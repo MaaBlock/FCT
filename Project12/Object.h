@@ -1,0 +1,3 @@
+class Object : public RefCounted {
+
+};
