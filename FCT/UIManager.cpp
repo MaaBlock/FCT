@@ -68,7 +68,7 @@ namespace FCT {
 		Font* font = new Font;
 		font->create("SimSun-01.ttf");
 		Text* text = new Text;
-		text->setText(L"字");
+		text->setText(L"字体");
 		text->setFont(font);
 		text->setPosition(150, 150);
 		text->setColor({ 0,1,1,1 }, {1,0,0,1});

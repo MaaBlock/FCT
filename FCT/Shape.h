@@ -7,7 +7,7 @@ public:
 	virtual void predraw(Context* context) {
 
 	}
-	void setOffset(float x, float y) {
+	virtual void setOffset(float x, float y) {
 		m_offsetX = x;
 		m_offserY = y;
 	}

@@ -1,7 +1,6 @@
 #define STB_TRUETYPE_IMPLEMENTATION
 #include "hander.h"
 namespace FCT {
-	float Cross(Pos2f edgePoint0, Pos2f edgePoint1, Pos2f point);
 	TextDevice* TextDevice::m_textDevice = NULL;
 	void TextDevice::Init()
 	{
@@ -91,11 +90,8 @@ namespace FCT {
 		for (int i = 0; i < m_textLen; i++) {
 			for (int j = 0; j < m_shapeNum[i] - 1; j++) {
 				context->draw(m_shape[i][j], m_x, m_y);
-			//	context->writeIn(g_window->getBuffer());
-			//	g_window->flush();
 			}
 		}
-		//context->draw(m_shape[0][m_shapeNum[0] - 2], m_x, m_y);
 		DepthStencilState* fillState = context->createResouce->DepthStencilState();
 		fillState->setRefStencil(255);
 		fillState->setDepthEnable(false);
@@ -107,7 +103,9 @@ namespace FCT {
 		fillState->setFrontFaceStencilFail(stencil_op_keep);
 		fillState->setFrontFaceStencilPass(stencil_op_keep);
 		context->setDeafultResouce(fillState);
-		context->draw(m_shape[0][m_shapeNum[0] - 1], m_x, m_y);
+		for (int i = 0; i < m_textLen; i++) {
+			context->draw(m_shape[i][m_shapeNum[i] - 1], m_x, m_y);
+		}
 		context->setDeafultResouce(rasterizerState->getResouceType(), NULL);
 		context->setDeafultResouce(state->getResouceType(), NULL);
 
@@ -124,10 +122,14 @@ namespace FCT {
 
 		}
 		float scaleSrcX(float srcX) {
-
+			float originX = 0;
+			float originY = m_src.descent;
+			return (srcX - originX) * m_scaleX + originX;
 		}
 		float scaleSrcY(float srcY) {
-
+			float originX = 0;
+			float originY = m_src.descent;
+			return (srcY - originY) * m_scaleX + originY;
 		}
 		void setStbFont(stbtt_fontinfo* font) {
 			m_font = font;
@@ -137,12 +139,13 @@ namespace FCT {
 				m_src.descent + m_src.lineGap;
 		}
 		void offsetText(size_t index,float& offsetX, float& offsetY) {
-			offsetX = m_offsetX + offsetX;
-			offsetY = m_src.linehight - offsetY
-				+ m_src.descent;
+			offsetX = m_offsetX + scaleSrcX(offsetX);
+			offsetY = scaleSrcY(m_src.linehight) - scaleSrcY(offsetY)
+				+ scaleSrcY(m_src.descent);
 		}
 		void textSize(int pixelHeight) {
-			stbtt_ScaleForPixelHeight(m_font, pixelHeight);
+			m_scaleY = stbtt_ScaleForPixelHeight(m_font, pixelHeight);
+			m_scaleX = m_scaleY;
 			return;
 		}
 		void setRect(int w,int h) {
@@ -152,27 +155,20 @@ namespace FCT {
 			int advance, lsb;
 			stbtt_GetCodepointHMetrics(m_font, m_text[index], &advance, &lsb);
 			//´¦Àírectangle
-			rectangle->setRect(advance, m_src.linehight);
+			rectangle->setRect(scaleSrcX(advance), scaleSrcY(m_src.linehight));
 			rectangle->setOffset(m_offsetX, m_offsetY);
-			//finsh
-			finsh(index);
-		}
-		void finsh(size_t index) {
-			int advance, lsb;
-			stbtt_GetCodepointHMetrics(m_font, m_text[index], &advance, &lsb);
-			m_offsetX += advance;
-			m_line++;
+			//finsh;
+			m_offsetX += scaleSrcX(advance);
 			if (false/*»»ÐÐ*/) {
 				m_offsetX = 0;
 				m_offsetY += m_src.linehight;
 			}
-			return;
 		}
 	private:
 		int m_dstWidth;
 		int m_dstHeight;
-		float m_scaleX;
-		float m_scaleY;
+		float m_scaleX = 0.5;
+		float m_scaleY = 0.5;
 		text_offset_src_t m_src;
 		int m_offsetX;
 		int m_offsetY;
