@@ -119,17 +119,22 @@ namespace FCT {
 	class Offset : public RefCounted {
 	public:
 		Offset(const wchar_t* text) : m_text(text) {
-
 		}
-		float scaleSrcX(float srcX) {
+		float scaleSrcX(float srcX) { 
 			float originX = 0;
 			float originY = m_src.descent;
 			return (srcX - originX) * m_scaleX + originX;
 		}
-		float scaleSrcY(float srcY) {
+		float scaleSrcY(float srcY) { 
 			float originX = 0;
 			float originY = m_src.descent;
-			return (srcY - originY) * m_scaleX + originY;
+			return (srcY - originY) * m_scaleY + originY;
+		}
+		float scaleMovX(float srcX) {
+			return srcX * m_scaleX;
+		}
+		float scaleMovY(float srcY) {
+			return srcY * m_scaleY;
 		}
 		void setStbFont(stbtt_fontinfo* font) {
 			m_font = font;
@@ -137,10 +142,11 @@ namespace FCT {
 				&m_src.descent, &m_src.lineGap);
 			m_src.linehight = m_src.ascent - 
 				m_src.descent + m_src.lineGap;
+			textSize(30);
 		}
 		void offsetText(size_t index,float& offsetX, float& offsetY) {
 			offsetX = m_offsetX + scaleSrcX(offsetX);
-			offsetY = scaleSrcY(m_src.linehight) - scaleSrcY(offsetY)
+			offsetY = scaleMovY(m_src.linehight) - scaleSrcY(offsetY)
 				+ scaleSrcY(m_src.descent);
 		}
 		void textSize(int pixelHeight) {
@@ -155,7 +161,7 @@ namespace FCT {
 			int advance, lsb;
 			stbtt_GetCodepointHMetrics(m_font, m_text[index], &advance, &lsb);
 			//´¦Àírectangle
-			rectangle->setRect(scaleSrcX(advance), scaleSrcY(m_src.linehight));
+			rectangle->setRect(scaleSrcX(advance), scaleMovY(m_src.linehight));
 			rectangle->setOffset(m_offsetX, m_offsetY);
 			//finsh;
 			m_offsetX += scaleSrcX(advance);
@@ -167,15 +173,14 @@ namespace FCT {
 	private:
 		int m_dstWidth;
 		int m_dstHeight;
-		float m_scaleX = 0.5;
-		float m_scaleY = 0.5;
+		float m_scaleX = 1.0f;
+		float m_scaleY = 1.0f;
 		text_offset_src_t m_src;
 		int m_offsetX;
 		int m_offsetY;
 		unsigned m_line = 0;
 		const wchar_t* m_text;
 		stbtt_fontinfo* m_font;
-		float m_scale = 10.0f;
 	};
 	void Text::create(Context* context)
 	{
