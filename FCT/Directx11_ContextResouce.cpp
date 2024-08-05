@@ -193,14 +193,106 @@ namespace FCT {
 		m_blendDesc.RenderTarget[0].RenderTargetWriteMask = D3D11_COLOR_WRITE_ENABLE_ALL;
 	}
 
-	void Directx11_BlendState::setAlphaBlend()
+	void Directx11_BlendState::alphaToCoverage(bool enable)
 	{
-
+		m_blendDesc.AlphaToCoverageEnable = enable;
 	}
 
-	void Directx11_BlendState::setRGBBlend()
+	void Directx11_BlendState::independentBlend(bool enable)
 	{
+		m_blendDesc.IndependentBlendEnable = enable;
+	}
 
+	void Directx11_BlendState::blendEnable(bool enable, int index)
+	{
+		m_blendDesc.RenderTarget[index].BlendEnable = enable;
+	}
+	D3D11_BLEND FCTtoD3D11BLEND(blend_factor_t src) {
+		switch (src)
+		{
+		case blend_factor_t::blend_factor_zero:
+		return D3D11_BLEND_ZERO;
+		case blend_factor_t::blend_factor_one:
+		return D3D11_BLEND_ONE;
+		case blend_factor_t::blend_factor_src_color:
+		return D3D11_BLEND_SRC_COLOR;
+		case blend_factor_t::blend_factor_inv_src_color:
+			return D3D11_BLEND_INV_SRC_COLOR;
+		case blend_factor_t::blend_factor_src_alpha:
+			return D3D11_BLEND_SRC_ALPHA;
+		case blend_factor_t::blend_factor_inv_src_alpha:
+			return D3D11_BLEND_INV_SRC_ALPHA;
+		case blend_factor_t::blend_factor_dest_alpha:
+			return D3D11_BLEND_DEST_ALPHA;
+		case blend_factor_t::blend_factor_inv_dest_alpha:
+			return D3D11_BLEND_INV_DEST_ALPHA;
+		case blend_factor_t::blend_factor_dest_color:
+			return D3D11_BLEND_DEST_COLOR;
+			break;
+		case blend_factor_t::blend_factor_inv_dest_color:
+			return D3D11_BLEND_INV_DEST_COLOR;
+			break;
+		case blend_factor_t::blend_factor_src_alpha_sat:
+			return D3D11_BLEND_SRC_ALPHA_SAT;
+		case blend_factor_t::blend_factor_blend_factor:
+			return D3D11_BLEND_BLEND_FACTOR;
+		case blend_factor_t::blend_factor_inv_blend_factor:
+			return D3D11_BLEND_INV_BLEND_FACTOR;
+		default:
+			// todo: error
+			break;
+		}
+	}
+	void Directx11_BlendState::srcBlendRGB(blend_factor_t src, int index)
+	{
+		m_blendDesc.RenderTarget[index].SrcBlend = FCTtoD3D11BLEND(src);
+	}
+
+	void Directx11_BlendState::destBlendRGB(blend_factor_t dest, int index)
+	{
+		m_blendDesc.RenderTarget[index].DestBlend = FCTtoD3D11BLEND(dest);
+	}
+	inline D3D11_BLEND_OP FCTtoD3D11BLENDOP(blend_op_t src) {
+		switch (src)
+		{
+		case blend_op_t::blend_op_add:
+			return D3D11_BLEND_OP_ADD;
+		case blend_op_t::blend_op_subtract:
+			return D3D11_BLEND_OP_SUBTRACT;
+		case blend_op_t::blend_op_rev_subtract:
+			return D3D11_BLEND_OP_REV_SUBTRACT;
+		case blend_op_t::blend_op_min:
+			return D3D11_BLEND_OP_MIN;
+		case blend_op_t::blend_op_max:
+			return D3D11_BLEND_OP_MAX;
+		default:
+			// todo: error
+			break;
+		}
+	}
+	void Directx11_BlendState::blendOpRGB(blend_op_t op, int index)
+	{
+		m_blendDesc.RenderTarget[index].BlendOp = FCTtoD3D11BLEND_OP(op);
+	}
+
+	void Directx11_BlendState::srcBlendAlpha(blend_factor_t src, int index)
+	{
+		m_blendDesc.RenderTarget[index].SrcBlendAlpha = FCTtoD3D11BLEND(src);
+	}
+
+	void Directx11_BlendState::destBlendAlpha(blend_factor_t dest, int index)
+	{
+		m_blendDesc.RenderTarget[index].DestBlendAlpha = FCTtoD3D11BLEND(dest);
+	}
+
+	void Directx11_BlendState::blendOpAlpha(blend_op_t op, int index)
+	{
+		m_blendDesc.RenderTarget[index].BlendOpAlpha = FCTtoD3D11BLEND_OP(op);
+	}
+
+	void Directx11_BlendState::writeMask(char mask)
+	{
+		m_blendDesc.RenderTarget[0].RenderTargetWriteMask = mask;
 	}
 
 	void Directx11_BlendState::create(ID3D11Device* device)

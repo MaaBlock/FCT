@@ -10,6 +10,7 @@ public:
 	ID3D11RenderTargetView** getRenderTargetViewPtr();
 	ID3D11ShaderResourceView* getShaderResourceView();
 	void createTarget();
+	DXGI_SAMPLE_DESC getSampleDesc();
 private:
 	int m_width;
 	int m_height;
@@ -19,4 +20,5 @@ private:
 	ID3D11RenderTargetView* m_rtv;
 	ID3D11ShaderResourceView* m_srv;
 	ID3D11DepthStencilView* m_dsv;
+	DXGI_SAMPLE_DESC m_sampleDesc;
 };

@@ -3,30 +3,30 @@ namespace FCT {
 	Directx11_Image::Directx11_Image(ID3D11Device* device,int w,int h)
 	{
 		REF_CLASS_BEGIN();
+		m_sampleDesc.Count = 1;
+		m_sampleDesc.Quality = 0;
 		m_width = w;
 		m_height = h;
 		m_device = device;
 		D3D11_TEXTURE2D_DESC desc;
-		desc.SampleDesc.Count = 1;
-		desc.SampleDesc.Quality = 0;
+		desc.SampleDesc = m_sampleDesc;
 		desc.Width = w;
 		desc.Height = h;
 		desc.MipLevels = 1;
 		desc.ArraySize = 1;
 		desc.Format = DXGI_FORMAT_R32G32B32A32_FLOAT;
-		desc.SampleDesc.Count = 1;
 		desc.Usage = D3D11_USAGE_DEFAULT;
 		desc.BindFlags = D3D11_BIND_SHADER_RESOURCE | D3D11_BIND_RENDER_TARGET;
 		desc.CPUAccessFlags = 0;
 		desc.MiscFlags = 0;
 		D3D11_SHADER_RESOURCE_VIEW_DESC srvDesc;
 		srvDesc.Format = desc.Format;
-		srvDesc.ViewDimension = D3D11_SRV_DIMENSION_TEXTURE2D;
+		srvDesc.ViewDimension = D3D11_SRV_DIMENSION_TEXTURE2DMS;
 		srvDesc.Texture2D.MostDetailedMip = 0;
 		srvDesc.Texture2D.MipLevels = desc.MipLevels;
 		D3D11_RENDER_TARGET_VIEW_DESC renderTargetData;
 		renderTargetData.Format = desc.Format;
-		renderTargetData.ViewDimension = D3D11_RTV_DIMENSION_TEXTURE2D;
+		renderTargetData.ViewDimension = D3D11_RTV_DIMENSION_TEXTURE2DMS;
 		renderTargetData.Texture2D.MipSlice = 0;
 		D3D11_TEXTURE2D_DESC depthStencilData;
 		depthStencilData.Width = w;
@@ -34,8 +34,7 @@ namespace FCT {
 		depthStencilData.MipLevels = 1;
 		depthStencilData.ArraySize = 1;
 		depthStencilData.Format = DXGI_FORMAT_D24_UNORM_S8_UINT;
-		depthStencilData.SampleDesc.Count = 1;
-		depthStencilData.SampleDesc.Quality = 0;
+		depthStencilData.SampleDesc = m_sampleDesc;
 		depthStencilData.Usage = D3D11_USAGE_DEFAULT;
 		depthStencilData.BindFlags = D3D11_BIND_DEPTH_STENCIL;
 		depthStencilData.CPUAccessFlags = 0;
@@ -83,5 +82,9 @@ namespace FCT {
 	void Directx11_Image::createTarget()
 	{
 
+	}
+	DXGI_SAMPLE_DESC Directx11_Image::getSampleDesc()
+	{
+		return m_sampleDesc;
 	}
 }

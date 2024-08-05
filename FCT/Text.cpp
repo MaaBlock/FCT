@@ -171,13 +171,13 @@ namespace FCT {
 			}
 		}
 	private:
-		int m_dstWidth;
-		int m_dstHeight;
+		float m_dstWidth;
+		float m_dstHeight;
 		float m_scaleX = 1.0f;
 		float m_scaleY = 1.0f;
 		text_offset_src_t m_src;
-		int m_offsetX;
-		int m_offsetY;
+		float m_offsetX;
+		float m_offsetY;
 		unsigned m_line = 0;
 		const wchar_t* m_text;
 		stbtt_fontinfo* m_font;

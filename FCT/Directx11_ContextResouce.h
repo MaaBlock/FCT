@@ -64,8 +64,16 @@ private:
 class Directx11_BlendState : public BlendState, public Directx11Interface {
 public:
 	Directx11_BlendState();
-	void setAlphaBlend();
-	void setRGBBlend();
+	void alphaToCoverage(bool enable);
+	void independentBlend(bool enable);
+	void blendEnable(bool enable,int index = 0);
+	void srcBlendRGB(blend_factor_t src,int index = 0);
+	void destBlendRGB(blend_factor_t dest, int index = 0);
+	void blendOpRGB(blend_op_t op, int index = 0);
+	void srcBlendAlpha(blend_factor_t src, int index = 0);
+	void destBlendAlpha(blend_factor_t dest, int index = 0);
+	void blendOpAlpha(blend_op_t op, int index = 0);
+	void writeMask(char mask = 0xf);// a b g r
 	void create(ID3D11Device* device);
 	void bind(Context* _context);
 private:
