@@ -19,6 +19,9 @@ public:
 	virtual void size(int w, int h) = 0;
 	virtual void show() = 0;
 	virtual void flush() = 0;
+	virtual bool isFocus() = 0;
+	virtual bool isMinimize() = 0;
+	virtual bool isForeground() = 0;
 	virtual bool isRunning() = 0;
 	virtual int getx() = 0;
 	virtual int gety() = 0;

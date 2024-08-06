@@ -1,7 +1,7 @@
 template <typename T>
 class Stack : public RefCounted {
 public:
-	Stack(const size_t max) {
+	Stack(size_t max) {
 		m_max = max;
 	}
 	void create() {
@@ -29,7 +29,7 @@ public:
 		return m_top - m_data;
 	}
 private:
-	const size_t m_max;
+    size_t m_max;
 	T* m_data;
 	T* m_top;
 };
