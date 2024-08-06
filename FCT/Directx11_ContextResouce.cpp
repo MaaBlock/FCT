@@ -191,6 +191,7 @@ namespace FCT {
 		m_blendDesc.RenderTarget[0].DestBlendAlpha = D3D11_BLEND_ONE;
 		m_blendDesc.RenderTarget[0].BlendOpAlpha = D3D11_BLEND_OP_ADD;
 		m_blendDesc.RenderTarget[0].RenderTargetWriteMask = D3D11_COLOR_WRITE_ENABLE_ALL;
+		m_bindFunc = Directx11_BlendStateFirstBind;
 	}
 
 	void Directx11_BlendState::alphaToCoverage(bool enable)
@@ -272,7 +273,7 @@ namespace FCT {
 	}
 	void Directx11_BlendState::blendOpRGB(blend_op_t op, int index)
 	{
-		m_blendDesc.RenderTarget[index].BlendOp = FCTtoD3D11BLEND_OP(op);
+		m_blendDesc.RenderTarget[index].BlendOp = FCTtoD3D11BLENDOP(op);
 	}
 
 	void Directx11_BlendState::srcBlendAlpha(blend_factor_t src, int index)
@@ -287,7 +288,7 @@ namespace FCT {
 
 	void Directx11_BlendState::blendOpAlpha(blend_op_t op, int index)
 	{
-		m_blendDesc.RenderTarget[index].BlendOpAlpha = FCTtoD3D11BLEND_OP(op);
+		m_blendDesc.RenderTarget[index].BlendOpAlpha = FCTtoD3D11BLENDOP(op);
 	}
 
 	void Directx11_BlendState::writeMask(char mask)
@@ -298,14 +299,26 @@ namespace FCT {
 	void Directx11_BlendState::create(ID3D11Device* device)
 	{
 		device->CreateBlendState(&m_blendDesc, &m_blendState);
+		m_bindFunc = Directx11_BlendStateBind;
 	}
-
+	void Directx11_BlendStateFirstBind() {
+	}
 	void Directx11_BlendState::bind(Context* _context)
 	{
-		ID3D11DeviceContext* context = GetContext((Directx11_Context*)_context);
-		context->OMSetBlendState(m_blendState, NULL, 0xFFFFFFFF);
+		m_bindFunc(this, _context);
 	}
 
+	void Directx11_BlendState::Directx11_BlendStateFirstBind(Directx11_BlendState* pThis, Context* context)
+	{
+		pThis->create(pThis->GetDevice((Directx11_Context*)context));
+		Directx11_BlendStateBind(pThis, context);
+	}
+
+	void Directx11_BlendState::Directx11_BlendStateBind(Directx11_BlendState* pThis, Context* _context)
+	{
+		ID3D11DeviceContext* context = pThis->GetContext((Directx11_Context*)_context);
+		context->OMSetBlendState(pThis->m_blendState, NULL, 0xFFFFFFFF);
+	}
 
 	Directx11_DepthStencilState::Directx11_DepthStencilState()
 	{

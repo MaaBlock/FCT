@@ -118,8 +118,8 @@ namespace FCT {
 		cbd.BindFlags = D3D11_BIND_CONSTANT_BUFFER;
 		cbd.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE ;
 		m_device->CreateBuffer(&cbd, nullptr, &m_constBuffer2d);
-		m_blendState = new Directx11_BlendState;
-		m_blendState->create(m_device);
+		m_nullBlendState = new Directx11_BlendState;
+		m_nullBlendState->create(m_device);
 	}
 	Image* Directx11_Context::createImage(int w,int h)
 	{
@@ -161,7 +161,8 @@ namespace FCT {
 		m_context->VSSetShader(m_vertexShader2d, NULL, 0);
 		m_context->PSSetShader(m_pixelShader2d, NULL, 0);
 		m_context->VSSetConstantBuffers(0, 1, &m_constBuffer2d);
-		m_blendState->bind(this);
+		m_blendState ? m_blendState->bind(this) : 
+			m_nullBlendState->bind(this);
 		m_rasterizerState ? m_rasterizerState->bind(this)
 			: m_context->RSSetState(NULL);
 		m_geometryShader ? m_geometryShader->bind(this)
@@ -253,7 +254,8 @@ namespace FCT {
 			m_rasterizerState = (Directx11_RasterizerState*)resouce;
 			break;
 		case context_resource_blend_state:
-			m_blendState = (Directx11_BlendState*)resouce;
+			m_blendState = resouce ? (Directx11_BlendState*)resouce
+				: m_nullBlendState;
 			break;
 		case context_resource_depth_stencil_state:
 			m_depthStencilState = (Directx11_DepthStencilState*)resouce;

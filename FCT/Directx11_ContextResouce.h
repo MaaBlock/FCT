@@ -77,6 +77,9 @@ public:
 	void create(ID3D11Device* device);
 	void bind(Context* _context);
 private:
+	static void Directx11_BlendStateFirstBind(Directx11_BlendState* pThis, Context* context);
+	static void Directx11_BlendStateBind(Directx11_BlendState* pThis, Context* context);
+	void (*m_bindFunc)(Directx11_BlendState* pThis, Context* context);
 	D3D11_BLEND_DESC m_blendDesc;
 	ID3D11BlendState* m_blendState;
 };

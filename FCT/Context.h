@@ -3,6 +3,7 @@ public:
 	virtual FCT::RasterizerState* RasterizerState() = 0;
 	virtual FCT::GeometryShader* GeometryShader() = 0;
 	virtual FCT::DepthStencilState* DepthStencilState() = 0;
+	virtual FCT::BlendState* BlendState() = 0;
 };
 
 class Context : public RefCounted {

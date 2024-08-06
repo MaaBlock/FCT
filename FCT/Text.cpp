@@ -85,6 +85,9 @@ namespace FCT {
 		RasterizerState* rasterizerState = context->createResouce->RasterizerState();
 		rasterizerState->setCullMode(cull_mode_none);
 		rasterizerState->create(context);
+		BlendState* blendState = context->createResouce->BlendState();
+		blendState->alphaToCoverage(true);
+		context->setDeafultResouce(blendState);	
 		context->setDeafultResouce(rasterizerState);
 		context->setDeafultResouce(state);
 		for (int i = 0; i < m_textLen; i++) {
@@ -108,6 +111,7 @@ namespace FCT {
 		}
 		context->setDeafultResouce(rasterizerState->getResouceType(), NULL);
 		context->setDeafultResouce(state->getResouceType(), NULL);
+		context->setDeafultResouce(blendState->getResouceType(), NULL);
 
 	}
 	struct text_offset_src_t {

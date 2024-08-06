@@ -27,7 +27,9 @@ public:
 	FCT::DepthStencilState* DepthStencilState() {
 		return new Directx11_DepthStencilState;
 	}
-	
+	FCT::BlendState* BlendState() {
+		return new Directx11_BlendState;
+	}
 };
 
 class Directx11_Context : public Context {
@@ -72,7 +74,8 @@ private:
 	ID3D11PixelShader* m_pixelShader3d;
 	ID3D11SamplerState* m_samplerState;
 	ID3D11Buffer* m_constBuffer2d;
-	Directx11_BlendState* m_blendState;
+	Directx11_BlendState* m_nullBlendState;
+	Directx11_BlendState* m_blendState = NULL;
 	Directx11_RasterizerState* m_rasterizerState;
 	Directx11_GeometryShader* m_geometryShader;
 	Directx11_DepthStencilState* m_depthStencilState;
