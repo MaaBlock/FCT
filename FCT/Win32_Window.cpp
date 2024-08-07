@@ -240,4 +240,19 @@ namespace FCT {
 		return m_input;
 	}
 
+	bool Win32_D3D11_Window::isFocus()
+	{
+		return false;
+	}
+
+	bool Win32_D3D11_Window::isMinimize()
+	{
+		return false;
+	}
+
+	bool Win32_D3D11_Window::isForeground()
+	{
+		return false;
+	}
+
 }

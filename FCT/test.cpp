@@ -10,11 +10,19 @@ int main(){
 #endif // GRAPH_DEBUG
 
 	Window* wnd = CreateWindow();
-	wnd->size(800, 600);
+	wnd->size(1000, 750);
 	wnd->create();
 	UIManager* ui = new UIManager;
-	wnd->show();
+	CircleGeometry* circle = new CircleGeometry;
+
+	circle->r = 50;
+	//test
+	UICaption* caption = new UICaption;
+	caption->setCenter(950, 50);
+	caption->setInputShape(circle);
 	ui->create(wnd);
+	ui->addControl(caption);
+	
 	wnd->show();
 	// ...这部分管线命令都将被捕获到
 #ifdef GRAPH_DEBUG

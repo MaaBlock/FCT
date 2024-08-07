@@ -34,6 +34,8 @@ class Text : public Shape {
 public:
 	Text();
 	~Text();
+	void setPixelSize(int height);
+	void setalphaToCoverage(bool enable);
 	void setColor(Color color,Color backGroundColor);
 	void setFont(Font* font);
 	void setPosition(float x, float y);
@@ -41,6 +43,8 @@ public:
 	void predraw(Context* context);
 	void create(Context* context);
 private:
+	bool m_alphaToCoverage = false;
+	int m_size;
 	const wchar_t* m_text;
 	Color m_color;
 	Color m_backGroundColor;

@@ -49,6 +49,8 @@ public:
 	void draw(Shape* shape,float x,float y);
 	void draw(Object*,float x,float y,float z);
 	void flush();
+
+	void setTexture(Image* img);
 	void writeIn(Color* buffer);
 	void writeIn(Image* img,Color* buffer);
 	Vertex2dBuffer* createVertex2dBuffer(Vertex2d* vertex, int vertexNum);

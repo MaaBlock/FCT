@@ -56,8 +56,8 @@ namespace FCT {
 					DXGI_SWAP_CHAIN_DESC SwapChainParam;
 
 					DXGI_MODE_DESC BufferParam;
-					BufferParam.Width = 800;
-					BufferParam.Height = 600;
+					BufferParam.Width = pWnd->m_width;
+					BufferParam.Height = pWnd->m_height;
 					BufferParam.Format = DXGI_FORMAT_R8G8B8A8_UNORM;
 					BufferParam.RefreshRate.Numerator = 60;
 					BufferParam.RefreshRate.Denominator = 1;
@@ -89,8 +89,8 @@ namespace FCT {
 
 					ID3D11Texture2D* pDepthBuffer = NULL;
 					D3D11_TEXTURE2D_DESC depthStencilData;
-					depthStencilData.Width = 800;
-					depthStencilData.Height = 600;
+					depthStencilData.Width = pWnd->m_width;
+					depthStencilData.Height = pWnd->m_height;
 					depthStencilData.MipLevels = 1;
 					depthStencilData.ArraySize = 1;
 					depthStencilData.Format = DXGI_FORMAT_D24_UNORM_S8_UINT;

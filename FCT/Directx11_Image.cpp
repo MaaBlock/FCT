@@ -3,8 +3,8 @@ namespace FCT {
 	Directx11_Image::Directx11_Image(ID3D11Device* device,int w,int h)
 	{
 		REF_CLASS_BEGIN();
-		m_sampleDesc.Count = 1;
-		m_sampleDesc.Quality = 0;
+		m_sampleDesc.Count = 2;
+		m_sampleDesc.Quality = DXGI_STANDARD_MULTISAMPLE_QUALITY_PATTERN;
 		m_width = w;
 		m_height = h;
 		m_device = device;

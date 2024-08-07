@@ -22,8 +22,15 @@ public:
 	int getwidth();
 	int getheight();
 	Input* getInput();
+
+	//ToDo:
+	bool isFocus();
+	bool isMinimize();
+	bool isForeground();
 protected:
+	Image* m_bufferImage = NULL;
 	Color* m_buffer = NULL;
+	bool m_bufferMaped = false;
 private:
 	Win32_Input* m_input;
 	HWND m_wnd;

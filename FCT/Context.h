@@ -16,6 +16,7 @@ class Context : public RefCounted {
 public:
 	CreateContextFactory* createResouce;
 	virtual void create() = 0;
+	virtual void setTexture(Image* img) = 0
 	virtual Image* createImage(int w, int h) = 0;
 	virtual void setTarget(Image* img) = 0;
 	virtual void draw(Shape* shape, float x, float y) = 0;

@@ -19,6 +19,15 @@ namespace FCT {
 	}
 	Circle* g_circle;
 	Text* g_text;
+	void UIManager::DrawControlShape(Node<UIControlBase*>* node, void* param) {
+		UIControlBase* control = node->getData();
+		UIManager* uiManager = (UIManager*)param;
+		if (control->getShape()) {
+			uiManager->m_context->draw(
+				control->getShape(), control->getx(), control->gety());
+		}
+		return;
+	}
 	void UIManager::updata()
 	{
 #ifdef GRAPH_DEBUG
@@ -29,8 +38,9 @@ namespace FCT {
 		//m_context->clear(0, 0, 1, 1.0f);
 		//m_context->draw(g_text, 50, 50);
 		//
-		//m_context->writeIn(m_window->getBuffer());
-		//m_window->flush();
+		m_controlTree->traversal(DrawControlShape, this);
+		m_context->writeIn(m_window->getBuffer());
+		m_window->flush();
 #ifdef GRAPH_DEBUG
 		pGraphicsAnalysis->EndCapture();
 #endif // GRAPH_DEBUG
@@ -41,45 +51,8 @@ namespace FCT {
 		m_context->create();
 		m_uiBuffer = m_context->createImage(window->getwidth(), window->getheight());
 		m_context->setTarget(m_uiBuffer);
-		RasterizerState* rasterizerState = m_context->createResouce->RasterizerState();
-		rasterizerState->setCullMode(cull_mode_none);
-		rasterizerState->create(m_context);
-		m_context->setDeafultResouce(rasterizerState);
-		TextFullQuadraticBezierCurve2d* curve = new TextFullQuadraticBezierCurve2d;
-		Line* fuline = new Line;
-		fuline->setPoint(50, 50);
-		fuline->setColor({ 1,1,0,1 });
-		fuline->create(m_context);
-		curve->setBeginPoint(0, 0);
-		curve->setControlPoint(50, 50);
-		curve->setEndPoint(50, 100);
-		curve->setColor({ 1,0,0,1.0f });
-		curve->create(m_context);
-		g_circle = new Circle;
-		g_circle->setR(50);
-		g_circle->setColor({ 1,0,0,1 });
-		g_circle->create(m_context);
-		m_context->clear(0, 0, 1, 1.0f);
-		m_context->draw(g_circle, 750, 50);
-		m_context->draw(curve, 50, 50);
-		m_context->draw(fuline, 50, 50);
-		m_context->writeIn(window->getBuffer());
-		m_context->setDeafultResouce(rasterizerState->getResouceType(), NULL);
-		Font* font = new Font;
-		font->create("SimSun-01.ttf");
-		Text* text = new Text;
-		text->setText(L"字体");
-		text->setFont(font);
-		text->setPosition(150, 150);
-		text->setColor({ 0,1,1,1 }, {1,0,0,1});
-		text->create(m_context);
-		m_context->draw(text, 50, 50);
-		g_window = window;
-		m_context->writeIn(window->getBuffer());
-		g_text = text;
 		m_window = window;
 		m_input = m_window->getInput();
-		//多线程操作
 		RectangleGeometry* rect = new RectangleGeometry;
 		rect->w = m_window->getwidth();
 		rect->h = m_window->getheight();
@@ -87,24 +60,17 @@ namespace FCT {
 		m_root->setCenter(0, 0);
 		m_root->setInputShape(rect);
 		m_controlTree = new Tree<UIControlBase*>(m_root);
-
-		CircleGeometry* circle = new CircleGeometry;
-		circle->r = 50;
-		//test
-		UICaption* caption = new UICaption;
-		caption->setCenter(750, 50);
-		caption->setInputShape(circle);
-		m_controlTree->addChild(caption);
-		// test
 		m_inputTranslate = new SoftRenderer_UIInputTranlate(window, m_controlTree);
 		m_callback = new UICallBack(m_inputTranslate,this);
 		m_inputTranslate->updata();
 		//树应该再callback之前创建完
 		m_window->getInput()->registerInputCallBack(m_callback);
-		circle->release();
-
 	}
-
+	void UIManager::addControl(UIControlBase* control)
+	{
+		m_controlTree->addChild(control);
+		m_inputTranslate->updata();
+	}
 	void UIManager::destroy()
 	{
 

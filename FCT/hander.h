@@ -9,7 +9,9 @@
 #include <iostream>
 #include <cstdint>
 #include <vector>
-#ifdef WIN32
+
+//注意WIN32宏是定义在Windows.h里面
+#ifdef _WIN32
 #include <Windows.h>
 #include <d3d11.h>
 #include <d3dcompiler.h>
@@ -24,7 +26,7 @@
 #endif
 
 #include "stb_truetype.h"
-#ifdef  WIN32
+#ifdef  _WIN32
 #pragma comment(lib,"d3d11.lib")
 #pragma comment(lib,"D3dCompiler.lib")
 #pragma comment(lib,"DXGI.lib")
@@ -63,14 +65,14 @@ namespace FCT {
 #include "Context.h"
 //适配创建
 
-#ifdef WIN32
+#ifdef _WIN32
 #undef CreateWindow
 #define CreateWindow Win32_D3D11_CreateWindow
 #endif
 
 //实现类 or 派生类
 
-#ifdef WIN32
+#ifdef _WIN32
 #include "DirectXMath_Matrix.h"
 #include "UIManager.h"
 #include "Win32_File.h"

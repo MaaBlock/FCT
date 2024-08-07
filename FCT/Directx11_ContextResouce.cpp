@@ -267,6 +267,7 @@ namespace FCT {
 		case blend_op_t::blend_op_max:
 			return D3D11_BLEND_OP_MAX;
 		default:
+			return D3D11_BLEND_OP_ADD;
 			// todo: error
 			break;
 		}

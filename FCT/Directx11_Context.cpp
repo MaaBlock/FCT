@@ -195,7 +195,8 @@ namespace FCT {
 		h = img->getHeight();
 		ID3D11Texture2D* temp;
 		D3D11_TEXTURE2D_DESC desc;
-		desc.SampleDesc = ((Directx11_Image*)img)->getSampleDesc();
+		desc.SampleDesc.Count = 1;
+		desc.SampleDesc.Quality = 0;
 		desc.Width = w;
 		desc.Height = h;
 		desc.MipLevels = 1;
@@ -206,13 +207,14 @@ namespace FCT {
 		desc.CPUAccessFlags = D3D11_CPU_ACCESS_READ;
 		desc.MiscFlags = 0;
 		m_device->CreateTexture2D(&desc, NULL, &temp);
-		//ID3D11Texture2D* tempDeault;
-		//desc.Usage = D3D11_USAGE_DEFAULT;
-		//m_device->CreateTexture2D(&desc, NULL, &tempDeault);
-		//m_context->ResolveSubresource(tempDeault, 0, ((Directx11_Image*)img)->getTexture(), 0, DXGI_FORMAT_R32G32B32A32_FLOAT);
-		//m_context->CopyResource(temp, tempDeault);
-		//m_context->Flush();
-		m_context->CopyResource(temp, ((Directx11_Image*)img)->getTexture());
+		ID3D11Texture2D* tempDeault;
+		desc.Usage = D3D11_USAGE_DEFAULT;
+		desc.CPUAccessFlags = NULL;
+		m_device->CreateTexture2D(&desc, NULL, &tempDeault);
+		m_context->ResolveSubresource(tempDeault, 0, ((Directx11_Image*)img)->getTexture(), 0, DXGI_FORMAT_R32G32B32A32_FLOAT);
+		m_context->CopyResource(temp, tempDeault);
+		m_context->Flush();
+		//m_context->CopyResource(temp, ((Directx11_Image*)img)->getTexture());
 		D3D11_MAPPED_SUBRESOURCE msr;
 		LRESULT rc;
 		m_context->Map(temp, 0, D3D11_MAP_READ, 0, &msr);
@@ -263,5 +265,9 @@ namespace FCT {
 		default:
 			break;
 		}
+	}
+	void Directx11_Context::setTexture(Image* img)
+	{
+
 	}
 };

@@ -45,6 +45,16 @@ namespace FCT {
 		FCT_RELEASE(m_font);
 	}
 
+	void Text::setPixelSize(int height)
+	{
+		m_size = height;
+	}
+
+	void Text::setalphaToCoverage(bool enable)
+	{
+		m_alphaToCoverage = enable;
+	}
+
 	void Text::setColor(Color color, Color backGroundColor)
 	{
 		m_color = color;
@@ -86,7 +96,7 @@ namespace FCT {
 		rasterizerState->setCullMode(cull_mode_none);
 		rasterizerState->create(context);
 		BlendState* blendState = context->createResouce->BlendState();
-		blendState->alphaToCoverage(true);
+		blendState->alphaToCoverage(m_alphaToCoverage);
 		context->setDeafultResouce(blendState);	
 		context->setDeafultResouce(rasterizerState);
 		context->setDeafultResouce(state);
@@ -146,7 +156,7 @@ namespace FCT {
 				&m_src.descent, &m_src.lineGap);
 			m_src.linehight = m_src.ascent - 
 				m_src.descent + m_src.lineGap;
-			textSize(30);
+			textSize(15);
 		}
 		void offsetText(size_t index,float& offsetX, float& offsetY) {
 			offsetX = m_offsetX + scaleSrcX(offsetX);
@@ -191,6 +201,7 @@ namespace FCT {
 		stbtt_fontinfo* font = m_font->getStbFont();
 		Offset* offset = new Offset(m_text);
 		offset->setStbFont(font);
+		offset->textSize(m_size);
 		m_textLen = wcslen(m_text);
 		m_shape = new Shape * *[m_textLen];
 		m_shapeNum = new int[m_textLen];

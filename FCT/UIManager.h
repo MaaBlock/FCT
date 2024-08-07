@@ -19,6 +19,9 @@ public:
 	virtual Geometry* getInputShape() {
 		return m_inputShape;
 	}
+	virtual void setDrawShape(Shape* shape) {
+		m_shape = shape;
+	}
 	virtual void setInputShape(Geometry* inputShape) {
 		if (m_inputShape) {
 			m_inputShape->release();
@@ -37,7 +40,21 @@ public:
 	virtual int gety() {
 		return m_cy;
 	}
+	virtual void setShape(Shape* shape) {
+		m_shape = shape;
+	}
+	virtual Shape* getShape() {
+		return m_shape;
+	}
+	virtual void setImage(Image* image) {
+		m_image = image;
+	}
+	virtual Image* getImage() {
+		return m_image;
+	}
 protected:
+	Shape* m_shape;
+	Image* m_image;
 	Geometry* m_inputShape = NULL;
 	int m_cx, m_cy;//center x,center y
 private:
@@ -55,11 +72,9 @@ public:
 	control_t getControlType() {
 		return control_type_graphics;
 	}
-	void setBuffer(Image* buffer) {
-		m_buffer = buffer;
-	}
 protected:
-	Image* m_buffer;
+	Image* m_backBuffer;
+	Image* m_foreBuffer;
 };
 class UIRoot : public UIGraphics {
 public:
@@ -80,8 +95,10 @@ class UIManager : public RefCounted
 {
 public:
 	UIManager();
+	static void DrawControlShape(Node<UIControlBase*>* node, void* param);
 	void updata();
 	void create(Window* window);
+	void addControl(UIControlBase* control);
 	void destroy();
 private:
 	Window* m_window;
