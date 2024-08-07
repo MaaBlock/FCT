@@ -6,7 +6,7 @@ enum control_t {
 	control_type_sys_edit = 3
 };
 extern Window* g_window;
-class UIControlBase : public RefCounted {
+class  UIControlBase : public RefCounted {
 public:
 	virtual ~UIControlBase() {
 		if (m_inputShape) {
@@ -20,7 +20,11 @@ public:
 		return m_inputShape;
 	}
 	virtual void setDrawShape(Shape* shape) {
+		if (m_shape) {
+			m_shape->release();
+		}
 		m_shape = shape;
+		m_shape->addRef();
 	}
 	virtual void setInputShape(Geometry* inputShape) {
 		if (m_inputShape) {
@@ -67,14 +71,29 @@ public:
 	}
 private:
 };
+enum UIGraphicsRendererChoose {
+	Directx11_UIGraphicsRendererChoose = 1,
+};
 class UIGraphics : public UIControlBase {
 public:
 	control_t getControlType() {
 		return control_type_graphics;
 	}
+	void size(int w, int h) {
+		m_width = w;
+		m_height = h;
+	}
+	void createRenderer(UIGraphicsRendererChoose choose);
+	Context* getContext();
+	void flush();
 protected:
-	Image* m_backBuffer;
-	Image* m_foreBuffer;
+	void setShape(Shape* shape)  {
+
+	}
+	int m_width;
+	int m_height;
+	Context* m_context;
+	Image* m_buffer;
 };
 class UIRoot : public UIGraphics {
 public:

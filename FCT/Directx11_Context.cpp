@@ -45,7 +45,7 @@ namespace FCT {
 		m_target = NULL;
 		m_rasterizerState = NULL;
 		m_geometryShader = NULL;
-		createResouce = new Directx11_CreateContextFactory;
+		createResouce = FCT_NEW(Directx11_CreateContextFactory);
 
 	}
 	void Directx11_Context::clear(float r, float g, float b, float a)
@@ -269,5 +269,7 @@ namespace FCT {
 	void Directx11_Context::setTexture(Image* img)
 	{
 
+		m_context->PSSetShaderResources(0, 1,
+			((Directx11_Image*)img)->getShaderResourceViewPtr());
 	}
 };

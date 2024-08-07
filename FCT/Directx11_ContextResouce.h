@@ -131,3 +131,23 @@ private:
 	ID3D11RasterizerState* m_rasterizerState;
 	D3D11_RASTERIZER_DESC m_desc;
 };
+
+class Directx11_SamplerState : public SamplerState, public Directx11Interface {
+public:
+	Directx11_SamplerState();
+	void setFilter(texture_filter_t filter);
+	void setAddressU(texture_address_mode_t address);
+	void setAddressV(texture_address_mode_t address);
+	void setAddressW(texture_address_mode_t address);
+	void setMipLODBias(float bias);
+	void setMaxAnisotropy(unsigned int max);
+	void setComparisonFunc(comparison_func_t func);
+	void setMinLod(float min);
+	void setMaxLod(float max);
+	void setBorderColor(Color color);
+	void create(Context* context);
+	void bind(Context* _context);
+private:
+	ID3D11SamplerState* m_samplerState;
+	D3D11_SAMPLER_DESC m_desc;
+};

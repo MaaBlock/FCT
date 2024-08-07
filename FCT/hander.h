@@ -38,6 +38,56 @@
 #include "GameActivity.h"
 #endif
 
+#define FCT_MEMORY_CHEAK
+#ifdef FCT_MEMORY_CHEAK
+#include <typeinfo>
+namespace FCT {
+	struct _fct_object_t {
+		void* pointer;
+		std::string describe;
+	};
+	extern std::vector<_fct_object_t*> fct_object_list;
+	template <typename T>
+	T* _fct_new() {
+		T* ret = new T;
+		_fct_object_t* object = new _fct_object_t;
+		object->pointer = ret;
+		object->describe = typeid(ret).name();
+
+		return new T;
+	}
+	template <typename T>
+	void _fct_delete(T arg) {
+		fct_object_list.erase(std::find(
+			fct_object_list.begin(), fct_object_list.end(),
+			[arg](_fct_object_t* object) {
+				return object->pointer == arg;
+			}
+		));
+		delete arg;
+	}
+	template <typename T>
+	void _fct_deletes(T arg) {
+		delete[] arg;
+	}
+	inline void _output_object(std::ostream out) {
+		//线程不安全
+		for (auto i = fct_object_list.begin(); i != fct_object_list.end(); i++) {
+			out << (*i)->describe;
+		}
+	}
+}
+
+#define FCT_NEW(type) _fct_new<type>()
+#define FCT_DELETE(args) _fct_delete<auto>(args)
+#define FCT_DELETES(args) _fct_deletes<auto>(args)
+#else
+#define FCT_NEW(type) new type
+#define FCT_DELETE(args) delete args
+#define FCT_DELETES(args) delete[] args
+#endif // FCT_MEMORY_CHEAK
+
+
 namespace FCT {
 	//引用计数
 #include "RefCount.h"

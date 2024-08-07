@@ -613,4 +613,141 @@ namespace FCT {
 		ID3D11DeviceContext* context = GetContext((Directx11_Context*)_context);
 		context->RSSetState(m_rasterizerState);
 	}
+
+	Directx11_SamplerState::Directx11_SamplerState()
+	{
+
+	}
+
+	void Directx11_SamplerState::setFilter(texture_filter_t filter)
+	{
+		switch (filter)
+		{
+		case texture_filter_min_mag_mip_point:
+			m_desc.Filter = D3D11_FILTER_MIN_MAG_MIP_POINT;
+			break;
+		case texture_filter_min_mag_point_mip_linear:
+			m_desc.Filter = D3D11_FILTER_MIN_MAG_POINT_MIP_LINEAR;
+			break;
+		case texture_filter_min_mag_linear_mip_point:
+			m_desc.Filter = D3D11_FILTER_MIN_MAG_LINEAR_MIP_POINT;
+			break;
+		case texture_filter_min_mag_linear_mip_linear:
+			m_desc.Filter = D3D11_FILTER_MIN_MAG_MIP_LINEAR;
+			break;
+		case texture_filter_anisotropic:
+			m_desc.Filter = D3D11_FILTER_ANISOTROPIC;
+			break;
+		default:
+			//ToDo: error or warning
+			break;
+		}
+	}
+	D3D11_TEXTURE_ADDRESS_MODE FCTAddressModeToDirectx11AddressMode(texture_address_mode_t mode)
+	{
+		switch (mode)
+		{
+		case texture_address_mode_wrap:
+			return D3D11_TEXTURE_ADDRESS_WRAP;
+		case texture_address_mode_mirror:
+			return D3D11_TEXTURE_ADDRESS_MIRROR;
+		case texture_address_mode_clamp:
+			return D3D11_TEXTURE_ADDRESS_CLAMP;
+		case texture_address_mode_border:
+			return D3D11_TEXTURE_ADDRESS_BORDER;
+		case texture_address_mode_mirror_once:
+			return D3D11_TEXTURE_ADDRESS_MIRROR_ONCE;
+		default:
+			//ToDo: error or warning
+			return D3D11_TEXTURE_ADDRESS_WRAP;
+		}
+	}
+	void Directx11_SamplerState::setAddressU(texture_address_mode_t address)
+	{
+		m_desc.AddressU = FCTAddressModeToDirectx11AddressMode(address);
+	}
+
+	void Directx11_SamplerState::setAddressV(texture_address_mode_t address)
+	{
+		m_desc.AddressV = FCTAddressModeToDirectx11AddressMode(address);
+	}
+
+	void Directx11_SamplerState::setAddressW(texture_address_mode_t address)
+	{
+		m_desc.AddressW = FCTAddressModeToDirectx11AddressMode(address);
+	}
+
+	void Directx11_SamplerState::setMipLODBias(float bias)
+	{
+		m_desc.MipLODBias = bias;
+	}
+
+	void Directx11_SamplerState::setMaxAnisotropy(unsigned int max)
+	{
+		m_desc.MaxAnisotropy = max;
+	}
+
+	void Directx11_SamplerState::setComparisonFunc(comparison_func_t func)
+	{
+		switch (func)
+		{
+		case comparison_func_never:
+			m_desc.ComparisonFunc = D3D11_COMPARISON_NEVER;
+			break;
+		case comparison_func_less:
+			m_desc.ComparisonFunc = D3D11_COMPARISON_LESS;
+			break;
+		case comparison_func_equal:
+			m_desc.ComparisonFunc = D3D11_COMPARISON_EQUAL;
+			break;
+		case comparison_func_less_equal:
+			m_desc.ComparisonFunc = D3D11_COMPARISON_LESS_EQUAL;
+			break;
+		case comparison_func_greater:
+			m_desc.ComparisonFunc = D3D11_COMPARISON_GREATER;
+			break;
+		case comparison_func_not_equal:
+			m_desc.ComparisonFunc = D3D11_COMPARISON_NOT_EQUAL;
+			break;
+		case comparison_func_always:
+			m_desc.ComparisonFunc = D3D11_COMPARISON_ALWAYS;
+			break;
+		default:
+			//ToDo: error or warning
+			m_desc.ComparisonFunc = D3D11_COMPARISON_LESS;
+		}
+	}
+	void Directx11_SamplerState::setMinLod(float min)
+	{
+		m_desc.MinLOD = min;
+	}
+
+	void Directx11_SamplerState::setMaxLod(float max)
+	{
+		m_desc.MaxLOD = max;
+	}
+
+	void Directx11_SamplerState::setBorderColor(Color color)
+	{
+		m_desc.BorderColor[0] = color.r;
+		m_desc.BorderColor[1] = color.g;
+		m_desc.BorderColor[2] = color.b;
+		m_desc.BorderColor[3] = color.a;
+	}
+
+
+	void Directx11_SamplerState::create(Context* context)
+	{
+		ID3D11Device* device = GetDevice((Directx11_Context*)context);
+		device->CreateSamplerState(&m_desc, &m_samplerState);
+	}
+
+	void Directx11_SamplerState::bind(Context* _context)
+	{
+		ID3D11DeviceContext* context = GetContext((Directx11_Context*)_context);
+		if (!m_samplerState) {
+			create(_context);
+		}
+		context->PSSetSamplers(0, 1, &m_samplerState);
+	}
 }

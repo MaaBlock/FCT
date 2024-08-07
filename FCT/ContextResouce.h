@@ -86,12 +86,38 @@ enum blend_op_t {
 	blend_op_min,
 	blend_op_max,
 };
+
 enum blend_state_write_mask_t {
 	blend_state_write_mask_r = 0x1,
 	blend_state_write_mask_g = 0x2,
 	blend_state_write_mask_b = 0x4,
 	blend_state_write_mask_a = 0x8,
 };
+enum texture_filter_t {
+	texture_filter_min_mag_mip_point,
+	texture_filter_min_mag_point_mip_linear,
+	texture_filter_min_mag_linear_mip_point,
+	texture_filter_min_mag_linear_mip_linear,
+	texture_filter_anisotropic,
+};
+enum texture_address_mode_t {
+	texture_address_mode_wrap,
+	texture_address_mode_mirror,
+	texture_address_mode_clamp,
+	texture_address_mode_border,
+	texture_address_mode_mirror_once
+};
+enum comparison_func_t {
+	comparison_func_never,
+	comparison_func_less,
+	comparison_func_equal,
+	comparison_func_less_equal,
+	comparison_func_greater,
+	comparison_func_not_equal,
+	comparison_func_always,
+};
+
+
 class ContextResouce: public RefCounted{
 public:
 	virtual context_resouce_t getResouceType() = 0;
@@ -161,6 +187,18 @@ public:
 	context_resouce_t getResouceType() {
 		return context_resource_sampler_state;
 	}
+	virtual void setFilter(texture_filter_t filter) = 0;
+	virtual void setAddressU(texture_address_mode_t address) = 0;
+	virtual void setAddressV(texture_address_mode_t address) = 0;
+	virtual void setAddressW(texture_address_mode_t address) = 0;
+	virtual void setMipLODBias(float bias) = 0;
+	virtual void setMaxAnisotropy(unsigned int max) = 0;
+	virtual void setComparisonFunc(comparison_func_t func) = 0;
+	virtual void setMinLod(float min) = 0;
+	virtual void setMaxLod(float max) = 0;
+	virtual void setBorderColor(Color color) = 0;
+
+
 };
 
 class RasterizerState : public ContextResouce {

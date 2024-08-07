@@ -79,6 +79,10 @@ namespace FCT {
 	{
 		return m_srv;
 	}
+	ID3D11ShaderResourceView** Directx11_Image::getShaderResourceViewPtr()
+	{
+		return &m_srv;
+	}
 	void Directx11_Image::createTarget()
 	{
 

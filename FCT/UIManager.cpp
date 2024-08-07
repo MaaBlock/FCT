@@ -1,15 +1,5 @@
 ﻿#include "hander.h"
 
-
-#ifdef NOUSE
-using Coord = double;
-using N = uint32_t;
-...
-std::vector<std::vector<Point>> polygon;
-...
-std::vector<N> indices = mapbox::earcut<N>(polygon);
-#endif // NOUSE
-
 namespace FCT {
 
 	Window* g_window;
@@ -146,4 +136,33 @@ namespace FCT {
 	{
 		return m_control[y * m_window->getwidth() + x];
 	}
+
+	void UIGraphics::createRenderer(UIGraphicsRendererChoose choose)
+	{	
+		switch (choose)
+		{
+		case FCT::Directx11_UIGraphicsRendererChoose:
+			m_context = new Directx11_Context;
+			break;
+		case 0:
+		default:
+#ifdef _WIN32
+			m_context = new Directx11_Context;
+#endif // _WIN32
+			break;
+		}
+		m_image = m_context->createImage(m_width, m_height);
+		m_buffer = m_context->createImage(m_width, m_height);
+		m_context->setTarget(m_buffer);
+	}
+
+	Context* UIGraphics::getContext()
+	{
+		return m_context;
+	}
+
+	void UIGraphics::flush()
+	{
+	}
+
 }

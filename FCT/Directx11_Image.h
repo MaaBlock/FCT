@@ -9,6 +9,7 @@ public:
 	ID3D11RenderTargetView* getRenderTargetView();
 	ID3D11RenderTargetView** getRenderTargetViewPtr();
 	ID3D11ShaderResourceView* getShaderResourceView();
+	ID3D11ShaderResourceView** getShaderResourceViewPtr();
 	void createTarget();
 	DXGI_SAMPLE_DESC getSampleDesc();
 private:
