@@ -33,12 +33,23 @@ public:
 	Color* getBuffer();
 
 	Input* getInput();
+
+    //内部函数，调用无效
+    Image* getTarget();
+    void setTarget(Image* target);
+
+    GameActivity* getActivity();
+    ANativeWindow* getNativeWindow();
 private:
     pthread_t m_mainThread = NULL;
 	bool m_running = false;
 	bool m_focus = false;
 	bool m_foreground = false;
 	bool m_minmize = false;
+    GameActivity* m_activity;
+    ANativeWindow* m_nativeWindow = NULL;
+    Context* m_context = NULL;
+    Image* m_target = NULL;
 public:
     static void* MainThread(void* param);
     static void Init(GameActivity* activity);

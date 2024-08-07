@@ -30,6 +30,8 @@
 #pragma comment(lib,"DXGI.lib")
 #endif
 #ifdef ANDROID
+#include <unistd.h>
+#include <EGL/egl.h>
 #include "AndroidOut.h"
 #include "GameActivity.h"
 #endif
@@ -89,6 +91,8 @@ namespace FCT {
 //#include "android_ContextResouce.h"
 #include "Android_Window.h"
 #include "Android_Input.h"
+#include "GLES3_0_Context.h"
+#include "GLES3_0_Image.h"
 #define CreateWindow Android_CreateWindow
 //#include "Android_Context.h"
 #endif

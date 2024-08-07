@@ -15,6 +15,8 @@ add_library(fct SHARED
         ../../../TextureAsset.cpp
         ../../../Android_Window.cpp
         ../../../AndroidActivitySwap.cpp
+        ../../../GLES3_0_Context.cpp
+        ../../../GLES3_0_Image.cpp
         ../../../hander.cpp
         ../../../Utility.cpp)
 

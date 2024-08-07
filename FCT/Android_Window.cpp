@@ -1,6 +1,10 @@
 #include "hander.h"
+
+
 extern int main();
 namespace FCT{
+    void FCTAPI_PreInit(){
+    }
     Android_Window* Android_Window::Instance = NULL;
     Window* Android_CreateWindow(){
         return Android_Window::getInstance();
@@ -11,13 +15,25 @@ namespace FCT{
         return window_info_t();
     }
     void* Android_Window::MainThread(void* param){
+        while (getInstance()->getNativeWindow()) {
+            usleep(1000);
+        }
+        ((GLES3_0_Context*)getInstance()->m_context)->setTarget(Instance);
+        //ToDo:已创建完surface,从此继续
         main();
         return NULL;
     }
 
     void Android_Window::Init(GameActivity* activity) {
         Instance = new Android_Window;
+        Instance->m_activity = activity;
         Instance->m_running = true;
+        Instance->m_context =
+                GLES3_0_Context::Init(); //创建一个GLES3_0_Context,
+                //并且context type为window
+
+        Instance->m_context->create();
+        FCTAPI_PreInit();
         //注意，destory之后running变为false，
         // 若在线程内设为true，要注意destroy后刚好线程内设为true
         pthread_create(&Instance->m_mainThread, NULL, Android_Window::MainThread, Instance);
@@ -175,7 +191,17 @@ namespace FCT{
 
     void Android_Window::onNativeWindowCreated(GameActivity* activity, ANativeWindow* window)
     {
+
         aout << "Android_Window::onNativeWindowCreated" << std::endl;
+        getInstance()->m_nativeWindow = window;
+    }
+
+    GameActivity* Android_Window::getActivity() {
+        return m_activity;
+    }
+
+    ANativeWindow *Android_Window::getNativeWindow() {
+        return m_nativeWindow;
     }
 }
 

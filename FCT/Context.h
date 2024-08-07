@@ -1,3 +1,9 @@
+enum context_t{
+    context_window = 0x0,
+    context_default = 0x1,
+
+};
+
 class CreateContextFactory {
 public:
 	virtual FCT::RasterizerState* RasterizerState() = 0;
