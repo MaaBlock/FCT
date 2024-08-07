@@ -118,7 +118,7 @@ namespace FCT {
 		cbd.BindFlags = D3D11_BIND_CONSTANT_BUFFER;
 		cbd.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE ;
 		m_device->CreateBuffer(&cbd, nullptr, &m_constBuffer2d);
-		m_nullBlendState = new Directx11_BlendState;
+		m_nullBlendState = FCT_NEW(Directx11_BlendState);
 		m_nullBlendState->create(m_device);
 	}
 	Image* Directx11_Context::createImage(int w,int h)
@@ -230,7 +230,7 @@ namespace FCT {
 	}
 	ConstBuffer* Directx11_Context::createConstBuffer(unsigned id, void* data, int biteSize, int type)
 	{
-		return new Directx11_ConstBuffer(m_device, id, data, biteSize, type);
+		return FCT_NEW(Directx11_ConstBuffer,m_device, id, data, biteSize, type);
 	}
 	Topology* Directx11_Context::createToplogy(shape_primitive_topology_t t)
 	{

@@ -47,14 +47,13 @@ namespace FCT {
 		std::string describe;
 	};
 	extern std::vector<_fct_object_t*> fct_object_list;
-	template <typename T>
-	T* _fct_new() {
-		T* ret = new T;
+	template <typename T,typename... Args>
+	T* _fct_new(const Args&... arg) {
+		T* ret = new T(arg...);
 		_fct_object_t* object = new _fct_object_t;
 		object->pointer = ret;
 		object->describe = typeid(ret).name();
-
-		return new T;
+		return ret;
 	}
 	template <typename T>
 	void _fct_delete(T arg) {
@@ -78,7 +77,7 @@ namespace FCT {
 	}
 }
 
-#define FCT_NEW(type) _fct_new<type>()
+#define FCT_NEW(type,...) _fct_new<type>(__VA_ARGS__)
 #define FCT_DELETE(args) _fct_delete<auto>(args)
 #define FCT_DELETES(args) _fct_deletes<auto>(args)
 #else
