@@ -5,7 +5,7 @@ public:
 		m_max = max;
 	}
 	void create() {
-		m_data = new T[m_max];
+		m_data = FCT_NEWS(T,m_max);
 		m_top = m_data;
 	}
 	void push(T data) {
@@ -23,7 +23,7 @@ public:
 		return *--m_top;
 	}
 	~Stack() {
-		delete[] m_data;
+		FCT_DELETES(m_data);
 	}
 	size_t size() {
 		return m_top - m_data;

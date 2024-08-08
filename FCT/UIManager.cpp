@@ -18,6 +18,9 @@ namespace FCT {
 		}
 		return;
 	}
+	bool flag = false; 
+	Font* font = NULL;
+	Text* text = NULL;
 	void UIManager::updata()
 	{
 #ifdef GRAPH_DEBUG
@@ -25,9 +28,23 @@ namespace FCT {
 		HRESULT getAnalysis = DXGIGetDebugInterface1(0, __uuidof(pGraphicsAnalysis), reinterpret_cast<void**>(&pGraphicsAnalysis));
 		pGraphicsAnalysis->BeginCapture();
 #endif // GRAPH_DEBUG
-		//m_context->clear(0, 0, 1, 1.0f);
-		//m_context->draw(g_text, 50, 50);
-		//
+		if (!font) {
+			font = new Font;
+			font->create("SimSun-01.ttf");
+		}
+		if (!text) {
+			text = new Text;
+			//text->setalphaToCoverage(true);
+			text->setText(L"你好");
+			text->setFont(font);
+			text->setPixelSize(50);
+			text->setColor({ 0,0,0,1 }, {1,1,1,1 });
+			text->create(m_context);
+			flag = true;
+		}
+		m_context->clear(1, 1, 1, 1.0f);
+		m_context->draw(text, 50, 50);
+		
 		m_controlTree->traversal(DrawControlShape, this);
 		m_context->writeIn(m_window->getBuffer());
 		m_window->flush();
@@ -37,21 +54,21 @@ namespace FCT {
 	}
 	void UIManager::create(Window* window)
 	{
-		m_context = new Directx11_Context;
+		m_context = FCT_NEW(Directx11_Context);
 		m_context->create();
 		m_uiBuffer = m_context->createImage(window->getwidth(), window->getheight());
 		m_context->setTarget(m_uiBuffer);
 		m_window = window;
 		m_input = m_window->getInput();
-		RectangleGeometry* rect = new RectangleGeometry;
+		RectangleGeometry* rect = FCT_NEW( RectangleGeometry);
 		rect->w = m_window->getwidth();
 		rect->h = m_window->getheight();
-		m_root = new UIRoot;
+		m_root = FCT_NEW( UIRoot);
 		m_root->setCenter(0, 0);
 		m_root->setInputShape(rect);
-		m_controlTree = new Tree<UIControlBase*>(m_root);
-		m_inputTranslate = new SoftRenderer_UIInputTranlate(window, m_controlTree);
-		m_callback = new UICallBack(m_inputTranslate,this);
+		m_controlTree = FCT_NEW(Tree<UIControlBase*>,m_root);
+		m_inputTranslate = FCT_NEW(SoftRenderer_UIInputTranlate,window, m_controlTree);
+		m_callback = FCT_NEW(UICallBack,m_inputTranslate,this);
 		m_inputTranslate->updata();
 		//树应该再callback之前创建完
 		m_window->getInput()->registerInputCallBack(m_callback);
@@ -86,7 +103,7 @@ namespace FCT {
 		m_tree = tree;
 		m_tree->addRef();
 		int nLong = m_window->getwidth() * m_window->getheight();
-		m_control = new Node<UIControlBase*>*[nLong];
+		m_control = FCT_NEWS(Node<UIControlBase*>*,nLong);
 		for (int i = 0; i < nLong; i++) {
 			m_control[i] = tree;
 		}
@@ -142,12 +159,12 @@ namespace FCT {
 		switch (choose)
 		{
 		case FCT::Directx11_UIGraphicsRendererChoose:
-			m_context = new Directx11_Context;
+			m_context = FCT_NEW( Directx11_Context);
 			break;
 		case 0:
 		default:
 #ifdef _WIN32
-			m_context = new Directx11_Context;
+			m_context = FCT_NEW( Directx11_Context);
 #endif // _WIN32
 			break;
 		}

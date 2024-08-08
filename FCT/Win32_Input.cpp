@@ -6,7 +6,7 @@ namespace FCT {
 
 	void Win32_Input::Init()
 	{
-		m_nullcallback = new InputCallBack;
+		m_nullcallback = FCT_NEW( InputCallBack);
 	}
 	Win32_Input::Win32_Input(Window* wnd)
 	{

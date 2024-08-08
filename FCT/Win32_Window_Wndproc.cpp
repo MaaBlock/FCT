@@ -25,7 +25,7 @@ namespace FCT {
 		case WM_CREATE:
 		{
 			{
-				pWnd->m_buffer = new Color[pWnd->m_width * pWnd->m_height];
+				pWnd->m_buffer = FCT_NEWS (Color,pWnd->m_width * pWnd->m_height);
 				for (int i = 0; i < pWnd->m_width * pWnd->m_height; i++) {
 					pWnd->m_buffer[i] = { 1,1,0,1 };
 				}
@@ -295,7 +295,7 @@ namespace FCT {
 			}
 			if (pWnd->m_width * pWnd->m_height != LOWORD(lParam) * HIWORD(lParam)) {
 				delete[] pWnd->m_buffer;
-				pWnd->m_buffer = new Color[LOWORD(lParam) * HIWORD(lParam)];
+				pWnd->m_buffer = FCT_NEWS( Color,LOWORD(lParam) * HIWORD(lParam));
 			}
 			//directx resize
 			{

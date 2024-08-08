@@ -41,45 +41,87 @@
 #define FCT_MEMORY_CHEAK
 #ifdef FCT_MEMORY_CHEAK
 #include <typeinfo>
+#include <mutex>
 namespace FCT {
 	struct _fct_object_t {
 		void* pointer;
 		std::string describe;
 	};
 	extern std::vector<_fct_object_t*> fct_object_list;
+	extern std::string fct_object_info;
+	extern std::mutex fct_object_mutex;
 	template <typename T,typename... Args>
 	T* _fct_new(const Args&... arg) {
 		T* ret = new T(arg...);
 		_fct_object_t* object = new _fct_object_t;
 		object->pointer = ret;
 		object->describe = typeid(ret).name();
+		fct_object_mutex.lock();
+		fct_object_list.push_back(object);
+		fct_object_mutex.unlock();
+		return ret;
+	}
+	template <typename T,typename AUTO>
+	T* _fct_news(AUTO size) {
+		T* ret = new T[size];
+		_fct_object_t* object = new _fct_object_t;
+		object->pointer = ret;
+		object->describe = typeid(ret).name();
+		fct_object_mutex.lock();
+		fct_object_list.push_back(object);
+		fct_object_mutex.unlock();
 		return ret;
 	}
 	template <typename T>
 	void _fct_delete(T arg) {
-		fct_object_list.erase(std::find(
-			fct_object_list.begin(), fct_object_list.end(),
-			[arg](_fct_object_t* object) {
-				return object->pointer == arg;
+		fct_object_mutex.lock();
+		auto i = fct_object_list.begin();
+		while (i != fct_object_list.end()) {
+			if ((*i)->pointer == arg) {
+				delete (*i);
+				fct_object_list.erase(i);
+				goto FinshWhile;
+
 			}
-		));
+			i++;
+		}
+		if (i == fct_object_list.end()) {
+			fct_object_info += "出现不在object表里被delete的object";
+		}
+		FinshWhile:
+		fct_object_mutex.unlock();
 		delete arg;
 	}
 	template <typename T>
 	void _fct_deletes(T arg) {
+		auto i = fct_object_list.begin();
+		for (; i != fct_object_list.end(); i++) {
+			if ((*i)->pointer == arg) {
+				delete (*i);
+				fct_object_list.erase(i);
+				goto FinshWhiles;
+			}
+		}
+		if (i == fct_object_list.end()) {
+			fct_object_info += "出现不在object表里被delete的object";
+		}
+	FinshWhiles:
 		delete[] arg;
 	}
-	inline void _output_object(std::ostream out) {
+	inline void _output_object(std::ostream& out) {
 		//线程不安全
 		for (auto i = fct_object_list.begin(); i != fct_object_list.end(); i++) {
-			out << (*i)->describe;
+			out << (*i)->describe << std::endl;
 		}
+		out << fct_object_info << std::endl;
+		out << "未释放对象总计:" << fct_object_list.size() <<std::endl;
 	}
 }
 
 #define FCT_NEW(type,...) _fct_new<type>(__VA_ARGS__)
-#define FCT_DELETE(args) _fct_delete<auto>(args)
-#define FCT_DELETES(args) _fct_deletes<auto>(args)
+#define FCT_NEWS(type,num) _fct_news<type>(num)
+#define FCT_DELETE(args) _fct_delete<decltype(args)>(args)
+#define FCT_DELETES(args) _fct_deletes<decltype(args)>(args)
 #else
 #define FCT_NEW(type) new type
 #define FCT_DELETE(args) delete args

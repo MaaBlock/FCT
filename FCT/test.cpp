@@ -1,5 +1,4 @@
 #include "hander.h"
-#include <iostream>
 using namespace FCT;
 int main(){
 	Init();
@@ -33,6 +32,7 @@ int main(){
 	}
 	ui->release();
 	wnd->release();
+	_output_object(std::cout);
 	return 0;
 }
 

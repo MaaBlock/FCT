@@ -2,7 +2,7 @@
 namespace FCT {
 	Window* Win32_D3D11_CreateWindow()
 	{
-		return new Win32_D3D11_Window;
+		return FCT_NEW( Win32_D3D11_Window);
 	}
 
 	void Win32_D3D11_Window::Init()
@@ -41,7 +41,7 @@ namespace FCT {
 			rc.bottom = CW_USEDEFAULT;
 		}
 		//
-		wnd->m_input = new Win32_Input(wnd);
+		wnd->m_input = FCT_NEW(Win32_Input,wnd);
 		//创建无边框窗口
 		//创建窗口
 		wnd->m_wnd = CreateWindowExW(0

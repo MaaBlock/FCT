@@ -22,7 +22,7 @@ namespace FCT {
 	}
 	void Line::create(Context* context)
 	{
-		m_resouce = new ContextResouce * [2];
+		m_resouce = FCT_NEWS(ContextResouce*,2);
 		m_resouce[0] = context->createToplogy(shape_primitive_topology_linelist);
 		m_resouce[1] = context->createVertex2dBuffer(m_vertices, 2);
 		m_resouceNum = 2;
@@ -62,7 +62,7 @@ namespace FCT {
 			vertices[i * 4 + 3].color = m_surroundColor;
 			vertices[i * 4 + 3].tex = { (m_u1 + m_u2) / 2, (m_v1 + m_v2) / 2 };
 		}
-		m_resouce = new ContextResouce*[2];
+		m_resouce = FCT_NEWS(ContextResouce*,2);
 		m_resouce[0] = context->createToplogy(shape_primitive_topology_trianglestrip);
 		m_resouce[1] = context->createVertex2dBuffer(vertices, vertexnum);
 		m_resouceNum = 2;
@@ -106,7 +106,7 @@ namespace FCT {
 	void QuadraticBezierCurve2d::create(Context* context)
 	{
 		m_resouceNum = 5;
-		m_resouce = new ContextResouce * [5];
+		m_resouce = FCT_NEWS(ContextResouce*, 5);
 		QuadraticBezierCurve2dConstBuffer constBuffer;
 		constBuffer.vertex[0] = m_vertex[0].pos;
 		constBuffer.vertex[1] = m_vertex[1].pos;
@@ -309,7 +309,7 @@ namespace FCT {
 	void TextFullQuadraticBezierCurve2d::create(Context* context)
 	{
 		m_resouceNum = 5;
-		m_resouce = new ContextResouce * [5];
+		m_resouce = FCT_NEWS(ContextResouce * ,5);
 		QuadraticBezierCurve2dConstBuffer constBuffer;
 		constBuffer.vertex[0] = m_vertex[0].pos;
 		constBuffer.vertex[1] = m_vertex[1].pos;
@@ -457,7 +457,7 @@ namespace FCT {
 		m_vertexs[1].pos = { m_w,m_h };
 		m_vertexs[3].pos = { m_w,0 };
 		m_resouceNum = 2;
-		m_resouce = new ContextResouce * [2];
+		m_resouce = FCT_NEWS(ContextResouce * ,2);
 		m_resouce[0] = context->createToplogy(shape_primitive_topology_trianglestrip);
 		m_resouce[1] = context->createVertex2dBuffer(m_vertexs, 4);
 	}

@@ -31,7 +31,7 @@ public:
 			std::cout << "出现计数小于0" << std::endl;
 		}
 		if (refCounter == 0) {
-			delete this;
+			FCT_DELETE(this);
 		}
 	}
 	int refCount() {

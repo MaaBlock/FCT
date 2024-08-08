@@ -1,6 +1,8 @@
 #include "hander.h"
 namespace FCT {
-	std::vector<_fct_object_t*> fct_object_list = std::vector<_fct_object_t*>(1024);
+	std::vector<_fct_object_t*> fct_object_list = std::vector<_fct_object_t*>();
+	std::string fct_object_info = std::string();
+	std::mutex fct_object_mutex;
 	void Init()
 	{
 #ifdef _WIN32

@@ -44,7 +44,7 @@ namespace FCT {
 	}
 	void TextPolygon::create(Context* context)
 	{
-		m_resouce = new ContextResouce * [1 + m_vertexNum / 3];
+		m_resouce = FCT_NEWS(ContextResouce * ,1 + m_vertexNum / 3);
 		m_resouceNum = 1 + m_vertexNum / 3;
 		m_resouce[0] = context->createToplogy(shape_primitive_topology_trianglelist);
 		for (int i = 1; i < 1 + m_vertexNum / 3; i++) {

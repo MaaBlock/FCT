@@ -123,7 +123,7 @@ namespace FCT {
 	}
 	Image* Directx11_Context::createImage(int w,int h)
 	{
-		return new Directx11_Image(m_device,w,h);
+		return FCT_NEW(Directx11_Image,m_device,w,h);
 	}
 	void Directx11_Context::setTarget(Image* img)
 	{
@@ -226,7 +226,7 @@ namespace FCT {
 	}
 	Vertex2dBuffer* Directx11_Context::createVertex2dBuffer(Vertex2d* vertex, int vertexNum)
 	{
-		return new Directx11_Vertex2dBuffer(m_device, vertex, vertexNum);
+		return FCT_NEW(Directx11_Vertex2dBuffer,m_device, vertex, vertexNum);
 	}
 	ConstBuffer* Directx11_Context::createConstBuffer(unsigned id, void* data, int biteSize, int type)
 	{
@@ -234,15 +234,15 @@ namespace FCT {
 	}
 	Topology* Directx11_Context::createToplogy(shape_primitive_topology_t t)
 	{
-		return new Directx11_Topology(t);
+		return FCT_NEW(Directx11_Topology,t);
 	}
 	PixelShader* Directx11_Context::createPixelShader(const char* code)
 	{
-		return new Directx11_PixelShader(m_device,code);
+		return FCT_NEW(Directx11_PixelShader,m_device,code);
 	}
 	VertexShader* Directx11_Context::createVertexShader(const char* code)
 	{
-		return new Directx11_VertexShader(m_device, code);
+		return FCT_NEW(Directx11_VertexShader,m_device, code);
 	}
 	void Directx11_Context::setDeafultResouce(ContextResouce* resouce)
 	{

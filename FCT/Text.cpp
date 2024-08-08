@@ -13,6 +13,7 @@ namespace FCT {
 	Font::Font() : REF_CLASS_INIT()
 	{
 		m_fontFile = NULL;
+		m_fontinfo = NULL;
 	}
 	Font::~Font()
 	{
@@ -122,7 +123,10 @@ namespace FCT {
 		context->setDeafultResouce(rasterizerState->getResouceType(), NULL);
 		context->setDeafultResouce(state->getResouceType(), NULL);
 		context->setDeafultResouce(blendState->getResouceType(), NULL);
-
+		fillState->release();
+		state->release();
+		rasterizerState->release();
+		blendState->release();
 	}
 	struct text_offset_src_t {
 		int ascent;
@@ -199,12 +203,12 @@ namespace FCT {
 	void Text::create(Context* context)
 	{
 		stbtt_fontinfo* font = m_font->getStbFont();
-		Offset* offset = new Offset(m_text);
+		Offset* offset = FCT_NEW(Offset,m_text);
 		offset->setStbFont(font);
 		offset->textSize(m_size);
 		m_textLen = wcslen(m_text);
-		m_shape = new Shape * *[m_textLen];
-		m_shapeNum = new int[m_textLen];
+		m_shape = FCT_NEWS(Shape * *,m_textLen);
+		m_shapeNum = FCT_NEWS (int,m_textLen);
 		int chId = 0;
 		for (int i = 0; i < m_textLen; i++) {
 			m_shapeNum[i] = 0;
@@ -216,9 +220,9 @@ namespace FCT {
 			stbtt_vertex* stbVertex = NULL;
 			int verCount = 0;
 			verCount = stbtt_GetCodepointShape(font, *ch, &stbVertex);
-			TriangledVertexs = new Vertex2d[verCount * 3];//精确值:3 * (verCount - moveNum * 2)
+			TriangledVertexs = FCT_NEWS(Vertex2d,verCount * 3);//精确值:3 * (verCount - moveNum * 2)
 			TriangledVertexNums = 0;
-			m_shape[chId] = new Shape * [verCount + 2];
+			m_shape[chId] = FCT_NEWS(Shape *,verCount + 2);
 			std::wcout << L"开始处理 [" << *ch << L"]" << std::endl;
 			Pos2f current;
 			Pos2f previous;
@@ -246,7 +250,7 @@ namespace FCT {
 						std::cout << " < 0 :" << previous.y;
 						std::cout << std::endl;
 					}
-					m_shape[chId][m_shapeNum[chId]] = new Line;
+					m_shape[chId][m_shapeNum[chId]] = FCT_NEW(Line);
 					Line* line = (Line*)m_shape[chId][m_shapeNum[chId]];
 					line->setOffset(previous.x, previous.y);
 					line->setPoint(current.x - previous.x, current.y - previous.y);
@@ -276,7 +280,7 @@ namespace FCT {
 					control.x = stbVer->x;
 					control.y = stbVer->y;
 					offset->offsetText(chId,control.x, control.y);
-					m_shape[chId][m_shapeNum[chId]] = new TextFullQuadraticBezierCurve2d;
+					m_shape[chId][m_shapeNum[chId]] = FCT_NEW(TextFullQuadraticBezierCurve2d);
 					TextFullQuadraticBezierCurve2d* bezier = (TextFullQuadraticBezierCurve2d*)m_shape[chId][m_shapeNum[chId]];
 					bezier->setOffset(previous.x, previous.y);
 					bezier->setBeginPoint(0, 0);
@@ -308,13 +312,13 @@ namespace FCT {
 					break;
 				}
 			}
-			m_shape[chId][m_shapeNum[chId]] = new TextPolygon;
+			m_shape[chId][m_shapeNum[chId]] = FCT_NEW(TextPolygon);
 			TextPolygon* polygon = (TextPolygon*)m_shape[chId][m_shapeNum[chId]];
 			polygon->setColor(m_color);
 			polygon->setVertex(TriangledVertexs, TriangledVertexNums);
 			polygon->create(context);
 			m_shapeNum[chId]++;
-			Rectangle* rectangle = new Rectangle;
+			Rectangle* rectangle = FCT_NEW(Rectangle);
 			offset->offsetFillRect(chId, rectangle);
 			rectangle->setColor(m_backGroundColor);
 			rectangle->create(context);

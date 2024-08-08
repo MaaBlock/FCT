@@ -19,16 +19,16 @@ the ByteWidth(value = 8) must be a multiple of 16.
 class Directx11_CreateContextFactory : public CreateContextFactory {
 public:
 	FCT::RasterizerState* RasterizerState() {
-		return new Directx11_RasterizerState;
+		return FCT_NEW( Directx11_RasterizerState);
 	}
 	FCT::GeometryShader* GeometryShader() {
-		return new Directx11_GeometryShader;
+		return FCT_NEW( Directx11_GeometryShader);
 	}
 	FCT::DepthStencilState* DepthStencilState() {
-		return new Directx11_DepthStencilState;
+		return FCT_NEW(Directx11_DepthStencilState);
 	}
 	FCT::BlendState* BlendState() {
-		return new Directx11_BlendState;
+		return FCT_NEW(Directx11_BlendState);
 	}
 };
 

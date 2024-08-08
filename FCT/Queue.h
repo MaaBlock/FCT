@@ -6,12 +6,12 @@ public:
 	Queue() {}
 	Queue(int nSize) {
 		m_size = nSize;
-		m_buffer = new T[nSize];
+		m_buffer = FCT_NEWS(T,nSize);
 		m_head = m_buffer;
 		m_tail = m_buffer;
 	}
 	~Queue() {
-		delete[] m_buffer;
+		FCT_DELETES (m_buffer);
 	}
 	void push(T data) {
 		*m_tail = data;

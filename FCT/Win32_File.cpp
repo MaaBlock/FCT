@@ -55,7 +55,7 @@ namespace FCT {
 
 	File* Win32_CreateFile()
 	{
-		return new Win32_File();
+		return FCT_NEW( Win32_File);
 	}
 }
 

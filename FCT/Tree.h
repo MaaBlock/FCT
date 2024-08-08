@@ -28,7 +28,7 @@ public:
 		child->m_level = m_level + 1;
 	}
 	void addChild(T t) {
-		addChild(new Node<T>(t, m_level + 1));
+		addChild(FCT_NEW (Node<T>,t, m_level + 1));
 	}
 	T getData() {
 		return m_data;
