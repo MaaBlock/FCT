@@ -154,6 +154,7 @@ namespace FCT {
 #include "Shape.h"
 #include "Text.h"
 #include "Context.h"
+#include "mutex.h"
 //适配创建
 
 #ifdef _WIN32
@@ -164,6 +165,7 @@ namespace FCT {
 //实现类 or 派生类
 
 #ifdef _WIN32
+#include "Win32_Mutex.h"
 #include "DirectXMath_Matrix.h"
 #include "UIManager.h"
 #include "Win32_File.h"

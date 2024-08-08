@@ -30,19 +30,19 @@ namespace FCT {
 #endif // GRAPH_DEBUG
 		if (!font) {
 			font = new Font;
-			font->create("SimSun-01.ttf");
+			font->create("NSimSun-02.ttf");
 		}
 		if (!text) {
 			text = new Text;
-			//text->setalphaToCoverage(true);
-			text->setText(L"你好");
+			text->setalphaToCoverage(true);
+			text->setText(L"高级");
 			text->setFont(font);
-			text->setPixelSize(50);
-			text->setColor({ 0,0,0,1 }, {1,1,1,1 });
+			text->setPixelSize(20);
+			text->setColor({ 1,1,1,1 }, {0,0,0,1 });
 			text->create(m_context);
 			flag = true;
 		}
-		m_context->clear(1, 1, 1, 1.0f);
+		m_context->clear(0, 0, 1, 1.0f);
 		m_context->draw(text, 50, 50);
 		
 		m_controlTree->traversal(DrawControlShape, this);

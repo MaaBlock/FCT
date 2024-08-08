@@ -277,8 +277,8 @@ namespace FCT {
 					current.x = stbVer->x;
 					current.y = stbVer->y;
 					offset->offsetText(chId,current.x, current.y);
-					control.x = stbVer->x;
-					control.y = stbVer->y;
+					control.x = stbVer->cx;
+					control.y = stbVer->cy;
 					offset->offsetText(chId,control.x, control.y);
 					m_shape[chId][m_shapeNum[chId]] = FCT_NEW(TextFullQuadraticBezierCurve2d);
 					TextFullQuadraticBezierCurve2d* bezier = (TextFullQuadraticBezierCurve2d*)m_shape[chId][m_shapeNum[chId]];
