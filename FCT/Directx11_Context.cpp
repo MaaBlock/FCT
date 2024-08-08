@@ -10,7 +10,7 @@ namespace FCT {
 			"float2 WindowSize;"
 			"float2 ShapePos;"
 			"}"
-			"Texture2D texcoord : register(t0);"
+			"Texture2DMS<float4, 2>  texcoord : register(t0);"
 			"struct VSOut"
 			"{"
 			"float4 pos : SV_Position;"
@@ -27,14 +27,14 @@ namespace FCT {
 			"}"
 		);
 		PixelShader2dCompiled = compilePixelShader(
-			"Texture2D texcoord : register(t0);"
+			"Texture2DMS<float4, 2> texcoord : register(t0);"
 			"SamplerState g_sampler : register(s0);"
 			"float4 main(float4 pos : SV_Position,float4 color : Color,float2 tex : Texcoord ) : SV_Target"
 			"{"
 			"   if (tex.x < 0){"
 			"       return color;"
 			"	}"
-			"   return texcoord.Sample(g_sampler, tex); "
+			"   return texcoord.Load(tex, g_sampler); "
 			"}");
 	}
 	Directx11_Context::Directx11_Context()
@@ -120,6 +120,7 @@ namespace FCT {
 		m_device->CreateBuffer(&cbd, nullptr, &m_constBuffer2d);
 		m_nullBlendState = FCT_NEW(Directx11_BlendState);
 		m_nullBlendState->create(m_device);
+		m_nullSamplerState = FCT_NEW(Directx11_SamplerState);
 	}
 	Image* Directx11_Context::createImage(int w,int h)
 	{
@@ -163,12 +164,15 @@ namespace FCT {
 		m_context->VSSetConstantBuffers(0, 1, &m_constBuffer2d);
 		m_blendState ? m_blendState->bind(this) : 
 			m_nullBlendState->bind(this);
+		m_samplerState ? m_samplerState->bind(this)
+			:m_nullSamplerState->bind(this);
 		m_rasterizerState ? m_rasterizerState->bind(this)
 			: m_context->RSSetState(NULL);
 		m_geometryShader ? m_geometryShader->bind(this)
 			: m_context->GSSetShader(NULL, NULL, 0);
 		m_depthStencilState ? m_depthStencilState->bind(this)
 			: m_context->OMSetDepthStencilState(NULL, NULL);
+
 		UINT stride = sizeof(Vertex2d);
 		UINT offset = 0;
 		shape->predraw(this);
@@ -268,7 +272,6 @@ namespace FCT {
 	}
 	void Directx11_Context::setTexture(Image* img)
 	{
-
 		m_context->PSSetShaderResources(0, 1,
 			((Directx11_Image*)img)->getShaderResourceViewPtr());
 	}

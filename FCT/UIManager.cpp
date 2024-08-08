@@ -12,13 +12,18 @@ namespace FCT {
 	void UIManager::DrawControlShape(Node<UIControlBase*>* node, void* param) {
 		UIControlBase* control = node->getData();
 		UIManager* uiManager = (UIManager*)param;
+		control->m_mutex->lock();
+		if (control->m_image) {
+			uiManager->getContext()->setTexture(control->m_image);
+		}
 		if (control->getShape()) {
 			uiManager->m_context->draw(
 				control->getShape(), control->getx(), control->gety());
 		}
+		control->m_mutex->unlock();
 		return;
 	}
-	bool flag = false; 
+	bool flag = false;
 	Font* font = NULL;
 	Text* text = NULL;
 	void UIManager::updata()
@@ -38,13 +43,13 @@ namespace FCT {
 			text->setText(L"高级");
 			text->setFont(font);
 			text->setPixelSize(20);
-			text->setColor({ 1,1,1,1 }, {0,0,0,1 });
+			text->setColor({ 1,1,1,1 }, { 0,0,0,1 });
 			text->create(m_context);
 			flag = true;
 		}
 		m_context->clear(0, 0, 1, 1.0f);
 		m_context->draw(text, 50, 50);
-		
+
 		m_controlTree->traversal(DrawControlShape, this);
 		m_context->writeIn(m_window->getBuffer());
 		m_window->flush();
@@ -60,23 +65,39 @@ namespace FCT {
 		m_context->setTarget(m_uiBuffer);
 		m_window = window;
 		m_input = m_window->getInput();
-		RectangleGeometry* rect = FCT_NEW( RectangleGeometry);
+		RectangleGeometry* rect = FCT_NEW(RectangleGeometry);
 		rect->w = m_window->getwidth();
 		rect->h = m_window->getheight();
-		m_root = FCT_NEW( UIRoot);
+		m_root = FCT_NEW(UIRoot,m_window->getwidth()
+		, m_window->getheight());
 		m_root->setCenter(0, 0);
 		m_root->setInputShape(rect);
-		m_controlTree = FCT_NEW(Tree<UIControlBase*>,m_root);
-		m_inputTranslate = FCT_NEW(SoftRenderer_UIInputTranlate,window, m_controlTree);
-		m_callback = FCT_NEW(UICallBack,m_inputTranslate,this);
+		m_root->createRenderer(Directx11_UIGraphicsRendererChoose);
+		m_root->bind(this);
+		m_controlTree = FCT_NEW(Tree<UIControlBase*>, m_root);
+		m_inputTranslate = FCT_NEW(SoftRenderer_UIInputTranlate, window, m_controlTree);
+		m_callback = FCT_NEW(UICallBack, m_inputTranslate, this);
 		m_inputTranslate->updata();
 		//树应该再callback之前创建完
 		m_window->getInput()->registerInputCallBack(m_callback);
 	}
 	void UIManager::addControl(UIControlBase* control)
 	{
+		control->m_mutex->create();
+		control->m_mutex->addRef();
+		if (control->getControlType() == control_type_graphics) {
+			((UIGraphics*)control)->bind(this);
+		}
 		m_controlTree->addChild(control);
 		m_inputTranslate->updata();
+	}
+	void UIManager::removeControl(UIControlBase* control)
+	{
+		m_controlTree->removeChild(control);
+	}
+	void UIManager::deleteControl(UIControlBase* control)
+	{
+
 	}
 	void UIManager::destroy()
 	{
@@ -103,7 +124,7 @@ namespace FCT {
 		m_tree = tree;
 		m_tree->addRef();
 		int nLong = m_window->getwidth() * m_window->getheight();
-		m_control = FCT_NEWS(Node<UIControlBase*>*,nLong);
+		m_control = FCT_NEWS(Node<UIControlBase*>*, nLong);
 		for (int i = 0; i < nLong; i++) {
 			m_control[i] = tree;
 		}
@@ -155,20 +176,21 @@ namespace FCT {
 	}
 
 	void UIGraphics::createRenderer(UIGraphicsRendererChoose choose)
-	{	
+	{
 		switch (choose)
 		{
 		case FCT::Directx11_UIGraphicsRendererChoose:
-			m_context = FCT_NEW( Directx11_Context);
+			m_context = FCT_NEW(Directx11_Context);
+			m_context->create();
 			break;
 		case 0:
 		default:
 #ifdef _WIN32
-			m_context = FCT_NEW( Directx11_Context);
+			m_context = FCT_NEW(Directx11_Context);
+			m_context->create();
 #endif // _WIN32
 			break;
 		}
-		m_image = m_context->createImage(m_width, m_height);
 		m_buffer = m_context->createImage(m_width, m_height);
 		m_context->setTarget(m_buffer);
 	}
@@ -178,8 +200,57 @@ namespace FCT {
 		return m_context;
 	}
 
-	void UIGraphics::flush()
+	void UIGraphics::size(int w, int h)
 	{
+		m_mutex->lock();
+		m_width = w;
+		m_height = h;
+		if (m_shape) {
+			m_shape->release();
+		}
+		Rectangle* shape = FCT_NEW(Rectangle);
+		shape->setRect(w, h);
+		shape->setTexcoord(0, 0, 1, 1);
+		shape->setColor({ 1,0,0,1 });
+		m_shape = shape;
+		if (m_manager) {
+			if (m_image) {
+				m_image->release();
+			}
+			m_image = m_manager->getContext()->createImage(w, h);
+		}
+		if (m_context) {
+			if (m_buffer) {
+				m_buffer->release();
+			}
+			m_buffer = m_context->createImage(w, h);
+			m_context->setTarget(m_buffer);
+		}
+		m_mutex->unlock();
 	}
 
+
+	void UIGraphics::move(int x, int y)
+	{
+		m_mutex->lock();
+		m_cx = x;
+		m_cy = y;
+		m_mutex->unlock();
+	}
+
+	void UIGraphics::flush()
+	{
+
+	}
+	void UIGraphics::bind(UIManager* manager)
+	{
+		m_image = manager->getContext()->createImage(m_width, m_height);
+		if (!m_shape) {
+			Rectangle* shape = FCT_NEW(Rectangle);
+			shape->setRect(m_width, m_height);
+			shape->setTexcoord(0, 0, 1, 1);
+			shape->setColor({ 1,0,0,1 });
+			m_shape = shape;
+		}
+	}
 }

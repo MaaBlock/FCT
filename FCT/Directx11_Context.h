@@ -74,11 +74,12 @@ private:
 	ID3D11InputLayout* m_input3dLayout;
 	ID3D11VertexShader* m_vertexShader3d;
 	ID3D11PixelShader* m_pixelShader3d;
-	ID3D11SamplerState* m_samplerState;
 	ID3D11Buffer* m_constBuffer2d;
 	Directx11_BlendState* m_nullBlendState;
 	Directx11_BlendState* m_blendState = NULL;
 	Directx11_RasterizerState* m_rasterizerState;
 	Directx11_GeometryShader* m_geometryShader;
 	Directx11_DepthStencilState* m_depthStencilState;
+	Directx11_SamplerState* m_nullSamplerState;
+	Directx11_SamplerState* m_samplerState = NULL;
 };

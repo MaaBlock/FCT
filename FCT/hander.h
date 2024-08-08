@@ -37,7 +37,6 @@
 #include "AndroidOut.h"
 #include "GameActivity.h"
 #endif
-
 #define FCT_MEMORY_CHEAK
 #ifdef FCT_MEMORY_CHEAK
 #include <typeinfo>
@@ -46,26 +45,30 @@ namespace FCT {
 	struct _fct_object_t {
 		void* pointer;
 		std::string describe;
+		int refCounted;
 	};
 	extern std::vector<_fct_object_t*> fct_object_list;
 	extern std::string fct_object_info;
 	extern std::mutex fct_object_mutex;
-	template <typename T,typename... Args>
+	template <typename T, typename... Args>
 	T* _fct_new(const Args&... arg) {
 		T* ret = new T(arg...);
 		_fct_object_t* object = new _fct_object_t;
 		object->pointer = ret;
+		object->refCounted = -1;
 		object->describe = typeid(ret).name();
 		fct_object_mutex.lock();
 		fct_object_list.push_back(object);
 		fct_object_mutex.unlock();
 		return ret;
 	}
-	template <typename T,typename AUTO>
+
+	template <typename T, typename AUTO>
 	T* _fct_news(AUTO size) {
 		T* ret = new T[size];
 		_fct_object_t* object = new _fct_object_t;
 		object->pointer = ret;
+		object->refCounted = -1;
 		object->describe = typeid(ret).name();
 		fct_object_mutex.lock();
 		fct_object_list.push_back(object);
@@ -81,14 +84,13 @@ namespace FCT {
 				delete (*i);
 				fct_object_list.erase(i);
 				goto FinshWhile;
-
 			}
 			i++;
 		}
 		if (i == fct_object_list.end()) {
 			fct_object_info += "出现不在object表里被delete的object";
 		}
-		FinshWhile:
+	FinshWhile:
 		fct_object_mutex.unlock();
 		delete arg;
 	}
@@ -117,7 +119,6 @@ namespace FCT {
 		out << "未释放对象总计:" << fct_object_list.size() <<std::endl;
 	}
 }
-
 #define FCT_NEW(type,...) _fct_new<type>(__VA_ARGS__)
 #define FCT_NEWS(type,num) _fct_news<type>(num)
 #define FCT_DELETE(args) _fct_delete<decltype(args)>(args)
@@ -130,7 +131,7 @@ namespace FCT {
 
 
 namespace FCT {
-	//引用计数
+//引用计数
 #include "RefCount.h"
 //杂项类
 #include "Vector.h"
@@ -160,14 +161,19 @@ namespace FCT {
 #ifdef _WIN32
 #undef CreateWindow
 #define CreateWindow Win32_D3D11_CreateWindow
+#undef CreateMutex
+#define CreateMutex Win32_CreateMutex
 #endif
-
+#ifdef ANDROID
+#define CreateWindow Android_CreateWindow
+#endif
 //实现类 or 派生类
 
 #ifdef _WIN32
 #include "Win32_Mutex.h"
 #include "DirectXMath_Matrix.h"
 #include "UIManager.h"
+#include "UIControl.h"
 #include "Win32_File.h"
 #include "Win32_Input.h"
 #include "Win32_Window.h"
@@ -188,7 +194,6 @@ namespace FCT {
 #include "Android_Input.h"
 #include "GLES3_0_Context.h"
 #include "GLES3_0_Image.h"
-#define CreateWindow Android_CreateWindow
 //#include "Android_Context.h"
 #endif
 

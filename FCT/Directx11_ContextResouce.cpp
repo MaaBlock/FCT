@@ -616,7 +616,13 @@ namespace FCT {
 
 	Directx11_SamplerState::Directx11_SamplerState()
 	{
-
+		m_desc.Filter = D3D11_FILTER_MIN_MAG_MIP_LINEAR;
+		m_desc.AddressU = D3D11_TEXTURE_ADDRESS_WRAP;
+		m_desc.AddressV = D3D11_TEXTURE_ADDRESS_WRAP;
+		m_desc.AddressW = D3D11_TEXTURE_ADDRESS_WRAP;
+		m_desc.ComparisonFunc = D3D11_COMPARISON_NEVER;
+		m_desc.MinLOD = 0;
+		m_desc.MaxLOD = D3D11_FLOAT32_MAX;
 	}
 
 	void Directx11_SamplerState::setFilter(texture_filter_t filter)

@@ -3,6 +3,9 @@
 #define REF_CLASS_INIT() RefCounted(__func__)
 class RefCounted {
 public:
+#ifdef FCT_MEMORY_CHEAK
+
+#endif
 	static unsigned nextId;
 	unsigned uid;
 	const char* userdata = "no userdata!";

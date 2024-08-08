@@ -30,6 +30,44 @@ public:
 	void addChild(T t) {
 		addChild(FCT_NEW (Node<T>,t, m_level + 1));
 	}
+	void removeChild(Node* child) {
+		if (child == m_firstChild) {
+			m_firstChild = child->m_nextSibling;
+			if (m_firstChild != NULL) {
+				m_firstChild->m_prevSibling = NULL;
+			}
+			child->m_nextSibling = NULL;
+		}
+		else if (child == m_lastChild) {
+			m_lastChild = child->m_prevSibling;
+			if (m_lastChild != NULL) {
+				m_lastChild->m_nextSibling = NULL;
+			}
+			child->m_prevSibling = NULL;
+		}
+		child->m_nextSibling = NULL;
+		child->m_prevSibling = NULL;
+		child->m_parent = NULL;
+		child->release();
+		child = NULL;
+	}
+	void removeChild(T t) {
+		Node<T>* child = findChild(t);
+		if (child != NULL) {
+			removeChild(child);
+		}
+		return;
+	}
+	Node<T>* findChild(T t) {
+		Node<T>* current = m_firstChild;
+		while (current != NULL) {
+			if (current->m_data == t) {
+				return current;
+			}
+			current = current->m_nextSibling;
+		}
+		return NULL;
+	}
 	T getData() {
 		return m_data;
 	}

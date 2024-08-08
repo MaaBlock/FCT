@@ -12,6 +12,12 @@ public:
 		}
 		m_mutex = CreateMutexA(NULL, FALSE, NULL);
 	}
+	void lock() {
+		WaitForSingleObject(m_mutex, INFINITE);
+	}
+	void unlock() {
+		ReleaseMutex(m_mutex);
+	}
 	void destory() {
 		if (m_mutex) {
 			CloseHandle(m_mutex);
@@ -21,3 +27,6 @@ public:
 private:
 	HANDLE m_mutex;
 };
+inline Mutex* Win32_CreateMutex() {
+	return FCT_NEW(Win32_Mutex);
+}

@@ -8,6 +8,9 @@ enum control_t {
 extern Window* g_window;
 class  UIControlBase : public RefCounted {
 public:
+	UIControlBase() {
+		m_mutex = CreateMutex();
+	}
 	virtual ~UIControlBase() {
 		if (m_inputShape) {
 			m_inputShape->release();
@@ -45,18 +48,31 @@ public:
 		return m_cy;
 	}
 	virtual void setShape(Shape* shape) {
+		m_mutex->lock();
+		if (m_shape) {
+			m_shape->release();
+		}
 		m_shape = shape;
+		m_shape->addRef();
+		m_mutex->unlock();
 	}
 	virtual Shape* getShape() {
 		return m_shape;
 	}
 	virtual void setImage(Image* image) {
-		m_image = image;
+		m_mutex->lock();
+		if (m_image) {
+			m_image->release();
+		}
+		m_image = image;	
+		m_mutex->unlock();
 	}
 	virtual Image* getImage() {
 		return m_image;
 	}
+	friend class UIManager;
 protected:
+	Mutex* m_mutex;
 	Shape* m_shape;
 	Image* m_image;
 	Geometry* m_inputShape = NULL;
@@ -76,19 +92,25 @@ enum UIGraphicsRendererChoose {
 };
 class UIGraphics : public UIControlBase {
 public:
+	//前缓冲由UIManager创建
+	//后缓存由用户选取的renderer创建
+	//ToDo:实现不同渲染器将后缓存画在前缓存上
 	control_t getControlType() {
 		return control_type_graphics;
 	}
-	void size(int w, int h) {
-		m_width = w;
-		m_height = h;
-	}
 	void createRenderer(UIGraphicsRendererChoose choose);
 	Context* getContext();
+	void size(int w, int h);
+	void move(int x, int y);
 	void flush();
-protected:
-	void setShape(Shape* shape)  {
 
+	//add的时候会UIManager会调用，不需要自己动手
+	void bind(UIManager*);
+
+protected:
+	UIManager* m_manager;
+	void setShape(Shape* shape) {
+		UIControlBase::setShape(shape);
 	}
 	int m_width;
 	int m_height;
@@ -97,7 +119,9 @@ protected:
 };
 class UIRoot : public UIGraphics {
 public:
-
+	UIRoot(int w,int h) {
+		size(w, h);
+	}
 private:
 
 };
@@ -118,7 +142,14 @@ public:
 	void updata();
 	void create(Window* window);
 	void addControl(UIControlBase* control);
+	void removeControl(UIControlBase* control);//移除一个Conrol
+	void deleteControl(UIControlBase* control);//直接delete一个control，
+		//与remove相比，删除一个将会从控件树移开并且直接释放Control对应的内存
 	void destroy();
+	Mutex* contextMutex;
+	inline Context* getContext() {
+		return m_context;
+	}
 private:
 	Window* m_window;
 	Input* m_input;
