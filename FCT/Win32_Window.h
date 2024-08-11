@@ -22,7 +22,6 @@ public:
 	int getwidth();
 	int getheight();
 	Input* getInput();
-
 	//ToDo:
 	bool isFocus();
 	bool isMinimize();

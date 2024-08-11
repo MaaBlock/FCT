@@ -115,7 +115,7 @@ namespace FCT {
 		m_resouce[0] = context->createConstBuffer(1, &constBuffer, sizeof(QuadraticBezierCurve2dConstBuffer), const_buffer_bind_vertex_shader | const_buffer_bind_pixel_shader | const_buffer_bind_geometry_shader);
 		m_resouce[1] = context->createToplogy(shape_primitive_topology_trianglelist);
 		m_resouce[2] = context->createPixelShader(
-			"Texture2DMS<float4, 2><float4, 2> texcoord : register(t0);\n"
+			"Texture2D texcoord : register(t0);\n"
 			"SamplerState g_sampler : register(s0);\n"
 			"cbuffer Bezier : register(b1)"
 			"{"
@@ -157,7 +157,7 @@ namespace FCT {
 			"float2 endPoint;\n"
 			"float width;"
 			"}\n"
-			"Texture2DMS<float4, 2> texcoord : register(t0);"
+			"Texture2D texcoord : register(t0);"
 			"struct Bezier"
 			"{"
 			"	float2 beginPoint;\n"
@@ -318,7 +318,7 @@ namespace FCT {
 		m_resouce[0] = context->createConstBuffer(1, &constBuffer, sizeof(QuadraticBezierCurve2dConstBuffer), const_buffer_bind_vertex_shader | const_buffer_bind_pixel_shader | const_buffer_bind_geometry_shader);
 		m_resouce[1] = context->createToplogy(shape_primitive_topology_trianglelist);
 		m_resouce[2] = context->createPixelShader(
-			"Texture2DMS<float4, 2> texcoord : register(t0);\n"
+			"Texture2D texcoord : register(t0);\n"
 			"SamplerState g_sampler : register(s0);\n"
 			"cbuffer Bezier : register(b1)"
 			"{"
@@ -367,7 +367,7 @@ namespace FCT {
 			"float2 endPoint;\n"
 			"float width;"
 			"}\n"
-			"Texture2DMS<float4, 2> texcoord : register(t0);"
+			"Texture2D texcoord : register(t0);"
 			"struct Bezier"
 			"{"
 			"	float2 beginPoint;\n"
@@ -436,8 +436,8 @@ namespace FCT {
 		m_vertexs[2].tex = { -1,-1 };
 		m_vertexs[3].tex = { -1,-1 };
 		m_vertexs[0].pos = { 0,50 };
-		m_vertexs[2].pos = { 0,0 };
 		m_vertexs[1].pos = { 50,50 };
+		m_vertexs[2].pos = { 0,0 };
 		m_vertexs[3].pos = { 50,0 };
 		m_w = 50;
 		m_h = 50;
@@ -453,8 +453,8 @@ namespace FCT {
 	void Rectangle::create(Context* context)
 	{
 		m_vertexs[0].pos = { 0,m_h };
-		m_vertexs[2].pos = { 0,0 };
-		m_vertexs[1].pos = { m_w,m_h };
+		m_vertexs[1].pos = { 0,0 };
+		m_vertexs[2].pos = { m_w,m_h };
 		m_vertexs[3].pos = { m_w,0 };
 		m_resouceNum = 2;
 		m_resouce = FCT_NEWS(ContextResouce * ,2);

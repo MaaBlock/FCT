@@ -61,20 +61,20 @@ public:
 	}
 	virtual void setImage(Image* image) {
 		m_mutex->lock();
-		if (m_image) {
-			m_image->release();
+		if (m_texture) {
+			m_texture->release();
 		}
-		m_image = image;	
+		m_texture = image;	
 		m_mutex->unlock();
 	}
 	virtual Image* getImage() {
-		return m_image;
+		return m_texture;
 	}
 	friend class UIManager;
 protected:
 	Mutex* m_mutex;
 	Shape* m_shape;
-	Image* m_image;
+	Texture* m_texture;
 	Geometry* m_inputShape = NULL;
 	int m_cx, m_cy;//center x,center y
 private:

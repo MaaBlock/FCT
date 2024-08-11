@@ -44,8 +44,10 @@ public:
 	Directx11_Context();
 	void clear(float r, float g, float b, float a);
 	void create();
-	Image* createImage(int w,int h);
+	Image* createImage(); 
+	Texture* createTexture();
 	void setTarget(Image* img);
+	void drawImage(Image* img, Pos2f dstPos, Pos2f srcPos,Pos2f size);//大小必须相同
 	void draw(Shape* shape,float x,float y);
 	void draw(Object*,float x,float y,float z);
 	void flush();
@@ -61,6 +63,8 @@ public:
 	VertexShader* createVertexShader(const char* code);
 	void setDeafultResouce(ContextResouce* resouce);
 	void setDeafultResouce(context_resouce_t resoutType, ContextResouce* resouce);
+	ID3D11DeviceContext* getContext();
+	ID3D11Device* getDevice();
 private:
 	Color* m_color;
 	Image* m_target;
@@ -82,4 +86,8 @@ private:
 	Directx11_DepthStencilState* m_depthStencilState;
 	Directx11_SamplerState* m_nullSamplerState;
 	Directx11_SamplerState* m_samplerState = NULL;
+
+	// 通过 Context 继承
+	Image* getTarget() override;
 };
+void DrawDirectx11ImageToDirectx11TextureSameSize(Context* directx11Context,Image* img, Texture* tex);

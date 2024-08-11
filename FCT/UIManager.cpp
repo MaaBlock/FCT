@@ -13,8 +13,8 @@ namespace FCT {
 		UIControlBase* control = node->getData();
 		UIManager* uiManager = (UIManager*)param;
 		control->m_mutex->lock();
-		if (control->m_image) {
-			uiManager->getContext()->setTexture(control->m_image);
+		if (control->m_texture) {
+			uiManager->getContext()->setTexture(control->m_texture);
 		}
 		if (control->getShape()) {
 			uiManager->m_context->draw(
@@ -47,9 +47,8 @@ namespace FCT {
 			text->create(m_context);
 			flag = true;
 		}
-		m_context->clear(0, 0, 1, 1.0f);
-		m_context->draw(text, 50, 50);
-
+		m_context->clear(0, 0, 0, 1.0f);
+		//m_context->draw(text, 50, 50);
 		m_controlTree->traversal(DrawControlShape, this);
 		m_context->writeIn(m_window->getBuffer());
 		m_window->flush();
@@ -61,7 +60,9 @@ namespace FCT {
 	{
 		m_context = FCT_NEW(Directx11_Context);
 		m_context->create();
-		m_uiBuffer = m_context->createImage(window->getwidth(), window->getheight());
+		m_uiBuffer = m_context->createImage();
+		m_uiBuffer->setSize(window->getwidth(), window->getheight());
+		m_uiBuffer->create();
 		m_context->setTarget(m_uiBuffer);
 		m_window = window;
 		m_input = m_window->getInput();
@@ -191,8 +192,6 @@ namespace FCT {
 #endif // _WIN32
 			break;
 		}
-		m_buffer = m_context->createImage(m_width, m_height);
-		m_context->setTarget(m_buffer);
 	}
 
 	Context* UIGraphics::getContext()
@@ -202,31 +201,11 @@ namespace FCT {
 
 	void UIGraphics::size(int w, int h)
 	{
-		m_mutex->lock();
+		if (m_manager) {
+			return;
+		}
 		m_width = w;
 		m_height = h;
-		if (m_shape) {
-			m_shape->release();
-		}
-		Rectangle* shape = FCT_NEW(Rectangle);
-		shape->setRect(w, h);
-		shape->setTexcoord(0, 0, 1, 1);
-		shape->setColor({ 1,0,0,1 });
-		m_shape = shape;
-		if (m_manager) {
-			if (m_image) {
-				m_image->release();
-			}
-			m_image = m_manager->getContext()->createImage(w, h);
-		}
-		if (m_context) {
-			if (m_buffer) {
-				m_buffer->release();
-			}
-			m_buffer = m_context->createImage(w, h);
-			m_context->setTarget(m_buffer);
-		}
-		m_mutex->unlock();
 	}
 
 
@@ -240,16 +219,32 @@ namespace FCT {
 
 	void UIGraphics::flush()
 	{
-
+		m_mutex->lock();
+		DrawDirectx11ImageToDirectx11TextureSameSize(m_manager->getContext(), m_buffer, m_texture);
+		m_manager->getContext()->flush();
+		m_mutex->unlock();
 	}
 	void UIGraphics::bind(UIManager* manager)
 	{
-		m_image = manager->getContext()->createImage(m_width, m_height);
+		m_manager = manager;
+
+		m_texture = m_manager->getContext()->createTexture();
+		m_texture->setSize(m_width, m_height);
+		m_texture->create();
+		m_buffer = m_context->createImage();
+		m_buffer->setSize(m_width, m_height);
+		m_buffer->create();
+		size(m_width, m_height);
+		m_context->setTarget(m_buffer);
+		m_context->clear(0, 0, 0, 1.0f);
+		m_context->flush();
+		flush();	
 		if (!m_shape) {
 			Rectangle* shape = FCT_NEW(Rectangle);
 			shape->setRect(m_width, m_height);
 			shape->setTexcoord(0, 0, 1, 1);
-			shape->setColor({ 1,0,0,1 });
+			shape->setColor({ 1,1,1,1 });
+			shape->create(m_manager->getContext());
 			m_shape = shape;
 		}
 	}

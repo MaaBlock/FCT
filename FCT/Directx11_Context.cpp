@@ -10,7 +10,7 @@ namespace FCT {
 			"float2 WindowSize;"
 			"float2 ShapePos;"
 			"}"
-			"Texture2DMS<float4, 2>  texcoord : register(t0);"
+			"Texture2D  texcoord : register(t0);"
 			"struct VSOut"
 			"{"
 			"float4 pos : SV_Position;"
@@ -27,14 +27,14 @@ namespace FCT {
 			"}"
 		);
 		PixelShader2dCompiled = compilePixelShader(
-			"Texture2DMS<float4, 2> texcoord : register(t0);"
+			"Texture2D texcoord : register(t0);"
 			"SamplerState g_sampler : register(s0);"
 			"float4 main(float4 pos : SV_Position,float4 color : Color,float2 tex : Texcoord ) : SV_Target"
 			"{"
 			"   if (tex.x < 0){"
 			"       return color;"
 			"	}"
-			"   return texcoord.Load(tex, g_sampler); "
+			"   return texcoord.Sample(g_sampler, tex); "
 			"}");
 	}
 	Directx11_Context::Directx11_Context()
@@ -122,9 +122,15 @@ namespace FCT {
 		m_nullBlendState->create(m_device);
 		m_nullSamplerState = FCT_NEW(Directx11_SamplerState);
 	}
-	Image* Directx11_Context::createImage(int w,int h)
+	Image* Directx11_Context::createImage()
 	{
-		return FCT_NEW(Directx11_Image,m_device,w,h);
+		return FCT_NEW(Directx11_Image, m_device);
+	}
+	Texture* Directx11_Context::createTexture()
+	{
+		Directx11_Image* ret = FCT_NEW(Directx11_Image, m_device);
+		ret->msaaEnable(false, 1);
+		return ret;
 	}
 	void Directx11_Context::setTarget(Image* img)
 	{
@@ -149,6 +155,18 @@ namespace FCT {
 		m_context->RSSetViewports(1, &vp);
 		m_target->addRef();
 	}
+	void Directx11_Context::drawImage(Image* srcimg, Pos2f dstPos, Pos2f srcPos, Pos2f size)
+	{
+		D3D11_BOX box;
+		box.left = srcPos.x;
+		box.top = srcPos.y;
+		box.right = srcPos.x + size.x;
+		box.bottom = srcPos.y + size.y;
+		box.front = 0;
+		box.back = 1;
+		m_context->CopySubresourceRegion(((Directx11_Image*)m_target)->getTexture(), 0,
+			dstPos.x, dstPos.y, 0, ((Directx11_Image*)m_target)->getTexture(), 0, &box);
+	}
 	void Directx11_Context::draw(Shape* shape, float x, float y)
 	{
 		D3D11_MAPPED_SUBRESOURCE data;
@@ -165,7 +183,7 @@ namespace FCT {
 		m_blendState ? m_blendState->bind(this) : 
 			m_nullBlendState->bind(this);
 		m_samplerState ? m_samplerState->bind(this)
-			:m_nullSamplerState->bind(this);
+			: m_nullSamplerState->bind(this);
 		m_rasterizerState ? m_rasterizerState->bind(this)
 			: m_context->RSSetState(NULL);
 		m_geometryShader ? m_geometryShader->bind(this)
@@ -186,7 +204,7 @@ namespace FCT {
 	}
 	void Directx11_Context::flush()
 	{
-
+		m_context->Flush();
 	}
 	void Directx11_Context::writeIn(Color* buffer)
 	{
@@ -270,9 +288,46 @@ namespace FCT {
 			break;
 		}
 	}
+	ID3D11DeviceContext* Directx11_Context::getContext()
+	{
+		return m_context;
+	}
+	ID3D11Device* Directx11_Context::getDevice()
+	{
+		return m_device;
+	}
+	Image* Directx11_Context::getTarget()
+	{
+		return m_target;
+	}
 	void Directx11_Context::setTexture(Image* img)
 	{
 		m_context->PSSetShaderResources(0, 1,
 			((Directx11_Image*)img)->getShaderResourceViewPtr());
 	}
+	ID3D11Texture2D* getSharedTexture(ID3D11Texture2D* src, ID3D11Device* dest) {
+		IDXGIResource* resource;
+		src->QueryInterface(__uuidof(IDXGIResource), (void**)&resource);
+		HANDLE hResource;
+		resource->GetSharedHandle(&hResource);
+		resource->Release();
+		IDXGIResource* retResource;
+		dest->OpenSharedResource(hResource, __uuidof(IDXGIResource), (void**) &retResource);
+		ID3D11Texture2D* ret;
+		retResource->QueryInterface(__uuidof(ID3D11Texture2D), (void**)&ret);
+		retResource->Release();
+		return ret;
+	}
+	void DrawDirectx11ImageToDirectx11TextureSameSize(Context* directx11Context, Image* img, Texture* tex)
+	{
+		ID3D11DeviceContext* context = ((Directx11_Context*)directx11Context)->getContext();
+		ID3D11Texture2D* sharedImg = getSharedTexture(((Directx11_Image*)img)->getTexture(),
+			((Directx11_Context*)directx11Context)->getDevice());
+		context->ResolveSubresource(
+			((Directx11_Image*)tex)->getTexture(),0,
+			sharedImg,
+			0,DXGI_FORMAT_R32G32B32A32_FLOAT);
+		directx11Context->flush();
+	}
 };
+

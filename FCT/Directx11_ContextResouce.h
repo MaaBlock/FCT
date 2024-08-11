@@ -148,6 +148,6 @@ public:
 	void create(Context* context);
 	void bind(Context* _context);
 private:
-	ID3D11SamplerState* m_samplerState;
+	ID3D11SamplerState* m_samplerState = {};
 	D3D11_SAMPLER_DESC m_desc;
 };

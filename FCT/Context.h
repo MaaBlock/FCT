@@ -17,8 +17,11 @@ public:
 	CreateContextFactory* createResouce;
 	virtual void create() = 0;
 	virtual void setTexture(Image* img) = 0;
-	virtual Image* createImage(int w, int h) = 0;
+	virtual Image* createImage() = 0;
+	virtual Texture* createTexture() = 0;
 	virtual void setTarget(Image* img) = 0;
+	virtual Image* getTarget() = 0;
+	virtual void drawImage(Image* img, Pos2f dstPos, Pos2f srcPos, Pos2f size) = 0;
 	virtual void draw(Shape* shape, float x, float y) = 0;
 	virtual void flush() = 0;
 	virtual void writeIn(Color* buffer) = 0;

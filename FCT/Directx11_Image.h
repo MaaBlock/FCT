@@ -1,6 +1,11 @@
+
 class Directx11_Image : public Image {
 public:
-	Directx11_Image(ID3D11Device* device,int w,int h);
+	Directx11_Image(ID3D11Device* device);
+	int msaaEnable(bool enable = true, unsigned count = 2);
+	void setSize(unsigned width, unsigned height);
+	int create();
+	int createWithoutView();
 	int getWidth();
 	int getHeight();
 	ID3D11Texture2D* getTexture();

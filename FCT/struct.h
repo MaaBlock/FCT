@@ -14,6 +14,10 @@ struct Pos2d {
 	int x;
 	int y;
 };
+struct size2d {
+	unsigned w;
+	unsigned h;
+};
 struct Color {
 	float r;
 	float g;
