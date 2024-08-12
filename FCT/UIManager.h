@@ -23,11 +23,16 @@ public:
 		return m_inputShape;
 	}
 	virtual void setDrawShape(Shape* shape) {
+		m_mutex->lock();
 		if (m_shape) {
 			m_shape->release();
 		}
 		m_shape = shape;
 		m_shape->addRef();
+		m_mutex->unlock();
+	}
+	virtual void onChar(wchar_t ch) {
+
 	}
 	virtual void setInputShape(Geometry* inputShape) {
 		if (m_inputShape) {
@@ -72,6 +77,7 @@ public:
 	}
 	friend class UIManager;
 protected:
+	UIManager* m_UIManager;
 	Mutex* m_mutex;
 	Shape* m_shape;
 	Texture* m_texture;
@@ -130,6 +136,8 @@ class UIInputTranslate : public RefCounted {
 public:
 	virtual void updata() = 0;
 	virtual Node<UIControlBase*>* getControl(int x, int y) = 0;
+	virtual Node<UIControlBase*>* getOnFocus() = 0;
+	virtual int updataFocus(int x, int y) = 0;
 protected:
 	Window* m_window;
 	Tree<UIControlBase*>* m_tree;
@@ -147,7 +155,7 @@ public:
 		//与remove相比，删除一个将会从控件树移开并且直接释放Control对应的内存
 	void destroy();
 	Mutex* contextMutex;
-	inline Context* getContext() {
+	inline Context* getCreateContext() {
 		return m_context;
 	}
 private:
@@ -165,8 +173,11 @@ public:
 	SoftRenderer_UIInputTranlate(Window* wnd, Tree<UIControlBase*>* tree);
 	void updata();
 	Node<UIControlBase*>* getControl(int x, int y);
+	Node<UIControlBase*>* getOnFocus();
+	int updataFocus(int x, int y);
 private:
 	Node<UIControlBase*>** m_control;
+	Node<UIControlBase*>* m_onFocusControl;
 };
 class UICallBack : public InputCallBack {
 public:
@@ -175,8 +186,16 @@ public:
 	}
 	nctest_result_t onNCTest(int x, int y);
 	void onPaint();
+	void onMouseLButtonDown(int x, int y);
+	void onMouseLButtonUp(int x, int y);
+	void onMouseRButtonDown(int x, int y);
+	void onMouseRButtonUp(int x, int y);
+	void onMouseMove(int x, int y);
+	void onMouseWheel(int x, int y, int delta);
+	void onChar(wchar_t ch);
+	void onKeyDown(int key);
+	void onKeyUp(int key);
 private:
 	UIManager* m_manager;
 	UIInputTranslate* m_translate;
 };
-

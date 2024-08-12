@@ -4,7 +4,7 @@ class Shape : public RefCounted {
 public:
 	Shape();
 	ContextResouce** m_resouce;
-	virtual void predraw(Context* context) {
+	virtual void predraw(Context* context, int x, int y) {
 
 	}
 	virtual void setOffset(float x, float y) {
@@ -131,18 +131,30 @@ public:
 	}
 	void setColor(Color color);
 	void setWidth(float width);
+	static void Init(Context*);
 private:
+	static PixelShader* Directx11_TextBezierPixelShader;
+	static VertexShader* Directx11_TextBezierVertexShader;
 	Vertex2d m_vertex[3];
 	float m_width;
 };
 
+
+struct ComplexShapeNode {
+	Shape* shape;
+	int x;
+	int y;
+};
 class ComplexShape : public Shape {
 public:
 	ComplexShape();
+	void predraw(Context* context,int x,int y);
 	void create(Context* context);
 	void add(Shape* shape,int x,int y); 
+	void remove(Shape* shape);
+	void allDelete();
 private:
-
+	std::vector<ComplexShapeNode*> m_shapes;
 };
 struct Edge4f {
 	size_t begin;
@@ -163,4 +175,4 @@ private:
 	float m_h;
 };
 
-
+void InitShapeModule(Context* context);

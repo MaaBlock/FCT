@@ -83,6 +83,7 @@ private:
 	Directx11_BlendState* m_blendState = NULL;
 	Directx11_RasterizerState* m_rasterizerState;
 	Directx11_GeometryShader* m_geometryShader;
+	Directx11_DepthStencilState* m_nullDepthStencilState;
 	Directx11_DepthStencilState* m_depthStencilState;
 	Directx11_SamplerState* m_nullSamplerState;
 	Directx11_SamplerState* m_samplerState = NULL;

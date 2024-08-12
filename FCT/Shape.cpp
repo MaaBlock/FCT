@@ -62,10 +62,15 @@ namespace FCT {
 			vertices[i * 4 + 3].color = m_surroundColor;
 			vertices[i * 4 + 3].tex = { (m_u1 + m_u2) / 2, (m_v1 + m_v2) / 2 };
 		}
-		m_resouce = FCT_NEWS(ContextResouce*,2);
+		RasterizerState* cr;
+		cr = context->createResouce->RasterizerState();
+		cr->setCullMode(cull_mode_none);
+		cr->create(context);
+		m_resouce = FCT_NEWS(ContextResouce*,3);
 		m_resouce[0] = context->createToplogy(shape_primitive_topology_trianglestrip);
-		m_resouce[1] = context->createVertex2dBuffer(vertices, vertexnum);
-		m_resouceNum = 2;
+		m_resouce[1] = context->createToplogy(shape_primitive_topology_trianglestrip);
+		m_resouce[2] = context->createVertex2dBuffer(vertices, vertexnum);
+		m_resouceNum = 3;
 	}
 	void Circle::setR(float r)
 	{
@@ -317,94 +322,8 @@ namespace FCT {
 		constBuffer.width = m_width;
 		m_resouce[0] = context->createConstBuffer(1, &constBuffer, sizeof(QuadraticBezierCurve2dConstBuffer), const_buffer_bind_vertex_shader | const_buffer_bind_pixel_shader | const_buffer_bind_geometry_shader);
 		m_resouce[1] = context->createToplogy(shape_primitive_topology_trianglelist);
-		m_resouce[2] = context->createPixelShader(
-			"Texture2D texcoord : register(t0);\n"
-			"SamplerState g_sampler : register(s0);\n"
-			"cbuffer Bezier : register(b1)"
-			"{"
-			"	float2 srcBeginPoint;\n"
-			"	float2 srcControlPoint;\n"
-			"	float2 srcEndPoint;\n"
-			"	float width;"
-			"}"
-			"struct Bezier"
-			"{"
-			"	float2 beginPoint;\n"
-			"	float2 controlPoint;\n"
-			"	float2 endPoint;\n"
-			"};"
-			"float aastep(float edge, float v)								 "
-			"{																	 "
-			"	float fwidth = 0.7 * length(float2(ddx(v), ddy(v)));			 "
-			"	return smoothstep(edge - fwidth, edge + fwidth, v);				 "
-			"}																	 "
-			"float4 main(float4 pos : SV_Position,float4 color : Color,float2 tex : Texcoord,Bezier bez : Bezier ) : SV_Target\n"
-			"{\n"
-			"   float d = (tex.x * tex.x - tex.y);"
-			"	return float4(color.x, color.y, color.z,d <= 0 ? 1 :0);"
-			//"	if (determinant(float4x4("
-			//"bez.beginPoint.x	,bez.beginPoint.y	,1,0,"
-			//"bez.controlPoint.x	,bez.controlPoint.y	,1,0,"
-			//"bez.endPoint.x		,bez.endPoint.y		,1,0,"
-			//"0,0,0,1"
-			//")) > 0) {"
-			//"		return float4(color.x, color.y, color.z,d >= 0 ? 1 :0);		 "
-			//"	}"
-			//"	return float4(color.x, color.y, color.z,d <= 0 ? 1 : 0);		 "
-			"}"
-		);
-		m_resouce[3] = context->createVertexShader(
-
-			"cbuffer TargetSize : register(b0)"
-			"{"
-			"float2 WindowSize;"
-			"float2 ShapePos;"
-			"}"
-			"cbuffer BezierData : register(b1)\n"
-			"{\n"
-			"float2 beginPoint;\n"
-			"float2 controlPoint;\n"
-			"float2 endPoint;\n"
-			"float width;"
-			"}\n"
-			"Texture2D texcoord : register(t0);"
-			"struct Bezier"
-			"{"
-			"	float2 beginPoint;\n"
-			"	float2 controlPoint;\n"
-			"	float2 endPoint;\n"
-			"};"
-			"struct TransVer"
-			"{"
-			"float4 pos : SV_Position;"
-			"float4 color : Color;"
-			"float2 tex : Texcoord;"
-			"Bezier bez : Bezier;"
-			"};"
-			"float toWorldX(float x) "
-			"{"
-			"	return (x + ShapePos.x) / WindowSize.x * 2 - 1;"
-			"}"
-			"float toWorldY(float y)"
-			"{"
-			"	return -((y + ShapePos.y) / WindowSize.y * 2) + 1;"
-			"}"
-			"float2 toWorld(float2 pos)"
-			"{"
-			"	return float2(toWorldX(pos.x),toWorldY(pos.y));"
-			"}"
-			"TransVer main(float4 color : Color,float2 pos : Position,float2 tex : Texcoord)"
-			"{"
-			"	TransVer ret;"
-			"	ret.pos = float4(toWorldX(pos.x),toWorldY(pos.y),0,1.0f);"
-			"	ret.color = color;"
-			"	ret.tex = tex;"
-			"	ret.bez.beginPoint	 = toWorld(beginPoint);"
-			"	ret.bez.controlPoint = toWorld(controlPoint);"
-			"	ret.bez.endPoint	 = toWorld(endPoint);"
-			"	return ret;"
-			"}"
-		);
+		m_resouce[2] = Directx11_TextBezierPixelShader;
+		m_resouce[3] = Directx11_TextBezierVertexShader;
 		m_resouce[4] = context->createVertex2dBuffer(m_vertex, 3);
 	}
 	void TextFullQuadraticBezierCurve2d::setBeginPoint(float x, float y)
@@ -423,6 +342,100 @@ namespace FCT {
 	{
 		for (int i = 0; i < 3; i++) {
 			m_vertex[i].color = color;
+		}
+	}
+	void TextFullQuadraticBezierCurve2d::Init(Context* context)
+	{
+		if (!Directx11_TextBezierPixelShader) {
+			Directx11_TextBezierPixelShader = context->createPixelShader(
+				"Texture2D texcoord : register(t0);\n"
+				"SamplerState g_sampler : register(s0);\n"
+				"cbuffer Bezier : register(b1)"
+				"{"
+				"	float2 srcBeginPoint;\n"
+				"	float2 srcControlPoint;\n"
+				"	float2 srcEndPoint;\n"
+				"	float width;"
+				"}"
+				"struct Bezier"
+				"{"
+				"	float2 beginPoint;\n"
+				"	float2 controlPoint;\n"
+				"	float2 endPoint;\n"
+				"};"
+				"float aastep(float edge, float v)								 "
+				"{																	 "
+				"	float fwidth = 0.7 * length(float2(ddx(v), ddy(v)));			 "
+				"	return smoothstep(edge - fwidth, edge + fwidth, v);				 "
+				"}																	 "
+				"float4 main(float4 pos : SV_Position,float4 color : Color,float2 tex : Texcoord,Bezier bez : Bezier ) : SV_Target\n"
+				"{\n"
+				"   float d = (tex.x * tex.x - tex.y);"
+				"	return float4(color.x, color.y, color.z,d <= 0 ? 1 :0);"
+				//"	if (determinant(float4x4("
+				//"bez.beginPoint.x	,bez.beginPoint.y	,1,0,"
+				//"bez.controlPoint.x	,bez.controlPoint.y	,1,0,"
+				//"bez.endPoint.x		,bez.endPoint.y		,1,0,"
+				//"0,0,0,1"
+				//")) > 0) {"
+				//"		return float4(color.x, color.y, color.z,d >= 0 ? 1 :0);		 "
+				//"	}"
+				//"	return float4(color.x, color.y, color.z,d <= 0 ? 1 : 0);		 "
+				"}"
+			);
+		}
+		if (!Directx11_TextBezierVertexShader) {
+			Directx11_TextBezierVertexShader = context->createVertexShader(
+				"cbuffer TargetSize : register(b0)"
+				"{"
+				"float2 WindowSize;"
+				"float2 ShapePos;"
+				"}"
+				"cbuffer BezierData : register(b1)\n"
+				"{\n"
+				"float2 beginPoint;\n"
+				"float2 controlPoint;\n"
+				"float2 endPoint;\n"
+				"float width;"
+				"}\n"
+				"Texture2D texcoord : register(t0);"
+				"struct Bezier"
+				"{"
+				"	float2 beginPoint;\n"
+				"	float2 controlPoint;\n"
+				"	float2 endPoint;\n"
+				"};"
+				"struct TransVer"
+				"{"
+				"float4 pos : SV_Position;"
+				"float4 color : Color;"
+				"float2 tex : Texcoord;"
+				"Bezier bez : Bezier;"
+				"};"
+				"float toWorldX(float x) "
+				"{"
+				"	return (x + ShapePos.x) / WindowSize.x * 2 - 1;"
+				"}"
+				"float toWorldY(float y)"
+				"{"
+				"	return -((y + ShapePos.y) / WindowSize.y * 2) + 1;"
+				"}"
+				"float2 toWorld(float2 pos)"
+				"{"
+				"	return float2(toWorldX(pos.x),toWorldY(pos.y));"
+				"}"
+				"TransVer main(float4 color : Color,float2 pos : Position,float2 tex : Texcoord)"
+				"{"
+				"	TransVer ret;"
+				"	ret.pos = float4(toWorldX(pos.x),toWorldY(pos.y),0,1.0f);"
+				"	ret.color = color;"
+				"	ret.tex = tex;"
+				"	ret.bez.beginPoint	 = toWorld(beginPoint);"
+				"	ret.bez.controlPoint = toWorld(controlPoint);"
+				"	ret.bez.endPoint	 = toWorld(endPoint);"
+				"	return ret;"
+				"}"
+			);
 		}
 	}
 	Rectangle::Rectangle()
@@ -460,6 +473,51 @@ namespace FCT {
 		m_resouce = FCT_NEWS(ContextResouce * ,2);
 		m_resouce[0] = context->createToplogy(shape_primitive_topology_trianglestrip);
 		m_resouce[1] = context->createVertex2dBuffer(m_vertexs, 4);
+	}
+
+	ComplexShape::ComplexShape()
+	{
+
+	}
+
+	void ComplexShape::predraw(Context* context,int x,int y)
+	{
+		for (auto i = m_shapes.begin(); i != m_shapes.end(); i++) {
+			context->draw((*i)->shape, x + (*i)->x,y + (*i)->y);
+		}
+	}
+
+	void ComplexShape::create(Context* context)
+	{
+
+	}
+	void ComplexShape::add(Shape* shape, int x, int y)
+	{
+		ComplexShapeNode* shape_node = FCT_NEW(ComplexShapeNode);
+		shape->addRef();
+		shape_node->shape = shape;
+		shape_node->x = x;
+		shape_node->y = y;
+		m_shapes.push_back(shape_node);
+	}
+	void ComplexShape::remove(Shape* shape)
+	{
+
+	}
+	void ComplexShape::allDelete()
+	{
+		for (auto i = m_shapes.begin(); i != m_shapes.end(); i++) {
+			ComplexShapeNode* shapeNode = *i;
+			shapeNode->shape->release();
+			FCT_DELETE(shapeNode);
+		}
+		m_shapes.clear();
+	}
+	VertexShader* TextFullQuadraticBezierCurve2d::Directx11_TextBezierVertexShader = NULL;
+	PixelShader* TextFullQuadraticBezierCurve2d::Directx11_TextBezierPixelShader = NULL;
+	void InitShapeModule(Context* context)
+	{
+		TextFullQuadraticBezierCurve2d::Init(context);
 	}
 }
 

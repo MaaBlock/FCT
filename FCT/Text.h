@@ -40,7 +40,7 @@ public:
 	void setFont(Font* font);
 	void setPosition(float x, float y);
 	void setText(const wchar_t* text);
-	void predraw(Context* context);
+	void predraw(Context* context,int x,int y);
 	void create(Context* context);
 private:
 	bool m_alphaToCoverage = false;

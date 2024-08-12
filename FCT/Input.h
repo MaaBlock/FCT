@@ -17,7 +17,7 @@ public:
 
 	}
 	virtual void onMouseLButtonDown(int x,int y) {
-
+		
 	}
 	virtual void onMouseLButtonUp(int x, int y) {
 
@@ -26,6 +26,19 @@ public:
 
 	}
 	virtual void onMouseRButtonUp(int x, int y) {
+
+	}
+	virtual void onMouseMove(int x, int y) {
+	
+	}
+	virtual void onMouseWheel(int x, int y, int delta) {}
+	virtual void onChar(wchar_t ch) {
+
+	}
+	virtual void onKeyDown(int key) {
+
+	}
+	virtual void onKeyUp(int key) {
 
 	}
 	virtual nctest_result_t onNCTest(int x, int y) {

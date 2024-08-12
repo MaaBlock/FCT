@@ -20,7 +20,7 @@ public:
 		outputDebug();
 	}
 	virtual void outputDebug() {
-		std::cout << "ID:" << uid << " 计数:" << refCounter << "使用信息" << userdata << std::endl;
+		//std::cout << "ID:" << uid << " 计数:" << refCounter << "使用信息" << userdata << std::endl;
 	}
 	virtual ~RefCounted() {}
 	virtual void addRef() {

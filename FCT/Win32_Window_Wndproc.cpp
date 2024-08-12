@@ -271,11 +271,12 @@ namespace FCT {
 			break;
 		}
 		case WM_LBUTTONDOWN:
-			int x;
-			int y;
-			x = LOWORD(lParam);
-			y = HIWORD(lParam);
-			pWnd->m_buffer[(y)*pWnd->m_width + x] = { 0,0,1,1 };
+			//int x;
+			//int y;
+			//x = LOWORD(lParam);
+			//y = HIWORD(lParam);
+			//pWnd->m_buffer[(y)*pWnd->m_width + x] = { 0,0,1,1 };
+
 			break;
 			//return DefWindowProc(hWnd, message, wParam, lParam);
 		case WM_KEYDOWN:

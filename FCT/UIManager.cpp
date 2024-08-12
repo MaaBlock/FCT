@@ -1,5 +1,4 @@
 ﻿#include "hander.h"
-
 namespace FCT {
 
 	Window* g_window;
@@ -14,7 +13,7 @@ namespace FCT {
 		UIManager* uiManager = (UIManager*)param;
 		control->m_mutex->lock();
 		if (control->m_texture) {
-			uiManager->getContext()->setTexture(control->m_texture);
+			uiManager->getCreateContext()->setTexture(control->m_texture);
 		}
 		if (control->getShape()) {
 			uiManager->m_context->draw(
@@ -23,9 +22,6 @@ namespace FCT {
 		control->m_mutex->unlock();
 		return;
 	}
-	bool flag = false;
-	Font* font = NULL;
-	Text* text = NULL;
 	void UIManager::updata()
 	{
 #ifdef GRAPH_DEBUG
@@ -33,20 +29,6 @@ namespace FCT {
 		HRESULT getAnalysis = DXGIGetDebugInterface1(0, __uuidof(pGraphicsAnalysis), reinterpret_cast<void**>(&pGraphicsAnalysis));
 		pGraphicsAnalysis->BeginCapture();
 #endif // GRAPH_DEBUG
-		if (!font) {
-			font = new Font;
-			font->create("NSimSun-02.ttf");
-		}
-		if (!text) {
-			text = new Text;
-			text->setalphaToCoverage(true);
-			text->setText(L"高级");
-			text->setFont(font);
-			text->setPixelSize(20);
-			text->setColor({ 1,1,1,1 }, { 0,0,0,1 });
-			text->create(m_context);
-			flag = true;
-		}
 		m_context->clear(0, 0, 0, 1.0f);
 		//m_context->draw(text, 50, 50);
 		m_controlTree->traversal(DrawControlShape, this);
@@ -60,6 +42,7 @@ namespace FCT {
 	{
 		m_context = FCT_NEW(Directx11_Context);
 		m_context->create();
+		InitShapeModule(m_context);
 		m_uiBuffer = m_context->createImage();
 		m_uiBuffer->setSize(window->getwidth(), window->getheight());
 		m_uiBuffer->create();
@@ -86,9 +69,10 @@ namespace FCT {
 	{
 		control->m_mutex->create();
 		control->m_mutex->addRef();
-		if (control->getControlType() == control_type_graphics) {
-			((UIGraphics*)control)->bind(this);
-		}
+		control->m_UIManager = this;
+		//if (control->getControlType() == control_type_graphics) {
+		//	((UIGraphics*)control)->bind(this);
+		//}
 		m_controlTree->addChild(control);
 		m_inputTranslate->updata();
 	}
@@ -118,9 +102,51 @@ namespace FCT {
 		m_manager->updata();
 	}
 
+	void UICallBack::onMouseLButtonDown(int x, int y)
+	{
+		m_translate->updataFocus(x, y);
+	}
+
+	void UICallBack::onMouseLButtonUp(int x, int y)
+	{
+	}
+
+	void UICallBack::onMouseRButtonDown(int x, int y)
+	{
+		m_translate->updataFocus(x, y);
+	}
+
+	void UICallBack::onMouseRButtonUp(int x, int y)
+	{
+	}
+
+	void UICallBack::onMouseMove(int x, int y)
+	{
+	}
+
+	void UICallBack::onMouseWheel(int x, int y, int delta)
+	{
+	}
+
+	void UICallBack::onChar(wchar_t ch)
+	{
+		if (m_translate->getOnFocus()) {
+			m_translate->getOnFocus()->m_data->onChar(ch);
+			return;
+		}
+		return;
+	}
+
+	void UICallBack::onKeyDown(int key)
+	{
+	}
+
+	void UICallBack::onKeyUp(int key)
+	{
+	}
+
 	SoftRenderer_UIInputTranlate::SoftRenderer_UIInputTranlate(Window* wnd, Tree<UIControlBase*>* tree)
 	{
-		REF_CLASS_BEGIN();
 		m_window = wnd;
 		m_tree = tree;
 		m_tree->addRef();
@@ -176,6 +202,26 @@ namespace FCT {
 		return m_control[y * m_window->getwidth() + x];
 	}
 
+	Node<UIControlBase*>* SoftRenderer_UIInputTranlate::getOnFocus()
+	{
+		return m_onFocusControl;
+	}
+
+	int SoftRenderer_UIInputTranlate::updataFocus(int x, int y)
+	{
+		if (x < 0 || y < 0) {
+			m_onFocusControl = NULL;
+			return 0;
+		}
+		if (x > m_window->getwidth() || y > m_window->getheight()) {
+			m_onFocusControl = NULL;
+			return 0;
+		}
+		Node<UIControlBase*>* control = m_control[y * m_window->getwidth() + x];
+		m_onFocusControl = control;
+		return 0;
+	}
+
 	void UIGraphics::createRenderer(UIGraphicsRendererChoose choose)
 	{
 		switch (choose)
@@ -220,15 +266,15 @@ namespace FCT {
 	void UIGraphics::flush()
 	{
 		m_mutex->lock();
-		DrawDirectx11ImageToDirectx11TextureSameSize(m_manager->getContext(), m_buffer, m_texture);
-		m_manager->getContext()->flush();
+		DrawDirectx11ImageToDirectx11TextureSameSize(m_manager->getCreateContext(), m_buffer, m_texture);
+		m_manager->getCreateContext()->flush();
 		m_mutex->unlock();
 	}
 	void UIGraphics::bind(UIManager* manager)
 	{
 		m_manager = manager;
 
-		m_texture = m_manager->getContext()->createTexture();
+		m_texture = m_manager->getCreateContext()->createTexture();
 		m_texture->setSize(m_width, m_height);
 		m_texture->create();
 		m_buffer = m_context->createImage();
@@ -244,7 +290,7 @@ namespace FCT {
 			shape->setRect(m_width, m_height);
 			shape->setTexcoord(0, 0, 1, 1);
 			shape->setColor({ 1,1,1,1 });
-			shape->create(m_manager->getContext());
+			shape->create(m_manager->getCreateContext());
 			m_shape = shape;
 		}
 	}

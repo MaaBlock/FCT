@@ -12,16 +12,34 @@ int main(){
 	wnd->size(1000, 750);
 	wnd->create();
 	UIManager* ui = new UIManager;
-	CircleGeometry* circle = new CircleGeometry;
 
-	circle->r = 50;
+	CircleGeometry* circle_geometry = new CircleGeometry;
+	circle_geometry->r = 50;
 	//test
 	UICaption* caption = new UICaption;
 	caption->setCenter(950, 50);
-	caption->setInputShape(circle);
+	caption->setInputShape(circle_geometry);
+	circle_geometry->release();
 	ui->create(wnd);
+	Circle* circle = new Circle();
+	circle->setColor({ 1,0,0,1 });
+	circle->setR(50);
+	circle->create(ui->getCreateContext());
+	caption->setDrawShape(circle);
 	ui->addControl(caption);
-	
+	circle->release();
+	Font* font = FCT_NEW(Font);
+	font->create("NSimSun-02.ttf");
+	Edit* edit = FCT_NEW(Edit);
+	edit->setFont(font);
+	edit->pos(0, 0);
+	edit->size(800, 400);
+	edit->setColor({ 0,0,0,1 }, { 1,1,1,1 });
+	edit->setText(L"Hello,World!");
+	edit->create();
+	ui->addControl(edit);
+	edit->updata();
+	edit->flush();
 	wnd->show();
 	// ...这部分管线命令都将被捕获到
 #ifdef GRAPH_DEBUG

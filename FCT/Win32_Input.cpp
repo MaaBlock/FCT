@@ -34,6 +34,7 @@ namespace FCT {
 		case WM_RBUTTONDOWN:
 			m_callback->onMouseRButtonDown(GET_X_LPARAM(lParam), GET_Y_LPARAM(lParam));
 			return 0;
+
 		case WM_KEYDOWN:
 			return 0;
 		case WM_NCHITTEST:
@@ -64,7 +65,9 @@ namespace FCT {
 				return HTCLIENT;
 			}
 		case WM_CHAR:
+			m_callback->onChar(wParam);
 			return 0;
+		return 0;
 		default:
 			return DefWindowProc(hWnd, message, wParam, lParam);
 		}

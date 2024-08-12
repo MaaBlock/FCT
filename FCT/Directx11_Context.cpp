@@ -121,6 +121,9 @@ namespace FCT {
 		m_nullBlendState = FCT_NEW(Directx11_BlendState);
 		m_nullBlendState->create(m_device);
 		m_nullSamplerState = FCT_NEW(Directx11_SamplerState);
+		m_nullDepthStencilState = FCT_NEW(Directx11_DepthStencilState);
+		m_nullDepthStencilState->setDepthFunc(depth_func_less_equal);
+		m_nullDepthStencilState->create(m_device);
 	}
 	Image* Directx11_Context::createImage()
 	{
@@ -189,11 +192,11 @@ namespace FCT {
 		m_geometryShader ? m_geometryShader->bind(this)
 			: m_context->GSSetShader(NULL, NULL, 0);
 		m_depthStencilState ? m_depthStencilState->bind(this)
-			: m_context->OMSetDepthStencilState(NULL, NULL);
+			: m_nullDepthStencilState->bind(this);
 
 		UINT stride = sizeof(Vertex2d);
 		UINT offset = 0;
-		shape->predraw(this);
+		shape->predraw(this, x + shape->getOffsetX(), y + shape->getOffsetY());
 		for (int i = 0; i < shape->m_resouceNum; i++) {
 			shape->m_resouce[i]->bind(this);
 		}
@@ -302,7 +305,7 @@ namespace FCT {
 	}
 	void Directx11_Context::setTexture(Image* img)
 	{
-		m_context->PSSetShaderResources(0, 1,
+		 m_context->PSSetShaderResources(0, 1,
 			((Directx11_Image*)img)->getShaderResourceViewPtr());
 	}
 	ID3D11Texture2D* getSharedTexture(ID3D11Texture2D* src, ID3D11Device* dest) {

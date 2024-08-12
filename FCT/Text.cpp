@@ -79,7 +79,7 @@ namespace FCT {
 		m_text = text;
 	}
 
-	void Text::predraw(Context* context)
+	void Text::predraw(Context* context,int x,int y)
 	{
 
 		DepthStencilState* state = context->createResouce->DepthStencilState();
@@ -103,7 +103,7 @@ namespace FCT {
 		context->setDeafultResouce(state);
 		for (int i = 0; i < m_textLen; i++) {
 			for (int j = 0; j < m_shapeNum[i] - 1; j++) {
-				context->draw(m_shape[i][j], m_x, m_y);
+				context->draw(m_shape[i][j], x, y);
 			}
 		}
 		DepthStencilState* fillState = context->createResouce->DepthStencilState();
@@ -118,7 +118,7 @@ namespace FCT {
 		fillState->setFrontFaceStencilPass(stencil_op_keep);
 		context->setDeafultResouce(fillState);
 		for (int i = 0; i < m_textLen; i++) {
-			context->draw(m_shape[i][m_shapeNum[i] - 1], m_x, m_y);
+			context->draw(m_shape[i][m_shapeNum[i] - 1], x, y);
 		}
 		context->setDeafultResouce(rasterizerState->getResouceType(), NULL);
 		context->setDeafultResouce(state->getResouceType(), NULL);
@@ -137,6 +137,7 @@ namespace FCT {
 	class Offset : public RefCounted {
 	public:
 		Offset(const wchar_t* text) : m_text(text) {
+
 		}
 		float scaleSrcX(float srcX) { 
 			float originX = 0;
@@ -223,7 +224,6 @@ namespace FCT {
 			TriangledVertexs = FCT_NEWS(Vertex2d,verCount * 3);//精确值:3 * (verCount - moveNum * 2)
 			TriangledVertexNums = 0;
 			m_shape[chId] = FCT_NEWS(Shape *,verCount + 2);
-			std::wcout << L"开始处理 [" << *ch << L"]" << std::endl;
 			Pos2f current;
 			Pos2f previous;
 			Pos2f control;
