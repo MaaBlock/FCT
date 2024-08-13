@@ -51,12 +51,14 @@ namespace FCT {
 		rect->setColor(m_bkColor);
 		rect->create(m_UIManager->getCreateContext());
 		m_bufferShape->add(rect, 0, 0);
+		rect->release();
 		Text* text = FCT_NEW(Text);
 		text->setText(m_data.c_str());
 		text->setFont(m_font);
 		text->setColor(m_color, m_bkColor);
 		text->setPixelSize(18);
 		text->create(m_UIManager->getCreateContext());
+		text->release();
 		m_bufferShape->add(text, 0, 0);
 	}
 	void Edit::flush()
