@@ -25,6 +25,11 @@ public:
 class Directx11_VertexShader : public VertexShader, public Directx11Interface {
 public:
 	Directx11_VertexShader(ID3D11Device* device, const char* shaderCode);
+	~Directx11_VertexShader()
+	{
+		COM_RELEASE(m_vertexShader);
+		COM_RELEASE(m_byteCode);
+	}
 	void bind(Context* _context);
 
 private:
@@ -35,7 +40,12 @@ private:
 class Directx11_PixelShader : public PixelShader, public Directx11Interface {
 public:
 	Directx11_PixelShader(ID3D11Device* device, const char* shaderCode);
-	void bind(Context* _context);
+	~Directx11_PixelShader()
+	{
+		COM_RELEASE(m_pixelShader);
+		COM_RELEASE(m_byteCode);
+	}
+	void bind(Context * _context);
 private:
 	ID3D11PixelShader* m_pixelShader;
 	ID3DBlob* m_byteCode;
@@ -44,6 +54,11 @@ private:
 class Directx11_GeometryShader : public GeometryShader,public Directx11Interface {
 public:
 	Directx11_GeometryShader();
+	~Directx11_GeometryShader()
+	{
+		COM_RELEASE(m_geometryShader);
+		COM_RELEASE(m_byteCode);
+	}
 	void setCode(const char* code);
 	void create(Context* context);
 	void bind(Context* _context);
@@ -55,6 +70,8 @@ private:
 class Directx11_ConstBuffer : public ConstBuffer, public Directx11Interface {
 public:
 	Directx11_ConstBuffer(ID3D11Device* device, unsigned id, const void* data, size_t size, int bindflag);
+	~Directx11_ConstBuffer();
+
 	void bind(Context* _context);
 private:
 	ID3D11Buffer* m_constBuffer;

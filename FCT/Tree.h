@@ -30,26 +30,78 @@ public:
 	void addChild(T t) {
 		addChild(FCT_NEW (Node<T>,t, m_level + 1));
 	}
+	//void removeChild(Node* child) {
+	//	if (child == m_firstChild) {
+	//		m_firstChild = child->m_nextSibling;
+	//		if (m_firstChild != NULL) {
+	//			m_firstChild->m_prevSibling = NULL;
+	//		}
+	//		child->m_nextSibling = NULL;
+	//	}
+	//	else if (child == m_lastChild) {
+	//		m_lastChild = child->m_prevSibling;
+	//		if (m_lastChild != NULL) {
+	//			m_lastChild->m_nextSibling = NULL;
+	//		}
+	//		child->m_prevSibling = NULL;
+	//	}
+	//	else {
+	//		child->m_prevSibling->m_nextSibling = child->m_nextSibling;
+	//		child->m_nextSibling->m_prevSibling = child->m_prevSibling;
+	//	}
+	//	child->m_nextSibling = NULL;
+	//	child->m_prevSibling = NULL;
+	//	child->m_parent = NULL;
+	//	child->release();
+	//	child = NULL;
+	//}
+	static void setParent(Node<T>* node, void* param) {
+		node->m_parent = (Node<T>*)param;
+	}
 	void removeChild(Node* child) {
-		if (child == m_firstChild) {
-			m_firstChild = child->m_nextSibling;
-			if (m_firstChild != NULL) {
-				m_firstChild->m_prevSibling = NULL;
-			}
-			child->m_nextSibling = NULL;
+		if (child->m_firstChild) {
+			child->m_prevSibling = child->m_firstChild;
+			child->m_firstChild->m_prevSibling = child->m_prevSibling;
+			child->m_prevSibling->m_nextSibling = child->m_firstChild;
+			traversalLevel(child->m_firstChild, setParent, child->m_parent, traversal_level_direction_next);
 		}
-		else if (child == m_lastChild) {
-			m_lastChild = child->m_prevSibling;
-			if (m_lastChild != NULL) {
-				m_lastChild->m_nextSibling = NULL;
-			}
-			child->m_prevSibling = NULL;
+		if (child->m_lastChild) {
+			child->m_nextSibling = child->m_lastChild;
+			child->m_lastChild->m_nextSibling = child->m_nextSibling;
+			child->m_nextSibling->m_prevSibling = child->m_lastChild;
 		}
-		child->m_nextSibling = NULL;
-		child->m_prevSibling = NULL;
-		child->m_parent = NULL;
+		child->m_firstChild = NULL;
+		child->m_lastChild = NULL;
 		child->release();
-		child = NULL;
+	}
+	void removeIf(bool (*remove)(Node<T>* node, void* param),void* param) { 
+
+		//if (remove(this, param)) {
+		//	if (m_parent != NULL) {
+		//		((Node<T>*)m_parent)->removeChild(this);
+		//	}
+		//	release();
+		//}
+		//else {
+		Node<T>* current = m_firstChild;
+		while (current != NULL) {
+			current->removeIf(remove, param);
+			current = current->m_nextSibling;
+		}
+		if (remove(this,param)) {
+			removeChild(this);
+		}
+	}
+
+	
+	void removeChildIf(bool (*remove)(Node<T>* node, void* param), void* param) {
+		Node<T>* current = m_firstChild;
+		Node<T>* temp = NULL;
+		while (current != NULL) {
+			temp = current->m_nextSibling;
+			current->removeIf(remove, param);
+			current = temp;
+		}
 	}
 	void removeChild(T t) {
 		Node<T>* child = findChild(t);
@@ -74,6 +126,19 @@ public:
 	int getLevel() {
 		return m_level;
 	}
+	enum traversal_level_direction_t {
+		traversal_level_direction_next = 0x1,
+		traversal_level_direction_pre = 0x2,
+	};
+	void traversalLevel(Node<T>* node, void (*func)(Node<T>* node, void* param), void* param, int direction = 1 | 2) {
+		func(node, param);
+		if (direction & traversal_level_direction_next && node->m_nextSibling != NULL) {
+			node->m_nextSibling->traversalLevel(node->m_nextSibling, func, param, traversal_level_direction_next);
+		}
+		if (direction & traversal_level_direction_pre && node->m_prevSibling != NULL) {
+			node->m_prevSibling->traversalLevel(node->m_prevSibling, func, param, traversal_level_direction_pre);
+		}
+	}
 	void traversal(void (*func)(Node<T>* node,void* param),void* param) { //Ç°Ðò±éÀú
 		func(this, param); 
 		if (m_firstChild != NULL) {
@@ -94,6 +159,11 @@ public:
 	int m_level;
 }; 
 
+template <typename T>
+bool tree_remove_release_if_func(Node<T>* node, void* param) {
+	node->m_data->release();
+	return true;
+}
 
 template <typename T>
 class Tree : public Node<T> {

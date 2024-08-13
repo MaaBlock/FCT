@@ -150,15 +150,14 @@ public:
 	static void DrawControlShape(Node<UIControlBase*>* node, void* param);
 	void updata();
 	void create(Window* window);
-	void addControl(UIControlBase* control);
-	void removeControl(UIControlBase* control);//移除一个Conrol
-	void deleteControl(UIControlBase* control);//直接delete一个control，
-		//与remove相比，删除一个将会从控件树移开并且直接释放Control对应的内存
+	void addControl(UIControlBase* control);//
+	void removeControl(UIControlBase* control);//
 	void destroy();
 	Mutex* contextMutex;
 	inline Context* getCreateContext() {
 		return m_context;
 	}
+	void removeAll();
 private:
 	Window* m_window;
 	Input* m_input;

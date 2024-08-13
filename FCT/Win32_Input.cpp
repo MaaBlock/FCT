@@ -12,11 +12,13 @@ namespace FCT {
 	{
 		REF_CLASS_BEGIN();
 		m_window = wnd;
+		m_mutex = CreateMutex();
 	}
 	;
 
 	LRESULT Win32_Input::WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 	{
+		m_mutex->lock();
 		switch (message)
 		{
 		case WM_PAINT:
@@ -71,10 +73,13 @@ namespace FCT {
 		default:
 			return DefWindowProc(hWnd, message, wParam, lParam);
 		}
+		m_mutex->unlock();
 	}
 
 	void Win32_Input::registerInputCallBack(InputCallBack* callback)
 	{
+		m_mutex->lock();
 		m_callback = callback;
+		m_mutex->unlock();
 	}
 }

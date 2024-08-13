@@ -8,6 +8,7 @@ public:
 	LRESULT WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
 	void registerInputCallBack(InputCallBack* callback);
 private:
+	Mutex* m_mutex;
 	Window* m_window;
 	InputCallBack* m_callback = m_nullcallback;
 };

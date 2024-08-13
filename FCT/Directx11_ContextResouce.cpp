@@ -164,6 +164,11 @@ namespace FCT {
 		m_flag = bindflag;
 	}
 
+	Directx11_ConstBuffer::~Directx11_ConstBuffer()
+	{
+		COM_RELEASE(m_constBuffer);
+	}
+
 	void Directx11_ConstBuffer::bind(Context* _context)
 	{
 		ID3D11DeviceContext* context = GetContext((Directx11_Context*)_context);

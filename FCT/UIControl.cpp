@@ -6,6 +6,11 @@ namespace FCT {
 		m_shape = FCT_NEW(ComplexShape);
 		m_bufferShape = FCT_NEW(ComplexShape);
 	}
+	Edit::~Edit()
+	{
+		FCT_RELEASE(m_shape);
+		FCT_RELEASE(m_bufferShape);
+	}
 	void Edit::setFont(Font* font)
 	{
 		m_font = font;
@@ -56,10 +61,10 @@ namespace FCT {
 		text->setText(m_data.c_str());
 		text->setFont(m_font);
 		text->setColor(m_color, m_bkColor);
-		text->setPixelSize(18);
+		text->setPixelSize(50);
 		text->create(m_UIManager->getCreateContext());
-		text->release();
 		m_bufferShape->add(text, 0, 0);
+		text->release();
 	}
 	void Edit::flush()
 	{

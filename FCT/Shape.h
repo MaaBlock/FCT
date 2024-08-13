@@ -3,7 +3,7 @@
 class Shape : public RefCounted {
 public:
 	Shape();
-	ContextResouce** m_resouce;
+	ContextResouce** m_resouce = NULL;
 	virtual void predraw(Context* context, int x, int y) {
 
 	}
@@ -17,7 +17,18 @@ public:
 	float getOffsetY() {
 		return m_offserY;
 	}
-	int m_resouceNum;
+	void destoryResouce() {
+		if (m_resouce) {
+			for (int i = 0; i < m_resouceNum; i++) {
+				m_resouce[i]->release();
+				m_resouce[i] = NULL;
+			}
+			FCT_DELETES(m_resouce);
+			m_resouce = NULL;
+			m_resouceNum = 0;
+		}
+	}
+	int m_resouceNum = 0;
 protected:
 	float m_offsetX = 0;
 	float m_offserY = 0;
@@ -37,6 +48,7 @@ private:
 class Rectangle : public Shape {
 public:
 	Rectangle();
+	~Rectangle();
 	void setWidth(int w);
 	void setHeight(int h);
 	inline void setColor(Color color) {
@@ -116,6 +128,7 @@ private:
 class TextFullQuadraticBezierCurve2d : public Shape {
 public:
 	TextFullQuadraticBezierCurve2d();
+	~TextFullQuadraticBezierCurve2d();
 	void create(Context* context);
 	void setBeginPoint(float x, float y);
 	void setEndPoint(float x, float y);
@@ -148,6 +161,7 @@ struct ComplexShapeNode {
 class ComplexShape : public Shape {
 public:
 	ComplexShape();
+	~ComplexShape();
 	void predraw(Context* context,int x,int y);
 	void create(Context* context);
 	void add(Shape* shape,int x,int y); 
@@ -163,6 +177,7 @@ struct Edge4f {
 //多边形，采用Bowyer-Watson算法进行三角形剖分
 class TextPolygon : public Shape {
 public:
+	~TextPolygon();
 	void setRect(int w, int h);
 	void setColor(Color color);
 	void setVertex(Vertex2d* vertexs, size_t vertexNum);

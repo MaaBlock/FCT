@@ -44,6 +44,7 @@ namespace FCT {
 	Text::~Text()
 	{
 		FCT_RELEASE(m_font);
+		destoryShape();
 	}
 
 	void Text::setPixelSize(int height)
@@ -101,7 +102,7 @@ namespace FCT {
 		context->setDeafultResouce(blendState);	
 		context->setDeafultResouce(rasterizerState);
 		context->setDeafultResouce(state);
-		for (int i = 0; i < m_textLen; i++) {
+		for (int i = 0; i < m_charShapesNum; i++) {
 			for (int j = 0; j < m_shapeNum[i] - 1; j++) {
 				context->draw(m_shape[i][j], x, y);
 			}
@@ -117,7 +118,7 @@ namespace FCT {
 		fillState->setFrontFaceStencilFail(stencil_op_keep);
 		fillState->setFrontFaceStencilPass(stencil_op_keep);
 		context->setDeafultResouce(fillState);
-		for (int i = 0; i < m_textLen; i++) {
+		for (int i = 0; i < m_charShapesNum; i++) {
 			context->draw(m_shape[i][m_shapeNum[i] - 1], x, y);
 		}
 		context->setDeafultResouce(rasterizerState->getResouceType(), NULL);
@@ -133,6 +134,9 @@ namespace FCT {
 		int descent;
 		int lineGap;
 		int linehight;
+	};
+	enum text_offset_predraw_ret_t {
+		text_offset_predraw_ret_skip
 	};
 	class Offset : public RefCounted {
 	public:
@@ -189,6 +193,19 @@ namespace FCT {
 				m_offsetY += m_src.linehight;
 			}
 		}
+		
+		void nextLine() {
+			m_offsetX = 0;
+			m_offsetY += m_src.linehight;
+			m_line++;
+			return;
+		}
+		text_offset_predraw_ret_t predraw(size_t index) {
+			if (m_text[index] == '\n') {
+				nextLine();
+				return text_offset_predraw_ret_skip;
+			}
+		}
 	private:
 		float m_dstWidth;
 		float m_dstHeight;
@@ -207,17 +224,25 @@ namespace FCT {
 		Offset* offset = FCT_NEW(Offset,m_text);
 		offset->setStbFont(font);
 		offset->textSize(m_size);
-		m_textLen = wcslen(m_text);
-		m_shape = FCT_NEWS(Shape * *,m_textLen);
-		m_shapeNum = FCT_NEWS (int,m_textLen);
+		m_charShapesNum = wcslen(m_text);
+		m_shape = FCT_NEWS(Shape * *,m_charShapesNum);
+		m_shapeNum = FCT_NEWS (int,m_charShapesNum);
 		int chId = 0;
-		for (int i = 0; i < m_textLen; i++) {
+		for (int i = 0; i < m_charShapesNum; i++) {
 			m_shapeNum[i] = 0;
 		}
 		Vertex2d* TriangledVertexs;
 		Pos2f TriangleFirstVertex;
 		size_t TriangledVertexNums;
 		for (const wchar_t* ch = m_text; *ch != L'\0'; ch++, chId++) {
+			switch (offset->predraw(chId))
+			{
+			case text_offset_predraw_ret_skip:
+
+				continue;
+			default:
+				break;
+			}
 			stbtt_vertex* stbVertex = NULL;
 			int verCount = 0;
 			verCount = stbtt_GetCodepointShape(font, *ch, &stbVertex);
@@ -325,8 +350,25 @@ namespace FCT {
 			m_shape[chId][m_shapeNum[chId]] = rectangle;
 			m_shapeNum[chId]++;
 			delete[] stbVertex;
-			delete[] TriangledVertexs;
+			FCT_DELETES(TriangledVertexs);
 		}
+		offset->release();
 		m_resouceNum = 0;
+	}
+	void Text::destoryShape()
+	{
+		for (int i = 0; i < m_charShapesNum; i++) {
+			for (int j = 0; j < m_shapeNum[i]; j++) {
+				FCT_RELEASE(m_shape[i][j]);
+			}
+			FCT_DELETES(m_shape[i]);
+			m_shape[i] = nullptr;
+			m_shapeNum[i] = 0;
+		}
+		FCT_DELETES(m_shapeNum);
+		m_shapeNum = nullptr;
+		FCT_DELETES(m_shape);
+		m_shape = nullptr;
+		m_charShapesNum = NULL;
 	}
 }

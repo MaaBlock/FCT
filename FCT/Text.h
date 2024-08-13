@@ -42,6 +42,7 @@ public:
 	void setText(const wchar_t* text);
 	void predraw(Context* context,int x,int y);
 	void create(Context* context);
+	void destoryShape();
 private:
 	bool m_alphaToCoverage = false;
 	int m_size;
@@ -50,7 +51,7 @@ private:
 	Color m_backGroundColor;
 	Shape*** m_shape;
 	int* m_shapeNum;
-	size_t m_textLen;
+	size_t m_charShapesNum = 0;
 	Font* m_font;
 	float m_x;
 	float m_y;

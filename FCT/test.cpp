@@ -27,6 +27,7 @@ int main(){
 	circle->create(ui->getCreateContext());
 	caption->setDrawShape(circle);
 	ui->addControl(caption);
+	caption->release();
 	circle->release();
 	Font* font = FCT_NEW(Font);
 	font->create("NSimSun-02.ttf");
@@ -40,6 +41,7 @@ int main(){
 	ui->addControl(edit);
 	edit->updata();
 	edit->flush();
+	edit->release();
 	wnd->show();
 	// ...这部分管线命令都将被捕获到
 #ifdef GRAPH_DEBUG

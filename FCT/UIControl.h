@@ -11,6 +11,7 @@ private:
 class Edit : public UIControlBase {
 public:
 	Edit();
+	~Edit();
 	void setFont(Font* font);
 	void pos(int x, int y);
 	void size(int width,int height);

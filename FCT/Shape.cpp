@@ -10,6 +10,7 @@ namespace FCT {
 
 	Line::~Line()
 	{
+		destoryResouce();
 	}
 	void Line::setPoint(float x, float y)
 	{
@@ -311,6 +312,10 @@ namespace FCT {
 		m_vertex[2].tex = { 1,1 };
 		m_width = 2;
 	}
+	TextFullQuadraticBezierCurve2d::~TextFullQuadraticBezierCurve2d()
+	{
+		destoryResouce();
+	}
 	void TextFullQuadraticBezierCurve2d::create(Context* context)
 	{
 		m_resouceNum = 5;
@@ -323,7 +328,9 @@ namespace FCT {
 		m_resouce[0] = context->createConstBuffer(1, &constBuffer, sizeof(QuadraticBezierCurve2dConstBuffer), const_buffer_bind_vertex_shader | const_buffer_bind_pixel_shader | const_buffer_bind_geometry_shader);
 		m_resouce[1] = context->createToplogy(shape_primitive_topology_trianglelist);
 		m_resouce[2] = Directx11_TextBezierPixelShader;
+		Directx11_TextBezierPixelShader->addRef();
 		m_resouce[3] = Directx11_TextBezierVertexShader;
+		Directx11_TextBezierVertexShader->addRef();
 		m_resouce[4] = context->createVertex2dBuffer(m_vertex, 3);
 	}
 	void TextFullQuadraticBezierCurve2d::setBeginPoint(float x, float y)
@@ -455,6 +462,10 @@ namespace FCT {
 		m_w = 50;
 		m_h = 50;
 	}
+	Rectangle::~Rectangle()
+	{
+		destoryResouce();
+	}
 	void Rectangle::setWidth(int w)
 	{
 		m_w = w;
@@ -478,6 +489,11 @@ namespace FCT {
 	ComplexShape::ComplexShape()
 	{
 
+	}
+
+	ComplexShape::~ComplexShape()
+	{
+		allDelete();
 	}
 
 	void ComplexShape::predraw(Context* context,int x,int y)

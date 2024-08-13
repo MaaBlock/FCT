@@ -8,7 +8,7 @@ namespace FCT {
 	}
 	UIManager::~UIManager()
 	{
-
+		destroy();
 	}
 	void UIManager::DrawControlShape(Node<UIControlBase*>* node, void* param) {
 		UIControlBase* control = node->getData();
@@ -65,9 +65,11 @@ namespace FCT {
 		m_inputTranslate->updata();
 		//树应该再callback之前创建完
 		m_window->getInput()->registerInputCallBack(m_callback);
+		rect->release();
 	}
 	void UIManager::addControl(UIControlBase* control)
 	{
+		control->addRef();
 		control->m_mutex->create();
 		control->m_mutex->addRef();
 		control->m_UIManager = this;
@@ -80,15 +82,26 @@ namespace FCT {
 	void UIManager::removeControl(UIControlBase* control)
 	{
 		m_controlTree->removeChild(control);
-	}
-	void UIManager::deleteControl(UIControlBase* control)
-	{
-
+		control->release();
+		//TODO:添加检查是否成功remove再release
 	}
 	void UIManager::destroy()
 	{
-
+		removeAll();
+		m_window->getInput()->registerInputCallBack(NULL);
+		FCT_RELEASE(m_inputTranslate);
+		FCT_RELEASE(m_callback);
+		FCT_RELEASE(m_controlTree);
+		FCT_RELEASE(m_root);
+		FCT_RELEASE(m_context);
+		FCT_RELEASE(m_uiBuffer);
 	}
+
+	void UIManager::removeAll()
+	{
+		m_controlTree->removeChildIf(tree_remove_release_if_func, NULL);
+	}
+
 
 	nctest_result_t UICallBack::onNCTest(int x, int y)
 	{

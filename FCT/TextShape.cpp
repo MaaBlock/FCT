@@ -16,6 +16,10 @@ namespace FCT {
 		}
 		return false;
 	}
+	TextPolygon::~TextPolygon()
+	{
+		destoryResouce();
+	}
 	void TextPolygon::setRect(int w, int h)
 	{
 		m_w = w;
@@ -44,11 +48,9 @@ namespace FCT {
 	}
 	void TextPolygon::create(Context* context)
 	{
-		m_resouce = FCT_NEWS(ContextResouce * ,1 + m_vertexNum / 3);
-		m_resouceNum = 1 + m_vertexNum / 3;
+		m_resouce = FCT_NEWS(ContextResouce * ,2);
+		m_resouceNum = 2;
 		m_resouce[0] = context->createToplogy(shape_primitive_topology_trianglelist);
-		for (int i = 1; i < 1 + m_vertexNum / 3; i++) {
-			m_resouce[i] = context->createVertex2dBuffer(m_vertex + (i - 1) * 3, 3);
-		}
-	}
+		m_resouce[1] = context->createVertex2dBuffer(m_vertex, m_vertexNum);
+	}	
 }
