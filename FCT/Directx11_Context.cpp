@@ -248,6 +248,7 @@ namespace FCT {
 		}
 		m_context->Unmap(temp, 0);
 		temp->Release();
+		tempDeault->Release();
 	}
 	Vertex2dBuffer* Directx11_Context::createVertex2dBuffer(Vertex2d* vertex, int vertexNum)
 	{

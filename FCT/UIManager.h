@@ -146,6 +146,7 @@ class UIManager : public RefCounted
 {
 public:
 	UIManager();
+	~UIManager();
 	static void DrawControlShape(Node<UIControlBase*>* node, void* param);
 	void updata();
 	void create(Window* window);

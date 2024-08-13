@@ -6,8 +6,10 @@ namespace FCT {
 	{
 		REF_CLASS_BEGIN();
 	}
-	Circle* g_circle;
-	Text* g_text;
+	UIManager::~UIManager()
+	{
+
+	}
 	void UIManager::DrawControlShape(Node<UIControlBase*>* node, void* param) {
 		UIControlBase* control = node->getData();
 		UIManager* uiManager = (UIManager*)param;
@@ -30,7 +32,6 @@ namespace FCT {
 		pGraphicsAnalysis->BeginCapture();
 #endif // GRAPH_DEBUG
 		m_context->clear(0, 0, 0, 1.0f);
-		//m_context->draw(text, 50, 50);
 		m_controlTree->traversal(DrawControlShape, this);
 		m_context->writeIn(m_window->getBuffer());
 		m_window->flush();
