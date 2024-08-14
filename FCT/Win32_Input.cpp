@@ -43,7 +43,9 @@ namespace FCT {
 			switch (m_callback->onNCTest(GET_X_LPARAM(lParam) - m_window->getx()
 				, GET_Y_LPARAM(lParam) - m_window->gety()))
 			{
-			case nctest_clent:
+			case nctest_border:
+				return HTBORDER;
+			case nctest_client:
 				return HTCLIENT;
 			case nctest_caption:
 				return HTCAPTION;

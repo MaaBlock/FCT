@@ -1,5 +1,5 @@
 enum nctest_result_t {
-	nctest_clent,
+	nctest_client,
 	nctest_caption,
 	nctest_size_top_left,
 	nctest_size_top,
@@ -9,6 +9,7 @@ enum nctest_result_t {
 	nctest_size_bottom,
 	nctest_size_bottom_left,
 	nctest_size_left,
+	nctest_border,
 };
 class InputCallBack : public RefCounted {
 public:
@@ -42,7 +43,7 @@ public:
 
 	}
 	virtual nctest_result_t onNCTest(int x, int y) {
-		return nctest_clent;
+		return nctest_client;
 	}
 	virtual void onPaint() {
 		

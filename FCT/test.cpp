@@ -1,5 +1,33 @@
 #include "hander.h"
 using namespace FCT;
+
+
+namespace FCT {
+	class NewCharShape : public Shape {
+	public:
+
+		void create(Context* context, stbtt_fontinfo* fontInfo, wchar_t ch);
+	private:
+		Shape** m_shapes;
+		size_t m_shapeNum;
+
+	};
+	class NewFont : public RefCounted {
+	public:
+		NewFont(Context* context);
+		void create(const char* fileNameOrPath);
+		NewCharShape* getShape(wchar_t ch);
+		void createShape(wchar_t ch);
+		void createShape(const wchar_t* text);
+		void createShape(wchar_t theFirstChar, wchar_t theEndChar);
+	private:
+		Context* m_context;
+		std::map<wchar_t, NewCharShape*> m_charShapes;
+		stbtt_fontinfo* m_fontInfo;
+		File* m_fontFile;
+	};
+	NewFont* CreateNewFont(Context* context);
+}
 int main(){
 	Init();
 #ifdef GRAPH_DEBUG
@@ -29,26 +57,25 @@ int main(){
 	ui->addControl(caption);
 	caption->release();
 	circle->release();
-	Font* font = FCT_NEW(Font);
-	font->create("NSimSun-02.ttf");
-	Edit* edit = FCT_NEW(Edit);
-	edit->setFont(font);
-	edit->pos(0, 0);
-	edit->size(800, 400);
-	edit->setColor({ 0,0,0,1 }, { 1,1,1,1 });
-	edit->setText(L"Hello,World!");
-	edit->create();
-	ui->addControl(edit);
-	edit->updata();
-	edit->flush();
-	edit->release();
+	NewFont* font = CreateNewFont(ui->getRootContext());
+	font->create("SimSun-01.ttf");
+	NewCharShape* shape = font->getShape(L'你');
+	Context* reotContext = ui->getRootContext();
 	wnd->show();
 	// ...这部分管线命令都将被捕获到
 #ifdef GRAPH_DEBUG
 	pGraphicsAnalysis->EndCapture();
 #endif // GRAPH_DEBUG
 	while (wnd->isRunning()) {
-		_output_object_nums(std::cout);
+#ifdef GRAPH_DEBUG	
+		pGraphicsAnalysis->BeginCapture();
+#endif // GRAPH_DEBUG
+		//_output_object_nums(std::cout);
+		//reotContext->draw(shape,50,50);
+		//ui->flushRoot();
+#ifdef GRAPH_DEBUG
+		pGraphicsAnalysis->EndCapture();
+#endif // GRAPH_DEBUG
 		Sleep(1);
 	}
 	ui->release();

@@ -536,4 +536,3 @@ namespace FCT {
 		TextFullQuadraticBezierCurve2d::Init(context);
 	}
 }
-

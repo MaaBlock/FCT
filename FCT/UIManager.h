@@ -157,7 +157,12 @@ public:
 	inline Context* getCreateContext() {
 		return m_context;
 	}
+	inline Context* getRootContext() {
+		return m_root->getContext();
+	}
+	void flushRoot();
 	void removeAll();
+	Window* getWindow();
 private:
 	Window* m_window;
 	Input* m_input;

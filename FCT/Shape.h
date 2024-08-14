@@ -1,5 +1,4 @@
 
-
 class Shape : public RefCounted {
 public:
 	Shape();

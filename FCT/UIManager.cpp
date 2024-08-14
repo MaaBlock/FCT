@@ -26,21 +26,27 @@ namespace FCT {
 	}
 	void UIManager::updata()
 	{
+		contextMutex->lock();
 #ifdef GRAPH_DEBUG
 		IDXGraphicsAnalysis* pGraphicsAnalysis;
 		HRESULT getAnalysis = DXGIGetDebugInterface1(0, __uuidof(pGraphicsAnalysis), reinterpret_cast<void**>(&pGraphicsAnalysis));
 		pGraphicsAnalysis->BeginCapture();
 #endif // GRAPH_DEBUG
+		
 		m_context->clear(0, 0, 0, 1.0f);
 		m_controlTree->traversal(DrawControlShape, this);
 		m_context->writeIn(m_window->getBuffer());
 		m_window->flush();
+
 #ifdef GRAPH_DEBUG
 		pGraphicsAnalysis->EndCapture();
 #endif // GRAPH_DEBUG
+		contextMutex->unlock();
 	}
 	void UIManager::create(Window* window)
 	{
+		contextMutex = CreateMutex();
+		contextMutex->create();
 		m_context = FCT_NEW(Directx11_Context);
 		m_context->create();
 		InitShapeModule(m_context);
@@ -97,18 +103,43 @@ namespace FCT {
 		FCT_RELEASE(m_uiBuffer);
 	}
 
+	void UIManager::flushRoot()
+	{
+		contextMutex->lock();
+		m_root->flush();
+		contextMutex->unlock();
+	}
+
 	void UIManager::removeAll()
 	{
 		m_controlTree->removeChildIf(tree_remove_release_if_func, NULL);
 	}
 
+	Window* UIManager::getWindow()
+	{
+		return m_window;
+	}
+
 
 	nctest_result_t UICallBack::onNCTest(int x, int y)
 	{
+		//剔除边框 -1~size
+		if (x < 0) {
+			return nctest_border;
+		}
+		if (y < 0) {
+			return nctest_border;
+		}
+		if (x >= m_manager->getWindow()->getwidth()) {
+			return nctest_border;
+		}
+		if (y >= m_manager->getWindow()->getheight()) {
+			return nctest_border;
+		}
 		if (m_translate->getControl(x, y)->getData()->getControlType() == control_type_caption) {
 			return nctest_caption;
 		}
-		return nctest_clent;
+		return nctest_client;
 	}
 
 	void UICallBack::onPaint()

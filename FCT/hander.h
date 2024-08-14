@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include <cstdint>
+#include <map>
 #include <vector>
 
 //注意WIN32宏是定义在Windows.h里面

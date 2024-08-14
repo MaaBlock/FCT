@@ -49,22 +49,24 @@ namespace FCT {
 	}
 	void Edit::updata()
 	{
-		m_bufferShape->allDelete();
-		Rectangle* rect = FCT_NEW(Rectangle);
-		rect->setWidth(m_width);
-		rect->setHeight(m_height);
-		rect->setColor(m_bkColor);
-		rect->create(m_UIManager->getCreateContext());
-		m_bufferShape->add(rect, 0, 0);
-		rect->release();
-		Text* text = FCT_NEW(Text);
-		text->setText(m_data.c_str());
-		text->setFont(m_font);
-		text->setColor(m_color, m_bkColor);
-		text->setPixelSize(50);
-		text->create(m_UIManager->getCreateContext());
-		m_bufferShape->add(text, 0, 0);
-		text->release();
+		if (m_UIManager) {
+			m_bufferShape->allDelete();
+			Rectangle* rect = FCT_NEW(Rectangle);
+			rect->setWidth(m_width);
+			rect->setHeight(m_height);
+			rect->setColor(m_bkColor);
+			rect->create(m_UIManager->getCreateContext());
+			m_bufferShape->add(rect, 0, 0);
+			rect->release();
+			Text* text = FCT_NEW(Text);
+			text->setText(m_data.c_str());
+			text->setFont(m_font);
+			text->setColor(m_color, m_bkColor);
+			text->setPixelSize(50);
+			text->create(m_UIManager->getCreateContext());
+			m_bufferShape->add(text, 0, 0);
+			text->release();
+		}
 	}
 	void Edit::flush()
 	{
