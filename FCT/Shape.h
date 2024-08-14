@@ -180,7 +180,7 @@ public:
 	~TextPolygon();
 	void setRect(int w, int h);
 	void setColor(Color color);
-	void setVertex(Vertex2d* vertexs, size_t vertexNum);
+	void setVertices(Vertex2d* vertexs, size_t vertexNum);
 	void create(Context* context);
 private:
 	Color m_color;

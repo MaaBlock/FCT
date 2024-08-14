@@ -48,6 +48,7 @@ int main(){
 	pGraphicsAnalysis->EndCapture();
 #endif // GRAPH_DEBUG
 	while (wnd->isRunning()) {
+		_output_object_nums(std::cout);
 		Sleep(1);
 	}
 	ui->release();

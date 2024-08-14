@@ -110,6 +110,9 @@ namespace FCT {
 	FinshWhiles:
 		delete[] arg;
 	}
+	inline void _output_object_nums(std::ostream& out) {
+		out << "当前对象总计:" << fct_object_list.size() << std::endl;
+	}
 	inline void _output_object(std::ostream& out) {
 		//线程不安全
 		for (auto i = fct_object_list.begin(); i != fct_object_list.end(); i++) {
@@ -154,6 +157,7 @@ namespace FCT {
 #include "ContextResouce.h"
 #include "Shape.h"
 #include "Text.h"
+#include "TextDevice.h"
 #include "Context.h"
 #include "mutex.h"
 //适配创建

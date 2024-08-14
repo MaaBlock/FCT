@@ -29,7 +29,7 @@ namespace FCT {
 	{
 		m_color = color;
 	}
-	void TextPolygon::setVertex(Vertex2d* vertexs, size_t vertexNum)
+	void TextPolygon::setVertices(Vertex2d* vertexs, size_t vertexNum)
 	{
 		m_vertex = vertexs;
 		m_vertexNum = vertexNum;

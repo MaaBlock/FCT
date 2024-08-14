@@ -1,17 +1,3 @@
-
-
-class TextDevice {
-private:
-	TextDevice() {}
-	~TextDevice() {}
-	static TextDevice* m_textDevice;
-public:
-	static void Init();
-	static TextDevice* GetTextDevice();
-private:
-
-};
-
 class Font : public RefCounted {
 public:
 	Font();
@@ -22,14 +8,6 @@ private:
 	stbtt_fontinfo* m_fontinfo;
 	File* m_fontFile;
 };
-
-inline TextDevice* CreateTextDevice() {
-	return TextDevice::GetTextDevice();
-}
-inline TextDevice* GetTextDevice() {
-	return TextDevice::GetTextDevice();
-}
-
 class Text : public Shape {
 public:
 	Text();
@@ -56,18 +34,36 @@ private:
 	float m_x;
 	float m_y;
 };
-class TextOffseter : public RefCounted {
-public:
-	void setReversal(bool x, bool y);
-	void nextLine();
-private:
-	bool m_xReversal = false;
-	//m_xReversal不实现，仅提供该接口，不计划实现
-	bool m_yReversal = true;
-	float m_offsexX = 0;
-	float m_offsexY = 0;
-	float scale = 1.0;
-};
 
+class CharShape : public Shape {
+public:
+
+private:
+
+};
+class StbTextPosTranslator;
+class Stencil_CharShape :public CharShape {
+public:
+	Stencil_CharShape();
+	~Stencil_CharShape();
+	void setFont(Font* font);
+	void destroy();
+	void destroyShapes();
+	void createCharInfo();
+	void destroyCharInfo();
+	void setColor(Color color);
+	void predraw(Context* context,int x, int y);
+	void create(Context* context);
+private:
+	DepthStencilState* m_depthStencilState;
+	RasterizerState* m_rasterizerState;
+	BlendState* m_blendState;
+	Color m_color;
+	Font* m_font;
+	Shape** m_shapes;
+	size_t m_shapeNum;
+	wchar_t m_char;
+	StbTextPosTranslator* m_translator;
+};
 //ToDo:重构:重写
 //ToDo:自己实现读取.ttf和.ttc
