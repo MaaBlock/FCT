@@ -3,15 +3,46 @@ using namespace FCT;
 
 
 namespace FCT {
+
+	class ShapeCommon : public RefCounted {
+	public:
+		virtual void create(Context* context) = 0;
+	private:
+
+	};
+	class ShapeBuilder {
+	public:
+		ShapeBuilder(Context* context);
+		template<typename T>
+		ShapeCommon* createShapeCommon(const char* shapeName);
+		template<typename T>
+		T* getShapeCommon(const char* shapeName);
+		Context* getContext() { return m_context; }
+	private:
+		std::map<const char*, ShapeCommon*> m_shapeCommonMap;
+		Context* m_context;
+	};
+	class NewCircle : public Shape {
+	public:
+		NewCircle();
+		~NewCircle();
+		void setRadius(float r);
+		void setTex(Texcoord LT, Texcoord RB);
+		void setColor(Color color);
+		void create(ShapeBuilder* builder);
+	private:
+		Vertex2d m_vertices[4];
+
+	};
 	class NewCharShape : public Shape {
 	public:
-
 		void create(Context* context, stbtt_fontinfo* fontInfo, wchar_t ch);
 	private:
 		Shape** m_shapes;
 		size_t m_shapeNum;
 
 	};
+	ShapeBuilder* createShapeBuilder(Context* context);
 	class NewFont : public RefCounted {
 	public:
 		NewFont(Context* context);
@@ -60,7 +91,13 @@ int main(){
 	NewFont* font = CreateNewFont(ui->getRootContext());
 	font->create("SimSun-01.ttf");
 	NewCharShape* shape = font->getShape(L'你');
-	Context* reotContext = ui->getRootContext();
+	Context* rootContext = ui->getRootContext();
+	createShapeBuilder(ui->getRootContext());
+	ShapeBuilder* builder = createShapeBuilder(rootContext);
+	NewCircle* circleShape = FCT_NEW(NewCircle);
+	circleShape->setColor({ 1,0,0,1 });
+	circleShape->create(builder);
+	rootContext->draw(circleShape, 50, 50);
 	wnd->show();
 	// ...这部分管线命令都将被捕获到
 #ifdef GRAPH_DEBUG
@@ -71,8 +108,8 @@ int main(){
 		pGraphicsAnalysis->BeginCapture();
 #endif // GRAPH_DEBUG
 		//_output_object_nums(std::cout);
-		//reotContext->draw(shape,50,50);
-		//ui->flushRoot();
+		rootContext->draw(circleShape,50,50);
+		ui->flushRoot();
 #ifdef GRAPH_DEBUG
 		pGraphicsAnalysis->EndCapture();
 #endif // GRAPH_DEBUG
@@ -80,7 +117,9 @@ int main(){
 	}
 	ui->release();
 	wnd->release();
+	circleShape->release();
 	_output_object(std::cout);
 	return 0;
 }
+
 

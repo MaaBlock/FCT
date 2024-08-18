@@ -50,7 +50,8 @@ namespace FCT {
 	};
 	extern std::vector<_fct_object_t*> fct_object_list;
 	extern std::string fct_object_info;
-	extern std::mutex fct_object_mutex;
+	extern std::mutex fct_object_mutex; 
+	extern int fct_object_count_delete_without_object;
 	template <typename T, typename... Args>
 	T* _fct_new(const Args&... arg) {
 		T* ret = new T(arg...);
@@ -89,7 +90,7 @@ namespace FCT {
 			i++;
 		}
 		if (i == fct_object_list.end()) {
-			fct_object_info += "出现不在object表里被delete的object";
+			fct_object_count_delete_without_object++;
 		}
 	FinshWhile:
 		fct_object_mutex.unlock();
@@ -106,7 +107,7 @@ namespace FCT {
 			}
 		}
 		if (i == fct_object_list.end()) {
-			fct_object_info += "出现不在object表里被delete的object";
+			fct_object_count_delete_without_object++;
 		}
 	FinshWhiles:
 		delete[] arg;
@@ -119,7 +120,7 @@ namespace FCT {
 		for (auto i = fct_object_list.begin(); i != fct_object_list.end(); i++) {
 			out << (*i)->describe << std::endl;
 		}
-		out << fct_object_info << std::endl;
+		out <<  "不在object表里不delete的数量:" << fct_object_count_delete_without_object << std::endl;
 		out << "未释放对象总计:" << fct_object_list.size() <<std::endl;
 	}
 }
@@ -132,6 +133,13 @@ namespace FCT {
 #define FCT_DELETE(args) delete args
 #define FCT_DELETES(args) delete[] args
 #endif // FCT_MEMORY_CHEAK
+#define FCT_PERFORMANCE_TEST 
+#ifdef FCT_PERFORMANCE_TEST
+namespace FCT {
+
+}
+#endif //FCT_PERFORMANCE_TEST
+
 
 
 namespace FCT {

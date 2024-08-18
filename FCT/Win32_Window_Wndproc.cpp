@@ -267,7 +267,7 @@ namespace FCT {
 		}
 		case WM_PAINT:
 		{
-			pWnd->m_swapChain->Present(1, 0);
+			//pWnd->m_swapChain->Present(1, 0);
 			break;
 		}
 		case WM_LBUTTONDOWN:
