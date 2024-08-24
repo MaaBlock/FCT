@@ -55,4 +55,4 @@ public:
     }
 private:
     volatile T m_value;
-};
+}; 

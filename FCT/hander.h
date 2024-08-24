@@ -169,6 +169,7 @@ namespace FCT {
 #include "TextDevice.h"
 #include "Context.h"
 #include "mutex.h"
+#include "Atomic.h"
 //  ≈‰¥¥Ω®
 
 #ifdef _WIN32
