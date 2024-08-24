@@ -209,6 +209,6 @@ namespace FCT {
 #include "GLES3_0_Image.h"
 //#include "Android_Context.h"
 #endif
-
+#include "LibrayContext.h"
 	void Init();
 }

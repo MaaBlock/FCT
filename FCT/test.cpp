@@ -59,6 +59,8 @@ namespace FCT {
 	};
 	NewFont* CreateNewFont(Context* context);
 }
+
+
 int main(){
 	Init();
 #ifdef GRAPH_DEBUG
