@@ -46,4 +46,16 @@ namespace FCT{
         return 0;
     }
 
+    void GLES3_0_Image::setSize(unsigned int width, unsigned int height) {
+
+    }
+
+    int GLES3_0_Image::create() {
+        return 0;
+    }
+
+    int GLES3_0_Image::msaaEnable(bool enable, unsigned int count) {
+        return 0;
+    }
+
 }

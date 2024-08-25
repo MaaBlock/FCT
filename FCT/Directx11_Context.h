@@ -61,8 +61,8 @@ public:
 	Topology* createToplogy(shape_primitive_topology_t);
 	PixelShader* createPixelShader(const char* code);
 	VertexShader* createVertexShader(const char* code);
-	void setDeafultResouce(ContextResouce* resouce);
-	void setDeafultResouce(context_resouce_t resoutType, ContextResouce* resouce);
+	void setDeafultResource(ContextResouce* resouce);
+	void setDeafultResource(context_resouce_t resoutType, ContextResouce* resouce);
 	ID3D11DeviceContext* getContext();
 	ID3D11Device* getDevice();
 private:

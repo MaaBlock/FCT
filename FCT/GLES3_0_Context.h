@@ -26,6 +26,14 @@ public:
 
     void clear(float r, float g, float b, float a) override;
 
+    void setTexture(Image *img) override;
+
+    Image *createImage() override;
+
+    Texture *createTexture() override;
+
+    void drawImage(Image *img, Pos2f dstPos, Pos2f srcPos, Pos2f size) override;
+
 private:
     context_t m_contextType;
     EGLContext m_eglContext;
@@ -37,6 +45,6 @@ private:
     Topology* createToplogy(shape_primitive_topology_t) override;
     PixelShader* createPixelShader(const char* code) override;
     VertexShader* createVertexShader(const char* code) override;
-    void setDeafultResouce(ContextResouce* resouce) override;
-    void setDeafultResouce(context_resouce_t resoutType, ContextResouce* resouce) override;
+    void setDeafultResource(ContextResouce* resouce) override;
+    void setDeafultResource(context_resouce_t resoutType, ContextResouce* resouce) override;
 };

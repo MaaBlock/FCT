@@ -105,5 +105,21 @@ namespace FCT {
 
     }
 
+    void GLES3_0_Context::setTexture(Image *img) {
+
+    }
+
+    Image *GLES3_0_Context::createImage() {
+        return nullptr;
+    }
+
+    Texture *GLES3_0_Context::createTexture() {
+        return nullptr;
+    }
+
+    void GLES3_0_Context::drawImage(Image *img, Pos2f dstPos, Pos2f srcPos, Pos2f size) {
+
+    }
+
 
 } // FCT

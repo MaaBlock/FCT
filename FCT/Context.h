@@ -14,7 +14,7 @@ public:
 
 class Context : public RefCounted {
 public:
-	CreateContextFactory* createResouce;
+	CreateContextFactory* createResource;
 	virtual void create() = 0;
 	virtual void setTexture(Image* img) = 0;
 	virtual Image* createImage() = 0;
@@ -32,6 +32,6 @@ public:
 	virtual Topology* createToplogy(shape_primitive_topology_t) = 0;
 	virtual PixelShader* createPixelShader(const char* code) = 0;
 	virtual VertexShader* createVertexShader(const char* code) = 0;
-	virtual void setDeafultResouce(ContextResouce* resouce) = 0;
-	virtual void setDeafultResouce(context_resouce_t resoutType, ContextResouce* resouce) = 0;
+	virtual void setDeafultResource(ContextResouce* resouce) = 0;
+	virtual void setDeafultResource(context_resouce_t resoutType, ContextResouce* resouce) = 0;
 };

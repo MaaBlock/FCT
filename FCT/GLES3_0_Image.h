@@ -17,6 +17,12 @@ public:
 
     int getHeight() override;
 
+    void setSize(unsigned int width, unsigned int height) override;
+
+    int create() override;
+
+    int msaaEnable(bool enable, unsigned int count) override;
+
     static EGLint nEGLConfigs;
     static EGLConfig EGLConfig;
 private:

@@ -141,7 +141,7 @@ namespace FCT {
 	void NewCharShape::predraw(Context* context, int x, int y)
 	{
 
-		DepthStencilState* state = context->createResouce->DepthStencilState();
+		DepthStencilState* state = context->createResource->DepthStencilState();
 		state->setDepthEnable(false);
 		state->setBackFaceStencilFail(stencil_op_invert);
 		state->setBackFaceStencilPass(stencil_op_invert);
@@ -152,20 +152,20 @@ namespace FCT {
 		state->setBackFaceStencilFunc(stencil_func_equal);
 		state->setFrontFaceStencilFunc(stencil_func_equal);
 		state->setRefStencil(0);
-		RasterizerState* rasterizerState = context->createResouce->RasterizerState();
+		RasterizerState* rasterizerState = context->createResource->RasterizerState();
 		rasterizerState->setCullMode(cull_mode_none);
 		rasterizerState->create(context);
-		BlendState* blendState = context->createResouce->BlendState();
+		BlendState* blendState = context->createResource->BlendState();
 		blendState->alphaToCoverage(true);
-		context->setDeafultResouce(blendState);
-		context->setDeafultResouce(rasterizerState);
-		context->setDeafultResouce(state);
+		context->setDeafultResource(blendState);
+		context->setDeafultResource(rasterizerState);
+		context->setDeafultResource(state);
 		for (int i = 0; i < m_shapeNum; i++) {
 			context->draw(m_shapes[i], x, y);
 		}
-		context->setDeafultResouce(rasterizerState->getResouceType(), NULL);
-		context->setDeafultResouce(state->getResouceType(), NULL);
-		context->setDeafultResouce(blendState->getResouceType(), NULL);
+		context->setDeafultResource(rasterizerState->getResouceType(), NULL);
+		context->setDeafultResource(state->getResouceType(), NULL);
+		context->setDeafultResource(blendState->getResouceType(), NULL);
 		state->release();
 		rasterizerState->release();
 		blendState->release();

@@ -82,7 +82,7 @@ namespace FCT {
 
 	void Text::predraw(Context* context,int x,int y)
 	{
-		DepthStencilState* state = context->createResouce->DepthStencilState();
+		DepthStencilState* state = context->createResource->DepthStencilState();
 		state->setDepthEnable(false);
 		state->setBackFaceStencilFail(stencil_op_invert);
 		state->setBackFaceStencilPass(stencil_op_invert);
@@ -93,20 +93,20 @@ namespace FCT {
 		state->setBackFaceStencilFunc(stencil_func_equal);
 		state->setFrontFaceStencilFunc(stencil_func_equal);
 		state->setRefStencil(0);
-		RasterizerState* rasterizerState = context->createResouce->RasterizerState();
+		RasterizerState* rasterizerState = context->createResource->RasterizerState();
 		rasterizerState->setCullMode(cull_mode_none);
 		rasterizerState->create(context);
-		BlendState* blendState = context->createResouce->BlendState();
+		BlendState* blendState = context->createResource->BlendState();
 		blendState->alphaToCoverage(m_alphaToCoverage);
-		context->setDeafultResouce(blendState);	
-		context->setDeafultResouce(rasterizerState);
-		context->setDeafultResouce(state);
+		context->setDeafultResource(blendState);	
+		context->setDeafultResource(rasterizerState);
+		context->setDeafultResource(state);
 		for (int i = 0; i < m_charShapesNum; i++) {
 			for (int j = 0; j < m_shapeNum[i] - 1; j++) {
 				context->draw(m_shape[i][j], x, y);
 			}
 		}
-		DepthStencilState* fillState = context->createResouce->DepthStencilState();
+		DepthStencilState* fillState = context->createResource->DepthStencilState();
 		fillState->setRefStencil(255);
 		fillState->setDepthEnable(false);
 		fillState->setStencilEnable(true);
@@ -116,15 +116,15 @@ namespace FCT {
 		fillState->setBackFaceStencilPass(stencil_op_keep);
 		fillState->setFrontFaceStencilFail(stencil_op_keep);
 		fillState->setFrontFaceStencilPass(stencil_op_keep);
-		context->setDeafultResouce(fillState);
+		context->setDeafultResource(fillState);
 		for (int i = 0; i < m_charShapesNum; i++) {
 			if (m_shape[i]) {
 				context->draw(m_shape[i][m_shapeNum[i] - 1], x, y);
 			}
 		}
-		context->setDeafultResouce(rasterizerState->getResouceType(), NULL);
-		context->setDeafultResouce(state->getResouceType(), NULL);
-		context->setDeafultResouce(blendState->getResouceType(), NULL);
+		context->setDeafultResource(rasterizerState->getResouceType(), NULL);
+		context->setDeafultResource(state->getResouceType(), NULL);
+		context->setDeafultResource(blendState->getResouceType(), NULL);
 		fillState->release();
 		state->release();
 		rasterizerState->release();

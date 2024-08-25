@@ -146,6 +146,7 @@ namespace FCT {
 //引用计数
 #include "RefCount.h"
 //杂项类
+#include "Atomic.h"
 #include "Vector.h"
 #include "struct.h"
 #include "Queue.h"
@@ -168,8 +169,9 @@ namespace FCT {
 #include "Text.h"
 #include "TextDevice.h"
 #include "Context.h"
+#include "Thread.h"
 #include "mutex.h"
-#include "Atomic.h"
+#include "Renderer.h"
 //适配创建
 
 #ifdef _WIN32

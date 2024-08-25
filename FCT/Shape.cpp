@@ -64,7 +64,7 @@ namespace FCT {
 			vertices[i * 4 + 3].tex = { (m_u1 + m_u2) / 2, (m_v1 + m_v2) / 2 };
 		}
 		RasterizerState* cr;
-		cr = context->createResouce->RasterizerState();
+		cr = context->createResource->RasterizerState();
 		cr->setCullMode(cull_mode_none);
 		cr->create(context);
 		m_resouce = FCT_NEWS(ContextResouce*,3);
@@ -202,7 +202,7 @@ namespace FCT {
 			"}"
 		);
 		/**
-		m_resouce[4] = context->createResouce->GeometryShader();
+		m_resouce[4] = context->createResource->GeometryShader();
 
 		((GeometryShader*)m_resouce[4])->setCode(
 		"struct Bezier"

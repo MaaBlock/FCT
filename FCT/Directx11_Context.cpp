@@ -45,7 +45,7 @@ namespace FCT {
 		m_target = NULL;
 		m_rasterizerState = NULL;
 		m_geometryShader = NULL;
-		createResouce = FCT_NEW(Directx11_CreateContextFactory);
+		createResource = FCT_NEW(Directx11_CreateContextFactory);
 
 	}
 	void Directx11_Context::clear(float r, float g, float b, float a)
@@ -270,11 +270,11 @@ namespace FCT {
 	{
 		return FCT_NEW(Directx11_VertexShader,m_device, code);
 	}
-	void Directx11_Context::setDeafultResouce(ContextResouce* resouce)
+	void Directx11_Context::setDeafultResource(ContextResouce* resouce)
 	{
-		setDeafultResouce(resouce->getResouceType(), resouce);
+		setDeafultResource(resouce->getResouceType(), resouce);
 	}
-	void Directx11_Context::setDeafultResouce(context_resouce_t resoutType, ContextResouce* resouce)
+	void Directx11_Context::setDeafultResource(context_resouce_t resoutType, ContextResouce* resouce)
 	{
 		switch (resoutType)
 		{

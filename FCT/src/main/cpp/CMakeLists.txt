@@ -10,7 +10,7 @@ project("fct")
 add_library(fct SHARED
         ../../../main.cpp
         ../../../AndroidOut.cpp
-        ../../../Renderer.cpp
+        #../../../Renderer.cpp
         ../../../Shader.cpp
         ../../../TextureAsset.cpp
         ../../../Android_Window.cpp
