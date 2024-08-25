@@ -171,6 +171,7 @@ namespace FCT {
 #include "Context.h"
 #include "Thread.h"
 #include "mutex.h"
+#include "ConditionVariable.h"
 #include "Renderer.h"
 //  ≈‰¥¥Ω®
 
@@ -187,6 +188,7 @@ namespace FCT {
 
 #ifdef _WIN32
 #include "Win32_Mutex.h"
+#include "Win32_ConditionVariable.h"
 #include "DirectXMath_Matrix.h"
 #include "UIManager.h"
 #include "UIControl.h"

@@ -1,45 +1,55 @@
 #include "hander.h"
 
 namespace FCT {
-    class Renderer : public RefCounted
-    {
-    public:
-        static void RendererThread(void* arg);
-        Renderer();
-        ~Renderer();
-        Context* getContext() { return m_context; }
-        void addCommand(void(*command)(Context*));
-
-    private:
-        Context* m_context;
-        LockFreeQueue<void(*)(Context*)> commandQueue;
-        Atomic<bool> running;
-        Thread* renderThread;
-    };
     void Renderer::RendererThread(void* arg)
     {
         Renderer* renderer = static_cast<Renderer*>(arg);
-        while (renderer->running.value()) {
-            void(*command)(Context*);
-            if (renderer->commandQueue.dequeue(command)) {
-                command(renderer->m_context);
+        while (renderer->m_running.value()) {
+            Command command;
+            if (renderer->m_commandQueue.dequeue(command)) {
+                command.func(renderer->m_context, command.arg);
+            }
+            if (renderer->m_flushRequested.value()) {
+                renderer->m_flushMutex->lock();
+                renderer->m_flushRequested = false;
+                renderer->m_flushCondition->notifyAll();
+                renderer->m_flushMutex->unlock();
             }
         }
     }
-    Renderer::Renderer() : m_context(nullptr), commandQueue(1024), running(true)
+
+    Renderer::Renderer() : m_context(nullptr), m_commandQueue(1024), m_running(true), m_flushRequested(false)
     {
-        renderThread = new Thread(RendererThread, this);
+        m_flushMutex = CreateMutex();
+        m_flushMutex->create();
+        m_flushCondition = CreateConditionVariable();
+        m_renderThread = new Thread(RendererThread, this);
     }
+
     Renderer::~Renderer()
     {
-        running = false;
-        renderThread->join();
-        delete renderThread;
+        m_running = false;
+        m_renderThread->join();
+        delete m_renderThread;
+        delete m_flushMutex;
+        delete m_flushCondition;
     }
-    void Renderer::addCommand(void(*command)(Context*))
+
+    void Renderer::addCommand(void(*command)(Context*, void*), void* arg)
     {
-        while (!commandQueue.enqueue(command)) {
-			Sleep(1); 
+        Command cmd = { command, arg };
+        while (!m_commandQueue.enqueue(cmd)) {
+            Sleep(1);
         }
+    }
+
+    void Renderer::flush()
+    {
+        m_flushMutex->lock();
+        m_flushRequested = true;
+        while (m_flushRequested.value()) {
+            m_flushCondition->wait(m_flushMutex);
+        }
+        m_flushMutex->unlock();
     }
 }

@@ -24,6 +24,9 @@ public:
 			m_mutex = NULL;
 		}
 	}
+	HANDLE getHandle() {
+		return m_mutex;
+	}
 private:
 	HANDLE m_mutex;
 };
