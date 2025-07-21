@@ -48,6 +48,10 @@ namespace FCT {
         void size(int w, int h) {
             m_behavior->size(w, h);
         }
+        /**
+         *@note if binded context,must call context->flush() every frame.
+         */
+        virtual void bind(Context* ctx) override = 0;
         virtual void create() = 0;
 		virtual bool isRunning() const = 0;
 		virtual void swapBuffers() = 0;
