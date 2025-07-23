@@ -42,7 +42,7 @@ namespace FCT {
 		};
 		using TokenGraphSavedBoostGraph =
 			boost::adjacency_list<
-				boost::listS,
+				boost::vecS,
 				boost::listS,
 				boost::bidirectionalS,
 				int, //weak ref
@@ -128,40 +128,15 @@ namespace FCT {
 		void addBoostEdge(Token from, Token to)
 		{
 			boost::add_edge(m_vertex.left.at(from), m_vertex.left.at(to), 1, m_graph);
-		}/*
+		}
 		void removeBoostEdge(Token from, Token to)
 		{
 			auto from_it = m_vertex.left.find(from);
             auto to_it = m_vertex.left.find(to);
             if (from_it!= m_vertex.left.end() && to_it!= m_vertex.left.end())
             {
-            	auto edge_pair = boost::edge(from_it->second, to_it->second, m_graph);
-            	if (edge_pair.second) {
-            		boost::remove_edge(edge_pair.first, m_graph);
-            		//boost::remove_edge(from_it->second, to_it->second, m_graph);
-            	}
-                //boost::remove_edge(from_it->second, to_it->second, m_graph);
+                boost::remove_edge(from_it->second, to_it->second, m_graph);
             }
-		}*/
-
-		void removeBoostEdge(Token from, Token to)
-		{
-			auto from_it = m_vertex.left.find(from);
-			auto to_it = m_vertex.left.find(to);
-
-			if (from_it != m_vertex.left.end() && to_it != m_vertex.left.end()) {
-				BoostVertex from_vertex = from_it->second;
-				BoostVertex to_vertex = to_it->second;
-
-				// 找到边迭代器并删除
-				auto edge_range = boost::out_edges(from_vertex, m_graph);
-				for (auto it = edge_range.first; it != edge_range.second; ++it) {
-					if (boost::target(*it, m_graph) == to_vertex) {
-						boost::remove_edge(it, m_graph);
-						break;
-					}
-				}
-			}
 		}
 		void addEdge(Token node, Token rhs,bool isSuccessor)
 		{
