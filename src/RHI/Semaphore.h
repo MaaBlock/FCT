@@ -1,4 +1,4 @@
-//
+﻿//
 // Created by Administrator on 2025/4/1.
 //
 #ifndef SEMAPHORE_H

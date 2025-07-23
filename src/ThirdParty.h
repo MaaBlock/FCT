@@ -65,6 +65,10 @@
 #include <boost/graph/adjacency_list.hpp>
 #include <boost/graph/topological_sort.hpp>
 #include <boost/graph/graphviz.hpp>
+#include <boost/container/flat_map.hpp>
+#include <boost/bimap.hpp>
+#include <boost/bimap/unordered_set_of.hpp>
+
 
 #include <thread>
 #include <map>
@@ -141,5 +145,6 @@ namespace FCT {
 #include <filesystem>
 #include <set>
 #include <queue>
+
 
 #endif // FCT_THIRDPARTY_HEADER

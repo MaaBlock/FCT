@@ -58,7 +58,8 @@ namespace FCT {
     }
 
 
-    Context::Context(Runtime* runtime) {
+    Context::Context(Runtime* runtime)
+    {
         m_defaultGraph = new RenderGraph(this);
         m_currentGraph = m_defaultGraph;
         m_currentGraph->addRef();
@@ -82,6 +83,47 @@ namespace FCT {
         m_maxFrameInFlight = 3;
         m_imageLoader = runtime->createImageLoader();
         m_modelLoader = runtime->createModelLoader();
+        m_submitTickers[RenderGraphSubmitTickerName] = {
+            [this]()
+            {
+                m_currentGraph->updateFrameIndices();
+                m_currentGraph->checkAndUpdateResourceSizes();
+                m_currentGraph->updateResource();
+            },
+            {},
+            {
+                RenderGraphExcutePassSubmitTickerName
+            }
+        };
+        m_submitTickers[RenderGraphExcutePassSubmitTickerName] = {
+            [this]()
+            {
+                ScopeTimer submitCmdAndWaitUploadTimer("submitCmdAndWaitUpload");
+                auto cmdBuf = getCmdBuf(m_bindWindows[0], 0);
+                cmdBuf->reset();
+                cmdBuf->begin();
+                excutePasses(cmdBuf);
+                cmdBuf->end();
+                cmdBuf->submit();
+            },
+            {},
+            {
+                SwapBufferSubmitTicker
+            }
+        };
+        m_submitTickers[SwapBufferSubmitTicker] = {
+            [this]()
+            {
+                std::this_thread::yield();
+                {
+                    ScopeTimer waitGpuTimer("waitGpu");
+                    swapBuffers();
+                }
+            },
+            {},
+            {}
+        };
+        m_submitTickers.update();
     }
 
     Context::~Context() {

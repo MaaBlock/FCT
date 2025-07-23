@@ -1,4 +1,4 @@
-#ifndef FCT_FORMAT_H
+﻿#ifndef FCT_FORMAT_H
 #define FCT_FORMAT_H
 #include "../ThirdParty.h"
 namespace FCT {

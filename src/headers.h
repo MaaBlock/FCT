@@ -12,6 +12,7 @@
 #include "./DebugTools/ScopeTimer.h"
 #include "./Base/Flags.h"
 #include "./Bases.h"
+#include "./Base/TokenGraph.h"
 #include "./Memory/ObjectPool.h"
 #include "Runtime/Runtime.h"
 #include "./Context/Vertex.h"

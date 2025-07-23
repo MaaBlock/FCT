@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "../ThirdParty.h"
 #include "../ToolDefine.h"
 #include "../Bases.h"
@@ -38,9 +38,9 @@
 #include "SemaphorePool.h"
 namespace FCT
 {
+
 	class BlendState;
 	class Pass;
-
 	namespace RHI
 	{
 		class TextureView;
@@ -56,7 +56,7 @@ namespace FCT
 	class Window;
 	class SemaphorePool;
 	class FencePool;
-	using SumitTicker = std::function<void()>;
+	using SubmitTicker = std::function<void()>;
 	using TickerToken = uint32_t;
 	struct FrameResource
 	{
@@ -91,6 +91,14 @@ namespace FCT
 	 *1.作为Context接口
 	 *2.作为RenderGraph系统
 	 *3.作为帧 管理器（合并在RenderGraph系统）
+	 */
+	constexpr const char* RenderGraphSubmitTickerName = "RenderGraphSubmitTicker";
+	constexpr const char* RenderGraphExcutePassSubmitTickerName = "RenderGraphExcutePassSubmitTicker";
+	constexpr const char* SwapBufferSubmitTicker = "SwapBufferSubmitTicker";
+	/**
+	 *@note successors of RenderGraphSubmitTicker has RenderGraphExcutePassSubmitTickerName SwapBufferSubmitTicker
+	 *		successors of RenderGraphExcutePassSubmitTickerName has SwapBufferSubmitTicker
+	 *		if you want to
 	 */
 	class Runtime;
 	class Context : public RefCount
@@ -218,20 +226,6 @@ namespace FCT
 		void swapBuffers();
 		void defaultTick()
 		{
-			{
-				ScopeTimer submitCmdAndWaitUploadTimer("submitCmdAndWaitUpload");
-				auto cmdBuf = getCmdBuf(m_bindWindows[0], 0);
-				cmdBuf->reset();
-				cmdBuf->begin();
-				excutePasses(cmdBuf);
-				cmdBuf->end();
-				cmdBuf->submit();
-			}
-			std::this_thread::yield();
-			{
-				ScopeTimer waitGpuTimer("waitGpu");
-				swapBuffers();
-			}
 		}
 		virtual RHI::RenderTargetView* createRenderTargetView() = 0;
 		void addBindWindow(Window* wnd)
@@ -242,18 +236,10 @@ namespace FCT
 		}
 		void tick()
 		{
-			m_currentGraph->updateFrameIndices();
-			m_currentGraph->checkAndUpdateResourceSizes();
-			m_currentGraph->updateResource();
-			m_ticker();
-		}
-		/*
-		 * 初始化阶段 可以在flush前任意修改，因为提交线程一直在等待下一帧
-		 * 运行阶段 不允许修改 或 拆分flush函数，在wait currentFlush和nextFrame之间修改
-		 */
-		void submitTicker(SumitTicker ticker)
-		{
-			m_ticker = ticker;
+			auto order = m_submitTickers.order();
+			for (auto& ticker : order) {
+                ticker();
+            }
 		}
 		void createCompiler();
 		ShaderCompiler* getCompiler() { return m_compiler; }
@@ -267,11 +253,17 @@ namespace FCT
 		{
 			return m_currentGraph->getPassTargetToWnd(wnd);
 		}
+		/*
+		 * 初始化阶段 可以在flush前任意修改，因为提交线程一直在等待下一帧
+		 * 运行阶段 不允许修改 或 拆分flush函数，在wait currentFlush和nextFrame之间修改
+		 */
+		auto& submitTickers() { return m_submitTickers; }
 	public:
 		void nextFrame();
 		void currentFlush();
 	protected:
-		SumitTicker m_ticker;
+		TokenGraph<std::string,SubmitTicker> m_submitTickers;
+		SubmitTicker m_ticker;
 		std::vector<Window*> m_bindWindows;
 		bool m_nextFrame;
 		bool m_currentFlush;
@@ -316,6 +308,10 @@ namespace FCT
 		void advanceLogicFrame()
 		{
 			m_logicFrameIndex = (m_logicFrameIndex + 1) % m_maxFrameInFlight;
+		}
+		constexpr const char* getRenderGraphSubmitTickerName()
+		{
+			return RenderGraphSubmitTickerName;
 		}
 	protected:
 		void initWndFrameResources(Window* wnd);
@@ -386,6 +382,7 @@ namespace FCT
 		{
 			return m_currentGraph->getPassByName(name);
 		}
+
 	};
 }
 

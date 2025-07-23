@@ -1,4 +1,4 @@
-#ifndef FCT_WINDOW_H
+﻿#ifndef FCT_WINDOW_H
 #define FCT_WINDOW_H
 #include "../MutilThreadBase/RefCount.h"
 #include "../Context/DataTypes.h"
