@@ -5,9 +5,10 @@
 #ifndef TOKENGRAPH_H
 #define TOKENGRAPH_H
 #include "../ThirdParty.h"
+#include "Noncopyable.h"
 namespace FCT {
 	template<typename Token,typename Value>
-	class TokenGraph
+	class TokenGraph : public Noncopyable
 	{
 	public:
 		class NodeProbe;
@@ -42,7 +43,7 @@ namespace FCT {
 		};
 		using TokenGraphSavedBoostGraph =
 			boost::adjacency_list<
-				boost::vecS,
+				boost::listS,
 				boost::listS,
 				boost::bidirectionalS,
 				int, //weak ref
@@ -135,7 +136,12 @@ namespace FCT {
             auto to_it = m_vertex.left.find(to);
             if (from_it!= m_vertex.left.end() && to_it!= m_vertex.left.end())
             {
-                boost::remove_edge(from_it->second, to_it->second, m_graph);
+            	auto edge_pair = boost::edge(from_it->second, to_it->second, m_graph);
+            	if (edge_pair.second)
+            	{
+            		boost::remove_edge(edge_pair.first, m_graph);
+            	}
+                //boost::remove_edge(from_it->second, to_it->second, m_graph);
             }
 		}
 		void addEdge(Token node, Token rhs,bool isSuccessor)

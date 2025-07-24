@@ -89,7 +89,7 @@ namespace FCT {
 		out << "不在object表里不delete的数量:" << fct_object_count_delete_without_object << std::endl;
 		out << "未释放对象总计:" << fct_object_list.size() << std::endl;
 	}
-#endif
+
 	inline void _add_object(void* ptr, const std::string& describe)
 	{
 		_fct_object_t* object = new _fct_object_t;
@@ -113,6 +113,14 @@ namespace FCT {
 		fct_object_count_delete_without_object++;
 		return false;
 	}
+
+	template<typename T>
+	inline void AllocatorDelete(T* ptr)
+	{
+		FCT::_remove_object(ptr);
+		operator delete[](ptr);
+	}
+#endif
 	template<typename T>
 	inline T* AllocatorNew(size_t size)
 	{
@@ -123,12 +131,6 @@ namespace FCT {
 #else
 		return static_cast<T*>(operator new[](sizeof(T) * size));
 #endif
-	}
-	template<typename T>
-	inline void AllocatorDelete(T* ptr)
-	{
-		FCT::_remove_object(ptr);
-		operator delete[](ptr);
 	}
 	template<typename T>
 	inline T* New(T* ptr)

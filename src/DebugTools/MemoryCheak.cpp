@@ -1,5 +1,5 @@
 #include "MemoryCheak.h"
-#ifdef FCT_MEMORY_CHEAK
+#if defined(FCT_DEBUG) && defined(FCT_USE_MEMORY_CHECK)
 namespace FCT {
 	std::vector<_fct_object_t*> fct_object_list = std::vector<_fct_object_t*>();
 	std::string fct_object_info = std::string();

@@ -218,7 +218,7 @@ if (FCT_ANDROID)
     set(CMAKE_CXX_STANDARD 20)
     find_package(VulkanHeaders CONFIG REQUIRED)
 else()
-    set(CMAKE_CXX_STANDARD 17)
+    set(CMAKE_CXX_STANDARD 20)
 endif ()
 
 add_library(FCT STATIC

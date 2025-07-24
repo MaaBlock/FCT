@@ -28,7 +28,7 @@ namespace FCT
             if (m_objects)
             {
                 clear();
-                AllocatorDelete(m_objects);
+                //AllocatorDelete(m_objects);
             }
         }
         template<typename... Args>
