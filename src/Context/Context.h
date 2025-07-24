@@ -57,6 +57,7 @@ namespace FCT
 	class SemaphorePool;
 	class FencePool;
 	using SubmitTicker = std::function<void()>;
+	using SyncTicker = std::function<void()>;
 	using TickerToken = uint32_t;
 	struct FrameResource
 	{
@@ -95,6 +96,7 @@ namespace FCT
 	constexpr const char* RenderGraphSubmitTickerName = "RenderGraphSubmitTicker";
 	constexpr const char* RenderGraphExcutePassSubmitTickerName = "RenderGraphExcutePassSubmitTicker";
 	constexpr const char* SwapBufferSubmitTicker = "SwapBufferSubmitTicker";
+	constexpr const char* RenderGraphSyncTicker_SwapJobQueueName = "RenderGraphSyncTicker_SwapJobQueue";
 	/**
 	 *@note successors of RenderGraphSubmitTicker has RenderGraphExcutePassSubmitTickerName SwapBufferSubmitTicker
 	 *		successors of RenderGraphExcutePassSubmitTickerName has SwapBufferSubmitTicker
@@ -187,6 +189,7 @@ namespace FCT
 		}
 
 	public:
+		auto& syncTickers(){ return m_syncTickers; }
 		void flush()
 		{
 			m_logicTask.consume_all([](LogicTaskData*& data) {
@@ -195,7 +198,11 @@ namespace FCT
             });
 			advanceLogicFrame();
 			FCT_WAIT_FOR(m_currentFlush);
-            m_currentGraph->swapJobQueue();
+			auto tickers = m_syncTickers.order();
+			for (auto ticker : tickers)
+			{
+				ticker();
+			}
 			nextFrame();
 			beginFrameTick();
 		}
@@ -263,6 +270,7 @@ namespace FCT
 		void currentFlush();
 	protected:
 		TokenGraph<std::string,SubmitTicker> m_submitTickers;
+		TokenGraph<std::string, SyncTicker> m_syncTickers;
 		SubmitTicker m_ticker;
 		std::vector<Window*> m_bindWindows;
 		bool m_nextFrame;

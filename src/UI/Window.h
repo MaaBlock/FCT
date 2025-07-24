@@ -63,6 +63,10 @@ namespace FCT {
 		void unregisterHandler(EventHandler* handler);
 		virtual Vec2 getCursorPos() const = 0;
 		void clearHandler();
+		Image* targetImage() const
+		{
+			return m_swapchain->getCurrentTarget()->targetImage();
+		}
 		CallBackEventHandler* getCallBack() const {
 			return m_callbackHandler;
 		}
@@ -144,6 +148,10 @@ namespace FCT {
 				m_autoViewport.ctx(m_ctx);
 				m_autoViewport.enableForWndAllPass(this);
 			}
+		}
+		RHI::Swapchain* swapchain() const
+		{
+			return m_swapchain;
 		}
 	private:
 	protected:

@@ -340,7 +340,7 @@ namespace FCT {
             return Samples::sample_1;
         }
 
-        ImageRenderTarget* VK_Swapchain::getCurrentTarget()
+        ImageRenderTarget* VK_Swapchain::getCurrentTarget() const
         {
             return m_target;
         }

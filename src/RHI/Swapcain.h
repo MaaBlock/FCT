@@ -33,13 +33,15 @@ namespace FCT
                 m_width = width;
                 m_height = height;
             }
+            virtual ImageRenderTarget* target() const = 0;
+            virtual FCT::Image* image() const = 0;
             virtual void enableDepthBuffer(Format format) = 0;
             virtual void create() = 0;
             virtual void present() = 0;
             virtual Format getFormat() const = 0;
             virtual Samples getSamples() const = 0;
             virtual void acquireFirstImage() = 0;
-            virtual ImageRenderTarget* getCurrentTarget() = 0;
+            virtual ImageRenderTarget* getCurrentTarget() const = 0;
             virtual RHI::Semaphore* getImageAvailableSemaphore() = 0;
             virtual void setPresentFinshSemaphore(RHI::Semaphore* semaphore) = 0;
             virtual void needRecreate() = 0;

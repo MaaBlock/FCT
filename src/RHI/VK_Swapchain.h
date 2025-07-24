@@ -34,7 +34,7 @@ namespace FCT{
             vk::Extent2D getExtent() const;
             Format getFormat() const override;
             Samples getSamples() const override;
-            ImageRenderTarget* getCurrentTarget() override;
+            ImageRenderTarget* getCurrentTarget() const override ;
             void setPresentFinshSemaphore(RHI::Semaphore* semaphore) override;
             RHI::Semaphore* getImageAvailableSemaphore() override;
             uint32_t getImageCount() const override
@@ -42,6 +42,14 @@ namespace FCT{
                 return m_fctImages.size();
             }
             Samples getSampleCount() const override;
+            ImageRenderTarget* target() const override
+            {
+                return m_target;
+            }
+            FCT::Image* image() const override
+            {
+                return m_fctImage;
+            }
         private:
             bool m_recreated;
             bool m_needRecreated;

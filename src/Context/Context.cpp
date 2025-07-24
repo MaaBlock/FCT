@@ -4,6 +4,7 @@
 #include "../FCTAPI.h"
 #include "Context.h"
 
+
 namespace FCT {
     void Context::nextFrame() {
         m_nextFrame = true;
@@ -124,6 +125,16 @@ namespace FCT {
             {}
         };
         m_submitTickers.update();
+        m_syncTickers[RenderGraphSyncTicker_SwapJobQueueName] =
+            {
+                [this]()
+                {
+                    m_currentGraph->swapJobQueue();
+                },
+            {},
+            {}
+            };
+        m_syncTickers.update();
     }
 
     Context::~Context() {
