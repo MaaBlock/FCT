@@ -49,7 +49,11 @@ namespace FCT {
             m_behavior->size(w, h);
         }
         /**
+         *@cond ENGLISH
          *@note if binded context,must call context->flush() every frame.
+         *@endcond
+         *@cond CHINESE
+         *@note 如果绑定了上下文,需要每帧调用一次ctx->flush()
          */
         virtual void bind(Context* ctx) override = 0;
         virtual void create() = 0;
@@ -65,13 +69,13 @@ namespace FCT {
 		void clearHandler();
 		Image* targetImage() const
 		{
-			return m_swapchain->getCurrentTarget()->targetImage();
+			return m_swapchain->target()->targetImage();
 		}
 		CallBackEventHandler* getCallBack() const {
 			return m_callbackHandler;
 		}
 		ImageRenderTarget* getCurrentTarget() {
-			return m_swapchain->getCurrentTarget();
+			return m_swapchain->target();
 		}
 		void addRenderFinshSemaphore(RHI::Semaphore* semaphore)
 		{
@@ -194,8 +198,8 @@ namespace FCT {
     	{
     		if (m_swapchain)
     		{
-    			m_swapchain->size(w,h);
-    			m_swapchain->needRecreate();
+    			//m_swapchain->size(w,h);
+    			m_swapchain->needRecreate(w,h);
     		}
     	});
         registerHandler(m_callbackHandler);

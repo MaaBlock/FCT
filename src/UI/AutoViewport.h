@@ -4,6 +4,7 @@
 
 #ifndef FCT_AUTOVIEWPORT_H
 #define FCT_AUTOVIEWPORT_H
+#include "../RHI/CommandBuffer.h"
 namespace FCT
 {
     class Context;
@@ -16,6 +17,7 @@ namespace FCT
         void ctx(FCT::Context* ctx);
         void resize(int width, int height);
         void computeViewport();
+        void submit(RHI::CommandBuffer* cmdBuf);
         void submit();
         void addPass(const std::string& name);
         bool wndPosToViewportPos(Vec2 wndPos,Vec2& viewportPos) const;

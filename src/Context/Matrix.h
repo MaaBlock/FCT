@@ -194,7 +194,15 @@ namespace FCT
 				0, 0, 0, 1};
 			*this = *this * rot;
 		}
-
+		Vec4 operator*(const Vec4& vec) const
+		{
+			Vec4 result;
+			result.x = m[0] * vec.x + m[1] * vec.y + m[2] * vec.z + m[3] * vec.w;
+			result.y = m[4] * vec.x + m[5] * vec.y + m[6] * vec.z + m[7] * vec.w;
+			result.z = m[8] * vec.x + m[9] * vec.y + m[10] * vec.z + m[11] * vec.w;
+			result.w = m[12] * vec.x + m[13] * vec.y + m[14] * vec.z + m[15] * vec.w;
+			return result;
+		 }
 		void scale(float x, float y, float z)
 		{
 			Mat4 scl = {

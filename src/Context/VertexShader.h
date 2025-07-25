@@ -31,16 +31,6 @@ namespace FCT {
         {
             m_userSource = source;
         }
-        void generateDefaultCode()
-        {
-            m_userSource =  m_ctx->getGenerator()->generateDefaultVertexMain(m_vertexLayouts,m_pixelLayout);
-        }
-        void compile()
-        {
-            m_binaryCode.code(
-                m_ctx->getCompiler()->compile(m_source,"FCTEntry",ShaderKind::VertexShader)
-                );
-        }
         void create()
         {
             m_vertexShader = m_ctx->newRhiVertexShader();
@@ -55,10 +45,6 @@ namespace FCT {
             }
             m_vertexShader->code(m_binaryCode.code());
             m_vertexShader->create();
-        }
-        void preprocess()
-        {
-            m_source = m_ctx->getGenerator()->generateVertexShader(m_vertexLayouts, m_pixelLayout,m_uniformLayouts,m_binaryCode,m_resourceLayout,m_userSource);
         }
         RHI::ShaderBinary binaryCode()
         {
@@ -97,6 +83,20 @@ namespace FCT {
             m_resourceLayout = layout;
         }
     protected:
+        void generateDefaultCode()
+        {
+            m_userSource =  m_ctx->getGenerator()->generateDefaultVertexMain(m_vertexLayouts,m_pixelLayout);
+        }
+        void compile()
+        {
+            m_binaryCode.code(
+                m_ctx->getCompiler()->compile(m_source,"FCTEntry",ShaderKind::VertexShader)
+                );
+        }
+        void preprocess()
+        {
+            m_source = m_ctx->getGenerator()->generateVertexShader(m_vertexLayouts, m_pixelLayout,m_uniformLayouts,m_binaryCode,m_resourceLayout,m_userSource);
+        }
         RHI::ShaderBinary m_binaryCode;
         Context* m_ctx;
         std::map<uint32_t,VertexLayout> m_vertexLayouts;

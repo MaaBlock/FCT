@@ -29,6 +29,23 @@ namespace FCT {
 		}
 		std::atomic<size_t> m_refCount;
 	};
+
+	/**
+	 * @cond CHINESE
+	 * @brief 用于自定义对象销毁行为
+	 * @note 对于继承了DeletableTrait和引用计数类的 添加该函数
+	 * @code
+     *  void deleteThis() override {
+	 *		if (!applyDeleter(this)) {
+	 *			FCT_DELETE(this);
+	 *		}
+	 *  }
+	 * @endcode
+	 * 使得其可以自定义删除时的 操作，
+	 * 主要用于实现对象池
+	 * @tparam T 子类类型
+	 * @endcond
+	 */
 	template<typename T>
 	class DeletableTrait {
 	public:
@@ -55,6 +72,13 @@ namespace FCT {
 	private:
 		DeleterType m_deleter;
 	};
+
+	/**
+	 * @cond CHINESE
+	 * @tparam T 被检测的类型
+	 * @tparam U
+	 * @endcond
+	 */
 	template<typename T, typename U = T>
 	struct IsDeletableTrait : std::is_base_of<DeletableTrait<U>, T> {};
 	inline void safeAddRef(RefCount* obj) {

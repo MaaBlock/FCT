@@ -16,7 +16,6 @@ namespace FCT {
             addRef();
             if (m_semaphore)
             {
-                m_ctx->device().waitIdle();
                 m_ctx->device().destroySemaphore(m_semaphore);
                 m_semaphore = nullptr;
             }

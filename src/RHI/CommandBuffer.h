@@ -3,7 +3,6 @@
 //
 #include "../MutilThreadBase/RefCount.h"
 #include "../Base/Flags.h"
-#include "RasterizationPipeline.h"
 #ifndef COMMANDBUFFER_H
 #define COMMANDBUFFER_H
 
@@ -12,6 +11,7 @@ namespace FCT
 {
     namespace RHI
     {
+        class RasterizationPipeline;
         class Semaphore;
         class Fence;
         enum class CommandBufferLevel

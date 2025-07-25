@@ -23,16 +23,6 @@ namespace FCT {
         {
             m_userSource = source;
         }
-        void generateDefaultCode()
-        {
-            m_userSource = m_ctx->getGenerator()->generateDefaultPixelMain(m_pixelLayout);
-        }
-        void compile()
-        {
-            m_binaryCode.code(
-                m_ctx->getCompiler()->compile(m_source,"FCTEntry",ShaderKind::FragmentShader)
-                );
-        }
         void create()
         {
             m_pixelShader = m_ctx->newRhiPixelShader();
@@ -47,10 +37,6 @@ namespace FCT {
             }
             m_pixelShader->code(m_binaryCode.code());
             m_pixelShader->create();
-        }
-        void preprocess()
-        {
-            m_source = m_ctx->getGenerator()->generatePixelShader(m_pixelLayout,m_uniformLayouts,m_binaryCode,m_resourceLayout, m_userSource);
         }
         RHI::ShaderBinary binaryCode()
         {
@@ -73,6 +59,20 @@ namespace FCT {
             m_resourceLayout = layout;
         }
     protected:
+        void generateDefaultCode()
+        {
+            m_userSource = m_ctx->getGenerator()->generateDefaultPixelMain(m_pixelLayout);
+        }
+        void compile()
+        {
+            m_binaryCode.code(
+                m_ctx->getCompiler()->compile(m_source,"FCTEntry",ShaderKind::FragmentShader)
+                );
+        }
+        void preprocess()
+        {
+            m_source = m_ctx->getGenerator()->generatePixelShader(m_pixelLayout,m_uniformLayouts,m_binaryCode,m_resourceLayout, m_userSource);
+        }
         RHI::ShaderBinary m_binaryCode;
         Context* m_ctx;
         PixelLayout m_pixelLayout;

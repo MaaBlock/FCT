@@ -7,6 +7,8 @@ namespace FCT {
         class ConstBuffer
         {
         public:
+            virtual ~ConstBuffer() = default;
+
             void layout(const ConstLayout& layout)
             {
                 m_layout = layout;

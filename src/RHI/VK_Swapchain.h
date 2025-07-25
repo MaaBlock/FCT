@@ -23,8 +23,8 @@ namespace FCT{
             void destroy();
             uint32_t getCurrentImageIndex() const;
             void present() override;
-            void acquireFirstImage();
-            void needRecreate();
+            bool acquireFirstImage();
+            void needRecreate(int width, int height) override;
             bool processRecreate(bool waitFence = false);
             void enableDepthBuffer(Format format) override;
             /*
@@ -34,7 +34,7 @@ namespace FCT{
             vk::Extent2D getExtent() const;
             Format getFormat() const override;
             Samples getSamples() const override;
-            ImageRenderTarget* getCurrentTarget() const override ;
+            ImageRenderTarget* target() const override ;
             void setPresentFinshSemaphore(RHI::Semaphore* semaphore) override;
             RHI::Semaphore* getImageAvailableSemaphore() override;
             uint32_t getImageCount() const override
@@ -42,17 +42,26 @@ namespace FCT{
                 return m_fctImages.size();
             }
             Samples getSampleCount() const override;
-            ImageRenderTarget* target() const override
-            {
-                return m_target;
-            }
             FCT::Image* image() const override
             {
                 return m_fctImage;
             }
+            bool doRecreate();
+            void sync() override;
         private:
+
+            void cleanupOldResources();
+            void setupQueueFamilies();
+            vk::SwapchainCreateInfoKHR buildSwapchainCreateInfo(const vk::SurfaceFormatKHR& format,
+                                                                vk::PresentModeKHR presentMode,
+                                                                const vk::Extent2D& extent, uint32_t imageCount,
+                                                                const vk::SurfaceCapabilitiesKHR& capabilities,
+                                                                uint32_t graphicsQueueFamily);
+            void createSwapchain(uint32_t width, uint32_t height);
+            void createImagesAndTargets();
             bool m_recreated;
             bool m_needRecreated;
+            bool m_recreatedFlag;
             MutilBufferImage* m_fctImage;
             MutilBufferImage* m_depthStencilImage;
             std::vector<RHI::Image*> m_fctImages;
@@ -72,6 +81,17 @@ namespace FCT{
             vk::Extent2D m_extent;
             uint32_t m_currentImageIndex = 0;
             RHI::VK_Semaphore* m_prensentFinshSemphore;
+            static constexpr uint32_t RECREATE_DEBOUNCE_MS = 50;
+            std::chrono::high_resolution_clock::time_point m_lastRecreateRequestTime;
+            /**
+             * @cond CHINESE
+             * @brief 窗口resize的时候传递的大小
+             * @endcond
+             * @cond ENGLISH
+             * @brief The size passed to the window resize callback
+             * @endcond
+             */
+            uint32_t m_pendingWidth = 0, m_pendingHeight = 0;
         };
 
         inline void VK_Swapchain::enableDepthBuffer(Format format)

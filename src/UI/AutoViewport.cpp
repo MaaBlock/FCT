@@ -46,6 +46,16 @@ namespace FCT
         }
     }
 
+    void AutoViewport::submit(RHI::CommandBuffer* cmdBuf)
+    {
+        if (m_needReviewport) {
+            computeViewport();
+            m_needReviewport = false;
+        }
+        cmdBuf->viewport(FCT::Vec2(m_viewportOffsetX, m_viewportOffsetY), FCT::Vec2(m_viewportOffsetX + m_viewportWidth, m_viewportOffsetY + m_viewportHeight));
+        cmdBuf->scissor(FCT::Vec2(m_viewportOffsetX, m_viewportOffsetY), FCT::Vec2(m_viewportOffsetX + m_viewportWidth, m_viewportOffsetY + m_viewportHeight));
+    }
+
     void AutoViewport::submit()
     {
         if (m_needReviewport) {

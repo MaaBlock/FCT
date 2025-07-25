@@ -131,6 +131,18 @@ namespace FCT {
                 {
                     m_currentGraph->swapJobQueue();
                 },
+            {InnerSync::CheckRecreateSwapchainSync},
+            {}
+            };
+        m_syncTickers[InnerSync::CheckRecreateSwapchainSync] =
+            {
+            [this]()
+            {
+                for (auto& window : m_bindWindows)
+                {
+                    window->swapchain()->sync();
+                }
+            },
             {},
             {}
             };

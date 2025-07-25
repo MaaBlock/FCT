@@ -142,7 +142,6 @@ namespace FCT
                 width = m_depthAttachments.rbegin()->second.image->width();
                 height = m_depthAttachments.rbegin()->second.image->height();
             }
-
             m_framebufferInfo.width = width;
             m_framebufferInfo.height = height;
             m_framebufferInfo.layers = 1;

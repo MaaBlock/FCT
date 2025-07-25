@@ -114,13 +114,15 @@ namespace FCT {
 		return false;
 	}
 
+#endif
 	template<typename T>
 	inline void AllocatorDelete(T* ptr)
 	{
+#ifdef FCT_DEBUG
 		FCT::_remove_object(ptr);
+#endif
 		operator delete[](ptr);
 	}
-#endif
 	template<typename T>
 	inline T* AllocatorNew(size_t size)
 	{

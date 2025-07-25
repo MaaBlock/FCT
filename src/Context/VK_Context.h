@@ -30,6 +30,7 @@ namespace FCT {
         {
             return new MutilBufferImage(this);
         }
+        RasterizationState* createRasterizationState() override;
         RHI::TextureView* createTextureView() override;
         RHI::Image* newRhiImage() override;
         RHI::ConstBuffer *createConstBuffer() override;

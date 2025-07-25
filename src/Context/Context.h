@@ -38,6 +38,7 @@
 #include "SemaphorePool.h"
 namespace FCT
 {
+	class RasterizationState;
 
 	class BlendState;
 	class Pass;
@@ -97,6 +98,10 @@ namespace FCT
 	constexpr const char* RenderGraphExcutePassSubmitTickerName = "RenderGraphExcutePassSubmitTicker";
 	constexpr const char* SwapBufferSubmitTicker = "SwapBufferSubmitTicker";
 	constexpr const char* RenderGraphSyncTicker_SwapJobQueueName = "RenderGraphSyncTicker_SwapJobQueue";
+	namespace InnerSync
+	{
+		constexpr const char* CheckRecreateSwapchainSync = "CheckRecreateSwapchainSync";
+	}
 	/**
 	 *@note successors of RenderGraphSubmitTicker has RenderGraphExcutePassSubmitTickerName SwapBufferSubmitTicker
 	 *		successors of RenderGraphExcutePassSubmitTickerName has SwapBufferSubmitTicker
@@ -140,9 +145,11 @@ namespace FCT
 		virtual Sampler* createSampler() = 0;
 		virtual SemaphorePool* createSemaphorePool() = 0;
 		virtual FencePool* createFencePool() = 0;
+
 	protected:
 		ModelLoader* m_modelLoader;
 	public:
+		virtual RasterizationState* createRasterizationState() = 0;
 		StaticMesh<uint32_t>* createMesh(const ModelMesh* modelMesh, const VertexLayout& layout)
 		{
 			if (!modelMesh) {
@@ -172,7 +179,7 @@ namespace FCT
 		StaticMesh<uint32_t>* loadMesh(const std::string& filename,const std::string& meshName, const VertexLayout& layout)
 		{
 			auto md = m_modelLoader->loadModel(filename);
-			auto mMesh =  md->findMesh("teapot");
+			auto mMesh =  md->findMesh(meshName);
 			return createMesh(mMesh,layout);
 		}
 	protected:
@@ -291,6 +298,18 @@ namespace FCT
 		RHI::CommandBuffer* getCmdBuf(Window* wnd,uint32_t index);
 		uint32_t allocBaseCommandBuffers(Window* wnd);
 		void freeCommandBuffers(Window* wnd, uint32_t index);
+
+		/**
+		 * @cond CHINESE
+		 * @param maxFrameInFlight cpu可以比gpu快多少帧
+		 * @note 必须在渲染之前调用
+		 * @endcond
+		 *
+		 * @cond ENGLISH
+		 * @param maxFrameInFlight Maximum number of frames in flight
+		 * @note Must be called before rendering
+		 * @endcond
+		 */
 		void maxFrameInFlight(uint32_t maxFrameInFlight);
 		uint32_t maxFrameInFlight() const { return m_maxFrameInFlight; }
 		void initFrameManager();

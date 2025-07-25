@@ -28,7 +28,7 @@ namespace FCT
             if (m_objects)
             {
                 clear();
-                //AllocatorDelete(m_objects);
+                AllocatorDelete(m_objects);
             }
         }
         template<typename... Args>
@@ -78,6 +78,24 @@ namespace FCT
         {
 
         }
+        T* alloc()
+        {
+            size_t index;
+            if (m_freeIndices.pop(index))
+            {
+
+                return m_chunks[index / SingleChunkObjectNums].get(index % SingleChunkObjectNums);
+            }
+            else
+            {
+                return addSingle();
+            }
+        }
+        void setDestroyCallback(DestroyCallback callback)
+        {
+            m_destroyCallback = std::move(callback);
+        }
+    protected:
         T* addSingle()
         {
             T* ret;
@@ -117,24 +135,6 @@ namespace FCT
             m_size++;
             return ret;
         }
-        T* alloc()
-        {
-            size_t index;
-            if (m_freeIndices.pop(index))
-            {
-
-                return m_chunks[index / SingleChunkObjectNums].get(index % SingleChunkObjectNums);
-            }
-            else
-            {
-                return addSingle();
-            }
-        }
-        void setDestroyCallback(DestroyCallback callback)
-        {
-            m_destroyCallback = std::move(callback);
-        }
-    protected:
         size_t m_size;
         std::vector<ObjectPoolChunk<T>> m_chunks;
         boost::lockfree::queue<size_t,boost::lockfree::capacity<1024>> m_freeIndices;

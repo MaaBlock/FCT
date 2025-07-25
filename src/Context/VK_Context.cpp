@@ -66,6 +66,11 @@ namespace FCT
         return FCT_NEW(VK_BlendState, this);
     }
 
+    RasterizationState* VK_Context::createRasterizationState()
+    {
+        return new VK_RasterizationState(this);
+    }
+
     RHI::TextureView* VK_Context::createTextureView()
     {
         return new RHI::VK_TextureView(this);
