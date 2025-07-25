@@ -1,0 +1,34 @@
+\doxysection{Freetype\+\_\+\+Font.\+h}
+\hypertarget{_freetype___font_8h_source}{}\label{_freetype___font_8h_source}\index{include/FCT/VertexAndText/Freetype\_Font.h@{include/FCT/VertexAndText/Freetype\_Font.h}}
+\mbox{\hyperlink{_freetype___font_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_freetype___font_8h_source_l00001}00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_freetype___font_8h_source_l00002}00002\ \textcolor{comment}{//\ Created\ by\ Administrator\ on\ 2025/5/4.}}
+\DoxyCodeLine{\Hypertarget{_freetype___font_8h_source_l00003}00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_freetype___font_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_font_8h}{./Font.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_freetype___font_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_freetype___font_common_8h}{./Freetype\_FontCommon.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_freetype___font_8h_source_l00006}00006\ \textcolor{preprocessor}{\#ifndef\ FREETYPE\_FONT\_H}}
+\DoxyCodeLine{\Hypertarget{_freetype___font_8h_source_l00007}00007\ \textcolor{preprocessor}{\#define\ FREETYPE\_FONT\_H}}
+\DoxyCodeLine{\Hypertarget{_freetype___font_8h_source_l00008}00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_f_c_t}{FCT}}}
+\DoxyCodeLine{\Hypertarget{_freetype___font_8h_source_l00009}00009\ \{}
+\DoxyCodeLine{\Hypertarget{_freetype___font_8h_source_l00010}\mbox{\hyperlink{class_f_c_t_1_1_freetype___font}{00010}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_f_c_t_1_1_freetype___font_a47e8fac999a0683aa6b0e1df9a49b3ec}{Freetype\_Font}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_font}{Font}}}
+\DoxyCodeLine{\Hypertarget{_freetype___font_8h_source_l00011}00011\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_freetype___font_8h_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_freetype___font_8h_source_l00013}00013\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_freetype___font_common}{Freetype\_FontCommon}}*\ m\_common;}
+\DoxyCodeLine{\Hypertarget{_freetype___font_8h_source_l00014}00014\ \ \ \ \ \ \ \ \ FT\_Face\ m\_face;}
+\DoxyCodeLine{\Hypertarget{_freetype___font_8h_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_freetype___font_8h_source_l00016}\mbox{\hyperlink{class_f_c_t_1_1_freetype___font_a47e8fac999a0683aa6b0e1df9a49b3ec}{00016}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_freetype___font_a47e8fac999a0683aa6b0e1df9a49b3ec}{Freetype\_Font}}(\mbox{\hyperlink{class_f_c_t_1_1_freetype___font_common}{Freetype\_FontCommon}}*\ common);}
+\DoxyCodeLine{\Hypertarget{_freetype___font_8h_source_l00017}\mbox{\hyperlink{class_f_c_t_1_1_freetype___font_a0563bac3cb5b2ff6468d5df990655cdd}{00017}}\ \ \ \ \ \ \ \ \ FT\_UInt\ \mbox{\hyperlink{class_f_c_t_1_1_freetype___font_a0563bac3cb5b2ff6468d5df990655cdd}{toGlyptIndex}}(\textcolor{keywordtype}{char32\_t}\ ch)}
+\DoxyCodeLine{\Hypertarget{_freetype___font_8h_source_l00018}00018\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_freetype___font_8h_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ FT\_UInt\ glyph\_index\ =\ FT\_Get\_Char\_Index(m\_face,\ ch);}
+\DoxyCodeLine{\Hypertarget{_freetype___font_8h_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \ glyph\_index;}
+\DoxyCodeLine{\Hypertarget{_freetype___font_8h_source_l00021}00021\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_freetype___font_8h_source_l00022}\mbox{\hyperlink{class_f_c_t_1_1_freetype___font_ada37a6113904f31564fed4857394364f}{00022}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_f_c_t_1_1_freetype___font_ada37a6113904f31564fed4857394364f}{create}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *fontPath);}
+\DoxyCodeLine{\Hypertarget{_freetype___font_8h_source_l00023}\mbox{\hyperlink{class_f_c_t_1_1_freetype___font_aee34e9383ee0acb4c2a8913959709e85}{00023}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_vertex_path}{VertexPath}}*\ \mbox{\hyperlink{class_f_c_t_1_1_freetype___font_aee34e9383ee0acb4c2a8913959709e85}{translateGlyph}}(FT\_UInt\ glyph\_index);}
+\DoxyCodeLine{\Hypertarget{_freetype___font_8h_source_l00024}\mbox{\hyperlink{class_f_c_t_1_1_freetype___font_a364d017fe73a46dd9c236799bfde46bc}{00024}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_freetype___font_a364d017fe73a46dd9c236799bfde46bc}{outlineToCommands}}(FT\_Outline*\ outline,\ \mbox{\hyperlink{class_f_c_t_1_1_vertex_path}{VertexPath}}*\ ret);}
+\DoxyCodeLine{\Hypertarget{_freetype___font_8h_source_l00025}00025\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_freetype___font_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_freetype___font_8h_source_l00027}00027\ \}}
+\DoxyCodeLine{\Hypertarget{_freetype___font_8h_source_l00028}00028\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//FREETYPE\_FONT\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FCT: include/FCT/DebugTools/MemoryCheak.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FCT
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_memory_cheak_8h.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">MemoryCheak.h 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;typeinfo&gt;</code><br />
+<code>#include &lt;mutex&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &quot;<a class="el" href="_third_party_8h_source.html">../ThirdParty.h</a>&quot;</code><br />
+</div>
+<p><a href="_memory_cheak_8h_source.html">浏览该文件的源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
+命名空间</h2></td></tr>
+<tr class="memitem:FCT" id="r_FCT"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_f_c_t.html">FCT</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a3fc44aa7be998c4e0f31e59d305f0612" id="r_a3fc44aa7be998c4e0f31e59d305f0612"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3fc44aa7be998c4e0f31e59d305f0612">FCT_USE_MEMORY_CHECK</a></td></tr>
+<tr class="memitem:a0fee0225d38ce42671a1fb5630db4434" id="r_a0fee0225d38ce42671a1fb5630db4434"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0fee0225d38ce42671a1fb5630db4434">FCT_NEW</a>(type, ...)</td></tr>
+<tr class="memitem:a322d84bde6390d4cd0062d4726d9eafc" id="r_a322d84bde6390d4cd0062d4726d9eafc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a322d84bde6390d4cd0062d4726d9eafc">FCT_NEWS</a>(type,  num)</td></tr>
+<tr class="memitem:a208ca9335e0fa05cd26667978959abd5" id="r_a208ca9335e0fa05cd26667978959abd5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a208ca9335e0fa05cd26667978959abd5">FCT_DELETE</a>(args)</td></tr>
+<tr class="memitem:a56b71ca695afcf8aba5906a660b72035" id="r_a56b71ca695afcf8aba5906a660b72035"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a56b71ca695afcf8aba5906a660b72035">FCT_DELETES</a>(args)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a611326d53acf4814f308bb3af9499899" id="r_a611326d53acf4814f308bb3af9499899"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a611326d53acf4814f308bb3af9499899 template"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_f_c_t.html#a611326d53acf4814f308bb3af9499899">FCT::AllocatorDelete</a> (T *ptr)</td></tr>
+<tr class="memitem:a3fcb58c5b721e187bad6da51a8b72a05" id="r_a3fcb58c5b721e187bad6da51a8b72a05"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a3fcb58c5b721e187bad6da51a8b72a05 template"><td class="memItemLeft" align="right" valign="top">T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_f_c_t.html#a3fcb58c5b721e187bad6da51a8b72a05">FCT::AllocatorNew</a> (size_t size)</td></tr>
+<tr class="memitem:a28b9188bf4be0ceb6c1128405c10fb41" id="r_a28b9188bf4be0ceb6c1128405c10fb41"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a28b9188bf4be0ceb6c1128405c10fb41 template"><td class="memItemLeft" align="right" valign="top">T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_f_c_t.html#a28b9188bf4be0ceb6c1128405c10fb41">FCT::New</a> (T *ptr)</td></tr>
+<tr class="memitem:aff1166bbe77435892c8acbc1e5deb6ac" id="r_aff1166bbe77435892c8acbc1e5deb6ac"><td class="memTemplParams" colspan="2">template&lt;typename T, typename... Args&gt; </td></tr>
+<tr class="memitem:aff1166bbe77435892c8acbc1e5deb6ac template"><td class="memItemLeft" align="right" valign="top">T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_f_c_t.html#aff1166bbe77435892c8acbc1e5deb6ac">FCT::New</a> (T *ptr, Args &amp;&amp;... args)</td></tr>
+<tr class="memitem:a76888f223cab62dfa9ea0b85d0b6d84a" id="r_a76888f223cab62dfa9ea0b85d0b6d84a"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a76888f223cab62dfa9ea0b85d0b6d84a template"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_f_c_t.html#a76888f223cab62dfa9ea0b85d0b6d84a">FCT::Destroy</a> (T *ptr)</td></tr>
+</table>
+<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">宏定义说明</h2>
+<a id="a208ca9335e0fa05cd26667978959abd5" name="a208ca9335e0fa05cd26667978959abd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a208ca9335e0fa05cd26667978959abd5">&#9670;&#160;</a></span>FCT_DELETE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FCT_DELETE</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>args</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><span class="keyword">delete</span> args</div>
+</div><!-- fragment -->
+<p class="definition">在文件 <a class="el" href="_memory_cheak_8h_source.html">MemoryCheak.h</a> 第 <a class="el" href="_memory_cheak_8h_source.html#l00164">164</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a56b71ca695afcf8aba5906a660b72035" name="a56b71ca695afcf8aba5906a660b72035"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56b71ca695afcf8aba5906a660b72035">&#9670;&#160;</a></span>FCT_DELETES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FCT_DELETES</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>args</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><span class="keyword">delete</span>[] args</div>
+</div><!-- fragment -->
+<p class="definition">在文件 <a class="el" href="_memory_cheak_8h_source.html">MemoryCheak.h</a> 第 <a class="el" href="_memory_cheak_8h_source.html#l00165">165</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a0fee0225d38ce42671a1fb5630db4434" name="a0fee0225d38ce42671a1fb5630db4434"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fee0225d38ce42671a1fb5630db4434">&#9670;&#160;</a></span>FCT_NEW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FCT_NEW</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>type</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em></em></span>...&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><span class="keyword">new</span> type(__VA_ARGS__)</div>
+</div><!-- fragment -->
+<p class="definition">在文件 <a class="el" href="_memory_cheak_8h_source.html">MemoryCheak.h</a> 第 <a class="el" href="_memory_cheak_8h_source.html#l00162">162</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a322d84bde6390d4cd0062d4726d9eafc" name="a322d84bde6390d4cd0062d4726d9eafc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a322d84bde6390d4cd0062d4726d9eafc">&#9670;&#160;</a></span>FCT_NEWS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FCT_NEWS</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>type</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>num</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>值:</b><div class="fragment"><div class="line"><span class="keyword">new</span> type[num]</div>
+</div><!-- fragment -->
+<p class="definition">在文件 <a class="el" href="_memory_cheak_8h_source.html">MemoryCheak.h</a> 第 <a class="el" href="_memory_cheak_8h_source.html#l00163">163</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a3fc44aa7be998c4e0f31e59d305f0612" name="a3fc44aa7be998c4e0f31e59d305f0612"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fc44aa7be998c4e0f31e59d305f0612">&#9670;&#160;</a></span>FCT_USE_MEMORY_CHECK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FCT_USE_MEMORY_CHECK</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_memory_cheak_8h_source.html">MemoryCheak.h</a> 第 <a class="el" href="_memory_cheak_8h_source.html#l00010">10</a> 行定义.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="dir_3b79087de5de3e907e48529d171f9ebd.html">FCT</a></li><li class="navelem"><a href="dir_7d6af68350718625d5d5cd308630f5f1.html">DebugTools</a></li><li class="navelem"><a href="_memory_cheak_8h.html">MemoryCheak.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

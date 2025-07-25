@@ -1,0 +1,33 @@
+\doxysection{include/\+FCT/\+Tool\+Define.h 文件参考}
+\hypertarget{_tool_define_8h}{}\label{_tool_define_8h}\index{include/FCT/ToolDefine.h@{include/FCT/ToolDefine.h}}
+\doxysubsubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_tool_define_8h_a586755af4a5cd35fae3fbbc6f139d9b0}{FCT\+\_\+\+WAIT\+\_\+\+FOR}}(condition)
+\end{DoxyCompactItemize}
+
+
+\label{doc-define-members}
+\Hypertarget{_tool_define_8h_doc-define-members}
+\doxysubsection{宏定义说明}
+\Hypertarget{_tool_define_8h_a586755af4a5cd35fae3fbbc6f139d9b0}\index{ToolDefine.h@{ToolDefine.h}!FCT\_WAIT\_FOR@{FCT\_WAIT\_FOR}}
+\index{FCT\_WAIT\_FOR@{FCT\_WAIT\_FOR}!ToolDefine.h@{ToolDefine.h}}
+\doxysubsubsection{\texorpdfstring{FCT\_WAIT\_FOR}{FCT\_WAIT\_FOR}}
+{\footnotesize\ttfamily \label{_tool_define_8h_a586755af4a5cd35fae3fbbc6f139d9b0} 
+\#define FCT\+\_\+\+WAIT\+\_\+\+FOR(\begin{DoxyParamCaption}\item[{}]{condition}{}\end{DoxyParamCaption})}
+
+{\bfseries 值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{do}\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ while(!condition)\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ std::this\_thread::sleep\_for(std::chrono::milliseconds(0));\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ condition\ =\ \textcolor{keyword}{false};\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+
+
+在文件 \mbox{\hyperlink{_tool_define_8h_source}{Tool\+Define.\+h}} 第 \mbox{\hyperlink{_tool_define_8h_source_l00009}{9}} 行定义.
+

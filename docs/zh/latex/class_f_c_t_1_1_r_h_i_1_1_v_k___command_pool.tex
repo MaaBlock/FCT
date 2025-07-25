@@ -1,0 +1,117 @@
+\doxysection{FCT\+::RHI\+::VK\+\_\+\+Command\+Pool类 参考}
+\hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___command_pool}{}\label{class_f_c_t_1_1_r_h_i_1_1_v_k___command_pool}\index{FCT::RHI::VK\_CommandPool@{FCT::RHI::VK\_CommandPool}}
+
+
+{\ttfamily \#include $<$VK\+\_\+\+Command\+Pool.\+h$>$}
+
+类 FCT\+::RHI\+::VK\+\_\+\+Command\+Pool 继承关系图\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_f_c_t_1_1_r_h_i_1_1_v_k___command_pool}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___command_pool_a4b16c41c5180643b2d999c02d6a91a87}{VK\+\_\+\+Command\+Pool}} (\mbox{\hyperlink{class_f_c_t_1_1_v_k___context}{VK\+\_\+\+Context}} \texorpdfstring{$\ast$}{*}ctx)
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_v_k___context}{VK\+\_\+\+Context}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___command_pool_aa1a3aaf7b0dcdec8d3a36e177a659b8b}{context}} () const
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___command_pool_a104c0bdd0ad19ebb069d325808f7b5d0}{create}} () override
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer}{Command\+Buffer}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___command_pool_a44e509ccaeb255ceea029c514aecff54}{create\+Command\+Buffer}} () override
+\item 
+vk\+::\+Command\+Pool \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___command_pool_a41aa0830ffc86dba785cfeb9bc47abdb}{pool}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public 成员函数 继承自 \mbox{\hyperlink{class_f_c_t_1_1_ref_count}{FCT\+::\+Ref\+Count}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_ref_count_a681b72d7bd32fd7e4b9ec861cd74370e}{Ref\+Count}} ()
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_ref_count_ae2948e0ae155079956caced23c85bb2b}{Ref\+Count}} (size\+\_\+t ref\+Count)
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_ref_count_af028e09f8a1492fdd5c788b6eb75754f}{\texorpdfstring{$\sim$}{\string~}\+Ref\+Count}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a59c2f131121de6503df8d363b6853d45}{add\+Ref}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_aaf57b2df79545f2b71ae9087865dee4c}{release}} ()
+\item 
+size\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a33146ec5804be422936519224a3a7b3f}{count}} ()
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_ref_count_a474ad3a918f2e87d75ff16075e1caeec}{operator bool}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{额外继承的成员函数}
+\doxysubsection*{Protected 成员函数 继承自 \mbox{\hyperlink{class_f_c_t_1_1_ref_count}{FCT\+::\+Ref\+Count}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a0fea0bed50f726d3e11ddde802dac5da}{delete\+This}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected 属性 继承自 \mbox{\hyperlink{class_f_c_t_1_1_ref_count}{FCT\+::\+Ref\+Count}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::atomic$<$ size\+\_\+t $>$ \mbox{\hyperlink{class_f_c_t_1_1_ref_count_aca88529f9b473d326168fa808fd02300}{m\+\_\+ref\+Count}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+
+
+在文件 \mbox{\hyperlink{_v_k___command_pool_8h_source}{VK\+\_\+\+Command\+Pool.\+h}} 第 \mbox{\hyperlink{_v_k___command_pool_8h_source_l00012}{12}} 行定义.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___command_pool_doc-constructors}
+\doxysubsection{构造及析构函数说明}
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___command_pool_a4b16c41c5180643b2d999c02d6a91a87}\index{FCT::RHI::VK\_CommandPool@{FCT::RHI::VK\_CommandPool}!VK\_CommandPool@{VK\_CommandPool}}
+\index{VK\_CommandPool@{VK\_CommandPool}!FCT::RHI::VK\_CommandPool@{FCT::RHI::VK\_CommandPool}}
+\doxysubsubsection{\texorpdfstring{VK\_CommandPool()}{VK\_CommandPool()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_v_k___command_pool_a4b16c41c5180643b2d999c02d6a91a87} 
+FCT\+::\+RHI\+::\+VK\+\_\+\+Command\+Pool\+::\+VK\+\_\+\+Command\+Pool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_v_k___context}{VK\+\_\+\+Context}} \texorpdfstring{$\ast$}{*}}]{ctx}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___command_pool_doc-func-members}
+\doxysubsection{成员函数说明}
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___command_pool_aa1a3aaf7b0dcdec8d3a36e177a659b8b}\index{FCT::RHI::VK\_CommandPool@{FCT::RHI::VK\_CommandPool}!context@{context}}
+\index{context@{context}!FCT::RHI::VK\_CommandPool@{FCT::RHI::VK\_CommandPool}}
+\doxysubsubsection{\texorpdfstring{context()}{context()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_v_k___command_pool_aa1a3aaf7b0dcdec8d3a36e177a659b8b} 
+\mbox{\hyperlink{class_f_c_t_1_1_v_k___context}{VK\+\_\+\+Context}} \texorpdfstring{$\ast$}{*} FCT\+::\+RHI\+::\+VK\+\_\+\+Command\+Pool\+::context (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___command_pool_a104c0bdd0ad19ebb069d325808f7b5d0}\index{FCT::RHI::VK\_CommandPool@{FCT::RHI::VK\_CommandPool}!create@{create}}
+\index{create@{create}!FCT::RHI::VK\_CommandPool@{FCT::RHI::VK\_CommandPool}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_v_k___command_pool_a104c0bdd0ad19ebb069d325808f7b5d0} 
+void FCT\+::\+RHI\+::\+VK\+\_\+\+Command\+Pool\+::create (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+实现了 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_pool_a4dda6279f56bfefb7e05e4e4f3a0a3cb}{FCT\+::\+RHI\+::\+Command\+Pool}}.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___command_pool_a44e509ccaeb255ceea029c514aecff54}\index{FCT::RHI::VK\_CommandPool@{FCT::RHI::VK\_CommandPool}!createCommandBuffer@{createCommandBuffer}}
+\index{createCommandBuffer@{createCommandBuffer}!FCT::RHI::VK\_CommandPool@{FCT::RHI::VK\_CommandPool}}
+\doxysubsubsection{\texorpdfstring{createCommandBuffer()}{createCommandBuffer()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_v_k___command_pool_a44e509ccaeb255ceea029c514aecff54} 
+\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer}{Command\+Buffer}} \texorpdfstring{$\ast$}{*} FCT\+::\+RHI\+::\+VK\+\_\+\+Command\+Pool\+::create\+Command\+Buffer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+实现了 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_pool_a39b786f6a860815683e88647ee39cc2a}{FCT\+::\+RHI\+::\+Command\+Pool}}.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___command_pool_a41aa0830ffc86dba785cfeb9bc47abdb}\index{FCT::RHI::VK\_CommandPool@{FCT::RHI::VK\_CommandPool}!pool@{pool}}
+\index{pool@{pool}!FCT::RHI::VK\_CommandPool@{FCT::RHI::VK\_CommandPool}}
+\doxysubsubsection{\texorpdfstring{pool()}{pool()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_v_k___command_pool_a41aa0830ffc86dba785cfeb9bc47abdb} 
+vk\+::\+Command\+Pool FCT\+::\+RHI\+::\+VK\+\_\+\+Command\+Pool\+::pool (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_v_k___command_pool_8h_source}{VK\+\_\+\+Command\+Pool.\+h}} 第 \mbox{\hyperlink{_v_k___command_pool_8h_source_l00018}{18}} 行定义.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\+FCT/\+RHI/\mbox{\hyperlink{_v_k___command_pool_8h}{VK\+\_\+\+Command\+Pool.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,275 @@
+\doxysection{FCT\+::VK\+\_\+\+Pass\+Resource类 参考}
+\hypertarget{class_f_c_t_1_1_v_k___pass_resource}{}\label{class_f_c_t_1_1_v_k___pass_resource}\index{FCT::VK\_PassResource@{FCT::VK\_PassResource}}
+
+
+{\ttfamily \#include $<$VK\+\_\+\+Pass\+Resource.\+h$>$}
+
+类 FCT\+::VK\+\_\+\+Pass\+Resource 继承关系图\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_f_c_t_1_1_v_k___pass_resource}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a72a17659f1efff4f33264391acc840bc}{VK\+\_\+\+Pass\+Resource}} (\mbox{\hyperlink{class_f_c_t_1_1_v_k___context}{VK\+\_\+\+Context}} \texorpdfstring{$\ast$}{*}ctx)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_ab76207cd13bd5ada11880cf3228ce72a}{add\+Const\+Buffer}} (\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_const_buffer}{RHI\+::\+Const\+Buffer}} \texorpdfstring{$\ast$}{*}buffer) override
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_aef8d80b6d7372a7d2ab0c8abac97bddd}{add\+Sampler}} (\mbox{\hyperlink{class_f_c_t_1_1_sampler}{Sampler}} \texorpdfstring{$\ast$}{*}sampler, \mbox{\hyperlink{class_f_c_t_1_1_sampler_element}{Sampler\+Element}} element) override
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_adce903a017bf01a4df07064f8eae2310}{add\+Texture}} (\mbox{\hyperlink{class_f_c_t_1_1_image}{Image}} \texorpdfstring{$\ast$}{*}texture, \mbox{\hyperlink{class_f_c_t_1_1_texture_element}{Texture\+Element}} element) override
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a7fdcd488b03258cd09464b1d2fe05277}{set\+Texture}} (\mbox{\hyperlink{class_f_c_t_1_1_image}{Image}} \texorpdfstring{$\ast$}{*}texture, \mbox{\hyperlink{class_f_c_t_1_1_texture_element}{Texture\+Element}} element) override
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a33e2e0be4beec0f521265b1ac654afa4}{mark\+All\+Descriptor\+Sets\+Dirty}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a93eee85bea4d326222f4881569d02d94}{mark\+Descriptor\+Set\+Dirty}} (uint32\+\_\+t frame\+Idx)
+\item 
+bool \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a0210cbf88dba34d267cdafac2071083f}{create\+Descriptor\+Sets\+And\+Layouts}} (uint32\+\_\+t frame\+Idx, std\+::vector$<$ vk\+::\+Descriptor\+Set\+Layout $>$ \&out\+Layouts, std\+::vector$<$ vk\+::\+Descriptor\+Set $>$ \&out\+Descriptor\+Sets)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a4818ec04167db30e0a2d545313e5bd95}{create}} () override
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a6b198b587cbcda927094f5f8a8a49889}{update\+Descriptor\+Sets\+If\+Needed}} (uint32\+\_\+t frame\+Idx)
+\item 
+vk\+::\+Descriptor\+Set \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a4073df698b9f3c62a2a72e73b1acea20}{get\+Descriptor\+Set}} (uint32\+\_\+t frame\+Idx, uint32\+\_\+t set\+Index)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a1e963f0f016d110d6646f223ef890b0d}{mark\+All\+Descriptor\+Sets\+Need\+Recreate}} ()
+\item 
+bool \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_abeddc4c3b08a49324c8da242bf7384ff}{recreate\+Descriptor\+Sets\+If\+Needed}} (uint32\+\_\+t frame\+Idx)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a4c81bbc00f575af063187d6f3a75205d}{update}} () override
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a7ad93d9edc1054a416d15f970f71c801}{bind}} (\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer}{RHI\+::\+Command\+Buffer}} \texorpdfstring{$\ast$}{*}cmd\+Buf, \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pipeline}{RHI\+::\+Pipeline}} \texorpdfstring{$\ast$}{*}pipeline) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public 成员函数 继承自 \mbox{\hyperlink{class_f_c_t_1_1_pass_resource}{FCT\+::\+Pass\+Resource}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_pass_resource_a9089c34fbb6750676805d2d1cd3ef987}{Pass\+Resource}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_pass_resource_ae10b85c895c0bb40a2a8af042d3eb3ca}{bind}} (\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}wnd)
+\item 
+bool \mbox{\hyperlink{class_f_c_t_1_1_pass_resource_a856801634d4fceb71ba38331e24e8ff1}{is\+Bound}} (const \mbox{\hyperlink{class_f_c_t_1_1_texture_element}{Texture\+Element}} \&element) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected 属性}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_v_k___context}{VK\+\_\+\+Context}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_aa61429c15436c4289d2a93110af38195}{m\+\_\+ctx}}
+\item 
+std\+::vector$<$ std\+::vector$<$ vk\+::\+Descriptor\+Set $>$ $>$ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_ada6a9cd1bd15621a37051de745d0cdfc}{m\+\_\+descriptor\+Sets}}
+\item 
+std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_ab7255ad01052f5e4e395d46537f91742}{m\+\_\+dirty\+Flags}}
+\item 
+std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a274b9d8a323e38398e54baa74c9aae09}{m\+\_\+need\+Recreate}}
+\item 
+std\+::vector$<$ vk\+::\+Descriptor\+Set\+Layout $>$ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_aab7111e185d71f25da05ce001cbf6603}{m\+\_\+descriptor\+Set\+Layouts}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected 属性 继承自 \mbox{\hyperlink{class_f_c_t_1_1_pass_resource}{FCT\+::\+Pass\+Resource}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_const_buffer}{RHI\+::\+Const\+Buffer}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_f_c_t_1_1_pass_resource_a87001a2c6b136ce66a75a71a938e1f78}{m\+\_\+const\+Buffers}}
+\item 
+std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{class_f_c_t_1_1_texture_element}{Texture\+Element}}, \mbox{\hyperlink{class_f_c_t_1_1_image}{Image}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_f_c_t_1_1_pass_resource_ad346a8e3ea6aca1e38a9609d734429cd}{m\+\_\+textures}}
+\item 
+std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{class_f_c_t_1_1_sampler}{Sampler}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{class_f_c_t_1_1_sampler_element}{Sampler\+Element}} $>$ $>$ \mbox{\hyperlink{class_f_c_t_1_1_pass_resource_a5a87c09644f12ae3b72621bd182923d0}{m\+\_\+samplers}}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_pass_resource_a275ae375787ce9f0eb2616272fe31eae}{m\+\_\+wnd}}
+\item 
+bool \mbox{\hyperlink{class_f_c_t_1_1_pass_resource_af16957199da14f817571f38ebe66ea8b}{m\+\_\+dirty}} = true
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+
+
+在文件 \mbox{\hyperlink{_v_k___pass_resource_8h_source}{VK\+\_\+\+Pass\+Resource.\+h}} 第 \mbox{\hyperlink{_v_k___pass_resource_8h_source_l00009}{9}} 行定义.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_f_c_t_1_1_v_k___pass_resource_doc-constructors}
+\doxysubsection{构造及析构函数说明}
+\Hypertarget{class_f_c_t_1_1_v_k___pass_resource_a72a17659f1efff4f33264391acc840bc}\index{FCT::VK\_PassResource@{FCT::VK\_PassResource}!VK\_PassResource@{VK\_PassResource}}
+\index{VK\_PassResource@{VK\_PassResource}!FCT::VK\_PassResource@{FCT::VK\_PassResource}}
+\doxysubsubsection{\texorpdfstring{VK\_PassResource()}{VK\_PassResource()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_v_k___pass_resource_a72a17659f1efff4f33264391acc840bc} 
+FCT\+::\+VK\+\_\+\+Pass\+Resource\+::\+VK\+\_\+\+Pass\+Resource (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_v_k___context}{VK\+\_\+\+Context}} \texorpdfstring{$\ast$}{*}}]{ctx}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_f_c_t_1_1_v_k___pass_resource_doc-func-members}
+\doxysubsection{成员函数说明}
+\Hypertarget{class_f_c_t_1_1_v_k___pass_resource_ab76207cd13bd5ada11880cf3228ce72a}\index{FCT::VK\_PassResource@{FCT::VK\_PassResource}!addConstBuffer@{addConstBuffer}}
+\index{addConstBuffer@{addConstBuffer}!FCT::VK\_PassResource@{FCT::VK\_PassResource}}
+\doxysubsubsection{\texorpdfstring{addConstBuffer()}{addConstBuffer()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_v_k___pass_resource_ab76207cd13bd5ada11880cf3228ce72a} 
+void FCT\+::\+VK\+\_\+\+Pass\+Resource\+::add\+Const\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_const_buffer}{RHI\+::\+Const\+Buffer}} \texorpdfstring{$\ast$}{*}}]{buffer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+实现了 \mbox{\hyperlink{class_f_c_t_1_1_pass_resource_a5d1d01b1cf151176bbf9cc891765a8ec}{FCT\+::\+Pass\+Resource}}.
+
+\Hypertarget{class_f_c_t_1_1_v_k___pass_resource_aef8d80b6d7372a7d2ab0c8abac97bddd}\index{FCT::VK\_PassResource@{FCT::VK\_PassResource}!addSampler@{addSampler}}
+\index{addSampler@{addSampler}!FCT::VK\_PassResource@{FCT::VK\_PassResource}}
+\doxysubsubsection{\texorpdfstring{addSampler()}{addSampler()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_v_k___pass_resource_aef8d80b6d7372a7d2ab0c8abac97bddd} 
+void FCT\+::\+VK\+\_\+\+Pass\+Resource\+::add\+Sampler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_sampler}{Sampler}} \texorpdfstring{$\ast$}{*}}]{sampler}{, }\item[{\mbox{\hyperlink{class_f_c_t_1_1_sampler_element}{Sampler\+Element}}}]{element}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+实现了 \mbox{\hyperlink{class_f_c_t_1_1_pass_resource_a0bd1a986830232e6adb3a8c261701d73}{FCT\+::\+Pass\+Resource}}.
+
+\Hypertarget{class_f_c_t_1_1_v_k___pass_resource_adce903a017bf01a4df07064f8eae2310}\index{FCT::VK\_PassResource@{FCT::VK\_PassResource}!addTexture@{addTexture}}
+\index{addTexture@{addTexture}!FCT::VK\_PassResource@{FCT::VK\_PassResource}}
+\doxysubsubsection{\texorpdfstring{addTexture()}{addTexture()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_v_k___pass_resource_adce903a017bf01a4df07064f8eae2310} 
+void FCT\+::\+VK\+\_\+\+Pass\+Resource\+::add\+Texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_image}{Image}} \texorpdfstring{$\ast$}{*}}]{texture}{, }\item[{\mbox{\hyperlink{class_f_c_t_1_1_texture_element}{Texture\+Element}}}]{element}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+实现了 \mbox{\hyperlink{class_f_c_t_1_1_pass_resource_a7dd6703c2c93bdd9afb7ac54d5ddafcc}{FCT\+::\+Pass\+Resource}}.
+
+\Hypertarget{class_f_c_t_1_1_v_k___pass_resource_a7ad93d9edc1054a416d15f970f71c801}\index{FCT::VK\_PassResource@{FCT::VK\_PassResource}!bind@{bind}}
+\index{bind@{bind}!FCT::VK\_PassResource@{FCT::VK\_PassResource}}
+\doxysubsubsection{\texorpdfstring{bind()}{bind()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_v_k___pass_resource_a7ad93d9edc1054a416d15f970f71c801} 
+void FCT\+::\+VK\+\_\+\+Pass\+Resource\+::bind (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer}{RHI\+::\+Command\+Buffer}} \texorpdfstring{$\ast$}{*}}]{cmd\+Buf}{, }\item[{\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pipeline}{RHI\+::\+Pipeline}} \texorpdfstring{$\ast$}{*}}]{pipeline}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+实现了 \mbox{\hyperlink{class_f_c_t_1_1_pass_resource_a186c298892b236f03a34c37ebf212e13}{FCT\+::\+Pass\+Resource}}.
+
+\Hypertarget{class_f_c_t_1_1_v_k___pass_resource_a4818ec04167db30e0a2d545313e5bd95}\index{FCT::VK\_PassResource@{FCT::VK\_PassResource}!create@{create}}
+\index{create@{create}!FCT::VK\_PassResource@{FCT::VK\_PassResource}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_v_k___pass_resource_a4818ec04167db30e0a2d545313e5bd95} 
+void FCT\+::\+VK\+\_\+\+Pass\+Resource\+::create (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+实现了 \mbox{\hyperlink{class_f_c_t_1_1_pass_resource_a510e6fab20f930e412280a6c1e574e63}{FCT\+::\+Pass\+Resource}}.
+
+\Hypertarget{class_f_c_t_1_1_v_k___pass_resource_a0210cbf88dba34d267cdafac2071083f}\index{FCT::VK\_PassResource@{FCT::VK\_PassResource}!createDescriptorSetsAndLayouts@{createDescriptorSetsAndLayouts}}
+\index{createDescriptorSetsAndLayouts@{createDescriptorSetsAndLayouts}!FCT::VK\_PassResource@{FCT::VK\_PassResource}}
+\doxysubsubsection{\texorpdfstring{createDescriptorSetsAndLayouts()}{createDescriptorSetsAndLayouts()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_v_k___pass_resource_a0210cbf88dba34d267cdafac2071083f} 
+bool FCT\+::\+VK\+\_\+\+Pass\+Resource\+::create\+Descriptor\+Sets\+And\+Layouts (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{frame\+Idx}{, }\item[{std\+::vector$<$ vk\+::\+Descriptor\+Set\+Layout $>$ \&}]{out\+Layouts}{, }\item[{std\+::vector$<$ vk\+::\+Descriptor\+Set $>$ \&}]{out\+Descriptor\+Sets}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_f_c_t_1_1_v_k___pass_resource_a4073df698b9f3c62a2a72e73b1acea20}\index{FCT::VK\_PassResource@{FCT::VK\_PassResource}!getDescriptorSet@{getDescriptorSet}}
+\index{getDescriptorSet@{getDescriptorSet}!FCT::VK\_PassResource@{FCT::VK\_PassResource}}
+\doxysubsubsection{\texorpdfstring{getDescriptorSet()}{getDescriptorSet()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_v_k___pass_resource_a4073df698b9f3c62a2a72e73b1acea20} 
+vk\+::\+Descriptor\+Set FCT\+::\+VK\+\_\+\+Pass\+Resource\+::get\+Descriptor\+Set (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{frame\+Idx}{, }\item[{uint32\+\_\+t}]{set\+Index}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_f_c_t_1_1_v_k___pass_resource_a33e2e0be4beec0f521265b1ac654afa4}\index{FCT::VK\_PassResource@{FCT::VK\_PassResource}!markAllDescriptorSetsDirty@{markAllDescriptorSetsDirty}}
+\index{markAllDescriptorSetsDirty@{markAllDescriptorSetsDirty}!FCT::VK\_PassResource@{FCT::VK\_PassResource}}
+\doxysubsubsection{\texorpdfstring{markAllDescriptorSetsDirty()}{markAllDescriptorSetsDirty()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_v_k___pass_resource_a33e2e0be4beec0f521265b1ac654afa4} 
+void FCT\+::\+VK\+\_\+\+Pass\+Resource\+::mark\+All\+Descriptor\+Sets\+Dirty (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_f_c_t_1_1_v_k___pass_resource_a1e963f0f016d110d6646f223ef890b0d}\index{FCT::VK\_PassResource@{FCT::VK\_PassResource}!markAllDescriptorSetsNeedRecreate@{markAllDescriptorSetsNeedRecreate}}
+\index{markAllDescriptorSetsNeedRecreate@{markAllDescriptorSetsNeedRecreate}!FCT::VK\_PassResource@{FCT::VK\_PassResource}}
+\doxysubsubsection{\texorpdfstring{markAllDescriptorSetsNeedRecreate()}{markAllDescriptorSetsNeedRecreate()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_v_k___pass_resource_a1e963f0f016d110d6646f223ef890b0d} 
+void FCT\+::\+VK\+\_\+\+Pass\+Resource\+::mark\+All\+Descriptor\+Sets\+Need\+Recreate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_f_c_t_1_1_v_k___pass_resource_a93eee85bea4d326222f4881569d02d94}\index{FCT::VK\_PassResource@{FCT::VK\_PassResource}!markDescriptorSetDirty@{markDescriptorSetDirty}}
+\index{markDescriptorSetDirty@{markDescriptorSetDirty}!FCT::VK\_PassResource@{FCT::VK\_PassResource}}
+\doxysubsubsection{\texorpdfstring{markDescriptorSetDirty()}{markDescriptorSetDirty()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_v_k___pass_resource_a93eee85bea4d326222f4881569d02d94} 
+void FCT\+::\+VK\+\_\+\+Pass\+Resource\+::mark\+Descriptor\+Set\+Dirty (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{frame\+Idx}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_f_c_t_1_1_v_k___pass_resource_abeddc4c3b08a49324c8da242bf7384ff}\index{FCT::VK\_PassResource@{FCT::VK\_PassResource}!recreateDescriptorSetsIfNeeded@{recreateDescriptorSetsIfNeeded}}
+\index{recreateDescriptorSetsIfNeeded@{recreateDescriptorSetsIfNeeded}!FCT::VK\_PassResource@{FCT::VK\_PassResource}}
+\doxysubsubsection{\texorpdfstring{recreateDescriptorSetsIfNeeded()}{recreateDescriptorSetsIfNeeded()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_v_k___pass_resource_abeddc4c3b08a49324c8da242bf7384ff} 
+bool FCT\+::\+VK\+\_\+\+Pass\+Resource\+::recreate\+Descriptor\+Sets\+If\+Needed (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{frame\+Idx}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_f_c_t_1_1_v_k___pass_resource_a7fdcd488b03258cd09464b1d2fe05277}\index{FCT::VK\_PassResource@{FCT::VK\_PassResource}!setTexture@{setTexture}}
+\index{setTexture@{setTexture}!FCT::VK\_PassResource@{FCT::VK\_PassResource}}
+\doxysubsubsection{\texorpdfstring{setTexture()}{setTexture()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_v_k___pass_resource_a7fdcd488b03258cd09464b1d2fe05277} 
+void FCT\+::\+VK\+\_\+\+Pass\+Resource\+::set\+Texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_image}{Image}} \texorpdfstring{$\ast$}{*}}]{texture}{, }\item[{\mbox{\hyperlink{class_f_c_t_1_1_texture_element}{Texture\+Element}}}]{element}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+实现了 \mbox{\hyperlink{class_f_c_t_1_1_pass_resource_ae6916eca7819c4ae671785b4a980f5ad}{FCT\+::\+Pass\+Resource}}.
+
+\Hypertarget{class_f_c_t_1_1_v_k___pass_resource_a4c81bbc00f575af063187d6f3a75205d}\index{FCT::VK\_PassResource@{FCT::VK\_PassResource}!update@{update}}
+\index{update@{update}!FCT::VK\_PassResource@{FCT::VK\_PassResource}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_v_k___pass_resource_a4c81bbc00f575af063187d6f3a75205d} 
+void FCT\+::\+VK\+\_\+\+Pass\+Resource\+::update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+实现了 \mbox{\hyperlink{class_f_c_t_1_1_pass_resource_a5f470e64882db144ec1d7b7ace8af7ef}{FCT\+::\+Pass\+Resource}}.
+
+\Hypertarget{class_f_c_t_1_1_v_k___pass_resource_a6b198b587cbcda927094f5f8a8a49889}\index{FCT::VK\_PassResource@{FCT::VK\_PassResource}!updateDescriptorSetsIfNeeded@{updateDescriptorSetsIfNeeded}}
+\index{updateDescriptorSetsIfNeeded@{updateDescriptorSetsIfNeeded}!FCT::VK\_PassResource@{FCT::VK\_PassResource}}
+\doxysubsubsection{\texorpdfstring{updateDescriptorSetsIfNeeded()}{updateDescriptorSetsIfNeeded()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_v_k___pass_resource_a6b198b587cbcda927094f5f8a8a49889} 
+void FCT\+::\+VK\+\_\+\+Pass\+Resource\+::update\+Descriptor\+Sets\+If\+Needed (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{frame\+Idx}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_f_c_t_1_1_v_k___pass_resource_doc-variable-members}
+\doxysubsection{类成员变量说明}
+\Hypertarget{class_f_c_t_1_1_v_k___pass_resource_aa61429c15436c4289d2a93110af38195}\index{FCT::VK\_PassResource@{FCT::VK\_PassResource}!m\_ctx@{m\_ctx}}
+\index{m\_ctx@{m\_ctx}!FCT::VK\_PassResource@{FCT::VK\_PassResource}}
+\doxysubsubsection{\texorpdfstring{m\_ctx}{m\_ctx}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_v_k___pass_resource_aa61429c15436c4289d2a93110af38195} 
+\mbox{\hyperlink{class_f_c_t_1_1_v_k___context}{VK\+\_\+\+Context}}\texorpdfstring{$\ast$}{*} FCT\+::\+VK\+\_\+\+Pass\+Resource\+::m\+\_\+ctx\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_v_k___pass_resource_8h_source}{VK\+\_\+\+Pass\+Resource.\+h}} 第 \mbox{\hyperlink{_v_k___pass_resource_8h_source_l00028}{28}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_v_k___pass_resource_aab7111e185d71f25da05ce001cbf6603}\index{FCT::VK\_PassResource@{FCT::VK\_PassResource}!m\_descriptorSetLayouts@{m\_descriptorSetLayouts}}
+\index{m\_descriptorSetLayouts@{m\_descriptorSetLayouts}!FCT::VK\_PassResource@{FCT::VK\_PassResource}}
+\doxysubsubsection{\texorpdfstring{m\_descriptorSetLayouts}{m\_descriptorSetLayouts}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_v_k___pass_resource_aab7111e185d71f25da05ce001cbf6603} 
+std\+::vector$<$vk\+::\+Descriptor\+Set\+Layout$>$ FCT\+::\+VK\+\_\+\+Pass\+Resource\+::m\+\_\+descriptor\+Set\+Layouts\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_v_k___pass_resource_8h_source}{VK\+\_\+\+Pass\+Resource.\+h}} 第 \mbox{\hyperlink{_v_k___pass_resource_8h_source_l00032}{32}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_v_k___pass_resource_ada6a9cd1bd15621a37051de745d0cdfc}\index{FCT::VK\_PassResource@{FCT::VK\_PassResource}!m\_descriptorSets@{m\_descriptorSets}}
+\index{m\_descriptorSets@{m\_descriptorSets}!FCT::VK\_PassResource@{FCT::VK\_PassResource}}
+\doxysubsubsection{\texorpdfstring{m\_descriptorSets}{m\_descriptorSets}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_v_k___pass_resource_ada6a9cd1bd15621a37051de745d0cdfc} 
+std\+::vector$<$std\+::vector$<$vk\+::\+Descriptor\+Set$>$ $>$ FCT\+::\+VK\+\_\+\+Pass\+Resource\+::m\+\_\+descriptor\+Sets\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_v_k___pass_resource_8h_source}{VK\+\_\+\+Pass\+Resource.\+h}} 第 \mbox{\hyperlink{_v_k___pass_resource_8h_source_l00029}{29}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_v_k___pass_resource_ab7255ad01052f5e4e395d46537f91742}\index{FCT::VK\_PassResource@{FCT::VK\_PassResource}!m\_dirtyFlags@{m\_dirtyFlags}}
+\index{m\_dirtyFlags@{m\_dirtyFlags}!FCT::VK\_PassResource@{FCT::VK\_PassResource}}
+\doxysubsubsection{\texorpdfstring{m\_dirtyFlags}{m\_dirtyFlags}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_v_k___pass_resource_ab7255ad01052f5e4e395d46537f91742} 
+std\+::vector$<$uint8\+\_\+t$>$ FCT\+::\+VK\+\_\+\+Pass\+Resource\+::m\+\_\+dirty\+Flags\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_v_k___pass_resource_8h_source}{VK\+\_\+\+Pass\+Resource.\+h}} 第 \mbox{\hyperlink{_v_k___pass_resource_8h_source_l00030}{30}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_v_k___pass_resource_a274b9d8a323e38398e54baa74c9aae09}\index{FCT::VK\_PassResource@{FCT::VK\_PassResource}!m\_needRecreate@{m\_needRecreate}}
+\index{m\_needRecreate@{m\_needRecreate}!FCT::VK\_PassResource@{FCT::VK\_PassResource}}
+\doxysubsubsection{\texorpdfstring{m\_needRecreate}{m\_needRecreate}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_v_k___pass_resource_a274b9d8a323e38398e54baa74c9aae09} 
+std\+::vector$<$uint8\+\_\+t$>$ FCT\+::\+VK\+\_\+\+Pass\+Resource\+::m\+\_\+need\+Recreate\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_v_k___pass_resource_8h_source}{VK\+\_\+\+Pass\+Resource.\+h}} 第 \mbox{\hyperlink{_v_k___pass_resource_8h_source_l00031}{31}} 行定义.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\+FCT/\+Context/\mbox{\hyperlink{_v_k___pass_resource_8h}{VK\+\_\+\+Pass\+Resource.\+h}}\end{DoxyCompactItemize}

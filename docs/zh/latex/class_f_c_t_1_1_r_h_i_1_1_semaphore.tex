@@ -1,0 +1,148 @@
+\doxysection{FCT\+::RHI\+::Semaphore类 参考}
+\hypertarget{class_f_c_t_1_1_r_h_i_1_1_semaphore}{}\label{class_f_c_t_1_1_r_h_i_1_1_semaphore}\index{FCT::RHI::Semaphore@{FCT::RHI::Semaphore}}
+
+
+{\ttfamily \#include $<$Semaphore.\+h$>$}
+
+类 FCT\+::RHI\+::Semaphore 继承关系图\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_f_c_t_1_1_r_h_i_1_1_semaphore}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore_ad282d07df3acb2f2b51933e26ab719f9}{Semaphore}} ()
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore_a18869186d6baaae5dacb80ffd1eed1ca}{\texorpdfstring{$\sim$}{\string~}\+Semaphore}} ()=default
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore_aaf0d510ea21508d3389592c58f563b07}{create}} ()=0
+\begin{DoxyCompactList}\small\item\em 创建 信号量 \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore_a29bfb901719c02db48896344a3886df0}{destroy}} ()=0
+\begin{DoxyCompactList}\small\item\em 销毁一个 信号量 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore_ad7b72415b5c2e15a44bf488c7e27c4cd}{delete\+This}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public 成员函数 继承自 \mbox{\hyperlink{class_f_c_t_1_1_ref_count}{FCT\+::\+Ref\+Count}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_ref_count_a681b72d7bd32fd7e4b9ec861cd74370e}{Ref\+Count}} ()
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_ref_count_ae2948e0ae155079956caced23c85bb2b}{Ref\+Count}} (size\+\_\+t ref\+Count)
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_ref_count_af028e09f8a1492fdd5c788b6eb75754f}{\texorpdfstring{$\sim$}{\string~}\+Ref\+Count}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a59c2f131121de6503df8d363b6853d45}{add\+Ref}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_aaf57b2df79545f2b71ae9087865dee4c}{release}} ()
+\item 
+size\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a33146ec5804be422936519224a3a7b3f}{count}} ()
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_ref_count_a474ad3a918f2e87d75ff16075e1caeec}{operator bool}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public 成员函数 继承自 \mbox{\hyperlink{class_f_c_t_1_1_deletable_trait}{FCT\+::\+Deletable\+Trait$<$ Semaphore $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_deletable_trait_ac6cac75cc5ab38b97e56f59f0a93934e}{set\+Deleter}} (\mbox{\hyperlink{class_f_c_t_1_1_deletable_trait_aa11d4656b54ed291143d6c79da4c407b}{Deleter\+Type}} deleter)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_deletable_trait_af36f7eff01c8c86ebfb148b827ca1a9f}{set\+Deleter\+Func}} (Func \&\&func)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{额外继承的成员函数}
+\doxysubsection*{Public 类型 继承自 \mbox{\hyperlink{class_f_c_t_1_1_deletable_trait}{FCT\+::\+Deletable\+Trait$<$ Semaphore $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{class_f_c_t_1_1_deletable_trait_aa11d4656b54ed291143d6c79da4c407b}{Deleter\+Type}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected 成员函数 继承自 \mbox{\hyperlink{class_f_c_t_1_1_deletable_trait}{FCT\+::\+Deletable\+Trait$<$ Semaphore $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_f_c_t_1_1_deletable_trait_aeb6edd1024ec555f8eb0321092ee874b}{apply\+Deleter}} (Semaphore \texorpdfstring{$\ast$}{*}ptr)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected 属性 继承自 \mbox{\hyperlink{class_f_c_t_1_1_ref_count}{FCT\+::\+Ref\+Count}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::atomic$<$ size\+\_\+t $>$ \mbox{\hyperlink{class_f_c_t_1_1_ref_count_aca88529f9b473d326168fa808fd02300}{m\+\_\+ref\+Count}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+
+
+在文件 \mbox{\hyperlink{_semaphore_8h_source}{Semaphore.\+h}} 第 \mbox{\hyperlink{_semaphore_8h_source_l00011}{11}} 行定义.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_semaphore_doc-constructors}
+\doxysubsection{构造及析构函数说明}
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_semaphore_ad282d07df3acb2f2b51933e26ab719f9}\index{FCT::RHI::Semaphore@{FCT::RHI::Semaphore}!Semaphore@{Semaphore}}
+\index{Semaphore@{Semaphore}!FCT::RHI::Semaphore@{FCT::RHI::Semaphore}}
+\doxysubsubsection{\texorpdfstring{Semaphore()}{Semaphore()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_semaphore_ad282d07df3acb2f2b51933e26ab719f9} 
+FCT\+::\+RHI\+::\+Semaphore\+::\+Semaphore (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_semaphore_8h_source}{Semaphore.\+h}} 第 \mbox{\hyperlink{_semaphore_8h_source_l00014}{14}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_semaphore_a18869186d6baaae5dacb80ffd1eed1ca}\index{FCT::RHI::Semaphore@{FCT::RHI::Semaphore}!````~Semaphore@{\texorpdfstring{$\sim$}{\string~}Semaphore}}
+\index{````~Semaphore@{\texorpdfstring{$\sim$}{\string~}Semaphore}!FCT::RHI::Semaphore@{FCT::RHI::Semaphore}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Semaphore()}{\string~Semaphore()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_semaphore_a18869186d6baaae5dacb80ffd1eed1ca} 
+virtual FCT\+::\+RHI\+::\+Semaphore\+::\texorpdfstring{$\sim$}{\string~}\+Semaphore (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_semaphore_doc-func-members}
+\doxysubsection{成员函数说明}
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_semaphore_aaf0d510ea21508d3389592c58f563b07}\index{FCT::RHI::Semaphore@{FCT::RHI::Semaphore}!create@{create}}
+\index{create@{create}!FCT::RHI::Semaphore@{FCT::RHI::Semaphore}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_semaphore_aaf0d510ea21508d3389592c58f563b07} 
+virtual void FCT\+::\+RHI\+::\+Semaphore\+::create (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+创建 信号量 
+
+\begin{DoxyNote}{注解}
+也可以用于强行reset一个 信号量（如果你知道你在干什么的话）,不推荐这么用 
+\end{DoxyNote}
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___semaphore_a1839ec7c217ac2bbf36aafa30a68900d}{FCT\+::\+RHI\+::\+VK\+\_\+\+Semaphore}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_semaphore_ad7b72415b5c2e15a44bf488c7e27c4cd}\index{FCT::RHI::Semaphore@{FCT::RHI::Semaphore}!deleteThis@{deleteThis}}
+\index{deleteThis@{deleteThis}!FCT::RHI::Semaphore@{FCT::RHI::Semaphore}}
+\doxysubsubsection{\texorpdfstring{deleteThis()}{deleteThis()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_semaphore_ad7b72415b5c2e15a44bf488c7e27c4cd} 
+void FCT\+::\+RHI\+::\+Semaphore\+::delete\+This (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+重载 \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a0fea0bed50f726d3e11ddde802dac5da}{FCT\+::\+Ref\+Count}} .
+
+
+
+在文件 \mbox{\hyperlink{_semaphore_8h_source}{Semaphore.\+h}} 第 \mbox{\hyperlink{_semaphore_8h_source_l00033}{33}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_semaphore_a29bfb901719c02db48896344a3886df0}\index{FCT::RHI::Semaphore@{FCT::RHI::Semaphore}!destroy@{destroy}}
+\index{destroy@{destroy}!FCT::RHI::Semaphore@{FCT::RHI::Semaphore}}
+\doxysubsubsection{\texorpdfstring{destroy()}{destroy()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_semaphore_a29bfb901719c02db48896344a3886df0} 
+virtual void FCT\+::\+RHI\+::\+Semaphore\+::destroy (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+销毁一个 信号量 
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___semaphore_af0b0ce7c7e517f3eb348035ea7711431}{FCT\+::\+RHI\+::\+VK\+\_\+\+Semaphore}} 内被实现.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\+FCT/\+RHI/\mbox{\hyperlink{_semaphore_8h}{Semaphore.\+h}}\end{DoxyCompactItemize}

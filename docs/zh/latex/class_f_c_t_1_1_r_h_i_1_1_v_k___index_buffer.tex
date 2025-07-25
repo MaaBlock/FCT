@@ -1,0 +1,168 @@
+\doxysection{FCT\+::RHI\+::VK\+\_\+\+Index\+Buffer类 参考}
+\hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer}{}\label{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer}\index{FCT::RHI::VK\_IndexBuffer@{FCT::RHI::VK\_IndexBuffer}}
+
+
+{\ttfamily \#include $<$VK\+\_\+\+Index\+Buffer.\+h$>$}
+
+类 FCT\+::RHI\+::VK\+\_\+\+Index\+Buffer 继承关系图\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_a2e57c5333a95371fc10273553a148b78}{VK\+\_\+\+Index\+Buffer}} (\mbox{\hyperlink{class_f_c_t_1_1_v_k___context}{VK\+\_\+\+Context}} \texorpdfstring{$\ast$}{*}ctx)
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_a3250e0d38c83340cbdfbcded22c980ba}{\texorpdfstring{$\sim$}{\string~}\+VK\+\_\+\+Index\+Buffer}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_a4014386949d65a9c42f1a186962db2bb}{create}} () override
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_a683555340360d8ebd33c4d04aecd5107}{map\+Buffer}} (void \texorpdfstring{$\ast$}{*}data, uint32\+\_\+t size, uint32\+\_\+t frame\+Index)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_ae6585b7e6f531246ddf5bc18b5312894}{map\+Buffer}} (void \texorpdfstring{$\ast$}{*}data, uint32\+\_\+t size) override
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_a6f1b0bf731a8ba32d399ce620a5f6553}{destroy}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_aafde2aad1820de240ce5676568d38195}{bind}} (\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer}{Command\+Buffer}} \texorpdfstring{$\ast$}{*}cmd\+Buffer)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_a3b202fdeedb49e79c43850c7909b4af6}{check\+And\+Resize\+If\+Needed}} (uint32\+\_\+t frame\+Index)
+\item 
+vk\+::\+Index\+Type \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_ad7a0939f7df3c393e77a3b349c3f9cc2}{get\+Index\+Type}} () const
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_a5fab9bea75d15501038296ec234eb228}{resize\+Buffer}} (size\+\_\+t size, uint32\+\_\+t frame\+Index)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_aef48c71a9da6cd5ac182463cb7e4b828}{resize}} (size\+\_\+t size) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public 成员函数 继承自 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_index_buffer}{FCT\+::\+RHI\+::\+Index\+Buffer}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_index_buffer_a8bda7b2672318f2f853a18a97ca98227}{Index\+Buffer}} ()
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_index_buffer_a1081c2bf113270108deb294f9c6e03b9}{\texorpdfstring{$\sim$}{\string~}\+Index\+Buffer}} ()
+\item 
+{\footnotesize template$<$typename T$>$ }\\void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_index_buffer_a35bf84f0d9532a974157956b06a500ba}{index\+Buffer}} (std\+::vector$<$ T $>$ \&indices)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_index_buffer_a1aebb139f22e933da94e5861e62a9a3e}{reserve}} (size\+\_\+t size)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_index_buffer_aa95b42d0f7d5eabce24cdfb8e9972750}{update\+Frequency}} (\mbox{\hyperlink{namespace_f_c_t_a0236e673f1b6fe9736bc596d7e50dc7e}{Update\+Frequency}} frequency)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_index_buffer_a1e6bd83966cd61dee0b473690ca60504}{updata\+Buffer}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{额外继承的成员函数}
+\doxysubsection*{Protected 属性 继承自 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_index_buffer}{FCT\+::\+RHI\+::\+Index\+Buffer}}}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_index_buffer_af580a15c37bfc8e4670b35699047ab42}{m\+\_\+size}}
+\item 
+size\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_index_buffer_a95ca93f6961bb742c5636ec73779aa3e}{m\+\_\+stride}}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_i_index_data}{IIndex\+Data}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_index_buffer_a81fe7da714ea60484df00323dd1ac7d6}{m\+\_\+index\+Data}}
+\item 
+\mbox{\hyperlink{namespace_f_c_t_a0236e673f1b6fe9736bc596d7e50dc7e}{Update\+Frequency}} \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_index_buffer_a72a476c96a56cf8738d7c13409ee7733}{m\+\_\+update\+Frequency}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+
+
+在文件 \mbox{\hyperlink{_v_k___index_buffer_8h_source}{VK\+\_\+\+Index\+Buffer.\+h}} 第 \mbox{\hyperlink{_v_k___index_buffer_8h_source_l00013}{13}} 行定义.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_doc-constructors}
+\doxysubsection{构造及析构函数说明}
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_a2e57c5333a95371fc10273553a148b78}\index{FCT::RHI::VK\_IndexBuffer@{FCT::RHI::VK\_IndexBuffer}!VK\_IndexBuffer@{VK\_IndexBuffer}}
+\index{VK\_IndexBuffer@{VK\_IndexBuffer}!FCT::RHI::VK\_IndexBuffer@{FCT::RHI::VK\_IndexBuffer}}
+\doxysubsubsection{\texorpdfstring{VK\_IndexBuffer()}{VK\_IndexBuffer()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_a2e57c5333a95371fc10273553a148b78} 
+FCT\+::\+RHI\+::\+VK\+\_\+\+Index\+Buffer\+::\+VK\+\_\+\+Index\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_v_k___context}{VK\+\_\+\+Context}} \texorpdfstring{$\ast$}{*}}]{ctx}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_a3250e0d38c83340cbdfbcded22c980ba}\index{FCT::RHI::VK\_IndexBuffer@{FCT::RHI::VK\_IndexBuffer}!````~VK\_IndexBuffer@{\texorpdfstring{$\sim$}{\string~}VK\_IndexBuffer}}
+\index{````~VK\_IndexBuffer@{\texorpdfstring{$\sim$}{\string~}VK\_IndexBuffer}!FCT::RHI::VK\_IndexBuffer@{FCT::RHI::VK\_IndexBuffer}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}VK\_IndexBuffer()}{\string~VK\_IndexBuffer()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_a3250e0d38c83340cbdfbcded22c980ba} 
+FCT\+::\+RHI\+::\+VK\+\_\+\+Index\+Buffer\+::\texorpdfstring{$\sim$}{\string~}\+VK\+\_\+\+Index\+Buffer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_doc-func-members}
+\doxysubsection{成员函数说明}
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_aafde2aad1820de240ce5676568d38195}\index{FCT::RHI::VK\_IndexBuffer@{FCT::RHI::VK\_IndexBuffer}!bind@{bind}}
+\index{bind@{bind}!FCT::RHI::VK\_IndexBuffer@{FCT::RHI::VK\_IndexBuffer}}
+\doxysubsubsection{\texorpdfstring{bind()}{bind()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_aafde2aad1820de240ce5676568d38195} 
+void FCT\+::\+RHI\+::\+VK\+\_\+\+Index\+Buffer\+::bind (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer}{Command\+Buffer}} \texorpdfstring{$\ast$}{*}}]{cmd\+Buffer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+实现了 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_index_buffer_a7e51d70b9730b52f1da53da17f02b6e2}{FCT\+::\+RHI\+::\+Index\+Buffer}}.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_a3b202fdeedb49e79c43850c7909b4af6}\index{FCT::RHI::VK\_IndexBuffer@{FCT::RHI::VK\_IndexBuffer}!checkAndResizeIfNeeded@{checkAndResizeIfNeeded}}
+\index{checkAndResizeIfNeeded@{checkAndResizeIfNeeded}!FCT::RHI::VK\_IndexBuffer@{FCT::RHI::VK\_IndexBuffer}}
+\doxysubsubsection{\texorpdfstring{checkAndResizeIfNeeded()}{checkAndResizeIfNeeded()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_a3b202fdeedb49e79c43850c7909b4af6} 
+void FCT\+::\+RHI\+::\+VK\+\_\+\+Index\+Buffer\+::check\+And\+Resize\+If\+Needed (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{frame\+Index}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_a4014386949d65a9c42f1a186962db2bb}\index{FCT::RHI::VK\_IndexBuffer@{FCT::RHI::VK\_IndexBuffer}!create@{create}}
+\index{create@{create}!FCT::RHI::VK\_IndexBuffer@{FCT::RHI::VK\_IndexBuffer}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_a4014386949d65a9c42f1a186962db2bb} 
+void FCT\+::\+RHI\+::\+VK\+\_\+\+Index\+Buffer\+::create (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+实现了 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_index_buffer_ae7aab286d1c154bda9959b776e83b06f}{FCT\+::\+RHI\+::\+Index\+Buffer}}.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_a6f1b0bf731a8ba32d399ce620a5f6553}\index{FCT::RHI::VK\_IndexBuffer@{FCT::RHI::VK\_IndexBuffer}!destroy@{destroy}}
+\index{destroy@{destroy}!FCT::RHI::VK\_IndexBuffer@{FCT::RHI::VK\_IndexBuffer}}
+\doxysubsubsection{\texorpdfstring{destroy()}{destroy()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_a6f1b0bf731a8ba32d399ce620a5f6553} 
+void FCT\+::\+RHI\+::\+VK\+\_\+\+Index\+Buffer\+::destroy (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_ad7a0939f7df3c393e77a3b349c3f9cc2}\index{FCT::RHI::VK\_IndexBuffer@{FCT::RHI::VK\_IndexBuffer}!getIndexType@{getIndexType}}
+\index{getIndexType@{getIndexType}!FCT::RHI::VK\_IndexBuffer@{FCT::RHI::VK\_IndexBuffer}}
+\doxysubsubsection{\texorpdfstring{getIndexType()}{getIndexType()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_ad7a0939f7df3c393e77a3b349c3f9cc2} 
+vk\+::\+Index\+Type FCT\+::\+RHI\+::\+VK\+\_\+\+Index\+Buffer\+::get\+Index\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_ae6585b7e6f531246ddf5bc18b5312894}\index{FCT::RHI::VK\_IndexBuffer@{FCT::RHI::VK\_IndexBuffer}!mapBuffer@{mapBuffer}}
+\index{mapBuffer@{mapBuffer}!FCT::RHI::VK\_IndexBuffer@{FCT::RHI::VK\_IndexBuffer}}
+\doxysubsubsection{\texorpdfstring{mapBuffer()}{mapBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_ae6585b7e6f531246ddf5bc18b5312894} 
+void FCT\+::\+RHI\+::\+VK\+\_\+\+Index\+Buffer\+::map\+Buffer (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{uint32\+\_\+t}]{size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+实现了 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_index_buffer_a07c27280b1bd2bbebcb9d53be5b04eff}{FCT\+::\+RHI\+::\+Index\+Buffer}}.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_a683555340360d8ebd33c4d04aecd5107}\index{FCT::RHI::VK\_IndexBuffer@{FCT::RHI::VK\_IndexBuffer}!mapBuffer@{mapBuffer}}
+\index{mapBuffer@{mapBuffer}!FCT::RHI::VK\_IndexBuffer@{FCT::RHI::VK\_IndexBuffer}}
+\doxysubsubsection{\texorpdfstring{mapBuffer()}{mapBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_a683555340360d8ebd33c4d04aecd5107} 
+void FCT\+::\+RHI\+::\+VK\+\_\+\+Index\+Buffer\+::map\+Buffer (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{uint32\+\_\+t}]{size}{, }\item[{uint32\+\_\+t}]{frame\+Index}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_aef48c71a9da6cd5ac182463cb7e4b828}\index{FCT::RHI::VK\_IndexBuffer@{FCT::RHI::VK\_IndexBuffer}!resize@{resize}}
+\index{resize@{resize}!FCT::RHI::VK\_IndexBuffer@{FCT::RHI::VK\_IndexBuffer}}
+\doxysubsubsection{\texorpdfstring{resize()}{resize()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_aef48c71a9da6cd5ac182463cb7e4b828} 
+void FCT\+::\+RHI\+::\+VK\+\_\+\+Index\+Buffer\+::resize (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+实现了 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_index_buffer_aaff4ba1a4a06cc94456d89fa0cb43805}{FCT\+::\+RHI\+::\+Index\+Buffer}}.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_a5fab9bea75d15501038296ec234eb228}\index{FCT::RHI::VK\_IndexBuffer@{FCT::RHI::VK\_IndexBuffer}!resizeBuffer@{resizeBuffer}}
+\index{resizeBuffer@{resizeBuffer}!FCT::RHI::VK\_IndexBuffer@{FCT::RHI::VK\_IndexBuffer}}
+\doxysubsubsection{\texorpdfstring{resizeBuffer()}{resizeBuffer()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_a5fab9bea75d15501038296ec234eb228} 
+void FCT\+::\+RHI\+::\+VK\+\_\+\+Index\+Buffer\+::resize\+Buffer (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size}{, }\item[{uint32\+\_\+t}]{frame\+Index}{}\end{DoxyParamCaption})}
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\+FCT/\+RHI/\mbox{\hyperlink{_v_k___index_buffer_8h}{VK\+\_\+\+Index\+Buffer.\+h}}\end{DoxyCompactItemize}

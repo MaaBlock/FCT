@@ -1,0 +1,494 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FCT: include/FCT/Context/ResourceLayout.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FCT
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_resource_layout_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">ResourceLayout.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_resource_layout_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// Created by Administrator on 2025/4/16.</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="_third_party_8h.html">../ThirdParty.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="_data_types_8h.html">DataTypes.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="_flags_8h.html">../Base/Flags.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="string_8h.html">../Base/string.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="_uniform_8h.html">Uniform.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef RESOURCELAYOUT_H</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define RESOURCELAYOUT_H</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_f_c_t.html">FCT</a></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>{</div>
+<div class="foldopen" id="foldopen00014" data-start="{" data-end="};">
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="namespace_f_c_t.html#a8c0a0c97235ef12c8fa799cc939337db">   14</a></span>    <span class="keyword">enum class</span> <a class="code hl_enumeration" href="namespace_f_c_t.html#a8c0a0c97235ef12c8fa799cc939337db">TextureType</a> {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="namespace_f_c_t.html#a8c0a0c97235ef12c8fa799cc939337dbaa6e2bae752d3bf4e34cb392bca789995">   15</a></span>        <a class="code hl_enumvalue" href="namespace_f_c_t.html#a8c0a0c97235ef12c8fa799cc939337dbaa6e2bae752d3bf4e34cb392bca789995">Texture2D</a>,</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="namespace_f_c_t.html#a8c0a0c97235ef12c8fa799cc939337dba89c915587e16bcf8963be7cf41a0d9fd">   16</a></span>        <a class="code hl_enumvalue" href="namespace_f_c_t.html#a8c0a0c97235ef12c8fa799cc939337dba89c915587e16bcf8963be7cf41a0d9fd">Texture3D</a>,</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="namespace_f_c_t.html#a8c0a0c97235ef12c8fa799cc939337dba0a152d9f3e1df14068c5857fb3352505">   17</a></span>        <a class="code hl_enumvalue" href="namespace_f_c_t.html#a8c0a0c97235ef12c8fa799cc939337dba0a152d9f3e1df14068c5857fb3352505">TextureCube</a>,</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="namespace_f_c_t.html#a8c0a0c97235ef12c8fa799cc939337dba5452f0008bbc07c796bb4ac7d284928d">   18</a></span>        <a class="code hl_enumvalue" href="namespace_f_c_t.html#a8c0a0c97235ef12c8fa799cc939337dba5452f0008bbc07c796bb4ac7d284928d">Texture2DArray</a>,</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="namespace_f_c_t.html#a8c0a0c97235ef12c8fa799cc939337dba8ff61f00665b2125149bf524b747994f">   19</a></span>        <a class="code hl_enumvalue" href="namespace_f_c_t.html#a8c0a0c97235ef12c8fa799cc939337dba8ff61f00665b2125149bf524b747994f">DepthTexture</a></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    };</div>
+</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="}">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="namespace_f_c_t.html#a52cfd86ec6a26e68f333aab8eaccbf37">   22</a></span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code hl_function" href="namespace_f_c_t.html#a52cfd86ec6a26e68f333aab8eaccbf37">GetTextureDefaultName</a>(<a class="code hl_enumeration" href="namespace_f_c_t.html#a8c0a0c97235ef12c8fa799cc939337db">TextureType</a> type)</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordflow">switch</span> (type)</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespace_f_c_t.html#a8c0a0c97235ef12c8fa799cc939337dbaa6e2bae752d3bf4e34cb392bca789995">TextureType::Texture2D</a>:</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            <span class="keywordflow">return</span> <span class="stringliteral">&quot;u_Texture2D&quot;</span>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespace_f_c_t.html#a8c0a0c97235ef12c8fa799cc939337dba89c915587e16bcf8963be7cf41a0d9fd">TextureType::Texture3D</a>:</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            <span class="keywordflow">return</span> <span class="stringliteral">&quot;u_Texture3D&quot;</span>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespace_f_c_t.html#a8c0a0c97235ef12c8fa799cc939337dba0a152d9f3e1df14068c5857fb3352505">TextureType::TextureCube</a>:</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            <span class="keywordflow">return</span> <span class="stringliteral">&quot;u_TextureCube&quot;</span>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespace_f_c_t.html#a8c0a0c97235ef12c8fa799cc939337dba5452f0008bbc07c796bb4ac7d284928d">TextureType::Texture2DArray</a>:</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            <span class="keywordflow">return</span> <span class="stringliteral">&quot;u_Texture2DArray&quot;</span>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespace_f_c_t.html#a8c0a0c97235ef12c8fa799cc939337dba8ff61f00665b2125149bf524b747994f">TextureType::DepthTexture</a>:</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            <span class="keywordflow">return</span> <span class="stringliteral">&quot;u_DepthTexture&quot;</span>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="keywordflow">default</span>:</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            <span class="keywordflow">return</span> <span class="stringliteral">&quot;u_Texture&quot;</span>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        }</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    }</div>
+</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="foldopen" id="foldopen00041" data-start="{" data-end="};">
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_texture_element.html">   41</a></span>    <span class="keyword">class </span><a class="code hl_function" href="class_f_c_t_1_1_texture_element.html#ad43df0589bd6f5a93fd475bd632e6bf8">TextureElement</a> {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00043" data-start="{" data-end="}">
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_texture_element.html#ad43df0589bd6f5a93fd475bd632e6bf8">   43</a></span>        <span class="keyword">constexpr</span> <a class="code hl_function" href="class_f_c_t_1_1_texture_element.html#ad43df0589bd6f5a93fd475bd632e6bf8">TextureElement</a>() noexcept</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            : m_type(<a class="code hl_enumeration" href="namespace_f_c_t.html#a8c0a0c97235ef12c8fa799cc939337db">TextureType</a>::<a class="code hl_enumvalue" href="namespace_f_c_t.html#a8c0a0c97235ef12c8fa799cc939337dbaa6e2bae752d3bf4e34cb392bca789995">Texture2D</a>), m_name(<span class="stringliteral">&quot;&quot;</span>),</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>              m_stages(<a class="code hl_enumeration" href="namespace_f_c_t.html#adb995786f2f649c122895cd47ab09d32">ShaderStage</a>::<a class="code hl_enumvalue" href="namespace_f_c_t.html#adb995786f2f649c122895cd47ab09d32ab1c94ca2fbc3e78fc30069c8d0f01680">All</a>), m_updateFrequency(<a class="code hl_enumeration" href="namespace_f_c_t.html#a0236e673f1b6fe9736bc596d7e50dc7e">UpdateFrequency</a>::<a class="code hl_enumvalue" href="namespace_f_c_t.html#a0236e673f1b6fe9736bc596d7e50dc7ea5ac98a9f1bddc1b15896f0e02bf06839">PerFrame</a>) {}</div>
+</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="foldopen" id="foldopen00047" data-start="{" data-end="}">
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_texture_element.html#a9dceae57be559943ea70885cecd1a410">   47</a></span>        <span class="keyword">constexpr</span> <a class="code hl_function" href="class_f_c_t_1_1_texture_element.html#a9dceae57be559943ea70885cecd1a410">TextureElement</a>(<span class="keyword">const</span> <a class="code hl_function" href="class_f_c_t_1_1_texture_element.html#ad43df0589bd6f5a93fd475bd632e6bf8">TextureElement</a>&amp; other) noexcept</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            : m_type(other.m_type), m_name(other.m_name),</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>              m_stages(other.m_stages), m_updateFrequency(other.m_updateFrequency) {}</div>
+</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="foldopen" id="foldopen00051" data-start="{" data-end="}">
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_texture_element.html#ac9d2fc54c64ea7c60727aad687e5cecb">   51</a></span>        <span class="keyword">constexpr</span> <a class="code hl_function" href="class_f_c_t_1_1_texture_element.html#ac9d2fc54c64ea7c60727aad687e5cecb">TextureElement</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* name) noexcept</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            : m_type(<a class="code hl_enumvalue" href="namespace_f_c_t.html#a8c0a0c97235ef12c8fa799cc939337dbaa6e2bae752d3bf4e34cb392bca789995">TextureType::Texture2D</a>), m_name(name),</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>              m_stages(<a class="code hl_enumvalue" href="namespace_f_c_t.html#adb995786f2f649c122895cd47ab09d32ab1c94ca2fbc3e78fc30069c8d0f01680">ShaderStage::All</a>), m_updateFrequency(<a class="code hl_enumvalue" href="namespace_f_c_t.html#a0236e673f1b6fe9736bc596d7e50dc7ea5ac98a9f1bddc1b15896f0e02bf06839">UpdateFrequency::PerFrame</a>) {}</div>
+</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="foldopen" id="foldopen00055" data-start="{" data-end="}">
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_texture_element.html#a4b3faa3f86b192673bb22e71357ec1b9">   55</a></span>        <span class="keyword">constexpr</span> <a class="code hl_function" href="class_f_c_t_1_1_texture_element.html#a4b3faa3f86b192673bb22e71357ec1b9">TextureElement</a>(<a class="code hl_enumeration" href="namespace_f_c_t.html#a8c0a0c97235ef12c8fa799cc939337db">TextureType</a> type) noexcept</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            : m_type(type), m_name(<a class="code hl_function" href="namespace_f_c_t.html#a52cfd86ec6a26e68f333aab8eaccbf37">GetTextureDefaultName</a>(type)),</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>              m_stages(<a class="code hl_enumvalue" href="namespace_f_c_t.html#adb995786f2f649c122895cd47ab09d32ab1c94ca2fbc3e78fc30069c8d0f01680">ShaderStage::All</a>), m_updateFrequency(<a class="code hl_enumvalue" href="namespace_f_c_t.html#a0236e673f1b6fe9736bc596d7e50dc7ea5ac98a9f1bddc1b15896f0e02bf06839">UpdateFrequency::PerFrame</a>) {}</div>
+</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="foldopen" id="foldopen00059" data-start="{" data-end="}">
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_texture_element.html#ab58044e5055d4675b051bb0c5ab58876">   59</a></span>        <span class="keyword">constexpr</span> <a class="code hl_function" href="class_f_c_t_1_1_texture_element.html#ab58044e5055d4675b051bb0c5ab58876">TextureElement</a>(<a class="code hl_enumeration" href="namespace_f_c_t.html#a8c0a0c97235ef12c8fa799cc939337db">TextureType</a> type, <span class="keyword">const</span> <span class="keywordtype">char</span>* name) noexcept</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            : m_type(type), m_name(name),</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>              m_stages(<a class="code hl_enumvalue" href="namespace_f_c_t.html#adb995786f2f649c122895cd47ab09d32ab1c94ca2fbc3e78fc30069c8d0f01680">ShaderStage::All</a>), m_updateFrequency(<a class="code hl_enumvalue" href="namespace_f_c_t.html#a0236e673f1b6fe9736bc596d7e50dc7ea5ac98a9f1bddc1b15896f0e02bf06839">UpdateFrequency::PerFrame</a>) {}</div>
+</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="foldopen" id="foldopen00063" data-start="{" data-end="}">
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_texture_element.html#aeb1b71de93afde0d453f282c56096891">   63</a></span>        <span class="keyword">constexpr</span> <a class="code hl_function" href="class_f_c_t_1_1_texture_element.html#aeb1b71de93afde0d453f282c56096891">TextureElement</a>(<a class="code hl_enumeration" href="namespace_f_c_t.html#a8c0a0c97235ef12c8fa799cc939337db">TextureType</a> type, <span class="keyword">const</span> <span class="keywordtype">char</span>* name, <a class="code hl_enumeration" href="namespace_f_c_t.html#a0236e673f1b6fe9736bc596d7e50dc7e">UpdateFrequency</a> updateFreq) noexcept</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            : m_type(type), m_name(name),</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>              m_stages(<a class="code hl_enumvalue" href="namespace_f_c_t.html#adb995786f2f649c122895cd47ab09d32ab1c94ca2fbc3e78fc30069c8d0f01680">ShaderStage::All</a>), m_updateFrequency(updateFreq) {}</div>
+</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="foldopen" id="foldopen00067" data-start="{" data-end="}">
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_texture_element.html#aab45f045a5ea15f8ffe55909d581610c">   67</a></span>        <span class="keyword">constexpr</span> <a class="code hl_function" href="class_f_c_t_1_1_texture_element.html#aab45f045a5ea15f8ffe55909d581610c">TextureElement</a>(<a class="code hl_enumeration" href="namespace_f_c_t.html#a8c0a0c97235ef12c8fa799cc939337db">TextureType</a> type, <span class="keyword">const</span> <span class="keywordtype">char</span>* name, <a class="code hl_typedef" href="namespace_f_c_t.html#a541d9708e0c1aa838437ddff4b111d4d">ShaderStages</a> stages,</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                                <a class="code hl_enumeration" href="namespace_f_c_t.html#a0236e673f1b6fe9736bc596d7e50dc7e">UpdateFrequency</a> updateFreq = <a class="code hl_enumvalue" href="namespace_f_c_t.html#a0236e673f1b6fe9736bc596d7e50dc7ea5ac98a9f1bddc1b15896f0e02bf06839">UpdateFrequency::PerFrame</a>) noexcept</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            : m_type(type), m_name(name),</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>              m_stages(stages), m_updateFrequency(updateFreq) {}</div>
+</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_texture_element.html#a86be58c42a5269bc62d986f6aef856ae">   72</a></span>        <span class="keyword">constexpr</span> <a class="code hl_enumeration" href="namespace_f_c_t.html#a8c0a0c97235ef12c8fa799cc939337db">TextureType</a> <a class="code hl_function" href="class_f_c_t_1_1_texture_element.html#a86be58c42a5269bc62d986f6aef856ae">getType</a>() const noexcept { <span class="keywordflow">return</span> m_type; }</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_texture_element.html#a29157e3cface33df29e94b9ee6d5b7d5">   73</a></span>        <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code hl_function" href="class_f_c_t_1_1_texture_element.html#a29157e3cface33df29e94b9ee6d5b7d5">getName</a>() const noexcept { <span class="keywordflow">return</span> m_name; }</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_texture_element.html#a196ac1a4f112dca30ab169437aecf702">   74</a></span>        <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespace_f_c_t.html#a541d9708e0c1aa838437ddff4b111d4d">ShaderStages</a> <a class="code hl_function" href="class_f_c_t_1_1_texture_element.html#a196ac1a4f112dca30ab169437aecf702">getShaderStages</a>() const noexcept { <span class="keywordflow">return</span> m_stages; }</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_texture_element.html#a8dfb7ad3a25db63761184bef8fe8e989">   75</a></span>        <span class="keyword">constexpr</span> <a class="code hl_enumeration" href="namespace_f_c_t.html#a0236e673f1b6fe9736bc596d7e50dc7e">UpdateFrequency</a> <a class="code hl_function" href="class_f_c_t_1_1_texture_element.html#a8dfb7ad3a25db63761184bef8fe8e989">getUpdateFrequency</a>() const noexcept { <span class="keywordflow">return</span> m_updateFrequency; }</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="foldopen" id="foldopen00077" data-start="{" data-end="}">
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_texture_element.html#a2b85b73beaad3e22e78f99e09971101d">   77</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="class_f_c_t_1_1_texture_element.html#a2b85b73beaad3e22e78f99e09971101d">operator==</a>(<span class="keyword">const</span> <a class="code hl_function" href="class_f_c_t_1_1_texture_element.html#ad43df0589bd6f5a93fd475bd632e6bf8">TextureElement</a>&amp; other) <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            <span class="keywordflow">return</span> m_type == other.m_type &amp;&amp;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                   <a class="code hl_function" href="namespace_f_c_t.html#a2258e1e2d785393addedd227fe296205">StringEquals</a>(m_name, other.m_name) &amp;&amp;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                   m_stages == other.m_stages &amp;&amp;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>                   m_updateFrequency == other.m_updateFrequency;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        }</div>
+</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="foldopen" id="foldopen00084" data-start="{" data-end="}">
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_texture_element.html#a86600db946ad9db81132d5ff93628e99">   84</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="class_f_c_t_1_1_texture_element.html#a86600db946ad9db81132d5ff93628e99">operator!=</a>(<span class="keyword">const</span> <a class="code hl_function" href="class_f_c_t_1_1_texture_element.html#ad43df0589bd6f5a93fd475bd632e6bf8">TextureElement</a>&amp; other) <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            <span class="keywordflow">return</span> !(*<span class="keyword">this</span> == other);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        }</div>
+</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="foldopen" id="foldopen00088" data-start="{" data-end="}">
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_texture_element.html#a257f7a0d75735a6ed85beaeb33c2dbe8">   88</a></span>        <span class="keyword">constexpr</span> <span class="keyword">explicit</span> <span class="keyword">operator</span> bool() const noexcept {</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            <span class="keywordflow">return</span> m_name != <span class="keyword">nullptr</span> &amp;&amp; m_name[0] != <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        }</div>
+</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <a class="code hl_enumeration" href="namespace_f_c_t.html#a8c0a0c97235ef12c8fa799cc939337db">TextureType</a> m_type;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        <span class="keyword">const</span> <span class="keywordtype">char</span>* m_name;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        <a class="code hl_typedef" href="namespace_f_c_t.html#a541d9708e0c1aa838437ddff4b111d4d">ShaderStages</a> m_stages;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <a class="code hl_enumeration" href="namespace_f_c_t.html#a0236e673f1b6fe9736bc596d7e50dc7e">UpdateFrequency</a> m_updateFrequency;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    };</div>
+</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="foldopen" id="foldopen00098" data-start="{" data-end="};">
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_sampler_element.html">   98</a></span>    <span class="keyword">class </span><a class="code hl_function" href="class_f_c_t_1_1_sampler_element.html#a958c61a2fa2732b790b3249125a154ca">SamplerElement</a> {</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00100" data-start="{" data-end="}">
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_sampler_element.html#a958c61a2fa2732b790b3249125a154ca">  100</a></span>        <span class="keyword">constexpr</span> <a class="code hl_function" href="class_f_c_t_1_1_sampler_element.html#a958c61a2fa2732b790b3249125a154ca">SamplerElement</a>() noexcept</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            : m_name(<span class="stringliteral">&quot;&quot;</span>), m_stages(<a class="code hl_enumeration" href="namespace_f_c_t.html#adb995786f2f649c122895cd47ab09d32">ShaderStage</a>::<a class="code hl_enumvalue" href="namespace_f_c_t.html#adb995786f2f649c122895cd47ab09d32ab1c94ca2fbc3e78fc30069c8d0f01680">All</a>),</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>              m_updateFrequency(<a class="code hl_enumeration" href="namespace_f_c_t.html#a0236e673f1b6fe9736bc596d7e50dc7e">UpdateFrequency</a>::<a class="code hl_enumvalue" href="namespace_f_c_t.html#a0236e673f1b6fe9736bc596d7e50dc7ea84a8921b25f505d0d2077aeb5db4bc16">Static</a>) {}</div>
+</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="foldopen" id="foldopen00104" data-start="{" data-end="}">
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_sampler_element.html#a4436c4a3d4db719e04dbee087dd59024">  104</a></span>        <span class="keyword">constexpr</span> <a class="code hl_function" href="class_f_c_t_1_1_sampler_element.html#a4436c4a3d4db719e04dbee087dd59024">SamplerElement</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* name) noexcept</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>            : m_name(name), m_stages(<a class="code hl_enumvalue" href="namespace_f_c_t.html#adb995786f2f649c122895cd47ab09d32ab1c94ca2fbc3e78fc30069c8d0f01680">ShaderStage::All</a>),</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>              m_updateFrequency(<a class="code hl_enumvalue" href="namespace_f_c_t.html#a0236e673f1b6fe9736bc596d7e50dc7ea84a8921b25f505d0d2077aeb5db4bc16">UpdateFrequency::Static</a>) {}</div>
+</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="foldopen" id="foldopen00108" data-start="{" data-end="}">
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_sampler_element.html#a38f604f0a2ab4e77ba04a33f98d9799e">  108</a></span>        <span class="keyword">constexpr</span> <a class="code hl_function" href="class_f_c_t_1_1_sampler_element.html#a38f604f0a2ab4e77ba04a33f98d9799e">SamplerElement</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* name, <a class="code hl_typedef" href="namespace_f_c_t.html#a541d9708e0c1aa838437ddff4b111d4d">ShaderStages</a> stages) noexcept</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            : m_name(name), m_stages(stages),</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>              m_updateFrequency(<a class="code hl_enumvalue" href="namespace_f_c_t.html#a0236e673f1b6fe9736bc596d7e50dc7ea84a8921b25f505d0d2077aeb5db4bc16">UpdateFrequency::Static</a>) {}</div>
+</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="foldopen" id="foldopen00112" data-start="{" data-end="}">
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_sampler_element.html#a28f9e7d43cc2d728595ac2fa367c8892">  112</a></span>        <span class="keyword">constexpr</span> <a class="code hl_function" href="class_f_c_t_1_1_sampler_element.html#a28f9e7d43cc2d728595ac2fa367c8892">SamplerElement</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* name, <a class="code hl_enumeration" href="namespace_f_c_t.html#a0236e673f1b6fe9736bc596d7e50dc7e">UpdateFrequency</a> updateFreq) noexcept</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            : m_name(name), m_stages(<a class="code hl_enumvalue" href="namespace_f_c_t.html#adb995786f2f649c122895cd47ab09d32ab1c94ca2fbc3e78fc30069c8d0f01680">ShaderStage::All</a>),</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>              m_updateFrequency(updateFreq) {}</div>
+</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="foldopen" id="foldopen00116" data-start="{" data-end="}">
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_sampler_element.html#ada898dea5b968159d34c53e620601e38">  116</a></span>        <span class="keyword">constexpr</span> <a class="code hl_function" href="class_f_c_t_1_1_sampler_element.html#ada898dea5b968159d34c53e620601e38">SamplerElement</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* name, <a class="code hl_typedef" href="namespace_f_c_t.html#a541d9708e0c1aa838437ddff4b111d4d">ShaderStages</a> stages,</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>                                <a class="code hl_enumeration" href="namespace_f_c_t.html#a0236e673f1b6fe9736bc596d7e50dc7e">UpdateFrequency</a> updateFreq) noexcept</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>            : m_name(name), m_stages(stages),</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>              m_updateFrequency(updateFreq) {}</div>
+</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_sampler_element.html#aa8459fb05557219fa2b8230bcfde8334">  121</a></span>        <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code hl_function" href="class_f_c_t_1_1_sampler_element.html#aa8459fb05557219fa2b8230bcfde8334">getName</a>() const noexcept { <span class="keywordflow">return</span> m_name; }</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_sampler_element.html#a2a6b3c52f47ad61fb4bccd49dd6fdb01">  122</a></span>        <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespace_f_c_t.html#a541d9708e0c1aa838437ddff4b111d4d">ShaderStages</a> <a class="code hl_function" href="class_f_c_t_1_1_sampler_element.html#a2a6b3c52f47ad61fb4bccd49dd6fdb01">getShaderStages</a>() const noexcept { <span class="keywordflow">return</span> m_stages; }</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_sampler_element.html#a677e75abff2dc5c4b06220fdffafc4bd">  123</a></span>        <span class="keyword">constexpr</span> <a class="code hl_enumeration" href="namespace_f_c_t.html#a0236e673f1b6fe9736bc596d7e50dc7e">UpdateFrequency</a> <a class="code hl_function" href="class_f_c_t_1_1_sampler_element.html#a677e75abff2dc5c4b06220fdffafc4bd">getUpdateFrequency</a>() const noexcept { <span class="keywordflow">return</span> m_updateFrequency; }</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="foldopen" id="foldopen00125" data-start="{" data-end="}">
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_sampler_element.html#a75b4ba542fdd2d1b83ef509f6f35bdb3">  125</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="class_f_c_t_1_1_sampler_element.html#a75b4ba542fdd2d1b83ef509f6f35bdb3">operator==</a>(<span class="keyword">const</span> <a class="code hl_function" href="class_f_c_t_1_1_sampler_element.html#a958c61a2fa2732b790b3249125a154ca">SamplerElement</a>&amp; other) <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="namespace_f_c_t.html#a2258e1e2d785393addedd227fe296205">StringEquals</a>(m_name, other.m_name) &amp;&amp;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>                   m_stages == other.m_stages &amp;&amp;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>                   m_updateFrequency == other.m_updateFrequency;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        }</div>
+</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="foldopen" id="foldopen00131" data-start="{" data-end="}">
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_sampler_element.html#ac12016dd6381710cb2bda22bd98d7c79">  131</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="class_f_c_t_1_1_sampler_element.html#ac12016dd6381710cb2bda22bd98d7c79">operator!=</a>(<span class="keyword">const</span> <a class="code hl_function" href="class_f_c_t_1_1_sampler_element.html#a958c61a2fa2732b790b3249125a154ca">SamplerElement</a>&amp; other) <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>            <span class="keywordflow">return</span> !(*<span class="keyword">this</span> == other);</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        }</div>
+</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        <span class="keyword">const</span> <span class="keywordtype">char</span>* m_name;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        <a class="code hl_typedef" href="namespace_f_c_t.html#a541d9708e0c1aa838437ddff4b111d4d">ShaderStages</a> m_stages;</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        <a class="code hl_enumeration" href="namespace_f_c_t.html#a0236e673f1b6fe9736bc596d7e50dc7e">UpdateFrequency</a> m_updateFrequency;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    };</div>
+</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="foldopen" id="foldopen00141" data-start="{" data-end="};">
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_resource_layout.html">  141</a></span>    <span class="keyword">class </span><a class="code hl_function" href="class_f_c_t_1_1_resource_layout.html#acc7e06e75b5357ee0d14c54f72ad7074">ResourceLayout</a> {</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_resource_layout.html#a4b695028e859c3a9057ee9a50f9ce104">  143</a></span>        <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">size_t</span> <a class="code hl_variable" href="class_f_c_t_1_1_resource_layout.html#a4b695028e859c3a9057ee9a50f9ce104">MaxElements</a> = 64;</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span> </div>
+<div class="foldopen" id="foldopen00145" data-start="{" data-end="}">
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_resource_layout.html#acc7e06e75b5357ee0d14c54f72ad7074">  145</a></span>        <span class="keyword">constexpr</span> <a class="code hl_function" href="class_f_c_t_1_1_resource_layout.html#acc7e06e75b5357ee0d14c54f72ad7074">ResourceLayout</a>() noexcept</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>            : m_textureCount(0), m_samplerCount(0) {}</div>
+</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span>... Args&gt;</div>
+<div class="foldopen" id="foldopen00149" data-start="{" data-end="}">
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_resource_layout.html#a16a4bd190d15c09ad695e2d09928585c">  149</a></span>        <span class="keyword">constexpr</span> <a class="code hl_function" href="class_f_c_t_1_1_resource_layout.html#a16a4bd190d15c09ad695e2d09928585c">ResourceLayout</a>(Args&amp;&amp;... args) noexcept</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>            : m_textureCount(0), m_samplerCount(0) {</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>            processArgs(std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        }</div>
+</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="foldopen" id="foldopen00154" data-start="{" data-end="}">
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_resource_layout.html#ab317726ac8284760c096b818cc92473b">  154</a></span>        <span class="keyword">constexpr</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_resource_layout.html#ab317726ac8284760c096b818cc92473b">addTexture</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_f_c_t_1_1_texture_element.html">TextureElement</a>&amp; element) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>            <span class="keywordflow">if</span> (m_textureCount &lt; <a class="code hl_variable" href="class_f_c_t_1_1_resource_layout.html#a4b695028e859c3a9057ee9a50f9ce104">MaxElements</a>) {</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>                m_textures[m_textureCount++] = element;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>            }</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        }</div>
+</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
+<div class="foldopen" id="foldopen00160" data-start="{" data-end="}">
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_resource_layout.html#a8f0fe6a6aa8b6c6e2a6783fc4f03fee1">  160</a></span>        <span class="keyword">constexpr</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_resource_layout.html#a8f0fe6a6aa8b6c6e2a6783fc4f03fee1">addSampler</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_f_c_t_1_1_sampler_element.html">SamplerElement</a>&amp; element) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>            <span class="keywordflow">if</span> (m_samplerCount &lt; <a class="code hl_variable" href="class_f_c_t_1_1_resource_layout.html#a4b695028e859c3a9057ee9a50f9ce104">MaxElements</a>) {</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>                m_samplers[m_samplerCount++] = element;</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>            }</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        }</div>
+</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_resource_layout.html#a42420cea5d1a830935adefd069c43c24">  166</a></span>        <span class="keyword">constexpr</span> <span class="keywordtype">size_t</span> <a class="code hl_function" href="class_f_c_t_1_1_resource_layout.html#a42420cea5d1a830935adefd069c43c24">getTextureCount</a>() const noexcept { <span class="keywordflow">return</span> m_textureCount; }</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_resource_layout.html#a2067ee6495123d5a77887eff440d5181">  167</a></span>        <span class="keyword">constexpr</span> <span class="keywordtype">size_t</span> <a class="code hl_function" href="class_f_c_t_1_1_resource_layout.html#a2067ee6495123d5a77887eff440d5181">getSamplerCount</a>() const noexcept { <span class="keywordflow">return</span> m_samplerCount; }</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
+<div class="foldopen" id="foldopen00169" data-start="{" data-end="}">
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_resource_layout.html#a38f7dcc717f40699c89a083ad65c892e">  169</a></span>        <span class="keyword">constexpr</span> <span class="keyword">const</span> <a class="code hl_class" href="class_f_c_t_1_1_texture_element.html">TextureElement</a>&amp; <a class="code hl_function" href="class_f_c_t_1_1_resource_layout.html#a38f7dcc717f40699c89a083ad65c892e">getTexture</a>(<span class="keywordtype">size_t</span> index) <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>            <span class="keywordflow">return</span> (index &lt; m_textureCount) ? m_textures[index] : m_textures[0];</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        }</div>
+</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
+<div class="foldopen" id="foldopen00173" data-start="{" data-end="}">
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_resource_layout.html#a6500fee17bc8d0881d8672de24ba16e4">  173</a></span>        <span class="keyword">constexpr</span> <span class="keyword">const</span> <a class="code hl_class" href="class_f_c_t_1_1_sampler_element.html">SamplerElement</a>&amp; <a class="code hl_function" href="class_f_c_t_1_1_resource_layout.html#a6500fee17bc8d0881d8672de24ba16e4">getSampler</a>(<span class="keywordtype">size_t</span> index) <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>            <span class="keywordflow">return</span> (index &lt; m_samplerCount) ? m_samplers[index] : m_samplers[0];</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        }</div>
+</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span> </div>
+<div class="foldopen" id="foldopen00177" data-start="{" data-end="}">
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_resource_layout.html#af8cecb424bfd352334b643d55d24c8e1">  177</a></span>        <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_f_c_t_1_1_resource_layout.html#af8cecb424bfd352334b643d55d24c8e1">findTextureIndex</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* name) <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; m_textureCount; ++i) {</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>                <span class="keywordflow">if</span> (<a class="code hl_function" href="namespace_f_c_t.html#a2258e1e2d785393addedd227fe296205">StringEquals</a>(m_textures[i].getName(), name)) {</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>                    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(i);</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>                }</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>            }</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>            <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        }</div>
+</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
+<div class="foldopen" id="foldopen00186" data-start="{" data-end="}">
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_resource_layout.html#a7ee41c9bf74bfdd44d2ff97e57254cd5">  186</a></span>        <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_f_c_t_1_1_resource_layout.html#a7ee41c9bf74bfdd44d2ff97e57254cd5">findSamplerIndex</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* name) <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; m_samplerCount; ++i) {</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>                <span class="keywordflow">if</span> (<a class="code hl_function" href="namespace_f_c_t.html#a2258e1e2d785393addedd227fe296205">StringEquals</a>(m_samplers[i].getName(), name)) {</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>                    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(i);</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>                }</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>            }</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>            <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>        }</div>
+</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span> </div>
+<div class="foldopen" id="foldopen00195" data-start="{" data-end="}">
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_resource_layout.html#a86775840d0a1f23df57d840139c25089">  195</a></span>        <span class="keyword">constexpr</span> <a class="code hl_class" href="class_f_c_t_1_1_texture_element.html">TextureElement</a> <a class="code hl_function" href="class_f_c_t_1_1_resource_layout.html#a86775840d0a1f23df57d840139c25089">findTexture</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* name) <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>            <span class="keywordtype">int</span> index = <a class="code hl_function" href="class_f_c_t_1_1_resource_layout.html#af8cecb424bfd352334b643d55d24c8e1">findTextureIndex</a>(name);</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>            <span class="keywordflow">return</span> (index &gt;= 0) ? m_textures[index] : <a class="code hl_class" href="class_f_c_t_1_1_texture_element.html">TextureElement</a>();</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        }</div>
+</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
+<div class="foldopen" id="foldopen00200" data-start="{" data-end="}">
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_resource_layout.html#aa56e4ed2fc87c075471ee0a4b17241c3">  200</a></span>        <span class="keyword">constexpr</span> <a class="code hl_class" href="class_f_c_t_1_1_sampler_element.html">SamplerElement</a> <a class="code hl_function" href="class_f_c_t_1_1_resource_layout.html#aa56e4ed2fc87c075471ee0a4b17241c3">findSampler</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* name) <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>            <span class="keywordtype">int</span> index = <a class="code hl_function" href="class_f_c_t_1_1_resource_layout.html#a7ee41c9bf74bfdd44d2ff97e57254cd5">findSamplerIndex</a>(name);</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>            <span class="keywordflow">return</span> (index &gt;= 0) ? m_samplers[index] : <a class="code hl_class" href="class_f_c_t_1_1_sampler_element.html">SamplerElement</a>();</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        }</div>
+</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span> </div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        <span class="keyword">constexpr</span> <span class="keywordtype">void</span> processArgs() noexcept {</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span> </div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>        }</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span>... Rest&gt;</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>        <span class="keyword">constexpr</span> <span class="keywordtype">void</span> processArgs(<span class="keyword">const</span> <a class="code hl_function" href="class_f_c_t_1_1_resource_layout.html#acc7e06e75b5357ee0d14c54f72ad7074">ResourceLayout</a>&amp; other, Rest&amp;&amp;... rest) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; other.m_textureCount; ++i) {</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>                <a class="code hl_function" href="class_f_c_t_1_1_resource_layout.html#ab317726ac8284760c096b818cc92473b">addTexture</a>(other.m_textures[i]);</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>            }</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span> </div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; other.m_samplerCount; ++i) {</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>                <a class="code hl_function" href="class_f_c_t_1_1_resource_layout.html#a8f0fe6a6aa8b6c6e2a6783fc4f03fee1">addSampler</a>(other.m_samplers[i]);</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>            }</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span> </div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>            processArgs(std::forward&lt;Rest&gt;(rest)...);</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>        }</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span>... Rest&gt;</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>        <span class="keyword">constexpr</span> <span class="keywordtype">void</span> processArgs(<span class="keyword">const</span> TextureElement&amp; element, Rest&amp;&amp;... rest) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>            <a class="code hl_function" href="class_f_c_t_1_1_resource_layout.html#ab317726ac8284760c096b818cc92473b">addTexture</a>(element);</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>            processArgs(std::forward&lt;Rest&gt;(rest)...);</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>        }</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span> </div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span>... Rest&gt;</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>        <span class="keyword">constexpr</span> <span class="keywordtype">void</span> processArgs(<span class="keyword">const</span> SamplerElement&amp; element, Rest&amp;&amp;... rest) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>            <a class="code hl_function" href="class_f_c_t_1_1_resource_layout.html#a8f0fe6a6aa8b6c6e2a6783fc4f03fee1">addSampler</a>(element);</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>            processArgs(std::forward&lt;Rest&gt;(rest)...);</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>        }</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span> </div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>        TextureElement m_textures[<a class="code hl_variable" href="class_f_c_t_1_1_resource_layout.html#a4b695028e859c3a9057ee9a50f9ce104">MaxElements</a>];</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>        SamplerElement m_samplers[<a class="code hl_variable" href="class_f_c_t_1_1_resource_layout.html#a4b695028e859c3a9057ee9a50f9ce104">MaxElements</a>];</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>        <span class="keywordtype">size_t</span> m_textureCount;</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>        <span class="keywordtype">size_t</span> m_samplerCount;</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    };</div>
+</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>}</div>
+<div class="foldopen" id="foldopen00239" data-start="{" data-end="}">
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno"><a class="line" href="namespacestd.html">  239</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacestd.html">std</a></div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>{</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    <span class="keyword">template</span>&lt;&gt;</div>
+<div class="foldopen" id="foldopen00242" data-start="{" data-end="};">
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno"><a class="line" href="structstd_1_1hash_3_01_f_c_t_1_1_texture_element_01_4.html">  242</a></span>    <span class="keyword">struct </span>hash&lt;<a class="code hl_namespace" href="namespace_f_c_t.html">FCT</a>::TextureElement&gt;</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    {</div>
+<div class="foldopen" id="foldopen00244" data-start="{" data-end="}">
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno"><a class="line" href="structstd_1_1hash_3_01_f_c_t_1_1_texture_element_01_4.html#ac9577788c51ce2cc93f16c93d5311eff">  244</a></span>        std::size_t <a class="code hl_function" href="structstd_1_1hash_3_01_f_c_t_1_1_texture_element_01_4.html#ac9577788c51ce2cc93f16c93d5311eff">operator()</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_f_c_t_1_1_texture_element.html">FCT::TextureElement</a>&amp; element) <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>            std::size_t seed = 0;</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span> </div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>            <span class="keywordflow">if</span> (element.getName() != <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>                boost::hash_combine(seed, std::string(element.getName()));</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>            }</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span> </div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>            boost::hash_combine(seed, <span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(element.getType()));</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>            boost::hash_combine(seed, <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(element.getShaderStages()));</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>            boost::hash_combine(seed, <span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(element.getUpdateFrequency()));</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span> </div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>            <span class="keywordflow">return</span> seed;</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>        }</div>
+</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    };</div>
+</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>}</div>
+</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span><span class="preprocessor">#endif </span><span class="comment">//RESOURCELAYOUT_H</span></div>
+<div class="ttc" id="a_data_types_8h_html"><div class="ttname"><a href="_data_types_8h.html">DataTypes.h</a></div></div>
+<div class="ttc" id="a_flags_8h_html"><div class="ttname"><a href="_flags_8h.html">Flags.h</a></div></div>
+<div class="ttc" id="a_third_party_8h_html"><div class="ttname"><a href="_third_party_8h.html">ThirdParty.h</a></div></div>
+<div class="ttc" id="a_uniform_8h_html"><div class="ttname"><a href="_uniform_8h.html">Uniform.h</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_resource_layout_html_a16a4bd190d15c09ad695e2d09928585c"><div class="ttname"><a href="class_f_c_t_1_1_resource_layout.html#a16a4bd190d15c09ad695e2d09928585c">FCT::ResourceLayout::ResourceLayout</a></div><div class="ttdeci">constexpr ResourceLayout(Args &amp;&amp;... args) noexcept</div><div class="ttdef"><b>定义</b> <a href="#l00149">ResourceLayout.h:149</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_resource_layout_html_a2067ee6495123d5a77887eff440d5181"><div class="ttname"><a href="class_f_c_t_1_1_resource_layout.html#a2067ee6495123d5a77887eff440d5181">FCT::ResourceLayout::getSamplerCount</a></div><div class="ttdeci">constexpr size_t getSamplerCount() const noexcept</div><div class="ttdef"><b>定义</b> <a href="#l00167">ResourceLayout.h:167</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_resource_layout_html_a38f7dcc717f40699c89a083ad65c892e"><div class="ttname"><a href="class_f_c_t_1_1_resource_layout.html#a38f7dcc717f40699c89a083ad65c892e">FCT::ResourceLayout::getTexture</a></div><div class="ttdeci">constexpr const TextureElement &amp; getTexture(size_t index) const noexcept</div><div class="ttdef"><b>定义</b> <a href="#l00169">ResourceLayout.h:169</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_resource_layout_html_a42420cea5d1a830935adefd069c43c24"><div class="ttname"><a href="class_f_c_t_1_1_resource_layout.html#a42420cea5d1a830935adefd069c43c24">FCT::ResourceLayout::getTextureCount</a></div><div class="ttdeci">constexpr size_t getTextureCount() const noexcept</div><div class="ttdef"><b>定义</b> <a href="#l00166">ResourceLayout.h:166</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_resource_layout_html_a4b695028e859c3a9057ee9a50f9ce104"><div class="ttname"><a href="class_f_c_t_1_1_resource_layout.html#a4b695028e859c3a9057ee9a50f9ce104">FCT::ResourceLayout::MaxElements</a></div><div class="ttdeci">static constexpr size_t MaxElements</div><div class="ttdef"><b>定义</b> <a href="#l00143">ResourceLayout.h:143</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_resource_layout_html_a6500fee17bc8d0881d8672de24ba16e4"><div class="ttname"><a href="class_f_c_t_1_1_resource_layout.html#a6500fee17bc8d0881d8672de24ba16e4">FCT::ResourceLayout::getSampler</a></div><div class="ttdeci">constexpr const SamplerElement &amp; getSampler(size_t index) const noexcept</div><div class="ttdef"><b>定义</b> <a href="#l00173">ResourceLayout.h:173</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_resource_layout_html_a7ee41c9bf74bfdd44d2ff97e57254cd5"><div class="ttname"><a href="class_f_c_t_1_1_resource_layout.html#a7ee41c9bf74bfdd44d2ff97e57254cd5">FCT::ResourceLayout::findSamplerIndex</a></div><div class="ttdeci">constexpr int findSamplerIndex(const char *name) const noexcept</div><div class="ttdef"><b>定义</b> <a href="#l00186">ResourceLayout.h:186</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_resource_layout_html_a86775840d0a1f23df57d840139c25089"><div class="ttname"><a href="class_f_c_t_1_1_resource_layout.html#a86775840d0a1f23df57d840139c25089">FCT::ResourceLayout::findTexture</a></div><div class="ttdeci">constexpr TextureElement findTexture(const char *name) const noexcept</div><div class="ttdef"><b>定义</b> <a href="#l00195">ResourceLayout.h:195</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_resource_layout_html_a8f0fe6a6aa8b6c6e2a6783fc4f03fee1"><div class="ttname"><a href="class_f_c_t_1_1_resource_layout.html#a8f0fe6a6aa8b6c6e2a6783fc4f03fee1">FCT::ResourceLayout::addSampler</a></div><div class="ttdeci">constexpr void addSampler(const SamplerElement &amp;element) noexcept</div><div class="ttdef"><b>定义</b> <a href="#l00160">ResourceLayout.h:160</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_resource_layout_html_aa56e4ed2fc87c075471ee0a4b17241c3"><div class="ttname"><a href="class_f_c_t_1_1_resource_layout.html#aa56e4ed2fc87c075471ee0a4b17241c3">FCT::ResourceLayout::findSampler</a></div><div class="ttdeci">constexpr SamplerElement findSampler(const char *name) const noexcept</div><div class="ttdef"><b>定义</b> <a href="#l00200">ResourceLayout.h:200</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_resource_layout_html_ab317726ac8284760c096b818cc92473b"><div class="ttname"><a href="class_f_c_t_1_1_resource_layout.html#ab317726ac8284760c096b818cc92473b">FCT::ResourceLayout::addTexture</a></div><div class="ttdeci">constexpr void addTexture(const TextureElement &amp;element) noexcept</div><div class="ttdef"><b>定义</b> <a href="#l00154">ResourceLayout.h:154</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_resource_layout_html_acc7e06e75b5357ee0d14c54f72ad7074"><div class="ttname"><a href="class_f_c_t_1_1_resource_layout.html#acc7e06e75b5357ee0d14c54f72ad7074">FCT::ResourceLayout::ResourceLayout</a></div><div class="ttdeci">constexpr ResourceLayout() noexcept</div><div class="ttdef"><b>定义</b> <a href="#l00145">ResourceLayout.h:145</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_resource_layout_html_af8cecb424bfd352334b643d55d24c8e1"><div class="ttname"><a href="class_f_c_t_1_1_resource_layout.html#af8cecb424bfd352334b643d55d24c8e1">FCT::ResourceLayout::findTextureIndex</a></div><div class="ttdeci">constexpr int findTextureIndex(const char *name) const noexcept</div><div class="ttdef"><b>定义</b> <a href="#l00177">ResourceLayout.h:177</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_sampler_element_html"><div class="ttname"><a href="class_f_c_t_1_1_sampler_element.html">FCT::SamplerElement</a></div><div class="ttdef"><b>定义</b> <a href="#l00098">ResourceLayout.h:98</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_sampler_element_html_a28f9e7d43cc2d728595ac2fa367c8892"><div class="ttname"><a href="class_f_c_t_1_1_sampler_element.html#a28f9e7d43cc2d728595ac2fa367c8892">FCT::SamplerElement::SamplerElement</a></div><div class="ttdeci">constexpr SamplerElement(const char *name, UpdateFrequency updateFreq) noexcept</div><div class="ttdef"><b>定义</b> <a href="#l00112">ResourceLayout.h:112</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_sampler_element_html_a2a6b3c52f47ad61fb4bccd49dd6fdb01"><div class="ttname"><a href="class_f_c_t_1_1_sampler_element.html#a2a6b3c52f47ad61fb4bccd49dd6fdb01">FCT::SamplerElement::getShaderStages</a></div><div class="ttdeci">constexpr ShaderStages getShaderStages() const noexcept</div><div class="ttdef"><b>定义</b> <a href="#l00122">ResourceLayout.h:122</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_sampler_element_html_a38f604f0a2ab4e77ba04a33f98d9799e"><div class="ttname"><a href="class_f_c_t_1_1_sampler_element.html#a38f604f0a2ab4e77ba04a33f98d9799e">FCT::SamplerElement::SamplerElement</a></div><div class="ttdeci">constexpr SamplerElement(const char *name, ShaderStages stages) noexcept</div><div class="ttdef"><b>定义</b> <a href="#l00108">ResourceLayout.h:108</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_sampler_element_html_a4436c4a3d4db719e04dbee087dd59024"><div class="ttname"><a href="class_f_c_t_1_1_sampler_element.html#a4436c4a3d4db719e04dbee087dd59024">FCT::SamplerElement::SamplerElement</a></div><div class="ttdeci">constexpr SamplerElement(const char *name) noexcept</div><div class="ttdef"><b>定义</b> <a href="#l00104">ResourceLayout.h:104</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_sampler_element_html_a677e75abff2dc5c4b06220fdffafc4bd"><div class="ttname"><a href="class_f_c_t_1_1_sampler_element.html#a677e75abff2dc5c4b06220fdffafc4bd">FCT::SamplerElement::getUpdateFrequency</a></div><div class="ttdeci">constexpr UpdateFrequency getUpdateFrequency() const noexcept</div><div class="ttdef"><b>定义</b> <a href="#l00123">ResourceLayout.h:123</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_sampler_element_html_a75b4ba542fdd2d1b83ef509f6f35bdb3"><div class="ttname"><a href="class_f_c_t_1_1_sampler_element.html#a75b4ba542fdd2d1b83ef509f6f35bdb3">FCT::SamplerElement::operator==</a></div><div class="ttdeci">bool operator==(const SamplerElement &amp;other) const noexcept</div><div class="ttdef"><b>定义</b> <a href="#l00125">ResourceLayout.h:125</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_sampler_element_html_a958c61a2fa2732b790b3249125a154ca"><div class="ttname"><a href="class_f_c_t_1_1_sampler_element.html#a958c61a2fa2732b790b3249125a154ca">FCT::SamplerElement::SamplerElement</a></div><div class="ttdeci">constexpr SamplerElement() noexcept</div><div class="ttdef"><b>定义</b> <a href="#l00100">ResourceLayout.h:100</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_sampler_element_html_aa8459fb05557219fa2b8230bcfde8334"><div class="ttname"><a href="class_f_c_t_1_1_sampler_element.html#aa8459fb05557219fa2b8230bcfde8334">FCT::SamplerElement::getName</a></div><div class="ttdeci">constexpr const char * getName() const noexcept</div><div class="ttdef"><b>定义</b> <a href="#l00121">ResourceLayout.h:121</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_sampler_element_html_ac12016dd6381710cb2bda22bd98d7c79"><div class="ttname"><a href="class_f_c_t_1_1_sampler_element.html#ac12016dd6381710cb2bda22bd98d7c79">FCT::SamplerElement::operator!=</a></div><div class="ttdeci">bool operator!=(const SamplerElement &amp;other) const noexcept</div><div class="ttdef"><b>定义</b> <a href="#l00131">ResourceLayout.h:131</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_sampler_element_html_ada898dea5b968159d34c53e620601e38"><div class="ttname"><a href="class_f_c_t_1_1_sampler_element.html#ada898dea5b968159d34c53e620601e38">FCT::SamplerElement::SamplerElement</a></div><div class="ttdeci">constexpr SamplerElement(const char *name, ShaderStages stages, UpdateFrequency updateFreq) noexcept</div><div class="ttdef"><b>定义</b> <a href="#l00116">ResourceLayout.h:116</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_texture_element_html"><div class="ttname"><a href="class_f_c_t_1_1_texture_element.html">FCT::TextureElement</a></div><div class="ttdef"><b>定义</b> <a href="#l00041">ResourceLayout.h:41</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_texture_element_html_a196ac1a4f112dca30ab169437aecf702"><div class="ttname"><a href="class_f_c_t_1_1_texture_element.html#a196ac1a4f112dca30ab169437aecf702">FCT::TextureElement::getShaderStages</a></div><div class="ttdeci">constexpr ShaderStages getShaderStages() const noexcept</div><div class="ttdef"><b>定义</b> <a href="#l00074">ResourceLayout.h:74</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_texture_element_html_a29157e3cface33df29e94b9ee6d5b7d5"><div class="ttname"><a href="class_f_c_t_1_1_texture_element.html#a29157e3cface33df29e94b9ee6d5b7d5">FCT::TextureElement::getName</a></div><div class="ttdeci">constexpr const char * getName() const noexcept</div><div class="ttdef"><b>定义</b> <a href="#l00073">ResourceLayout.h:73</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_texture_element_html_a2b85b73beaad3e22e78f99e09971101d"><div class="ttname"><a href="class_f_c_t_1_1_texture_element.html#a2b85b73beaad3e22e78f99e09971101d">FCT::TextureElement::operator==</a></div><div class="ttdeci">bool operator==(const TextureElement &amp;other) const noexcept</div><div class="ttdef"><b>定义</b> <a href="#l00077">ResourceLayout.h:77</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_texture_element_html_a4b3faa3f86b192673bb22e71357ec1b9"><div class="ttname"><a href="class_f_c_t_1_1_texture_element.html#a4b3faa3f86b192673bb22e71357ec1b9">FCT::TextureElement::TextureElement</a></div><div class="ttdeci">constexpr TextureElement(TextureType type) noexcept</div><div class="ttdef"><b>定义</b> <a href="#l00055">ResourceLayout.h:55</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_texture_element_html_a86600db946ad9db81132d5ff93628e99"><div class="ttname"><a href="class_f_c_t_1_1_texture_element.html#a86600db946ad9db81132d5ff93628e99">FCT::TextureElement::operator!=</a></div><div class="ttdeci">bool operator!=(const TextureElement &amp;other) const noexcept</div><div class="ttdef"><b>定义</b> <a href="#l00084">ResourceLayout.h:84</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_texture_element_html_a86be58c42a5269bc62d986f6aef856ae"><div class="ttname"><a href="class_f_c_t_1_1_texture_element.html#a86be58c42a5269bc62d986f6aef856ae">FCT::TextureElement::getType</a></div><div class="ttdeci">constexpr TextureType getType() const noexcept</div><div class="ttdef"><b>定义</b> <a href="#l00072">ResourceLayout.h:72</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_texture_element_html_a8dfb7ad3a25db63761184bef8fe8e989"><div class="ttname"><a href="class_f_c_t_1_1_texture_element.html#a8dfb7ad3a25db63761184bef8fe8e989">FCT::TextureElement::getUpdateFrequency</a></div><div class="ttdeci">constexpr UpdateFrequency getUpdateFrequency() const noexcept</div><div class="ttdef"><b>定义</b> <a href="#l00075">ResourceLayout.h:75</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_texture_element_html_a9dceae57be559943ea70885cecd1a410"><div class="ttname"><a href="class_f_c_t_1_1_texture_element.html#a9dceae57be559943ea70885cecd1a410">FCT::TextureElement::TextureElement</a></div><div class="ttdeci">constexpr TextureElement(const TextureElement &amp;other) noexcept</div><div class="ttdef"><b>定义</b> <a href="#l00047">ResourceLayout.h:47</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_texture_element_html_aab45f045a5ea15f8ffe55909d581610c"><div class="ttname"><a href="class_f_c_t_1_1_texture_element.html#aab45f045a5ea15f8ffe55909d581610c">FCT::TextureElement::TextureElement</a></div><div class="ttdeci">constexpr TextureElement(TextureType type, const char *name, ShaderStages stages, UpdateFrequency updateFreq=UpdateFrequency::PerFrame) noexcept</div><div class="ttdef"><b>定义</b> <a href="#l00067">ResourceLayout.h:67</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_texture_element_html_ab58044e5055d4675b051bb0c5ab58876"><div class="ttname"><a href="class_f_c_t_1_1_texture_element.html#ab58044e5055d4675b051bb0c5ab58876">FCT::TextureElement::TextureElement</a></div><div class="ttdeci">constexpr TextureElement(TextureType type, const char *name) noexcept</div><div class="ttdef"><b>定义</b> <a href="#l00059">ResourceLayout.h:59</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_texture_element_html_ac9d2fc54c64ea7c60727aad687e5cecb"><div class="ttname"><a href="class_f_c_t_1_1_texture_element.html#ac9d2fc54c64ea7c60727aad687e5cecb">FCT::TextureElement::TextureElement</a></div><div class="ttdeci">constexpr TextureElement(const char *name) noexcept</div><div class="ttdef"><b>定义</b> <a href="#l00051">ResourceLayout.h:51</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_texture_element_html_ad43df0589bd6f5a93fd475bd632e6bf8"><div class="ttname"><a href="class_f_c_t_1_1_texture_element.html#ad43df0589bd6f5a93fd475bd632e6bf8">FCT::TextureElement::TextureElement</a></div><div class="ttdeci">constexpr TextureElement() noexcept</div><div class="ttdef"><b>定义</b> <a href="#l00043">ResourceLayout.h:43</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_texture_element_html_aeb1b71de93afde0d453f282c56096891"><div class="ttname"><a href="class_f_c_t_1_1_texture_element.html#aeb1b71de93afde0d453f282c56096891">FCT::TextureElement::TextureElement</a></div><div class="ttdeci">constexpr TextureElement(TextureType type, const char *name, UpdateFrequency updateFreq) noexcept</div><div class="ttdef"><b>定义</b> <a href="#l00063">ResourceLayout.h:63</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html"><div class="ttname"><a href="namespace_f_c_t.html">FCT</a></div><div class="ttdef"><b>定义</b> <a href="_flags_8h_source.html#l00010">Flags.h:11</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_a0236e673f1b6fe9736bc596d7e50dc7e"><div class="ttname"><a href="namespace_f_c_t.html#a0236e673f1b6fe9736bc596d7e50dc7e">FCT::UpdateFrequency</a></div><div class="ttdeci">UpdateFrequency</div><div class="ttdef"><b>定义</b> <a href="_uniform_8h_source.html#l00220">Uniform.h:220</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_a0236e673f1b6fe9736bc596d7e50dc7ea5ac98a9f1bddc1b15896f0e02bf06839"><div class="ttname"><a href="namespace_f_c_t.html#a0236e673f1b6fe9736bc596d7e50dc7ea5ac98a9f1bddc1b15896f0e02bf06839">FCT::UpdateFrequency::PerFrame</a></div><div class="ttdeci">@ PerFrame</div><div class="ttdef"><b>定义</b> <a href="_uniform_8h_source.html#l00222">Uniform.h:222</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_a0236e673f1b6fe9736bc596d7e50dc7ea84a8921b25f505d0d2077aeb5db4bc16"><div class="ttname"><a href="namespace_f_c_t.html#a0236e673f1b6fe9736bc596d7e50dc7ea84a8921b25f505d0d2077aeb5db4bc16">FCT::UpdateFrequency::Static</a></div><div class="ttdeci">@ Static</div><div class="ttdef"><b>定义</b> <a href="_uniform_8h_source.html#l00221">Uniform.h:221</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_a2258e1e2d785393addedd227fe296205"><div class="ttname"><a href="namespace_f_c_t.html#a2258e1e2d785393addedd227fe296205">FCT::StringEquals</a></div><div class="ttdeci">constexpr bool StringEquals(const char *a, const char *b) noexcept</div><div class="ttdef"><b>定义</b> <a href="string_8h_source.html#l00008">string.h:8</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_a52cfd86ec6a26e68f333aab8eaccbf37"><div class="ttname"><a href="namespace_f_c_t.html#a52cfd86ec6a26e68f333aab8eaccbf37">FCT::GetTextureDefaultName</a></div><div class="ttdeci">constexpr const char * GetTextureDefaultName(TextureType type)</div><div class="ttdef"><b>定义</b> <a href="#l00022">ResourceLayout.h:22</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_a541d9708e0c1aa838437ddff4b111d4d"><div class="ttname"><a href="namespace_f_c_t.html#a541d9708e0c1aa838437ddff4b111d4d">FCT::ShaderStages</a></div><div class="ttdeci">Flags&lt; ShaderStage &gt; ShaderStages</div><div class="ttdef"><b>定义</b> <a href="_uniform_8h_source.html#l00060">Uniform.h:60</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_a8c0a0c97235ef12c8fa799cc939337db"><div class="ttname"><a href="namespace_f_c_t.html#a8c0a0c97235ef12c8fa799cc939337db">FCT::TextureType</a></div><div class="ttdeci">TextureType</div><div class="ttdef"><b>定义</b> <a href="#l00014">ResourceLayout.h:14</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_a8c0a0c97235ef12c8fa799cc939337dba0a152d9f3e1df14068c5857fb3352505"><div class="ttname"><a href="namespace_f_c_t.html#a8c0a0c97235ef12c8fa799cc939337dba0a152d9f3e1df14068c5857fb3352505">FCT::TextureType::TextureCube</a></div><div class="ttdeci">@ TextureCube</div><div class="ttdef"><b>定义</b> <a href="#l00017">ResourceLayout.h:17</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_a8c0a0c97235ef12c8fa799cc939337dba5452f0008bbc07c796bb4ac7d284928d"><div class="ttname"><a href="namespace_f_c_t.html#a8c0a0c97235ef12c8fa799cc939337dba5452f0008bbc07c796bb4ac7d284928d">FCT::TextureType::Texture2DArray</a></div><div class="ttdeci">@ Texture2DArray</div><div class="ttdef"><b>定义</b> <a href="#l00018">ResourceLayout.h:18</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_a8c0a0c97235ef12c8fa799cc939337dba89c915587e16bcf8963be7cf41a0d9fd"><div class="ttname"><a href="namespace_f_c_t.html#a8c0a0c97235ef12c8fa799cc939337dba89c915587e16bcf8963be7cf41a0d9fd">FCT::TextureType::Texture3D</a></div><div class="ttdeci">@ Texture3D</div><div class="ttdef"><b>定义</b> <a href="#l00016">ResourceLayout.h:16</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_a8c0a0c97235ef12c8fa799cc939337dba8ff61f00665b2125149bf524b747994f"><div class="ttname"><a href="namespace_f_c_t.html#a8c0a0c97235ef12c8fa799cc939337dba8ff61f00665b2125149bf524b747994f">FCT::TextureType::DepthTexture</a></div><div class="ttdeci">@ DepthTexture</div><div class="ttdef"><b>定义</b> <a href="#l00019">ResourceLayout.h:19</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_a8c0a0c97235ef12c8fa799cc939337dbaa6e2bae752d3bf4e34cb392bca789995"><div class="ttname"><a href="namespace_f_c_t.html#a8c0a0c97235ef12c8fa799cc939337dbaa6e2bae752d3bf4e34cb392bca789995">FCT::TextureType::Texture2D</a></div><div class="ttdeci">@ Texture2D</div><div class="ttdef"><b>定义</b> <a href="#l00015">ResourceLayout.h:15</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_adb995786f2f649c122895cd47ab09d32"><div class="ttname"><a href="namespace_f_c_t.html#adb995786f2f649c122895cd47ab09d32">FCT::ShaderStage</a></div><div class="ttdeci">ShaderStage</div><div class="ttdef"><b>定义</b> <a href="_uniform_8h_source.html#l00042">Uniform.h:42</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_adb995786f2f649c122895cd47ab09d32ab1c94ca2fbc3e78fc30069c8d0f01680"><div class="ttname"><a href="namespace_f_c_t.html#adb995786f2f649c122895cd47ab09d32ab1c94ca2fbc3e78fc30069c8d0f01680">FCT::ShaderStage::All</a></div><div class="ttdeci">@ All</div><div class="ttdef"><b>定义</b> <a href="_uniform_8h_source.html#l00057">Uniform.h:57</a></div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>定义</b> <a href="#l00239">ResourceLayout.h:240</a></div></div>
+<div class="ttc" id="astring_8h_html"><div class="ttname"><a href="string_8h.html">string.h</a></div></div>
+<div class="ttc" id="astructstd_1_1hash_3_01_f_c_t_1_1_texture_element_01_4_html_ac9577788c51ce2cc93f16c93d5311eff"><div class="ttname"><a href="structstd_1_1hash_3_01_f_c_t_1_1_texture_element_01_4.html#ac9577788c51ce2cc93f16c93d5311eff">std::hash&lt; FCT::TextureElement &gt;::operator()</a></div><div class="ttdeci">std::size_t operator()(const FCT::TextureElement &amp;element) const noexcept</div><div class="ttdef"><b>定义</b> <a href="#l00244">ResourceLayout.h:244</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="dir_3b79087de5de3e907e48529d171f9ebd.html">FCT</a></li><li class="navelem"><a href="dir_19fee93ae38761ad3d1230778bcc76f4.html">Context</a></li><li class="navelem"><a href="_resource_layout_8h.html">ResourceLayout.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

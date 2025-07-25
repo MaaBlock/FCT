@@ -1,0 +1,34 @@
+\doxysection{VK\+\_\+\+Blend\+State.\+h}
+\hypertarget{_v_k___blend_state_8h_source}{}\label{_v_k___blend_state_8h_source}\index{include/FCT/RHI/VK\_BlendState.h@{include/FCT/RHI/VK\_BlendState.h}}
+\mbox{\hyperlink{_v_k___blend_state_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8h_source_l00001}00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8h_source_l00002}00002\ \textcolor{comment}{//\ Created\ by\ Administrator\ on\ 2025/3/23.}}
+\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8h_source_l00003}00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_third_party_8h}{../ThirdParty.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_blend_state_8h}{./BlendState.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8h_source_l00006}00006\ \textcolor{preprocessor}{\#ifndef\ VK\_BLENDSTATE\_H}}
+\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8h_source_l00007}00007\ \textcolor{preprocessor}{\#define\ VK\_BLENDSTATE\_H}}
+\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8h_source_l00009}00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_f_c_t}{FCT}}}
+\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8h_source_l00010}00010\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8h_source_l00011}00011\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_f_c_t_1_1_v_k___context}{VK\_Context}};}
+\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8h_source_l00012}\mbox{\hyperlink{class_f_c_t_1_1_v_k___blend_state}{00012}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_f_c_t_1_1_v_k___blend_state_ac65574630e0848efa335be9f9d155fcf}{VK\_BlendState}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_f_c_t_1_1_blend_state}{BlendState}}\ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8h_source_l00013}00013\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8h_source_l00014}\mbox{\hyperlink{class_f_c_t_1_1_v_k___blend_state_ac65574630e0848efa335be9f9d155fcf}{00014}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_v_k___blend_state_ac65574630e0848efa335be9f9d155fcf}{VK\_BlendState}}(\mbox{\hyperlink{class_f_c_t_1_1_v_k___context}{VK\_Context}}*\ ctx);}
+\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8h_source_l00015}\mbox{\hyperlink{class_f_c_t_1_1_v_k___blend_state_a1ba31cda03843da64e1242df6cc2415f}{00015}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___blend_state_a1ba31cda03843da64e1242df6cc2415f}{create}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8h_source_l00016}\mbox{\hyperlink{class_f_c_t_1_1_v_k___blend_state_a967044bf29607ca00d3f250cd0021ac7}{00016}}\ \ \ \ \ \ \ \ \ vk::PipelineColorBlendStateCreateInfo\&\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___blend_state_a967044bf29607ca00d3f250cd0021ac7}{colorBlendStateCreateInfo}}()\ \{\ \textcolor{keywordflow}{return}\ m\_createInfo;\ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8h_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8h_source_l00018}00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_v_k___context}{VK\_Context}}*\ m\_ctx;}
+\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8h_source_l00019}00019\ \ \ \ \ \ \ \ \ vk::PipelineColorBlendAttachmentState\ m\_attachmentState;}
+\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8h_source_l00020}00020\ \ \ \ \ \ \ \ \ vk::PipelineColorBlendStateCreateInfo\ m\_createInfo;}
+\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8h_source_l00022}00022\ \ \ \ \ \ \ \ \ vk::BlendFactor\ convertBlendFactor(\mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75}{BlendFactor}}\ factor)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8h_source_l00023}00023\ \ \ \ \ \ \ \ \ vk::BlendOp\ convertBlendOp(\mbox{\hyperlink{namespace_f_c_t_a63a2f041d347dd600f0083cb95d0a245}{BlendOp}}\ op)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8h_source_l00024}00024\ \ \ \ \ \ \ \ \ vk::LogicOp\ convertLogicOp(\mbox{\hyperlink{namespace_f_c_t_a01748ad436ae9c9f3aa57b324c0128b0}{LogicOp}}\ op)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8h_source_l00025}00025\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8h_source_l00026}00026\ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8h_source_l00028}00028\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//VK\_BLENDSTATE\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,40 @@
+\doxysection{Semaphore.\+h}
+\hypertarget{_semaphore_8h_source}{}\label{_semaphore_8h_source}\index{include/FCT/RHI/Semaphore.h@{include/FCT/RHI/Semaphore.h}}
+\mbox{\hyperlink{_semaphore_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_semaphore_8h_source_l00001}00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_semaphore_8h_source_l00002}00002\ \textcolor{comment}{//\ Created\ by\ Administrator\ on\ 2025/4/1.}}
+\DoxyCodeLine{\Hypertarget{_semaphore_8h_source_l00003}00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_semaphore_8h_source_l00004}00004\ \textcolor{preprocessor}{\#ifndef\ SEMAPHORE\_H}}
+\DoxyCodeLine{\Hypertarget{_semaphore_8h_source_l00005}00005\ \textcolor{preprocessor}{\#define\ SEMAPHORE\_H}}
+\DoxyCodeLine{\Hypertarget{_semaphore_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_ref_count_8h}{../MutilThreadBase/RefCount.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_semaphore_8h_source_l00007}00007\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_f_c_t}{FCT}}}
+\DoxyCodeLine{\Hypertarget{_semaphore_8h_source_l00008}00008\ \{}
+\DoxyCodeLine{\Hypertarget{_semaphore_8h_source_l00009}00009\ \ \ \ \ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_f_c_t_1_1_r_h_i}{RHI}}}
+\DoxyCodeLine{\Hypertarget{_semaphore_8h_source_l00010}00010\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_semaphore_8h_source_l00011}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore}{00011}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore_ad282d07df3acb2f2b51933e26ab719f9}{Semaphore}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_f_c_t_1_1_ref_count}{FCT::RefCount}},\textcolor{keyword}{public}\ \mbox{\hyperlink{class_f_c_t_1_1_deletable_trait}{FCT::DeletableTrait}}<Semaphore>}
+\DoxyCodeLine{\Hypertarget{_semaphore_8h_source_l00012}00012\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_semaphore_8h_source_l00013}00013\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_semaphore_8h_source_l00014}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore_ad282d07df3acb2f2b51933e26ab719f9}{00014}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore_ad282d07df3acb2f2b51933e26ab719f9}{Semaphore}}()\ :\ \mbox{\hyperlink{namespace_f_c_t}{FCT}}::\mbox{\hyperlink{class_f_c_t_1_1_ref_count_a681b72d7bd32fd7e4b9ec861cd74370e}{RefCount}}(0)}
+\DoxyCodeLine{\Hypertarget{_semaphore_8h_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_semaphore_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_semaphore_8h_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_semaphore_8h_source_l00018}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore_a18869186d6baaae5dacb80ffd1eed1ca}{00018}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore_a18869186d6baaae5dacb80ffd1eed1ca}{\string~Semaphore}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{_semaphore_8h_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//实在需要reset可以\ 调用create,但是不推荐}}
+\DoxyCodeLine{\Hypertarget{_semaphore_8h_source_l00026}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore_aaf0d510ea21508d3389592c58f563b07}{00026}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore_aaf0d510ea21508d3389592c58f563b07}{create}}()\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_semaphore_8h_source_l00032}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore_a29bfb901719c02db48896344a3886df0}{00032}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore_a29bfb901719c02db48896344a3886df0}{destroy}}()\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_semaphore_8h_source_l00033}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore_ad7b72415b5c2e15a44bf488c7e27c4cd}{00033}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore_ad7b72415b5c2e15a44bf488c7e27c4cd}{deleteThis}}()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{\Hypertarget{_semaphore_8h_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!this-\/>\mbox{\hyperlink{class_f_c_t_1_1_deletable_trait_aeb6edd1024ec555f8eb0321092ee874b}{applyDeleter}}(\textcolor{keyword}{this}))\ \{}
+\DoxyCodeLine{\Hypertarget{_semaphore_8h_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_memory_cheak_8h_a208ca9335e0fa05cd26667978959abd5}{FCT\_DELETE}}(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_semaphore_8h_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_semaphore_8h_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_semaphore_8h_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{_semaphore_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_semaphore_8h_source_l00040}00040\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_semaphore_8h_source_l00041}00041\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_semaphore_8h_source_l00042}00042\ \}}
+\DoxyCodeLine{\Hypertarget{_semaphore_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_semaphore_8h_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_semaphore_8h_source_l00045}00045\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//SEMAPHORE\_H}}
+
+\end{DoxyCode}

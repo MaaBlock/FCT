@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FCT: include/FCT/RHI/Pipeline.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FCT
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_pipeline_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Pipeline.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_pipeline_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// Created by Administrator on 2025/3/24.</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="_resource_layout_8h.html">../Context/ResourceLayout.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="_ref_count_8h.html">../MutilThreadBase/RefCount.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="_vertex_8h.html">../Context/Vertex.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#ifndef FCT_PIPELINE_H</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#define FCT_PIPELINE_H</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_f_c_t.html">FCT</a></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>{</div>
+<div class="foldopen" id="foldopen00011" data-start="{" data-end="};">
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="namespace_f_c_t.html#a02e39e190de7cba24375f441d807cccc">   11</a></span>    <span class="keyword">enum</span> <a class="code hl_enumeration" href="namespace_f_c_t.html#a02e39e190de7cba24375f441d807cccc">PipelineType</a></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="namespace_f_c_t.html#a02e39e190de7cba24375f441d807cccca50ae1c82c7832ab74385d9b341d916d1">   13</a></span>        <a class="code hl_enumvalue" href="namespace_f_c_t.html#a02e39e190de7cba24375f441d807cccca50ae1c82c7832ab74385d9b341d916d1">Traditional</a>,</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="namespace_f_c_t.html#a02e39e190de7cba24375f441d807cccca36c6f535151094d9b40813cb3cc2de16">   14</a></span>        <a class="code hl_enumvalue" href="namespace_f_c_t.html#a02e39e190de7cba24375f441d807cccca36c6f535151094d9b40813cb3cc2de16">RayTracing</a>,</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="namespace_f_c_t.html#a02e39e190de7cba24375f441d807ccccaee28c6b028c6c0e7955643bbe3579e5a">   15</a></span>        <a class="code hl_enumvalue" href="namespace_f_c_t.html#a02e39e190de7cba24375f441d807ccccaee28c6b028c6c0e7955643bbe3579e5a">MeshShader</a>,</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    };</div>
+</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">namespace </span>RHI</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    {</div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="};">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_pipeline.html">   19</a></span>        <span class="keyword">class </span><a class="code hl_class" href="class_f_c_t_1_1_r_h_i_1_1_pipeline.html">Pipeline</a> : <span class="keyword">public</span> <a class="code hl_function" href="class_f_c_t_1_1_ref_count.html#a681b72d7bd32fd7e4b9ec861cd74370e">RefCount</a></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_pipeline.html#a37f260a8e1de8f3c98820fef38b1cfa5">   22</a></span>            <span class="keyword">virtual</span> <a class="code hl_enumeration" href="namespace_f_c_t.html#a02e39e190de7cba24375f441d807cccc">PipelineType</a> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_pipeline.html#a37f260a8e1de8f3c98820fef38b1cfa5">getType</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_pipeline.html#ad1bfb7f7c5f04bf85aff8087c89ef026">   23</a></span>            <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_pipeline.html#ad1bfb7f7c5f04bf85aff8087c89ef026">vertexLayout</a>(<a class="code hl_class" href="class_f_c_t_1_1_vertex_layout.html">VertexLayout</a> layout,uint32_t slot = 0) { <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_pipeline.html#aa5bc58a181eb19fc59b07bc4432a841c">m_vertexLayouts</a>[slot] = layout; }</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_pipeline.html#a62b5f88f66ef6d9f9b0bc5dec11b91d3">   24</a></span>            <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_pipeline.html#a62b5f88f66ef6d9f9b0bc5dec11b91d3">pixelLayout</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_f_c_t_1_1_pixel_layout.html">PixelLayout</a>&amp; layout) { <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_pipeline.html#a5d13baf743ff7c8125a646fd15716aa0">m_pixelLayout</a> = layout; }</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_pipeline.html#a188540b41a4f563af6607e7c7680eb75">   25</a></span>            <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_pipeline.html#a188540b41a4f563af6607e7c7680eb75">resourceLayout</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_f_c_t_1_1_resource_layout.html">ResourceLayout</a>&amp; layout) { <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_pipeline.html#a8f3c17b1734d3d787c77979154e92a35">m_resourceLayout</a> = layout; }</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_pipeline.html#a70f2886ed528e3020534fa283216e99b">   26</a></span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_pipeline.html#a70f2886ed528e3020534fa283216e99b">create</a>() = 0;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_pipeline.html#aa5bc58a181eb19fc59b07bc4432a841c">   28</a></span>            std::map&lt;uint32_t,VertexLayout&gt; <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_pipeline.html#aa5bc58a181eb19fc59b07bc4432a841c">m_vertexLayouts</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_pipeline.html#a5d13baf743ff7c8125a646fd15716aa0">   29</a></span>            <a class="code hl_class" href="class_f_c_t_1_1_pixel_layout.html">PixelLayout</a> <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_pipeline.html#a5d13baf743ff7c8125a646fd15716aa0">m_pixelLayout</a>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_pipeline.html#a8f3c17b1734d3d787c77979154e92a35">   30</a></span>            <a class="code hl_class" href="class_f_c_t_1_1_resource_layout.html">ResourceLayout</a> <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_pipeline.html#a8f3c17b1734d3d787c77979154e92a35">m_resourceLayout</a>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        };</div>
+</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    }</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>}</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#endif </span><span class="comment">//FCT_PIPELINE_H</span></div>
+<div class="ttc" id="a_ref_count_8h_html"><div class="ttname"><a href="_ref_count_8h.html">RefCount.h</a></div></div>
+<div class="ttc" id="a_resource_layout_8h_html"><div class="ttname"><a href="_resource_layout_8h.html">ResourceLayout.h</a></div></div>
+<div class="ttc" id="a_vertex_8h_html"><div class="ttname"><a href="_vertex_8h.html">Vertex.h</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_pixel_layout_html"><div class="ttname"><a href="class_f_c_t_1_1_pixel_layout.html">FCT::PixelLayout</a></div><div class="ttdef"><b>定义</b> <a href="_vertex_8h_source.html#l00306">Vertex.h:307</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_pipeline_html"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_pipeline.html">FCT::RHI::Pipeline</a></div><div class="ttdef"><b>定义</b> <a href="#l00019">Pipeline.h:20</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_pipeline_html_a188540b41a4f563af6607e7c7680eb75"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_pipeline.html#a188540b41a4f563af6607e7c7680eb75">FCT::RHI::Pipeline::resourceLayout</a></div><div class="ttdeci">void resourceLayout(const ResourceLayout &amp;layout)</div><div class="ttdef"><b>定义</b> <a href="#l00025">Pipeline.h:25</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_pipeline_html_a37f260a8e1de8f3c98820fef38b1cfa5"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_pipeline.html#a37f260a8e1de8f3c98820fef38b1cfa5">FCT::RHI::Pipeline::getType</a></div><div class="ttdeci">virtual PipelineType getType() const =0</div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_pipeline_html_a5d13baf743ff7c8125a646fd15716aa0"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_pipeline.html#a5d13baf743ff7c8125a646fd15716aa0">FCT::RHI::Pipeline::m_pixelLayout</a></div><div class="ttdeci">PixelLayout m_pixelLayout</div><div class="ttdef"><b>定义</b> <a href="#l00029">Pipeline.h:29</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_pipeline_html_a62b5f88f66ef6d9f9b0bc5dec11b91d3"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_pipeline.html#a62b5f88f66ef6d9f9b0bc5dec11b91d3">FCT::RHI::Pipeline::pixelLayout</a></div><div class="ttdeci">void pixelLayout(const PixelLayout &amp;layout)</div><div class="ttdef"><b>定义</b> <a href="#l00024">Pipeline.h:24</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_pipeline_html_a70f2886ed528e3020534fa283216e99b"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_pipeline.html#a70f2886ed528e3020534fa283216e99b">FCT::RHI::Pipeline::create</a></div><div class="ttdeci">virtual void create()=0</div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_pipeline_html_a8f3c17b1734d3d787c77979154e92a35"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_pipeline.html#a8f3c17b1734d3d787c77979154e92a35">FCT::RHI::Pipeline::m_resourceLayout</a></div><div class="ttdeci">ResourceLayout m_resourceLayout</div><div class="ttdef"><b>定义</b> <a href="#l00030">Pipeline.h:30</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_pipeline_html_aa5bc58a181eb19fc59b07bc4432a841c"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_pipeline.html#aa5bc58a181eb19fc59b07bc4432a841c">FCT::RHI::Pipeline::m_vertexLayouts</a></div><div class="ttdeci">std::map&lt; uint32_t, VertexLayout &gt; m_vertexLayouts</div><div class="ttdef"><b>定义</b> <a href="#l00028">Pipeline.h:28</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_pipeline_html_ad1bfb7f7c5f04bf85aff8087c89ef026"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_pipeline.html#ad1bfb7f7c5f04bf85aff8087c89ef026">FCT::RHI::Pipeline::vertexLayout</a></div><div class="ttdeci">void vertexLayout(VertexLayout layout, uint32_t slot=0)</div><div class="ttdef"><b>定义</b> <a href="#l00023">Pipeline.h:23</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_ref_count_html_a681b72d7bd32fd7e4b9ec861cd74370e"><div class="ttname"><a href="class_f_c_t_1_1_ref_count.html#a681b72d7bd32fd7e4b9ec861cd74370e">FCT::RefCount::RefCount</a></div><div class="ttdeci">RefCount()</div><div class="ttdef"><b>定义</b> <a href="_ref_count_8h_source.html#l00007">RefCount.h:7</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_resource_layout_html"><div class="ttname"><a href="class_f_c_t_1_1_resource_layout.html">FCT::ResourceLayout</a></div><div class="ttdef"><b>定义</b> <a href="_resource_layout_8h_source.html#l00141">ResourceLayout.h:141</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_vertex_layout_html"><div class="ttname"><a href="class_f_c_t_1_1_vertex_layout.html">FCT::VertexLayout</a></div><div class="ttdef"><b>定义</b> <a href="_vertex_8h_source.html#l00228">Vertex.h:229</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html"><div class="ttname"><a href="namespace_f_c_t.html">FCT</a></div><div class="ttdef"><b>定义</b> <a href="_flags_8h_source.html#l00010">Flags.h:11</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_a02e39e190de7cba24375f441d807cccc"><div class="ttname"><a href="namespace_f_c_t.html#a02e39e190de7cba24375f441d807cccc">FCT::PipelineType</a></div><div class="ttdeci">PipelineType</div><div class="ttdef"><b>定义</b> <a href="#l00011">Pipeline.h:12</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_a02e39e190de7cba24375f441d807cccca36c6f535151094d9b40813cb3cc2de16"><div class="ttname"><a href="namespace_f_c_t.html#a02e39e190de7cba24375f441d807cccca36c6f535151094d9b40813cb3cc2de16">FCT::RayTracing</a></div><div class="ttdeci">@ RayTracing</div><div class="ttdef"><b>定义</b> <a href="#l00014">Pipeline.h:14</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_a02e39e190de7cba24375f441d807cccca50ae1c82c7832ab74385d9b341d916d1"><div class="ttname"><a href="namespace_f_c_t.html#a02e39e190de7cba24375f441d807cccca50ae1c82c7832ab74385d9b341d916d1">FCT::Traditional</a></div><div class="ttdeci">@ Traditional</div><div class="ttdef"><b>定义</b> <a href="#l00013">Pipeline.h:13</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_a02e39e190de7cba24375f441d807ccccaee28c6b028c6c0e7955643bbe3579e5a"><div class="ttname"><a href="namespace_f_c_t.html#a02e39e190de7cba24375f441d807ccccaee28c6b028c6c0e7955643bbe3579e5a">FCT::MeshShader</a></div><div class="ttdeci">@ MeshShader</div><div class="ttdef"><b>定义</b> <a href="#l00015">Pipeline.h:15</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="dir_3b79087de5de3e907e48529d171f9ebd.html">FCT</a></li><li class="navelem"><a href="dir_62941668c16d32482f5920d3acbd0d1f.html">RHI</a></li><li class="navelem"><a href="_pipeline_8h.html">Pipeline.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

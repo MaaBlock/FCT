@@ -1,0 +1,107 @@
+\doxysection{Share\+Ptr.\+h}
+\hypertarget{_share_ptr_8h_source}{}\label{_share_ptr_8h_source}\index{include/FCT/MutilThreadBase/SharePtr.h@{include/FCT/MutilThreadBase/SharePtr.h}}
+\mbox{\hyperlink{_share_ptr_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00001}00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00002}00002\ \textcolor{comment}{//\ Created\ by\ Administrator\ on\ 2025/5/7.}}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00003}00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00005}00005\ \textcolor{preprocessor}{\#ifndef\ SHAREPTR\_H}}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00006}00006\ \textcolor{preprocessor}{\#define\ SHAREPTR\_H}}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_ref_count_8h}{./RefCount.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00008}00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_f_c_t}{FCT}}\ \{}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00009}00009\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00010}\mbox{\hyperlink{struct_f_c_t_1_1_is_ref_count_base}{00010}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_f_c_t_1_1_is_ref_count_base}{IsRefCountBase}}\ \{}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00011}00011\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00012}00012\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{bool}\ test(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_f_c_t_1_1_ref_count}{RefCount}}*)\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \}}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00013}00013\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{bool}\ test(...)\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00015}\mbox{\hyperlink{struct_f_c_t_1_1_is_ref_count_base_a930f94ed4e0653870e3cca5c6d73bc08}{00015}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_f_c_t_1_1_is_ref_count_base_a930f94ed4e0653870e3cca5c6d73bc08}{ret}}\ =\ test(\textcolor{keyword}{static\_cast<}T*\textcolor{keyword}{>}(\textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00016}00016\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00017}00017\ \ \ \ \ template<typename\ T,bool\ isRefCountBase\ =\ IsRefCountBase<T>::ret>}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00018}\mbox{\hyperlink{class_f_c_t_1_1_ref_count_policy}{00018}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_f_c_t_1_1_ref_count_policy}{RefCountPolicy}}\ \{}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00020}\mbox{\hyperlink{class_f_c_t_1_1_ref_count_policy_a8a245459c142890483c2342d96534568}{00020}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_ref_count_policy_a8a245459c142890483c2342d96534568}{addRef}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00022}00022\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00023}\mbox{\hyperlink{class_f_c_t_1_1_ref_count_policy_afdc71546d7b261dc731d1bede537f0b9}{00023}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_ref_count_policy_afdc71546d7b261dc731d1bede537f0b9}{release}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00025}00025\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00026}00026\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00027}00027\ \ \ \ \ \ \ \ \ T*\ ptr;}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00028}00028\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00029}00029\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00030}\mbox{\hyperlink{class_f_c_t_1_1_ref_count_policy_3_01_t_00_01false_01_4}{00030}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_f_c_t_1_1_ref_count_policy}{RefCountPolicy}}<T,false>\ \{}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00031}00031\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00032}\mbox{\hyperlink{class_f_c_t_1_1_ref_count_policy_3_01_t_00_01false_01_4_aef3955f0eb6c5b5dc26133302bd7a7f2}{00032}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_ref_count_policy_3_01_t_00_01false_01_4_aef3955f0eb6c5b5dc26133302bd7a7f2}{addRef}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00034}00034\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00035}\mbox{\hyperlink{class_f_c_t_1_1_ref_count_policy_3_01_t_00_01false_01_4_a1620a6a8ceeb42e6082989991c235212}{00035}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_ref_count_policy_3_01_t_00_01false_01_4_a1620a6a8ceeb42e6082989991c235212}{release}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00037}00037\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00038}00038\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00040}00040\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00041}00041\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00042}\mbox{\hyperlink{class_f_c_t_1_1_share_ptr}{00042}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_f_c_t_1_1_share_ptr_a39fae67f7d34d8c460b7f970a14f3971}{SharePtr}}\{}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00043}00043\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00044}00044\ \ \ \ \ \ \ \ \ T*\ m\_ptr;}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00045}00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_ref_count_policy}{RefCountPolicy<T>}}\ m\_policy;}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00046}00046\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00047}\mbox{\hyperlink{class_f_c_t_1_1_share_ptr_a39fae67f7d34d8c460b7f970a14f3971}{00047}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_share_ptr_a39fae67f7d34d8c460b7f970a14f3971}{SharePtr}}(T*\ ptr)\ :\ m\_ptr(ptr)}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00050}00050\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00051}\mbox{\hyperlink{class_f_c_t_1_1_share_ptr_afe19460905442a2d4b8f4c6fcf9e98ad}{00051}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_share_ptr_afe19460905442a2d4b8f4c6fcf9e98ad}{\string~SharePtr}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ m\_policy.release();}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00053}00053\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00054}\mbox{\hyperlink{class_f_c_t_1_1_share_ptr_a68cc174fad8d91401211eb5167bb3fc3}{00054}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_share_ptr_a68cc174fad8d91401211eb5167bb3fc3}{SharePtr}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_f_c_t_1_1_share_ptr_a39fae67f7d34d8c460b7f970a14f3971}{SharePtr}}\&\ other)\ :\ m\_ptr(other.m\_ptr),\ m\_policy(other.m\_policy)}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00055}00055\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ m\_policy.addRef();}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00057}00057\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00058}\mbox{\hyperlink{class_f_c_t_1_1_share_ptr_a75374fe161645ff2aaea886e59701dca}{00058}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_share_ptr_a39fae67f7d34d8c460b7f970a14f3971}{SharePtr}}\&\ \mbox{\hyperlink{class_f_c_t_1_1_share_ptr_a75374fe161645ff2aaea886e59701dca}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_f_c_t_1_1_share_ptr_a39fae67f7d34d8c460b7f970a14f3971}{SharePtr}}\&\ other)}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00059}00059\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}!=\ \&other)\ \{}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_policy.release();}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_ptr\ =\ other.m\_ptr;}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_policy\ =\ other.m\_policy;}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_policy.addRef();}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00067}00067\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00068}\mbox{\hyperlink{class_f_c_t_1_1_share_ptr_ab9d21102d50740a965927b23ed7bc762}{00068}}\ \ \ \ \ \ \ \ \ T\&\ \mbox{\hyperlink{class_f_c_t_1_1_share_ptr_ab9d21102d50740a965927b23ed7bc762}{operator*}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *m\_ptr;}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00070}00070\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00071}\mbox{\hyperlink{class_f_c_t_1_1_share_ptr_a7cf6d047a51386b4800ae9f14ced208e}{00071}}\ \ \ \ \ \ \ \ \ T*\ \mbox{\hyperlink{class_f_c_t_1_1_share_ptr_a7cf6d047a51386b4800ae9f14ced208e}{operator-\/>}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_ptr;}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00073}00073\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00074}00074\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00075}00075\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00076}\mbox{\hyperlink{class_f_c_t_1_1_weak_ptr}{00076}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_f_c_t_1_1_weak_ptr_a507256b05fcef8f079911d52b200faac}{WeakPtr}}}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00077}00077\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00078}00078\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00079}00079\ \ \ \ \ \ \ \ \ T*\ m\_ptr;}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00080}00080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_ref_count_policy}{RefCountPolicy<T>}}\ m\_policy;}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00081}00081\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00082}\mbox{\hyperlink{class_f_c_t_1_1_weak_ptr_a507256b05fcef8f079911d52b200faac}{00082}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_weak_ptr_a507256b05fcef8f079911d52b200faac}{WeakPtr}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_f_c_t_1_1_share_ptr}{SharePtr<T>}}\&\ other)\ :\ m\_ptr(other.m\_ptr),\ m\_policy(other.m\_policy)}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00083}00083\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00085}00085\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00086}\mbox{\hyperlink{class_f_c_t_1_1_weak_ptr_a6b218ed34d789033001e14df3d18d473}{00086}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_f_c_t_1_1_weak_ptr_a6b218ed34d789033001e14df3d18d473}{expired}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00087}00087\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00089}00089\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00090}\mbox{\hyperlink{class_f_c_t_1_1_weak_ptr_aaec08518a69762fa46c90658e71d48f0}{00090}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{operator}\ bool()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00091}00091\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00093}00093\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00094}00094\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00095}00095\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00096}00096\ \textcolor{comment}{\ \ \ \ template<template\ T,typename...\ Args>}}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00097}00097\ \textcolor{comment}{\ \ \ \ SharePtr<T>\ MakeShared(Args\&\&...\ args)\ \{}}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00098}00098\ \textcolor{comment}{\ \ \ \ \ \ \ \ return\ SharePtr<T>(FCT\_NEW(T,std::forward<Args>(args)...));}}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00099}00099\ \textcolor{comment}{\ \ \ \ \}*/}}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00100}00100\ \}}
+\DoxyCodeLine{\Hypertarget{_share_ptr_8h_source_l00101}00101\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//SHAREPTR\_H}}
+
+\end{DoxyCode}

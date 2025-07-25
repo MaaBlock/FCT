@@ -1,0 +1,410 @@
+\doxysection{FCT\+::RHI\+::VK\+\_\+\+Rasterization\+Pipeline类 参考}
+\hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline}{}\label{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline}\index{FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}}
+
+
+{\ttfamily \#include $<$VK\+\_\+\+Rasterization\+Pipeline.\+h$>$}
+
+类 FCT\+::RHI\+::VK\+\_\+\+Rasterization\+Pipeline 继承关系图\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a64afc601b21a37c7077916c2881b5837}{VK\+\_\+\+Rasterization\+Pipeline}} (\mbox{\hyperlink{class_f_c_t_1_1_v_k___context}{VK\+\_\+\+Context}} \texorpdfstring{$\ast$}{*}ctx)
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_ae8c7df493a210dbbc1ed6fc243a742a1}{\texorpdfstring{$\sim$}{\string~}\+VK\+\_\+\+Rasterization\+Pipeline}} ()
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a7878cf0ee2ead51c7ea6794317e8ba87}{add\+Resources}} (\mbox{\hyperlink{class_f_c_t_1_1_i_pipeline_resource}{IPipeline\+Resource}} \texorpdfstring{$\ast$}{*}resource)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a9e96913fa12adcc2f5c62a565c02dd13}{create}} () override
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a6c62ebc1ac4fb16bc61f5210999c91b4}{bind\+Pass}} (\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pass}{Pass}} \texorpdfstring{$\ast$}{*}pass) override
+\item 
+vk\+::\+Pipeline \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a438d61a2cdf03a0064930b32207f1a64}{pipeline}} ()
+\item 
+std\+::vector$<$ vk\+::\+Descriptor\+Set\+Layout $>$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a4140cd500d59481438dfc784b1ab4d29}{descriptor\+Set\+Layouts}} ()
+\item 
+vk\+::\+Pipeline\+Layout \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a6a678b39660774a4da6983fdd3e215a0}{pipeline\+Layout}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public 成员函数 继承自 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_rasterization_pipeline}{FCT\+::\+RHI\+::\+Rasterization\+Pipeline}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_rasterization_pipeline_a5f51d30bad3cb7232cc7b410529609b9}{Rasterization\+Pipeline}} ()
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_rasterization_pipeline_a710fdb537ab56a23b07f93e3813c95fb}{\texorpdfstring{$\sim$}{\string~}\+Rasterization\+Pipeline}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_rasterization_pipeline_a6f6f05b9d19d5820c83d50a265bb9a73}{bind}} (\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer}{RHI\+::\+Command\+Buffer}} \texorpdfstring{$\ast$}{*}cmd\+Buffer)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public 成员函数 继承自 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pipeline}{FCT\+::\+RHI\+::\+Pipeline}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{namespace_f_c_t_a02e39e190de7cba24375f441d807cccc}{Pipeline\+Type}} \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pipeline_a37f260a8e1de8f3c98820fef38b1cfa5}{get\+Type}} () const =0
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pipeline_ad1bfb7f7c5f04bf85aff8087c89ef026}{vertex\+Layout}} (\mbox{\hyperlink{class_f_c_t_1_1_vertex_layout}{Vertex\+Layout}} layout, uint32\+\_\+t slot=0)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pipeline_a62b5f88f66ef6d9f9b0bc5dec11b91d3}{pixel\+Layout}} (const \mbox{\hyperlink{class_f_c_t_1_1_pixel_layout}{Pixel\+Layout}} \&layout)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pipeline_a188540b41a4f563af6607e7c7680eb75}{resource\+Layout}} (const \mbox{\hyperlink{class_f_c_t_1_1_resource_layout}{Resource\+Layout}} \&layout)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public 成员函数 继承自 \mbox{\hyperlink{class_f_c_t_1_1_ref_count}{FCT\+::\+Ref\+Count}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_ref_count_a681b72d7bd32fd7e4b9ec861cd74370e}{Ref\+Count}} ()
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_ref_count_ae2948e0ae155079956caced23c85bb2b}{Ref\+Count}} (size\+\_\+t ref\+Count)
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_ref_count_af028e09f8a1492fdd5c788b6eb75754f}{\texorpdfstring{$\sim$}{\string~}\+Ref\+Count}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a59c2f131121de6503df8d363b6853d45}{add\+Ref}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_aaf57b2df79545f2b71ae9087865dee4c}{release}} ()
+\item 
+size\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a33146ec5804be422936519224a3a7b3f}{count}} ()
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_ref_count_a474ad3a918f2e87d75ff16075e1caeec}{operator bool}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a662ad9fa48f46d6aae0230452ce701d9}{generate\+Default\+Resources}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected 成员函数 继承自 \mbox{\hyperlink{class_f_c_t_1_1_ref_count}{FCT\+::\+Ref\+Count}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a0fea0bed50f726d3e11ddde802dac5da}{delete\+This}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected 属性}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ vk\+::\+Pipeline\+Shader\+Stage\+Create\+Info $>$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a9a3acb904c1a878a62746fdab0bcb785}{m\+\_\+shader\+Stages}}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_v_k___context}{VK\+\_\+\+Context}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a13c569e3a5af87cfa080347d51c849f5}{m\+\_\+ctx}}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_v_k___blend_state}{VK\+\_\+\+Blend\+State}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a904aa4716183c7e804e09f7402b87bc4}{m\+\_\+blend\+State}}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___input_layout}{VK\+\_\+\+Input\+Layout}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a644f21182a7ce7fec44d581ba5fdcd75}{m\+\_\+input\+Layout}}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_v_k___viewport_state}{VK\+\_\+\+Viewport\+State}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_ac2276a02ee6848761aaf6d3830349491}{m\+\_\+viewport\+State}}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_v_k___rasterization_state}{VK\+\_\+\+Rasterization\+State}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a0ece67653fd67194f24729f21217c913}{m\+\_\+rasterization\+State}}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___depth_stencil_state}{VK\+\_\+\+Depth\+Stencil\+State}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a58e6f33f033d4e428a61d12c327298aa}{m\+\_\+depth\+Stencil\+State}}
+\item 
+vk\+::\+Graphics\+Pipeline\+Create\+Info \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a0836f319d8f86a409cb050765436cd7a}{m\+\_\+create\+Info}}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass}{VK\+\_\+\+Pass}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_adce81728b281ae572af88c0ba9cb2b2b}{m\+\_\+pass}}
+\item 
+vk\+::\+Pipeline \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a855f99473943ef979a5df3bcaadb4951}{m\+\_\+pipeline}}
+\item 
+vk\+::\+Pipeline\+Dynamic\+State\+Create\+Info \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a4078f34f7fad1d07ab554ce33816f529}{m\+\_\+dynamic\+State}} \{\}
+\item 
+vk\+::\+Pipeline\+Vertex\+Input\+State\+Create\+Info \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_ae353e24c21fea3ca470b6ff3018f60bc}{m\+\_\+vertex\+Input\+State}} \{\}
+\item 
+vk\+::\+Pipeline\+Input\+Assembly\+State\+Create\+Info \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_aa12377895caab52f5e7f40ed1ffa59e1}{m\+\_\+input\+Assembly\+State}} \{\}
+\item 
+std\+::vector$<$ vk\+::\+Descriptor\+Set\+Layout $>$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_afc08cc745d07eb6c782859dff3945442}{m\+\_\+descriptor\+Set\+Layouts\+Arr}}
+\item 
+std\+::map$<$ uint32\+\_\+t, vk\+::\+Descriptor\+Set\+Layout $>$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_ae0160107a91468a3d9340bc24ce875fa}{m\+\_\+descriptor\+Set\+Layouts}}
+\item 
+vk\+::\+Pipeline\+Layout \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a030b3f7b9a2e9e6f708322d967b1b12d}{m\+\_\+pipeline\+Layout}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected 属性 继承自 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pipeline}{FCT\+::\+RHI\+::\+Pipeline}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ uint32\+\_\+t, \mbox{\hyperlink{class_f_c_t_1_1_vertex_layout}{Vertex\+Layout}} $>$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pipeline_aa5bc58a181eb19fc59b07bc4432a841c}{m\+\_\+vertex\+Layouts}}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_pixel_layout}{Pixel\+Layout}} \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pipeline_a5d13baf743ff7c8125a646fd15716aa0}{m\+\_\+pixel\+Layout}}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_resource_layout}{Resource\+Layout}} \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pipeline_a8f3c17b1734d3d787c77979154e92a35}{m\+\_\+resource\+Layout}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected 属性 继承自 \mbox{\hyperlink{class_f_c_t_1_1_ref_count}{FCT\+::\+Ref\+Count}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::atomic$<$ size\+\_\+t $>$ \mbox{\hyperlink{class_f_c_t_1_1_ref_count_aca88529f9b473d326168fa808fd02300}{m\+\_\+ref\+Count}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+
+
+在文件 \mbox{\hyperlink{_v_k___rasterization_pipeline_8h_source}{VK\+\_\+\+Rasterization\+Pipeline.\+h}} 第 \mbox{\hyperlink{_v_k___rasterization_pipeline_8h_source_l00022}{22}} 行定义.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_doc-constructors}
+\doxysubsection{构造及析构函数说明}
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a64afc601b21a37c7077916c2881b5837}\index{FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}!VK\_RasterizationPipeline@{VK\_RasterizationPipeline}}
+\index{VK\_RasterizationPipeline@{VK\_RasterizationPipeline}!FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}}
+\doxysubsubsection{\texorpdfstring{VK\_RasterizationPipeline()}{VK\_RasterizationPipeline()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a64afc601b21a37c7077916c2881b5837} 
+FCT\+::\+RHI\+::\+VK\+\_\+\+Rasterization\+Pipeline\+::\+VK\+\_\+\+Rasterization\+Pipeline (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_v_k___context}{VK\+\_\+\+Context}} \texorpdfstring{$\ast$}{*}}]{ctx}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_ae8c7df493a210dbbc1ed6fc243a742a1}\index{FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}!````~VK\_RasterizationPipeline@{\texorpdfstring{$\sim$}{\string~}VK\_RasterizationPipeline}}
+\index{````~VK\_RasterizationPipeline@{\texorpdfstring{$\sim$}{\string~}VK\_RasterizationPipeline}!FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}VK\_RasterizationPipeline()}{\string~VK\_RasterizationPipeline()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_ae8c7df493a210dbbc1ed6fc243a742a1} 
+virtual FCT\+::\+RHI\+::\+VK\+\_\+\+Rasterization\+Pipeline\+::\texorpdfstring{$\sim$}{\string~}\+VK\+\_\+\+Rasterization\+Pipeline (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_doc-func-members}
+\doxysubsection{成员函数说明}
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a7878cf0ee2ead51c7ea6794317e8ba87}\index{FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}!addResources@{addResources}}
+\index{addResources@{addResources}!FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}}
+\doxysubsubsection{\texorpdfstring{addResources()}{addResources()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a7878cf0ee2ead51c7ea6794317e8ba87} 
+virtual void FCT\+::\+RHI\+::\+VK\+\_\+\+Rasterization\+Pipeline\+::add\+Resources (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_i_pipeline_resource}{IPipeline\+Resource}} \texorpdfstring{$\ast$}{*}}]{resource}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+实现了 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_rasterization_pipeline_ae0fd67de37db28c862e36d98c7eae912}{FCT\+::\+RHI\+::\+Rasterization\+Pipeline}}.
+
+
+
+被 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___traditional_pipeline_a93984f3b030cd4ea5edf5a2f0e446a16}{FCT\+::\+RHI\+::\+VK\+\_\+\+Traditional\+Pipeline}} 重载.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a6c62ebc1ac4fb16bc61f5210999c91b4}\index{FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}!bindPass@{bindPass}}
+\index{bindPass@{bindPass}!FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}}
+\doxysubsubsection{\texorpdfstring{bindPass()}{bindPass()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a6c62ebc1ac4fb16bc61f5210999c91b4} 
+void FCT\+::\+RHI\+::\+VK\+\_\+\+Rasterization\+Pipeline\+::bind\+Pass (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pass}{Pass}} \texorpdfstring{$\ast$}{*}}]{pass}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyPrecond}{前置条件}
+must do this before call \doxylink{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a9e96913fa12adcc2f5c62a565c02dd13}{create()} 
+
+the \doxylink{class_f_c_t_1_1_r_h_i_1_1_pass}{Pass} Group of the pass must be created 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{参数}
+{\em pass} & pass,The \doxylink{class_f_c_t_1_1_r_h_i_1_1_pass}{Pass} Group of the pass must be created \\
+\hline
+\end{DoxyParams}
+
+
+实现了 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_rasterization_pipeline_a08649c2d5ecbba4e429e598787954a00}{FCT\+::\+RHI\+::\+Rasterization\+Pipeline}}.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a9e96913fa12adcc2f5c62a565c02dd13}\index{FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}!create@{create}}
+\index{create@{create}!FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a9e96913fa12adcc2f5c62a565c02dd13} 
+void FCT\+::\+RHI\+::\+VK\+\_\+\+Rasterization\+Pipeline\+::create (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+实现了 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_rasterization_pipeline_a1ef56eeb60d16fabbc5ce78d3580e4a4}{FCT\+::\+RHI\+::\+Rasterization\+Pipeline}}.
+
+
+
+被 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___traditional_pipeline_a8a1068006ff2d23d6b0a9e2de1b07602}{FCT\+::\+RHI\+::\+VK\+\_\+\+Traditional\+Pipeline}} 重载.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a4140cd500d59481438dfc784b1ab4d29}\index{FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}!descriptorSetLayouts@{descriptorSetLayouts}}
+\index{descriptorSetLayouts@{descriptorSetLayouts}!FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}}
+\doxysubsubsection{\texorpdfstring{descriptorSetLayouts()}{descriptorSetLayouts()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a4140cd500d59481438dfc784b1ab4d29} 
+std\+::vector$<$ vk\+::\+Descriptor\+Set\+Layout $>$ FCT\+::\+RHI\+::\+VK\+\_\+\+Rasterization\+Pipeline\+::descriptor\+Set\+Layouts (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_v_k___rasterization_pipeline_8h_source}{VK\+\_\+\+Rasterization\+Pipeline.\+h}} 第 \mbox{\hyperlink{_v_k___rasterization_pipeline_8h_source_l00033}{33}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a662ad9fa48f46d6aae0230452ce701d9}\index{FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}!generateDefaultResources@{generateDefaultResources}}
+\index{generateDefaultResources@{generateDefaultResources}!FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}}
+\doxysubsubsection{\texorpdfstring{generateDefaultResources()}{generateDefaultResources()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a662ad9fa48f46d6aae0230452ce701d9} 
+void FCT\+::\+RHI\+::\+VK\+\_\+\+Rasterization\+Pipeline\+::generate\+Default\+Resources (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a438d61a2cdf03a0064930b32207f1a64}\index{FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}!pipeline@{pipeline}}
+\index{pipeline@{pipeline}!FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}}
+\doxysubsubsection{\texorpdfstring{pipeline()}{pipeline()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a438d61a2cdf03a0064930b32207f1a64} 
+vk\+::\+Pipeline FCT\+::\+RHI\+::\+VK\+\_\+\+Rasterization\+Pipeline\+::pipeline (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_v_k___rasterization_pipeline_8h_source}{VK\+\_\+\+Rasterization\+Pipeline.\+h}} 第 \mbox{\hyperlink{_v_k___rasterization_pipeline_8h_source_l00029}{29}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a6a678b39660774a4da6983fdd3e215a0}\index{FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}!pipelineLayout@{pipelineLayout}}
+\index{pipelineLayout@{pipelineLayout}!FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}}
+\doxysubsubsection{\texorpdfstring{pipelineLayout()}{pipelineLayout()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a6a678b39660774a4da6983fdd3e215a0} 
+vk\+::\+Pipeline\+Layout FCT\+::\+RHI\+::\+VK\+\_\+\+Rasterization\+Pipeline\+::pipeline\+Layout (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_v_k___rasterization_pipeline_8h_source}{VK\+\_\+\+Rasterization\+Pipeline.\+h}} 第 \mbox{\hyperlink{_v_k___rasterization_pipeline_8h_source_l00037}{37}} 行定义.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_doc-variable-members}
+\doxysubsection{类成员变量说明}
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a904aa4716183c7e804e09f7402b87bc4}\index{FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}!m\_blendState@{m\_blendState}}
+\index{m\_blendState@{m\_blendState}!FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}}
+\doxysubsubsection{\texorpdfstring{m\_blendState}{m\_blendState}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a904aa4716183c7e804e09f7402b87bc4} 
+\mbox{\hyperlink{class_f_c_t_1_1_v_k___blend_state}{VK\+\_\+\+Blend\+State}}\texorpdfstring{$\ast$}{*} FCT\+::\+RHI\+::\+VK\+\_\+\+Rasterization\+Pipeline\+::m\+\_\+blend\+State\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_v_k___rasterization_pipeline_8h_source}{VK\+\_\+\+Rasterization\+Pipeline.\+h}} 第 \mbox{\hyperlink{_v_k___rasterization_pipeline_8h_source_l00045}{45}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a0836f319d8f86a409cb050765436cd7a}\index{FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}!m\_createInfo@{m\_createInfo}}
+\index{m\_createInfo@{m\_createInfo}!FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}}
+\doxysubsubsection{\texorpdfstring{m\_createInfo}{m\_createInfo}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a0836f319d8f86a409cb050765436cd7a} 
+vk\+::\+Graphics\+Pipeline\+Create\+Info FCT\+::\+RHI\+::\+VK\+\_\+\+Rasterization\+Pipeline\+::m\+\_\+create\+Info\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_v_k___rasterization_pipeline_8h_source}{VK\+\_\+\+Rasterization\+Pipeline.\+h}} 第 \mbox{\hyperlink{_v_k___rasterization_pipeline_8h_source_l00050}{50}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a13c569e3a5af87cfa080347d51c849f5}\index{FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}!m\_ctx@{m\_ctx}}
+\index{m\_ctx@{m\_ctx}!FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}}
+\doxysubsubsection{\texorpdfstring{m\_ctx}{m\_ctx}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a13c569e3a5af87cfa080347d51c849f5} 
+\mbox{\hyperlink{class_f_c_t_1_1_v_k___context}{VK\+\_\+\+Context}}\texorpdfstring{$\ast$}{*} FCT\+::\+RHI\+::\+VK\+\_\+\+Rasterization\+Pipeline\+::m\+\_\+ctx\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_v_k___rasterization_pipeline_8h_source}{VK\+\_\+\+Rasterization\+Pipeline.\+h}} 第 \mbox{\hyperlink{_v_k___rasterization_pipeline_8h_source_l00044}{44}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a58e6f33f033d4e428a61d12c327298aa}\index{FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}!m\_depthStencilState@{m\_depthStencilState}}
+\index{m\_depthStencilState@{m\_depthStencilState}!FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}}
+\doxysubsubsection{\texorpdfstring{m\_depthStencilState}{m\_depthStencilState}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a58e6f33f033d4e428a61d12c327298aa} 
+\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___depth_stencil_state}{VK\+\_\+\+Depth\+Stencil\+State}}\texorpdfstring{$\ast$}{*} FCT\+::\+RHI\+::\+VK\+\_\+\+Rasterization\+Pipeline\+::m\+\_\+depth\+Stencil\+State\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_v_k___rasterization_pipeline_8h_source}{VK\+\_\+\+Rasterization\+Pipeline.\+h}} 第 \mbox{\hyperlink{_v_k___rasterization_pipeline_8h_source_l00049}{49}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_ae0160107a91468a3d9340bc24ce875fa}\index{FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}!m\_descriptorSetLayouts@{m\_descriptorSetLayouts}}
+\index{m\_descriptorSetLayouts@{m\_descriptorSetLayouts}!FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}}
+\doxysubsubsection{\texorpdfstring{m\_descriptorSetLayouts}{m\_descriptorSetLayouts}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_ae0160107a91468a3d9340bc24ce875fa} 
+std\+::map$<$uint32\+\_\+t, vk\+::\+Descriptor\+Set\+Layout$>$ FCT\+::\+RHI\+::\+VK\+\_\+\+Rasterization\+Pipeline\+::m\+\_\+descriptor\+Set\+Layouts\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_v_k___rasterization_pipeline_8h_source}{VK\+\_\+\+Rasterization\+Pipeline.\+h}} 第 \mbox{\hyperlink{_v_k___rasterization_pipeline_8h_source_l00057}{57}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_afc08cc745d07eb6c782859dff3945442}\index{FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}!m\_descriptorSetLayoutsArr@{m\_descriptorSetLayoutsArr}}
+\index{m\_descriptorSetLayoutsArr@{m\_descriptorSetLayoutsArr}!FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}}
+\doxysubsubsection{\texorpdfstring{m\_descriptorSetLayoutsArr}{m\_descriptorSetLayoutsArr}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_afc08cc745d07eb6c782859dff3945442} 
+std\+::vector$<$vk\+::\+Descriptor\+Set\+Layout$>$ FCT\+::\+RHI\+::\+VK\+\_\+\+Rasterization\+Pipeline\+::m\+\_\+descriptor\+Set\+Layouts\+Arr\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_v_k___rasterization_pipeline_8h_source}{VK\+\_\+\+Rasterization\+Pipeline.\+h}} 第 \mbox{\hyperlink{_v_k___rasterization_pipeline_8h_source_l00056}{56}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a4078f34f7fad1d07ab554ce33816f529}\index{FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}!m\_dynamicState@{m\_dynamicState}}
+\index{m\_dynamicState@{m\_dynamicState}!FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}}
+\doxysubsubsection{\texorpdfstring{m\_dynamicState}{m\_dynamicState}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a4078f34f7fad1d07ab554ce33816f529} 
+vk\+::\+Pipeline\+Dynamic\+State\+Create\+Info FCT\+::\+RHI\+::\+VK\+\_\+\+Rasterization\+Pipeline\+::m\+\_\+dynamic\+State \{\}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_v_k___rasterization_pipeline_8h_source}{VK\+\_\+\+Rasterization\+Pipeline.\+h}} 第 \mbox{\hyperlink{_v_k___rasterization_pipeline_8h_source_l00053}{53}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_aa12377895caab52f5e7f40ed1ffa59e1}\index{FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}!m\_inputAssemblyState@{m\_inputAssemblyState}}
+\index{m\_inputAssemblyState@{m\_inputAssemblyState}!FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}}
+\doxysubsubsection{\texorpdfstring{m\_inputAssemblyState}{m\_inputAssemblyState}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_aa12377895caab52f5e7f40ed1ffa59e1} 
+vk\+::\+Pipeline\+Input\+Assembly\+State\+Create\+Info FCT\+::\+RHI\+::\+VK\+\_\+\+Rasterization\+Pipeline\+::m\+\_\+input\+Assembly\+State \{\}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_v_k___rasterization_pipeline_8h_source}{VK\+\_\+\+Rasterization\+Pipeline.\+h}} 第 \mbox{\hyperlink{_v_k___rasterization_pipeline_8h_source_l00055}{55}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a644f21182a7ce7fec44d581ba5fdcd75}\index{FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}!m\_inputLayout@{m\_inputLayout}}
+\index{m\_inputLayout@{m\_inputLayout}!FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}}
+\doxysubsubsection{\texorpdfstring{m\_inputLayout}{m\_inputLayout}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a644f21182a7ce7fec44d581ba5fdcd75} 
+\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___input_layout}{VK\+\_\+\+Input\+Layout}}\texorpdfstring{$\ast$}{*} FCT\+::\+RHI\+::\+VK\+\_\+\+Rasterization\+Pipeline\+::m\+\_\+input\+Layout\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_v_k___rasterization_pipeline_8h_source}{VK\+\_\+\+Rasterization\+Pipeline.\+h}} 第 \mbox{\hyperlink{_v_k___rasterization_pipeline_8h_source_l00046}{46}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_adce81728b281ae572af88c0ba9cb2b2b}\index{FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}!m\_pass@{m\_pass}}
+\index{m\_pass@{m\_pass}!FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}}
+\doxysubsubsection{\texorpdfstring{m\_pass}{m\_pass}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_adce81728b281ae572af88c0ba9cb2b2b} 
+\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass}{VK\+\_\+\+Pass}}\texorpdfstring{$\ast$}{*} FCT\+::\+RHI\+::\+VK\+\_\+\+Rasterization\+Pipeline\+::m\+\_\+pass\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_v_k___rasterization_pipeline_8h_source}{VK\+\_\+\+Rasterization\+Pipeline.\+h}} 第 \mbox{\hyperlink{_v_k___rasterization_pipeline_8h_source_l00051}{51}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a855f99473943ef979a5df3bcaadb4951}\index{FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}!m\_pipeline@{m\_pipeline}}
+\index{m\_pipeline@{m\_pipeline}!FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}}
+\doxysubsubsection{\texorpdfstring{m\_pipeline}{m\_pipeline}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a855f99473943ef979a5df3bcaadb4951} 
+vk\+::\+Pipeline FCT\+::\+RHI\+::\+VK\+\_\+\+Rasterization\+Pipeline\+::m\+\_\+pipeline\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_v_k___rasterization_pipeline_8h_source}{VK\+\_\+\+Rasterization\+Pipeline.\+h}} 第 \mbox{\hyperlink{_v_k___rasterization_pipeline_8h_source_l00052}{52}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a030b3f7b9a2e9e6f708322d967b1b12d}\index{FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}!m\_pipelineLayout@{m\_pipelineLayout}}
+\index{m\_pipelineLayout@{m\_pipelineLayout}!FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}}
+\doxysubsubsection{\texorpdfstring{m\_pipelineLayout}{m\_pipelineLayout}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a030b3f7b9a2e9e6f708322d967b1b12d} 
+vk\+::\+Pipeline\+Layout FCT\+::\+RHI\+::\+VK\+\_\+\+Rasterization\+Pipeline\+::m\+\_\+pipeline\+Layout\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_v_k___rasterization_pipeline_8h_source}{VK\+\_\+\+Rasterization\+Pipeline.\+h}} 第 \mbox{\hyperlink{_v_k___rasterization_pipeline_8h_source_l00058}{58}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a0ece67653fd67194f24729f21217c913}\index{FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}!m\_rasterizationState@{m\_rasterizationState}}
+\index{m\_rasterizationState@{m\_rasterizationState}!FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}}
+\doxysubsubsection{\texorpdfstring{m\_rasterizationState}{m\_rasterizationState}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a0ece67653fd67194f24729f21217c913} 
+\mbox{\hyperlink{class_f_c_t_1_1_v_k___rasterization_state}{VK\+\_\+\+Rasterization\+State}}\texorpdfstring{$\ast$}{*} FCT\+::\+RHI\+::\+VK\+\_\+\+Rasterization\+Pipeline\+::m\+\_\+rasterization\+State\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_v_k___rasterization_pipeline_8h_source}{VK\+\_\+\+Rasterization\+Pipeline.\+h}} 第 \mbox{\hyperlink{_v_k___rasterization_pipeline_8h_source_l00048}{48}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a9a3acb904c1a878a62746fdab0bcb785}\index{FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}!m\_shaderStages@{m\_shaderStages}}
+\index{m\_shaderStages@{m\_shaderStages}!FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}}
+\doxysubsubsection{\texorpdfstring{m\_shaderStages}{m\_shaderStages}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a9a3acb904c1a878a62746fdab0bcb785} 
+std\+::vector$<$vk\+::\+Pipeline\+Shader\+Stage\+Create\+Info$>$ FCT\+::\+RHI\+::\+VK\+\_\+\+Rasterization\+Pipeline\+::m\+\_\+shader\+Stages\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_v_k___rasterization_pipeline_8h_source}{VK\+\_\+\+Rasterization\+Pipeline.\+h}} 第 \mbox{\hyperlink{_v_k___rasterization_pipeline_8h_source_l00043}{43}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_ae353e24c21fea3ca470b6ff3018f60bc}\index{FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}!m\_vertexInputState@{m\_vertexInputState}}
+\index{m\_vertexInputState@{m\_vertexInputState}!FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}}
+\doxysubsubsection{\texorpdfstring{m\_vertexInputState}{m\_vertexInputState}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_ae353e24c21fea3ca470b6ff3018f60bc} 
+vk\+::\+Pipeline\+Vertex\+Input\+State\+Create\+Info FCT\+::\+RHI\+::\+VK\+\_\+\+Rasterization\+Pipeline\+::m\+\_\+vertex\+Input\+State \{\}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_v_k___rasterization_pipeline_8h_source}{VK\+\_\+\+Rasterization\+Pipeline.\+h}} 第 \mbox{\hyperlink{_v_k___rasterization_pipeline_8h_source_l00054}{54}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_ac2276a02ee6848761aaf6d3830349491}\index{FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}!m\_viewportState@{m\_viewportState}}
+\index{m\_viewportState@{m\_viewportState}!FCT::RHI::VK\_RasterizationPipeline@{FCT::RHI::VK\_RasterizationPipeline}}
+\doxysubsubsection{\texorpdfstring{m\_viewportState}{m\_viewportState}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_ac2276a02ee6848761aaf6d3830349491} 
+\mbox{\hyperlink{class_f_c_t_1_1_v_k___viewport_state}{VK\+\_\+\+Viewport\+State}}\texorpdfstring{$\ast$}{*} FCT\+::\+RHI\+::\+VK\+\_\+\+Rasterization\+Pipeline\+::m\+\_\+viewport\+State\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_v_k___rasterization_pipeline_8h_source}{VK\+\_\+\+Rasterization\+Pipeline.\+h}} 第 \mbox{\hyperlink{_v_k___rasterization_pipeline_8h_source_l00047}{47}} 行定义.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\+FCT/\+RHI/\mbox{\hyperlink{_v_k___rasterization_pipeline_8h}{VK\+\_\+\+Rasterization\+Pipeline.\+h}}\end{DoxyCompactItemize}

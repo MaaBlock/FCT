@@ -1,0 +1,1353 @@
+\doxysection{FCT\+::Context类 参考}
+\hypertarget{class_f_c_t_1_1_context}{}\label{class_f_c_t_1_1_context}\index{FCT::Context@{FCT::Context}}
+
+
+{\ttfamily \#include $<$Context.\+h$>$}
+
+类 FCT\+::Context 继承关系图\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_f_c_t_1_1_context}
+\end{center}
+\end{figure}
+\doxysubsubsection*{类}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_f_c_t_1_1_context_1_1_logic_task_data}{Logic\+Task\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public 类型}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{class_f_c_t_1_1_context_a3e4665afe2d6148769a19bb997a8c8da}{begin\+Frame\+Ticker}} = std\+::function$<$void()$>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_context_ae3e3f1f9bc99815af51ae21edceaa97f}{Context}} (\mbox{\hyperlink{class_f_c_t_1_1_runtime}{Runtime}} \texorpdfstring{$\ast$}{*}runtime)
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_context_ae9f25111b701a78b22c48c79f8fcb540}{\texorpdfstring{$\sim$}{\string~}\+Context}} ()
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_context_aca7c4cf9e614a76569e3005cd2f4c1e6}{clear}} (float r, float g, float b)=0
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_context_a7c4199aa72db8098fb32596180734dd5}{viewport}} (int x, int y, int width, int height)=0
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_vertex_shader}{Vertex\+Shader}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_a368d235925611fb533b343511fbdbff4}{create\+Vertex\+Shader}} ()=0
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_vertex_shader}{RHI\+::\+Vertex\+Shader}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_afb89a1544d82cb03a91e7f48fa0398b2}{new\+Rhi\+Vertex\+Shader}} ()=0
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pixel_shader}{RHI\+::\+Pixel\+Shader}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_ae1679b244acc071168b28534e9d7f018}{new\+Rhi\+Pixel\+Shader}} ()=0
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_pixel_shader}{Pixel\+Shader}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_a961b7c6365356f63579f82b40c560852}{create\+Pixel\+Shader}} ()=0
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_input_layout}{RHI\+::\+Input\+Layout}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_aa2b23551e6b11e13bc39cbf26870ec1f}{create\+Input\+Layout}} ()=0
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_draw_call}{Draw\+Call}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_aab2520a062ce769a360034f2cc062ee7}{create\+Draw\+Call}} (\mbox{\hyperlink{namespace_f_c_t_af728cf79eb18c0a3cc5d824c70c335cc}{Primitive\+Type}} primitive\+Type, uint32\+\_\+t start\+Vertex, uint32\+\_\+t vertex\+Count)=0
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_const_buffer}{RHI\+::\+Const\+Buffer}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_a720302c5df22d696e7e92d13595de2e6}{create\+Const\+Buffer}} ()=0
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_texture}{Texture}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_ad5c25c20d75db4da761237a54262d330}{create\+Texture}} ()=0
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_texture_array}{Texture\+Array}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_a8a147f4bf489a79380d4b3dafb97f616}{create\+Texture\+Array}} ()=0
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_image}{Image}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_ab9573d0c62fbcbef704101ea7f816d7c}{create\+Image}} ()=0
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_mutil_buffer_image}{Mutil\+Buffer\+Image}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_a94cdcc9452ef5e0bd50e9e95a8631088}{create\+Mutil\+Buffer\+Image}} ()=0
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_image}{RHI\+::\+Image}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_ac61134e1cf709d993e60969843766bc4}{new\+Rhi\+Image}} ()=0
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain}{RHI\+::\+Swapchain}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_a51b369e54126ef59a9806755cc46df04}{create\+Swapchain}} ()=0
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pass_group}{RHI\+::\+Pass\+Group}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_a25d20c5bb9a46451086ec3883ca2ee4c}{create\+Pass\+Group}} ()=0
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pass}{RHI\+::\+Pass}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_a61c5641f6af96080b633ddceb5b9db97}{create\+Pass}} ()=0
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_rasterization_pipeline}{RHI\+::\+Rasterization\+Pipeline}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_aa99693e7e4e88ef8dd3ea21d3f9f2ef2}{create\+Tradition\+Pipeline}} ()=0
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_fence}{RHI\+::\+Fence}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_ad8dd80d0b438bf2ca8b3aa5fd493a2f5}{create\+Fence}} ()=0
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore}{RHI\+::\+Semaphore}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_ae54259b9be5678cb70c0468cb306cbc1}{create\+Semaphore}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_context_a2050b198b0059f2643e7ab4169d06ebf}{create}} ()=0
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_pool}{RHI\+::\+Command\+Pool}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_abc287f13b2471e18328331abadbd29b1}{create\+Command\+Pool}} ()=0
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_vertex_buffer}{RHI\+::\+Vertex\+Buffer}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_aefc485b4acd4a826fb09bbf9a778e6e6}{create\+Vertex\+Buffer}} ()=0
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_index_buffer}{RHI\+::\+Index\+Buffer}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_aee5183a182bc074374d1a34af8212502}{create\+Index\+Buffer}} ()=0
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_descriptor_pool}{RHI\+::\+Descriptor\+Pool}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_a09bccf561e2b7776c793d405ee3a1733}{create\+Descriptor\+Pool}} ()=0
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_depth_stencil_view}{RHI\+::\+Depth\+Stencil\+View}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_af6e514d395a3ebd49b791cb85cb68e7b}{create\+Depth\+Stencil\+View}} ()=0
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_blend_state}{Blend\+State}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_ad195949b97664c9d81916f58b93d78a2}{create\+Blend\+State}} ()=0
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_pass_resource}{Pass\+Resource}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_a3cc10f80433eb994b87ae6cf347c7d2c}{create\+Pass\+Resource}} ()=0
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_texture_view}{RHI\+::\+Texture\+View}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_af03b9b718c75fa3f169a97705dad7748}{create\+Texture\+View}} ()=0
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_sampler}{Sampler}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_a0a2a87ad08add89c44f60886d33a6d70}{create\+Sampler}} ()=0
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_semaphore_pool}{Semaphore\+Pool}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_a30b1257e1f2b807311c4f9ca04af010f}{create\+Semaphore\+Pool}} ()=0
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_fence_pool}{Fence\+Pool}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_a46063c9f8a0282d9d2c14e5119ff813c}{create\+Fence\+Pool}} ()=0
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_rasterization_state}{Rasterization\+State}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_a349d4feb2b2aaa01dae3638409ba01fe}{create\+Rasterization\+State}} ()=0
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_static_mesh}{Static\+Mesh}}$<$ uint32\+\_\+t $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_a896b22c78ba26980de3d661a9c40033d}{create\+Mesh}} (const \mbox{\hyperlink{struct_f_c_t_1_1_model_mesh}{Model\+Mesh}} \texorpdfstring{$\ast$}{*}model\+Mesh, const \mbox{\hyperlink{class_f_c_t_1_1_vertex_layout}{Vertex\+Layout}} \&layout)
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_static_mesh}{Static\+Mesh}}$<$ uint32\+\_\+t $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_af0e0fab29cd16c504b5a218a6b939ece}{load\+Mesh}} (const std\+::string \&filename, const std\+::string \&mesh\+Name, const \mbox{\hyperlink{class_f_c_t_1_1_vertex_layout}{Vertex\+Layout}} \&layout)
+\item 
+auto \& \mbox{\hyperlink{class_f_c_t_1_1_context_a66d1da4b7d6f4fb370fc581c9c872689}{sync\+Tickers}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_context_a355396139ecceed7a06651842fa2e4c0}{flush}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_context_a9055c3d8311647def65c4a9263f107d1}{begin\+Frame\+Tick}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_context_a56287dc37f625bb3e6ce0f358aaf88b7}{add\+Begin\+Frame\+Ticker}} (const \mbox{\hyperlink{class_f_c_t_1_1_context_a3e4665afe2d6148769a19bb997a8c8da}{begin\+Frame\+Ticker}} \&ticker)
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_context_a827c85bf4a63521a1bea6fd40a3110b4}{swap\+Queue}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_context_a12e64115a928b13b07f487fc5dd89ed7}{submit\+Thread}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_context_a5e894d71be6d4ed0f8aaa5383314667a}{swap\+Buffers}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_context_ad65777e7264df95bb14d0e6e5d88e259}{default\+Tick}} ()
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_render_target_view}{RHI\+::\+Render\+Target\+View}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_a02594d59433ecc725052ec796cdbaa1b}{create\+Render\+Target\+View}} ()=0
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_context_a2b98f5b7532af1acf5909835e43c6915}{add\+Bind\+Window}} (\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}wnd)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_context_a3622894a108ee0cfc14bef65c39aa1f4}{tick}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_context_aaa41a1b8bb45d0f06e4910c47fbaadfd}{create\+Compiler}} ()
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_shader_compiler}{Shader\+Compiler}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_a10e40a05886dd341038c3edfee6300a3}{get\+Compiler}} ()
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_shader_generator}{Shader\+Generator}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_a4fddfb4fc06ff56cecee12d1eeb6d4a4}{get\+Generator}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_context_aa1a6b5e7d6b49a399d8715e95af0f4ad}{wait\+Current\+Flush}} ()
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_f_c_t_1_1_context_ae72453fbe8d92908e7f94a7f852288ef}{get\+Pass\+Target\+To\+Wnd}} (\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}wnd)
+\item 
+auto \& \mbox{\hyperlink{class_f_c_t_1_1_context_af176b89646d19f0183e3e6f545217044}{submit\+Tickers}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_context_a589fed90876f5148e5dde6a048eb1af1}{next\+Frame}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_context_af425799b4b55dc83f161dff9fcef7d6f}{current\+Flush}} ()
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer}{RHI\+::\+Command\+Buffer}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_afed262a94e3490f5fa2607ae90d1e26a}{get\+Cmd\+Buf}} (\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}wnd, uint32\+\_\+t index)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_context_a229f460b0c9e0f9f63b1e16e2f27d8af}{alloc\+Base\+Command\+Buffers}} (\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}wnd)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_context_aebda281ffc27ef8841d7e35c7d4345b0}{free\+Command\+Buffers}} (\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}wnd, uint32\+\_\+t index)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_context_a3466c5b1edcfac32da5248a7d4ad5e0c}{max\+Frame\+In\+Flight}} (uint32\+\_\+t max\+Frame\+In\+Flight)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_context_a9053397bba286120ce3de5ebd6fc0b37}{max\+Frame\+In\+Flight}} () const
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_context_a4c8ce2d10be4c3e42843f53469afeb54}{init\+Frame\+Manager}} ()
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_context_abbd56d15cc27f255113384c136a0c09f}{current\+Submit\+Frame\+Index}} () const
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_context_a71ea2ed7a86a226f4e9247fd3df0d5f1}{current\+Frame\+Index}} ()
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_descriptor_pool}{RHI\+::\+Descriptor\+Pool}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_aa0ea88368be61837378cbd8a3cebd170}{get\+Descriptor\+Pool}} (\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}wnd)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_context_ab22339bb66ea1657de28c0aad0b4466b}{advance\+Logic\+Frame}} ()
+\item 
+constexpr const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_a4367b332f76cf97b25bc5c9769731e6a}{get\+Render\+Graph\+Submit\+Ticker\+Name}} ()
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_image}{Image}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_a59944f3c38119994120f3623a36cddf6}{load\+Texture}} (const std\+::string \&filename)
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_render_graph}{Render\+Graph}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_ac7ec8176015f8db9535c0a5ad8e988fc}{current\+Graph}} ()
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_image}{Image}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_a9c52657124df86c17bed8d538364ab88}{get\+Resource\+Image}} (std\+::string name)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_context_acd2b0643731a47a61518d404814ea875}{set\+Current\+Graph}} (\mbox{\hyperlink{class_f_c_t_1_1_render_graph}{Render\+Graph}} \texorpdfstring{$\ast$}{*}graph)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_context_a2c0b83b16518d18c2031faae140808da}{add\+Pass}} (const std\+::string \&name, \mbox{\hyperlink{class_f_c_t_1_1_pass}{Pass}} \texorpdfstring{$\ast$}{*}pass)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_context_a9feca7241fe59a755ac9da9b6dde7b58}{submit}} (\mbox{\hyperlink{struct_f_c_t_1_1_job}{Job}} \texorpdfstring{$\ast$}{*}job, std\+::string name)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_context_afb74d05d2931b29f4a05684ddb5661d8}{compile\+Passes}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_context_a74710a923fb4868c24138bf947d88bf5}{add\+Pass\+Denpendency}} (const std\+::string \&from, const std\+::string \&to)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_context_a06339c0255fec76082e5f16aefc97040}{bind\+Output\+Image}} (const std\+::string \&name, std\+::string image, uint8\+\_\+t slot=0)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_context_a94129a46f922769a7ea271911eba1865}{bind\+Texture\+Image}} (std\+::string name, std\+::string image, uint32\+\_\+t width=0, uint32\+\_\+t height=0, \mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182}{Samples}} samples=\mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a1f5d8e7e094ddab8199dc672aaba3e23}{Samples\+::sample\+\_\+undefined}})
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_context_aa7fd8323e50c4d202c9a50b102dd23c2}{bind\+Depth\+Stencil}} (const char \texorpdfstring{$\ast$}{*}name, std\+::string image)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_context_a9b5d0e563de01c7a495c1380bb6e6e2b}{bind\+Output}} (const char \texorpdfstring{$\ast$}{*}name, \mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}wnd, uint8\+\_\+t slot=0)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_context_af13e72a95c7f89b191875fc2606a26f8}{excute\+Passes}} (\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer}{RHI\+::\+Command\+Buffer}} \texorpdfstring{$\ast$}{*}cmd\+Buf)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_context_ae4f518c9281a700abb5a5ecf7ba20413}{excute}} ()
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_pass}{Pass}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_af301bb0cbec7b6bb310b8ab6bd3afab7}{find\+Pass}} (const std\+::string \&name)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public 成员函数 继承自 \mbox{\hyperlink{class_f_c_t_1_1_ref_count}{FCT\+::\+Ref\+Count}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_ref_count_a681b72d7bd32fd7e4b9ec861cd74370e}{Ref\+Count}} ()
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_ref_count_ae2948e0ae155079956caced23c85bb2b}{Ref\+Count}} (size\+\_\+t ref\+Count)
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_ref_count_af028e09f8a1492fdd5c788b6eb75754f}{\texorpdfstring{$\sim$}{\string~}\+Ref\+Count}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a59c2f131121de6503df8d363b6853d45}{add\+Ref}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_aaf57b2df79545f2b71ae9087865dee4c}{release}} ()
+\item 
+size\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a33146ec5804be422936519224a3a7b3f}{count}} ()
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_ref_count_a474ad3a918f2e87d75ff16075e1caeec}{operator bool}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_context_a0111ed9cd23192f9ffaab4230e978e05}{post\+Logic\+Task}} (const std\+::function$<$ void()$>$ \&task)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_context_aa66c7a49e123d9a0161617eeb21ce1e1}{init\+Wnd\+Frame\+Resources}} (\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}wnd)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected 成员函数 继承自 \mbox{\hyperlink{class_f_c_t_1_1_ref_count}{FCT\+::\+Ref\+Count}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a0fea0bed50f726d3e11ddde802dac5da}{delete\+This}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected 属性}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_model_loader}{Model\+Loader}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_a4dac183a4ae06a784937d0f98b90634d}{m\+\_\+model\+Loader}}
+\item 
+boost\+::lockfree\+::queue$<$ \mbox{\hyperlink{struct_f_c_t_1_1_context_1_1_logic_task_data}{Logic\+Task\+Data}} \texorpdfstring{$\ast$}{*}, boost\+::lockfree\+::capacity$<$ 1024 $>$ $>$ \mbox{\hyperlink{class_f_c_t_1_1_context_afb417ec1d038fde6232213b19dfded5a}{m\+\_\+logic\+Task}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_f_c_t_1_1_context_a3e4665afe2d6148769a19bb997a8c8da}{begin\+Frame\+Ticker}} $>$ \mbox{\hyperlink{class_f_c_t_1_1_context_a2048188b5503fbdbd83b68402e21d204}{m\+\_\+begin\+Frame\+Ticker}}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_token_graph}{Token\+Graph}}$<$ std\+::string, \mbox{\hyperlink{namespace_f_c_t_ab1ea6811dd963f80ea7b7b1b6aec0d3c}{Submit\+Ticker}} $>$ \mbox{\hyperlink{class_f_c_t_1_1_context_a0a4292a15160e0a362771c471ab8556f}{m\+\_\+submit\+Tickers}}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_token_graph}{Token\+Graph}}$<$ std\+::string, \mbox{\hyperlink{namespace_f_c_t_a726db41259cdbddb2910a4854444d5b9}{Sync\+Ticker}} $>$ \mbox{\hyperlink{class_f_c_t_1_1_context_a9db519c58becad823dbf34c91128bc84}{m\+\_\+sync\+Tickers}}
+\item 
+\mbox{\hyperlink{namespace_f_c_t_ab1ea6811dd963f80ea7b7b1b6aec0d3c}{Submit\+Ticker}} \mbox{\hyperlink{class_f_c_t_1_1_context_afd3e26eb12b319cee7d9ac8fc86f9293}{m\+\_\+ticker}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_f_c_t_1_1_context_ab7073c87ebf502dcf3aef25ec8cd256e}{m\+\_\+bind\+Windows}}
+\item 
+bool \mbox{\hyperlink{class_f_c_t_1_1_context_af70b8941135949280dae113210b633d8}{m\+\_\+next\+Frame}}
+\item 
+bool \mbox{\hyperlink{class_f_c_t_1_1_context_a9ee4c75d34c392e75747ce303df85bf5}{m\+\_\+current\+Flush}}
+\item 
+std\+::thread \mbox{\hyperlink{class_f_c_t_1_1_context_a8120cc50999faef6525e4eaa1c7c9724}{m\+\_\+submit\+Thread}}
+\item 
+bool \mbox{\hyperlink{class_f_c_t_1_1_context_a884452f9647279f66f76eef51c658687}{m\+\_\+ctx\+Running}}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_shader_compiler}{Shader\+Compiler}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_a4c6607256a23ab3c6a276ca3ffa855d9}{m\+\_\+compiler}}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_shader_generator}{Shader\+Generator}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_ac7fcac233cb62b85e35990a42560c105}{m\+\_\+generator}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_context_a0a83bc9311ede1a9044f514ee85e8a23}{m\+\_\+max\+Frame\+In\+Flight}}
+\item 
+std\+::map$<$ \mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}, std\+::vector$<$ \mbox{\hyperlink{struct_f_c_t_1_1_frame_resource}{Frame\+Resource}} $>$ $>$ \mbox{\hyperlink{class_f_c_t_1_1_context_ae5a23c79de8756181d7e019c5541e0bf}{m\+\_\+frame\+Resources}}
+\item 
+std\+::map$<$ \mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_descriptor_pool}{RHI\+::\+Descriptor\+Pool}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_f_c_t_1_1_context_a1c31068bae9e283c04f664abfa70dca4}{m\+\_\+descriptor\+Pools}}
+\item 
+size\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_context_aed5ee768dbd1e64f831cf65024133505}{m\+\_\+frame\+Index}} = 0
+\item 
+size\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_context_a72fda74f84f568d35396bde11ed1a134}{m\+\_\+logic\+Frame\+Index}} = 0
+\item 
+std\+::thread\+::id \mbox{\hyperlink{class_f_c_t_1_1_context_af6b38f1cae0ed69cef0b975ecbf7ae17}{m\+\_\+submit\+Thread\+Id}}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_image_loader}{Image\+Loader}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_a86e60a6457143d658b445cdb55bddb8a}{m\+\_\+image\+Loader}}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_render_graph}{Render\+Graph}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_a136ad21d370980e07a7c7740c014ba13}{m\+\_\+default\+Graph}}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_render_graph}{Render\+Graph}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_a6a581e9a74f88c4df6061e192a04fce3}{m\+\_\+current\+Graph}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected 属性 继承自 \mbox{\hyperlink{class_f_c_t_1_1_ref_count}{FCT\+::\+Ref\+Count}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::atomic$<$ size\+\_\+t $>$ \mbox{\hyperlink{class_f_c_t_1_1_ref_count_aca88529f9b473d326168fa808fd02300}{m\+\_\+ref\+Count}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00111}{111}} 行定义.
+
+
+
+\label{doc-typedef-members}
+\Hypertarget{class_f_c_t_1_1_context_doc-typedef-members}
+\doxysubsection{成员类型定义说明}
+\Hypertarget{class_f_c_t_1_1_context_a3e4665afe2d6148769a19bb997a8c8da}\index{FCT::Context@{FCT::Context}!beginFrameTicker@{beginFrameTicker}}
+\index{beginFrameTicker@{beginFrameTicker}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{beginFrameTicker}{beginFrameTicker}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a3e4665afe2d6148769a19bb997a8c8da} 
+using \mbox{\hyperlink{class_f_c_t_1_1_context_a3e4665afe2d6148769a19bb997a8c8da}{FCT\+::\+Context\+::begin\+Frame\+Ticker}} = std\+::function$<$void()$>$}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00216}{216}} 行定义.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_f_c_t_1_1_context_doc-constructors}
+\doxysubsection{构造及析构函数说明}
+\Hypertarget{class_f_c_t_1_1_context_ae3e3f1f9bc99815af51ae21edceaa97f}\index{FCT::Context@{FCT::Context}!Context@{Context}}
+\index{Context@{Context}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{Context()}{Context()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_ae3e3f1f9bc99815af51ae21edceaa97f} 
+FCT\+::\+Context\+::\+Context (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_runtime}{Runtime}} \texorpdfstring{$\ast$}{*}}]{runtime}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_f_c_t_1_1_context_ae9f25111b701a78b22c48c79f8fcb540}\index{FCT::Context@{FCT::Context}!````~Context@{\texorpdfstring{$\sim$}{\string~}Context}}
+\index{````~Context@{\texorpdfstring{$\sim$}{\string~}Context}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Context()}{\string~Context()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_ae9f25111b701a78b22c48c79f8fcb540} 
+virtual FCT\+::\+Context\+::\texorpdfstring{$\sim$}{\string~}\+Context (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_f_c_t_1_1_context_doc-func-members}
+\doxysubsection{成员函数说明}
+\Hypertarget{class_f_c_t_1_1_context_a56287dc37f625bb3e6ce0f358aaf88b7}\index{FCT::Context@{FCT::Context}!addBeginFrameTicker@{addBeginFrameTicker}}
+\index{addBeginFrameTicker@{addBeginFrameTicker}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{addBeginFrameTicker()}{addBeginFrameTicker()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a56287dc37f625bb3e6ce0f358aaf88b7} 
+void FCT\+::\+Context\+::add\+Begin\+Frame\+Ticker (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_f_c_t_1_1_context_a3e4665afe2d6148769a19bb997a8c8da}{begin\+Frame\+Ticker}} \&}]{ticker}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00226}{226}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_a2b98f5b7532af1acf5909835e43c6915}\index{FCT::Context@{FCT::Context}!addBindWindow@{addBindWindow}}
+\index{addBindWindow@{addBindWindow}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{addBindWindow()}{addBindWindow()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a2b98f5b7532af1acf5909835e43c6915} 
+void FCT\+::\+Context\+::add\+Bind\+Window (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}}]{wnd}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00245}{245}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_a2c0b83b16518d18c2031faae140808da}\index{FCT::Context@{FCT::Context}!addPass@{addPass}}
+\index{addPass@{addPass}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{addPass()}{addPass()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a2c0b83b16518d18c2031faae140808da} 
+void FCT\+::\+Context\+::add\+Pass (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{\mbox{\hyperlink{class_f_c_t_1_1_pass}{Pass}} \texorpdfstring{$\ast$}{*}}]{pass}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00367}{367}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_a74710a923fb4868c24138bf947d88bf5}\index{FCT::Context@{FCT::Context}!addPassDenpendency@{addPassDenpendency}}
+\index{addPassDenpendency@{addPassDenpendency}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{addPassDenpendency()}{addPassDenpendency()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a74710a923fb4868c24138bf947d88bf5} 
+void FCT\+::\+Context\+::add\+Pass\+Denpendency (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{from}{, }\item[{const std\+::string \&}]{to}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00380}{380}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_ab22339bb66ea1657de28c0aad0b4466b}\index{FCT::Context@{FCT::Context}!advanceLogicFrame@{advanceLogicFrame}}
+\index{advanceLogicFrame@{advanceLogicFrame}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{advanceLogicFrame()}{advanceLogicFrame()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_ab22339bb66ea1657de28c0aad0b4466b} 
+void FCT\+::\+Context\+::advance\+Logic\+Frame (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00335}{335}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_a229f460b0c9e0f9f63b1e16e2f27d8af}\index{FCT::Context@{FCT::Context}!allocBaseCommandBuffers@{allocBaseCommandBuffers}}
+\index{allocBaseCommandBuffers@{allocBaseCommandBuffers}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{allocBaseCommandBuffers()}{allocBaseCommandBuffers()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a229f460b0c9e0f9f63b1e16e2f27d8af} 
+uint32\+\_\+t FCT\+::\+Context\+::alloc\+Base\+Command\+Buffers (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}}]{wnd}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8hpp_source}{Context.\+hpp}} 第 \mbox{\hyperlink{_context_8hpp_source_l00145}{145}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_a9055c3d8311647def65c4a9263f107d1}\index{FCT::Context@{FCT::Context}!beginFrameTick@{beginFrameTick}}
+\index{beginFrameTick@{beginFrameTick}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{beginFrameTick()}{beginFrameTick()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a9055c3d8311647def65c4a9263f107d1} 
+void FCT\+::\+Context\+::begin\+Frame\+Tick (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00220}{220}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_aa7fd8323e50c4d202c9a50b102dd23c2}\index{FCT::Context@{FCT::Context}!bindDepthStencil@{bindDepthStencil}}
+\index{bindDepthStencil@{bindDepthStencil}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{bindDepthStencil()}{bindDepthStencil()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_aa7fd8323e50c4d202c9a50b102dd23c2} 
+void FCT\+::\+Context\+::bind\+Depth\+Stencil (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{name}{, }\item[{std\+::string}]{image}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00392}{392}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_a9b5d0e563de01c7a495c1380bb6e6e2b}\index{FCT::Context@{FCT::Context}!bindOutput@{bindOutput}}
+\index{bindOutput@{bindOutput}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{bindOutput()}{bindOutput()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a9b5d0e563de01c7a495c1380bb6e6e2b} 
+void FCT\+::\+Context\+::bind\+Output (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{name}{, }\item[{\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}}]{wnd}{, }\item[{uint8\+\_\+t}]{slot}{ = {\ttfamily 0}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00396}{396}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_a06339c0255fec76082e5f16aefc97040}\index{FCT::Context@{FCT::Context}!bindOutputImage@{bindOutputImage}}
+\index{bindOutputImage@{bindOutputImage}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{bindOutputImage()}{bindOutputImage()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a06339c0255fec76082e5f16aefc97040} 
+void FCT\+::\+Context\+::bind\+Output\+Image (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{std\+::string}]{image}{, }\item[{uint8\+\_\+t}]{slot}{ = {\ttfamily 0}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00384}{384}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_a94129a46f922769a7ea271911eba1865}\index{FCT::Context@{FCT::Context}!bindTextureImage@{bindTextureImage}}
+\index{bindTextureImage@{bindTextureImage}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{bindTextureImage()}{bindTextureImage()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a94129a46f922769a7ea271911eba1865} 
+void FCT\+::\+Context\+::bind\+Texture\+Image (\begin{DoxyParamCaption}\item[{std\+::string}]{name}{, }\item[{std\+::string}]{image}{, }\item[{uint32\+\_\+t}]{width}{ = {\ttfamily 0}, }\item[{uint32\+\_\+t}]{height}{ = {\ttfamily 0}, }\item[{\mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182}{Samples}}}]{samples}{ = {\ttfamily \mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a1f5d8e7e094ddab8199dc672aaba3e23}{Samples\+::sample\+\_\+undefined}}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00388}{388}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_aca7c4cf9e614a76569e3005cd2f4c1e6}\index{FCT::Context@{FCT::Context}!clear@{clear}}
+\index{clear@{clear}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_aca7c4cf9e614a76569e3005cd2f4c1e6} 
+virtual void FCT\+::\+Context\+::clear (\begin{DoxyParamCaption}\item[{float}]{r}{, }\item[{float}]{g}{, }\item[{float}]{b}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_a3c5d15de5ff732c6b3fc22be1aad0140}{FCT\+::\+VK\+\_\+\+Context}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_context_afb74d05d2931b29f4a05684ddb5661d8}\index{FCT::Context@{FCT::Context}!compilePasses@{compilePasses}}
+\index{compilePasses@{compilePasses}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{compilePasses()}{compilePasses()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_afb74d05d2931b29f4a05684ddb5661d8} 
+void FCT\+::\+Context\+::compile\+Passes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00376}{376}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_a2050b198b0059f2643e7ab4169d06ebf}\index{FCT::Context@{FCT::Context}!create@{create}}
+\index{create@{create}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a2050b198b0059f2643e7ab4169d06ebf} 
+virtual void FCT\+::\+Context\+::create (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_a9171eabffff1b94dadd24467623fe442}{FCT\+::\+VK\+\_\+\+Context}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_context_ad195949b97664c9d81916f58b93d78a2}\index{FCT::Context@{FCT::Context}!createBlendState@{createBlendState}}
+\index{createBlendState@{createBlendState}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{createBlendState()}{createBlendState()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_ad195949b97664c9d81916f58b93d78a2} 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_blend_state}{Blend\+State}} \texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::create\+Blend\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_aeab953b33bc0e7fd98dd5a2c670bad3f}{FCT\+::\+VK\+\_\+\+Context}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_context_abc287f13b2471e18328331abadbd29b1}\index{FCT::Context@{FCT::Context}!createCommandPool@{createCommandPool}}
+\index{createCommandPool@{createCommandPool}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{createCommandPool()}{createCommandPool()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_abc287f13b2471e18328331abadbd29b1} 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_pool}{RHI\+::\+Command\+Pool}} \texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::create\+Command\+Pool (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_aefb0b3fa66630654b6f028b35702737d}{FCT\+::\+VK\+\_\+\+Context}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_context_aaa41a1b8bb45d0f06e4910c47fbaadfd}\index{FCT::Context@{FCT::Context}!createCompiler@{createCompiler}}
+\index{createCompiler@{createCompiler}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{createCompiler()}{createCompiler()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_aaa41a1b8bb45d0f06e4910c47fbaadfd} 
+void FCT\+::\+Context\+::create\+Compiler (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_f_c_t_1_1_context_a720302c5df22d696e7e92d13595de2e6}\index{FCT::Context@{FCT::Context}!createConstBuffer@{createConstBuffer}}
+\index{createConstBuffer@{createConstBuffer}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{createConstBuffer()}{createConstBuffer()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a720302c5df22d696e7e92d13595de2e6} 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_const_buffer}{RHI\+::\+Const\+Buffer}} \texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::create\+Const\+Buffer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_a4aa4cf1af7b59c7bf76c313b8212baf7}{FCT\+::\+VK\+\_\+\+Context}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_context_af6e514d395a3ebd49b791cb85cb68e7b}\index{FCT::Context@{FCT::Context}!createDepthStencilView@{createDepthStencilView}}
+\index{createDepthStencilView@{createDepthStencilView}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{createDepthStencilView()}{createDepthStencilView()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_af6e514d395a3ebd49b791cb85cb68e7b} 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_depth_stencil_view}{RHI\+::\+Depth\+Stencil\+View}} \texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::create\+Depth\+Stencil\+View (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_a6bf5c9f93acfef497b64164d6e19635b}{FCT\+::\+VK\+\_\+\+Context}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_context_a09bccf561e2b7776c793d405ee3a1733}\index{FCT::Context@{FCT::Context}!createDescriptorPool@{createDescriptorPool}}
+\index{createDescriptorPool@{createDescriptorPool}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{createDescriptorPool()}{createDescriptorPool()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a09bccf561e2b7776c793d405ee3a1733} 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_descriptor_pool}{RHI\+::\+Descriptor\+Pool}} \texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::create\+Descriptor\+Pool (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_acb641b3e3a744783e44b6feee40c9cf1}{FCT\+::\+VK\+\_\+\+Context}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_context_aab2520a062ce769a360034f2cc062ee7}\index{FCT::Context@{FCT::Context}!createDrawCall@{createDrawCall}}
+\index{createDrawCall@{createDrawCall}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{createDrawCall()}{createDrawCall()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_aab2520a062ce769a360034f2cc062ee7} 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_draw_call}{Draw\+Call}} \texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::create\+Draw\+Call (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_f_c_t_af728cf79eb18c0a3cc5d824c70c335cc}{Primitive\+Type}}}]{primitive\+Type}{, }\item[{uint32\+\_\+t}]{start\+Vertex}{, }\item[{uint32\+\_\+t}]{vertex\+Count}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_ad66b3777c66585e6afe992328f1e5218}{FCT\+::\+VK\+\_\+\+Context}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_context_ad8dd80d0b438bf2ca8b3aa5fd493a2f5}\index{FCT::Context@{FCT::Context}!createFence@{createFence}}
+\index{createFence@{createFence}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{createFence()}{createFence()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_ad8dd80d0b438bf2ca8b3aa5fd493a2f5} 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_fence}{RHI\+::\+Fence}} \texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::create\+Fence (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_a029441ca22ac938127d1c1ace1c3b928}{FCT\+::\+VK\+\_\+\+Context}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_context_a46063c9f8a0282d9d2c14e5119ff813c}\index{FCT::Context@{FCT::Context}!createFencePool@{createFencePool}}
+\index{createFencePool@{createFencePool}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{createFencePool()}{createFencePool()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a46063c9f8a0282d9d2c14e5119ff813c} 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_fence_pool}{Fence\+Pool}} \texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::create\+Fence\+Pool (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_a1cfeb2564b1c9e074b5c870ea0b8ec55}{FCT\+::\+VK\+\_\+\+Context}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_context_ab9573d0c62fbcbef704101ea7f816d7c}\index{FCT::Context@{FCT::Context}!createImage@{createImage}}
+\index{createImage@{createImage}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{createImage()}{createImage()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_ab9573d0c62fbcbef704101ea7f816d7c} 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_image}{Image}} \texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::create\+Image (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_acacc59805254d22f1bc73b3d8ffc2d93}{FCT\+::\+VK\+\_\+\+Context}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_context_aee5183a182bc074374d1a34af8212502}\index{FCT::Context@{FCT::Context}!createIndexBuffer@{createIndexBuffer}}
+\index{createIndexBuffer@{createIndexBuffer}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{createIndexBuffer()}{createIndexBuffer()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_aee5183a182bc074374d1a34af8212502} 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_index_buffer}{RHI\+::\+Index\+Buffer}} \texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::create\+Index\+Buffer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_a24e81bbf103cb4eb28697f524dc78707}{FCT\+::\+VK\+\_\+\+Context}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_context_aa2b23551e6b11e13bc39cbf26870ec1f}\index{FCT::Context@{FCT::Context}!createInputLayout@{createInputLayout}}
+\index{createInputLayout@{createInputLayout}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{createInputLayout()}{createInputLayout()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_aa2b23551e6b11e13bc39cbf26870ec1f} 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_input_layout}{RHI\+::\+Input\+Layout}} \texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::create\+Input\+Layout (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_a67b818784d8b40e0cb003ace6c6dac08}{FCT\+::\+VK\+\_\+\+Context}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_context_a896b22c78ba26980de3d661a9c40033d}\index{FCT::Context@{FCT::Context}!createMesh@{createMesh}}
+\index{createMesh@{createMesh}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{createMesh()}{createMesh()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a896b22c78ba26980de3d661a9c40033d} 
+\mbox{\hyperlink{class_f_c_t_1_1_static_mesh}{Static\+Mesh}}$<$ uint32\+\_\+t $>$ \texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::create\+Mesh (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_f_c_t_1_1_model_mesh}{Model\+Mesh}} \texorpdfstring{$\ast$}{*}}]{model\+Mesh}{, }\item[{const \mbox{\hyperlink{class_f_c_t_1_1_vertex_layout}{Vertex\+Layout}} \&}]{layout}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00153}{153}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_a94cdcc9452ef5e0bd50e9e95a8631088}\index{FCT::Context@{FCT::Context}!createMutilBufferImage@{createMutilBufferImage}}
+\index{createMutilBufferImage@{createMutilBufferImage}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{createMutilBufferImage()}{createMutilBufferImage()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a94cdcc9452ef5e0bd50e9e95a8631088} 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_mutil_buffer_image}{Mutil\+Buffer\+Image}} \texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::create\+Mutil\+Buffer\+Image (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_a9703b7b0829926a81760a480a426c61c}{FCT\+::\+VK\+\_\+\+Context}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_context_a61c5641f6af96080b633ddceb5b9db97}\index{FCT::Context@{FCT::Context}!createPass@{createPass}}
+\index{createPass@{createPass}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{createPass()}{createPass()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a61c5641f6af96080b633ddceb5b9db97} 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pass}{RHI\+::\+Pass}} \texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::create\+Pass (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_af0be10160bfa0c83d4cc020476b6dad7}{FCT\+::\+VK\+\_\+\+Context}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_context_a25d20c5bb9a46451086ec3883ca2ee4c}\index{FCT::Context@{FCT::Context}!createPassGroup@{createPassGroup}}
+\index{createPassGroup@{createPassGroup}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{createPassGroup()}{createPassGroup()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a25d20c5bb9a46451086ec3883ca2ee4c} 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pass_group}{RHI\+::\+Pass\+Group}} \texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::create\+Pass\+Group (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_a429c365d90112604abc25e44a1cc893b}{FCT\+::\+VK\+\_\+\+Context}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_context_a3cc10f80433eb994b87ae6cf347c7d2c}\index{FCT::Context@{FCT::Context}!createPassResource@{createPassResource}}
+\index{createPassResource@{createPassResource}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{createPassResource()}{createPassResource()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a3cc10f80433eb994b87ae6cf347c7d2c} 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_pass_resource}{Pass\+Resource}} \texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::create\+Pass\+Resource (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_abc4009e9aa538de2cbbf1c9fe9933b24}{FCT\+::\+VK\+\_\+\+Context}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_context_a961b7c6365356f63579f82b40c560852}\index{FCT::Context@{FCT::Context}!createPixelShader@{createPixelShader}}
+\index{createPixelShader@{createPixelShader}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{createPixelShader()}{createPixelShader()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a961b7c6365356f63579f82b40c560852} 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_pixel_shader}{Pixel\+Shader}} \texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::create\+Pixel\+Shader (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_a9ac7d1ba8eec1bef87de5f15d8274dd2}{FCT\+::\+VK\+\_\+\+Context}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_context_a349d4feb2b2aaa01dae3638409ba01fe}\index{FCT::Context@{FCT::Context}!createRasterizationState@{createRasterizationState}}
+\index{createRasterizationState@{createRasterizationState}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{createRasterizationState()}{createRasterizationState()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a349d4feb2b2aaa01dae3638409ba01fe} 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_rasterization_state}{Rasterization\+State}} \texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::create\+Rasterization\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_a178ca2e4050a63215659b6200d25d217}{FCT\+::\+VK\+\_\+\+Context}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_context_a02594d59433ecc725052ec796cdbaa1b}\index{FCT::Context@{FCT::Context}!createRenderTargetView@{createRenderTargetView}}
+\index{createRenderTargetView@{createRenderTargetView}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{createRenderTargetView()}{createRenderTargetView()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a02594d59433ecc725052ec796cdbaa1b} 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_render_target_view}{RHI\+::\+Render\+Target\+View}} \texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::create\+Render\+Target\+View (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_a58516c03f7f60aaf0c23fb5c5b6dc4cb}{FCT\+::\+VK\+\_\+\+Context}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_context_a0a2a87ad08add89c44f60886d33a6d70}\index{FCT::Context@{FCT::Context}!createSampler@{createSampler}}
+\index{createSampler@{createSampler}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{createSampler()}{createSampler()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a0a2a87ad08add89c44f60886d33a6d70} 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_sampler}{Sampler}} \texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::create\+Sampler (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_a9e4449b125d55239a290491364edace4}{FCT\+::\+VK\+\_\+\+Context}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_context_ae54259b9be5678cb70c0468cb306cbc1}\index{FCT::Context@{FCT::Context}!createSemaphore@{createSemaphore}}
+\index{createSemaphore@{createSemaphore}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{createSemaphore()}{createSemaphore()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_ae54259b9be5678cb70c0468cb306cbc1} 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore}{RHI\+::\+Semaphore}} \texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::create\+Semaphore (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_a95b074d9151bf17e3f04c8de6c9d489b}{FCT\+::\+VK\+\_\+\+Context}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_context_a30b1257e1f2b807311c4f9ca04af010f}\index{FCT::Context@{FCT::Context}!createSemaphorePool@{createSemaphorePool}}
+\index{createSemaphorePool@{createSemaphorePool}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{createSemaphorePool()}{createSemaphorePool()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a30b1257e1f2b807311c4f9ca04af010f} 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_semaphore_pool}{Semaphore\+Pool}} \texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::create\+Semaphore\+Pool (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_a8d13cc8d868507cdb8da0f8ca93398ad}{FCT\+::\+VK\+\_\+\+Context}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_context_a51b369e54126ef59a9806755cc46df04}\index{FCT::Context@{FCT::Context}!createSwapchain@{createSwapchain}}
+\index{createSwapchain@{createSwapchain}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{createSwapchain()}{createSwapchain()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a51b369e54126ef59a9806755cc46df04} 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain}{RHI\+::\+Swapchain}} \texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::create\+Swapchain (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_a655930d7df8481ada723d524de8c207e}{FCT\+::\+VK\+\_\+\+Context}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_context_ad5c25c20d75db4da761237a54262d330}\index{FCT::Context@{FCT::Context}!createTexture@{createTexture}}
+\index{createTexture@{createTexture}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{createTexture()}{createTexture()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_ad5c25c20d75db4da761237a54262d330} 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_texture}{Texture}} \texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::create\+Texture (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_adc82347b7e5fbd50f2d65aa472fcc959}{FCT\+::\+VK\+\_\+\+Context}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_context_a8a147f4bf489a79380d4b3dafb97f616}\index{FCT::Context@{FCT::Context}!createTextureArray@{createTextureArray}}
+\index{createTextureArray@{createTextureArray}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{createTextureArray()}{createTextureArray()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a8a147f4bf489a79380d4b3dafb97f616} 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_texture_array}{Texture\+Array}} \texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::create\+Texture\+Array (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_a48e91d61c2d8b4e8ad91b4faf16fe1bb}{FCT\+::\+VK\+\_\+\+Context}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_context_af03b9b718c75fa3f169a97705dad7748}\index{FCT::Context@{FCT::Context}!createTextureView@{createTextureView}}
+\index{createTextureView@{createTextureView}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{createTextureView()}{createTextureView()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_af03b9b718c75fa3f169a97705dad7748} 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_texture_view}{RHI\+::\+Texture\+View}} \texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::create\+Texture\+View (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_a66337a92bbdd5fceecbfca177141b3dc}{FCT\+::\+VK\+\_\+\+Context}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_context_aa99693e7e4e88ef8dd3ea21d3f9f2ef2}\index{FCT::Context@{FCT::Context}!createTraditionPipeline@{createTraditionPipeline}}
+\index{createTraditionPipeline@{createTraditionPipeline}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{createTraditionPipeline()}{createTraditionPipeline()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_aa99693e7e4e88ef8dd3ea21d3f9f2ef2} 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_rasterization_pipeline}{RHI\+::\+Rasterization\+Pipeline}} \texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::create\+Tradition\+Pipeline (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_a023507923c777244f1e3c2aea3c0cbf3}{FCT\+::\+VK\+\_\+\+Context}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_context_aefc485b4acd4a826fb09bbf9a778e6e6}\index{FCT::Context@{FCT::Context}!createVertexBuffer@{createVertexBuffer}}
+\index{createVertexBuffer@{createVertexBuffer}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{createVertexBuffer()}{createVertexBuffer()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_aefc485b4acd4a826fb09bbf9a778e6e6} 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_vertex_buffer}{RHI\+::\+Vertex\+Buffer}} \texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::create\+Vertex\+Buffer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_a5348f21005144daf1b41989b99d475f4}{FCT\+::\+VK\+\_\+\+Context}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_context_a368d235925611fb533b343511fbdbff4}\index{FCT::Context@{FCT::Context}!createVertexShader@{createVertexShader}}
+\index{createVertexShader@{createVertexShader}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{createVertexShader()}{createVertexShader()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a368d235925611fb533b343511fbdbff4} 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_vertex_shader}{Vertex\+Shader}} \texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::create\+Vertex\+Shader (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_ac74be5d672a53f3bad8d1efadcb6dd21}{FCT\+::\+VK\+\_\+\+Context}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_context_af425799b4b55dc83f161dff9fcef7d6f}\index{FCT::Context@{FCT::Context}!currentFlush@{currentFlush}}
+\index{currentFlush@{currentFlush}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{currentFlush()}{currentFlush()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_af425799b4b55dc83f161dff9fcef7d6f} 
+void FCT\+::\+Context\+::current\+Flush (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_f_c_t_1_1_context_a71ea2ed7a86a226f4e9247fd3df0d5f1}\index{FCT::Context@{FCT::Context}!currentFrameIndex@{currentFrameIndex}}
+\index{currentFrameIndex@{currentFrameIndex}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{currentFrameIndex()}{currentFrameIndex()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a71ea2ed7a86a226f4e9247fd3df0d5f1} 
+uint32\+\_\+t FCT\+::\+Context\+::current\+Frame\+Index (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00325}{325}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_ac7ec8176015f8db9535c0a5ad8e988fc}\index{FCT::Context@{FCT::Context}!currentGraph@{currentGraph}}
+\index{currentGraph@{currentGraph}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{currentGraph()}{currentGraph()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_ac7ec8176015f8db9535c0a5ad8e988fc} 
+\mbox{\hyperlink{class_f_c_t_1_1_render_graph}{Render\+Graph}} \texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::current\+Graph (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00355}{355}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_abbd56d15cc27f255113384c136a0c09f}\index{FCT::Context@{FCT::Context}!currentSubmitFrameIndex@{currentSubmitFrameIndex}}
+\index{currentSubmitFrameIndex@{currentSubmitFrameIndex}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{currentSubmitFrameIndex()}{currentSubmitFrameIndex()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_abbd56d15cc27f255113384c136a0c09f} 
+uint32\+\_\+t FCT\+::\+Context\+::current\+Submit\+Frame\+Index (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00316}{316}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_ad65777e7264df95bb14d0e6e5d88e259}\index{FCT::Context@{FCT::Context}!defaultTick@{defaultTick}}
+\index{defaultTick@{defaultTick}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{defaultTick()}{defaultTick()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_ad65777e7264df95bb14d0e6e5d88e259} 
+void FCT\+::\+Context\+::default\+Tick (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00241}{241}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_ae4f518c9281a700abb5a5ecf7ba20413}\index{FCT::Context@{FCT::Context}!excute@{excute}}
+\index{excute@{excute}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{excute()}{excute()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_ae4f518c9281a700abb5a5ecf7ba20413} 
+void FCT\+::\+Context\+::excute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00404}{404}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_af13e72a95c7f89b191875fc2606a26f8}\index{FCT::Context@{FCT::Context}!excutePasses@{excutePasses}}
+\index{excutePasses@{excutePasses}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{excutePasses()}{excutePasses()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_af13e72a95c7f89b191875fc2606a26f8} 
+void FCT\+::\+Context\+::excute\+Passes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer}{RHI\+::\+Command\+Buffer}} \texorpdfstring{$\ast$}{*}}]{cmd\+Buf}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00400}{400}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_af301bb0cbec7b6bb310b8ab6bd3afab7}\index{FCT::Context@{FCT::Context}!findPass@{findPass}}
+\index{findPass@{findPass}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{findPass()}{findPass()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_af301bb0cbec7b6bb310b8ab6bd3afab7} 
+\mbox{\hyperlink{class_f_c_t_1_1_pass}{Pass}} \texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::find\+Pass (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00408}{408}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_a355396139ecceed7a06651842fa2e4c0}\index{FCT::Context@{FCT::Context}!flush@{flush}}
+\index{flush@{flush}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{flush()}{flush()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a355396139ecceed7a06651842fa2e4c0} 
+void FCT\+::\+Context\+::flush (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00200}{200}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_aebda281ffc27ef8841d7e35c7d4345b0}\index{FCT::Context@{FCT::Context}!freeCommandBuffers@{freeCommandBuffers}}
+\index{freeCommandBuffers@{freeCommandBuffers}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{freeCommandBuffers()}{freeCommandBuffers()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_aebda281ffc27ef8841d7e35c7d4345b0} 
+void FCT\+::\+Context\+::free\+Command\+Buffers (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}}]{wnd}{, }\item[{uint32\+\_\+t}]{index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8hpp_source}{Context.\+hpp}} 第 \mbox{\hyperlink{_context_8hpp_source_l00166}{166}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_afed262a94e3490f5fa2607ae90d1e26a}\index{FCT::Context@{FCT::Context}!getCmdBuf@{getCmdBuf}}
+\index{getCmdBuf@{getCmdBuf}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{getCmdBuf()}{getCmdBuf()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_afed262a94e3490f5fa2607ae90d1e26a} 
+\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer}{RHI\+::\+Command\+Buffer}} \texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::get\+Cmd\+Buf (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}}]{wnd}{, }\item[{uint32\+\_\+t}]{index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8hpp_source}{Context.\+hpp}} 第 \mbox{\hyperlink{_context_8hpp_source_l00137}{137}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_a10e40a05886dd341038c3edfee6300a3}\index{FCT::Context@{FCT::Context}!getCompiler@{getCompiler}}
+\index{getCompiler@{getCompiler}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{getCompiler()}{getCompiler()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a10e40a05886dd341038c3edfee6300a3} 
+\mbox{\hyperlink{class_f_c_t_1_1_shader_compiler}{Shader\+Compiler}} \texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::get\+Compiler (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00259}{259}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_aa0ea88368be61837378cbd8a3cebd170}\index{FCT::Context@{FCT::Context}!getDescriptorPool@{getDescriptorPool}}
+\index{getDescriptorPool@{getDescriptorPool}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{getDescriptorPool()}{getDescriptorPool()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_aa0ea88368be61837378cbd8a3cebd170} 
+\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_descriptor_pool}{RHI\+::\+Descriptor\+Pool}} \texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::get\+Descriptor\+Pool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}}]{wnd}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8hpp_source}{Context.\+hpp}} 第 \mbox{\hyperlink{_context_8hpp_source_l00201}{201}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_a4fddfb4fc06ff56cecee12d1eeb6d4a4}\index{FCT::Context@{FCT::Context}!getGenerator@{getGenerator}}
+\index{getGenerator@{getGenerator}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{getGenerator()}{getGenerator()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a4fddfb4fc06ff56cecee12d1eeb6d4a4} 
+\mbox{\hyperlink{class_f_c_t_1_1_shader_generator}{Shader\+Generator}} \texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::get\+Generator (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00260}{260}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_ae72453fbe8d92908e7f94a7f852288ef}\index{FCT::Context@{FCT::Context}!getPassTargetToWnd@{getPassTargetToWnd}}
+\index{getPassTargetToWnd@{getPassTargetToWnd}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{getPassTargetToWnd()}{getPassTargetToWnd()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_ae72453fbe8d92908e7f94a7f852288ef} 
+std\+::vector$<$ std\+::string $>$ FCT\+::\+Context\+::get\+Pass\+Target\+To\+Wnd (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}}]{wnd}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00266}{266}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_a4367b332f76cf97b25bc5c9769731e6a}\index{FCT::Context@{FCT::Context}!getRenderGraphSubmitTickerName@{getRenderGraphSubmitTickerName}}
+\index{getRenderGraphSubmitTickerName@{getRenderGraphSubmitTickerName}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{getRenderGraphSubmitTickerName()}{getRenderGraphSubmitTickerName()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a4367b332f76cf97b25bc5c9769731e6a} 
+const char \texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::get\+Render\+Graph\+Submit\+Ticker\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00339}{339}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_a9c52657124df86c17bed8d538364ab88}\index{FCT::Context@{FCT::Context}!getResourceImage@{getResourceImage}}
+\index{getResourceImage@{getResourceImage}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{getResourceImage()}{getResourceImage()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a9c52657124df86c17bed8d538364ab88} 
+\mbox{\hyperlink{class_f_c_t_1_1_image}{Image}} \texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::get\+Resource\+Image (\begin{DoxyParamCaption}\item[{std\+::string}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00356}{356}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_a4c8ce2d10be4c3e42843f53469afeb54}\index{FCT::Context@{FCT::Context}!initFrameManager@{initFrameManager}}
+\index{initFrameManager@{initFrameManager}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{initFrameManager()}{initFrameManager()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a4c8ce2d10be4c3e42843f53469afeb54} 
+void FCT\+::\+Context\+::init\+Frame\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8hpp_source}{Context.\+hpp}} 第 \mbox{\hyperlink{_context_8hpp_source_l00178}{178}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_aa66c7a49e123d9a0161617eeb21ce1e1}\index{FCT::Context@{FCT::Context}!initWndFrameResources@{initWndFrameResources}}
+\index{initWndFrameResources@{initWndFrameResources}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{initWndFrameResources()}{initWndFrameResources()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_aa66c7a49e123d9a0161617eeb21ce1e1} 
+void FCT\+::\+Context\+::init\+Wnd\+Frame\+Resources (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}}]{wnd}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8hpp_source}{Context.\+hpp}} 第 \mbox{\hyperlink{_context_8hpp_source_l00187}{187}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_af0e0fab29cd16c504b5a218a6b939ece}\index{FCT::Context@{FCT::Context}!loadMesh@{loadMesh}}
+\index{loadMesh@{loadMesh}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{loadMesh()}{loadMesh()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_af0e0fab29cd16c504b5a218a6b939ece} 
+\mbox{\hyperlink{class_f_c_t_1_1_static_mesh}{Static\+Mesh}}$<$ uint32\+\_\+t $>$ \texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::load\+Mesh (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{, }\item[{const std\+::string \&}]{mesh\+Name}{, }\item[{const \mbox{\hyperlink{class_f_c_t_1_1_vertex_layout}{Vertex\+Layout}} \&}]{layout}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00179}{179}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_a59944f3c38119994120f3623a36cddf6}\index{FCT::Context@{FCT::Context}!loadTexture@{loadTexture}}
+\index{loadTexture@{loadTexture}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{loadTexture()}{loadTexture()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a59944f3c38119994120f3623a36cddf6} 
+\mbox{\hyperlink{class_f_c_t_1_1_image}{Image}} \texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::load\+Texture (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_f_c_t_1_1_context_a9053397bba286120ce3de5ebd6fc0b37}\index{FCT::Context@{FCT::Context}!maxFrameInFlight@{maxFrameInFlight}}
+\index{maxFrameInFlight@{maxFrameInFlight}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{maxFrameInFlight()}{maxFrameInFlight()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a9053397bba286120ce3de5ebd6fc0b37} 
+uint32\+\_\+t FCT\+::\+Context\+::max\+Frame\+In\+Flight (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00314}{314}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_a3466c5b1edcfac32da5248a7d4ad5e0c}\index{FCT::Context@{FCT::Context}!maxFrameInFlight@{maxFrameInFlight}}
+\index{maxFrameInFlight@{maxFrameInFlight}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{maxFrameInFlight()}{maxFrameInFlight()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a3466c5b1edcfac32da5248a7d4ad5e0c} 
+void FCT\+::\+Context\+::max\+Frame\+In\+Flight (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{max\+Frame\+In\+Flight}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{参数}
+{\em max\+Frame\+In\+Flight} & cpu可以比gpu快多少帧 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{注解}
+必须在渲染之前调用 
+\end{DoxyNote}
+
+
+在文件 \mbox{\hyperlink{_context_8hpp_source}{Context.\+hpp}} 第 \mbox{\hyperlink{_context_8hpp_source_l00173}{173}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_ac61134e1cf709d993e60969843766bc4}\index{FCT::Context@{FCT::Context}!newRhiImage@{newRhiImage}}
+\index{newRhiImage@{newRhiImage}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{newRhiImage()}{newRhiImage()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_ac61134e1cf709d993e60969843766bc4} 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_image}{RHI\+::\+Image}} \texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::new\+Rhi\+Image (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_a86b8b8df532d14361fd6b95a52acadfa}{FCT\+::\+VK\+\_\+\+Context}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_context_ae1679b244acc071168b28534e9d7f018}\index{FCT::Context@{FCT::Context}!newRhiPixelShader@{newRhiPixelShader}}
+\index{newRhiPixelShader@{newRhiPixelShader}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{newRhiPixelShader()}{newRhiPixelShader()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_ae1679b244acc071168b28534e9d7f018} 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pixel_shader}{RHI\+::\+Pixel\+Shader}} \texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::new\+Rhi\+Pixel\+Shader (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_aa4f6b4bd4f8ab3958c69cbbf1e467fb4}{FCT\+::\+VK\+\_\+\+Context}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_context_afb89a1544d82cb03a91e7f48fa0398b2}\index{FCT::Context@{FCT::Context}!newRhiVertexShader@{newRhiVertexShader}}
+\index{newRhiVertexShader@{newRhiVertexShader}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{newRhiVertexShader()}{newRhiVertexShader()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_afb89a1544d82cb03a91e7f48fa0398b2} 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_vertex_shader}{RHI\+::\+Vertex\+Shader}} \texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::new\+Rhi\+Vertex\+Shader (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_ab47d30c494a5a276b34cf9e2e4b651a7}{FCT\+::\+VK\+\_\+\+Context}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_context_a589fed90876f5148e5dde6a048eb1af1}\index{FCT::Context@{FCT::Context}!nextFrame@{nextFrame}}
+\index{nextFrame@{nextFrame}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{nextFrame()}{nextFrame()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a589fed90876f5148e5dde6a048eb1af1} 
+void FCT\+::\+Context\+::next\+Frame (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_f_c_t_1_1_context_a0111ed9cd23192f9ffaab4230e978e05}\index{FCT::Context@{FCT::Context}!postLogicTask@{postLogicTask}}
+\index{postLogicTask@{postLogicTask}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{postLogicTask()}{postLogicTask()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a0111ed9cd23192f9ffaab4230e978e05} 
+void FCT\+::\+Context\+::post\+Logic\+Task (\begin{DoxyParamCaption}\item[{const std\+::function$<$ void()$>$ \&}]{task}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00191}{191}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_acd2b0643731a47a61518d404814ea875}\index{FCT::Context@{FCT::Context}!setCurrentGraph@{setCurrentGraph}}
+\index{setCurrentGraph@{setCurrentGraph}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{setCurrentGraph()}{setCurrentGraph()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_acd2b0643731a47a61518d404814ea875} 
+void FCT\+::\+Context\+::set\+Current\+Graph (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_render_graph}{Render\+Graph}} \texorpdfstring{$\ast$}{*}}]{graph}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00361}{361}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_a9feca7241fe59a755ac9da9b6dde7b58}\index{FCT::Context@{FCT::Context}!submit@{submit}}
+\index{submit@{submit}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{submit()}{submit()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a9feca7241fe59a755ac9da9b6dde7b58} 
+void FCT\+::\+Context\+::submit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_f_c_t_1_1_job}{Job}} \texorpdfstring{$\ast$}{*}}]{job}{, }\item[{std\+::string}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00372}{372}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_a12e64115a928b13b07f487fc5dd89ed7}\index{FCT::Context@{FCT::Context}!submitThread@{submitThread}}
+\index{submitThread@{submitThread}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{submitThread()}{submitThread()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a12e64115a928b13b07f487fc5dd89ed7} 
+void FCT\+::\+Context\+::submit\+Thread (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00231}{231}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_af176b89646d19f0183e3e6f545217044}\index{FCT::Context@{FCT::Context}!submitTickers@{submitTickers}}
+\index{submitTickers@{submitTickers}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{submitTickers()}{submitTickers()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_af176b89646d19f0183e3e6f545217044} 
+auto \& FCT\+::\+Context\+::submit\+Tickers (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00274}{274}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_a5e894d71be6d4ed0f8aaa5383314667a}\index{FCT::Context@{FCT::Context}!swapBuffers@{swapBuffers}}
+\index{swapBuffers@{swapBuffers}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{swapBuffers()}{swapBuffers()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a5e894d71be6d4ed0f8aaa5383314667a} 
+void FCT\+::\+Context\+::swap\+Buffers (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8hpp_source}{Context.\+hpp}} 第 \mbox{\hyperlink{_context_8hpp_source_l00103}{103}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_a827c85bf4a63521a1bea6fd40a3110b4}\index{FCT::Context@{FCT::Context}!swapQueue@{swapQueue}}
+\index{swapQueue@{swapQueue}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{swapQueue()}{swapQueue()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a827c85bf4a63521a1bea6fd40a3110b4} 
+virtual void FCT\+::\+Context\+::swap\+Queue (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\Hypertarget{class_f_c_t_1_1_context_a66d1da4b7d6f4fb370fc581c9c872689}\index{FCT::Context@{FCT::Context}!syncTickers@{syncTickers}}
+\index{syncTickers@{syncTickers}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{syncTickers()}{syncTickers()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a66d1da4b7d6f4fb370fc581c9c872689} 
+auto \& FCT\+::\+Context\+::sync\+Tickers (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00199}{199}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_a3622894a108ee0cfc14bef65c39aa1f4}\index{FCT::Context@{FCT::Context}!tick@{tick}}
+\index{tick@{tick}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{tick()}{tick()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a3622894a108ee0cfc14bef65c39aa1f4} 
+void FCT\+::\+Context\+::tick (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00251}{251}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_a7c4199aa72db8098fb32596180734dd5}\index{FCT::Context@{FCT::Context}!viewport@{viewport}}
+\index{viewport@{viewport}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{viewport()}{viewport()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a7c4199aa72db8098fb32596180734dd5} 
+virtual void FCT\+::\+Context\+::viewport (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{int}]{width}{, }\item[{int}]{height}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_a0f0a700bca54ffb6b69effbcc3b2a16b}{FCT\+::\+VK\+\_\+\+Context}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_context_aa1a6b5e7d6b49a399d8715e95af0f4ad}\index{FCT::Context@{FCT::Context}!waitCurrentFlush@{waitCurrentFlush}}
+\index{waitCurrentFlush@{waitCurrentFlush}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{waitCurrentFlush()}{waitCurrentFlush()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_aa1a6b5e7d6b49a399d8715e95af0f4ad} 
+void FCT\+::\+Context\+::wait\+Current\+Flush (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00262}{262}} 行定义.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_f_c_t_1_1_context_doc-variable-members}
+\doxysubsection{类成员变量说明}
+\Hypertarget{class_f_c_t_1_1_context_a2048188b5503fbdbd83b68402e21d204}\index{FCT::Context@{FCT::Context}!m\_beginFrameTicker@{m\_beginFrameTicker}}
+\index{m\_beginFrameTicker@{m\_beginFrameTicker}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{m\_beginFrameTicker}{m\_beginFrameTicker}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a2048188b5503fbdbd83b68402e21d204} 
+std\+::vector$<$\mbox{\hyperlink{class_f_c_t_1_1_context_a3e4665afe2d6148769a19bb997a8c8da}{begin\+Frame\+Ticker}}$>$ FCT\+::\+Context\+::m\+\_\+begin\+Frame\+Ticker\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00218}{218}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_ab7073c87ebf502dcf3aef25ec8cd256e}\index{FCT::Context@{FCT::Context}!m\_bindWindows@{m\_bindWindows}}
+\index{m\_bindWindows@{m\_bindWindows}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{m\_bindWindows}{m\_bindWindows}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_ab7073c87ebf502dcf3aef25ec8cd256e} 
+std\+::vector$<$\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}}\texorpdfstring{$\ast$}{*}$>$ FCT\+::\+Context\+::m\+\_\+bind\+Windows\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00282}{282}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_a4c6607256a23ab3c6a276ca3ffa855d9}\index{FCT::Context@{FCT::Context}!m\_compiler@{m\_compiler}}
+\index{m\_compiler@{m\_compiler}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{m\_compiler}{m\_compiler}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a4c6607256a23ab3c6a276ca3ffa855d9} 
+\mbox{\hyperlink{class_f_c_t_1_1_shader_compiler}{Shader\+Compiler}}\texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::m\+\_\+compiler\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00287}{287}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_a884452f9647279f66f76eef51c658687}\index{FCT::Context@{FCT::Context}!m\_ctxRunning@{m\_ctxRunning}}
+\index{m\_ctxRunning@{m\_ctxRunning}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{m\_ctxRunning}{m\_ctxRunning}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a884452f9647279f66f76eef51c658687} 
+bool FCT\+::\+Context\+::m\+\_\+ctx\+Running\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00286}{286}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_a9ee4c75d34c392e75747ce303df85bf5}\index{FCT::Context@{FCT::Context}!m\_currentFlush@{m\_currentFlush}}
+\index{m\_currentFlush@{m\_currentFlush}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{m\_currentFlush}{m\_currentFlush}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a9ee4c75d34c392e75747ce303df85bf5} 
+bool FCT\+::\+Context\+::m\+\_\+current\+Flush\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00284}{284}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_a6a581e9a74f88c4df6061e192a04fce3}\index{FCT::Context@{FCT::Context}!m\_currentGraph@{m\_currentGraph}}
+\index{m\_currentGraph@{m\_currentGraph}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{m\_currentGraph}{m\_currentGraph}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a6a581e9a74f88c4df6061e192a04fce3} 
+\mbox{\hyperlink{class_f_c_t_1_1_render_graph}{Render\+Graph}}\texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::m\+\_\+current\+Graph\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00353}{353}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_a136ad21d370980e07a7c7740c014ba13}\index{FCT::Context@{FCT::Context}!m\_defaultGraph@{m\_defaultGraph}}
+\index{m\_defaultGraph@{m\_defaultGraph}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{m\_defaultGraph}{m\_defaultGraph}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a136ad21d370980e07a7c7740c014ba13} 
+\mbox{\hyperlink{class_f_c_t_1_1_render_graph}{Render\+Graph}}\texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::m\+\_\+default\+Graph\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00352}{352}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_a1c31068bae9e283c04f664abfa70dca4}\index{FCT::Context@{FCT::Context}!m\_descriptorPools@{m\_descriptorPools}}
+\index{m\_descriptorPools@{m\_descriptorPools}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{m\_descriptorPools}{m\_descriptorPools}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a1c31068bae9e283c04f664abfa70dca4} 
+std\+::map$<$\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}}\texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_descriptor_pool}{RHI\+::\+Descriptor\+Pool}}\texorpdfstring{$\ast$}{*}$>$ FCT\+::\+Context\+::m\+\_\+descriptor\+Pools\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00292}{292}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_aed5ee768dbd1e64f831cf65024133505}\index{FCT::Context@{FCT::Context}!m\_frameIndex@{m\_frameIndex}}
+\index{m\_frameIndex@{m\_frameIndex}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{m\_frameIndex}{m\_frameIndex}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_aed5ee768dbd1e64f831cf65024133505} 
+size\+\_\+t FCT\+::\+Context\+::m\+\_\+frame\+Index = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00293}{293}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_ae5a23c79de8756181d7e019c5541e0bf}\index{FCT::Context@{FCT::Context}!m\_frameResources@{m\_frameResources}}
+\index{m\_frameResources@{m\_frameResources}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{m\_frameResources}{m\_frameResources}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_ae5a23c79de8756181d7e019c5541e0bf} 
+std\+::map$<$\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}}\texorpdfstring{$\ast$}{*}, std\+::vector$<$\mbox{\hyperlink{struct_f_c_t_1_1_frame_resource}{Frame\+Resource}}$>$ $>$ FCT\+::\+Context\+::m\+\_\+frame\+Resources\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00291}{291}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_ac7fcac233cb62b85e35990a42560c105}\index{FCT::Context@{FCT::Context}!m\_generator@{m\_generator}}
+\index{m\_generator@{m\_generator}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{m\_generator}{m\_generator}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_ac7fcac233cb62b85e35990a42560c105} 
+\mbox{\hyperlink{class_f_c_t_1_1_shader_generator}{Shader\+Generator}}\texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::m\+\_\+generator\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00288}{288}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_a86e60a6457143d658b445cdb55bddb8a}\index{FCT::Context@{FCT::Context}!m\_imageLoader@{m\_imageLoader}}
+\index{m\_imageLoader@{m\_imageLoader}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{m\_imageLoader}{m\_imageLoader}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a86e60a6457143d658b445cdb55bddb8a} 
+\mbox{\hyperlink{class_f_c_t_1_1_image_loader}{Image\+Loader}}\texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::m\+\_\+image\+Loader\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00348}{348}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_a72fda74f84f568d35396bde11ed1a134}\index{FCT::Context@{FCT::Context}!m\_logicFrameIndex@{m\_logicFrameIndex}}
+\index{m\_logicFrameIndex@{m\_logicFrameIndex}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{m\_logicFrameIndex}{m\_logicFrameIndex}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a72fda74f84f568d35396bde11ed1a134} 
+size\+\_\+t FCT\+::\+Context\+::m\+\_\+logic\+Frame\+Index = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00294}{294}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_afb417ec1d038fde6232213b19dfded5a}\index{FCT::Context@{FCT::Context}!m\_logicTask@{m\_logicTask}}
+\index{m\_logicTask@{m\_logicTask}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{m\_logicTask}{m\_logicTask}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_afb417ec1d038fde6232213b19dfded5a} 
+boost\+::lockfree\+::queue$<$\mbox{\hyperlink{struct_f_c_t_1_1_context_1_1_logic_task_data}{Logic\+Task\+Data}}\texorpdfstring{$\ast$}{*},boost\+::lockfree\+::capacity$<$1024$>$ $>$ FCT\+::\+Context\+::m\+\_\+logic\+Task\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00190}{190}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_a0a83bc9311ede1a9044f514ee85e8a23}\index{FCT::Context@{FCT::Context}!m\_maxFrameInFlight@{m\_maxFrameInFlight}}
+\index{m\_maxFrameInFlight@{m\_maxFrameInFlight}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{m\_maxFrameInFlight}{m\_maxFrameInFlight}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a0a83bc9311ede1a9044f514ee85e8a23} 
+uint32\+\_\+t FCT\+::\+Context\+::m\+\_\+max\+Frame\+In\+Flight\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00290}{290}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_a4dac183a4ae06a784937d0f98b90634d}\index{FCT::Context@{FCT::Context}!m\_modelLoader@{m\_modelLoader}}
+\index{m\_modelLoader@{m\_modelLoader}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{m\_modelLoader}{m\_modelLoader}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a4dac183a4ae06a784937d0f98b90634d} 
+\mbox{\hyperlink{class_f_c_t_1_1_model_loader}{Model\+Loader}}\texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::m\+\_\+model\+Loader\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00150}{150}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_af70b8941135949280dae113210b633d8}\index{FCT::Context@{FCT::Context}!m\_nextFrame@{m\_nextFrame}}
+\index{m\_nextFrame@{m\_nextFrame}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{m\_nextFrame}{m\_nextFrame}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_af70b8941135949280dae113210b633d8} 
+bool FCT\+::\+Context\+::m\+\_\+next\+Frame\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00283}{283}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_a8120cc50999faef6525e4eaa1c7c9724}\index{FCT::Context@{FCT::Context}!m\_submitThread@{m\_submitThread}}
+\index{m\_submitThread@{m\_submitThread}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{m\_submitThread}{m\_submitThread}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a8120cc50999faef6525e4eaa1c7c9724} 
+std\+::thread FCT\+::\+Context\+::m\+\_\+submit\+Thread\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00285}{285}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_af6b38f1cae0ed69cef0b975ecbf7ae17}\index{FCT::Context@{FCT::Context}!m\_submitThreadId@{m\_submitThreadId}}
+\index{m\_submitThreadId@{m\_submitThreadId}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{m\_submitThreadId}{m\_submitThreadId}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_af6b38f1cae0ed69cef0b975ecbf7ae17} 
+std\+::thread\+::id FCT\+::\+Context\+::m\+\_\+submit\+Thread\+Id\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00295}{295}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_a0a4292a15160e0a362771c471ab8556f}\index{FCT::Context@{FCT::Context}!m\_submitTickers@{m\_submitTickers}}
+\index{m\_submitTickers@{m\_submitTickers}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{m\_submitTickers}{m\_submitTickers}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a0a4292a15160e0a362771c471ab8556f} 
+\mbox{\hyperlink{class_f_c_t_1_1_token_graph}{Token\+Graph}}$<$std\+::string,\mbox{\hyperlink{namespace_f_c_t_ab1ea6811dd963f80ea7b7b1b6aec0d3c}{Submit\+Ticker}}$>$ FCT\+::\+Context\+::m\+\_\+submit\+Tickers\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00279}{279}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_a9db519c58becad823dbf34c91128bc84}\index{FCT::Context@{FCT::Context}!m\_syncTickers@{m\_syncTickers}}
+\index{m\_syncTickers@{m\_syncTickers}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{m\_syncTickers}{m\_syncTickers}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a9db519c58becad823dbf34c91128bc84} 
+\mbox{\hyperlink{class_f_c_t_1_1_token_graph}{Token\+Graph}}$<$std\+::string, \mbox{\hyperlink{namespace_f_c_t_a726db41259cdbddb2910a4854444d5b9}{Sync\+Ticker}}$>$ FCT\+::\+Context\+::m\+\_\+sync\+Tickers\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00280}{280}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_context_afd3e26eb12b319cee7d9ac8fc86f9293}\index{FCT::Context@{FCT::Context}!m\_ticker@{m\_ticker}}
+\index{m\_ticker@{m\_ticker}!FCT::Context@{FCT::Context}}
+\doxysubsubsection{\texorpdfstring{m\_ticker}{m\_ticker}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_afd3e26eb12b319cee7d9ac8fc86f9293} 
+\mbox{\hyperlink{namespace_f_c_t_ab1ea6811dd963f80ea7b7b1b6aec0d3c}{Submit\+Ticker}} FCT\+::\+Context\+::m\+\_\+ticker\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00281}{281}} 行定义.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\+FCT/\+Context/\mbox{\hyperlink{_context_8h}{Context.\+h}}\item 
+include/\+FCT/\+Context/\mbox{\hyperlink{_context_8hpp}{Context.\+hpp}}\end{DoxyCompactItemize}

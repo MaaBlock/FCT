@@ -1,0 +1,97 @@
+\doxysection{FCT\+::Image\+Loader类 参考}
+\hypertarget{class_f_c_t_1_1_image_loader}{}\label{class_f_c_t_1_1_image_loader}\index{FCT::ImageLoader@{FCT::ImageLoader}}
+
+
+{\ttfamily \#include $<$Image\+Loader.\+h$>$}
+
+类 FCT\+::Image\+Loader 继承关系图\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_f_c_t_1_1_image_loader}
+\end{center}
+\end{figure}
+\doxysubsubsection*{类}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_f_c_t_1_1_image_loader_1_1_image_data}{Image\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_image_loader_a48b552bedde562e3cde2b6bd50900fb0}{\texorpdfstring{$\sim$}{\string~}\+Image\+Loader}} ()=default
+\item 
+virtual \mbox{\hyperlink{struct_f_c_t_1_1_image_loader_1_1_image_data}{Image\+Data}} \mbox{\hyperlink{class_f_c_t_1_1_image_loader_a0e1b6e011b71a5d73ff9f9e22319268c}{load}} (const std\+::string \&filename)=0
+\item 
+virtual bool \mbox{\hyperlink{class_f_c_t_1_1_image_loader_a8ec1c74db7d2e07693d553e72b0e09d3}{save}} (const std\+::string \&filename, const \mbox{\hyperlink{struct_f_c_t_1_1_image_loader_1_1_image_data}{Image\+Data}} \&image\+Data)=0
+\item 
+virtual std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_f_c_t_1_1_image_loader_a62bb3c434350ea7439d0c39338a0acf4}{get\+Supported\+Extensions}} () const =0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_image_loader_af87b05475a0f11be29546717025d2c6f}{Image\+Loader}} ()=default
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+
+
+在文件 \mbox{\hyperlink{_image_loader_8h_source}{Image\+Loader.\+h}} 第 \mbox{\hyperlink{_image_loader_8h_source_l00008}{8}} 行定义.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_f_c_t_1_1_image_loader_doc-constructors}
+\doxysubsection{构造及析构函数说明}
+\Hypertarget{class_f_c_t_1_1_image_loader_a48b552bedde562e3cde2b6bd50900fb0}\index{FCT::ImageLoader@{FCT::ImageLoader}!````~ImageLoader@{\texorpdfstring{$\sim$}{\string~}ImageLoader}}
+\index{````~ImageLoader@{\texorpdfstring{$\sim$}{\string~}ImageLoader}!FCT::ImageLoader@{FCT::ImageLoader}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ImageLoader()}{\string~ImageLoader()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_image_loader_a48b552bedde562e3cde2b6bd50900fb0} 
+virtual FCT\+::\+Image\+Loader\+::\texorpdfstring{$\sim$}{\string~}\+Image\+Loader (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+\Hypertarget{class_f_c_t_1_1_image_loader_af87b05475a0f11be29546717025d2c6f}\index{FCT::ImageLoader@{FCT::ImageLoader}!ImageLoader@{ImageLoader}}
+\index{ImageLoader@{ImageLoader}!FCT::ImageLoader@{FCT::ImageLoader}}
+\doxysubsubsection{\texorpdfstring{ImageLoader()}{ImageLoader()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_image_loader_af87b05475a0f11be29546717025d2c6f} 
+FCT\+::\+Image\+Loader\+::\+Image\+Loader (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_f_c_t_1_1_image_loader_doc-func-members}
+\doxysubsection{成员函数说明}
+\Hypertarget{class_f_c_t_1_1_image_loader_a62bb3c434350ea7439d0c39338a0acf4}\index{FCT::ImageLoader@{FCT::ImageLoader}!getSupportedExtensions@{getSupportedExtensions}}
+\index{getSupportedExtensions@{getSupportedExtensions}!FCT::ImageLoader@{FCT::ImageLoader}}
+\doxysubsubsection{\texorpdfstring{getSupportedExtensions()}{getSupportedExtensions()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_image_loader_a62bb3c434350ea7439d0c39338a0acf4} 
+virtual std\+::vector$<$ std\+::string $>$ FCT\+::\+Image\+Loader\+::get\+Supported\+Extensions (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_free_image___image_loader_ae25f42aa12983e250ac13ace8404ce70}{FCT\+::\+Free\+Image\+\_\+\+Image\+Loader}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_image_loader_a0e1b6e011b71a5d73ff9f9e22319268c}\index{FCT::ImageLoader@{FCT::ImageLoader}!load@{load}}
+\index{load@{load}!FCT::ImageLoader@{FCT::ImageLoader}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_image_loader_a0e1b6e011b71a5d73ff9f9e22319268c} 
+virtual \mbox{\hyperlink{struct_f_c_t_1_1_image_loader_1_1_image_data}{Image\+Data}} FCT\+::\+Image\+Loader\+::load (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_free_image___image_loader_ad1bb7b0672da54771fadfe5b3622ae50}{FCT\+::\+Free\+Image\+\_\+\+Image\+Loader}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_image_loader_a8ec1c74db7d2e07693d553e72b0e09d3}\index{FCT::ImageLoader@{FCT::ImageLoader}!save@{save}}
+\index{save@{save}!FCT::ImageLoader@{FCT::ImageLoader}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_image_loader_a8ec1c74db7d2e07693d553e72b0e09d3} 
+virtual bool FCT\+::\+Image\+Loader\+::save (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{, }\item[{const \mbox{\hyperlink{struct_f_c_t_1_1_image_loader_1_1_image_data}{Image\+Data}} \&}]{image\+Data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_free_image___image_loader_a415cc10447a2086a5711ca55575cbf69}{FCT\+::\+Free\+Image\+\_\+\+Image\+Loader}} 内被实现.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\+FCT/\+Image\+Loader/\mbox{\hyperlink{_image_loader_8h}{Image\+Loader.\+h}}\end{DoxyCompactItemize}

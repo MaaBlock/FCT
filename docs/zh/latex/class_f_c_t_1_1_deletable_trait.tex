@@ -1,0 +1,116 @@
+\doxysection{FCT\+::Deletable\+Trait\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} 模板类 参考}
+\hypertarget{class_f_c_t_1_1_deletable_trait}{}\label{class_f_c_t_1_1_deletable_trait}\index{FCT::DeletableTrait$<$ T $>$@{FCT::DeletableTrait$<$ T $>$}}
+
+
+用于自定义对象销毁行为  
+
+
+
+
+{\ttfamily \#include $<$Ref\+Count.\+h$>$}
+
+\doxysubsubsection*{Public 类型}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{class_f_c_t_1_1_deletable_trait_aa11d4656b54ed291143d6c79da4c407b}{Deleter\+Type}} = std\+::function$<$void(T\texorpdfstring{$\ast$}{*})$>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_deletable_trait_ac6cac75cc5ab38b97e56f59f0a93934e}{set\+Deleter}} (\mbox{\hyperlink{class_f_c_t_1_1_deletable_trait_aa11d4656b54ed291143d6c79da4c407b}{Deleter\+Type}} deleter)
+\item 
+{\footnotesize template$<$typename Func$>$ }\\void \mbox{\hyperlink{class_f_c_t_1_1_deletable_trait_af36f7eff01c8c86ebfb148b827ca1a9f}{set\+Deleter\+Func}} (Func \&\&func)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_f_c_t_1_1_deletable_trait_aeb6edd1024ec555f8eb0321092ee874b}{apply\+Deleter}} (T \texorpdfstring{$\ast$}{*}ptr)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+\subsubsection*{template$<$typename T$>$\newline
+class FCT\+::\+Deletable\+Trait$<$ T $>$}
+用于自定义对象销毁行为 
+
+\begin{DoxyNote}{注解}
+对于继承了\+Deletable\+Trait和引用计数类的 添加该函数 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ deleteThis()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_f_c_t_1_1_deletable_trait_aeb6edd1024ec555f8eb0321092ee874b}{applyDeleter}}(\textcolor{keyword}{this}))\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \mbox{\hyperlink{_memory_cheak_8h_a208ca9335e0fa05cd26667978959abd5}{FCT\_DELETE}}(\textcolor{keyword}{this});}
+\DoxyCodeLine{\ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 使得其可以自定义删除时的 操作， 主要用于实现对象池 
+\end{DoxyNote}
+
+\begin{DoxyTemplParams}{模板参数}
+{\em T} & 子类类型 \\
+\hline
+\end{DoxyTemplParams}
+
+
+在文件 \mbox{\hyperlink{_ref_count_8h_source}{Ref\+Count.\+h}} 第 \mbox{\hyperlink{_ref_count_8h_source_l00050}{50}} 行定义.
+
+
+
+\label{doc-typedef-members}
+\Hypertarget{class_f_c_t_1_1_deletable_trait_doc-typedef-members}
+\doxysubsection{成员类型定义说明}
+\Hypertarget{class_f_c_t_1_1_deletable_trait_aa11d4656b54ed291143d6c79da4c407b}\index{FCT::DeletableTrait$<$ T $>$@{FCT::DeletableTrait$<$ T $>$}!DeleterType@{DeleterType}}
+\index{DeleterType@{DeleterType}!FCT::DeletableTrait$<$ T $>$@{FCT::DeletableTrait$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{DeleterType}{DeleterType}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_deletable_trait_aa11d4656b54ed291143d6c79da4c407b} 
+template$<$typename T$>$ \\
+using \mbox{\hyperlink{class_f_c_t_1_1_deletable_trait}{FCT\+::\+Deletable\+Trait}}$<$ T $>$\+::\+Deleter\+Type = std\+::function$<$void(T\texorpdfstring{$\ast$}{*})$>$}
+
+
+
+在文件 \mbox{\hyperlink{_ref_count_8h_source}{Ref\+Count.\+h}} 第 \mbox{\hyperlink{_ref_count_8h_source_l00052}{52}} 行定义.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_f_c_t_1_1_deletable_trait_doc-func-members}
+\doxysubsection{成员函数说明}
+\Hypertarget{class_f_c_t_1_1_deletable_trait_aeb6edd1024ec555f8eb0321092ee874b}\index{FCT::DeletableTrait$<$ T $>$@{FCT::DeletableTrait$<$ T $>$}!applyDeleter@{applyDeleter}}
+\index{applyDeleter@{applyDeleter}!FCT::DeletableTrait$<$ T $>$@{FCT::DeletableTrait$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{applyDeleter()}{applyDeleter()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_deletable_trait_aeb6edd1024ec555f8eb0321092ee874b} 
+template$<$typename T$>$ \\
+bool \mbox{\hyperlink{class_f_c_t_1_1_deletable_trait}{FCT\+::\+Deletable\+Trait}}$<$ T $>$\+::apply\+Deleter (\begin{DoxyParamCaption}\item[{T \texorpdfstring{$\ast$}{*}}]{ptr}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_ref_count_8h_source}{Ref\+Count.\+h}} 第 \mbox{\hyperlink{_ref_count_8h_source_l00064}{64}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_deletable_trait_ac6cac75cc5ab38b97e56f59f0a93934e}\index{FCT::DeletableTrait$<$ T $>$@{FCT::DeletableTrait$<$ T $>$}!setDeleter@{setDeleter}}
+\index{setDeleter@{setDeleter}!FCT::DeletableTrait$<$ T $>$@{FCT::DeletableTrait$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setDeleter()}{setDeleter()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_deletable_trait_ac6cac75cc5ab38b97e56f59f0a93934e} 
+template$<$typename T$>$ \\
+void \mbox{\hyperlink{class_f_c_t_1_1_deletable_trait}{FCT\+::\+Deletable\+Trait}}$<$ T $>$\+::set\+Deleter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_deletable_trait_aa11d4656b54ed291143d6c79da4c407b}{Deleter\+Type}}}]{deleter}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_ref_count_8h_source}{Ref\+Count.\+h}} 第 \mbox{\hyperlink{_ref_count_8h_source_l00054}{54}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_deletable_trait_af36f7eff01c8c86ebfb148b827ca1a9f}\index{FCT::DeletableTrait$<$ T $>$@{FCT::DeletableTrait$<$ T $>$}!setDeleterFunc@{setDeleterFunc}}
+\index{setDeleterFunc@{setDeleterFunc}!FCT::DeletableTrait$<$ T $>$@{FCT::DeletableTrait$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setDeleterFunc()}{setDeleterFunc()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_deletable_trait_af36f7eff01c8c86ebfb148b827ca1a9f} 
+template$<$typename T$>$ \\
+template$<$typename Func$>$ \\
+void \mbox{\hyperlink{class_f_c_t_1_1_deletable_trait}{FCT\+::\+Deletable\+Trait}}$<$ T $>$\+::set\+Deleter\+Func (\begin{DoxyParamCaption}\item[{Func \&\&}]{func}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_ref_count_8h_source}{Ref\+Count.\+h}} 第 \mbox{\hyperlink{_ref_count_8h_source_l00059}{59}} 行定义.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\+FCT/\+Mutil\+Thread\+Base/\mbox{\hyperlink{_ref_count_8h}{Ref\+Count.\+h}}\end{DoxyCompactItemize}

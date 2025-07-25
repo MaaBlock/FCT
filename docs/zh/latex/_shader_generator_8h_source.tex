@@ -1,0 +1,131 @@
+\doxysection{Shader\+Generator.\+h}
+\hypertarget{_shader_generator_8h_source}{}\label{_shader_generator_8h_source}\index{include/FCT/Context/ShaderGenerator.h@{include/FCT/Context/ShaderGenerator.h}}
+\mbox{\hyperlink{_shader_generator_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00001}00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00002}00002\ \textcolor{comment}{//\ Created\ by\ Administrator\ on\ 2025/4/11.}}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00003}00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00004}00004\ \textcolor{preprocessor}{\#ifndef\ FCT\_SHADERGENERATOR\_H}}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00005}00005\ \textcolor{preprocessor}{\#define\ FCT\_SHADERGENERATOR\_H}}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_resource_layout_8h}{./ResourceLayout.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_shader_generate_8h}{./ShaderGenerate.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_out_stream_8h}{../DebugTools/OutStream.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00009}00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_f_c_t}{FCT}}}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00010}00010\ \{}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00011}00011\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00012}00012\ \textcolor{comment}{\ \ \ \ \ *todo:}}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00013}00013\ \textcolor{comment}{\ \ \ \ \ *\ \ 1.对于从外部加载S\ haderBinary,用spirv-\/cross,}}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00014}00014\ \textcolor{comment}{\ \ \ \ \ *\ \ \ \ 对加载的Shader查找一下有没有对应的layout，}}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00015}00015\ \textcolor{comment}{\ \ \ \ \ *\ \ \ \ 有用哪个的binding，没用就分配新的binding，}}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00016}00016\ \textcolor{comment}{\ \ \ \ \ *\ \ \ \ 然后用spirv-\/cross反射改变shader里面的binding}}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00017}00017\ \textcolor{comment}{\ \ \ \ \ *\ \ 2.对于外部加载的，通过判断name和布局是否一一\ 相等}}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00018}00018\ \textcolor{comment}{\ \ \ \ \ *\ \ \ \ 来判断是否相等，如果布局\ 相等，但是名字不\ 相等}}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00019}00019\ \textcolor{comment}{\ \ \ \ \ *\ \ \ \ 可以手动更改配置文件里面的名字来使得FCT判断其\ 相等}}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00020}00020\ \textcolor{comment}{\ \ \ \ \ *\ \ \ \ \ 故对于ShaderBinary的存储，layout的名字应该需要好改，}}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00021}00021\ \textcolor{comment}{\ \ \ \ \ *\ \ \ \ \ 应当只存储一次layout的名字}}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00022}00022\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00023}\mbox{\hyperlink{class_f_c_t_1_1_shader_generator}{00023}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_f_c_t_1_1_shader_generator_a4f55e345ec274be07caee06d1d9711e9}{ShaderGenerator}}}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00024}00024\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00026}\mbox{\hyperlink{class_f_c_t_1_1_shader_generator_a4f55e345ec274be07caee06d1d9711e9}{00026}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_shader_generator_a4f55e345ec274be07caee06d1d9711e9}{ShaderGenerator}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00027}\mbox{\hyperlink{class_f_c_t_1_1_shader_generator_a4eb8d0bf80e4244b915794d84177640f}{00027}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_shader_generator_a4eb8d0bf80e4244b915794d84177640f}{ResourceLayoutToElements}}(\mbox{\hyperlink{class_f_c_t_1_1_resource_layout}{ResourceLayout}}\&\ resourceLayout,std::vector<TextureElement>\&\ textureElements,std::vector<SamplerElement>\&\ samplerElements);}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00028}\mbox{\hyperlink{class_f_c_t_1_1_shader_generator_a13a5bd4746a540b7b4c9690313928b73}{00028}}\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{class_f_c_t_1_1_shader_generator_a13a5bd4746a540b7b4c9690313928b73}{generateVertexShader}}(}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::map<uint32\_t,\ VertexLayout>\&\ vertexLayouts,}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_f_c_t_1_1_pixel_layout}{PixelLayout}}\&\ pixelLayout,}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<ConstLayout>\&\ uniformLayouts,}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary}{RHI::ShaderBinary}}\&\ binary,}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_resource_layout}{ResourceLayout}}\&\ resourceLayout,}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ userCode);}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00036}\mbox{\hyperlink{class_f_c_t_1_1_shader_generator_a8ae979c286cd5e2451d319f266361e58}{00036}}\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{class_f_c_t_1_1_shader_generator_a8ae979c286cd5e2451d319f266361e58}{generatePixelShader}}(}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_f_c_t_1_1_pixel_layout}{PixelLayout}}\&\ layout,}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<ConstLayout>\&\ uniformLayouts,}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary}{RHI::ShaderBinary}}\&\ binary,}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_resource_layout}{ResourceLayout}}\&\ resourceLayout,}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ userCode);}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00043}\mbox{\hyperlink{class_f_c_t_1_1_shader_generator_a727fae4988f5d638c44f3ccc20b8e46d}{00043}}\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{class_f_c_t_1_1_shader_generator_a727fae4988f5d638c44f3ccc20b8e46d}{generateDefaultVertexMain}}(}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::map<uint32\_t,\ VertexLayout>\&\ vertexLayouts,}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_f_c_t_1_1_pixel_layout}{PixelLayout}}\&\ pixelLayout);}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00047}\mbox{\hyperlink{class_f_c_t_1_1_shader_generator_a6a9381e9f931a022186e624b02dcba09}{00047}}\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{class_f_c_t_1_1_shader_generator_a6a9381e9f931a022186e624b02dcba09}{generateDefaultPixelMain}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_f_c_t_1_1_pixel_layout}{PixelLayout}}\&\ pixelLayout);}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00049}\mbox{\hyperlink{class_f_c_t_1_1_shader_generator_a6261b741abbbb25f68a2638d88aea3ee}{00049}}\ \ \ \ \ \ \ \ \ std::pair<uint32\_t,\ uint32\_t>\ \mbox{\hyperlink{class_f_c_t_1_1_shader_generator_a6261b741abbbb25f68a2638d88aea3ee}{getLayoutBinding}}(\mbox{\hyperlink{class_f_c_t_1_1_const_layout}{ConstLayout}}\ layout)}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00050}00050\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ pair\ :\ \mbox{\hyperlink{class_f_c_t_1_1_shader_generator_a60dc50567fdb38a912333e15a025cd37}{m\_layoutSetBindings}})\ \{}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pair.first\ ==\ layout)\ \{}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ pair.second;}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//todo:alloc\ new\ binding}}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_pair(0,\ 0);}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00058}00058\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00059}\mbox{\hyperlink{class_f_c_t_1_1_shader_generator_ac29d9c030dd95fcc418f2619850965ce}{00059}}\ \ \ \ \ \ \ \ \ std::pair<uint32\_t,\ uint32\_t>\ \mbox{\hyperlink{class_f_c_t_1_1_shader_generator_ac29d9c030dd95fcc418f2619850965ce}{getTextureBinding}}(\mbox{\hyperlink{class_f_c_t_1_1_texture_element}{TextureElement}}\ texture)}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00060}00060\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ pair\ :\ \mbox{\hyperlink{class_f_c_t_1_1_shader_generator_ae913fcf275db7253587e4e64e4796ffa}{m\_textureSetBindings}})\ \{}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pair.first\ ==\ texture)\ \{}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ pair.second;}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_a0a6fe6357d3e0a9020f582a601a6f112}{ferr}}\ <<\ \textcolor{stringliteral}{"{}getTextureBinding\ 返回过\ (0,0)"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//todo:alloc\ new\ binding}}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_pair(0,\ 0);}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00069}00069\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00071}\mbox{\hyperlink{class_f_c_t_1_1_shader_generator_ab972d97dea77cc1ad2ff4c0daf36fce5}{00071}}\ \ \ \ \ \ \ \ \ std::pair<uint32\_t,\ uint32\_t>\ \mbox{\hyperlink{class_f_c_t_1_1_shader_generator_ab972d97dea77cc1ad2ff4c0daf36fce5}{getSamplerBinding}}(\mbox{\hyperlink{class_f_c_t_1_1_sampler_element}{SamplerElement}}\ sampler)}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00072}00072\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ pair\ :\ \mbox{\hyperlink{class_f_c_t_1_1_shader_generator_a42289c311dc4b23084f4190e927429f3}{m\_samplerSetBindings}})\ \{}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pair.first\ ==\ sampler)\ \{}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ pair.second;}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//todo:alloc\ new\ binding}}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_pair(0,\ 0);}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00080}00080\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00081}\mbox{\hyperlink{class_f_c_t_1_1_shader_generator_a7c3a7c3e140f21cf0dab0a7552692dec}{00081}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_texture_element}{TextureElement}}\ \mbox{\hyperlink{class_f_c_t_1_1_shader_generator_a7c3a7c3e140f21cf0dab0a7552692dec}{findTextureElementByName}}(std::string\ name)}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00082}00082\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ pair\ :\ \mbox{\hyperlink{class_f_c_t_1_1_shader_generator_ae913fcf275db7253587e4e64e4796ffa}{m\_textureSetBindings}})\ \{}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pair.first.getName()\ ==\ name)\ \{}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ pair.first;}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_f_c_t_1_1_texture_element}{TextureElement}}();}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00089}00089\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00090}\mbox{\hyperlink{class_f_c_t_1_1_shader_generator_a147bb6429bba49018404089992859605}{00090}}\ \ \ \ \ \ \ \ \ std::pair<uint32\_t,\ uint32\_t>\ \mbox{\hyperlink{class_f_c_t_1_1_shader_generator_a147bb6429bba49018404089992859605}{allocateTextureBinding}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_f_c_t_1_1_texture_element}{TextureElement}}\&\ texture);}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00091}\mbox{\hyperlink{class_f_c_t_1_1_shader_generator_a9e46ba6e290a9dd25dcd3f04688a0482}{00091}}\ \ \ \ \ \ \ \ \ std::pair<uint32\_t,\ uint32\_t>\ \mbox{\hyperlink{class_f_c_t_1_1_shader_generator_a9e46ba6e290a9dd25dcd3f04688a0482}{allocateSamplerBinding}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_f_c_t_1_1_sampler_element}{SamplerElement}}\&\ sampler);}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00093}00093\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00094}\mbox{\hyperlink{class_f_c_t_1_1_shader_generator_a1de5a9cab267570711c3464d124edda2}{00094}}\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{class_f_c_t_1_1_shader_generator_a1de5a9cab267570711c3464d124edda2}{generateShaderIn}}(}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::map<uint32\_t,\ VertexLayout>\&\ layouts,}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ std::map<std::string,\ uint32\_t>\&\ locationMap);}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00098}\mbox{\hyperlink{class_f_c_t_1_1_shader_generator_a7e69a7f8b9a7cb6f22a44a9e820c2e9e}{00098}}\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{class_f_c_t_1_1_shader_generator_a7e69a7f8b9a7cb6f22a44a9e820c2e9e}{generateShaderIn}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_f_c_t_1_1_pixel_layout}{PixelLayout}}\&\ layout);}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00100}\mbox{\hyperlink{class_f_c_t_1_1_shader_generator_aecf7fd62509c1201f89ef591a42028f5}{00100}}\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{class_f_c_t_1_1_shader_generator_aecf7fd62509c1201f89ef591a42028f5}{generateShaderOut}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_f_c_t_1_1_pixel_layout}{PixelLayout}}\&\ layout);}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00102}\mbox{\hyperlink{class_f_c_t_1_1_shader_generator_a1a2d0c79b258b56482c80bf2fc52fd2c}{00102}}\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{class_f_c_t_1_1_shader_generator_a1a2d0c79b258b56482c80bf2fc52fd2c}{generateShaderOut}}();}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00104}\mbox{\hyperlink{class_f_c_t_1_1_shader_generator_af0fd66d6674ccc714021f8ccd47ce5d2}{00104}}\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{class_f_c_t_1_1_shader_generator_af0fd66d6674ccc714021f8ccd47ce5d2}{generateFromPixelLayout}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_f_c_t_1_1_pixel_layout}{PixelLayout}}\&\ layout);}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00106}\mbox{\hyperlink{class_f_c_t_1_1_shader_generator_aac42622c1b8e46e992ae8135e92a2122}{00106}}\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{class_f_c_t_1_1_shader_generator_aac42622c1b8e46e992ae8135e92a2122}{generateVertexMain}}(}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::map<uint32\_t,\ VertexLayout>\&\ vertexLayouts,}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_f_c_t_1_1_pixel_layout}{PixelLayout}}\&\ pixelLayout);}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00110}\mbox{\hyperlink{class_f_c_t_1_1_shader_generator_ac04e6ed76b15a9ccdfd969983da23834}{00110}}\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{class_f_c_t_1_1_shader_generator_ac04e6ed76b15a9ccdfd969983da23834}{generatePixelMain}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_f_c_t_1_1_pixel_layout}{PixelLayout}}\&\ pixelLayout);}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00111}\mbox{\hyperlink{class_f_c_t_1_1_shader_generator_a05f0a2b75a1aef42a14678fe144dbd70}{00111}}\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{class_f_c_t_1_1_shader_generator_a05f0a2b75a1aef42a14678fe144dbd70}{generateTexturesAndSamplers}}(\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary}{RHI::ShaderBinary}}\&\ binary,\ \textcolor{keyword}{const}\ std::vector<TextureElement>\&\ textures,}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<SamplerElement>\&\ samplers);}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00114}\mbox{\hyperlink{class_f_c_t_1_1_shader_generator_a3f3e3aac1741057ad3eab6c28e418c94}{00114}}\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{class_f_c_t_1_1_shader_generator_a3f3e3aac1741057ad3eab6c28e418c94}{uniformTypeToShaderType}}(\mbox{\hyperlink{namespace_f_c_t_aca2f02796bb2000f510d9542ef85e9d1}{ConstType}}\ type);}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00116}\mbox{\hyperlink{class_f_c_t_1_1_shader_generator_ab91186ecee3ab2bbf373dad6c281c9be}{00116}}\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{class_f_c_t_1_1_shader_generator_ab91186ecee3ab2bbf373dad6c281c9be}{generateConstBuffer}}(\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary}{RHI::ShaderBinary}}\&\ binary,\textcolor{keyword}{const}\ std::vector<ConstLayout>\&\ uniforms);}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00118}\mbox{\hyperlink{class_f_c_t_1_1_shader_generator_a60dc50567fdb38a912333e15a025cd37}{00118}}\ \ \ \ \ \ \ \ \ std::vector<std::pair<ConstLayout,\ std::pair<uint32\_t,\ uint32\_t>>>\ \mbox{\hyperlink{class_f_c_t_1_1_shader_generator_a60dc50567fdb38a912333e15a025cd37}{m\_layoutSetBindings}};}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00119}\mbox{\hyperlink{class_f_c_t_1_1_shader_generator_af816d022ce0343774390f6d26d92da9b}{00119}}\ \ \ \ \ \ \ \ \ std::unordered\_map<UpdateFrequency,\ uint32\_t>\ \mbox{\hyperlink{class_f_c_t_1_1_shader_generator_af816d022ce0343774390f6d26d92da9b}{m\_frequencyBindingCount}};}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00121}\mbox{\hyperlink{class_f_c_t_1_1_shader_generator_ae913fcf275db7253587e4e64e4796ffa}{00121}}\ \ \ \ \ \ \ \ \ std::vector<std::pair<TextureElement,\ std::pair<uint32\_t,\ uint32\_t>>>\ \mbox{\hyperlink{class_f_c_t_1_1_shader_generator_ae913fcf275db7253587e4e64e4796ffa}{m\_textureSetBindings}};}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00122}\mbox{\hyperlink{class_f_c_t_1_1_shader_generator_a42289c311dc4b23084f4190e927429f3}{00122}}\ \ \ \ \ \ \ \ \ std::vector<std::pair<SamplerElement,\ std::pair<uint32\_t,\ uint32\_t>>>\ \mbox{\hyperlink{class_f_c_t_1_1_shader_generator_a42289c311dc4b23084f4190e927429f3}{m\_samplerSetBindings}};}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00123}00123\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00124}00124\ \}}
+\DoxyCodeLine{\Hypertarget{_shader_generator_8h_source_l00125}00125\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//FCT\_SHADERGENERATOR\_H}}
+
+\end{DoxyCode}

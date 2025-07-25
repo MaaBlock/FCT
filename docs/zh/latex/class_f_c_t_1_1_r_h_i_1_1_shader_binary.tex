@@ -1,0 +1,389 @@
+\doxysection{FCT\+::RHI\+::Shader\+Binary类 参考}
+\hypertarget{class_f_c_t_1_1_r_h_i_1_1_shader_binary}{}\label{class_f_c_t_1_1_r_h_i_1_1_shader_binary}\index{FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}}
+
+
+{\ttfamily \#include $<$Shader\+Binary.\+h$>$}
+
+类 FCT\+::RHI\+::Shader\+Binary 继承关系图\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_f_c_t_1_1_r_h_i_1_1_shader_binary}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_ae14ca2d24f3940fcda3ac1ec2a698433}{Shader\+Binary}} ()
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a112a8907a73586cc316c3d37cb2d5fd3}{\texorpdfstring{$\sim$}{\string~}\+Shader\+Binary}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_ab9e1f09b11e3c5b93dfa5de0a45cd372}{code}} (std\+::vector$<$ char $>$ code)
+\item 
+std\+::vector$<$ char $>$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_ad980f2f83257becbbf570891818513fb}{code}} () const
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a12e04d867a7d6d8af3e37d0002e6aa38}{location}} (std\+::map$<$ std\+::string, uint32\+\_\+t $>$ locations)
+\item 
+int32\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a263ea3acc2ec1f1a46dcdb4aa588843f}{location\+By\+Semantic}} (const std\+::string \&semantic) const
+\item 
+std\+::map$<$ std\+::string, std\+::pair$<$ uint32\+\_\+t, uint32\+\_\+t $>$ $>$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_acb302f82c5bd483c1276c34b1204310c}{const\+Buffer\+Locations}} ()
+\item 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{class_f_c_t_1_1_const_layout}{Const\+Layout}} $>$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_aba51452e367cc1e3435e051243bc1cf3}{const\+Buffer\+Layout}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a530750aa137bb8f5fe46f47c8985a80d}{add\+Const\+Buffer\+Location}} (\mbox{\hyperlink{class_f_c_t_1_1_const_layout}{Const\+Layout}} layout, uint32\+\_\+t set, uint32\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a12e04d867a7d6d8af3e37d0002e6aa38}{location}})
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a5f9791bd03457c7f05c3f3e9c747819b}{add\+Texture\+Location}} (\mbox{\hyperlink{class_f_c_t_1_1_texture_element}{Texture\+Element}} texture, uint32\+\_\+t set, uint32\+\_\+t binding)
+\item 
+std\+::pair$<$ uint32\+\_\+t, uint32\+\_\+t $>$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a7d5e6265e0ecaad62237478d9895026f}{get\+Texture\+Location}} (const std\+::string \&name) const
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_texture_element}{Texture\+Element}} \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_af84d42d0264ea8d6b8aa5d8b4b3bcb53}{get\+Texture\+Element}} (const std\+::string \&name) const
+\item 
+std\+::map$<$ std\+::string, std\+::pair$<$ uint32\+\_\+t, uint32\+\_\+t $>$ $>$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a5a78e2acffd78039dbc02c6cc863e107}{texture\+Locations}} () const
+\item 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{class_f_c_t_1_1_texture_element}{Texture\+Element}} $>$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a6c32b39cde5a0221fc166d938ce7910f}{texture\+Layout}} () const
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a9c7a7c7859ec40f5b1d6032c67bb20dc}{add\+Sampler\+Location}} (\mbox{\hyperlink{class_f_c_t_1_1_sampler_element}{Sampler\+Element}} sampler, uint32\+\_\+t set, uint32\+\_\+t binding)
+\item 
+std\+::pair$<$ uint32\+\_\+t, uint32\+\_\+t $>$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a9508b6de32fa750c31ae861edacc741e}{get\+Sampler\+Location}} (const std\+::string \&name) const
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_sampler_element}{Sampler\+Element}} \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_acd20cc5006e4ca31e23d673489dbd253}{get\+Sampler\+Element}} (const std\+::string \&name) const
+\item 
+std\+::map$<$ std\+::string, std\+::pair$<$ uint32\+\_\+t, uint32\+\_\+t $>$ $>$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_af0cc551e78d4d67e5264a6fb997d3daf}{sampler\+Locations}} () const
+\item 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{class_f_c_t_1_1_sampler_element}{Sampler\+Element}} $>$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_ae868e4140b950f5bf273f1d4756aece8}{sampler\+Layout}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected 属性}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ char $>$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_ab28101698f7a61e94eac8aa5ab88f4d5}{m\+\_\+code}}
+\item 
+std\+::map$<$ std\+::string, uint32\+\_\+t $>$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_abd5c32db38f910c53bfb27bcf1210155}{m\+\_\+locations}}
+\item 
+std\+::map$<$ std\+::string, std\+::pair$<$ uint32\+\_\+t, uint32\+\_\+t $>$ $>$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_ada1e10b65b3c7bb76d1e5667a4c29293}{m\+\_\+uniform\+Locations}}
+\item 
+std\+::map$<$ std\+::string, std\+::pair$<$ uint32\+\_\+t, uint32\+\_\+t $>$ $>$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a68fd607d08b0e7c8219c5018c6e498a5}{m\+\_\+const\+Buffer\+Locations}}
+\item 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{class_f_c_t_1_1_const_layout}{Const\+Layout}} $>$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_aad51c71e87e1d89d74d38fc77099c7e8}{m\+\_\+const\+Buffer\+Layout}}
+\item 
+std\+::map$<$ std\+::string, std\+::pair$<$ uint32\+\_\+t, uint32\+\_\+t $>$ $>$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_aa5607f5810c6bab14f0407c29428353c}{m\+\_\+texture\+Locations}}
+\item 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{class_f_c_t_1_1_texture_element}{Texture\+Element}} $>$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a7eea73660f5e16e6894930056e3b9930}{m\+\_\+texture\+Layout}}
+\item 
+std\+::map$<$ std\+::string, std\+::pair$<$ uint32\+\_\+t, uint32\+\_\+t $>$ $>$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a07a491784b70c511c0fdac27e511a7ea}{m\+\_\+sampler\+Locations}}
+\item 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{class_f_c_t_1_1_sampler_element}{Sampler\+Element}} $>$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_ab814276c30a482362a22d95fb9a62cf5}{m\+\_\+sampler\+Layout}}
+\item 
+bool \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_af6bd1dd7227da3d72ae1a9e4480c0da0}{m\+\_\+reflected}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+
+
+在文件 \mbox{\hyperlink{_shader_binary_8h_source}{Shader\+Binary.\+h}} 第 \mbox{\hyperlink{_shader_binary_8h_source_l00014}{14}} 行定义.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_shader_binary_doc-constructors}
+\doxysubsection{构造及析构函数说明}
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_shader_binary_ae14ca2d24f3940fcda3ac1ec2a698433}\index{FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}!ShaderBinary@{ShaderBinary}}
+\index{ShaderBinary@{ShaderBinary}!FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}}
+\doxysubsubsection{\texorpdfstring{ShaderBinary()}{ShaderBinary()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_shader_binary_ae14ca2d24f3940fcda3ac1ec2a698433} 
+FCT\+::\+RHI\+::\+Shader\+Binary\+::\+Shader\+Binary (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a112a8907a73586cc316c3d37cb2d5fd3}\index{FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}!````~ShaderBinary@{\texorpdfstring{$\sim$}{\string~}ShaderBinary}}
+\index{````~ShaderBinary@{\texorpdfstring{$\sim$}{\string~}ShaderBinary}!FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ShaderBinary()}{\string~ShaderBinary()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a112a8907a73586cc316c3d37cb2d5fd3} 
+virtual FCT\+::\+RHI\+::\+Shader\+Binary\+::\texorpdfstring{$\sim$}{\string~}\+Shader\+Binary (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+在文件 \mbox{\hyperlink{_shader_binary_8h_source}{Shader\+Binary.\+h}} 第 \mbox{\hyperlink{_shader_binary_8h_source_l00017}{17}} 行定义.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_shader_binary_doc-func-members}
+\doxysubsection{成员函数说明}
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a530750aa137bb8f5fe46f47c8985a80d}\index{FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}!addConstBufferLocation@{addConstBufferLocation}}
+\index{addConstBufferLocation@{addConstBufferLocation}!FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}}
+\doxysubsubsection{\texorpdfstring{addConstBufferLocation()}{addConstBufferLocation()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a530750aa137bb8f5fe46f47c8985a80d} 
+void FCT\+::\+RHI\+::\+Shader\+Binary\+::add\+Const\+Buffer\+Location (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_const_layout}{Const\+Layout}}}]{layout}{, }\item[{uint32\+\_\+t}]{set}{, }\item[{uint32\+\_\+t}]{location}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_shader_binary_8h_source}{Shader\+Binary.\+h}} 第 \mbox{\hyperlink{_shader_binary_8h_source_l00047}{47}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a9c7a7c7859ec40f5b1d6032c67bb20dc}\index{FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}!addSamplerLocation@{addSamplerLocation}}
+\index{addSamplerLocation@{addSamplerLocation}!FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}}
+\doxysubsubsection{\texorpdfstring{addSamplerLocation()}{addSamplerLocation()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a9c7a7c7859ec40f5b1d6032c67bb20dc} 
+void FCT\+::\+RHI\+::\+Shader\+Binary\+::add\+Sampler\+Location (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_sampler_element}{Sampler\+Element}}}]{sampler}{, }\item[{uint32\+\_\+t}]{set}{, }\item[{uint32\+\_\+t}]{binding}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_shader_binary_8h_source}{Shader\+Binary.\+h}} 第 \mbox{\hyperlink{_shader_binary_8h_source_l00087}{87}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a5f9791bd03457c7f05c3f3e9c747819b}\index{FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}!addTextureLocation@{addTextureLocation}}
+\index{addTextureLocation@{addTextureLocation}!FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}}
+\doxysubsubsection{\texorpdfstring{addTextureLocation()}{addTextureLocation()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a5f9791bd03457c7f05c3f3e9c747819b} 
+void FCT\+::\+RHI\+::\+Shader\+Binary\+::add\+Texture\+Location (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_texture_element}{Texture\+Element}}}]{texture}{, }\item[{uint32\+\_\+t}]{set}{, }\item[{uint32\+\_\+t}]{binding}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_shader_binary_8h_source}{Shader\+Binary.\+h}} 第 \mbox{\hyperlink{_shader_binary_8h_source_l00053}{53}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_shader_binary_ad980f2f83257becbbf570891818513fb}\index{FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}!code@{code}}
+\index{code@{code}!FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}}
+\doxysubsubsection{\texorpdfstring{code()}{code()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_shader_binary_ad980f2f83257becbbf570891818513fb} 
+std\+::vector$<$ char $>$ FCT\+::\+RHI\+::\+Shader\+Binary\+::code (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_shader_binary_8h_source}{Shader\+Binary.\+h}} 第 \mbox{\hyperlink{_shader_binary_8h_source_l00023}{23}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_shader_binary_ab9e1f09b11e3c5b93dfa5de0a45cd372}\index{FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}!code@{code}}
+\index{code@{code}!FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}}
+\doxysubsubsection{\texorpdfstring{code()}{code()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_shader_binary_ab9e1f09b11e3c5b93dfa5de0a45cd372} 
+void FCT\+::\+RHI\+::\+Shader\+Binary\+::code (\begin{DoxyParamCaption}\item[{std\+::vector$<$ char $>$}]{code}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_shader_binary_8h_source}{Shader\+Binary.\+h}} 第 \mbox{\hyperlink{_shader_binary_8h_source_l00018}{18}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_shader_binary_aba51452e367cc1e3435e051243bc1cf3}\index{FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}!constBufferLayout@{constBufferLayout}}
+\index{constBufferLayout@{constBufferLayout}!FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}}
+\doxysubsubsection{\texorpdfstring{constBufferLayout()}{constBufferLayout()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_shader_binary_aba51452e367cc1e3435e051243bc1cf3} 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{class_f_c_t_1_1_const_layout}{Const\+Layout}} $>$ FCT\+::\+RHI\+::\+Shader\+Binary\+::const\+Buffer\+Layout (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_shader_binary_8h_source}{Shader\+Binary.\+h}} 第 \mbox{\hyperlink{_shader_binary_8h_source_l00043}{43}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_shader_binary_acb302f82c5bd483c1276c34b1204310c}\index{FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}!constBufferLocations@{constBufferLocations}}
+\index{constBufferLocations@{constBufferLocations}!FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}}
+\doxysubsubsection{\texorpdfstring{constBufferLocations()}{constBufferLocations()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_shader_binary_acb302f82c5bd483c1276c34b1204310c} 
+std\+::map$<$ std\+::string, std\+::pair$<$ uint32\+\_\+t, uint32\+\_\+t $>$ $>$ FCT\+::\+RHI\+::\+Shader\+Binary\+::const\+Buffer\+Locations (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_shader_binary_8h_source}{Shader\+Binary.\+h}} 第 \mbox{\hyperlink{_shader_binary_8h_source_l00039}{39}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_shader_binary_acd20cc5006e4ca31e23d673489dbd253}\index{FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}!getSamplerElement@{getSamplerElement}}
+\index{getSamplerElement@{getSamplerElement}!FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}}
+\doxysubsubsection{\texorpdfstring{getSamplerElement()}{getSamplerElement()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_shader_binary_acd20cc5006e4ca31e23d673489dbd253} 
+\mbox{\hyperlink{class_f_c_t_1_1_sampler_element}{Sampler\+Element}} FCT\+::\+RHI\+::\+Shader\+Binary\+::get\+Sampler\+Element (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_shader_binary_8h_source}{Shader\+Binary.\+h}} 第 \mbox{\hyperlink{_shader_binary_8h_source_l00102}{102}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a9508b6de32fa750c31ae861edacc741e}\index{FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}!getSamplerLocation@{getSamplerLocation}}
+\index{getSamplerLocation@{getSamplerLocation}!FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}}
+\doxysubsubsection{\texorpdfstring{getSamplerLocation()}{getSamplerLocation()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a9508b6de32fa750c31ae861edacc741e} 
+std\+::pair$<$ uint32\+\_\+t, uint32\+\_\+t $>$ FCT\+::\+RHI\+::\+Shader\+Binary\+::get\+Sampler\+Location (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_shader_binary_8h_source}{Shader\+Binary.\+h}} 第 \mbox{\hyperlink{_shader_binary_8h_source_l00093}{93}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_shader_binary_af84d42d0264ea8d6b8aa5d8b4b3bcb53}\index{FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}!getTextureElement@{getTextureElement}}
+\index{getTextureElement@{getTextureElement}!FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}}
+\doxysubsubsection{\texorpdfstring{getTextureElement()}{getTextureElement()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_shader_binary_af84d42d0264ea8d6b8aa5d8b4b3bcb53} 
+\mbox{\hyperlink{class_f_c_t_1_1_texture_element}{Texture\+Element}} FCT\+::\+RHI\+::\+Shader\+Binary\+::get\+Texture\+Element (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_shader_binary_8h_source}{Shader\+Binary.\+h}} 第 \mbox{\hyperlink{_shader_binary_8h_source_l00068}{68}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a7d5e6265e0ecaad62237478d9895026f}\index{FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}!getTextureLocation@{getTextureLocation}}
+\index{getTextureLocation@{getTextureLocation}!FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}}
+\doxysubsubsection{\texorpdfstring{getTextureLocation()}{getTextureLocation()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a7d5e6265e0ecaad62237478d9895026f} 
+std\+::pair$<$ uint32\+\_\+t, uint32\+\_\+t $>$ FCT\+::\+RHI\+::\+Shader\+Binary\+::get\+Texture\+Location (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_shader_binary_8h_source}{Shader\+Binary.\+h}} 第 \mbox{\hyperlink{_shader_binary_8h_source_l00059}{59}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a12e04d867a7d6d8af3e37d0002e6aa38}\index{FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}!location@{location}}
+\index{location@{location}!FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}}
+\doxysubsubsection{\texorpdfstring{location()}{location()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a12e04d867a7d6d8af3e37d0002e6aa38} 
+void FCT\+::\+RHI\+::\+Shader\+Binary\+::location (\begin{DoxyParamCaption}\item[{std\+::map$<$ std\+::string, uint32\+\_\+t $>$}]{locations}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_shader_binary_8h_source}{Shader\+Binary.\+h}} 第 \mbox{\hyperlink{_shader_binary_8h_source_l00027}{27}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a263ea3acc2ec1f1a46dcdb4aa588843f}\index{FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}!locationBySemantic@{locationBySemantic}}
+\index{locationBySemantic@{locationBySemantic}!FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}}
+\doxysubsubsection{\texorpdfstring{locationBySemantic()}{locationBySemantic()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a263ea3acc2ec1f1a46dcdb4aa588843f} 
+int32\+\_\+t FCT\+::\+RHI\+::\+Shader\+Binary\+::location\+By\+Semantic (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{semantic}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_shader_binary_8h_source}{Shader\+Binary.\+h}} 第 \mbox{\hyperlink{_shader_binary_8h_source_l00031}{31}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_shader_binary_ae868e4140b950f5bf273f1d4756aece8}\index{FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}!samplerLayout@{samplerLayout}}
+\index{samplerLayout@{samplerLayout}!FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}}
+\doxysubsubsection{\texorpdfstring{samplerLayout()}{samplerLayout()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_shader_binary_ae868e4140b950f5bf273f1d4756aece8} 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{class_f_c_t_1_1_sampler_element}{Sampler\+Element}} $>$ FCT\+::\+RHI\+::\+Shader\+Binary\+::sampler\+Layout (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_shader_binary_8h_source}{Shader\+Binary.\+h}} 第 \mbox{\hyperlink{_shader_binary_8h_source_l00116}{116}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_shader_binary_af0cc551e78d4d67e5264a6fb997d3daf}\index{FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}!samplerLocations@{samplerLocations}}
+\index{samplerLocations@{samplerLocations}!FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}}
+\doxysubsubsection{\texorpdfstring{samplerLocations()}{samplerLocations()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_shader_binary_af0cc551e78d4d67e5264a6fb997d3daf} 
+std\+::map$<$ std\+::string, std\+::pair$<$ uint32\+\_\+t, uint32\+\_\+t $>$ $>$ FCT\+::\+RHI\+::\+Shader\+Binary\+::sampler\+Locations (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_shader_binary_8h_source}{Shader\+Binary.\+h}} 第 \mbox{\hyperlink{_shader_binary_8h_source_l00111}{111}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a6c32b39cde5a0221fc166d938ce7910f}\index{FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}!textureLayout@{textureLayout}}
+\index{textureLayout@{textureLayout}!FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}}
+\doxysubsubsection{\texorpdfstring{textureLayout()}{textureLayout()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a6c32b39cde5a0221fc166d938ce7910f} 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{class_f_c_t_1_1_texture_element}{Texture\+Element}} $>$ FCT\+::\+RHI\+::\+Shader\+Binary\+::texture\+Layout (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_shader_binary_8h_source}{Shader\+Binary.\+h}} 第 \mbox{\hyperlink{_shader_binary_8h_source_l00082}{82}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a5a78e2acffd78039dbc02c6cc863e107}\index{FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}!textureLocations@{textureLocations}}
+\index{textureLocations@{textureLocations}!FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}}
+\doxysubsubsection{\texorpdfstring{textureLocations()}{textureLocations()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a5a78e2acffd78039dbc02c6cc863e107} 
+std\+::map$<$ std\+::string, std\+::pair$<$ uint32\+\_\+t, uint32\+\_\+t $>$ $>$ FCT\+::\+RHI\+::\+Shader\+Binary\+::texture\+Locations (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_shader_binary_8h_source}{Shader\+Binary.\+h}} 第 \mbox{\hyperlink{_shader_binary_8h_source_l00077}{77}} 行定义.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_shader_binary_doc-variable-members}
+\doxysubsection{类成员变量说明}
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_shader_binary_ab28101698f7a61e94eac8aa5ab88f4d5}\index{FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}!m\_code@{m\_code}}
+\index{m\_code@{m\_code}!FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}}
+\doxysubsubsection{\texorpdfstring{m\_code}{m\_code}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_shader_binary_ab28101698f7a61e94eac8aa5ab88f4d5} 
+std\+::vector$<$char$>$ FCT\+::\+RHI\+::\+Shader\+Binary\+::m\+\_\+code\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_shader_binary_8h_source}{Shader\+Binary.\+h}} 第 \mbox{\hyperlink{_shader_binary_8h_source_l00122}{122}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_shader_binary_aad51c71e87e1d89d74d38fc77099c7e8}\index{FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}!m\_constBufferLayout@{m\_constBufferLayout}}
+\index{m\_constBufferLayout@{m\_constBufferLayout}!FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}}
+\doxysubsubsection{\texorpdfstring{m\_constBufferLayout}{m\_constBufferLayout}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_shader_binary_aad51c71e87e1d89d74d38fc77099c7e8} 
+std\+::map$<$std\+::string,\mbox{\hyperlink{class_f_c_t_1_1_const_layout}{Const\+Layout}}$>$ FCT\+::\+RHI\+::\+Shader\+Binary\+::m\+\_\+const\+Buffer\+Layout\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_shader_binary_8h_source}{Shader\+Binary.\+h}} 第 \mbox{\hyperlink{_shader_binary_8h_source_l00126}{126}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a68fd607d08b0e7c8219c5018c6e498a5}\index{FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}!m\_constBufferLocations@{m\_constBufferLocations}}
+\index{m\_constBufferLocations@{m\_constBufferLocations}!FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}}
+\doxysubsubsection{\texorpdfstring{m\_constBufferLocations}{m\_constBufferLocations}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a68fd607d08b0e7c8219c5018c6e498a5} 
+std\+::map$<$std\+::string,std\+::pair$<$uint32\+\_\+t,uint32\+\_\+t$>$ $>$ FCT\+::\+RHI\+::\+Shader\+Binary\+::m\+\_\+const\+Buffer\+Locations\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_shader_binary_8h_source}{Shader\+Binary.\+h}} 第 \mbox{\hyperlink{_shader_binary_8h_source_l00125}{125}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_shader_binary_abd5c32db38f910c53bfb27bcf1210155}\index{FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}!m\_locations@{m\_locations}}
+\index{m\_locations@{m\_locations}!FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}}
+\doxysubsubsection{\texorpdfstring{m\_locations}{m\_locations}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_shader_binary_abd5c32db38f910c53bfb27bcf1210155} 
+std\+::map$<$std\+::string, uint32\+\_\+t$>$ FCT\+::\+RHI\+::\+Shader\+Binary\+::m\+\_\+locations\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_shader_binary_8h_source}{Shader\+Binary.\+h}} 第 \mbox{\hyperlink{_shader_binary_8h_source_l00123}{123}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_shader_binary_af6bd1dd7227da3d72ae1a9e4480c0da0}\index{FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}!m\_reflected@{m\_reflected}}
+\index{m\_reflected@{m\_reflected}!FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}}
+\doxysubsubsection{\texorpdfstring{m\_reflected}{m\_reflected}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_shader_binary_af6bd1dd7227da3d72ae1a9e4480c0da0} 
+bool FCT\+::\+RHI\+::\+Shader\+Binary\+::m\+\_\+reflected = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_shader_binary_8h_source}{Shader\+Binary.\+h}} 第 \mbox{\hyperlink{_shader_binary_8h_source_l00131}{131}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_shader_binary_ab814276c30a482362a22d95fb9a62cf5}\index{FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}!m\_samplerLayout@{m\_samplerLayout}}
+\index{m\_samplerLayout@{m\_samplerLayout}!FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}}
+\doxysubsubsection{\texorpdfstring{m\_samplerLayout}{m\_samplerLayout}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_shader_binary_ab814276c30a482362a22d95fb9a62cf5} 
+std\+::map$<$std\+::string,\mbox{\hyperlink{class_f_c_t_1_1_sampler_element}{Sampler\+Element}}$>$ FCT\+::\+RHI\+::\+Shader\+Binary\+::m\+\_\+sampler\+Layout\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_shader_binary_8h_source}{Shader\+Binary.\+h}} 第 \mbox{\hyperlink{_shader_binary_8h_source_l00130}{130}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a07a491784b70c511c0fdac27e511a7ea}\index{FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}!m\_samplerLocations@{m\_samplerLocations}}
+\index{m\_samplerLocations@{m\_samplerLocations}!FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}}
+\doxysubsubsection{\texorpdfstring{m\_samplerLocations}{m\_samplerLocations}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a07a491784b70c511c0fdac27e511a7ea} 
+std\+::map$<$std\+::string,std\+::pair$<$uint32\+\_\+t,uint32\+\_\+t$>$ $>$ FCT\+::\+RHI\+::\+Shader\+Binary\+::m\+\_\+sampler\+Locations\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_shader_binary_8h_source}{Shader\+Binary.\+h}} 第 \mbox{\hyperlink{_shader_binary_8h_source_l00129}{129}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a7eea73660f5e16e6894930056e3b9930}\index{FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}!m\_textureLayout@{m\_textureLayout}}
+\index{m\_textureLayout@{m\_textureLayout}!FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}}
+\doxysubsubsection{\texorpdfstring{m\_textureLayout}{m\_textureLayout}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a7eea73660f5e16e6894930056e3b9930} 
+std\+::map$<$std\+::string,\mbox{\hyperlink{class_f_c_t_1_1_texture_element}{Texture\+Element}}$>$ FCT\+::\+RHI\+::\+Shader\+Binary\+::m\+\_\+texture\+Layout\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_shader_binary_8h_source}{Shader\+Binary.\+h}} 第 \mbox{\hyperlink{_shader_binary_8h_source_l00128}{128}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_shader_binary_aa5607f5810c6bab14f0407c29428353c}\index{FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}!m\_textureLocations@{m\_textureLocations}}
+\index{m\_textureLocations@{m\_textureLocations}!FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}}
+\doxysubsubsection{\texorpdfstring{m\_textureLocations}{m\_textureLocations}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_shader_binary_aa5607f5810c6bab14f0407c29428353c} 
+std\+::map$<$std\+::string,std\+::pair$<$uint32\+\_\+t,uint32\+\_\+t$>$ $>$ FCT\+::\+RHI\+::\+Shader\+Binary\+::m\+\_\+texture\+Locations\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_shader_binary_8h_source}{Shader\+Binary.\+h}} 第 \mbox{\hyperlink{_shader_binary_8h_source_l00127}{127}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_shader_binary_ada1e10b65b3c7bb76d1e5667a4c29293}\index{FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}!m\_uniformLocations@{m\_uniformLocations}}
+\index{m\_uniformLocations@{m\_uniformLocations}!FCT::RHI::ShaderBinary@{FCT::RHI::ShaderBinary}}
+\doxysubsubsection{\texorpdfstring{m\_uniformLocations}{m\_uniformLocations}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_shader_binary_ada1e10b65b3c7bb76d1e5667a4c29293} 
+std\+::map$<$std\+::string,std\+::pair$<$uint32\+\_\+t,uint32\+\_\+t$>$ $>$ FCT\+::\+RHI\+::\+Shader\+Binary\+::m\+\_\+uniform\+Locations\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_shader_binary_8h_source}{Shader\+Binary.\+h}} 第 \mbox{\hyperlink{_shader_binary_8h_source_l00124}{124}} 行定义.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\+FCT/\+RHI/\mbox{\hyperlink{_shader_binary_8h}{Shader\+Binary.\+h}}\end{DoxyCompactItemize}

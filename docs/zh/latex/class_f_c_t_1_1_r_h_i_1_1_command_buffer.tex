@@ -1,0 +1,361 @@
+\doxysection{FCT\+::RHI\+::Command\+Buffer类 参考}
+\hypertarget{class_f_c_t_1_1_r_h_i_1_1_command_buffer}{}\label{class_f_c_t_1_1_r_h_i_1_1_command_buffer}\index{FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}}
+
+
+{\ttfamily \#include $<$Command\+Buffer.\+h$>$}
+
+类 FCT\+::RHI\+::Command\+Buffer 继承关系图\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_f_c_t_1_1_r_h_i_1_1_command_buffer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer_a8af059f4d01c98a51f554a4bf5611b37}{Command\+Buffer}} ()
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer_a37569dfcd26f0a0f5543df5cb4c95cc4}{\texorpdfstring{$\sim$}{\string~}\+Command\+Buffer}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer_aeb7fd44b2d4c3158d76e716dd129a1e7}{level}} (\mbox{\hyperlink{namespace_f_c_t_1_1_r_h_i_a5da22e84cafb0e1536971983037e9fbb}{Command\+Buffer\+Level}} level)
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer_a36fc74c77c0ddd889ac2127e402f3e64}{reset}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer_af9a481365826f007bebca4f5fcff8cbb}{create}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer_a2ee5ecd3bd6318d5670b3ce97bb0255e}{begin}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer_ac759849c55b2746d5cd1b1ffc24ce66d}{viewport}} (\mbox{\hyperlink{struct_f_c_t_1_1_vec2}{Vec2}} lt, \mbox{\hyperlink{struct_f_c_t_1_1_vec2}{Vec2}} rb)=0
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer_a7b51ab7bd9f18283c84a477454ef9fbf}{scissor}} (\mbox{\hyperlink{struct_f_c_t_1_1_vec2}{Vec2}} lt, \mbox{\hyperlink{struct_f_c_t_1_1_vec2}{Vec2}} rb)=0
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer_a262d898496ad60211fc2fa512305e89a}{draw}} (size\+\_\+t vertex\+Begin, size\+\_\+t instance\+Begin, size\+\_\+t vertex\+Size, size\+\_\+t instance\+Size)=0
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer_a3a719a2cc8851e679be8f15297ad5684}{draw\+Index}} (size\+\_\+t index\+Begin, size\+\_\+t instance\+Begin, size\+\_\+t index\+Count, size\+\_\+t instance\+Count, size\+\_\+t first\+Vertex=0)=0
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer_a8bd734a4a7c9e940e66094e1dd45a4fa}{bind\+Pipieline}} (\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_rasterization_pipeline}{Rasterization\+Pipeline}} \texorpdfstring{$\ast$}{*}pipeline)=0
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer_aa69be42699909e13451d41ac3dd50f5e}{end}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer_adceb45fe593dd99f933b6dcce0b13d7a}{submit}} ()=0
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_fence}{Fence}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer_aa89a06ef5bc4bbfefd1ac5d812cfdfe3}{fence}} () const
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer_a6513f4ee5d3a68153b1840d01be019c0}{fence}} (\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_fence}{Fence}} \texorpdfstring{$\ast$}{*}fence)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_f_c_t_1_1_r_h_i_1_1_wait_semaphore_description}{Wait\+Semaphore\+Description}} $>$ \& \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer_a5be27292ce3da760492eef18291cec75}{wait\+Semaphores}} ()
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore}{Semaphore}} \texorpdfstring{$\ast$}{*} $>$ \& \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer_a83a09058c209a34a5831aeea2a146cfd}{signal\+Semaphores}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer_ad58a19944cc5db8baed7d3d7ad4e6f45}{clear\+Wait\+Semaphores}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer_ae144aad972520d4c900c99d7dbfc9479}{add\+Wait\+Semaphore}} (\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore}{Semaphore}} \texorpdfstring{$\ast$}{*}semaphore, \mbox{\hyperlink{namespace_f_c_t_1_1_r_h_i_a175639f6128e64cd2ba742715b157741}{Pipeline\+Stages}} stage=\mbox{\hyperlink{namespace_f_c_t_1_1_r_h_i_a01c5167b2393f4a915439498c590fa98a4ecc54305ce317f6232ab7ce1acb4db6}{Pipeline\+Stage\+::color\+Attachment\+Output}})
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer_abfc610f45b65f65b5bb52f41c78f09cf}{add\+Signal\+Semaphore}} (\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore}{Semaphore}} \texorpdfstring{$\ast$}{*}semaphore)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public 成员函数 继承自 \mbox{\hyperlink{class_f_c_t_1_1_ref_count}{FCT\+::\+Ref\+Count}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_ref_count_a681b72d7bd32fd7e4b9ec861cd74370e}{Ref\+Count}} ()
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_ref_count_ae2948e0ae155079956caced23c85bb2b}{Ref\+Count}} (size\+\_\+t ref\+Count)
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_ref_count_af028e09f8a1492fdd5c788b6eb75754f}{\texorpdfstring{$\sim$}{\string~}\+Ref\+Count}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a59c2f131121de6503df8d363b6853d45}{add\+Ref}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_aaf57b2df79545f2b71ae9087865dee4c}{release}} ()
+\item 
+size\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a33146ec5804be422936519224a3a7b3f}{count}} ()
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_ref_count_a474ad3a918f2e87d75ff16075e1caeec}{operator bool}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected 属性}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespace_f_c_t_1_1_r_h_i_a5da22e84cafb0e1536971983037e9fbb}{Command\+Buffer\+Level}} \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer_af3dcfa6dbb473476a545dda2c9cea0fa}{m\+\_\+level}}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_fence}{Fence}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer_aacc5fa9c5c6cd09ee426524bed6a4ba2}{m\+\_\+fence}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_f_c_t_1_1_r_h_i_1_1_wait_semaphore_description}{Wait\+Semaphore\+Description}} $>$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer_ad2452899803c38a48073e719b03a834f}{m\+\_\+wait\+Semaphores}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore}{Semaphore}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer_a95543c0e6dac8f1d0796ee304db977dc}{m\+\_\+signal\+Semaphores}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected 属性 继承自 \mbox{\hyperlink{class_f_c_t_1_1_ref_count}{FCT\+::\+Ref\+Count}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::atomic$<$ size\+\_\+t $>$ \mbox{\hyperlink{class_f_c_t_1_1_ref_count_aca88529f9b473d326168fa808fd02300}{m\+\_\+ref\+Count}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{额外继承的成员函数}
+\doxysubsection*{Protected 成员函数 继承自 \mbox{\hyperlink{class_f_c_t_1_1_ref_count}{FCT\+::\+Ref\+Count}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a0fea0bed50f726d3e11ddde802dac5da}{delete\+This}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+
+
+在文件 \mbox{\hyperlink{_command_buffer_8h_source}{Command\+Buffer.\+h}} 第 \mbox{\hyperlink{_command_buffer_8h_source_l00032}{32}} 行定义.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_command_buffer_doc-constructors}
+\doxysubsection{构造及析构函数说明}
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_command_buffer_a8af059f4d01c98a51f554a4bf5611b37}\index{FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}!CommandBuffer@{CommandBuffer}}
+\index{CommandBuffer@{CommandBuffer}!FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{CommandBuffer()}{CommandBuffer()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_command_buffer_a8af059f4d01c98a51f554a4bf5611b37} 
+FCT\+::\+RHI\+::\+Command\+Buffer\+::\+Command\+Buffer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_command_buffer_8h_source}{Command\+Buffer.\+h}} 第 \mbox{\hyperlink{_command_buffer_8h_source_l00035}{35}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_command_buffer_a37569dfcd26f0a0f5543df5cb4c95cc4}\index{FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}!````~CommandBuffer@{\texorpdfstring{$\sim$}{\string~}CommandBuffer}}
+\index{````~CommandBuffer@{\texorpdfstring{$\sim$}{\string~}CommandBuffer}!FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CommandBuffer()}{\string~CommandBuffer()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_command_buffer_a37569dfcd26f0a0f5543df5cb4c95cc4} 
+FCT\+::\+RHI\+::\+Command\+Buffer\+::\texorpdfstring{$\sim$}{\string~}\+Command\+Buffer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_command_buffer_8h_source}{Command\+Buffer.\+h}} 第 \mbox{\hyperlink{_command_buffer_8h_source_l00040}{40}} 行定义.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_command_buffer_doc-func-members}
+\doxysubsection{成员函数说明}
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_command_buffer_abfc610f45b65f65b5bb52f41c78f09cf}\index{FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}!addSignalSemaphore@{addSignalSemaphore}}
+\index{addSignalSemaphore@{addSignalSemaphore}!FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{addSignalSemaphore()}{addSignalSemaphore()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_command_buffer_abfc610f45b65f65b5bb52f41c78f09cf} 
+void FCT\+::\+RHI\+::\+Command\+Buffer\+::add\+Signal\+Semaphore (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore}{Semaphore}} \texorpdfstring{$\ast$}{*}}]{semaphore}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_command_buffer_8h_source}{Command\+Buffer.\+h}} 第 \mbox{\hyperlink{_command_buffer_8h_source_l00094}{94}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_command_buffer_ae144aad972520d4c900c99d7dbfc9479}\index{FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}!addWaitSemaphore@{addWaitSemaphore}}
+\index{addWaitSemaphore@{addWaitSemaphore}!FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{addWaitSemaphore()}{addWaitSemaphore()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_command_buffer_ae144aad972520d4c900c99d7dbfc9479} 
+void FCT\+::\+RHI\+::\+Command\+Buffer\+::add\+Wait\+Semaphore (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore}{Semaphore}} \texorpdfstring{$\ast$}{*}}]{semaphore}{, }\item[{\mbox{\hyperlink{namespace_f_c_t_1_1_r_h_i_a175639f6128e64cd2ba742715b157741}{Pipeline\+Stages}}}]{stage}{ = {\ttfamily \mbox{\hyperlink{namespace_f_c_t_1_1_r_h_i_a01c5167b2393f4a915439498c590fa98a4ecc54305ce317f6232ab7ce1acb4db6}{Pipeline\+Stage\+::color\+Attachment\+Output}}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_command_buffer_8h_source}{Command\+Buffer.\+h}} 第 \mbox{\hyperlink{_command_buffer_8h_source_l00086}{86}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_command_buffer_a2ee5ecd3bd6318d5670b3ce97bb0255e}\index{FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}!begin@{begin}}
+\index{begin@{begin}!FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_command_buffer_a2ee5ecd3bd6318d5670b3ce97bb0255e} 
+virtual void FCT\+::\+RHI\+::\+Command\+Buffer\+::begin (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer_a775aaa3a42bbf95deb9bbe90a5cc0bb3}{FCT\+::\+RHI\+::\+VK\+\_\+\+Command\+Buffer}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_command_buffer_a8bd734a4a7c9e940e66094e1dd45a4fa}\index{FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}!bindPipieline@{bindPipieline}}
+\index{bindPipieline@{bindPipieline}!FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{bindPipieline()}{bindPipieline()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_command_buffer_a8bd734a4a7c9e940e66094e1dd45a4fa} 
+virtual void FCT\+::\+RHI\+::\+Command\+Buffer\+::bind\+Pipieline (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_rasterization_pipeline}{Rasterization\+Pipeline}} \texorpdfstring{$\ast$}{*}}]{pipeline}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer_ad4e0a4fc9549049347c43099daaeda11}{FCT\+::\+RHI\+::\+VK\+\_\+\+Command\+Buffer}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_command_buffer_ad58a19944cc5db8baed7d3d7ad4e6f45}\index{FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}!clearWaitSemaphores@{clearWaitSemaphores}}
+\index{clearWaitSemaphores@{clearWaitSemaphores}!FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{clearWaitSemaphores()}{clearWaitSemaphores()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_command_buffer_ad58a19944cc5db8baed7d3d7ad4e6f45} 
+void FCT\+::\+RHI\+::\+Command\+Buffer\+::clear\+Wait\+Semaphores (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_command_buffer_8h_source}{Command\+Buffer.\+h}} 第 \mbox{\hyperlink{_command_buffer_8h_source_l00078}{78}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_command_buffer_af9a481365826f007bebca4f5fcff8cbb}\index{FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}!create@{create}}
+\index{create@{create}!FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_command_buffer_af9a481365826f007bebca4f5fcff8cbb} 
+virtual void FCT\+::\+RHI\+::\+Command\+Buffer\+::create (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer_af9ab46232edcdf36f5b40e6724f8391d}{FCT\+::\+RHI\+::\+VK\+\_\+\+Command\+Buffer}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_command_buffer_a262d898496ad60211fc2fa512305e89a}\index{FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}!draw@{draw}}
+\index{draw@{draw}!FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_command_buffer_a262d898496ad60211fc2fa512305e89a} 
+virtual void FCT\+::\+RHI\+::\+Command\+Buffer\+::draw (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{vertex\+Begin}{, }\item[{size\+\_\+t}]{instance\+Begin}{, }\item[{size\+\_\+t}]{vertex\+Size}{, }\item[{size\+\_\+t}]{instance\+Size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer_a2a27873ed53662f3ab01bb1c21e2d94c}{FCT\+::\+RHI\+::\+VK\+\_\+\+Command\+Buffer}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_command_buffer_a3a719a2cc8851e679be8f15297ad5684}\index{FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}!drawIndex@{drawIndex}}
+\index{drawIndex@{drawIndex}!FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{drawIndex()}{drawIndex()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_command_buffer_a3a719a2cc8851e679be8f15297ad5684} 
+virtual void FCT\+::\+RHI\+::\+Command\+Buffer\+::draw\+Index (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index\+Begin}{, }\item[{size\+\_\+t}]{instance\+Begin}{, }\item[{size\+\_\+t}]{index\+Count}{, }\item[{size\+\_\+t}]{instance\+Count}{, }\item[{size\+\_\+t}]{first\+Vertex}{ = {\ttfamily 0}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer_a68767d12725e6beda5288ecde7997220}{FCT\+::\+RHI\+::\+VK\+\_\+\+Command\+Buffer}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_command_buffer_aa69be42699909e13451d41ac3dd50f5e}\index{FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}!end@{end}}
+\index{end@{end}!FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_command_buffer_aa69be42699909e13451d41ac3dd50f5e} 
+virtual void FCT\+::\+RHI\+::\+Command\+Buffer\+::end (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer_a73183fe2b772f3d84539e19ae1f964db}{FCT\+::\+RHI\+::\+VK\+\_\+\+Command\+Buffer}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_command_buffer_aa89a06ef5bc4bbfefd1ac5d812cfdfe3}\index{FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}!fence@{fence}}
+\index{fence@{fence}!FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{fence()}{fence()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_command_buffer_aa89a06ef5bc4bbfefd1ac5d812cfdfe3} 
+\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_fence}{Fence}} \texorpdfstring{$\ast$}{*} FCT\+::\+RHI\+::\+Command\+Buffer\+::fence (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_command_buffer_8h_source}{Command\+Buffer.\+h}} 第 \mbox{\hyperlink{_command_buffer_8h_source_l00069}{69}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_command_buffer_a6513f4ee5d3a68153b1840d01be019c0}\index{FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}!fence@{fence}}
+\index{fence@{fence}!FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{fence()}{fence()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_command_buffer_a6513f4ee5d3a68153b1840d01be019c0} 
+void FCT\+::\+RHI\+::\+Command\+Buffer\+::fence (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_fence}{Fence}} \texorpdfstring{$\ast$}{*}}]{fence}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_command_buffer_8h_source}{Command\+Buffer.\+h}} 第 \mbox{\hyperlink{_command_buffer_8h_source_l00070}{70}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_command_buffer_aeb7fd44b2d4c3158d76e716dd129a1e7}\index{FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}!level@{level}}
+\index{level@{level}!FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{level()}{level()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_command_buffer_aeb7fd44b2d4c3158d76e716dd129a1e7} 
+void FCT\+::\+RHI\+::\+Command\+Buffer\+::level (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_f_c_t_1_1_r_h_i_a5da22e84cafb0e1536971983037e9fbb}{Command\+Buffer\+Level}}}]{level}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_command_buffer_8h_source}{Command\+Buffer.\+h}} 第 \mbox{\hyperlink{_command_buffer_8h_source_l00055}{55}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_command_buffer_a36fc74c77c0ddd889ac2127e402f3e64}\index{FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}!reset@{reset}}
+\index{reset@{reset}!FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_command_buffer_a36fc74c77c0ddd889ac2127e402f3e64} 
+virtual void FCT\+::\+RHI\+::\+Command\+Buffer\+::reset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer_a58e7a54f640f832f155707df332e8d65}{FCT\+::\+RHI\+::\+VK\+\_\+\+Command\+Buffer}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_command_buffer_a7b51ab7bd9f18283c84a477454ef9fbf}\index{FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}!scissor@{scissor}}
+\index{scissor@{scissor}!FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{scissor()}{scissor()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_command_buffer_a7b51ab7bd9f18283c84a477454ef9fbf} 
+virtual void FCT\+::\+RHI\+::\+Command\+Buffer\+::scissor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_f_c_t_1_1_vec2}{Vec2}}}]{lt}{, }\item[{\mbox{\hyperlink{struct_f_c_t_1_1_vec2}{Vec2}}}]{rb}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer_a2add93b72d1289301a26fa2d9be60208}{FCT\+::\+RHI\+::\+VK\+\_\+\+Command\+Buffer}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_command_buffer_a83a09058c209a34a5831aeea2a146cfd}\index{FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}!signalSemaphores@{signalSemaphores}}
+\index{signalSemaphores@{signalSemaphores}!FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{signalSemaphores()}{signalSemaphores()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_command_buffer_a83a09058c209a34a5831aeea2a146cfd} 
+std\+::vector$<$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore}{Semaphore}} \texorpdfstring{$\ast$}{*} $>$ \& FCT\+::\+RHI\+::\+Command\+Buffer\+::signal\+Semaphores (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_command_buffer_8h_source}{Command\+Buffer.\+h}} 第 \mbox{\hyperlink{_command_buffer_8h_source_l00077}{77}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_command_buffer_adceb45fe593dd99f933b6dcce0b13d7a}\index{FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}!submit@{submit}}
+\index{submit@{submit}!FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{submit()}{submit()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_command_buffer_adceb45fe593dd99f933b6dcce0b13d7a} 
+virtual void FCT\+::\+RHI\+::\+Command\+Buffer\+::submit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer_a1c04e2cf1b81f5a4c0355e9efec78a83}{FCT\+::\+RHI\+::\+VK\+\_\+\+Command\+Buffer}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_command_buffer_ac759849c55b2746d5cd1b1ffc24ce66d}\index{FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}!viewport@{viewport}}
+\index{viewport@{viewport}!FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{viewport()}{viewport()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_command_buffer_ac759849c55b2746d5cd1b1ffc24ce66d} 
+virtual void FCT\+::\+RHI\+::\+Command\+Buffer\+::viewport (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_f_c_t_1_1_vec2}{Vec2}}}]{lt}{, }\item[{\mbox{\hyperlink{struct_f_c_t_1_1_vec2}{Vec2}}}]{rb}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer_a86a8a52535de07e4439721342cc6bcd1}{FCT\+::\+RHI\+::\+VK\+\_\+\+Command\+Buffer}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_command_buffer_a5be27292ce3da760492eef18291cec75}\index{FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}!waitSemaphores@{waitSemaphores}}
+\index{waitSemaphores@{waitSemaphores}!FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{waitSemaphores()}{waitSemaphores()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_command_buffer_a5be27292ce3da760492eef18291cec75} 
+std\+::vector$<$ \mbox{\hyperlink{struct_f_c_t_1_1_r_h_i_1_1_wait_semaphore_description}{Wait\+Semaphore\+Description}} $>$ \& FCT\+::\+RHI\+::\+Command\+Buffer\+::wait\+Semaphores (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_command_buffer_8h_source}{Command\+Buffer.\+h}} 第 \mbox{\hyperlink{_command_buffer_8h_source_l00076}{76}} 行定义.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_command_buffer_doc-variable-members}
+\doxysubsection{类成员变量说明}
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_command_buffer_aacc5fa9c5c6cd09ee426524bed6a4ba2}\index{FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}!m\_fence@{m\_fence}}
+\index{m\_fence@{m\_fence}!FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{m\_fence}{m\_fence}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_command_buffer_aacc5fa9c5c6cd09ee426524bed6a4ba2} 
+\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_fence}{Fence}}\texorpdfstring{$\ast$}{*} FCT\+::\+RHI\+::\+Command\+Buffer\+::m\+\_\+fence\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_command_buffer_8h_source}{Command\+Buffer.\+h}} 第 \mbox{\hyperlink{_command_buffer_8h_source_l00101}{101}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_command_buffer_af3dcfa6dbb473476a545dda2c9cea0fa}\index{FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}!m\_level@{m\_level}}
+\index{m\_level@{m\_level}!FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{m\_level}{m\_level}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_command_buffer_af3dcfa6dbb473476a545dda2c9cea0fa} 
+\mbox{\hyperlink{namespace_f_c_t_1_1_r_h_i_a5da22e84cafb0e1536971983037e9fbb}{Command\+Buffer\+Level}} FCT\+::\+RHI\+::\+Command\+Buffer\+::m\+\_\+level\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_command_buffer_8h_source}{Command\+Buffer.\+h}} 第 \mbox{\hyperlink{_command_buffer_8h_source_l00100}{100}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_command_buffer_a95543c0e6dac8f1d0796ee304db977dc}\index{FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}!m\_signalSemaphores@{m\_signalSemaphores}}
+\index{m\_signalSemaphores@{m\_signalSemaphores}!FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{m\_signalSemaphores}{m\_signalSemaphores}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_command_buffer_a95543c0e6dac8f1d0796ee304db977dc} 
+std\+::vector$<$\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore}{Semaphore}}\texorpdfstring{$\ast$}{*}$>$ FCT\+::\+RHI\+::\+Command\+Buffer\+::m\+\_\+signal\+Semaphores\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_command_buffer_8h_source}{Command\+Buffer.\+h}} 第 \mbox{\hyperlink{_command_buffer_8h_source_l00103}{103}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_command_buffer_ad2452899803c38a48073e719b03a834f}\index{FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}!m\_waitSemaphores@{m\_waitSemaphores}}
+\index{m\_waitSemaphores@{m\_waitSemaphores}!FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{m\_waitSemaphores}{m\_waitSemaphores}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_command_buffer_ad2452899803c38a48073e719b03a834f} 
+std\+::vector$<$\mbox{\hyperlink{struct_f_c_t_1_1_r_h_i_1_1_wait_semaphore_description}{Wait\+Semaphore\+Description}}$>$ FCT\+::\+RHI\+::\+Command\+Buffer\+::m\+\_\+wait\+Semaphores\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_command_buffer_8h_source}{Command\+Buffer.\+h}} 第 \mbox{\hyperlink{_command_buffer_8h_source_l00102}{102}} 行定义.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\+FCT/\+RHI/\mbox{\hyperlink{_command_buffer_8h}{Command\+Buffer.\+h}}\end{DoxyCompactItemize}

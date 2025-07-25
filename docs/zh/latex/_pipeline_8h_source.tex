@@ -1,0 +1,40 @@
+\doxysection{Pipeline.\+h}
+\hypertarget{_pipeline_8h_source}{}\label{_pipeline_8h_source}\index{include/FCT/RHI/Pipeline.h@{include/FCT/RHI/Pipeline.h}}
+\mbox{\hyperlink{_pipeline_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_pipeline_8h_source_l00001}00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_pipeline_8h_source_l00002}00002\ \textcolor{comment}{//\ Created\ by\ Administrator\ on\ 2025/3/24.}}
+\DoxyCodeLine{\Hypertarget{_pipeline_8h_source_l00003}00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_pipeline_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_resource_layout_8h}{../Context/ResourceLayout.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_pipeline_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_ref_count_8h}{../MutilThreadBase/RefCount.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_pipeline_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_vertex_8h}{../Context/Vertex.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_pipeline_8h_source_l00007}00007\ \textcolor{preprocessor}{\#ifndef\ FCT\_PIPELINE\_H}}
+\DoxyCodeLine{\Hypertarget{_pipeline_8h_source_l00008}00008\ \textcolor{preprocessor}{\#define\ FCT\_PIPELINE\_H}}
+\DoxyCodeLine{\Hypertarget{_pipeline_8h_source_l00009}00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_f_c_t}{FCT}}}
+\DoxyCodeLine{\Hypertarget{_pipeline_8h_source_l00010}00010\ \{}
+\DoxyCodeLine{\Hypertarget{_pipeline_8h_source_l00011}\mbox{\hyperlink{namespace_f_c_t_a02e39e190de7cba24375f441d807cccc}{00011}}\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespace_f_c_t_a02e39e190de7cba24375f441d807cccc}{PipelineType}}}
+\DoxyCodeLine{\Hypertarget{_pipeline_8h_source_l00012}00012\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_pipeline_8h_source_l00013}\mbox{\hyperlink{namespace_f_c_t_a02e39e190de7cba24375f441d807cccca50ae1c82c7832ab74385d9b341d916d1}{00013}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_a02e39e190de7cba24375f441d807cccca50ae1c82c7832ab74385d9b341d916d1}{Traditional}},}
+\DoxyCodeLine{\Hypertarget{_pipeline_8h_source_l00014}\mbox{\hyperlink{namespace_f_c_t_a02e39e190de7cba24375f441d807cccca36c6f535151094d9b40813cb3cc2de16}{00014}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_a02e39e190de7cba24375f441d807cccca36c6f535151094d9b40813cb3cc2de16}{RayTracing}},}
+\DoxyCodeLine{\Hypertarget{_pipeline_8h_source_l00015}\mbox{\hyperlink{namespace_f_c_t_a02e39e190de7cba24375f441d807ccccaee28c6b028c6c0e7955643bbe3579e5a}{00015}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_a02e39e190de7cba24375f441d807ccccaee28c6b028c6c0e7955643bbe3579e5a}{MeshShader}},}
+\DoxyCodeLine{\Hypertarget{_pipeline_8h_source_l00016}00016\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_pipeline_8h_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{namespace\ }RHI}
+\DoxyCodeLine{\Hypertarget{_pipeline_8h_source_l00018}00018\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_pipeline_8h_source_l00019}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pipeline}{00019}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pipeline}{Pipeline}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a681b72d7bd32fd7e4b9ec861cd74370e}{RefCount}}}
+\DoxyCodeLine{\Hypertarget{_pipeline_8h_source_l00020}00020\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_pipeline_8h_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_pipeline_8h_source_l00022}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pipeline_a37f260a8e1de8f3c98820fef38b1cfa5}{00022}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{namespace_f_c_t_a02e39e190de7cba24375f441d807cccc}{PipelineType}}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pipeline_a37f260a8e1de8f3c98820fef38b1cfa5}{getType}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_pipeline_8h_source_l00023}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pipeline_ad1bfb7f7c5f04bf85aff8087c89ef026}{00023}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pipeline_ad1bfb7f7c5f04bf85aff8087c89ef026}{vertexLayout}}(\mbox{\hyperlink{class_f_c_t_1_1_vertex_layout}{VertexLayout}}\ layout,uint32\_t\ slot\ =\ 0)\ \{\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pipeline_aa5bc58a181eb19fc59b07bc4432a841c}{m\_vertexLayouts}}[slot]\ =\ layout;\ \}}
+\DoxyCodeLine{\Hypertarget{_pipeline_8h_source_l00024}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pipeline_a62b5f88f66ef6d9f9b0bc5dec11b91d3}{00024}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pipeline_a62b5f88f66ef6d9f9b0bc5dec11b91d3}{pixelLayout}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_f_c_t_1_1_pixel_layout}{PixelLayout}}\&\ layout)\ \{\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pipeline_a5d13baf743ff7c8125a646fd15716aa0}{m\_pixelLayout}}\ =\ layout;\ \}}
+\DoxyCodeLine{\Hypertarget{_pipeline_8h_source_l00025}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pipeline_a188540b41a4f563af6607e7c7680eb75}{00025}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pipeline_a188540b41a4f563af6607e7c7680eb75}{resourceLayout}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_f_c_t_1_1_resource_layout}{ResourceLayout}}\&\ layout)\ \{\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pipeline_a8f3c17b1734d3d787c77979154e92a35}{m\_resourceLayout}}\ =\ layout;\ \}}
+\DoxyCodeLine{\Hypertarget{_pipeline_8h_source_l00026}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pipeline_a70f2886ed528e3020534fa283216e99b}{00026}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pipeline_a70f2886ed528e3020534fa283216e99b}{create}}()\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_pipeline_8h_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{_pipeline_8h_source_l00028}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pipeline_aa5bc58a181eb19fc59b07bc4432a841c}{00028}}\ \ \ \ \ \ \ \ \ \ \ \ \ std::map<uint32\_t,VertexLayout>\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pipeline_aa5bc58a181eb19fc59b07bc4432a841c}{m\_vertexLayouts}};}
+\DoxyCodeLine{\Hypertarget{_pipeline_8h_source_l00029}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pipeline_a5d13baf743ff7c8125a646fd15716aa0}{00029}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_pixel_layout}{PixelLayout}}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pipeline_a5d13baf743ff7c8125a646fd15716aa0}{m\_pixelLayout}};}
+\DoxyCodeLine{\Hypertarget{_pipeline_8h_source_l00030}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pipeline_a8f3c17b1734d3d787c77979154e92a35}{00030}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_resource_layout}{ResourceLayout}}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pipeline_a8f3c17b1734d3d787c77979154e92a35}{m\_resourceLayout}};}
+\DoxyCodeLine{\Hypertarget{_pipeline_8h_source_l00031}00031\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_pipeline_8h_source_l00032}00032\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_pipeline_8h_source_l00033}00033\ \}}
+\DoxyCodeLine{\Hypertarget{_pipeline_8h_source_l00034}00034\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//FCT\_PIPELINE\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,67 @@
+\doxysection{include/\+FCT/\+Mutil\+Thread\+Base/\+Ref\+Count.h 文件参考}
+\hypertarget{_ref_count_8h}{}\label{_ref_count_8h}\index{include/FCT/MutilThreadBase/RefCount.h@{include/FCT/MutilThreadBase/RefCount.h}}
+{\ttfamily \#include $<$atomic$>$}\newline
+{\ttfamily \#include "{}../\+Debug\+Tools/\+Memory\+Cheak.\+h"{}}\newline
+\doxysubsubsection*{类}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_f_c_t_1_1_ref_count}{FCT\+::\+Ref\+Count}}
+\item 
+class \mbox{\hyperlink{class_f_c_t_1_1_deletable_trait}{FCT\+::\+Deletable\+Trait$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em 用于自定义对象销毁行为 \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_f_c_t_1_1_is_deletable_trait}{FCT\+::\+Is\+Deletable\+Trait$<$ T, U $>$}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{命名空间}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_f_c_t}{FCT}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_ref_count_8h_a8fd9b038d7a87f3ec781300d0d702ae0}{FCT\+\_\+\+SAFE\+\_\+\+RELEASE}}(obj)
+\item 
+\#define \mbox{\hyperlink{_ref_count_8h_a22bcf07b77c0fc007051e8903fe17bdf}{FCT\+\_\+\+SAFE\+\_\+\+ADDREF}}(p)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespace_f_c_t_aae9e9c566a4946fdf40954bc6e462eb8}{FCT\+::safe\+Add\+Ref}} (\mbox{\hyperlink{class_f_c_t_1_1_ref_count}{Ref\+Count}} \texorpdfstring{$\ast$}{*}obj)
+\item 
+void \mbox{\hyperlink{namespace_f_c_t_a397954f06cba94c6ba59c60eafdd0e93}{FCT\+::safe\+Release}} (\mbox{\hyperlink{class_f_c_t_1_1_ref_count}{Ref\+Count}} \texorpdfstring{$\ast$}{*}\&obj)
+\end{DoxyCompactItemize}
+
+
+\label{doc-define-members}
+\Hypertarget{_ref_count_8h_doc-define-members}
+\doxysubsection{宏定义说明}
+\Hypertarget{_ref_count_8h_a22bcf07b77c0fc007051e8903fe17bdf}\index{RefCount.h@{RefCount.h}!FCT\_SAFE\_ADDREF@{FCT\_SAFE\_ADDREF}}
+\index{FCT\_SAFE\_ADDREF@{FCT\_SAFE\_ADDREF}!RefCount.h@{RefCount.h}}
+\doxysubsubsection{\texorpdfstring{FCT\_SAFE\_ADDREF}{FCT\_SAFE\_ADDREF}}
+{\footnotesize\ttfamily \label{_ref_count_8h_a22bcf07b77c0fc007051e8903fe17bdf} 
+\#define FCT\+\_\+\+SAFE\+\_\+\+ADDREF(\begin{DoxyParamCaption}\item[{}]{p}{}\end{DoxyParamCaption})}
+
+{\bfseries 值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (p)\ \{\ p-\/>addRef();\ \}}
+
+\end{DoxyCode}
+
+
+在文件 \mbox{\hyperlink{_ref_count_8h_source}{Ref\+Count.\+h}} 第 \mbox{\hyperlink{_ref_count_8h_source_l00092}{92}} 行定义.
+
+\Hypertarget{_ref_count_8h_a8fd9b038d7a87f3ec781300d0d702ae0}\index{RefCount.h@{RefCount.h}!FCT\_SAFE\_RELEASE@{FCT\_SAFE\_RELEASE}}
+\index{FCT\_SAFE\_RELEASE@{FCT\_SAFE\_RELEASE}!RefCount.h@{RefCount.h}}
+\doxysubsubsection{\texorpdfstring{FCT\_SAFE\_RELEASE}{FCT\_SAFE\_RELEASE}}
+{\footnotesize\ttfamily \label{_ref_count_8h_a8fd9b038d7a87f3ec781300d0d702ae0} 
+\#define FCT\+\_\+\+SAFE\+\_\+\+RELEASE(\begin{DoxyParamCaption}\item[{}]{obj}{}\end{DoxyParamCaption})}
+
+{\bfseries 值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (obj)\ obj-\/>release();\ obj\ =\ \textcolor{keyword}{nullptr};}
+
+\end{DoxyCode}
+
+
+在文件 \mbox{\hyperlink{_ref_count_8h_source}{Ref\+Count.\+h}} 第 \mbox{\hyperlink{_ref_count_8h_source_l00091}{91}} 行定义.
+

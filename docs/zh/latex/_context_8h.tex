@@ -1,0 +1,78 @@
+\doxysection{include/\+FCT/\+Context/\+Context.h 文件参考}
+\hypertarget{_context_8h}{}\label{_context_8h}\index{include/FCT/Context/Context.h@{include/FCT/Context/Context.h}}
+{\ttfamily \#include "{}../\+Third\+Party.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Tool\+Define.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Bases.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Memory/\+Object\+Pool.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Mutil\+Thread\+Base/\+Computation.\+h"{}}\newline
+{\ttfamily \#include "{}./\+Data\+Types.\+h"{}}\newline
+{\ttfamily \#include "{}../\+RHI/\+Vertex\+Shader.\+h"{}}\newline
+{\ttfamily \#include "{}../\+RHI/\+Pixel\+Shader.\+h"{}}\newline
+{\ttfamily \#include "{}../\+RHI/\+Swapcain.\+h"{}}\newline
+{\ttfamily \#include "{}./\+Vertex\+Buffer.\+h"{}}\newline
+{\ttfamily \#include "{}./\+Material.\+h"{}}\newline
+{\ttfamily \#include "{}./\+Draw\+Call.\+h"{}}\newline
+{\ttfamily \#include "{}./\+Const\+Buffer.\+h"{}}\newline
+{\ttfamily \#include "{}./\+Texture.\+h"{}}\newline
+{\ttfamily \#include "{}./\+Texture\+Array.\+h"{}}\newline
+{\ttfamily \#include "{}./\+Format.\+h"{}}\newline
+{\ttfamily \#include "{}./\+Image.\+h"{}}\newline
+{\ttfamily \#include "{}../\+RHI/\+Command\+Pool.\+h"{}}\newline
+{\ttfamily \#include "{}../\+RHI/\+Pass.\+h"{}}\newline
+{\ttfamily \#include "{}../\+RHI/\+Fence.\+h"{}}\newline
+{\ttfamily \#include "{}../\+RHI/\+Semaphore.\+h"{}}\newline
+{\ttfamily \#include "{}../\+RHI/\+Pass\+Group.\+h"{}}\newline
+{\ttfamily \#include "{}../\+RHI/\+Sampler.\+h"{}}\newline
+{\ttfamily \#include "{}../\+RHI/\+Rasterization\+Pipeline.\+h"{}}\newline
+{\ttfamily \#include "{}../\+RHI/\+Input\+Layout.\+h"{}}\newline
+{\ttfamily \#include "{}../\+RHI/\+Descriptor\+Pool.\+h"{}}\newline
+{\ttfamily \#include "{}./\+Shader\+Compiler.\+h"{}}\newline
+{\ttfamily \#include "{}./\+Shader\+Generator.\+h"{}}\newline
+{\ttfamily \#include "{}Mesh.\+h"{}}\newline
+{\ttfamily \#include "{}Pass\+Resource.\+h"{}}\newline
+{\ttfamily \#include "{}../\+RHI/\+Depth\+Stencil\+View.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Model\+Loader/\+Model\+Loader.\+h"{}}\newline
+{\ttfamily \#include "{}Mutil\+Buffer\+Image.\+h"{}}\newline
+{\ttfamily \#include "{}./\+Render\+Graph.\+h"{}}\newline
+{\ttfamily \#include "{}Fence\+Pool.\+h"{}}\newline
+{\ttfamily \#include "{}Semaphore\+Pool.\+h"{}}\newline
+\doxysubsubsection*{类}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_f_c_t_1_1_frame_resource}{FCT\+::\+Frame\+Resource}}
+\item 
+class \mbox{\hyperlink{class_f_c_t_1_1_context}{FCT\+::\+Context}}
+\item 
+struct \mbox{\hyperlink{struct_f_c_t_1_1_context_1_1_logic_task_data}{FCT\+::\+Context\+::\+Logic\+Task\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{命名空间}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_f_c_t}{FCT}}
+\item 
+namespace \mbox{\hyperlink{namespace_f_c_t_1_1_r_h_i}{FCT\+::\+RHI}}
+\item 
+namespace \mbox{\hyperlink{namespace_f_c_t_1_1_inner_sync}{FCT\+::\+Inner\+Sync}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{类型定义}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{namespace_f_c_t_ab1ea6811dd963f80ea7b7b1b6aec0d3c}{FCT\+::\+Submit\+Ticker}} = std\+::function$<$void()$>$
+\item 
+using \mbox{\hyperlink{namespace_f_c_t_a726db41259cdbddb2910a4854444d5b9}{FCT\+::\+Sync\+Ticker}} = std\+::function$<$void()$>$
+\item 
+using \mbox{\hyperlink{namespace_f_c_t_a4871ca624d38cba5f44a54de0e01a933}{FCT\+::\+Ticker\+Token}} = uint32\+\_\+t
+\end{DoxyCompactItemize}
+\doxysubsubsection*{变量}
+\begin{DoxyCompactItemize}
+\item 
+constexpr const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespace_f_c_t_a7bd85aff3c2babcf1441a80ec00e70e4}{FCT\+::\+Render\+Graph\+Submit\+Ticker\+Name}} = "{}Render\+Graph\+Submit\+Ticker"{}
+\item 
+constexpr const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespace_f_c_t_a41b02c859811a4fb4d24f7e20a0698f4}{FCT\+::\+Render\+Graph\+Excute\+Pass\+Submit\+Ticker\+Name}} = "{}Render\+Graph\+Excute\+Pass\+Submit\+Ticker"{}
+\item 
+constexpr const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespace_f_c_t_a713521d343a445fb31ddf00b9665d59f}{FCT\+::\+Swap\+Buffer\+Submit\+Ticker}} = "{}Swap\+Buffer\+Submit\+Ticker"{}
+\item 
+constexpr const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespace_f_c_t_a3bec92bc39d2c90a357c13c4874e5e24}{FCT\+::\+Render\+Graph\+Sync\+Ticker\+\_\+\+Swap\+Job\+Queue\+Name}} = "{}Render\+Graph\+Sync\+Ticker\+\_\+\+Swap\+Job\+Queue"{}
+\item 
+constexpr const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespace_f_c_t_1_1_inner_sync_a7cbf6ad9e86670d646cb1cb41d6fd000}{FCT\+::\+Inner\+Sync\+::\+Check\+Recreate\+Swapchain\+Sync}} = "{}Check\+Recreate\+Swapchain\+Sync"{}
+\end{DoxyCompactItemize}

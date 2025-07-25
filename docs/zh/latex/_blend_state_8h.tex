@@ -1,0 +1,69 @@
+\doxysection{include/\+FCT/\+RHI/\+Blend\+State.h 文件参考}
+\hypertarget{_blend_state_8h}{}\label{_blend_state_8h}\index{include/FCT/RHI/BlendState.h@{include/FCT/RHI/BlendState.h}}
+{\ttfamily \#include "{}./\+IPipeline\+Resource.\+h"{}}\newline
+\doxysubsubsection*{类}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_f_c_t_1_1_blend_state}{FCT\+::\+Blend\+State}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{命名空间}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_f_c_t}{FCT}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{枚举}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75}{FCT\+::\+Blend\+Factor}} \{ \newline
+\mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75ad7ed4ee1df437474d005188535f74875}{FCT\+::\+Zero}}
+, \mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75a06c2cea18679d64399783748fa367bdd}{FCT\+::\+One}}
+, \mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75a2ad714e29d37896d79187312086bc6fe}{FCT\+::\+Src\+Color}}
+, \mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75a09d3240b4e2481b1a729da24e9bfddf7}{FCT\+::\+One\+Minus\+Src\+Color}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75afaedf511c99a5461048fd6a3b73da26c}{FCT\+::\+Dst\+Color}}
+, \mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75a09f1a054ebd4d3850fd248bd2fa7b325}{FCT\+::\+One\+Minus\+Dst\+Color}}
+, \mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75ad5c7b7f0102df3f7305c43f73fc3a498}{FCT\+::\+Src\+Alpha}}
+, \mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75ac00a6016489cff63d50d489ce52254cc}{FCT\+::\+One\+Minus\+Src\+Alpha}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75af72dbe2436b38a39e5927ed644e6818b}{FCT\+::\+Dst\+Alpha}}
+, \mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75a4132e4b87a8d461be2c6ee8fc620cfb2}{FCT\+::\+One\+Minus\+Dst\+Alpha}}
+, \mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75aeb8eb99f8eea9079c0e76d5ce7301dd3}{FCT\+::\+Constant\+Color}}
+, \mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75a13ab8deb1c606ab17745354b4e92f43a}{FCT\+::\+One\+Minus\+Constant\+Color}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75a87c65d6ae5c79e8a05482365776bd959}{FCT\+::\+Src1\+Color}}
+, \mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75ac1686472488cf32c06cc257f4e8ac04f}{FCT\+::\+One\+Minus\+Src1\+Color}}
+, \mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75aa69d96453c025ed62b3276e892e59e39}{FCT\+::\+Src1\+Alpha}}
+, \mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75a88dfdcc65a80f412d0330f00579ab7f2}{FCT\+::\+One\+Minus\+Src1\+Alpha}}
+ \}
+\item 
+enum class \mbox{\hyperlink{namespace_f_c_t_a63a2f041d347dd600f0083cb95d0a245}{FCT\+::\+Blend\+Op}} \{ \newline
+\mbox{\hyperlink{namespace_f_c_t_a63a2f041d347dd600f0083cb95d0a245aec211f7c20af43e742bf2570c3cb84f9}{FCT\+::\+Add}}
+, \mbox{\hyperlink{namespace_f_c_t_a63a2f041d347dd600f0083cb95d0a245a1d9baf077ee87921f57a8fe42d510b65}{FCT\+::\+Subtract}}
+, \mbox{\hyperlink{namespace_f_c_t_a63a2f041d347dd600f0083cb95d0a245abd5458190996e76988cb2f27a820c685}{FCT\+::\+Reverse\+Subtract}}
+, \mbox{\hyperlink{namespace_f_c_t_a63a2f041d347dd600f0083cb95d0a245a78d811e98514cd165dda532286610fd2}{FCT\+::\+Min}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_a63a2f041d347dd600f0083cb95d0a245a6a061313d22e51e0f25b7cd4dc065233}{FCT\+::\+Max}}
+ \}
+\item 
+enum class \mbox{\hyperlink{namespace_f_c_t_a01748ad436ae9c9f3aa57b324c0128b0}{FCT\+::\+Logic\+Op}} \{ \newline
+\mbox{\hyperlink{namespace_f_c_t_a01748ad436ae9c9f3aa57b324c0128b0adc30bc0c7914db5918da4263fce93ad2}{FCT\+::\+Clear}}
+, \mbox{\hyperlink{namespace_f_c_t_a01748ad436ae9c9f3aa57b324c0128b0ac33315685a0cba3ce53be378b3c7874b}{FCT\+::\+And}}
+, \mbox{\hyperlink{namespace_f_c_t_a01748ad436ae9c9f3aa57b324c0128b0a287b07d4ecc112d0a742eba7d4c845bc}{FCT\+::\+And\+Reverse}}
+, \mbox{\hyperlink{namespace_f_c_t_a01748ad436ae9c9f3aa57b324c0128b0a5fb63579fc981698f97d55bfecb213ea}{FCT\+::\+Copy}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_a01748ad436ae9c9f3aa57b324c0128b0adf0344a044e102673403a03fe8e83d8d}{FCT\+::\+And\+Inverted}}
+, \mbox{\hyperlink{namespace_f_c_t_a01748ad436ae9c9f3aa57b324c0128b0a60832e2e4bbebccf26555b9ba658bad5}{FCT\+::\+No\+Op}}
+, \mbox{\hyperlink{namespace_f_c_t_a01748ad436ae9c9f3aa57b324c0128b0a76feb79109026728a20736a8c6504548}{FCT\+::\+Xor}}
+, \mbox{\hyperlink{namespace_f_c_t_a01748ad436ae9c9f3aa57b324c0128b0a3a2d5fe857d8f9541136a124c2edec6c}{FCT\+::\+Or}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_a01748ad436ae9c9f3aa57b324c0128b0a5f61fcb6e17f7a46a46a47c7977c90c1}{FCT\+::\+Nor}}
+, \mbox{\hyperlink{namespace_f_c_t_a01748ad436ae9c9f3aa57b324c0128b0aafd102579f64c98e96d92a7424130605}{FCT\+::\+Equivalent}}
+, \mbox{\hyperlink{namespace_f_c_t_a01748ad436ae9c9f3aa57b324c0128b0a9b8958acb7be504bb5f55f17c0eea366}{FCT\+::\+Invert}}
+, \mbox{\hyperlink{namespace_f_c_t_a01748ad436ae9c9f3aa57b324c0128b0aabbaa132814b3deb687143a873ab3100}{FCT\+::\+Or\+Reverse}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_a01748ad436ae9c9f3aa57b324c0128b0ae7a387d9808b05131e4906e7655a33a0}{FCT\+::\+Copy\+Inverted}}
+, \mbox{\hyperlink{namespace_f_c_t_a01748ad436ae9c9f3aa57b324c0128b0abf95e9e38b3918a85a27125fff7e47ea}{FCT\+::\+Or\+Inverted}}
+, \mbox{\hyperlink{namespace_f_c_t_a01748ad436ae9c9f3aa57b324c0128b0ad39e2d62791eb0c18e0bb54315180049}{FCT\+::\+Nand}}
+, \mbox{\hyperlink{namespace_f_c_t_a01748ad436ae9c9f3aa57b324c0128b0a5d5b78699e57104f2fa03bbdf7b9197b}{FCT\+::\+Set}}
+ \}
+\end{DoxyCompactItemize}

@@ -1,0 +1,62 @@
+\doxysection{include/\+FCT/\+Base/\+Flags.h 文件参考}
+\hypertarget{_flags_8h}{}\label{_flags_8h}\index{include/FCT/Base/Flags.h@{include/FCT/Base/Flags.h}}
+{\ttfamily \#include $<$type\+\_\+traits$>$}\newline
+\doxysubsubsection*{类}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_f_c_t_1_1_flags}{FCT\+::\+Flags$<$ Bit\+Type $>$}}
+\item 
+struct \mbox{\hyperlink{struct_f_c_t_1_1_flag_traits}{FCT\+::\+Flag\+Traits$<$ Bit\+Type $>$}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{命名空间}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_f_c_t}{FCT}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_flags_8h_ad4f3528683d14cd2c679ec96189e968f}{FCT\+\_\+\+DECLARE\+\_\+\+FLAGS}}(Bit\+Type)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Bit\+Type, typename std\+::enable\+\_\+if$<$ \mbox{\hyperlink{struct_f_c_t_1_1_flag_traits}{Flag\+Traits}}$<$ Bit\+Type $>$\+::is\+Bitmask, bool $>$\+::type = true$>$ }\\constexpr \mbox{\hyperlink{class_f_c_t_1_1_flags}{Flags}}$<$ Bit\+Type $>$ \mbox{\hyperlink{namespace_f_c_t_a4887c054ea0efbf025397906cc414f3d}{FCT\+::operator\texorpdfstring{$\vert$}{|}}} (Bit\+Type lhs, Bit\+Type rhs) noexcept
+\item 
+{\footnotesize template$<$typename Bit\+Type, typename std\+::enable\+\_\+if$<$ \mbox{\hyperlink{struct_f_c_t_1_1_flag_traits}{Flag\+Traits}}$<$ Bit\+Type $>$\+::is\+Bitmask, bool $>$\+::type = true$>$ }\\constexpr \mbox{\hyperlink{class_f_c_t_1_1_flags}{Flags}}$<$ Bit\+Type $>$ \mbox{\hyperlink{namespace_f_c_t_ad85dcfc5bcdf14438fa4cd5720a1b7a0}{FCT\+::operator\&}} (Bit\+Type lhs, Bit\+Type rhs) noexcept
+\item 
+{\footnotesize template$<$typename Bit\+Type, typename std\+::enable\+\_\+if$<$ \mbox{\hyperlink{struct_f_c_t_1_1_flag_traits}{Flag\+Traits}}$<$ Bit\+Type $>$\+::is\+Bitmask, bool $>$\+::type = true$>$ }\\constexpr \mbox{\hyperlink{class_f_c_t_1_1_flags}{Flags}}$<$ Bit\+Type $>$ \mbox{\hyperlink{namespace_f_c_t_a067479ba41ce3d1fa49fddc9a5a4ac8b}{FCT\+::operator\texorpdfstring{$^\wedge$}{\string^}}} (Bit\+Type lhs, Bit\+Type rhs) noexcept
+\item 
+{\footnotesize template$<$typename Bit\+Type, typename std\+::enable\+\_\+if$<$ \mbox{\hyperlink{struct_f_c_t_1_1_flag_traits}{Flag\+Traits}}$<$ Bit\+Type $>$\+::is\+Bitmask, bool $>$\+::type = true$>$ }\\constexpr \mbox{\hyperlink{class_f_c_t_1_1_flags}{Flags}}$<$ Bit\+Type $>$ \mbox{\hyperlink{namespace_f_c_t_a03c44bf2b89a19ba58925807ab7a169b}{FCT\+::operator\texorpdfstring{$\sim$}{\string~}}} (Bit\+Type bits) noexcept
+\item 
+{\footnotesize template$<$typename Bit\+Type$>$ }\\constexpr \mbox{\hyperlink{class_f_c_t_1_1_flags}{Flags}}$<$ Bit\+Type $>$ \mbox{\hyperlink{namespace_f_c_t_a1c4bb7f9803bfc22ee8a160dcd416e50}{FCT\+::operator\texorpdfstring{$\vert$}{|}}} (Bit\+Type bit, \mbox{\hyperlink{class_f_c_t_1_1_flags}{Flags}}$<$ Bit\+Type $>$ const \&flags) noexcept
+\item 
+{\footnotesize template$<$typename Bit\+Type$>$ }\\constexpr \mbox{\hyperlink{class_f_c_t_1_1_flags}{Flags}}$<$ Bit\+Type $>$ \mbox{\hyperlink{namespace_f_c_t_ad5e19ded42b4f6f73a9d769a3bd8a3b3}{FCT\+::operator\&}} (Bit\+Type bit, \mbox{\hyperlink{class_f_c_t_1_1_flags}{Flags}}$<$ Bit\+Type $>$ const \&flags) noexcept
+\item 
+{\footnotesize template$<$typename Bit\+Type$>$ }\\constexpr \mbox{\hyperlink{class_f_c_t_1_1_flags}{Flags}}$<$ Bit\+Type $>$ \mbox{\hyperlink{namespace_f_c_t_a50e3b828129f8c36b8b4bb342b1c750e}{FCT\+::operator\texorpdfstring{$^\wedge$}{\string^}}} (Bit\+Type bit, \mbox{\hyperlink{class_f_c_t_1_1_flags}{Flags}}$<$ Bit\+Type $>$ const \&flags) noexcept
+\end{DoxyCompactItemize}
+
+
+\label{doc-define-members}
+\Hypertarget{_flags_8h_doc-define-members}
+\doxysubsection{宏定义说明}
+\Hypertarget{_flags_8h_ad4f3528683d14cd2c679ec96189e968f}\index{Flags.h@{Flags.h}!FCT\_DECLARE\_FLAGS@{FCT\_DECLARE\_FLAGS}}
+\index{FCT\_DECLARE\_FLAGS@{FCT\_DECLARE\_FLAGS}!Flags.h@{Flags.h}}
+\doxysubsubsection{\texorpdfstring{FCT\_DECLARE\_FLAGS}{FCT\_DECLARE\_FLAGS}}
+{\footnotesize\ttfamily \label{_flags_8h_ad4f3528683d14cd2c679ec96189e968f} 
+\#define FCT\+\_\+\+DECLARE\+\_\+\+FLAGS(\begin{DoxyParamCaption}\item[{}]{Bit\+Type}{}\end{DoxyParamCaption})}
+
+{\bfseries 值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{template}<>\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_f_c_t_1_1_flag_traits}{FCT::FlagTraits}}<BitType>\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{bool}\ isBitmask\ =\ \textcolor{keyword}{true};\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \};\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }BitType\#\#s\ =\ \mbox{\hyperlink{class_f_c_t_1_1_flags}{FCT::Flags<BitType>}};}
+
+\end{DoxyCode}
+
+
+在文件 \mbox{\hyperlink{_flags_8h_source}{Flags.\+h}} 第 \mbox{\hyperlink{_flags_8h_source_l00100}{100}} 行定义.
+

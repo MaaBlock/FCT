@@ -1,0 +1,656 @@
+\doxysection{FCT\+::Call\+Back\+Event\+Handler类 参考}
+\hypertarget{class_f_c_t_1_1_call_back_event_handler}{}\label{class_f_c_t_1_1_call_back_event_handler}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+
+
+{\ttfamily \#include $<$Call\+Back\+Handler.\+h$>$}
+
+类 FCT\+::Call\+Back\+Event\+Handler 继承关系图\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_f_c_t_1_1_call_back_event_handler}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 类型}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a53669ac876ac17958f126e05fb75fe01}{LButton\+Down\+Call\+Back}} = std\+::function$<$void(\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}}\texorpdfstring{$\ast$}{*} wnd, int x, int y)$>$
+\item 
+using \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a5f58140a936d4735bb9e0bba5a6c7366}{LButton\+Up\+Call\+Back}} = std\+::function$<$void(\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}}\texorpdfstring{$\ast$}{*} wnd, int x, int y)$>$
+\item 
+using \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a3adcf93e289b9cec2101285e42bb8762}{RButton\+Down\+Call\+Back}} = std\+::function$<$void(\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}}\texorpdfstring{$\ast$}{*} wnd, int x, int y)$>$
+\item 
+using \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a44355cfb5142de3488022dae130365f9}{RButton\+Up\+Call\+Back}} = std\+::function$<$void(\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}}\texorpdfstring{$\ast$}{*} wnd, int x, int y)$>$
+\item 
+using \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a0c4378b803f64808cb0a8825bd7a2e23}{Mouse\+Move\+Call\+Back}} = std\+::function$<$void(\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}}\texorpdfstring{$\ast$}{*} wnd, int x, int y)$>$
+\item 
+using \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a495d82b1fc8b2e862cc09385f2fa5078}{Mouse\+Wheel\+Call\+Back}} = std\+::function$<$void(\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}}\texorpdfstring{$\ast$}{*} wnd, int delta)$>$
+\item 
+using \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8d9d4ed687033c258166a69dd6f77eaa}{Key\+Down\+Call\+Back}} = std\+::function$<$void(\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}}\texorpdfstring{$\ast$}{*} wnd, int key)$>$
+\item 
+using \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_aeb36839a3be9a52fbce66187c4c121ff}{Key\+Up\+Call\+Back}} = std\+::function$<$void(\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}}\texorpdfstring{$\ast$}{*} wnd, int key)$>$
+\item 
+using \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}} = size\+\_\+t
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_ade2d3b896c4c0594e55c88d60ead788c}{on\+Resize}} (\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}wnd, int width, int height) override
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_ae40602b661daaa8cc104320b1d6cb564}{on\+Mouse\+Move}} (\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}wnd, int x, int y) override
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a79a0ab70f460b99ce93417a39bdd9883}{on\+Mouse\+Wheel}} (\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}wnd, int delta) override
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a4c7dffc93ae084473074c9f5e8a6d2f6}{on\+Key\+Down}} (\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}wnd, int key) override
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_ac3928621554d0615ea7db6c95eab22d0}{on\+Key\+Up}} (\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}wnd, int key) override
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a39f2050713bd39b13f5b72b9f11f3a01}{on\+LButton\+Down}} (\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}wnd, int x, int y) override
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a53a1d75fbb1513777e8e2c8d330c2c63}{on\+LButton\+Up}} (\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}wnd, int x, int y) override
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a295a64f34578f42266e500c426a34259}{on\+RButton\+Down}} (\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}wnd, int x, int y) override
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_aec751ec1ce6e45c3d6091be54068291c}{on\+RButton\+Up}} (\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}wnd, int x, int y) override
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}} \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a237fc8ca6ab7f20e2cbcaf1ae9d11091}{add\+Resize\+Callback}} (const \mbox{\hyperlink{namespace_f_c_t_a9e86debfb8e07b3158f7c3f36555d3b4}{Resize\+Call\+Back}} \&cb)
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}} \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a5e5db37789268dc08fe3bd3605b1e5d8}{add\+LButton\+Down\+Callback}} (const \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a53669ac876ac17958f126e05fb75fe01}{LButton\+Down\+Call\+Back}} \&cb)
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}} \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a167ea2907e213bd67ddf1ce643d61cd1}{add\+LButton\+Up\+Callback}} (const \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a5f58140a936d4735bb9e0bba5a6c7366}{LButton\+Up\+Call\+Back}} \&cb)
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}} \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_ad6883a1a19c76a8d70ca55f8853c1f41}{add\+RButton\+Down\+Callback}} (const \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a3adcf93e289b9cec2101285e42bb8762}{RButton\+Down\+Call\+Back}} \&cb)
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}} \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a964de7b878c1925c771d18f90bde935a}{add\+RButton\+Up\+Callback}} (const \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a44355cfb5142de3488022dae130365f9}{RButton\+Up\+Call\+Back}} \&cb)
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}} \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a1f8f0a747d8bf95fecb773cdcdba5c50}{add\+Mouse\+Move\+Callback}} (const \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a0c4378b803f64808cb0a8825bd7a2e23}{Mouse\+Move\+Call\+Back}} \&cb)
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}} \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_aec8ac2896602c0eb56c680538f1894ab}{add\+Mouse\+Wheel\+Callback}} (const \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a495d82b1fc8b2e862cc09385f2fa5078}{Mouse\+Wheel\+Call\+Back}} \&cb)
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}} \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_aee9da42091dc7de932f4f96ad41ce4f0}{add\+Key\+Down\+Callback}} (const \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8d9d4ed687033c258166a69dd6f77eaa}{Key\+Down\+Call\+Back}} \&cb)
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}} \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8555113e448a7d3eb1b80e619a8b9f1c}{add\+Key\+Up\+Callback}} (const \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_aeb36839a3be9a52fbce66187c4c121ff}{Key\+Up\+Call\+Back}} \&cb)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a14ed3aba9e16cef99f9a3612167b27a3}{remove\+Resize\+Callback}} (\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}} id)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_ab5fee45986b03ce196aaead5b78152c7}{remove\+LButton\+Down\+Callback}} (\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}} id)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_afac271eef9de6171c376044e50378bf4}{remove\+LButton\+Up\+Callback}} (\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}} id)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a709dc6c25303a79b99768428b357b264}{remove\+RButton\+Down\+Callback}} (\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}} id)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a011db7e88b5bc5c7ade5c67cd367332c}{remove\+RButton\+Up\+Callback}} (\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}} id)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a985a00cf0484d35625e3fe4a0a9dbf0f}{remove\+Mouse\+Move\+Callback}} (\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}} id)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a5226ea209c41c936bd8528b98185ad66}{remove\+Mouse\+Wheel\+Callback}} (\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}} id)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_abce9bc3d6dcd7ad626f7ebf1b945ff2e}{remove\+Key\+Down\+Callback}} (\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}} id)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a824504216bb4949470cd22b7a8ebd31a}{remove\+Key\+Up\+Callback}} (\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}} id)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a548656a888db221919334ab7d88d6ef8}{clear\+Resize\+Callbacks}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_ab97246e21668c7c44d1e7864a844f7b1}{clear\+LButton\+Down\+Callbacks}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_ad2a023477277acef67e018343f50c439}{clear\+LButton\+Up\+Callbacks}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_aff6a83def4623102d90f7b56941ecd4e}{clear\+RButton\+Down\+Callbacks}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a800aeb1798c1d9cbf5361ed0ea0b5c28}{clear\+RButton\+Up\+Callbacks}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_ac37ddd6e127384e8ef3f58018802c52b}{clear\+Mouse\+Move\+Callbacks}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a3be05e17f00b18475b9d9fb5451465f8}{clear\+Mouse\+Wheel\+Callbacks}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a954e4d0827e6b0be50ecd5bde87a22b9}{clear\+Key\+Down\+Callbacks}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a73b35034a48c95a5fe2bd97220307592}{clear\+Key\+Up\+Callbacks}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a1c1dc86731d9bdc0e9edc9b296258f48}{invoke\+Resize\+Callbacks}} (\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}wnd, int width, int height)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public 成员函数 继承自 \mbox{\hyperlink{class_f_c_t_1_1_ref_count}{FCT\+::\+Ref\+Count}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_ref_count_a681b72d7bd32fd7e4b9ec861cd74370e}{Ref\+Count}} ()
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_ref_count_ae2948e0ae155079956caced23c85bb2b}{Ref\+Count}} (size\+\_\+t ref\+Count)
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_ref_count_af028e09f8a1492fdd5c788b6eb75754f}{\texorpdfstring{$\sim$}{\string~}\+Ref\+Count}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a59c2f131121de6503df8d363b6853d45}{add\+Ref}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_aaf57b2df79545f2b71ae9087865dee4c}{release}} ()
+\item 
+size\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a33146ec5804be422936519224a3a7b3f}{count}} ()
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_ref_count_a474ad3a918f2e87d75ff16075e1caeec}{operator bool}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{额外继承的成员函数}
+\doxysubsection*{Protected 成员函数 继承自 \mbox{\hyperlink{class_f_c_t_1_1_ref_count}{FCT\+::\+Ref\+Count}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a0fea0bed50f726d3e11ddde802dac5da}{delete\+This}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected 属性 继承自 \mbox{\hyperlink{class_f_c_t_1_1_ref_count}{FCT\+::\+Ref\+Count}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::atomic$<$ size\+\_\+t $>$ \mbox{\hyperlink{class_f_c_t_1_1_ref_count_aca88529f9b473d326168fa808fd02300}{m\+\_\+ref\+Count}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00009}{9}} 行定义.
+
+
+
+\label{doc-typedef-members}
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_doc-typedef-members}
+\doxysubsection{成员类型定义说明}
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!CallbackId@{CallbackId}}
+\index{CallbackId@{CallbackId}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{CallbackId}{CallbackId}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e} 
+using \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{FCT\+::\+Call\+Back\+Event\+Handler\+::\+Callback\+Id}} = size\+\_\+t}
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00019}{19}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_a8d9d4ed687033c258166a69dd6f77eaa}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!KeyDownCallBack@{KeyDownCallBack}}
+\index{KeyDownCallBack@{KeyDownCallBack}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{KeyDownCallBack}{KeyDownCallBack}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_a8d9d4ed687033c258166a69dd6f77eaa} 
+using \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8d9d4ed687033c258166a69dd6f77eaa}{FCT\+::\+Call\+Back\+Event\+Handler\+::\+Key\+Down\+Call\+Back}} = std\+::function$<$void(\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}}\texorpdfstring{$\ast$}{*} wnd, int key)$>$}
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00017}{17}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_aeb36839a3be9a52fbce66187c4c121ff}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!KeyUpCallBack@{KeyUpCallBack}}
+\index{KeyUpCallBack@{KeyUpCallBack}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{KeyUpCallBack}{KeyUpCallBack}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_aeb36839a3be9a52fbce66187c4c121ff} 
+using \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_aeb36839a3be9a52fbce66187c4c121ff}{FCT\+::\+Call\+Back\+Event\+Handler\+::\+Key\+Up\+Call\+Back}} = std\+::function$<$void(\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}}\texorpdfstring{$\ast$}{*} wnd, int key)$>$}
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00018}{18}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_a53669ac876ac17958f126e05fb75fe01}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!LButtonDownCallBack@{LButtonDownCallBack}}
+\index{LButtonDownCallBack@{LButtonDownCallBack}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{LButtonDownCallBack}{LButtonDownCallBack}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_a53669ac876ac17958f126e05fb75fe01} 
+using \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a53669ac876ac17958f126e05fb75fe01}{FCT\+::\+Call\+Back\+Event\+Handler\+::\+LButton\+Down\+Call\+Back}} = std\+::function$<$void(\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}}\texorpdfstring{$\ast$}{*} wnd, int x, int y)$>$}
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00011}{11}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_a5f58140a936d4735bb9e0bba5a6c7366}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!LButtonUpCallBack@{LButtonUpCallBack}}
+\index{LButtonUpCallBack@{LButtonUpCallBack}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{LButtonUpCallBack}{LButtonUpCallBack}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_a5f58140a936d4735bb9e0bba5a6c7366} 
+using \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a5f58140a936d4735bb9e0bba5a6c7366}{FCT\+::\+Call\+Back\+Event\+Handler\+::\+LButton\+Up\+Call\+Back}} = std\+::function$<$void(\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}}\texorpdfstring{$\ast$}{*} wnd, int x, int y)$>$}
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00012}{12}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_a0c4378b803f64808cb0a8825bd7a2e23}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!MouseMoveCallBack@{MouseMoveCallBack}}
+\index{MouseMoveCallBack@{MouseMoveCallBack}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{MouseMoveCallBack}{MouseMoveCallBack}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_a0c4378b803f64808cb0a8825bd7a2e23} 
+using \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a0c4378b803f64808cb0a8825bd7a2e23}{FCT\+::\+Call\+Back\+Event\+Handler\+::\+Mouse\+Move\+Call\+Back}} = std\+::function$<$void(\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}}\texorpdfstring{$\ast$}{*} wnd, int x, int y)$>$}
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00015}{15}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_a495d82b1fc8b2e862cc09385f2fa5078}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!MouseWheelCallBack@{MouseWheelCallBack}}
+\index{MouseWheelCallBack@{MouseWheelCallBack}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{MouseWheelCallBack}{MouseWheelCallBack}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_a495d82b1fc8b2e862cc09385f2fa5078} 
+using \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a495d82b1fc8b2e862cc09385f2fa5078}{FCT\+::\+Call\+Back\+Event\+Handler\+::\+Mouse\+Wheel\+Call\+Back}} = std\+::function$<$void(\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}}\texorpdfstring{$\ast$}{*} wnd, int delta)$>$}
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00016}{16}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_a3adcf93e289b9cec2101285e42bb8762}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!RButtonDownCallBack@{RButtonDownCallBack}}
+\index{RButtonDownCallBack@{RButtonDownCallBack}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{RButtonDownCallBack}{RButtonDownCallBack}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_a3adcf93e289b9cec2101285e42bb8762} 
+using \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a3adcf93e289b9cec2101285e42bb8762}{FCT\+::\+Call\+Back\+Event\+Handler\+::\+RButton\+Down\+Call\+Back}} = std\+::function$<$void(\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}}\texorpdfstring{$\ast$}{*} wnd, int x, int y)$>$}
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00013}{13}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_a44355cfb5142de3488022dae130365f9}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!RButtonUpCallBack@{RButtonUpCallBack}}
+\index{RButtonUpCallBack@{RButtonUpCallBack}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{RButtonUpCallBack}{RButtonUpCallBack}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_a44355cfb5142de3488022dae130365f9} 
+using \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a44355cfb5142de3488022dae130365f9}{FCT\+::\+Call\+Back\+Event\+Handler\+::\+RButton\+Up\+Call\+Back}} = std\+::function$<$void(\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}}\texorpdfstring{$\ast$}{*} wnd, int x, int y)$>$}
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00014}{14}} 行定义.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_doc-func-members}
+\doxysubsection{成员函数说明}
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_aee9da42091dc7de932f4f96ad41ce4f0}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!addKeyDownCallback@{addKeyDownCallback}}
+\index{addKeyDownCallback@{addKeyDownCallback}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{addKeyDownCallback()}{addKeyDownCallback()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_aee9da42091dc7de932f4f96ad41ce4f0} 
+\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}} FCT\+::\+Call\+Back\+Event\+Handler\+::add\+Key\+Down\+Callback (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8d9d4ed687033c258166a69dd6f77eaa}{Key\+Down\+Call\+Back}} \&}]{cb}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00103}{103}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_a8555113e448a7d3eb1b80e619a8b9f1c}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!addKeyUpCallback@{addKeyUpCallback}}
+\index{addKeyUpCallback@{addKeyUpCallback}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{addKeyUpCallback()}{addKeyUpCallback()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_a8555113e448a7d3eb1b80e619a8b9f1c} 
+\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}} FCT\+::\+Call\+Back\+Event\+Handler\+::add\+Key\+Up\+Callback (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_aeb36839a3be9a52fbce66187c4c121ff}{Key\+Up\+Call\+Back}} \&}]{cb}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00108}{108}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_a5e5db37789268dc08fe3bd3605b1e5d8}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!addLButtonDownCallback@{addLButtonDownCallback}}
+\index{addLButtonDownCallback@{addLButtonDownCallback}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{addLButtonDownCallback()}{addLButtonDownCallback()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_a5e5db37789268dc08fe3bd3605b1e5d8} 
+\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}} FCT\+::\+Call\+Back\+Event\+Handler\+::add\+LButton\+Down\+Callback (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a53669ac876ac17958f126e05fb75fe01}{LButton\+Down\+Call\+Back}} \&}]{cb}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00073}{73}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_a167ea2907e213bd67ddf1ce643d61cd1}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!addLButtonUpCallback@{addLButtonUpCallback}}
+\index{addLButtonUpCallback@{addLButtonUpCallback}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{addLButtonUpCallback()}{addLButtonUpCallback()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_a167ea2907e213bd67ddf1ce643d61cd1} 
+\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}} FCT\+::\+Call\+Back\+Event\+Handler\+::add\+LButton\+Up\+Callback (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a5f58140a936d4735bb9e0bba5a6c7366}{LButton\+Up\+Call\+Back}} \&}]{cb}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00078}{78}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_a1f8f0a747d8bf95fecb773cdcdba5c50}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!addMouseMoveCallback@{addMouseMoveCallback}}
+\index{addMouseMoveCallback@{addMouseMoveCallback}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{addMouseMoveCallback()}{addMouseMoveCallback()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_a1f8f0a747d8bf95fecb773cdcdba5c50} 
+\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}} FCT\+::\+Call\+Back\+Event\+Handler\+::add\+Mouse\+Move\+Callback (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a0c4378b803f64808cb0a8825bd7a2e23}{Mouse\+Move\+Call\+Back}} \&}]{cb}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00093}{93}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_aec8ac2896602c0eb56c680538f1894ab}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!addMouseWheelCallback@{addMouseWheelCallback}}
+\index{addMouseWheelCallback@{addMouseWheelCallback}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{addMouseWheelCallback()}{addMouseWheelCallback()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_aec8ac2896602c0eb56c680538f1894ab} 
+\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}} FCT\+::\+Call\+Back\+Event\+Handler\+::add\+Mouse\+Wheel\+Callback (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a495d82b1fc8b2e862cc09385f2fa5078}{Mouse\+Wheel\+Call\+Back}} \&}]{cb}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00098}{98}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_ad6883a1a19c76a8d70ca55f8853c1f41}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!addRButtonDownCallback@{addRButtonDownCallback}}
+\index{addRButtonDownCallback@{addRButtonDownCallback}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{addRButtonDownCallback()}{addRButtonDownCallback()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_ad6883a1a19c76a8d70ca55f8853c1f41} 
+\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}} FCT\+::\+Call\+Back\+Event\+Handler\+::add\+RButton\+Down\+Callback (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a3adcf93e289b9cec2101285e42bb8762}{RButton\+Down\+Call\+Back}} \&}]{cb}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00083}{83}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_a964de7b878c1925c771d18f90bde935a}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!addRButtonUpCallback@{addRButtonUpCallback}}
+\index{addRButtonUpCallback@{addRButtonUpCallback}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{addRButtonUpCallback()}{addRButtonUpCallback()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_a964de7b878c1925c771d18f90bde935a} 
+\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}} FCT\+::\+Call\+Back\+Event\+Handler\+::add\+RButton\+Up\+Callback (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a44355cfb5142de3488022dae130365f9}{RButton\+Up\+Call\+Back}} \&}]{cb}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00088}{88}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_a237fc8ca6ab7f20e2cbcaf1ae9d11091}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!addResizeCallback@{addResizeCallback}}
+\index{addResizeCallback@{addResizeCallback}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{addResizeCallback()}{addResizeCallback()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_a237fc8ca6ab7f20e2cbcaf1ae9d11091} 
+\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}} FCT\+::\+Call\+Back\+Event\+Handler\+::add\+Resize\+Callback (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_f_c_t_a9e86debfb8e07b3158f7c3f36555d3b4}{Resize\+Call\+Back}} \&}]{cb}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00067}{67}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_a954e4d0827e6b0be50ecd5bde87a22b9}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!clearKeyDownCallbacks@{clearKeyDownCallbacks}}
+\index{clearKeyDownCallbacks@{clearKeyDownCallbacks}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{clearKeyDownCallbacks()}{clearKeyDownCallbacks()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_a954e4d0827e6b0be50ecd5bde87a22b9} 
+void FCT\+::\+Call\+Back\+Event\+Handler\+::clear\+Key\+Down\+Callbacks (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00163}{163}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_a73b35034a48c95a5fe2bd97220307592}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!clearKeyUpCallbacks@{clearKeyUpCallbacks}}
+\index{clearKeyUpCallbacks@{clearKeyUpCallbacks}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{clearKeyUpCallbacks()}{clearKeyUpCallbacks()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_a73b35034a48c95a5fe2bd97220307592} 
+void FCT\+::\+Call\+Back\+Event\+Handler\+::clear\+Key\+Up\+Callbacks (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00166}{166}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_ab97246e21668c7c44d1e7864a844f7b1}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!clearLButtonDownCallbacks@{clearLButtonDownCallbacks}}
+\index{clearLButtonDownCallbacks@{clearLButtonDownCallbacks}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{clearLButtonDownCallbacks()}{clearLButtonDownCallbacks()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_ab97246e21668c7c44d1e7864a844f7b1} 
+void FCT\+::\+Call\+Back\+Event\+Handler\+::clear\+LButton\+Down\+Callbacks (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00145}{145}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_ad2a023477277acef67e018343f50c439}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!clearLButtonUpCallbacks@{clearLButtonUpCallbacks}}
+\index{clearLButtonUpCallbacks@{clearLButtonUpCallbacks}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{clearLButtonUpCallbacks()}{clearLButtonUpCallbacks()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_ad2a023477277acef67e018343f50c439} 
+void FCT\+::\+Call\+Back\+Event\+Handler\+::clear\+LButton\+Up\+Callbacks (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00148}{148}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_ac37ddd6e127384e8ef3f58018802c52b}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!clearMouseMoveCallbacks@{clearMouseMoveCallbacks}}
+\index{clearMouseMoveCallbacks@{clearMouseMoveCallbacks}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{clearMouseMoveCallbacks()}{clearMouseMoveCallbacks()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_ac37ddd6e127384e8ef3f58018802c52b} 
+void FCT\+::\+Call\+Back\+Event\+Handler\+::clear\+Mouse\+Move\+Callbacks (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00157}{157}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_a3be05e17f00b18475b9d9fb5451465f8}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!clearMouseWheelCallbacks@{clearMouseWheelCallbacks}}
+\index{clearMouseWheelCallbacks@{clearMouseWheelCallbacks}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{clearMouseWheelCallbacks()}{clearMouseWheelCallbacks()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_a3be05e17f00b18475b9d9fb5451465f8} 
+void FCT\+::\+Call\+Back\+Event\+Handler\+::clear\+Mouse\+Wheel\+Callbacks (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00160}{160}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_aff6a83def4623102d90f7b56941ecd4e}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!clearRButtonDownCallbacks@{clearRButtonDownCallbacks}}
+\index{clearRButtonDownCallbacks@{clearRButtonDownCallbacks}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{clearRButtonDownCallbacks()}{clearRButtonDownCallbacks()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_aff6a83def4623102d90f7b56941ecd4e} 
+void FCT\+::\+Call\+Back\+Event\+Handler\+::clear\+RButton\+Down\+Callbacks (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00151}{151}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_a800aeb1798c1d9cbf5361ed0ea0b5c28}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!clearRButtonUpCallbacks@{clearRButtonUpCallbacks}}
+\index{clearRButtonUpCallbacks@{clearRButtonUpCallbacks}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{clearRButtonUpCallbacks()}{clearRButtonUpCallbacks()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_a800aeb1798c1d9cbf5361ed0ea0b5c28} 
+void FCT\+::\+Call\+Back\+Event\+Handler\+::clear\+RButton\+Up\+Callbacks (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00154}{154}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_a548656a888db221919334ab7d88d6ef8}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!clearResizeCallbacks@{clearResizeCallbacks}}
+\index{clearResizeCallbacks@{clearResizeCallbacks}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{clearResizeCallbacks()}{clearResizeCallbacks()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_a548656a888db221919334ab7d88d6ef8} 
+void FCT\+::\+Call\+Back\+Event\+Handler\+::clear\+Resize\+Callbacks (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00142}{142}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_a1c1dc86731d9bdc0e9edc9b296258f48}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!invokeResizeCallbacks@{invokeResizeCallbacks}}
+\index{invokeResizeCallbacks@{invokeResizeCallbacks}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{invokeResizeCallbacks()}{invokeResizeCallbacks()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_a1c1dc86731d9bdc0e9edc9b296258f48} 
+void FCT\+::\+Call\+Back\+Event\+Handler\+::invoke\+Resize\+Callbacks (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}}]{wnd}{, }\item[{int}]{width}{, }\item[{int}]{height}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00169}{169}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_a4c7dffc93ae084473074c9f5e8a6d2f6}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!onKeyDown@{onKeyDown}}
+\index{onKeyDown@{onKeyDown}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{onKeyDown()}{onKeyDown()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_a4c7dffc93ae084473074c9f5e8a6d2f6} 
+void FCT\+::\+Call\+Back\+Event\+Handler\+::on\+Key\+Down (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}}]{wnd}{, }\item[{int}]{key}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+实现了 \mbox{\hyperlink{class_f_c_t_1_1_event_handler_a0928fc37323389e80dd610fce41c68d0}{FCT\+::\+Event\+Handler}}.
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00036}{36}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_ac3928621554d0615ea7db6c95eab22d0}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!onKeyUp@{onKeyUp}}
+\index{onKeyUp@{onKeyUp}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{onKeyUp()}{onKeyUp()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_ac3928621554d0615ea7db6c95eab22d0} 
+void FCT\+::\+Call\+Back\+Event\+Handler\+::on\+Key\+Up (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}}]{wnd}{, }\item[{int}]{key}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+实现了 \mbox{\hyperlink{class_f_c_t_1_1_event_handler_a991c759490310be0dd8201c5d1ef9c0c}{FCT\+::\+Event\+Handler}}.
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00041}{41}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_a39f2050713bd39b13f5b72b9f11f3a01}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!onLButtonDown@{onLButtonDown}}
+\index{onLButtonDown@{onLButtonDown}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{onLButtonDown()}{onLButtonDown()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_a39f2050713bd39b13f5b72b9f11f3a01} 
+void FCT\+::\+Call\+Back\+Event\+Handler\+::on\+LButton\+Down (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}}]{wnd}{, }\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+实现了 \mbox{\hyperlink{class_f_c_t_1_1_event_handler_a0e55301bd836d93c72c3010d38011c82}{FCT\+::\+Event\+Handler}}.
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00046}{46}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_a53a1d75fbb1513777e8e2c8d330c2c63}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!onLButtonUp@{onLButtonUp}}
+\index{onLButtonUp@{onLButtonUp}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{onLButtonUp()}{onLButtonUp()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_a53a1d75fbb1513777e8e2c8d330c2c63} 
+void FCT\+::\+Call\+Back\+Event\+Handler\+::on\+LButton\+Up (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}}]{wnd}{, }\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+实现了 \mbox{\hyperlink{class_f_c_t_1_1_event_handler_a4fe6a112319ccea7d82fdd9025cda220}{FCT\+::\+Event\+Handler}}.
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00051}{51}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_ae40602b661daaa8cc104320b1d6cb564}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!onMouseMove@{onMouseMove}}
+\index{onMouseMove@{onMouseMove}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{onMouseMove()}{onMouseMove()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_ae40602b661daaa8cc104320b1d6cb564} 
+void FCT\+::\+Call\+Back\+Event\+Handler\+::on\+Mouse\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}}]{wnd}{, }\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+实现了 \mbox{\hyperlink{class_f_c_t_1_1_event_handler_ab34d880ea473fb12d56202d881a84fed}{FCT\+::\+Event\+Handler}}.
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00026}{26}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_a79a0ab70f460b99ce93417a39bdd9883}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!onMouseWheel@{onMouseWheel}}
+\index{onMouseWheel@{onMouseWheel}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{onMouseWheel()}{onMouseWheel()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_a79a0ab70f460b99ce93417a39bdd9883} 
+void FCT\+::\+Call\+Back\+Event\+Handler\+::on\+Mouse\+Wheel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}}]{wnd}{, }\item[{int}]{delta}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+实现了 \mbox{\hyperlink{class_f_c_t_1_1_event_handler_a05b5d13d23d19b22178d1549ac8e94cd}{FCT\+::\+Event\+Handler}}.
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00031}{31}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_a295a64f34578f42266e500c426a34259}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!onRButtonDown@{onRButtonDown}}
+\index{onRButtonDown@{onRButtonDown}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{onRButtonDown()}{onRButtonDown()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_a295a64f34578f42266e500c426a34259} 
+void FCT\+::\+Call\+Back\+Event\+Handler\+::on\+RButton\+Down (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}}]{wnd}{, }\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+实现了 \mbox{\hyperlink{class_f_c_t_1_1_event_handler_afb30c504f7581116f9c0ad63de0ac997}{FCT\+::\+Event\+Handler}}.
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00056}{56}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_aec751ec1ce6e45c3d6091be54068291c}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!onRButtonUp@{onRButtonUp}}
+\index{onRButtonUp@{onRButtonUp}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{onRButtonUp()}{onRButtonUp()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_aec751ec1ce6e45c3d6091be54068291c} 
+void FCT\+::\+Call\+Back\+Event\+Handler\+::on\+RButton\+Up (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}}]{wnd}{, }\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+实现了 \mbox{\hyperlink{class_f_c_t_1_1_event_handler_a34c668bfb17d23f1df3b8a9b33fb07ca}{FCT\+::\+Event\+Handler}}.
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00061}{61}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_ade2d3b896c4c0594e55c88d60ead788c}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!onResize@{onResize}}
+\index{onResize@{onResize}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{onResize()}{onResize()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_ade2d3b896c4c0594e55c88d60ead788c} 
+void FCT\+::\+Call\+Back\+Event\+Handler\+::on\+Resize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}}]{wnd}{, }\item[{int}]{width}{, }\item[{int}]{height}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+实现了 \mbox{\hyperlink{class_f_c_t_1_1_event_handler_a86ab8d3e1067d2f5311f7858f15a6864}{FCT\+::\+Event\+Handler}}.
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00021}{21}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_abce9bc3d6dcd7ad626f7ebf1b945ff2e}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!removeKeyDownCallback@{removeKeyDownCallback}}
+\index{removeKeyDownCallback@{removeKeyDownCallback}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{removeKeyDownCallback()}{removeKeyDownCallback()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_abce9bc3d6dcd7ad626f7ebf1b945ff2e} 
+void FCT\+::\+Call\+Back\+Event\+Handler\+::remove\+Key\+Down\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}}}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00135}{135}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_a824504216bb4949470cd22b7a8ebd31a}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!removeKeyUpCallback@{removeKeyUpCallback}}
+\index{removeKeyUpCallback@{removeKeyUpCallback}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{removeKeyUpCallback()}{removeKeyUpCallback()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_a824504216bb4949470cd22b7a8ebd31a} 
+void FCT\+::\+Call\+Back\+Event\+Handler\+::remove\+Key\+Up\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}}}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00138}{138}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_ab5fee45986b03ce196aaead5b78152c7}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!removeLButtonDownCallback@{removeLButtonDownCallback}}
+\index{removeLButtonDownCallback@{removeLButtonDownCallback}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{removeLButtonDownCallback()}{removeLButtonDownCallback()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_ab5fee45986b03ce196aaead5b78152c7} 
+void FCT\+::\+Call\+Back\+Event\+Handler\+::remove\+LButton\+Down\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}}}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00117}{117}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_afac271eef9de6171c376044e50378bf4}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!removeLButtonUpCallback@{removeLButtonUpCallback}}
+\index{removeLButtonUpCallback@{removeLButtonUpCallback}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{removeLButtonUpCallback()}{removeLButtonUpCallback()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_afac271eef9de6171c376044e50378bf4} 
+void FCT\+::\+Call\+Back\+Event\+Handler\+::remove\+LButton\+Up\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}}}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00120}{120}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_a985a00cf0484d35625e3fe4a0a9dbf0f}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!removeMouseMoveCallback@{removeMouseMoveCallback}}
+\index{removeMouseMoveCallback@{removeMouseMoveCallback}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{removeMouseMoveCallback()}{removeMouseMoveCallback()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_a985a00cf0484d35625e3fe4a0a9dbf0f} 
+void FCT\+::\+Call\+Back\+Event\+Handler\+::remove\+Mouse\+Move\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}}}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00129}{129}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_a5226ea209c41c936bd8528b98185ad66}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!removeMouseWheelCallback@{removeMouseWheelCallback}}
+\index{removeMouseWheelCallback@{removeMouseWheelCallback}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{removeMouseWheelCallback()}{removeMouseWheelCallback()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_a5226ea209c41c936bd8528b98185ad66} 
+void FCT\+::\+Call\+Back\+Event\+Handler\+::remove\+Mouse\+Wheel\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}}}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00132}{132}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_a709dc6c25303a79b99768428b357b264}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!removeRButtonDownCallback@{removeRButtonDownCallback}}
+\index{removeRButtonDownCallback@{removeRButtonDownCallback}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{removeRButtonDownCallback()}{removeRButtonDownCallback()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_a709dc6c25303a79b99768428b357b264} 
+void FCT\+::\+Call\+Back\+Event\+Handler\+::remove\+RButton\+Down\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}}}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00123}{123}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_a011db7e88b5bc5c7ade5c67cd367332c}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!removeRButtonUpCallback@{removeRButtonUpCallback}}
+\index{removeRButtonUpCallback@{removeRButtonUpCallback}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{removeRButtonUpCallback()}{removeRButtonUpCallback()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_a011db7e88b5bc5c7ade5c67cd367332c} 
+void FCT\+::\+Call\+Back\+Event\+Handler\+::remove\+RButton\+Up\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}}}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00126}{126}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_a14ed3aba9e16cef99f9a3612167b27a3}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!removeResizeCallback@{removeResizeCallback}}
+\index{removeResizeCallback@{removeResizeCallback}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{removeResizeCallback()}{removeResizeCallback()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_a14ed3aba9e16cef99f9a3612167b27a3} 
+void FCT\+::\+Call\+Back\+Event\+Handler\+::remove\+Resize\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}}}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00113}{113}} 行定义.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\+FCT/\+UI/\mbox{\hyperlink{_call_back_handler_8h}{Call\+Back\+Handler.\+h}}\end{DoxyCompactItemize}

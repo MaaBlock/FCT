@@ -1,0 +1,76 @@
+\doxysection{FCT\+::Mat3类 参考}
+\hypertarget{class_f_c_t_1_1_mat3}{}\label{class_f_c_t_1_1_mat3}\index{FCT::Mat3@{FCT::Mat3}}
+
+
+{\ttfamily \#include $<$Matrix.\+h$>$}
+
+类 FCT\+::Mat3 继承关系图\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_f_c_t_1_1_mat3}
+\end{center}
+\end{figure}
+\doxysubsubsection*{额外继承的成员函数}
+\doxysubsection*{Public 成员函数 继承自 \mbox{\hyperlink{class_f_c_t_1_1_mat4}{FCT\+::\+Mat4}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_mat4_a0a1d014550c518156cdcc5a83c72b185}{Mat4}} ()
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_mat4_a4a9c0c095045a3d0664a5a3bcb93ea5d}{Mat4}} (float m11, float m12, float m13, float m14, float m21, float m22, float m23, float m24, float m31, float m32, float m33, float m34, float m41, float m42, float m43, float m44)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_mat4_aa21e679e86683258615081fe7cf6938e}{identity}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_mat4_a9d5fd623d9fefeb44fc4b94e09ee5442}{translate}} (float x, float y)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_mat4_a2d283463f44b282d5b09496676bece5d}{translate}} (float x, float y, float z)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_mat4_a562982793290c6f0089523df97491ecf}{rotateX}} (float degrees)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_mat4_af4a759e399a2f577c11094e3eb45a3b9}{rotateY}} (float degrees)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_mat4_a07610096c11999c9b479bf43e2dbc575}{rotateZ}} (float degrees)
+\item 
+\mbox{\hyperlink{struct_f_c_t_1_1_vec4}{Vec4}} \mbox{\hyperlink{class_f_c_t_1_1_mat4_ad9ed4ca219a5ec86a400a03784cde841}{operator\texorpdfstring{$\ast$}{*}}} (const \mbox{\hyperlink{struct_f_c_t_1_1_vec4}{Vec4}} \&vec) const
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_mat4_a9a29749e6535843cb0ff7cdb330f2368}{scale}} (float x, float y, float z)
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_mat4}{Mat4}} \mbox{\hyperlink{class_f_c_t_1_1_mat4_acfa9e3551187cf2964a6aac401f11042}{operator\texorpdfstring{$\ast$}{*}}} (const \mbox{\hyperlink{class_f_c_t_1_1_mat4}{Mat4}} \&rhs) const
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_mat4}{Mat4}} \& \mbox{\hyperlink{class_f_c_t_1_1_mat4_ac2c396a0ebb91b394f469e2808d56733}{operator\texorpdfstring{$\ast$}{*}=}} (const \mbox{\hyperlink{class_f_c_t_1_1_mat4}{Mat4}} \&rhs)
+\end{DoxyCompactItemize}
+\doxysubsection*{静态 Public 成员函数 继承自 \mbox{\hyperlink{class_f_c_t_1_1_mat4}{FCT\+::\+Mat4}}}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_f_c_t_1_1_mat4}{Mat4}} \mbox{\hyperlink{class_f_c_t_1_1_mat4_a0f3efd42afbb6b42727727ca1c7ed0fe}{Create\+Translation}} (float x, float y)
+\item 
+static \mbox{\hyperlink{class_f_c_t_1_1_mat4}{Mat4}} \mbox{\hyperlink{class_f_c_t_1_1_mat4_ade119f54b585c25bc922fe9832af87ed}{Create\+Scale}} (float scaleX, float scaleY)
+\item 
+static \mbox{\hyperlink{class_f_c_t_1_1_mat4}{Mat4}} \mbox{\hyperlink{class_f_c_t_1_1_mat4_afc0ecea363af76792f8aecd3258d259d}{Translate}} (float x, float y)
+\item 
+static \mbox{\hyperlink{class_f_c_t_1_1_mat4}{Mat4}} \mbox{\hyperlink{class_f_c_t_1_1_mat4_ab0a06b949ac51a8f3e6c4f39924f5604}{Translate}} (float x, float y, float z)
+\item 
+static \mbox{\hyperlink{class_f_c_t_1_1_mat4}{Mat4}} \mbox{\hyperlink{class_f_c_t_1_1_mat4_a60900bd8356d59476fe8ee42e54e857d}{Look\+At}} (const \mbox{\hyperlink{struct_f_c_t_1_1_vec3}{Vec3}} \&eye, const \mbox{\hyperlink{struct_f_c_t_1_1_vec3}{Vec3}} \&center, const \mbox{\hyperlink{struct_f_c_t_1_1_vec3}{Vec3}} \&up)
+\item 
+static \mbox{\hyperlink{class_f_c_t_1_1_mat4}{Mat4}} \mbox{\hyperlink{class_f_c_t_1_1_mat4_a64ee02531111c457492e5dab96a96341}{Scale}} (float scaleX, float scaleY)
+\item 
+static \mbox{\hyperlink{class_f_c_t_1_1_mat4}{Mat4}} \mbox{\hyperlink{class_f_c_t_1_1_mat4_a6bd0411139ba97a75a18b877bab83cc0}{Scale}} (float scaleX, float scaleY, float scaleZ)
+\item 
+static \mbox{\hyperlink{class_f_c_t_1_1_mat4}{Mat4}} \mbox{\hyperlink{class_f_c_t_1_1_mat4_a4ae8e785aa89f1940d449ce99de73cbc}{Perspective}} (float fovy, float aspect, float z\+Near, float z\+Far)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public 属性 继承自 \mbox{\hyperlink{class_f_c_t_1_1_mat4}{FCT\+::\+Mat4}}}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_f_c_t_1_1_mat4_a9da3247036e27dd59fceebc7af55be3e}{m}} \mbox{[}16\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+
+
+在文件 \mbox{\hyperlink{_matrix_8h_source}{Matrix.\+h}} 第 \mbox{\hyperlink{_matrix_8h_source_l00256}{256}} 行定义.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\+FCT/\+Context/\mbox{\hyperlink{_matrix_8h}{Matrix.\+h}}\end{DoxyCompactItemize}

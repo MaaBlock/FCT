@@ -1,0 +1,62 @@
+\doxysection{Pass\+Source.\+h}
+\hypertarget{_pass_source_8h_source}{}\label{_pass_source_8h_source}\index{include/FCT/Context/PassSource.h@{include/FCT/Context/PassSource.h}}
+\mbox{\hyperlink{_pass_source_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00001}00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00002}00002\ \textcolor{comment}{//\ Created\ by\ Administrator\ on\ 2025/3/20.}}
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00003}00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_third_party_8h}{../ThirdParty.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00006}00006\ \textcolor{preprocessor}{\#ifndef\ ANDROIDTUTORIAL\_PASSSOURCE\_H}}
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00007}00007\ \textcolor{preprocessor}{\#define\ ANDROIDTUTORIAL\_PASSSOURCE\_H}}
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00009}00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_f_c_t}{FCT}}\ \{}
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00010}\mbox{\hyperlink{struct_f_c_t_1_1_pass_source}{00010}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_f_c_t_1_1_pass_source_ae2e8a424534a3bf44b6bb6620145837f}{PassSource}}\ \{}
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00011}\mbox{\hyperlink{struct_f_c_t_1_1_pass_source_ae2e8a424534a3bf44b6bb6620145837f}{00011}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_f_c_t_1_1_pass_source_ae2e8a424534a3bf44b6bb6620145837f}{PassSource}}(\textcolor{keyword}{const}\ std::string\&\ source)\ \{\ \textcolor{comment}{//不能有多余的空格，为了效率，并没有额外处理空格}}
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00012}00012\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ dotPos\ =\ source.find(\textcolor{charliteral}{'.'});}
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00013}00013\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dotPos\ !=\ std::string::npos)\ \{}
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00014}00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_f_c_t_1_1_pass_source_a71dc2b14870e11ce983c405e104a501e}{oper}}\ =\ source.substr(0,\ dotPos);}
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_f_c_t_1_1_pass_source_ae8b4ebd36873d0445580e3d724f38056}{name}}\ =\ source.substr(dotPos\ +\ 1);}
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_f_c_t_1_1_pass_source_ae8b4ebd36873d0445580e3d724f38056}{name}}\ =\ source;}
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00019}00019\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00021}\mbox{\hyperlink{struct_f_c_t_1_1_pass_source_a16030a24baeda02d0e16ddf831e67a66}{00021}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_f_c_t_1_1_pass_source_a16030a24baeda02d0e16ddf831e67a66}{PassSource}}(\textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{struct_f_c_t_1_1_pass_source_a71dc2b14870e11ce983c405e104a501e}{oper}},\ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{struct_f_c_t_1_1_pass_source_ae8b4ebd36873d0445580e3d724f38056}{name}})}
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{struct_f_c_t_1_1_pass_source_a71dc2b14870e11ce983c405e104a501e}{oper}}(\mbox{\hyperlink{struct_f_c_t_1_1_pass_source_a71dc2b14870e11ce983c405e104a501e}{oper}}),\ \mbox{\hyperlink{struct_f_c_t_1_1_pass_source_ae8b4ebd36873d0445580e3d724f38056}{name}}(\mbox{\hyperlink{struct_f_c_t_1_1_pass_source_ae8b4ebd36873d0445580e3d724f38056}{name}})\ \{\}}
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00024}\mbox{\hyperlink{struct_f_c_t_1_1_pass_source_aa5285cd446bd1aa9972ca47c8fa6ec9b}{00024}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_f_c_t_1_1_pass_source_ae2e8a424534a3bf44b6bb6620145837f}{PassSource}}\ \mbox{\hyperlink{struct_f_c_t_1_1_pass_source_aa5285cd446bd1aa9972ca47c8fa6ec9b}{operator|}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_f_c_t_1_1_pass_source_ae2e8a424534a3bf44b6bb6620145837f}{PassSource}}\&\ rhs)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_f_c_t_1_1_pass_source_ae2e8a424534a3bf44b6bb6620145837f}{PassSource}}\ result\ =\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ result.\mbox{\hyperlink{struct_f_c_t_1_1_pass_source_a248866ab628504c968a12d2008f85a50}{alternatives}}.push\_back(rhs);}
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00028}00028\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00030}\mbox{\hyperlink{struct_f_c_t_1_1_pass_source_a9a5d04d6e022447721114936175765e9}{00030}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{struct_f_c_t_1_1_pass_source_a9a5d04d6e022447721114936175765e9}{getName}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_f_c_t_1_1_pass_source_ae8b4ebd36873d0445580e3d724f38056}{name}};\ \}}
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00032}\mbox{\hyperlink{struct_f_c_t_1_1_pass_source_a52d8872f26a2abb1fbf74b6cc5f5be12}{00032}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{struct_f_c_t_1_1_pass_source_a52d8872f26a2abb1fbf74b6cc5f5be12}{getOperator}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_f_c_t_1_1_pass_source_a71dc2b14870e11ce983c405e104a501e}{oper}};\ \}}
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00034}\mbox{\hyperlink{struct_f_c_t_1_1_pass_source_ae6ee812381b0c8fb49c2219b7579a842}{00034}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<PassSource>\&\ \mbox{\hyperlink{struct_f_c_t_1_1_pass_source_ae6ee812381b0c8fb49c2219b7579a842}{getAlternatives}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_f_c_t_1_1_pass_source_a248866ab628504c968a12d2008f85a50}{alternatives}};\ \}}
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00036}\mbox{\hyperlink{struct_f_c_t_1_1_pass_source_abf5feb191a212c45bd26652edabce4b5}{00036}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_f_c_t_1_1_pass_source_abf5feb191a212c45bd26652edabce4b5}{hasAlternatives}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ !\mbox{\hyperlink{struct_f_c_t_1_1_pass_source_a248866ab628504c968a12d2008f85a50}{alternatives}}.empty();\ \}}
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00038}\mbox{\hyperlink{struct_f_c_t_1_1_pass_source_a9afc9b1f9cbea02a48156156b08abc2b}{00038}}\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{struct_f_c_t_1_1_pass_source_a9afc9b1f9cbea02a48156156b08abc2b}{getFullIdentifier}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_f_c_t_1_1_pass_source_a71dc2b14870e11ce983c405e104a501e}{oper}}.empty()\ ?\ \mbox{\hyperlink{struct_f_c_t_1_1_pass_source_ae8b4ebd36873d0445580e3d724f38056}{name}}\ :\ (\mbox{\hyperlink{struct_f_c_t_1_1_pass_source_a71dc2b14870e11ce983c405e104a501e}{oper}}\ +\ \textcolor{stringliteral}{"{}."{}}\ +\ \mbox{\hyperlink{struct_f_c_t_1_1_pass_source_ae8b4ebd36873d0445580e3d724f38056}{name}});}
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00040}00040\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00042}\mbox{\hyperlink{struct_f_c_t_1_1_pass_source_a10675cc95da9a8e8bde0e06bef65f139}{00042}}\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{struct_f_c_t_1_1_pass_source_a10675cc95da9a8e8bde0e06bef65f139}{toString}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ result\ =\ \mbox{\hyperlink{struct_f_c_t_1_1_pass_source_a9afc9b1f9cbea02a48156156b08abc2b}{getFullIdentifier}}();}
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ alt\ :\ \mbox{\hyperlink{struct_f_c_t_1_1_pass_source_a248866ab628504c968a12d2008f85a50}{alternatives}})\ \{}
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result\ +=\ \textcolor{stringliteral}{"{}\ |\ "{}}\ +\ alt.getFullIdentifier();}
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00050}\mbox{\hyperlink{struct_f_c_t_1_1_pass_source_ae8b4ebd36873d0445580e3d724f38056}{00050}}\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{struct_f_c_t_1_1_pass_source_ae8b4ebd36873d0445580e3d724f38056}{name}};}
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00051}\mbox{\hyperlink{struct_f_c_t_1_1_pass_source_a71dc2b14870e11ce983c405e104a501e}{00051}}\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{struct_f_c_t_1_1_pass_source_a71dc2b14870e11ce983c405e104a501e}{oper}};}
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00052}\mbox{\hyperlink{struct_f_c_t_1_1_pass_source_a248866ab628504c968a12d2008f85a50}{00052}}\ \ \ \ \ \ \ \ \ std::vector<PassSource>\ \mbox{\hyperlink{struct_f_c_t_1_1_pass_source_a248866ab628504c968a12d2008f85a50}{alternatives}};}
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00053}00053\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00054}00054\ \}}
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_pass_source_8h_source_l00056}00056\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//ANDROIDTUTORIAL\_PASSSOURCE\_H}}
+
+\end{DoxyCode}

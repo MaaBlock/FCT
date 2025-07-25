@@ -1,0 +1,174 @@
+\doxysection{FCT\+::RHI\+::VK\+\_\+\+Depth\+Stencil\+State类 参考}
+\hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___depth_stencil_state}{}\label{class_f_c_t_1_1_r_h_i_1_1_v_k___depth_stencil_state}\index{FCT::RHI::VK\_DepthStencilState@{FCT::RHI::VK\_DepthStencilState}}
+
+
+{\ttfamily \#include $<$VK\+\_\+\+Depth\+Stencil\+State.\+h$>$}
+
+类 FCT\+::RHI\+::VK\+\_\+\+Depth\+Stencil\+State 继承关系图\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_f_c_t_1_1_r_h_i_1_1_v_k___depth_stencil_state}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___depth_stencil_state_ad001d86255bc64b9181428f2780cee65}{VK\+\_\+\+Depth\+Stencil\+State}} (\mbox{\hyperlink{class_f_c_t_1_1_v_k___context}{VK\+\_\+\+Context}} \texorpdfstring{$\ast$}{*}ctx)
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___depth_stencil_state_a017a9e288e611725fe6b3736ecf741ab}{\texorpdfstring{$\sim$}{\string~}\+VK\+\_\+\+Depth\+Stencil\+State}} () override=default
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___depth_stencil_state_af809dfa675e3ec435296c433ee1e00b0}{create}} () override
+\item 
+vk\+::\+Pipeline\+Depth\+Stencil\+State\+Create\+Info \& \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___depth_stencil_state_a2d676c4e0fca1239de5092aa115fd1a8}{get\+Create\+Info}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public 成员函数 继承自 \mbox{\hyperlink{class_f_c_t_1_1_depth_stencil_state}{FCT\+::\+Depth\+Stencil\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_depth_stencil_state_ac7d32b971b50162bbae28a51688ad0ac}{\texorpdfstring{$\sim$}{\string~}\+Depth\+Stencil\+State}} () override=default
+\item 
+bool \mbox{\hyperlink{class_f_c_t_1_1_depth_stencil_state_a9ff3aa8855e5bb552520d95ccddbd14d}{depth\+Test\+Enable}} () const
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_depth_stencil_state_aab8027d0f0b8263cfb09d2e8342b8a2a}{depth\+Test\+Enable}} (bool enable)
+\item 
+bool \mbox{\hyperlink{class_f_c_t_1_1_depth_stencil_state_a2257c10674df76933f97a85fd8e8bac0}{depth\+Write\+Enable}} () const
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_depth_stencil_state_a5265a7718877505425c0e9b3d9a60f89}{depth\+Write\+Enable}} (bool enable)
+\item 
+\mbox{\hyperlink{namespace_f_c_t_ae72266666726fb6ad7e1a218a340b4c8}{Compare\+Op}} \mbox{\hyperlink{class_f_c_t_1_1_depth_stencil_state_a933b343d07b1a5e6f32f764ef545bccc}{depth\+Compare\+Op}} () const
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_depth_stencil_state_a41e7fc1f50aebb76f933870e6bb8affe}{depth\+Compare\+Op}} (\mbox{\hyperlink{namespace_f_c_t_ae72266666726fb6ad7e1a218a340b4c8}{Compare\+Op}} op)
+\item 
+bool \mbox{\hyperlink{class_f_c_t_1_1_depth_stencil_state_a4849245467bf25560d83aa8e3a8af146}{depth\+Bounds\+Test\+Enable}} () const
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_depth_stencil_state_a99f4278c45b6930be711e01a87d34702}{depth\+Bounds\+Test\+Enable}} (bool enable)
+\item 
+bool \mbox{\hyperlink{class_f_c_t_1_1_depth_stencil_state_a227e0ace13c22ce4409584501d5e2321}{stencil\+Test\+Enable}} () const
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_depth_stencil_state_aa4d6be4b7b271c93b4dffb6c26bf1f6a}{stencil\+Test\+Enable}} (bool enable)
+\item 
+const \mbox{\hyperlink{struct_f_c_t_1_1_stencil_op_state}{Stencil\+Op\+State}} \& \mbox{\hyperlink{class_f_c_t_1_1_depth_stencil_state_a28a1b38f345c61840465b4560c155541}{front}} () const
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_depth_stencil_state_a242a4d661ed313c9c08c14fa57de95c6}{front}} (const \mbox{\hyperlink{struct_f_c_t_1_1_stencil_op_state}{Stencil\+Op\+State}} \&state)
+\item 
+const \mbox{\hyperlink{struct_f_c_t_1_1_stencil_op_state}{Stencil\+Op\+State}} \& \mbox{\hyperlink{class_f_c_t_1_1_depth_stencil_state_a624c93648e85549da5139c2554306418}{back}} () const
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_depth_stencil_state_aaffe127f6ae79fed98fd00b43928a555}{back}} (const \mbox{\hyperlink{struct_f_c_t_1_1_stencil_op_state}{Stencil\+Op\+State}} \&state)
+\item 
+float \mbox{\hyperlink{class_f_c_t_1_1_depth_stencil_state_aa9b59d00e5cb112b3ada572c90b09932}{min\+Depth\+Bounds}} () const
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_depth_stencil_state_aee47d5546744d1bdfb429ea42016b268}{min\+Depth\+Bounds}} (float value)
+\item 
+float \mbox{\hyperlink{class_f_c_t_1_1_depth_stencil_state_a6bc0e53dbbc4de641ef97fc1893c5d2e}{max\+Depth\+Bounds}} () const
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_depth_stencil_state_abaa3d9401f842b2be403f4a73308ccaa}{max\+Depth\+Bounds}} (float value)
+\item 
+\mbox{\hyperlink{namespace_f_c_t_a0100ef6b5595f1c6e1ca08fb82dc0f67}{Pipeline\+Resource\+Type}} \mbox{\hyperlink{class_f_c_t_1_1_depth_stencil_state_a098436493ee193b23be8a2dee4ef1e0f}{get\+Type}} () const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public 成员函数 继承自 \mbox{\hyperlink{class_f_c_t_1_1_i_pipeline_resource}{FCT\+::\+IPipeline\+Resource}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_i_pipeline_resource_a8db158a7ce7f29a72763cbc336a36655}{\texorpdfstring{$\sim$}{\string~}\+IPipeline\+Resource}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public 成员函数 继承自 \mbox{\hyperlink{class_f_c_t_1_1_ref_count}{FCT\+::\+Ref\+Count}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_ref_count_a681b72d7bd32fd7e4b9ec861cd74370e}{Ref\+Count}} ()
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_ref_count_ae2948e0ae155079956caced23c85bb2b}{Ref\+Count}} (size\+\_\+t ref\+Count)
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_ref_count_af028e09f8a1492fdd5c788b6eb75754f}{\texorpdfstring{$\sim$}{\string~}\+Ref\+Count}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a59c2f131121de6503df8d363b6853d45}{add\+Ref}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_aaf57b2df79545f2b71ae9087865dee4c}{release}} ()
+\item 
+size\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a33146ec5804be422936519224a3a7b3f}{count}} ()
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_ref_count_a474ad3a918f2e87d75ff16075e1caeec}{operator bool}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{额外继承的成员函数}
+\doxysubsection*{Protected 成员函数 继承自 \mbox{\hyperlink{class_f_c_t_1_1_ref_count}{FCT\+::\+Ref\+Count}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a0fea0bed50f726d3e11ddde802dac5da}{delete\+This}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected 属性 继承自 \mbox{\hyperlink{class_f_c_t_1_1_depth_stencil_state}{FCT\+::\+Depth\+Stencil\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_f_c_t_1_1_depth_stencil_state_a5fdd96b55c961503898fb7bf500bd005}{m\+\_\+depth\+Test\+Enable}} = true
+\item 
+bool \mbox{\hyperlink{class_f_c_t_1_1_depth_stencil_state_a3eb377e38ad47bbc3eafa0b39fc2e394}{m\+\_\+depth\+Write\+Enable}} = true
+\item 
+\mbox{\hyperlink{namespace_f_c_t_ae72266666726fb6ad7e1a218a340b4c8}{Compare\+Op}} \mbox{\hyperlink{class_f_c_t_1_1_depth_stencil_state_abfb4d318fbc779b366757102870eecbf}{m\+\_\+depth\+Compare\+Op}} = \mbox{\hyperlink{namespace_f_c_t_ae72266666726fb6ad7e1a218a340b4c8aa4cbdbb6070a5abb35fc95ecf1e22c14}{Compare\+Op\+::\+Less\+Or\+Equal}}
+\item 
+bool \mbox{\hyperlink{class_f_c_t_1_1_depth_stencil_state_a29e706e3fa67606adf121b0225c70655}{m\+\_\+depth\+Bounds\+Test\+Enable}} = false
+\item 
+bool \mbox{\hyperlink{class_f_c_t_1_1_depth_stencil_state_accdb39eb3c2a38516fd096324826d74e}{m\+\_\+stencil\+Test\+Enable}} = false
+\item 
+\mbox{\hyperlink{struct_f_c_t_1_1_stencil_op_state}{Stencil\+Op\+State}} \mbox{\hyperlink{class_f_c_t_1_1_depth_stencil_state_a4f0f1b83e20157685af5946e9ffab3bf}{m\+\_\+front}}
+\item 
+\mbox{\hyperlink{struct_f_c_t_1_1_stencil_op_state}{Stencil\+Op\+State}} \mbox{\hyperlink{class_f_c_t_1_1_depth_stencil_state_a1ba29da1ff2cf3cff84b26d6e413d4fb}{m\+\_\+back}}
+\item 
+float \mbox{\hyperlink{class_f_c_t_1_1_depth_stencil_state_ad354fe3cbf1c7ab219daf256f154ea5f}{m\+\_\+min\+Depth\+Bounds}} = 0.\+0f
+\item 
+float \mbox{\hyperlink{class_f_c_t_1_1_depth_stencil_state_a3808cfa358b87d428c9aa2162586fe1e}{m\+\_\+max\+Depth\+Bounds}} = 1.\+0f
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected 属性 继承自 \mbox{\hyperlink{class_f_c_t_1_1_ref_count}{FCT\+::\+Ref\+Count}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::atomic$<$ size\+\_\+t $>$ \mbox{\hyperlink{class_f_c_t_1_1_ref_count_aca88529f9b473d326168fa808fd02300}{m\+\_\+ref\+Count}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+
+
+在文件 \mbox{\hyperlink{_v_k___depth_stencil_state_8h_source}{VK\+\_\+\+Depth\+Stencil\+State.\+h}} 第 \mbox{\hyperlink{_v_k___depth_stencil_state_8h_source_l00014}{14}} 行定义.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___depth_stencil_state_doc-constructors}
+\doxysubsection{构造及析构函数说明}
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___depth_stencil_state_ad001d86255bc64b9181428f2780cee65}\index{FCT::RHI::VK\_DepthStencilState@{FCT::RHI::VK\_DepthStencilState}!VK\_DepthStencilState@{VK\_DepthStencilState}}
+\index{VK\_DepthStencilState@{VK\_DepthStencilState}!FCT::RHI::VK\_DepthStencilState@{FCT::RHI::VK\_DepthStencilState}}
+\doxysubsubsection{\texorpdfstring{VK\_DepthStencilState()}{VK\_DepthStencilState()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_v_k___depth_stencil_state_ad001d86255bc64b9181428f2780cee65} 
+FCT\+::\+RHI\+::\+VK\+\_\+\+Depth\+Stencil\+State\+::\+VK\+\_\+\+Depth\+Stencil\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_v_k___context}{VK\+\_\+\+Context}} \texorpdfstring{$\ast$}{*}}]{ctx}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___depth_stencil_state_a017a9e288e611725fe6b3736ecf741ab}\index{FCT::RHI::VK\_DepthStencilState@{FCT::RHI::VK\_DepthStencilState}!````~VK\_DepthStencilState@{\texorpdfstring{$\sim$}{\string~}VK\_DepthStencilState}}
+\index{````~VK\_DepthStencilState@{\texorpdfstring{$\sim$}{\string~}VK\_DepthStencilState}!FCT::RHI::VK\_DepthStencilState@{FCT::RHI::VK\_DepthStencilState}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}VK\_DepthStencilState()}{\string~VK\_DepthStencilState()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_v_k___depth_stencil_state_a017a9e288e611725fe6b3736ecf741ab} 
+FCT\+::\+RHI\+::\+VK\+\_\+\+Depth\+Stencil\+State\+::\texorpdfstring{$\sim$}{\string~}\+VK\+\_\+\+Depth\+Stencil\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___depth_stencil_state_doc-func-members}
+\doxysubsection{成员函数说明}
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___depth_stencil_state_af809dfa675e3ec435296c433ee1e00b0}\index{FCT::RHI::VK\_DepthStencilState@{FCT::RHI::VK\_DepthStencilState}!create@{create}}
+\index{create@{create}!FCT::RHI::VK\_DepthStencilState@{FCT::RHI::VK\_DepthStencilState}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_v_k___depth_stencil_state_af809dfa675e3ec435296c433ee1e00b0} 
+void FCT\+::\+RHI\+::\+VK\+\_\+\+Depth\+Stencil\+State\+::create (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+实现了 \mbox{\hyperlink{class_f_c_t_1_1_depth_stencil_state_a0c82431e95880b99474c3d5d7d5b3f45}{FCT\+::\+Depth\+Stencil\+State}}.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___depth_stencil_state_a2d676c4e0fca1239de5092aa115fd1a8}\index{FCT::RHI::VK\_DepthStencilState@{FCT::RHI::VK\_DepthStencilState}!getCreateInfo@{getCreateInfo}}
+\index{getCreateInfo@{getCreateInfo}!FCT::RHI::VK\_DepthStencilState@{FCT::RHI::VK\_DepthStencilState}}
+\doxysubsubsection{\texorpdfstring{getCreateInfo()}{getCreateInfo()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_v_k___depth_stencil_state_a2d676c4e0fca1239de5092aa115fd1a8} 
+vk\+::\+Pipeline\+Depth\+Stencil\+State\+Create\+Info \& FCT\+::\+RHI\+::\+VK\+\_\+\+Depth\+Stencil\+State\+::get\+Create\+Info (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_v_k___depth_stencil_state_8h_source}{VK\+\_\+\+Depth\+Stencil\+State.\+h}} 第 \mbox{\hyperlink{_v_k___depth_stencil_state_8h_source_l00021}{21}} 行定义.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\+FCT/\+RHI/\mbox{\hyperlink{_v_k___depth_stencil_state_8h}{VK\+\_\+\+Depth\+Stencil\+State.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,76 @@
+\doxysection{FCTAPI.\+h}
+\hypertarget{_f_c_t_a_p_i_8h_source}{}\label{_f_c_t_a_p_i_8h_source}\index{include/FCT/FCTAPI.h@{include/FCT/FCTAPI.h}}
+\mbox{\hyperlink{_f_c_t_a_p_i_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00001}00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00002}00002\ \textcolor{comment}{//\ Created\ by\ Administrator\ on\ 2025/2/27.}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00003}00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00005}00005\ \textcolor{preprocessor}{\#ifndef\ TUTORIAL\_FCTAPI\_H}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00006}00006\ \textcolor{preprocessor}{\#define\ TUTORIAL\_FCTAPI\_H}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_third_party_8h}{ThirdParty.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{headers_8h}{headers.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00009}00009\ \textcolor{preprocessor}{\#ifdef\ FCT\_ANDROID}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_android___window_8h}{./UI/Android\_Window.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_android___u_i_common_8h}{./UI/Android\_UICommon.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00012}00012\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00013}00013\ \textcolor{preprocessor}{\#ifdef\ FCT\_USE\_VULKAN}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v_k___context_common_8h}{./Context/VK\_ContextCommon.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00015}00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v_k___context_8h}{./Context/VK\_Context.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00016}00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_context_2_v_k___vertex_shader_8h}{./Context/VK\_VertexShader.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00017}00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v_k___swapchain_8h}{./RHI/VK\_Swapchain.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00018}00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v_k___render_pass_8h}{./Context/VK\_RenderPass.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00019}00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_r_h_i_2_v_k___vertex_shader_8h}{./RHI/VK\_VertexShader.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00020}00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v_k___pixel_shader_8h}{./RHI/VK\_PixelShader.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00021}00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v_k___input_layout_8h}{./RHI/VK\_InputLayout.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00022}00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v_k___viewport_state_8h}{./RHI/VK\_ViewportState.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00023}00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v_k___rasterization_state_8h}{./RHI/VK\_RasterizationState.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00024}00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v_k___blend_state_8h}{./RHI/VK\_BlendState.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00025}00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v_k___rasterization_pipeline_8h}{./RHI/VK\_RasterizationPipeline.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00026}00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v_k___traditional_pipeline_8h}{./RHI/VK\_TraditionalPipeline.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00027}00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v_k___pass_group_8h}{./RHI/VK\_PassGroup.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00028}00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v_k___image_8h}{./RHI/VK\_Image.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00029}00029\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v_k___render_target_view_8h}{./RHI/VK\_RenderTargetView.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00030}00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v_k___pass_8h}{./RHI/VK\_Pass.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00031}00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v_k___pixel_shader_8h}{./RHI/VK\_PixelShader.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00032}00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_r_h_i_2_v_k___vertex_shader_8h}{./RHI/VK\_VertexShader.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00033}00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v_k___traditional_pipeline_8h}{./RHI/VK\_TraditionalPipeline.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00034}00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v_k___command_pool_8h}{./RHI/VK\_CommandPool.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00035}00035\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v_k___command_buffer_8h}{./RHI/VK\_CommandBuffer.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00036}00036\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v_k___semaphore_8h}{./RHI/VK\_Semaphore.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00037}00037\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v_k___fence_8h}{./RHI/VK\_Fence.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00038}00038\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v_k___shader_binary_8h}{./RHI/VK\_ShaderBinary.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00039}00039\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v_k___vertex_buffer_8h}{./RHI/VK\_VertexBuffer.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00040}00040\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v_k___index_buffer_8h}{./RHI/VK\_IndexBuffer.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00041}00041\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v_k___const_buffer_8h}{./RHI/VK\_ConstBuffer.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00042}00042\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v_k___descriptor_pool_8h}{./RHI/VK\_DescriptorPool.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00043}00043\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v_k___texture_view_8h}{./RHI/VK\_TextureView.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00044}00044\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v_k___pass_resource_8h}{./Context/VK\_PassResource.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00045}00045\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v_k___sampler_8h}{./RHI/VK\_Sampler.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00046}00046\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v_k___depth_stencil_view_8h}{./RHI/VK\_DepthStencilView.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00047}00047\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v_k___depth_stencil_state_8h}{./RHI/VK\_DepthStencilState.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00048}00048\ \textcolor{comment}{//\#include\ "{}./Context/VK\_Image.h"{}}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00049}00049\ \textcolor{preprocessor}{\#\ include\ "{}\mbox{\hyperlink{_v_k___semaphore_pool_8h}{./Context/VK\_SemaphorePool.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00050}00050\ \textcolor{preprocessor}{\#\ include\ "{}\mbox{\hyperlink{_v_k___fence_pool_8h}{./Context/VK\_FencePool.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00051}00051\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00052}00052\ \textcolor{comment}{//\#include\ "{}./Runtime/FCT\_Runtime.h"{}}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00053}00053\ \textcolor{preprocessor}{\#ifdef\ FCT\_ANDROID}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00054}00054\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_android___runtime_8h}{./Runtime/Android\_Runtime.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00055}00055\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00056}00056\ \textcolor{preprocessor}{\#ifdef\ FCT\_USE\_GLFW}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00057}00057\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_g_l_f_w___window_8h}{./UI/GLFW\_Window.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00058}00058\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_g_l_f_w___u_i_common_8h}{./UI/GLFW\_UICommon.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00059}00059\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00060}00060\ \textcolor{preprocessor}{\#ifdef\ FCT\_USE\_SHADERC}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00061}00061\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_shaderc___shader_compiler_8h}{./Context/Shaderc\_ShaderCompiler.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00062}00062\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00063}00063\ \textcolor{preprocessor}{\#ifdef\ FCT\_USE\_FREEIMAGE}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00064}00064\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_free_image___image_loader_8h}{./ImageLoader//FreeImage\_ImageLoader.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00065}00065\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00066}00066\ \textcolor{preprocessor}{\#ifdef\ FCT\_USE\_ASSIMP}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00067}00067\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_assimp___model_loader_8h}{./ModelLoader/Assimp\_ModelLoader.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00068}00068\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_f_c_t_a_p_i_8h_source_l00070}00070\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//TUTORIAL\_FCTAPI\_H}}
+
+\end{DoxyCode}

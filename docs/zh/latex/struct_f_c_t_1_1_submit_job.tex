@@ -1,0 +1,100 @@
+\doxysection{FCT\+::Submit\+Job结构体 参考}
+\hypertarget{struct_f_c_t_1_1_submit_job}{}\label{struct_f_c_t_1_1_submit_job}\index{FCT::SubmitJob@{FCT::SubmitJob}}
+
+
+{\ttfamily \#include $<$Job.\+h$>$}
+
+类 FCT\+::Submit\+Job 继承关系图\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{struct_f_c_t_1_1_submit_job}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespace_f_c_t_a819fbd2d7d7097dac44202134baccf09}{Job\+Type}} \mbox{\hyperlink{struct_f_c_t_1_1_submit_job_a2ec3cb1b18b0b85f5235372fe224ce57}{get\+Type}} () const override
+\item 
+virtual void \mbox{\hyperlink{struct_f_c_t_1_1_submit_job_a5d39579346aa806a2d446faba06ff5f8}{submit}} (\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer}{RHI\+::\+Command\+Buffer}} \texorpdfstring{$\ast$}{*}cmd\+Buf)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public 成员函数 继承自 \mbox{\hyperlink{class_f_c_t_1_1_ref_count}{FCT\+::\+Ref\+Count}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_ref_count_a681b72d7bd32fd7e4b9ec861cd74370e}{Ref\+Count}} ()
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_ref_count_ae2948e0ae155079956caced23c85bb2b}{Ref\+Count}} (size\+\_\+t ref\+Count)
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_ref_count_af028e09f8a1492fdd5c788b6eb75754f}{\texorpdfstring{$\sim$}{\string~}\+Ref\+Count}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a59c2f131121de6503df8d363b6853d45}{add\+Ref}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_aaf57b2df79545f2b71ae9087865dee4c}{release}} ()
+\item 
+size\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a33146ec5804be422936519224a3a7b3f}{count}} ()
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_ref_count_a474ad3a918f2e87d75ff16075e1caeec}{operator bool}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{额外继承的成员函数}
+\doxysubsection*{Protected 成员函数 继承自 \mbox{\hyperlink{class_f_c_t_1_1_ref_count}{FCT\+::\+Ref\+Count}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a0fea0bed50f726d3e11ddde802dac5da}{delete\+This}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected 属性 继承自 \mbox{\hyperlink{class_f_c_t_1_1_ref_count}{FCT\+::\+Ref\+Count}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::atomic$<$ size\+\_\+t $>$ \mbox{\hyperlink{class_f_c_t_1_1_ref_count_aca88529f9b473d326168fa808fd02300}{m\+\_\+ref\+Count}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+
+
+在文件 \mbox{\hyperlink{_job_8h_source}{Job.\+h}} 第 \mbox{\hyperlink{_job_8h_source_l00135}{135}} 行定义.
+
+
+
+\label{doc-func-members}
+\Hypertarget{struct_f_c_t_1_1_submit_job_doc-func-members}
+\doxysubsection{成员函数说明}
+\Hypertarget{struct_f_c_t_1_1_submit_job_a2ec3cb1b18b0b85f5235372fe224ce57}\index{FCT::SubmitJob@{FCT::SubmitJob}!getType@{getType}}
+\index{getType@{getType}!FCT::SubmitJob@{FCT::SubmitJob}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_submit_job_a2ec3cb1b18b0b85f5235372fe224ce57} 
+\mbox{\hyperlink{namespace_f_c_t_a819fbd2d7d7097dac44202134baccf09}{Job\+Type}} FCT\+::\+Submit\+Job\+::get\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+实现了 \mbox{\hyperlink{struct_f_c_t_1_1_job_a7ceea8a4c0389c95c5df4451cb416fab}{FCT\+::\+Job}}.
+
+
+
+被 \mbox{\hyperlink{struct_f_c_t_1_1_viewport_job_aa40d27a275d26080b8536e28bb1fab51}{FCT\+::\+Viewport\+Job}} 重载.
+
+
+
+在文件 \mbox{\hyperlink{_job_8h_source}{Job.\+h}} 第 \mbox{\hyperlink{_job_8h_source_l00137}{137}} 行定义.
+
+\Hypertarget{struct_f_c_t_1_1_submit_job_a5d39579346aa806a2d446faba06ff5f8}\index{FCT::SubmitJob@{FCT::SubmitJob}!submit@{submit}}
+\index{submit@{submit}!FCT::SubmitJob@{FCT::SubmitJob}}
+\doxysubsubsection{\texorpdfstring{submit()}{submit()}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_submit_job_a5d39579346aa806a2d446faba06ff5f8} 
+virtual void FCT\+::\+Submit\+Job\+::submit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer}{RHI\+::\+Command\+Buffer}} \texorpdfstring{$\ast$}{*}}]{cmd\+Buf}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+实现了 \mbox{\hyperlink{struct_f_c_t_1_1_job_a875ef854b3268c18ca1e6e5ef4e1d980}{FCT\+::\+Job}}.
+
+
+
+被 \mbox{\hyperlink{class_f_c_t_1_1_vertex_submit_job_a7046f00757bf73a98198916070c67507}{FCT\+::\+Vertex\+Submit\+Job}} , 以及 \mbox{\hyperlink{struct_f_c_t_1_1_viewport_job_ad2ed9ba2578573398c4f7267001329e0}{FCT\+::\+Viewport\+Job}} 重载.
+
+
+
+在文件 \mbox{\hyperlink{_job_8h_source}{Job.\+h}} 第 \mbox{\hyperlink{_job_8h_source_l00141}{141}} 行定义.
+
+
+
+该结构体的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\+FCT/\+Context/\mbox{\hyperlink{_job_8h}{Job.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,554 @@
+\doxysection{FCT\+::RHI\+::Swapchain类 参考}
+\hypertarget{class_f_c_t_1_1_r_h_i_1_1_swapchain}{}\label{class_f_c_t_1_1_r_h_i_1_1_swapchain}\index{FCT::RHI::Swapchain@{FCT::RHI::Swapchain}}
+
+
+{\ttfamily \#include $<$Swapcain.\+h$>$}
+
+类 FCT\+::RHI\+::Swapchain 继承关系图\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_f_c_t_1_1_r_h_i_1_1_swapchain}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_a49f1efcb33ba0c01b59e6f1eed3a949d}{Swapchain}} ()
+\item 
+virtual uint32\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_a148d4a73ae353bec80e66252e7218fdb}{get\+Image\+Count}} () const =0
+\item 
+virtual \mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182}{Samples}} \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_ab95df779bd9caf7e56123451062110de}{get\+Sample\+Count}} () const =0
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_af0171422f73c0469d41c9aa7f2b42e13}{\texorpdfstring{$\sim$}{\string~}\+Swapchain}} ()=default
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_a37854167ceefb6de32152b2ca715c420}{native\+Handle}} (void \texorpdfstring{$\ast$}{*}handle)
+\begin{DoxyCompactList}\small\item\em 传递 surface \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_a853393e879382a74faf92aa6a5ac4402}{size}} (int width, int height)
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_image}{FCT\+::\+Image}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_ab0e619b914c32692739269902d846f1a}{image}} () const =0
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_ac2677b2e3006628d6cb5ff2e2b6540aa}{enable\+Depth\+Buffer}} (\mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4}{Format}} format)=0
+\begin{DoxyCompactList}\small\item\em 启用深度模板 缓存 \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_a2d2f24f17d5920ce59aa336453be89d9}{create}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_a89c3c3b767ee5aa142a017f96c45c73d}{present}} ()=0
+\begin{DoxyCompactList}\small\item\em 提交present命令 \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4}{Format}} \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_ad617dcf25514c881ad50262159138065}{get\+Format}} () const =0
+\item 
+virtual \mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182}{Samples}} \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_af6d290e35af414a705ccef7c312f69d4}{get\+Samples}} () const =0
+\item 
+virtual bool \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_aed11043bd38b05c5854cd9d80006d74d}{acquire\+First\+Image}} ()=0
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_image_render_target}{Image\+Render\+Target}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_a06ecb64faf87b22257d3c04037629bd2}{target}} () const =0
+\begin{DoxyCompactList}\small\item\em 获取交换链对应的target \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore}{RHI\+::\+Semaphore}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_a5dfa73f0a9bbd2076df3940d5a993a9a}{get\+Image\+Available\+Semaphore}} ()=0
+\begin{DoxyCompactList}\small\item\em 用于渲染命令同步的，获取到 图像，gpu可以执行渲染命令 \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_a01f20dac4886efe9d4d4c8d3946f0c90}{set\+Present\+Finsh\+Semaphore}} (\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore}{RHI\+::\+Semaphore}} \texorpdfstring{$\ast$}{*}semaphore)=0
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_a64195f6228c3a4ef899691d4cc320076}{need\+Recreate}} (int width, int height)=0
+\begin{DoxyCompactList}\small\item\em 用于窗口通知需要 recreate \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_aae3b542a3aef2e630cea2d06cfd46781}{add\+Render\+Finsh\+Fence}} (\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_fence}{RHI\+::\+Fence}} \texorpdfstring{$\ast$}{*}fence)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_a86fd743e23c8ff6faa8b1ca5104ec38b}{clear\+Render\+Finsh\+Fences}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_a5798d280765548683fd3700767018d3c}{add\+Render\+Finsh\+Semaphore}} (\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore}{RHI\+::\+Semaphore}} \texorpdfstring{$\ast$}{*}semaphore)
+\begin{DoxyCompactList}\small\item\em 渲染完毕以后发出的 信号，是present命令所必须的 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_a238dfb2326230d13926706a576e58cc5}{clear\+Render\+Finsh\+Semaphores}} ()
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_a2e685c8abee78db9c5343ae67d045997}{sync}} ()=0
+\item 
+bool \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_ab39d37cfd02cf2e6f2633b2f9a0fef6c}{has\+Recreated\+In\+This\+Frame}} () const
+\begin{DoxyCompactList}\small\item\em 在sync\+Graph里 的判断是否要recreate节点是否进行了重建交换链， 可持续一帧 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public 成员函数 继承自 \mbox{\hyperlink{class_f_c_t_1_1_ref_count}{FCT\+::\+Ref\+Count}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_ref_count_a681b72d7bd32fd7e4b9ec861cd74370e}{Ref\+Count}} ()
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_ref_count_ae2948e0ae155079956caced23c85bb2b}{Ref\+Count}} (size\+\_\+t ref\+Count)
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_ref_count_af028e09f8a1492fdd5c788b6eb75754f}{\texorpdfstring{$\sim$}{\string~}\+Ref\+Count}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a59c2f131121de6503df8d363b6853d45}{add\+Ref}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_aaf57b2df79545f2b71ae9087865dee4c}{release}} ()
+\item 
+size\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a33146ec5804be422936519224a3a7b3f}{count}} ()
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_ref_count_a474ad3a918f2e87d75ff16075e1caeec}{operator bool}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected 属性}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_fence}{RHI\+::\+Fence}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_ae720ea08e24b310ac7fe0c0ed23c3337}{m\+\_\+render\+Finsh\+Fences}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore}{RHI\+::\+Semaphore}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_ac7b4690e0089f6037b6301d35228f1bf}{m\+\_\+render\+Finsh\+Semaphores}}
+\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_a55d3ce81c7798f71ee31dc03d318f9f2}{m\+\_\+native\+Handle}}
+\begin{DoxyCompactList}\small\item\em 交换链对应的surface \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_a27dc83e42bf02c7dbf2b2f64ddc4f372}{m\+\_\+width}}
+\begin{DoxyCompactList}\small\item\em 创建交换链后得到的实际大小 \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_a721f7212bd66a3a09e8ffc9c8aeff29e}{m\+\_\+height}}
+\begin{DoxyCompactList}\small\item\em 创建交换链后得到的实际大小 \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_acd14cf1b3194f89dbd84a54a3e26c459}{m\+\_\+dst\+Width}} = 0
+\begin{DoxyCompactList}\small\item\em 目标大小 \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_a29e11b945f3dca176cdae92668ebb218}{m\+\_\+dst\+Height}} = 0
+\begin{DoxyCompactList}\small\item\em 目标大小 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_a7baa8e838359215e45fe7b7dd0fa3306}{m\+\_\+has\+Recreated\+In\+This\+Frame}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected 属性 继承自 \mbox{\hyperlink{class_f_c_t_1_1_ref_count}{FCT\+::\+Ref\+Count}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::atomic$<$ size\+\_\+t $>$ \mbox{\hyperlink{class_f_c_t_1_1_ref_count_aca88529f9b473d326168fa808fd02300}{m\+\_\+ref\+Count}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{额外继承的成员函数}
+\doxysubsection*{Protected 成员函数 继承自 \mbox{\hyperlink{class_f_c_t_1_1_ref_count}{FCT\+::\+Ref\+Count}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a0fea0bed50f726d3e11ddde802dac5da}{delete\+This}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+
+
+在文件 \mbox{\hyperlink{_swapcain_8h_source}{Swapcain.\+h}} 第 \mbox{\hyperlink{_swapcain_8h_source_l00015}{15}} 行定义.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_swapchain_doc-constructors}
+\doxysubsection{构造及析构函数说明}
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_swapchain_a49f1efcb33ba0c01b59e6f1eed3a949d}\index{FCT::RHI::Swapchain@{FCT::RHI::Swapchain}!Swapchain@{Swapchain}}
+\index{Swapchain@{Swapchain}!FCT::RHI::Swapchain@{FCT::RHI::Swapchain}}
+\doxysubsubsection{\texorpdfstring{Swapchain()}{Swapchain()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_swapchain_a49f1efcb33ba0c01b59e6f1eed3a949d} 
+FCT\+::\+RHI\+::\+Swapchain\+::\+Swapchain (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_swapcain_8h_source}{Swapcain.\+h}} 第 \mbox{\hyperlink{_swapcain_8h_source_l00018}{18}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_swapchain_af0171422f73c0469d41c9aa7f2b42e13}\index{FCT::RHI::Swapchain@{FCT::RHI::Swapchain}!````~Swapchain@{\texorpdfstring{$\sim$}{\string~}Swapchain}}
+\index{````~Swapchain@{\texorpdfstring{$\sim$}{\string~}Swapchain}!FCT::RHI::Swapchain@{FCT::RHI::Swapchain}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Swapchain()}{\string~Swapchain()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_swapchain_af0171422f73c0469d41c9aa7f2b42e13} 
+virtual FCT\+::\+RHI\+::\+Swapchain\+::\texorpdfstring{$\sim$}{\string~}\+Swapchain (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_swapchain_doc-func-members}
+\doxysubsection{成员函数说明}
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_swapchain_aed11043bd38b05c5854cd9d80006d74d}\index{FCT::RHI::Swapchain@{FCT::RHI::Swapchain}!acquireFirstImage@{acquireFirstImage}}
+\index{acquireFirstImage@{acquireFirstImage}!FCT::RHI::Swapchain@{FCT::RHI::Swapchain}}
+\doxysubsubsection{\texorpdfstring{acquireFirstImage()}{acquireFirstImage()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_swapchain_aed11043bd38b05c5854cd9d80006d74d} 
+virtual bool FCT\+::\+RHI\+::\+Swapchain\+::acquire\+First\+Image (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a58f3695dff033e086411efc7ec36b61b}{FCT\+::\+RHI\+::\+VK\+\_\+\+Swapchain}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_swapchain_aae3b542a3aef2e630cea2d06cfd46781}\index{FCT::RHI::Swapchain@{FCT::RHI::Swapchain}!addRenderFinshFence@{addRenderFinshFence}}
+\index{addRenderFinshFence@{addRenderFinshFence}!FCT::RHI::Swapchain@{FCT::RHI::Swapchain}}
+\doxysubsubsection{\texorpdfstring{addRenderFinshFence()}{addRenderFinshFence()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_swapchain_aae3b542a3aef2e630cea2d06cfd46781} 
+void FCT\+::\+RHI\+::\+Swapchain\+::add\+Render\+Finsh\+Fence (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_fence}{RHI\+::\+Fence}} \texorpdfstring{$\ast$}{*}}]{fence}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyNote}{注解}
+主要用来实现max frame in flight，该fence是渲染所必须的 
+\end{DoxyNote}
+
+\begin{DoxyParams}{参数}
+{\em fence} & 在提交完present后，获取下一帧图像前等待的fence， 既下一个渲染帧的资源渲染完毕的fence \\
+\hline
+\end{DoxyParams}
+
+
+在文件 \mbox{\hyperlink{_swapcain_8h_source}{Swapcain.\+h}} 第 \mbox{\hyperlink{_swapcain_8h_source_l00120}{120}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_swapchain_a5798d280765548683fd3700767018d3c}\index{FCT::RHI::Swapchain@{FCT::RHI::Swapchain}!addRenderFinshSemaphore@{addRenderFinshSemaphore}}
+\index{addRenderFinshSemaphore@{addRenderFinshSemaphore}!FCT::RHI::Swapchain@{FCT::RHI::Swapchain}}
+\doxysubsubsection{\texorpdfstring{addRenderFinshSemaphore()}{addRenderFinshSemaphore()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_swapchain_a5798d280765548683fd3700767018d3c} 
+void FCT\+::\+RHI\+::\+Swapchain\+::add\+Render\+Finsh\+Semaphore (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore}{RHI\+::\+Semaphore}} \texorpdfstring{$\ast$}{*}}]{semaphore}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+渲染完毕以后发出的 信号，是present命令所必须的 
+
+
+\begin{DoxyParams}{参数}
+{\em semaphore} & 渲染完毕以后发出的 信号，是present命令所必须的 \\
+\hline
+\end{DoxyParams}
+
+
+在文件 \mbox{\hyperlink{_swapcain_8h_source}{Swapcain.\+h}} 第 \mbox{\hyperlink{_swapcain_8h_source_l00134}{134}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_swapchain_a86fd743e23c8ff6faa8b1ca5104ec38b}\index{FCT::RHI::Swapchain@{FCT::RHI::Swapchain}!clearRenderFinshFences@{clearRenderFinshFences}}
+\index{clearRenderFinshFences@{clearRenderFinshFences}!FCT::RHI::Swapchain@{FCT::RHI::Swapchain}}
+\doxysubsubsection{\texorpdfstring{clearRenderFinshFences()}{clearRenderFinshFences()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_swapchain_a86fd743e23c8ff6faa8b1ca5104ec38b} 
+void FCT\+::\+RHI\+::\+Swapchain\+::clear\+Render\+Finsh\+Fences (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_swapcain_8h_source}{Swapcain.\+h}} 第 \mbox{\hyperlink{_swapcain_8h_source_l00124}{124}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_swapchain_a238dfb2326230d13926706a576e58cc5}\index{FCT::RHI::Swapchain@{FCT::RHI::Swapchain}!clearRenderFinshSemaphores@{clearRenderFinshSemaphores}}
+\index{clearRenderFinshSemaphores@{clearRenderFinshSemaphores}!FCT::RHI::Swapchain@{FCT::RHI::Swapchain}}
+\doxysubsubsection{\texorpdfstring{clearRenderFinshSemaphores()}{clearRenderFinshSemaphores()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_swapchain_a238dfb2326230d13926706a576e58cc5} 
+void FCT\+::\+RHI\+::\+Swapchain\+::clear\+Render\+Finsh\+Semaphores (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_swapcain_8h_source}{Swapcain.\+h}} 第 \mbox{\hyperlink{_swapcain_8h_source_l00137}{137}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_swapchain_a2d2f24f17d5920ce59aa336453be89d9}\index{FCT::RHI::Swapchain@{FCT::RHI::Swapchain}!create@{create}}
+\index{create@{create}!FCT::RHI::Swapchain@{FCT::RHI::Swapchain}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_swapchain_a2d2f24f17d5920ce59aa336453be89d9} 
+virtual void FCT\+::\+RHI\+::\+Swapchain\+::create (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a446c22557164109d53c6e28555a0f4dd}{FCT\+::\+RHI\+::\+VK\+\_\+\+Swapchain}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_swapchain_ac2677b2e3006628d6cb5ff2e2b6540aa}\index{FCT::RHI::Swapchain@{FCT::RHI::Swapchain}!enableDepthBuffer@{enableDepthBuffer}}
+\index{enableDepthBuffer@{enableDepthBuffer}!FCT::RHI::Swapchain@{FCT::RHI::Swapchain}}
+\doxysubsubsection{\texorpdfstring{enableDepthBuffer()}{enableDepthBuffer()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_swapchain_ac2677b2e3006628d6cb5ff2e2b6540aa} 
+virtual void FCT\+::\+RHI\+::\+Swapchain\+::enable\+Depth\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4}{Format}}}]{format}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+启用深度模板 缓存 
+
+
+\begin{DoxyParams}{参数}
+{\em format} & 深度模板缓存的格式 \\
+\hline
+\end{DoxyParams}
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_ae9b902ead96898f1c4a953b1a7378cde}{FCT\+::\+RHI\+::\+VK\+\_\+\+Swapchain}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_swapchain_ad617dcf25514c881ad50262159138065}\index{FCT::RHI::Swapchain@{FCT::RHI::Swapchain}!getFormat@{getFormat}}
+\index{getFormat@{getFormat}!FCT::RHI::Swapchain@{FCT::RHI::Swapchain}}
+\doxysubsubsection{\texorpdfstring{getFormat()}{getFormat()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_swapchain_ad617dcf25514c881ad50262159138065} 
+virtual \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4}{Format}} FCT\+::\+RHI\+::\+Swapchain\+::get\+Format (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_aec5dab44339d78ba7899d85cc53b564f}{FCT\+::\+RHI\+::\+VK\+\_\+\+Swapchain}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_swapchain_a5dfa73f0a9bbd2076df3940d5a993a9a}\index{FCT::RHI::Swapchain@{FCT::RHI::Swapchain}!getImageAvailableSemaphore@{getImageAvailableSemaphore}}
+\index{getImageAvailableSemaphore@{getImageAvailableSemaphore}!FCT::RHI::Swapchain@{FCT::RHI::Swapchain}}
+\doxysubsubsection{\texorpdfstring{getImageAvailableSemaphore()}{getImageAvailableSemaphore()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_swapchain_a5dfa73f0a9bbd2076df3940d5a993a9a} 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore}{RHI\+::\+Semaphore}} \texorpdfstring{$\ast$}{*} FCT\+::\+RHI\+::\+Swapchain\+::get\+Image\+Available\+Semaphore (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+用于渲染命令同步的，获取到 图像，gpu可以执行渲染命令 
+
+\begin{DoxyReturn}{返回}
+gpu获取到图像发出的信号量 
+\end{DoxyReturn}
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_ae1b985252d4e52726cdb9ea2a8bf1346}{FCT\+::\+RHI\+::\+VK\+\_\+\+Swapchain}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_swapchain_a148d4a73ae353bec80e66252e7218fdb}\index{FCT::RHI::Swapchain@{FCT::RHI::Swapchain}!getImageCount@{getImageCount}}
+\index{getImageCount@{getImageCount}!FCT::RHI::Swapchain@{FCT::RHI::Swapchain}}
+\doxysubsubsection{\texorpdfstring{getImageCount()}{getImageCount()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_swapchain_a148d4a73ae353bec80e66252e7218fdb} 
+virtual uint32\+\_\+t FCT\+::\+RHI\+::\+Swapchain\+::get\+Image\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\begin{DoxyReturn}{返回}
+缓存数 
+\end{DoxyReturn}
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_aef5fca5bddf267c2fbffc582a76c6c0b}{FCT\+::\+RHI\+::\+VK\+\_\+\+Swapchain}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_swapchain_ab95df779bd9caf7e56123451062110de}\index{FCT::RHI::Swapchain@{FCT::RHI::Swapchain}!getSampleCount@{getSampleCount}}
+\index{getSampleCount@{getSampleCount}!FCT::RHI::Swapchain@{FCT::RHI::Swapchain}}
+\doxysubsubsection{\texorpdfstring{getSampleCount()}{getSampleCount()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_swapchain_ab95df779bd9caf7e56123451062110de} 
+virtual \mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182}{Samples}} FCT\+::\+RHI\+::\+Swapchain\+::get\+Sample\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\begin{DoxyReturn}{返回}
+与get\+Samples相同 
+\end{DoxyReturn}
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a1dfe5081c8f7361d1b19ca69caf2f084}{FCT\+::\+RHI\+::\+VK\+\_\+\+Swapchain}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_swapchain_af6d290e35af414a705ccef7c312f69d4}\index{FCT::RHI::Swapchain@{FCT::RHI::Swapchain}!getSamples@{getSamples}}
+\index{getSamples@{getSamples}!FCT::RHI::Swapchain@{FCT::RHI::Swapchain}}
+\doxysubsubsection{\texorpdfstring{getSamples()}{getSamples()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_swapchain_af6d290e35af414a705ccef7c312f69d4} 
+virtual \mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182}{Samples}} FCT\+::\+RHI\+::\+Swapchain\+::get\+Samples (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\begin{DoxyReturn}{返回}
+交换链对应的图像的 采样 数 
+\end{DoxyReturn}
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a5f5eb310c0eff911ddcfd242ecd8646a}{FCT\+::\+RHI\+::\+VK\+\_\+\+Swapchain}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_swapchain_ab39d37cfd02cf2e6f2633b2f9a0fef6c}\index{FCT::RHI::Swapchain@{FCT::RHI::Swapchain}!hasRecreatedInThisFrame@{hasRecreatedInThisFrame}}
+\index{hasRecreatedInThisFrame@{hasRecreatedInThisFrame}!FCT::RHI::Swapchain@{FCT::RHI::Swapchain}}
+\doxysubsubsection{\texorpdfstring{hasRecreatedInThisFrame()}{hasRecreatedInThisFrame()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_swapchain_ab39d37cfd02cf2e6f2633b2f9a0fef6c} 
+bool FCT\+::\+RHI\+::\+Swapchain\+::has\+Recreated\+In\+This\+Frame (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在sync\+Graph里 的判断是否要recreate节点是否进行了重建交换链， 可持续一帧 
+
+\begin{DoxyReturn}{返回}
+是否进行了重建交换链 
+\end{DoxyReturn}
+
+
+在文件 \mbox{\hyperlink{_swapcain_8h_source}{Swapcain.\+h}} 第 \mbox{\hyperlink{_swapcain_8h_source_l00147}{147}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_swapchain_ab0e619b914c32692739269902d846f1a}\index{FCT::RHI::Swapchain@{FCT::RHI::Swapchain}!image@{image}}
+\index{image@{image}!FCT::RHI::Swapchain@{FCT::RHI::Swapchain}}
+\doxysubsubsection{\texorpdfstring{image()}{image()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_swapchain_ab0e619b914c32692739269902d846f1a} 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_image}{FCT\+::\+Image}} \texorpdfstring{$\ast$}{*} FCT\+::\+RHI\+::\+Swapchain\+::image (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\begin{DoxyReturn}{返回}
+交换链对应的图像，是一个多缓存图像 
+\end{DoxyReturn}
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a467c00a2686a99d5ada904a60b8830d9}{FCT\+::\+RHI\+::\+VK\+\_\+\+Swapchain}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_swapchain_a37854167ceefb6de32152b2ca715c420}\index{FCT::RHI::Swapchain@{FCT::RHI::Swapchain}!nativeHandle@{nativeHandle}}
+\index{nativeHandle@{nativeHandle}!FCT::RHI::Swapchain@{FCT::RHI::Swapchain}}
+\doxysubsubsection{\texorpdfstring{nativeHandle()}{nativeHandle()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_swapchain_a37854167ceefb6de32152b2ca715c420} 
+void FCT\+::\+RHI\+::\+Swapchain\+::native\+Handle (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{handle}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+传递 surface 
+
+
+\begin{DoxyParams}{参数}
+{\em handle} & 传递了surface \\
+\hline
+\end{DoxyParams}
+
+
+在文件 \mbox{\hyperlink{_swapcain_8h_source}{Swapcain.\+h}} 第 \mbox{\hyperlink{_swapcain_8h_source_l00044}{44}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_swapchain_a64195f6228c3a4ef899691d4cc320076}\index{FCT::RHI::Swapchain@{FCT::RHI::Swapchain}!needRecreate@{needRecreate}}
+\index{needRecreate@{needRecreate}!FCT::RHI::Swapchain@{FCT::RHI::Swapchain}}
+\doxysubsubsection{\texorpdfstring{needRecreate()}{needRecreate()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_swapchain_a64195f6228c3a4ef899691d4cc320076} 
+virtual void FCT\+::\+RHI\+::\+Swapchain\+::need\+Recreate (\begin{DoxyParamCaption}\item[{int}]{width}{, }\item[{int}]{height}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+用于窗口通知需要 recreate 
+
+
+\begin{DoxyParams}{参数}
+{\em width} & 新的width \\
+\hline
+{\em height} & 新的height \\
+\hline
+\end{DoxyParams}
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_aa788133c8149636bcff10880879ee4e4}{FCT\+::\+RHI\+::\+VK\+\_\+\+Swapchain}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_swapchain_a89c3c3b767ee5aa142a017f96c45c73d}\index{FCT::RHI::Swapchain@{FCT::RHI::Swapchain}!present@{present}}
+\index{present@{present}!FCT::RHI::Swapchain@{FCT::RHI::Swapchain}}
+\doxysubsubsection{\texorpdfstring{present()}{present()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_swapchain_a89c3c3b767ee5aa142a017f96c45c73d} 
+virtual void FCT\+::\+RHI\+::\+Swapchain\+::present (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+提交present命令 
+
+\begin{DoxyNote}{注解}
+其中 包含提交present命令和获取下一个图像俩个 命令， 失败任一一个会触发重建交换 链（如果是因为交换链过时（既窗口改变大小）导致的话） 
+\end{DoxyNote}
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a78f21c203fe2759fe3cf2c702207e96e}{FCT\+::\+RHI\+::\+VK\+\_\+\+Swapchain}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_swapchain_a01f20dac4886efe9d4d4c8d3946f0c90}\index{FCT::RHI::Swapchain@{FCT::RHI::Swapchain}!setPresentFinshSemaphore@{setPresentFinshSemaphore}}
+\index{setPresentFinshSemaphore@{setPresentFinshSemaphore}!FCT::RHI::Swapchain@{FCT::RHI::Swapchain}}
+\doxysubsubsection{\texorpdfstring{setPresentFinshSemaphore()}{setPresentFinshSemaphore()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_swapchain_a01f20dac4886efe9d4d4c8d3946f0c90} 
+virtual void FCT\+::\+RHI\+::\+Swapchain\+::set\+Present\+Finsh\+Semaphore (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore}{RHI\+::\+Semaphore}} \texorpdfstring{$\ast$}{*}}]{semaphore}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a363ea8d0036083086d71fc193d562624}{FCT\+::\+RHI\+::\+VK\+\_\+\+Swapchain}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_swapchain_a853393e879382a74faf92aa6a5ac4402}\index{FCT::RHI::Swapchain@{FCT::RHI::Swapchain}!size@{size}}
+\index{size@{size}!FCT::RHI::Swapchain@{FCT::RHI::Swapchain}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_swapchain_a853393e879382a74faf92aa6a5ac4402} 
+void FCT\+::\+RHI\+::\+Swapchain\+::size (\begin{DoxyParamCaption}\item[{int}]{width}{, }\item[{int}]{height}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{参数}
+{\em width} & 目标宽度 \\
+\hline
+{\em height} & 目标高度 \\
+\hline
+\end{DoxyParams}
+
+
+在文件 \mbox{\hyperlink{_swapcain_8h_source}{Swapcain.\+h}} 第 \mbox{\hyperlink{_swapcain_8h_source_l00054}{54}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_swapchain_a2e685c8abee78db9c5343ae67d045997}\index{FCT::RHI::Swapchain@{FCT::RHI::Swapchain}!sync@{sync}}
+\index{sync@{sync}!FCT::RHI::Swapchain@{FCT::RHI::Swapchain}}
+\doxysubsubsection{\texorpdfstring{sync()}{sync()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_swapchain_a2e685c8abee78db9c5343ae67d045997} 
+virtual void FCT\+::\+RHI\+::\+Swapchain\+::sync (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a33264ad79ca37ae01a536e2af696a0cc}{FCT\+::\+RHI\+::\+VK\+\_\+\+Swapchain}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_swapchain_a06ecb64faf87b22257d3c04037629bd2}\index{FCT::RHI::Swapchain@{FCT::RHI::Swapchain}!target@{target}}
+\index{target@{target}!FCT::RHI::Swapchain@{FCT::RHI::Swapchain}}
+\doxysubsubsection{\texorpdfstring{target()}{target()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_swapchain_a06ecb64faf87b22257d3c04037629bd2} 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_image_render_target}{Image\+Render\+Target}} \texorpdfstring{$\ast$}{*} FCT\+::\+RHI\+::\+Swapchain\+::target (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+获取交换链对应的target 
+
+\begin{DoxyReturn}{返回}
+交换链对应的target 
+\end{DoxyReturn}
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_ad9f2d2c7fea5528211182d55b497c6ea}{FCT\+::\+RHI\+::\+VK\+\_\+\+Swapchain}} 内被实现.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_swapchain_doc-variable-members}
+\doxysubsection{类成员变量说明}
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_swapchain_a29e11b945f3dca176cdae92668ebb218}\index{FCT::RHI::Swapchain@{FCT::RHI::Swapchain}!m\_dstHeight@{m\_dstHeight}}
+\index{m\_dstHeight@{m\_dstHeight}!FCT::RHI::Swapchain@{FCT::RHI::Swapchain}}
+\doxysubsubsection{\texorpdfstring{m\_dstHeight}{m\_dstHeight}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_swapchain_a29e11b945f3dca176cdae92668ebb218} 
+uint32\+\_\+t FCT\+::\+RHI\+::\+Swapchain\+::m\+\_\+dst\+Height = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+目标大小 
+
+
+
+在文件 \mbox{\hyperlink{_swapcain_8h_source}{Swapcain.\+h}} 第 \mbox{\hyperlink{_swapcain_8h_source_l00195}{195}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_swapchain_acd14cf1b3194f89dbd84a54a3e26c459}\index{FCT::RHI::Swapchain@{FCT::RHI::Swapchain}!m\_dstWidth@{m\_dstWidth}}
+\index{m\_dstWidth@{m\_dstWidth}!FCT::RHI::Swapchain@{FCT::RHI::Swapchain}}
+\doxysubsubsection{\texorpdfstring{m\_dstWidth}{m\_dstWidth}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_swapchain_acd14cf1b3194f89dbd84a54a3e26c459} 
+uint32\+\_\+t FCT\+::\+RHI\+::\+Swapchain\+::m\+\_\+dst\+Width = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+目标大小 
+
+
+
+在文件 \mbox{\hyperlink{_swapcain_8h_source}{Swapcain.\+h}} 第 \mbox{\hyperlink{_swapcain_8h_source_l00186}{186}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_swapchain_a7baa8e838359215e45fe7b7dd0fa3306}\index{FCT::RHI::Swapchain@{FCT::RHI::Swapchain}!m\_hasRecreatedInThisFrame@{m\_hasRecreatedInThisFrame}}
+\index{m\_hasRecreatedInThisFrame@{m\_hasRecreatedInThisFrame}!FCT::RHI::Swapchain@{FCT::RHI::Swapchain}}
+\doxysubsubsection{\texorpdfstring{m\_hasRecreatedInThisFrame}{m\_hasRecreatedInThisFrame}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_swapchain_a7baa8e838359215e45fe7b7dd0fa3306} 
+bool FCT\+::\+RHI\+::\+Swapchain\+::m\+\_\+has\+Recreated\+In\+This\+Frame\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_swapcain_8h_source}{Swapcain.\+h}} 第 \mbox{\hyperlink{_swapcain_8h_source_l00196}{196}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_swapchain_a721f7212bd66a3a09e8ffc9c8aeff29e}\index{FCT::RHI::Swapchain@{FCT::RHI::Swapchain}!m\_height@{m\_height}}
+\index{m\_height@{m\_height}!FCT::RHI::Swapchain@{FCT::RHI::Swapchain}}
+\doxysubsubsection{\texorpdfstring{m\_height}{m\_height}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_swapchain_a721f7212bd66a3a09e8ffc9c8aeff29e} 
+uint32\+\_\+t FCT\+::\+RHI\+::\+Swapchain\+::m\+\_\+height\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+创建交换链后得到的实际大小 
+
+
+
+在文件 \mbox{\hyperlink{_swapcain_8h_source}{Swapcain.\+h}} 第 \mbox{\hyperlink{_swapcain_8h_source_l00177}{177}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_swapchain_a55d3ce81c7798f71ee31dc03d318f9f2}\index{FCT::RHI::Swapchain@{FCT::RHI::Swapchain}!m\_nativeHandle@{m\_nativeHandle}}
+\index{m\_nativeHandle@{m\_nativeHandle}!FCT::RHI::Swapchain@{FCT::RHI::Swapchain}}
+\doxysubsubsection{\texorpdfstring{m\_nativeHandle}{m\_nativeHandle}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_swapchain_a55d3ce81c7798f71ee31dc03d318f9f2} 
+void\texorpdfstring{$\ast$}{*} FCT\+::\+RHI\+::\+Swapchain\+::m\+\_\+native\+Handle\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+交换链对应的surface 
+
+
+
+在文件 \mbox{\hyperlink{_swapcain_8h_source}{Swapcain.\+h}} 第 \mbox{\hyperlink{_swapcain_8h_source_l00159}{159}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_swapchain_ae720ea08e24b310ac7fe0c0ed23c3337}\index{FCT::RHI::Swapchain@{FCT::RHI::Swapchain}!m\_renderFinshFences@{m\_renderFinshFences}}
+\index{m\_renderFinshFences@{m\_renderFinshFences}!FCT::RHI::Swapchain@{FCT::RHI::Swapchain}}
+\doxysubsubsection{\texorpdfstring{m\_renderFinshFences}{m\_renderFinshFences}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_swapchain_ae720ea08e24b310ac7fe0c0ed23c3337} 
+std\+::vector$<$\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_fence}{RHI\+::\+Fence}}\texorpdfstring{$\ast$}{*}$>$ FCT\+::\+RHI\+::\+Swapchain\+::m\+\_\+render\+Finsh\+Fences\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_swapcain_8h_source}{Swapcain.\+h}} 第 \mbox{\hyperlink{_swapcain_8h_source_l00152}{152}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_swapchain_ac7b4690e0089f6037b6301d35228f1bf}\index{FCT::RHI::Swapchain@{FCT::RHI::Swapchain}!m\_renderFinshSemaphores@{m\_renderFinshSemaphores}}
+\index{m\_renderFinshSemaphores@{m\_renderFinshSemaphores}!FCT::RHI::Swapchain@{FCT::RHI::Swapchain}}
+\doxysubsubsection{\texorpdfstring{m\_renderFinshSemaphores}{m\_renderFinshSemaphores}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_swapchain_ac7b4690e0089f6037b6301d35228f1bf} 
+std\+::vector$<$\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore}{RHI\+::\+Semaphore}}\texorpdfstring{$\ast$}{*}$>$ FCT\+::\+RHI\+::\+Swapchain\+::m\+\_\+render\+Finsh\+Semaphores\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_swapcain_8h_source}{Swapcain.\+h}} 第 \mbox{\hyperlink{_swapcain_8h_source_l00153}{153}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_swapchain_a27dc83e42bf02c7dbf2b2f64ddc4f372}\index{FCT::RHI::Swapchain@{FCT::RHI::Swapchain}!m\_width@{m\_width}}
+\index{m\_width@{m\_width}!FCT::RHI::Swapchain@{FCT::RHI::Swapchain}}
+\doxysubsubsection{\texorpdfstring{m\_width}{m\_width}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_swapchain_a27dc83e42bf02c7dbf2b2f64ddc4f372} 
+uint32\+\_\+t FCT\+::\+RHI\+::\+Swapchain\+::m\+\_\+width\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+创建交换链后得到的实际大小 
+
+
+
+在文件 \mbox{\hyperlink{_swapcain_8h_source}{Swapcain.\+h}} 第 \mbox{\hyperlink{_swapcain_8h_source_l00168}{168}} 行定义.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\+FCT/\+RHI/\mbox{\hyperlink{_swapcain_8h}{Swapcain.\+h}}\end{DoxyCompactItemize}

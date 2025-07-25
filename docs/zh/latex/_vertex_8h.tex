@@ -1,0 +1,89 @@
+\doxysection{include/\+FCT/\+Context/\+Vertex.h 文件参考}
+\hypertarget{_vertex_8h}{}\label{_vertex_8h}\index{include/FCT/Context/Vertex.h@{include/FCT/Context/Vertex.h}}
+{\ttfamily \#include "{}./\+Format.\+h"{}}\newline
+{\ttfamily \#include "{}./\+Data\+Types.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Base/string.\+h"{}}\newline
+\doxysubsubsection*{类}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_f_c_t_1_1_vertex_element}{FCT\+::\+Vertex\+Element}}
+\item 
+class \mbox{\hyperlink{class_f_c_t_1_1_vertex_layout}{FCT\+::\+Vertex\+Layout}}
+\item 
+class \mbox{\hyperlink{class_f_c_t_1_1_pixel_layout}{FCT\+::\+Pixel\+Layout}}
+\item 
+class \mbox{\hyperlink{class_f_c_t_1_1_vertex}{FCT\+::\+Vertex}}
+\item 
+class \mbox{\hyperlink{class_f_c_t_1_1_const_vertex}{FCT\+::\+Const\+Vertex}}
+\item 
+class \mbox{\hyperlink{class_f_c_t_1_1_vertex_buffer}{FCT\+::\+Vertex\+Buffer}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{命名空间}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_f_c_t}{FCT}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{枚举}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespace_f_c_t_aa946ca9a7d9318f0c9a8e49b9df96b06}{FCT\+::\+Vtx\+Type}} \{ \newline
+\mbox{\hyperlink{namespace_f_c_t_aa946ca9a7d9318f0c9a8e49b9df96b06aa05977ec7c87487a0bd46117934021f3}{FCT\+::\+Position2f}}
+, \mbox{\hyperlink{namespace_f_c_t_aa946ca9a7d9318f0c9a8e49b9df96b06ac4e58643607e522dbefd0c3e420e68c0}{FCT\+::\+Position3f}}
+, \mbox{\hyperlink{namespace_f_c_t_aa946ca9a7d9318f0c9a8e49b9df96b06a78f15757ef79c97aa0187c4823e8b0ed}{FCT\+::\+Position4f}}
+, \mbox{\hyperlink{namespace_f_c_t_aa946ca9a7d9318f0c9a8e49b9df96b06a908f4dab02973b0773bbc2a05fc23753}{FCT\+::\+Normal3f}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_aa946ca9a7d9318f0c9a8e49b9df96b06a2013aecb0cd8f07d99b57af08853f8f8}{FCT\+::\+Tangent3f}}
+, \mbox{\hyperlink{namespace_f_c_t_aa946ca9a7d9318f0c9a8e49b9df96b06adf78711ae2b083145f3d5cfb89fcb10a}{FCT\+::\+Bitangent3f}}
+, \mbox{\hyperlink{namespace_f_c_t_aa946ca9a7d9318f0c9a8e49b9df96b06abf4af6bad2ec3d11d38fc1cb96f4fc6e}{FCT\+::\+Tex\+Coord2f}}
+, \mbox{\hyperlink{namespace_f_c_t_aa946ca9a7d9318f0c9a8e49b9df96b06a1eb2844071812fc95e6956cdf76e3b8d}{FCT\+::\+Color3f}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_aa946ca9a7d9318f0c9a8e49b9df96b06a4b27cd2fd42dcad88c2b5ca40571dd51}{FCT\+::\+Color4f}}
+, \mbox{\hyperlink{namespace_f_c_t_aa946ca9a7d9318f0c9a8e49b9df96b06ab38ae03fff6cd43f89db21e3eed904fd}{FCT\+::\+Vertex\+Coord2f}}
+, \mbox{\hyperlink{namespace_f_c_t_aa946ca9a7d9318f0c9a8e49b9df96b06ab2a91dd9e3cbf5e799b2be78b056e05b}{FCT\+::\+Command\+Offset}}
+, \mbox{\hyperlink{namespace_f_c_t_aa946ca9a7d9318f0c9a8e49b9df96b06a3bcbe4b9e745459127f3403801057ab7}{FCT\+::\+Command\+Size}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_aa946ca9a7d9318f0c9a8e49b9df96b06ac9e6b15ea0d6744ddb60d3fab4177db8}{FCT\+::\+Batch\+ID}}
+, \mbox{\hyperlink{namespace_f_c_t_aa946ca9a7d9318f0c9a8e49b9df96b06a40f1b143b6b93d489bf0a22cdb9b32e1}{FCT\+::\+Face\+Id}}
+, \mbox{\hyperlink{namespace_f_c_t_aa946ca9a7d9318f0c9a8e49b9df96b06a90589c47f06eb971d548591f23c285af}{FCT\+::\+Custom}}
+ \}
+\item 
+enum class \mbox{\hyperlink{namespace_f_c_t_a7ec8d52d86a568cdd834ed3105281bfa}{FCT\+::\+Model\+Vertex\+Attribute}} \{ \newline
+\mbox{\hyperlink{namespace_f_c_t_a7ec8d52d86a568cdd834ed3105281bfaa52f5e0bc3859bc5f5e25130b6c7e8881}{FCT\+::\+Position}}
+, \mbox{\hyperlink{namespace_f_c_t_a7ec8d52d86a568cdd834ed3105281bfaa960b44c579bc2f6818d2daaf9e4c16f0}{FCT\+::\+Normal}}
+, \mbox{\hyperlink{namespace_f_c_t_a7ec8d52d86a568cdd834ed3105281bfaa4ac00b6292b9c8d63d0a11df581bd399}{FCT\+::\+Tex\+Coord0}}
+, \mbox{\hyperlink{namespace_f_c_t_a7ec8d52d86a568cdd834ed3105281bfaae1328451c081a530e07a9b63aada0995}{FCT\+::\+Tex\+Coord1}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_a7ec8d52d86a568cdd834ed3105281bfaad086d00856e00fc62abebe2a3ffc73b4}{FCT\+::\+Tex\+Coord2}}
+, \mbox{\hyperlink{namespace_f_c_t_a7ec8d52d86a568cdd834ed3105281bfaa2af6f19d716550a1ec57bea6d292c8f2}{FCT\+::\+Tex\+Coord3}}
+, \mbox{\hyperlink{namespace_f_c_t_a7ec8d52d86a568cdd834ed3105281bfaa8dbbd17ca63a0e70ece164198ee929db}{FCT\+::\+Tex\+Coord4}}
+, \mbox{\hyperlink{namespace_f_c_t_a7ec8d52d86a568cdd834ed3105281bfaaefdf278000bb8814222914dc0234ed36}{FCT\+::\+Tex\+Coord5}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_a7ec8d52d86a568cdd834ed3105281bfaaf3156a5ff918fb9f1b9d708cdb0a194c}{FCT\+::\+Tex\+Coord6}}
+, \mbox{\hyperlink{namespace_f_c_t_a7ec8d52d86a568cdd834ed3105281bfaa235c9e34e7810f6ae9158ea6263225d3}{FCT\+::\+Tex\+Coord7}}
+, \mbox{\hyperlink{namespace_f_c_t_a7ec8d52d86a568cdd834ed3105281bfaaa0a1f5336d1ce1e6ed36df3ae4ea3a5a}{FCT\+::\+Color0}}
+, \mbox{\hyperlink{namespace_f_c_t_a7ec8d52d86a568cdd834ed3105281bfaa10d80f0d320a1f0d44f4d5b81d2806bf}{FCT\+::\+Color1}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_a7ec8d52d86a568cdd834ed3105281bfaae2a7898b335d86cfce3647176ed64660}{FCT\+::\+Color2}}
+, \mbox{\hyperlink{namespace_f_c_t_a7ec8d52d86a568cdd834ed3105281bfaaa768a1a754fe61345d8268ac9cbba90b}{FCT\+::\+Color3}}
+, \mbox{\hyperlink{namespace_f_c_t_a7ec8d52d86a568cdd834ed3105281bfaae2e4e0d0046eb80c1a3a6a44085448a4}{FCT\+::\+Color4}}
+, \mbox{\hyperlink{namespace_f_c_t_a7ec8d52d86a568cdd834ed3105281bfaa6a13b6d8b42dd3580ddf94cd8adddc04}{FCT\+::\+Color5}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_a7ec8d52d86a568cdd834ed3105281bfaab5ab4d4d35fe76b5dce0d22ca018c784}{FCT\+::\+Color6}}
+, \mbox{\hyperlink{namespace_f_c_t_a7ec8d52d86a568cdd834ed3105281bfaa615211c915b857c848bb2523aebcb87b}{FCT\+::\+Color7}}
+, \mbox{\hyperlink{namespace_f_c_t_a7ec8d52d86a568cdd834ed3105281bfaa541671cb1be09d76a84ba1a873ec3fc8}{FCT\+::\+Tangent}}
+, \mbox{\hyperlink{namespace_f_c_t_a7ec8d52d86a568cdd834ed3105281bfaae3e73a4b6e7cfd12008a35f6a051b319}{FCT\+::\+Bitangent}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_a7ec8d52d86a568cdd834ed3105281bfaa6adf97f83acf6453d4a6a4b1070f3754}{FCT\+::\+None}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+constexpr \mbox{\hyperlink{namespace_f_c_t_a7ec8d52d86a568cdd834ed3105281bfa}{Model\+Vertex\+Attribute}} \mbox{\hyperlink{namespace_f_c_t_a4ba28979ce8da56dd4b3abd32e8d4efd}{FCT\+::\+Get\+Default\+Model\+Attribute}} (\mbox{\hyperlink{namespace_f_c_t_aa946ca9a7d9318f0c9a8e49b9df96b06}{Vtx\+Type}} type) noexcept
+\item 
+constexpr bool \mbox{\hyperlink{namespace_f_c_t_a3ef126832cda3182055ecc28f358dfdb}{FCT\+::is\+Position\+Type}} (\mbox{\hyperlink{namespace_f_c_t_aa946ca9a7d9318f0c9a8e49b9df96b06}{Vtx\+Type}} type) noexcept
+\item 
+constexpr \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4}{Format}} \mbox{\hyperlink{namespace_f_c_t_a81850560dd81764dc2dd61d69eae0f71}{FCT\+::\+Get\+Default\+Format}} (\mbox{\hyperlink{namespace_f_c_t_aa946ca9a7d9318f0c9a8e49b9df96b06}{Vtx\+Type}} type) noexcept
+\item 
+constexpr const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespace_f_c_t_a06936c03fc1091d0cdb6e73d091dd84e}{FCT\+::\+Get\+Default\+Semantic}} (\mbox{\hyperlink{namespace_f_c_t_aa946ca9a7d9318f0c9a8e49b9df96b06}{Vtx\+Type}} type) noexcept
+\end{DoxyCompactItemize}

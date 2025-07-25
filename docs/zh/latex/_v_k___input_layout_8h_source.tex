@@ -1,0 +1,51 @@
+\doxysection{VK\+\_\+\+Input\+Layout.\+h}
+\hypertarget{_v_k___input_layout_8h_source}{}\label{_v_k___input_layout_8h_source}\index{include/FCT/RHI/VK\_InputLayout.h@{include/FCT/RHI/VK\_InputLayout.h}}
+\mbox{\hyperlink{_v_k___input_layout_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_v_k___input_layout_8h_source_l00001}00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_v_k___input_layout_8h_source_l00002}00002\ \textcolor{comment}{//\ Created\ by\ Administrator\ on\ 2025/3/23.}}
+\DoxyCodeLine{\Hypertarget{_v_k___input_layout_8h_source_l00003}00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_v_k___input_layout_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_third_party_8h}{../ThirdParty.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_v_k___input_layout_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_input_layout_8h}{./InputLayout.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_v_k___input_layout_8h_source_l00006}00006\ \textcolor{preprocessor}{\#ifndef\ VK\_INPUTLAYOUT\_H}}
+\DoxyCodeLine{\Hypertarget{_v_k___input_layout_8h_source_l00007}00007\ \textcolor{preprocessor}{\#define\ VK\_INPUTLAYOUT\_H}}
+\DoxyCodeLine{\Hypertarget{_v_k___input_layout_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_v_k___input_layout_8h_source_l00009}00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_f_c_t}{FCT}}}
+\DoxyCodeLine{\Hypertarget{_v_k___input_layout_8h_source_l00010}00010\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___input_layout_8h_source_l00011}00011\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_f_c_t_1_1_v_k___context}{VK\_Context}};}
+\DoxyCodeLine{\Hypertarget{_v_k___input_layout_8h_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_f_c_t_1_1_r_h_i}{RHI}}}
+\DoxyCodeLine{\Hypertarget{_v_k___input_layout_8h_source_l00013}00013\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___input_layout_8h_source_l00014}\mbox{\hyperlink{namespace_f_c_t_1_1_r_h_i_a7f1d79dca0dc6729185dd31b065ab492}{00014}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ vk::VertexInputRate\ \mbox{\hyperlink{namespace_f_c_t_1_1_r_h_i_a7f1d79dca0dc6729185dd31b065ab492}{ToVkVertexInputRate}}(\mbox{\hyperlink{namespace_f_c_t_1_1_r_h_i_a0f81d87a9e2755ec0c644ddb522fd3a3}{InputRate}}\ rate)}
+\DoxyCodeLine{\Hypertarget{_v_k___input_layout_8h_source_l00015}00015\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___input_layout_8h_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (rate)}
+\DoxyCodeLine{\Hypertarget{_v_k___input_layout_8h_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___input_layout_8h_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_f_c_t_1_1_r_h_i_a0f81d87a9e2755ec0c644ddb522fd3a3a47e73954b650524c96a2c612bfda4029}{InputRate::PerVertex}}:}
+\DoxyCodeLine{\Hypertarget{_v_k___input_layout_8h_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vk::VertexInputRate::eVertex;}
+\DoxyCodeLine{\Hypertarget{_v_k___input_layout_8h_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_f_c_t_1_1_r_h_i_a0f81d87a9e2755ec0c644ddb522fd3a3a638926405e39d8cd5227b49fa3156e1a}{InputRate::PerInstance}}:}
+\DoxyCodeLine{\Hypertarget{_v_k___input_layout_8h_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vk::VertexInputRate::eInstance;}
+\DoxyCodeLine{\Hypertarget{_v_k___input_layout_8h_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{_v_k___input_layout_8h_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vk::VertexInputRate::eVertex;}
+\DoxyCodeLine{\Hypertarget{_v_k___input_layout_8h_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___input_layout_8h_source_l00025}00025\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___input_layout_8h_source_l00026}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___input_layout}{00026}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___input_layout_a0dacb4577c55ba8e1b7291c57ac51162}{VK\_InputLayout}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_input_layout}{InputLayout}}\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___input_layout_8h_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_v_k___input_layout_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_v_k___input_layout_8h_source_l00029}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___input_layout_a0dacb4577c55ba8e1b7291c57ac51162}{00029}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___input_layout_a0dacb4577c55ba8e1b7291c57ac51162}{VK\_InputLayout}}(\mbox{\hyperlink{class_f_c_t_1_1_v_k___context}{VK\_Context}}*\ context);}
+\DoxyCodeLine{\Hypertarget{_v_k___input_layout_8h_source_l00030}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___input_layout_a33b2efe5d54338cf996ca240320e39e8}{00030}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___input_layout_a33b2efe5d54338cf996ca240320e39e8}{\string~VK\_InputLayout}}()\textcolor{keyword}{\ override\ }\{\};}
+\DoxyCodeLine{\Hypertarget{_v_k___input_layout_8h_source_l00031}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___input_layout_a5d348eb18c2cdbeab6e31e136a1dc0a7}{00031}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___input_layout_a5d348eb18c2cdbeab6e31e136a1dc0a7}{create}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_v_k___input_layout_8h_source_l00032}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___input_layout_ae973bc200ccab6d63af419a945027beb}{00032}}\ \ \ \ \ \ \ \ \ \ \ \ \ vk::PipelineVertexInputStateCreateInfo\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___input_layout_ae973bc200ccab6d63af419a945027beb}{inputStateInfo}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_vertexInputStateInfo;\ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___input_layout_8h_source_l00033}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___input_layout_a85367b8285490bd897baee0eb8aead31}{00033}}\ \ \ \ \ \ \ \ \ \ \ \ \ vk::PipelineVertexInputStateCreateInfo*\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___input_layout_a85367b8285490bd897baee0eb8aead31}{pInputStateInfo}}()\ \{\ \textcolor{keywordflow}{return}\ \&m\_vertexInputStateInfo;\ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___input_layout_8h_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_v_k___input_layout_8h_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_v_k___context}{VK\_Context}}*\ m\_ctx;}
+\DoxyCodeLine{\Hypertarget{_v_k___input_layout_8h_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<vk::VertexInputBindingDescription>\ m\_bindingDescriptions;}
+\DoxyCodeLine{\Hypertarget{_v_k___input_layout_8h_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<vk::VertexInputAttributeDescription>\ m\_attributeDescriptions;}
+\DoxyCodeLine{\Hypertarget{_v_k___input_layout_8h_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ vk::PipelineVertexInputStateCreateInfo\ m\_vertexInputStateInfo;}
+\DoxyCodeLine{\Hypertarget{_v_k___input_layout_8h_source_l00039}00039\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_v_k___input_layout_8h_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_v_k___input_layout_8h_source_l00041}00041\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___input_layout_8h_source_l00042}00042\ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___input_layout_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_v_k___input_layout_8h_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_v_k___input_layout_8h_source_l00045}00045\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//VK\_INPUTLAYOUT\_H}}
+
+\end{DoxyCode}

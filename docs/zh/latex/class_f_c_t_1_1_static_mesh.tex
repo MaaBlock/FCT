@@ -1,0 +1,190 @@
+\doxysection{FCT\+::Static\+Mesh\texorpdfstring{$<$}{<} Index\+Type \texorpdfstring{$>$}{>} 模板类 参考}
+\hypertarget{class_f_c_t_1_1_static_mesh}{}\label{class_f_c_t_1_1_static_mesh}\index{FCT::StaticMesh$<$ IndexType $>$@{FCT::StaticMesh$<$ IndexType $>$}}
+
+
+{\ttfamily \#include $<$Mesh.\+h$>$}
+
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_static_mesh_a27f754d0ffd6aa39d8f7c8c6ef3c6205}{Static\+Mesh}} (\mbox{\hyperlink{class_f_c_t_1_1_context}{Context}} \texorpdfstring{$\ast$}{*}context, const \mbox{\hyperlink{class_f_c_t_1_1_vertex_layout}{Vertex\+Layout}} \&layout)
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_static_mesh_ad44798dfc3031701d6236c8b51b55ddb}{\texorpdfstring{$\sim$}{\string~}\+Static\+Mesh}} ()
+\item 
+{\footnotesize template$<$typename... Args$>$ }\\void \mbox{\hyperlink{class_f_c_t_1_1_static_mesh_a377e6c21718bd67d3631aaf2f9c8f48b}{add\+Vertex}} (Args \&\&... args)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_static_mesh_a7fbfa8fd440f036d1276be07ccd73fd2}{set\+Indices}} (const std\+::vector$<$ Index\+Type $>$ \&indices)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_static_mesh_ab14ba8e6a44b67f1b25c8ad6794e63a6}{create}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_static_mesh_ad5276864c6c9d5ac6799a1aab301f581}{bind}} (\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer}{RHI\+::\+Command\+Buffer}} \texorpdfstring{$\ast$}{*}cmd\+Buf)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_static_mesh_aa3d0e16a9851d3dc0ffec540f16f0b72}{draw}} (\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer}{RHI\+::\+Command\+Buffer}} \texorpdfstring{$\ast$}{*}cmd\+Buf, uint32\+\_\+t instance\+Count=1)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_static_mesh_a9c2ccefbd920dc1258e2b2508c5d5506}{update\+Vertex\+Data}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_static_mesh_a6955b934ce46f94b3036c7f6987cb6b6}{update\+Index\+Data}} ()
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_vertex_buffer}{Vertex\+Buffer}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_static_mesh_a9c10fb21344b22537a288b74ced4bf8d}{get\+Vertex\+Buffer}} () const
+\item 
+size\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_static_mesh_a64de326e17658bc3d24b104d787f42b4}{get\+Index\+Count}} () const
+\item 
+size\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_static_mesh_a5a025603c6064e231a9ab76871798548}{get\+Vertex\+Count}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+\subsubsection*{template$<$typename Index\+Type = uint16\+\_\+t$>$\newline
+class FCT\+::\+Static\+Mesh$<$ Index\+Type $>$}
+
+
+在文件 \mbox{\hyperlink{_mesh_8h_source}{Mesh.\+h}} 第 \mbox{\hyperlink{_mesh_8h_source_l00014}{14}} 行定义.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_f_c_t_1_1_static_mesh_doc-constructors}
+\doxysubsection{构造及析构函数说明}
+\Hypertarget{class_f_c_t_1_1_static_mesh_a27f754d0ffd6aa39d8f7c8c6ef3c6205}\index{FCT::StaticMesh$<$ IndexType $>$@{FCT::StaticMesh$<$ IndexType $>$}!StaticMesh@{StaticMesh}}
+\index{StaticMesh@{StaticMesh}!FCT::StaticMesh$<$ IndexType $>$@{FCT::StaticMesh$<$ IndexType $>$}}
+\doxysubsubsection{\texorpdfstring{StaticMesh()}{StaticMesh()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_static_mesh_a27f754d0ffd6aa39d8f7c8c6ef3c6205} 
+template$<$typename Index\+Type = uint16\+\_\+t$>$ \\
+\mbox{\hyperlink{class_f_c_t_1_1_static_mesh}{FCT\+::\+Static\+Mesh}}$<$ Index\+Type $>$\+::\+Static\+Mesh (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_context}{Context}} \texorpdfstring{$\ast$}{*}}]{context}{, }\item[{const \mbox{\hyperlink{class_f_c_t_1_1_vertex_layout}{Vertex\+Layout}} \&}]{layout}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_mesh_8h_source}{Mesh.\+h}} 第 \mbox{\hyperlink{_mesh_8h_source_l00017}{17}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_static_mesh_ad44798dfc3031701d6236c8b51b55ddb}\index{FCT::StaticMesh$<$ IndexType $>$@{FCT::StaticMesh$<$ IndexType $>$}!````~StaticMesh@{\texorpdfstring{$\sim$}{\string~}StaticMesh}}
+\index{````~StaticMesh@{\texorpdfstring{$\sim$}{\string~}StaticMesh}!FCT::StaticMesh$<$ IndexType $>$@{FCT::StaticMesh$<$ IndexType $>$}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}StaticMesh()}{\string~StaticMesh()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_static_mesh_ad44798dfc3031701d6236c8b51b55ddb} 
+template$<$typename Index\+Type = uint16\+\_\+t$>$ \\
+\mbox{\hyperlink{class_f_c_t_1_1_static_mesh}{FCT\+::\+Static\+Mesh}}$<$ Index\+Type $>$\+::\texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{class_f_c_t_1_1_static_mesh}{Static\+Mesh}} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_mesh_8h_source}{Mesh.\+h}} 第 \mbox{\hyperlink{_mesh_8h_source_l00023}{23}} 行定义.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_f_c_t_1_1_static_mesh_doc-func-members}
+\doxysubsection{成员函数说明}
+\Hypertarget{class_f_c_t_1_1_static_mesh_a377e6c21718bd67d3631aaf2f9c8f48b}\index{FCT::StaticMesh$<$ IndexType $>$@{FCT::StaticMesh$<$ IndexType $>$}!addVertex@{addVertex}}
+\index{addVertex@{addVertex}!FCT::StaticMesh$<$ IndexType $>$@{FCT::StaticMesh$<$ IndexType $>$}}
+\doxysubsubsection{\texorpdfstring{addVertex()}{addVertex()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_static_mesh_a377e6c21718bd67d3631aaf2f9c8f48b} 
+template$<$typename Index\+Type = uint16\+\_\+t$>$ \\
+template$<$typename... Args$>$ \\
+void \mbox{\hyperlink{class_f_c_t_1_1_static_mesh}{FCT\+::\+Static\+Mesh}}$<$ Index\+Type $>$\+::add\+Vertex (\begin{DoxyParamCaption}\item[{Args \&\&...}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_mesh_8h_source}{Mesh.\+h}} 第 \mbox{\hyperlink{_mesh_8h_source_l00037}{37}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_static_mesh_ad5276864c6c9d5ac6799a1aab301f581}\index{FCT::StaticMesh$<$ IndexType $>$@{FCT::StaticMesh$<$ IndexType $>$}!bind@{bind}}
+\index{bind@{bind}!FCT::StaticMesh$<$ IndexType $>$@{FCT::StaticMesh$<$ IndexType $>$}}
+\doxysubsubsection{\texorpdfstring{bind()}{bind()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_static_mesh_ad5276864c6c9d5ac6799a1aab301f581} 
+template$<$typename Index\+Type = uint16\+\_\+t$>$ \\
+void \mbox{\hyperlink{class_f_c_t_1_1_static_mesh}{FCT\+::\+Static\+Mesh}}$<$ Index\+Type $>$\+::bind (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer}{RHI\+::\+Command\+Buffer}} \texorpdfstring{$\ast$}{*}}]{cmd\+Buf}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_mesh_8h_source}{Mesh.\+h}} 第 \mbox{\hyperlink{_mesh_8h_source_l00062}{62}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_static_mesh_ab14ba8e6a44b67f1b25c8ad6794e63a6}\index{FCT::StaticMesh$<$ IndexType $>$@{FCT::StaticMesh$<$ IndexType $>$}!create@{create}}
+\index{create@{create}!FCT::StaticMesh$<$ IndexType $>$@{FCT::StaticMesh$<$ IndexType $>$}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_static_mesh_ab14ba8e6a44b67f1b25c8ad6794e63a6} 
+template$<$typename Index\+Type = uint16\+\_\+t$>$ \\
+void \mbox{\hyperlink{class_f_c_t_1_1_static_mesh}{FCT\+::\+Static\+Mesh}}$<$ Index\+Type $>$\+::create (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_mesh_8h_source}{Mesh.\+h}} 第 \mbox{\hyperlink{_mesh_8h_source_l00047}{47}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_static_mesh_aa3d0e16a9851d3dc0ffec540f16f0b72}\index{FCT::StaticMesh$<$ IndexType $>$@{FCT::StaticMesh$<$ IndexType $>$}!draw@{draw}}
+\index{draw@{draw}!FCT::StaticMesh$<$ IndexType $>$@{FCT::StaticMesh$<$ IndexType $>$}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_static_mesh_aa3d0e16a9851d3dc0ffec540f16f0b72} 
+template$<$typename Index\+Type = uint16\+\_\+t$>$ \\
+void \mbox{\hyperlink{class_f_c_t_1_1_static_mesh}{FCT\+::\+Static\+Mesh}}$<$ Index\+Type $>$\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer}{RHI\+::\+Command\+Buffer}} \texorpdfstring{$\ast$}{*}}]{cmd\+Buf}{, }\item[{uint32\+\_\+t}]{instance\+Count}{ = {\ttfamily 1}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_mesh_8h_source}{Mesh.\+h}} 第 \mbox{\hyperlink{_mesh_8h_source_l00073}{73}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_static_mesh_a64de326e17658bc3d24b104d787f42b4}\index{FCT::StaticMesh$<$ IndexType $>$@{FCT::StaticMesh$<$ IndexType $>$}!getIndexCount@{getIndexCount}}
+\index{getIndexCount@{getIndexCount}!FCT::StaticMesh$<$ IndexType $>$@{FCT::StaticMesh$<$ IndexType $>$}}
+\doxysubsubsection{\texorpdfstring{getIndexCount()}{getIndexCount()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_static_mesh_a64de326e17658bc3d24b104d787f42b4} 
+template$<$typename Index\+Type = uint16\+\_\+t$>$ \\
+size\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_static_mesh}{FCT\+::\+Static\+Mesh}}$<$ Index\+Type $>$\+::get\+Index\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_mesh_8h_source}{Mesh.\+h}} 第 \mbox{\hyperlink{_mesh_8h_source_l00098}{98}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_static_mesh_a9c10fb21344b22537a288b74ced4bf8d}\index{FCT::StaticMesh$<$ IndexType $>$@{FCT::StaticMesh$<$ IndexType $>$}!getVertexBuffer@{getVertexBuffer}}
+\index{getVertexBuffer@{getVertexBuffer}!FCT::StaticMesh$<$ IndexType $>$@{FCT::StaticMesh$<$ IndexType $>$}}
+\doxysubsubsection{\texorpdfstring{getVertexBuffer()}{getVertexBuffer()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_static_mesh_a9c10fb21344b22537a288b74ced4bf8d} 
+template$<$typename Index\+Type = uint16\+\_\+t$>$ \\
+\mbox{\hyperlink{class_f_c_t_1_1_vertex_buffer}{Vertex\+Buffer}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_static_mesh}{FCT\+::\+Static\+Mesh}}$<$ Index\+Type $>$\+::get\+Vertex\+Buffer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_mesh_8h_source}{Mesh.\+h}} 第 \mbox{\hyperlink{_mesh_8h_source_l00096}{96}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_static_mesh_a5a025603c6064e231a9ab76871798548}\index{FCT::StaticMesh$<$ IndexType $>$@{FCT::StaticMesh$<$ IndexType $>$}!getVertexCount@{getVertexCount}}
+\index{getVertexCount@{getVertexCount}!FCT::StaticMesh$<$ IndexType $>$@{FCT::StaticMesh$<$ IndexType $>$}}
+\doxysubsubsection{\texorpdfstring{getVertexCount()}{getVertexCount()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_static_mesh_a5a025603c6064e231a9ab76871798548} 
+template$<$typename Index\+Type = uint16\+\_\+t$>$ \\
+size\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_static_mesh}{FCT\+::\+Static\+Mesh}}$<$ Index\+Type $>$\+::get\+Vertex\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_mesh_8h_source}{Mesh.\+h}} 第 \mbox{\hyperlink{_mesh_8h_source_l00100}{100}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_static_mesh_a7fbfa8fd440f036d1276be07ccd73fd2}\index{FCT::StaticMesh$<$ IndexType $>$@{FCT::StaticMesh$<$ IndexType $>$}!setIndices@{setIndices}}
+\index{setIndices@{setIndices}!FCT::StaticMesh$<$ IndexType $>$@{FCT::StaticMesh$<$ IndexType $>$}}
+\doxysubsubsection{\texorpdfstring{setIndices()}{setIndices()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_static_mesh_a7fbfa8fd440f036d1276be07ccd73fd2} 
+template$<$typename Index\+Type = uint16\+\_\+t$>$ \\
+void \mbox{\hyperlink{class_f_c_t_1_1_static_mesh}{FCT\+::\+Static\+Mesh}}$<$ Index\+Type $>$\+::set\+Indices (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ Index\+Type $>$ \&}]{indices}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_mesh_8h_source}{Mesh.\+h}} 第 \mbox{\hyperlink{_mesh_8h_source_l00042}{42}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_static_mesh_a6955b934ce46f94b3036c7f6987cb6b6}\index{FCT::StaticMesh$<$ IndexType $>$@{FCT::StaticMesh$<$ IndexType $>$}!updateIndexData@{updateIndexData}}
+\index{updateIndexData@{updateIndexData}!FCT::StaticMesh$<$ IndexType $>$@{FCT::StaticMesh$<$ IndexType $>$}}
+\doxysubsubsection{\texorpdfstring{updateIndexData()}{updateIndexData()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_static_mesh_a6955b934ce46f94b3036c7f6987cb6b6} 
+template$<$typename Index\+Type = uint16\+\_\+t$>$ \\
+void \mbox{\hyperlink{class_f_c_t_1_1_static_mesh}{FCT\+::\+Static\+Mesh}}$<$ Index\+Type $>$\+::update\+Index\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_mesh_8h_source}{Mesh.\+h}} 第 \mbox{\hyperlink{_mesh_8h_source_l00089}{89}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_static_mesh_a9c2ccefbd920dc1258e2b2508c5d5506}\index{FCT::StaticMesh$<$ IndexType $>$@{FCT::StaticMesh$<$ IndexType $>$}!updateVertexData@{updateVertexData}}
+\index{updateVertexData@{updateVertexData}!FCT::StaticMesh$<$ IndexType $>$@{FCT::StaticMesh$<$ IndexType $>$}}
+\doxysubsubsection{\texorpdfstring{updateVertexData()}{updateVertexData()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_static_mesh_a9c2ccefbd920dc1258e2b2508c5d5506} 
+template$<$typename Index\+Type = uint16\+\_\+t$>$ \\
+void \mbox{\hyperlink{class_f_c_t_1_1_static_mesh}{FCT\+::\+Static\+Mesh}}$<$ Index\+Type $>$\+::update\+Vertex\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_mesh_8h_source}{Mesh.\+h}} 第 \mbox{\hyperlink{_mesh_8h_source_l00082}{82}} 行定义.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\+FCT/\+Context/\mbox{\hyperlink{_mesh_8h}{Mesh.\+h}}\end{DoxyCompactItemize}

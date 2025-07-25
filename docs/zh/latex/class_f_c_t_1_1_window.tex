@@ -1,0 +1,657 @@
+\doxysection{FCT\+::Window类 参考}
+\hypertarget{class_f_c_t_1_1_window}{}\label{class_f_c_t_1_1_window}\index{FCT::Window@{FCT::Window}}
+
+
+{\ttfamily \#include $<$Window.\+h$>$}
+
+类 FCT\+::Window 继承关系图\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_f_c_t_1_1_window}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespace_f_c_t_a1f1ccd6c8741cf55008c982f25b9bf2b}{Render\+Target\+Type}} \mbox{\hyperlink{class_f_c_t_1_1_window_a28395dc287ff1853602fb43c6840bd05}{get\+Type}} () const override
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_window_a7659d7c67b9e40d73f4245e4449c776f}{Window}} ()
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_window_a8059e104e95a93cba67c88344bbb5a98}{\texorpdfstring{$\sim$}{\string~}\+Window}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_window_a37d307a2adceaa748cf612a95ab89027}{pos}} (int x, int y)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_window_a263187dd65b4ac02a3e23c78b30e26a1}{size}} (int w, int h)
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_window_add382caaaec3b7ec0a181b92e1836581}{bind}} (\mbox{\hyperlink{class_f_c_t_1_1_context}{Context}} \texorpdfstring{$\ast$}{*}ctx) override=0
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_window_a19f6eb5e65660ee8fbd95cfcb6013245}{create}} ()=0
+\item 
+virtual bool \mbox{\hyperlink{class_f_c_t_1_1_window_a081f45332c5d1d563017ba285b4534e1}{is\+Running}} () const =0
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_window_a58737ce5ad34870d946ce4cf65b6218e}{swap\+Buffers}} ()=0
+\item 
+virtual int \mbox{\hyperlink{class_f_c_t_1_1_window_aa53c3eaadddcc9086c2c4f9f7753c808}{get\+Width}} ()=0
+\item 
+virtual int \mbox{\hyperlink{class_f_c_t_1_1_window_a97ac3a85a6e1b9fcbd42095e6450ec04}{get\+Height}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_window_a51f291d1553cd802aa4a48588062164d}{set\+Cursor\+Pos}} (int x, int y)=0
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_window_addf28064468b78b3bff89dbab4e551cf}{register\+Handler}} (\mbox{\hyperlink{class_f_c_t_1_1_event_handler}{Event\+Handler}} \texorpdfstring{$\ast$}{*}handler)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_window_af49287ab5b42fe00bc8d58afa3a78193}{unregister\+Handler}} (\mbox{\hyperlink{class_f_c_t_1_1_event_handler}{Event\+Handler}} \texorpdfstring{$\ast$}{*}handler)
+\item 
+virtual \mbox{\hyperlink{struct_f_c_t_1_1_vec2}{Vec2}} \mbox{\hyperlink{class_f_c_t_1_1_window_a21ab67913f960d2bb3f0a419d1e9f2bd}{get\+Cursor\+Pos}} () const =0
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_window_afe5ee45a8dc029d5ce83eaececb2804d}{clear\+Handler}} ()
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_image}{Image}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_window_a13f64b8c8a304805d783c3d074c7f29e}{target\+Image}} () const
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler}{Call\+Back\+Event\+Handler}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_window_ac63d6dd2fa8834882c9cdb284c365891}{get\+Call\+Back}} () const
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_image_render_target}{Image\+Render\+Target}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_window_ac219937cf7ceb32fef223540caaa945d}{get\+Current\+Target}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_window_aa39650c2393b7ec804e67ca3d1bd654a}{add\+Render\+Finsh\+Semaphore}} (\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore}{RHI\+::\+Semaphore}} \texorpdfstring{$\ast$}{*}semaphore)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_window_a877968f3e05dd21b530583ce3ec88d3d}{clear\+Render\+Finsh\+Semaphores}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_window_a420d3dbf23fe4442e9715c0d45c07d7c}{set\+Present\+Finsh\+Semaphore}} (\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore}{RHI\+::\+Semaphore}} \texorpdfstring{$\ast$}{*}semaphore)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_window_a376a194971e6b32be4d4e0fd1d6b7e8b}{add\+Render\+Finsh\+Fence}} (\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_fence}{RHI\+::\+Fence}} \texorpdfstring{$\ast$}{*}fence)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_window_a7b5b62028986a805c53fcbffe4b1cecd}{clear\+Render\+Finsh\+Fences}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_window_a19a7ad9ada73cdb78399672e016acfa6}{init\+Render}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_window_a4b99d82c5edeaf7f6aec4c08f6f6e4cb}{title}} (const std\+::string \&title)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_window_a7740ffaf178bb626e3257e193c857705}{enable\+Depth\+Buffer}} (\mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4}{Format}} format)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_window_a02a5ba22294b7943ffd93588c59065fc}{get\+Swapchain\+Image\+Count}} () const
+\item 
+\mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182}{Samples}} \mbox{\hyperlink{class_f_c_t_1_1_window_a711ba7c9f5ee0e678bb77ad9e8e41726}{get\+Swapchain\+Sample\+Count}} () const
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_window_a985a1e5959e71dd4ad70768f2a10157a}{enable\+Auto\+Viewport}} (\mbox{\hyperlink{struct_f_c_t_1_1_vec2}{Vec2}} viewport\+Size)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_window_aa10280e4cdebc9a5b298a966d5a6dd69}{disable\+Auto\+Viewport}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_window_a67a6fb7e2a6e1b1bf5866d79a761a3bb}{enable\+Auto\+Viewport\+For\+All\+Current\+Target\+To\+Wnd\+Pass}} ()
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain}{RHI\+::\+Swapchain}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_window_a7d345c18f51bb043f3b69bd887537f24}{swapchain}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public 成员函数 继承自 \mbox{\hyperlink{class_f_c_t_1_1_ref_count}{FCT\+::\+Ref\+Count}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_ref_count_a681b72d7bd32fd7e4b9ec861cd74370e}{Ref\+Count}} ()
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_ref_count_ae2948e0ae155079956caced23c85bb2b}{Ref\+Count}} (size\+\_\+t ref\+Count)
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_ref_count_af028e09f8a1492fdd5c788b6eb75754f}{\texorpdfstring{$\sim$}{\string~}\+Ref\+Count}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a59c2f131121de6503df8d363b6853d45}{add\+Ref}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_aaf57b2df79545f2b71ae9087865dee4c}{release}} ()
+\item 
+size\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a33146ec5804be422936519224a3a7b3f}{count}} ()
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_ref_count_a474ad3a918f2e87d75ff16075e1caeec}{operator bool}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public 成员函数 继承自 \mbox{\hyperlink{class_f_c_t_1_1_i_render_target}{FCT\+::\+IRender\+Target}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_image}{Image}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_i_render_target_a8371e34eb4e145fe7496a9032cd10923}{get\+Image}} () const =0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected 属性}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_window_behavior}{Window\+Behavior}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_window_a24bd55d961a81690bb279ef431fb27a3}{m\+\_\+behavior}}
+\item 
+bool \mbox{\hyperlink{class_f_c_t_1_1_window_ad6068be0069051222e58c3a71526c53e}{m\+\_\+enable\+Auto\+Viewport}}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_auto_viewport}{Auto\+Viewport}} \mbox{\hyperlink{class_f_c_t_1_1_window_a93033ed90f098fe09dfdbf06ec6f0222}{m\+\_\+auto\+Viewport}}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler}{Call\+Back\+Event\+Handler}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_window_af2cb41a72d45dbdc4ed9406bde3df15c}{m\+\_\+callback\+Handler}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_f_c_t_1_1_event_handler}{Event\+Handler}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_f_c_t_1_1_window_a2156a9c3c229f13f12e749dbd9b05ee1}{m\+\_\+handlers}}
+\item 
+int \mbox{\hyperlink{class_f_c_t_1_1_window_a57ad4dd73f465f53dd132a4dea2352e1}{m\+\_\+x}}
+\item 
+int \mbox{\hyperlink{class_f_c_t_1_1_window_a805d7000cddab97b078ed85a7bd7b3be}{m\+\_\+y}}
+\item 
+int \mbox{\hyperlink{class_f_c_t_1_1_window_acb809f9a6eb447cbaf02eabeb5049d35}{m\+\_\+width}}
+\item 
+int \mbox{\hyperlink{class_f_c_t_1_1_window_ab0dd108ca2345f23098dd9355e792b91}{m\+\_\+height}}
+\item 
+std\+::string \mbox{\hyperlink{class_f_c_t_1_1_window_a6e7b85dfa13e22588a011fca71fc4966}{m\+\_\+title}}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain}{RHI\+::\+Swapchain}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_window_adbab51a8e0422d698f4253fdb6641d2f}{m\+\_\+swapchain}}
+\item 
+bool \mbox{\hyperlink{class_f_c_t_1_1_window_a23bd49567f2067845f966248e16e2366}{m\+\_\+need\+Enable\+Depth\+Buffer}}
+\item 
+\mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4}{Format}} \mbox{\hyperlink{class_f_c_t_1_1_window_a53143e7dd7f81cbd35ee917f688c8682}{m\+\_\+depth\+Buffer\+Format}}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_context}{Context}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_window_a865d79557eec2bbedc90c8ffe4dfbcbd}{m\+\_\+ctx}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected 属性 继承自 \mbox{\hyperlink{class_f_c_t_1_1_ref_count}{FCT\+::\+Ref\+Count}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::atomic$<$ size\+\_\+t $>$ \mbox{\hyperlink{class_f_c_t_1_1_ref_count_aca88529f9b473d326168fa808fd02300}{m\+\_\+ref\+Count}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{友元}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_f_c_t_1_1_window_afa3ecf872e4cf7e89fa2de4e30ea11e1}{Set\+Param\+Window\+Behavior}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{额外继承的成员函数}
+\doxysubsection*{Protected 成员函数 继承自 \mbox{\hyperlink{class_f_c_t_1_1_ref_count}{FCT\+::\+Ref\+Count}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a0fea0bed50f726d3e11ddde802dac5da}{delete\+This}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+
+
+在文件 \mbox{\hyperlink{_window_8h_source}{Window.\+h}} 第 \mbox{\hyperlink{_window_8h_source_l00034}{34}} 行定义.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_f_c_t_1_1_window_doc-constructors}
+\doxysubsection{构造及析构函数说明}
+\Hypertarget{class_f_c_t_1_1_window_a7659d7c67b9e40d73f4245e4449c776f}\index{FCT::Window@{FCT::Window}!Window@{Window}}
+\index{Window@{Window}!FCT::Window@{FCT::Window}}
+\doxysubsubsection{\texorpdfstring{Window()}{Window()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_window_a7659d7c67b9e40d73f4245e4449c776f} 
+FCT\+::\+Window\+::\+Window (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_window_8h_source}{Window.\+h}} 第 \mbox{\hyperlink{_window_8h_source_l00193}{193}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_window_a8059e104e95a93cba67c88344bbb5a98}\index{FCT::Window@{FCT::Window}!````~Window@{\texorpdfstring{$\sim$}{\string~}Window}}
+\index{````~Window@{\texorpdfstring{$\sim$}{\string~}Window}!FCT::Window@{FCT::Window}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Window()}{\string~Window()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_window_a8059e104e95a93cba67c88344bbb5a98} 
+virtual FCT\+::\+Window\+::\texorpdfstring{$\sim$}{\string~}\+Window (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+在文件 \mbox{\hyperlink{_window_8h_source}{Window.\+h}} 第 \mbox{\hyperlink{_window_8h_source_l00041}{41}} 行定义.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_f_c_t_1_1_window_doc-func-members}
+\doxysubsection{成员函数说明}
+\Hypertarget{class_f_c_t_1_1_window_a376a194971e6b32be4d4e0fd1d6b7e8b}\index{FCT::Window@{FCT::Window}!addRenderFinshFence@{addRenderFinshFence}}
+\index{addRenderFinshFence@{addRenderFinshFence}!FCT::Window@{FCT::Window}}
+\doxysubsubsection{\texorpdfstring{addRenderFinshFence()}{addRenderFinshFence()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_window_a376a194971e6b32be4d4e0fd1d6b7e8b} 
+void FCT\+::\+Window\+::add\+Render\+Finsh\+Fence (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_fence}{RHI\+::\+Fence}} \texorpdfstring{$\ast$}{*}}]{fence}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_window_8h_source}{Window.\+h}} 第 \mbox{\hyperlink{_window_8h_source_l00097}{97}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_window_aa39650c2393b7ec804e67ca3d1bd654a}\index{FCT::Window@{FCT::Window}!addRenderFinshSemaphore@{addRenderFinshSemaphore}}
+\index{addRenderFinshSemaphore@{addRenderFinshSemaphore}!FCT::Window@{FCT::Window}}
+\doxysubsubsection{\texorpdfstring{addRenderFinshSemaphore()}{addRenderFinshSemaphore()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_window_aa39650c2393b7ec804e67ca3d1bd654a} 
+void FCT\+::\+Window\+::add\+Render\+Finsh\+Semaphore (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore}{RHI\+::\+Semaphore}} \texorpdfstring{$\ast$}{*}}]{semaphore}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_window_8h_source}{Window.\+h}} 第 \mbox{\hyperlink{_window_8h_source_l00080}{80}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_window_add382caaaec3b7ec0a181b92e1836581}\index{FCT::Window@{FCT::Window}!bind@{bind}}
+\index{bind@{bind}!FCT::Window@{FCT::Window}}
+\doxysubsubsection{\texorpdfstring{bind()}{bind()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_window_add382caaaec3b7ec0a181b92e1836581} 
+virtual void FCT\+::\+Window\+::bind (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_context}{Context}} \texorpdfstring{$\ast$}{*}}]{ctx}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [pure virtual]}}
+
+\begin{DoxyNote}{注解}
+如果绑定了上下文,需要每帧调用一次ctx-\/\texorpdfstring{$>$}{>}flush() 
+\end{DoxyNote}
+
+
+实现了 \mbox{\hyperlink{class_f_c_t_1_1_i_render_target_ad4b699064749ff5e517faa56f74e74e5}{FCT\+::\+IRender\+Target}}.
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_android___window_a4fe807aa70f193f9b56d96c1b2840c84}{FCT\+::\+Android\+\_\+\+Window}} , 以及 \mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_af9adbc194b65b58eee606089a978c69d}{FCT\+::\+GLFW\+\_\+\+Window}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_window_afe5ee45a8dc029d5ce83eaececb2804d}\index{FCT::Window@{FCT::Window}!clearHandler@{clearHandler}}
+\index{clearHandler@{clearHandler}!FCT::Window@{FCT::Window}}
+\doxysubsubsection{\texorpdfstring{clearHandler()}{clearHandler()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_window_afe5ee45a8dc029d5ce83eaececb2804d} 
+void FCT\+::\+Window\+::clear\+Handler (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_f_c_t_1_1_window_a7b5b62028986a805c53fcbffe4b1cecd}\index{FCT::Window@{FCT::Window}!clearRenderFinshFences@{clearRenderFinshFences}}
+\index{clearRenderFinshFences@{clearRenderFinshFences}!FCT::Window@{FCT::Window}}
+\doxysubsubsection{\texorpdfstring{clearRenderFinshFences()}{clearRenderFinshFences()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_window_a7b5b62028986a805c53fcbffe4b1cecd} 
+void FCT\+::\+Window\+::clear\+Render\+Finsh\+Fences (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_window_8h_source}{Window.\+h}} 第 \mbox{\hyperlink{_window_8h_source_l00101}{101}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_window_a877968f3e05dd21b530583ce3ec88d3d}\index{FCT::Window@{FCT::Window}!clearRenderFinshSemaphores@{clearRenderFinshSemaphores}}
+\index{clearRenderFinshSemaphores@{clearRenderFinshSemaphores}!FCT::Window@{FCT::Window}}
+\doxysubsubsection{\texorpdfstring{clearRenderFinshSemaphores()}{clearRenderFinshSemaphores()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_window_a877968f3e05dd21b530583ce3ec88d3d} 
+void FCT\+::\+Window\+::clear\+Render\+Finsh\+Semaphores (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_window_8h_source}{Window.\+h}} 第 \mbox{\hyperlink{_window_8h_source_l00089}{89}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_window_a19f6eb5e65660ee8fbd95cfcb6013245}\index{FCT::Window@{FCT::Window}!create@{create}}
+\index{create@{create}!FCT::Window@{FCT::Window}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_window_a19f6eb5e65660ee8fbd95cfcb6013245} 
+virtual void FCT\+::\+Window\+::create (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_android___window_a76688cccb1d2f45f1a06963a252edc2a}{FCT\+::\+Android\+\_\+\+Window}} , 以及 \mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_a139cfe81fa3136d7d4e31ccea4c7e010}{FCT\+::\+GLFW\+\_\+\+Window}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_window_aa10280e4cdebc9a5b298a966d5a6dd69}\index{FCT::Window@{FCT::Window}!disableAutoViewport@{disableAutoViewport}}
+\index{disableAutoViewport@{disableAutoViewport}!FCT::Window@{FCT::Window}}
+\doxysubsubsection{\texorpdfstring{disableAutoViewport()}{disableAutoViewport()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_window_aa10280e4cdebc9a5b298a966d5a6dd69} 
+void FCT\+::\+Window\+::disable\+Auto\+Viewport (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_window_8h_source}{Window.\+h}} 第 \mbox{\hyperlink{_window_8h_source_l00144}{144}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_window_a985a1e5959e71dd4ad70768f2a10157a}\index{FCT::Window@{FCT::Window}!enableAutoViewport@{enableAutoViewport}}
+\index{enableAutoViewport@{enableAutoViewport}!FCT::Window@{FCT::Window}}
+\doxysubsubsection{\texorpdfstring{enableAutoViewport()}{enableAutoViewport()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_window_a985a1e5959e71dd4ad70768f2a10157a} 
+void FCT\+::\+Window\+::enable\+Auto\+Viewport (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_f_c_t_1_1_vec2}{Vec2}}}]{viewport\+Size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_window_8h_source}{Window.\+h}} 第 \mbox{\hyperlink{_window_8h_source_l00131}{131}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_window_a67a6fb7e2a6e1b1bf5866d79a761a3bb}\index{FCT::Window@{FCT::Window}!enableAutoViewportForAllCurrentTargetToWndPass@{enableAutoViewportForAllCurrentTargetToWndPass}}
+\index{enableAutoViewportForAllCurrentTargetToWndPass@{enableAutoViewportForAllCurrentTargetToWndPass}!FCT::Window@{FCT::Window}}
+\doxysubsubsection{\texorpdfstring{enableAutoViewportForAllCurrentTargetToWndPass()}{enableAutoViewportForAllCurrentTargetToWndPass()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_window_a67a6fb7e2a6e1b1bf5866d79a761a3bb} 
+void FCT\+::\+Window\+::enable\+Auto\+Viewport\+For\+All\+Current\+Target\+To\+Wnd\+Pass (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_window_8h_source}{Window.\+h}} 第 \mbox{\hyperlink{_window_8h_source_l00148}{148}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_window_a7740ffaf178bb626e3257e193c857705}\index{FCT::Window@{FCT::Window}!enableDepthBuffer@{enableDepthBuffer}}
+\index{enableDepthBuffer@{enableDepthBuffer}!FCT::Window@{FCT::Window}}
+\doxysubsubsection{\texorpdfstring{enableDepthBuffer()}{enableDepthBuffer()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_window_a7740ffaf178bb626e3257e193c857705} 
+void FCT\+::\+Window\+::enable\+Depth\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4}{Format}}}]{format}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_window_8h_source}{Window.\+h}} 第 \mbox{\hyperlink{_window_8h_source_l00111}{111}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_window_ac63d6dd2fa8834882c9cdb284c365891}\index{FCT::Window@{FCT::Window}!getCallBack@{getCallBack}}
+\index{getCallBack@{getCallBack}!FCT::Window@{FCT::Window}}
+\doxysubsubsection{\texorpdfstring{getCallBack()}{getCallBack()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_window_ac63d6dd2fa8834882c9cdb284c365891} 
+\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler}{Call\+Back\+Event\+Handler}} \texorpdfstring{$\ast$}{*} FCT\+::\+Window\+::get\+Call\+Back (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_window_8h_source}{Window.\+h}} 第 \mbox{\hyperlink{_window_8h_source_l00074}{74}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_window_ac219937cf7ceb32fef223540caaa945d}\index{FCT::Window@{FCT::Window}!getCurrentTarget@{getCurrentTarget}}
+\index{getCurrentTarget@{getCurrentTarget}!FCT::Window@{FCT::Window}}
+\doxysubsubsection{\texorpdfstring{getCurrentTarget()}{getCurrentTarget()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_window_ac219937cf7ceb32fef223540caaa945d} 
+\mbox{\hyperlink{class_f_c_t_1_1_image_render_target}{Image\+Render\+Target}} \texorpdfstring{$\ast$}{*} FCT\+::\+Window\+::get\+Current\+Target (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_window_8h_source}{Window.\+h}} 第 \mbox{\hyperlink{_window_8h_source_l00077}{77}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_window_a21ab67913f960d2bb3f0a419d1e9f2bd}\index{FCT::Window@{FCT::Window}!getCursorPos@{getCursorPos}}
+\index{getCursorPos@{getCursorPos}!FCT::Window@{FCT::Window}}
+\doxysubsubsection{\texorpdfstring{getCursorPos()}{getCursorPos()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_window_a21ab67913f960d2bb3f0a419d1e9f2bd} 
+virtual \mbox{\hyperlink{struct_f_c_t_1_1_vec2}{Vec2}} FCT\+::\+Window\+::get\+Cursor\+Pos (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_ac58cefe96f8c6015899d22d7548e9292}{FCT\+::\+GLFW\+\_\+\+Window}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_window_a97ac3a85a6e1b9fcbd42095e6450ec04}\index{FCT::Window@{FCT::Window}!getHeight@{getHeight}}
+\index{getHeight@{getHeight}!FCT::Window@{FCT::Window}}
+\doxysubsubsection{\texorpdfstring{getHeight()}{getHeight()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_window_a97ac3a85a6e1b9fcbd42095e6450ec04} 
+virtual int FCT\+::\+Window\+::get\+Height (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_android___window_a246f92e1852e93681f0ff2db4259ad44}{FCT\+::\+Android\+\_\+\+Window}} , 以及 \mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_ac6a2aca643585288deb19984147b299b}{FCT\+::\+GLFW\+\_\+\+Window}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_window_a02a5ba22294b7943ffd93588c59065fc}\index{FCT::Window@{FCT::Window}!getSwapchainImageCount@{getSwapchainImageCount}}
+\index{getSwapchainImageCount@{getSwapchainImageCount}!FCT::Window@{FCT::Window}}
+\doxysubsubsection{\texorpdfstring{getSwapchainImageCount()}{getSwapchainImageCount()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_window_a02a5ba22294b7943ffd93588c59065fc} 
+uint32\+\_\+t FCT\+::\+Window\+::get\+Swapchain\+Image\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_window_8h_source}{Window.\+h}} 第 \mbox{\hyperlink{_window_8h_source_l00123}{123}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_window_a711ba7c9f5ee0e678bb77ad9e8e41726}\index{FCT::Window@{FCT::Window}!getSwapchainSampleCount@{getSwapchainSampleCount}}
+\index{getSwapchainSampleCount@{getSwapchainSampleCount}!FCT::Window@{FCT::Window}}
+\doxysubsubsection{\texorpdfstring{getSwapchainSampleCount()}{getSwapchainSampleCount()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_window_a711ba7c9f5ee0e678bb77ad9e8e41726} 
+\mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182}{Samples}} FCT\+::\+Window\+::get\+Swapchain\+Sample\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_window_8h_source}{Window.\+h}} 第 \mbox{\hyperlink{_window_8h_source_l00127}{127}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_window_a28395dc287ff1853602fb43c6840bd05}\index{FCT::Window@{FCT::Window}!getType@{getType}}
+\index{getType@{getType}!FCT::Window@{FCT::Window}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_window_a28395dc287ff1853602fb43c6840bd05} 
+\mbox{\hyperlink{namespace_f_c_t_a1f1ccd6c8741cf55008c982f25b9bf2b}{Render\+Target\+Type}} FCT\+::\+Window\+::get\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+实现了 \mbox{\hyperlink{class_f_c_t_1_1_i_render_target_a3e6761df642ec3acbe76bb82a41eac9b}{FCT\+::\+IRender\+Target}}.
+
+
+
+在文件 \mbox{\hyperlink{_window_8h_source}{Window.\+h}} 第 \mbox{\hyperlink{_window_8h_source_l00039}{39}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_window_aa53c3eaadddcc9086c2c4f9f7753c808}\index{FCT::Window@{FCT::Window}!getWidth@{getWidth}}
+\index{getWidth@{getWidth}!FCT::Window@{FCT::Window}}
+\doxysubsubsection{\texorpdfstring{getWidth()}{getWidth()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_window_aa53c3eaadddcc9086c2c4f9f7753c808} 
+virtual int FCT\+::\+Window\+::get\+Width (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_android___window_a54ca01febad6bf6bf70e269885c108b3}{FCT\+::\+Android\+\_\+\+Window}} , 以及 \mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_a664529ab5a468493f4f420082d3d8900}{FCT\+::\+GLFW\+\_\+\+Window}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_window_a19a7ad9ada73cdb78399672e016acfa6}\index{FCT::Window@{FCT::Window}!initRender@{initRender}}
+\index{initRender@{initRender}!FCT::Window@{FCT::Window}}
+\doxysubsubsection{\texorpdfstring{initRender()}{initRender()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_window_a19a7ad9ada73cdb78399672e016acfa6} 
+void FCT\+::\+Window\+::init\+Render (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_f_c_t_1_1_window_a081f45332c5d1d563017ba285b4534e1}\index{FCT::Window@{FCT::Window}!isRunning@{isRunning}}
+\index{isRunning@{isRunning}!FCT::Window@{FCT::Window}}
+\doxysubsubsection{\texorpdfstring{isRunning()}{isRunning()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_window_a081f45332c5d1d563017ba285b4534e1} 
+virtual bool FCT\+::\+Window\+::is\+Running (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_android___window_afa5f564564865d6bc2f3e3825fa09ad7}{FCT\+::\+Android\+\_\+\+Window}} , 以及 \mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_a381dad29d9be19cfd88e129fd195373d}{FCT\+::\+GLFW\+\_\+\+Window}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_window_a37d307a2adceaa748cf612a95ab89027}\index{FCT::Window@{FCT::Window}!pos@{pos}}
+\index{pos@{pos}!FCT::Window@{FCT::Window}}
+\doxysubsubsection{\texorpdfstring{pos()}{pos()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_window_a37d307a2adceaa748cf612a95ab89027} 
+void FCT\+::\+Window\+::pos (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_window_8h_source}{Window.\+h}} 第 \mbox{\hyperlink{_window_8h_source_l00045}{45}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_window_addf28064468b78b3bff89dbab4e551cf}\index{FCT::Window@{FCT::Window}!registerHandler@{registerHandler}}
+\index{registerHandler@{registerHandler}!FCT::Window@{FCT::Window}}
+\doxysubsubsection{\texorpdfstring{registerHandler()}{registerHandler()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_window_addf28064468b78b3bff89dbab4e551cf} 
+void FCT\+::\+Window\+::register\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_event_handler}{Event\+Handler}} \texorpdfstring{$\ast$}{*}}]{handler}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_f_c_t_1_1_window_a51f291d1553cd802aa4a48588062164d}\index{FCT::Window@{FCT::Window}!setCursorPos@{setCursorPos}}
+\index{setCursorPos@{setCursorPos}!FCT::Window@{FCT::Window}}
+\doxysubsubsection{\texorpdfstring{setCursorPos()}{setCursorPos()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_window_a51f291d1553cd802aa4a48588062164d} 
+virtual void FCT\+::\+Window\+::set\+Cursor\+Pos (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_android___window_aa476aa6a317d4af1ca53aaf8bb2b2c2e}{FCT\+::\+Android\+\_\+\+Window}} , 以及 \mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_a8d60d0c3bed9c92ba518ffb7b6ad7fb3}{FCT\+::\+GLFW\+\_\+\+Window}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_window_a420d3dbf23fe4442e9715c0d45c07d7c}\index{FCT::Window@{FCT::Window}!setPresentFinshSemaphore@{setPresentFinshSemaphore}}
+\index{setPresentFinshSemaphore@{setPresentFinshSemaphore}!FCT::Window@{FCT::Window}}
+\doxysubsubsection{\texorpdfstring{setPresentFinshSemaphore()}{setPresentFinshSemaphore()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_window_a420d3dbf23fe4442e9715c0d45c07d7c} 
+void FCT\+::\+Window\+::set\+Present\+Finsh\+Semaphore (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore}{RHI\+::\+Semaphore}} \texorpdfstring{$\ast$}{*}}]{semaphore}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_window_8h_source}{Window.\+h}} 第 \mbox{\hyperlink{_window_8h_source_l00093}{93}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_window_a263187dd65b4ac02a3e23c78b30e26a1}\index{FCT::Window@{FCT::Window}!size@{size}}
+\index{size@{size}!FCT::Window@{FCT::Window}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_window_a263187dd65b4ac02a3e23c78b30e26a1} 
+void FCT\+::\+Window\+::size (\begin{DoxyParamCaption}\item[{int}]{w}{, }\item[{int}]{h}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_window_8h_source}{Window.\+h}} 第 \mbox{\hyperlink{_window_8h_source_l00048}{48}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_window_a58737ce5ad34870d946ce4cf65b6218e}\index{FCT::Window@{FCT::Window}!swapBuffers@{swapBuffers}}
+\index{swapBuffers@{swapBuffers}!FCT::Window@{FCT::Window}}
+\doxysubsubsection{\texorpdfstring{swapBuffers()}{swapBuffers()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_window_a58737ce5ad34870d946ce4cf65b6218e} 
+virtual void FCT\+::\+Window\+::swap\+Buffers (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_android___window_a449fe196cc96232664c4acf36d909b47}{FCT\+::\+Android\+\_\+\+Window}} , 以及 \mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_acbdbe173978cca12cf07acd56532eec1}{FCT\+::\+GLFW\+\_\+\+Window}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_window_a7d345c18f51bb043f3b69bd887537f24}\index{FCT::Window@{FCT::Window}!swapchain@{swapchain}}
+\index{swapchain@{swapchain}!FCT::Window@{FCT::Window}}
+\doxysubsubsection{\texorpdfstring{swapchain()}{swapchain()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_window_a7d345c18f51bb043f3b69bd887537f24} 
+\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain}{RHI\+::\+Swapchain}} \texorpdfstring{$\ast$}{*} FCT\+::\+Window\+::swapchain (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_window_8h_source}{Window.\+h}} 第 \mbox{\hyperlink{_window_8h_source_l00156}{156}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_window_a13f64b8c8a304805d783c3d074c7f29e}\index{FCT::Window@{FCT::Window}!targetImage@{targetImage}}
+\index{targetImage@{targetImage}!FCT::Window@{FCT::Window}}
+\doxysubsubsection{\texorpdfstring{targetImage()}{targetImage()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_window_a13f64b8c8a304805d783c3d074c7f29e} 
+\mbox{\hyperlink{class_f_c_t_1_1_image}{Image}} \texorpdfstring{$\ast$}{*} FCT\+::\+Window\+::target\+Image (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_window_8h_source}{Window.\+h}} 第 \mbox{\hyperlink{_window_8h_source_l00070}{70}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_window_a4b99d82c5edeaf7f6aec4c08f6f6e4cb}\index{FCT::Window@{FCT::Window}!title@{title}}
+\index{title@{title}!FCT::Window@{FCT::Window}}
+\doxysubsubsection{\texorpdfstring{title()}{title()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_window_a4b99d82c5edeaf7f6aec4c08f6f6e4cb} 
+void FCT\+::\+Window\+::title (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{title}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_window_8h_source}{Window.\+h}} 第 \mbox{\hyperlink{_window_8h_source_l00106}{106}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_window_af49287ab5b42fe00bc8d58afa3a78193}\index{FCT::Window@{FCT::Window}!unregisterHandler@{unregisterHandler}}
+\index{unregisterHandler@{unregisterHandler}!FCT::Window@{FCT::Window}}
+\doxysubsubsection{\texorpdfstring{unregisterHandler()}{unregisterHandler()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_window_af49287ab5b42fe00bc8d58afa3a78193} 
+void FCT\+::\+Window\+::unregister\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_event_handler}{Event\+Handler}} \texorpdfstring{$\ast$}{*}}]{handler}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-related-members}
+\Hypertarget{class_f_c_t_1_1_window_doc-related-members}
+\doxysubsection{友元及相关符号说明}
+\Hypertarget{class_f_c_t_1_1_window_afa3ecf872e4cf7e89fa2de4e30ea11e1}\index{FCT::Window@{FCT::Window}!SetParamWindowBehavior@{SetParamWindowBehavior}}
+\index{SetParamWindowBehavior@{SetParamWindowBehavior}!FCT::Window@{FCT::Window}}
+\doxysubsubsection{\texorpdfstring{SetParamWindowBehavior}{SetParamWindowBehavior}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_window_afa3ecf872e4cf7e89fa2de4e30ea11e1} 
+friend class \mbox{\hyperlink{class_f_c_t_1_1_set_param_window_behavior}{Set\+Param\+Window\+Behavior}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+在文件 \mbox{\hyperlink{_window_8h_source}{Window.\+h}} 第 \mbox{\hyperlink{_window_8h_source_l00038}{38}} 行定义.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_f_c_t_1_1_window_doc-variable-members}
+\doxysubsection{类成员变量说明}
+\Hypertarget{class_f_c_t_1_1_window_a93033ed90f098fe09dfdbf06ec6f0222}\index{FCT::Window@{FCT::Window}!m\_autoViewport@{m\_autoViewport}}
+\index{m\_autoViewport@{m\_autoViewport}!FCT::Window@{FCT::Window}}
+\doxysubsubsection{\texorpdfstring{m\_autoViewport}{m\_autoViewport}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_window_a93033ed90f098fe09dfdbf06ec6f0222} 
+\mbox{\hyperlink{class_f_c_t_1_1_auto_viewport}{Auto\+Viewport}} FCT\+::\+Window\+::m\+\_\+auto\+Viewport\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_window_8h_source}{Window.\+h}} 第 \mbox{\hyperlink{_window_8h_source_l00163}{163}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_window_a24bd55d961a81690bb279ef431fb27a3}\index{FCT::Window@{FCT::Window}!m\_behavior@{m\_behavior}}
+\index{m\_behavior@{m\_behavior}!FCT::Window@{FCT::Window}}
+\doxysubsubsection{\texorpdfstring{m\_behavior}{m\_behavior}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_window_a24bd55d961a81690bb279ef431fb27a3} 
+\mbox{\hyperlink{class_f_c_t_1_1_window_behavior}{Window\+Behavior}}\texorpdfstring{$\ast$}{*} FCT\+::\+Window\+::m\+\_\+behavior\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_window_8h_source}{Window.\+h}} 第 \mbox{\hyperlink{_window_8h_source_l00036}{36}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_window_af2cb41a72d45dbdc4ed9406bde3df15c}\index{FCT::Window@{FCT::Window}!m\_callbackHandler@{m\_callbackHandler}}
+\index{m\_callbackHandler@{m\_callbackHandler}!FCT::Window@{FCT::Window}}
+\doxysubsubsection{\texorpdfstring{m\_callbackHandler}{m\_callbackHandler}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_window_af2cb41a72d45dbdc4ed9406bde3df15c} 
+\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler}{Call\+Back\+Event\+Handler}}\texorpdfstring{$\ast$}{*} FCT\+::\+Window\+::m\+\_\+callback\+Handler\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_window_8h_source}{Window.\+h}} 第 \mbox{\hyperlink{_window_8h_source_l00164}{164}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_window_a865d79557eec2bbedc90c8ffe4dfbcbd}\index{FCT::Window@{FCT::Window}!m\_ctx@{m\_ctx}}
+\index{m\_ctx@{m\_ctx}!FCT::Window@{FCT::Window}}
+\doxysubsubsection{\texorpdfstring{m\_ctx}{m\_ctx}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_window_a865d79557eec2bbedc90c8ffe4dfbcbd} 
+\mbox{\hyperlink{class_f_c_t_1_1_context}{Context}}\texorpdfstring{$\ast$}{*} FCT\+::\+Window\+::m\+\_\+ctx\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_window_8h_source}{Window.\+h}} 第 \mbox{\hyperlink{_window_8h_source_l00171}{171}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_window_a53143e7dd7f81cbd35ee917f688c8682}\index{FCT::Window@{FCT::Window}!m\_depthBufferFormat@{m\_depthBufferFormat}}
+\index{m\_depthBufferFormat@{m\_depthBufferFormat}!FCT::Window@{FCT::Window}}
+\doxysubsubsection{\texorpdfstring{m\_depthBufferFormat}{m\_depthBufferFormat}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_window_a53143e7dd7f81cbd35ee917f688c8682} 
+\mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4}{Format}} FCT\+::\+Window\+::m\+\_\+depth\+Buffer\+Format\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_window_8h_source}{Window.\+h}} 第 \mbox{\hyperlink{_window_8h_source_l00170}{170}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_window_ad6068be0069051222e58c3a71526c53e}\index{FCT::Window@{FCT::Window}!m\_enableAutoViewport@{m\_enableAutoViewport}}
+\index{m\_enableAutoViewport@{m\_enableAutoViewport}!FCT::Window@{FCT::Window}}
+\doxysubsubsection{\texorpdfstring{m\_enableAutoViewport}{m\_enableAutoViewport}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_window_ad6068be0069051222e58c3a71526c53e} 
+bool FCT\+::\+Window\+::m\+\_\+enable\+Auto\+Viewport\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_window_8h_source}{Window.\+h}} 第 \mbox{\hyperlink{_window_8h_source_l00162}{162}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_window_a2156a9c3c229f13f12e749dbd9b05ee1}\index{FCT::Window@{FCT::Window}!m\_handlers@{m\_handlers}}
+\index{m\_handlers@{m\_handlers}!FCT::Window@{FCT::Window}}
+\doxysubsubsection{\texorpdfstring{m\_handlers}{m\_handlers}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_window_a2156a9c3c229f13f12e749dbd9b05ee1} 
+std\+::vector$<$\mbox{\hyperlink{class_f_c_t_1_1_event_handler}{Event\+Handler}}\texorpdfstring{$\ast$}{*}$>$ FCT\+::\+Window\+::m\+\_\+handlers\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_window_8h_source}{Window.\+h}} 第 \mbox{\hyperlink{_window_8h_source_l00165}{165}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_window_ab0dd108ca2345f23098dd9355e792b91}\index{FCT::Window@{FCT::Window}!m\_height@{m\_height}}
+\index{m\_height@{m\_height}!FCT::Window@{FCT::Window}}
+\doxysubsubsection{\texorpdfstring{m\_height}{m\_height}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_window_ab0dd108ca2345f23098dd9355e792b91} 
+int FCT\+::\+Window\+::m\+\_\+height\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_window_8h_source}{Window.\+h}} 第 \mbox{\hyperlink{_window_8h_source_l00166}{166}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_window_a23bd49567f2067845f966248e16e2366}\index{FCT::Window@{FCT::Window}!m\_needEnableDepthBuffer@{m\_needEnableDepthBuffer}}
+\index{m\_needEnableDepthBuffer@{m\_needEnableDepthBuffer}!FCT::Window@{FCT::Window}}
+\doxysubsubsection{\texorpdfstring{m\_needEnableDepthBuffer}{m\_needEnableDepthBuffer}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_window_a23bd49567f2067845f966248e16e2366} 
+bool FCT\+::\+Window\+::m\+\_\+need\+Enable\+Depth\+Buffer\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_window_8h_source}{Window.\+h}} 第 \mbox{\hyperlink{_window_8h_source_l00169}{169}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_window_adbab51a8e0422d698f4253fdb6641d2f}\index{FCT::Window@{FCT::Window}!m\_swapchain@{m\_swapchain}}
+\index{m\_swapchain@{m\_swapchain}!FCT::Window@{FCT::Window}}
+\doxysubsubsection{\texorpdfstring{m\_swapchain}{m\_swapchain}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_window_adbab51a8e0422d698f4253fdb6641d2f} 
+\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain}{RHI\+::\+Swapchain}}\texorpdfstring{$\ast$}{*} FCT\+::\+Window\+::m\+\_\+swapchain\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_window_8h_source}{Window.\+h}} 第 \mbox{\hyperlink{_window_8h_source_l00168}{168}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_window_a6e7b85dfa13e22588a011fca71fc4966}\index{FCT::Window@{FCT::Window}!m\_title@{m\_title}}
+\index{m\_title@{m\_title}!FCT::Window@{FCT::Window}}
+\doxysubsubsection{\texorpdfstring{m\_title}{m\_title}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_window_a6e7b85dfa13e22588a011fca71fc4966} 
+std\+::string FCT\+::\+Window\+::m\+\_\+title\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_window_8h_source}{Window.\+h}} 第 \mbox{\hyperlink{_window_8h_source_l00167}{167}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_window_acb809f9a6eb447cbaf02eabeb5049d35}\index{FCT::Window@{FCT::Window}!m\_width@{m\_width}}
+\index{m\_width@{m\_width}!FCT::Window@{FCT::Window}}
+\doxysubsubsection{\texorpdfstring{m\_width}{m\_width}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_window_acb809f9a6eb447cbaf02eabeb5049d35} 
+int FCT\+::\+Window\+::m\+\_\+width\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_window_8h_source}{Window.\+h}} 第 \mbox{\hyperlink{_window_8h_source_l00166}{166}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_window_a57ad4dd73f465f53dd132a4dea2352e1}\index{FCT::Window@{FCT::Window}!m\_x@{m\_x}}
+\index{m\_x@{m\_x}!FCT::Window@{FCT::Window}}
+\doxysubsubsection{\texorpdfstring{m\_x}{m\_x}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_window_a57ad4dd73f465f53dd132a4dea2352e1} 
+int FCT\+::\+Window\+::m\+\_\+x\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_window_8h_source}{Window.\+h}} 第 \mbox{\hyperlink{_window_8h_source_l00166}{166}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_window_a805d7000cddab97b078ed85a7bd7b3be}\index{FCT::Window@{FCT::Window}!m\_y@{m\_y}}
+\index{m\_y@{m\_y}!FCT::Window@{FCT::Window}}
+\doxysubsubsection{\texorpdfstring{m\_y}{m\_y}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_window_a805d7000cddab97b078ed85a7bd7b3be} 
+int FCT\+::\+Window\+::m\+\_\+y\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_window_8h_source}{Window.\+h}} 第 \mbox{\hyperlink{_window_8h_source_l00166}{166}} 行定义.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\+FCT/\+UI/\mbox{\hyperlink{_window_8h}{Window.\+h}}\end{DoxyCompactItemize}

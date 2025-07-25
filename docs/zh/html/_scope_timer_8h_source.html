@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FCT: include/FCT/DebugTools/ScopeTimer.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FCT
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_scope_timer_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">ScopeTimer.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_scope_timer_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// Created by Administrator on 2025/5/11.</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#ifndef SCOPETIMER_H</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#define SCOPETIMER_H</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="_out_stream_8h.html">OutStream.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="_third_party_8h.html">../ThirdParty.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_f_c_t.html">FCT</a></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>{</div>
+<div class="foldopen" id="foldopen00011" data-start="{" data-end="};">
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_scope_timer.html">   11</a></span>    <span class="keyword">class </span><a class="code hl_function" href="class_f_c_t_1_1_scope_timer.html#a117434f23f1f083ccccb6ce29d5edd7f">ScopeTimer</a> {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        std::string name;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        std::chrono::high_resolution_clock::time_point startTime;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="keywordtype">bool</span> stopped;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keyword">static</span> std::map&lt;std::string, double&gt; timings;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="}">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_scope_timer.html#a117434f23f1f083ccccb6ce29d5edd7f">   18</a></span>        <a class="code hl_function" href="class_f_c_t_1_1_scope_timer.html#a117434f23f1f083ccccb6ce29d5edd7f">ScopeTimer</a>(<span class="keyword">const</span> std::string&amp; timerName)</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>            : name(timerName), stopped(false) {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>            startTime = std::chrono::high_resolution_clock::now();</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        }</div>
+</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="}">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_scope_timer.html#a9239925fe32b4ea1dd3375951220e691">   23</a></span>        <a class="code hl_function" href="class_f_c_t_1_1_scope_timer.html#a9239925fe32b4ea1dd3375951220e691">~ScopeTimer</a>() {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            <span class="keywordflow">if</span> (!stopped) {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>                <a class="code hl_function" href="class_f_c_t_1_1_scope_timer.html#a2803ceae81eb377ed3bfa7c45bf41452">stop</a>();</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            }</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        }</div>
+</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="foldopen" id="foldopen00029" data-start="{" data-end="}">
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_scope_timer.html#a2803ceae81eb377ed3bfa7c45bf41452">   29</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_scope_timer.html#a2803ceae81eb377ed3bfa7c45bf41452">stop</a>() {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            <span class="keyword">auto</span> endTime = std::chrono::high_resolution_clock::now();</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            <span class="keyword">auto</span> duration = std::chrono::duration_cast&lt;std::chrono::microseconds&gt;(endTime - startTime).count();</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            timings[name] = duration;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            stopped = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        }</div>
+</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="foldopen" id="foldopen00037" data-start="{" data-end="}">
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_scope_timer.html#a9d388adcbb5261bfe534ede761751a0a">   37</a></span>        <span class="keyword">static</span> <span class="keywordtype">double</span> <a class="code hl_function" href="class_f_c_t_1_1_scope_timer.html#a9d388adcbb5261bfe534ede761751a0a">getTime</a>(<span class="keyword">const</span> std::string&amp; timerName) {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            <span class="keyword">auto</span> it = timings.find(timerName);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            <span class="keywordflow">if</span> (it != timings.end()) {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                <span class="keywordflow">return</span> it-&gt;second;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            }</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            <span class="keywordflow">return</span> 0.0;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        }</div>
+</div>
+<div class="foldopen" id="foldopen00044" data-start="{" data-end="}">
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_scope_timer.html#a8e5583787ba4c72862156e4cdce30b9a">   44</a></span>        <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_scope_timer.html#a8e5583787ba4c72862156e4cdce30b9a">printAll</a>(std::ostream&amp; out = <a class="code hl_variable" href="namespace_f_c_t.html#aaf667d52d2d41f6a081ae2fc2d521650">fout</a>) {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            out &lt;&lt; <span class="stringliteral">&quot;===== ScopeTimer Results =====\n&quot;</span>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; timing : timings) {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                out &lt;&lt; timing.first &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; timing.second &lt;&lt; <span class="stringliteral">&quot; us\n&quot;</span>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            }</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            out &lt;&lt; <span class="stringliteral">&quot;============================\n&quot;</span>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        }</div>
+</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    };</div>
+</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>} <span class="comment">// namespace FCT</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="_scope_timer_8h.html#a304c5fc7c53824f61be40b9470b34cc5">   53</a></span><span class="preprocessor">#define FCTSCOPETIMER(name) FCT::ScopeTimer name##Timer(#name)</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#endif </span><span class="comment">//SCOPETIMER_H</span></div>
+<div class="ttc" id="a_out_stream_8h_html"><div class="ttname"><a href="_out_stream_8h.html">OutStream.h</a></div></div>
+<div class="ttc" id="a_third_party_8h_html"><div class="ttname"><a href="_third_party_8h.html">ThirdParty.h</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_scope_timer_html_a117434f23f1f083ccccb6ce29d5edd7f"><div class="ttname"><a href="class_f_c_t_1_1_scope_timer.html#a117434f23f1f083ccccb6ce29d5edd7f">FCT::ScopeTimer::ScopeTimer</a></div><div class="ttdeci">ScopeTimer(const std::string &amp;timerName)</div><div class="ttdef"><b>定义</b> <a href="#l00018">ScopeTimer.h:18</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_scope_timer_html_a2803ceae81eb377ed3bfa7c45bf41452"><div class="ttname"><a href="class_f_c_t_1_1_scope_timer.html#a2803ceae81eb377ed3bfa7c45bf41452">FCT::ScopeTimer::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdef"><b>定义</b> <a href="#l00029">ScopeTimer.h:29</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_scope_timer_html_a8e5583787ba4c72862156e4cdce30b9a"><div class="ttname"><a href="class_f_c_t_1_1_scope_timer.html#a8e5583787ba4c72862156e4cdce30b9a">FCT::ScopeTimer::printAll</a></div><div class="ttdeci">static void printAll(std::ostream &amp;out=fout)</div><div class="ttdef"><b>定义</b> <a href="#l00044">ScopeTimer.h:44</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_scope_timer_html_a9239925fe32b4ea1dd3375951220e691"><div class="ttname"><a href="class_f_c_t_1_1_scope_timer.html#a9239925fe32b4ea1dd3375951220e691">FCT::ScopeTimer::~ScopeTimer</a></div><div class="ttdeci">~ScopeTimer()</div><div class="ttdef"><b>定义</b> <a href="#l00023">ScopeTimer.h:23</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_scope_timer_html_a9d388adcbb5261bfe534ede761751a0a"><div class="ttname"><a href="class_f_c_t_1_1_scope_timer.html#a9d388adcbb5261bfe534ede761751a0a">FCT::ScopeTimer::getTime</a></div><div class="ttdeci">static double getTime(const std::string &amp;timerName)</div><div class="ttdef"><b>定义</b> <a href="#l00037">ScopeTimer.h:37</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html"><div class="ttname"><a href="namespace_f_c_t.html">FCT</a></div><div class="ttdef"><b>定义</b> <a href="_flags_8h_source.html#l00010">Flags.h:11</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_aaf667d52d2d41f6a081ae2fc2d521650"><div class="ttname"><a href="namespace_f_c_t.html#aaf667d52d2d41f6a081ae2fc2d521650">FCT::fout</a></div><div class="ttdeci">std::ostream &amp; fout</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="dir_3b79087de5de3e907e48529d171f9ebd.html">FCT</a></li><li class="navelem"><a href="dir_7d6af68350718625d5d5cd308630f5f1.html">DebugTools</a></li><li class="navelem"><a href="_scope_timer_8h.html">ScopeTimer.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

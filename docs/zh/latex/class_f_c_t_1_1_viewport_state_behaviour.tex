@@ -1,0 +1,101 @@
+\doxysection{FCT\+::Viewport\+State\+Behaviour类 参考}
+\hypertarget{class_f_c_t_1_1_viewport_state_behaviour}{}\label{class_f_c_t_1_1_viewport_state_behaviour}\index{FCT::ViewportStateBehaviour@{FCT::ViewportStateBehaviour}}
+
+
+{\ttfamily \#include $<$Viewport\+State.\+h$>$}
+
+类 FCT\+::Viewport\+State\+Behaviour 继承关系图\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_f_c_t_1_1_viewport_state_behaviour}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_viewport_state_behaviour_a3204554d9530255c8104c2e57974d59c}{\texorpdfstring{$\sim$}{\string~}\+Viewport\+State\+Behaviour}} ()=default
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_viewport_state_behaviour_ac215493f1f9b61ddc890bd6c541e9a90}{viewport}} (\mbox{\hyperlink{struct_f_c_t_1_1_vec2}{Vec2}} pos, \mbox{\hyperlink{struct_f_c_t_1_1_vec2}{Vec2}} size)=0
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_viewport_state_behaviour_abf9cd82d4fdd4d034403aab90d9d1928}{depth\+Range}} (float min\+Depth, float max\+Depth)=0
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_viewport_state_behaviour_aab83fcaebe56067592541ed63cd2deb4}{scissor}} (\mbox{\hyperlink{struct_f_c_t_1_1_vec2}{Vec2}} pos, \mbox{\hyperlink{struct_f_c_t_1_1_vec2}{Vec2}} size)=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected 属性}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_viewport_state}{Viewport\+State}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_viewport_state_behaviour_abde0e66aa147c7d471212ce5dd45ebc6}{m\+\_\+state}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+
+
+在文件 \mbox{\hyperlink{_viewport_state_8h_source}{Viewport\+State.\+h}} 第 \mbox{\hyperlink{_viewport_state_8h_source_l00012}{12}} 行定义.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_f_c_t_1_1_viewport_state_behaviour_doc-constructors}
+\doxysubsection{构造及析构函数说明}
+\Hypertarget{class_f_c_t_1_1_viewport_state_behaviour_a3204554d9530255c8104c2e57974d59c}\index{FCT::ViewportStateBehaviour@{FCT::ViewportStateBehaviour}!````~ViewportStateBehaviour@{\texorpdfstring{$\sim$}{\string~}ViewportStateBehaviour}}
+\index{````~ViewportStateBehaviour@{\texorpdfstring{$\sim$}{\string~}ViewportStateBehaviour}!FCT::ViewportStateBehaviour@{FCT::ViewportStateBehaviour}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ViewportStateBehaviour()}{\string~ViewportStateBehaviour()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_viewport_state_behaviour_a3204554d9530255c8104c2e57974d59c} 
+virtual FCT\+::\+Viewport\+State\+Behaviour\+::\texorpdfstring{$\sim$}{\string~}\+Viewport\+State\+Behaviour (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_f_c_t_1_1_viewport_state_behaviour_doc-func-members}
+\doxysubsection{成员函数说明}
+\Hypertarget{class_f_c_t_1_1_viewport_state_behaviour_abf9cd82d4fdd4d034403aab90d9d1928}\index{FCT::ViewportStateBehaviour@{FCT::ViewportStateBehaviour}!depthRange@{depthRange}}
+\index{depthRange@{depthRange}!FCT::ViewportStateBehaviour@{FCT::ViewportStateBehaviour}}
+\doxysubsubsection{\texorpdfstring{depthRange()}{depthRange()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_viewport_state_behaviour_abf9cd82d4fdd4d034403aab90d9d1928} 
+virtual void FCT\+::\+Viewport\+State\+Behaviour\+::depth\+Range (\begin{DoxyParamCaption}\item[{float}]{min\+Depth}{, }\item[{float}]{max\+Depth}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_set_param_viewport_state_behaviour_a8697be2e1938bd25f3539a78111b1662}{FCT\+::\+Set\+Param\+Viewport\+State\+Behaviour}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_viewport_state_behaviour_aab83fcaebe56067592541ed63cd2deb4}\index{FCT::ViewportStateBehaviour@{FCT::ViewportStateBehaviour}!scissor@{scissor}}
+\index{scissor@{scissor}!FCT::ViewportStateBehaviour@{FCT::ViewportStateBehaviour}}
+\doxysubsubsection{\texorpdfstring{scissor()}{scissor()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_viewport_state_behaviour_aab83fcaebe56067592541ed63cd2deb4} 
+virtual void FCT\+::\+Viewport\+State\+Behaviour\+::scissor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_f_c_t_1_1_vec2}{Vec2}}}]{pos}{, }\item[{\mbox{\hyperlink{struct_f_c_t_1_1_vec2}{Vec2}}}]{size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_set_param_viewport_state_behaviour_ad18a9d67f54e5d1022a3f53f88ebde1a}{FCT\+::\+Set\+Param\+Viewport\+State\+Behaviour}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_viewport_state_behaviour_ac215493f1f9b61ddc890bd6c541e9a90}\index{FCT::ViewportStateBehaviour@{FCT::ViewportStateBehaviour}!viewport@{viewport}}
+\index{viewport@{viewport}!FCT::ViewportStateBehaviour@{FCT::ViewportStateBehaviour}}
+\doxysubsubsection{\texorpdfstring{viewport()}{viewport()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_viewport_state_behaviour_ac215493f1f9b61ddc890bd6c541e9a90} 
+virtual void FCT\+::\+Viewport\+State\+Behaviour\+::viewport (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_f_c_t_1_1_vec2}{Vec2}}}]{pos}{, }\item[{\mbox{\hyperlink{struct_f_c_t_1_1_vec2}{Vec2}}}]{size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_set_param_viewport_state_behaviour_a8db0aff682919cf36a7a75065ec89704}{FCT\+::\+Set\+Param\+Viewport\+State\+Behaviour}} 内被实现.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_f_c_t_1_1_viewport_state_behaviour_doc-variable-members}
+\doxysubsection{类成员变量说明}
+\Hypertarget{class_f_c_t_1_1_viewport_state_behaviour_abde0e66aa147c7d471212ce5dd45ebc6}\index{FCT::ViewportStateBehaviour@{FCT::ViewportStateBehaviour}!m\_state@{m\_state}}
+\index{m\_state@{m\_state}!FCT::ViewportStateBehaviour@{FCT::ViewportStateBehaviour}}
+\doxysubsubsection{\texorpdfstring{m\_state}{m\_state}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_viewport_state_behaviour_abde0e66aa147c7d471212ce5dd45ebc6} 
+\mbox{\hyperlink{class_f_c_t_1_1_viewport_state}{Viewport\+State}}\texorpdfstring{$\ast$}{*} FCT\+::\+Viewport\+State\+Behaviour\+::m\+\_\+state\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_viewport_state_8h_source}{Viewport\+State.\+h}} 第 \mbox{\hyperlink{_viewport_state_8h_source_l00020}{20}} 行定义.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\+FCT/\+RHI/\mbox{\hyperlink{_viewport_state_8h}{Viewport\+State.\+h}}\end{DoxyCompactItemize}

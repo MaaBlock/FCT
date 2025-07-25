@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FCT: include/FCT/RHI/VK_RasterizationPipeline.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FCT
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_v_k___rasterization_pipeline_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">VK_RasterizationPipeline.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_v_k___rasterization_pipeline_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// Created by Administrator on 2025/3/24.</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="_rasterization_pipeline_8h.html">./RasterizationPipeline.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="_v_k___blend_state_8h.html">./VK_BlendState.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="_v_k___input_layout_8h.html">./VK_InputLayout.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="_v_k___viewport_state_8h.html">./VK_ViewportState.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="_v_k___rasterization_state_8h.html">./VK_RasterizationState.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="_v_k___depth_stencil_state_8h.html">./VK_DepthStencilState.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="_v_k___pass_group_8h.html">VK_PassGroup.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#ifndef VK_RASTERIZATIONPIPELINE_H</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#define VK_RASTERIZATIONPIPELINE_H</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_f_c_t.html">FCT</a></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">class </span><a class="code hl_class" href="class_f_c_t_1_1_v_k___context.html">VK_Context</a>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_f_c_t_1_1_r_h_i.html">RHI</a></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keyword">class </span><a class="code hl_class" href="class_f_c_t_1_1_r_h_i_1_1_v_k___pass.html">VK_Pass</a>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="};">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html">   22</a></span>        <span class="keyword">class </span><a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a64afc601b21a37c7077916c2881b5837">VK_RasterizationPipeline</a> : <span class="keyword">public</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_rasterization_pipeline.html#a5f51d30bad3cb7232cc7b410529609b9">RasterizationPipeline</a>{</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a64afc601b21a37c7077916c2881b5837">   24</a></span>            <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a64afc601b21a37c7077916c2881b5837">VK_RasterizationPipeline</a>(<a class="code hl_class" href="class_f_c_t_1_1_v_k___context.html">VK_Context</a>* ctx);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#ae8c7df493a210dbbc1ed6fc243a742a1">   25</a></span>            <span class="keyword">virtual</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#ae8c7df493a210dbbc1ed6fc243a742a1">~VK_RasterizationPipeline</a>();</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a7878cf0ee2ead51c7ea6794317e8ba87">   26</a></span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a7878cf0ee2ead51c7ea6794317e8ba87">addResources</a>(<a class="code hl_class" href="class_f_c_t_1_1_i_pipeline_resource.html">IPipelineResource</a>* resource);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a9e96913fa12adcc2f5c62a565c02dd13">   27</a></span>            <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a9e96913fa12adcc2f5c62a565c02dd13">create</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a6c62ebc1ac4fb16bc61f5210999c91b4">   28</a></span>            <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a6c62ebc1ac4fb16bc61f5210999c91b4">bindPass</a>(<a class="code hl_class" href="class_f_c_t_1_1_r_h_i_1_1_pass.html">Pass</a>* pass) <span class="keyword">override</span>;</div>
+<div class="foldopen" id="foldopen00029" data-start="{" data-end="}">
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a438d61a2cdf03a0064930b32207f1a64">   29</a></span>            vk::Pipeline <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a438d61a2cdf03a0064930b32207f1a64">pipeline</a>()</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>                <span class="keywordflow">return</span> <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a855f99473943ef979a5df3bcaadb4951">m_pipeline</a>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            }</div>
+</div>
+<div class="foldopen" id="foldopen00033" data-start="{" data-end="}">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a4140cd500d59481438dfc784b1ab4d29">   33</a></span>            std::vector&lt;vk::DescriptorSetLayout&gt; <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a4140cd500d59481438dfc784b1ab4d29">descriptorSetLayouts</a>()</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                <span class="keywordflow">return</span> <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#afc08cc745d07eb6c782859dff3945442">m_descriptorSetLayoutsArr</a>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            }</div>
+</div>
+<div class="foldopen" id="foldopen00037" data-start="{" data-end="}">
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a6a678b39660774a4da6983fdd3e215a0">   37</a></span>            vk::PipelineLayout <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a6a678b39660774a4da6983fdd3e215a0">pipelineLayout</a>()</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                <span class="keywordflow">return</span> <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a030b3f7b9a2e9e6f708322d967b1b12d">m_pipelineLayout</a>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            }</div>
+</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a662ad9fa48f46d6aae0230452ce701d9">   42</a></span>            <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a662ad9fa48f46d6aae0230452ce701d9">generateDefaultResources</a>();</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a9a3acb904c1a878a62746fdab0bcb785">   43</a></span>            std::vector&lt;vk::PipelineShaderStageCreateInfo&gt; <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a9a3acb904c1a878a62746fdab0bcb785">m_shaderStages</a>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a13c569e3a5af87cfa080347d51c849f5">   44</a></span>            <a class="code hl_class" href="class_f_c_t_1_1_v_k___context.html">VK_Context</a>* <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a13c569e3a5af87cfa080347d51c849f5">m_ctx</a>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a904aa4716183c7e804e09f7402b87bc4">   45</a></span>            <a class="code hl_class" href="class_f_c_t_1_1_v_k___blend_state.html">VK_BlendState</a>* <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a904aa4716183c7e804e09f7402b87bc4">m_blendState</a>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a644f21182a7ce7fec44d581ba5fdcd75">   46</a></span>            <a class="code hl_class" href="class_f_c_t_1_1_r_h_i_1_1_v_k___input_layout.html">VK_InputLayout</a>* <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a644f21182a7ce7fec44d581ba5fdcd75">m_inputLayout</a>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#ac2276a02ee6848761aaf6d3830349491">   47</a></span>            <a class="code hl_class" href="class_f_c_t_1_1_v_k___viewport_state.html">VK_ViewportState</a>* <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#ac2276a02ee6848761aaf6d3830349491">m_viewportState</a>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a0ece67653fd67194f24729f21217c913">   48</a></span>            <a class="code hl_class" href="class_f_c_t_1_1_v_k___rasterization_state.html">VK_RasterizationState</a>* <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a0ece67653fd67194f24729f21217c913">m_rasterizationState</a>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a58e6f33f033d4e428a61d12c327298aa">   49</a></span>            <a class="code hl_class" href="class_f_c_t_1_1_r_h_i_1_1_v_k___depth_stencil_state.html">VK_DepthStencilState</a>* <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a58e6f33f033d4e428a61d12c327298aa">m_depthStencilState</a>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a0836f319d8f86a409cb050765436cd7a">   50</a></span>            vk::GraphicsPipelineCreateInfo <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a0836f319d8f86a409cb050765436cd7a">m_createInfo</a>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#adce81728b281ae572af88c0ba9cb2b2b">   51</a></span>            <a class="code hl_class" href="class_f_c_t_1_1_r_h_i_1_1_v_k___pass.html">VK_Pass</a>* <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#adce81728b281ae572af88c0ba9cb2b2b">m_pass</a>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a855f99473943ef979a5df3bcaadb4951">   52</a></span>            vk::Pipeline <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a855f99473943ef979a5df3bcaadb4951">m_pipeline</a>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a4078f34f7fad1d07ab554ce33816f529">   53</a></span>            vk::PipelineDynamicStateCreateInfo <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a4078f34f7fad1d07ab554ce33816f529">m_dynamicState</a>{};</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#ae353e24c21fea3ca470b6ff3018f60bc">   54</a></span>            vk::PipelineVertexInputStateCreateInfo <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#ae353e24c21fea3ca470b6ff3018f60bc">m_vertexInputState</a>{};</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#aa12377895caab52f5e7f40ed1ffa59e1">   55</a></span>            vk::PipelineInputAssemblyStateCreateInfo <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#aa12377895caab52f5e7f40ed1ffa59e1">m_inputAssemblyState</a>{};</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#afc08cc745d07eb6c782859dff3945442">   56</a></span>            std::vector&lt;vk::DescriptorSetLayout&gt; <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#afc08cc745d07eb6c782859dff3945442">m_descriptorSetLayoutsArr</a>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#ae0160107a91468a3d9340bc24ce875fa">   57</a></span>            std::map&lt;uint32_t, vk::DescriptorSetLayout&gt; <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#ae0160107a91468a3d9340bc24ce875fa">m_descriptorSetLayouts</a>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a030b3f7b9a2e9e6f708322d967b1b12d">   58</a></span>            vk::PipelineLayout <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a030b3f7b9a2e9e6f708322d967b1b12d">m_pipelineLayout</a>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        };</div>
+</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    }</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>}</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="preprocessor">#endif </span><span class="comment">//VK_RASTERIZATIONPIPELINE_H</span></div>
+<div class="ttc" id="a_rasterization_pipeline_8h_html"><div class="ttname"><a href="_rasterization_pipeline_8h.html">RasterizationPipeline.h</a></div></div>
+<div class="ttc" id="a_v_k___blend_state_8h_html"><div class="ttname"><a href="_v_k___blend_state_8h.html">VK_BlendState.h</a></div></div>
+<div class="ttc" id="a_v_k___depth_stencil_state_8h_html"><div class="ttname"><a href="_v_k___depth_stencil_state_8h.html">VK_DepthStencilState.h</a></div></div>
+<div class="ttc" id="a_v_k___input_layout_8h_html"><div class="ttname"><a href="_v_k___input_layout_8h.html">VK_InputLayout.h</a></div></div>
+<div class="ttc" id="a_v_k___pass_group_8h_html"><div class="ttname"><a href="_v_k___pass_group_8h.html">VK_PassGroup.h</a></div></div>
+<div class="ttc" id="a_v_k___rasterization_state_8h_html"><div class="ttname"><a href="_v_k___rasterization_state_8h.html">VK_RasterizationState.h</a></div></div>
+<div class="ttc" id="a_v_k___viewport_state_8h_html"><div class="ttname"><a href="_v_k___viewport_state_8h.html">VK_ViewportState.h</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_i_pipeline_resource_html"><div class="ttname"><a href="class_f_c_t_1_1_i_pipeline_resource.html">FCT::IPipelineResource</a></div><div class="ttdef"><b>定义</b> <a href="_i_pipeline_resource_8h_source.html#l00021">IPipelineResource.h:21</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_pass_html"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_pass.html">FCT::RHI::Pass</a></div><div class="ttdef"><b>定义</b> <a href="_r_h_i_2_pass_8h_source.html#l00029">Pass.h:30</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_rasterization_pipeline_html_a5f51d30bad3cb7232cc7b410529609b9"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_rasterization_pipeline.html#a5f51d30bad3cb7232cc7b410529609b9">FCT::RHI::RasterizationPipeline::RasterizationPipeline</a></div><div class="ttdeci">RasterizationPipeline()</div><div class="ttdef"><b>定义</b> <a href="_rasterization_pipeline_8h_source.html#l00019">RasterizationPipeline.h:19</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___depth_stencil_state_html"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___depth_stencil_state.html">FCT::RHI::VK_DepthStencilState</a></div><div class="ttdef"><b>定义</b> <a href="_v_k___depth_stencil_state_8h_source.html#l00014">VK_DepthStencilState.h:14</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___input_layout_html"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___input_layout.html">FCT::RHI::VK_InputLayout</a></div><div class="ttdef"><b>定义</b> <a href="_v_k___input_layout_8h_source.html#l00026">VK_InputLayout.h:26</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___pass_html"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___pass.html">FCT::RHI::VK_Pass</a></div><div class="ttdef"><b>定义</b> <a href="_v_k___pass_8h_source.html#l00013">VK_Pass.h:13</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_html_a030b3f7b9a2e9e6f708322d967b1b12d"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a030b3f7b9a2e9e6f708322d967b1b12d">FCT::RHI::VK_RasterizationPipeline::m_pipelineLayout</a></div><div class="ttdeci">vk::PipelineLayout m_pipelineLayout</div><div class="ttdef"><b>定义</b> <a href="#l00058">VK_RasterizationPipeline.h:58</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_html_a0836f319d8f86a409cb050765436cd7a"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a0836f319d8f86a409cb050765436cd7a">FCT::RHI::VK_RasterizationPipeline::m_createInfo</a></div><div class="ttdeci">vk::GraphicsPipelineCreateInfo m_createInfo</div><div class="ttdef"><b>定义</b> <a href="#l00050">VK_RasterizationPipeline.h:50</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_html_a0ece67653fd67194f24729f21217c913"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a0ece67653fd67194f24729f21217c913">FCT::RHI::VK_RasterizationPipeline::m_rasterizationState</a></div><div class="ttdeci">VK_RasterizationState * m_rasterizationState</div><div class="ttdef"><b>定义</b> <a href="#l00048">VK_RasterizationPipeline.h:48</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_html_a13c569e3a5af87cfa080347d51c849f5"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a13c569e3a5af87cfa080347d51c849f5">FCT::RHI::VK_RasterizationPipeline::m_ctx</a></div><div class="ttdeci">VK_Context * m_ctx</div><div class="ttdef"><b>定义</b> <a href="#l00044">VK_RasterizationPipeline.h:44</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_html_a4078f34f7fad1d07ab554ce33816f529"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a4078f34f7fad1d07ab554ce33816f529">FCT::RHI::VK_RasterizationPipeline::m_dynamicState</a></div><div class="ttdeci">vk::PipelineDynamicStateCreateInfo m_dynamicState</div><div class="ttdef"><b>定义</b> <a href="#l00053">VK_RasterizationPipeline.h:53</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_html_a4140cd500d59481438dfc784b1ab4d29"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a4140cd500d59481438dfc784b1ab4d29">FCT::RHI::VK_RasterizationPipeline::descriptorSetLayouts</a></div><div class="ttdeci">std::vector&lt; vk::DescriptorSetLayout &gt; descriptorSetLayouts()</div><div class="ttdef"><b>定义</b> <a href="#l00033">VK_RasterizationPipeline.h:33</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_html_a438d61a2cdf03a0064930b32207f1a64"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a438d61a2cdf03a0064930b32207f1a64">FCT::RHI::VK_RasterizationPipeline::pipeline</a></div><div class="ttdeci">vk::Pipeline pipeline()</div><div class="ttdef"><b>定义</b> <a href="#l00029">VK_RasterizationPipeline.h:29</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_html_a58e6f33f033d4e428a61d12c327298aa"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a58e6f33f033d4e428a61d12c327298aa">FCT::RHI::VK_RasterizationPipeline::m_depthStencilState</a></div><div class="ttdeci">VK_DepthStencilState * m_depthStencilState</div><div class="ttdef"><b>定义</b> <a href="#l00049">VK_RasterizationPipeline.h:49</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_html_a644f21182a7ce7fec44d581ba5fdcd75"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a644f21182a7ce7fec44d581ba5fdcd75">FCT::RHI::VK_RasterizationPipeline::m_inputLayout</a></div><div class="ttdeci">VK_InputLayout * m_inputLayout</div><div class="ttdef"><b>定义</b> <a href="#l00046">VK_RasterizationPipeline.h:46</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_html_a64afc601b21a37c7077916c2881b5837"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a64afc601b21a37c7077916c2881b5837">FCT::RHI::VK_RasterizationPipeline::VK_RasterizationPipeline</a></div><div class="ttdeci">VK_RasterizationPipeline(VK_Context *ctx)</div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_html_a662ad9fa48f46d6aae0230452ce701d9"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a662ad9fa48f46d6aae0230452ce701d9">FCT::RHI::VK_RasterizationPipeline::generateDefaultResources</a></div><div class="ttdeci">void generateDefaultResources()</div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_html_a6a678b39660774a4da6983fdd3e215a0"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a6a678b39660774a4da6983fdd3e215a0">FCT::RHI::VK_RasterizationPipeline::pipelineLayout</a></div><div class="ttdeci">vk::PipelineLayout pipelineLayout()</div><div class="ttdef"><b>定义</b> <a href="#l00037">VK_RasterizationPipeline.h:37</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_html_a6c62ebc1ac4fb16bc61f5210999c91b4"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a6c62ebc1ac4fb16bc61f5210999c91b4">FCT::RHI::VK_RasterizationPipeline::bindPass</a></div><div class="ttdeci">void bindPass(Pass *pass) override</div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_html_a7878cf0ee2ead51c7ea6794317e8ba87"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a7878cf0ee2ead51c7ea6794317e8ba87">FCT::RHI::VK_RasterizationPipeline::addResources</a></div><div class="ttdeci">virtual void addResources(IPipelineResource *resource)</div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_html_a855f99473943ef979a5df3bcaadb4951"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a855f99473943ef979a5df3bcaadb4951">FCT::RHI::VK_RasterizationPipeline::m_pipeline</a></div><div class="ttdeci">vk::Pipeline m_pipeline</div><div class="ttdef"><b>定义</b> <a href="#l00052">VK_RasterizationPipeline.h:52</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_html_a904aa4716183c7e804e09f7402b87bc4"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a904aa4716183c7e804e09f7402b87bc4">FCT::RHI::VK_RasterizationPipeline::m_blendState</a></div><div class="ttdeci">VK_BlendState * m_blendState</div><div class="ttdef"><b>定义</b> <a href="#l00045">VK_RasterizationPipeline.h:45</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_html_a9a3acb904c1a878a62746fdab0bcb785"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a9a3acb904c1a878a62746fdab0bcb785">FCT::RHI::VK_RasterizationPipeline::m_shaderStages</a></div><div class="ttdeci">std::vector&lt; vk::PipelineShaderStageCreateInfo &gt; m_shaderStages</div><div class="ttdef"><b>定义</b> <a href="#l00043">VK_RasterizationPipeline.h:43</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_html_a9e96913fa12adcc2f5c62a565c02dd13"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a9e96913fa12adcc2f5c62a565c02dd13">FCT::RHI::VK_RasterizationPipeline::create</a></div><div class="ttdeci">void create() override</div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_html_aa12377895caab52f5e7f40ed1ffa59e1"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#aa12377895caab52f5e7f40ed1ffa59e1">FCT::RHI::VK_RasterizationPipeline::m_inputAssemblyState</a></div><div class="ttdeci">vk::PipelineInputAssemblyStateCreateInfo m_inputAssemblyState</div><div class="ttdef"><b>定义</b> <a href="#l00055">VK_RasterizationPipeline.h:55</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_html_ac2276a02ee6848761aaf6d3830349491"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#ac2276a02ee6848761aaf6d3830349491">FCT::RHI::VK_RasterizationPipeline::m_viewportState</a></div><div class="ttdeci">VK_ViewportState * m_viewportState</div><div class="ttdef"><b>定义</b> <a href="#l00047">VK_RasterizationPipeline.h:47</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_html_adce81728b281ae572af88c0ba9cb2b2b"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#adce81728b281ae572af88c0ba9cb2b2b">FCT::RHI::VK_RasterizationPipeline::m_pass</a></div><div class="ttdeci">VK_Pass * m_pass</div><div class="ttdef"><b>定义</b> <a href="#l00051">VK_RasterizationPipeline.h:51</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_html_ae0160107a91468a3d9340bc24ce875fa"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#ae0160107a91468a3d9340bc24ce875fa">FCT::RHI::VK_RasterizationPipeline::m_descriptorSetLayouts</a></div><div class="ttdeci">std::map&lt; uint32_t, vk::DescriptorSetLayout &gt; m_descriptorSetLayouts</div><div class="ttdef"><b>定义</b> <a href="#l00057">VK_RasterizationPipeline.h:57</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_html_ae353e24c21fea3ca470b6ff3018f60bc"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#ae353e24c21fea3ca470b6ff3018f60bc">FCT::RHI::VK_RasterizationPipeline::m_vertexInputState</a></div><div class="ttdeci">vk::PipelineVertexInputStateCreateInfo m_vertexInputState</div><div class="ttdef"><b>定义</b> <a href="#l00054">VK_RasterizationPipeline.h:54</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_html_ae8c7df493a210dbbc1ed6fc243a742a1"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#ae8c7df493a210dbbc1ed6fc243a742a1">FCT::RHI::VK_RasterizationPipeline::~VK_RasterizationPipeline</a></div><div class="ttdeci">virtual ~VK_RasterizationPipeline()</div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_html_afc08cc745d07eb6c782859dff3945442"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#afc08cc745d07eb6c782859dff3945442">FCT::RHI::VK_RasterizationPipeline::m_descriptorSetLayoutsArr</a></div><div class="ttdeci">std::vector&lt; vk::DescriptorSetLayout &gt; m_descriptorSetLayoutsArr</div><div class="ttdef"><b>定义</b> <a href="#l00056">VK_RasterizationPipeline.h:56</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_v_k___blend_state_html"><div class="ttname"><a href="class_f_c_t_1_1_v_k___blend_state.html">FCT::VK_BlendState</a></div><div class="ttdef"><b>定义</b> <a href="_v_k___blend_state_8h_source.html#l00012">VK_BlendState.h:12</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_v_k___context_html"><div class="ttname"><a href="class_f_c_t_1_1_v_k___context.html">FCT::VK_Context</a></div><div class="ttdef"><b>定义</b> <a href="_v_k___context_8h_source.html#l00011">VK_Context.h:11</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_v_k___rasterization_state_html"><div class="ttname"><a href="class_f_c_t_1_1_v_k___rasterization_state.html">FCT::VK_RasterizationState</a></div><div class="ttdef"><b>定义</b> <a href="_v_k___rasterization_state_8h_source.html#l00011">VK_RasterizationState.h:11</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_v_k___viewport_state_html"><div class="ttname"><a href="class_f_c_t_1_1_v_k___viewport_state.html">FCT::VK_ViewportState</a></div><div class="ttdef"><b>定义</b> <a href="_v_k___viewport_state_8h_source.html#l00012">VK_ViewportState.h:12</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_1_1_r_h_i_html"><div class="ttname"><a href="namespace_f_c_t_1_1_r_h_i.html">FCT::RHI</a></div><div class="ttdef"><b>定义</b> <a href="_context_8h_source.html#l00045">Context.h:46</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html"><div class="ttname"><a href="namespace_f_c_t.html">FCT</a></div><div class="ttdef"><b>定义</b> <a href="_flags_8h_source.html#l00010">Flags.h:11</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="dir_3b79087de5de3e907e48529d171f9ebd.html">FCT</a></li><li class="navelem"><a href="dir_62941668c16d32482f5920d3acbd0d1f.html">RHI</a></li><li class="navelem"><a href="_v_k___rasterization_pipeline_8h.html">VK_RasterizationPipeline.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,129 @@
+\doxysection{Vertex\+Factory.\+h}
+\hypertarget{_vertex_factory_8h_source}{}\label{_vertex_factory_8h_source}\index{include/FCT/Context/VertexFactory.h@{include/FCT/Context/VertexFactory.h}}
+\mbox{\hyperlink{_vertex_factory_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <cstring>}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <cstdlib>}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_ref_count_8h}{../MutilThreadBase/RefCount.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_data_types_8h}{./DataTypes.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00012}00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_f_c_t}{FCT}}\ \{}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00014}00014\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00015}00015\ \textcolor{comment}{\ \ \ \ struct\ VertexAttribute\ \{}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00016}00016\ \textcolor{comment}{\ \ \ \ \ \ \ \ PipelineAttributeType\ type;}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00017}00017\ \textcolor{comment}{\ \ \ \ \ \ \ \ std::string\ name;}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00018}00018\ \textcolor{comment}{\ \ \ \ \ \ \ \ DataType\ dataType;}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00019}00019\ \textcolor{comment}{\ \ \ \ \ \ \ \ size\_t\ offset;}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00020}00020\ \textcolor{comment}{\ \ \ \ \ \ \ \ bool\ flat;}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00021}00021\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00022}00022\ \textcolor{comment}{\ \ \ \ \ \ \ \ VertexAttribute(PipelineAttributeType\ t,\ const\ std::string\&\ n,\ DataType\ dt,\ size\_t\ o)}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00023}00023\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ :\ type(t),\ name(n),\ dataType(dt),\ offset(o)\ \{}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00024}00024\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ flat\ =\ false;}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00025}00025\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00026}00026\ \textcolor{comment}{\ \ \ \ \ \ \ \ VertexAttribute(PipelineAttributeType\ t,\ const\ std::string\&\ n,\ DataType\ dt,\ size\_t\ o,bool\ f)}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00027}00027\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ :\ type(t),\ name(n),\ dataType(dt),\ offset(o),flat(f)\ \{}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00028}00028\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00029}00029\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00030}00030\ \textcolor{comment}{\ \ \ \ \};}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00031}00031\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00032}00032\ \textcolor{comment}{\ \ \ \ class\ VertexFactory;}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00033}00033\ \textcolor{comment}{\ \ \ \ class\ VertexData;}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00034}00034\ \textcolor{comment}{\ \ \ \ class\ VertexArray;}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00035}00035\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00036}00036\ \textcolor{comment}{\ \ \ \ class\ VertexData\ \{}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00037}00037\ \textcolor{comment}{\ \ \ \ public:}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00038}00038\ \textcolor{comment}{\ \ \ \ \ \ \ \ VertexData(const\ VertexFactory\&\ factory);}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00039}00039\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00040}00040\ \textcolor{comment}{\ \ \ \ \ \ \ \ \string~VertexData()\ \{}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00041}00041\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ delete[]\ m\_data;}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00042}00042\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00043}00043\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00044}00044\ \textcolor{comment}{\ \ \ \ \ \ \ \ VertexData(const\ VertexData\&)\ =\ delete;}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00045}00045\ \textcolor{comment}{\ \ \ \ \ \ \ \ VertexData\&\ operator=(const\ VertexData\&)\ =\ delete;}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00046}00046\ \textcolor{comment}{\ \ \ \ \ \ \ \ VertexData(VertexData\&\&)\ =\ delete;}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00047}00047\ \textcolor{comment}{\ \ \ \ \ \ \ \ VertexData\&\ operator=(VertexData\&\&)\ =\ delete;}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00048}00048\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00049}00049\ \textcolor{comment}{\ \ \ \ \ \ \ \ template<typename\ T>}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00050}00050\ \textcolor{comment}{\ \ \ \ \ \ \ \ void\ setAttribute(const\ std::string\&\ name,\ const\ T\&\ value);}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00051}00051\ \textcolor{comment}{\ \ \ \ \ \ \ \ template<typename\ T>}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00052}00052\ \textcolor{comment}{\ \ \ \ \ \ \ \ T\ getAttribute(const\ std::string\&\ name)\ const;}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00053}00053\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00054}00054\ \textcolor{comment}{\ \ \ \ \ \ \ \ void*\ data()\ \{\ return\ m\_data;\ \}}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00055}00055\ \textcolor{comment}{\ \ \ \ \ \ \ \ const\ void*\ data()\ const\ \{\ return\ m\_data;\ \}}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00056}00056\ \textcolor{comment}{\ \ \ \ \ \ \ \ size\_t\ getSize()\ const\ \{\ return\ m\_dataSize;\ \}}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00057}00057\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00058}00058\ \textcolor{comment}{\ \ \ \ private:}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00059}00059\ \textcolor{comment}{\ \ \ \ \ \ \ \ const\ VertexFactory*\ m\_factory;}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00060}00060\ \textcolor{comment}{\ \ \ \ \ \ \ \ char*\ m\_data;}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00061}00061\ \textcolor{comment}{\ \ \ \ \ \ \ \ size\_t\ m\_dataSize;}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00062}00062\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00063}00063\ \textcolor{comment}{\ \ \ \ \ \ \ \ friend\ class\ VertexFactory;}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00064}00064\ \textcolor{comment}{\ \ \ \ \};}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00065}00065\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00066}00066\ \textcolor{comment}{\ \ \ \ class\ VertexFactory\ :\ public\ RefCount\ \{}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00067}00067\ \textcolor{comment}{\ \ \ \ public:}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00068}00068\ \textcolor{comment}{\ \ \ \ \ \ \ \ VertexFactory()\ =\ default;}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00069}00069\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00070}00070\ \textcolor{comment}{\ \ \ \ \ \ \ \ void\ addAttribute(PipelineAttributeType\ type,\ const\ std::string\&\ name\ =\ "{}"{},\ DataType\ dataType\ =\ DataType::Float,bool\ flat\ =\ false);}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00071}00071\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00072}00072\ \textcolor{comment}{\ \ \ \ \ \ \ \ const\ std::vector<VertexAttribute>\&\ getAttributes()\ const\ \{}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00073}00073\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ return\ attributes;}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00074}00074\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00075}00075\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00076}00076\ \textcolor{comment}{\ \ \ \ \ \ \ \ size\_t\ getStride()\ const;}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00077}00077\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00078}00078\ \textcolor{comment}{\ \ \ \ \ \ \ \ VertexData*\ createVertex()\ const;}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00079}00079\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00080}00080\ \textcolor{comment}{\ \ \ \ \ \ \ \ template<typename\ T>}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00081}00081\ \textcolor{comment}{\ \ \ \ \ \ \ \ void\ setAttributeData(VertexData\&\ vertexData,\ const\ std::string\&\ name,\ const\ T\&\ value)\ const;}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00082}00082\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00083}00083\ \textcolor{comment}{\ \ \ \ \ \ \ \ void\ setVertexData(VertexData\&\ vertexData,\ const\ void*\ data,\ size\_t\ dataSize)\ const;}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00084}00084\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00085}00085\ \textcolor{comment}{\ \ \ \ \ \ \ \ const\ VertexAttribute\&\ getAttribute(const\ std::string\&\ name)\ const;}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00086}00086\ \textcolor{comment}{\ \ \ \ private:}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00087}00087\ \textcolor{comment}{\ \ \ \ \ \ \ \ std::vector<VertexAttribute>\ attributes;}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00088}00088\ \textcolor{comment}{\ \ \ \ \};}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00089}00089\ \textcolor{comment}{\ \ \ \ template<typename\ T>}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00090}00090\ \textcolor{comment}{\ \ \ \ void\ VertexData::setAttribute(const\ std::string\&\ name,\ const\ T\&\ value)\ \{}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00091}00091\ \textcolor{comment}{\ \ \ \ \ \ \ \ const\ auto\&\ attr\ =\ m\_factory-\/>getAttribute(name);}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00092}00092\ \textcolor{comment}{\ \ \ \ \ \ \ \ if\ (GetDataTypeSize(attr.dataType)\ !=\ sizeof(T))\ \{}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00093}00093\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ throw\ std::runtime\_error("{}Attribute\ size\ mismatch"{});}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00094}00094\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00095}00095\ \textcolor{comment}{\ \ \ \ \ \ \ \ std::memcpy(static\_cast<char*>(m\_data)\ +\ attr.offset,\ \&value,\ GetDataTypeSize(attr.dataType));}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00096}00096\ \textcolor{comment}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00097}00097\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00098}00098\ \textcolor{comment}{\ \ \ \ template<typename\ T>}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00099}00099\ \textcolor{comment}{\ \ \ \ T\ VertexData::getAttribute(const\ std::string\&\ name)\ const\ \{}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00100}00100\ \textcolor{comment}{\ \ \ \ \ \ \ \ const\ auto\&\ attr\ =\ m\_factory-\/>getAttribute(name);}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00101}00101\ \textcolor{comment}{\ \ \ \ \ \ \ \ if\ (GetDataTypeSize(attr.dataType)\ !=\ sizeof(T))\ \{}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00102}00102\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ throw\ std::runtime\_error("{}Attribute\ size\ mismatch"{});}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00103}00103\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00104}00104\ \textcolor{comment}{\ \ \ \ \ \ \ \ T\ result;}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00105}00105\ \textcolor{comment}{\ \ \ \ \ \ \ \ std::memcpy(\&result,\ static\_cast<const\ char*>(m\_data)\ +\ attr.offset,\ GetDataTypeSize(attr.dataType));}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00106}00106\ \textcolor{comment}{\ \ \ \ \ \ \ \ return\ result;}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00107}00107\ \textcolor{comment}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00108}00108\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00109}00109\ \textcolor{comment}{\ \ \ \ template<typename\ T>}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00110}00110\ \textcolor{comment}{\ \ \ \ void\ VertexFactory::setAttributeData(VertexData\&\ vertexData,\ const\ std::string\&\ name,\ const\ T\&\ value)\ const\ \{}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00111}00111\ \textcolor{comment}{\ \ \ \ \ \ \ \ for\ (const\ auto\&\ attr\ :\ attributes)\ \{}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00112}00112\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ if\ (attr.name\ ==\ name)\ \{}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00113}00113\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (GetDataTypeSize(attr.dataType)\ !=\ sizeof(T))\ \{}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00114}00114\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ throw\ std::runtime\_error("{}属性大小不匹配"{});}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00115}00115\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00116}00116\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::memcpy((char*)vertexData.data()\ +\ attr.offset,\ \&value,\ GetDataTypeSize(attr.dataType));}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00117}00117\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return;}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00118}00118\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00119}00119\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00120}00120\ \textcolor{comment}{\ \ \ \ \ \ \ \ throw\ std::runtime\_error("{}未找到属性"{});}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00121}00121\ \textcolor{comment}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00122}00122\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{_vertex_factory_8h_source_l00123}00123\ \}\ \textcolor{comment}{//\ namespace\ FCT}}
+
+\end{DoxyCode}

@@ -1,0 +1,389 @@
+\doxysection{FCT\+::Sampler类 参考}
+\hypertarget{class_f_c_t_1_1_sampler}{}\label{class_f_c_t_1_1_sampler}\index{FCT::Sampler@{FCT::Sampler}}
+
+
+{\ttfamily \#include $<$Sampler.\+h$>$}
+
+类 FCT\+::Sampler 继承关系图\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_f_c_t_1_1_sampler}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_sampler_ae759f61839ced62cf9a6a7eb5ce8a997}{\texorpdfstring{$\sim$}{\string~}\+Sampler}} ()=default
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_sampler_a9c6a060877a1b2b7c5fcd4c53f3850a8}{set\+Filter}} (\mbox{\hyperlink{namespace_f_c_t_ab91ea156a9bfda232cfaf73535670779}{Filter\+Mode}} mag\+Filter, \mbox{\hyperlink{namespace_f_c_t_ab91ea156a9bfda232cfaf73535670779}{Filter\+Mode}} min\+Filter, \mbox{\hyperlink{namespace_f_c_t_ab91ea156a9bfda232cfaf73535670779}{Filter\+Mode}} mipmap\+Filter)
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_sampler_a7bdcf3853239359ec0cc2ea34c163eda}{set\+Address\+Mode}} (\mbox{\hyperlink{namespace_f_c_t_aeffaa324cc414eb87b89ba0f1bed673a}{Address\+Mode}} u, \mbox{\hyperlink{namespace_f_c_t_aeffaa324cc414eb87b89ba0f1bed673a}{Address\+Mode}} v, \mbox{\hyperlink{namespace_f_c_t_aeffaa324cc414eb87b89ba0f1bed673a}{Address\+Mode}} w)
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_sampler_a095e579b761fa2ebe7dd134e4d98b34c}{set\+Anisotropy}} (bool enable, float max\+Anisotropy)
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_sampler_ae120b62af42b838d010bddc806f5f67f}{set\+Compare}} (bool enable, \mbox{\hyperlink{namespace_f_c_t_ae72266666726fb6ad7e1a218a340b4c8}{Compare\+Op}} op)
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_sampler_ab56aef767c6b1fcbb4228596a89f6bcb}{set\+Lod\+Range}} (float min\+Lod, float max\+Lod, float bias)
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_sampler_a4392804436f52f506b21e697ee4afe3f}{set\+Border\+Color}} (\mbox{\hyperlink{namespace_f_c_t_abbd9f55da7ce19953699d6544fba8a96}{Border\+Color}} \mbox{\hyperlink{namespace_f_c_t_a5d14bda42e5f9f565abd0b018262b564a70dda5dfb8053dc6d1c492574bce9bfd}{color}})
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_sampler_acf709955c48132c2cd5a46470b7a8b2a}{set\+Unnormalized\+Coordinates}} (bool unnormalized)
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_sampler_ab0770be0f1e4df8b81b7a8ad37b013e0}{create}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_sampler_a8272e4f50875f9fc20e257d989469adf}{set\+Linear}} ()
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_sampler_aafd136bd2063722f00dcb7d72369970b}{set\+Point}} ()
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_sampler_ad57f90e576605b4d4d6a246dba90c65d}{set\+Anisotropic}} (float max\+Anisotropy=16.\+0f)
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_sampler_a862b300b12cec41032743ce8d43f0a7f}{set\+Linear\+Clamp}} ()
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_sampler_ad75c2b5917baa6db016e8fd9c47fe656}{set\+Shadow\+Map}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected 属性}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespace_f_c_t_ab91ea156a9bfda232cfaf73535670779}{Filter\+Mode}} \mbox{\hyperlink{class_f_c_t_1_1_sampler_a8a9c340fba9047c49a6383902bcee968}{m\+\_\+mag\+Filter}} = \mbox{\hyperlink{namespace_f_c_t_ab91ea156a9bfda232cfaf73535670779a32a843da6ea40ab3b17a3421ccdf671b}{Filter\+Mode\+::\+Linear}}
+\item 
+\mbox{\hyperlink{namespace_f_c_t_ab91ea156a9bfda232cfaf73535670779}{Filter\+Mode}} \mbox{\hyperlink{class_f_c_t_1_1_sampler_aa20164263b2adea5c36cbcc72c5fca91}{m\+\_\+min\+Filter}} = \mbox{\hyperlink{namespace_f_c_t_ab91ea156a9bfda232cfaf73535670779a32a843da6ea40ab3b17a3421ccdf671b}{Filter\+Mode\+::\+Linear}}
+\item 
+\mbox{\hyperlink{namespace_f_c_t_ab91ea156a9bfda232cfaf73535670779}{Filter\+Mode}} \mbox{\hyperlink{class_f_c_t_1_1_sampler_af4c567e9bae50e3ded925b35d270aac8}{m\+\_\+mipmap\+Filter}} = \mbox{\hyperlink{namespace_f_c_t_ab91ea156a9bfda232cfaf73535670779a32a843da6ea40ab3b17a3421ccdf671b}{Filter\+Mode\+::\+Linear}}
+\item 
+\mbox{\hyperlink{namespace_f_c_t_aeffaa324cc414eb87b89ba0f1bed673a}{Address\+Mode}} \mbox{\hyperlink{class_f_c_t_1_1_sampler_a175608624efccf99073ca56714797180}{m\+\_\+address\+ModeU}} = \mbox{\hyperlink{namespace_f_c_t_aeffaa324cc414eb87b89ba0f1bed673aa7020426cfb0a204051be4b3053d2acc8}{Address\+Mode\+::\+Repeat}}
+\item 
+\mbox{\hyperlink{namespace_f_c_t_aeffaa324cc414eb87b89ba0f1bed673a}{Address\+Mode}} \mbox{\hyperlink{class_f_c_t_1_1_sampler_ad86ac233f4fd609afddca16c4f150443}{m\+\_\+address\+ModeV}} = \mbox{\hyperlink{namespace_f_c_t_aeffaa324cc414eb87b89ba0f1bed673aa7020426cfb0a204051be4b3053d2acc8}{Address\+Mode\+::\+Repeat}}
+\item 
+\mbox{\hyperlink{namespace_f_c_t_aeffaa324cc414eb87b89ba0f1bed673a}{Address\+Mode}} \mbox{\hyperlink{class_f_c_t_1_1_sampler_a3de293bea279120be2a3271f976dc1c1}{m\+\_\+address\+ModeW}} = \mbox{\hyperlink{namespace_f_c_t_aeffaa324cc414eb87b89ba0f1bed673aa7020426cfb0a204051be4b3053d2acc8}{Address\+Mode\+::\+Repeat}}
+\item 
+float \mbox{\hyperlink{class_f_c_t_1_1_sampler_aeda085a2c444205f5e8840fcd5eb5e56}{m\+\_\+mip\+Lod\+Bias}} = 0.\+0f
+\item 
+bool \mbox{\hyperlink{class_f_c_t_1_1_sampler_a6dcd8a6d58f03ed6af22fe7d754b9535}{m\+\_\+anisotropy\+Enable}} = false
+\item 
+float \mbox{\hyperlink{class_f_c_t_1_1_sampler_a93d332947201654ea6fcda13fd10675c}{m\+\_\+max\+Anisotropy}} = 1.\+0f
+\item 
+bool \mbox{\hyperlink{class_f_c_t_1_1_sampler_ab8183d1df21860c72bbd81bc784bbc63}{m\+\_\+compare\+Enable}} = false
+\item 
+\mbox{\hyperlink{namespace_f_c_t_ae72266666726fb6ad7e1a218a340b4c8}{Compare\+Op}} \mbox{\hyperlink{class_f_c_t_1_1_sampler_aa85da4ec1ad57755df2baebc817de1bd}{m\+\_\+compare\+Op}} = \mbox{\hyperlink{namespace_f_c_t_ae72266666726fb6ad7e1a218a340b4c8a6e7b34fa59e1bd229b207892956dc41c}{Compare\+Op\+::\+Never}}
+\item 
+float \mbox{\hyperlink{class_f_c_t_1_1_sampler_ac38f2ec7f6a4a15c31ba115138a1c823}{m\+\_\+min\+Lod}} = 0.\+0f
+\item 
+float \mbox{\hyperlink{class_f_c_t_1_1_sampler_a601b16f255d885f498d300a0688c6827}{m\+\_\+max\+Lod}} = 1000.\+0f
+\item 
+\mbox{\hyperlink{namespace_f_c_t_abbd9f55da7ce19953699d6544fba8a96}{Border\+Color}} \mbox{\hyperlink{class_f_c_t_1_1_sampler_a57047de0ab7ee0d0273b199a743f9418}{m\+\_\+border\+Color}} = \mbox{\hyperlink{namespace_f_c_t_abbd9f55da7ce19953699d6544fba8a96ae264fa6d4bbd78199f1533e4e2a9d261}{Border\+Color\+::\+Opaque\+Black}}
+\item 
+bool \mbox{\hyperlink{class_f_c_t_1_1_sampler_adb9c22e5ada05479222cabb5cfc26241}{m\+\_\+unnormalized\+Coordinates}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+
+
+在文件 \mbox{\hyperlink{_sampler_8h_source}{Sampler.\+h}} 第 \mbox{\hyperlink{_sampler_8h_source_l00035}{35}} 行定义.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_f_c_t_1_1_sampler_doc-constructors}
+\doxysubsection{构造及析构函数说明}
+\Hypertarget{class_f_c_t_1_1_sampler_ae759f61839ced62cf9a6a7eb5ce8a997}\index{FCT::Sampler@{FCT::Sampler}!````~Sampler@{\texorpdfstring{$\sim$}{\string~}Sampler}}
+\index{````~Sampler@{\texorpdfstring{$\sim$}{\string~}Sampler}!FCT::Sampler@{FCT::Sampler}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Sampler()}{\string~Sampler()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_sampler_ae759f61839ced62cf9a6a7eb5ce8a997} 
+virtual FCT\+::\+Sampler\+::\texorpdfstring{$\sim$}{\string~}\+Sampler (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_f_c_t_1_1_sampler_doc-func-members}
+\doxysubsection{成员函数说明}
+\Hypertarget{class_f_c_t_1_1_sampler_ab0770be0f1e4df8b81b7a8ad37b013e0}\index{FCT::Sampler@{FCT::Sampler}!create@{create}}
+\index{create@{create}!FCT::Sampler@{FCT::Sampler}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_sampler_ab0770be0f1e4df8b81b7a8ad37b013e0} 
+virtual void FCT\+::\+Sampler\+::create (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___sampler_a69cdc9eb8bd18f6af09400df5b890fe6}{FCT\+::\+RHI\+::\+VK\+\_\+\+Sampler}} 内被实现.
+
+\Hypertarget{class_f_c_t_1_1_sampler_a7bdcf3853239359ec0cc2ea34c163eda}\index{FCT::Sampler@{FCT::Sampler}!setAddressMode@{setAddressMode}}
+\index{setAddressMode@{setAddressMode}!FCT::Sampler@{FCT::Sampler}}
+\doxysubsubsection{\texorpdfstring{setAddressMode()}{setAddressMode()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_sampler_a7bdcf3853239359ec0cc2ea34c163eda} 
+virtual void FCT\+::\+Sampler\+::set\+Address\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_f_c_t_aeffaa324cc414eb87b89ba0f1bed673a}{Address\+Mode}}}]{u}{, }\item[{\mbox{\hyperlink{namespace_f_c_t_aeffaa324cc414eb87b89ba0f1bed673a}{Address\+Mode}}}]{v}{, }\item[{\mbox{\hyperlink{namespace_f_c_t_aeffaa324cc414eb87b89ba0f1bed673a}{Address\+Mode}}}]{w}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+在文件 \mbox{\hyperlink{_sampler_8h_source}{Sampler.\+h}} 第 \mbox{\hyperlink{_sampler_8h_source_l00045}{45}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_sampler_ad57f90e576605b4d4d6a246dba90c65d}\index{FCT::Sampler@{FCT::Sampler}!setAnisotropic@{setAnisotropic}}
+\index{setAnisotropic@{setAnisotropic}!FCT::Sampler@{FCT::Sampler}}
+\doxysubsubsection{\texorpdfstring{setAnisotropic()}{setAnisotropic()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_sampler_ad57f90e576605b4d4d6a246dba90c65d} 
+virtual void FCT\+::\+Sampler\+::set\+Anisotropic (\begin{DoxyParamCaption}\item[{float}]{max\+Anisotropy}{ = {\ttfamily 16.0f}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+在文件 \mbox{\hyperlink{_sampler_8h_source}{Sampler.\+h}} 第 \mbox{\hyperlink{_sampler_8h_source_l00097}{97}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_sampler_a095e579b761fa2ebe7dd134e4d98b34c}\index{FCT::Sampler@{FCT::Sampler}!setAnisotropy@{setAnisotropy}}
+\index{setAnisotropy@{setAnisotropy}!FCT::Sampler@{FCT::Sampler}}
+\doxysubsubsection{\texorpdfstring{setAnisotropy()}{setAnisotropy()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_sampler_a095e579b761fa2ebe7dd134e4d98b34c} 
+virtual void FCT\+::\+Sampler\+::set\+Anisotropy (\begin{DoxyParamCaption}\item[{bool}]{enable}{, }\item[{float}]{max\+Anisotropy}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+在文件 \mbox{\hyperlink{_sampler_8h_source}{Sampler.\+h}} 第 \mbox{\hyperlink{_sampler_8h_source_l00051}{51}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_sampler_a4392804436f52f506b21e697ee4afe3f}\index{FCT::Sampler@{FCT::Sampler}!setBorderColor@{setBorderColor}}
+\index{setBorderColor@{setBorderColor}!FCT::Sampler@{FCT::Sampler}}
+\doxysubsubsection{\texorpdfstring{setBorderColor()}{setBorderColor()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_sampler_a4392804436f52f506b21e697ee4afe3f} 
+virtual void FCT\+::\+Sampler\+::set\+Border\+Color (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_f_c_t_abbd9f55da7ce19953699d6544fba8a96}{Border\+Color}}}]{color}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+在文件 \mbox{\hyperlink{_sampler_8h_source}{Sampler.\+h}} 第 \mbox{\hyperlink{_sampler_8h_source_l00067}{67}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_sampler_ae120b62af42b838d010bddc806f5f67f}\index{FCT::Sampler@{FCT::Sampler}!setCompare@{setCompare}}
+\index{setCompare@{setCompare}!FCT::Sampler@{FCT::Sampler}}
+\doxysubsubsection{\texorpdfstring{setCompare()}{setCompare()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_sampler_ae120b62af42b838d010bddc806f5f67f} 
+virtual void FCT\+::\+Sampler\+::set\+Compare (\begin{DoxyParamCaption}\item[{bool}]{enable}{, }\item[{\mbox{\hyperlink{namespace_f_c_t_ae72266666726fb6ad7e1a218a340b4c8}{Compare\+Op}}}]{op}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+在文件 \mbox{\hyperlink{_sampler_8h_source}{Sampler.\+h}} 第 \mbox{\hyperlink{_sampler_8h_source_l00056}{56}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_sampler_a9c6a060877a1b2b7c5fcd4c53f3850a8}\index{FCT::Sampler@{FCT::Sampler}!setFilter@{setFilter}}
+\index{setFilter@{setFilter}!FCT::Sampler@{FCT::Sampler}}
+\doxysubsubsection{\texorpdfstring{setFilter()}{setFilter()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_sampler_a9c6a060877a1b2b7c5fcd4c53f3850a8} 
+virtual void FCT\+::\+Sampler\+::set\+Filter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_f_c_t_ab91ea156a9bfda232cfaf73535670779}{Filter\+Mode}}}]{mag\+Filter}{, }\item[{\mbox{\hyperlink{namespace_f_c_t_ab91ea156a9bfda232cfaf73535670779}{Filter\+Mode}}}]{min\+Filter}{, }\item[{\mbox{\hyperlink{namespace_f_c_t_ab91ea156a9bfda232cfaf73535670779}{Filter\+Mode}}}]{mipmap\+Filter}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+在文件 \mbox{\hyperlink{_sampler_8h_source}{Sampler.\+h}} 第 \mbox{\hyperlink{_sampler_8h_source_l00039}{39}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_sampler_a8272e4f50875f9fc20e257d989469adf}\index{FCT::Sampler@{FCT::Sampler}!setLinear@{setLinear}}
+\index{setLinear@{setLinear}!FCT::Sampler@{FCT::Sampler}}
+\doxysubsubsection{\texorpdfstring{setLinear()}{setLinear()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_sampler_a8272e4f50875f9fc20e257d989469adf} 
+virtual void FCT\+::\+Sampler\+::set\+Linear (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+在文件 \mbox{\hyperlink{_sampler_8h_source}{Sampler.\+h}} 第 \mbox{\hyperlink{_sampler_8h_source_l00077}{77}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_sampler_a862b300b12cec41032743ce8d43f0a7f}\index{FCT::Sampler@{FCT::Sampler}!setLinearClamp@{setLinearClamp}}
+\index{setLinearClamp@{setLinearClamp}!FCT::Sampler@{FCT::Sampler}}
+\doxysubsubsection{\texorpdfstring{setLinearClamp()}{setLinearClamp()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_sampler_a862b300b12cec41032743ce8d43f0a7f} 
+virtual void FCT\+::\+Sampler\+::set\+Linear\+Clamp (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+在文件 \mbox{\hyperlink{_sampler_8h_source}{Sampler.\+h}} 第 \mbox{\hyperlink{_sampler_8h_source_l00107}{107}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_sampler_ab56aef767c6b1fcbb4228596a89f6bcb}\index{FCT::Sampler@{FCT::Sampler}!setLodRange@{setLodRange}}
+\index{setLodRange@{setLodRange}!FCT::Sampler@{FCT::Sampler}}
+\doxysubsubsection{\texorpdfstring{setLodRange()}{setLodRange()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_sampler_ab56aef767c6b1fcbb4228596a89f6bcb} 
+virtual void FCT\+::\+Sampler\+::set\+Lod\+Range (\begin{DoxyParamCaption}\item[{float}]{min\+Lod}{, }\item[{float}]{max\+Lod}{, }\item[{float}]{bias}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+在文件 \mbox{\hyperlink{_sampler_8h_source}{Sampler.\+h}} 第 \mbox{\hyperlink{_sampler_8h_source_l00061}{61}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_sampler_aafd136bd2063722f00dcb7d72369970b}\index{FCT::Sampler@{FCT::Sampler}!setPoint@{setPoint}}
+\index{setPoint@{setPoint}!FCT::Sampler@{FCT::Sampler}}
+\doxysubsubsection{\texorpdfstring{setPoint()}{setPoint()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_sampler_aafd136bd2063722f00dcb7d72369970b} 
+virtual void FCT\+::\+Sampler\+::set\+Point (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+在文件 \mbox{\hyperlink{_sampler_8h_source}{Sampler.\+h}} 第 \mbox{\hyperlink{_sampler_8h_source_l00087}{87}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_sampler_ad75c2b5917baa6db016e8fd9c47fe656}\index{FCT::Sampler@{FCT::Sampler}!setShadowMap@{setShadowMap}}
+\index{setShadowMap@{setShadowMap}!FCT::Sampler@{FCT::Sampler}}
+\doxysubsubsection{\texorpdfstring{setShadowMap()}{setShadowMap()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_sampler_ad75c2b5917baa6db016e8fd9c47fe656} 
+virtual void FCT\+::\+Sampler\+::set\+Shadow\+Map (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+在文件 \mbox{\hyperlink{_sampler_8h_source}{Sampler.\+h}} 第 \mbox{\hyperlink{_sampler_8h_source_l00117}{117}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_sampler_acf709955c48132c2cd5a46470b7a8b2a}\index{FCT::Sampler@{FCT::Sampler}!setUnnormalizedCoordinates@{setUnnormalizedCoordinates}}
+\index{setUnnormalizedCoordinates@{setUnnormalizedCoordinates}!FCT::Sampler@{FCT::Sampler}}
+\doxysubsubsection{\texorpdfstring{setUnnormalizedCoordinates()}{setUnnormalizedCoordinates()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_sampler_acf709955c48132c2cd5a46470b7a8b2a} 
+virtual void FCT\+::\+Sampler\+::set\+Unnormalized\+Coordinates (\begin{DoxyParamCaption}\item[{bool}]{unnormalized}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+在文件 \mbox{\hyperlink{_sampler_8h_source}{Sampler.\+h}} 第 \mbox{\hyperlink{_sampler_8h_source_l00071}{71}} 行定义.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_f_c_t_1_1_sampler_doc-variable-members}
+\doxysubsection{类成员变量说明}
+\Hypertarget{class_f_c_t_1_1_sampler_a175608624efccf99073ca56714797180}\index{FCT::Sampler@{FCT::Sampler}!m\_addressModeU@{m\_addressModeU}}
+\index{m\_addressModeU@{m\_addressModeU}!FCT::Sampler@{FCT::Sampler}}
+\doxysubsubsection{\texorpdfstring{m\_addressModeU}{m\_addressModeU}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_sampler_a175608624efccf99073ca56714797180} 
+\mbox{\hyperlink{namespace_f_c_t_aeffaa324cc414eb87b89ba0f1bed673a}{Address\+Mode}} FCT\+::\+Sampler\+::m\+\_\+address\+ModeU = \mbox{\hyperlink{namespace_f_c_t_aeffaa324cc414eb87b89ba0f1bed673aa7020426cfb0a204051be4b3053d2acc8}{Address\+Mode\+::\+Repeat}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_sampler_8h_source}{Sampler.\+h}} 第 \mbox{\hyperlink{_sampler_8h_source_l00132}{132}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_sampler_ad86ac233f4fd609afddca16c4f150443}\index{FCT::Sampler@{FCT::Sampler}!m\_addressModeV@{m\_addressModeV}}
+\index{m\_addressModeV@{m\_addressModeV}!FCT::Sampler@{FCT::Sampler}}
+\doxysubsubsection{\texorpdfstring{m\_addressModeV}{m\_addressModeV}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_sampler_ad86ac233f4fd609afddca16c4f150443} 
+\mbox{\hyperlink{namespace_f_c_t_aeffaa324cc414eb87b89ba0f1bed673a}{Address\+Mode}} FCT\+::\+Sampler\+::m\+\_\+address\+ModeV = \mbox{\hyperlink{namespace_f_c_t_aeffaa324cc414eb87b89ba0f1bed673aa7020426cfb0a204051be4b3053d2acc8}{Address\+Mode\+::\+Repeat}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_sampler_8h_source}{Sampler.\+h}} 第 \mbox{\hyperlink{_sampler_8h_source_l00133}{133}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_sampler_a3de293bea279120be2a3271f976dc1c1}\index{FCT::Sampler@{FCT::Sampler}!m\_addressModeW@{m\_addressModeW}}
+\index{m\_addressModeW@{m\_addressModeW}!FCT::Sampler@{FCT::Sampler}}
+\doxysubsubsection{\texorpdfstring{m\_addressModeW}{m\_addressModeW}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_sampler_a3de293bea279120be2a3271f976dc1c1} 
+\mbox{\hyperlink{namespace_f_c_t_aeffaa324cc414eb87b89ba0f1bed673a}{Address\+Mode}} FCT\+::\+Sampler\+::m\+\_\+address\+ModeW = \mbox{\hyperlink{namespace_f_c_t_aeffaa324cc414eb87b89ba0f1bed673aa7020426cfb0a204051be4b3053d2acc8}{Address\+Mode\+::\+Repeat}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_sampler_8h_source}{Sampler.\+h}} 第 \mbox{\hyperlink{_sampler_8h_source_l00134}{134}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_sampler_a6dcd8a6d58f03ed6af22fe7d754b9535}\index{FCT::Sampler@{FCT::Sampler}!m\_anisotropyEnable@{m\_anisotropyEnable}}
+\index{m\_anisotropyEnable@{m\_anisotropyEnable}!FCT::Sampler@{FCT::Sampler}}
+\doxysubsubsection{\texorpdfstring{m\_anisotropyEnable}{m\_anisotropyEnable}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_sampler_a6dcd8a6d58f03ed6af22fe7d754b9535} 
+bool FCT\+::\+Sampler\+::m\+\_\+anisotropy\+Enable = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_sampler_8h_source}{Sampler.\+h}} 第 \mbox{\hyperlink{_sampler_8h_source_l00137}{137}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_sampler_a57047de0ab7ee0d0273b199a743f9418}\index{FCT::Sampler@{FCT::Sampler}!m\_borderColor@{m\_borderColor}}
+\index{m\_borderColor@{m\_borderColor}!FCT::Sampler@{FCT::Sampler}}
+\doxysubsubsection{\texorpdfstring{m\_borderColor}{m\_borderColor}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_sampler_a57047de0ab7ee0d0273b199a743f9418} 
+\mbox{\hyperlink{namespace_f_c_t_abbd9f55da7ce19953699d6544fba8a96}{Border\+Color}} FCT\+::\+Sampler\+::m\+\_\+border\+Color = \mbox{\hyperlink{namespace_f_c_t_abbd9f55da7ce19953699d6544fba8a96ae264fa6d4bbd78199f1533e4e2a9d261}{Border\+Color\+::\+Opaque\+Black}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_sampler_8h_source}{Sampler.\+h}} 第 \mbox{\hyperlink{_sampler_8h_source_l00146}{146}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_sampler_ab8183d1df21860c72bbd81bc784bbc63}\index{FCT::Sampler@{FCT::Sampler}!m\_compareEnable@{m\_compareEnable}}
+\index{m\_compareEnable@{m\_compareEnable}!FCT::Sampler@{FCT::Sampler}}
+\doxysubsubsection{\texorpdfstring{m\_compareEnable}{m\_compareEnable}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_sampler_ab8183d1df21860c72bbd81bc784bbc63} 
+bool FCT\+::\+Sampler\+::m\+\_\+compare\+Enable = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_sampler_8h_source}{Sampler.\+h}} 第 \mbox{\hyperlink{_sampler_8h_source_l00140}{140}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_sampler_aa85da4ec1ad57755df2baebc817de1bd}\index{FCT::Sampler@{FCT::Sampler}!m\_compareOp@{m\_compareOp}}
+\index{m\_compareOp@{m\_compareOp}!FCT::Sampler@{FCT::Sampler}}
+\doxysubsubsection{\texorpdfstring{m\_compareOp}{m\_compareOp}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_sampler_aa85da4ec1ad57755df2baebc817de1bd} 
+\mbox{\hyperlink{namespace_f_c_t_ae72266666726fb6ad7e1a218a340b4c8}{Compare\+Op}} FCT\+::\+Sampler\+::m\+\_\+compare\+Op = \mbox{\hyperlink{namespace_f_c_t_ae72266666726fb6ad7e1a218a340b4c8a6e7b34fa59e1bd229b207892956dc41c}{Compare\+Op\+::\+Never}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_sampler_8h_source}{Sampler.\+h}} 第 \mbox{\hyperlink{_sampler_8h_source_l00141}{141}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_sampler_a8a9c340fba9047c49a6383902bcee968}\index{FCT::Sampler@{FCT::Sampler}!m\_magFilter@{m\_magFilter}}
+\index{m\_magFilter@{m\_magFilter}!FCT::Sampler@{FCT::Sampler}}
+\doxysubsubsection{\texorpdfstring{m\_magFilter}{m\_magFilter}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_sampler_a8a9c340fba9047c49a6383902bcee968} 
+\mbox{\hyperlink{namespace_f_c_t_ab91ea156a9bfda232cfaf73535670779}{Filter\+Mode}} FCT\+::\+Sampler\+::m\+\_\+mag\+Filter = \mbox{\hyperlink{namespace_f_c_t_ab91ea156a9bfda232cfaf73535670779a32a843da6ea40ab3b17a3421ccdf671b}{Filter\+Mode\+::\+Linear}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_sampler_8h_source}{Sampler.\+h}} 第 \mbox{\hyperlink{_sampler_8h_source_l00128}{128}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_sampler_a93d332947201654ea6fcda13fd10675c}\index{FCT::Sampler@{FCT::Sampler}!m\_maxAnisotropy@{m\_maxAnisotropy}}
+\index{m\_maxAnisotropy@{m\_maxAnisotropy}!FCT::Sampler@{FCT::Sampler}}
+\doxysubsubsection{\texorpdfstring{m\_maxAnisotropy}{m\_maxAnisotropy}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_sampler_a93d332947201654ea6fcda13fd10675c} 
+float FCT\+::\+Sampler\+::m\+\_\+max\+Anisotropy = 1.\+0f\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_sampler_8h_source}{Sampler.\+h}} 第 \mbox{\hyperlink{_sampler_8h_source_l00138}{138}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_sampler_a601b16f255d885f498d300a0688c6827}\index{FCT::Sampler@{FCT::Sampler}!m\_maxLod@{m\_maxLod}}
+\index{m\_maxLod@{m\_maxLod}!FCT::Sampler@{FCT::Sampler}}
+\doxysubsubsection{\texorpdfstring{m\_maxLod}{m\_maxLod}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_sampler_a601b16f255d885f498d300a0688c6827} 
+float FCT\+::\+Sampler\+::m\+\_\+max\+Lod = 1000.\+0f\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_sampler_8h_source}{Sampler.\+h}} 第 \mbox{\hyperlink{_sampler_8h_source_l00144}{144}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_sampler_aa20164263b2adea5c36cbcc72c5fca91}\index{FCT::Sampler@{FCT::Sampler}!m\_minFilter@{m\_minFilter}}
+\index{m\_minFilter@{m\_minFilter}!FCT::Sampler@{FCT::Sampler}}
+\doxysubsubsection{\texorpdfstring{m\_minFilter}{m\_minFilter}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_sampler_aa20164263b2adea5c36cbcc72c5fca91} 
+\mbox{\hyperlink{namespace_f_c_t_ab91ea156a9bfda232cfaf73535670779}{Filter\+Mode}} FCT\+::\+Sampler\+::m\+\_\+min\+Filter = \mbox{\hyperlink{namespace_f_c_t_ab91ea156a9bfda232cfaf73535670779a32a843da6ea40ab3b17a3421ccdf671b}{Filter\+Mode\+::\+Linear}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_sampler_8h_source}{Sampler.\+h}} 第 \mbox{\hyperlink{_sampler_8h_source_l00129}{129}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_sampler_ac38f2ec7f6a4a15c31ba115138a1c823}\index{FCT::Sampler@{FCT::Sampler}!m\_minLod@{m\_minLod}}
+\index{m\_minLod@{m\_minLod}!FCT::Sampler@{FCT::Sampler}}
+\doxysubsubsection{\texorpdfstring{m\_minLod}{m\_minLod}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_sampler_ac38f2ec7f6a4a15c31ba115138a1c823} 
+float FCT\+::\+Sampler\+::m\+\_\+min\+Lod = 0.\+0f\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_sampler_8h_source}{Sampler.\+h}} 第 \mbox{\hyperlink{_sampler_8h_source_l00143}{143}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_sampler_aeda085a2c444205f5e8840fcd5eb5e56}\index{FCT::Sampler@{FCT::Sampler}!m\_mipLodBias@{m\_mipLodBias}}
+\index{m\_mipLodBias@{m\_mipLodBias}!FCT::Sampler@{FCT::Sampler}}
+\doxysubsubsection{\texorpdfstring{m\_mipLodBias}{m\_mipLodBias}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_sampler_aeda085a2c444205f5e8840fcd5eb5e56} 
+float FCT\+::\+Sampler\+::m\+\_\+mip\+Lod\+Bias = 0.\+0f\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_sampler_8h_source}{Sampler.\+h}} 第 \mbox{\hyperlink{_sampler_8h_source_l00136}{136}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_sampler_af4c567e9bae50e3ded925b35d270aac8}\index{FCT::Sampler@{FCT::Sampler}!m\_mipmapFilter@{m\_mipmapFilter}}
+\index{m\_mipmapFilter@{m\_mipmapFilter}!FCT::Sampler@{FCT::Sampler}}
+\doxysubsubsection{\texorpdfstring{m\_mipmapFilter}{m\_mipmapFilter}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_sampler_af4c567e9bae50e3ded925b35d270aac8} 
+\mbox{\hyperlink{namespace_f_c_t_ab91ea156a9bfda232cfaf73535670779}{Filter\+Mode}} FCT\+::\+Sampler\+::m\+\_\+mipmap\+Filter = \mbox{\hyperlink{namespace_f_c_t_ab91ea156a9bfda232cfaf73535670779a32a843da6ea40ab3b17a3421ccdf671b}{Filter\+Mode\+::\+Linear}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_sampler_8h_source}{Sampler.\+h}} 第 \mbox{\hyperlink{_sampler_8h_source_l00130}{130}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_sampler_adb9c22e5ada05479222cabb5cfc26241}\index{FCT::Sampler@{FCT::Sampler}!m\_unnormalizedCoordinates@{m\_unnormalizedCoordinates}}
+\index{m\_unnormalizedCoordinates@{m\_unnormalizedCoordinates}!FCT::Sampler@{FCT::Sampler}}
+\doxysubsubsection{\texorpdfstring{m\_unnormalizedCoordinates}{m\_unnormalizedCoordinates}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_sampler_adb9c22e5ada05479222cabb5cfc26241} 
+bool FCT\+::\+Sampler\+::m\+\_\+unnormalized\+Coordinates = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_sampler_8h_source}{Sampler.\+h}} 第 \mbox{\hyperlink{_sampler_8h_source_l00147}{147}} 行定义.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/\+FCT/\+RHI/\mbox{\hyperlink{_sampler_8h}{Sampler.\+h}}\end{DoxyCompactItemize}

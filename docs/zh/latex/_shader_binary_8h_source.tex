@@ -1,0 +1,144 @@
+\doxysection{Shader\+Binary.\+h}
+\hypertarget{_shader_binary_8h_source}{}\label{_shader_binary_8h_source}\index{include/FCT/RHI/ShaderBinary.h@{include/FCT/RHI/ShaderBinary.h}}
+\mbox{\hyperlink{_shader_binary_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00001}00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00002}00002\ \textcolor{comment}{//\ Created\ by\ Administrator\ on\ 2025/4/8.}}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00003}00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_third_party_8h}{../ThirdParty.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_uniform_8h}{../Context/Uniform.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_resource_layout_8h}{../Context/ResourceLayout.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00007}00007\ \textcolor{preprocessor}{\#ifndef\ SHADERBINARY\_H}}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00008}00008\ \textcolor{preprocessor}{\#define\ SHADERBINARY\_H}}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00010}00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_f_c_t}{FCT}}}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_f_c_t_1_1_r_h_i}{RHI}}}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00013}00013\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00014}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary}{00014}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_ae14ca2d24f3940fcda3ac1ec2a698433}{ShaderBinary}}\ \{}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00015}00015\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00016}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_ae14ca2d24f3940fcda3ac1ec2a698433}{00016}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_ae14ca2d24f3940fcda3ac1ec2a698433}{ShaderBinary}}();}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00017}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a112a8907a73586cc316c3d37cb2d5fd3}{00017}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a112a8907a73586cc316c3d37cb2d5fd3}{\string~ShaderBinary}}()\ \{\}}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00018}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_ab9e1f09b11e3c5b93dfa5de0a45cd372}{00018}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_ab9e1f09b11e3c5b93dfa5de0a45cd372}{code}}(std::vector<char>\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_ab9e1f09b11e3c5b93dfa5de0a45cd372}{code}})}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_ab28101698f7a61e94eac8aa5ab88f4d5}{m\_code}}\ =\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_ab9e1f09b11e3c5b93dfa5de0a45cd372}{code}};}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_af6bd1dd7227da3d72ae1a9e4480c0da0}{m\_reflected}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00023}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_ad980f2f83257becbbf570891818513fb}{00023}}\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<char>\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_ad980f2f83257becbbf570891818513fb}{code}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00024}00024\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_ab28101698f7a61e94eac8aa5ab88f4d5}{m\_code}};}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00027}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a12e04d867a7d6d8af3e37d0002e6aa38}{00027}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a12e04d867a7d6d8af3e37d0002e6aa38}{location}}(std::map<std::string,\ uint32\_t>\ locations)}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_abd5c32db38f910c53bfb27bcf1210155}{m\_locations}}\ =\ locations;}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00031}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a263ea3acc2ec1f1a46dcdb4aa588843f}{00031}}\ \ \ \ \ \ \ \ \ \ \ \ \ int32\_t\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a263ea3acc2ec1f1a46dcdb4aa588843f}{locationBySemantic}}(\textcolor{keyword}{const}\ std::string\&\ semantic)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00032}00032\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_abd5c32db38f910c53bfb27bcf1210155}{m\_locations}}.find(semantic);}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_abd5c32db38f910c53bfb27bcf1210155}{m\_locations}}.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ it-\/>second;}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00039}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_acb302f82c5bd483c1276c34b1204310c}{00039}}\ \ \ \ \ \ \ \ \ \ \ \ \ std::map<std::string,std::pair<uint32\_t,uint32\_t>>\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_acb302f82c5bd483c1276c34b1204310c}{constBufferLocations}}()}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a68fd607d08b0e7c8219c5018c6e498a5}{m\_constBufferLocations}};}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00043}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_aba51452e367cc1e3435e051243bc1cf3}{00043}}\ \ \ \ \ \ \ \ \ \ \ \ \ std::map<std::string,ConstLayout>\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_aba51452e367cc1e3435e051243bc1cf3}{constBufferLayout}}()}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_aad51c71e87e1d89d74d38fc77099c7e8}{m\_constBufferLayout}};}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00047}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a530750aa137bb8f5fe46f47c8985a80d}{00047}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a530750aa137bb8f5fe46f47c8985a80d}{addConstBufferLocation}}(\mbox{\hyperlink{class_f_c_t_1_1_const_layout}{ConstLayout}}\ layout,\ uint32\_t\ set,\ uint32\_t\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a12e04d867a7d6d8af3e37d0002e6aa38}{location}})}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_aad51c71e87e1d89d74d38fc77099c7e8}{m\_constBufferLayout}}[layout.\mbox{\hyperlink{class_f_c_t_1_1_const_layout_aa9451c9479b21cb27c18c70a1231b581}{getName}}()]\ =\ layout;}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a68fd607d08b0e7c8219c5018c6e498a5}{m\_constBufferLocations}}[layout.\mbox{\hyperlink{class_f_c_t_1_1_const_layout_aa9451c9479b21cb27c18c70a1231b581}{getName}}()]\ =\ std::make\_pair(set,\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a12e04d867a7d6d8af3e37d0002e6aa38}{location}});}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00053}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a5f9791bd03457c7f05c3f3e9c747819b}{00053}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a5f9791bd03457c7f05c3f3e9c747819b}{addTextureLocation}}(\mbox{\hyperlink{class_f_c_t_1_1_texture_element}{TextureElement}}\ texture,\ uint32\_t\ set,\ uint32\_t\ binding)}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a7eea73660f5e16e6894930056e3b9930}{m\_textureLayout}}[texture.\mbox{\hyperlink{class_f_c_t_1_1_texture_element_a29157e3cface33df29e94b9ee6d5b7d5}{getName}}()]\ =\ texture;}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_aa5607f5810c6bab14f0407c29428353c}{m\_textureLocations}}[texture.\mbox{\hyperlink{class_f_c_t_1_1_texture_element_a29157e3cface33df29e94b9ee6d5b7d5}{getName}}()]\ =\ std::make\_pair(set,\ binding);}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00059}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a7d5e6265e0ecaad62237478d9895026f}{00059}}\ \ \ \ \ \ \ \ \ \ \ \ \ std::pair<uint32\_t,\ uint32\_t>\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a7d5e6265e0ecaad62237478d9895026f}{getTextureLocation}}(\textcolor{keyword}{const}\ std::string\&\ name)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00060}00060\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_aa5607f5810c6bab14f0407c29428353c}{m\_textureLocations}}.find(name);}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_aa5607f5810c6bab14f0407c29428353c}{m\_textureLocations}}.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ it-\/>second;}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_pair(0,\ 0);}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00068}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_af84d42d0264ea8d6b8aa5d8b4b3bcb53}{00068}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_texture_element}{TextureElement}}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_af84d42d0264ea8d6b8aa5d8b4b3bcb53}{getTextureElement}}(\textcolor{keyword}{const}\ std::string\&\ name)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00069}00069\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a7eea73660f5e16e6894930056e3b9930}{m\_textureLayout}}.find(name);}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a7eea73660f5e16e6894930056e3b9930}{m\_textureLayout}}.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ it-\/>second;}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_f_c_t_1_1_texture_element}{TextureElement}}();}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00077}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a5a78e2acffd78039dbc02c6cc863e107}{00077}}\ \ \ \ \ \ \ \ \ \ \ \ \ std::map<std::string,\ std::pair<uint32\_t,\ uint32\_t>>\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a5a78e2acffd78039dbc02c6cc863e107}{textureLocations}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00078}00078\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_aa5607f5810c6bab14f0407c29428353c}{m\_textureLocations}};}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00082}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a6c32b39cde5a0221fc166d938ce7910f}{00082}}\ \ \ \ \ \ \ \ \ \ \ \ \ std::map<std::string,\ TextureElement>\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a6c32b39cde5a0221fc166d938ce7910f}{textureLayout}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00083}00083\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a7eea73660f5e16e6894930056e3b9930}{m\_textureLayout}};}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00087}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a9c7a7c7859ec40f5b1d6032c67bb20dc}{00087}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a9c7a7c7859ec40f5b1d6032c67bb20dc}{addSamplerLocation}}(\mbox{\hyperlink{class_f_c_t_1_1_sampler_element}{SamplerElement}}\ sampler,\ uint32\_t\ set,\ uint32\_t\ binding)}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_ab814276c30a482362a22d95fb9a62cf5}{m\_samplerLayout}}[sampler.\mbox{\hyperlink{class_f_c_t_1_1_sampler_element_aa8459fb05557219fa2b8230bcfde8334}{getName}}()]\ =\ sampler;}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a07a491784b70c511c0fdac27e511a7ea}{m\_samplerLocations}}[sampler.\mbox{\hyperlink{class_f_c_t_1_1_sampler_element_aa8459fb05557219fa2b8230bcfde8334}{getName}}()]\ =\ std::make\_pair(set,\ binding);}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00093}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a9508b6de32fa750c31ae861edacc741e}{00093}}\ \ \ \ \ \ \ \ \ \ \ \ \ std::pair<uint32\_t,\ uint32\_t>\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a9508b6de32fa750c31ae861edacc741e}{getSamplerLocation}}(\textcolor{keyword}{const}\ std::string\&\ name)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00094}00094\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a07a491784b70c511c0fdac27e511a7ea}{m\_samplerLocations}}.find(name);}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a07a491784b70c511c0fdac27e511a7ea}{m\_samplerLocations}}.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ it-\/>second;}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_pair(0,\ 0);}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00102}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_acd20cc5006e4ca31e23d673489dbd253}{00102}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_sampler_element}{SamplerElement}}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_acd20cc5006e4ca31e23d673489dbd253}{getSamplerElement}}(\textcolor{keyword}{const}\ std::string\&\ name)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00103}00103\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_ab814276c30a482362a22d95fb9a62cf5}{m\_samplerLayout}}.find(name);}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_ab814276c30a482362a22d95fb9a62cf5}{m\_samplerLayout}}.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ it-\/>second;}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_f_c_t_1_1_sampler_element}{SamplerElement}}();}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00111}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_af0cc551e78d4d67e5264a6fb997d3daf}{00111}}\ \ \ \ \ \ \ \ \ \ \ \ \ std::map<std::string,\ std::pair<uint32\_t,\ uint32\_t>>\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_af0cc551e78d4d67e5264a6fb997d3daf}{samplerLocations}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00112}00112\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a07a491784b70c511c0fdac27e511a7ea}{m\_samplerLocations}};}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00116}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_ae868e4140b950f5bf273f1d4756aece8}{00116}}\ \ \ \ \ \ \ \ \ \ \ \ \ std::map<std::string,\ SamplerElement>\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_ae868e4140b950f5bf273f1d4756aece8}{samplerLayout}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00117}00117\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_ab814276c30a482362a22d95fb9a62cf5}{m\_samplerLayout}};}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00121}00121\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00122}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_ab28101698f7a61e94eac8aa5ab88f4d5}{00122}}\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<char>\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_ab28101698f7a61e94eac8aa5ab88f4d5}{m\_code}};}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00123}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_abd5c32db38f910c53bfb27bcf1210155}{00123}}\ \ \ \ \ \ \ \ \ \ \ \ \ std::map<std::string,\ uint32\_t>\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_abd5c32db38f910c53bfb27bcf1210155}{m\_locations}};}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00124}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_ada1e10b65b3c7bb76d1e5667a4c29293}{00124}}\ \ \ \ \ \ \ \ \ \ \ \ \ std::map<std::string,std::pair<uint32\_t,uint32\_t>>\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_ada1e10b65b3c7bb76d1e5667a4c29293}{m\_uniformLocations}};}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00125}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a68fd607d08b0e7c8219c5018c6e498a5}{00125}}\ \ \ \ \ \ \ \ \ \ \ \ \ std::map<std::string,std::pair<uint32\_t,uint32\_t>>\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a68fd607d08b0e7c8219c5018c6e498a5}{m\_constBufferLocations}};}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00126}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_aad51c71e87e1d89d74d38fc77099c7e8}{00126}}\ \ \ \ \ \ \ \ \ \ \ \ \ std::map<std::string,ConstLayout>\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_aad51c71e87e1d89d74d38fc77099c7e8}{m\_constBufferLayout}};}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00127}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_aa5607f5810c6bab14f0407c29428353c}{00127}}\ \ \ \ \ \ \ \ \ \ \ \ \ std::map<std::string,std::pair<uint32\_t,uint32\_t>>\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_aa5607f5810c6bab14f0407c29428353c}{m\_textureLocations}};}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00128}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a7eea73660f5e16e6894930056e3b9930}{00128}}\ \ \ \ \ \ \ \ \ \ \ \ \ std::map<std::string,TextureElement>\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a7eea73660f5e16e6894930056e3b9930}{m\_textureLayout}};}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00129}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a07a491784b70c511c0fdac27e511a7ea}{00129}}\ \ \ \ \ \ \ \ \ \ \ \ \ std::map<std::string,std::pair<uint32\_t,uint32\_t>>\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_a07a491784b70c511c0fdac27e511a7ea}{m\_samplerLocations}};}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00130}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_ab814276c30a482362a22d95fb9a62cf5}{00130}}\ \ \ \ \ \ \ \ \ \ \ \ \ std::map<std::string,SamplerElement>\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_ab814276c30a482362a22d95fb9a62cf5}{m\_samplerLayout}};}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00131}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_af6bd1dd7227da3d72ae1a9e4480c0da0}{00131}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_shader_binary_af6bd1dd7227da3d72ae1a9e4480c0da0}{m\_reflected}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00132}00132\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00133}00133\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00134}00134\ \}}
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00135}00135\ }
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00136}00136\ }
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{_shader_binary_8h_source_l00138}00138\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//SHADERBINARY\_H}}
+
+\end{DoxyCode}

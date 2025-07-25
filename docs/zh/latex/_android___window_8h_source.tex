@@ -1,0 +1,107 @@
+\doxysection{Android\+\_\+\+Window.\+h}
+\hypertarget{_android___window_8h_source}{}\label{_android___window_8h_source}\index{include/FCT/UI/Android\_Window.h@{include/FCT/UI/Android\_Window.h}}
+\mbox{\hyperlink{_android___window_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00001}00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00002}00002\ \textcolor{comment}{//\ Created\ by\ Administrator\ on\ 2025/2/20.}}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00003}00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_third_party_8h}{../ThirdParty.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_window_8h}{Window.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_activity_wrapper_8h}{../Runtime/ActivityWrapper.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00007}00007\ \textcolor{preprocessor}{\#ifdef\ FCT\_USE\_VULKAN}}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}../Context/VK\_Swapchain.h"{}}}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00009}00009\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00011}00011\ \textcolor{preprocessor}{\#ifndef\ ANDROID\_WINDOW\_H}}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00012}00012\ \textcolor{preprocessor}{\#define\ ANDROID\_WINDOW\_H}}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00013}00013\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_f_c_t}{FCT}}\ \{}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00014}\mbox{\hyperlink{class_f_c_t_1_1_android___window}{00014}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_f_c_t_1_1_android___window_ad691d472dcb9c2c1dd30371e5718a93d}{Android\_Window}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_f_c_t_1_1_window_a7659d7c67b9e40d73f4245e4449c776f}{Window}}\ \{}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00016}\mbox{\hyperlink{class_f_c_t_1_1_android___window_ad691d472dcb9c2c1dd30371e5718a93d}{00016}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_android___window_ad691d472dcb9c2c1dd30371e5718a93d}{Android\_Window}}();}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00017}\mbox{\hyperlink{class_f_c_t_1_1_android___window_ab9af7bc40b25d86dd253a02924b6f0fd}{00017}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_android___window_ab9af7bc40b25d86dd253a02924b6f0fd}{Android\_Window}}(JavaVM*\ vm);}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00019}\mbox{\hyperlink{class_f_c_t_1_1_android___window_a4fe807aa70f193f9b56d96c1b2840c84}{00019}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_android___window_a4fe807aa70f193f9b56d96c1b2840c84}{bind}}(\mbox{\hyperlink{class_f_c_t_1_1_context}{FCT::Context}}\ *ctx)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00021}\mbox{\hyperlink{class_f_c_t_1_1_android___window_afa5f564564865d6bc2f3e3825fa09ad7}{00021}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_f_c_t_1_1_android___window_afa5f564564865d6bc2f3e3825fa09ad7}{isRunning}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00023}\mbox{\hyperlink{class_f_c_t_1_1_android___window_a449fe196cc96232664c4acf36d909b47}{00023}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_android___window_a449fe196cc96232664c4acf36d909b47}{swapBuffers}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00025}\mbox{\hyperlink{class_f_c_t_1_1_android___window_a54ca01febad6bf6bf70e269885c108b3}{00025}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_f_c_t_1_1_android___window_a54ca01febad6bf6bf70e269885c108b3}{getWidth}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00027}\mbox{\hyperlink{class_f_c_t_1_1_android___window_a246f92e1852e93681f0ff2db4259ad44}{00027}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_f_c_t_1_1_android___window_a246f92e1852e93681f0ff2db4259ad44}{getHeight}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00028}\mbox{\hyperlink{class_f_c_t_1_1_android___window_a804b07255663549900edf6ac7719e136}{00028}}\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_f_c_t_1_1_android___window_a804b07255663549900edf6ac7719e136}{getDeviceWidth}}();}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00029}\mbox{\hyperlink{class_f_c_t_1_1_android___window_a5f8bdcdc84fe48634ae9d4f21f2041e4}{00029}}\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_f_c_t_1_1_android___window_a5f8bdcdc84fe48634ae9d4f21f2041e4}{getDeviceHeight}}();}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00030}\mbox{\hyperlink{class_f_c_t_1_1_android___window_a7685e3fcf793a7e52e29d0cd7fb93ad1}{00030}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_android___window_a7685e3fcf793a7e52e29d0cd7fb93ad1}{onDestory}}();}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00032}\mbox{\hyperlink{class_f_c_t_1_1_android___window_aa476aa6a317d4af1ca53aaf8bb2b2c2e}{00032}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_android___window_aa476aa6a317d4af1ca53aaf8bb2b2c2e}{setCursorPos}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00034}\mbox{\hyperlink{class_f_c_t_1_1_android___window_ab95cdb60248c488e182bd97bdb761a0b}{00034}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_android___window_ab95cdb60248c488e182bd97bdb761a0b}{invokeResizeCallbacks}}(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height);}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00036}\mbox{\hyperlink{class_f_c_t_1_1_android___window_a1f2554ab3129861961705e3b6b6fa1a1}{00036}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_android___window_a1f2554ab3129861961705e3b6b6fa1a1}{invokeMouseMoveCallbacks}}(\textcolor{keywordtype}{int}\ xpos,\ \textcolor{keywordtype}{int}\ ypos);}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00038}\mbox{\hyperlink{class_f_c_t_1_1_android___window_ab922a45877085cd709332b0d32c8b032}{00038}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_android___window_ab922a45877085cd709332b0d32c8b032}{invokeMouseCallbacks}}(\textcolor{keywordtype}{int}\ button,\ \textcolor{keywordtype}{int}\ action,\ \textcolor{keywordtype}{int}\ mods);}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00040}\mbox{\hyperlink{class_f_c_t_1_1_android___window_a4b8dd3d50662bc365a3072561318591d}{00040}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_android___window_a4b8dd3d50662bc365a3072561318591d}{invokeKeyCallbacks}}(\textcolor{keywordtype}{int}\ key,\ \textcolor{keywordtype}{int}\ scancode,\ \textcolor{keywordtype}{int}\ action,\ \textcolor{keywordtype}{int}\ mods);}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00042}\mbox{\hyperlink{class_f_c_t_1_1_android___window_a66d50d098a13bba7c53c613b59236494}{00042}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_android___window_a66d50d098a13bba7c53c613b59236494}{invokeScrollCallbacks}}(\textcolor{keywordtype}{int}\ xoffset,\ \textcolor{keywordtype}{int}\ yoffset);}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00044}\mbox{\hyperlink{class_f_c_t_1_1_android___window_a76688cccb1d2f45f1a06963a252edc2a}{00044}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_android___window_a76688cccb1d2f45f1a06963a252edc2a}{create}}();}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00046}\mbox{\hyperlink{class_f_c_t_1_1_android___window_a29a20e61929bba4886353c32be757b09}{00046}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_android___window_a29a20e61929bba4886353c32be757b09}{destroy}}();}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00048}\mbox{\hyperlink{class_f_c_t_1_1_android___window_a8567f9179e1f26134b8ccc3a2dd1e37d}{00048}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_f_c_t_1_1_android___window_a8567f9179e1f26134b8ccc3a2dd1e37d}{isCreated}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00050}\mbox{\hyperlink{class_f_c_t_1_1_android___window_ac1b367502ee808bf95b1f651df1ed8c2}{00050}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_f_c_t_1_1_android___window_ac1b367502ee808bf95b1f651df1ed8c2}{hasSurface}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{comment}{//void\ createSurface(jobject\ surface);}}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00054}\mbox{\hyperlink{class_f_c_t_1_1_android___window_a43eeb957e01d51e2010e8ee660b7b97b}{00054}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_android___window_a43eeb957e01d51e2010e8ee660b7b97b}{destroySurface}}();}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00055}\mbox{\hyperlink{class_f_c_t_1_1_android___window_a4d4ae01f152a99b3c219261b28c844a1}{00055}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_android___window_a4d4ae01f152a99b3c219261b28c844a1}{create}}(\textcolor{keywordtype}{float}\ w,\textcolor{keywordtype}{float}\ h,\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{class_f_c_t_1_1_window_a4b99d82c5edeaf7f6aec4c08f6f6e4cb}{title}});}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00057}\mbox{\hyperlink{class_f_c_t_1_1_android___window_a3fde83fc6f89c6daedb10e72dd3390a0}{00057}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_android___window_a3fde83fc6f89c6daedb10e72dd3390a0}{viewport}}(\mbox{\hyperlink{struct_f_c_t_1_1_vec2}{Vec2}}\ lt,\ \mbox{\hyperlink{struct_f_c_t_1_1_vec2}{Vec2}}\ rb);}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00058}\mbox{\hyperlink{class_f_c_t_1_1_android___window_ac186c22cbb37032875f81469c837d8aa}{00058}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_android___window_ac186c22cbb37032875f81469c837d8aa}{sizeParam}}(\textcolor{keywordtype}{int}\ w,\textcolor{keywordtype}{int}\ h);}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00059}\mbox{\hyperlink{class_f_c_t_1_1_android___window_a636a8f49cf74bb4595d9334bb9793983}{00059}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_android___window_a636a8f49cf74bb4595d9334bb9793983}{resize}}(\textcolor{keywordtype}{int}\ w,\textcolor{keywordtype}{int}\ h);}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00060}\mbox{\hyperlink{class_f_c_t_1_1_android___window_a943091cee5995631734baf8344ce40c8}{00060}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_android___window_a943091cee5995631734baf8344ce40c8}{onSurfaceCreate}}(jobject\ surface);}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00061}\mbox{\hyperlink{class_f_c_t_1_1_android___window_ad612dd36264f4c5f37ff7f347e8c2c64}{00061}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_android___window_ad612dd36264f4c5f37ff7f347e8c2c64}{onSurfaceChanged}}(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height);}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00062}\mbox{\hyperlink{class_f_c_t_1_1_android___window_a07d3c8dbe91f6729895de7901dde18d4}{00062}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_android___window_a07d3c8dbe91f6729895de7901dde18d4}{onSurfaceDestroy}}();}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00063}00063\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00064}00064\ \ \ \ \ \ \ \ \ jni::GlobalObject<FCTWindowJavaClass>*\ m\_windowObject;}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00065}00065\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_context}{Context}}*\ m\_ctx;}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00066}00066\ \ \ \ \ \ \ \ \ JNIEnv*\ getEnv()\{}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ JNIEnv*\ env\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ m\_vm-\/>GetEnv((\textcolor{keywordtype}{void}\ **)\&env,\ JNI\_VERSION\_1\_6);}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ env;}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00070}00070\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00071}00071\ \ \ \ \ \ \ \ \ JavaVM*\ m\_vm;}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_hasSurface;}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00073}00073\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_running;}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00074}00074\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_created;}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{class_f_c_t_1_1_window_a6e7b85dfa13e22588a011fca71fc4966}{m\_title}};}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00076}00076\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_f_c_t_1_1_vec2}{Vec2}}\ m\_lt;}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00077}00077\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_f_c_t_1_1_vec2}{Vec2}}\ m\_rb;}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00078}00078\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ m\_contextReource;}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00079}00079\ \ \ \ \ \ \ \ \ ANativeWindow*\ m\_nativeWindow;}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00080}00080\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_needRecreateSwapChain;}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00081}00081\ \textcolor{preprocessor}{\#ifdef\ FCT\_USE\_VULKAN}}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00082}00082\ \ \ \ \ \ \ \ \ VK\_Swapchain*\ m\_vkSwapchain;}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00084}00084\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ createVulkanSurface();}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00085}00085\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ destroyVulkanSurface();}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ createVulkanSwapChain();}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00087}00087\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ presentVulkan();}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00088}00088\ \ \ \ \ \ \ \ \ vk::SurfaceKHR\ m\_vulkanSurface;}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00089}00089\ \ \ \ \ \ \ \ \ \textcolor{comment}{//vk::SwapchainKHR\ m\_vulkanSwapchain;}}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00091}00091\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00092}00092\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Image*\ m\_buffer;}}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00093}00093\ \ \ \ \ \ \ \ \ std::mutex\ m\_nativeSurfaceMutex;}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00094}00094\ \ \ \ \ \ \ \ \ std::function<void()>\ destorySurface;}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00095}00095\ \ \ \ \ \ \ \ \ std::function<void()>\ createSurface;}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00096}00096\ \ \ \ \ \ \ \ \ std::function<void()>\ recreateSwapChain;}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00097}00097\ \ \ \ \ \ \ \ \ std::function<void()>\ present;}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00098}00098\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00099}00099\ \}}
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{_android___window_8h_source_l00101}00101\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//ANDROID\_WINDOW\_H}}
+
+\end{DoxyCode}

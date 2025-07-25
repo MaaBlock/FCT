@@ -1,0 +1,91 @@
+\doxysection{GLFW\+\_\+\+Window.\+h}
+\hypertarget{_g_l_f_w___window_8h_source}{}\label{_g_l_f_w___window_8h_source}\index{include/FCT/UI/GLFW\_Window.h@{include/FCT/UI/GLFW\_Window.h}}
+\mbox{\hyperlink{_g_l_f_w___window_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00001}00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00002}00002\ \textcolor{comment}{//\ Created\ by\ Administrator\ on\ 2025/3/22.}}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00003}00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_third_party_8h}{../ThirdParty.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_window_8h}{./Window.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{runtime_8h}{../Runtime/Runtime.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00007}00007\ \textcolor{preprocessor}{\#ifndef\ GLFW\_WINDOW\_H}}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00008}00008\ \textcolor{preprocessor}{\#define\ GLFW\_WINDOW\_H}}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00010}00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_f_c_t}{FCT}}}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_behavior}{GLFW\_WindowBehavior}};}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00013}\mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window}{00013}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_a692e43ff9dd8177914dd84611272bd6d}{GLFW\_Window}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_f_c_t_1_1_window_a7659d7c67b9e40d73f4245e4449c776f}{Window}}}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00014}00014\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00016}\mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_a44f53a55022fe594510aa1908617047a}{00016}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_a44f53a55022fe594510aa1908617047a}{GLFW\_WindowBehavior}};}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00017}\mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_a692e43ff9dd8177914dd84611272bd6d}{00017}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_a692e43ff9dd8177914dd84611272bd6d}{GLFW\_Window}}(\mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___u_i_common}{GLFW\_UICommon}}*\ common,\ \mbox{\hyperlink{class_f_c_t_1_1_runtime}{Runtime}}*\ rt);}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00018}\mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_ac2966f48d053a2132610e73b3b4478cf}{00018}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_ac2966f48d053a2132610e73b3b4478cf}{\string~GLFW\_Window}}();}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00019}\mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_a45787a961ba286964267a1019eb10e48}{00019}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_a45787a961ba286964267a1019eb10e48}{invokeResizeCallbacks}}(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height);}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00020}\mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_a9c40e2770603e99cb407b7e5b81e6d00}{00020}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_a9c40e2770603e99cb407b7e5b81e6d00}{invokeMouseMoveCallbacks}}(\textcolor{keywordtype}{int}\ xpos,\ \textcolor{keywordtype}{int}\ ypos);}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00021}\mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_af841db207f4c3a38e334cf487feca34c}{00021}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_af841db207f4c3a38e334cf487feca34c}{invokeMouseCallbacks}}(\textcolor{keywordtype}{int}\ button,\ \textcolor{keywordtype}{int}\ action,\ \textcolor{keywordtype}{int}\ mods);}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00022}\mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_a73009276887dc418f50096b8cb4380c7}{00022}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_a73009276887dc418f50096b8cb4380c7}{invokeKeyCallbacks}}(\textcolor{keywordtype}{int}\ key,\ \textcolor{keywordtype}{int}\ scancode,\ \textcolor{keywordtype}{int}\ action,\ \textcolor{keywordtype}{int}\ mods);}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00023}\mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_a16ffef44712c5c59373ae8902d2a8d60}{00023}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_a16ffef44712c5c59373ae8902d2a8d60}{invokeScrollCallbacks}}(\textcolor{keywordtype}{int}\ xoffset,\ \textcolor{keywordtype}{int}\ yoffset);}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00024}\mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_a139cfe81fa3136d7d4e31ccea4c7e010}{00024}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_a139cfe81fa3136d7d4e31ccea4c7e010}{create}}();}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00025}\mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_a381dad29d9be19cfd88e129fd195373d}{00025}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_a381dad29d9be19cfd88e129fd195373d}{isRunning}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00026}\mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_af9adbc194b65b58eee606089a978c69d}{00026}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_af9adbc194b65b58eee606089a978c69d}{bind}}(\mbox{\hyperlink{class_f_c_t_1_1_context}{Context}}*\ ctx)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00027}\mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_acbdbe173978cca12cf07acd56532eec1}{00027}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_acbdbe173978cca12cf07acd56532eec1}{swapBuffers}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00028}\mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_a664529ab5a468493f4f420082d3d8900}{00028}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_a664529ab5a468493f4f420082d3d8900}{getWidth}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00029}\mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_ac6a2aca643585288deb19984147b299b}{00029}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_ac6a2aca643585288deb19984147b299b}{getHeight}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00030}\mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_a8d60d0c3bed9c92ba518ffb7b6ad7fb3}{00030}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_a8d60d0c3bed9c92ba518ffb7b6ad7fb3}{setCursorPos}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00031}\mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_aa34fd2e0df3a8d230e12a50d50041cf4}{00031}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_image}{Image}}*\ \mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_aa34fd2e0df3a8d230e12a50d50041cf4}{getImage}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00032}\mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_a95fb376b87ae1821e4194018fcfc9011}{00032}}\ \ \ \ \ \ \ \ \ GLFWwindow*\ \mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_a95fb376b87ae1821e4194018fcfc9011}{getWindow}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_window;\ \}}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00033}\mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_ac58cefe96f8c6015899d22d7548e9292}{00033}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_f_c_t_1_1_vec2}{Vec2}}\ \mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_ac58cefe96f8c6015899d22d7548e9292}{getCursorPos}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00034}\mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_a13875c89666442d12280b7ed19dbc988}{00034}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_a13875c89666442d12280b7ed19dbc988}{postUiTask}}(\mbox{\hyperlink{namespace_f_c_t_a2b67c2197d2675193be9ca0fe8406c87}{UITaskFunction}}\ task,\textcolor{keywordtype}{void}*\ param\ =\ \textcolor{keyword}{nullptr},\textcolor{keywordtype}{bool}\ waited\ =\ \textcolor{keyword}{true})}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00035}00035\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ m\_common-\/>postUiTask(task,\ param,\ waited);}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00037}00037\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00038}\mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_adb39fa768885f15bfbaaec2894a61bf1}{00038}}\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_adb39fa768885f15bfbaaec2894a61bf1}{postTicker}}(\mbox{\hyperlink{namespace_f_c_t_afeb4bf1a3cf675cfa582cc37d4cb0946}{UiTicker}}\ ticker)}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00039}00039\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_common-\/>postTicker(ticker);}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00041}00041\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00042}\mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_aa748b507675c7deee965c0e5f7a36889}{00042}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_aa748b507675c7deee965c0e5f7a36889}{sendUiTask}}(\mbox{\hyperlink{namespace_f_c_t_a2b67c2197d2675193be9ca0fe8406c87}{UITaskFunction}}\ task,\textcolor{keywordtype}{void}*\ param\ =\ \textcolor{keyword}{nullptr},\textcolor{keywordtype}{bool}\ waited\ =\ \textcolor{keyword}{true})}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00043}00043\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ m\_common-\/>sendUiTask(task,\ param,\ waited);}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00045}00045\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00046}00046\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00047}00047\ \ \ \ \ \ \ \ \ GLFWwindow*\ m\_window;}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_runtime}{Runtime}}*\ m\_rt;}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00049}00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___u_i_common}{GLFW\_UICommon}}*\ m\_common;}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ recreateSwapchain(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height);}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00051}00051\ \textcolor{preprocessor}{\#ifdef\ FCT\_USE\_VULKAN}}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00052}00052\ \ \ \ \ \ \ \ \ VkSurfaceKHR\ m\_vkSurface;}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00053}00053\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ m\_swapchainNativeHandle;}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00055}00055\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00057}00057\ \ \ \ \ \textcolor{keyword}{class\ }GLFW\_UICommon;}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00060}\mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_behavior}{00060}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_behavior_a4c864ff47a2d65a6344d187d4370a2cb}{GLFW\_WindowBehavior}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_f_c_t_1_1_window_behavior}{WindowBehavior}}\ \{}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00061}00061\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00062}\mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_behavior_a4c864ff47a2d65a6344d187d4370a2cb}{00062}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_behavior_a4c864ff47a2d65a6344d187d4370a2cb}{GLFW\_WindowBehavior}}(\mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window}{GLFW\_Window}}*\ wnd)\ :\ m\_wnd(wnd)\ \{\}}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00063}\mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_behavior_a6052f3d62b23d248d04bc86ad29015e8}{00063}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_behavior_a6052f3d62b23d248d04bc86ad29015e8}{pos}}(\textcolor{keywordtype}{int}\ x,\textcolor{keywordtype}{int}\ y)}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00064}00064\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00066}00066\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00067}\mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_behavior_a3d885d02819d187e05b1a4bb4df4e62e}{00067}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_behavior_a3d885d02819d187e05b1a4bb4df4e62e}{size}}(\textcolor{keywordtype}{int}\ w,\ \textcolor{keywordtype}{int}\ h)}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00068}00068\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00070}00070\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00071}\mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_behavior_aea4e7df3616e20886b7a4aad688d04a9}{00071}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_behavior_aea4e7df3616e20886b7a4aad688d04a9}{title}}(\textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_behavior_aea4e7df3616e20886b7a4aad688d04a9}{title}})}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00072}00072\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ m\_wnd-\/>addRef();}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ m\_wnd-\/>m\_common-\/>postUiTask([\textcolor{keyword}{this},\ \mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_behavior_aea4e7df3616e20886b7a4aad688d04a9}{title}}](\textcolor{keywordtype}{void}*)}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ glfwSetWindowTitle(m\_wnd-\/>m\_window,\ \mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window_behavior_aea4e7df3616e20886b7a4aad688d04a9}{title}}.c\_str());}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_wnd-\/>release();}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \},\textcolor{keyword}{nullptr},\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00079}00079\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00080}00080\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00081}00081\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___window}{GLFW\_Window}}*\ m\_wnd;}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00082}00082\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00083}00083\ \}}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___window_8h_source_l00085}00085\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//GLFW\_WINDOW\_H}}
+
+\end{DoxyCode}

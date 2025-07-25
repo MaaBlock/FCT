@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FCT: include/FCT/Context/Context.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FCT
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_context_8h.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Context.h 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="_third_party_8h_source.html">../ThirdParty.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_tool_define_8h_source.html">../ToolDefine.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_bases_8h_source.html">../Bases.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_object_pool_8h_source.html">../Memory/ObjectPool.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_computation_8h_source.html">../MutilThreadBase/Computation.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_data_types_8h_source.html">./DataTypes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_r_h_i_2_vertex_shader_8h_source.html">../RHI/VertexShader.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_r_h_i_2_pixel_shader_8h_source.html">../RHI/PixelShader.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_swapcain_8h_source.html">../RHI/Swapcain.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_context_2_vertex_buffer_8h_source.html">./VertexBuffer.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_material_8h_source.html">./Material.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_draw_call_8h_source.html">./DrawCall.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_context_2_const_buffer_8h_source.html">./ConstBuffer.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_texture_8h_source.html">./Texture.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_texture_array_8h_source.html">./TextureArray.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_format_8h_source.html">./Format.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_context_2_image_8h_source.html">./Image.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_command_pool_8h_source.html">../RHI/CommandPool.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_r_h_i_2_pass_8h_source.html">../RHI/Pass.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_fence_8h_source.html">../RHI/Fence.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_semaphore_8h_source.html">../RHI/Semaphore.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_pass_group_8h_source.html">../RHI/PassGroup.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_sampler_8h_source.html">../RHI/Sampler.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_rasterization_pipeline_8h_source.html">../RHI/RasterizationPipeline.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_input_layout_8h_source.html">../RHI/InputLayout.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_descriptor_pool_8h_source.html">../RHI/DescriptorPool.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_shader_compiler_8h_source.html">./ShaderCompiler.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_shader_generator_8h_source.html">./ShaderGenerator.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_mesh_8h_source.html">Mesh.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_pass_resource_8h_source.html">PassResource.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_depth_stencil_view_8h_source.html">../RHI/DepthStencilView.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_model_loader_8h_source.html">../ModelLoader/ModelLoader.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_mutil_buffer_image_8h_source.html">MutilBufferImage.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_render_graph_8h_source.html">./RenderGraph.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_fence_pool_8h_source.html">FencePool.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_semaphore_pool_8h_source.html">SemaphorePool.h</a>&quot;</code><br />
+</div>
+<p><a href="_context_8h_source.html">浏览该文件的源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:FCT_3A_3AFrameResource" id="r_FCT_3A_3AFrameResource"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_f_c_t_1_1_frame_resource.html">FCT::FrameResource</a></td></tr>
+<tr class="memitem:FCT_3A_3AContext" id="r_FCT_3A_3AContext"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_f_c_t_1_1_context.html">FCT::Context</a></td></tr>
+<tr class="memitem:FCT_3A_3AContext_3A_3ALogicTaskData" id="r_FCT_3A_3AContext_3A_3ALogicTaskData"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_f_c_t_1_1_context_1_1_logic_task_data.html">FCT::Context::LogicTaskData</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
+命名空间</h2></td></tr>
+<tr class="memitem:FCT" id="r_FCT"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_f_c_t.html">FCT</a></td></tr>
+<tr class="memitem:FCT_3A_3ARHI" id="r_FCT_3A_3ARHI"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_f_c_t_1_1_r_h_i.html">FCT::RHI</a></td></tr>
+<tr class="memitem:FCT_3A_3AInnerSync" id="r_FCT_3A_3AInnerSync"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_f_c_t_1_1_inner_sync.html">FCT::InnerSync</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:ab1ea6811dd963f80ea7b7b1b6aec0d3c" id="r_ab1ea6811dd963f80ea7b7b1b6aec0d3c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_f_c_t.html#ab1ea6811dd963f80ea7b7b1b6aec0d3c">FCT::SubmitTicker</a> = std::function&lt;void()&gt;</td></tr>
+<tr class="memitem:a726db41259cdbddb2910a4854444d5b9" id="r_a726db41259cdbddb2910a4854444d5b9"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_f_c_t.html#a726db41259cdbddb2910a4854444d5b9">FCT::SyncTicker</a> = std::function&lt;void()&gt;</td></tr>
+<tr class="memitem:a4871ca624d38cba5f44a54de0e01a933" id="r_a4871ca624d38cba5f44a54de0e01a933"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_f_c_t.html#a4871ca624d38cba5f44a54de0e01a933">FCT::TickerToken</a> = uint32_t</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:a7bd85aff3c2babcf1441a80ec00e70e4" id="r_a7bd85aff3c2babcf1441a80ec00e70e4"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_f_c_t.html#a7bd85aff3c2babcf1441a80ec00e70e4">FCT::RenderGraphSubmitTickerName</a> = &quot;RenderGraphSubmitTicker&quot;</td></tr>
+<tr class="memitem:a41b02c859811a4fb4d24f7e20a0698f4" id="r_a41b02c859811a4fb4d24f7e20a0698f4"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_f_c_t.html#a41b02c859811a4fb4d24f7e20a0698f4">FCT::RenderGraphExcutePassSubmitTickerName</a> = &quot;RenderGraphExcutePassSubmitTicker&quot;</td></tr>
+<tr class="memitem:a713521d343a445fb31ddf00b9665d59f" id="r_a713521d343a445fb31ddf00b9665d59f"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_f_c_t.html#a713521d343a445fb31ddf00b9665d59f">FCT::SwapBufferSubmitTicker</a> = &quot;SwapBufferSubmitTicker&quot;</td></tr>
+<tr class="memitem:a3bec92bc39d2c90a357c13c4874e5e24" id="r_a3bec92bc39d2c90a357c13c4874e5e24"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_f_c_t.html#a3bec92bc39d2c90a357c13c4874e5e24">FCT::RenderGraphSyncTicker_SwapJobQueueName</a> = &quot;RenderGraphSyncTicker_SwapJobQueue&quot;</td></tr>
+<tr class="memitem:a7cbf6ad9e86670d646cb1cb41d6fd000" id="r_a7cbf6ad9e86670d646cb1cb41d6fd000"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_f_c_t_1_1_inner_sync.html#a7cbf6ad9e86670d646cb1cb41d6fd000">FCT::InnerSync::CheckRecreateSwapchainSync</a> = &quot;CheckRecreateSwapchainSync&quot;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="dir_3b79087de5de3e907e48529d171f9ebd.html">FCT</a></li><li class="navelem"><a href="dir_19fee93ae38761ad3d1230778bcc76f4.html">Context</a></li><li class="navelem"><a href="_context_8h.html">Context.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>
