@@ -6,12 +6,12 @@
 #define FCT_PASSRESOURCE_H
 #include "ResourceLayout.h"
 #include "../RHI/ConstBuffer.h"
-#include "../UI/Window.h"
 namespace FCT
 {
     class Sampler;
     class SamplerElement;
     class TextureElement;
+    class Window;
 
     namespace RHI
     {

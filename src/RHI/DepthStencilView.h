@@ -8,6 +8,7 @@ namespace FCT
 {
     namespace RHI
     {
+        class Image;
         class DepthStencilView : public RefCount
         {
         public:

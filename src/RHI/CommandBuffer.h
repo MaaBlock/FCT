@@ -3,6 +3,7 @@
 //
 #include "../MutilThreadBase/RefCount.h"
 #include "../Base/Flags.h"
+#include "../Context/DataTypes.h"
 #ifndef COMMANDBUFFER_H
 #define COMMANDBUFFER_H
 
@@ -37,21 +38,8 @@ namespace FCT
                 level(CommandBufferLevel::Primary);
                 m_fence = nullptr;
             }
-            ~CommandBuffer()
-            {
-                for (auto& desc : m_waitSemaphores)
-                {
-                    desc.semaphore->release();
-                }
-                for (auto& semaphore : m_signalSemaphores)
-                {
-                    semaphore->release();
-                }
-                if (m_fence)
-                {
-                    m_fence->release();
-                }
-            }
+            ~CommandBuffer();
+
             void level(CommandBufferLevel level)
             {
                 m_level = level;
@@ -67,35 +55,15 @@ namespace FCT
             virtual void end() = 0;
             virtual void submit() = 0;
             Fence* fence() const { return m_fence; }
-            void fence(Fence* fence)
-            {
-                FCT_SAFE_RELEASE(m_fence);
-                m_fence = fence;
-                FCT_SAFE_ADDREF(m_fence);
-            }
+            void fence(Fence* fence);
             std::vector<WaitSemaphoreDescription>& waitSemaphores() { return m_waitSemaphores; }
             std::vector<Semaphore*>& signalSemaphores() { return m_signalSemaphores; }
-            void clearWaitSemaphores()
-            {
-                for (auto& desc : m_waitSemaphores)
-                {
-                    desc.semaphore->release();
-                }
-                m_waitSemaphores.clear();
-            }
-            void addWaitSemaphore(Semaphore* semaphore,PipelineStages stage = PipelineStage::colorAttachmentOutput)
-            {
-                WaitSemaphoreDescription desc;
-                desc.semaphore = semaphore;
-                desc.stages = stage;
-                semaphore->addRef();
-                m_waitSemaphores.push_back(desc);
-            }
-            void addSignalSemaphore(Semaphore* semaphore)
-            {
-                semaphore->addRef();
-                m_signalSemaphores.push_back(semaphore);
-            }
+            void clearWaitSemaphores();
+
+            void addWaitSemaphore(Semaphore* semaphore,PipelineStages stage = PipelineStage::colorAttachmentOutput);
+
+            void addSignalSemaphore(Semaphore* semaphore);
+
         protected:
             CommandBufferLevel m_level;
             Fence* m_fence;
@@ -103,6 +71,7 @@ namespace FCT
             std::vector<Semaphore*> m_signalSemaphores;
             //std::vector<Fence*> m_submitFence;
         };
+
     }
 }
 #endif //COMMANDBUFFER_H

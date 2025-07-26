@@ -1,26 +1,19 @@
 //
 // Created by Administrator on 2025/3/27.
 //
+#include "../Type/type.h"
 #include "../MutilThreadBase/RefCount.h"
 #include "../Base/Flags.h"
-#include "../Context/Format.h"
 
 #ifndef FCT_RHI_IMAGE_H
 #define FCT_RHI_IMAGE_H
 namespace FCT
 {
-    enum class ImageUsage : unsigned int
-    {
-        RenderTarget = 0x1,
-        DepthStencil = 0x2,
-        Texture      = 0x4,
-    };
     struct ImageInitData
     {
         void* data;
         size_t size;
     };
-    using ImageUsageFlags = Flags<ImageUsage>;
     namespace RHI
     {
         class Fence;

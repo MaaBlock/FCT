@@ -3,7 +3,9 @@
 //
 #include "../Base/Flags.h"
 #include "../MutilThreadBase/RefCount.h"
+#include "../Context/DataTypes.h"
 #include "../Context/Image.h"
+
 #ifndef FCT_RHI_PASS_H
 #define FCT_RHI_PASS_H
 namespace FCT
@@ -25,6 +27,7 @@ namespace FCT
     };
     namespace RHI
     {
+        class CommandBuffer;
         class PassGroup;
         class Pass : public RefCount
         {

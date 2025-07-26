@@ -2,7 +2,8 @@
 // Created by Administrator on 2025/3/27.
 //
 
-#include "../headers.h"
+#include "./Context.h"
+#include "../RHI/Image.h"
 #include "./Image.h"
 namespace FCT
 {
@@ -21,8 +22,18 @@ namespace FCT
         return m_image->m_samples;
     }
 
+    void UpdateResult::waitFor()
+    {
+        fence->waitFor();
+        fence->release();
+        if (cleanUpCallback) {
+            cleanUpCallback();
+        }
+        delete this;
+    }
+
     Image::Image(Context* ctx) : m_ctx(ctx), m_behavior(nullptr), m_renderTargetType(RenderTargetType::ImageTarget),
-    m_width(0), m_height(0)
+                                 m_width(0), m_height(0)
     {
         m_samples = Samples::sample_1;
     }

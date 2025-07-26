@@ -1,0 +1,59 @@
+\doxysection{Mesh.\+hpp}
+\hypertarget{_mesh_8hpp_source}{}\label{_mesh_8hpp_source}\index{include/FCT/Context/Mesh.hpp@{include/FCT/Context/Mesh.hpp}}
+\mbox{\hyperlink{_mesh_8hpp}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ FCT\_MESH\_HPP}}
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00002}00002\ \textcolor{preprocessor}{\#define\ FCT\_MESH\_HPP}}
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00003}00003\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_f_c_t}{FCT}}\ \{}
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00004}00004\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ IndexType>}
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00005}\mbox{\hyperlink{class_f_c_t_1_1_static_mesh_ab14ba8e6a44b67f1b25c8ad6794e63a6}{00005}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_static_mesh_ab14ba8e6a44b67f1b25c8ad6794e63a6}{StaticMesh<IndexType>::create}}()}
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00006}00006\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00007}00007\ \ \ \ \ \ \ \ \ m\_gpuVertex\ =\ m\_ctx-\/>createResource<\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_vertex_buffer}{RHI::VertexBuffer}}>();}
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00008}00008\ \ \ \ \ \ \ \ \ m\_gpuVertex-\/>\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_vertex_buffer_a7b420e365ee7c6998d92f4a50047ef75}{vertexBuffer}}(m\_cpuVertex);}
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00009}00009\ \ \ \ \ \ \ \ \ m\_gpuVertex-\/>create();}
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00010}00010\ \ \ \ \ \ \ \ \ m\_gpuVertex-\/>updataBuffer();}
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00012}00012\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!m\_cpuIndices.empty())\ \{}
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00013}00013\ \ \ \ \ \ \ \ \ \ \ \ \ m\_gpuIndex\ =\ m\_ctx-\/>createResource<\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_index_buffer}{RHI::IndexBuffer}}>();}
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \ \ \ \ m\_gpuIndex-\/>\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_index_buffer_a35bf84f0d9532a974157956b06a500ba}{indexBuffer}}(m\_cpuIndices);}
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ m\_gpuIndex-\/>create();}
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ m\_gpuIndex-\/>updataBuffer();}
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00018}00018\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ IndexType>}
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00021}\mbox{\hyperlink{class_f_c_t_1_1_dynamic_mesh_ac504cebdc39c6485be8de87334d7212d}{00021}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_dynamic_mesh_ac504cebdc39c6485be8de87334d7212d}{DynamicMesh<IndexType>::create}}()}
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00022}00022\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00023}00023\ \ \ \ \ \ \ \ \ m\_gpuVertex\ =\ m\_ctx-\/>createResource<\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_vertex_buffer}{RHI::VertexBuffer}}>();}
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00024}00024\ \ \ \ \ \ \ \ \ m\_gpuVertex-\/>\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_vertex_buffer_a7b420e365ee7c6998d92f4a50047ef75}{vertexBuffer}}(m\_cpuVertex);}
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00025}00025\ \ \ \ \ \ \ \ \ m\_gpuVertex-\/>updateFrequency(\mbox{\hyperlink{namespace_f_c_t_a0236e673f1b6fe9736bc596d7e50dc7ea5ac98a9f1bddc1b15896f0e02bf06839}{UpdateFrequency::PerFrame}});}
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_vertexCapacity\ >\ m\_cpuVertex-\/>getVertexCount())\ \{}
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ m\_vertexCapacity\ =\ m\_cpuVertex-\/>getVertexCount();}
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00032}00032\ \ \ \ \ \ \ \ \ m\_gpuVertex-\/>reserve(m\_vertexCapacity);}
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00034}00034\ \ \ \ \ \ \ \ \ m\_gpuVertex-\/>create();}
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00035}00035\ \ \ \ \ \ \ \ \ m\_gpuVertex-\/>updataBuffer();}
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!m\_cpuIndices.empty()\ ||\ m\_indexCapacity\ >\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ m\_gpuIndex\ =\ m\_ctx-\/>createResource<\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_index_buffer}{RHI::IndexBuffer}}>();}
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ m\_gpuIndex-\/>\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_index_buffer_a35bf84f0d9532a974157956b06a500ba}{indexBuffer}}(m\_cpuIndices);}
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ m\_gpuIndex-\/>updateFrequency(\mbox{\hyperlink{namespace_f_c_t_a0236e673f1b6fe9736bc596d7e50dc7ea5ac98a9f1bddc1b15896f0e02bf06839}{UpdateFrequency::PerFrame}});}
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_indexCapacity\ >\ m\_cpuIndices.size())\ \{}
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_indexCapacity\ =\ m\_cpuIndices.size();}
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ m\_gpuIndex-\/>reserve(m\_indexCapacity);}
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ m\_gpuIndex-\/>create();}
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ m\_gpuIndex-\/>updataBuffer();}
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00051}00051\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00052}00052\ \}}
+\DoxyCodeLine{\Hypertarget{_mesh_8hpp_source_l00053}00053\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

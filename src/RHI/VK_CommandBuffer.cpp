@@ -28,6 +28,29 @@ namespace FCT
             m_commandBuffer = m_pool->context()->device().allocateCommandBuffers(m_allocateInfo)[0];
         }
 
+        void VK_CommandBuffer::scissor(Vec2 lt, Vec2 rb)
+        {
+            vk::Rect2D scissor{};
+            scissor.offset.x = static_cast<int32_t>(lt.x);
+            scissor.offset.y = static_cast<int32_t>(lt.y);
+            scissor.extent.width = static_cast<uint32_t>(rb.x - lt.x);
+            scissor.extent.height = static_cast<uint32_t>(rb.y - lt.y);
+            m_commandBuffer.setScissor(0,1, &scissor);
+        }
+
+        void VK_CommandBuffer::bindPipieline(RasterizationPipeline* pipeline)
+        {
+            switch (pipeline->getType())
+            {
+            case PipelineType::Traditional:
+                {
+                    auto vkPipeline = static_cast<VK_TraditionalPipeline*>(pipeline);
+                    m_commandBuffer.bindPipeline(vk::PipelineBindPoint::eGraphics,vkPipeline->pipeline());
+                }
+                break;
+            }
+        }
+
         void VK_CommandBuffer::submit()
         {
             vk::SubmitInfo submitInfo{};

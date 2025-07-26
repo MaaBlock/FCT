@@ -4,6 +4,7 @@
 
 #ifndef VERTEXPATH_H
 #define VERTEXPATH_H
+#include "../MutilThreadBase/RefCount.h"
 namespace FCT {
 
 

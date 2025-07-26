@@ -1,44 +1,26 @@
 //
 // Created by Administrator on 2025/3/5.
 //
-#include "../MutilThreadBase/RefCount.h"
-#include "../Base/Flags.h"
-#include "./IRenderTarget.h"
-#include "./Format.h"
-#include "../RHI/DepthStencilView.h"
-#include "../RHI/Image.h"
-#include "../RHI/RenderTargetView.h"
-#include "../RHI/TextureView.h"
 
 #ifndef FCT_IMAGE_H
 #define FCT_IMAGE_H
+#include "../MutilThreadBase/RefCount.h"
+#include "../Base/Flags.h"
+#include "./IRenderTarget.h"
+#include "../Type/type.h"
+#include "../RHI/Fence.h"
 
 namespace FCT {
     class Context;
-    /*
-    struct ImageUsageFlags
+    namespace RHI
     {
-        ImageUsageFlags() : m_mask(0) {}
-        ImageUsageFlags(ImageUsage bits) : m_mask(static_cast<unsigned int>(bits)) {}
-        ImageUsageFlags(unsigned int flags) : m_mask(flags) {}
+        class Image;
+        class Fence;
+        class TextureView;
+        class DepthStencilView;
+        class RenderTargetView;
+    }
 
-        operator unsigned int() const { return m_mask; }
-
-        bool operator!() const { return !m_mask; }
-
-        ImageUsageFlags operator&(ImageUsage bits) const
-        {
-            return ImageUsageFlags(m_mask & static_cast<unsigned int>(bits));
-        }
-
-        ImageUsageFlags& operator|=(ImageUsage bits)
-        {
-            m_mask |= static_cast<unsigned int>(bits);
-            return *this;
-        }
-
-        unsigned int m_mask;
-    }; */
     class Image;
     class ImageBehavior
     {
@@ -61,15 +43,7 @@ namespace FCT {
     {
         RHI::Fence* fence;
         std::function<void()> cleanUpCallback;
-        void waitFor()
-        {
-            fence->waitFor();
-            fence->release();
-            if (cleanUpCallback) {
-                cleanUpCallback();
-            }
-            delete this;
-        }
+        void waitFor();
         uint8_t currentFrame;
     };
     class Image : public RefCount, public IRenderTarget {

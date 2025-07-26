@@ -1,7 +1,11 @@
 //
 // Created by Administrator on 2025/5/4.
 //
-#include "../headers.h"
+#include "./Freetype_FontCommon.h"
+
+#include "Freetype_Font.h"
+#include "../DebugTools/OutStream.h"
+
 namespace FCT
 {
     void Freetype_FontCommon::init()
@@ -9,12 +13,12 @@ namespace FCT
         if (FT_Init_FreeType(&g_library))
             fout << "Could not initialize FreeType library" << std::endl;
     }
-    FCT::Freetype_Font *FCT::Freetype_FontCommon::create()
+    Freetype_Font *Freetype_FontCommon::create()
     {
         return new Freetype_Font(this);
     }
 
-    void FCT::Freetype_FontCommon::tern()
+    void Freetype_FontCommon::tern()
     {
         FT_Done_FreeType(g_library);
     }

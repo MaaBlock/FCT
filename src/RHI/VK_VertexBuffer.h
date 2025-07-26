@@ -5,8 +5,10 @@
 #ifndef VK_VERTEXBUFFER_H
 #define VK_VERTEXBUFFER_H
 
+
 namespace FCT
 {
+    class VK_Context;
     namespace RHI
     {
 

@@ -8,6 +8,7 @@
 
 namespace FCT
 {
+    class VK_Context;
      namespace RHI
     {
         struct AttachmentSlot

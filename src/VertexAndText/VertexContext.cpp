@@ -87,14 +87,14 @@ namespace FCT
     void VertexContext::create()
     {
         m_pso = new TraditionPipelineState();
-        m_vs = m_ctx->createVertexShader();
+        m_vs = m_ctx->createResource<VertexShader>();
         m_vs->pixelLayout(pixelLayout);
         m_vs->addLayout(0, vertexLayout);
         m_vs->addUniform(m_projectionMatrix.first);
         m_vs->addUniform(m_viewMatrix.first);
         m_vs->resourceLayout(resourceLayout);
 
-        m_ps = m_ctx->createPixelShader();
+        m_ps = m_ctx->createResource<PixelShader>();
         m_ps->pixelLayout(pixelLayout);
         m_ps->resourceLayout(resourceLayout);
 

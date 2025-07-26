@@ -10,6 +10,7 @@ namespace FCT
 {
     namespace RHI
     {
+        class RasterizationPipeline;
         class VK_CommandBuffer : public CommandBuffer{
         public:
             VK_CommandBuffer(VK_CommandPool* pool);
@@ -39,27 +40,9 @@ namespace FCT
                 viewport.maxDepth = 1.0f;
                 m_commandBuffer.setViewport(0,1, &viewport);
             }
-            void scissor(Vec2 lt, Vec2 rb) override
-            {
-                vk::Rect2D scissor{};
-                scissor.offset.x = static_cast<int32_t>(lt.x);
-                scissor.offset.y = static_cast<int32_t>(lt.y);
-                scissor.extent.width = static_cast<uint32_t>(rb.x - lt.x);
-                scissor.extent.height = static_cast<uint32_t>(rb.y - lt.y);
-                m_commandBuffer.setScissor(0,1, &scissor);
-            }
-            void bindPipieline(RasterizationPipeline* pipeline) override
-            {
-                switch (pipeline->getType())
-                {
-                case PipelineType::Traditional:
-                    {
-                        auto vkPipeline = static_cast<VK_TraditionalPipeline*>(pipeline);
-                        m_commandBuffer.bindPipeline(vk::PipelineBindPoint::eGraphics,vkPipeline->pipeline());
-                    }
-                    break;
-                }
-            }
+            void scissor(Vec2 lt, Vec2 rb) override;
+            void bindPipieline(RasterizationPipeline* pipeline) override;
+
             void draw(size_t vertexBegin, size_t instanceBegin, size_t vertexSize, size_t instanceSize) override
             {
                 m_commandBuffer.draw(static_cast<uint32_t>(vertexSize),static_cast<uint32_t>(instanceSize) ,static_cast<uint32_t>(vertexBegin), static_cast<uint32_t>(instanceBegin));

@@ -1,8 +1,11 @@
 #include "./TextureView.h"
 #ifndef VK_TEXTUREVIEW_H
 #define VK_TEXTUREVIEW_H
+
+
 namespace FCT
 {
+    class VK_Context;
     namespace RHI
     {
         class VK_TextureView : public TextureView {

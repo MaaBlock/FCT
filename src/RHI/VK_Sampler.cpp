@@ -1,4 +1,8 @@
-#include "../FCTAPI.h"
+
+
+#include "../ThirdParty.h"
+#include "../Context/VK_Context.h"
+#include "VK_Sampler.h"
 
 namespace FCT
 {

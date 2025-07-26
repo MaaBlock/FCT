@@ -14,28 +14,24 @@
 #include "./ConstBuffer.h"
 #include "./Texture.h"
 #include "./TextureArray.h"
-#include "./Format.h"
+#include "../Type/type.h"
 #include "./Image.h"
 #include "../RHI/CommandPool.h"
 #include "../RHI/Pass.h"
 #include "../RHI/Fence.h"
 #include "../RHI/Semaphore.h"
-#include "../RHI/PassGroup.h"
 #include "../RHI/Sampler.h"
-#include "../RHI/RasterizationPipeline.h"
 #include "../RHI/InputLayout.h"
 #include "../RHI/DescriptorPool.h"
 #include "./ShaderCompiler.h"
 #include "./ShaderGenerator.h"
-#include "Mesh.h"
-#include "PassResource.h"
-#include "../RHI/DepthStencilView.h"
 #include "../ModelLoader/ModelLoader.h"
-#include "./Mesh.h"
-#include "MutilBufferImage.h"
 #include "./RenderGraph.h"
 #include "FencePool.h"
 #include "SemaphorePool.h"
+#include "./Device.h"
+#include "Mesh.h"
+#include "../Base/TokenGraph.h"
 namespace FCT
 {
 	class RasterizationState;
@@ -110,78 +106,28 @@ namespace FCT
 	class Runtime;
 	class Context : public RefCount
 	{
+	protected:
+		Device* m_resourceDevice;
 	public:
 		Context(Runtime* runtime);
 		virtual ~Context();
 		virtual void clear(float r, float g, float b) = 0;
 		virtual void viewport(int x, int y, int width, int height) = 0;
-		virtual VertexShader* createVertexShader() = 0;
-		virtual RHI::VertexShader* newRhiVertexShader() = 0;
-		virtual RHI::PixelShader* newRhiPixelShader() = 0;
-		virtual PixelShader* createPixelShader() = 0;
-		virtual RHI::InputLayout* createInputLayout() = 0;
-		virtual DrawCall* createDrawCall(PrimitiveType primitiveType, uint32_t startVertex, uint32_t vertexCount) = 0;
-		virtual RHI::ConstBuffer* createConstBuffer() = 0;
-		virtual Texture* createTexture() = 0;
-		virtual TextureArray* createTextureArray() = 0;
-		virtual Image* createImage() = 0;
-		virtual MutilBufferImage* createMutilBufferImage() = 0;
-		virtual RHI::Image* newRhiImage() = 0;
-		virtual RHI::Swapchain* createSwapchain() = 0;
-		virtual RHI::PassGroup* createPassGroup() = 0;
-		virtual RHI::Pass* createPass() = 0;
+		template <typename T>
+		T* createResource()
+		{
+			return m_resourceDevice->createResource<T>();
+		}
 		virtual RHI::RasterizationPipeline* createTraditionPipeline() = 0;
-		virtual RHI::Fence* createFence() = 0;
-		virtual RHI::Semaphore* createSemaphore() = 0;
 		virtual void create() = 0;
-		virtual RHI::CommandPool* createCommandPool() = 0;
-		virtual RHI::VertexBuffer* createVertexBuffer() = 0;
-		virtual RHI::IndexBuffer* createIndexBuffer() = 0;
-		virtual RHI::DescriptorPool* createDescriptorPool() = 0;
-		virtual RHI::DepthStencilView* createDepthStencilView() = 0;
-		virtual BlendState* createBlendState() = 0;
-		virtual PassResource* createPassResource() = 0;
-		virtual RHI::TextureView* createTextureView() = 0;
-		virtual Sampler* createSampler() = 0;
-		virtual SemaphorePool* createSemaphorePool() = 0;
-		virtual FencePool* createFencePool() = 0;
 
 	protected:
 		ModelLoader* m_modelLoader;
 	public:
 		virtual RasterizationState* createRasterizationState() = 0;
-		StaticMesh<uint32_t>* createMesh(const ModelMesh* modelMesh, const VertexLayout& layout)
-		{
-			if (!modelMesh) {
-				return nullptr;
-			}
+		StaticMesh<uint32_t>* createMesh(const ModelMesh* modelMesh, const VertexLayout& layout);
+		StaticMesh<uint32_t>* loadMesh(const std::string& filename,const std::string& meshName, const VertexLayout& layout);
 
-			StaticMesh<uint32_t>* mesh = new StaticMesh<uint32_t>(this, layout);
-			VertexBuffer* vertexBuffer = mesh->getVertexBuffer();
-			vertexBuffer->resize(modelMesh->vertices.size());
-			for (uint32_t i = 0; i < modelMesh->vertices.size(); ++i) {
-				const auto& modelVertex = modelMesh->vertices[i];
-				Vertex vertex = (*vertexBuffer)[i];
-
-				for (size_t j = 0; j < layout.getElementCount(); ++j) {
-					const VertexElement& element = layout.getElement(j);
-					setVertexAttributeFromModel(vertex, j, element, modelVertex);
-				}
-			}
-
-			std::vector<uint32_t> indices = modelMesh->indices;
-			mesh->setIndices(indices);
-
-			mesh->create();
-
-			return mesh;
-		}
-		StaticMesh<uint32_t>* loadMesh(const std::string& filename,const std::string& meshName, const VertexLayout& layout)
-		{
-			auto md = m_modelLoader->loadModel(filename);
-			auto mMesh =  md->findMesh(meshName);
-			return createMesh(mMesh,layout);
-		}
 	protected:
 		struct LogicTaskData
 		{
@@ -276,7 +222,7 @@ namespace FCT
 		void nextFrame();
 		void currentFlush();
 	protected:
-		TokenGraph<std::string,SubmitTicker> m_submitTickers;
+		TokenGraph<std::string, SubmitTicker> m_submitTickers;
 		TokenGraph<std::string, SyncTicker> m_syncTickers;
 		SubmitTicker m_ticker;
 		std::vector<Window*> m_bindWindows;
@@ -412,4 +358,4 @@ namespace FCT
 
 	};
 }
-
+#include "Mesh.hpp"

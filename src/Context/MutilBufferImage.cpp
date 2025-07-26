@@ -3,6 +3,10 @@
 //
 
 #include "../FCTAPI.h"
+#include "../RHI/DepthStencilView.h"
+#include "../RHI/Image.h"
+#include "../RHI/RenderTargetView.h"
+#include "./Context.h"
 namespace FCT
 {
     MutilBufferAffterCreateImageBehavior::MutilBufferAffterCreateImageBehavior(MutilBufferImage* image)
@@ -29,7 +33,7 @@ namespace FCT
     {
         for (uint32_t i = 0; i < m_imageCount; ++i)
         {
-            auto image = m_ctx->newRhiImage();
+            auto image = m_ctx->createResource<RHI::Image>();
             image->width(m_width);
             image->height(m_height);
             image->format(m_format);
@@ -89,7 +93,7 @@ namespace FCT
 
         for (uint32_t i = 0; i < currentImageCount; ++i)
         {
-            auto image = m_ctx->newRhiImage();
+            auto image = m_ctx->createResource<RHI::Image>();
             image->width(m_width);
             image->height(m_height);
             image->format(currentFormat);
@@ -157,7 +161,7 @@ namespace FCT
         {
             for (auto img : m_images)
             {
-                auto dsv = m_ctx->createDepthStencilView();
+                auto dsv = m_ctx->createResource<RHI::DepthStencilView>();
                 dsv->image(img);
                 while (!dsv->create());
                 m_dsvs.push_back(dsv);
@@ -167,7 +171,7 @@ namespace FCT
         {
             for (auto img : m_images)
             {
-                auto tv = m_ctx->createTextureView();
+                auto tv = m_ctx->createResource<RHI::TextureView>();
                 tv->image(img);
                 tv->create();
                 m_tvs.push_back(tv);
@@ -211,7 +215,7 @@ namespace FCT
     UpdateResult* MutilBufferImage::updateToCurrent(void* data, size_t size)
     {
         UpdateResult* res = new UpdateResult();
-        res->fence = m_ctx->createFence();
+        res->fence = m_ctx->createResource<RHI::Fence>();
         m_images[m_ctx->currentFrameIndex()]->updateData(data,size,res->fence,&res->cleanUpCallback);
         return res;
     }

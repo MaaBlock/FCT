@@ -1,5 +1,13 @@
-#include "../FCTAPI.h"
+#include "../ThirdParty.h"
+#include "../Context/VK_Context.h"
+#include "./VK_Swapchain.h"
 
+#include "./VK_Fence.h"
+#include "./Fence.h"
+#include "./Semaphore.h"
+#include "./Image.h"
+#include "./Pass.h"
+#include "../Context/MutilBufferImage.h"
 
 namespace FCT {
     namespace RHI
@@ -434,6 +442,19 @@ namespace FCT {
             return Samples::sample_1;
         }
 
+
+        void VK_Swapchain::enableDepthBuffer(Format format)
+        {
+            m_depthStencilImage = m_ctx->createResource<MutilBufferImage>();
+            m_depthStencilImage->width(m_width);
+            m_depthStencilImage->height(m_height);
+            m_depthStencilImage->format(format);
+            m_depthStencilImage->samples(Samples::sample_1);
+            m_depthStencilImage->as(ImageUsage::DepthStencil);
+            m_depthStencilImage->imageCount(m_images.size());
+            m_depthStencilImage->create();
+            m_target->setDepthStencilBuffer(m_depthStencilImage);
+        }
     }
 }
 

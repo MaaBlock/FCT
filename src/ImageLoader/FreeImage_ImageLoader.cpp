@@ -1,4 +1,7 @@
-#include "../FCTAPI.h"
+#include "./FreeImage_ImageLoader.h"
+
+#include <iostream>
+#include <stdexcept>
 
 namespace FCT {
     void FreeImage_ImageLoader::Init()

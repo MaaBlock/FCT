@@ -256,7 +256,7 @@ void FCT::GLFW_Window::recreateSwapchain(int width, int height)
 {
     if (!m_swapchain)
     {
-        m_swapchain = m_ctx->createSwapchain();
+        m_swapchain = m_ctx->createResource<RHI::Swapchain>();
     }
     m_swapchain->nativeHandle(m_swapchainNativeHandle);
     m_swapchain->size(width, height);

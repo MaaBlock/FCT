@@ -1,13 +1,10 @@
-﻿//
-// Created by Administrator on 2025/3/26.
-//
+﻿#ifndef FCT_SWAPCAIN_H
+#define FCT_SWAPCAIN_H
+#include "../Type/type.h"
 #include "Fence.h"
 #include "../MutilThreadBase/RefCount.h"
-#include "../Context/Format.h"
 #include "../Context/ImageRenderTarget.h"
 #include "../RHI/Semaphore.h"
-#ifndef FCT_SWAPCAIN_H
-#define FCT_SWAPCAIN_H
 namespace FCT
 {
     namespace RHI

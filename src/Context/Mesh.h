@@ -5,6 +5,7 @@
 #define FCT_MESH_H
 #include "../ThirdParty.h"
 #include "./Vertex.h"
+#include "Context.h"
 #include "../RHI/IndexBuffer.h"
 #include "../RHI/VertexBuffer.h"
 #include "../RHI/CommandBuffer.h"
@@ -44,20 +45,7 @@ namespace FCT
             m_cpuIndices = indices;
         }
 
-        void create()
-        {
-            m_gpuVertex = m_ctx->createVertexBuffer();
-            m_gpuVertex->vertexBuffer(m_cpuVertex);
-            m_gpuVertex->create();
-            m_gpuVertex->updataBuffer();
-
-            if (!m_cpuIndices.empty()) {
-                m_gpuIndex = m_ctx->createIndexBuffer();
-                m_gpuIndex->indexBuffer(m_cpuIndices);
-                m_gpuIndex->create();
-                m_gpuIndex->updataBuffer();
-            }
-        }
+        void create();
 
         void bind(RHI::CommandBuffer* cmdBuf)
         {
@@ -107,6 +95,8 @@ namespace FCT
         RHI::IndexBuffer* m_gpuIndex;
         std::vector<IndexType> m_cpuIndices;
     };
+
+
     template<typename IndexType = uint16_t>
     class DynamicMesh
     {
@@ -184,37 +174,7 @@ namespace FCT
             }
         }
 
-        void create()
-        {
-            m_gpuVertex = m_ctx->createVertexBuffer();
-            m_gpuVertex->vertexBuffer(m_cpuVertex);
-            m_gpuVertex->updateFrequency(UpdateFrequency::PerFrame);
-
-            if (m_vertexCapacity > m_cpuVertex->getVertexCount()) {
-
-            } else {
-                m_vertexCapacity = m_cpuVertex->getVertexCount();
-            }
-            m_gpuVertex->reserve(m_vertexCapacity);
-
-            m_gpuVertex->create();
-            m_gpuVertex->updataBuffer();
-
-            if (!m_cpuIndices.empty() || m_indexCapacity > 0) {
-                m_gpuIndex = m_ctx->createIndexBuffer();
-                m_gpuIndex->indexBuffer(m_cpuIndices);
-                m_gpuIndex->updateFrequency(UpdateFrequency::PerFrame);
-
-                if (m_indexCapacity > m_cpuIndices.size()) {
-                } else {
-                    m_indexCapacity = m_cpuIndices.size();
-                }
-                m_gpuIndex->reserve(m_indexCapacity);
-
-                m_gpuIndex->create();
-                m_gpuIndex->updataBuffer();
-            }
-        }
+        void create();
 
         void bind(RHI::CommandBuffer* cmdBuf)
         {
@@ -301,5 +261,6 @@ namespace FCT
         size_t m_vertexCapacity = 0;
         size_t m_indexCapacity = 0;
     };
+
 }
 #endif //MESH_H

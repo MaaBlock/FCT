@@ -1,7 +1,11 @@
 //
 // Created by Administrator on 2025/5/4.
 //
-#include "../headers.h"
+#include "../Context/DataTypes.h"
+#include "./Freetype_Font.h"
+
+#include "VertexPath.h"
+
 namespace FCT
 {
 	Freetype_Font::Freetype_Font(Freetype_FontCommon* common)

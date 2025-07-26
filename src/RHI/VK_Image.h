@@ -8,6 +8,7 @@
 
 namespace FCT
 {
+    class VK_Context;
     namespace RHI
     {
         class VK_Image : public Image {

@@ -2,7 +2,11 @@
 // Created by Administrator on 2025/3/27.
 //
 
-#include "../FCTAPI.h"
+#include "VK_Image.h"
+#include "VK_Fence.h"
+#include "../ThirdParty.h"
+#include "../Context/VK_Context.h"
+
 namespace FCT {
     namespace RHI {
         VK_Image::VK_Image(VK_Context* ctx)

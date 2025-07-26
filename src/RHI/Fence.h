@@ -1,9 +1,9 @@
 //
 // Created by Administrator on 2025/4/2.
 //
-#include "../MutilThreadBase/RefCount.h"
 #ifndef FENCE_H
 #define FENCE_H
+#include "../MutilThreadBase/RefCount.h"
 namespace FCT
 {
     namespace RHI

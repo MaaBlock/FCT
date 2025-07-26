@@ -2,7 +2,10 @@
 // Created by Administrator on 2025/3/28.
 //
 
-#include "../FCTAPI.h"
+#include "./VK_Pass.h"
+#include "./VK_PassGroup.h"
+#include "./VK_CommandBuffer.h"
+#include "../Context/VK_Context.h"
 namespace FCT
 {
     namespace RHI

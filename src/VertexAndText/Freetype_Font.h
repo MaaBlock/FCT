@@ -7,6 +7,8 @@
 #define FREETYPE_FONT_H
 namespace FCT
 {
+    class VertexPath;
+
     class Freetype_Font : public Font
     {
     private:

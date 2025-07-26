@@ -5,6 +5,8 @@
 #ifndef VK_PASS_H
 #define VK_PASS_H
 #include "./Pass.h"
+#include "CommandBuffer.h"
+
 namespace FCT
 {
     class VK_Context;

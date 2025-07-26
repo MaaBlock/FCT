@@ -12,14 +12,9 @@ namespace FCT {
             VK_ConstBuffer(VK_Context* ctx);
             void mapData() override;
             void checkAndUpdateCurrentFrame();
-            const vk::DescriptorBufferInfo& currentBufferInfo() {
-                checkAndUpdateCurrentFrame();
-                return m_bufferInfos[m_ctx->currentSubmitFrameIndex()];
-            }
-            const vk::DescriptorBufferInfo& currentBufferInfoWithoutUpdata() const
-            {
-                return m_bufferInfos[m_ctx->currentSubmitFrameIndex()];
-            }
+            const vk::DescriptorBufferInfo& currentBufferInfo();
+
+            const vk::DescriptorBufferInfo& currentBufferInfoWithoutUpdata() const;
             void create() override;
         protected:
             VK_Context* m_ctx;

@@ -2,8 +2,6 @@
 // Created by Administrator on 2025/3/30.
 //
 #include "./Image.h"
-#include "Context.h"
-#include "../RHI/DepthStencilView.h"
 #ifndef MUTILBUFFERIMAGE_H
 #define MUTILBUFFERIMAGE_H
 
@@ -11,6 +9,7 @@
 namespace FCT
 {
     class MutilBufferImage;
+    class Context;
     class MutilBufferAffterCreateImageBehavior : public ImageBehavior
     {
     public:

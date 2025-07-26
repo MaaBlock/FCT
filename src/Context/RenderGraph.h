@@ -8,8 +8,11 @@
 
 namespace FCT
 {
+    class MutilBufferImage;
     struct Job;
     class Pass;
+    class Window;
+    class Context;
 
     enum class RenderGraphVertexType {
         Pass,

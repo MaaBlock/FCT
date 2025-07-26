@@ -104,5 +104,14 @@ namespace FCT
             static constexpr bool isBitmask = true; \
         }; \
         using BitType##s = FCT::Flags<BitType>;
+
+    enum class ImageUsage : unsigned int
+    {
+        RenderTarget = 0x1,
+        DepthStencil = 0x2,
+        Texture      = 0x4,
+    };
+
+    using ImageUsageFlags = Flags<ImageUsage>;
 }
 #endif //FLAGS_H

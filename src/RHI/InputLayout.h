@@ -2,7 +2,7 @@
 #include "../MutilThreadBase/RefCount.h"
 #include "./IPipelineResource.h"
 #include "../Context/VertexFactory.h"
-#include "../Context/Format.h"
+#include "../Type/Format.h"
 #include "../Context/Vertex.h"
 #include "./ShaderBinary.h"
 namespace FCT {

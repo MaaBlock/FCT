@@ -7,10 +7,10 @@ namespace FCT {
 	{
 		this->ctx = ctx;
 
-		cmdPool = ctx->createCommandPool();
+		cmdPool = ctx->createResource<RHI::CommandPool>();
 		cmdPool->create();
 
-		renderFinishedSemaphoresPool = ctx->createSemaphorePool();
+		renderFinishedSemaphoresPool = ctx->createResource<SemaphorePool>();
 		renderFinishedSemaphoresPool->setDestroyCallback([this](RHI::Semaphore* semaphore)
 		{
 			auto ret = std::find(renderFinishedSemaphores.begin(),renderFinishedSemaphores.end(),semaphore);
@@ -19,7 +19,7 @@ namespace FCT {
 				*ret = nullptr;
 			}
 		});
-		presentCompleteFencePool = ctx->createFencePool();
+		presentCompleteFencePool = ctx->createResource<FencePool>();
 		presentCompleteFencePool->setDestroyCallback([this](RHI::Fence* fence)
 		{
 			auto ret = std::find(presentCompleteFences.begin(),presentCompleteFences.end(),fence);
@@ -28,7 +28,7 @@ namespace FCT {
 				*ret = nullptr;
 			}
 		});
-		imageAvailableSemaphore = ctx->createSemaphore();
+		imageAvailableSemaphore = ctx->createResource<RHI::Semaphore>();
 		imageAvailableSemaphore->create();
 	}
 	inline void FrameResource::allocCommandBuffers(uint32_t additionalCount)
@@ -193,7 +193,7 @@ namespace FCT {
 		wnd->setPresentFinshSemaphore(frameResources[m_frameIndex].imageAvailableSemaphore);
 		wnd->initRender();
 		m_frameResources[wnd] = std::move(frameResources);
-		m_descriptorPools[wnd] = createDescriptorPool();
+		m_descriptorPools[wnd] = createResource<RHI::DescriptorPool>();
 		m_descriptorPools[wnd]->create();
 		allocBaseCommandBuffers(wnd);
 	}

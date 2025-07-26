@@ -3,18 +3,10 @@
 //
 
 #include "../FCTAPI.h"
+#include "./VK_Device.h"
 VULKAN_HPP_DEFAULT_DISPATCH_LOADER_DYNAMIC_STORAGE
 namespace FCT
 {
-    FCT::TextureArray *FCT::VK_Context::createTextureArray() {
-        return nullptr;
-    }
-
-    Sampler* VK_Context::createSampler()
-    {
-        return FCT_NEW(RHI::VK_Sampler,this);
-    }
-
     void FCT::VK_Context::clear(float r, float g, float b) {
 
     }
@@ -23,75 +15,19 @@ namespace FCT
 
     }
 
-    RHI::DescriptorPool* VK_Context::createDescriptorPool()
-    {
-        return FCT_NEW(RHI::VK_DescriptorPool,this);
-    }
-
-    VertexShader* VK_Context::createVertexShader()
-    {
-        return new VK_VertexShader(this);
-    }
-
-    RHI::VertexShader* VK_Context::newRhiVertexShader()
-    {
-        return new RHI::VK_VertexShader(this);
-    }
-
-    RHI::PixelShader* VK_Context::newRhiPixelShader()
-    {
-        return new RHI::VK_PixelShader(this);
-    }
-    PixelShader* VK_Context::createPixelShader()
-    {
-        return new PixelShader(this);
-    }
-
-    RHI::InputLayout* VK_Context::createInputLayout()
-    {
-        return new RHI::VK_InputLayout(this);
-    }
 
     /*Material *VK_Context::createMaterial(VertexShader *vertexShader, PixelShader *pixelShader) {
         return nullptr;
     }*/
-
-    DrawCall *VK_Context::createDrawCall(PrimitiveType primitiveType, uint32_t startVertex,
-                                         uint32_t vertexCount) {
-        return nullptr;
-    }
-
-    BlendState* VK_Context::createBlendState()
-    {
-        return FCT_NEW(VK_BlendState, this);
-    }
 
     RasterizationState* VK_Context::createRasterizationState()
     {
         return new VK_RasterizationState(this);
     }
 
-    RHI::TextureView* VK_Context::createTextureView()
-    {
-        return new RHI::VK_TextureView(this);
-    }
-
-    RHI::Image* VK_Context::newRhiImage()
-    {
-        return new RHI::VK_Image(this);
-    }
-
-    RHI::ConstBuffer *VK_Context::createConstBuffer() {
-        return new RHI::VK_ConstBuffer(this);
-    }
-
     RHI::RasterizationPipeline* VK_Context::createTraditionPipeline()
     {
         return new RHI::VK_TraditionalPipeline(this);
-    }
-
-    Texture *VK_Context::createTexture() {
-        return nullptr;
     }
 
     VK_Context::~VK_Context()
@@ -107,6 +43,7 @@ namespace FCT
     }
 
     VK_Context::VK_Context(VK_ContextCommon *common) : Context(common->runtime()) {
+        m_resourceDevice = new VK_Device(this);
         m_common = common;
         m_phyDevice = common->getPhysicalDevice();
         auto queueFamily = m_phyDevice.getQueueFamilyProperties();
@@ -575,64 +512,9 @@ namespace FCT
 
     }
 
-
-    Image *VK_Context::createImage() {
-        return nullptr;
-    }
-
-    RHI::Swapchain* VK_Context::createSwapchain()
-    {
-        return new RHI::VK_Swapchain(this);
-    }
-
     RHI::RenderTargetView* VK_Context::createRenderTargetView()
     {
         return new RHI::VK_RenderTargetView(this);
-    }
-
-    RHI::Pass* VK_Context::createPass()
-    {
-        return new RHI::VK_Pass(this);
-    }
-
-    RHI::PassGroup* VK_Context::createPassGroup()
-    {
-        return new RHI::VK_PassGroup(this);
-    }
-
-    RHI::Semaphore* VK_Context::createSemaphore()
-    {
-        return new RHI::VK_Semaphore(this);
-    }
-
-    RHI::Fence* VK_Context::createFence()
-    {
-        return new RHI::VK_Fence(this);
-    }
-
-    RHI::VertexBuffer* VK_Context::createVertexBuffer()
-    {
-        return new RHI::VK_VertexBuffer(this);
-    }
-
-    RHI::IndexBuffer* VK_Context::createIndexBuffer()
-    {
-        return new RHI::VK_IndexBuffer(this);
-    }
-
-    PassResource* VK_Context::createPassResource()
-    {
-        return new VK_PassResource(this);
-    }
-
-    FencePool* VK_Context::createFencePool()
-    {
-        return new VK_FencePool(this);
-    }
-
-    SemaphorePool* VK_Context::createSemaphorePool()
-    {
-        return new VK_SemaphorePool(this);
     }
 
     uint32_t VK_Context::findMemoryType(uint32_t typeFilter, vk::MemoryPropertyFlags properties)
@@ -645,11 +527,6 @@ namespace FCT
                 return i;
                 }
         }
-    }
-
-    RHI::CommandPool* VK_Context::createCommandPool()
-    {
-        return new RHI::VK_CommandPool(this);
     }
 
     vk::Instance VK_Context::getVkInstance() {
@@ -672,10 +549,5 @@ namespace FCT
 
         m_graphicsQueue.submit(submitInfo);
         m_graphicsQueue.waitIdle();
-    }
-
-    RHI::DepthStencilView* VK_Context::createDepthStencilView()
-    {
-        return new RHI::VK_DepthStencilView(this);
     }
 }

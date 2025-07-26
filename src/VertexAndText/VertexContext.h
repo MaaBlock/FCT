@@ -131,7 +131,7 @@ namespace FCT
             m_targetIndex = 0;
             for (int i = 0;i < m_ctx->maxFrameInFlight();i++)
             {
-                m_passResources.push_back(m_ctx->createPassResource());
+                m_passResources.push_back(m_ctx->createResource<PassResource>());
                 m_passResources[i]->bind(wnd);
             }
             /*

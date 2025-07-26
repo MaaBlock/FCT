@@ -410,7 +410,7 @@ namespace FCT
             }
 
             if ((desc.usage & ImageUsage::RenderTarget) || (desc.usage & ImageUsage::DepthStencil)) {
-                MutilBufferImage* img = m_ctx->createMutilBufferImage();
+                MutilBufferImage* img = m_ctx->createResource<MutilBufferImage>();
                 img->imageCount(m_ctx->maxFrameInFlight());
                 img->samples(desc.samples);
                 img->format(format);
@@ -422,7 +422,7 @@ namespace FCT
                 m_needUpdataFramesIndexImages.push_back(img);
                 img->changeCurrentIndex(m_ctx->currentSubmitFrameIndex());
             } else {
-                Image* img = m_ctx->createImage();
+                Image* img = m_ctx->createResource<Image>();
                 img->samples(desc.samples);
                 img->format(format);
                 img->width(desc.width);
@@ -489,7 +489,7 @@ namespace FCT
 
             if (!passData.rhiPass)
             {
-                passData.rhiPass = m_ctx->createPass();
+                passData.rhiPass = m_ctx->createResource<RHI::Pass>();
                 PassClearValue clearValue = passData.pass->getClearValue();
                 passData.rhiPass->enableClear(clearValue);
                 passData.pass->setRhiPass(passData.rhiPass);
@@ -576,7 +576,7 @@ namespace FCT
         m_passGroups.clear();
 
         for (const auto& group : passGroups) {
-            RHI::PassGroup* passGroup = m_ctx->createPassGroup();
+            RHI::PassGroup* passGroup = m_ctx->createResource<RHI::PassGroup>();
             m_passGroups.push_back(passGroup);
 
             for (auto passVd : group) {

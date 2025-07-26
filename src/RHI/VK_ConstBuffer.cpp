@@ -95,6 +95,17 @@ namespace FCT
             }
         }
 
+        const vk::DescriptorBufferInfo& VK_ConstBuffer::currentBufferInfo()
+        {
+            checkAndUpdateCurrentFrame();
+            return m_bufferInfos[m_ctx->currentSubmitFrameIndex()];
+        }
+
+        const vk::DescriptorBufferInfo& VK_ConstBuffer::currentBufferInfoWithoutUpdata() const
+        {
+            return m_bufferInfos[m_ctx->currentSubmitFrameIndex()];
+        }
+
         void VK_ConstBuffer::create()
         {
             vk::Device device = m_ctx->getDevice();

@@ -1,7 +1,12 @@
 //
 // Created by Administrator on 2025/3/24.
 //
-#include "../FCTAPI.h"
+#include "../Context/VK_Context.h"
+#include "VK_TraditionalPipeline.h"
+#include "../Context/VertexShader.h"
+#include "../Context/PixelShader.h"
+#include "./VK_VertexShader.h"
+#include "./VK_PixelShader.h"
 namespace FCT
 {
     namespace RHI
@@ -57,7 +62,7 @@ namespace FCT
             FCT::VertexShader* vs = nullptr;
             if (!m_vertexShader)
             {
-                m_vertexShader = m_ctx->createVertexShader();
+                m_vertexShader = m_ctx->createResource<FCT::VertexShader>();
                 for (auto pair : m_vertexLayouts)
                 {
                     m_vertexShader->addLayout(pair.first, pair.second);
@@ -68,7 +73,7 @@ namespace FCT
             }
             if (!m_pixelShader)
             {
-                m_pixelShader = m_ctx->createPixelShader();
+                m_pixelShader = m_ctx->createResource<FCT::PixelShader>();
                 m_pixelShader->pixelLayout(m_pixelLayout);
                 m_pixelShader->resourceLayout(m_resourceLayout);
                 m_pixelShader->create();

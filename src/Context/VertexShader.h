@@ -33,7 +33,7 @@ namespace FCT {
         }
         void create()
         {
-            m_vertexShader = m_ctx->newRhiVertexShader();
+            m_vertexShader = m_ctx->createResource<RHI::VertexShader>();
             if (m_userSource.empty())
             {
                 generateDefaultCode();
@@ -52,7 +52,7 @@ namespace FCT {
         }
         RHI::InputLayout* createBindedInputLayout()
         {
-            RHI::InputLayout* il = m_ctx->createInputLayout();
+            RHI::InputLayout* il = m_ctx->createResource<RHI::InputLayout>();
             for (auto [slot, layout] : m_vertexLayouts)
             {
                 il->add(slot,layout);

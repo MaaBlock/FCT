@@ -25,7 +25,7 @@ namespace FCT {
         }
         void create()
         {
-            m_pixelShader = m_ctx->newRhiPixelShader();
+            m_pixelShader = m_ctx->createResource<RHI::PixelShader>();
             if (m_userSource.empty())
             {
                 generateDefaultCode();

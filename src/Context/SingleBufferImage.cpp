@@ -30,7 +30,7 @@ namespace FCT
 
     void SingleBufferImage::create() {
         FCT_SAFE_RELEASE(m_image);
-        m_image = m_ctx->newRhiImage();
+        m_image = m_ctx->createResource<RHI::Image>();
         m_image->width(m_width);
         m_image->height(m_height);
         m_image->format(m_format);
@@ -40,7 +40,7 @@ namespace FCT
         m_image->create();
         if (m_usage & ImageUsage::Texture && !m_srv)
         {
-            m_srv = m_ctx->createTextureView();
+            m_srv = m_ctx->createResource<RHI::TextureView>();
             m_srv->image(m_image);
             m_srv->create();
         }
@@ -99,7 +99,7 @@ namespace FCT
         m_width = width;
         m_height = height;
 
-        m_image = m_ctx->newRhiImage();
+        m_image = m_ctx->createResource<RHI::Image>();
         m_image->width(m_width);
         m_image->height(m_height);
         m_image->format(currentFormat);

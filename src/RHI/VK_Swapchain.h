@@ -12,6 +12,7 @@
 #ifndef FCT_VK_SWAPCHAIN_H
 #define FCT_VK_SWAPCHAIN_H
 namespace FCT{
+    class VK_Context;
     namespace RHI
     {
         class VK_Swapchain : public Swapchain {
@@ -94,18 +95,6 @@ namespace FCT{
             uint32_t m_pendingWidth = 0, m_pendingHeight = 0;
         };
 
-        inline void VK_Swapchain::enableDepthBuffer(Format format)
-        {
-            m_depthStencilImage = new MutilBufferImage(m_ctx);
-            m_depthStencilImage->width(m_width);
-            m_depthStencilImage->height(m_height);
-            m_depthStencilImage->format(format);
-            m_depthStencilImage->samples(Samples::sample_1);
-            m_depthStencilImage->as(ImageUsage::DepthStencil);
-            m_depthStencilImage->imageCount(m_images.size());
-            m_depthStencilImage->create();
-            m_target->setDepthStencilBuffer(m_depthStencilImage);
-        }
     }
 }
 

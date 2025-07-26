@@ -4,7 +4,6 @@
 
 #ifndef FONT_H
 #define FONT_H
-#include "./VertexPath.h"
 class Font {
 protected:
     float m_ascender;

@@ -25,3 +25,18 @@ graph TD
     用户需要知道自己在干什么]
     1-->2
 ```
+```mermaid
+graph TD
+    2[改名create为build]
+    1[拆分某些build的逻辑]
+    3[固定某些build的逻辑]
+    2-->1-->3
+```
+a.g. PipelineResource
+
+```mermaid
+graph TD
+    1[将Pipeline系列分离为俩个类，
+    一个负责平台，
+    一个负责生成默认资源]
+```

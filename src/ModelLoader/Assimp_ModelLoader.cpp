@@ -1,4 +1,4 @@
-#include "../FCTAPI.h"
+#include "./Assimp_ModelLoader.h"
 namespace FCT
 {
     std::unique_ptr<ModelData> Assimp_ModelLoader::loadModel(const std::string& path)

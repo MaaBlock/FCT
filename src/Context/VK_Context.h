@@ -1,10 +1,10 @@
 //
 // Created by Administrator on 2025/3/1.
 //
-#include "../ThirdParty.h"
-#include "./Context.h"
 #ifndef VK_CONTEXT_H
 #define VK_CONTEXT_H
+#include "../ThirdParty.h"
+#include "./Context.h"
 
 namespace FCT {
     class VK_ContextCommon;
@@ -12,42 +12,12 @@ namespace FCT {
     public:
         VK_Context(VK_ContextCommon* common);
         ~VK_Context() override;
-        TextureArray *createTextureArray() override;
-        Sampler* createSampler() override;
         void clear(float r, float g, float b) override;
 
         void viewport(int x, int y, int width, int height) override;
-        RHI::DescriptorPool* createDescriptorPool() override;
-        VertexShader* createVertexShader() override;
-        RHI::VertexShader* newRhiVertexShader() override;
-        RHI::PixelShader* newRhiPixelShader() override;
-        PixelShader* createPixelShader() override;
-        RHI::InputLayout* createInputLayout() override;
-        DrawCall *createDrawCall(PrimitiveType primitiveType, uint32_t startVertex,
-                                 uint32_t vertexCount) override;
-        BlendState* createBlendState() override;
-        MutilBufferImage* createMutilBufferImage() override
-        {
-            return new MutilBufferImage(this);
-        }
         RasterizationState* createRasterizationState() override;
-        RHI::TextureView* createTextureView() override;
-        RHI::Image* newRhiImage() override;
-        RHI::ConstBuffer *createConstBuffer() override;
         RHI::RasterizationPipeline* createTraditionPipeline() override;
-        Texture *createTexture() override;
-        Image *createImage() override;
-        RHI::Swapchain* createSwapchain() override;
         RHI::RenderTargetView* createRenderTargetView() override;
-        RHI::Pass* createPass() override;
-        RHI::PassGroup* createPassGroup() override;
-        RHI::Semaphore* createSemaphore() override;
-        RHI::Fence* createFence() override;
-        RHI::VertexBuffer* createVertexBuffer() override;
-        RHI::IndexBuffer* createIndexBuffer() override;
-        PassResource* createPassResource() override;
-        FencePool* createFencePool() override;
-        SemaphorePool* createSemaphorePool() override;
         //void create(IRenderTarget* target) override;
         uint32_t findMemoryType(uint32_t typeFilter, vk::MemoryPropertyFlags properties);
         void create();
@@ -61,12 +31,12 @@ namespace FCT {
         auto getPhysicalDevice() const {
             return m_phyDevice;
         }
-        RHI::CommandPool* createCommandPool() override;
+
         vk::Instance getVkInstance();
         void beginCommandBuffer(int index);
         void endCommandBuffer(int index);
         void submitCommandBuffer();
-        RHI::DepthStencilView* createDepthStencilView() override;
+
         void clear(Vec4 color,float depth = 1.0,float stencil = 0.0){
 
         }

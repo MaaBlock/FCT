@@ -202,6 +202,11 @@ file(GLOB BASE_MODULE_HEADERS
         CONFIGURE_DEPENDS
         "./src/Base/*.h"
 )
+file(GLOB TYPE_MODULE_HEADERS
+        LIST_DIRECTORIES false
+        CONFIGURE_DEPENDS
+        "./src/Type/*.h"
+)
 
 
 file(GLOB ADDITIONAL_HEADERS
@@ -341,6 +346,7 @@ set(ALL_HEADER_FILES
         ${BASE_MODULE_HEADERS}
         ${MUTILTHREADBASE_MODULE_HEADERS}
         ${THIRDPARTY_MODULE_HEADERS}
+        ${TYPE_MODULE_HEADERS}
 )
 
 add_custom_target(fct_copy_headers ALL
@@ -410,6 +416,12 @@ function(target_link_fct_libraries target_name)
                 log)
     endif()
 endfunction()
+
+if(CMAKE_VERSION VERSION_GREATER_EQUAL "3.16")
+    target_precompile_headers(FCT PRIVATE
+            "${CMAKE_CURRENT_SOURCE_DIR}/src/pch.h"
+    )
+endif()
 
 #target_link_libraries(FCT PUBLIC
 #    harfbuzz::harfbuzz

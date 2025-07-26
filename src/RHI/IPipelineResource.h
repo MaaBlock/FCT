@@ -1,4 +1,5 @@
 #pragma once
+#include "../MutilThreadBase/RefCount.h"
 namespace FCT {
 
     enum class PipelineResourceType {
