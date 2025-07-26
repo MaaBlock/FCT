@@ -11,10 +11,10 @@
 \DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00007}00007\ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00008}00008\ \ \ \ \ \ \ \ \ this-\/>ctx\ =\ \mbox{\hyperlink{struct_f_c_t_1_1_frame_resource_a9bf1808b86624fddd49aa21c03234ffe}{ctx}};}
 \DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00009}00009\ }
-\DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00010}00010\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_f_c_t_1_1_frame_resource_abfb3ca663d25b1d0d51d091c220b335b}{cmdPool}}\ =\ \mbox{\hyperlink{struct_f_c_t_1_1_frame_resource_a9bf1808b86624fddd49aa21c03234ffe}{ctx}}-\/>createCommandPool();}
+\DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00010}00010\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_f_c_t_1_1_frame_resource_abfb3ca663d25b1d0d51d091c220b335b}{cmdPool}}\ =\ \mbox{\hyperlink{struct_f_c_t_1_1_frame_resource_a9bf1808b86624fddd49aa21c03234ffe}{ctx}}-\/>createResource<\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_pool}{RHI::CommandPool}}>();}
 \DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00011}00011\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_f_c_t_1_1_frame_resource_abfb3ca663d25b1d0d51d091c220b335b}{cmdPool}}-\/>create();}
 \DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00012}00012\ }
-\DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00013}00013\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_f_c_t_1_1_frame_resource_ae0650b9d37343fb78fb5ba03dd9152cb}{renderFinishedSemaphoresPool}}\ =\ \mbox{\hyperlink{struct_f_c_t_1_1_frame_resource_a9bf1808b86624fddd49aa21c03234ffe}{ctx}}-\/>createSemaphorePool();}
+\DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00013}00013\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_f_c_t_1_1_frame_resource_ae0650b9d37343fb78fb5ba03dd9152cb}{renderFinishedSemaphoresPool}}\ =\ \mbox{\hyperlink{struct_f_c_t_1_1_frame_resource_a9bf1808b86624fddd49aa21c03234ffe}{ctx}}-\/>createResource<\mbox{\hyperlink{class_f_c_t_1_1_semaphore_pool}{SemaphorePool}}>();}
 \DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_f_c_t_1_1_frame_resource_ae0650b9d37343fb78fb5ba03dd9152cb}{renderFinishedSemaphoresPool}}-\/>setDestroyCallback([\textcolor{keyword}{this}](\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore}{RHI::Semaphore}}*\ semaphore)}
 \DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ ret\ =\ std::find(\mbox{\hyperlink{struct_f_c_t_1_1_frame_resource_aca48ed37c46177ab9e6470e0ca3c936c}{renderFinishedSemaphores}}.begin(),\mbox{\hyperlink{struct_f_c_t_1_1_frame_resource_aca48ed37c46177ab9e6470e0ca3c936c}{renderFinishedSemaphores}}.end(),semaphore);}
@@ -23,7 +23,7 @@
 \DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *ret\ =\ \textcolor{keyword}{nullptr};}
 \DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \});}
-\DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_f_c_t_1_1_frame_resource_aa03773e65e3fb5270ccfe3f568ad1025}{presentCompleteFencePool}}\ =\ \mbox{\hyperlink{struct_f_c_t_1_1_frame_resource_a9bf1808b86624fddd49aa21c03234ffe}{ctx}}-\/>createFencePool();}
+\DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_f_c_t_1_1_frame_resource_aa03773e65e3fb5270ccfe3f568ad1025}{presentCompleteFencePool}}\ =\ \mbox{\hyperlink{struct_f_c_t_1_1_frame_resource_a9bf1808b86624fddd49aa21c03234ffe}{ctx}}-\/>createResource<\mbox{\hyperlink{class_f_c_t_1_1_fence_pool}{FencePool}}>();}
 \DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_f_c_t_1_1_frame_resource_aa03773e65e3fb5270ccfe3f568ad1025}{presentCompleteFencePool}}-\/>setDestroyCallback([\textcolor{keyword}{this}](\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_fence}{RHI::Fence}}*\ fence)}
 \DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ ret\ =\ std::find(\mbox{\hyperlink{struct_f_c_t_1_1_frame_resource_ae81583aafabf0bb88a4ca4bbebd9df0b}{presentCompleteFences}}.begin(),\mbox{\hyperlink{struct_f_c_t_1_1_frame_resource_ae81583aafabf0bb88a4ca4bbebd9df0b}{presentCompleteFences}}.end(),fence);}
@@ -32,7 +32,7 @@
 \DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *ret\ =\ \textcolor{keyword}{nullptr};}
 \DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \});}
-\DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_f_c_t_1_1_frame_resource_adda8a13bbd8686d55fca86cbc238fde4}{imageAvailableSemaphore}}\ =\ \mbox{\hyperlink{struct_f_c_t_1_1_frame_resource_a9bf1808b86624fddd49aa21c03234ffe}{ctx}}-\/>createSemaphore();}
+\DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_f_c_t_1_1_frame_resource_adda8a13bbd8686d55fca86cbc238fde4}{imageAvailableSemaphore}}\ =\ \mbox{\hyperlink{struct_f_c_t_1_1_frame_resource_a9bf1808b86624fddd49aa21c03234ffe}{ctx}}-\/>createResource<\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore}{RHI::Semaphore}}>();}
 \DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_f_c_t_1_1_frame_resource_adda8a13bbd8686d55fca86cbc238fde4}{imageAvailableSemaphore}}-\/>create();}
 \DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00033}00033\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00034}\mbox{\hyperlink{struct_f_c_t_1_1_frame_resource_ab3dd6f45e67a3bb00385167c11289671}{00034}}\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_f_c_t_1_1_frame_resource_ab3dd6f45e67a3bb00385167c11289671}{FrameResource::allocCommandBuffers}}(uint32\_t\ additionalCount)}
@@ -197,7 +197,7 @@
 \DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00193}00193\ \ \ \ \ \ \ \ \ wnd-\/>\mbox{\hyperlink{class_f_c_t_1_1_window_a420d3dbf23fe4442e9715c0d45c07d7c}{setPresentFinshSemaphore}}(frameResources[\mbox{\hyperlink{class_f_c_t_1_1_context_aed5ee768dbd1e64f831cf65024133505}{m\_frameIndex}}].imageAvailableSemaphore);}
 \DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00194}00194\ \ \ \ \ \ \ \ \ wnd-\/>\mbox{\hyperlink{class_f_c_t_1_1_window_a19a7ad9ada73cdb78399672e016acfa6}{initRender}}();}
 \DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00195}00195\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_context_ae5a23c79de8756181d7e019c5541e0bf}{m\_frameResources}}[wnd]\ =\ std::move(frameResources);}
-\DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00196}00196\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_context_a1c31068bae9e283c04f664abfa70dca4}{m\_descriptorPools}}[wnd]\ =\ \mbox{\hyperlink{class_f_c_t_1_1_context_a09bccf561e2b7776c793d405ee3a1733}{createDescriptorPool}}();}
+\DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00196}00196\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_context_a1c31068bae9e283c04f664abfa70dca4}{m\_descriptorPools}}[wnd]\ =\ \mbox{\hyperlink{class_f_c_t_1_1_context_a4a2f3241a3ce158e6616d28335d3f8d9}{createResource<RHI::DescriptorPool>}}();}
 \DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00197}00197\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_context_a1c31068bae9e283c04f664abfa70dca4}{m\_descriptorPools}}[wnd]-\/>create();}
 \DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00198}00198\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_context_a229f460b0c9e0f9f63b1e16e2f27d8af}{allocBaseCommandBuffers}}(wnd);}
 \DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00199}00199\ \ \ \ \ \}}

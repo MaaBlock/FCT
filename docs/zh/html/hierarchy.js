@@ -25,6 +25,9 @@ var hierarchy =
     [ "FCT::RHI::DescriptorPool", "class_f_c_t_1_1_r_h_i_1_1_descriptor_pool.html", [
       [ "FCT::RHI::VK_DescriptorPool", "class_f_c_t_1_1_r_h_i_1_1_v_k___descriptor_pool.html", null ]
     ] ],
+    [ "FCT::Device", "class_f_c_t_1_1_device.html", [
+      [ "FCT::VK_Device", "class_f_c_t_1_1_v_k___device.html", null ]
+    ] ],
     [ "FCT::DynamicMesh< IndexType >", "class_f_c_t_1_1_dynamic_mesh.html", null ],
     [ "FCT::RenderGraph::ExecutionOrder", "struct_f_c_t_1_1_render_graph_1_1_execution_order.html", null ],
     [ "FCT::FencePool", "class_f_c_t_1_1_fence_pool.html", [

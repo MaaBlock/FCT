@@ -38,12 +38,6 @@ var _uniform_8h =
       [ "FCT::ShaderStage::Callable", "namespace_f_c_t.html#adb995786f2f649c122895cd47ab09d32a79ace5b2a7206c5d0aa286a5b33385f8", null ],
       [ "FCT::ShaderStage::All", "namespace_f_c_t.html#adb995786f2f649c122895cd47ab09d32ab1c94ca2fbc3e78fc30069c8d0f01680", null ]
     ] ],
-    [ "FCT::UpdateFrequency", "namespace_f_c_t.html#a0236e673f1b6fe9736bc596d7e50dc7e", [
-      [ "FCT::UpdateFrequency::Static", "namespace_f_c_t.html#a0236e673f1b6fe9736bc596d7e50dc7ea84a8921b25f505d0d2077aeb5db4bc16", null ],
-      [ "FCT::UpdateFrequency::PerFrame", "namespace_f_c_t.html#a0236e673f1b6fe9736bc596d7e50dc7ea5ac98a9f1bddc1b15896f0e02bf06839", null ],
-      [ "FCT::UpdateFrequency::PerObject", "namespace_f_c_t.html#a0236e673f1b6fe9736bc596d7e50dc7eaa550e0dc6bbc206ba5f88a05963a9773", null ],
-      [ "FCT::UpdateFrequency::Dynamic", "namespace_f_c_t.html#a0236e673f1b6fe9736bc596d7e50dc7ea971fd8cc345d8bd9f92e9f7d88fdf20c", null ]
-    ] ],
     [ "FCT::ConvertToVkShaderStageFlags", "namespace_f_c_t.html#a797b8d2bea8308fe4de9470246c0812a", null ],
     [ "FCT::GetUniformAlignment", "namespace_f_c_t.html#a3c086a0e177b1a691f750527e0f8ab8e", null ],
     [ "FCT::GetUniformDefaultName", "namespace_f_c_t.html#aed9547bd7853e437ad95521fdec85f69", null ],

@@ -42,6 +42,8 @@ class \mbox{\hyperlink{class_f_c_t_1_1_deletable_trait}{Deletable\+Trait}}
 \begin{DoxyCompactList}\small\item\em 用于自定义对象销毁行为 \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_f_c_t_1_1_depth_stencil_state}{Depth\+Stencil\+State}}
 \item 
+class \mbox{\hyperlink{class_f_c_t_1_1_device}{Device}}
+\item 
 class \mbox{\hyperlink{class_f_c_t_1_1_draw_call}{Draw\+Call}}
 \item 
 class \mbox{\hyperlink{class_f_c_t_1_1_dynamic_mesh}{Dynamic\+Mesh}}
@@ -254,6 +256,8 @@ class \mbox{\hyperlink{class_f_c_t_1_1_v_k___context}{VK\+\_\+\+Context}}
 \item 
 class \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_common}{VK\+\_\+\+Context\+Common}}
 \item 
+class \mbox{\hyperlink{class_f_c_t_1_1_v_k___device}{VK\+\_\+\+Device}}
+\item 
 class \mbox{\hyperlink{class_f_c_t_1_1_v_k___fence_pool}{VK\+\_\+\+Fence\+Pool}}
 \item 
 class \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource}{VK\+\_\+\+Pass\+Resource}}
@@ -277,6 +281,8 @@ class \mbox{\hyperlink{class_f_c_t_1_1_window_behavior}{Window\+Behavior}}
 \doxysubsubsection*{类型定义}
 \begin{DoxyCompactItemize}
 \item 
+using \mbox{\hyperlink{namespace_f_c_t_a0cbb58fc2b9d03ebc10caf8a6f43d5d9}{Image\+Usage\+Flags}} = \mbox{\hyperlink{class_f_c_t_1_1_flags}{Flags}}$<$\mbox{\hyperlink{namespace_f_c_t_a7c79cf32fda44767f87c534ba3c7f1e5}{Image\+Usage}}$>$
+\item 
 using \mbox{\hyperlink{namespace_f_c_t_aa1479301f199fc13f9f893d2c9c77e71}{Context\+Ptr}} = \mbox{\hyperlink{class_f_c_t_1_1_context}{Context}}\texorpdfstring{$\ast$}{*}
 \item 
 using \mbox{\hyperlink{namespace_f_c_t_ab1ea6811dd963f80ea7b7b1b6aec0d3c}{Submit\+Ticker}} = std\+::function$<$void()$>$
@@ -297,8 +303,6 @@ using \mbox{\hyperlink{namespace_f_c_t_a6ac4affd73cd6cf1ba455a683b2d69ba}{PRHISa
 \item 
 using \mbox{\hyperlink{namespace_f_c_t_ad61b2f01faf2e7ae0c6b07b681f09734}{PSampler}} = \mbox{\hyperlink{class_f_c_t_1_1_sampler}{Sampler}}\texorpdfstring{$\ast$}{*}
 \item 
-using \mbox{\hyperlink{namespace_f_c_t_a0cbb58fc2b9d03ebc10caf8a6f43d5d9}{Image\+Usage\+Flags}} = \mbox{\hyperlink{class_f_c_t_1_1_flags}{Flags}}$<$\mbox{\hyperlink{namespace_f_c_t_a7c79cf32fda44767f87c534ba3c7f1e5}{Image\+Usage}}$>$
-\item 
 using \mbox{\hyperlink{namespace_f_c_t_a2b67c2197d2675193be9ca0fe8406c87}{UITask\+Function}} = std\+::function$<$void(void \texorpdfstring{$\ast$}{*})$>$
 \item 
 using \mbox{\hyperlink{namespace_f_c_t_a9e86debfb8e07b3158f7c3f36555d3b4}{Resize\+Call\+Back}} = std\+::function$<$void(\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}}\texorpdfstring{$\ast$}{*} wnd, int width, int height)$>$
@@ -313,6 +317,17 @@ using \mbox{\hyperlink{namespace_f_c_t_a8469f412041eb2781b0a0a2ed1ff8cf3}{Vertex
 \end{DoxyCompactItemize}
 \doxysubsubsection*{枚举}
 \begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespace_f_c_t_a7c79cf32fda44767f87c534ba3c7f1e5}{Image\+Usage}} \+: unsigned int \{ \mbox{\hyperlink{namespace_f_c_t_a7c79cf32fda44767f87c534ba3c7f1e5a9b0bffda4bcb312168c0d6537cb04b4d}{Render\+Target}} = 0x1
+, \mbox{\hyperlink{namespace_f_c_t_a7c79cf32fda44767f87c534ba3c7f1e5a2fa8076285272883c91e14402975a441}{Depth\+Stencil}} = 0x2
+, \mbox{\hyperlink{namespace_f_c_t_a7c79cf32fda44767f87c534ba3c7f1e5aa3e8ae43188ae76d38f414b2bdb0077b}{Texture}} = 0x4
+ \}
+\item 
+enum class \mbox{\hyperlink{namespace_f_c_t_a0236e673f1b6fe9736bc596d7e50dc7e}{Update\+Frequency}} \{ \mbox{\hyperlink{namespace_f_c_t_a0236e673f1b6fe9736bc596d7e50dc7ea84a8921b25f505d0d2077aeb5db4bc16}{Static}}
+, \mbox{\hyperlink{namespace_f_c_t_a0236e673f1b6fe9736bc596d7e50dc7ea5ac98a9f1bddc1b15896f0e02bf06839}{Per\+Frame}}
+, \mbox{\hyperlink{namespace_f_c_t_a0236e673f1b6fe9736bc596d7e50dc7eaa550e0dc6bbc206ba5f88a05963a9773}{Per\+Object}}
+, \mbox{\hyperlink{namespace_f_c_t_a0236e673f1b6fe9736bc596d7e50dc7ea971fd8cc345d8bd9f92e9f7d88fdf20c}{Dynamic}}
+ \}
 \item 
 enum class \mbox{\hyperlink{namespace_f_c_t_a230e974c7c1f163f1dec4530a2e3239c}{Data\+Type}} \{ \newline
 \mbox{\hyperlink{namespace_f_c_t_a230e974c7c1f163f1dec4530a2e3239ca22ae0e2b89e5e3d477f988cc36d3272b}{Float}}
@@ -398,6 +413,60 @@ enum class \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4}{F
 \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4aa6dc4e4319b85984a4ab81ae89949f88}{D24\+\_\+\+UNORM\+\_\+\+S8\+\_\+\+UINT}}
 , \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a23a4ce33815655871d103d3071d91072}{D32\+\_\+\+SFLOAT}}
 , \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a37607c17eb1a7e0092e2c2dac3c072ea}{D32\+\_\+\+SFLOAT\+\_\+\+S8\+\_\+\+UINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a0db45d2a4141101bdfe48e3314cfbca3}{UNDEFINED}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a6ee77dd485809c93542e95acf222420c}{R8\+\_\+\+UNORM}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a74b8cc492d3b8df6a7c4f2573e751f65}{R8\+G8\+\_\+\+UNORM}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a510cef4c9832a8b4e6fcad93f2927142}{R8\+G8\+B8\+\_\+\+UNORM}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4af55c1c722034e92213df328d31e33c62}{R8\+G8\+B8\+A8\+\_\+\+UNORM}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a0f09a2e0cf764ef602b892fc70b817bf}{B8\+G8\+R8\+A8\+\_\+\+UNORM}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a5c835c7ea238d0796853827ce416a5e2}{R8\+G8\+B8\+A8\+\_\+\+SRGB}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4af76dbb655425d5bbcf8f4b8f5d316960}{B8\+G8\+R8\+A8\+\_\+\+SRGB}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a7d02f4bfc1a88d4c301de5ae6f0b5d9c}{R16\+\_\+\+SFLOAT}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a3fa3b9f0bfc91056d90272c3a6e0cbaf}{R16\+G16\+\_\+\+SFLOAT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a69395b052af3edbce890742e01c55348}{R16\+G16\+B16\+A16\+\_\+\+SFLOAT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4afb3d9b81391ab907186bd39d1e0ec06b}{R8\+\_\+\+SINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ad865c8685eaca0a8002ebae3e41927d0}{R8\+G8\+\_\+\+SINT}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4aa0203efb56d9533eb903960af0f91e96}{R8\+G8\+B8\+\_\+\+SINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a371d6f9af5590e4d6f25cdb002854ef0}{R8\+G8\+B8\+A8\+\_\+\+SINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a261d1e0997b29130ae82f9722f7bcebf}{R16\+\_\+\+SINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a9d7ccb74bbc2a2aca0d0688f85266a08}{R16\+G16\+\_\+\+SINT}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a3bba18da59078bdd6bc406042907f76f}{R16\+G16\+B16\+\_\+\+SINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a5700a5767ec14fdb361879186ff5d242}{R16\+G16\+B16\+A16\+\_\+\+SINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a99d5ccfc1a21572c753cbf0640bd2565}{R32\+\_\+\+SINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ae00f80e3640e18f2997325c36fe0ef90}{R32\+G32\+\_\+\+SINT}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ae53d190f1e9fa67fb47bc8c053b53278}{R32\+G32\+B32\+\_\+\+SINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4afd9ca5bb13785040311bc3b0dbe4f192}{R32\+G32\+B32\+A32\+\_\+\+SINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a99f9bb6daa4c8f9ea6744ca176038180}{R8\+\_\+\+UINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a68e4bb37495d561f4939031d2b1adbae}{R8\+G8\+\_\+\+UINT}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a27742f2c14c784edbbc18f650ffd3e91}{R8\+G8\+B8\+\_\+\+UINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a67db604c7206857ceb4fe94ee620cae4}{R8\+G8\+B8\+A8\+\_\+\+UINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ad8187d21ed6dc3072e4c8e819e202c05}{R16\+\_\+\+UINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a01aa628941c3b48fea869c081e0611a3}{R16\+G16\+\_\+\+UINT}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a028c7eb70f9cab1827627c3dbf0e1976}{R16\+G16\+B16\+\_\+\+UINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a9e1fb7eae42b4f0b636e6bde9a33cf4b}{R16\+G16\+B16\+A16\+\_\+\+UINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4af010bb9e5a699e4cb9c80b2f5d982218}{R32\+\_\+\+UINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ad0a8fa71e3197bbf9b23d6d93235f3ca}{R32\+G32\+\_\+\+UINT}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a8a0c94872edade84a5320f3cb31ac6a8}{R32\+G32\+B32\+\_\+\+UINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a0b993e1cc925013e7f5aff710f0033e9}{R32\+G32\+B32\+A32\+\_\+\+UINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a345ce98ef1d75d250f01f84e05767f7b}{R32\+\_\+\+SFLOAT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ae3592aada13e620eeaa18d929ee3802e}{R32\+G32\+\_\+\+SFLOAT}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a122d94426d820038b87e45b4dc694862}{R32\+G32\+B32\+\_\+\+SFLOAT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a0590997a0c78c9b9dae9f8dacb962b15}{R32\+G32\+B32\+A32\+\_\+\+SFLOAT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a03e5886d3d7216eed4f577937132b20f}{D16\+\_\+\+UNORM}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4aa6dc4e4319b85984a4ab81ae89949f88}{D24\+\_\+\+UNORM\+\_\+\+S8\+\_\+\+UINT}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a23a4ce33815655871d103d3071d91072}{D32\+\_\+\+SFLOAT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a37607c17eb1a7e0092e2c2dac3c072ea}{D32\+\_\+\+SFLOAT\+\_\+\+S8\+\_\+\+UINT}}
  \}
 \item 
 enum class \mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182}{Samples}} \{ \newline
@@ -408,6 +477,15 @@ enum class \mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182}{S
 , \newline
 \mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a3a9912db03f28e61f3ce2c31a7d1d8b8}{sample\+\_\+8}}
 , \mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a898482ee38ed8c708655bc52bbbfd177}{sample\+\_\+16}}
+, \mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a4624653fd55ddea32e7d03ac6335b651}{sample\+\_\+32}}
+, \mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a1f5d8e7e094ddab8199dc672aaba3e23}{sample\+\_\+undefined}} = 0
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182af16981b72c70cf9ef716f38b848c5cf0}{sample\+\_\+1}}
+, \mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a4a2f0f9aee216a77ce0a1c55396073f0}{sample\+\_\+2}}
+, \mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a7f24c693aa391ce14aaa8d4298d03497}{sample\+\_\+4}}
+, \mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a3a9912db03f28e61f3ce2c31a7d1d8b8}{sample\+\_\+8}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a898482ee38ed8c708655bc52bbbfd177}{sample\+\_\+16}}
 , \mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a4624653fd55ddea32e7d03ac6335b651}{sample\+\_\+32}}
  \}
 \item 
@@ -489,12 +567,6 @@ enum class \mbox{\hyperlink{namespace_f_c_t_adb995786f2f649c122895cd47ab09d32}{S
 \mbox{\hyperlink{namespace_f_c_t_adb995786f2f649c122895cd47ab09d32aa06d31c2ee920b4d53e8c9c06d90ba24}{Intersection}} = 0x00001000
 , \mbox{\hyperlink{namespace_f_c_t_adb995786f2f649c122895cd47ab09d32a79ace5b2a7206c5d0aa286a5b33385f8}{Callable}} = 0x00002000
 , \mbox{\hyperlink{namespace_f_c_t_adb995786f2f649c122895cd47ab09d32ab1c94ca2fbc3e78fc30069c8d0f01680}{All}} = 0x\+FFFFFFFF
- \}
-\item 
-enum class \mbox{\hyperlink{namespace_f_c_t_a0236e673f1b6fe9736bc596d7e50dc7e}{Update\+Frequency}} \{ \mbox{\hyperlink{namespace_f_c_t_a0236e673f1b6fe9736bc596d7e50dc7ea84a8921b25f505d0d2077aeb5db4bc16}{Static}}
-, \mbox{\hyperlink{namespace_f_c_t_a0236e673f1b6fe9736bc596d7e50dc7ea5ac98a9f1bddc1b15896f0e02bf06839}{Per\+Frame}}
-, \mbox{\hyperlink{namespace_f_c_t_a0236e673f1b6fe9736bc596d7e50dc7eaa550e0dc6bbc206ba5f88a05963a9773}{Per\+Object}}
-, \mbox{\hyperlink{namespace_f_c_t_a0236e673f1b6fe9736bc596d7e50dc7ea971fd8cc345d8bd9f92e9f7d88fdf20c}{Dynamic}}
  \}
 \item 
 enum class \mbox{\hyperlink{namespace_f_c_t_aa946ca9a7d9318f0c9a8e49b9df96b06}{Vtx\+Type}} \{ \newline
@@ -612,11 +684,6 @@ enum class \mbox{\hyperlink{namespace_f_c_t_a974ea50843d2c5ad8bbb8eb832cda07a}{S
 , \mbox{\hyperlink{namespace_f_c_t_a974ea50843d2c5ad8bbb8eb832cda07aa6ec565c329385c8d59333abc6a1003d1}{Decrement\+Wrap}}
  \}
 \item 
-enum class \mbox{\hyperlink{namespace_f_c_t_a7c79cf32fda44767f87c534ba3c7f1e5}{Image\+Usage}} \+: unsigned int \{ \mbox{\hyperlink{namespace_f_c_t_a7c79cf32fda44767f87c534ba3c7f1e5a9b0bffda4bcb312168c0d6537cb04b4d}{Render\+Target}} = 0x1
-, \mbox{\hyperlink{namespace_f_c_t_a7c79cf32fda44767f87c534ba3c7f1e5a2fa8076285272883c91e14402975a441}{Depth\+Stencil}} = 0x2
-, \mbox{\hyperlink{namespace_f_c_t_a7c79cf32fda44767f87c534ba3c7f1e5aa3e8ae43188ae76d38f414b2bdb0077b}{Texture}} = 0x4
- \}
-\item 
 enum class \mbox{\hyperlink{namespace_f_c_t_a0100ef6b5595f1c6e1ca08fb82dc0f67}{Pipeline\+Resource\+Type}} \{ \newline
 \mbox{\hyperlink{namespace_f_c_t_a0100ef6b5595f1c6e1ca08fb82dc0f67aeb3ca4dac3e206977e0b7d998eefcc33}{Vertex\+Shader}}
 , \mbox{\hyperlink{namespace_f_c_t_a0100ef6b5595f1c6e1ca08fb82dc0f67a54d3d36aabc3abac323576e3d22a3d2c}{Pixel\+Shader}}
@@ -691,6 +758,136 @@ enum class \mbox{\hyperlink{namespace_f_c_t_ae72266666726fb6ad7e1a218a340b4c8}{C
 enum class \mbox{\hyperlink{namespace_f_c_t_abbd9f55da7ce19953699d6544fba8a96}{Border\+Color}} \{ \mbox{\hyperlink{namespace_f_c_t_abbd9f55da7ce19953699d6544fba8a96a890d9049f815b10b66e84123cd7f5c54}{Transparent\+Black}}
 , \mbox{\hyperlink{namespace_f_c_t_abbd9f55da7ce19953699d6544fba8a96ae264fa6d4bbd78199f1533e4e2a9d261}{Opaque\+Black}}
 , \mbox{\hyperlink{namespace_f_c_t_abbd9f55da7ce19953699d6544fba8a96ab5acb7ca0dd0bfffaae1b3e6c784f993}{Opaque\+White}}
+ \}
+\item 
+enum class \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4}{Format}} \{ \newline
+\mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a0db45d2a4141101bdfe48e3314cfbca3}{UNDEFINED}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a6ee77dd485809c93542e95acf222420c}{R8\+\_\+\+UNORM}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a74b8cc492d3b8df6a7c4f2573e751f65}{R8\+G8\+\_\+\+UNORM}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a510cef4c9832a8b4e6fcad93f2927142}{R8\+G8\+B8\+\_\+\+UNORM}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4af55c1c722034e92213df328d31e33c62}{R8\+G8\+B8\+A8\+\_\+\+UNORM}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a0f09a2e0cf764ef602b892fc70b817bf}{B8\+G8\+R8\+A8\+\_\+\+UNORM}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a5c835c7ea238d0796853827ce416a5e2}{R8\+G8\+B8\+A8\+\_\+\+SRGB}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4af76dbb655425d5bbcf8f4b8f5d316960}{B8\+G8\+R8\+A8\+\_\+\+SRGB}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a7d02f4bfc1a88d4c301de5ae6f0b5d9c}{R16\+\_\+\+SFLOAT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a3fa3b9f0bfc91056d90272c3a6e0cbaf}{R16\+G16\+\_\+\+SFLOAT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a69395b052af3edbce890742e01c55348}{R16\+G16\+B16\+A16\+\_\+\+SFLOAT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4afb3d9b81391ab907186bd39d1e0ec06b}{R8\+\_\+\+SINT}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ad865c8685eaca0a8002ebae3e41927d0}{R8\+G8\+\_\+\+SINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4aa0203efb56d9533eb903960af0f91e96}{R8\+G8\+B8\+\_\+\+SINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a371d6f9af5590e4d6f25cdb002854ef0}{R8\+G8\+B8\+A8\+\_\+\+SINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a261d1e0997b29130ae82f9722f7bcebf}{R16\+\_\+\+SINT}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a9d7ccb74bbc2a2aca0d0688f85266a08}{R16\+G16\+\_\+\+SINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a3bba18da59078bdd6bc406042907f76f}{R16\+G16\+B16\+\_\+\+SINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a5700a5767ec14fdb361879186ff5d242}{R16\+G16\+B16\+A16\+\_\+\+SINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a99d5ccfc1a21572c753cbf0640bd2565}{R32\+\_\+\+SINT}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ae00f80e3640e18f2997325c36fe0ef90}{R32\+G32\+\_\+\+SINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ae53d190f1e9fa67fb47bc8c053b53278}{R32\+G32\+B32\+\_\+\+SINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4afd9ca5bb13785040311bc3b0dbe4f192}{R32\+G32\+B32\+A32\+\_\+\+SINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a99f9bb6daa4c8f9ea6744ca176038180}{R8\+\_\+\+UINT}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a68e4bb37495d561f4939031d2b1adbae}{R8\+G8\+\_\+\+UINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a27742f2c14c784edbbc18f650ffd3e91}{R8\+G8\+B8\+\_\+\+UINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a67db604c7206857ceb4fe94ee620cae4}{R8\+G8\+B8\+A8\+\_\+\+UINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ad8187d21ed6dc3072e4c8e819e202c05}{R16\+\_\+\+UINT}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a01aa628941c3b48fea869c081e0611a3}{R16\+G16\+\_\+\+UINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a028c7eb70f9cab1827627c3dbf0e1976}{R16\+G16\+B16\+\_\+\+UINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a9e1fb7eae42b4f0b636e6bde9a33cf4b}{R16\+G16\+B16\+A16\+\_\+\+UINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4af010bb9e5a699e4cb9c80b2f5d982218}{R32\+\_\+\+UINT}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ad0a8fa71e3197bbf9b23d6d93235f3ca}{R32\+G32\+\_\+\+UINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a8a0c94872edade84a5320f3cb31ac6a8}{R32\+G32\+B32\+\_\+\+UINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a0b993e1cc925013e7f5aff710f0033e9}{R32\+G32\+B32\+A32\+\_\+\+UINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a345ce98ef1d75d250f01f84e05767f7b}{R32\+\_\+\+SFLOAT}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ae3592aada13e620eeaa18d929ee3802e}{R32\+G32\+\_\+\+SFLOAT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a122d94426d820038b87e45b4dc694862}{R32\+G32\+B32\+\_\+\+SFLOAT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a0590997a0c78c9b9dae9f8dacb962b15}{R32\+G32\+B32\+A32\+\_\+\+SFLOAT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a03e5886d3d7216eed4f577937132b20f}{D16\+\_\+\+UNORM}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4aa6dc4e4319b85984a4ab81ae89949f88}{D24\+\_\+\+UNORM\+\_\+\+S8\+\_\+\+UINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a23a4ce33815655871d103d3071d91072}{D32\+\_\+\+SFLOAT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a37607c17eb1a7e0092e2c2dac3c072ea}{D32\+\_\+\+SFLOAT\+\_\+\+S8\+\_\+\+UINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a0db45d2a4141101bdfe48e3314cfbca3}{UNDEFINED}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a6ee77dd485809c93542e95acf222420c}{R8\+\_\+\+UNORM}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a74b8cc492d3b8df6a7c4f2573e751f65}{R8\+G8\+\_\+\+UNORM}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a510cef4c9832a8b4e6fcad93f2927142}{R8\+G8\+B8\+\_\+\+UNORM}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4af55c1c722034e92213df328d31e33c62}{R8\+G8\+B8\+A8\+\_\+\+UNORM}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a0f09a2e0cf764ef602b892fc70b817bf}{B8\+G8\+R8\+A8\+\_\+\+UNORM}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a5c835c7ea238d0796853827ce416a5e2}{R8\+G8\+B8\+A8\+\_\+\+SRGB}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4af76dbb655425d5bbcf8f4b8f5d316960}{B8\+G8\+R8\+A8\+\_\+\+SRGB}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a7d02f4bfc1a88d4c301de5ae6f0b5d9c}{R16\+\_\+\+SFLOAT}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a3fa3b9f0bfc91056d90272c3a6e0cbaf}{R16\+G16\+\_\+\+SFLOAT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a69395b052af3edbce890742e01c55348}{R16\+G16\+B16\+A16\+\_\+\+SFLOAT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4afb3d9b81391ab907186bd39d1e0ec06b}{R8\+\_\+\+SINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ad865c8685eaca0a8002ebae3e41927d0}{R8\+G8\+\_\+\+SINT}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4aa0203efb56d9533eb903960af0f91e96}{R8\+G8\+B8\+\_\+\+SINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a371d6f9af5590e4d6f25cdb002854ef0}{R8\+G8\+B8\+A8\+\_\+\+SINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a261d1e0997b29130ae82f9722f7bcebf}{R16\+\_\+\+SINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a9d7ccb74bbc2a2aca0d0688f85266a08}{R16\+G16\+\_\+\+SINT}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a3bba18da59078bdd6bc406042907f76f}{R16\+G16\+B16\+\_\+\+SINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a5700a5767ec14fdb361879186ff5d242}{R16\+G16\+B16\+A16\+\_\+\+SINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a99d5ccfc1a21572c753cbf0640bd2565}{R32\+\_\+\+SINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ae00f80e3640e18f2997325c36fe0ef90}{R32\+G32\+\_\+\+SINT}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ae53d190f1e9fa67fb47bc8c053b53278}{R32\+G32\+B32\+\_\+\+SINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4afd9ca5bb13785040311bc3b0dbe4f192}{R32\+G32\+B32\+A32\+\_\+\+SINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a99f9bb6daa4c8f9ea6744ca176038180}{R8\+\_\+\+UINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a68e4bb37495d561f4939031d2b1adbae}{R8\+G8\+\_\+\+UINT}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a27742f2c14c784edbbc18f650ffd3e91}{R8\+G8\+B8\+\_\+\+UINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a67db604c7206857ceb4fe94ee620cae4}{R8\+G8\+B8\+A8\+\_\+\+UINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ad8187d21ed6dc3072e4c8e819e202c05}{R16\+\_\+\+UINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a01aa628941c3b48fea869c081e0611a3}{R16\+G16\+\_\+\+UINT}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a028c7eb70f9cab1827627c3dbf0e1976}{R16\+G16\+B16\+\_\+\+UINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a9e1fb7eae42b4f0b636e6bde9a33cf4b}{R16\+G16\+B16\+A16\+\_\+\+UINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4af010bb9e5a699e4cb9c80b2f5d982218}{R32\+\_\+\+UINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ad0a8fa71e3197bbf9b23d6d93235f3ca}{R32\+G32\+\_\+\+UINT}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a8a0c94872edade84a5320f3cb31ac6a8}{R32\+G32\+B32\+\_\+\+UINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a0b993e1cc925013e7f5aff710f0033e9}{R32\+G32\+B32\+A32\+\_\+\+UINT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a345ce98ef1d75d250f01f84e05767f7b}{R32\+\_\+\+SFLOAT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ae3592aada13e620eeaa18d929ee3802e}{R32\+G32\+\_\+\+SFLOAT}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a122d94426d820038b87e45b4dc694862}{R32\+G32\+B32\+\_\+\+SFLOAT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a0590997a0c78c9b9dae9f8dacb962b15}{R32\+G32\+B32\+A32\+\_\+\+SFLOAT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a03e5886d3d7216eed4f577937132b20f}{D16\+\_\+\+UNORM}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4aa6dc4e4319b85984a4ab81ae89949f88}{D24\+\_\+\+UNORM\+\_\+\+S8\+\_\+\+UINT}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a23a4ce33815655871d103d3071d91072}{D32\+\_\+\+SFLOAT}}
+, \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a37607c17eb1a7e0092e2c2dac3c072ea}{D32\+\_\+\+SFLOAT\+\_\+\+S8\+\_\+\+UINT}}
+ \}
+\item 
+enum class \mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182}{Samples}} \{ \newline
+\mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a1f5d8e7e094ddab8199dc672aaba3e23}{sample\+\_\+undefined}} = 0
+, \mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182af16981b72c70cf9ef716f38b848c5cf0}{sample\+\_\+1}}
+, \mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a4a2f0f9aee216a77ce0a1c55396073f0}{sample\+\_\+2}}
+, \mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a7f24c693aa391ce14aaa8d4298d03497}{sample\+\_\+4}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a3a9912db03f28e61f3ce2c31a7d1d8b8}{sample\+\_\+8}}
+, \mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a898482ee38ed8c708655bc52bbbfd177}{sample\+\_\+16}}
+, \mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a4624653fd55ddea32e7d03ac6335b651}{sample\+\_\+32}}
+, \mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a1f5d8e7e094ddab8199dc672aaba3e23}{sample\+\_\+undefined}} = 0
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182af16981b72c70cf9ef716f38b848c5cf0}{sample\+\_\+1}}
+, \mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a4a2f0f9aee216a77ce0a1c55396073f0}{sample\+\_\+2}}
+, \mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a7f24c693aa391ce14aaa8d4298d03497}{sample\+\_\+4}}
+, \mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a3a9912db03f28e61f3ce2c31a7d1d8b8}{sample\+\_\+8}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a898482ee38ed8c708655bc52bbbfd177}{sample\+\_\+16}}
+, \mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a4624653fd55ddea32e7d03ac6335b651}{sample\+\_\+32}}
  \}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{函数}
@@ -852,7 +1049,7 @@ using \mbox{\hyperlink{namespace_f_c_t_a0cbb58fc2b9d03ebc10caf8a6f43d5d9}{FCT\+:
 
 
 
-在文件 \mbox{\hyperlink{_r_h_i_2_image_8h_source}{Image.\+h}} 第 \mbox{\hyperlink{_r_h_i_2_image_8h_source_l00023}{23}} 行定义.
+在文件 \mbox{\hyperlink{_flags_8h_source}{Flags.\+h}} 第 \mbox{\hyperlink{_flags_8h_source_l00115}{115}} 行定义.
 
 \Hypertarget{namespace_f_c_t_ab4a59b11fd31afd38f70a20820f77fe6}\index{FCT@{FCT}!InputPosTransformCallback@{InputPosTransformCallback}}
 \index{InputPosTransformCallback@{InputPosTransformCallback}!FCT@{FCT}}
@@ -883,7 +1080,7 @@ using \mbox{\hyperlink{namespace_f_c_t_ade60146e92314a0c13d22e0ce1e17b1d}{FCT\+:
 \end{DoxyCode}
 
 
-在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00057}{57}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00060}{60}} 行定义.
 
 \Hypertarget{namespace_f_c_t_a6ac4affd73cd6cf1ba455a683b2d69ba}\index{FCT@{FCT}!PRHISampler@{PRHISampler}}
 \index{PRHISampler@{PRHISampler}!FCT@{FCT}}
@@ -948,7 +1145,7 @@ using \mbox{\hyperlink{namespace_f_c_t_ac41e778fbc977f4696d9b8be38b37ef6}{FCT\+:
 \end{DoxyCode}
 
 
-在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00064}{64}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00067}{67}} 行定义.
 
 \Hypertarget{namespace_f_c_t_a541d9708e0c1aa838437ddff4b111d4d}\index{FCT@{FCT}!ShaderStages@{ShaderStages}}
 \index{ShaderStages@{ShaderStages}!FCT@{FCT}}
@@ -968,7 +1165,7 @@ using \mbox{\hyperlink{namespace_f_c_t_ab1ea6811dd963f80ea7b7b1b6aec0d3c}{FCT\+:
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00060}{60}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00056}{56}} 行定义.
 
 \Hypertarget{namespace_f_c_t_a726db41259cdbddb2910a4854444d5b9}\index{FCT@{FCT}!SyncTicker@{SyncTicker}}
 \index{SyncTicker@{SyncTicker}!FCT@{FCT}}
@@ -978,7 +1175,7 @@ using \mbox{\hyperlink{namespace_f_c_t_a726db41259cdbddb2910a4854444d5b9}{FCT\+:
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00061}{61}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00057}{57}} 行定义.
 
 \Hypertarget{namespace_f_c_t_a4871ca624d38cba5f44a54de0e01a933}\index{FCT@{FCT}!TickerToken@{TickerToken}}
 \index{TickerToken@{TickerToken}!FCT@{FCT}}
@@ -988,7 +1185,7 @@ using \mbox{\hyperlink{namespace_f_c_t_a4871ca624d38cba5f44a54de0e01a933}{FCT\+:
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00062}{62}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00058}{58}} 行定义.
 
 \Hypertarget{namespace_f_c_t_a2b67c2197d2675193be9ca0fe8406c87}\index{FCT@{FCT}!UITaskFunction@{UITaskFunction}}
 \index{UITaskFunction@{UITaskFunction}!FCT@{FCT}}
@@ -1225,7 +1422,7 @@ depth\+Stencil&\\
 \end{DoxyEnumFields}
 
 
-在文件 \mbox{\hyperlink{_r_h_i_2_pass_8h_source}{Pass.\+h}} 第 \mbox{\hyperlink{_r_h_i_2_pass_8h_source_l00011}{11}} 行定义.
+在文件 \mbox{\hyperlink{_r_h_i_2_pass_8h_source}{Pass.\+h}} 第 \mbox{\hyperlink{_r_h_i_2_pass_8h_source_l00013}{13}} 行定义.
 
 \Hypertarget{namespace_f_c_t_ae72266666726fb6ad7e1a218a340b4c8}\index{FCT@{FCT}!CompareOp@{CompareOp}}
 \index{CompareOp@{CompareOp}!FCT@{FCT}}
@@ -1457,7 +1654,7 @@ BVec4&\\
 \end{DoxyEnumFields}
 
 
-在文件 \mbox{\hyperlink{_data_types_8h_source}{Data\+Types.\+h}} 第 \mbox{\hyperlink{_data_types_8h_source_l00009}{9}} 行定义.
+在文件 \mbox{\hyperlink{_data_types_8h_source}{Data\+Types.\+h}} 第 \mbox{\hyperlink{_data_types_8h_source_l00015}{15}} 行定义.
 
 \Hypertarget{namespace_f_c_t_ab91ea156a9bfda232cfaf73535670779}\index{FCT@{FCT}!FilterMode@{FilterMode}}
 \index{FilterMode@{FilterMode}!FCT@{FCT}}
@@ -1481,7 +1678,7 @@ Linear&\\
 
 \Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4}\index{FCT@{FCT}!Format@{Format}}
 \index{Format@{Format}!FCT@{FCT}}
-\doxysubsubsection{\texorpdfstring{Format}{Format}}
+\doxysubsubsection{\texorpdfstring{Format}{Format}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily \label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4} 
 enum class \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4}{FCT\+::\+Format}}\hspace{0.3cm}{\ttfamily [strong]}}
 
@@ -1658,10 +1855,538 @@ D32\+\_\+\+SFLOAT&\\
 D32\+\_\+\+SFLOAT\+\_\+\+S8\+\_\+\+UINT&\\
 \hline
 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UNDEFINED@{UNDEFINED}!FCT@{FCT}}\index{FCT@{FCT}!UNDEFINED@{UNDEFINED}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a0db45d2a4141101bdfe48e3314cfbca3}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a0db45d2a4141101bdfe48e3314cfbca3} 
+UNDEFINED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R8\_UNORM@{R8\_UNORM}!FCT@{FCT}}\index{FCT@{FCT}!R8\_UNORM@{R8\_UNORM}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a6ee77dd485809c93542e95acf222420c}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a6ee77dd485809c93542e95acf222420c} 
+R8\+\_\+\+UNORM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R8G8\_UNORM@{R8G8\_UNORM}!FCT@{FCT}}\index{FCT@{FCT}!R8G8\_UNORM@{R8G8\_UNORM}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a74b8cc492d3b8df6a7c4f2573e751f65}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a74b8cc492d3b8df6a7c4f2573e751f65} 
+R8\+G8\+\_\+\+UNORM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R8G8B8\_UNORM@{R8G8B8\_UNORM}!FCT@{FCT}}\index{FCT@{FCT}!R8G8B8\_UNORM@{R8G8B8\_UNORM}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a510cef4c9832a8b4e6fcad93f2927142}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a510cef4c9832a8b4e6fcad93f2927142} 
+R8\+G8\+B8\+\_\+\+UNORM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R8G8B8A8\_UNORM@{R8G8B8A8\_UNORM}!FCT@{FCT}}\index{FCT@{FCT}!R8G8B8A8\_UNORM@{R8G8B8A8\_UNORM}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4af55c1c722034e92213df328d31e33c62}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4af55c1c722034e92213df328d31e33c62} 
+R8\+G8\+B8\+A8\+\_\+\+UNORM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B8G8R8A8\_UNORM@{B8G8R8A8\_UNORM}!FCT@{FCT}}\index{FCT@{FCT}!B8G8R8A8\_UNORM@{B8G8R8A8\_UNORM}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a0f09a2e0cf764ef602b892fc70b817bf}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a0f09a2e0cf764ef602b892fc70b817bf} 
+B8\+G8\+R8\+A8\+\_\+\+UNORM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R8G8B8A8\_SRGB@{R8G8B8A8\_SRGB}!FCT@{FCT}}\index{FCT@{FCT}!R8G8B8A8\_SRGB@{R8G8B8A8\_SRGB}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a5c835c7ea238d0796853827ce416a5e2}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a5c835c7ea238d0796853827ce416a5e2} 
+R8\+G8\+B8\+A8\+\_\+\+SRGB&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B8G8R8A8\_SRGB@{B8G8R8A8\_SRGB}!FCT@{FCT}}\index{FCT@{FCT}!B8G8R8A8\_SRGB@{B8G8R8A8\_SRGB}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4af76dbb655425d5bbcf8f4b8f5d316960}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4af76dbb655425d5bbcf8f4b8f5d316960} 
+B8\+G8\+R8\+A8\+\_\+\+SRGB&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R16\_SFLOAT@{R16\_SFLOAT}!FCT@{FCT}}\index{FCT@{FCT}!R16\_SFLOAT@{R16\_SFLOAT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a7d02f4bfc1a88d4c301de5ae6f0b5d9c}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a7d02f4bfc1a88d4c301de5ae6f0b5d9c} 
+R16\+\_\+\+SFLOAT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R16G16\_SFLOAT@{R16G16\_SFLOAT}!FCT@{FCT}}\index{FCT@{FCT}!R16G16\_SFLOAT@{R16G16\_SFLOAT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a3fa3b9f0bfc91056d90272c3a6e0cbaf}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a3fa3b9f0bfc91056d90272c3a6e0cbaf} 
+R16\+G16\+\_\+\+SFLOAT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R16G16B16A16\_SFLOAT@{R16G16B16A16\_SFLOAT}!FCT@{FCT}}\index{FCT@{FCT}!R16G16B16A16\_SFLOAT@{R16G16B16A16\_SFLOAT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a69395b052af3edbce890742e01c55348}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a69395b052af3edbce890742e01c55348} 
+R16\+G16\+B16\+A16\+\_\+\+SFLOAT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R8\_SINT@{R8\_SINT}!FCT@{FCT}}\index{FCT@{FCT}!R8\_SINT@{R8\_SINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4afb3d9b81391ab907186bd39d1e0ec06b}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4afb3d9b81391ab907186bd39d1e0ec06b} 
+R8\+\_\+\+SINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R8G8\_SINT@{R8G8\_SINT}!FCT@{FCT}}\index{FCT@{FCT}!R8G8\_SINT@{R8G8\_SINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ad865c8685eaca0a8002ebae3e41927d0}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ad865c8685eaca0a8002ebae3e41927d0} 
+R8\+G8\+\_\+\+SINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R8G8B8\_SINT@{R8G8B8\_SINT}!FCT@{FCT}}\index{FCT@{FCT}!R8G8B8\_SINT@{R8G8B8\_SINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4aa0203efb56d9533eb903960af0f91e96}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4aa0203efb56d9533eb903960af0f91e96} 
+R8\+G8\+B8\+\_\+\+SINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R8G8B8A8\_SINT@{R8G8B8A8\_SINT}!FCT@{FCT}}\index{FCT@{FCT}!R8G8B8A8\_SINT@{R8G8B8A8\_SINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a371d6f9af5590e4d6f25cdb002854ef0}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a371d6f9af5590e4d6f25cdb002854ef0} 
+R8\+G8\+B8\+A8\+\_\+\+SINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R16\_SINT@{R16\_SINT}!FCT@{FCT}}\index{FCT@{FCT}!R16\_SINT@{R16\_SINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a261d1e0997b29130ae82f9722f7bcebf}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a261d1e0997b29130ae82f9722f7bcebf} 
+R16\+\_\+\+SINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R16G16\_SINT@{R16G16\_SINT}!FCT@{FCT}}\index{FCT@{FCT}!R16G16\_SINT@{R16G16\_SINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a9d7ccb74bbc2a2aca0d0688f85266a08}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a9d7ccb74bbc2a2aca0d0688f85266a08} 
+R16\+G16\+\_\+\+SINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R16G16B16\_SINT@{R16G16B16\_SINT}!FCT@{FCT}}\index{FCT@{FCT}!R16G16B16\_SINT@{R16G16B16\_SINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a3bba18da59078bdd6bc406042907f76f}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a3bba18da59078bdd6bc406042907f76f} 
+R16\+G16\+B16\+\_\+\+SINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R16G16B16A16\_SINT@{R16G16B16A16\_SINT}!FCT@{FCT}}\index{FCT@{FCT}!R16G16B16A16\_SINT@{R16G16B16A16\_SINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a5700a5767ec14fdb361879186ff5d242}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a5700a5767ec14fdb361879186ff5d242} 
+R16\+G16\+B16\+A16\+\_\+\+SINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R32\_SINT@{R32\_SINT}!FCT@{FCT}}\index{FCT@{FCT}!R32\_SINT@{R32\_SINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a99d5ccfc1a21572c753cbf0640bd2565}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a99d5ccfc1a21572c753cbf0640bd2565} 
+R32\+\_\+\+SINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R32G32\_SINT@{R32G32\_SINT}!FCT@{FCT}}\index{FCT@{FCT}!R32G32\_SINT@{R32G32\_SINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ae00f80e3640e18f2997325c36fe0ef90}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ae00f80e3640e18f2997325c36fe0ef90} 
+R32\+G32\+\_\+\+SINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R32G32B32\_SINT@{R32G32B32\_SINT}!FCT@{FCT}}\index{FCT@{FCT}!R32G32B32\_SINT@{R32G32B32\_SINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ae53d190f1e9fa67fb47bc8c053b53278}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ae53d190f1e9fa67fb47bc8c053b53278} 
+R32\+G32\+B32\+\_\+\+SINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R32G32B32A32\_SINT@{R32G32B32A32\_SINT}!FCT@{FCT}}\index{FCT@{FCT}!R32G32B32A32\_SINT@{R32G32B32A32\_SINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4afd9ca5bb13785040311bc3b0dbe4f192}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4afd9ca5bb13785040311bc3b0dbe4f192} 
+R32\+G32\+B32\+A32\+\_\+\+SINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R8\_UINT@{R8\_UINT}!FCT@{FCT}}\index{FCT@{FCT}!R8\_UINT@{R8\_UINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a99f9bb6daa4c8f9ea6744ca176038180}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a99f9bb6daa4c8f9ea6744ca176038180} 
+R8\+\_\+\+UINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R8G8\_UINT@{R8G8\_UINT}!FCT@{FCT}}\index{FCT@{FCT}!R8G8\_UINT@{R8G8\_UINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a68e4bb37495d561f4939031d2b1adbae}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a68e4bb37495d561f4939031d2b1adbae} 
+R8\+G8\+\_\+\+UINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R8G8B8\_UINT@{R8G8B8\_UINT}!FCT@{FCT}}\index{FCT@{FCT}!R8G8B8\_UINT@{R8G8B8\_UINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a27742f2c14c784edbbc18f650ffd3e91}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a27742f2c14c784edbbc18f650ffd3e91} 
+R8\+G8\+B8\+\_\+\+UINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R8G8B8A8\_UINT@{R8G8B8A8\_UINT}!FCT@{FCT}}\index{FCT@{FCT}!R8G8B8A8\_UINT@{R8G8B8A8\_UINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a67db604c7206857ceb4fe94ee620cae4}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a67db604c7206857ceb4fe94ee620cae4} 
+R8\+G8\+B8\+A8\+\_\+\+UINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R16\_UINT@{R16\_UINT}!FCT@{FCT}}\index{FCT@{FCT}!R16\_UINT@{R16\_UINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ad8187d21ed6dc3072e4c8e819e202c05}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ad8187d21ed6dc3072e4c8e819e202c05} 
+R16\+\_\+\+UINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R16G16\_UINT@{R16G16\_UINT}!FCT@{FCT}}\index{FCT@{FCT}!R16G16\_UINT@{R16G16\_UINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a01aa628941c3b48fea869c081e0611a3}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a01aa628941c3b48fea869c081e0611a3} 
+R16\+G16\+\_\+\+UINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R16G16B16\_UINT@{R16G16B16\_UINT}!FCT@{FCT}}\index{FCT@{FCT}!R16G16B16\_UINT@{R16G16B16\_UINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a028c7eb70f9cab1827627c3dbf0e1976}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a028c7eb70f9cab1827627c3dbf0e1976} 
+R16\+G16\+B16\+\_\+\+UINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R16G16B16A16\_UINT@{R16G16B16A16\_UINT}!FCT@{FCT}}\index{FCT@{FCT}!R16G16B16A16\_UINT@{R16G16B16A16\_UINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a9e1fb7eae42b4f0b636e6bde9a33cf4b}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a9e1fb7eae42b4f0b636e6bde9a33cf4b} 
+R16\+G16\+B16\+A16\+\_\+\+UINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R32\_UINT@{R32\_UINT}!FCT@{FCT}}\index{FCT@{FCT}!R32\_UINT@{R32\_UINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4af010bb9e5a699e4cb9c80b2f5d982218}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4af010bb9e5a699e4cb9c80b2f5d982218} 
+R32\+\_\+\+UINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R32G32\_UINT@{R32G32\_UINT}!FCT@{FCT}}\index{FCT@{FCT}!R32G32\_UINT@{R32G32\_UINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ad0a8fa71e3197bbf9b23d6d93235f3ca}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ad0a8fa71e3197bbf9b23d6d93235f3ca} 
+R32\+G32\+\_\+\+UINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R32G32B32\_UINT@{R32G32B32\_UINT}!FCT@{FCT}}\index{FCT@{FCT}!R32G32B32\_UINT@{R32G32B32\_UINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a8a0c94872edade84a5320f3cb31ac6a8}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a8a0c94872edade84a5320f3cb31ac6a8} 
+R32\+G32\+B32\+\_\+\+UINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R32G32B32A32\_UINT@{R32G32B32A32\_UINT}!FCT@{FCT}}\index{FCT@{FCT}!R32G32B32A32\_UINT@{R32G32B32A32\_UINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a0b993e1cc925013e7f5aff710f0033e9}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a0b993e1cc925013e7f5aff710f0033e9} 
+R32\+G32\+B32\+A32\+\_\+\+UINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R32\_SFLOAT@{R32\_SFLOAT}!FCT@{FCT}}\index{FCT@{FCT}!R32\_SFLOAT@{R32\_SFLOAT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a345ce98ef1d75d250f01f84e05767f7b}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a345ce98ef1d75d250f01f84e05767f7b} 
+R32\+\_\+\+SFLOAT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R32G32\_SFLOAT@{R32G32\_SFLOAT}!FCT@{FCT}}\index{FCT@{FCT}!R32G32\_SFLOAT@{R32G32\_SFLOAT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ae3592aada13e620eeaa18d929ee3802e}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ae3592aada13e620eeaa18d929ee3802e} 
+R32\+G32\+\_\+\+SFLOAT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R32G32B32\_SFLOAT@{R32G32B32\_SFLOAT}!FCT@{FCT}}\index{FCT@{FCT}!R32G32B32\_SFLOAT@{R32G32B32\_SFLOAT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a122d94426d820038b87e45b4dc694862}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a122d94426d820038b87e45b4dc694862} 
+R32\+G32\+B32\+\_\+\+SFLOAT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R32G32B32A32\_SFLOAT@{R32G32B32A32\_SFLOAT}!FCT@{FCT}}\index{FCT@{FCT}!R32G32B32A32\_SFLOAT@{R32G32B32A32\_SFLOAT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a0590997a0c78c9b9dae9f8dacb962b15}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a0590997a0c78c9b9dae9f8dacb962b15} 
+R32\+G32\+B32\+A32\+\_\+\+SFLOAT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D16\_UNORM@{D16\_UNORM}!FCT@{FCT}}\index{FCT@{FCT}!D16\_UNORM@{D16\_UNORM}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a03e5886d3d7216eed4f577937132b20f}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a03e5886d3d7216eed4f577937132b20f} 
+D16\+\_\+\+UNORM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D24\_UNORM\_S8\_UINT@{D24\_UNORM\_S8\_UINT}!FCT@{FCT}}\index{FCT@{FCT}!D24\_UNORM\_S8\_UINT@{D24\_UNORM\_S8\_UINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4aa6dc4e4319b85984a4ab81ae89949f88}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4aa6dc4e4319b85984a4ab81ae89949f88} 
+D24\+\_\+\+UNORM\+\_\+\+S8\+\_\+\+UINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D32\_SFLOAT@{D32\_SFLOAT}!FCT@{FCT}}\index{FCT@{FCT}!D32\_SFLOAT@{D32\_SFLOAT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a23a4ce33815655871d103d3071d91072}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a23a4ce33815655871d103d3071d91072} 
+D32\+\_\+\+SFLOAT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D32\_SFLOAT\_S8\_UINT@{D32\_SFLOAT\_S8\_UINT}!FCT@{FCT}}\index{FCT@{FCT}!D32\_SFLOAT\_S8\_UINT@{D32\_SFLOAT\_S8\_UINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a37607c17eb1a7e0092e2c2dac3c072ea}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a37607c17eb1a7e0092e2c2dac3c072ea} 
+D32\+\_\+\+SFLOAT\+\_\+\+S8\+\_\+\+UINT&\\
+\hline
+
 \end{DoxyEnumFields}
 
 
-在文件 \mbox{\hyperlink{_format_8h_source}{Format.\+h}} 第 \mbox{\hyperlink{_format_8h_source_l00005}{5}} 行定义.
+在文件 \mbox{\hyperlink{_context_2_format_8h_source}{Format.\+h}} 第 \mbox{\hyperlink{_context_2_format_8h_source_l00005}{5}} 行定义.
+
+\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4}\index{FCT@{FCT}!Format@{Format}}
+\index{Format@{Format}!FCT@{FCT}}
+\doxysubsubsection{\texorpdfstring{Format}{Format}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4} 
+enum class \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4}{FCT\+::\+Format}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}[2]{枚举值}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UNDEFINED@{UNDEFINED}!FCT@{FCT}}\index{FCT@{FCT}!UNDEFINED@{UNDEFINED}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a0db45d2a4141101bdfe48e3314cfbca3}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a0db45d2a4141101bdfe48e3314cfbca3} 
+UNDEFINED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R8\_UNORM@{R8\_UNORM}!FCT@{FCT}}\index{FCT@{FCT}!R8\_UNORM@{R8\_UNORM}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a6ee77dd485809c93542e95acf222420c}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a6ee77dd485809c93542e95acf222420c} 
+R8\+\_\+\+UNORM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R8G8\_UNORM@{R8G8\_UNORM}!FCT@{FCT}}\index{FCT@{FCT}!R8G8\_UNORM@{R8G8\_UNORM}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a74b8cc492d3b8df6a7c4f2573e751f65}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a74b8cc492d3b8df6a7c4f2573e751f65} 
+R8\+G8\+\_\+\+UNORM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R8G8B8\_UNORM@{R8G8B8\_UNORM}!FCT@{FCT}}\index{FCT@{FCT}!R8G8B8\_UNORM@{R8G8B8\_UNORM}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a510cef4c9832a8b4e6fcad93f2927142}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a510cef4c9832a8b4e6fcad93f2927142} 
+R8\+G8\+B8\+\_\+\+UNORM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R8G8B8A8\_UNORM@{R8G8B8A8\_UNORM}!FCT@{FCT}}\index{FCT@{FCT}!R8G8B8A8\_UNORM@{R8G8B8A8\_UNORM}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4af55c1c722034e92213df328d31e33c62}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4af55c1c722034e92213df328d31e33c62} 
+R8\+G8\+B8\+A8\+\_\+\+UNORM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B8G8R8A8\_UNORM@{B8G8R8A8\_UNORM}!FCT@{FCT}}\index{FCT@{FCT}!B8G8R8A8\_UNORM@{B8G8R8A8\_UNORM}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a0f09a2e0cf764ef602b892fc70b817bf}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a0f09a2e0cf764ef602b892fc70b817bf} 
+B8\+G8\+R8\+A8\+\_\+\+UNORM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R8G8B8A8\_SRGB@{R8G8B8A8\_SRGB}!FCT@{FCT}}\index{FCT@{FCT}!R8G8B8A8\_SRGB@{R8G8B8A8\_SRGB}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a5c835c7ea238d0796853827ce416a5e2}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a5c835c7ea238d0796853827ce416a5e2} 
+R8\+G8\+B8\+A8\+\_\+\+SRGB&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B8G8R8A8\_SRGB@{B8G8R8A8\_SRGB}!FCT@{FCT}}\index{FCT@{FCT}!B8G8R8A8\_SRGB@{B8G8R8A8\_SRGB}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4af76dbb655425d5bbcf8f4b8f5d316960}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4af76dbb655425d5bbcf8f4b8f5d316960} 
+B8\+G8\+R8\+A8\+\_\+\+SRGB&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R16\_SFLOAT@{R16\_SFLOAT}!FCT@{FCT}}\index{FCT@{FCT}!R16\_SFLOAT@{R16\_SFLOAT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a7d02f4bfc1a88d4c301de5ae6f0b5d9c}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a7d02f4bfc1a88d4c301de5ae6f0b5d9c} 
+R16\+\_\+\+SFLOAT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R16G16\_SFLOAT@{R16G16\_SFLOAT}!FCT@{FCT}}\index{FCT@{FCT}!R16G16\_SFLOAT@{R16G16\_SFLOAT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a3fa3b9f0bfc91056d90272c3a6e0cbaf}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a3fa3b9f0bfc91056d90272c3a6e0cbaf} 
+R16\+G16\+\_\+\+SFLOAT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R16G16B16A16\_SFLOAT@{R16G16B16A16\_SFLOAT}!FCT@{FCT}}\index{FCT@{FCT}!R16G16B16A16\_SFLOAT@{R16G16B16A16\_SFLOAT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a69395b052af3edbce890742e01c55348}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a69395b052af3edbce890742e01c55348} 
+R16\+G16\+B16\+A16\+\_\+\+SFLOAT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R8\_SINT@{R8\_SINT}!FCT@{FCT}}\index{FCT@{FCT}!R8\_SINT@{R8\_SINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4afb3d9b81391ab907186bd39d1e0ec06b}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4afb3d9b81391ab907186bd39d1e0ec06b} 
+R8\+\_\+\+SINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R8G8\_SINT@{R8G8\_SINT}!FCT@{FCT}}\index{FCT@{FCT}!R8G8\_SINT@{R8G8\_SINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ad865c8685eaca0a8002ebae3e41927d0}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ad865c8685eaca0a8002ebae3e41927d0} 
+R8\+G8\+\_\+\+SINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R8G8B8\_SINT@{R8G8B8\_SINT}!FCT@{FCT}}\index{FCT@{FCT}!R8G8B8\_SINT@{R8G8B8\_SINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4aa0203efb56d9533eb903960af0f91e96}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4aa0203efb56d9533eb903960af0f91e96} 
+R8\+G8\+B8\+\_\+\+SINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R8G8B8A8\_SINT@{R8G8B8A8\_SINT}!FCT@{FCT}}\index{FCT@{FCT}!R8G8B8A8\_SINT@{R8G8B8A8\_SINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a371d6f9af5590e4d6f25cdb002854ef0}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a371d6f9af5590e4d6f25cdb002854ef0} 
+R8\+G8\+B8\+A8\+\_\+\+SINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R16\_SINT@{R16\_SINT}!FCT@{FCT}}\index{FCT@{FCT}!R16\_SINT@{R16\_SINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a261d1e0997b29130ae82f9722f7bcebf}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a261d1e0997b29130ae82f9722f7bcebf} 
+R16\+\_\+\+SINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R16G16\_SINT@{R16G16\_SINT}!FCT@{FCT}}\index{FCT@{FCT}!R16G16\_SINT@{R16G16\_SINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a9d7ccb74bbc2a2aca0d0688f85266a08}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a9d7ccb74bbc2a2aca0d0688f85266a08} 
+R16\+G16\+\_\+\+SINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R16G16B16\_SINT@{R16G16B16\_SINT}!FCT@{FCT}}\index{FCT@{FCT}!R16G16B16\_SINT@{R16G16B16\_SINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a3bba18da59078bdd6bc406042907f76f}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a3bba18da59078bdd6bc406042907f76f} 
+R16\+G16\+B16\+\_\+\+SINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R16G16B16A16\_SINT@{R16G16B16A16\_SINT}!FCT@{FCT}}\index{FCT@{FCT}!R16G16B16A16\_SINT@{R16G16B16A16\_SINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a5700a5767ec14fdb361879186ff5d242}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a5700a5767ec14fdb361879186ff5d242} 
+R16\+G16\+B16\+A16\+\_\+\+SINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R32\_SINT@{R32\_SINT}!FCT@{FCT}}\index{FCT@{FCT}!R32\_SINT@{R32\_SINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a99d5ccfc1a21572c753cbf0640bd2565}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a99d5ccfc1a21572c753cbf0640bd2565} 
+R32\+\_\+\+SINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R32G32\_SINT@{R32G32\_SINT}!FCT@{FCT}}\index{FCT@{FCT}!R32G32\_SINT@{R32G32\_SINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ae00f80e3640e18f2997325c36fe0ef90}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ae00f80e3640e18f2997325c36fe0ef90} 
+R32\+G32\+\_\+\+SINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R32G32B32\_SINT@{R32G32B32\_SINT}!FCT@{FCT}}\index{FCT@{FCT}!R32G32B32\_SINT@{R32G32B32\_SINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ae53d190f1e9fa67fb47bc8c053b53278}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ae53d190f1e9fa67fb47bc8c053b53278} 
+R32\+G32\+B32\+\_\+\+SINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R32G32B32A32\_SINT@{R32G32B32A32\_SINT}!FCT@{FCT}}\index{FCT@{FCT}!R32G32B32A32\_SINT@{R32G32B32A32\_SINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4afd9ca5bb13785040311bc3b0dbe4f192}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4afd9ca5bb13785040311bc3b0dbe4f192} 
+R32\+G32\+B32\+A32\+\_\+\+SINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R8\_UINT@{R8\_UINT}!FCT@{FCT}}\index{FCT@{FCT}!R8\_UINT@{R8\_UINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a99f9bb6daa4c8f9ea6744ca176038180}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a99f9bb6daa4c8f9ea6744ca176038180} 
+R8\+\_\+\+UINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R8G8\_UINT@{R8G8\_UINT}!FCT@{FCT}}\index{FCT@{FCT}!R8G8\_UINT@{R8G8\_UINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a68e4bb37495d561f4939031d2b1adbae}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a68e4bb37495d561f4939031d2b1adbae} 
+R8\+G8\+\_\+\+UINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R8G8B8\_UINT@{R8G8B8\_UINT}!FCT@{FCT}}\index{FCT@{FCT}!R8G8B8\_UINT@{R8G8B8\_UINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a27742f2c14c784edbbc18f650ffd3e91}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a27742f2c14c784edbbc18f650ffd3e91} 
+R8\+G8\+B8\+\_\+\+UINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R8G8B8A8\_UINT@{R8G8B8A8\_UINT}!FCT@{FCT}}\index{FCT@{FCT}!R8G8B8A8\_UINT@{R8G8B8A8\_UINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a67db604c7206857ceb4fe94ee620cae4}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a67db604c7206857ceb4fe94ee620cae4} 
+R8\+G8\+B8\+A8\+\_\+\+UINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R16\_UINT@{R16\_UINT}!FCT@{FCT}}\index{FCT@{FCT}!R16\_UINT@{R16\_UINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ad8187d21ed6dc3072e4c8e819e202c05}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ad8187d21ed6dc3072e4c8e819e202c05} 
+R16\+\_\+\+UINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R16G16\_UINT@{R16G16\_UINT}!FCT@{FCT}}\index{FCT@{FCT}!R16G16\_UINT@{R16G16\_UINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a01aa628941c3b48fea869c081e0611a3}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a01aa628941c3b48fea869c081e0611a3} 
+R16\+G16\+\_\+\+UINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R16G16B16\_UINT@{R16G16B16\_UINT}!FCT@{FCT}}\index{FCT@{FCT}!R16G16B16\_UINT@{R16G16B16\_UINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a028c7eb70f9cab1827627c3dbf0e1976}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a028c7eb70f9cab1827627c3dbf0e1976} 
+R16\+G16\+B16\+\_\+\+UINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R16G16B16A16\_UINT@{R16G16B16A16\_UINT}!FCT@{FCT}}\index{FCT@{FCT}!R16G16B16A16\_UINT@{R16G16B16A16\_UINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a9e1fb7eae42b4f0b636e6bde9a33cf4b}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a9e1fb7eae42b4f0b636e6bde9a33cf4b} 
+R16\+G16\+B16\+A16\+\_\+\+UINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R32\_UINT@{R32\_UINT}!FCT@{FCT}}\index{FCT@{FCT}!R32\_UINT@{R32\_UINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4af010bb9e5a699e4cb9c80b2f5d982218}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4af010bb9e5a699e4cb9c80b2f5d982218} 
+R32\+\_\+\+UINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R32G32\_UINT@{R32G32\_UINT}!FCT@{FCT}}\index{FCT@{FCT}!R32G32\_UINT@{R32G32\_UINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ad0a8fa71e3197bbf9b23d6d93235f3ca}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ad0a8fa71e3197bbf9b23d6d93235f3ca} 
+R32\+G32\+\_\+\+UINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R32G32B32\_UINT@{R32G32B32\_UINT}!FCT@{FCT}}\index{FCT@{FCT}!R32G32B32\_UINT@{R32G32B32\_UINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a8a0c94872edade84a5320f3cb31ac6a8}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a8a0c94872edade84a5320f3cb31ac6a8} 
+R32\+G32\+B32\+\_\+\+UINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R32G32B32A32\_UINT@{R32G32B32A32\_UINT}!FCT@{FCT}}\index{FCT@{FCT}!R32G32B32A32\_UINT@{R32G32B32A32\_UINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a0b993e1cc925013e7f5aff710f0033e9}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a0b993e1cc925013e7f5aff710f0033e9} 
+R32\+G32\+B32\+A32\+\_\+\+UINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R32\_SFLOAT@{R32\_SFLOAT}!FCT@{FCT}}\index{FCT@{FCT}!R32\_SFLOAT@{R32\_SFLOAT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a345ce98ef1d75d250f01f84e05767f7b}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a345ce98ef1d75d250f01f84e05767f7b} 
+R32\+\_\+\+SFLOAT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R32G32\_SFLOAT@{R32G32\_SFLOAT}!FCT@{FCT}}\index{FCT@{FCT}!R32G32\_SFLOAT@{R32G32\_SFLOAT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ae3592aada13e620eeaa18d929ee3802e}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ae3592aada13e620eeaa18d929ee3802e} 
+R32\+G32\+\_\+\+SFLOAT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R32G32B32\_SFLOAT@{R32G32B32\_SFLOAT}!FCT@{FCT}}\index{FCT@{FCT}!R32G32B32\_SFLOAT@{R32G32B32\_SFLOAT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a122d94426d820038b87e45b4dc694862}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a122d94426d820038b87e45b4dc694862} 
+R32\+G32\+B32\+\_\+\+SFLOAT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R32G32B32A32\_SFLOAT@{R32G32B32A32\_SFLOAT}!FCT@{FCT}}\index{FCT@{FCT}!R32G32B32A32\_SFLOAT@{R32G32B32A32\_SFLOAT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a0590997a0c78c9b9dae9f8dacb962b15}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a0590997a0c78c9b9dae9f8dacb962b15} 
+R32\+G32\+B32\+A32\+\_\+\+SFLOAT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D16\_UNORM@{D16\_UNORM}!FCT@{FCT}}\index{FCT@{FCT}!D16\_UNORM@{D16\_UNORM}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a03e5886d3d7216eed4f577937132b20f}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a03e5886d3d7216eed4f577937132b20f} 
+D16\+\_\+\+UNORM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D24\_UNORM\_S8\_UINT@{D24\_UNORM\_S8\_UINT}!FCT@{FCT}}\index{FCT@{FCT}!D24\_UNORM\_S8\_UINT@{D24\_UNORM\_S8\_UINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4aa6dc4e4319b85984a4ab81ae89949f88}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4aa6dc4e4319b85984a4ab81ae89949f88} 
+D24\+\_\+\+UNORM\+\_\+\+S8\+\_\+\+UINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D32\_SFLOAT@{D32\_SFLOAT}!FCT@{FCT}}\index{FCT@{FCT}!D32\_SFLOAT@{D32\_SFLOAT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a23a4ce33815655871d103d3071d91072}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a23a4ce33815655871d103d3071d91072} 
+D32\+\_\+\+SFLOAT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D32\_SFLOAT\_S8\_UINT@{D32\_SFLOAT\_S8\_UINT}!FCT@{FCT}}\index{FCT@{FCT}!D32\_SFLOAT\_S8\_UINT@{D32\_SFLOAT\_S8\_UINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a37607c17eb1a7e0092e2c2dac3c072ea}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a37607c17eb1a7e0092e2c2dac3c072ea} 
+D32\+\_\+\+SFLOAT\+\_\+\+S8\+\_\+\+UINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UNDEFINED@{UNDEFINED}!FCT@{FCT}}\index{FCT@{FCT}!UNDEFINED@{UNDEFINED}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a0db45d2a4141101bdfe48e3314cfbca3}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a0db45d2a4141101bdfe48e3314cfbca3} 
+UNDEFINED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R8\_UNORM@{R8\_UNORM}!FCT@{FCT}}\index{FCT@{FCT}!R8\_UNORM@{R8\_UNORM}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a6ee77dd485809c93542e95acf222420c}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a6ee77dd485809c93542e95acf222420c} 
+R8\+\_\+\+UNORM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R8G8\_UNORM@{R8G8\_UNORM}!FCT@{FCT}}\index{FCT@{FCT}!R8G8\_UNORM@{R8G8\_UNORM}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a74b8cc492d3b8df6a7c4f2573e751f65}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a74b8cc492d3b8df6a7c4f2573e751f65} 
+R8\+G8\+\_\+\+UNORM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R8G8B8\_UNORM@{R8G8B8\_UNORM}!FCT@{FCT}}\index{FCT@{FCT}!R8G8B8\_UNORM@{R8G8B8\_UNORM}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a510cef4c9832a8b4e6fcad93f2927142}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a510cef4c9832a8b4e6fcad93f2927142} 
+R8\+G8\+B8\+\_\+\+UNORM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R8G8B8A8\_UNORM@{R8G8B8A8\_UNORM}!FCT@{FCT}}\index{FCT@{FCT}!R8G8B8A8\_UNORM@{R8G8B8A8\_UNORM}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4af55c1c722034e92213df328d31e33c62}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4af55c1c722034e92213df328d31e33c62} 
+R8\+G8\+B8\+A8\+\_\+\+UNORM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B8G8R8A8\_UNORM@{B8G8R8A8\_UNORM}!FCT@{FCT}}\index{FCT@{FCT}!B8G8R8A8\_UNORM@{B8G8R8A8\_UNORM}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a0f09a2e0cf764ef602b892fc70b817bf}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a0f09a2e0cf764ef602b892fc70b817bf} 
+B8\+G8\+R8\+A8\+\_\+\+UNORM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R8G8B8A8\_SRGB@{R8G8B8A8\_SRGB}!FCT@{FCT}}\index{FCT@{FCT}!R8G8B8A8\_SRGB@{R8G8B8A8\_SRGB}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a5c835c7ea238d0796853827ce416a5e2}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a5c835c7ea238d0796853827ce416a5e2} 
+R8\+G8\+B8\+A8\+\_\+\+SRGB&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B8G8R8A8\_SRGB@{B8G8R8A8\_SRGB}!FCT@{FCT}}\index{FCT@{FCT}!B8G8R8A8\_SRGB@{B8G8R8A8\_SRGB}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4af76dbb655425d5bbcf8f4b8f5d316960}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4af76dbb655425d5bbcf8f4b8f5d316960} 
+B8\+G8\+R8\+A8\+\_\+\+SRGB&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R16\_SFLOAT@{R16\_SFLOAT}!FCT@{FCT}}\index{FCT@{FCT}!R16\_SFLOAT@{R16\_SFLOAT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a7d02f4bfc1a88d4c301de5ae6f0b5d9c}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a7d02f4bfc1a88d4c301de5ae6f0b5d9c} 
+R16\+\_\+\+SFLOAT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R16G16\_SFLOAT@{R16G16\_SFLOAT}!FCT@{FCT}}\index{FCT@{FCT}!R16G16\_SFLOAT@{R16G16\_SFLOAT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a3fa3b9f0bfc91056d90272c3a6e0cbaf}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a3fa3b9f0bfc91056d90272c3a6e0cbaf} 
+R16\+G16\+\_\+\+SFLOAT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R16G16B16A16\_SFLOAT@{R16G16B16A16\_SFLOAT}!FCT@{FCT}}\index{FCT@{FCT}!R16G16B16A16\_SFLOAT@{R16G16B16A16\_SFLOAT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a69395b052af3edbce890742e01c55348}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a69395b052af3edbce890742e01c55348} 
+R16\+G16\+B16\+A16\+\_\+\+SFLOAT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R8\_SINT@{R8\_SINT}!FCT@{FCT}}\index{FCT@{FCT}!R8\_SINT@{R8\_SINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4afb3d9b81391ab907186bd39d1e0ec06b}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4afb3d9b81391ab907186bd39d1e0ec06b} 
+R8\+\_\+\+SINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R8G8\_SINT@{R8G8\_SINT}!FCT@{FCT}}\index{FCT@{FCT}!R8G8\_SINT@{R8G8\_SINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ad865c8685eaca0a8002ebae3e41927d0}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ad865c8685eaca0a8002ebae3e41927d0} 
+R8\+G8\+\_\+\+SINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R8G8B8\_SINT@{R8G8B8\_SINT}!FCT@{FCT}}\index{FCT@{FCT}!R8G8B8\_SINT@{R8G8B8\_SINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4aa0203efb56d9533eb903960af0f91e96}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4aa0203efb56d9533eb903960af0f91e96} 
+R8\+G8\+B8\+\_\+\+SINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R8G8B8A8\_SINT@{R8G8B8A8\_SINT}!FCT@{FCT}}\index{FCT@{FCT}!R8G8B8A8\_SINT@{R8G8B8A8\_SINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a371d6f9af5590e4d6f25cdb002854ef0}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a371d6f9af5590e4d6f25cdb002854ef0} 
+R8\+G8\+B8\+A8\+\_\+\+SINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R16\_SINT@{R16\_SINT}!FCT@{FCT}}\index{FCT@{FCT}!R16\_SINT@{R16\_SINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a261d1e0997b29130ae82f9722f7bcebf}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a261d1e0997b29130ae82f9722f7bcebf} 
+R16\+\_\+\+SINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R16G16\_SINT@{R16G16\_SINT}!FCT@{FCT}}\index{FCT@{FCT}!R16G16\_SINT@{R16G16\_SINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a9d7ccb74bbc2a2aca0d0688f85266a08}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a9d7ccb74bbc2a2aca0d0688f85266a08} 
+R16\+G16\+\_\+\+SINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R16G16B16\_SINT@{R16G16B16\_SINT}!FCT@{FCT}}\index{FCT@{FCT}!R16G16B16\_SINT@{R16G16B16\_SINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a3bba18da59078bdd6bc406042907f76f}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a3bba18da59078bdd6bc406042907f76f} 
+R16\+G16\+B16\+\_\+\+SINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R16G16B16A16\_SINT@{R16G16B16A16\_SINT}!FCT@{FCT}}\index{FCT@{FCT}!R16G16B16A16\_SINT@{R16G16B16A16\_SINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a5700a5767ec14fdb361879186ff5d242}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a5700a5767ec14fdb361879186ff5d242} 
+R16\+G16\+B16\+A16\+\_\+\+SINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R32\_SINT@{R32\_SINT}!FCT@{FCT}}\index{FCT@{FCT}!R32\_SINT@{R32\_SINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a99d5ccfc1a21572c753cbf0640bd2565}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a99d5ccfc1a21572c753cbf0640bd2565} 
+R32\+\_\+\+SINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R32G32\_SINT@{R32G32\_SINT}!FCT@{FCT}}\index{FCT@{FCT}!R32G32\_SINT@{R32G32\_SINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ae00f80e3640e18f2997325c36fe0ef90}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ae00f80e3640e18f2997325c36fe0ef90} 
+R32\+G32\+\_\+\+SINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R32G32B32\_SINT@{R32G32B32\_SINT}!FCT@{FCT}}\index{FCT@{FCT}!R32G32B32\_SINT@{R32G32B32\_SINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ae53d190f1e9fa67fb47bc8c053b53278}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ae53d190f1e9fa67fb47bc8c053b53278} 
+R32\+G32\+B32\+\_\+\+SINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R32G32B32A32\_SINT@{R32G32B32A32\_SINT}!FCT@{FCT}}\index{FCT@{FCT}!R32G32B32A32\_SINT@{R32G32B32A32\_SINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4afd9ca5bb13785040311bc3b0dbe4f192}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4afd9ca5bb13785040311bc3b0dbe4f192} 
+R32\+G32\+B32\+A32\+\_\+\+SINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R8\_UINT@{R8\_UINT}!FCT@{FCT}}\index{FCT@{FCT}!R8\_UINT@{R8\_UINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a99f9bb6daa4c8f9ea6744ca176038180}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a99f9bb6daa4c8f9ea6744ca176038180} 
+R8\+\_\+\+UINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R8G8\_UINT@{R8G8\_UINT}!FCT@{FCT}}\index{FCT@{FCT}!R8G8\_UINT@{R8G8\_UINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a68e4bb37495d561f4939031d2b1adbae}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a68e4bb37495d561f4939031d2b1adbae} 
+R8\+G8\+\_\+\+UINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R8G8B8\_UINT@{R8G8B8\_UINT}!FCT@{FCT}}\index{FCT@{FCT}!R8G8B8\_UINT@{R8G8B8\_UINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a27742f2c14c784edbbc18f650ffd3e91}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a27742f2c14c784edbbc18f650ffd3e91} 
+R8\+G8\+B8\+\_\+\+UINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R8G8B8A8\_UINT@{R8G8B8A8\_UINT}!FCT@{FCT}}\index{FCT@{FCT}!R8G8B8A8\_UINT@{R8G8B8A8\_UINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a67db604c7206857ceb4fe94ee620cae4}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a67db604c7206857ceb4fe94ee620cae4} 
+R8\+G8\+B8\+A8\+\_\+\+UINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R16\_UINT@{R16\_UINT}!FCT@{FCT}}\index{FCT@{FCT}!R16\_UINT@{R16\_UINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ad8187d21ed6dc3072e4c8e819e202c05}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ad8187d21ed6dc3072e4c8e819e202c05} 
+R16\+\_\+\+UINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R16G16\_UINT@{R16G16\_UINT}!FCT@{FCT}}\index{FCT@{FCT}!R16G16\_UINT@{R16G16\_UINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a01aa628941c3b48fea869c081e0611a3}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a01aa628941c3b48fea869c081e0611a3} 
+R16\+G16\+\_\+\+UINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R16G16B16\_UINT@{R16G16B16\_UINT}!FCT@{FCT}}\index{FCT@{FCT}!R16G16B16\_UINT@{R16G16B16\_UINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a028c7eb70f9cab1827627c3dbf0e1976}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a028c7eb70f9cab1827627c3dbf0e1976} 
+R16\+G16\+B16\+\_\+\+UINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R16G16B16A16\_UINT@{R16G16B16A16\_UINT}!FCT@{FCT}}\index{FCT@{FCT}!R16G16B16A16\_UINT@{R16G16B16A16\_UINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a9e1fb7eae42b4f0b636e6bde9a33cf4b}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a9e1fb7eae42b4f0b636e6bde9a33cf4b} 
+R16\+G16\+B16\+A16\+\_\+\+UINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R32\_UINT@{R32\_UINT}!FCT@{FCT}}\index{FCT@{FCT}!R32\_UINT@{R32\_UINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4af010bb9e5a699e4cb9c80b2f5d982218}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4af010bb9e5a699e4cb9c80b2f5d982218} 
+R32\+\_\+\+UINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R32G32\_UINT@{R32G32\_UINT}!FCT@{FCT}}\index{FCT@{FCT}!R32G32\_UINT@{R32G32\_UINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ad0a8fa71e3197bbf9b23d6d93235f3ca}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ad0a8fa71e3197bbf9b23d6d93235f3ca} 
+R32\+G32\+\_\+\+UINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R32G32B32\_UINT@{R32G32B32\_UINT}!FCT@{FCT}}\index{FCT@{FCT}!R32G32B32\_UINT@{R32G32B32\_UINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a8a0c94872edade84a5320f3cb31ac6a8}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a8a0c94872edade84a5320f3cb31ac6a8} 
+R32\+G32\+B32\+\_\+\+UINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R32G32B32A32\_UINT@{R32G32B32A32\_UINT}!FCT@{FCT}}\index{FCT@{FCT}!R32G32B32A32\_UINT@{R32G32B32A32\_UINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a0b993e1cc925013e7f5aff710f0033e9}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a0b993e1cc925013e7f5aff710f0033e9} 
+R32\+G32\+B32\+A32\+\_\+\+UINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R32\_SFLOAT@{R32\_SFLOAT}!FCT@{FCT}}\index{FCT@{FCT}!R32\_SFLOAT@{R32\_SFLOAT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a345ce98ef1d75d250f01f84e05767f7b}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a345ce98ef1d75d250f01f84e05767f7b} 
+R32\+\_\+\+SFLOAT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R32G32\_SFLOAT@{R32G32\_SFLOAT}!FCT@{FCT}}\index{FCT@{FCT}!R32G32\_SFLOAT@{R32G32\_SFLOAT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ae3592aada13e620eeaa18d929ee3802e}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4ae3592aada13e620eeaa18d929ee3802e} 
+R32\+G32\+\_\+\+SFLOAT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R32G32B32\_SFLOAT@{R32G32B32\_SFLOAT}!FCT@{FCT}}\index{FCT@{FCT}!R32G32B32\_SFLOAT@{R32G32B32\_SFLOAT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a122d94426d820038b87e45b4dc694862}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a122d94426d820038b87e45b4dc694862} 
+R32\+G32\+B32\+\_\+\+SFLOAT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R32G32B32A32\_SFLOAT@{R32G32B32A32\_SFLOAT}!FCT@{FCT}}\index{FCT@{FCT}!R32G32B32A32\_SFLOAT@{R32G32B32A32\_SFLOAT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a0590997a0c78c9b9dae9f8dacb962b15}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a0590997a0c78c9b9dae9f8dacb962b15} 
+R32\+G32\+B32\+A32\+\_\+\+SFLOAT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D16\_UNORM@{D16\_UNORM}!FCT@{FCT}}\index{FCT@{FCT}!D16\_UNORM@{D16\_UNORM}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a03e5886d3d7216eed4f577937132b20f}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a03e5886d3d7216eed4f577937132b20f} 
+D16\+\_\+\+UNORM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D24\_UNORM\_S8\_UINT@{D24\_UNORM\_S8\_UINT}!FCT@{FCT}}\index{FCT@{FCT}!D24\_UNORM\_S8\_UINT@{D24\_UNORM\_S8\_UINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4aa6dc4e4319b85984a4ab81ae89949f88}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4aa6dc4e4319b85984a4ab81ae89949f88} 
+D24\+\_\+\+UNORM\+\_\+\+S8\+\_\+\+UINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D32\_SFLOAT@{D32\_SFLOAT}!FCT@{FCT}}\index{FCT@{FCT}!D32\_SFLOAT@{D32\_SFLOAT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a23a4ce33815655871d103d3071d91072}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a23a4ce33815655871d103d3071d91072} 
+D32\+\_\+\+SFLOAT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D32\_SFLOAT\_S8\_UINT@{D32\_SFLOAT\_S8\_UINT}!FCT@{FCT}}\index{FCT@{FCT}!D32\_SFLOAT\_S8\_UINT@{D32\_SFLOAT\_S8\_UINT}}}\Hypertarget{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a37607c17eb1a7e0092e2c2dac3c072ea}\label{namespace_f_c_t_a0741721dca246274b1b72d07249443e4a37607c17eb1a7e0092e2c2dac3c072ea} 
+D32\+\_\+\+SFLOAT\+\_\+\+S8\+\_\+\+UINT&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+在文件 \mbox{\hyperlink{_type_2_format_8h_source}{Format.\+h}} 第 \mbox{\hyperlink{_type_2_format_8h_source_l00005}{5}} 行定义.
 
 \Hypertarget{namespace_f_c_t_a47e9731b33c8a4c56b7219874f2cd3a4}\index{FCT@{FCT}!FrontFace@{FrontFace}}
 \index{FrontFace@{FrontFace}!FCT@{FCT}}
@@ -1705,7 +2430,7 @@ Texture&\\
 \end{DoxyEnumFields}
 
 
-在文件 \mbox{\hyperlink{_r_h_i_2_image_8h_source}{Image.\+h}} 第 \mbox{\hyperlink{_r_h_i_2_image_8h_source_l00012}{12}} 行定义.
+在文件 \mbox{\hyperlink{_flags_8h_source}{Flags.\+h}} 第 \mbox{\hyperlink{_flags_8h_source_l00108}{108}} 行定义.
 
 \Hypertarget{namespace_f_c_t_a819fbd2d7d7097dac44202134baccf09}\index{FCT@{FCT}!JobType@{JobType}}
 \index{JobType@{JobType}!FCT@{FCT}}
@@ -1913,7 +2638,7 @@ Dependency&\\
 \end{DoxyEnumFields}
 
 
-在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00033}{33}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00036}{36}} 行定义.
 
 \Hypertarget{namespace_f_c_t_a0100ef6b5595f1c6e1ca08fb82dc0f67}\index{FCT@{FCT}!PipelineResourceType@{PipelineResourceType}}
 \index{PipelineResourceType@{PipelineResourceType}!FCT@{FCT}}
@@ -1981,7 +2706,7 @@ Viewport\+State&\\
 \end{DoxyEnumFields}
 
 
-在文件 \mbox{\hyperlink{_i_pipeline_resource_8h_source}{IPipeline\+Resource.\+h}} 第 \mbox{\hyperlink{_i_pipeline_resource_8h_source_l00004}{4}} 行定义.
+在文件 \mbox{\hyperlink{_i_pipeline_resource_8h_source}{IPipeline\+Resource.\+h}} 第 \mbox{\hyperlink{_i_pipeline_resource_8h_source_l00005}{5}} 行定义.
 
 \Hypertarget{namespace_f_c_t_a02e39e190de7cba24375f441d807cccc}\index{FCT@{FCT}!PipelineType@{PipelineType}}
 \index{PipelineType@{PipelineType}!FCT@{FCT}}
@@ -2069,7 +2794,7 @@ Resource&\\
 \end{DoxyEnumFields}
 
 
-在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00014}{14}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00017}{17}} 行定义.
 
 \Hypertarget{namespace_f_c_t_a1f1ccd6c8741cf55008c982f25b9bf2b}\index{FCT@{FCT}!RenderTargetType@{RenderTargetType}}
 \index{RenderTargetType@{RenderTargetType}!FCT@{FCT}}
@@ -2109,11 +2834,11 @@ Parent\+Child&\\
 \end{DoxyEnumFields}
 
 
-在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00045}{45}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00048}{48}} 行定义.
 
 \Hypertarget{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182}\index{FCT@{FCT}!Samples@{Samples}}
 \index{Samples@{Samples}!FCT@{FCT}}
-\doxysubsubsection{\texorpdfstring{Samples}{Samples}}
+\doxysubsubsection{\texorpdfstring{Samples}{Samples}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily \label{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182} 
 enum class \mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182}{FCT\+::\+Samples}}\hspace{0.3cm}{\ttfamily [strong]}}
 
@@ -2146,10 +2871,106 @@ sample\+\_\+16&\\
 sample\+\_\+32&\\
 \hline
 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{sample\_undefined@{sample\_undefined}!FCT@{FCT}}\index{FCT@{FCT}!sample\_undefined@{sample\_undefined}}}\Hypertarget{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a1f5d8e7e094ddab8199dc672aaba3e23}\label{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a1f5d8e7e094ddab8199dc672aaba3e23} 
+sample\+\_\+undefined&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{sample\_1@{sample\_1}!FCT@{FCT}}\index{FCT@{FCT}!sample\_1@{sample\_1}}}\Hypertarget{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182af16981b72c70cf9ef716f38b848c5cf0}\label{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182af16981b72c70cf9ef716f38b848c5cf0} 
+sample\+\_\+1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{sample\_2@{sample\_2}!FCT@{FCT}}\index{FCT@{FCT}!sample\_2@{sample\_2}}}\Hypertarget{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a4a2f0f9aee216a77ce0a1c55396073f0}\label{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a4a2f0f9aee216a77ce0a1c55396073f0} 
+sample\+\_\+2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{sample\_4@{sample\_4}!FCT@{FCT}}\index{FCT@{FCT}!sample\_4@{sample\_4}}}\Hypertarget{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a7f24c693aa391ce14aaa8d4298d03497}\label{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a7f24c693aa391ce14aaa8d4298d03497} 
+sample\+\_\+4&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{sample\_8@{sample\_8}!FCT@{FCT}}\index{FCT@{FCT}!sample\_8@{sample\_8}}}\Hypertarget{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a3a9912db03f28e61f3ce2c31a7d1d8b8}\label{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a3a9912db03f28e61f3ce2c31a7d1d8b8} 
+sample\+\_\+8&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{sample\_16@{sample\_16}!FCT@{FCT}}\index{FCT@{FCT}!sample\_16@{sample\_16}}}\Hypertarget{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a898482ee38ed8c708655bc52bbbfd177}\label{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a898482ee38ed8c708655bc52bbbfd177} 
+sample\+\_\+16&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{sample\_32@{sample\_32}!FCT@{FCT}}\index{FCT@{FCT}!sample\_32@{sample\_32}}}\Hypertarget{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a4624653fd55ddea32e7d03ac6335b651}\label{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a4624653fd55ddea32e7d03ac6335b651} 
+sample\+\_\+32&\\
+\hline
+
 \end{DoxyEnumFields}
 
 
-在文件 \mbox{\hyperlink{_format_8h_source}{Format.\+h}} 第 \mbox{\hyperlink{_format_8h_source_l00218}{218}} 行定义.
+在文件 \mbox{\hyperlink{_context_2_format_8h_source}{Format.\+h}} 第 \mbox{\hyperlink{_context_2_format_8h_source_l00218}{218}} 行定义.
+
+\Hypertarget{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182}\index{FCT@{FCT}!Samples@{Samples}}
+\index{Samples@{Samples}!FCT@{FCT}}
+\doxysubsubsection{\texorpdfstring{Samples}{Samples}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182} 
+enum class \mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182}{FCT\+::\+Samples}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}[2]{枚举值}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{sample\_undefined@{sample\_undefined}!FCT@{FCT}}\index{FCT@{FCT}!sample\_undefined@{sample\_undefined}}}\Hypertarget{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a1f5d8e7e094ddab8199dc672aaba3e23}\label{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a1f5d8e7e094ddab8199dc672aaba3e23} 
+sample\+\_\+undefined&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{sample\_1@{sample\_1}!FCT@{FCT}}\index{FCT@{FCT}!sample\_1@{sample\_1}}}\Hypertarget{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182af16981b72c70cf9ef716f38b848c5cf0}\label{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182af16981b72c70cf9ef716f38b848c5cf0} 
+sample\+\_\+1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{sample\_2@{sample\_2}!FCT@{FCT}}\index{FCT@{FCT}!sample\_2@{sample\_2}}}\Hypertarget{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a4a2f0f9aee216a77ce0a1c55396073f0}\label{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a4a2f0f9aee216a77ce0a1c55396073f0} 
+sample\+\_\+2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{sample\_4@{sample\_4}!FCT@{FCT}}\index{FCT@{FCT}!sample\_4@{sample\_4}}}\Hypertarget{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a7f24c693aa391ce14aaa8d4298d03497}\label{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a7f24c693aa391ce14aaa8d4298d03497} 
+sample\+\_\+4&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{sample\_8@{sample\_8}!FCT@{FCT}}\index{FCT@{FCT}!sample\_8@{sample\_8}}}\Hypertarget{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a3a9912db03f28e61f3ce2c31a7d1d8b8}\label{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a3a9912db03f28e61f3ce2c31a7d1d8b8} 
+sample\+\_\+8&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{sample\_16@{sample\_16}!FCT@{FCT}}\index{FCT@{FCT}!sample\_16@{sample\_16}}}\Hypertarget{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a898482ee38ed8c708655bc52bbbfd177}\label{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a898482ee38ed8c708655bc52bbbfd177} 
+sample\+\_\+16&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{sample\_32@{sample\_32}!FCT@{FCT}}\index{FCT@{FCT}!sample\_32@{sample\_32}}}\Hypertarget{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a4624653fd55ddea32e7d03ac6335b651}\label{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a4624653fd55ddea32e7d03ac6335b651} 
+sample\+\_\+32&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{sample\_undefined@{sample\_undefined}!FCT@{FCT}}\index{FCT@{FCT}!sample\_undefined@{sample\_undefined}}}\Hypertarget{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a1f5d8e7e094ddab8199dc672aaba3e23}\label{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a1f5d8e7e094ddab8199dc672aaba3e23} 
+sample\+\_\+undefined&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{sample\_1@{sample\_1}!FCT@{FCT}}\index{FCT@{FCT}!sample\_1@{sample\_1}}}\Hypertarget{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182af16981b72c70cf9ef716f38b848c5cf0}\label{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182af16981b72c70cf9ef716f38b848c5cf0} 
+sample\+\_\+1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{sample\_2@{sample\_2}!FCT@{FCT}}\index{FCT@{FCT}!sample\_2@{sample\_2}}}\Hypertarget{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a4a2f0f9aee216a77ce0a1c55396073f0}\label{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a4a2f0f9aee216a77ce0a1c55396073f0} 
+sample\+\_\+2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{sample\_4@{sample\_4}!FCT@{FCT}}\index{FCT@{FCT}!sample\_4@{sample\_4}}}\Hypertarget{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a7f24c693aa391ce14aaa8d4298d03497}\label{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a7f24c693aa391ce14aaa8d4298d03497} 
+sample\+\_\+4&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{sample\_8@{sample\_8}!FCT@{FCT}}\index{FCT@{FCT}!sample\_8@{sample\_8}}}\Hypertarget{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a3a9912db03f28e61f3ce2c31a7d1d8b8}\label{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a3a9912db03f28e61f3ce2c31a7d1d8b8} 
+sample\+\_\+8&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{sample\_16@{sample\_16}!FCT@{FCT}}\index{FCT@{FCT}!sample\_16@{sample\_16}}}\Hypertarget{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a898482ee38ed8c708655bc52bbbfd177}\label{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a898482ee38ed8c708655bc52bbbfd177} 
+sample\+\_\+16&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{sample\_32@{sample\_32}!FCT@{FCT}}\index{FCT@{FCT}!sample\_32@{sample\_32}}}\Hypertarget{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a4624653fd55ddea32e7d03ac6335b651}\label{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a4624653fd55ddea32e7d03ac6335b651} 
+sample\+\_\+32&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+在文件 \mbox{\hyperlink{_type_2_format_8h_source}{Format.\+h}} 第 \mbox{\hyperlink{_type_2_format_8h_source_l00218}{218}} 行定义.
 
 \Hypertarget{namespace_f_c_t_a99b96afabbbc9a9b5093989877721193}\index{FCT@{FCT}!ShaderKind@{ShaderKind}}
 \index{ShaderKind@{ShaderKind}!FCT@{FCT}}
@@ -2361,7 +3182,7 @@ Dynamic&\\
 \end{DoxyEnumFields}
 
 
-在文件 \mbox{\hyperlink{_uniform_8h_source}{Uniform.\+h}} 第 \mbox{\hyperlink{_uniform_8h_source_l00220}{220}} 行定义.
+在文件 \mbox{\hyperlink{_data_types_8h_source}{Data\+Types.\+h}} 第 \mbox{\hyperlink{_data_types_8h_source_l00009}{9}} 行定义.
 
 \Hypertarget{namespace_f_c_t_aa946ca9a7d9318f0c9a8e49b9df96b06}\index{FCT@{FCT}!VtxType@{VtxType}}
 \index{VtxType@{VtxType}!FCT@{FCT}}
@@ -2527,7 +3348,7 @@ size\+\_\+t FCT\+::\+Format\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperli
 
 
 
-在文件 \mbox{\hyperlink{_format_8h_source}{Format.\+h}} 第 \mbox{\hyperlink{_format_8h_source_l00139}{139}} 行定义.
+在文件 \mbox{\hyperlink{_context_2_format_8h_source}{Format.\+h}} 第 \mbox{\hyperlink{_context_2_format_8h_source_l00139}{139}} 行定义.
 
 \Hypertarget{namespace_f_c_t_a7c588ec4852a371fb43f92e23a29cc02}\index{FCT@{FCT}!FormatToShaderType@{FormatToShaderType}}
 \index{FormatToShaderType@{FormatToShaderType}!FCT@{FCT}}
@@ -2537,7 +3358,7 @@ const char \texorpdfstring{$\ast$}{*} FCT\+::\+Format\+To\+Shader\+Type (\begin{
 
 
 
-在文件 \mbox{\hyperlink{_format_8h_source}{Format.\+h}} 第 \mbox{\hyperlink{_format_8h_source_l00059}{59}} 行定义.
+在文件 \mbox{\hyperlink{_context_2_format_8h_source}{Format.\+h}} 第 \mbox{\hyperlink{_context_2_format_8h_source_l00059}{59}} 行定义.
 
 \Hypertarget{namespace_f_c_t_aae307910da6496d22fde7dd730866662}\index{FCT@{FCT}!FromVkFormat@{FromVkFormat}}
 \index{FromVkFormat@{FromVkFormat}!FCT@{FCT}}
@@ -2547,7 +3368,7 @@ const char \texorpdfstring{$\ast$}{*} FCT\+::\+Format\+To\+Shader\+Type (\begin{
 
 
 
-在文件 \mbox{\hyperlink{_format_8h_source}{Format.\+h}} 第 \mbox{\hyperlink{_format_8h_source_l00365}{365}} 行定义.
+在文件 \mbox{\hyperlink{_context_2_format_8h_source}{Format.\+h}} 第 \mbox{\hyperlink{_context_2_format_8h_source_l00365}{365}} 行定义.
 
 \Hypertarget{namespace_f_c_t_aca9bd39a1b41ac4770fe2f4c8053dcbd}\index{FCT@{FCT}!FromVkSampleCount@{FromVkSampleCount}}
 \index{FromVkSampleCount@{FromVkSampleCount}!FCT@{FCT}}
@@ -2557,7 +3378,7 @@ const char \texorpdfstring{$\ast$}{*} FCT\+::\+Format\+To\+Shader\+Type (\begin{
 
 
 
-在文件 \mbox{\hyperlink{_format_8h_source}{Format.\+h}} 第 \mbox{\hyperlink{_format_8h_source_l00248}{248}} 行定义.
+在文件 \mbox{\hyperlink{_context_2_format_8h_source}{Format.\+h}} 第 \mbox{\hyperlink{_context_2_format_8h_source_l00248}{248}} 行定义.
 
 \Hypertarget{namespace_f_c_t_af7f179f72a01d8c70c2f5d7b929ea9b5}\index{FCT@{FCT}!GetDataTypeName@{GetDataTypeName}}
 \index{GetDataTypeName@{GetDataTypeName}!FCT@{FCT}}
@@ -2818,7 +3639,7 @@ vk\+::\+Format FCT\+::\+To\+Vk\+Format (\begin{DoxyParamCaption}\item[{\mbox{\hy
 
 
 
-在文件 \mbox{\hyperlink{_format_8h_source}{Format.\+h}} 第 \mbox{\hyperlink{_format_8h_source_l00268}{268}} 行定义.
+在文件 \mbox{\hyperlink{_context_2_format_8h_source}{Format.\+h}} 第 \mbox{\hyperlink{_context_2_format_8h_source_l00268}{268}} 行定义.
 
 \Hypertarget{namespace_f_c_t_a630511e4e6f1b069a65ce7439723da72}\index{FCT@{FCT}!ToVkSampleCount@{ToVkSampleCount}}
 \index{ToVkSampleCount@{ToVkSampleCount}!FCT@{FCT}}
@@ -2828,7 +3649,7 @@ vk\+::\+Sample\+Count\+Flag\+Bits FCT\+::\+To\+Vk\+Sample\+Count (\begin{DoxyPar
 
 
 
-在文件 \mbox{\hyperlink{_format_8h_source}{Format.\+h}} 第 \mbox{\hyperlink{_format_8h_source_l00229}{229}} 行定义.
+在文件 \mbox{\hyperlink{_context_2_format_8h_source}{Format.\+h}} 第 \mbox{\hyperlink{_context_2_format_8h_source_l00229}{229}} 行定义.
 
 
 
@@ -2951,7 +3772,7 @@ const char\texorpdfstring{$\ast$}{*} FCT\+::\+Render\+Graph\+Excute\+Pass\+Submi
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00098}{98}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00094}{94}} 行定义.
 
 \Hypertarget{namespace_f_c_t_a7bd85aff3c2babcf1441a80ec00e70e4}\index{FCT@{FCT}!RenderGraphSubmitTickerName@{RenderGraphSubmitTickerName}}
 \index{RenderGraphSubmitTickerName@{RenderGraphSubmitTickerName}!FCT@{FCT}}
@@ -2961,7 +3782,7 @@ const char\texorpdfstring{$\ast$}{*} FCT\+::\+Render\+Graph\+Submit\+Ticker\+Nam
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00097}{97}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00093}{93}} 行定义.
 
 \Hypertarget{namespace_f_c_t_a3bec92bc39d2c90a357c13c4874e5e24}\index{FCT@{FCT}!RenderGraphSyncTicker\_SwapJobQueueName@{RenderGraphSyncTicker\_SwapJobQueueName}}
 \index{RenderGraphSyncTicker\_SwapJobQueueName@{RenderGraphSyncTicker\_SwapJobQueueName}!FCT@{FCT}}
@@ -2971,7 +3792,7 @@ const char\texorpdfstring{$\ast$}{*} FCT\+::\+Render\+Graph\+Sync\+Ticker\+\_\+\
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00100}{100}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00096}{96}} 行定义.
 
 \Hypertarget{namespace_f_c_t_a060d175d28f74076dcd676729d55a8e3}\index{FCT@{FCT}!SingleChunkObjectNums@{SingleChunkObjectNums}}
 \index{SingleChunkObjectNums@{SingleChunkObjectNums}!FCT@{FCT}}
@@ -2991,7 +3812,7 @@ const char\texorpdfstring{$\ast$}{*} FCT\+::\+Swap\+Buffer\+Submit\+Ticker = "{}
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00099}{99}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00095}{95}} 行定义.
 
 \Hypertarget{namespace_f_c_t_a7186c70e83eacf0988cfd2ab42e8050f}\index{FCT@{FCT}!VertexCommand\_ArcTo@{VertexCommand\_ArcTo}}
 \index{VertexCommand\_ArcTo@{VertexCommand\_ArcTo}!FCT@{FCT}}
@@ -3001,7 +3822,7 @@ float FCT\+::\+Vertex\+Command\+\_\+\+Arc\+To = 6.\+0\hspace{0.3cm}{\ttfamily [c
 
 
 
-在文件 \mbox{\hyperlink{_vertex_path_8h_source}{Vertex\+Path.\+h}} 第 \mbox{\hyperlink{_vertex_path_8h_source_l00015}{15}} 行定义.
+在文件 \mbox{\hyperlink{_vertex_path_8h_source}{Vertex\+Path.\+h}} 第 \mbox{\hyperlink{_vertex_path_8h_source_l00016}{16}} 行定义.
 
 \Hypertarget{namespace_f_c_t_aea93dba39e20bf367a3d5c9af2f05563}\index{FCT@{FCT}!VertexCommand\_BeginPath@{VertexCommand\_BeginPath}}
 \index{VertexCommand\_BeginPath@{VertexCommand\_BeginPath}!FCT@{FCT}}
@@ -3011,7 +3832,7 @@ float FCT\+::\+Vertex\+Command\+\_\+\+Begin\+Path = 7.\+0\hspace{0.3cm}{\ttfamil
 
 
 
-在文件 \mbox{\hyperlink{_vertex_path_8h_source}{Vertex\+Path.\+h}} 第 \mbox{\hyperlink{_vertex_path_8h_source_l00017}{17}} 行定义.
+在文件 \mbox{\hyperlink{_vertex_path_8h_source}{Vertex\+Path.\+h}} 第 \mbox{\hyperlink{_vertex_path_8h_source_l00018}{18}} 行定义.
 
 \Hypertarget{namespace_f_c_t_a9e95124674bfc7bac5798d5930b784ba}\index{FCT@{FCT}!VertexCommand\_BezierCurveTo@{VertexCommand\_BezierCurveTo}}
 \index{VertexCommand\_BezierCurveTo@{VertexCommand\_BezierCurveTo}!FCT@{FCT}}
@@ -3021,7 +3842,7 @@ float FCT\+::\+Vertex\+Command\+\_\+\+Bezier\+Curve\+To = 3.\+0\hspace{0.3cm}{\t
 
 
 
-在文件 \mbox{\hyperlink{_vertex_path_8h_source}{Vertex\+Path.\+h}} 第 \mbox{\hyperlink{_vertex_path_8h_source_l00013}{13}} 行定义.
+在文件 \mbox{\hyperlink{_vertex_path_8h_source}{Vertex\+Path.\+h}} 第 \mbox{\hyperlink{_vertex_path_8h_source_l00014}{14}} 行定义.
 
 \Hypertarget{namespace_f_c_t_a92ac38c495f3786ade2746ad9611fae5}\index{FCT@{FCT}!VertexCommand\_End@{VertexCommand\_End}}
 \index{VertexCommand\_End@{VertexCommand\_End}!FCT@{FCT}}
@@ -3031,7 +3852,7 @@ float FCT\+::\+Vertex\+Command\+\_\+\+End = -\/1.\+0\hspace{0.3cm}{\ttfamily [co
 
 
 
-在文件 \mbox{\hyperlink{_vertex_path_8h_source}{Vertex\+Path.\+h}} 第 \mbox{\hyperlink{_vertex_path_8h_source_l00010}{10}} 行定义.
+在文件 \mbox{\hyperlink{_vertex_path_8h_source}{Vertex\+Path.\+h}} 第 \mbox{\hyperlink{_vertex_path_8h_source_l00011}{11}} 行定义.
 
 \Hypertarget{namespace_f_c_t_a782c95bb6c3248b8611fd33f83a093ca}\index{FCT@{FCT}!VertexCommand\_EndPath@{VertexCommand\_EndPath}}
 \index{VertexCommand\_EndPath@{VertexCommand\_EndPath}!FCT@{FCT}}
@@ -3041,7 +3862,7 @@ float FCT\+::\+Vertex\+Command\+\_\+\+End\+Path = 8.\+0\hspace{0.3cm}{\ttfamily 
 
 
 
-在文件 \mbox{\hyperlink{_vertex_path_8h_source}{Vertex\+Path.\+h}} 第 \mbox{\hyperlink{_vertex_path_8h_source_l00018}{18}} 行定义.
+在文件 \mbox{\hyperlink{_vertex_path_8h_source}{Vertex\+Path.\+h}} 第 \mbox{\hyperlink{_vertex_path_8h_source_l00019}{19}} 行定义.
 
 \Hypertarget{namespace_f_c_t_a05b95a0724e561f0b2a1b8aaf9d20c22}\index{FCT@{FCT}!VertexCommand\_LineTo@{VertexCommand\_LineTo}}
 \index{VertexCommand\_LineTo@{VertexCommand\_LineTo}!FCT@{FCT}}
@@ -3051,7 +3872,7 @@ float FCT\+::\+Vertex\+Command\+\_\+\+Line\+To = 2.\+0\hspace{0.3cm}{\ttfamily [
 
 
 
-在文件 \mbox{\hyperlink{_vertex_path_8h_source}{Vertex\+Path.\+h}} 第 \mbox{\hyperlink{_vertex_path_8h_source_l00012}{12}} 行定义.
+在文件 \mbox{\hyperlink{_vertex_path_8h_source}{Vertex\+Path.\+h}} 第 \mbox{\hyperlink{_vertex_path_8h_source_l00013}{13}} 行定义.
 
 \Hypertarget{namespace_f_c_t_a746b29002cdb00f413b48e6cfa64ef41}\index{FCT@{FCT}!VertexCommand\_MoveTo@{VertexCommand\_MoveTo}}
 \index{VertexCommand\_MoveTo@{VertexCommand\_MoveTo}!FCT@{FCT}}
@@ -3061,7 +3882,7 @@ float FCT\+::\+Vertex\+Command\+\_\+\+Move\+To = 1.\+0\hspace{0.3cm}{\ttfamily [
 
 
 
-在文件 \mbox{\hyperlink{_vertex_path_8h_source}{Vertex\+Path.\+h}} 第 \mbox{\hyperlink{_vertex_path_8h_source_l00011}{11}} 行定义.
+在文件 \mbox{\hyperlink{_vertex_path_8h_source}{Vertex\+Path.\+h}} 第 \mbox{\hyperlink{_vertex_path_8h_source_l00012}{12}} 行定义.
 
 \Hypertarget{namespace_f_c_t_ae4223c5fe723050691f8cbe9f041bad8}\index{FCT@{FCT}!VertexCommand\_SetColor@{VertexCommand\_SetColor}}
 \index{VertexCommand\_SetColor@{VertexCommand\_SetColor}!FCT@{FCT}}
@@ -3071,7 +3892,7 @@ float FCT\+::\+Vertex\+Command\+\_\+\+Set\+Color = 4.\+0\hspace{0.3cm}{\ttfamily
 
 
 
-在文件 \mbox{\hyperlink{_vertex_path_8h_source}{Vertex\+Path.\+h}} 第 \mbox{\hyperlink{_vertex_path_8h_source_l00014}{14}} 行定义.
+在文件 \mbox{\hyperlink{_vertex_path_8h_source}{Vertex\+Path.\+h}} 第 \mbox{\hyperlink{_vertex_path_8h_source_l00015}{15}} 行定义.
 
 \Hypertarget{namespace_f_c_t_af4e7b95fc2f5c2daad7e127ae9549e99}\index{FCT@{FCT}!VertexCommand\_SetTransform@{VertexCommand\_SetTransform}}
 \index{VertexCommand\_SetTransform@{VertexCommand\_SetTransform}!FCT@{FCT}}
@@ -3081,5 +3902,5 @@ float FCT\+::\+Vertex\+Command\+\_\+\+Set\+Transform = 5.\+0\hspace{0.3cm}{\ttfa
 
 
 
-在文件 \mbox{\hyperlink{_vertex_path_8h_source}{Vertex\+Path.\+h}} 第 \mbox{\hyperlink{_vertex_path_8h_source_l00016}{16}} 行定义.
+在文件 \mbox{\hyperlink{_vertex_path_8h_source}{Vertex\+Path.\+h}} 第 \mbox{\hyperlink{_vertex_path_8h_source_l00017}{17}} 行定义.
 

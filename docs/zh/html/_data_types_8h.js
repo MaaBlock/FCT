@@ -21,6 +21,12 @@ var _data_types_8h =
       [ "FCT::DataType::BVec3", "namespace_f_c_t.html#a230e974c7c1f163f1dec4530a2e3239ca8e8e5975ff19fd76f71a60d5c8212aec", null ],
       [ "FCT::DataType::BVec4", "namespace_f_c_t.html#a230e974c7c1f163f1dec4530a2e3239ca887a98416b52570eced35aad39c2e00e", null ]
     ] ],
+    [ "FCT::UpdateFrequency", "namespace_f_c_t.html#a0236e673f1b6fe9736bc596d7e50dc7e", [
+      [ "FCT::UpdateFrequency::Static", "namespace_f_c_t.html#a0236e673f1b6fe9736bc596d7e50dc7ea84a8921b25f505d0d2077aeb5db4bc16", null ],
+      [ "FCT::UpdateFrequency::PerFrame", "namespace_f_c_t.html#a0236e673f1b6fe9736bc596d7e50dc7ea5ac98a9f1bddc1b15896f0e02bf06839", null ],
+      [ "FCT::UpdateFrequency::PerObject", "namespace_f_c_t.html#a0236e673f1b6fe9736bc596d7e50dc7eaa550e0dc6bbc206ba5f88a05963a9773", null ],
+      [ "FCT::UpdateFrequency::Dynamic", "namespace_f_c_t.html#a0236e673f1b6fe9736bc596d7e50dc7ea971fd8cc345d8bd9f92e9f7d88fdf20c", null ]
+    ] ],
     [ "FCT::GetDataTypeName", "namespace_f_c_t.html#af7f179f72a01d8c70c2f5d7b929ea9b5", null ],
     [ "FCT::GetDataTypeSize", "namespace_f_c_t.html#a97569083cdf723d2ca8d5d0d652f0b2a", null ]
 ];
