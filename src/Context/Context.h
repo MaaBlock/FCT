@@ -108,7 +108,10 @@ namespace FCT
 	class Runtime;
 	namespace ContextEvent
 	{
-
+		struct WindowBind
+		{
+			Window* window;
+		};
 	}
 	class Context : public RefCount,public IEventSystem<EventSystemConfig::TriggerOnly>
 	{

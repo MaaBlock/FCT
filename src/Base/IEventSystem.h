@@ -22,6 +22,7 @@ namespace FCT
             static constexpr bool EnableTrigger = true;
         };
     }
+    using SubscribeId = entt::connection;
     template<typename Config = EventSystemConfig::Full>
     class IEventSystem {
     protected:
@@ -55,9 +56,19 @@ namespace FCT
         }
 
         template<typename Event, typename Func>
-        void subscribe(Func&& func) {
-            m_dispatcher.sink<Event>().connect(std::forward<Func>(func));
+        SubscribeId subscribe(Func&& func) {
+            return m_dispatcher.sink<Event>().connect(std::forward<Func>(func));
         }
-    };;
+
+        template<typename Event>
+        void unsubscribe(SubscribeId& conn) {
+            m_dispatcher.sink<Event>().disconnect(conn);
+        }
+
+        template<typename Event>
+        void unsubscribeAll() {
+            m_dispatcher.sink<Event>().disconnect();
+        }
+	};
 }
 #endif //EVENTSYSTEM_H
