@@ -32,7 +32,7 @@
 #include "./Device.h"
 #include "Mesh.h"
 #include "../Base/TokenGraph.h"
-#include "../Base/EventSystem.h"
+#include "../Base/IEventSystem.h"
 namespace FCT
 {
 	class RasterizationState;
@@ -106,6 +106,10 @@ namespace FCT
 	 *		if you want to
 	 */
 	class Runtime;
+	namespace ContextEvent
+	{
+
+	}
 	class Context : public RefCount,public IEventSystem<EventSystemConfig::TriggerOnly>
 	{
 	protected:
