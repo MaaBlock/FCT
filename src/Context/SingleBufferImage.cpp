@@ -60,7 +60,7 @@ namespace FCT
 
     void SingleBufferImage::as(ImageUsageFlags usage) {
         if (usage & ImageUsage::RenderTarget && !m_rtv) {
-            m_rtv = m_ctx->createRenderTargetView();
+            m_rtv = m_ctx->createResource<RHI::RenderTargetView>();
             m_rtv->image(m_image);
             m_rtv->create();
         }

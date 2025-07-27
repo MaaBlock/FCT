@@ -12,12 +12,7 @@ namespace FCT {
     public:
         VK_Context(VK_ContextCommon* common);
         ~VK_Context() override;
-        void clear(float r, float g, float b) override;
-
-        void viewport(int x, int y, int width, int height) override;
-        RasterizationState* createRasterizationState() override;
         RHI::RasterizationPipeline* createTraditionPipeline() override;
-        RHI::RenderTargetView* createRenderTargetView() override;
         //void create(IRenderTarget* target) override;
         uint32_t findMemoryType(uint32_t typeFilter, vk::MemoryPropertyFlags properties);
         void create();

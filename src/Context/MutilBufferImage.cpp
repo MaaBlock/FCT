@@ -151,7 +151,7 @@ namespace FCT
         {
             for (auto img : m_images)
             {
-                auto rtv = m_ctx->createRenderTargetView();
+                auto rtv = m_ctx->createResource<RHI::RenderTargetView>();
                 rtv->image(img);
                 rtv->create();
                 m_rtvs.push_back(rtv);

@@ -38,6 +38,8 @@ namespace FCT {
         PassResource* newPassResource() override;
         SemaphorePool* newSemaphorePool() override;
         FencePool* newFencePool() override;
+        RHI::RenderTargetView* newRhiRenderTargetView() override;
+        RasterizationState* newRasterizationState() override;
     };
 }
 #endif //VK_DEVICE_H

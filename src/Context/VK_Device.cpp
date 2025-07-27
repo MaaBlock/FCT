@@ -21,8 +21,10 @@
 #include "../RHI/VK_VertexBuffer.h"
 #include "../RHI/VK_IndexBuffer.h"
 #include "../RHI/VK_DescriptorPool.h"
+#include "../RHI/VK_RenderTargetView.h"
 #include "../RHI/VK_DepthStencilView.h"
 #include "../RHI/VK_TextureView.h"
+#include "../RHI/VK_RasterizationState.h"
 #include "../RHI/VK_BlendState.h"
 #include "../RHI/VK_Sampler.h"
 #include "./VK_PassResource.h"
@@ -159,5 +161,15 @@ namespace FCT
     FencePool* VK_Device::newFencePool()
     {
         return new VK_FencePool(m_ctx);
+    }
+
+    RHI::RenderTargetView* VK_Device::newRhiRenderTargetView()
+    {
+        return new RHI::VK_RenderTargetView(m_ctx);
+    }
+
+    RasterizationState* VK_Device::newRasterizationState()
+    {
+        return new VK_RasterizationState(m_ctx);
     }
 }

@@ -32,6 +32,7 @@
 #include "./Device.h"
 #include "Mesh.h"
 #include "../Base/TokenGraph.h"
+#include "../Base/EventSystem.h"
 namespace FCT
 {
 	class RasterizationState;
@@ -55,6 +56,7 @@ namespace FCT
 	class FencePool;
 	using SubmitTicker = std::function<void()>;
 	using SyncTicker = std::function<void()>;
+
 	using TickerToken = uint32_t;
 	struct FrameResource
 	{
@@ -104,15 +106,13 @@ namespace FCT
 	 *		if you want to
 	 */
 	class Runtime;
-	class Context : public RefCount
+	class Context : public RefCount,public IEventSystem<EventSystemConfig::TriggerOnly>
 	{
 	protected:
 		Device* m_resourceDevice;
 	public:
 		Context(Runtime* runtime);
 		virtual ~Context();
-		virtual void clear(float r, float g, float b) = 0;
-		virtual void viewport(int x, int y, int width, int height) = 0;
 		template <typename T>
 		T* createResource()
 		{
@@ -123,7 +123,6 @@ namespace FCT
 	protected:
 		ModelLoader* m_modelLoader;
 	public:
-		virtual RasterizationState* createRasterizationState() = 0;
 		StaticMesh<uint32_t>* createMesh(const ModelMesh* modelMesh, const VertexLayout& layout);
 		StaticMesh<uint32_t>* loadMesh(const std::string& filename,const std::string& meshName, const VertexLayout& layout);
 	protected:
@@ -138,7 +137,6 @@ namespace FCT
 			data->task = task;
 			m_logicTask.push(data);
 		}
-
 	public:
 		auto& syncTickers(){ return m_syncTickers; }
 		void flush()
@@ -174,10 +172,12 @@ namespace FCT
 		virtual void swapQueue();
 		void submitThread()
 		{
-
 			while (m_ctxRunning) {
 				FCT_WAIT_FOR(m_nextFrame);
-				tick();
+				auto order = m_submitTickers.order();
+				for (auto& ticker : order) {
+					ticker();
+				}
 				currentFlush();
 			}
 		}
@@ -185,19 +185,12 @@ namespace FCT
 		void defaultTick()
 		{
 		}
-		virtual RHI::RenderTargetView* createRenderTargetView() = 0;
+
 		void addBindWindow(Window* wnd)
 		{
 			m_bindWindows.push_back(wnd);
 			m_currentGraph->addWindowResource(wnd);
 			initWndFrameResources(wnd);
-		}
-		void tick()
-		{
-			auto order = m_submitTickers.order();
-			for (auto& ticker : order) {
-                ticker();
-            }
 		}
 		void createCompiler();
 		ShaderCompiler* getCompiler() { return m_compiler; }

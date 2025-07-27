@@ -7,12 +7,13 @@
 #include <type_traits>
 
 namespace FCT {
-    class PixelShader;
     class VertexShader;
+    class PixelShader;
     class Image;
     class SingleBufferImage;
     class MutilBufferImage;
     class DescriptorPool;
+    class RasterizationState;
     class BlendState;
     class Sampler;
     class PassResource;
@@ -34,10 +35,24 @@ namespace FCT {
         class VertexBuffer;
         class IndexBuffer;
         class DescriptorPool;
+        class RenderTargetView;
         class DepthStencilView;
         class TextureView;
     }
 
+    /**
+     * @cond CHINESE
+     * @brief 通过这个命名空间即可知道可以创建哪些资源
+     * @endcond
+     */
+    namespace ContextResource
+    {
+        using VertexShader = FCT::VertexShader;
+        using PixelShader = FCT::PixelShader;
+        using Image = FCT::Image;
+        using SingleBufferImage = FCT::SingleBufferImage;
+        using MutilBufferImage = FCT::MutilBufferImage;
+    }
 
     class Device
     {
@@ -61,8 +76,10 @@ namespace FCT {
         virtual RHI::VertexBuffer* newRhiVertexBuffer() = 0;
         virtual RHI::IndexBuffer* newRhiIndexBuffer() = 0;
         virtual RHI::DescriptorPool* newRhiDescriptorPool() = 0;
+        virtual RHI::RenderTargetView* newRhiRenderTargetView() = 0;
         virtual RHI::DepthStencilView* newRhiDepthStencilView() = 0;
         virtual RHI::TextureView* newRhiTextureView() = 0;
+        virtual RasterizationState* newRasterizationState() = 0;
         virtual BlendState* newBlendState() = 0;
         virtual Sampler* newSampler() = 0;
         virtual PassResource* newPassResource() = 0;
@@ -109,10 +126,14 @@ namespace FCT {
                 return newRhiIndexBuffer();
             else if constexpr (std::is_same_v<T, RHI::DescriptorPool>)
                 return newRhiDescriptorPool();
+            else if constexpr (std::is_same_v<T, RHI::RenderTargetView>)
+                return newRhiRenderTargetView();
             else if constexpr (std::is_same_v<T, RHI::DepthStencilView>)
                 return newRhiDepthStencilView();
             else if constexpr (std::is_same_v<T, RHI::TextureView>)
                 return newRhiTextureView();
+            else if constexpr (std::is_same_v<T, RasterizationState>)
+                return newRasterizationState();
             else if constexpr (std::is_same_v<T, BlendState>)
                 return newBlendState();
             else if constexpr (std::is_same_v<T, Sampler>)

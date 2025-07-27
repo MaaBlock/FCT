@@ -7,23 +7,12 @@
 VULKAN_HPP_DEFAULT_DISPATCH_LOADER_DYNAMIC_STORAGE
 namespace FCT
 {
-    void FCT::VK_Context::clear(float r, float g, float b) {
 
-    }
-
-    void VK_Context::viewport(int x, int y, int width, int height) {
-
-    }
 
 
     /*Material *VK_Context::createMaterial(VertexShader *vertexShader, PixelShader *pixelShader) {
         return nullptr;
     }*/
-
-    RasterizationState* VK_Context::createRasterizationState()
-    {
-        return new VK_RasterizationState(this);
-    }
 
     RHI::RasterizationPipeline* VK_Context::createTraditionPipeline()
     {
@@ -510,11 +499,6 @@ namespace FCT
     void VK_Context::create()
     {
 
-    }
-
-    RHI::RenderTargetView* VK_Context::createRenderTargetView()
-    {
-        return new RHI::VK_RenderTargetView(this);
     }
 
     uint32_t VK_Context::findMemoryType(uint32_t typeFilter, vk::MemoryPropertyFlags properties)
