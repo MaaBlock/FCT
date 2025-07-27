@@ -1,4 +1,5 @@
 ﻿#pragma once
+
 #include "../ThirdParty.h"
 #include "../ToolDefine.h"
 #include "../Bases.h"
@@ -108,9 +109,10 @@ namespace FCT
 	class Runtime;
 	namespace ContextEvent
 	{
-		struct WindowBind
+		struct WindowBound
 		{
 			Window* window;
+			Context* context;
 		};
 	}
 	class Context : public RefCount,public IEventSystem<EventSystemConfig::TriggerOnly>
@@ -193,11 +195,14 @@ namespace FCT
 		{
 		}
 
-		void addBindWindow(Window* wnd)
+		void onWindowBound(Window* wnd)
 		{
 			m_bindWindows.push_back(wnd);
 			m_currentGraph->addWindowResource(wnd);
 			initWndFrameResources(wnd);
+			trigger(ContextEvent::WindowBound{
+			wnd,this
+			});
 		}
 		void createCompiler();
 		ShaderCompiler* getCompiler() { return m_compiler; }

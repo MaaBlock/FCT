@@ -198,7 +198,7 @@ void FCT::GLFW_Window::bind(Context* srcCtx)
         {
             enableDepthBuffer(m_depthBufferFormat);
         }
-        m_ctx->addBindWindow(this);
+        m_ctx->onWindowBound(this);
 }
 
 void FCT::GLFW_Window::swapBuffers()
