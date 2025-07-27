@@ -120,14 +120,12 @@ namespace FCT
 		}
 		virtual RHI::RasterizationPipeline* createTraditionPipeline() = 0;
 		virtual void create() = 0;
-
 	protected:
 		ModelLoader* m_modelLoader;
 	public:
 		virtual RasterizationState* createRasterizationState() = 0;
 		StaticMesh<uint32_t>* createMesh(const ModelMesh* modelMesh, const VertexLayout& layout);
 		StaticMesh<uint32_t>* loadMesh(const std::string& filename,const std::string& meshName, const VertexLayout& layout);
-
 	protected:
 		struct LogicTaskData
 		{

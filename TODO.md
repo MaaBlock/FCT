@@ -1,22 +1,25 @@
-﻿[branch]
-```mermaid
-graph TD
-    1[去除beginFrameTicker]
-    2[转换wnd的enableAutoReviewport为组件]
-    2-->1
-    3[为Wnd添加组件功能,
-    将上层功能变为添加到wnd的组件，
-    从而实现上层解耦，
-    从而防止wnd层调用上层代码]
-    3-->2
+﻿# [branch]
+## 添加Window模块
+1.添加Window命名空间 
+  在Window命名空间下添加归属于Window的模块<div/>
+2.Window内部添加一个类型Map，
+能根据类型获取对应的模块对象，
+如
+```c++
+AutoViewport av = wnd->getModule<AutoViewport>
 ```
-requeire:
-使用entt
+3.实现添加模块
+如
+```c++
+wnd->addModule<AutoViewport>();
+```
+4.移除Context中的beginFrameTicker
+## 添加事件处理
 ```mermaid
 graph TD
     1[添加使用entt的窗口EventHandler]
 ```
-[main]
+# [main]
 ```mermaid
 graph TD
     1[简化命名，使得其符合直觉]
