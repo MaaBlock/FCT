@@ -4,10 +4,24 @@
 
 {\ttfamily \#include $<$Token\+Graph.\+h$>$}
 
-类 FCT\+::Token\+Graph\texorpdfstring{$<$}{<} Token, Value \texorpdfstring{$>$}{>} 继承关系图\+:\begin{figure}[H]
+
+
+类 FCT\+::Token\+Graph\texorpdfstring{$<$}{<} Token, Value \texorpdfstring{$>$}{>} 继承关系图\+:
+\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{class_f_c_t_1_1_token_graph}
+\includegraphics[height=550pt]{class_f_c_t_1_1_token_graph__inherit__graph}
+\end{center}
+\end{figure}
+
+
+FCT\+::Token\+Graph\texorpdfstring{$<$}{<} Token, Value \texorpdfstring{$>$}{>} 的协作图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_f_c_t_1_1_token_graph__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{类}
@@ -16,6 +30,8 @@
 struct \mbox{\hyperlink{struct_f_c_t_1_1_token_graph_1_1_node_info}{Node\+Info}}
 \item 
 class \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe}{Node\+Probe}}
+\item 
+class \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_token_graph_b_f_s_visitor}{Token\+Graph\+BFSVisitor}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Public 类型}
 \begin{DoxyCompactItemize}
@@ -31,7 +47,7 @@ void \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a078ec745ddf9a87d14d34cd004e91
 \item 
 void \mbox{\hyperlink{class_f_c_t_1_1_token_graph_af64b875be97104a009a295518c8ea325}{remove\+Vertex}} (Token token)
 \item 
-bool \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a6a2e9b12b1de2dda7752dda056f9f620}{has\+Vertex}} (Token token)
+bool \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a1bf5a94618641b09375973295ee819af}{has\+Vertex}} (Token token) const
 \item 
 void \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a25b35ee757e8decec92d5ac345f6d95c}{add\+Weak\+Ref}} (Token token)
 \item 
@@ -41,9 +57,9 @@ void \mbox{\hyperlink{class_f_c_t_1_1_token_graph_aab1068f2bd9ffdd4205d37011c5f1
 \item 
 void \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a9744aa4648240aa8ecaa360705693ff5}{remove\+Weak\+Ref}} (Token from, Token to)
 \item 
-bool \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a859648d4b5f325c7e9de542a56b9b38f}{has\+Edge}} (Token from, Token to)
+bool \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a199cfa86da74b741af72ecbfa3918d93}{has\+Edge}} (Token from, Token to) const
 \item 
-bool \mbox{\hyperlink{class_f_c_t_1_1_token_graph_afdfdcc668e94183ad088c025117f922e}{has\+Node}} (Token token)
+bool \mbox{\hyperlink{class_f_c_t_1_1_token_graph_af49a2237bb4cf2b7e5399c3235ee1ece}{has\+Node}} (Token token) const
 \item 
 void \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a0050fe08bd1e1201b923b8db9ee7d844}{add\+Boost\+Edge}} (Token from, Token to)
 \item 
@@ -51,7 +67,9 @@ void \mbox{\hyperlink{class_f_c_t_1_1_token_graph_ad486cfa2f81084f96f7348a8f3a4a
 \item 
 void \mbox{\hyperlink{class_f_c_t_1_1_token_graph_adef26c12e175fca63765fbb52a84bf52}{add\+Edge}} (Token node, Token rhs, bool is\+Successor)
 \item 
-bool \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a9bd735fa8c7ee75ad17cfe55757210e4}{is\+Zero\+Ref\+Vertex}} (Token token)
+{\footnotesize template$<$typename Visitor$>$ }\\void \mbox{\hyperlink{class_f_c_t_1_1_token_graph_aa8af4a56c5321a15a4afc3e091bbf323}{visit\+BFS}} (Token start\+Token, Visitor visitor, bool include\+Start=true) const
+\item 
+bool \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a377fea90122f6dd9a5a5fa76eee5d65c}{is\+Zero\+Ref\+Vertex}} (Token token) const
 \item 
 void \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a87fb2cf76d3e2e338c88843e81dea586}{remove\+Edge}} (Token node, Token rhs, bool is\+Successor)
 \item 
@@ -68,6 +86,8 @@ void \mbox{\hyperlink{class_f_c_t_1_1_token_graph_af33f08e17dfc9d269f4f422dbc503
 std\+::vector$<$ Value $>$ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_ac00b14851a393161f371cb4bb28f8da2}{order}} () const
 \item 
 void \mbox{\hyperlink{class_f_c_t_1_1_token_graph_afeea24bc135a350c3a9edfb04992e8d8}{update\+Node}} (const \mbox{\hyperlink{struct_f_c_t_1_1_token_graph_1_1_node_info}{Node\+Info}} \&info)
+\item 
+std\+::vector$<$ Value $>$ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a9c0d24c314b735638568a4e09ae22fc1}{compute\+Order}} (std\+::function$<$ bool(const Value \&)$>$ can\+Visit)
 \end{DoxyCompactItemize}
 \doxysubsection*{Public 成员函数 继承自 \mbox{\hyperlink{class_f_c_t_1_1_noncopyable}{FCT\+::\+Noncopyable}}}
 \begin{DoxyCompactItemize}
@@ -148,6 +168,13 @@ void \mbox{\hyperlink{class_f_c_t_1_1_token_graph}{FCT\+::\+Token\+Graph}}$<$ To
 
 在文件 \mbox{\hyperlink{_token_graph_8h_source}{Token\+Graph.\+h}} 第 \mbox{\hyperlink{_token_graph_8h_source_l00129}{129}} 行定义.
 
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_token_graph_a0050fe08bd1e1201b923b8db9ee7d844_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_token_graph_adef26c12e175fca63765fbb52a84bf52}\index{FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}!addEdge@{addEdge}}
 \index{addEdge@{addEdge}!FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}}
 \doxysubsubsection{\texorpdfstring{addEdge()}{addEdge()}}
@@ -159,6 +186,20 @@ void \mbox{\hyperlink{class_f_c_t_1_1_token_graph}{FCT\+::\+Token\+Graph}}$<$ To
 
 在文件 \mbox{\hyperlink{_token_graph_8h_source}{Token\+Graph.\+h}} 第 \mbox{\hyperlink{_token_graph_8h_source_l00147}{147}} 行定义.
 
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_token_graph_adef26c12e175fca63765fbb52a84bf52_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_token_graph_adef26c12e175fca63765fbb52a84bf52_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_token_graph_afd28b63ee29ca7f50551eb3b3cde1498}\index{FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}!addNode@{addNode}}
 \index{addNode@{addNode}!FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}}
 \doxysubsubsection{\texorpdfstring{addNode()}{addNode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -168,8 +209,22 @@ void \mbox{\hyperlink{class_f_c_t_1_1_token_graph}{FCT\+::\+Token\+Graph}}$<$ To
 
 
 
-在文件 \mbox{\hyperlink{_token_graph_8h_source}{Token\+Graph.\+h}} 第 \mbox{\hyperlink{_token_graph_8h_source_l00205}{205}} 行定义.
+在文件 \mbox{\hyperlink{_token_graph_8h_source}{Token\+Graph.\+h}} 第 \mbox{\hyperlink{_token_graph_8h_source_l00258}{258}} 行定义.
 
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_token_graph_afd28b63ee29ca7f50551eb3b3cde1498_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_token_graph_afd28b63ee29ca7f50551eb3b3cde1498_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_token_graph_aba061ed742eff635cc5970f8ea283ab5}\index{FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}!addNode@{addNode}}
 \index{addNode@{addNode}!FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}}
 \doxysubsubsection{\texorpdfstring{addNode()}{addNode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
@@ -179,8 +234,15 @@ void \mbox{\hyperlink{class_f_c_t_1_1_token_graph}{FCT\+::\+Token\+Graph}}$<$ To
 
 
 
-在文件 \mbox{\hyperlink{_token_graph_8h_source}{Token\+Graph.\+h}} 第 \mbox{\hyperlink{_token_graph_8h_source_l00217}{217}} 行定义.
+在文件 \mbox{\hyperlink{_token_graph_8h_source}{Token\+Graph.\+h}} 第 \mbox{\hyperlink{_token_graph_8h_source_l00270}{270}} 行定义.
 
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_token_graph_aba061ed742eff635cc5970f8ea283ab5_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_token_graph_a078ec745ddf9a87d14d34cd004e914f0}\index{FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}!addVertex@{addVertex}}
 \index{addVertex@{addVertex}!FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}}
 \doxysubsubsection{\texorpdfstring{addVertex()}{addVertex()}}
@@ -192,6 +254,13 @@ void \mbox{\hyperlink{class_f_c_t_1_1_token_graph}{FCT\+::\+Token\+Graph}}$<$ To
 
 在文件 \mbox{\hyperlink{_token_graph_8h_source}{Token\+Graph.\+h}} 第 \mbox{\hyperlink{_token_graph_8h_source_l00053}{53}} 行定义.
 
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_token_graph_a078ec745ddf9a87d14d34cd004e914f0_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_token_graph_aab1068f2bd9ffdd4205d37011c5f16c0}\index{FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}!addWeakRef@{addWeakRef}}
 \index{addWeakRef@{addWeakRef}!FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}}
 \doxysubsubsection{\texorpdfstring{addWeakRef()}{addWeakRef()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -214,50 +283,105 @@ void \mbox{\hyperlink{class_f_c_t_1_1_token_graph}{FCT\+::\+Token\+Graph}}$<$ To
 
 在文件 \mbox{\hyperlink{_token_graph_8h_source}{Token\+Graph.\+h}} 第 \mbox{\hyperlink{_token_graph_8h_source_l00073}{73}} 行定义.
 
-\Hypertarget{class_f_c_t_1_1_token_graph_a859648d4b5f325c7e9de542a56b9b38f}\index{FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}!hasEdge@{hasEdge}}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_token_graph_a25b35ee757e8decec92d5ac345f6d95c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_f_c_t_1_1_token_graph_a9c0d24c314b735638568a4e09ae22fc1}\index{FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}!computeOrder@{computeOrder}}
+\index{computeOrder@{computeOrder}!FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}}
+\doxysubsubsection{\texorpdfstring{computeOrder()}{computeOrder()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_token_graph_a9c0d24c314b735638568a4e09ae22fc1} 
+template$<$typename Token, typename Value$>$ \\
+std\+::vector$<$ Value $>$ \mbox{\hyperlink{class_f_c_t_1_1_token_graph}{FCT\+::\+Token\+Graph}}$<$ Token, Value $>$\+::compute\+Order (\begin{DoxyParamCaption}\item[{std\+::function$<$ bool(const Value \&)$>$}]{can\+Visit}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_token_graph_8h_source}{Token\+Graph.\+h}} 第 \mbox{\hyperlink{_token_graph_8h_source_l00461}{461}} 行定义.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_token_graph_a9c0d24c314b735638568a4e09ae22fc1_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_f_c_t_1_1_token_graph_a199cfa86da74b741af72ecbfa3918d93}\index{FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}!hasEdge@{hasEdge}}
 \index{hasEdge@{hasEdge}!FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}}
 \doxysubsubsection{\texorpdfstring{hasEdge()}{hasEdge()}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_token_graph_a859648d4b5f325c7e9de542a56b9b38f} 
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_token_graph_a199cfa86da74b741af72ecbfa3918d93} 
 template$<$typename Token, typename Value$>$ \\
-bool \mbox{\hyperlink{class_f_c_t_1_1_token_graph}{FCT\+::\+Token\+Graph}}$<$ Token, Value $>$\+::has\+Edge (\begin{DoxyParamCaption}\item[{Token}]{from}{, }\item[{Token}]{to}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+bool \mbox{\hyperlink{class_f_c_t_1_1_token_graph}{FCT\+::\+Token\+Graph}}$<$ Token, Value $>$\+::has\+Edge (\begin{DoxyParamCaption}\item[{Token}]{from}{, }\item[{Token}]{to}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 在文件 \mbox{\hyperlink{_token_graph_8h_source}{Token\+Graph.\+h}} 第 \mbox{\hyperlink{_token_graph_8h_source_l00114}{114}} 行定义.
 
-\Hypertarget{class_f_c_t_1_1_token_graph_afdfdcc668e94183ad088c025117f922e}\index{FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}!hasNode@{hasNode}}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_token_graph_a199cfa86da74b741af72ecbfa3918d93_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_f_c_t_1_1_token_graph_af49a2237bb4cf2b7e5399c3235ee1ece}\index{FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}!hasNode@{hasNode}}
 \index{hasNode@{hasNode}!FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}}
 \doxysubsubsection{\texorpdfstring{hasNode()}{hasNode()}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_token_graph_afdfdcc668e94183ad088c025117f922e} 
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_token_graph_af49a2237bb4cf2b7e5399c3235ee1ece} 
 template$<$typename Token, typename Value$>$ \\
-bool \mbox{\hyperlink{class_f_c_t_1_1_token_graph}{FCT\+::\+Token\+Graph}}$<$ Token, Value $>$\+::has\+Node (\begin{DoxyParamCaption}\item[{Token}]{token}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+bool \mbox{\hyperlink{class_f_c_t_1_1_token_graph}{FCT\+::\+Token\+Graph}}$<$ Token, Value $>$\+::has\+Node (\begin{DoxyParamCaption}\item[{Token}]{token}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 在文件 \mbox{\hyperlink{_token_graph_8h_source}{Token\+Graph.\+h}} 第 \mbox{\hyperlink{_token_graph_8h_source_l00125}{125}} 行定义.
 
-\Hypertarget{class_f_c_t_1_1_token_graph_a6a2e9b12b1de2dda7752dda056f9f620}\index{FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}!hasVertex@{hasVertex}}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_token_graph_af49a2237bb4cf2b7e5399c3235ee1ece_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_f_c_t_1_1_token_graph_a1bf5a94618641b09375973295ee819af}\index{FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}!hasVertex@{hasVertex}}
 \index{hasVertex@{hasVertex}!FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}}
 \doxysubsubsection{\texorpdfstring{hasVertex()}{hasVertex()}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_token_graph_a6a2e9b12b1de2dda7752dda056f9f620} 
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_token_graph_a1bf5a94618641b09375973295ee819af} 
 template$<$typename Token, typename Value$>$ \\
-bool \mbox{\hyperlink{class_f_c_t_1_1_token_graph}{FCT\+::\+Token\+Graph}}$<$ Token, Value $>$\+::has\+Vertex (\begin{DoxyParamCaption}\item[{Token}]{token}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+bool \mbox{\hyperlink{class_f_c_t_1_1_token_graph}{FCT\+::\+Token\+Graph}}$<$ Token, Value $>$\+::has\+Vertex (\begin{DoxyParamCaption}\item[{Token}]{token}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 在文件 \mbox{\hyperlink{_token_graph_8h_source}{Token\+Graph.\+h}} 第 \mbox{\hyperlink{_token_graph_8h_source_l00069}{69}} 行定义.
 
-\Hypertarget{class_f_c_t_1_1_token_graph_a9bd735fa8c7ee75ad17cfe55757210e4}\index{FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}!isZeroRefVertex@{isZeroRefVertex}}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_token_graph_a1bf5a94618641b09375973295ee819af_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_f_c_t_1_1_token_graph_a377fea90122f6dd9a5a5fa76eee5d65c}\index{FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}!isZeroRefVertex@{isZeroRefVertex}}
 \index{isZeroRefVertex@{isZeroRefVertex}!FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}}
 \doxysubsubsection{\texorpdfstring{isZeroRefVertex()}{isZeroRefVertex()}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_token_graph_a9bd735fa8c7ee75ad17cfe55757210e4} 
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_token_graph_a377fea90122f6dd9a5a5fa76eee5d65c} 
 template$<$typename Token, typename Value$>$ \\
-bool \mbox{\hyperlink{class_f_c_t_1_1_token_graph}{FCT\+::\+Token\+Graph}}$<$ Token, Value $>$\+::is\+Zero\+Ref\+Vertex (\begin{DoxyParamCaption}\item[{Token}]{token}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+bool \mbox{\hyperlink{class_f_c_t_1_1_token_graph}{FCT\+::\+Token\+Graph}}$<$ Token, Value $>$\+::is\+Zero\+Ref\+Vertex (\begin{DoxyParamCaption}\item[{Token}]{token}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-在文件 \mbox{\hyperlink{_token_graph_8h_source}{Token\+Graph.\+h}} 第 \mbox{\hyperlink{_token_graph_8h_source_l00177}{177}} 行定义.
+在文件 \mbox{\hyperlink{_token_graph_8h_source}{Token\+Graph.\+h}} 第 \mbox{\hyperlink{_token_graph_8h_source_l00230}{230}} 行定义.
 
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_token_graph_a377fea90122f6dd9a5a5fa76eee5d65c_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_token_graph_a761119710050fcfb17b8d3b4af84fc7a}\index{FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
 \index{operator\mbox{[}\mbox{]}@{operator[]}!FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}}
 \doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
@@ -267,7 +391,7 @@ template$<$typename Token, typename Value$>$ \\
 
 
 
-在文件 \mbox{\hyperlink{_token_graph_8h_source}{Token\+Graph.\+h}} 第 \mbox{\hyperlink{_token_graph_8h_source_l00395}{395}} 行定义.
+在文件 \mbox{\hyperlink{_token_graph_8h_source}{Token\+Graph.\+h}} 第 \mbox{\hyperlink{_token_graph_8h_source_l00448}{448}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_token_graph_ac00b14851a393161f371cb4bb28f8da2}\index{FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}!order@{order}}
 \index{order@{order}!FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}}
@@ -278,7 +402,7 @@ std\+::vector$<$ Value $>$ \mbox{\hyperlink{class_f_c_t_1_1_token_graph}{FCT\+::
 
 
 
-在文件 \mbox{\hyperlink{_token_graph_8h_source}{Token\+Graph.\+h}} 第 \mbox{\hyperlink{_token_graph_8h_source_l00399}{399}} 行定义.
+在文件 \mbox{\hyperlink{_token_graph_8h_source}{Token\+Graph.\+h}} 第 \mbox{\hyperlink{_token_graph_8h_source_l00452}{452}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_token_graph_ad486cfa2f81084f96f7348a8f3a4a70a}\index{FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}!removeBoostEdge@{removeBoostEdge}}
 \index{removeBoostEdge@{removeBoostEdge}!FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}}
@@ -291,6 +415,13 @@ void \mbox{\hyperlink{class_f_c_t_1_1_token_graph}{FCT\+::\+Token\+Graph}}$<$ To
 
 在文件 \mbox{\hyperlink{_token_graph_8h_source}{Token\+Graph.\+h}} 第 \mbox{\hyperlink{_token_graph_8h_source_l00133}{133}} 行定义.
 
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_token_graph_ad486cfa2f81084f96f7348a8f3a4a70a_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_token_graph_a87fb2cf76d3e2e338c88843e81dea586}\index{FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}!removeEdge@{removeEdge}}
 \index{removeEdge@{removeEdge}!FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}}
 \doxysubsubsection{\texorpdfstring{removeEdge()}{removeEdge()}}
@@ -300,8 +431,22 @@ void \mbox{\hyperlink{class_f_c_t_1_1_token_graph}{FCT\+::\+Token\+Graph}}$<$ To
 
 
 
-在文件 \mbox{\hyperlink{_token_graph_8h_source}{Token\+Graph.\+h}} 第 \mbox{\hyperlink{_token_graph_8h_source_l00183}{183}} 行定义.
+在文件 \mbox{\hyperlink{_token_graph_8h_source}{Token\+Graph.\+h}} 第 \mbox{\hyperlink{_token_graph_8h_source_l00236}{236}} 行定义.
 
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_token_graph_a87fb2cf76d3e2e338c88843e81dea586_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_token_graph_a87fb2cf76d3e2e338c88843e81dea586_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_token_graph_aa7517c57efb792b948b8f739455b9378}\index{FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}!removeNode@{removeNode}}
 \index{removeNode@{removeNode}!FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}}
 \doxysubsubsection{\texorpdfstring{removeNode()}{removeNode()}}
@@ -311,8 +456,22 @@ void \mbox{\hyperlink{class_f_c_t_1_1_token_graph}{FCT\+::\+Token\+Graph}}$<$ To
 
 
 
-在文件 \mbox{\hyperlink{_token_graph_8h_source}{Token\+Graph.\+h}} 第 \mbox{\hyperlink{_token_graph_8h_source_l00225}{225}} 行定义.
+在文件 \mbox{\hyperlink{_token_graph_8h_source}{Token\+Graph.\+h}} 第 \mbox{\hyperlink{_token_graph_8h_source_l00278}{278}} 行定义.
 
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_token_graph_aa7517c57efb792b948b8f739455b9378_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_token_graph_aa7517c57efb792b948b8f739455b9378_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_token_graph_af64b875be97104a009a295518c8ea325}\index{FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}!removeVertex@{removeVertex}}
 \index{removeVertex@{removeVertex}!FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}}
 \doxysubsubsection{\texorpdfstring{removeVertex()}{removeVertex()}}
@@ -324,6 +483,13 @@ void \mbox{\hyperlink{class_f_c_t_1_1_token_graph}{FCT\+::\+Token\+Graph}}$<$ To
 
 在文件 \mbox{\hyperlink{_token_graph_8h_source}{Token\+Graph.\+h}} 第 \mbox{\hyperlink{_token_graph_8h_source_l00060}{60}} 行定义.
 
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_token_graph_af64b875be97104a009a295518c8ea325_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_token_graph_a9744aa4648240aa8ecaa360705693ff5}\index{FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}!removeWeakRef@{removeWeakRef}}
 \index{removeWeakRef@{removeWeakRef}!FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}}
 \doxysubsubsection{\texorpdfstring{removeWeakRef()}{removeWeakRef()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -335,6 +501,13 @@ void \mbox{\hyperlink{class_f_c_t_1_1_token_graph}{FCT\+::\+Token\+Graph}}$<$ To
 
 在文件 \mbox{\hyperlink{_token_graph_8h_source}{Token\+Graph.\+h}} 第 \mbox{\hyperlink{_token_graph_8h_source_l00099}{99}} 行定义.
 
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_token_graph_a9744aa4648240aa8ecaa360705693ff5_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_token_graph_a89c8a44fcf101e851132d4fd5b40e496}\index{FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}!removeWeakRef@{removeWeakRef}}
 \index{removeWeakRef@{removeWeakRef}!FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}}
 \doxysubsubsection{\texorpdfstring{removeWeakRef()}{removeWeakRef()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
@@ -346,6 +519,13 @@ void \mbox{\hyperlink{class_f_c_t_1_1_token_graph}{FCT\+::\+Token\+Graph}}$<$ To
 
 在文件 \mbox{\hyperlink{_token_graph_8h_source}{Token\+Graph.\+h}} 第 \mbox{\hyperlink{_token_graph_8h_source_l00080}{80}} 行定义.
 
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_token_graph_a89c8a44fcf101e851132d4fd5b40e496_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_token_graph_af33f08e17dfc9d269f4f422dbc503518}\index{FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}!update@{update}}
 \index{update@{update}!FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}}
 \doxysubsubsection{\texorpdfstring{update()}{update()}}
@@ -355,8 +535,15 @@ void \mbox{\hyperlink{class_f_c_t_1_1_token_graph}{FCT\+::\+Token\+Graph}}$<$ To
 
 
 
-在文件 \mbox{\hyperlink{_token_graph_8h_source}{Token\+Graph.\+h}} 第 \mbox{\hyperlink{_token_graph_8h_source_l00241}{241}} 行定义.
+在文件 \mbox{\hyperlink{_token_graph_8h_source}{Token\+Graph.\+h}} 第 \mbox{\hyperlink{_token_graph_8h_source_l00294}{294}} 行定义.
 
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_token_graph_af33f08e17dfc9d269f4f422dbc503518_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_token_graph_afeea24bc135a350c3a9edfb04992e8d8}\index{FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}!updateNode@{updateNode}}
 \index{updateNode@{updateNode}!FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}}
 \doxysubsubsection{\texorpdfstring{updateNode()}{updateNode()}}
@@ -366,10 +553,43 @@ void \mbox{\hyperlink{class_f_c_t_1_1_token_graph}{FCT\+::\+Token\+Graph}}$<$ To
 
 
 
-在文件 \mbox{\hyperlink{_token_graph_8h_source}{Token\+Graph.\+h}} 第 \mbox{\hyperlink{_token_graph_8h_source_l00403}{403}} 行定义.
+在文件 \mbox{\hyperlink{_token_graph_8h_source}{Token\+Graph.\+h}} 第 \mbox{\hyperlink{_token_graph_8h_source_l00456}{456}} 行定义.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_token_graph_afeea24bc135a350c3a9edfb04992e8d8_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_f_c_t_1_1_token_graph_aa8af4a56c5321a15a4afc3e091bbf323}\index{FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}!visitBFS@{visitBFS}}
+\index{visitBFS@{visitBFS}!FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}}
+\doxysubsubsection{\texorpdfstring{visitBFS()}{visitBFS()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_token_graph_aa8af4a56c5321a15a4afc3e091bbf323} 
+template$<$typename Token, typename Value$>$ \\
+template$<$typename Visitor$>$ \\
+void \mbox{\hyperlink{class_f_c_t_1_1_token_graph}{FCT\+::\+Token\+Graph}}$<$ Token, Value $>$\+::visit\+BFS (\begin{DoxyParamCaption}\item[{Token}]{start\+Token}{, }\item[{Visitor}]{visitor}{, }\item[{bool}]{include\+Start}{ = {\ttfamily true}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyTemplParams}{模板参数}
+{\em Visitor} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{参数}
+{\em start\+Token} & \\
+\hline
+{\em visitor} & 参数为 Value \\
+\hline
+{\em include\+Start} & 是否包含起点自身 \\
+\hline
+\end{DoxyParams}
+
+
+在文件 \mbox{\hyperlink{_token_graph_8h_source}{Token\+Graph.\+h}} 第 \mbox{\hyperlink{_token_graph_8h_source_l00215}{215}} 行定义.
 
 
 
 该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
 \item 
-include/\+FCT/\+Base/\mbox{\hyperlink{_token_graph_8h}{Token\+Graph.\+h}}\end{DoxyCompactItemize}
+src/\+Base/\mbox{\hyperlink{_token_graph_8h}{Token\+Graph.\+h}}\end{DoxyCompactItemize}

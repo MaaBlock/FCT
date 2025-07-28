@@ -1,5 +1,5 @@
-\doxysection{include/\+FCT/\+Context/\+Context.h 文件参考}
-\hypertarget{_context_8h}{}\label{_context_8h}\index{include/FCT/Context/Context.h@{include/FCT/Context/Context.h}}
+\doxysection{src/\+Context/\+Context.h 文件参考}
+\hypertarget{_context_8h}{}\label{_context_8h}\index{src/Context/Context.h@{src/Context/Context.h}}
 {\ttfamily \#include "{}../\+Third\+Party.\+h"{}}\newline
 {\ttfamily \#include "{}../\+Tool\+Define.\+h"{}}\newline
 {\ttfamily \#include "{}../\+Bases.\+h"{}}\newline
@@ -33,7 +33,26 @@
 {\ttfamily \#include "{}./\+Device.\+h"{}}\newline
 {\ttfamily \#include "{}Mesh.\+h"{}}\newline
 {\ttfamily \#include "{}../\+Base/\+Token\+Graph.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Base/\+IEvent\+System.\+h"{}}\newline
+{\ttfamily \#include "{}./\+Resource\+Manager.\+h"{}}\newline
+{\ttfamily \#include "{}./\+Context\+Event.\+h"{}}\newline
 {\ttfamily \#include "{}Mesh.\+hpp"{}}\newline
+Context.\+h 的引用(Include)关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_context_8h__incl}
+\end{center}
+\end{figure}
+此图展示该文件被哪些文件直接或间接地引用了\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_context_8h__dep__incl}
+\end{center}
+\end{figure}
 \doxysubsubsection*{类}
 \begin{DoxyCompactItemize}
 \item 
@@ -73,4 +92,6 @@ constexpr const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespace_f_c_t
 constexpr const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespace_f_c_t_a3bec92bc39d2c90a357c13c4874e5e24}{FCT\+::\+Render\+Graph\+Sync\+Ticker\+\_\+\+Swap\+Job\+Queue\+Name}} = "{}Render\+Graph\+Sync\+Ticker\+\_\+\+Swap\+Job\+Queue"{}
 \item 
 constexpr const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespace_f_c_t_1_1_inner_sync_a7cbf6ad9e86670d646cb1cb41d6fd000}{FCT\+::\+Inner\+Sync\+::\+Check\+Recreate\+Swapchain\+Sync}} = "{}Check\+Recreate\+Swapchain\+Sync"{}
+\item 
+constexpr const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespace_f_c_t_1_1_inner_sync_ad2597362f14f210b2f50b418fb6a5fef}{FCT\+::\+Inner\+Sync\+::\+Advance\+Frame\+Index}} = "{}Advance\+Frame\+Index"{}
 \end{DoxyCompactItemize}

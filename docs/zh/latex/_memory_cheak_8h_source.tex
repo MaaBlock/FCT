@@ -1,5 +1,5 @@
 \doxysection{Memory\+Cheak.\+h}
-\hypertarget{_memory_cheak_8h_source}{}\label{_memory_cheak_8h_source}\index{include/FCT/DebugTools/MemoryCheak.h@{include/FCT/DebugTools/MemoryCheak.h}}
+\hypertarget{_memory_cheak_8h_source}{}\label{_memory_cheak_8h_source}\index{src/DebugTools/MemoryCheak.h@{src/DebugTools/MemoryCheak.h}}
 \mbox{\hyperlink{_memory_cheak_8h}{浏览该文件的文档.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{_memory_cheak_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ FCT\_MEMORY\_CHEAK}}
@@ -168,7 +168,15 @@
 \DoxyCodeLine{\Hypertarget{_memory_cheak_8h_source_l00164}\mbox{\hyperlink{_memory_cheak_8h_a208ca9335e0fa05cd26667978959abd5}{00164}}\ \textcolor{preprocessor}{\#define\ FCT\_DELETE(args)\ delete\ args}}
 \DoxyCodeLine{\Hypertarget{_memory_cheak_8h_source_l00165}\mbox{\hyperlink{_memory_cheak_8h_a56b71ca695afcf8aba5906a660b72035}{00165}}\ \textcolor{preprocessor}{\#define\ FCT\_DELETES(args)\ delete[]\ args}}
 \DoxyCodeLine{\Hypertarget{_memory_cheak_8h_source_l00166}00166\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FCT\_DEBUG}}
-\DoxyCodeLine{\Hypertarget{_memory_cheak_8h_source_l00167}00167\ }
-\DoxyCodeLine{\Hypertarget{_memory_cheak_8h_source_l00168}00168\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FCT\_MEMORY\_CHEAK}}
+\DoxyCodeLine{\Hypertarget{_memory_cheak_8h_source_l00167}\mbox{\hyperlink{_memory_cheak_8h_af286b6406ea2c32046e4b1d34f4032b0}{00167}}\ \textcolor{preprocessor}{\#define\ FCT\_SAFE\_NEW(var,type,...)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_memory_cheak_8h_source_l00168}00168\ \textcolor{preprocessor}{\ \ \ \ if\ (var)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_memory_cheak_8h_source_l00169}00169\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ FCT\_DELETE(var);\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_memory_cheak_8h_source_l00170}00170\ \textcolor{preprocessor}{\ \ \ \ var\ =\ FCT\_NEW(type,\ \_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{\Hypertarget{_memory_cheak_8h_source_l00171}\mbox{\hyperlink{_memory_cheak_8h_a83569cc2756f73ebf7b01c88ec19e224}{00171}}\ \textcolor{preprocessor}{\#define\ FCT\_SAFE\_DELETE(var)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_memory_cheak_8h_source_l00172}00172\ \textcolor{preprocessor}{\ \ \ \ if\ (var)\ \{\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_memory_cheak_8h_source_l00173}00173\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ FCT\_DELETE(var);\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_memory_cheak_8h_source_l00174}00174\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ var\ =\ nullptr;\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_memory_cheak_8h_source_l00175}00175\ \textcolor{preprocessor}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_memory_cheak_8h_source_l00176}00176\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FCT\_MEMORY\_CHEAK}}
 
 \end{DoxyCode}

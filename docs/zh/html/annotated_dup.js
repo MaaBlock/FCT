@@ -1,6 +1,14 @@
 var annotated_dup =
 [
     [ "FCT", "namespace_f_c_t.html", [
+      [ "ContextEvent", "namespace_f_c_t_1_1_context_event.html", [
+        [ "WindowBound", "struct_f_c_t_1_1_context_event_1_1_window_bound.html", "struct_f_c_t_1_1_context_event_1_1_window_bound" ]
+      ] ],
+      [ "EventSystemConfig", "namespace_f_c_t_1_1_event_system_config.html", [
+        [ "Full", "struct_f_c_t_1_1_event_system_config_1_1_full.html", "struct_f_c_t_1_1_event_system_config_1_1_full" ],
+        [ "QueueOnly", "struct_f_c_t_1_1_event_system_config_1_1_queue_only.html", "struct_f_c_t_1_1_event_system_config_1_1_queue_only" ],
+        [ "TriggerOnly", "struct_f_c_t_1_1_event_system_config_1_1_trigger_only.html", "struct_f_c_t_1_1_event_system_config_1_1_trigger_only" ]
+      ] ],
       [ "RHI", "namespace_f_c_t_1_1_r_h_i.html", [
         [ "AttachmentSlot", "struct_f_c_t_1_1_r_h_i_1_1_attachment_slot.html", "struct_f_c_t_1_1_r_h_i_1_1_attachment_slot" ],
         [ "CommandBuffer", "class_f_c_t_1_1_r_h_i_1_1_command_buffer.html", "class_f_c_t_1_1_r_h_i_1_1_command_buffer" ],
@@ -51,7 +59,11 @@ var annotated_dup =
         [ "VK_VertexShader", "class_f_c_t_1_1_r_h_i_1_1_v_k___vertex_shader.html", "class_f_c_t_1_1_r_h_i_1_1_v_k___vertex_shader" ],
         [ "WaitSemaphoreDescription", "struct_f_c_t_1_1_r_h_i_1_1_wait_semaphore_description.html", "struct_f_c_t_1_1_r_h_i_1_1_wait_semaphore_description" ]
       ] ],
+      [ "SwapchainEvent", "namespace_f_c_t_1_1_swapchain_event.html", [
+        [ "Recreate", "struct_f_c_t_1_1_swapchain_event_1_1_recreate.html", "struct_f_c_t_1_1_swapchain_event_1_1_recreate" ]
+      ] ],
       [ "Android_Runtime", "class_f_c_t_1_1_android___runtime.html", "class_f_c_t_1_1_android___runtime" ],
+      [ "Android_RuntimeCommon", "struct_f_c_t_1_1_android___runtime_common.html", null ],
       [ "Android_UICommon", "class_f_c_t_1_1_android___u_i_common.html", "class_f_c_t_1_1_android___u_i_common" ],
       [ "Android_Window", "class_f_c_t_1_1_android___window.html", "class_f_c_t_1_1_android___window" ],
       [ "Assimp_ModelLoader", "class_f_c_t_1_1_assimp___model_loader.html", "class_f_c_t_1_1_assimp___model_loader" ],
@@ -79,11 +91,14 @@ var annotated_dup =
       [ "GLFW_UICommon", "class_f_c_t_1_1_g_l_f_w___u_i_common.html", "class_f_c_t_1_1_g_l_f_w___u_i_common" ],
       [ "GLFW_Window", "class_f_c_t_1_1_g_l_f_w___window.html", "class_f_c_t_1_1_g_l_f_w___window" ],
       [ "GLFW_WindowBehavior", "class_f_c_t_1_1_g_l_f_w___window_behavior.html", "class_f_c_t_1_1_g_l_f_w___window_behavior" ],
+      [ "IEventSystem", "class_f_c_t_1_1_i_event_system.html", "class_f_c_t_1_1_i_event_system" ],
       [ "Image", "class_f_c_t_1_1_image.html", "class_f_c_t_1_1_image" ],
       [ "ImageBehavior", "class_f_c_t_1_1_image_behavior.html", "class_f_c_t_1_1_image_behavior" ],
+      [ "ImageDesc", "struct_f_c_t_1_1_image_desc.html", "struct_f_c_t_1_1_image_desc" ],
       [ "ImageInitData", "struct_f_c_t_1_1_image_init_data.html", "struct_f_c_t_1_1_image_init_data" ],
       [ "ImageLoader", "class_f_c_t_1_1_image_loader.html", "class_f_c_t_1_1_image_loader" ],
       [ "ImageRenderTarget", "class_f_c_t_1_1_image_render_target.html", "class_f_c_t_1_1_image_render_target" ],
+      [ "ImageSaved", "struct_f_c_t_1_1_image_saved.html", "struct_f_c_t_1_1_image_saved" ],
       [ "InputStateEventHandler", "class_f_c_t_1_1_input_state_event_handler.html", "class_f_c_t_1_1_input_state_event_handler" ],
       [ "IPipelineResource", "class_f_c_t_1_1_i_pipeline_resource.html", "class_f_c_t_1_1_i_pipeline_resource" ],
       [ "IRenderTarget", "class_f_c_t_1_1_i_render_target.html", "class_f_c_t_1_1_i_render_target" ],
@@ -120,6 +135,7 @@ var annotated_dup =
       [ "ResourceGraphEdge", "struct_f_c_t_1_1_resource_graph_edge.html", "struct_f_c_t_1_1_resource_graph_edge" ],
       [ "ResourceGraphVertex", "struct_f_c_t_1_1_resource_graph_vertex.html", null ],
       [ "ResourceLayout", "class_f_c_t_1_1_resource_layout.html", "class_f_c_t_1_1_resource_layout" ],
+      [ "ResourceManager", "class_f_c_t_1_1_resource_manager.html", "class_f_c_t_1_1_resource_manager" ],
       [ "RootSign", "class_f_c_t_1_1_root_sign.html", "class_f_c_t_1_1_root_sign" ],
       [ "Runtime", "class_f_c_t_1_1_runtime.html", "class_f_c_t_1_1_runtime" ],
       [ "RuntimeCommon", "struct_f_c_t_1_1_runtime_common.html", "struct_f_c_t_1_1_runtime_common" ],
@@ -180,7 +196,9 @@ var annotated_dup =
       [ "VK_SemaphorePool", "class_f_c_t_1_1_v_k___semaphore_pool.html", "class_f_c_t_1_1_v_k___semaphore_pool" ],
       [ "VK_VertexShader", "class_f_c_t_1_1_v_k___vertex_shader.html", "class_f_c_t_1_1_v_k___vertex_shader" ],
       [ "VK_ViewportState", "class_f_c_t_1_1_v_k___viewport_state.html", "class_f_c_t_1_1_v_k___viewport_state" ],
+      [ "Vulkan_WndResource", "struct_f_c_t_1_1_vulkan___wnd_resource.html", "struct_f_c_t_1_1_vulkan___wnd_resource" ],
       [ "WeakPtr", "class_f_c_t_1_1_weak_ptr.html", "class_f_c_t_1_1_weak_ptr" ],
+      [ "Win32_RuntimeCommon", "struct_f_c_t_1_1_win32___runtime_common.html", null ],
       [ "Window", "class_f_c_t_1_1_window.html", "class_f_c_t_1_1_window" ],
       [ "WindowBehavior", "class_f_c_t_1_1_window_behavior.html", "class_f_c_t_1_1_window_behavior" ]
     ] ],

@@ -4,10 +4,22 @@
 
 {\ttfamily \#include $<$Device.\+h$>$}
 
-类 FCT\+::Device 继承关系图\+:\begin{figure}[H]
+
+
+类 FCT\+::Device 继承关系图\+:\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{class_f_c_t_1_1_device}
+\includegraphics[height=550pt]{class_f_c_t_1_1_device__inherit__graph}
+\end{center}
+\end{figure}
+
+
+FCT\+::Device 的协作图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_f_c_t_1_1_device__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public 成员函数}
@@ -51,9 +63,13 @@ virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_index_buffer}{RHI\+::\+Index\
 \item 
 virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_descriptor_pool}{RHI\+::\+Descriptor\+Pool}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_device_a639f76bf83037a6559988692a27eb92a}{new\+Rhi\+Descriptor\+Pool}} ()=0
 \item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_render_target_view}{RHI\+::\+Render\+Target\+View}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_device_aa0a10c6636b4c8e5ca1b53b18bb96230}{new\+Rhi\+Render\+Target\+View}} ()=0
+\item 
 virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_depth_stencil_view}{RHI\+::\+Depth\+Stencil\+View}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_device_ab9d4d9e97a06e562d5c9c6d255ae8805}{new\+Rhi\+Depth\+Stencil\+View}} ()=0
 \item 
 virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_texture_view}{RHI\+::\+Texture\+View}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_device_a57be9693de2cf89d9bb36a5eeaf48736}{new\+Rhi\+Texture\+View}} ()=0
+\item 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_rasterization_state}{Rasterization\+State}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_device_a90594f290b81691e3c290e7d7aeb6351}{new\+Rasterization\+State}} ()=0
 \item 
 virtual \mbox{\hyperlink{class_f_c_t_1_1_blend_state}{Blend\+State}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_device_a2587924e0ac2a163f020d5228b307d07}{new\+Blend\+State}} ()=0
 \item 
@@ -72,7 +88,7 @@ virtual \mbox{\hyperlink{class_f_c_t_1_1_fence_pool}{Fence\+Pool}} \texorpdfstri
 \doxysubsection{详细描述}
 
 
-在文件 \mbox{\hyperlink{_device_8h_source}{Device.\+h}} 第 \mbox{\hyperlink{_device_8h_source_l00042}{42}} 行定义.
+在文件 \mbox{\hyperlink{_device_8h_source}{Device.\+h}} 第 \mbox{\hyperlink{_device_8h_source_l00057}{57}} 行定义.
 
 
 
@@ -99,8 +115,15 @@ T \texorpdfstring{$\ast$}{*} FCT\+::\+Device\+::create\+Resource (\begin{DoxyPar
 
 
 
-在文件 \mbox{\hyperlink{_device_8h_source}{Device.\+h}} 第 \mbox{\hyperlink{_device_8h_source_l00072}{72}} 行定义.
+在文件 \mbox{\hyperlink{_device_8h_source}{Device.\+h}} 第 \mbox{\hyperlink{_device_8h_source_l00089}{89}} 行定义.
 
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_f_c_t_1_1_device_a767564c02b1e777a52888b5f2c436344_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_device_a2587924e0ac2a163f020d5228b307d07}\index{FCT::Device@{FCT::Device}!newBlendState@{newBlendState}}
 \index{newBlendState@{newBlendState}!FCT::Device@{FCT::Device}}
 \doxysubsubsection{\texorpdfstring{newBlendState()}{newBlendState()}}
@@ -111,6 +134,13 @@ virtual \mbox{\hyperlink{class_f_c_t_1_1_blend_state}{Blend\+State}} \texorpdfst
 
 在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___device_a307488e5490b561f8774a0ff4871e832}{FCT\+::\+VK\+\_\+\+Device}} 内被实现.
 
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_device_a2587924e0ac2a163f020d5228b307d07_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_device_afc5b61e01594e299daf30ed4ae5b57f5}\index{FCT::Device@{FCT::Device}!newFencePool@{newFencePool}}
 \index{newFencePool@{newFencePool}!FCT::Device@{FCT::Device}}
 \doxysubsubsection{\texorpdfstring{newFencePool()}{newFencePool()}}
@@ -121,6 +151,13 @@ virtual \mbox{\hyperlink{class_f_c_t_1_1_fence_pool}{Fence\+Pool}} \texorpdfstri
 
 在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___device_a7c42ac16133acdae9df2fe4844a1bfe5}{FCT\+::\+VK\+\_\+\+Device}} 内被实现.
 
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_device_afc5b61e01594e299daf30ed4ae5b57f5_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_device_a933c5d57f21c1f394678b27e8562578b}\index{FCT::Device@{FCT::Device}!newMutilBufferImage@{newMutilBufferImage}}
 \index{newMutilBufferImage@{newMutilBufferImage}!FCT::Device@{FCT::Device}}
 \doxysubsubsection{\texorpdfstring{newMutilBufferImage()}{newMutilBufferImage()}}
@@ -131,6 +168,13 @@ virtual \mbox{\hyperlink{class_f_c_t_1_1_mutil_buffer_image}{Mutil\+Buffer\+Imag
 
 在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___device_ade2447e82ac6040d82aa26eddbccac71}{FCT\+::\+VK\+\_\+\+Device}} 内被实现.
 
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_device_a933c5d57f21c1f394678b27e8562578b_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_device_a36698715f092332246fc3f14ff148301}\index{FCT::Device@{FCT::Device}!newPassResource@{newPassResource}}
 \index{newPassResource@{newPassResource}!FCT::Device@{FCT::Device}}
 \doxysubsubsection{\texorpdfstring{newPassResource()}{newPassResource()}}
@@ -141,6 +185,13 @@ virtual \mbox{\hyperlink{class_f_c_t_1_1_pass_resource}{Pass\+Resource}} \texorp
 
 在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___device_af1c68ca57495e330af6f74b376b1d4ef}{FCT\+::\+VK\+\_\+\+Device}} 内被实现.
 
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_device_a36698715f092332246fc3f14ff148301_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_device_abe36f211763331489199eacea6ec89d3}\index{FCT::Device@{FCT::Device}!newPixelShader@{newPixelShader}}
 \index{newPixelShader@{newPixelShader}!FCT::Device@{FCT::Device}}
 \doxysubsubsection{\texorpdfstring{newPixelShader()}{newPixelShader()}}
@@ -151,6 +202,30 @@ virtual \mbox{\hyperlink{class_f_c_t_1_1_pixel_shader}{Pixel\+Shader}} \texorpdf
 
 在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___device_a91aa46fa570b76a153cee28e022846ff}{FCT\+::\+VK\+\_\+\+Device}} 内被实现.
 
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_device_abe36f211763331489199eacea6ec89d3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_f_c_t_1_1_device_a90594f290b81691e3c290e7d7aeb6351}\index{FCT::Device@{FCT::Device}!newRasterizationState@{newRasterizationState}}
+\index{newRasterizationState@{newRasterizationState}!FCT::Device@{FCT::Device}}
+\doxysubsubsection{\texorpdfstring{newRasterizationState()}{newRasterizationState()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_device_a90594f290b81691e3c290e7d7aeb6351} 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_rasterization_state}{Rasterization\+State}} \texorpdfstring{$\ast$}{*} FCT\+::\+Device\+::new\+Rasterization\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___device_a02898f8f072c4e44a4a6aee805280cb7}{FCT\+::\+VK\+\_\+\+Device}} 内被实现.
+
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_device_a90594f290b81691e3c290e7d7aeb6351_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_device_afe3c706fc5ec502c9c72ae75cd627c55}\index{FCT::Device@{FCT::Device}!newRhiCommandPool@{newRhiCommandPool}}
 \index{newRhiCommandPool@{newRhiCommandPool}!FCT::Device@{FCT::Device}}
 \doxysubsubsection{\texorpdfstring{newRhiCommandPool()}{newRhiCommandPool()}}
@@ -161,6 +236,13 @@ virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_pool}{RHI\+::\+Comman
 
 在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___device_ad7922d2113ff7b9807a944705bf9e1dd}{FCT\+::\+VK\+\_\+\+Device}} 内被实现.
 
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_device_afe3c706fc5ec502c9c72ae75cd627c55_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_device_ad81488b6339fac66b4456f91ce0c99c0}\index{FCT::Device@{FCT::Device}!newRhiConstBuffer@{newRhiConstBuffer}}
 \index{newRhiConstBuffer@{newRhiConstBuffer}!FCT::Device@{FCT::Device}}
 \doxysubsubsection{\texorpdfstring{newRhiConstBuffer()}{newRhiConstBuffer()}}
@@ -171,6 +253,13 @@ virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_const_buffer}{RHI\+::\+Const\
 
 在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___device_a2bcff53314a633fc137a8cc5a1a5f128}{FCT\+::\+VK\+\_\+\+Device}} 内被实现.
 
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_device_ad81488b6339fac66b4456f91ce0c99c0_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_device_ab9d4d9e97a06e562d5c9c6d255ae8805}\index{FCT::Device@{FCT::Device}!newRhiDepthStencilView@{newRhiDepthStencilView}}
 \index{newRhiDepthStencilView@{newRhiDepthStencilView}!FCT::Device@{FCT::Device}}
 \doxysubsubsection{\texorpdfstring{newRhiDepthStencilView()}{newRhiDepthStencilView()}}
@@ -181,6 +270,13 @@ virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_depth_stencil_view}{RHI\+::\+
 
 在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___device_a9cd78bf6cd8046d4396211cc38071c30}{FCT\+::\+VK\+\_\+\+Device}} 内被实现.
 
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_device_ab9d4d9e97a06e562d5c9c6d255ae8805_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_device_a639f76bf83037a6559988692a27eb92a}\index{FCT::Device@{FCT::Device}!newRhiDescriptorPool@{newRhiDescriptorPool}}
 \index{newRhiDescriptorPool@{newRhiDescriptorPool}!FCT::Device@{FCT::Device}}
 \doxysubsubsection{\texorpdfstring{newRhiDescriptorPool()}{newRhiDescriptorPool()}}
@@ -191,6 +287,13 @@ virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_descriptor_pool}{RHI\+::\+Des
 
 在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___device_a1263d11c00327eb324c6cbeab9606c7d}{FCT\+::\+VK\+\_\+\+Device}} 内被实现.
 
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_device_a639f76bf83037a6559988692a27eb92a_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_device_a7a05a59f9e197e3d3fe601fc339e3f09}\index{FCT::Device@{FCT::Device}!newRhiFence@{newRhiFence}}
 \index{newRhiFence@{newRhiFence}!FCT::Device@{FCT::Device}}
 \doxysubsubsection{\texorpdfstring{newRhiFence()}{newRhiFence()}}
@@ -201,6 +304,13 @@ virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_fence}{RHI\+::\+Fence}} \texo
 
 在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___device_a08228af2af8c74954bd7eefa1a331d95}{FCT\+::\+VK\+\_\+\+Device}} 内被实现.
 
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_device_a7a05a59f9e197e3d3fe601fc339e3f09_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_device_a67e5520f28b5f45cae9d31c2e0ab951f}\index{FCT::Device@{FCT::Device}!newRhiImage@{newRhiImage}}
 \index{newRhiImage@{newRhiImage}!FCT::Device@{FCT::Device}}
 \doxysubsubsection{\texorpdfstring{newRhiImage()}{newRhiImage()}}
@@ -211,6 +321,13 @@ virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_image}{RHI\+::\+Image}} \texo
 
 在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___device_a5deda57241dd5d001c7044784a4b52d5}{FCT\+::\+VK\+\_\+\+Device}} 内被实现.
 
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_device_a67e5520f28b5f45cae9d31c2e0ab951f_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_device_a1f3075e21b9e66926060335978054a38}\index{FCT::Device@{FCT::Device}!newRhiIndexBuffer@{newRhiIndexBuffer}}
 \index{newRhiIndexBuffer@{newRhiIndexBuffer}!FCT::Device@{FCT::Device}}
 \doxysubsubsection{\texorpdfstring{newRhiIndexBuffer()}{newRhiIndexBuffer()}}
@@ -221,6 +338,13 @@ virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_index_buffer}{RHI\+::\+Index\
 
 在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___device_ad7e1221c2f638c2d91fcb671197e00c1}{FCT\+::\+VK\+\_\+\+Device}} 内被实现.
 
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_device_a1f3075e21b9e66926060335978054a38_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_device_a30e04e1476d55c7f88891e9b630a6d80}\index{FCT::Device@{FCT::Device}!newRhiInputLayout@{newRhiInputLayout}}
 \index{newRhiInputLayout@{newRhiInputLayout}!FCT::Device@{FCT::Device}}
 \doxysubsubsection{\texorpdfstring{newRhiInputLayout()}{newRhiInputLayout()}}
@@ -231,6 +355,13 @@ virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_input_layout}{RHI\+::\+Input\
 
 在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___device_ab0cf171874abe002e0c0efacc40c0e3a}{FCT\+::\+VK\+\_\+\+Device}} 内被实现.
 
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_device_a30e04e1476d55c7f88891e9b630a6d80_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_device_abbd12437979df94227aaeb9fb2e39353}\index{FCT::Device@{FCT::Device}!newRhiPass@{newRhiPass}}
 \index{newRhiPass@{newRhiPass}!FCT::Device@{FCT::Device}}
 \doxysubsubsection{\texorpdfstring{newRhiPass()}{newRhiPass()}}
@@ -241,6 +372,13 @@ virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pass}{RHI\+::\+Pass}} \texorp
 
 在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___device_a509928b1ff8dcad8108dfcae0fd7527c}{FCT\+::\+VK\+\_\+\+Device}} 内被实现.
 
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_device_abbd12437979df94227aaeb9fb2e39353_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_device_a9ae4aef0a070c40c7e8aaa88edffa25b}\index{FCT::Device@{FCT::Device}!newRhiPassGroup@{newRhiPassGroup}}
 \index{newRhiPassGroup@{newRhiPassGroup}!FCT::Device@{FCT::Device}}
 \doxysubsubsection{\texorpdfstring{newRhiPassGroup()}{newRhiPassGroup()}}
@@ -251,6 +389,13 @@ virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pass_group}{RHI\+::\+Pass\+Gr
 
 在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___device_a23939e52d724f406bdea705fe41d475d}{FCT\+::\+VK\+\_\+\+Device}} 内被实现.
 
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_device_a9ae4aef0a070c40c7e8aaa88edffa25b_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_device_a62f36cfc1d555bb4a16b7f402ec5d898}\index{FCT::Device@{FCT::Device}!newRhiPixelShader@{newRhiPixelShader}}
 \index{newRhiPixelShader@{newRhiPixelShader}!FCT::Device@{FCT::Device}}
 \doxysubsubsection{\texorpdfstring{newRhiPixelShader()}{newRhiPixelShader()}}
@@ -261,6 +406,30 @@ virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pixel_shader}{RHI\+::\+Pixel\
 
 在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___device_aa2d6416918764d1e7bb48afab24dedd5}{FCT\+::\+VK\+\_\+\+Device}} 内被实现.
 
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_device_a62f36cfc1d555bb4a16b7f402ec5d898_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_f_c_t_1_1_device_aa0a10c6636b4c8e5ca1b53b18bb96230}\index{FCT::Device@{FCT::Device}!newRhiRenderTargetView@{newRhiRenderTargetView}}
+\index{newRhiRenderTargetView@{newRhiRenderTargetView}!FCT::Device@{FCT::Device}}
+\doxysubsubsection{\texorpdfstring{newRhiRenderTargetView()}{newRhiRenderTargetView()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_device_aa0a10c6636b4c8e5ca1b53b18bb96230} 
+virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_render_target_view}{RHI\+::\+Render\+Target\+View}} \texorpdfstring{$\ast$}{*} FCT\+::\+Device\+::new\+Rhi\+Render\+Target\+View (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___device_a67f37943247cb96f2bd055cdf312a505}{FCT\+::\+VK\+\_\+\+Device}} 内被实现.
+
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_device_aa0a10c6636b4c8e5ca1b53b18bb96230_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_device_a1e2aa63d6a8471692dc5cd32fcdc4ddb}\index{FCT::Device@{FCT::Device}!newRhiSemaphore@{newRhiSemaphore}}
 \index{newRhiSemaphore@{newRhiSemaphore}!FCT::Device@{FCT::Device}}
 \doxysubsubsection{\texorpdfstring{newRhiSemaphore()}{newRhiSemaphore()}}
@@ -271,6 +440,13 @@ virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore}{RHI\+::\+Semaphore
 
 在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___device_aa7af98ef0d6038384f33e2c99fd8c114}{FCT\+::\+VK\+\_\+\+Device}} 内被实现.
 
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_device_a1e2aa63d6a8471692dc5cd32fcdc4ddb_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_device_a29d4df472b774465dca09997d2c08851}\index{FCT::Device@{FCT::Device}!newRhiSwapchain@{newRhiSwapchain}}
 \index{newRhiSwapchain@{newRhiSwapchain}!FCT::Device@{FCT::Device}}
 \doxysubsubsection{\texorpdfstring{newRhiSwapchain()}{newRhiSwapchain()}}
@@ -281,6 +457,13 @@ virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain}{RHI\+::\+Swapchain
 
 在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___device_a992ecbab42f56cbc0178ce7b4421adc4}{FCT\+::\+VK\+\_\+\+Device}} 内被实现.
 
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_device_a29d4df472b774465dca09997d2c08851_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_device_a57be9693de2cf89d9bb36a5eeaf48736}\index{FCT::Device@{FCT::Device}!newRhiTextureView@{newRhiTextureView}}
 \index{newRhiTextureView@{newRhiTextureView}!FCT::Device@{FCT::Device}}
 \doxysubsubsection{\texorpdfstring{newRhiTextureView()}{newRhiTextureView()}}
@@ -291,6 +474,13 @@ virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_texture_view}{RHI\+::\+Textur
 
 在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___device_a2d009e9d053cee926424ed9e0256e08a}{FCT\+::\+VK\+\_\+\+Device}} 内被实现.
 
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_device_a57be9693de2cf89d9bb36a5eeaf48736_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_device_aebb08cf1cacbb227cad2099fc74683ea}\index{FCT::Device@{FCT::Device}!newRhiVertexBuffer@{newRhiVertexBuffer}}
 \index{newRhiVertexBuffer@{newRhiVertexBuffer}!FCT::Device@{FCT::Device}}
 \doxysubsubsection{\texorpdfstring{newRhiVertexBuffer()}{newRhiVertexBuffer()}}
@@ -301,6 +491,13 @@ virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_vertex_buffer}{RHI\+::\+Verte
 
 在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___device_a4596b15006ce930c68b57ab566945b4f}{FCT\+::\+VK\+\_\+\+Device}} 内被实现.
 
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_device_aebb08cf1cacbb227cad2099fc74683ea_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_device_ae8f580cf023546aa540d030314de752b}\index{FCT::Device@{FCT::Device}!newRhiVertexShader@{newRhiVertexShader}}
 \index{newRhiVertexShader@{newRhiVertexShader}!FCT::Device@{FCT::Device}}
 \doxysubsubsection{\texorpdfstring{newRhiVertexShader()}{newRhiVertexShader()}}
@@ -311,6 +508,13 @@ virtual \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_vertex_shader}{RHI\+::\+Verte
 
 在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___device_ab18942d151ae5449b11c6d4c7b614ea9}{FCT\+::\+VK\+\_\+\+Device}} 内被实现.
 
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_device_ae8f580cf023546aa540d030314de752b_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_device_a5afbf8e47d1827146adb7959a6fa4cc4}\index{FCT::Device@{FCT::Device}!newSampler@{newSampler}}
 \index{newSampler@{newSampler}!FCT::Device@{FCT::Device}}
 \doxysubsubsection{\texorpdfstring{newSampler()}{newSampler()}}
@@ -321,6 +525,13 @@ virtual \mbox{\hyperlink{class_f_c_t_1_1_sampler}{Sampler}} \texorpdfstring{$\as
 
 在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___device_a2ee69925012f492642ab3310cb1260d1}{FCT\+::\+VK\+\_\+\+Device}} 内被实现.
 
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_device_a5afbf8e47d1827146adb7959a6fa4cc4_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_device_a7294a2265bbfe118cf6c29cf97bbce46}\index{FCT::Device@{FCT::Device}!newSemaphorePool@{newSemaphorePool}}
 \index{newSemaphorePool@{newSemaphorePool}!FCT::Device@{FCT::Device}}
 \doxysubsubsection{\texorpdfstring{newSemaphorePool()}{newSemaphorePool()}}
@@ -331,6 +542,13 @@ virtual \mbox{\hyperlink{class_f_c_t_1_1_semaphore_pool}{Semaphore\+Pool}} \texo
 
 在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___device_a3a51de071dbf0411e04b0ca5e3a6a329}{FCT\+::\+VK\+\_\+\+Device}} 内被实现.
 
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_device_a7294a2265bbfe118cf6c29cf97bbce46_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_device_aadd6cebb636524daa2322bf061df45d4}\index{FCT::Device@{FCT::Device}!newSingleBufferImage@{newSingleBufferImage}}
 \index{newSingleBufferImage@{newSingleBufferImage}!FCT::Device@{FCT::Device}}
 \doxysubsubsection{\texorpdfstring{newSingleBufferImage()}{newSingleBufferImage()}}
@@ -341,6 +559,13 @@ virtual \mbox{\hyperlink{class_f_c_t_1_1_single_buffer_image}{Single\+Buffer\+Im
 
 在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___device_a3a63cbd59e6cd705a54bf8a75c505d24}{FCT\+::\+VK\+\_\+\+Device}} 内被实现.
 
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_device_aadd6cebb636524daa2322bf061df45d4_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_device_a07bd1311c1a135e46e732560bc395275}\index{FCT::Device@{FCT::Device}!newVertexShader@{newVertexShader}}
 \index{newVertexShader@{newVertexShader}!FCT::Device@{FCT::Device}}
 \doxysubsubsection{\texorpdfstring{newVertexShader()}{newVertexShader()}}
@@ -351,8 +576,15 @@ virtual \mbox{\hyperlink{class_f_c_t_1_1_vertex_shader}{Vertex\+Shader}} \texorp
 
 在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___device_ac75f4a217269507c6bc01b939bd393b7}{FCT\+::\+VK\+\_\+\+Device}} 内被实现.
 
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_device_a07bd1311c1a135e46e732560bc395275_icgraph}
+\end{center}
+\end{figure}
 
 
 该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
 \item 
-include/\+FCT/\+Context/\mbox{\hyperlink{_device_8h}{Device.\+h}}\end{DoxyCompactItemize}
+src/\+Context/\mbox{\hyperlink{_device_8h}{Device.\+h}}\end{DoxyCompactItemize}

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>FCT: include/FCT/DebugTools/MemoryCheak.h 源文件</title>
+<title>FCT: src/DebugTools/MemoryCheak.h 源文件</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -267,8 +267,20 @@ $(function(){initNavTree('_memory_cheak_8h_source.html','',''); });
 <div class="line"><a id="l00164" name="l00164"></a><span class="lineno"><a class="line" href="_memory_cheak_8h.html#a208ca9335e0fa05cd26667978959abd5">  164</a></span><span class="preprocessor">#define FCT_DELETE(args) delete args</span></div>
 <div class="line"><a id="l00165" name="l00165"></a><span class="lineno"><a class="line" href="_memory_cheak_8h.html#a56b71ca695afcf8aba5906a660b72035">  165</a></span><span class="preprocessor">#define FCT_DELETES(args) delete[] args</span></div>
 <div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span><span class="preprocessor">#endif </span><span class="comment">// FCT_DEBUG</span></div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span><span class="preprocessor">#endif </span><span class="comment">// FCT_MEMORY_CHEAK</span></div>
+<div class="foldopen" id="foldopen00167" data-start="" data-end="">
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno"><a class="line" href="_memory_cheak_8h.html#af286b6406ea2c32046e4b1d34f4032b0">  167</a></span><span class="preprocessor">#define FCT_SAFE_NEW(var,type,...) \</span></div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span><span class="preprocessor">    if (var) \</span></div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span><span class="preprocessor">        FCT_DELETE(var); \</span></div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span><span class="preprocessor">    var = FCT_NEW(type, __VA_ARGS__)</span></div>
+</div>
+<div class="foldopen" id="foldopen00171" data-start="" data-end="">
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno"><a class="line" href="_memory_cheak_8h.html#a83569cc2756f73ebf7b01c88ec19e224">  171</a></span><span class="preprocessor">#define FCT_SAFE_DELETE(var) \</span></div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span><span class="preprocessor">    if (var) {\</span></div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span><span class="preprocessor">        FCT_DELETE(var); \</span></div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span><span class="preprocessor">        var = nullptr; \</span></div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span><span class="preprocessor">    }</span></div>
+</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span><span class="preprocessor">#endif </span><span class="comment">// FCT_MEMORY_CHEAK</span></div>
 <div class="ttc" id="a_third_party_8h_html"><div class="ttname"><a href="_third_party_8h.html">ThirdParty.h</a></div></div>
 <div class="ttc" id="anamespace_f_c_t_html"><div class="ttname"><a href="namespace_f_c_t.html">FCT</a></div><div class="ttdef"><b>定义</b> <a href="_flags_8h_source.html#l00010">Flags.h:11</a></div></div>
 <div class="ttc" id="anamespace_f_c_t_html_a28b9188bf4be0ceb6c1128405c10fb41"><div class="ttname"><a href="namespace_f_c_t.html#a28b9188bf4be0ceb6c1128405c10fb41">FCT::New</a></div><div class="ttdeci">T * New(T *ptr)</div><div class="ttdef"><b>定义</b> <a href="#l00138">MemoryCheak.h:138</a></div></div>
@@ -281,7 +293,7 @@ $(function(){initNavTree('_memory_cheak_8h_source.html','',''); });
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="dir_3b79087de5de3e907e48529d171f9ebd.html">FCT</a></li><li class="navelem"><a href="dir_7d6af68350718625d5d5cd308630f5f1.html">DebugTools</a></li><li class="navelem"><a href="_memory_cheak_8h.html">MemoryCheak.h</a></li>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_15630127a0212804b9132cab53416798.html">DebugTools</a></li><li class="navelem"><a href="_memory_cheak_8h.html">MemoryCheak.h</a></li>
     <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>

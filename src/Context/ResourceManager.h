@@ -4,7 +4,7 @@
 
 #ifndef RESOURCEMANAGER_H
 #define RESOURCEMANAGER_H
-
+#include "../ThirdParty.h"
 #include "ContextEvent.h"
 #include "../Base/TokenGraph.h"
 #include "Device.h"
@@ -46,6 +46,7 @@ namespace FCT
         }
         Image* img;
         bool mutilBuffer;
+        bool autoIndex;
     };
 
     /**
@@ -54,6 +55,10 @@ namespace FCT
      *        自动切换BufferIndex
      * @endcond
      */
+    namespace InnerTicker
+    {
+        constexpr const char* ImageGraph_ChangeIndex = "ImageGraph_ChangeIndex";
+    }
     class ResourceManager {
     public:
         ResourceManager(Context* ctx);
@@ -76,10 +81,17 @@ namespace FCT
          */
         Image* allocateImage(std::string name,std::string dependency,ImageDesc desc);
     private:
+        /*todo: updateGraph 修改了 m_needChangeIndexImages 而 change index 发生在submit 线程
+         *      要是运行时 allocateImage怎么办？怎么做线程同步?
+        */
+        void updateGraph();
+        void addvanceFrame();
         void registerWindow(Window* wnd);
         void resizeSub(std::string token,int width, int height);
         void resize(std::string token, int width, int height);
         TokenGraph<std::string,ImageSaved> m_dependencyGraph;
+        std::vector<std::string> m_target;
+        std::vector<ImageSaved> m_needChangeIndexImages;
         Device* m_resourceDevice;
         Context* m_context;
     public:

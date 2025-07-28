@@ -1,5 +1,5 @@
 \doxysection{Window.\+h}
-\hypertarget{_window_8h_source}{}\label{_window_8h_source}\index{include/FCT/UI/Window.h@{include/FCT/UI/Window.h}}
+\hypertarget{_window_8h_source}{}\label{_window_8h_source}\index{src/UI/Window.h@{src/UI/Window.h}}
 \mbox{\hyperlink{_window_8h}{浏览该文件的文档.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{_window_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ FCT\_WINDOW\_H}}
@@ -60,10 +60,10 @@
 \DoxyCodeLine{\Hypertarget{_window_8h_source_l00063}\mbox{\hyperlink{class_f_c_t_1_1_window_a97ac3a85a6e1b9fcbd42095e6450ec04}{00063}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_f_c_t_1_1_window_a97ac3a85a6e1b9fcbd42095e6450ec04}{getHeight}}()\ =\ 0;}
 \DoxyCodeLine{\Hypertarget{_window_8h_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{comment}{//virtual\ void\ viewport(Vec2\ lt,\ Vec2\ rb)\ =\ 0;}}
 \DoxyCodeLine{\Hypertarget{_window_8h_source_l00065}\mbox{\hyperlink{class_f_c_t_1_1_window_a51f291d1553cd802aa4a48588062164d}{00065}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_window_a51f291d1553cd802aa4a48588062164d}{setCursorPos}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{_window_8h_source_l00066}\mbox{\hyperlink{class_f_c_t_1_1_window_addf28064468b78b3bff89dbab4e551cf}{00066}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_window_addf28064468b78b3bff89dbab4e551cf}{registerHandler}}(\mbox{\hyperlink{class_f_c_t_1_1_event_handler}{EventHandler}}*\ handler);}
-\DoxyCodeLine{\Hypertarget{_window_8h_source_l00067}\mbox{\hyperlink{class_f_c_t_1_1_window_af49287ab5b42fe00bc8d58afa3a78193}{00067}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_window_af49287ab5b42fe00bc8d58afa3a78193}{unregisterHandler}}(\mbox{\hyperlink{class_f_c_t_1_1_event_handler}{EventHandler}}*\ handler);}
+\DoxyCodeLine{\Hypertarget{_window_8h_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_window_addf28064468b78b3bff89dbab4e551cf}{registerHandler}}(\mbox{\hyperlink{class_f_c_t_1_1_event_handler}{EventHandler}}*\ handler);}
+\DoxyCodeLine{\Hypertarget{_window_8h_source_l00067}00067\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_window_af49287ab5b42fe00bc8d58afa3a78193}{unregisterHandler}}(\mbox{\hyperlink{class_f_c_t_1_1_event_handler}{EventHandler}}*\ handler);}
 \DoxyCodeLine{\Hypertarget{_window_8h_source_l00068}\mbox{\hyperlink{class_f_c_t_1_1_window_a21ab67913f960d2bb3f0a419d1e9f2bd}{00068}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{struct_f_c_t_1_1_vec2}{Vec2}}\ \mbox{\hyperlink{class_f_c_t_1_1_window_a21ab67913f960d2bb3f0a419d1e9f2bd}{getCursorPos}}()\ \textcolor{keyword}{const}\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{_window_8h_source_l00069}\mbox{\hyperlink{class_f_c_t_1_1_window_afe5ee45a8dc029d5ce83eaececb2804d}{00069}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_window_afe5ee45a8dc029d5ce83eaececb2804d}{clearHandler}}();}
+\DoxyCodeLine{\Hypertarget{_window_8h_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_window_afe5ee45a8dc029d5ce83eaececb2804d}{clearHandler}}();}
 \DoxyCodeLine{\Hypertarget{_window_8h_source_l00070}\mbox{\hyperlink{class_f_c_t_1_1_window_a13f64b8c8a304805d783c3d074c7f29e}{00070}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_image}{Image}}*\ \mbox{\hyperlink{class_f_c_t_1_1_window_a13f64b8c8a304805d783c3d074c7f29e}{targetImage}}()\textcolor{keyword}{\ const}}
 \DoxyCodeLine{\Hypertarget{_window_8h_source_l00071}00071\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
 \DoxyCodeLine{\Hypertarget{_window_8h_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_f_c_t_1_1_window_adbab51a8e0422d698f4253fdb6641d2f}{m\_swapchain}}-\/>target()-\/>targetImage();}
@@ -81,7 +81,7 @@
 \DoxyCodeLine{\Hypertarget{_window_8h_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_window_adbab51a8e0422d698f4253fdb6641d2f}{m\_swapchain}}-\/>addRenderFinshSemaphore(semaphore);}
 \DoxyCodeLine{\Hypertarget{_window_8h_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
 \DoxyCodeLine{\Hypertarget{_window_8h_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_window_8h_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_a0a6fe6357d3e0a9020f582a601a6f112}{ferr}}\ <<\ \textcolor{stringliteral}{"{}未\ bind\ Context"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_window_8h_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_a41993be9a3c6e8f05f5b7bda9a9015b2}{ferr}}\ <<\ \textcolor{stringliteral}{"{}未\ bind\ Context"{}}\ <<\ std::endl;}
 \DoxyCodeLine{\Hypertarget{_window_8h_source_l00088}00088\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_window_8h_source_l00089}\mbox{\hyperlink{class_f_c_t_1_1_window_a877968f3e05dd21b530583ce3ec88d3d}{00089}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_window_a877968f3e05dd21b530583ce3ec88d3d}{clearRenderFinshSemaphores}}()}
 \DoxyCodeLine{\Hypertarget{_window_8h_source_l00090}00090\ \ \ \ \ \ \ \ \ \{}
@@ -99,7 +99,7 @@
 \DoxyCodeLine{\Hypertarget{_window_8h_source_l00102}00102\ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_window_8h_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_window_adbab51a8e0422d698f4253fdb6641d2f}{m\_swapchain}}-\/>clearRenderFinshFences();}
 \DoxyCodeLine{\Hypertarget{_window_8h_source_l00104}00104\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_window_8h_source_l00105}\mbox{\hyperlink{class_f_c_t_1_1_window_a19a7ad9ada73cdb78399672e016acfa6}{00105}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_window_a19a7ad9ada73cdb78399672e016acfa6}{initRender}}();}
+\DoxyCodeLine{\Hypertarget{_window_8h_source_l00105}00105\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_window_a19a7ad9ada73cdb78399672e016acfa6}{initRender}}();}
 \DoxyCodeLine{\Hypertarget{_window_8h_source_l00106}\mbox{\hyperlink{class_f_c_t_1_1_window_a4b99d82c5edeaf7f6aec4c08f6f6e4cb}{00106}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_window_a4b99d82c5edeaf7f6aec4c08f6f6e4cb}{title}}(\textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_f_c_t_1_1_window_a4b99d82c5edeaf7f6aec4c08f6f6e4cb}{title}})}
 \DoxyCodeLine{\Hypertarget{_window_8h_source_l00107}00107\ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_window_8h_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_window_a24bd55d961a81690bb279ef431fb27a3}{m\_behavior}}-\/>title(\mbox{\hyperlink{class_f_c_t_1_1_window_a4b99d82c5edeaf7f6aec4c08f6f6e4cb}{title}});}

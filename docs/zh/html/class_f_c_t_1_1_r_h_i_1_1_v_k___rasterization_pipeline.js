@@ -1,8 +1,8 @@
 var class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline =
 [
     [ "VK_RasterizationPipeline", "class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a64afc601b21a37c7077916c2881b5837", null ],
-    [ "~VK_RasterizationPipeline", "class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#ae8c7df493a210dbbc1ed6fc243a742a1", null ],
-    [ "addResources", "class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a7878cf0ee2ead51c7ea6794317e8ba87", null ],
+    [ "~VK_RasterizationPipeline", "class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#ad9fc6894db66e03b07eb27b5b798836a", null ],
+    [ "addResources", "class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#afe4da753d05aafd27b68e995e6a5f09b", null ],
     [ "bindPass", "class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a6c62ebc1ac4fb16bc61f5210999c91b4", null ],
     [ "create", "class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a9e96913fa12adcc2f5c62a565c02dd13", null ],
     [ "descriptorSetLayouts", "class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline.html#a4140cd500d59481438dfc784b1ab4d29", null ],

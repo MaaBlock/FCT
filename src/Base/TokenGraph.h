@@ -458,6 +458,36 @@ namespace FCT {
 			removeNode(info.token);
 			addNode(info);
 		}
+		std::vector<Value> computeOrder(std::function<bool(const Value&)> canVisit)
+		{
+			std::deque<BoostVertex> sortedVertices;
+
+			std::map<BoostVertex, std::size_t> vertex_index_map;
+			std::size_t index = 0;
+			for (auto [v_iter, v_end] = boost::vertices(m_graph); v_iter != v_end; ++v_iter) {
+				vertex_index_map[*v_iter] = index++;
+			}
+			auto index_pmap = boost::make_assoc_property_map(vertex_index_map);
+
+			std::map<BoostVertex, boost::default_color_type> vertex_color_map;
+			auto color_pmap = boost::make_assoc_property_map(vertex_color_map);
+
+			boost::topological_sort(m_graph, std::front_inserter(sortedVertices),
+								   boost::vertex_index_map(index_pmap).color_map(color_pmap));
+
+			std::vector<Value> ret;
+
+			for (auto vertex : sortedVertices) {
+				auto it = m_vertex.right.find(vertex);
+				if (it != m_vertex.right.end()) {
+					Token token = it->second;
+					if (hasNode(token) && canVisit(m_nodeMap[token].value)) {
+						ret.push_back(m_nodeMap[token].value);
+					}
+				}
+			}
+			return ret;
+		}
 	private:
 		TokenGraphSavedBoostGraph m_graph;
 		boost::bimap<

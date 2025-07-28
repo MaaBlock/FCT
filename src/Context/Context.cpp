@@ -145,6 +145,16 @@ namespace FCT {
                 }
             },
             {},
+            {InnerSync::AdvanceFrameIndex}
+            };
+        m_syncTickers[InnerSync::AdvanceFrameIndex] =
+            {
+            [this]()
+            {
+                advanceLogicFrame();
+                advanceSubmitFrame();
+            },
+            {},
             {}
             };
         m_syncTickers.update();

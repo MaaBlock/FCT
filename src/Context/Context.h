@@ -102,6 +102,7 @@ namespace FCT
 	namespace InnerSync
 	{
 		constexpr const char* CheckRecreateSwapchainSync = "CheckRecreateSwapchainSync";
+		constexpr const char* AdvanceFrameIndex = "AdvanceFrameIndex";
 	}
 	/**
 	 *@note successors of RenderGraphSubmitTicker has RenderGraphExcutePassSubmitTickerName SwapBufferSubmitTicker
@@ -155,7 +156,6 @@ namespace FCT
                 data->task();
 				FCT_DELETE(data);
             });
-			advanceLogicFrame();
 			FCT_WAIT_FOR(m_currentFlush);
 			auto tickers = m_syncTickers.order();
 			for (auto ticker : tickers)
@@ -241,8 +241,10 @@ namespace FCT
 		uint32_t m_maxFrameInFlight;
 		std::map<Window*, std::vector<FrameResource>> m_frameResources;
 		std::map<Window*, RHI::DescriptorPool*> m_descriptorPools;
-		size_t m_frameIndex = 0;
+
+		size_t m_frameIndex = 0;//submit帧index 区别在于是 swapBuffer更改的，而m_submitFrameIndex和m_logicFrameIndex都是在同步时候更改的
 		size_t m_logicFrameIndex = 0; //逻辑帧index
+		size_t m_submitFrameIndex = 0;//submit帧index
 		std::thread::id m_submitThreadId;
 		//todo:未分离线程时，m_submitThreadId = 逻辑and提交线程 所在id
 	public:
@@ -287,10 +289,15 @@ namespace FCT
 		{
 			m_logicFrameIndex = (m_logicFrameIndex + 1) % m_maxFrameInFlight;
 		}
+		void advanceSubmitFrame()
+		{
+			m_submitFrameIndex = (m_submitFrameIndex + 1) % m_maxFrameInFlight;
+		}
 		constexpr const char* getRenderGraphSubmitTickerName()
 		{
 			return RenderGraphSubmitTickerName;
 		}
+		uint32_t currentLogicFrameIndex() const { return m_logicFrameIndex; }
 	protected:
 		void initWndFrameResources(Window* wnd);
 	public:

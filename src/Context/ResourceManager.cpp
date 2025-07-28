@@ -25,11 +25,13 @@ namespace FCT {
     ImageSaved::ImageSaved(RHI::Swapchain* swapchain)
     {
         img = swapchain->image();
+        autoIndex = false;
     }
 
     ImageSaved::ImageSaved(ImageSaved* denpendency)
     {
         mutilBuffer = denpendency->mutilBuffer;
+        autoIndex = true;
     }
 
     ResourceManager::ResourceManager(Context* ctx)
@@ -39,6 +41,19 @@ namespace FCT {
         {
             registerWindow(env.window);
         });
+        auto& tickerGraph = m_context->submitTickers();
+        tickerGraph[InnerTicker::ImageGraph_ChangeIndex] = {
+            [this]()
+            {
+                for (auto image : m_needChangeIndexImages)
+                {
+                    auto img = dynamic_cast<MutilBufferImage*>(image.img);
+                    img->changeCurrentIndex(m_context->currentLogicFrameIndex());
+                }
+            },
+            {SwapBufferSubmitTicker},
+            {}
+        };
         for (auto wnd : m_context->getBindWindows())
         {
             registerWindow(wnd);
@@ -80,7 +95,17 @@ namespace FCT {
             {dependency},
             {},
         };
+        updateGraph();
         return ret.img;
+    }
+
+    void ResourceManager::updateGraph()
+    {
+        m_dependencyGraph.update();
+        m_needChangeIndexImages = m_dependencyGraph.computeOrder([](const ImageSaved& saved)
+        {
+            return saved.mutilBuffer && saved.autoIndex;
+        });
     }
 
     void ResourceManager::registerWindow(Window* wnd)
@@ -99,6 +124,7 @@ namespace FCT {
             {},
             {},
         };
+        updateGraph();
     }
 
     void ResourceManager::resizeSub(std::string token, int width, int height)

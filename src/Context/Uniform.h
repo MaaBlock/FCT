@@ -264,12 +264,24 @@ namespace FCT
         constexpr UpdateFrequency getUpdateFrequency() const noexcept { return m_updateFrequency; }
 
         constexpr ShaderStages getShaderStages() const noexcept { return m_shaderStages; }
+#ifdef FCT_UNUSE
 
         constexpr void addElement(const ConstElement& element) noexcept {
             if (m_elementCount < MaxElements) {
                 size_t alignment = element.getAlignment();
                 m_size = (m_size + alignment - 1) & ~(alignment - 1);
 
+                m_offsets[m_elementCount] = m_size;
+                m_elements[m_elementCount++] = element;
+                m_size += element.getSize();
+            }
+        }
+#endif
+        constexpr void addElement(const ConstElement& element) noexcept {
+            if (m_elementCount < MaxElements) {
+                size_t size = element.getSize();
+                m_size = (m_size + size <= ((m_size + 15) & ~15)) ?
+                    m_size : (m_size + 15) & ~15;
                 m_offsets[m_elementCount] = m_size;
                 m_elements[m_elementCount++] = element;
                 m_size += element.getSize();
@@ -304,7 +316,8 @@ namespace FCT
         }
 
         constexpr size_t getTotalSize() const noexcept {
-            return (m_size + 15) & ~15;
+            //return (m_size + 15) & ~15;
+            return m_size;
         }
 
         constexpr int findElementIndex(const char* name) const noexcept {

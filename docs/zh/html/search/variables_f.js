@@ -1,11 +1,19 @@
 var searchData=
 [
-  ['tangent_0',['tangent',['../struct_f_c_t_1_1_model_vertex.html#ae6175be9ab85d8abbbfd15819fdc9ccf',1,'FCT::ModelVertex']]],
-  ['target_1',['target',['../struct_f_c_t_1_1_pass_graph_vertex.html#a72453359d48d68279817eed7f199d954',1,'FCT::PassGraphVertex']]],
-  ['task_2',['task',['../struct_f_c_t_1_1_context_1_1_logic_task_data.html#ae273e1531b2699d45f8d035b098ac98f',1,'FCT::Context::LogicTaskData::task'],['../struct_f_c_t_1_1_ui_task_data.html#a7291db52b0f209af50fe8e4fac93fb01',1,'FCT::UiTaskData::task']]],
-  ['texcoords_3',['texCoords',['../struct_f_c_t_1_1_model_vertex.html#aa86712659501ed5c5451413aa90a903f',1,'FCT::ModelVertex']]],
-  ['textures_4',['textures',['../struct_f_c_t_1_1_pass_graph_vertex.html#a7a336dec8b4e59c71f535caa54716fd6',1,'FCT::PassGraphVertex']]],
-  ['transform_5',['transform',['../class_f_c_t_1_1_vertex_path.html#a2b45cd766fac46fb7ee7e7c87724c358',1,'FCT::VertexPath']]],
-  ['type_6',['type',['../struct_f_c_t_1_1_pass_graph_edge.html#aed6dfd34ade613b3f6ef2aa0aeac6669',1,'FCT::PassGraphEdge::type'],['../struct_f_c_t_1_1_resource_graph_edge.html#a84cea9d1195f45cff8960248fb87194b',1,'FCT::ResourceGraphEdge::type']]],
-  ['types_7',['types',['../struct_f_c_t_1_1_pass_clear_value.html#accb82a353a78ef0a73c5ca59a631a684',1,'FCT::PassClearValue']]]
+  ['samples_0',['samples',['../struct_f_c_t_1_1_render_graph_1_1_image_resource_desc.html#ae5b089bf3f66ab0681ed8ea95c1b2ee5',1,'FCT::RenderGraph::ImageResourceDesc']]],
+  ['scissorlt_1',['scissorLt',['../struct_f_c_t_1_1_viewport_job.html#a38edd67a5050d9446d202f0c93a7f9b8',1,'FCT::ViewportJob']]],
+  ['scissorrb_2',['scissorRb',['../struct_f_c_t_1_1_viewport_job.html#a05246bda6cdfc3ba6cf78d0afe4a423c',1,'FCT::ViewportJob']]],
+  ['screeninfonameinshder_3',['ScreenInfoNameInShder',['../class_f_c_t_1_1_vertex_context.html#a87782fd9229ab4b83226a2a1744a80e0',1,'FCT::VertexContext']]],
+  ['semaphore_4',['semaphore',['../struct_f_c_t_1_1_r_h_i_1_1_wait_semaphore_description.html#a7217c4372a9b9372e92dc4c8df8e977c',1,'FCT::RHI::WaitSemaphoreDescription']]],
+  ['singlechunkobjectnums_5',['SingleChunkObjectNums',['../namespace_f_c_t.html#a060d175d28f74076dcd676729d55a8e3',1,'FCT']]],
+  ['singlemvp_6',['SingleMVP',['../namespace_f_c_t_1_1_predefined_uniforms.html#af114142471391885833735e0ac67ccbf',1,'FCT::PredefinedUniforms']]],
+  ['size_7',['size',['../struct_f_c_t_1_1_image_init_data.html#a8307100c24ff7107883be8d5c13c1400',1,'FCT::ImageInitData']]],
+  ['slot_8',['slot',['../struct_f_c_t_1_1_render_graph_1_1_image_resource_vertex.html#a55db22f9b483693cc1d257f2efa920ad',1,'FCT::RenderGraph::ImageResourceVertex::slot'],['../struct_f_c_t_1_1_r_h_i_1_1_attachment_slot.html#ab80c6340217c26d3e47382c08ff5c426',1,'FCT::RHI::AttachmentSlot::slot']]],
+  ['sortedpasses_9',['sortedPasses',['../struct_f_c_t_1_1_render_graph_1_1_execution_order.html#ad18b63a83bafe6f229f83792fdc0255c',1,'FCT::RenderGraph::ExecutionOrder']]],
+  ['stages_10',['stages',['../struct_f_c_t_1_1_r_h_i_1_1_wait_semaphore_description.html#ae31410cb10185e3e7e93b885e9bba17e',1,'FCT::RHI::WaitSemaphoreDescription']]],
+  ['state_11',['state',['../struct_f_c_t_1_1_tradition_render_job.html#ab5af7a2e1c4a6153cd29a14541e932fa',1,'FCT::TraditionRenderJob']]],
+  ['stencil_12',['stencil',['../struct_f_c_t_1_1_pass_clear_value.html#ace48476fbf209c7d625ad4548a3bcc00',1,'FCT::PassClearValue']]],
+  ['successors_13',['successors',['../struct_f_c_t_1_1_token_graph_1_1_node_info.html#ac0b75b9b988cd91bee0d4309a41cd2b5',1,'FCT::TokenGraph::NodeInfo']]],
+  ['swapbuffersubmitticker_14',['SwapBufferSubmitTicker',['../namespace_f_c_t.html#a713521d343a445fb31ddf00b9665d59f',1,'FCT']]],
+  ['swapchain_15',['swapchain',['../struct_f_c_t_1_1_swapchain_event_1_1_recreate.html#a3d5210ecfa27eeb04fc88aef082343a1',1,'FCT::SwapchainEvent::Recreate']]]
 ];

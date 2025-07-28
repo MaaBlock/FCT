@@ -11,6 +11,9 @@ var hierarchy =
     [ "FCT::ConstElement", "class_f_c_t_1_1_const_element.html", null ],
     [ "FCT::ConstLayout", "class_f_c_t_1_1_const_layout.html", null ],
     [ "FCT::ConstVertex", "class_f_c_t_1_1_const_vertex.html", null ],
+    [ "boost::default_bfs_visitor", null, [
+      [ "FCT::TokenGraph< Token, Value >::TokenGraphBFSVisitor< Visitor >", "class_f_c_t_1_1_token_graph_1_1_token_graph_b_f_s_visitor.html", null ]
+    ] ],
     [ "FCT::DeletableTrait< T >", "class_f_c_t_1_1_deletable_trait.html", null ],
     [ "FCT::DeletableTrait< Fence >", "class_f_c_t_1_1_deletable_trait.html", [
       [ "FCT::RHI::Fence", "class_f_c_t_1_1_r_h_i_1_1_fence.html", [
@@ -40,9 +43,19 @@ var hierarchy =
     ] ],
     [ "FCT::FrameResource", "struct_f_c_t_1_1_frame_resource.html", null ],
     [ "FCT::Freetype_FontCommon", "class_f_c_t_1_1_freetype___font_common.html", null ],
+    [ "FCT::EventSystemConfig::Full", "struct_f_c_t_1_1_event_system_config_1_1_full.html", null ],
     [ "FCT::GLFW_UICommon", "class_f_c_t_1_1_g_l_f_w___u_i_common.html", null ],
     [ "Font::GlyphInfo", "struct_font_1_1_glyph_info.html", null ],
     [ "std::hash< FCT::TextureElement >", "structstd_1_1hash_3_01_f_c_t_1_1_texture_element_01_4.html", null ],
+    [ "FCT::IEventSystem< Config >", "class_f_c_t_1_1_i_event_system.html", null ],
+    [ "FCT::IEventSystem< EventSystemConfig::TriggerOnly >", "class_f_c_t_1_1_i_event_system.html", [
+      [ "FCT::Context", "class_f_c_t_1_1_context.html", [
+        [ "FCT::VK_Context", "class_f_c_t_1_1_v_k___context.html", null ]
+      ] ],
+      [ "FCT::RHI::Swapchain", "class_f_c_t_1_1_r_h_i_1_1_swapchain.html", [
+        [ "FCT::RHI::VK_Swapchain", "class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html", null ]
+      ] ]
+    ] ],
     [ "FCT::RHI::IIndexData", "class_f_c_t_1_1_r_h_i_1_1_i_index_data.html", [
       [ "FCT::RHI::IndexData< T >", "class_f_c_t_1_1_r_h_i_1_1_index_data.html", null ]
     ] ],
@@ -52,12 +65,14 @@ var hierarchy =
       [ "FCT::SingleBufferAfterCreateImageBehavior", "class_f_c_t_1_1_single_buffer_after_create_image_behavior.html", null ]
     ] ],
     [ "FCT::ImageLoader::ImageData", "struct_f_c_t_1_1_image_loader_1_1_image_data.html", null ],
+    [ "FCT::ImageDesc", "struct_f_c_t_1_1_image_desc.html", null ],
     [ "FCT::ImageInitData", "struct_f_c_t_1_1_image_init_data.html", null ],
     [ "FCT::ImageLoader", "class_f_c_t_1_1_image_loader.html", [
       [ "FCT::FreeImage_ImageLoader", "class_f_c_t_1_1_free_image___image_loader.html", null ]
     ] ],
     [ "FCT::RenderGraph::ImageResourceDesc", "struct_f_c_t_1_1_render_graph_1_1_image_resource_desc.html", null ],
     [ "FCT::RenderGraph::ImageResourceVertex", "struct_f_c_t_1_1_render_graph_1_1_image_resource_vertex.html", null ],
+    [ "FCT::ImageSaved", "struct_f_c_t_1_1_image_saved.html", null ],
     [ "FCT::RHI::IndexBuffer", "class_f_c_t_1_1_r_h_i_1_1_index_buffer.html", [
       [ "FCT::RHI::VK_IndexBuffer", "class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer.html", null ]
     ] ],
@@ -94,6 +109,7 @@ var hierarchy =
     [ "FCT::Noncopyable", "class_f_c_t_1_1_noncopyable.html", [
       [ "FCT::TokenGraph< std::string, SubmitTicker >", "class_f_c_t_1_1_token_graph.html", null ],
       [ "FCT::TokenGraph< std::string, SyncTicker >", "class_f_c_t_1_1_token_graph.html", null ],
+      [ "FCT::TokenGraph< std::string, FCT::ImageSaved >", "class_f_c_t_1_1_token_graph.html", null ],
       [ "FCT::TokenGraph< Token, Value >", "class_f_c_t_1_1_token_graph.html", null ]
     ] ],
     [ "FCT::Object", "class_f_c_t_1_1_object.html", [
@@ -115,10 +131,10 @@ var hierarchy =
       [ "FCT::VertexRenderPipeline", "class_f_c_t_1_1_vertex_render_pipeline.html", null ]
     ] ],
     [ "FCT::PixelLayout", "class_f_c_t_1_1_pixel_layout.html", null ],
+    [ "FCT::EventSystemConfig::QueueOnly", "struct_f_c_t_1_1_event_system_config_1_1_queue_only.html", null ],
+    [ "FCT::SwapchainEvent::Recreate", "struct_f_c_t_1_1_swapchain_event_1_1_recreate.html", null ],
     [ "FCT::RefCount", "class_f_c_t_1_1_ref_count.html", [
-      [ "FCT::Context", "class_f_c_t_1_1_context.html", [
-        [ "FCT::VK_Context", "class_f_c_t_1_1_v_k___context.html", null ]
-      ] ],
+      [ "FCT::Context", "class_f_c_t_1_1_context.html", null ],
       [ "FCT::EventHandler", "class_f_c_t_1_1_event_handler.html", [
         [ "FCT::CallBackEventHandler", "class_f_c_t_1_1_call_back_event_handler.html", null ],
         [ "FCT::InputStateEventHandler", "class_f_c_t_1_1_input_state_event_handler.html", null ]
@@ -193,9 +209,7 @@ var hierarchy =
         [ "FCT::RHI::VK_RenderTargetView", "class_f_c_t_1_1_r_h_i_1_1_v_k___render_target_view.html", null ]
       ] ],
       [ "FCT::RHI::Semaphore", "class_f_c_t_1_1_r_h_i_1_1_semaphore.html", null ],
-      [ "FCT::RHI::Swapchain", "class_f_c_t_1_1_r_h_i_1_1_swapchain.html", [
-        [ "FCT::RHI::VK_Swapchain", "class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html", null ]
-      ] ],
+      [ "FCT::RHI::Swapchain", "class_f_c_t_1_1_r_h_i_1_1_swapchain.html", null ],
       [ "FCT::RHI::TextureView", "class_f_c_t_1_1_r_h_i_1_1_texture_view.html", [
         [ "FCT::RHI::VK_TextureView", "class_f_c_t_1_1_r_h_i_1_1_v_k___texture_view.html", null ]
       ] ],
@@ -208,8 +222,12 @@ var hierarchy =
     [ "FCT::ResourceGraphEdge", "struct_f_c_t_1_1_resource_graph_edge.html", null ],
     [ "FCT::ResourceGraphVertex", "struct_f_c_t_1_1_resource_graph_vertex.html", null ],
     [ "FCT::ResourceLayout", "class_f_c_t_1_1_resource_layout.html", null ],
+    [ "FCT::ResourceManager", "class_f_c_t_1_1_resource_manager.html", null ],
     [ "FCT::Runtime", "class_f_c_t_1_1_runtime.html", null ],
-    [ "FCT::RuntimeCommon", "struct_f_c_t_1_1_runtime_common.html", null ],
+    [ "FCT::RuntimeCommon", "struct_f_c_t_1_1_runtime_common.html", [
+      [ "FCT::Android_RuntimeCommon", "struct_f_c_t_1_1_android___runtime_common.html", null ],
+      [ "FCT::Win32_RuntimeCommon", "struct_f_c_t_1_1_win32___runtime_common.html", null ]
+    ] ],
     [ "FCT::Sampler", "class_f_c_t_1_1_sampler.html", [
       [ "FCT::RHI::VK_Sampler", "class_f_c_t_1_1_r_h_i_1_1_v_k___sampler.html", null ]
     ] ],
@@ -236,6 +254,7 @@ var hierarchy =
     [ "FCT::TlsPtr< T >", "class_f_c_t_1_1_tls_ptr.html", null ],
     [ "FCT::TraditionPipelineState", "struct_f_c_t_1_1_tradition_pipeline_state.html", null ],
     [ "FCT::TraditionRenderPass::TraditionRenderJobQueue", "struct_f_c_t_1_1_tradition_render_pass_1_1_tradition_render_job_queue.html", null ],
+    [ "FCT::EventSystemConfig::TriggerOnly", "struct_f_c_t_1_1_event_system_config_1_1_trigger_only.html", null ],
     [ "FCT::UiTaskData", "struct_f_c_t_1_1_ui_task_data.html", null ],
     [ "FCT::UITaskTrans", "struct_f_c_t_1_1_u_i_task_trans.html", null ],
     [ "FCT::UniformBuffer", "class_f_c_t_1_1_uniform_buffer.html", null ],
@@ -259,12 +278,14 @@ var hierarchy =
     ] ],
     [ "FCT::VK_ContextCommon", "class_f_c_t_1_1_v_k___context_common.html", null ],
     [ "FCT::VK_RenderPass", "class_f_c_t_1_1_v_k___render_pass.html", null ],
+    [ "FCT::Vulkan_WndResource", "struct_f_c_t_1_1_vulkan___wnd_resource.html", null ],
     [ "FCT::RHI::WaitSemaphoreDescription", "struct_f_c_t_1_1_r_h_i_1_1_wait_semaphore_description.html", null ],
     [ "FCT::WeakPtr< T >", "class_f_c_t_1_1_weak_ptr.html", null ],
     [ "FCT::WindowBehavior", "class_f_c_t_1_1_window_behavior.html", [
       [ "FCT::GLFW_WindowBehavior", "class_f_c_t_1_1_g_l_f_w___window_behavior.html", null ],
       [ "FCT::SetParamWindowBehavior", "class_f_c_t_1_1_set_param_window_behavior.html", null ]
     ] ],
+    [ "FCT::ContextEvent::WindowBound", "struct_f_c_t_1_1_context_event_1_1_window_bound.html", null ],
     [ "FCT::RenderGraph::WindowDepthStencilResource", "struct_f_c_t_1_1_render_graph_1_1_window_depth_stencil_resource.html", null ],
     [ "FCT::RenderGraph::WindowImageResource", "struct_f_c_t_1_1_render_graph_1_1_window_image_resource.html", null ]
 ];

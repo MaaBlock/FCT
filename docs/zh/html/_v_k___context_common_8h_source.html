@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>FCT: include/FCT/Context/VK_ContextCommon.h 源文件</title>
+<title>FCT: src/Context/VK_ContextCommon.h 源文件</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -137,9 +137,9 @@ $(function(){initNavTree('_v_k___context_common_8h_source.html','',''); });
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            std::vector&lt;vk::ExtensionProperties&gt; availableExtensions = vk::enumerateInstanceExtensionProperties();</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            <span class="comment">// 输出可用的扩展，用于调试</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            <a class="code hl_variable" href="namespace_f_c_t.html#aaf667d52d2d41f6a081ae2fc2d521650">fout</a> &lt;&lt; <span class="stringliteral">&quot;Available Vulkan extensions:&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            <a class="code hl_variable" href="namespace_f_c_t.html#a539584b126825634a31a2e55f4c9a0f3">fout</a> &lt;&lt; <span class="stringliteral">&quot;Available Vulkan extensions:&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; extension : availableExtensions) {</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                <a class="code hl_variable" href="namespace_f_c_t.html#aaf667d52d2d41f6a081ae2fc2d521650">fout</a> &lt;&lt; <span class="stringliteral">&quot;  &quot;</span> &lt;&lt; extension.extensionName &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                <a class="code hl_variable" href="namespace_f_c_t.html#a539584b126825634a31a2e55f4c9a0f3">fout</a> &lt;&lt; <span class="stringliteral">&quot;  &quot;</span> &lt;&lt; extension.extensionName &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            }</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            std::vector&lt;const char*&gt; extensions = {</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#ifdef FCT_DEBUG</span></div>
@@ -164,9 +164,9 @@ $(function(){initNavTree('_v_k___context_common_8h_source.html','',''); });
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            m_physicalDevices =  m_instance.enumeratePhysicalDevices();</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            <span class="keywordflow">for</span> (<span class="keyword">auto</span> it : m_physicalDevices){</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                <a class="code hl_variable" href="namespace_f_c_t.html#aaf667d52d2d41f6a081ae2fc2d521650">fout</a> &lt;&lt; <span class="stringliteral">&quot;Physical Device: &quot;</span> &lt;&lt; it.getProperties().deviceName &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                <a class="code hl_variable" href="namespace_f_c_t.html#a539584b126825634a31a2e55f4c9a0f3">fout</a> &lt;&lt; <span class="stringliteral">&quot;Physical Device: &quot;</span> &lt;&lt; it.getProperties().deviceName &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; queueFamily : it.getQueueFamilyProperties()) {</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                    <a class="code hl_variable" href="namespace_f_c_t.html#aaf667d52d2d41f6a081ae2fc2d521650">fout</a> &lt;&lt; <span class="stringliteral">&quot;Queue Family: &quot;</span> &lt;&lt; queueFamily.queueCount &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                    <a class="code hl_variable" href="namespace_f_c_t.html#a539584b126825634a31a2e55f4c9a0f3">fout</a> &lt;&lt; <span class="stringliteral">&quot;Queue Family: &quot;</span> &lt;&lt; queueFamily.queueCount &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                }</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            }</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
@@ -226,14 +226,14 @@ $(function(){initNavTree('_v_k___context_common_8h_source.html','',''); });
 <div class="ttc" id="aclass_f_c_t_1_1_v_k___context_common_html_ae229fdad476fc58f660fd9ef688dfa61"><div class="ttname"><a href="class_f_c_t_1_1_v_k___context_common.html#ae229fdad476fc58f660fd9ef688dfa61">FCT::VK_ContextCommon::init</a></div><div class="ttdeci">void init()</div><div class="ttdef"><b>定义</b> <a href="#l00024">VK_ContextCommon.h:24</a></div></div>
 <div class="ttc" id="aclass_f_c_t_1_1_v_k___context_html"><div class="ttname"><a href="class_f_c_t_1_1_v_k___context.html">FCT::VK_Context</a></div><div class="ttdef"><b>定义</b> <a href="_v_k___context_8h_source.html#l00011">VK_Context.h:11</a></div></div>
 <div class="ttc" id="anamespace_f_c_t_html"><div class="ttname"><a href="namespace_f_c_t.html">FCT</a></div><div class="ttdef"><b>定义</b> <a href="_flags_8h_source.html#l00010">Flags.h:11</a></div></div>
-<div class="ttc" id="anamespace_f_c_t_html_aaf667d52d2d41f6a081ae2fc2d521650"><div class="ttname"><a href="namespace_f_c_t.html#aaf667d52d2d41f6a081ae2fc2d521650">FCT::fout</a></div><div class="ttdeci">std::ostream &amp; fout</div></div>
+<div class="ttc" id="anamespace_f_c_t_html_a539584b126825634a31a2e55f4c9a0f3"><div class="ttname"><a href="namespace_f_c_t.html#a539584b126825634a31a2e55f4c9a0f3">FCT::fout</a></div><div class="ttdeci">std::ostream &amp; fout</div><div class="ttdef"><b>定义</b> <a href="_out_stream_8cpp_source.html#l00008">OutStream.cpp:8</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="dir_3b79087de5de3e907e48529d171f9ebd.html">FCT</a></li><li class="navelem"><a href="dir_19fee93ae38761ad3d1230778bcc76f4.html">Context</a></li><li class="navelem"><a href="_v_k___context_common_8h.html">VK_ContextCommon.h</a></li>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_283dc56ba28011889f2bbd8b6e1cfbb3.html">Context</a></li><li class="navelem"><a href="_v_k___context_common_8h.html">VK_ContextCommon.h</a></li>
     <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>

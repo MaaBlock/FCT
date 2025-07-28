@@ -53,6 +53,7 @@ var NAVTREE =
       [ "文件列表", "files.html", "files_dup" ],
       [ "文件成员", "globals.html", [
         [ "全部", "globals.html", null ],
+        [ "函数", "globals_func.html", null ],
         [ "变量", "globals_vars.html", null ],
         [ "宏定义", "globals_defs.html", null ]
       ] ]
@@ -62,28 +63,29 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_activity_wrapper_8h.html",
-"_v_k___command_pool_8h_source.html",
-"class_f_c_t_1_1_blend_state.html#a9f3359dd84acb98a75bc85c8c7d66561",
-"class_f_c_t_1_1_context.html#a59944f3c38119994120f3623a36cddf6",
-"class_f_c_t_1_1_draw_call.html#a52c1984997e1af160baee0c43fec0cd1",
-"class_f_c_t_1_1_image.html#a2e5175e18704b37ee3d3a971ddedbd98",
-"class_f_c_t_1_1_object_pool.html#a2024de67b53ccff6ac52877a2dc44720",
-"class_f_c_t_1_1_r_h_i_1_1_const_buffer.html#a5052583f15fca88b4da74fdf4d790cfc",
-"class_f_c_t_1_1_r_h_i_1_1_pipeline.html#a70f2886ed528e3020534fa283216e99b",
-"class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer.html#a53b5f6a28fcc892d2aa43b158f166250",
-"class_f_c_t_1_1_r_h_i_1_1_v_k___semaphore.html#a1839ec7c217ac2bbf36aafa30a68900d",
-"class_f_c_t_1_1_rasterization_state.html#abee941dd8172ff399e18e2b6c8e226e9",
-"class_f_c_t_1_1_sampler.html#aafd136bd2063722f00dcb7d72369970b",
-"class_f_c_t_1_1_texture.html#a166351c47adddda7abfd5f46eb438e2e",
-"class_f_c_t_1_1_v_k___blend_state.html",
-"class_f_c_t_1_1_vertex_buffer.html#a28227e8ac75acde61503b6a4a24f39ae",
-"class_f_c_t_1_1_vertex_render_screen.html#a74af271f7895b3824487abb5f3d79887",
-"functions_func.html",
-"namespace_f_c_t.html#a0741721dca246274b1b72d07249443e4aa0203efb56d9533eb903960af0f91e96",
-"namespace_f_c_t.html#abb465125b2d017d7c11e187830f12ca6",
-"struct_f_c_t_1_1_model_mesh.html#a453f310c108aa0412c7505601df3d4a1",
-"struct_f_c_t_1_1_tradition_render_job.html#af1221b57bde7417e227ea278291511b1"
+"_activity_wrapper_8cpp.html",
+"_resource_manager_8cpp_source.html",
+"class_f_c_t_1_1_android___runtime.html#a065a479fc9e0808194381f762b63d4f0",
+"class_f_c_t_1_1_call_back_event_handler.html#a8457c73c6cb46ee6ed38174f403fae5e",
+"class_f_c_t_1_1_context.html#aed5ee768dbd1e64f831cf65024133505",
+"class_f_c_t_1_1_flags.html#a0f535e8bcd5fd02aa5923d9fa500049e",
+"class_f_c_t_1_1_image_loader.html",
+"class_f_c_t_1_1_pass.html#a6f12820bcf0085948a94c1ddd2820a00",
+"class_f_c_t_1_1_r_h_i_1_1_i_index_data.html#a7195708b80666fd277c7bca2465331dd",
+"class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a07a491784b70c511c0fdac27e511a7ea",
+"class_f_c_t_1_1_r_h_i_1_1_v_k___fence.html#aac3ff4218dc7ec5dcbaf29fec9338dc3",
+"class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#aef5fca5bddf267c2fbffc582a76c6c0b",
+"class_f_c_t_1_1_render_graph.html",
+"class_f_c_t_1_1_sampler_element.html#ac12016dd6381710cb2bda22bd98d7c79",
+"class_f_c_t_1_1_texture_array.html#a465261477eca40c7c7a089318c5f194dab4b279046a02077466fa26cabb00c642",
+"class_f_c_t_1_1_v_k___context.html#a9171eabffff1b94dadd24467623fe442",
+"class_f_c_t_1_1_vertex_context.html#a15a716cb062421c0d6d5107bf1311043",
+"class_f_c_t_1_1_vertex_shader.html#a8d99e2b940895be398146ab0f9424231",
+"functions_vars_d.html",
+"namespace_f_c_t.html#a0741721dca246274b1b72d07249443e4af76dbb655425d5bbcf8f4b8f5d316960",
+"namespace_f_c_t.html#adb995786f2f649c122895cd47ab09d32a6c2ab859b54837522f9f738ef3bf846d",
+"struct_f_c_t_1_1_is_ref_count_base.html",
+"struct_f_c_t_1_1_tradition_render_job.html"
 ];
 
 var SYNCONMSG = '点击 关闭 面板同步';

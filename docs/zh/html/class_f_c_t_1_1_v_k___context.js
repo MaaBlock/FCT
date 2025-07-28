@@ -5,11 +5,8 @@ var class_f_c_t_1_1_v_k___context =
     [ "beginCommandBuffer", "class_f_c_t_1_1_v_k___context.html#a8dbebdd5340f76ecfa6039602e403a89", null ],
     [ "beginSingleTimeCommands", "class_f_c_t_1_1_v_k___context.html#ad5e7885fc2f821b9f477cf9fd0cabba4", null ],
     [ "beginSingleTimeTransferCommands", "class_f_c_t_1_1_v_k___context.html#ae5763fb1ff2d916acff15f02419a07b0", null ],
-    [ "clear", "class_f_c_t_1_1_v_k___context.html#a3c5d15de5ff732c6b3fc22be1aad0140", null ],
     [ "clear", "class_f_c_t_1_1_v_k___context.html#a8ee2816d720658cca4b90b0bfad1840d", null ],
     [ "create", "class_f_c_t_1_1_v_k___context.html#a9171eabffff1b94dadd24467623fe442", null ],
-    [ "createRasterizationState", "class_f_c_t_1_1_v_k___context.html#a178ca2e4050a63215659b6200d25d217", null ],
-    [ "createRenderTargetView", "class_f_c_t_1_1_v_k___context.html#a58516c03f7f60aaf0c23fb5c5b6dc4cb", null ],
     [ "createTraditionPipeline", "class_f_c_t_1_1_v_k___context.html#a023507923c777244f1e3c2aea3c0cbf3", null ],
     [ "createTransferCommandPool", "class_f_c_t_1_1_v_k___context.html#a951c3c18fa573db2ade791d7367acea4", null ],
     [ "device", "class_f_c_t_1_1_v_k___context.html#afc7bb90fee91dc8aec3b2f3f18ec6693", null ],
@@ -25,6 +22,5 @@ var class_f_c_t_1_1_v_k___context =
     [ "submitCommandBuffer", "class_f_c_t_1_1_v_k___context.html#afb26ca9ab344135c07590cf5d485d94d", null ],
     [ "transferDataToBuffer", "class_f_c_t_1_1_v_k___context.html#a6e11a276d21ef62c3917fd9dba515e2c", null ],
     [ "transferDataToImage", "class_f_c_t_1_1_v_k___context.html#a60302b67c23a40ae9c2f7e55fdae5627", null ],
-    [ "transferDataToImage", "class_f_c_t_1_1_v_k___context.html#ab12afb4949df6e03b57d5c0d70e9f2d3", null ],
-    [ "viewport", "class_f_c_t_1_1_v_k___context.html#a0f0a700bca54ffb6b69effbcc3b2a16b", null ]
+    [ "transferDataToImage", "class_f_c_t_1_1_v_k___context.html#ab12afb4949df6e03b57d5c0d70e9f2d3", null ]
 ];

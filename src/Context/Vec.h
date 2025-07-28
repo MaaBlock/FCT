@@ -189,6 +189,23 @@ namespace FCT {
         : x(vec.x), y(vec.y), z(vec.z), w(w) {}
         Vec4(Vec2 v, float z = 0.0f, float w = 0.0f)
             : x(v.x), y(v.y), z(z), w(w) {}
+        Vec4 operator-(const Vec4 &rhs) const
+        {
+            return Vec4(x - rhs.x, y - rhs.y, z - rhs.z, w - rhs.w);
+        }
+
+        Vec4 operator-() const
+        {
+            return Vec4(-x, -y, -z, -w);
+        }
+        Vec4 normalize() const
+        {
+            float length = std::sqrt(x * x + y * y + z * z + w * w);
+            if (length > 0.0f) {
+                return Vec4(x / length, y / length, z / length, w / length);
+            }
+            return Vec4(0.0f, 0.0f, 0.0f, 0.0f);
+        }
     };
     template<typename T>
     struct Vector4
