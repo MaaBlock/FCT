@@ -5,11 +5,13 @@
 #include "../MutilThreadBase/RefCount.h"
 #include "../Context/ImageRenderTarget.h"
 #include "../RHI/Semaphore.h"
+#include "../Base/IEventSystem.h"
+#include "SwapchainEvent.h"
 namespace FCT
 {
     namespace RHI
     {
-        class Swapchain : public RefCount
+        class Swapchain : public RefCount,public IEventSystem<EventSystemConfig::TriggerOnly>
         {
         public:
             Swapchain()
@@ -144,6 +146,25 @@ namespace FCT
             bool hasRecreatedInThisFrame() const
             {
                 return m_hasRecreatedInThisFrame;
+            }
+
+            /**
+             * @cond CHINESE
+             * @return 创建交换链后得到的实际大小
+             * @endcond
+             */
+            uint32_t width() const
+            {
+                return m_width;
+            }
+            /**
+             * @cond CHINESE
+             * @return 创建交换链后得到的实际大小
+             * @endcond
+             */
+            uint32_t height() const
+            {
+                return m_height;
             }
         protected:
             std::vector<RHI::Fence*> m_renderFinshFences;

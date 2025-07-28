@@ -164,5 +164,13 @@ namespace FCT {
 #define FCT_DELETE(args) delete args
 #define FCT_DELETES(args) delete[] args
 #endif // FCT_DEBUG
-
+#define FCT_SAFE_NEW(var,type,...) \
+	if (var) \
+	    FCT_DELETE(var); \
+	var = FCT_NEW(type, __VA_ARGS__)
+#define FCT_SAFE_DELETE(var) \
+	if (var) {\
+	    FCT_DELETE(var); \
+	    var = nullptr; \
+	}
 #endif // FCT_MEMORY_CHEAK

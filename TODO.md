@@ -21,6 +21,11 @@ graph TD
 ```
 ## 统一new和delete
 将不小心使用的new 和 delete 都改为使用FCT_NEW FCT_NEWS FCT_DELETE FCT_DELETES
+## 将FCT::Image变为只读
+将FCT::Image用来填参数的以及create统一去除，
+只用来获取图像信息,可以不去除as,这样用户
+要么自行创建MutilBufferImage/SingleBufferImage
+要么通过ResourceManager allocate
 # [main]
 ```mermaid
 graph TD

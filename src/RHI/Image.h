@@ -3,17 +3,12 @@
 //
 #include "../Type/type.h"
 #include "../MutilThreadBase/RefCount.h"
-#include "../Base/Flags.h"
+#include "./ImageUsageFlags.h"
 
 #ifndef FCT_RHI_IMAGE_H
 #define FCT_RHI_IMAGE_H
 namespace FCT
 {
-    struct ImageInitData
-    {
-        void* data;
-        size_t size;
-    };
     namespace RHI
     {
         class Fence;

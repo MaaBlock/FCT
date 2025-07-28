@@ -255,6 +255,13 @@ namespace FCT {
                 }
                 m_hasRecreatedInThisFrame = true;
             }
+            if (m_hasRecreatedInThisFrame)
+            {
+                trigger(SwapchainEvent::Recreate{
+                    m_width, m_height,
+                    this
+                });
+            }
         }
 
         void VK_Swapchain::present()

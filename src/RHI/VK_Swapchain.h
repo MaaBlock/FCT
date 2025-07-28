@@ -9,6 +9,7 @@
 #include "VK_Semaphore.h"
 #include "../Context/ImageRenderTarget.h"
 #include "../Context/MutilBufferImage.h"
+#include "../Base/IEventSystem.h"
 #ifndef FCT_VK_SWAPCHAIN_H
 #define FCT_VK_SWAPCHAIN_H
 namespace FCT{

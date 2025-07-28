@@ -61,6 +61,7 @@ namespace FCT {
 
     Context::Context(Runtime* runtime)
     {
+        m_resourceManager = nullptr;
         m_defaultGraph = new RenderGraph(this);
         m_currentGraph = m_defaultGraph;
         m_currentGraph->addRef();

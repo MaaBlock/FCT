@@ -68,6 +68,7 @@
 #include <boost/container/flat_map.hpp>
 #include <boost/bimap.hpp>
 #include <boost/bimap/unordered_set_of.hpp>
+#include <boost/graph/breadth_first_search.hpp>
 
 
 #include <thread>

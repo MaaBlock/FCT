@@ -4,11 +4,11 @@
 
 #ifndef FCT_IMAGE_H
 #define FCT_IMAGE_H
-#include "../MutilThreadBase/RefCount.h"
-#include "../Base/Flags.h"
 #include "./IRenderTarget.h"
-#include "../Type/type.h"
+#include "../MutilThreadBase/RefCount.h"
 #include "../RHI/Fence.h"
+#include "../RHI/ImageUsageFlags.h"
+#include "../Type/type.h"
 
 namespace FCT {
     class Context;

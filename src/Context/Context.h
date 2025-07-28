@@ -34,6 +34,8 @@
 #include "Mesh.h"
 #include "../Base/TokenGraph.h"
 #include "../Base/IEventSystem.h"
+#include "./ResourceManager.h"
+#include "./ContextEvent.h"
 namespace FCT
 {
 	class RasterizationState;
@@ -107,14 +109,6 @@ namespace FCT
 	 *		if you want to
 	 */
 	class Runtime;
-	namespace ContextEvent
-	{
-		struct WindowBound
-		{
-			Window* window;
-			Context* context;
-		};
-	}
 	class Context : public RefCount,public IEventSystem<EventSystemConfig::TriggerOnly>
 	{
 	protected:
@@ -129,6 +123,13 @@ namespace FCT
 		}
 		virtual RHI::RasterizationPipeline* createTraditionPipeline() = 0;
 		virtual void create() = 0;
+		template <typename T>
+		void addModule();
+		template <typename T>
+		void removeModule();
+		template <typename T>
+		T* getModule();
+
 	protected:
 		ModelLoader* m_modelLoader;
 	public:
@@ -224,6 +225,7 @@ namespace FCT
 	public:
 		void nextFrame();
 		void currentFlush();
+		const std::vector<Window*>& getBindWindows() { return m_bindWindows; }
 	protected:
 		TokenGraph<std::string, SubmitTicker> m_submitTickers;
 		TokenGraph<std::string, SyncTicker> m_syncTickers;
@@ -359,6 +361,47 @@ namespace FCT
 			return m_currentGraph->getPassByName(name);
 		}
 
+	protected:
+		ResourceManager* m_resourceManager;
 	};
+
+	template <typename T>
+	void Context::addModule()
+	{
+		if constexpr (std::is_same_v<T, ResourceManager>)
+		{
+			FCT_SAFE_NEW(m_resourceManager,ResourceManager,this);
+		} else
+		{
+			ferr << "Unsupported module type: " << typeid(T).name() << std::endl;
+		}
+	}
+
+	template <typename T>
+	void Context::removeModule()
+	{
+		if constexpr (std::is_same_v<T, ResourceManager>)
+        {
+			FCT_SAFE_DELETE(m_resourceManager);
+        } else
+        {
+            ferr << "Unsupported module type: " << typeid(T).name() << std::endl;
+        }
+
+	}
+
+	template <typename T>
+	T* Context::getModule()
+	{
+
+		if constexpr (std::is_same_v<T, ResourceManager>)
+		{
+			return m_resourceManager;
+		} else
+		{
+			ferr << "try to get undefined context module." << std::endl;
+			return nullptr;
+		}
+	}
 }
 #include "Mesh.hpp"
