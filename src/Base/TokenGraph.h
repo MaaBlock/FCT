@@ -174,6 +174,35 @@ namespace FCT {
 			}
 		}
 
+
+		template<typename Visitor>
+		class TokenGraphBFSVisitor : public boost::default_bfs_visitor
+		{
+		private:
+			const TokenGraph* graph;
+			Visitor visitor;
+			Token startToken;
+			bool includeStart;
+
+		public:
+			TokenGraphBFSVisitor(const TokenGraph* g, Visitor v, Token start, bool include)
+				: graph(g), visitor(v), startToken(start), includeStart(include) {}
+
+			template<typename VertexDescriptor, typename Graph>
+			void discover_vertex(VertexDescriptor v, const Graph& g) const
+			{
+				auto vertex_token_it = graph->m_vertex.right.find(v);
+				if (vertex_token_it != graph->m_vertex.right.end()) {
+					Token token = vertex_token_it->second;
+					if (graph->hasNode(token)) {
+						if (!includeStart && token == startToken) {
+							return;
+						}
+						visitor(graph->m_nodeMap.at(token).value);
+					}
+				}
+			}
+		};
 		/**
 		 * @cond CHINESE
 		 * @tparam Visitor
@@ -193,30 +222,7 @@ namespace FCT {
 			std::map<BoostVertex, boost::default_color_type> vertex_color_map;
 			auto color_pmap = boost::make_assoc_property_map(vertex_color_map);
 
-			struct DiscoverFunc {
-				const decltype(this) graph;
-				Visitor& visitor;
-				Token startToken;
-				bool includeStart;
-
-				void operator()(BoostVertex v, const TokenGraphSavedBoostGraph& g) const {
-					auto vertex_token_it = graph->m_vertex.right.find(v);
-					if (vertex_token_it != graph->m_vertex.right.end()) {
-						Token token = vertex_token_it->second;
-						if (graph->hasNode(token)) {
-							if (!includeStart && token == startToken) {
-								return;
-							}
-							visitor(graph->m_nodeMap.at(token).value);
-						}
-					}
-				}
-			};
-
-			DiscoverFunc discover_func{this, visitor, startToken, includeStart};
-			auto bfs_visitor = boost::make_bfs_visitor(
-				boost::on_discover_vertex(discover_func)
-			);
+			TokenGraphBFSVisitor<Visitor> bfs_visitor(this, visitor, startToken, includeStart);
 
 			boost::breadth_first_search(m_graph, start_vertex_it->second,
 				boost::visitor(bfs_visitor).color_map(color_pmap));
