@@ -66,7 +66,7 @@ namespace FCT {
 				m_vertex.left.erase(it);
 			}
 		}
-		bool hasVertex(Token token)
+		bool hasVertex(Token token) const
 		{
 			return m_vertex.left.count(token);
 		}
@@ -111,7 +111,7 @@ namespace FCT {
 				}
 			}
 		}
-		bool hasEdge(Token from, Token to)
+		bool hasEdge(Token from, Token to) const
 		{
 			auto from_it = m_vertex.left.find(from);
 			auto to_it = m_vertex.left.find(to);
@@ -122,7 +122,7 @@ namespace FCT {
 			}
 			return false;
 		}
-		bool hasNode(Token token)
+		bool hasNode(Token token) const
 		{
 			return m_nodeMap.count(token);
 		}
@@ -174,7 +174,54 @@ namespace FCT {
 			}
 		}
 
-		bool isZeroRefVertex(Token token)
+		/**
+		 * @cond CHINESE
+		 * @tparam Visitor
+		 * @param startToken
+		 * @param visitor 参数为 Value
+		 * @param includeStart 是否包含起点自身
+		 * @endcond
+		 */
+		template<typename Visitor>
+		void visitBFS(Token startToken, Visitor visitor, bool includeStart = true) const
+		{
+			auto start_vertex_it = m_vertex.left.find(startToken);
+			if (start_vertex_it == m_vertex.left.end()) {
+				return;
+			}
+
+			std::map<BoostVertex, boost::default_color_type> vertex_color_map;
+			auto color_pmap = boost::make_assoc_property_map(vertex_color_map);
+
+			struct DiscoverFunc {
+				const decltype(this) graph;
+				Visitor& visitor;
+				Token startToken;
+				bool includeStart;
+
+				void operator()(BoostVertex v, const TokenGraphSavedBoostGraph& g) const {
+					auto vertex_token_it = graph->m_vertex.right.find(v);
+					if (vertex_token_it != graph->m_vertex.right.end()) {
+						Token token = vertex_token_it->second;
+						if (graph->hasNode(token)) {
+							if (!includeStart && token == startToken) {
+								return;
+							}
+							visitor(graph->m_nodeMap.at(token).value);
+						}
+					}
+				}
+			};
+
+			DiscoverFunc discover_func{this, visitor, startToken, includeStart};
+			auto bfs_visitor = boost::make_bfs_visitor(
+				boost::on_discover_vertex(discover_func)
+			);
+
+			boost::breadth_first_search(m_graph, start_vertex_it->second,
+				boost::visitor(bfs_visitor).color_map(color_pmap));
+		}
+		bool isZeroRefVertex(Token token) const
 		{
 			auto it = m_vertex.left.find(token);
             return m_graph[it->second] == 0;
