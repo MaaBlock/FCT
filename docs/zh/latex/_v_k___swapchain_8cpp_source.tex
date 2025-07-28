@@ -1,0 +1,473 @@
+\doxysection{VK\+\_\+\+Swapchain.\+cpp}
+\hypertarget{_v_k___swapchain_8cpp_source}{}\label{_v_k___swapchain_8cpp_source}\index{src/RHI/VK\_Swapchain.cpp@{src/RHI/VK\_Swapchain.cpp}}
+\mbox{\hyperlink{_v_k___swapchain_8cpp}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_third_party_8h}{../ThirdParty.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v_k___context_8h}{../Context/VK\_Context.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v_k___swapchain_8h}{./VK\_Swapchain.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v_k___fence_8h}{./VK\_Fence.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_fence_8h}{./Fence.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_semaphore_8h}{./Semaphore.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_r_h_i_2_image_8h}{./Image.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_r_h_i_2_pass_8h}{./Pass.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_mutil_buffer_image_8h}{../Context/MutilBufferImage.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00012}00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_f_c_t}{FCT}}\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00013}00013\ \ \ \ \ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_f_c_t_1_1_r_h_i}{RHI}}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00014}00014\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00015}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a7f82f5f294583fdb6dc937e3ae7a72cb}{00015}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a7f82f5f294583fdb6dc937e3ae7a72cb}{VK\_Swapchain::VK\_Swapchain}}(\mbox{\hyperlink{class_f_c_t_1_1_v_k___context}{VK\_Context}}\ *ctx)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ m\_ctx\ =\ ctx;}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ m\_swapchain\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ m\_fctImage\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ m\_target\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ m\_prensentFinshSemphore\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ m\_needRecreated\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ m\_depthStencilImage\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ m\_recreatedFlag\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00026}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a5a8112f1b2a5ea25e4b43d4a2b197335}{00026}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a5a8112f1b2a5ea25e4b43d4a2b197335}{VK\_Swapchain::\string~VK\_Swapchain}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ VK\_Swapchain::cleanupOldResources()\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_fctImages.size())\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a467c00a2686a99d5ada904a60b8830d9}{image}}\ :\ m\_fctImages)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a467c00a2686a99d5ada904a60b8830d9}{image}}-\/>\mbox{\hyperlink{class_f_c_t_1_1_ref_count_aaf57b2df79545f2b71ae9087865dee4c}{release}}();}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_fctImages.clear();}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ VK\_Swapchain::setupQueueFamilies()\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ phyDc\ =\ m\_ctx-\/>\mbox{\hyperlink{class_f_c_t_1_1_v_k___context_af49b4a664f8566269de7d998c3c16640}{getPhysicalDevice}}();}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ dc\ =\ m\_ctx-\/>getDevice();}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ graphicsQueueFamily\ =\ m\_ctx-\/>getGraphicsQueueFamily();}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ m\_presentQueueFamilyIndex\ =\ UINT32\_MAX;}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ queueFamilyCount\ =\ phyDc.getQueueFamilyProperties().size();}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (uint32\_t\ i\ =\ 0;\ i\ <\ queueFamilyCount;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (phyDc.getSurfaceSupportKHR(i,\ m\_surface))\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_presentQueueFamilyIndex\ =\ i;}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_presentQueueFamilyIndex\ ==\ UINT32\_MAX)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_presentQueueFamilyIndex\ =\ graphicsQueueFamily;}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ m\_presentQueues.clear();}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ m\_presentQueues.push\_back(dc.getQueue(m\_presentQueueFamilyIndex,\ 0));}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ m\_presentQueue\ =\ dc.getQueue(m\_presentQueueFamilyIndex,\ 0);}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ vk::SwapchainCreateInfoKHR\ VK\_Swapchain::buildSwapchainCreateInfo(}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ vk::SurfaceFormatKHR\&\ format,}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ vk::PresentModeKHR\ presentMode,}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ vk::Extent2D\&\ extent,}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ imageCount,}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ vk::SurfaceCapabilitiesKHR\&\ capabilities,}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ graphicsQueueFamily)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ vk::SwapchainCreateInfoKHR\ createInfo\{\};}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ createInfo.setSurface(m\_surface)}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .setMinImageCount(imageCount)}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .setImageFormat(format.format)}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .setImageColorSpace(format.colorSpace)}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .setImageExtent(extent)}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .setCompositeAlpha(vk::CompositeAlphaFlagBitsKHR::eOpaque)}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .setPreTransform(capabilities.currentTransform)}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .setPresentMode(presentMode)}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .setImageUsage(vk::ImageUsageFlagBits::eColorAttachment)}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .setImageArrayLayers(1)}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .setClipped(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ queueFamilyIndices[]\ =\ \{graphicsQueueFamily,\ m\_presentQueueFamilyIndex\};}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (graphicsQueueFamily\ !=\ m\_presentQueueFamilyIndex)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ createInfo.setImageSharingMode(vk::SharingMode::eConcurrent)}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .setQueueFamilyIndexCount(2)}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .setPQueueFamilyIndices(queueFamilyIndices);}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ createInfo.setImageSharingMode(vk::SharingMode::eExclusive);}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ createInfo;}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ VK\_Swapchain::createSwapchain(uint32\_t\ width,\ uint32\_t\ height)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ phyDc\ =\ m\_ctx-\/>getPhysicalDevice();}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ dc\ =\ m\_ctx-\/>getDevice();}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ graphicsQueueFamily\ =\ m\_ctx-\/>getGraphicsQueueFamily();}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ capabilities\ =\ phyDc.getSurfaceCapabilitiesKHR(m\_surface);}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ formats\ =\ phyDc.getSurfaceFormatsKHR(m\_surface);}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ presentModes\ =\ phyDc.getSurfacePresentModesKHR(m\_surface);}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ format\ =\ chooseSwapSurfaceFormat(formats);}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ presentMode\ =\ chooseSwapPresentMode(presentModes);}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ m\_imageFormat\ =\ format.format;}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ vk::Extent2D\ extent(}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::clamp(\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_acd14cf1b3194f89dbd84a54a3e26c459}{m\_dstWidth}},\ capabilities.minImageExtent.width,\ capabilities.maxImageExtent.width),}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::clamp(\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_a29e11b945f3dca176cdae92668ebb218}{m\_dstHeight}},\ capabilities.minImageExtent.height,\ capabilities.maxImageExtent.height)}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_a27dc83e42bf02c7dbf2b2f64ddc4f372}{m\_width}}\ =\ extent.width;}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_a721f7212bd66a3a09e8ffc9c8aeff29e}{m\_height}}\ =\ extent.height;}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ imageCount\ =\ std::clamp(3u,\ capabilities.minImageCount,\ capabilities.maxImageCount);}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ vk::SwapchainCreateInfoKHR\ createInfo\ =\ buildSwapchainCreateInfo(}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ format,\ presentMode,\ extent,\ imageCount,\ capabilities,\ graphicsQueueFamily}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ vk::SwapchainKHR\ oldSwapchain\ =\ m\_swapchain;}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (oldSwapchain)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ createInfo.setOldSwapchain(oldSwapchain);}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ m\_swapchain\ =\ dc.createSwapchainKHR(createInfo);}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ m\_images\ =\ dc.getSwapchainImagesKHR(m\_swapchain);}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (oldSwapchain)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dc.destroySwapchainKHR(oldSwapchain);}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ VK\_Swapchain::createImagesAndTargets()\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a467c00a2686a99d5ada904a60b8830d9}{image}}\ :\ m\_images)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ ret\ =\ \textcolor{keyword}{new}\ VK\_Image(m\_ctx);}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ret-\/>samples(\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a5f5eb310c0eff911ddcfd242ecd8646a}{getSamples}}());}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ret-\/>format(\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_aec5dab44339d78ba7899d85cc53b564f}{getFormat}}());}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ret-\/>width(\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_a27dc83e42bf02c7dbf2b2f64ddc4f372}{m\_width}});}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ret-\/>height(\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_a721f7212bd66a3a09e8ffc9c8aeff29e}{m\_height}});}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ret-\/>create(\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a467c00a2686a99d5ada904a60b8830d9}{image}});}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_fctImages.push\_back(ret);}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_fctImage)}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_fctImage-\/>create(m\_fctImages);}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_fctImage\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{namespace_f_c_t_1_1_context_resource_ad75a4148b45a9d45b79e4ed6d08b0001}{MutilBufferImage}}(m\_ctx);}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_fctImage-\/>renderTargetType(\mbox{\hyperlink{namespace_f_c_t_a1f1ccd6c8741cf55008c982f25b9bf2ba77b3213b6f5c8d994d2bcfcb58a2ec30}{RenderTargetType::WindowTarget}});}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_fctImage-\/>as(\mbox{\hyperlink{namespace_f_c_t_a7c79cf32fda44767f87c534ba3c7f1e5a9b0bffda4bcb312168c0d6537cb04b4d}{ImageUsage::RenderTarget}});}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_fctImage-\/>create(m\_fctImages);}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_target)}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00156}00156\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_target\ =\ \textcolor{keyword}{new}\ ImageRenderTarget(m\_ctx);}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_target-\/>renderTargetType(\mbox{\hyperlink{namespace_f_c_t_a1f1ccd6c8741cf55008c982f25b9bf2ba77b3213b6f5c8d994d2bcfcb58a2ec30}{RenderTargetType::WindowTarget}});}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_target-\/>bindTarget(m\_fctImage);}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00163}00163\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00164}00164\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00165}00165\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00166}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a2568a60eeb8a794e40f18afb163eb94c}{00166}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a446c22557164109d53c6e28555a0f4dd}{VK\_Swapchain::create}}(vk::SurfaceKHR\ surface,\ uint32\_t\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_a15fd90177e6fd7b0886b06d85b9b7b85}{width}},\ uint32\_t\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_ac064791709b137ce6fcd8e9344767e1d}{height}})\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_acd14cf1b3194f89dbd84a54a3e26c459}{m\_dstWidth}}\ =\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_a15fd90177e6fd7b0886b06d85b9b7b85}{width}};}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_a29e11b945f3dca176cdae92668ebb218}{m\_dstHeight}}\ =\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_ac064791709b137ce6fcd8e9344767e1d}{height}};}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//dst\ size\ !=\ real\ size}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ cleanupOldResources();}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ m\_surface\ =\ surface;}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ setupQueueFamilies();}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ createSwapchain(\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_acd14cf1b3194f89dbd84a54a3e26c459}{m\_dstWidth}},\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_a29e11b945f3dca176cdae92668ebb218}{m\_dstHeight}});}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ createImagesAndTargets();}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00175}00175\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_depthStencilImage)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_depthStencilImage-\/>resize(\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_a27dc83e42bf02c7dbf2b2f64ddc4f372}{m\_width}},\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_a721f7212bd66a3a09e8ffc9c8aeff29e}{m\_height}});}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00179}00179\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00180}00180\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00181}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a446c22557164109d53c6e28555a0f4dd}{00181}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a446c22557164109d53c6e28555a0f4dd}{VK\_Swapchain::create}}()}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00182}00182\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a446c22557164109d53c6e28555a0f4dd}{create}}(*\textcolor{keyword}{static\_cast<}vk::SurfaceKHR*\textcolor{keyword}{>}(\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_a55d3ce81c7798f71ee31dc03d318f9f2}{m\_nativeHandle}}),m\_pendingWidth,m\_pendingHeight);}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00184}00184\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00185}00185\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ vk::SurfaceFormatKHR\ VK\_Swapchain::chooseSwapSurfaceFormat(}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<vk::SurfaceFormatKHR>\ \&availableFormats)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&availableFormat\ :\ availableFormats)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (availableFormat.format\ ==\ vk::Format::eB8G8R8A8Unorm\ \&\&}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ availableFormat.colorSpace\ ==\ vk::ColorSpaceKHR::eSrgbNonlinear)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ availableFormat;}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ availableFormats[0];}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00195}00195\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00196}00196\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00197}00197\ \ \ \ \ \ \ \ \ vk::PresentModeKHR\ VK\_Swapchain::chooseSwapPresentMode(}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<vk::PresentModeKHR>\ \&availablePresentModes)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&availablePresentMode\ :\ availablePresentModes)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (availablePresentMode\ ==\ vk::PresentModeKHR::eImmediate)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ availablePresentMode;}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vk::PresentModeKHR::eFifo;}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00205}00205\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00206}00206\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00207}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a5e45cb6c6c3818c3f49f1b0e7ad19814}{00207}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a5e45cb6c6c3818c3f49f1b0e7ad19814}{VK\_Swapchain::destroy}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00208}00208\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00209}00209\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00210}00210\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00211}00211\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00212}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a7f1dae09188ee9a889c7d7df1e031cad}{00212}}\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a7f1dae09188ee9a889c7d7df1e031cad}{VK\_Swapchain::getCurrentImageIndex}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_currentImageIndex;}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00214}00214\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00215}00215\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00216}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a317a59351a75bae4e75089d55927f8d1}{00216}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a317a59351a75bae4e75089d55927f8d1}{VK\_Swapchain::doRecreate}}()}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00217}00217\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00218}00218\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//reset\ all\ render\ finsh\ semaphores}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00219}00219\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ dc\ =\ m\_ctx-\/>getDevice();}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ \ dc.waitIdle();}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00221}00221\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ semaphore\ :\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_ac7b4690e0089f6037b6301d35228f1bf}{m\_renderFinshSemaphores}})}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ semaphore-\/>create();}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a446c22557164109d53c6e28555a0f4dd}{create}}();}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a58f3695dff033e086411efc7ec36b61b}{acquireFirstImage}}();}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00227}00227\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00228}00228\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00229}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a33264ad79ca37ae01a536e2af696a0cc}{00229}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a33264ad79ca37ae01a536e2af696a0cc}{VK\_Swapchain::sync}}()}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00230}00230\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_a7baa8e838359215e45fe7b7dd0fa3306}{m\_hasRecreatedInThisFrame}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (m\_recreatedFlag)}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ namespace\ }std::chrono;}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ now\ =\ high\_resolution\_clock::now();}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ timeSinceRequest\ =\ duration\_cast<milliseconds>(}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ now\ -\/\ m\_lastRecreateRequestTime}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ).count();}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00239}00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (timeSinceRequest\ <\ RECREATE\_DEBOUNCE\_MS\ ||\ !\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_a27dc83e42bf02c7dbf2b2f64ddc4f372}{m\_width}}\ ||\ !\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_a721f7212bd66a3a09e8ffc9c8aeff29e}{m\_height}})}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ now\ =\ high\_resolution\_clock::now();}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ timeSinceRequest\ =\ duration\_cast<milliseconds>(}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ now\ -\/\ m\_lastRecreateRequestTime}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ).count();}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::this\_thread::sleep\_for(std::chrono::milliseconds(5));}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a317a59351a75bae4e75089d55927f8d1}{doRecreate}}())}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00249}00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ now\ =\ high\_resolution\_clock::now();}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00250}00250\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ timeSinceRequest\ =\ duration\_cast<milliseconds>(}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00251}00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ now\ -\/\ m\_lastRecreateRequestTime}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00252}00252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ).count();}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00253}00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (timeSinceRequest\ >\ RECREATE\_DEBOUNCE\_MS\ \&\&\ m\_pendingWidth\ ==\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_acd14cf1b3194f89dbd84a54a3e26c459}{m\_dstWidth}}\ \&\&\ m\_pendingHeight\ ==\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_a29e11b945f3dca176cdae92668ebb218}{m\_dstHeight}})}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_recreatedFlag\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00255}00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_a7baa8e838359215e45fe7b7dd0fa3306}{m\_hasRecreatedInThisFrame}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00257}00257\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_a7baa8e838359215e45fe7b7dd0fa3306}{m\_hasRecreatedInThisFrame}})}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00259}00259\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00260}00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a59cef3fb278dbd26a9bfdcd81407835c}{trigger}}(\mbox{\hyperlink{struct_f_c_t_1_1_swapchain_event_1_1_recreate}{SwapchainEvent::Recreate}}\{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00261}00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_a27dc83e42bf02c7dbf2b2f64ddc4f372}{m\_width}},\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_a721f7212bd66a3a09e8ffc9c8aeff29e}{m\_height}},}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00262}00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{this}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00264}00264\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00265}00265\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00266}00266\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00267}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a78f21c203fe2759fe3cf2c702207e96e}{00267}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a78f21c203fe2759fe3cf2c702207e96e}{VK\_Swapchain::present}}()}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00268}00268\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00269}00269\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ dc\ =\ m\_ctx-\/>getDevice();}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00270}00270\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00271}00271\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<vk::Semaphore>\ semaphores;}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00272}00272\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ semaphore\ :\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_ac7b4690e0089f6037b6301d35228f1bf}{m\_renderFinshSemaphores}})}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00273}00273\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00274}00274\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ semaphores.push\_back(\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___semaphore}{VK\_Semaphore}}*\textcolor{keyword}{>}(semaphore)-\/>semaphore());}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00275}00275\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00276}00276\ \ \ \ \ \ \ \ \ \ \ \ \ vk::PresentInfoKHR\ presentInfo\{\};}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00277}00277\ \ \ \ \ \ \ \ \ \ \ \ \ presentInfo.setWaitSemaphores(semaphores)}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00278}00278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .setSwapchainCount(1)}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00279}00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .setPSwapchains(\&m\_swapchain)}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00280}00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .setPImageIndices(\&m\_currentImageIndex);}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00281}00281\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00282}00282\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00283}00283\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ result\ =\ m\_presentQueues[m\_ctx-\/>currentSubmitFrameIndex()\ \%\ m\_presentQueues.size()].presentKHR(presentInfo);}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00284}00284\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (result\ ==\ vk::Result::eSuboptimalKHR)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00285}00285\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_recreatedFlag\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00286}00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ fence\ :\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_ae720ea08e24b310ac7fe0c0ed23c3337}{m\_renderFinshFences}})}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00287}00287\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00288}00288\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fence-\/>waitFor();}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00289}00289\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fence-\/>reset();}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00290}00290\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00291}00291\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00292}00292\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00293}00293\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (vk::OutOfDateKHRError\&\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00294}00294\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_recreatedFlag\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00295}00295\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ fence\ :\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_ae720ea08e24b310ac7fe0c0ed23c3337}{m\_renderFinshFences}})}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00296}00296\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00297}00297\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fence-\/>waitFor();}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00298}00298\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fence-\/>reset();}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00299}00299\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00300}00300\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00301}00301\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (vk::SystemError\&\ e)}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00302}00302\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00303}00303\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_a41993be9a3c6e8f05f5b7bda9a9015b2}{ferr}}\ <<\ \textcolor{stringliteral}{"{}fetal\ error\ in\ VK\_Swapchain::present()"{}}\ <<\ e.what()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00304}00304\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00305}00305\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00306}00306\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ fence\ :\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_ae720ea08e24b310ac7fe0c0ed23c3337}{m\_renderFinshFences}})}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00307}00307\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00308}00308\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fence-\/>waitFor();}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00309}00309\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fence-\/>reset();}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00310}00310\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00311}00311\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00312}00312\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ nextResult\ =\ dc.acquireNextImageKHR(}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00313}00313\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_swapchain,}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00314}00314\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UINT64\_MAX,}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00315}00315\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_prensentFinshSemphore-\/>semaphore(),}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00316}00316\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{nullptr},}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00317}00317\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&m\_currentImageIndex}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00318}00318\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00319}00319\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00320}00320\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (nextResult\ ==\ vk::Result::eSuboptimalKHR)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00321}00321\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_recreatedFlag\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00322}00322\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00323}00323\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00324}00324\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (vk::OutOfDateKHRError\&\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00325}00325\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_recreatedFlag\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00326}00326\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00327}00327\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (vk::SystemError\&\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00328}00328\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_a41993be9a3c6e8f05f5b7bda9a9015b2}{ferr}}\ <<\ \textcolor{stringliteral}{"{}fetal\ error\ in\ VK\_Swapchain::present()\ -\/\ acquireNextImage"{}}\ <<\ e.what()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00329}00329\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00330}00330\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00331}00331\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00332}00332\ \ \ \ \ \ \ \ \ \ \ \ \ m\_fctImage-\/>changeCurrentIndex(m\_currentImageIndex);}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00333}00333\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_depthStencilImage)}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00334}00334\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00335}00335\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_depthStencilImage-\/>changeCurrentIndex(m\_currentImageIndex);}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00336}00336\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00337}00337\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00338}00338\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00339}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a58f3695dff033e086411efc7ec36b61b}{00339}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a58f3695dff033e086411efc7ec36b61b}{VK\_Swapchain::acquireFirstImage}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00340}00340\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ dc\ =\ m\_ctx-\/>getDevice();}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00341}00341\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___fence}{VK\_Fence}}*\ fence\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00342}00342\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00343}00343\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00344}00344\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_prensentFinshSemphore)}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00345}00345\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00346}00346\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_prensentFinshSemphore-\/>create();}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00347}00347\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ nextResult\ =\ dc.acquireNextImageKHR(}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00348}00348\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_swapchain,}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00349}00349\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UINT64\_MAX,}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00350}00350\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_prensentFinshSemphore-\/>semaphore(),}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00351}00351\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{nullptr},}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00352}00352\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&m\_currentImageIndex}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00353}00353\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00354}00354\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (nextResult\ ==\ vk::Result::eSuboptimalKHR)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00355}00355\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00356}00356\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00357}00357\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00358}00358\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00359}00359\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fence\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___fence}{VK\_Fence}}(m\_ctx);}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00360}00360\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fence-\/>\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___fence_a6165a4dbe87683eaa15803370bf04dcf}{create}}();}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00361}00361\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ nextResult\ =\ dc.acquireNextImageKHR(}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00362}00362\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_swapchain,}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00363}00363\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UINT64\_MAX,}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00364}00364\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{nullptr},}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00365}00365\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fence-\/>\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___fence_ab2196acf254a1d0f9dc0c40a44d3a034}{fence}}(),}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00366}00366\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&m\_currentImageIndex}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00367}00367\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00368}00368\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fence-\/>\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___fence_a13ba2227f44cf2d8f9282435dcd80676}{waitFor}}();}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00369}00369\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fence-\/>\mbox{\hyperlink{class_f_c_t_1_1_ref_count_aaf57b2df79545f2b71ae9087865dee4c}{release}}();}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00370}00370\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (nextResult\ ==\ vk::Result::eSuboptimalKHR)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00371}00371\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00372}00372\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00373}00373\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00374}00374\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (vk::OutOfDateKHRError\&\ e)}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00375}00375\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00376}00376\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00377}00377\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00378}00378\ \ \ \ \ \ \ \ \ \ \ \ \ m\_fctImage-\/>changeCurrentIndex(m\_currentImageIndex);}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00379}00379\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_depthStencilImage)}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00380}00380\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00381}00381\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_depthStencilImage-\/>changeCurrentIndex(m\_currentImageIndex);}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00382}00382\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00383}00383\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00384}00384\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00385}00385\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00386}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_aa788133c8149636bcff10880879ee4e4}{00386}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_aa788133c8149636bcff10880879ee4e4}{VK\_Swapchain::needRecreate}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_a15fd90177e6fd7b0886b06d85b9b7b85}{width}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_ac064791709b137ce6fcd8e9344767e1d}{height}})}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00387}00387\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00388}00388\ \ \ \ \ \ \ \ \ \ \ \ \ m\_lastRecreateRequestTime\ =\ std::chrono::high\_resolution\_clock::now();}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00389}00389\ \ \ \ \ \ \ \ \ \ \ \ \ m\_recreatedFlag\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00390}00390\ \ \ \ \ \ \ \ \ \ \ \ \ m\_pendingWidth\ =\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_a15fd90177e6fd7b0886b06d85b9b7b85}{width}};}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00391}00391\ \ \ \ \ \ \ \ \ \ \ \ \ m\_pendingHeight\ =\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_ac064791709b137ce6fcd8e9344767e1d}{height}};}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00392}00392\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//m\_needRecreated\ =\ true;}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00393}00393\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//m\_recreated\ =\ false;}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00394}00394\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//FCT\_WAIT\_FOR(m\_recreated);}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00395}00395\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00396}00396\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00397}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_ab25446560682a0d918de20a6dca725ad}{00397}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_ab25446560682a0d918de20a6dca725ad}{VK\_Swapchain::processRecreate}}(\textcolor{keywordtype}{bool}\ waitFence)}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00398}00398\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00399}00399\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ dc\ =\ m\_ctx-\/>getDevice();}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00400}00400\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_needRecreated)}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00401}00401\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00402}00402\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (waitFence)}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00403}00403\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00404}00404\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ fence\ :\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_ae720ea08e24b310ac7fe0c0ed23c3337}{m\_renderFinshFences}})}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00405}00405\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00406}00406\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fence-\/>waitFor();}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00407}00407\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fence-\/>reset();}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00408}00408\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00409}00409\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00410}00410\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a446c22557164109d53c6e28555a0f4dd}{create}}();}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00411}00411\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_needRecreated\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00412}00412\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_recreated\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00413}00413\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00414}00414\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00415}00415\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00416}00416\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00417}00417\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00418}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a46ee50ac34781999461d7ed1709f75a0}{00418}}\ \ \ \ \ \ \ \ \ vk::Extent2D\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a46ee50ac34781999461d7ed1709f75a0}{VK\_Swapchain::getExtent}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00419}00419\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_extent;}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00420}00420\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00421}00421\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00422}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_aec5dab44339d78ba7899d85cc53b564f}{00422}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4}{Format}}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_aec5dab44339d78ba7899d85cc53b564f}{VK\_Swapchain::getFormat}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00423}00423\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00424}00424\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespace_f_c_t_aae307910da6496d22fde7dd730866662}{FromVkFormat}}(m\_imageFormat);}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00425}00425\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00426}00426\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00427}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a5f5eb310c0eff911ddcfd242ecd8646a}{00427}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182}{Samples}}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a5f5eb310c0eff911ddcfd242ecd8646a}{VK\_Swapchain::getSamples}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00428}00428\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00429}00429\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182af16981b72c70cf9ef716f38b848c5cf0}{Samples::sample\_1}};}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00430}00430\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00431}00431\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00432}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_ad9f2d2c7fea5528211182d55b497c6ea}{00432}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_image_render_target}{ImageRenderTarget}}*\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_ad9f2d2c7fea5528211182d55b497c6ea}{VK\_Swapchain::target}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00433}00433\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00434}00434\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_target;}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00435}00435\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00436}00436\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00437}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a363ea8d0036083086d71fc193d562624}{00437}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a363ea8d0036083086d71fc193d562624}{VK\_Swapchain::setPresentFinshSemaphore}}(\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore}{RHI::Semaphore}}*\ semaphore)}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00438}00438\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00439}00439\ \ \ \ \ \ \ \ \ \ \ \ \ m\_prensentFinshSemphore\ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___semaphore}{VK\_Semaphore}}*\textcolor{keyword}{>}(semaphore);}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00440}00440\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00441}00441\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00442}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_ae1b985252d4e52726cdb9ea2a8bf1346}{00442}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore}{RHI::Semaphore}}*\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_ae1b985252d4e52726cdb9ea2a8bf1346}{VK\_Swapchain::getImageAvailableSemaphore}}()}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00443}00443\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00444}00444\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_prensentFinshSemphore;}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00445}00445\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00446}00446\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00447}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a1dfe5081c8f7361d1b19ca69caf2f084}{00447}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182}{Samples}}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a1dfe5081c8f7361d1b19ca69caf2f084}{VK\_Swapchain::getSampleCount}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00448}00448\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00449}00449\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182af16981b72c70cf9ef716f38b848c5cf0}{Samples::sample\_1}};}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00450}00450\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00451}00451\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00452}00452\ }
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00453}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_ae9b902ead96898f1c4a953b1a7378cde}{00453}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_ae9b902ead96898f1c4a953b1a7378cde}{VK\_Swapchain::enableDepthBuffer}}(\mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4}{Format}}\ format)}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00454}00454\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00455}00455\ \ \ \ \ \ \ \ \ \ \ \ \ m\_depthStencilImage\ =\ m\_ctx-\/>createResource<\mbox{\hyperlink{class_f_c_t_1_1_mutil_buffer_image}{MutilBufferImage}}>();}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00456}00456\ \ \ \ \ \ \ \ \ \ \ \ \ m\_depthStencilImage-\/>\mbox{\hyperlink{class_f_c_t_1_1_image_af4b50a8b7479884c2cd0c0e990875c25}{width}}(\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_a27dc83e42bf02c7dbf2b2f64ddc4f372}{m\_width}});}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00457}00457\ \ \ \ \ \ \ \ \ \ \ \ \ m\_depthStencilImage-\/>height(\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain_a721f7212bd66a3a09e8ffc9c8aeff29e}{m\_height}});}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00458}00458\ \ \ \ \ \ \ \ \ \ \ \ \ m\_depthStencilImage-\/>format(format);}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00459}00459\ \ \ \ \ \ \ \ \ \ \ \ \ m\_depthStencilImage-\/>samples(\mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182af16981b72c70cf9ef716f38b848c5cf0}{Samples::sample\_1}});}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00460}00460\ \ \ \ \ \ \ \ \ \ \ \ \ m\_depthStencilImage-\/>as(\mbox{\hyperlink{namespace_f_c_t_a7c79cf32fda44767f87c534ba3c7f1e5a2fa8076285272883c91e14402975a441}{ImageUsage::DepthStencil}});}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00461}00461\ \ \ \ \ \ \ \ \ \ \ \ \ m\_depthStencilImage-\/>imageCount(m\_images.size());}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00462}00462\ \ \ \ \ \ \ \ \ \ \ \ \ m\_depthStencilImage-\/>create();}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00463}00463\ \ \ \ \ \ \ \ \ \ \ \ \ m\_target-\/>setDepthStencilBuffer(m\_depthStencilImage);}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00464}00464\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00465}00465\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00466}00466\ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___swapchain_8cpp_source_l00467}00467\ }
+
+\end{DoxyCode}

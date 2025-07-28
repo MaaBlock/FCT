@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FCT: src/Runtime/Win32_Runtime.cpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FCT
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_win32___runtime_8cpp_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Win32_Runtime.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_win32___runtime_8cpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="_f_c_t_a_p_i_8h.html">../FCTAPI.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_f_c_t.html">FCT</a> {</div>
+<div class="foldopen" id="foldopen00004" data-start="{" data-end="};">
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="struct_f_c_t_1_1_win32___runtime_common.html">    4</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_f_c_t_1_1_win32___runtime_common.html">Win32_RuntimeCommon</a> : <span class="keyword">public</span> <a class="code hl_struct" href="struct_f_c_t_1_1_runtime_common.html">RuntimeCommon</a> {</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    };</div>
+</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_runtime.html#a8935358c013f37d5ec950099c888c89c">Runtime::init</a>() {</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>        g_common = <a class="code hl_define" href="_memory_cheak_8h.html#a0fee0225d38ce42671a1fb5630db4434">FCT_NEW</a>(<a class="code hl_struct" href="struct_f_c_t_1_1_win32___runtime_common.html">Win32_RuntimeCommon</a>);</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    }</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_runtime.html#a7e06f2fd3bd29b1196861fa8b62aee37">Runtime::term</a>() {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <a class="code hl_define" href="_memory_cheak_8h.html#a208ca9335e0fa05cd26667978959abd5">FCT_DELETE</a>(g_common);</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    }</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <a class="code hl_class" href="class_f_c_t_1_1_window.html">Window</a>* <a class="code hl_function" href="class_f_c_t_1_1_runtime.html#adf96ab1ae1ec05e6777ab9b3fdef8d55">Runtime::createWindow</a>()</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#ifdef FCT_USE_GLFW</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        Window* window = <a class="code hl_define" href="_memory_cheak_8h.html#a0fee0225d38ce42671a1fb5630db4434">FCT_NEW</a>(GLFW_Window,g_common-&gt;glfwUICommon,<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keywordflow">return</span> window;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    }</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <a class="code hl_class" href="class_f_c_t_1_1_context.html">Context</a>* <a class="code hl_function" href="class_f_c_t_1_1_runtime.html#ade286afead1866b1749ba244f0da78e3">Runtime::createContext</a>()</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordflow">return</span> <a class="code hl_define" href="_memory_cheak_8h.html#a0fee0225d38ce42671a1fb5630db4434">FCT_NEW</a>(VK_Context,g_common-&gt;vkContextCommon);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    }</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="foldopen" id="foldopen00027" data-start="{" data-end="}">
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_runtime.html#a828db6219f2af0c96807a71e0543440b">   27</a></span>    <a class="code hl_class" href="class_f_c_t_1_1_image_loader.html">ImageLoader</a>* <a class="code hl_function" href="class_f_c_t_1_1_runtime.html#a828db6219f2af0c96807a71e0543440b">Runtime::createImageLoader</a>()</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keywordflow">return</span> <a class="code hl_define" href="_memory_cheak_8h.html#a0fee0225d38ce42671a1fb5630db4434">FCT_NEW</a>(<a class="code hl_class" href="class_f_c_t_1_1_free_image___image_loader.html">FreeImage_ImageLoader</a>);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    }</div>
+</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>}</div>
+<div class="ttc" id="a_f_c_t_a_p_i_8h_html"><div class="ttname"><a href="_f_c_t_a_p_i_8h.html">FCTAPI.h</a></div></div>
+<div class="ttc" id="a_memory_cheak_8h_html_a0fee0225d38ce42671a1fb5630db4434"><div class="ttname"><a href="_memory_cheak_8h.html#a0fee0225d38ce42671a1fb5630db4434">FCT_NEW</a></div><div class="ttdeci">#define FCT_NEW(type,...)</div><div class="ttdef"><b>定义</b> <a href="_memory_cheak_8h_source.html#l00162">MemoryCheak.h:162</a></div></div>
+<div class="ttc" id="a_memory_cheak_8h_html_a208ca9335e0fa05cd26667978959abd5"><div class="ttname"><a href="_memory_cheak_8h.html#a208ca9335e0fa05cd26667978959abd5">FCT_DELETE</a></div><div class="ttdeci">#define FCT_DELETE(args)</div><div class="ttdef"><b>定义</b> <a href="_memory_cheak_8h_source.html#l00164">MemoryCheak.h:164</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_context_html"><div class="ttname"><a href="class_f_c_t_1_1_context.html">FCT::Context</a></div><div class="ttdef"><b>定义</b> <a href="_context_8h_source.html#l00113">Context.h:114</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_free_image___image_loader_html"><div class="ttname"><a href="class_f_c_t_1_1_free_image___image_loader.html">FCT::FreeImage_ImageLoader</a></div><div class="ttdef"><b>定义</b> <a href="_free_image___image_loader_8h_source.html#l00008">FreeImage_ImageLoader.h:8</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_image_loader_html"><div class="ttname"><a href="class_f_c_t_1_1_image_loader.html">FCT::ImageLoader</a></div><div class="ttdef"><b>定义</b> <a href="_image_loader_8h_source.html#l00008">ImageLoader.h:8</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_runtime_html_a7e06f2fd3bd29b1196861fa8b62aee37"><div class="ttname"><a href="class_f_c_t_1_1_runtime.html#a7e06f2fd3bd29b1196861fa8b62aee37">FCT::Runtime::term</a></div><div class="ttdeci">void term()</div><div class="ttdef"><b>定义</b> <a href="_android___runtime_8cpp_source.html#l00056">Android_Runtime.cpp:56</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_runtime_html_a828db6219f2af0c96807a71e0543440b"><div class="ttname"><a href="class_f_c_t_1_1_runtime.html#a828db6219f2af0c96807a71e0543440b">FCT::Runtime::createImageLoader</a></div><div class="ttdeci">ImageLoader * createImageLoader()</div><div class="ttdef"><b>定义</b> <a href="#l00027">Win32_Runtime.cpp:27</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_runtime_html_a8935358c013f37d5ec950099c888c89c"><div class="ttname"><a href="class_f_c_t_1_1_runtime.html#a8935358c013f37d5ec950099c888c89c">FCT::Runtime::init</a></div><div class="ttdeci">void init()</div><div class="ttdef"><b>定义</b> <a href="_android___runtime_8cpp_source.html#l00052">Android_Runtime.cpp:52</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_runtime_html_ade286afead1866b1749ba244f0da78e3"><div class="ttname"><a href="class_f_c_t_1_1_runtime.html#ade286afead1866b1749ba244f0da78e3">FCT::Runtime::createContext</a></div><div class="ttdeci">Context * createContext()</div><div class="ttdef"><b>定义</b> <a href="_android___runtime_8cpp_source.html#l00072">Android_Runtime.cpp:72</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_runtime_html_adf96ab1ae1ec05e6777ab9b3fdef8d55"><div class="ttname"><a href="class_f_c_t_1_1_runtime.html#adf96ab1ae1ec05e6777ab9b3fdef8d55">FCT::Runtime::createWindow</a></div><div class="ttdeci">Window * createWindow()</div><div class="ttdef"><b>定义</b> <a href="_android___runtime_8cpp_source.html#l00068">Android_Runtime.cpp:68</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_window_html"><div class="ttname"><a href="class_f_c_t_1_1_window.html">FCT::Window</a></div><div class="ttdef"><b>定义</b> <a href="_window_8h_source.html#l00034">Window.h:34</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html"><div class="ttname"><a href="namespace_f_c_t.html">FCT</a></div><div class="ttdef"><b>定义</b> <a href="_flags_8h_source.html#l00010">Flags.h:11</a></div></div>
+<div class="ttc" id="astruct_f_c_t_1_1_runtime_common_html"><div class="ttname"><a href="struct_f_c_t_1_1_runtime_common.html">FCT::RuntimeCommon</a></div><div class="ttdef"><b>定义</b> <a href="runtime_8h_source.html#l00016">runtime.h:16</a></div></div>
+<div class="ttc" id="astruct_f_c_t_1_1_win32___runtime_common_html"><div class="ttname"><a href="struct_f_c_t_1_1_win32___runtime_common.html">FCT::Win32_RuntimeCommon</a></div><div class="ttdef"><b>定义</b> <a href="#l00004">Win32_Runtime.cpp:4</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_336443d5468dfc2bb33128b4e5b96f42.html">Runtime</a></li><li class="navelem"><a href="_win32___runtime_8cpp.html">Win32_Runtime.cpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

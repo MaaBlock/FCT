@@ -1,0 +1,191 @@
+\doxysection{Pixel\+Shader.\+cpp}
+\hypertarget{_r_h_i_2_pixel_shader_8cpp_source}{}\label{_r_h_i_2_pixel_shader_8cpp_source}\index{src/RHI/PixelShader.cpp@{src/RHI/PixelShader.cpp}}
+\mbox{\hyperlink{_r_h_i_2_pixel_shader_8cpp}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{headers_8h}{../headers.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00004}00004\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_f_c_t}{FCT}}\ \{}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#ifdef\ FCT\_DEPRECATED}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00007}00007\ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_pixel_shader_a307d98731b35ee727aa2a4cc859e4cc8}{PixelShader::PixelShader}}(\textcolor{keyword}{const}\ ShaderOutput\&\ vertexOutput)}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00008}00008\ \ \ \ \ \ \ \ \ :\ m\_isCompiled(false),\ m\_vertexOutput(vertexOutput)}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00009}00009\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00010}00010\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00012}00012\ \ \ \ \ PixelShader::\string~PixelShader()\ \{\}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00014}00014\ \ \ \ \ \textcolor{keywordtype}{bool}\ PixelShader::compileFromSource(\textcolor{keyword}{const}\ std::string\&\ userCode)}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00015}00015\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ std::string\ finalUserCode\ =\ userCode.empty()\ ?\ generateDefaultCode()\ :\ userCode;}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ m\_source\ =\ combineCode(finalUserCode);}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ compile();}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00019}00019\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00021}00021\ \ \ \ \ std::string\ PixelShader::generateDefaultCode()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00022}00022\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ std::stringstream\ ss;}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}PixelOutput\ main(PixelInput\ ps\_input)\ \{\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}\ \ \ \ PixelOutput\ ps\_output;\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ hasColorAttribute\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ output\ :\ m\_vertexOutput.getOutputs())\ \{}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (output.type\ ==\ PipelineAttributeType::Color4f)\ \{}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ hasColorAttribute\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}\ \ \ \ ps\_output."{}}\ <<\ output.name\ <<\ \textcolor{stringliteral}{"{}\ =\ ps\_input."{}}\ <<\ output.name\ <<\ \textcolor{stringliteral}{"{};\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!hasColorAttribute)\ \{}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}\ \ \ \ ps\_output.color\ =\ vec4(1.0,\ 0.647,\ 0.0,\ 1.0);\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}\ \ \ \ return\ ps\_output;\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}\}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ss.str();}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00042}00042\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00044}00044\ \ \ \ \ std::string\ PixelShader::combineCode(\textcolor{keyword}{const}\ std::string\&\ userCode)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00045}00045\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ std::stringstream\ ss;}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}\#version\ 320\ es\(\backslash\)n\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}precision\ highp\ float;\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}precision\ highp\ int;\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}precision\ highp\ sampler2D;\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}precision\ highp\ sampler2DArray;\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ hasColorAttribute\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ hasTexCoordAttribute\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ hasTextureId\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ output\ :\ m\_vertexOutput.getOutputs())\ \{}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (output.type\ ==\ PipelineAttributeType::Color4f)\ \{}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ hasColorAttribute\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (output.type\ ==\ PipelineAttributeType::TexCoord2f)\ \{}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ hasTexCoordAttribute\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (output.type\ ==\ PipelineAttributeType::TextureId)\ \{}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ hasTextureId\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \textcolor{comment}{//ss\ <<\ "{}\#extension\ GL\_ARB\_shading\_language\_420pack\ :\ enable\(\backslash\)n"{};}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (hasTextureId)\ \{}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}layout(binding\ =\ 3)\ uniform\ sampler2DArray\ mainTexture;\(\backslash\)n\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}layout(binding\ =\ 3)\ uniform\ sampler2D\ mainTexture;\(\backslash\)n\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}struct\ PixelInput\ \{\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ output\ :\ m\_vertexOutput.getOutputs())\ \{}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}\ \ \ \ "{}}\ <<\ \mbox{\hyperlink{namespace_f_c_t_af7f179f72a01d8c70c2f5d7b929ea9b5}{GetDataTypeName}}(output.dataType)\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ output.name\ <<\ \textcolor{stringliteral}{"{};\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}\};\(\backslash\)n\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}struct\ PixelOutput\ \{\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ output\ :\ m\_vertexOutput.getOutputs())\ \{}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}\ \ \ \ "{}}\ <<\ \mbox{\hyperlink{namespace_f_c_t_af7f179f72a01d8c70c2f5d7b929ea9b5}{GetDataTypeName}}(output.dataType)\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ output.name\ <<\ \textcolor{stringliteral}{"{};\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!hasColorAttribute)\ \{}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}\ \ \ \ vec4\ color;\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}\};\(\backslash\)n\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ locationCounter\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ output\ :\ m\_vertexOutput.getOutputs())\ \{}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}layout\ (location\ =\ "{}}\ <<\ locationCounter\ +\ 1\ <<\ \textcolor{stringliteral}{"{})\ "{}}\ <<\ (output.flat\ ?\ \textcolor{stringliteral}{"{}flat"{}}\ :\ \textcolor{stringliteral}{"{}\(\backslash\)0"{}})\ <<\ \textcolor{stringliteral}{"{}\ in\ "{}}\ <<\ \mbox{\hyperlink{namespace_f_c_t_af7f179f72a01d8c70c2f5d7b929ea9b5}{GetDataTypeName}}(output.dataType)\ <<\ \textcolor{stringliteral}{"{}\ vs2fs\_"{}}\ <<\ output.name\ <<\ \textcolor{stringliteral}{"{};\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ locationCounter++;}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nlayout\ (location\ =\ 0)out\ vec4\ FragColor;\(\backslash\)n\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}PixelOutput\ fct\_user\_main(PixelInput);\(\backslash\)n\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}void\ main()\ \{\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}\ \ \ \ PixelInput\ ps\_input;\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ output\ :\ m\_vertexOutput.getOutputs())\ \{}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}\ \ \ \ ps\_input."{}}\ <<\ output.name\ <<\ \textcolor{stringliteral}{"{}\ =\ vs2fs\_"{}}\ <<\ output.name\ <<\ \textcolor{stringliteral}{"{};\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (hasTexCoordAttribute)\ \{}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (hasColorAttribute)\ \{}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (hasTextureId)\ \{}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}ps\_input."{}}\ <<\ getColorName()\ <<\ \textcolor{stringliteral}{"{}\ *=\ texture(mainTexture,\ vec3(ps\_input."{}}\ <<\ getTexCoordName()\ <<\ \textcolor{stringliteral}{"{},ps\_input."{}}\ <<\ getTextureIdName()\ <<\ \textcolor{stringliteral}{"{}));\ \(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}ps\_input."{}}\ <<\ getColorName()\ <<\ \textcolor{stringliteral}{"{}\ *=\ texture(mainTexture,\ ps\_input."{}}\ <<\ getTexCoordName()\ <<\ \textcolor{stringliteral}{"{});\ \(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (hasTextureId)\ \{}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}ps\_input."{}}\ <<\ getColorName()\ <<\ \textcolor{stringliteral}{"{}\ =\ texture(mainTexture,\ vec3(ps\_input."{}}\ <<\ getTexCoordName()\ <<\ \textcolor{stringliteral}{"{},ps\_input."{}}\ <<\ getTextureIdName()\ <<\ \textcolor{stringliteral}{"{}));\ \(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}ps\_input."{}}\ <<\ getColorName()\ <<\ \textcolor{stringliteral}{"{}\ =\ texture(mainTexture,\ ps\_input."{}}\ <<\ getTexCoordName()\ <<\ \textcolor{stringliteral}{"{});\ \(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}\ \ \ \ PixelOutput\ ps\_output\ =\ fct\_user\_main(ps\_input);\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (hasColorAttribute)\ \{}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ output\ :\ m\_vertexOutput.getOutputs())\ \{}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (output.type\ ==\ PipelineAttributeType::Color4f)\ \{}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}\ \ \ \ FragColor\ =\ ps\_output."{}}\ <<\ output.name\ <<\ \textcolor{stringliteral}{"{};\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}\ \ \ \ FragColor\ =\ ps\_output.color;\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}\}\(\backslash\)n\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ std::string\ modifiedUserCode\ =\ userCode;}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ mainPos\ =\ modifiedUserCode.find(\textcolor{stringliteral}{"{}main"{}});}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mainPos\ !=\ std::string::npos)\ \{}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ modifiedUserCode.replace(mainPos,\ 4,\ \textcolor{stringliteral}{"{}fct\_user\_main"{}});}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00139}00139\ }
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ ss\ <<\ modifiedUserCode;}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ss.str();}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00143}00143\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00144}00144\ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_a0100ef6b5595f1c6e1ca08fb82dc0f67}{PipelineResourceType}}\ PixelShader::getType()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00145}00145\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ PipelineResourceType::PixelShader;}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00147}00147\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00148}00148\ \ \ \ \ std::string\ PixelShader::getCompileError()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_compileError;}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00150}00150\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00152}00152\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ PixelShader::getSource()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_source;}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00154}00154\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00155}00155\ }
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00156}00156\ \ \ \ \ \textcolor{keywordtype}{bool}\ PixelShader::isCompiled()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_isCompiled;}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00158}00158\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00159}00159\ }
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00160}00160\ \ \ \ \ std::string\ PixelShader::getTexCoordName()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ output\ :\ m\_vertexOutput.getOutputs())\ \{}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (output.type\ ==\ PipelineAttributeType::TexCoord2f)\ \{}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ output.name;}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00167}00167\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00168}00168\ \ \ \ \ std::string\ PixelShader::getTextureIdName()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00169}00169\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ output\ :\ m\_vertexOutput.getOutputs())\ \{}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (output.type\ ==\ PipelineAttributeType::TextureId)\ \{}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ output.name;}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00173}00173\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00174}00174\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00175}00175\ }
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00176}00176\ \ \ \ \ std::string\ PixelShader::getColorName()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00177}00177\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ output\ :\ m\_vertexOutput.getOutputs())\ \{}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (output.type\ ==\ PipelineAttributeType::Color4f)\ \{}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ output.name;}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00181}00181\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00182}00182\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}color"{}};}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00183}00183\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00184}00184\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_r_h_i_2_pixel_shader_8cpp_source_l00185}00185\ \}\ \textcolor{comment}{//\ namespace\ FCT}}
+
+\end{DoxyCode}

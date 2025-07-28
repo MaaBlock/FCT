@@ -1,0 +1,107 @@
+\doxysection{Auto\+Viewport.\+cpp}
+\hypertarget{_auto_viewport_8cpp_source}{}\label{_auto_viewport_8cpp_source}\index{src/UI/AutoViewport.cpp@{src/UI/AutoViewport.cpp}}
+\mbox{\hyperlink{_auto_viewport_8cpp}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_f_c_t_a_p_i_8h}{../FCTAPI.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00002}00002\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_f_c_t}{FCT}}}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00003}00003\ \{}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00004}\mbox{\hyperlink{class_f_c_t_1_1_auto_viewport_a473bf205c680166fd4474cbe19c21edd}{00004}}\ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_auto_viewport_a473bf205c680166fd4474cbe19c21edd}{AutoViewport::AutoViewport}}()}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00005}00005\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00007}00007\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00009}\mbox{\hyperlink{class_f_c_t_1_1_auto_viewport_ac1f7593a96c1a541c9fce0f3a6a3280f}{00009}}\ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_auto_viewport_a473bf205c680166fd4474cbe19c21edd}{AutoViewport::AutoViewport}}(\mbox{\hyperlink{struct_f_c_t_1_1_vec2}{Vec2}}\ windowSize,\ \mbox{\hyperlink{struct_f_c_t_1_1_vec2}{Vec2}}\ viewportSize)}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00010}00010\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ m\_needReviewport\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_auto_viewport_a7714ea97a6f1d96bb573ec694d69c8c6}{resize}}(windowSize.\mbox{\hyperlink{struct_f_c_t_1_1_vec2_a46dd201ced58e5d5012381fa82e2f023}{x}},windowSize.\mbox{\hyperlink{struct_f_c_t_1_1_vec2_aef6165dc59972cc930197af4e4bf2b2f}{y}});}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ m\_dstViewportWidth\ =\ viewportSize.\mbox{\hyperlink{struct_f_c_t_1_1_vec2_a46dd201ced58e5d5012381fa82e2f023}{x}};}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ m\_dstViewPortHeight\ =\ viewportSize.\mbox{\hyperlink{struct_f_c_t_1_1_vec2_aef6165dc59972cc930197af4e4bf2b2f}{y}};}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ m\_viewportOffsetX\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ m\_viewportOffsetY\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00017}00017\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00019}\mbox{\hyperlink{class_f_c_t_1_1_auto_viewport_a4410ba69b939e54669a7ab1427b0a77c}{00019}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_auto_viewport_a4410ba69b939e54669a7ab1427b0a77c}{AutoViewport::ctx}}(\mbox{\hyperlink{class_f_c_t_1_1_context}{FCT::Context}}*\ \mbox{\hyperlink{class_f_c_t_1_1_auto_viewport_a4410ba69b939e54669a7ab1427b0a77c}{ctx}})}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00020}00020\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ this-\/>m\_ctx\ =\ \mbox{\hyperlink{class_f_c_t_1_1_auto_viewport_a4410ba69b939e54669a7ab1427b0a77c}{ctx}};}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00022}00022\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00024}\mbox{\hyperlink{class_f_c_t_1_1_auto_viewport_a7714ea97a6f1d96bb573ec694d69c8c6}{00024}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_auto_viewport_a7714ea97a6f1d96bb573ec694d69c8c6}{AutoViewport::resize}}(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height)}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00025}00025\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ m\_windowWidth\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(width);}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ m\_windowHeight\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(height);}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ m\_needReviewport\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00029}00029\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00031}\mbox{\hyperlink{class_f_c_t_1_1_auto_viewport_a71650f51b3cec932c0ecc092b8babd57}{00031}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_auto_viewport_a71650f51b3cec932c0ecc092b8babd57}{AutoViewport::computeViewport}}()}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00032}00032\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ targetAspect\ =\ m\_dstViewportWidth\ /\ m\_dstViewPortHeight;}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ windowAspect\ =\ m\_windowWidth\ /\ m\_windowHeight;}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (windowAspect\ >\ targetAspect)\ \{}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ m\_viewportHeight\ =\ m\_windowHeight;}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ m\_viewportWidth\ =\ m\_windowHeight\ *\ targetAspect;}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ m\_viewportOffsetX\ =\ (m\_windowWidth\ -\/\ m\_viewportWidth)\ /\ 2.0f;}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ m\_viewportOffsetY\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ m\_viewportWidth\ =\ m\_windowWidth;}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ m\_viewportHeight\ =\ m\_windowWidth\ /\ targetAspect;}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ m\_viewportOffsetX\ =\ 0.0f;}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ m\_viewportOffsetY\ =\ (m\_windowHeight\ -\/\ m\_viewportHeight)\ /\ 2.0f;}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00047}00047\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00049}\mbox{\hyperlink{class_f_c_t_1_1_auto_viewport_ac91bfd11bf4371f85f351b680f9ccdc6}{00049}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_auto_viewport_aaa4e805b17813671945e9c605d0deb23}{AutoViewport::submit}}(\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer}{RHI::CommandBuffer}}*\ cmdBuf)}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00050}00050\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_needReviewport)\ \{}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_auto_viewport_a71650f51b3cec932c0ecc092b8babd57}{computeViewport}}();}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ m\_needReviewport\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ cmdBuf-\/>\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer_ac759849c55b2746d5cd1b1ffc24ce66d}{viewport}}(\mbox{\hyperlink{struct_f_c_t_1_1_vec2}{FCT::Vec2}}(m\_viewportOffsetX,\ m\_viewportOffsetY),\ \mbox{\hyperlink{struct_f_c_t_1_1_vec2}{FCT::Vec2}}(m\_viewportOffsetX\ +\ m\_viewportWidth,\ m\_viewportOffsetY\ +\ m\_viewportHeight));}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ cmdBuf-\/>\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer_a7b51ab7bd9f18283c84a477454ef9fbf}{scissor}}(\mbox{\hyperlink{struct_f_c_t_1_1_vec2}{FCT::Vec2}}(m\_viewportOffsetX,\ m\_viewportOffsetY),\ \mbox{\hyperlink{struct_f_c_t_1_1_vec2}{FCT::Vec2}}(m\_viewportOffsetX\ +\ m\_viewportWidth,\ m\_viewportOffsetY\ +\ m\_viewportHeight));}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00057}00057\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00059}\mbox{\hyperlink{class_f_c_t_1_1_auto_viewport_aaa4e805b17813671945e9c605d0deb23}{00059}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_auto_viewport_aaa4e805b17813671945e9c605d0deb23}{AutoViewport::submit}}()}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00060}00060\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_needReviewport)\ \{}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_auto_viewport_a71650f51b3cec932c0ecc092b8babd57}{computeViewport}}();}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ m\_needReviewport\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_f_c_t_1_1_viewport_job}{FCT::ViewportJob}}*\ job\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{struct_f_c_t_1_1_viewport_job}{FCT::ViewportJob}}(}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_f_c_t_1_1_vec2}{FCT::Vec2}}(m\_viewportOffsetX,\ m\_viewportOffsetY),\ \mbox{\hyperlink{struct_f_c_t_1_1_vec2}{FCT::Vec2}}(m\_viewportOffsetX\ +\ m\_viewportWidth,\ m\_viewportOffsetY\ +\ m\_viewportHeight),}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_f_c_t_1_1_vec2}{FCT::Vec2}}(m\_viewportOffsetX,\ m\_viewportOffsetY),\ \mbox{\hyperlink{struct_f_c_t_1_1_vec2}{FCT::Vec2}}(m\_viewportOffsetX\ +\ m\_viewportWidth,\ m\_viewportOffsetY\ +\ m\_viewportHeight)}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ name\ :\ m\_passes)}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ m\_ctx-\/>submit(job,\ name);}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ job-\/>\mbox{\hyperlink{class_f_c_t_1_1_ref_count_aaf57b2df79545f2b71ae9087865dee4c}{release}}();}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00074}00074\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00076}\mbox{\hyperlink{class_f_c_t_1_1_auto_viewport_a32968f68483a7627a9a7333d314d52c4}{00076}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_auto_viewport_a32968f68483a7627a9a7333d314d52c4}{AutoViewport::addPass}}(\textcolor{keyword}{const}\ std::string\&\ name)}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00077}00077\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ m\_passes.push\_back(name);}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00079}00079\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00081}\mbox{\hyperlink{class_f_c_t_1_1_auto_viewport_a4fc07ffe6500f158ad15cf28e4ca525b}{00081}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_f_c_t_1_1_auto_viewport_a4fc07ffe6500f158ad15cf28e4ca525b}{AutoViewport::wndPosToViewportPos}}(\mbox{\hyperlink{struct_f_c_t_1_1_vec2}{Vec2}}\ wndPos,\ \mbox{\hyperlink{struct_f_c_t_1_1_vec2}{Vec2}}\&\ viewportPos)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00082}00082\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_f_c_t_1_1_vec2}{Vec2}}\ srcViewportPos(0.0f,\ 0.0f);}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ srcViewportPos.\mbox{\hyperlink{struct_f_c_t_1_1_vec2_a46dd201ced58e5d5012381fa82e2f023}{x}}\ =\ (wndPos.\mbox{\hyperlink{struct_f_c_t_1_1_vec2_a46dd201ced58e5d5012381fa82e2f023}{x}}\ -\/\ m\_viewportOffsetX)\ /\ m\_viewportWidth;}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ srcViewportPos.\mbox{\hyperlink{struct_f_c_t_1_1_vec2_aef6165dc59972cc930197af4e4bf2b2f}{y}}\ =\ (wndPos.\mbox{\hyperlink{struct_f_c_t_1_1_vec2_aef6165dc59972cc930197af4e4bf2b2f}{y}}\ -\/\ m\_viewportOffsetY)\ /\ m\_viewportHeight;}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ viewportPos\ =\ srcViewportPos\ *\ \mbox{\hyperlink{namespace_f_c_t_a230e974c7c1f163f1dec4530a2e3239cafe98032d4f1c52a2f0b617f9205d5f80}{Vec2}}(m\_dstViewportWidth,\ m\_dstViewPortHeight);}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ srcViewportPos.\mbox{\hyperlink{struct_f_c_t_1_1_vec2_a46dd201ced58e5d5012381fa82e2f023}{x}}\ >=\ 0.0f\ \&\&\ srcViewportPos.\mbox{\hyperlink{struct_f_c_t_1_1_vec2_a46dd201ced58e5d5012381fa82e2f023}{x}}\ <=\ 1.0f\ \&\&\ srcViewportPos.\mbox{\hyperlink{struct_f_c_t_1_1_vec2_aef6165dc59972cc930197af4e4bf2b2f}{y}}\ >=\ 0.0f\ \&\&\ srcViewportPos.\mbox{\hyperlink{struct_f_c_t_1_1_vec2_aef6165dc59972cc930197af4e4bf2b2f}{y}}\ <=\ 1.0f;}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00088}00088\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00090}\mbox{\hyperlink{class_f_c_t_1_1_auto_viewport_a239bbb0ac6e0211a43982c0ecc33765a}{00090}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_auto_viewport_a239bbb0ac6e0211a43982c0ecc33765a}{AutoViewport::enableForWndAllPass}}(\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}}*\ wnd)}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00091}00091\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ passes\ =\ m\_ctx-\/>getPassTargetToWnd(wnd);}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ pass\ :\ passes)}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_auto_viewport_a32968f68483a7627a9a7333d314d52c4}{addPass}}(pass);}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00097}00097\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00098}00098\ \}}
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{_auto_viewport_8cpp_source_l00101}00101\ }
+
+\end{DoxyCode}

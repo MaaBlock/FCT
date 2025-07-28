@@ -1,0 +1,94 @@
+\doxysection{Assimp\+\_\+\+Model\+Loader.\+cpp}
+\hypertarget{_assimp___model_loader_8cpp_source}{}\label{_assimp___model_loader_8cpp_source}\index{src/ModelLoader/Assimp\_ModelLoader.cpp@{src/ModelLoader/Assimp\_ModelLoader.cpp}}
+\mbox{\hyperlink{_assimp___model_loader_8cpp}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_assimp___model_loader_8h}{./Assimp\_ModelLoader.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00002}00002\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_f_c_t}{FCT}}}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00003}00003\ \{}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00004}\mbox{\hyperlink{class_f_c_t_1_1_assimp___model_loader_a102ea230976ff5cbcd3a48423d0c3ebe}{00004}}\ \ \ \ \ std::unique\_ptr<ModelData>\ \mbox{\hyperlink{class_f_c_t_1_1_assimp___model_loader_a102ea230976ff5cbcd3a48423d0c3ebe}{Assimp\_ModelLoader::loadModel}}(\textcolor{keyword}{const}\ std::string\&\ path)}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00005}00005\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00006}00006\ \ \ \ \ \ \ \ \ Assimp::Importer\ importer;}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00007}00007\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ aiScene\ =\ importer.ReadFile(path,}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00008}00008\ \ \ \ \ \ \ \ \ \ \ \ \ aiProcess\_CalcTangentSpace\ |}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00009}00009\ \ \ \ \ \ \ \ \ \ \ \ \ aiProcess\_Triangulate\ |}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00010}00010\ \ \ \ \ \ \ \ \ \ \ \ \ aiProcess\_JoinIdenticalVertices\ |}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ \ \ \ \ aiProcess\_SortByPType);}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ ret\ =\ std::make\_unique<ModelData>();}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ aiScene-\/>mNumMeshes;\ i++)}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ aiMesh\ =\ aiScene-\/>mMeshes[i];}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ mesh\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{struct_f_c_t_1_1_model_mesh}{ModelMesh}}();}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ mesh-\/>name\ =\ aiMesh-\/>mName.C\_Str();}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ mesh-\/>material\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ mesh-\/>vertices.resize(aiMesh-\/>mNumVertices);}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (aiMesh-\/>HasPositions())}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ aiMesh-\/>mNumVertices;\ j++)\ \{}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ aiVertex\ =\ aiMesh-\/>mVertices[j];}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mesh-\/>vertices[j].position\ =\ \{\ aiVertex.x,\ aiVertex.y,\ aiVertex.z\ \};}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (aiMesh-\/>HasNormals())}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ aiMesh-\/>mNumVertices;\ j++)\ \{}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ aiNormal\ =\ aiMesh-\/>mNormals[j];}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mesh-\/>vertices[j].normal\ =\ \{\ aiNormal.x,\ aiNormal.y,\ aiNormal.z\ \};}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ texCoordSet\ =\ 0;\ texCoordSet\ <\ 8;\ texCoordSet++)}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (aiMesh-\/>HasTextureCoords(texCoordSet))}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ aiMesh-\/>mNumVertices;\ j++)\ \{}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ aiTexCoord\ =\ aiMesh-\/>mTextureCoords[texCoordSet][j];}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mesh-\/>vertices[j].texCoords[texCoordSet]\ =\ \{\ aiTexCoord.x,\ aiTexCoord.y\ \};}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (aiMesh-\/>HasTangentsAndBitangents())}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ aiMesh-\/>mNumVertices;\ j++)\ \{}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ aiTangent\ =\ aiMesh-\/>mTangents[j];}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ aiBitangent\ =\ aiMesh-\/>mBitangents[j];}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mesh-\/>vertices[j].tangent\ =\ \{\ aiTangent.x,\ aiTangent.y,\ aiTangent.z\ \};}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mesh-\/>vertices[j].bitangent\ =\ \{\ aiBitangent.x,\ aiBitangent.y,\ aiBitangent.z\ \};}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ colorSet\ =\ 0;\ colorSet\ <\ 8;\ colorSet++)}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (aiMesh-\/>HasVertexColors(colorSet))}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ aiMesh-\/>mNumVertices;\ j++)\ \{}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ aiColor\ =\ aiMesh-\/>mColors[colorSet][j];}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mesh-\/>vertices[j].colors[colorSet]\ =\ \{\ aiColor.r,\ aiColor.g,\ aiColor.b,\ aiColor.a\ \};}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (aiMesh-\/>HasFaces())}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mesh-\/>indices.reserve(aiMesh-\/>mNumFaces\ *\ 3);}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ aiMesh-\/>mNumFaces;\ j++)}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ aiFace\&\ face\ =\ aiMesh-\/>mFaces[j];}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ k\ =\ 0;\ k\ <\ face.mNumIndices;\ k++)}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mesh-\/>indices.push\_back(face.mIndices[k]);}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ ret-\/>meshes.push\_back(mesh);}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ret;}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00087}00087\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_assimp___model_loader_8cpp_source_l00088}00088\ \}}
+
+\end{DoxyCode}

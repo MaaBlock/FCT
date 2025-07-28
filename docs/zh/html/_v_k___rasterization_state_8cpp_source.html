@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FCT: src/RHI/VK_RasterizationState.cpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FCT
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_v_k___rasterization_state_8cpp_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">VK_RasterizationState.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_v_k___rasterization_state_8cpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// Created by Administrator on 2025/3/23.</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="_v_k___rasterization_state_8h.html">./VK_RasterizationState.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_f_c_t.html">FCT</a></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
+<div class="foldopen" id="foldopen00008" data-start="{" data-end="}">
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_v_k___rasterization_state.html#a4168aa800f80b9f6b42e3a8e85f98499">    8</a></span>    <a class="code hl_function" href="class_f_c_t_1_1_v_k___rasterization_state.html#a4168aa800f80b9f6b42e3a8e85f98499">VK_RasterizationState::VK_RasterizationState</a>(<a class="code hl_class" href="class_f_c_t_1_1_v_k___context.html">VK_Context</a>* ctx)</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    {</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        m_ctx = ctx;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    }</div>
+</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="}">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_v_k___rasterization_state.html#a696f17a3e2220ad149edcae6cca9dc55">   13</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_v_k___rasterization_state.html#a696f17a3e2220ad149edcae6cca9dc55">VK_RasterizationState::create</a>()</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        m_rasterizationStateCreateInfo = vk::PipelineRasterizationStateCreateInfo()</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>            .setDepthClampEnable(<a class="code hl_function" href="class_f_c_t_1_1_rasterization_state.html#a681aabd2123c8be5befa99b959b3a5f1">depthClampEnable</a>())</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>            .setRasterizerDiscardEnable(<a class="code hl_function" href="class_f_c_t_1_1_rasterization_state.html#a6a174ac7ef952eb6664ba4b46fef4207">rasterizerDiscardEnable</a>())</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>            .setPolygonMode(convertPolygonMode(<a class="code hl_function" href="class_f_c_t_1_1_rasterization_state.html#a486fc0b5c55a3a928ccf0de3b2cb8e88">polygonMode</a>()))</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>            .setCullMode(convertCullMode(<a class="code hl_function" href="class_f_c_t_1_1_rasterization_state.html#ab9cf4df9f0d5f754c2e3dff05bed3d1c">cullMode</a>()))</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>            .setFrontFace(convertFrontFace(<a class="code hl_function" href="class_f_c_t_1_1_rasterization_state.html#acdb81261115cc2e7bcd69ccce653121f">frontFace</a>()))</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>            .setDepthBiasEnable(<a class="code hl_function" href="class_f_c_t_1_1_rasterization_state.html#a1b0c1523322d72357de918ce8395b0a2">depthBiasEnable</a>())</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            .setDepthBiasConstantFactor(<a class="code hl_function" href="class_f_c_t_1_1_rasterization_state.html#a90cc51a507e9efe4d0e2152317324168">depthBiasConstantFactor</a>())</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            .setDepthBiasClamp(<a class="code hl_function" href="class_f_c_t_1_1_rasterization_state.html#aad9dd596a9490aba51f324fcdad4a710">depthBiasClamp</a>())</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            .setDepthBiasSlopeFactor(<a class="code hl_function" href="class_f_c_t_1_1_rasterization_state.html#a603cb0f90c15f80daa01b44414c5ce3a">depthBiasSlopeFactor</a>())</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            .setLineWidth(<a class="code hl_function" href="class_f_c_t_1_1_rasterization_state.html#ad96eb583827733fdca38493743cd4415">lineWidth</a>());</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        m_multisampleStateCreateInfo = vk::PipelineMultisampleStateCreateInfo()</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            .setRasterizationSamples(<span class="keyword">static_cast&lt;</span>vk::SampleCountFlagBits<span class="keyword">&gt;</span>(<a class="code hl_variable" href="class_f_c_t_1_1_rasterization_state.html#a012e93a6c4be5eac880087abc04ef97a">m_sampleCount</a>))</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            .setSampleShadingEnable(<a class="code hl_variable" href="class_f_c_t_1_1_rasterization_state.html#aa7365ae12b6fc599430abc8725bcd3cd">m_minSampleShading</a> &lt; 1.0f)</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            .setMinSampleShading(<a class="code hl_variable" href="class_f_c_t_1_1_rasterization_state.html#aa7365ae12b6fc599430abc8725bcd3cd">m_minSampleShading</a>)</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            .setPSampleMask(&amp;<a class="code hl_variable" href="class_f_c_t_1_1_rasterization_state.html#aaa4dcd7b1b4a7ac16197cd538e0796dd">m_sampleMask</a>)</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            .setAlphaToCoverageEnable(<a class="code hl_variable" href="class_f_c_t_1_1_rasterization_state.html#a8944fcab42c355c3071d04422d1ab45e">m_alphaToCoverageEnable</a>)</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            .setAlphaToOneEnable(<a class="code hl_variable" href="class_f_c_t_1_1_rasterization_state.html#acb84f9c5d08b76190b322f21999c5c91">m_alphaToOneEnable</a>);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    }</div>
+</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>}</div>
+<div class="ttc" id="a_v_k___rasterization_state_8h_html"><div class="ttname"><a href="_v_k___rasterization_state_8h.html">VK_RasterizationState.h</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_rasterization_state_html_a012e93a6c4be5eac880087abc04ef97a"><div class="ttname"><a href="class_f_c_t_1_1_rasterization_state.html#a012e93a6c4be5eac880087abc04ef97a">FCT::RasterizationState::m_sampleCount</a></div><div class="ttdeci">uint32_t m_sampleCount</div><div class="ttdef"><b>定义</b> <a href="_rasterization_state_8h_source.html#l00096">RasterizationState.h:96</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_rasterization_state_html_a1b0c1523322d72357de918ce8395b0a2"><div class="ttname"><a href="class_f_c_t_1_1_rasterization_state.html#a1b0c1523322d72357de918ce8395b0a2">FCT::RasterizationState::depthBiasEnable</a></div><div class="ttdeci">bool depthBiasEnable() const</div><div class="ttdef"><b>定义</b> <a href="_rasterization_state_8h_source.html#l00052">RasterizationState.h:52</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_rasterization_state_html_a486fc0b5c55a3a928ccf0de3b2cb8e88"><div class="ttname"><a href="class_f_c_t_1_1_rasterization_state.html#a486fc0b5c55a3a928ccf0de3b2cb8e88">FCT::RasterizationState::polygonMode</a></div><div class="ttdeci">PolygonMode polygonMode() const</div><div class="ttdef"><b>定义</b> <a href="_rasterization_state_8h_source.html#l00034">RasterizationState.h:34</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_rasterization_state_html_a603cb0f90c15f80daa01b44414c5ce3a"><div class="ttname"><a href="class_f_c_t_1_1_rasterization_state.html#a603cb0f90c15f80daa01b44414c5ce3a">FCT::RasterizationState::depthBiasSlopeFactor</a></div><div class="ttdeci">float depthBiasSlopeFactor() const</div><div class="ttdef"><b>定义</b> <a href="_rasterization_state_8h_source.html#l00061">RasterizationState.h:61</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_rasterization_state_html_a681aabd2123c8be5befa99b959b3a5f1"><div class="ttname"><a href="class_f_c_t_1_1_rasterization_state.html#a681aabd2123c8be5befa99b959b3a5f1">FCT::RasterizationState::depthClampEnable</a></div><div class="ttdeci">bool depthClampEnable() const</div><div class="ttdef"><b>定义</b> <a href="_rasterization_state_8h_source.html#l00046">RasterizationState.h:46</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_rasterization_state_html_a6a174ac7ef952eb6664ba4b46fef4207"><div class="ttname"><a href="class_f_c_t_1_1_rasterization_state.html#a6a174ac7ef952eb6664ba4b46fef4207">FCT::RasterizationState::rasterizerDiscardEnable</a></div><div class="ttdeci">bool rasterizerDiscardEnable() const</div><div class="ttdef"><b>定义</b> <a href="_rasterization_state_8h_source.html#l00049">RasterizationState.h:49</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_rasterization_state_html_a8944fcab42c355c3071d04422d1ab45e"><div class="ttname"><a href="class_f_c_t_1_1_rasterization_state.html#a8944fcab42c355c3071d04422d1ab45e">FCT::RasterizationState::m_alphaToCoverageEnable</a></div><div class="ttdeci">bool m_alphaToCoverageEnable</div><div class="ttdef"><b>定义</b> <a href="_rasterization_state_8h_source.html#l00099">RasterizationState.h:99</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_rasterization_state_html_a90cc51a507e9efe4d0e2152317324168"><div class="ttname"><a href="class_f_c_t_1_1_rasterization_state.html#a90cc51a507e9efe4d0e2152317324168">FCT::RasterizationState::depthBiasConstantFactor</a></div><div class="ttdeci">float depthBiasConstantFactor() const</div><div class="ttdef"><b>定义</b> <a href="_rasterization_state_8h_source.html#l00055">RasterizationState.h:55</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_rasterization_state_html_aa7365ae12b6fc599430abc8725bcd3cd"><div class="ttname"><a href="class_f_c_t_1_1_rasterization_state.html#aa7365ae12b6fc599430abc8725bcd3cd">FCT::RasterizationState::m_minSampleShading</a></div><div class="ttdeci">float m_minSampleShading</div><div class="ttdef"><b>定义</b> <a href="_rasterization_state_8h_source.html#l00097">RasterizationState.h:97</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_rasterization_state_html_aaa4dcd7b1b4a7ac16197cd538e0796dd"><div class="ttname"><a href="class_f_c_t_1_1_rasterization_state.html#aaa4dcd7b1b4a7ac16197cd538e0796dd">FCT::RasterizationState::m_sampleMask</a></div><div class="ttdeci">uint32_t m_sampleMask</div><div class="ttdef"><b>定义</b> <a href="_rasterization_state_8h_source.html#l00098">RasterizationState.h:98</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_rasterization_state_html_aad9dd596a9490aba51f324fcdad4a710"><div class="ttname"><a href="class_f_c_t_1_1_rasterization_state.html#aad9dd596a9490aba51f324fcdad4a710">FCT::RasterizationState::depthBiasClamp</a></div><div class="ttdeci">float depthBiasClamp() const</div><div class="ttdef"><b>定义</b> <a href="_rasterization_state_8h_source.html#l00058">RasterizationState.h:58</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_rasterization_state_html_ab9cf4df9f0d5f754c2e3dff05bed3d1c"><div class="ttname"><a href="class_f_c_t_1_1_rasterization_state.html#ab9cf4df9f0d5f754c2e3dff05bed3d1c">FCT::RasterizationState::cullMode</a></div><div class="ttdeci">CullMode cullMode() const</div><div class="ttdef"><b>定义</b> <a href="_rasterization_state_8h_source.html#l00037">RasterizationState.h:37</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_rasterization_state_html_acb84f9c5d08b76190b322f21999c5c91"><div class="ttname"><a href="class_f_c_t_1_1_rasterization_state.html#acb84f9c5d08b76190b322f21999c5c91">FCT::RasterizationState::m_alphaToOneEnable</a></div><div class="ttdeci">bool m_alphaToOneEnable</div><div class="ttdef"><b>定义</b> <a href="_rasterization_state_8h_source.html#l00100">RasterizationState.h:100</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_rasterization_state_html_acdb81261115cc2e7bcd69ccce653121f"><div class="ttname"><a href="class_f_c_t_1_1_rasterization_state.html#acdb81261115cc2e7bcd69ccce653121f">FCT::RasterizationState::frontFace</a></div><div class="ttdeci">FrontFace frontFace() const</div><div class="ttdef"><b>定义</b> <a href="_rasterization_state_8h_source.html#l00040">RasterizationState.h:40</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_rasterization_state_html_ad96eb583827733fdca38493743cd4415"><div class="ttname"><a href="class_f_c_t_1_1_rasterization_state.html#ad96eb583827733fdca38493743cd4415">FCT::RasterizationState::lineWidth</a></div><div class="ttdeci">float lineWidth() const</div><div class="ttdef"><b>定义</b> <a href="_rasterization_state_8h_source.html#l00043">RasterizationState.h:43</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_v_k___context_html"><div class="ttname"><a href="class_f_c_t_1_1_v_k___context.html">FCT::VK_Context</a></div><div class="ttdef"><b>定义</b> <a href="_v_k___context_8h_source.html#l00011">VK_Context.h:11</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_v_k___rasterization_state_html_a4168aa800f80b9f6b42e3a8e85f98499"><div class="ttname"><a href="class_f_c_t_1_1_v_k___rasterization_state.html#a4168aa800f80b9f6b42e3a8e85f98499">FCT::VK_RasterizationState::VK_RasterizationState</a></div><div class="ttdeci">VK_RasterizationState(VK_Context *ctx)</div><div class="ttdef"><b>定义</b> <a href="#l00008">VK_RasterizationState.cpp:8</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_v_k___rasterization_state_html_a696f17a3e2220ad149edcae6cca9dc55"><div class="ttname"><a href="class_f_c_t_1_1_v_k___rasterization_state.html#a696f17a3e2220ad149edcae6cca9dc55">FCT::VK_RasterizationState::create</a></div><div class="ttdeci">void create() override</div><div class="ttdef"><b>定义</b> <a href="#l00013">VK_RasterizationState.cpp:13</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html"><div class="ttname"><a href="namespace_f_c_t.html">FCT</a></div><div class="ttdef"><b>定义</b> <a href="_flags_8h_source.html#l00010">Flags.h:11</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_99cd23f92401c000af28014fa43f2752.html">RHI</a></li><li class="navelem"><a href="_v_k___rasterization_state_8cpp.html">VK_RasterizationState.cpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

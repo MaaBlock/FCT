@@ -1,0 +1,175 @@
+\doxysection{FCT\+::IEvent\+System\texorpdfstring{$<$}{<} Config \texorpdfstring{$>$}{>} 模板类 参考}
+\hypertarget{class_f_c_t_1_1_i_event_system}{}\label{class_f_c_t_1_1_i_event_system}\index{FCT::IEventSystem$<$ Config $>$@{FCT::IEventSystem$<$ Config $>$}}
+
+
+{\ttfamily \#include $<$IEvent\+System.\+h$>$}
+
+
+
+FCT\+::IEvent\+System\texorpdfstring{$<$}{<} Config \texorpdfstring{$>$}{>} 的协作图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{class_f_c_t_1_1_i_event_system__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Event$>$ \newline
+requires Config\+::\+Enable\+Trigger}\\void \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a59cef3fb278dbd26a9bfdcd81407835c}{trigger}} (const Event \&event)
+\item 
+{\footnotesize template$<$typename Event$>$ \newline
+requires Config\+::\+Enable\+Queue}\\void \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a43cccfe74d41690355f7d97601a67bb7}{enqueue}} (Event \&\&event)
+\item 
+{\footnotesize template$<$typename Event$>$ \newline
+requires Config\+::\+Enable\+Queue}\\void \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a2b11fa6ab70e609902f655dd736a4cd0}{update}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_ad2331301d8b3d7b9505cfd4cc1641b24}{update\+All}} ()
+\item 
+{\footnotesize template$<$typename Event, typename Func$>$ }\\\mbox{\hyperlink{namespace_f_c_t_a8b1c77084f003979f0fe6c4ddb7e8eb6}{Subscribe\+Id}} \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a7270900dc7047e4f81324f58002066ad}{subscribe}} (Func \&\&func)
+\item 
+{\footnotesize template$<$typename Event$>$ }\\void \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a084c953a75c413b6a2c856e4d474030b}{unsubscribe}} (\mbox{\hyperlink{namespace_f_c_t_a8b1c77084f003979f0fe6c4ddb7e8eb6}{Subscribe\+Id}} subscribe\+Id)
+\item 
+{\footnotesize template$<$typename Event$>$ }\\void \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a9a1e4a28230992fedf7c1d3450d2fd90}{unsubscribe\+All}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_acfc5f32e8e8cdcf0e3069b7b5711f05a}{unsubscribe}} (\mbox{\hyperlink{namespace_f_c_t_a8b1c77084f003979f0fe6c4ddb7e8eb6}{Subscribe\+Id}} subscribe\+Id)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+\subsubsection*{template$<$typename Config = Event\+System\+Config\+::\+Full$>$\newline
+class FCT\+::\+IEvent\+System$<$ Config $>$}
+
+
+在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00034}{34}} 行定义.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_f_c_t_1_1_i_event_system_doc-func-members}
+\doxysubsection{成员函数说明}
+\Hypertarget{class_f_c_t_1_1_i_event_system_a43cccfe74d41690355f7d97601a67bb7}\index{FCT::IEventSystem$<$ Config $>$@{FCT::IEventSystem$<$ Config $>$}!enqueue@{enqueue}}
+\index{enqueue@{enqueue}!FCT::IEventSystem$<$ Config $>$@{FCT::IEventSystem$<$ Config $>$}}
+\doxysubsubsection{\texorpdfstring{enqueue()}{enqueue()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_i_event_system_a43cccfe74d41690355f7d97601a67bb7} 
+template$<$typename Config = Event\+System\+Config\+::\+Full$>$ \\
+template$<$typename Event$>$ \newline
+requires Config\+::\+Enable\+Queue\\
+void \mbox{\hyperlink{class_f_c_t_1_1_i_event_system}{FCT\+::\+IEvent\+System}}$<$ Config $>$\+::enqueue (\begin{DoxyParamCaption}\item[{Event \&\&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00093}{93}} 行定义.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{class_f_c_t_1_1_i_event_system_a43cccfe74d41690355f7d97601a67bb7_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_f_c_t_1_1_i_event_system_a7270900dc7047e4f81324f58002066ad}\index{FCT::IEventSystem$<$ Config $>$@{FCT::IEventSystem$<$ Config $>$}!subscribe@{subscribe}}
+\index{subscribe@{subscribe}!FCT::IEventSystem$<$ Config $>$@{FCT::IEventSystem$<$ Config $>$}}
+\doxysubsubsection{\texorpdfstring{subscribe()}{subscribe()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_i_event_system_a7270900dc7047e4f81324f58002066ad} 
+template$<$typename Config = Event\+System\+Config\+::\+Full$>$ \\
+template$<$typename Event, typename Func$>$ \\
+\mbox{\hyperlink{namespace_f_c_t_a8b1c77084f003979f0fe6c4ddb7e8eb6}{Subscribe\+Id}} \mbox{\hyperlink{class_f_c_t_1_1_i_event_system}{FCT\+::\+IEvent\+System}}$<$ Config $>$\+::subscribe (\begin{DoxyParamCaption}\item[{Func \&\&}]{func}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00133}{133}} 行定义.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{class_f_c_t_1_1_i_event_system_a7270900dc7047e4f81324f58002066ad_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_f_c_t_1_1_i_event_system_a59cef3fb278dbd26a9bfdcd81407835c}\index{FCT::IEventSystem$<$ Config $>$@{FCT::IEventSystem$<$ Config $>$}!trigger@{trigger}}
+\index{trigger@{trigger}!FCT::IEventSystem$<$ Config $>$@{FCT::IEventSystem$<$ Config $>$}}
+\doxysubsubsection{\texorpdfstring{trigger()}{trigger()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_i_event_system_a59cef3fb278dbd26a9bfdcd81407835c} 
+template$<$typename Config = Event\+System\+Config\+::\+Full$>$ \\
+template$<$typename Event$>$ \newline
+requires Config\+::\+Enable\+Trigger\\
+void \mbox{\hyperlink{class_f_c_t_1_1_i_event_system}{FCT\+::\+IEvent\+System}}$<$ Config $>$\+::trigger (\begin{DoxyParamCaption}\item[{const Event \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00079}{79}} 行定义.
+
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{class_f_c_t_1_1_i_event_system_a59cef3fb278dbd26a9bfdcd81407835c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_f_c_t_1_1_i_event_system_a084c953a75c413b6a2c856e4d474030b}\index{FCT::IEventSystem$<$ Config $>$@{FCT::IEventSystem$<$ Config $>$}!unsubscribe@{unsubscribe}}
+\index{unsubscribe@{unsubscribe}!FCT::IEventSystem$<$ Config $>$@{FCT::IEventSystem$<$ Config $>$}}
+\doxysubsubsection{\texorpdfstring{unsubscribe()}{unsubscribe()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_i_event_system_a084c953a75c413b6a2c856e4d474030b} 
+template$<$typename Config = Event\+System\+Config\+::\+Full$>$ \\
+template$<$typename Event$>$ \\
+void \mbox{\hyperlink{class_f_c_t_1_1_i_event_system}{FCT\+::\+IEvent\+System}}$<$ Config $>$\+::unsubscribe (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_f_c_t_a8b1c77084f003979f0fe6c4ddb7e8eb6}{Subscribe\+Id}}}]{subscribe\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00148}{148}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_i_event_system_acfc5f32e8e8cdcf0e3069b7b5711f05a}\index{FCT::IEventSystem$<$ Config $>$@{FCT::IEventSystem$<$ Config $>$}!unsubscribe@{unsubscribe}}
+\index{unsubscribe@{unsubscribe}!FCT::IEventSystem$<$ Config $>$@{FCT::IEventSystem$<$ Config $>$}}
+\doxysubsubsection{\texorpdfstring{unsubscribe()}{unsubscribe()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_i_event_system_acfc5f32e8e8cdcf0e3069b7b5711f05a} 
+template$<$typename Config = Event\+System\+Config\+::\+Full$>$ \\
+void \mbox{\hyperlink{class_f_c_t_1_1_i_event_system}{FCT\+::\+IEvent\+System}}$<$ Config $>$\+::unsubscribe (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_f_c_t_a8b1c77084f003979f0fe6c4ddb7e8eb6}{Subscribe\+Id}}}]{subscribe\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00166}{166}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_i_event_system_a9a1e4a28230992fedf7c1d3450d2fd90}\index{FCT::IEventSystem$<$ Config $>$@{FCT::IEventSystem$<$ Config $>$}!unsubscribeAll@{unsubscribeAll}}
+\index{unsubscribeAll@{unsubscribeAll}!FCT::IEventSystem$<$ Config $>$@{FCT::IEventSystem$<$ Config $>$}}
+\doxysubsubsection{\texorpdfstring{unsubscribeAll()}{unsubscribeAll()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_i_event_system_a9a1e4a28230992fedf7c1d3450d2fd90} 
+template$<$typename Config = Event\+System\+Config\+::\+Full$>$ \\
+template$<$typename Event$>$ \\
+void \mbox{\hyperlink{class_f_c_t_1_1_i_event_system}{FCT\+::\+IEvent\+System}}$<$ Config $>$\+::unsubscribe\+All (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00161}{161}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_i_event_system_a2b11fa6ab70e609902f655dd736a4cd0}\index{FCT::IEventSystem$<$ Config $>$@{FCT::IEventSystem$<$ Config $>$}!update@{update}}
+\index{update@{update}!FCT::IEventSystem$<$ Config $>$@{FCT::IEventSystem$<$ Config $>$}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_i_event_system_a2b11fa6ab70e609902f655dd736a4cd0} 
+template$<$typename Config = Event\+System\+Config\+::\+Full$>$ \\
+template$<$typename Event$>$ \newline
+requires Config\+::\+Enable\+Queue\\
+void \mbox{\hyperlink{class_f_c_t_1_1_i_event_system}{FCT\+::\+IEvent\+System}}$<$ Config $>$\+::update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00106}{106}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_i_event_system_ad2331301d8b3d7b9505cfd4cc1641b24}\index{FCT::IEventSystem$<$ Config $>$@{FCT::IEventSystem$<$ Config $>$}!updateAll@{updateAll}}
+\index{updateAll@{updateAll}!FCT::IEventSystem$<$ Config $>$@{FCT::IEventSystem$<$ Config $>$}}
+\doxysubsubsection{\texorpdfstring{updateAll()}{updateAll()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_i_event_system_ad2331301d8b3d7b9505cfd4cc1641b24} 
+template$<$typename Config = Event\+System\+Config\+::\+Full$>$ \\
+void \mbox{\hyperlink{class_f_c_t_1_1_i_event_system}{FCT\+::\+IEvent\+System}}$<$ Config $>$\+::update\+All (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00121}{121}} 行定义.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Base/\mbox{\hyperlink{_i_event_system_8h}{IEvent\+System.\+h}}\end{DoxyCompactItemize}

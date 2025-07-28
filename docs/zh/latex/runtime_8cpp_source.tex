@@ -1,0 +1,88 @@
+\doxysection{runtime.\+cpp}
+\hypertarget{runtime_8cpp_source}{}\label{runtime_8cpp_source}\index{src/Runtime/runtime.cpp@{src/Runtime/runtime.cpp}}
+\mbox{\hyperlink{runtime_8cpp}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_f_c_t_a_p_i_8h}{../FCTAPI.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00005}00005\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_f_c_t}{FCT}}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00006}00006\ \{}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00008}\mbox{\hyperlink{class_f_c_t_1_1_context_aaa41a1b8bb45d0f06e4910c47fbaadfd}{00008}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_context_aaa41a1b8bb45d0f06e4910c47fbaadfd}{Context::createCompiler}}()}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00009}00009\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#ifdef\ FCT\_USE\_SHADERC}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_context_a4c6607256a23ab3c6a276ca3ffa855d9}{m\_compiler}}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_f_c_t_1_1_shaderc___shader_compiler}{Shaderc\_ShaderCompiler}};}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00012}00012\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00013}00013\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00015}\mbox{\hyperlink{class_f_c_t_1_1_runtime_a140a42440102f51f7b91feabab5825d0}{00015}}\ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_model_loader}{ModelLoader}}*\ \mbox{\hyperlink{class_f_c_t_1_1_runtime_a140a42440102f51f7b91feabab5825d0}{Runtime::createModelLoader}}()}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00016}00016\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_f_c_t_1_1_assimp___model_loader}{Assimp\_ModelLoader}};}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00018}00018\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00019}00019\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00020}00020\ \textcolor{comment}{\ \ \ \ Runtime\ *CreateRuntime()}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00021}00021\ \textcolor{comment}{\ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00022}00022\ \textcolor{comment}{\ \ \ \ \ \ \ \ Runtime\ *ret\ =\ new\ Runtime;}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00023}00023\ \textcolor{comment}{\ \ \ \ \ \ \ \ return\ ret;}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00024}00024\ \textcolor{comment}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00025}00025\ \textcolor{comment}{\ \ \ \ void\ Runtime::init()}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00026}00026\ \textcolor{comment}{\ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00027}00027\ \textcolor{comment}{\ \ \ \ \ \ \ \ g\_glfwWindowShareData\ =\ new\ GLFW\_WindowShareData(this);}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00028}00028\ \textcolor{comment}{\ \ \ \ \ \ \ \ g\_glfwWindowShareData-\/>init();}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00029}00029\ \textcolor{comment}{\ \ \ \ \ \ \ \ g\_glContextShareData\ =\ new\ GL\_ContextShareData(this);}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00030}00030\ \textcolor{comment}{\ \ \ \ \ \ \ \ g\_glContextShareData-\/>init();}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00031}00031\ \textcolor{comment}{\ \ \ \ \ \ \ \ g\_phsyShareData\ =\ new\ PX\_PhysicsShareData;}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00032}00032\ \textcolor{comment}{\ \ \ \ \ \ \ \ g\_phsyShareData-\/>init();}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00033}00033\ \textcolor{comment}{\ \ \ \ \ \ \ \ FreeImage\_ImageLoader::Init();}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00034}00034\ \textcolor{comment}{\ \ \ \ \ \ \ \ g\_freeTypeFontShareData\ =\ new\ FreeType\_FontShareData;}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00035}00035\ \textcolor{comment}{\ \ \ \ \ \ \ \ g\_freeTypeFontShareData-\/>init();}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00036}00036\ \textcolor{comment}{\ \ \ \ \ \ \ \ setOpenGLVesion(3,\ 2);}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00037}00037\ \textcolor{comment}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00038}00038\ \textcolor{comment}{\ \ \ \ void\ Runtime::term()}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00039}00039\ \textcolor{comment}{\ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00040}00040\ \textcolor{comment}{\ \ \ \ \ \ \ \ FreeImage\_ImageLoader::Tern();}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00041}00041\ \textcolor{comment}{\ \ \ \ \ \ \ \ g\_freeTypeFontShareData-\/>tern();}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00042}00042\ \textcolor{comment}{\ \ \ \ \ \ \ \ g\_phsyShareData-\/>term();}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00043}00043\ \textcolor{comment}{\ \ \ \ \ \ \ \ delete\ g\_glfwWindowShareData;}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00044}00044\ \textcolor{comment}{\ \ \ \ \ \ \ \ delete\ g\_glContextShareData;}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00045}00045\ \textcolor{comment}{\ \ \ \ \ \ \ \ delete\ g\_freeTypeFontShareData;}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00046}00046\ \textcolor{comment}{\ \ \ \ \ \ \ \ delete\ g\_phsyShareData;}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00047}00047\ \textcolor{comment}{\ \ \ \ \ \ \ \ m\_isTern\ =\ true;}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00048}00048\ \textcolor{comment}{\ \ \ \ \ \ \ \ if\ (!m\_isRelease)}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00049}00049\ \textcolor{comment}{\ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00050}00050\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ delete\ this;}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00051}00051\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00052}00052\ \textcolor{comment}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00053}00053\ \textcolor{comment}{\ \ \ \ Window\ *Runtime::createWindow(int\ w,\ int\ h,\ const\ char\ *title)}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00054}00054\ \textcolor{comment}{\ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00055}00055\ \textcolor{comment}{\ \ \ \ \ \ \ \ return\ g\_glfwWindowShareData-\/>createWindow(w,\ h,\ title);}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00056}00056\ \textcolor{comment}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00057}00057\ \textcolor{comment}{\ \ \ \ Context\ *Runtime::createContext(IRenderTarget\ *target)}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00058}00058\ \textcolor{comment}{\ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00059}00059\ \textcolor{comment}{\ \ \ \ \ \ \ \ return\ g\_glContextShareData-\/>createContext(target);}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00060}00060\ \textcolor{comment}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00061}00061\ \textcolor{comment}{\ \ \ \ void\ Runtime::setOpenGLVesion(int\ major,\ int\ minor)}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00062}00062\ \textcolor{comment}{\ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00063}00063\ \textcolor{comment}{\ \ \ \ \ \ \ \ g\_glContextShareData-\/>setOpenGLVersion(major,\ minor);}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00064}00064\ \textcolor{comment}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00065}00065\ \textcolor{comment}{\ \ \ \ Font\ *Runtime::createFont()}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00066}00066\ \textcolor{comment}{\ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00067}00067\ \textcolor{comment}{\ \ \ \ \ \ \ \ return\ g\_freeTypeFontShareData-\/>create();}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00068}00068\ \textcolor{comment}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00069}00069\ \textcolor{comment}{\ \ \ \ ImageLoader\ *Runtime::createImageLoader()}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00070}00070\ \textcolor{comment}{\ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00071}00071\ \textcolor{comment}{\ \ \ \ \ \ \ \ return\ new\ FreeImage\_ImageLoader();}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00072}00072\ \textcolor{comment}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00073}00073\ \textcolor{comment}{\ \ \ \ Pipeline\ *Runtime::createVectorRenderPipeline(Context\ *ctx)}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00074}00074\ \textcolor{comment}{\ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00075}00075\ \textcolor{comment}{\ \ \ \ \ \ \ \ return\ nullptr;}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00076}00076\ \textcolor{comment}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00077}00077\ \textcolor{comment}{\ \ \ \ PhysicsSystem*\ Runtime::createPhysicsSystem()}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00078}00078\ \textcolor{comment}{\ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00079}00079\ \textcolor{comment}{\ \ \ \ \ \ \ \ PhysicsSystem*\ ret\ =\ new\ PhysicsSystem(this,\ g\_phsyShareData);}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00080}00080\ \textcolor{comment}{\ \ \ \ \ \ \ \ return\ ret;}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00081}00081\ \textcolor{comment}{\ \ \ \ \}*/}}
+\DoxyCodeLine{\Hypertarget{runtime_8cpp_source_l00082}00082\ \}}
+
+\end{DoxyCode}

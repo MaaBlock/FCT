@@ -1,0 +1,247 @@
+\doxysection{VK\+\_\+\+Index\+Buffer.\+cpp}
+\hypertarget{_v_k___index_buffer_8cpp_source}{}\label{_v_k___index_buffer_8cpp_source}\index{src/RHI/VK\_IndexBuffer.cpp@{src/RHI/VK\_IndexBuffer.cpp}}
+\mbox{\hyperlink{_v_k___index_buffer_8cpp}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00001}00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00002}00002\ \textcolor{comment}{//\ Created\ by\ Administrator\ on\ 2025/4/10.}}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00003}00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v_k___context_8h}{../Context/VK\_Context.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v_k___index_buffer_8h}{./VK\_IndexBuffer.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v_k___command_buffer_8h}{./VK\_CommandBuffer.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00008}00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_f_c_t}{FCT}}}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00009}00009\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00010}00010\ \ \ \ \ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_f_c_t_1_1_r_h_i}{RHI}}}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00011}00011\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00012}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_a2e57c5333a95371fc10273553a148b78}{00012}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_a2e57c5333a95371fc10273553a148b78}{VK\_IndexBuffer::VK\_IndexBuffer}}(\mbox{\hyperlink{class_f_c_t_1_1_v_k___context}{VK\_Context}}*\ ctx)}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \ \ \ \ m\_ctx\ =\ ctx;}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00017}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_a3250e0d38c83340cbdfbcded22c980ba}{00017}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_a3250e0d38c83340cbdfbcded22c980ba}{VK\_IndexBuffer::\string~VK\_IndexBuffer}}()}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_a6f1b0bf731a8ba32d399ce620a5f6553}{destroy}}();}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00021}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_a4014386949d65a9c42f1a186962db2bb}{00021}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_a4014386949d65a9c42f1a186962db2bb}{VK\_IndexBuffer::create}}()}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_isCreated)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_a6f1b0bf731a8ba32d399ce620a5f6553}{destroy}}();}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ bufferSize\ =\ \textcolor{keyword}{static\_cast<}uint32\_t\textcolor{keyword}{>}(\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_index_buffer_af580a15c37bfc8e4670b35699047ab42}{m\_size}}\ *\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_index_buffer_a95ca93f6961bb742c5636ec73779aa3e}{m\_stride}});}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ bufferCount\ =\ (\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_index_buffer_a72a476c96a56cf8738d7c13409ee7733}{m\_updateFrequency}}\ ==\ \mbox{\hyperlink{namespace_f_c_t_a0236e673f1b6fe9736bc596d7e50dc7ea5ac98a9f1bddc1b15896f0e02bf06839}{UpdateFrequency::PerFrame}})\ ?}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_ctx-\/>maxFrameInFlight()\ :\ 1;}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ m\_buffers.resize(bufferCount);}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ m\_memories.resize(bufferCount);}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ m\_dirtyFlags.resize(bufferCount,\ 0);}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (uint32\_t\ i\ =\ 0;\ i\ <\ bufferCount;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vk::BufferCreateInfo\ bufferInfo;}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bufferInfo.size\ =\ bufferSize;}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bufferInfo.usage\ =\ vk::BufferUsageFlagBits::eIndexBuffer;}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bufferInfo.sharingMode\ =\ vk::SharingMode::eExclusive;}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_buffers[i]\ =\ m\_ctx-\/>getDevice().createBuffer(bufferInfo);}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vk::MemoryRequirements\ memRequirements\ =\ m\_ctx-\/>getDevice().getBufferMemoryRequirements(m\_buffers[i]);}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vk::MemoryAllocateInfo\ allocInfo;}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ allocInfo.allocationSize\ =\ memRequirements.size;}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ allocInfo.memoryTypeIndex\ =\ m\_ctx-\/>findMemoryType(}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ memRequirements.memoryTypeBits,}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vk::MemoryPropertyFlagBits::eHostVisible\ |\ vk::MemoryPropertyFlagBits::eHostCoherent}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_memories[i]\ =\ m\_ctx-\/>getDevice().allocateMemory(allocInfo);}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_ctx-\/>getDevice().bindBufferMemory(m\_buffers[i],\ m\_memories[i],\ 0);}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ m\_isCreated\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_index_buffer_a1e6bd83966cd61dee0b473690ca60504}{updataBuffer}}();}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00060}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_a683555340360d8ebd33c4d04aecd5107}{00060}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_a683555340360d8ebd33c4d04aecd5107}{VK\_IndexBuffer::mapBuffer}}(\textcolor{keywordtype}{void}*\ data,\ uint32\_t\ size,\ uint32\_t\ frameIndex)}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!m\_isCreated\ ||\ !data\ ||\ size\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_index_buffer_a72a476c96a56cf8738d7c13409ee7733}{m\_updateFrequency}}\ ==\ \mbox{\hyperlink{namespace_f_c_t_a0236e673f1b6fe9736bc596d7e50dc7ea5ac98a9f1bddc1b15896f0e02bf06839}{UpdateFrequency::PerFrame}})\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (frameIndex\ >=\ m\_buffers.size())\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ frameIndex\ =\ frameIndex\ \%\ m\_buffers.size();}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_a3b202fdeedb49e79c43850c7909b4af6}{checkAndResizeIfNeeded}}(frameIndex);}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ frameIndex\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ mappedData\ =\ m\_ctx-\/>getDevice().mapMemory(m\_memories[frameIndex],\ 0,\ size);}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ memcpy(mappedData,\ data,\ size);}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ m\_ctx-\/>getDevice().unmapMemory(m\_memories[frameIndex]);}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00082}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_ae6585b7e6f531246ddf5bc18b5312894}{00082}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_a683555340360d8ebd33c4d04aecd5107}{VK\_IndexBuffer::mapBuffer}}(\textcolor{keywordtype}{void}*\ data,\ uint32\_t\ size)}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ frameIndex\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_index_buffer_a72a476c96a56cf8738d7c13409ee7733}{m\_updateFrequency}}\ ==\ \mbox{\hyperlink{namespace_f_c_t_a0236e673f1b6fe9736bc596d7e50dc7ea5ac98a9f1bddc1b15896f0e02bf06839}{UpdateFrequency::PerFrame}})\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ frameIndex\ =\ m\_ctx-\/>currentFrameIndex();}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_a683555340360d8ebd33c4d04aecd5107}{mapBuffer}}(data,\ size,\ frameIndex);}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00091}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_a6f1b0bf731a8ba32d399ce620a5f6553}{00091}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_a6f1b0bf731a8ba32d399ce620a5f6553}{VK\_IndexBuffer::destroy}}()}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_isCreated)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_ctx-\/>getDevice().waitIdle();}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ m\_buffers.size();\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_buffers[i])\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_ctx-\/>getDevice().destroyBuffer(m\_buffers[i]);}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_memories[i])\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_ctx-\/>getDevice().freeMemory(m\_memories[i]);}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_buffers.clear();}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_memories.clear();}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_isCreated\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00112}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_aafde2aad1820de240ce5676568d38195}{00112}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_aafde2aad1820de240ce5676568d38195}{VK\_IndexBuffer::bind}}(\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer}{CommandBuffer}}*\ cmdBuffer)}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ cmd\ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer}{VK\_CommandBuffer}}*\textcolor{keyword}{>}(cmdBuffer);}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_isCreated)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ frameIndex\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_index_buffer_a72a476c96a56cf8738d7c13409ee7733}{m\_updateFrequency}}\ ==\ \mbox{\hyperlink{namespace_f_c_t_a0236e673f1b6fe9736bc596d7e50dc7ea5ac98a9f1bddc1b15896f0e02bf06839}{UpdateFrequency::PerFrame}})\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ frameIndex\ =\ m\_ctx-\/>currentSubmitFrameIndex();}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_a3b202fdeedb49e79c43850c7909b4af6}{checkAndResizeIfNeeded}}(frameIndex);}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (frameIndex\ <\ m\_buffers.size()\ \&\&\ m\_buffers[frameIndex])\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cmd-\/>commandBuffer().bindIndexBuffer(m\_buffers[frameIndex],\ 0,\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_ad7a0939f7df3c393e77a3b349c3f9cc2}{getIndexType}}());}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00127}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_a3b202fdeedb49e79c43850c7909b4af6}{00127}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_a3b202fdeedb49e79c43850c7909b4af6}{VK\_IndexBuffer::checkAndResizeIfNeeded}}(uint32\_t\ frameIndex)}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (frameIndex\ <\ m\_dirtyFlags.size()\ \&\&\ m\_dirtyFlags[frameIndex])\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ currentFrame\ =\ m\_ctx-\/>currentFrameIndex();}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (currentFrame\ !=\ frameIndex\ \&\&\ currentFrame\ <\ m\_buffers.size())\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_a5fab9bea75d15501038296ec234eb228}{resizeBuffer}}(\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_index_buffer_af580a15c37bfc8e4670b35699047ab42}{m\_size}},\ frameIndex);}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_dirtyFlags[frameIndex]\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00139}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_a5fab9bea75d15501038296ec234eb228}{00139}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_a5fab9bea75d15501038296ec234eb228}{VK\_IndexBuffer::resizeBuffer}}(\textcolor{keywordtype}{size\_t}\ size,\ uint32\_t\ frameIndex)}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (size\ ==\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_index_buffer_af580a15c37bfc8e4670b35699047ab42}{m\_size}}\ ||\ !m\_isCreated)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00144}00144\ }
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (frameIndex\ >=\ m\_buffers.size())\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ frameIndex\ =\ frameIndex\ \%\ m\_buffers.size();}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00148}00148\ }
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ oldSize\ =\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_index_buffer_af580a15c37bfc8e4670b35699047ab42}{m\_size}};}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ oldBufferSize\ =\ \textcolor{keyword}{static\_cast<}uint32\_t\textcolor{keyword}{>}(oldSize\ *\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_index_buffer_a95ca93f6961bb742c5636ec73779aa3e}{m\_stride}});}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ newBufferSize\ =\ \textcolor{keyword}{static\_cast<}uint32\_t\textcolor{keyword}{>}(size\ *\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_index_buffer_a95ca93f6961bb742c5636ec73779aa3e}{m\_stride}});}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ tempData\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ copySize\ =\ \textcolor{keyword}{static\_cast<}uint32\_t\textcolor{keyword}{>}(std::min(oldSize,\ size)\ *\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_index_buffer_a95ca93f6961bb742c5636ec73779aa3e}{m\_stride}});}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00155}00155\ }
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (copySize\ >\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tempData\ =\ malloc(copySize);}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tempData)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ srcData\ =\ m\_ctx-\/>getDevice().mapMemory(m\_memories[frameIndex],\ 0,\ copySize);}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ memcpy(tempData,\ srcData,\ copySize);}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_ctx-\/>getDevice().unmapMemory(m\_memories[frameIndex]);}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00164}00164\ }
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_index_buffer_af580a15c37bfc8e4670b35699047ab42}{m\_size}}\ =\ size;}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00166}00166\ }
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_buffers[frameIndex])\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_ctx-\/>getDevice().destroyBuffer(m\_buffers[frameIndex]);}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00170}00170\ }
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_memories[frameIndex])\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_ctx-\/>getDevice().freeMemory(m\_memories[frameIndex]);}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00174}00174\ }
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ vk::BufferCreateInfo\ bufferInfo;}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ bufferInfo.size\ =\ newBufferSize;}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ bufferInfo.usage\ =\ vk::BufferUsageFlagBits::eIndexBuffer;}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ bufferInfo.sharingMode\ =\ vk::SharingMode::eExclusive;}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00179}00179\ }
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ m\_buffers[frameIndex]\ =\ m\_ctx-\/>getDevice().createBuffer(bufferInfo);}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00181}00181\ }
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ vk::MemoryRequirements\ memRequirements\ =\ m\_ctx-\/>getDevice().getBufferMemoryRequirements(m\_buffers[frameIndex]);}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00183}00183\ }
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ vk::MemoryAllocateInfo\ allocInfo;}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ allocInfo.allocationSize\ =\ memRequirements.size;}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ allocInfo.memoryTypeIndex\ =\ m\_ctx-\/>findMemoryType(}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ memRequirements.memoryTypeBits,}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vk::MemoryPropertyFlagBits::eHostVisible\ |\ vk::MemoryPropertyFlagBits::eHostCoherent}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00190}00190\ }
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ m\_memories[frameIndex]\ =\ m\_ctx-\/>getDevice().allocateMemory(allocInfo);}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ m\_ctx-\/>getDevice().bindBufferMemory(m\_buffers[frameIndex],\ m\_memories[frameIndex],\ 0);}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00193}00193\ }
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tempData\ \&\&\ copySize\ >\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ mappedData\ =\ m\_ctx-\/>getDevice().mapMemory(m\_memories[frameIndex],\ 0,\ copySize);}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ memcpy(mappedData,\ tempData,\ copySize);}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_ctx-\/>getDevice().unmapMemory(m\_memories[frameIndex]);}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ free(tempData);}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00200}00200\ }
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (frameIndex\ <\ m\_dirtyFlags.size())\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_dirtyFlags[frameIndex]\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00204}00204\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00205}00205\ }
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00206}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_aef48c71a9da6cd5ac182463cb7e4b828}{00206}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_aef48c71a9da6cd5ac182463cb7e4b828}{VK\_IndexBuffer::resize}}(\textcolor{keywordtype}{size\_t}\ size)}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00207}00207\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (size\ ==\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_index_buffer_af580a15c37bfc8e4670b35699047ab42}{m\_size}})\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00211}00211\ }
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_index_buffer_a72a476c96a56cf8738d7c13409ee7733}{m\_updateFrequency}}\ ==\ \mbox{\hyperlink{namespace_f_c_t_a0236e673f1b6fe9736bc596d7e50dc7ea5ac98a9f1bddc1b15896f0e02bf06839}{UpdateFrequency::PerFrame}})\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ currentFrame\ =\ m\_ctx-\/>currentFrameIndex();}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00214}00214\ }
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_a5fab9bea75d15501038296ec234eb228}{resizeBuffer}}(size,\ currentFrame);}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00216}00216\ }
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (uint32\_t\ i\ =\ 0;\ i\ <\ m\_dirtyFlags.size();\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00218}00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ !=\ currentFrame)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00219}00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_dirtyFlags[i]\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00221}00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_a5fab9bea75d15501038296ec234eb228}{resizeBuffer}}(size,\ 0);}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00225}00225\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00226}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_ad7a0939f7df3c393e77a3b349c3f9cc2}{00226}}\ \ \ \ \ \ \ \ \ vk::IndexType\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer_ad7a0939f7df3c393e77a3b349c3f9cc2}{VK\_IndexBuffer::getIndexType}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00227}00227\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_index_buffer_a95ca93f6961bb742c5636ec73779aa3e}{m\_stride}})}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vk::IndexType::eUint8;}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vk::IndexType::eUint16;}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 4:}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vk::IndexType::eUint32;}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vk::IndexType::eUint32;}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00239}00239\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00240}00240\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___index_buffer_8cpp_source_l00241}00241\ \}}
+
+\end{DoxyCode}

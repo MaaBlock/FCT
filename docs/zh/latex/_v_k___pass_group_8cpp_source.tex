@@ -1,0 +1,434 @@
+\doxysection{VK\+\_\+\+Pass\+Group.\+cpp}
+\hypertarget{_v_k___pass_group_8cpp_source}{}\label{_v_k___pass_group_8cpp_source}\index{src/RHI/VK\_PassGroup.cpp@{src/RHI/VK\_PassGroup.cpp}}
+\mbox{\hyperlink{_v_k___pass_group_8cpp}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_third_party_8h}{../ThirdParty.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v_k___context_8h}{../Context/VK\_Context.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v_k___pass_group_8h}{./VK\_PassGroup.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v_k___render_target_view_8h}{./VK\_RenderTargetView.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v_k___depth_stencil_view_8h}{./VK\_DepthStencilView.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v_k___pass_8h}{./VK\_Pass.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_v_k___command_buffer_8h}{./VK\_CommandBuffer.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00009}00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_f_c_t}{FCT}}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00010}00010\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00011}00011\ \ \ \ \ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_f_c_t_1_1_r_h_i}{RHI}}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00012}00012\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00013}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_a52fc44df89cb18d6d3d2f7f899e594e0}{00013}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_a52fc44df89cb18d6d3d2f7f899e594e0}{VK\_PassGroup::VK\_PassGroup}}(\mbox{\hyperlink{class_f_c_t_1_1_v_k___context}{VK\_Context}}*\ ctx)\ :\ m\_createInfo\{\},m\_beginInfo\{\},m\_framebufferInfo\{\}\ \textcolor{comment}{//\ ,\ m\_framebuffer()}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ m\_ctx\ =\ ctx;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00017}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_afe3ebd57695705a749b0758a893aa3f8}{00017}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_afe3ebd57695705a749b0758a893aa3f8}{VK\_PassGroup::create}}()}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ collectAttachments();}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ pass\ :\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pass_group_ad23ceb570cbb2ceab73cdce492c5e3ae}{m\_passes}})}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pass-\/>create(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ m\_createInfo.attachmentCount\ =\ m\_attachments.size();}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ m\_createInfo.dependencyCount\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ m\_createInfo.pAttachments\ =\ m\_attachments.data();}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<vk::SubpassDependency>\ dependencies;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ hasDepthStencil\ =\ !m\_depthAttachments.empty();}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ vk::SubpassDependency\ dependency\{\};}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ dependency.srcSubpass\ =\ VK\_SUBPASS\_EXTERNAL;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ dependency.dstSubpass\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (hasDepthStencil)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dependency.srcStageMask\ =\ vk::PipelineStageFlagBits::eColorAttachmentOutput\ |}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vk::PipelineStageFlagBits::eEarlyFragmentTests;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dependency.srcStageMask\ =\ vk::PipelineStageFlagBits::eColorAttachmentOutput;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ dependency.srcAccessMask\ =\ vk::AccessFlags();}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (hasDepthStencil)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dependency.dstStageMask\ =\ vk::PipelineStageFlagBits::eColorAttachmentOutput\ |}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vk::PipelineStageFlagBits::eEarlyFragmentTests;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dependency.dstAccessMask\ =\ vk::AccessFlagBits::eColorAttachmentWrite\ |}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vk::AccessFlagBits::eDepthStencilAttachmentWrite;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dependency.dstStageMask\ =\ vk::PipelineStageFlagBits::eColorAttachmentOutput;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dependency.dstAccessMask\ =\ vk::AccessFlagBits::eColorAttachmentWrite;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ dependencies.push\_back(dependency);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ vk::SubpassDependency\ outDependency\{\};}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ outDependency.srcSubpass\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ outDependency.dstSubpass\ =\ VK\_SUBPASS\_EXTERNAL;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (hasDepthStencil)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ outDependency.srcStageMask\ =\ vk::PipelineStageFlagBits::eColorAttachmentOutput\ |}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vk::PipelineStageFlagBits::eLateFragmentTests;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ outDependency.srcAccessMask\ =\ vk::AccessFlagBits::eColorAttachmentWrite\ |}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vk::AccessFlagBits::eDepthStencilAttachmentWrite;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ outDependency.srcStageMask\ =\ vk::PipelineStageFlagBits::eColorAttachmentOutput;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ outDependency.srcAccessMask\ =\ vk::AccessFlagBits::eColorAttachmentWrite;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ outDependency.dstStageMask\ =\ vk::PipelineStageFlagBits::eBottomOfPipe;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ outDependency.dstAccessMask\ =\ vk::AccessFlagBits::eMemoryRead;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ dependencies.push\_back(outDependency);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_subpasses.size()\ >\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ m\_subpasses.size()\ -\/\ 1;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vk::SubpassDependency\ subpassDependency\{\};}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ subpassDependency.srcSubpass\ =\ i;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ subpassDependency.dstSubpass\ =\ i\ +\ 1;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ subpassDependency.srcStageMask\ =\ vk::PipelineStageFlagBits::eColorAttachmentOutput;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ subpassDependency.srcAccessMask\ =\ vk::AccessFlagBits::eColorAttachmentWrite;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (hasDepthStencil)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ subpassDependency.srcStageMask\ |=\ vk::PipelineStageFlagBits::eLateFragmentTests;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ subpassDependency.srcAccessMask\ |=\ vk::AccessFlagBits::eDepthStencilAttachmentWrite;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ subpassDependency.dstStageMask\ =\ vk::PipelineStageFlagBits::eColorAttachmentOutput;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ subpassDependency.dstAccessMask\ =\ vk::AccessFlagBits::eColorAttachmentWrite;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (hasDepthStencil)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ subpassDependency.dstStageMask\ |=\ vk::PipelineStageFlagBits::eEarlyFragmentTests;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ subpassDependency.dstAccessMask\ |=\ vk::AccessFlagBits::eDepthStencilAttachmentWrite;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dependencies.push\_back(subpassDependency);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ m\_createInfo.setDependencies(dependencies);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ collectSubpasses();}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ m\_createInfo.pSubpasses\ =\ m\_subpasses.data();}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ m\_createInfo.subpassCount\ =\ m\_subpasses.size();}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_renderPass\ =\ m\_ctx-\/>device().createRenderPass(m\_createInfo);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_a41993be9a3c6e8f05f5b7bda9a9015b2}{ferr}}\ <<\ \textcolor{stringliteral}{"{}Failed\ to\ create\ render\ pass:\ "{}}\ <<\ e.what()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw};}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ m\_beginInfo.renderPass\ =\ m\_renderPass;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ m\_framebufferInfo.renderPass\ =\ m\_renderPass;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00117}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_a4848b5d5340bbdfd3daa3394d9ce8221}{00117}}\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_a4848b5d5340bbdfd3daa3394d9ce8221}{VK\_PassGroup::getPassIndex}}(\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pass}{Pass}}*\ pass)}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_passIndices[pass];}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00122}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_aaa999b2743887a306a316ba317ab1482}{00122}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_aaa999b2743887a306a316ba317ab1482}{VK\_PassGroup::beginSubmit}}(\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer}{CommandBuffer}}*\ cmdBuf)}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ collectImageViews();}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_framebuffers[cmdBuf])}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_ctx-\/>device().destroyFramebuffer(m\_framebuffers[cmdBuf]);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_framebuffers[cmdBuf]\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ m\_framebufferInfo.attachmentCount\ =\ m\_framebufferViews.size();}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ m\_framebufferInfo.pAttachments\ =\ m\_framebufferViews.data();}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_targetAttachments.empty()\ \&\&\ m\_depthAttachments.empty())\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_a539584b126825634a31a2e55f4c9a0f3}{fout}}\ <<\ \textcolor{stringliteral}{"{}No\ attachments\ for\ framebuffer!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00138}00138\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ width,\ height;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!m\_targetAttachments.empty())\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ width\ =\ m\_targetAttachments.rbegin()-\/>second.image-\/>width();}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ height\ =\ m\_targetAttachments.rbegin()-\/>second.image-\/>height();}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ width\ =\ m\_depthAttachments.rbegin()-\/>second.image-\/>width();}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ height\ =\ m\_depthAttachments.rbegin()-\/>second.image-\/>height();}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ m\_framebufferInfo.width\ =\ width;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ m\_framebufferInfo.height\ =\ height;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ m\_framebufferInfo.layers\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ m\_framebufferInfo.renderPass\ =\ m\_renderPass;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_framebuffers[cmdBuf]\ =\ m\_ctx-\/>device().createFramebuffer(m\_framebufferInfo);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_a41993be9a3c6e8f05f5b7bda9a9015b2}{ferr}}\ <<\ \textcolor{stringliteral}{"{}Failed\ to\ create\ framebuffer:\ "{}}\ <<\ e.what()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw};}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ m\_beginInfo.framebuffer\ =\ m\_framebuffers[cmdBuf];}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ m\_beginInfo.renderArea.offset.setX(0).setY(0);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ m\_beginInfo.renderArea.extent.width\ =\ width;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ m\_beginInfo.renderArea.extent.height\ =\ height;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00163}00163\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ m\_clearValues\ =\ std::vector<vk::ClearValue>(m\_attachments.size());}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ m\_clearValues.size();\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_depthAttachments.find(i)\ !=\ m\_depthAttachments.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_clearValues[i].setDepthStencil(vk::ClearDepthStencilValue(1.0f,\ 0));}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_clearValues[i].setColor(vk::ClearColorValue(std::array<float,\ 4>\{0.0f,\ 0.0f,\ 0.0f,\ 1.0f\}));}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00172}00172\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ m\_beginInfo.setClearValues(m\_clearValues);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00174}00174\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ vkCmdBuf\ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer}{VK\_CommandBuffer}}*\textcolor{keyword}{>}(cmdBuf);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ vkCmdBuf-\/>\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer_ae8c7ddb229009bc08273d05e1bc270e5}{commandBuffer}}().beginRenderPass(m\_beginInfo,\ vk::SubpassContents::eInline);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00177}00177\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00178}00178\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00179}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_ab8f9be61498c2990d5828553474a515e}{00179}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_ab8f9be61498c2990d5828553474a515e}{VK\_PassGroup::endSubmit}}(\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer}{CommandBuffer}}*\ cmdBuf)}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00180}00180\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ vkCmdBuf\ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer}{VK\_CommandBuffer}}*\textcolor{keyword}{>}(cmdBuf);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_targetAttachments.empty()\ \&\&\ m\_depthAttachments.empty())\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00185}00185\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ vkCmdBuf-\/>\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer_ae8c7ddb229009bc08273d05e1bc270e5}{commandBuffer}}().endRenderPass();}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00187}00187\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00188}00188\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00189}00189\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ VK\_PassGroup::collectSubpasses()}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00190}00190\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ srcPass\ :\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pass_group_ad23ceb570cbb2ceab73cdce492c5e3ae}{m\_passes}})}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ pass\ =\ (\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass}{VK\_Pass}}*\&)(srcPass);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_passIndices[pass]\ =\ m\_subpasses.size();}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_subpasses.push\_back(pass-\/>getDescription());}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00197}00197\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00198}00198\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00199}00199\ \textcolor{comment}{\ \ \ \ \ void\ VK\_PassGroup::collectAttachments()}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00200}00200\ \textcolor{comment}{\ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00201}00201\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ for\ (auto\&\ pass\ :\ m\_passes)}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00202}00202\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00203}00203\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ for\ (auto\&\ targetPair\ :\ pass-\/>renderTargets())}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00204}00204\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00205}00205\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ auto\&\ image\ =\ targetPair.second;}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00206}00206\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vk::AttachmentDescription\ desc;}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00207}00207\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ desc.format\ =\ ToVkFormat(image-\/>format());}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00208}00208\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ desc.samples\ =\ ToVkSampleCount(image-\/>samples());}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00209}00209\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ desc.loadOp\ =\ vk::AttachmentLoadOp::eClear;}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00210}00210\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ desc.storeOp\ =\ vk::AttachmentStoreOp::eStore;}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00211}00211\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ desc.initialLayout\ =\ vk::ImageLayout::eUndefined;}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00212}00212\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //todo:优化initialLayout}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00213}00213\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (image-\/>getType()\ ==\ RenderTargetType::WindowTarget\ \&\&\ !m\_nextPassGroup.size())}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00214}00214\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00215}00215\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ desc.finalLayout\ =\ vk::ImageLayout::ePresentSrcKHR;}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00216}00216\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ else}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00217}00217\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00218}00218\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ desc.finalLayout\ =\ vk::ImageLayout::eGeneral;}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00219}00219\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //Todo:\ 根据nextPassGroup来优化finalLayout，或者由外部手动指定finalLayout}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00220}00220\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00221}00221\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ desc.stencilLoadOp\ =\ vk::AttachmentLoadOp::eDontCare;}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00222}00222\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ desc.stencilStoreOp\ =\ vk::AttachmentStoreOp::eDontCare;}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00223}00223\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00224}00224\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_targetAttachments[m\_attachments.size()]\ =\ AttachmentSlot(}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00225}00225\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ image,}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00226}00226\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ImageUsage::RenderTarget,}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00227}00227\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ targetPair.first);}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00228}00228\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ auto\ vkPass\ =\ static\_cast<VK\_Pass*>(pass);}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00229}00229\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vkPass-\/>targetAttachmentIndices()[targetPair.first]\ =\ m\_attachments.size();}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00230}00230\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_attachments.push\_back(desc);}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00231}00231\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00232}00232\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00233}00233\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ auto\ vkPass\ =\ static\_cast<VK\_Pass*>(pass);}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00234}00234\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FCT::Image*\ depthStencil\ =\ vkPass-\/>depthStencil();}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00235}00235\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (depthStencil)}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00236}00236\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00237}00237\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vk::AttachmentDescription\ desc;}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00238}00238\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ desc.format\ =\ ToVkFormat(depthStencil-\/>format());}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00239}00239\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ desc.samples\ =\ ToVkSampleCount(depthStencil-\/>samples());}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00240}00240\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00241}00241\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ desc.loadOp\ =\ vk::AttachmentLoadOp::eClear;}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00242}00242\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ desc.storeOp\ =\ vk::AttachmentStoreOp::eStore;}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00243}00243\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00244}00244\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (desc.format\ ==\ vk::Format::eD24UnormS8Uint\ ||}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00245}00245\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ desc.format\ ==\ vk::Format::eD32SfloatS8Uint\ ||}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00246}00246\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ desc.format\ ==\ vk::Format::eD16UnormS8Uint)}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00247}00247\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00248}00248\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ desc.stencilLoadOp\ =\ vk::AttachmentLoadOp::eClear;}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00249}00249\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ desc.stencilStoreOp\ =\ vk::AttachmentStoreOp::eStore;}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00250}00250\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00251}00251\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00252}00252\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00253}00253\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ desc.stencilLoadOp\ =\ vk::AttachmentLoadOp::eDontCare;}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00254}00254\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ desc.stencilStoreOp\ =\ vk::AttachmentStoreOp::eDontCare;}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00255}00255\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00256}00256\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00257}00257\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ desc.initialLayout\ =\ vk::ImageLayout::eUndefined;}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00258}00258\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ desc.finalLayout\ =\ vk::ImageLayout::eDepthStencilAttachmentOptimal;}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00259}00259\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00260}00260\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_depthAttachments[m\_attachments.size()]\ =\ AttachmentSlot(}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00261}00261\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ depthStencil,}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00262}00262\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ImageUsage::DepthStencil,}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00263}00263\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0);}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00264}00264\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00265}00265\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vkPass-\/>setDepthStencilAttachmentIndex(m\_attachments.size());}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00266}00266\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00267}00267\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_attachments.push\_back(desc);}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00268}00268\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00269}00269\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00270}00270\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00271}00271\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00272}00272\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ VK\_PassGroup::collectAttachments()}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00273}00273\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00274}00274\ \ \ \ \ \ \ \ \ \ \ \ \ std::map<FCT::Image*,\ uint32\_t>\ imageToAttachmentIndex;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00275}00275\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00276}00276\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ pass\ :\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pass_group_ad23ceb570cbb2ceab73cdce492c5e3ae}{m\_passes}})}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00277}00277\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00278}00278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ vkPass\ =\ \textcolor{keyword}{static\_cast<}VK\_Pass*\textcolor{keyword}{>}(pass);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00279}00279\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00280}00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ targetPair\ :\ pass-\/>renderTargets())}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00281}00281\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00282}00282\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ image\ =\ targetPair.second;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00283}00283\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ attachmentIndex;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00284}00284\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00285}00285\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ imageToAttachmentIndex.find(image);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00286}00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ imageToAttachmentIndex.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00287}00287\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ attachmentIndex\ =\ it-\/>second;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00288}00288\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00289}00289\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vk::AttachmentDescription\ desc;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00290}00290\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ desc.format\ =\ \mbox{\hyperlink{namespace_f_c_t_ac1e051cf6058ce7121dd786478277836}{ToVkFormat}}(image-\/>format());}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00291}00291\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ desc.samples\ =\ \mbox{\hyperlink{namespace_f_c_t_a630511e4e6f1b069a65ce7439723da72}{ToVkSampleCount}}(image-\/>samples());}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00292}00292\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00293}00293\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ desc.storeOp\ =\ vk::AttachmentStoreOp::eStore;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00294}00294\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (image-\/>getType()\ ==\ \mbox{\hyperlink{namespace_f_c_t_a1f1ccd6c8741cf55008c982f25b9bf2ba77b3213b6f5c8d994d2bcfcb58a2ec30}{RenderTargetType::WindowTarget}})\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00295}00295\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ desc.loadOp\ =\ vk::AttachmentLoadOp::eLoad;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00296}00296\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ desc.initialLayout\ =\ vk::ImageLayout::eColorAttachmentOptimal;\ \textcolor{comment}{//\ 不能是Undefined}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00297}00297\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00298}00298\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ desc.loadOp\ =\ vk::AttachmentLoadOp::eLoad;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00299}00299\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ desc.initialLayout\ =\ vk::ImageLayout::eColorAttachmentOptimal;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00300}00300\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00301}00301\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00302}00302\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (image-\/>getType()\ ==\ \mbox{\hyperlink{namespace_f_c_t_a1f1ccd6c8741cf55008c982f25b9bf2ba77b3213b6f5c8d994d2bcfcb58a2ec30}{RenderTargetType::WindowTarget}}\ \&\&\ !\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pass_group_abe4a511c5653fb299a52e7d03a1bdbd2}{m\_nextPassGroup}}.size())\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00303}00303\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ desc.finalLayout\ =\ vk::ImageLayout::ePresentSrcKHR;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00304}00304\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00305}00305\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ desc.finalLayout\ =\ vk::ImageLayout::eGeneral;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00306}00306\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00307}00307\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00308}00308\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ desc.stencilLoadOp\ =\ vk::AttachmentLoadOp::eDontCare;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00309}00309\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ desc.stencilStoreOp\ =\ vk::AttachmentStoreOp::eDontCare;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00310}00310\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00311}00311\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ attachmentIndex\ =\ m\_attachments.size();}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00312}00312\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_attachments.push\_back(desc);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00313}00313\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00314}00314\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ imageToAttachmentIndex[image]\ =\ attachmentIndex;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00315}00315\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00316}00316\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_targetAttachments[attachmentIndex]\ =\ AttachmentSlot(}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00317}00317\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ image,}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00318}00318\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_a7c79cf32fda44767f87c534ba3c7f1e5a9b0bffda4bcb312168c0d6537cb04b4d}{ImageUsage::RenderTarget}},}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00319}00319\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ targetPair.first);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00320}00320\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00321}00321\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00322}00322\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vkPass-\/>targetAttachmentIndices()[targetPair.first]\ =\ attachmentIndex;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00323}00323\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00324}00324\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00325}00325\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FCT::Image*\ \mbox{\hyperlink{namespace_f_c_t_a5d14bda42e5f9f565abd0b018262b564ab9e904187d836d79d4fd0cbc4ea5420d}{depthStencil}}\ =\ vkPass-\/>depthStencil();}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00326}00326\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{namespace_f_c_t_a5d14bda42e5f9f565abd0b018262b564ab9e904187d836d79d4fd0cbc4ea5420d}{depthStencil}})}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00327}00327\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00328}00328\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ attachmentIndex;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00329}00329\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00330}00330\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ imageToAttachmentIndex.find(\mbox{\hyperlink{namespace_f_c_t_a5d14bda42e5f9f565abd0b018262b564ab9e904187d836d79d4fd0cbc4ea5420d}{depthStencil}});}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00331}00331\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ imageToAttachmentIndex.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00332}00332\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ attachmentIndex\ =\ it-\/>second;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00333}00333\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00334}00334\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vk::AttachmentDescription\ desc;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00335}00335\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ desc.format\ =\ \mbox{\hyperlink{namespace_f_c_t_ac1e051cf6058ce7121dd786478277836}{ToVkFormat}}(\mbox{\hyperlink{namespace_f_c_t_a5d14bda42e5f9f565abd0b018262b564ab9e904187d836d79d4fd0cbc4ea5420d}{depthStencil}}-\/>format());}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00336}00336\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ desc.samples\ =\ \mbox{\hyperlink{namespace_f_c_t_a630511e4e6f1b069a65ce7439723da72}{ToVkSampleCount}}(\mbox{\hyperlink{namespace_f_c_t_a5d14bda42e5f9f565abd0b018262b564ab9e904187d836d79d4fd0cbc4ea5420d}{depthStencil}}-\/>samples());}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00337}00337\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00338}00338\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ desc.loadOp\ =\ vk::AttachmentLoadOp::eLoad;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00339}00339\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ desc.storeOp\ =\ vk::AttachmentStoreOp::eStore;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00340}00340\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00341}00341\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (desc.format\ ==\ vk::Format::eD24UnormS8Uint\ ||}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00342}00342\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ desc.format\ ==\ vk::Format::eD32SfloatS8Uint\ ||}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00343}00343\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ desc.format\ ==\ vk::Format::eD16UnormS8Uint)}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00344}00344\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00345}00345\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ desc.stencilLoadOp\ =\ vk::AttachmentLoadOp::eLoad;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00346}00346\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ desc.stencilStoreOp\ =\ vk::AttachmentStoreOp::eStore;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00347}00347\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00348}00348\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00349}00349\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00350}00350\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ desc.stencilLoadOp\ =\ vk::AttachmentLoadOp::eDontCare;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00351}00351\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ desc.stencilStoreOp\ =\ vk::AttachmentStoreOp::eDontCare;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00352}00352\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00353}00353\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00354}00354\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ desc.initialLayout\ =\ vk::ImageLayout::eDepthStencilAttachmentOptimal;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00355}00355\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ desc.finalLayout\ =\ vk::ImageLayout::eDepthStencilAttachmentOptimal;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00356}00356\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00357}00357\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ attachmentIndex\ =\ m\_attachments.size();}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00358}00358\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_attachments.push\_back(desc);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00359}00359\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00360}00360\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ imageToAttachmentIndex[\mbox{\hyperlink{namespace_f_c_t_a5d14bda42e5f9f565abd0b018262b564ab9e904187d836d79d4fd0cbc4ea5420d}{depthStencil}}]\ =\ attachmentIndex;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00361}00361\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00362}00362\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_depthAttachments[attachmentIndex]\ =\ AttachmentSlot(}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00363}00363\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_a5d14bda42e5f9f565abd0b018262b564ab9e904187d836d79d4fd0cbc4ea5420d}{depthStencil}},}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00364}00364\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_a7c79cf32fda44767f87c534ba3c7f1e5a2fa8076285272883c91e14402975a441}{ImageUsage::DepthStencil}},}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00365}00365\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00366}00366\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00367}00367\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00368}00368\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vkPass-\/>setDepthStencilAttachmentIndex(attachmentIndex);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00369}00369\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00370}00370\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00371}00371\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00372}00372\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ VK\_PassGroup::collectImageViews()\ \textcolor{comment}{//\ 注意，顺序要保持和collectAttachments一样}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00373}00373\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00374}00374\ \ \ \ \ \ \ \ \ \ \ \ \ m\_framebufferViews.clear();}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00375}00375\ \ \ \ \ \ \ \ \ \ \ \ \ m\_framebufferViews.resize(m\_attachments.size());}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00376}00376\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00377}00377\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ [attachmentIndex,\ slot]\ :\ m\_targetAttachments)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00378}00378\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ image\ =\ slot.image;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00379}00379\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_framebufferViews[attachmentIndex]\ =}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00380}00380\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}VK\_RenderTargetView*\textcolor{keyword}{>}(image-\/>currentTargetView())-\/>view();}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00381}00381\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00382}00382\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00383}00383\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ [attachmentIndex,\ slot]\ :\ m\_depthAttachments)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00384}00384\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ image\ =\ slot.image;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00385}00385\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ dsv\ =\ image-\/>currentDepthStencilView();}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00386}00386\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dsv)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00387}00387\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ vkDsv\ =\ \textcolor{keyword}{static\_cast<}VK\_DepthStencilView*\textcolor{keyword}{>}(dsv);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00388}00388\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_framebufferViews[attachmentIndex]\ =\ vkDsv-\/>getImageView();}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00389}00389\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00390}00390\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_a41993be9a3c6e8f05f5b7bda9a9015b2}{ferr}}\ <<\ \textcolor{stringliteral}{"{}Depth\ stencil\ image\ has\ no\ depth\ stencil\ view!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00391}00391\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00392}00392\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00393}00393\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00394}00394\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00395}00395\ \textcolor{comment}{\ \ \ \ \ \ \ \ void\ VK\_PassGroup::collectImageViews()\ //\ 注意，顺序要保持和collectAttachments一样}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00396}00396\ \textcolor{comment}{\ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00397}00397\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ m\_framebufferViews.clear();}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00398}00398\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00399}00399\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ //\ 收集渲染目标视图}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00400}00400\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ for\ (auto\&\ pass\ :\ m\_passes)}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00401}00401\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00402}00402\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ for\ (auto\&\ targetPair\ :\ pass-\/>renderTargets())}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00403}00403\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00404}00404\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ auto\&\ image\ =\ targetPair.second;}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00405}00405\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_framebufferViews.push\_back(}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00406}00406\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ static\_cast<VK\_RenderTargetView*>(image-\/>currentTargetView())-\/>view());}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00407}00407\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00408}00408\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00409}00409\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ auto\ vkPass\ =\ static\_cast<VK\_Pass*>(pass);}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00410}00410\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FCT::Image*\ depthStencil\ =\ vkPass-\/>depthStencil();}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00411}00411\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (depthStencil)}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00412}00412\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00413}00413\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ auto\ dsv\ =\ depthStencil-\/>currentDepthStencilView();}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00414}00414\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (dsv)}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00415}00415\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00416}00416\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ auto\ vkDsv\ =\ static\_cast<VK\_DepthStencilView*>(dsv);}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00417}00417\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_framebufferViews.push\_back(vkDsv-\/>getImageView());}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00418}00418\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00419}00419\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00420}00420\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00421}00421\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ferr\ <<\ "{}Depth\ stencil\ image\ has\ no\ depth\ stencil\ view!"{}\ <<\ std::endl;}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00422}00422\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00423}00423\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00424}00424\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00425}00425\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00426}00426\ \textcolor{comment}{\ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00427}00427\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8cpp_source_l00428}00428\ \}}
+
+\end{DoxyCode}

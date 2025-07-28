@@ -1,0 +1,169 @@
+\doxysection{VK\+\_\+\+Const\+Buffer.\+cpp}
+\hypertarget{_v_k___const_buffer_8cpp_source}{}\label{_v_k___const_buffer_8cpp_source}\index{src/RHI/VK\_ConstBuffer.cpp@{src/RHI/VK\_ConstBuffer.cpp}}
+\mbox{\hyperlink{_v_k___const_buffer_8cpp}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_f_c_t_a_p_i_8h}{../FCTAPI.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00003}00003\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_f_c_t}{FCT}}}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00004}00004\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00005}00005\ \ \ \ \ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_f_c_t_1_1_r_h_i}{RHI}}}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00006}00006\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00007}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_ab43b43acff01d28b1950798dcf50b38f}{00007}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_ab43b43acff01d28b1950798dcf50b38f}{VK\_ConstBuffer::VK\_ConstBuffer}}(\mbox{\hyperlink{class_f_c_t_1_1_v_k___context}{VK\_Context}}*\ ctx)}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00008}00008\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00009}00009\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_a19ef08081fe0d04a77396acee43c00f2}{m\_ctx}}\ =\ ctx;}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00010}00010\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_const_buffer_a45e16186a85ad1d2474f4434b17ea32d}{m\_buffer}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_aeec02840106e33fb01439c288d76d56b}{m\_frameNeedsUpdate}}.clear();}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00014}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_a53b5f6a28fcc892d2aa43b158f166250}{00014}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_a53b5f6a28fcc892d2aa43b158f166250}{VK\_ConstBuffer::mapData}}()}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_const_buffer_a45e16186a85ad1d2474f4434b17ea32d}{m\_buffer}})\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00019}00019\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00020}00020\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ if\ (!m\_buffer-\/>isDirty())\ \{}}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00021}00021\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return;}}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00022}00022\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00023}00023\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ data\ =\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_const_buffer_a45e16186a85ad1d2474f4434b17ea32d}{m\_buffer}}-\/>getData();}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size\ =\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_const_buffer_a45e16186a85ad1d2474f4434b17ea32d}{m\_buffer}}-\/>getSize();}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!data\ ||\ size\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ maxFrames\ =\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_a19ef08081fe0d04a77396acee43c00f2}{m\_ctx}}-\/>maxFrameInFlight();}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ copySize\ =\ std::min(size,\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_a9cc6d22648ea84729ab73abde2cfbd23}{m\_bufferInfos}}[0].range));}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_a0236e673f1b6fe9736bc596d7e50dc7e}{UpdateFrequency}}\ frequency\ =\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_const_buffer_abb76a54e7187e27f76c8645dc362381b}{m\_layout}}.getUpdateFrequency();}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (frequency)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_f_c_t_a0236e673f1b6fe9736bc596d7e50dc7ea5ac98a9f1bddc1b15896f0e02bf06839}{UpdateFrequency::PerFrame}}:}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_f_c_t_a0236e673f1b6fe9736bc596d7e50dc7ea971fd8cc345d8bd9f92e9f7d88fdf20c}{UpdateFrequency::Dynamic}}:}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ frameIndex\ =\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_a19ef08081fe0d04a77396acee43c00f2}{m\_ctx}}-\/>currentSubmitFrameIndex();}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (frameIndex\ <\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_a5e76e87a88e92cef4acee0c4addda58b}{m\_mappedData}}.size()\ \&\&\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_a5e76e87a88e92cef4acee0c4addda58b}{m\_mappedData}}[frameIndex])\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ memcpy(\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_a5e76e87a88e92cef4acee0c4addda58b}{m\_mappedData}}[frameIndex],\ data,\ copySize);}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_f_c_t_a0236e673f1b6fe9736bc596d7e50dc7ea84a8921b25f505d0d2077aeb5db4bc16}{UpdateFrequency::Static}}:}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_f_c_t_a0236e673f1b6fe9736bc596d7e50dc7eaa550e0dc6bbc206ba5f88a05963a9773}{UpdateFrequency::PerObject}}:}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 对于静态或每对象数据，更新当前帧并标记其他帧需要更新}}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ currentFrame\ =\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_a19ef08081fe0d04a77396acee43c00f2}{m\_ctx}}-\/>currentSubmitFrameIndex();}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 更新当前帧}}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (currentFrame\ <\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_a5e76e87a88e92cef4acee0c4addda58b}{m\_mappedData}}.size()\ \&\&\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_a5e76e87a88e92cef4acee0c4addda58b}{m\_mappedData}}[currentFrame])\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ memcpy(\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_a5e76e87a88e92cef4acee0c4addda58b}{m\_mappedData}}[currentFrame],\ data,\ copySize);}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 标记其他帧需要更新}}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_aeec02840106e33fb01439c288d76d56b}{m\_frameNeedsUpdate}}.size()\ <\ maxFrames)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_aeec02840106e33fb01439c288d76d56b}{m\_frameNeedsUpdate}}.resize(maxFrames,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (uint32\_t\ i\ =\ 0;\ i\ <\ maxFrames;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ !=\ currentFrame)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_aeec02840106e33fb01439c288d76d56b}{m\_frameNeedsUpdate}}[i]\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_const_buffer_a45e16186a85ad1d2474f4434b17ea32d}{m\_buffer}}-\/>clearDirty();}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00075}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_aaef98c40faf3017568f07f5ae8b48d2b}{00075}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_aaef98c40faf3017568f07f5ae8b48d2b}{VK\_ConstBuffer::checkAndUpdateCurrentFrame}}()}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_const_buffer_a45e16186a85ad1d2474f4434b17ea32d}{m\_buffer}})\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ currentFrame\ =\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_a19ef08081fe0d04a77396acee43c00f2}{m\_ctx}}-\/>currentSubmitFrameIndex();}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (currentFrame\ <\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_aeec02840106e33fb01439c288d76d56b}{m\_frameNeedsUpdate}}.size()\ \&\&\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_aeec02840106e33fb01439c288d76d56b}{m\_frameNeedsUpdate}}[currentFrame])\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (currentFrame\ <\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_a5e76e87a88e92cef4acee0c4addda58b}{m\_mappedData}}.size()\ \&\&\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_a5e76e87a88e92cef4acee0c4addda58b}{m\_mappedData}}[currentFrame])\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ data\ =\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_const_buffer_a45e16186a85ad1d2474f4434b17ea32d}{m\_buffer}}-\/>getData();}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size\ =\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_const_buffer_a45e16186a85ad1d2474f4434b17ea32d}{m\_buffer}}-\/>getSize();}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (data\ \&\&\ size\ >\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ copySize\ =\ std::min(size,\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_a9cc6d22648ea84729ab73abde2cfbd23}{m\_bufferInfos}}[currentFrame].range));}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ memcpy(\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_a5e76e87a88e92cef4acee0c4addda58b}{m\_mappedData}}[currentFrame],\ data,\ copySize);}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_aeec02840106e33fb01439c288d76d56b}{m\_frameNeedsUpdate}}[currentFrame]\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00098}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_a7a9f8ddd458274629cae88c8849f8099}{00098}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ vk::DescriptorBufferInfo\&\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_a7a9f8ddd458274629cae88c8849f8099}{VK\_ConstBuffer::currentBufferInfo}}()}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_aaef98c40faf3017568f07f5ae8b48d2b}{checkAndUpdateCurrentFrame}}();}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_a9cc6d22648ea84729ab73abde2cfbd23}{m\_bufferInfos}}[\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_a19ef08081fe0d04a77396acee43c00f2}{m\_ctx}}-\/>currentSubmitFrameIndex()];}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00104}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_ab16fbcf060de6d698bafedec7897b74e}{00104}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ vk::DescriptorBufferInfo\&\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_ab16fbcf060de6d698bafedec7897b74e}{VK\_ConstBuffer::currentBufferInfoWithoutUpdata}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00105}00105\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_a9cc6d22648ea84729ab73abde2cfbd23}{m\_bufferInfos}}[\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_a19ef08081fe0d04a77396acee43c00f2}{m\_ctx}}-\/>currentSubmitFrameIndex()];}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00109}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_a74207f60c769bc9567d1e7e6d9844880}{00109}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_a74207f60c769bc9567d1e7e6d9844880}{VK\_ConstBuffer::create}}()}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ vk::Device\ device\ =\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_a19ef08081fe0d04a77396acee43c00f2}{m\_ctx}}-\/>getDevice();}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ maxFramesInFlight\ =\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_a19ef08081fe0d04a77396acee43c00f2}{m\_ctx}}-\/>maxFrameInFlight();}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ vk::DeviceSize\ bufferSize\ =\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_const_buffer_abb76a54e7187e27f76c8645dc362381b}{m\_layout}}.getTotalSize();}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (bufferSize\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bufferSize\ =\ 256;}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_a3c2fc3df3f4d88e20dd49404ff5071b0}{m\_buffers}}.resize(maxFramesInFlight);}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_a12683299f1fd57268f6475f52088f253}{m\_memories}}.resize(maxFramesInFlight);}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_a5e76e87a88e92cef4acee0c4addda58b}{m\_mappedData}}.resize(maxFramesInFlight,\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_aeec02840106e33fb01439c288d76d56b}{m\_frameNeedsUpdate}}.resize(maxFramesInFlight,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (uint32\_t\ i\ =\ 0;\ i\ <\ maxFramesInFlight;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vk::BufferCreateInfo\ bufferInfo;}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bufferInfo.size\ =\ bufferSize;}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bufferInfo.usage\ =\ vk::BufferUsageFlagBits::eUniformBuffer;}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bufferInfo.sharingMode\ =\ vk::SharingMode::eExclusive;}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_a3c2fc3df3f4d88e20dd49404ff5071b0}{m\_buffers}}[i]\ =\ device.createBuffer(bufferInfo);}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vk::MemoryRequirements\ memRequirements\ =\ device.getBufferMemoryRequirements(\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_a3c2fc3df3f4d88e20dd49404ff5071b0}{m\_buffers}}[i]);}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vk::MemoryAllocateInfo\ allocInfo;}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ allocInfo.allocationSize\ =\ memRequirements.size;}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ allocInfo.memoryTypeIndex\ =\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_a19ef08081fe0d04a77396acee43c00f2}{m\_ctx}}-\/>findMemoryType(}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ memRequirements.memoryTypeBits,}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vk::MemoryPropertyFlagBits::eHostVisible\ |\ vk::MemoryPropertyFlagBits::eHostCoherent}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_a12683299f1fd57268f6475f52088f253}{m\_memories}}[i]\ =\ device.allocateMemory(allocInfo);}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00143}00143\ }
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ device.bindBufferMemory(\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_a3c2fc3df3f4d88e20dd49404ff5071b0}{m\_buffers}}[i],\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_a12683299f1fd57268f6475f52088f253}{m\_memories}}[i],\ 0);}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_a5e76e87a88e92cef4acee0c4addda58b}{m\_mappedData}}[i]\ =\ device.mapMemory(\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_a12683299f1fd57268f6475f52088f253}{m\_memories}}[i],\ 0,\ bufferSize);}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ memset(\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_a5e76e87a88e92cef4acee0c4addda58b}{m\_mappedData}}[i],\ 0,\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(bufferSize));}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ vk::SystemError\&\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Failed\ to\ create\ uniform\ buffer:\ "{}}\ +\ std::string(e.what()));}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00154}00154\ }
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_a9cc6d22648ea84729ab73abde2cfbd23}{m\_bufferInfos}}.resize(maxFramesInFlight);}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (uint32\_t\ i\ =\ 0;\ i\ <\ maxFramesInFlight;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_a9cc6d22648ea84729ab73abde2cfbd23}{m\_bufferInfos}}[i].buffer\ =\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_a3c2fc3df3f4d88e20dd49404ff5071b0}{m\_buffers}}[i];}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_a9cc6d22648ea84729ab73abde2cfbd23}{m\_bufferInfos}}[i].offset\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer_a9cc6d22648ea84729ab73abde2cfbd23}{m\_bufferInfos}}[i].range\ =\ bufferSize;}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00162}00162\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___const_buffer_8cpp_source_l00163}00163\ \}}
+
+\end{DoxyCode}

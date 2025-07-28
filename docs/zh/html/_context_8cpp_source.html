@@ -1,0 +1,406 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FCT: src/Context/Context.cpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FCT
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_context_8cpp_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Context.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_context_8cpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// Created by Administrator on 2025/3/16.</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="_f_c_t_a_p_i_8h.html">../FCTAPI.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="_context_8h.html">Context.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_f_c_t.html">FCT</a> {</div>
+<div class="foldopen" id="foldopen00009" data-start="{" data-end="}">
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_context.html#a589fed90876f5148e5dde6a048eb1af1">    9</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_context.html#a589fed90876f5148e5dde6a048eb1af1">Context::nextFrame</a>() {</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <a class="code hl_variable" href="class_f_c_t_1_1_context.html#af70b8941135949280dae113210b633d8">m_nextFrame</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    }</div>
+</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="}">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_context.html#af425799b4b55dc83f161dff9fcef7d6f">   13</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_context.html#af425799b4b55dc83f161dff9fcef7d6f">Context::currentFlush</a>() {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <a class="code hl_variable" href="class_f_c_t_1_1_context.html#a9ee4c75d34c392e75747ce303df85bf5">m_currentFlush</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    }</div>
+</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="}">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_context.html#a59944f3c38119994120f3623a36cddf6">   18</a></span>    <a class="code hl_class" href="class_f_c_t_1_1_image.html">Image</a>* <a class="code hl_function" href="class_f_c_t_1_1_context.html#a59944f3c38119994120f3623a36cddf6">Context::loadTexture</a>(<span class="keyword">const</span> std::string&amp; filename)</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keyword">auto</span> data = <a class="code hl_variable" href="class_f_c_t_1_1_context.html#a86e60a6457143d658b445cdb55bddb8a">m_imageLoader</a>-&gt;load(filename);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <a class="code hl_class" href="class_f_c_t_1_1_single_buffer_image.html">SingleBufferImage</a>* image = <span class="keyword">new</span> <a class="code hl_class" href="class_f_c_t_1_1_single_buffer_image.html">SingleBufferImage</a>(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        image-&gt;<a class="code hl_function" href="class_f_c_t_1_1_image.html#af4b50a8b7479884c2cd0c0e990875c25">width</a>(data.width);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        image-&gt;<a class="code hl_function" href="class_f_c_t_1_1_image.html#ab8acb1090a3b1bc3bb282196f7b9209f">height</a>(data.height);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordtype">bool</span> isSRGB = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <a class="code hl_enumeration" href="namespace_f_c_t.html#a0741721dca246274b1b72d07249443e4">Format</a> format;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keywordflow">switch</span> (data.channels) {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordflow">case</span> 1:</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            format = <a class="code hl_enumvalue" href="namespace_f_c_t.html#a0741721dca246274b1b72d07249443e4a6ee77dd485809c93542e95acf222420c">Format::R8_UNORM</a>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keywordflow">case</span> 2:</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            format = <a class="code hl_enumvalue" href="namespace_f_c_t.html#a0741721dca246274b1b72d07249443e4a74b8cc492d3b8df6a7c4f2573e751f65">Format::R8G8_UNORM</a>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="keywordflow">case</span> 3:</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            format = isSRGB ? <a class="code hl_enumvalue" href="namespace_f_c_t.html#a0741721dca246274b1b72d07249443e4a5c835c7ea238d0796853827ce416a5e2">Format::R8G8B8A8_SRGB</a> : <a class="code hl_enumvalue" href="namespace_f_c_t.html#a0741721dca246274b1b72d07249443e4a510cef4c9832a8b4e6fcad93f2927142">Format::R8G8B8_UNORM</a>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordflow">case</span> 4:</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            format = isSRGB ? <a class="code hl_enumvalue" href="namespace_f_c_t.html#a0741721dca246274b1b72d07249443e4a5c835c7ea238d0796853827ce416a5e2">Format::R8G8B8A8_SRGB</a> : <a class="code hl_enumvalue" href="namespace_f_c_t.html#a0741721dca246274b1b72d07249443e4af55c1c722034e92213df328d31e33c62">Format::R8G8B8A8_UNORM</a>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keywordflow">default</span>:</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            <a class="code hl_variable" href="namespace_f_c_t.html#a41993be9a3c6e8f05f5b7bda9a9015b2">ferr</a> &lt;&lt; <span class="stringliteral">&quot;Unsupported number of channels: &quot;</span> &lt;&lt; data.channels &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            format = isSRGB ? <a class="code hl_enumvalue" href="namespace_f_c_t.html#a0741721dca246274b1b72d07249443e4a5c835c7ea238d0796853827ce416a5e2">Format::R8G8B8A8_SRGB</a> : <a class="code hl_enumvalue" href="namespace_f_c_t.html#a0741721dca246274b1b72d07249443e4af55c1c722034e92213df328d31e33c62">Format::R8G8B8A8_UNORM</a>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        }</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        image-&gt;<a class="code hl_function" href="class_f_c_t_1_1_image.html#a980f032db297c98b2c2d55e674e3fb31">format</a>(format);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        image-&gt;<a class="code hl_function" href="class_f_c_t_1_1_single_buffer_image.html#af6ab61168d6a4afe6971edc770bd11ab">as</a>(<a class="code hl_enumvalue" href="namespace_f_c_t.html#a7c79cf32fda44767f87c534ba3c7f1e5aa3e8ae43188ae76d38f414b2bdb0077b">ImageUsage::Texture</a>);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        image-&gt;<a class="code hl_function" href="class_f_c_t_1_1_single_buffer_image.html#a376d6976dad19ad1d0c6f3f45a293dd2">initData</a>(data.data.data(), data.data.size());</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        image-&gt;<a class="code hl_function" href="class_f_c_t_1_1_single_buffer_image.html#aa542818532e4290461370075f40e8539">create</a>();</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <span class="keywordflow">return</span> image;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    }</div>
+</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="foldopen" id="foldopen00056" data-start="{" data-end="}">
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_context.html#ac1edb04d29eac81265919c82eb22c229">   56</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_context.html#ac1edb04d29eac81265919c82eb22c229">Context::swapQueue</a>() {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="comment">//std::swap(m_pushQueue,m_submitQueue);</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    }</div>
+</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="foldopen" id="foldopen00062" data-start="{" data-end="}">
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_context.html#ae3e3f1f9bc99815af51ae21edceaa97f">   62</a></span>    <a class="code hl_function" href="class_f_c_t_1_1_context.html#ae3e3f1f9bc99815af51ae21edceaa97f">Context::Context</a>(<a class="code hl_class" href="class_f_c_t_1_1_runtime.html">Runtime</a>* runtime)</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <a class="code hl_variable" href="class_f_c_t_1_1_context.html#aa09a4eb2ceb2a619cfdd5bc9a3bc444a">m_resourceManager</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <a class="code hl_variable" href="class_f_c_t_1_1_context.html#a136ad21d370980e07a7c7740c014ba13">m_defaultGraph</a> = <span class="keyword">new</span> <a class="code hl_class" href="class_f_c_t_1_1_render_graph.html">RenderGraph</a>(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <a class="code hl_variable" href="class_f_c_t_1_1_context.html#a6a581e9a74f88c4df6061e192a04fce3">m_currentGraph</a> = <a class="code hl_variable" href="class_f_c_t_1_1_context.html#a136ad21d370980e07a7c7740c014ba13">m_defaultGraph</a>;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <a class="code hl_variable" href="class_f_c_t_1_1_context.html#a6a581e9a74f88c4df6061e192a04fce3">m_currentGraph</a>-&gt;addRef();</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <a class="code hl_variable" href="class_f_c_t_1_1_context.html#a4c6607256a23ab3c6a276ca3ffa855d9">m_compiler</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <a class="code hl_variable" href="class_f_c_t_1_1_context.html#a884452f9647279f66f76eef51c658687">m_ctxRunning</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="comment">//m_flushWnd = nullptr;</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <a class="code hl_variable" href="class_f_c_t_1_1_context.html#af70b8941135949280dae113210b633d8">m_nextFrame</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <a class="code hl_variable" href="class_f_c_t_1_1_context.html#a9ee4c75d34c392e75747ce303df85bf5">m_currentFlush</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <span class="keywordtype">bool</span> isInited = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <a class="code hl_variable" href="class_f_c_t_1_1_context.html#a8120cc50999faef6525e4eaa1c7c9724">m_submitThread</a> = std::thread([<span class="keyword">this</span>,&amp;isInited]</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            <a class="code hl_variable" href="class_f_c_t_1_1_context.html#af6b38f1cae0ed69cef0b975ecbf7ae17">m_submitThreadId</a> = std::this_thread::get_id();</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            isInited = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            <a class="code hl_function" href="class_f_c_t_1_1_context.html#a12e64115a928b13b07f487fc5dd89ed7">submitThread</a>();</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        });</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        <a class="code hl_define" href="_tool_define_8h.html#a586755af4a5cd35fae3fbbc6f139d9b0">FCT_WAIT_FOR</a>(isInited);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        <a class="code hl_variable" href="class_f_c_t_1_1_context.html#afd3e26eb12b319cee7d9ac8fc86f9293">m_ticker</a> = std::bind(&amp;<a class="code hl_function" href="class_f_c_t_1_1_context.html#ad65777e7264df95bb14d0e6e5d88e259">Context::defaultTick</a>,<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <a class="code hl_function" href="class_f_c_t_1_1_context.html#aaa41a1b8bb45d0f06e4910c47fbaadfd">createCompiler</a>();</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <a class="code hl_variable" href="class_f_c_t_1_1_context.html#ac7fcac233cb62b85e35990a42560c105">m_generator</a> = <span class="keyword">new</span> <a class="code hl_class" href="class_f_c_t_1_1_shader_generator.html">ShaderGenerator</a>();</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <a class="code hl_variable" href="class_f_c_t_1_1_context.html#aed5ee768dbd1e64f831cf65024133505">m_frameIndex</a> = 0;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <a class="code hl_variable" href="class_f_c_t_1_1_context.html#a0a83bc9311ede1a9044f514ee85e8a23">m_maxFrameInFlight</a> = 3;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <a class="code hl_variable" href="class_f_c_t_1_1_context.html#a86e60a6457143d658b445cdb55bddb8a">m_imageLoader</a> = runtime-&gt;<a class="code hl_function" href="class_f_c_t_1_1_runtime.html#a828db6219f2af0c96807a71e0543440b">createImageLoader</a>();</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        <a class="code hl_variable" href="class_f_c_t_1_1_context.html#a4dac183a4ae06a784937d0f98b90634d">m_modelLoader</a> = runtime-&gt;<a class="code hl_function" href="class_f_c_t_1_1_runtime.html#a140a42440102f51f7b91feabab5825d0">createModelLoader</a>();</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        <a class="code hl_variable" href="class_f_c_t_1_1_context.html#a9f3723358760e931498769cdad4e6820">m_submitTickers</a>[<a class="code hl_variable" href="namespace_f_c_t.html#a7bd85aff3c2babcf1441a80ec00e70e4">RenderGraphSubmitTickerName</a>] = {</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            [<span class="keyword">this</span>]()</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            {</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                <a class="code hl_variable" href="class_f_c_t_1_1_context.html#a6a581e9a74f88c4df6061e192a04fce3">m_currentGraph</a>-&gt;updateFrameIndices();</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                <a class="code hl_variable" href="class_f_c_t_1_1_context.html#a6a581e9a74f88c4df6061e192a04fce3">m_currentGraph</a>-&gt;checkAndUpdateResourceSizes();</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>                <a class="code hl_variable" href="class_f_c_t_1_1_context.html#a6a581e9a74f88c4df6061e192a04fce3">m_currentGraph</a>-&gt;updateResource();</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            },</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            {},</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            {</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                <a class="code hl_variable" href="namespace_f_c_t.html#a41b02c859811a4fb4d24f7e20a0698f4">RenderGraphExcutePassSubmitTickerName</a></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>            }</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        };</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        <a class="code hl_variable" href="class_f_c_t_1_1_context.html#a9f3723358760e931498769cdad4e6820">m_submitTickers</a>[<a class="code hl_variable" href="namespace_f_c_t.html#a41b02c859811a4fb4d24f7e20a0698f4">RenderGraphExcutePassSubmitTickerName</a>] = {</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            [<span class="keyword">this</span>]()</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            {</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>                <a class="code hl_class" href="class_f_c_t_1_1_scope_timer.html">ScopeTimer</a> submitCmdAndWaitUploadTimer(<span class="stringliteral">&quot;submitCmdAndWaitUpload&quot;</span>);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>                <span class="keyword">auto</span> cmdBuf = <a class="code hl_function" href="class_f_c_t_1_1_context.html#afed262a94e3490f5fa2607ae90d1e26a">getCmdBuf</a>(<a class="code hl_variable" href="class_f_c_t_1_1_context.html#ab7073c87ebf502dcf3aef25ec8cd256e">m_bindWindows</a>[0], 0);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                cmdBuf-&gt;reset();</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                cmdBuf-&gt;begin();</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                <a class="code hl_function" href="class_f_c_t_1_1_context.html#af13e72a95c7f89b191875fc2606a26f8">excutePasses</a>(cmdBuf);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                cmdBuf-&gt;end();</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                cmdBuf-&gt;submit();</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            },</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>            {},</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>            {</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                <a class="code hl_variable" href="namespace_f_c_t.html#a713521d343a445fb31ddf00b9665d59f">SwapBufferSubmitTicker</a></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>            }</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        };</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        <a class="code hl_variable" href="class_f_c_t_1_1_context.html#a9f3723358760e931498769cdad4e6820">m_submitTickers</a>[<a class="code hl_variable" href="namespace_f_c_t.html#a713521d343a445fb31ddf00b9665d59f">SwapBufferSubmitTicker</a>] = {</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>            [<span class="keyword">this</span>]()</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>            {</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>                std::this_thread::yield();</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>                {</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>                    <a class="code hl_class" href="class_f_c_t_1_1_scope_timer.html">ScopeTimer</a> waitGpuTimer(<span class="stringliteral">&quot;waitGpu&quot;</span>);</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>                    <a class="code hl_function" href="class_f_c_t_1_1_context.html#a5e894d71be6d4ed0f8aaa5383314667a">swapBuffers</a>();</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>                }</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>            },</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>            {},</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>            {}</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        };</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        <a class="code hl_variable" href="class_f_c_t_1_1_context.html#a9f3723358760e931498769cdad4e6820">m_submitTickers</a>.update();</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        <a class="code hl_variable" href="class_f_c_t_1_1_context.html#a9db519c58becad823dbf34c91128bc84">m_syncTickers</a>[<a class="code hl_variable" href="namespace_f_c_t.html#a3bec92bc39d2c90a357c13c4874e5e24">RenderGraphSyncTicker_SwapJobQueueName</a>] =</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>            {</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>                [<span class="keyword">this</span>]()</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>                {</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>                    <a class="code hl_variable" href="class_f_c_t_1_1_context.html#a6a581e9a74f88c4df6061e192a04fce3">m_currentGraph</a>-&gt;swapJobQueue();</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>                },</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>            {<a class="code hl_variable" href="namespace_f_c_t_1_1_inner_sync.html#a7cbf6ad9e86670d646cb1cb41d6fd000">InnerSync::CheckRecreateSwapchainSync</a>},</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>            {}</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>            };</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        <a class="code hl_variable" href="class_f_c_t_1_1_context.html#a9db519c58becad823dbf34c91128bc84">m_syncTickers</a>[<a class="code hl_variable" href="namespace_f_c_t_1_1_inner_sync.html#a7cbf6ad9e86670d646cb1cb41d6fd000">InnerSync::CheckRecreateSwapchainSync</a>] =</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>            {</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>            [<span class="keyword">this</span>]()</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>            {</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>                <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; window : <a class="code hl_variable" href="class_f_c_t_1_1_context.html#ab7073c87ebf502dcf3aef25ec8cd256e">m_bindWindows</a>)</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>                {</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>                    window-&gt;swapchain()-&gt;sync();</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>                }</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>            },</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>            {},</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>            {<a class="code hl_variable" href="namespace_f_c_t_1_1_inner_sync.html#ad2597362f14f210b2f50b418fb6a5fef">InnerSync::AdvanceFrameIndex</a>}</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>            };</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        <a class="code hl_variable" href="class_f_c_t_1_1_context.html#a9db519c58becad823dbf34c91128bc84">m_syncTickers</a>[<a class="code hl_variable" href="namespace_f_c_t_1_1_inner_sync.html#ad2597362f14f210b2f50b418fb6a5fef">InnerSync::AdvanceFrameIndex</a>] =</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>            {</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>            [<span class="keyword">this</span>]()</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>            {</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>                <a class="code hl_function" href="class_f_c_t_1_1_context.html#ab22339bb66ea1657de28c0aad0b4466b">advanceLogicFrame</a>();</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>                <a class="code hl_function" href="class_f_c_t_1_1_context.html#ae64b6dac3c4e5f7ecfcf7445308b5d09">advanceSubmitFrame</a>();</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>            },</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>            {},</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>            {}</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>            };</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        <a class="code hl_variable" href="class_f_c_t_1_1_context.html#a9db519c58becad823dbf34c91128bc84">m_syncTickers</a>.update();</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    }</div>
+</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
+<div class="foldopen" id="foldopen00163" data-start="{" data-end="}">
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_context.html#ad0681810833454681d964ad523f56f64">  163</a></span>    <a class="code hl_function" href="class_f_c_t_1_1_context.html#ad0681810833454681d964ad523f56f64">Context::~Context</a>() {</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        <a class="code hl_variable" href="class_f_c_t_1_1_context.html#a884452f9647279f66f76eef51c658687">m_ctxRunning</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        <a class="code hl_variable" href="class_f_c_t_1_1_context.html#a6a581e9a74f88c4df6061e192a04fce3">m_currentGraph</a>-&gt;release();</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        <a class="code hl_variable" href="class_f_c_t_1_1_context.html#a136ad21d370980e07a7c7740c014ba13">m_defaultGraph</a>-&gt;release();</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        <a class="code hl_variable" href="class_f_c_t_1_1_context.html#a8120cc50999faef6525e4eaa1c7c9724">m_submitThread</a>.join();</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    }</div>
+</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
+<div class="foldopen" id="foldopen00170" data-start="{" data-end="}">
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_context.html#a896b22c78ba26980de3d661a9c40033d">  170</a></span>    <a class="code hl_class" href="class_f_c_t_1_1_static_mesh.html">StaticMesh&lt;uint32_t&gt;</a>* <a class="code hl_function" href="class_f_c_t_1_1_context.html#a896b22c78ba26980de3d661a9c40033d">Context::createMesh</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_f_c_t_1_1_model_mesh.html">ModelMesh</a>* modelMesh, <span class="keyword">const</span> <a class="code hl_class" href="class_f_c_t_1_1_vertex_layout.html">VertexLayout</a>&amp; layout)</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    {</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>        <span class="keywordflow">if</span> (!modelMesh) {</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        }</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> </div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        <a class="code hl_class" href="class_f_c_t_1_1_static_mesh.html">StaticMesh&lt;uint32_t&gt;</a>* mesh = <span class="keyword">new</span> <a class="code hl_class" href="class_f_c_t_1_1_static_mesh.html">StaticMesh&lt;uint32_t&gt;</a>(<span class="keyword">this</span>, layout);</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        <a class="code hl_class" href="class_f_c_t_1_1_vertex_buffer.html">VertexBuffer</a>* vertexBuffer = mesh-&gt;<a class="code hl_function" href="class_f_c_t_1_1_static_mesh.html#a9c10fb21344b22537a288b74ced4bf8d">getVertexBuffer</a>();</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        vertexBuffer-&gt;<a class="code hl_function" href="class_f_c_t_1_1_vertex_buffer.html#ae074d04e391f6cbbdbe0231aa1a12d64">resize</a>(modelMesh-&gt;<a class="code hl_variable" href="struct_f_c_t_1_1_model_mesh.html#a638865597345ca0a7ee76a211770903e">vertices</a>.size());</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        <span class="keywordflow">for</span> (uint32_t i = 0; i &lt; modelMesh-&gt;<a class="code hl_variable" href="struct_f_c_t_1_1_model_mesh.html#a638865597345ca0a7ee76a211770903e">vertices</a>.size(); ++i) {</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; modelVertex = modelMesh-&gt;<a class="code hl_variable" href="struct_f_c_t_1_1_model_mesh.html#a638865597345ca0a7ee76a211770903e">vertices</a>[i];</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>            <a class="code hl_class" href="class_f_c_t_1_1_vertex.html">Vertex</a> vertex = (*vertexBuffer)[i];</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span> </div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = 0; j &lt; layout.<a class="code hl_function" href="class_f_c_t_1_1_vertex_layout.html#ac4c4d17c633da256a103dff4c7069335">getElementCount</a>(); ++j) {</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>                <span class="keyword">const</span> <a class="code hl_class" href="class_f_c_t_1_1_vertex_element.html">VertexElement</a>&amp; element = layout.<a class="code hl_function" href="class_f_c_t_1_1_vertex_layout.html#ac92df2a28dbdf091ae8c1558e8725fa6">getElement</a>(j);</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>                <a class="code hl_function" href="namespace_f_c_t.html#af370987864bb4392790a3d5ab46db1dc">setVertexAttributeFromModel</a>(vertex, j, element, modelVertex);</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>            }</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        }</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> </div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        std::vector&lt;uint32_t&gt; indices = modelMesh-&gt;<a class="code hl_variable" href="struct_f_c_t_1_1_model_mesh.html#a3f1191d1a099beb6bca492aa13e00a47">indices</a>;</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>        mesh-&gt;<a class="code hl_function" href="class_f_c_t_1_1_static_mesh.html#a7fbfa8fd440f036d1276be07ccd73fd2">setIndices</a>(indices);</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        mesh-&gt;<a class="code hl_function" href="class_f_c_t_1_1_static_mesh.html#ab14ba8e6a44b67f1b25c8ad6794e63a6">create</a>();</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span> </div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>        <span class="keywordflow">return</span> mesh;</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    }</div>
+</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span> </div>
+<div class="foldopen" id="foldopen00197" data-start="{" data-end="}">
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_context.html#af0e0fab29cd16c504b5a218a6b939ece">  197</a></span>    <a class="code hl_class" href="class_f_c_t_1_1_static_mesh.html">StaticMesh&lt;uint32_t&gt;</a>* <a class="code hl_function" href="class_f_c_t_1_1_context.html#af0e0fab29cd16c504b5a218a6b939ece">Context::loadMesh</a>(<span class="keyword">const</span> std::string&amp; filename, <span class="keyword">const</span> std::string&amp; meshName,</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>                                            <span class="keyword">const</span> <a class="code hl_class" href="class_f_c_t_1_1_vertex_layout.html">VertexLayout</a>&amp; layout)</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    {</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        <span class="keyword">auto</span> md = <a class="code hl_variable" href="class_f_c_t_1_1_context.html#a4dac183a4ae06a784937d0f98b90634d">m_modelLoader</a>-&gt;loadModel(filename);</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        <span class="keyword">auto</span> mMesh =  md-&gt;findMesh(meshName);</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="class_f_c_t_1_1_context.html#a896b22c78ba26980de3d661a9c40033d">createMesh</a>(mMesh,layout);</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    }</div>
+</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>}</div>
+<div class="ttc" id="a_context_8h_html"><div class="ttname"><a href="_context_8h.html">Context.h</a></div></div>
+<div class="ttc" id="a_f_c_t_a_p_i_8h_html"><div class="ttname"><a href="_f_c_t_a_p_i_8h.html">FCTAPI.h</a></div></div>
+<div class="ttc" id="a_tool_define_8h_html_a586755af4a5cd35fae3fbbc6f139d9b0"><div class="ttname"><a href="_tool_define_8h.html#a586755af4a5cd35fae3fbbc6f139d9b0">FCT_WAIT_FOR</a></div><div class="ttdeci">#define FCT_WAIT_FOR(condition)</div><div class="ttdef"><b>定义</b> <a href="_tool_define_8h_source.html#l00009">ToolDefine.h:9</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_context_html_a0a83bc9311ede1a9044f514ee85e8a23"><div class="ttname"><a href="class_f_c_t_1_1_context.html#a0a83bc9311ede1a9044f514ee85e8a23">FCT::Context::m_maxFrameInFlight</a></div><div class="ttdeci">uint32_t m_maxFrameInFlight</div><div class="ttdef"><b>定义</b> <a href="_context_8h_source.html#l00241">Context.h:241</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_context_html_a12e64115a928b13b07f487fc5dd89ed7"><div class="ttname"><a href="class_f_c_t_1_1_context.html#a12e64115a928b13b07f487fc5dd89ed7">FCT::Context::submitThread</a></div><div class="ttdeci">void submitThread()</div><div class="ttdef"><b>定义</b> <a href="_context_8h_source.html#l00183">Context.h:183</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_context_html_a136ad21d370980e07a7c7740c014ba13"><div class="ttname"><a href="class_f_c_t_1_1_context.html#a136ad21d370980e07a7c7740c014ba13">FCT::Context::m_defaultGraph</a></div><div class="ttdeci">RenderGraph * m_defaultGraph</div><div class="ttdef"><b>定义</b> <a href="_context_8h_source.html#l00310">Context.h:310</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_context_html_a4c6607256a23ab3c6a276ca3ffa855d9"><div class="ttname"><a href="class_f_c_t_1_1_context.html#a4c6607256a23ab3c6a276ca3ffa855d9">FCT::Context::m_compiler</a></div><div class="ttdeci">ShaderCompiler * m_compiler</div><div class="ttdef"><b>定义</b> <a href="_context_8h_source.html#l00238">Context.h:238</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_context_html_a4dac183a4ae06a784937d0f98b90634d"><div class="ttname"><a href="class_f_c_t_1_1_context.html#a4dac183a4ae06a784937d0f98b90634d">FCT::Context::m_modelLoader</a></div><div class="ttdeci">ModelLoader * m_modelLoader</div><div class="ttdef"><b>定义</b> <a href="_context_8h_source.html#l00135">Context.h:135</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_context_html_a589fed90876f5148e5dde6a048eb1af1"><div class="ttname"><a href="class_f_c_t_1_1_context.html#a589fed90876f5148e5dde6a048eb1af1">FCT::Context::nextFrame</a></div><div class="ttdeci">void nextFrame()</div><div class="ttdef"><b>定义</b> <a href="#l00009">Context.cpp:9</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_context_html_a59944f3c38119994120f3623a36cddf6"><div class="ttname"><a href="class_f_c_t_1_1_context.html#a59944f3c38119994120f3623a36cddf6">FCT::Context::loadTexture</a></div><div class="ttdeci">Image * loadTexture(const std::string &amp;filename)</div><div class="ttdef"><b>定义</b> <a href="#l00018">Context.cpp:18</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_context_html_a5e894d71be6d4ed0f8aaa5383314667a"><div class="ttname"><a href="class_f_c_t_1_1_context.html#a5e894d71be6d4ed0f8aaa5383314667a">FCT::Context::swapBuffers</a></div><div class="ttdeci">void swapBuffers()</div><div class="ttdef"><b>定义</b> <a href="_context_8hpp_source.html#l00103">Context.hpp:103</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_context_html_a6a581e9a74f88c4df6061e192a04fce3"><div class="ttname"><a href="class_f_c_t_1_1_context.html#a6a581e9a74f88c4df6061e192a04fce3">FCT::Context::m_currentGraph</a></div><div class="ttdeci">RenderGraph * m_currentGraph</div><div class="ttdef"><b>定义</b> <a href="_context_8h_source.html#l00311">Context.h:311</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_context_html_a8120cc50999faef6525e4eaa1c7c9724"><div class="ttname"><a href="class_f_c_t_1_1_context.html#a8120cc50999faef6525e4eaa1c7c9724">FCT::Context::m_submitThread</a></div><div class="ttdeci">std::thread m_submitThread</div><div class="ttdef"><b>定义</b> <a href="_context_8h_source.html#l00236">Context.h:236</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_context_html_a86e60a6457143d658b445cdb55bddb8a"><div class="ttname"><a href="class_f_c_t_1_1_context.html#a86e60a6457143d658b445cdb55bddb8a">FCT::Context::m_imageLoader</a></div><div class="ttdeci">ImageLoader * m_imageLoader</div><div class="ttdef"><b>定义</b> <a href="_context_8h_source.html#l00306">Context.h:306</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_context_html_a884452f9647279f66f76eef51c658687"><div class="ttname"><a href="class_f_c_t_1_1_context.html#a884452f9647279f66f76eef51c658687">FCT::Context::m_ctxRunning</a></div><div class="ttdeci">bool m_ctxRunning</div><div class="ttdef"><b>定义</b> <a href="_context_8h_source.html#l00237">Context.h:237</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_context_html_a896b22c78ba26980de3d661a9c40033d"><div class="ttname"><a href="class_f_c_t_1_1_context.html#a896b22c78ba26980de3d661a9c40033d">FCT::Context::createMesh</a></div><div class="ttdeci">StaticMesh&lt; uint32_t &gt; * createMesh(const ModelMesh *modelMesh, const VertexLayout &amp;layout)</div><div class="ttdef"><b>定义</b> <a href="#l00170">Context.cpp:170</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_context_html_a9db519c58becad823dbf34c91128bc84"><div class="ttname"><a href="class_f_c_t_1_1_context.html#a9db519c58becad823dbf34c91128bc84">FCT::Context::m_syncTickers</a></div><div class="ttdeci">TokenGraph&lt; std::string, SyncTicker &gt; m_syncTickers</div><div class="ttdef"><b>定义</b> <a href="_context_8h_source.html#l00231">Context.h:231</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_context_html_a9ee4c75d34c392e75747ce303df85bf5"><div class="ttname"><a href="class_f_c_t_1_1_context.html#a9ee4c75d34c392e75747ce303df85bf5">FCT::Context::m_currentFlush</a></div><div class="ttdeci">bool m_currentFlush</div><div class="ttdef"><b>定义</b> <a href="_context_8h_source.html#l00235">Context.h:235</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_context_html_a9f3723358760e931498769cdad4e6820"><div class="ttname"><a href="class_f_c_t_1_1_context.html#a9f3723358760e931498769cdad4e6820">FCT::Context::m_submitTickers</a></div><div class="ttdeci">TokenGraph&lt; std::string, SubmitTicker &gt; m_submitTickers</div><div class="ttdef"><b>定义</b> <a href="_context_8h_source.html#l00230">Context.h:230</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_context_html_aa09a4eb2ceb2a619cfdd5bc9a3bc444a"><div class="ttname"><a href="class_f_c_t_1_1_context.html#aa09a4eb2ceb2a619cfdd5bc9a3bc444a">FCT::Context::m_resourceManager</a></div><div class="ttdeci">ResourceManager * m_resourceManager</div><div class="ttdef"><b>定义</b> <a href="_context_8h_source.html#l00372">Context.h:372</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_context_html_aaa41a1b8bb45d0f06e4910c47fbaadfd"><div class="ttname"><a href="class_f_c_t_1_1_context.html#aaa41a1b8bb45d0f06e4910c47fbaadfd">FCT::Context::createCompiler</a></div><div class="ttdeci">void createCompiler()</div><div class="ttdef"><b>定义</b> <a href="runtime_8cpp_source.html#l00008">runtime.cpp:8</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_context_html_ab22339bb66ea1657de28c0aad0b4466b"><div class="ttname"><a href="class_f_c_t_1_1_context.html#ab22339bb66ea1657de28c0aad0b4466b">FCT::Context::advanceLogicFrame</a></div><div class="ttdeci">void advanceLogicFrame()</div><div class="ttdef"><b>定义</b> <a href="_context_8h_source.html#l00288">Context.h:288</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_context_html_ab7073c87ebf502dcf3aef25ec8cd256e"><div class="ttname"><a href="class_f_c_t_1_1_context.html#ab7073c87ebf502dcf3aef25ec8cd256e">FCT::Context::m_bindWindows</a></div><div class="ttdeci">std::vector&lt; Window * &gt; m_bindWindows</div><div class="ttdef"><b>定义</b> <a href="_context_8h_source.html#l00233">Context.h:233</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_context_html_ac1edb04d29eac81265919c82eb22c229"><div class="ttname"><a href="class_f_c_t_1_1_context.html#ac1edb04d29eac81265919c82eb22c229">FCT::Context::swapQueue</a></div><div class="ttdeci">virtual void swapQueue()</div><div class="ttdef"><b>定义</b> <a href="#l00056">Context.cpp:56</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_context_html_ac7fcac233cb62b85e35990a42560c105"><div class="ttname"><a href="class_f_c_t_1_1_context.html#ac7fcac233cb62b85e35990a42560c105">FCT::Context::m_generator</a></div><div class="ttdeci">ShaderGenerator * m_generator</div><div class="ttdef"><b>定义</b> <a href="_context_8h_source.html#l00239">Context.h:239</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_context_html_ad0681810833454681d964ad523f56f64"><div class="ttname"><a href="class_f_c_t_1_1_context.html#ad0681810833454681d964ad523f56f64">FCT::Context::~Context</a></div><div class="ttdeci">virtual ~Context()</div><div class="ttdef"><b>定义</b> <a href="#l00163">Context.cpp:163</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_context_html_ad65777e7264df95bb14d0e6e5d88e259"><div class="ttname"><a href="class_f_c_t_1_1_context.html#ad65777e7264df95bb14d0e6e5d88e259">FCT::Context::defaultTick</a></div><div class="ttdeci">void defaultTick()</div><div class="ttdef"><b>定义</b> <a href="_context_8h_source.html#l00195">Context.h:195</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_context_html_ae3e3f1f9bc99815af51ae21edceaa97f"><div class="ttname"><a href="class_f_c_t_1_1_context.html#ae3e3f1f9bc99815af51ae21edceaa97f">FCT::Context::Context</a></div><div class="ttdeci">Context(Runtime *runtime)</div><div class="ttdef"><b>定义</b> <a href="#l00062">Context.cpp:62</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_context_html_ae64b6dac3c4e5f7ecfcf7445308b5d09"><div class="ttname"><a href="class_f_c_t_1_1_context.html#ae64b6dac3c4e5f7ecfcf7445308b5d09">FCT::Context::advanceSubmitFrame</a></div><div class="ttdeci">void advanceSubmitFrame()</div><div class="ttdef"><b>定义</b> <a href="_context_8h_source.html#l00292">Context.h:292</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_context_html_aed5ee768dbd1e64f831cf65024133505"><div class="ttname"><a href="class_f_c_t_1_1_context.html#aed5ee768dbd1e64f831cf65024133505">FCT::Context::m_frameIndex</a></div><div class="ttdeci">size_t m_frameIndex</div><div class="ttdef"><b>定义</b> <a href="_context_8h_source.html#l00245">Context.h:245</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_context_html_af0e0fab29cd16c504b5a218a6b939ece"><div class="ttname"><a href="class_f_c_t_1_1_context.html#af0e0fab29cd16c504b5a218a6b939ece">FCT::Context::loadMesh</a></div><div class="ttdeci">StaticMesh&lt; uint32_t &gt; * loadMesh(const std::string &amp;filename, const std::string &amp;meshName, const VertexLayout &amp;layout)</div><div class="ttdef"><b>定义</b> <a href="#l00197">Context.cpp:197</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_context_html_af13e72a95c7f89b191875fc2606a26f8"><div class="ttname"><a href="class_f_c_t_1_1_context.html#af13e72a95c7f89b191875fc2606a26f8">FCT::Context::excutePasses</a></div><div class="ttdeci">void excutePasses(RHI::CommandBuffer *cmdBuf)</div><div class="ttdef"><b>定义</b> <a href="_context_8h_source.html#l00358">Context.h:358</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_context_html_af425799b4b55dc83f161dff9fcef7d6f"><div class="ttname"><a href="class_f_c_t_1_1_context.html#af425799b4b55dc83f161dff9fcef7d6f">FCT::Context::currentFlush</a></div><div class="ttdeci">void currentFlush()</div><div class="ttdef"><b>定义</b> <a href="#l00013">Context.cpp:13</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_context_html_af6b38f1cae0ed69cef0b975ecbf7ae17"><div class="ttname"><a href="class_f_c_t_1_1_context.html#af6b38f1cae0ed69cef0b975ecbf7ae17">FCT::Context::m_submitThreadId</a></div><div class="ttdeci">std::thread::id m_submitThreadId</div><div class="ttdef"><b>定义</b> <a href="_context_8h_source.html#l00248">Context.h:248</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_context_html_af70b8941135949280dae113210b633d8"><div class="ttname"><a href="class_f_c_t_1_1_context.html#af70b8941135949280dae113210b633d8">FCT::Context::m_nextFrame</a></div><div class="ttdeci">bool m_nextFrame</div><div class="ttdef"><b>定义</b> <a href="_context_8h_source.html#l00234">Context.h:234</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_context_html_afd3e26eb12b319cee7d9ac8fc86f9293"><div class="ttname"><a href="class_f_c_t_1_1_context.html#afd3e26eb12b319cee7d9ac8fc86f9293">FCT::Context::m_ticker</a></div><div class="ttdeci">SubmitTicker m_ticker</div><div class="ttdef"><b>定义</b> <a href="_context_8h_source.html#l00232">Context.h:232</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_context_html_afed262a94e3490f5fa2607ae90d1e26a"><div class="ttname"><a href="class_f_c_t_1_1_context.html#afed262a94e3490f5fa2607ae90d1e26a">FCT::Context::getCmdBuf</a></div><div class="ttdeci">RHI::CommandBuffer * getCmdBuf(Window *wnd, uint32_t index)</div><div class="ttdef"><b>定义</b> <a href="_context_8hpp_source.html#l00137">Context.hpp:137</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_image_html"><div class="ttname"><a href="class_f_c_t_1_1_image.html">FCT::Image</a></div><div class="ttdef"><b>定义</b> <a href="_context_2_image_8h_source.html#l00049">Image.h:49</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_image_html_a980f032db297c98b2c2d55e674e3fb31"><div class="ttname"><a href="class_f_c_t_1_1_image.html#a980f032db297c98b2c2d55e674e3fb31">FCT::Image::format</a></div><div class="ttdeci">Format format() const</div><div class="ttdef"><b>定义</b> <a href="_context_2_image_8h_source.html#l00064">Image.h:64</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_image_html_ab8acb1090a3b1bc3bb282196f7b9209f"><div class="ttname"><a href="class_f_c_t_1_1_image.html#ab8acb1090a3b1bc3bb282196f7b9209f">FCT::Image::height</a></div><div class="ttdeci">int height() const</div><div class="ttdef"><b>定义</b> <a href="_context_2_image_8h_source.html#l00076">Image.h:76</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_image_html_af4b50a8b7479884c2cd0c0e990875c25"><div class="ttname"><a href="class_f_c_t_1_1_image.html#af4b50a8b7479884c2cd0c0e990875c25">FCT::Image::width</a></div><div class="ttdeci">int width() const</div><div class="ttdef"><b>定义</b> <a href="_context_2_image_8h_source.html#l00075">Image.h:75</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_render_graph_html"><div class="ttname"><a href="class_f_c_t_1_1_render_graph.html">FCT::RenderGraph</a></div><div class="ttdef"><b>定义</b> <a href="_render_graph_8h_source.html#l00076">RenderGraph.h:77</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_runtime_html"><div class="ttname"><a href="class_f_c_t_1_1_runtime.html">FCT::Runtime</a></div><div class="ttdef"><b>定义</b> <a href="runtime_8h_source.html#l00031">runtime.h:31</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_runtime_html_a140a42440102f51f7b91feabab5825d0"><div class="ttname"><a href="class_f_c_t_1_1_runtime.html#a140a42440102f51f7b91feabab5825d0">FCT::Runtime::createModelLoader</a></div><div class="ttdeci">ModelLoader * createModelLoader()</div><div class="ttdef"><b>定义</b> <a href="runtime_8cpp_source.html#l00015">runtime.cpp:15</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_runtime_html_a828db6219f2af0c96807a71e0543440b"><div class="ttname"><a href="class_f_c_t_1_1_runtime.html#a828db6219f2af0c96807a71e0543440b">FCT::Runtime::createImageLoader</a></div><div class="ttdeci">ImageLoader * createImageLoader()</div><div class="ttdef"><b>定义</b> <a href="_win32___runtime_8cpp_source.html#l00027">Win32_Runtime.cpp:27</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_scope_timer_html"><div class="ttname"><a href="class_f_c_t_1_1_scope_timer.html">FCT::ScopeTimer</a></div><div class="ttdef"><b>定义</b> <a href="_scope_timer_8h_source.html#l00011">ScopeTimer.h:11</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_shader_generator_html"><div class="ttname"><a href="class_f_c_t_1_1_shader_generator.html">FCT::ShaderGenerator</a></div><div class="ttdef"><b>定义</b> <a href="_shader_generator_8h_source.html#l00023">ShaderGenerator.h:24</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_single_buffer_image_html"><div class="ttname"><a href="class_f_c_t_1_1_single_buffer_image.html">FCT::SingleBufferImage</a></div><div class="ttdef"><b>定义</b> <a href="_single_buffer_image_8h_source.html#l00018">SingleBufferImage.h:18</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_single_buffer_image_html_a376d6976dad19ad1d0c6f3f45a293dd2"><div class="ttname"><a href="class_f_c_t_1_1_single_buffer_image.html#a376d6976dad19ad1d0c6f3f45a293dd2">FCT::SingleBufferImage::initData</a></div><div class="ttdeci">void initData(void *data, int size)</div><div class="ttdef"><b>定义</b> <a href="_single_buffer_image_8h_source.html#l00023">SingleBufferImage.h:23</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_single_buffer_image_html_aa542818532e4290461370075f40e8539"><div class="ttname"><a href="class_f_c_t_1_1_single_buffer_image.html#aa542818532e4290461370075f40e8539">FCT::SingleBufferImage::create</a></div><div class="ttdeci">void create() override</div><div class="ttdef"><b>定义</b> <a href="_single_buffer_image_8cpp_source.html#l00031">SingleBufferImage.cpp:31</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_single_buffer_image_html_af6ab61168d6a4afe6971edc770bd11ab"><div class="ttname"><a href="class_f_c_t_1_1_single_buffer_image.html#af6ab61168d6a4afe6971edc770bd11ab">FCT::SingleBufferImage::as</a></div><div class="ttdeci">void as(ImageUsageFlags usage) override</div><div class="ttdef"><b>定义</b> <a href="_single_buffer_image_8cpp_source.html#l00061">SingleBufferImage.cpp:61</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_static_mesh_html"><div class="ttname"><a href="class_f_c_t_1_1_static_mesh.html">FCT::StaticMesh</a></div><div class="ttdef"><b>定义</b> <a href="_mesh_8h_source.html#l00015">Mesh.h:16</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_static_mesh_html_a7fbfa8fd440f036d1276be07ccd73fd2"><div class="ttname"><a href="class_f_c_t_1_1_static_mesh.html#a7fbfa8fd440f036d1276be07ccd73fd2">FCT::StaticMesh::setIndices</a></div><div class="ttdeci">void setIndices(const std::vector&lt; IndexType &gt; &amp;indices)</div><div class="ttdef"><b>定义</b> <a href="_mesh_8h_source.html#l00043">Mesh.h:43</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_static_mesh_html_a9c10fb21344b22537a288b74ced4bf8d"><div class="ttname"><a href="class_f_c_t_1_1_static_mesh.html#a9c10fb21344b22537a288b74ced4bf8d">FCT::StaticMesh::getVertexBuffer</a></div><div class="ttdeci">VertexBuffer * getVertexBuffer() const</div><div class="ttdef"><b>定义</b> <a href="_mesh_8h_source.html#l00084">Mesh.h:84</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_static_mesh_html_ab14ba8e6a44b67f1b25c8ad6794e63a6"><div class="ttname"><a href="class_f_c_t_1_1_static_mesh.html#ab14ba8e6a44b67f1b25c8ad6794e63a6">FCT::StaticMesh::create</a></div><div class="ttdeci">void create()</div><div class="ttdef"><b>定义</b> <a href="_mesh_8hpp_source.html#l00005">Mesh.hpp:5</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_vertex_buffer_html"><div class="ttname"><a href="class_f_c_t_1_1_vertex_buffer.html">FCT::VertexBuffer</a></div><div class="ttdef"><b>定义</b> <a href="_vertex_8h_source.html#l00542">Vertex.h:542</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_vertex_buffer_html_ae074d04e391f6cbbdbe0231aa1a12d64"><div class="ttname"><a href="class_f_c_t_1_1_vertex_buffer.html#ae074d04e391f6cbbdbe0231aa1a12d64">FCT::VertexBuffer::resize</a></div><div class="ttdeci">void resize(size_t vertexCount)</div><div class="ttdef"><b>定义</b> <a href="_vertex_8h_source.html#l00575">Vertex.h:575</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_vertex_element_html"><div class="ttname"><a href="class_f_c_t_1_1_vertex_element.html">FCT::VertexElement</a></div><div class="ttdef"><b>定义</b> <a href="_vertex_8h_source.html#l00168">Vertex.h:168</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_vertex_html"><div class="ttname"><a href="class_f_c_t_1_1_vertex.html">FCT::Vertex</a></div><div class="ttdef"><b>定义</b> <a href="_vertex_8h_source.html#l00433">Vertex.h:433</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_vertex_layout_html"><div class="ttname"><a href="class_f_c_t_1_1_vertex_layout.html">FCT::VertexLayout</a></div><div class="ttdef"><b>定义</b> <a href="_vertex_8h_source.html#l00228">Vertex.h:229</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_vertex_layout_html_ac4c4d17c633da256a103dff4c7069335"><div class="ttname"><a href="class_f_c_t_1_1_vertex_layout.html#ac4c4d17c633da256a103dff4c7069335">FCT::VertexLayout::getElementCount</a></div><div class="ttdeci">constexpr size_t getElementCount() const noexcept</div><div class="ttdef"><b>定义</b> <a href="_vertex_8h_source.html#l00242">Vertex.h:242</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_vertex_layout_html_ac92df2a28dbdf091ae8c1558e8725fa6"><div class="ttname"><a href="class_f_c_t_1_1_vertex_layout.html#ac92df2a28dbdf091ae8c1558e8725fa6">FCT::VertexLayout::getElement</a></div><div class="ttdeci">constexpr const VertexElement &amp; getElement(size_t index) const noexcept</div><div class="ttdef"><b>定义</b> <a href="_vertex_8h_source.html#l00246">Vertex.h:246</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_1_1_inner_sync_html_a7cbf6ad9e86670d646cb1cb41d6fd000"><div class="ttname"><a href="namespace_f_c_t_1_1_inner_sync.html#a7cbf6ad9e86670d646cb1cb41d6fd000">FCT::InnerSync::CheckRecreateSwapchainSync</a></div><div class="ttdeci">constexpr const char * CheckRecreateSwapchainSync</div><div class="ttdef"><b>定义</b> <a href="_context_8h_source.html#l00104">Context.h:104</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_1_1_inner_sync_html_ad2597362f14f210b2f50b418fb6a5fef"><div class="ttname"><a href="namespace_f_c_t_1_1_inner_sync.html#ad2597362f14f210b2f50b418fb6a5fef">FCT::InnerSync::AdvanceFrameIndex</a></div><div class="ttdeci">constexpr const char * AdvanceFrameIndex</div><div class="ttdef"><b>定义</b> <a href="_context_8h_source.html#l00105">Context.h:105</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html"><div class="ttname"><a href="namespace_f_c_t.html">FCT</a></div><div class="ttdef"><b>定义</b> <a href="_flags_8h_source.html#l00010">Flags.h:11</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_a0741721dca246274b1b72d07249443e4"><div class="ttname"><a href="namespace_f_c_t.html#a0741721dca246274b1b72d07249443e4">FCT::Format</a></div><div class="ttdeci">Format</div><div class="ttdef"><b>定义</b> <a href="_context_2_format_8h_source.html#l00005">Format.h:5</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_a0741721dca246274b1b72d07249443e4a510cef4c9832a8b4e6fcad93f2927142"><div class="ttname"><a href="namespace_f_c_t.html#a0741721dca246274b1b72d07249443e4a510cef4c9832a8b4e6fcad93f2927142">FCT::Format::R8G8B8_UNORM</a></div><div class="ttdeci">@ R8G8B8_UNORM</div><div class="ttdef"><b>定义</b> <a href="_context_2_format_8h_source.html#l00009">Format.h:9</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_a0741721dca246274b1b72d07249443e4a5c835c7ea238d0796853827ce416a5e2"><div class="ttname"><a href="namespace_f_c_t.html#a0741721dca246274b1b72d07249443e4a5c835c7ea238d0796853827ce416a5e2">FCT::Format::R8G8B8A8_SRGB</a></div><div class="ttdeci">@ R8G8B8A8_SRGB</div><div class="ttdef"><b>定义</b> <a href="_context_2_format_8h_source.html#l00012">Format.h:12</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_a0741721dca246274b1b72d07249443e4a6ee77dd485809c93542e95acf222420c"><div class="ttname"><a href="namespace_f_c_t.html#a0741721dca246274b1b72d07249443e4a6ee77dd485809c93542e95acf222420c">FCT::Format::R8_UNORM</a></div><div class="ttdeci">@ R8_UNORM</div><div class="ttdef"><b>定义</b> <a href="_context_2_format_8h_source.html#l00007">Format.h:7</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_a0741721dca246274b1b72d07249443e4a74b8cc492d3b8df6a7c4f2573e751f65"><div class="ttname"><a href="namespace_f_c_t.html#a0741721dca246274b1b72d07249443e4a74b8cc492d3b8df6a7c4f2573e751f65">FCT::Format::R8G8_UNORM</a></div><div class="ttdeci">@ R8G8_UNORM</div><div class="ttdef"><b>定义</b> <a href="_context_2_format_8h_source.html#l00008">Format.h:8</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_a0741721dca246274b1b72d07249443e4af55c1c722034e92213df328d31e33c62"><div class="ttname"><a href="namespace_f_c_t.html#a0741721dca246274b1b72d07249443e4af55c1c722034e92213df328d31e33c62">FCT::Format::R8G8B8A8_UNORM</a></div><div class="ttdeci">@ R8G8B8A8_UNORM</div><div class="ttdef"><b>定义</b> <a href="_context_2_format_8h_source.html#l00010">Format.h:10</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_a3bec92bc39d2c90a357c13c4874e5e24"><div class="ttname"><a href="namespace_f_c_t.html#a3bec92bc39d2c90a357c13c4874e5e24">FCT::RenderGraphSyncTicker_SwapJobQueueName</a></div><div class="ttdeci">constexpr const char * RenderGraphSyncTicker_SwapJobQueueName</div><div class="ttdef"><b>定义</b> <a href="_context_8h_source.html#l00101">Context.h:101</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_a41993be9a3c6e8f05f5b7bda9a9015b2"><div class="ttname"><a href="namespace_f_c_t.html#a41993be9a3c6e8f05f5b7bda9a9015b2">FCT::ferr</a></div><div class="ttdeci">std::ostream &amp; ferr</div><div class="ttdef"><b>定义</b> <a href="_out_stream_8cpp_source.html#l00009">OutStream.cpp:9</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_a41b02c859811a4fb4d24f7e20a0698f4"><div class="ttname"><a href="namespace_f_c_t.html#a41b02c859811a4fb4d24f7e20a0698f4">FCT::RenderGraphExcutePassSubmitTickerName</a></div><div class="ttdeci">constexpr const char * RenderGraphExcutePassSubmitTickerName</div><div class="ttdef"><b>定义</b> <a href="_context_8h_source.html#l00099">Context.h:99</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_a713521d343a445fb31ddf00b9665d59f"><div class="ttname"><a href="namespace_f_c_t.html#a713521d343a445fb31ddf00b9665d59f">FCT::SwapBufferSubmitTicker</a></div><div class="ttdeci">constexpr const char * SwapBufferSubmitTicker</div><div class="ttdef"><b>定义</b> <a href="_context_8h_source.html#l00100">Context.h:100</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_a7bd85aff3c2babcf1441a80ec00e70e4"><div class="ttname"><a href="namespace_f_c_t.html#a7bd85aff3c2babcf1441a80ec00e70e4">FCT::RenderGraphSubmitTickerName</a></div><div class="ttdeci">constexpr const char * RenderGraphSubmitTickerName</div><div class="ttdef"><b>定义</b> <a href="_context_8h_source.html#l00098">Context.h:98</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_a7c79cf32fda44767f87c534ba3c7f1e5aa3e8ae43188ae76d38f414b2bdb0077b"><div class="ttname"><a href="namespace_f_c_t.html#a7c79cf32fda44767f87c534ba3c7f1e5aa3e8ae43188ae76d38f414b2bdb0077b">FCT::ImageUsage::Texture</a></div><div class="ttdeci">@ Texture</div><div class="ttdef"><b>定义</b> <a href="_image_usage_flags_8h_source.html#l00014">ImageUsageFlags.h:14</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_af370987864bb4392790a3d5ab46db1dc"><div class="ttname"><a href="namespace_f_c_t.html#af370987864bb4392790a3d5ab46db1dc">FCT::setVertexAttributeFromModel</a></div><div class="ttdeci">void setVertexAttributeFromModel(Vertex &amp;vertex, size_t elementIndex, const VertexElement &amp;element, const ModelVertex &amp;modelVertex)</div><div class="ttdef"><b>定义</b> <a href="_model_loader_8h_source.html#l00063">ModelLoader.h:63</a></div></div>
+<div class="ttc" id="astruct_f_c_t_1_1_model_mesh_html"><div class="ttname"><a href="struct_f_c_t_1_1_model_mesh.html">FCT::ModelMesh</a></div><div class="ttdef"><b>定义</b> <a href="_model_loader_8h_source.html#l00035">ModelLoader.h:36</a></div></div>
+<div class="ttc" id="astruct_f_c_t_1_1_model_mesh_html_a3f1191d1a099beb6bca492aa13e00a47"><div class="ttname"><a href="struct_f_c_t_1_1_model_mesh.html#a3f1191d1a099beb6bca492aa13e00a47">FCT::ModelMesh::indices</a></div><div class="ttdeci">std::vector&lt; uint32_t &gt; indices</div><div class="ttdef"><b>定义</b> <a href="_model_loader_8h_source.html#l00039">ModelLoader.h:39</a></div></div>
+<div class="ttc" id="astruct_f_c_t_1_1_model_mesh_html_a638865597345ca0a7ee76a211770903e"><div class="ttname"><a href="struct_f_c_t_1_1_model_mesh.html#a638865597345ca0a7ee76a211770903e">FCT::ModelMesh::vertices</a></div><div class="ttdeci">std::vector&lt; ModelVertex &gt; vertices</div><div class="ttdef"><b>定义</b> <a href="_model_loader_8h_source.html#l00038">ModelLoader.h:38</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_283dc56ba28011889f2bbd8b6e1cfbb3.html">Context</a></li><li class="navelem"><a href="_context_8cpp.html">Context.cpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

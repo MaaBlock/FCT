@@ -1,0 +1,388 @@
+\doxysection{VK\+\_\+\+Pass\+Resource.\+cpp}
+\hypertarget{_v_k___pass_resource_8cpp_source}{}\label{_v_k___pass_resource_8cpp_source}\index{src/Context/VK\_PassResource.cpp@{src/Context/VK\_PassResource.cpp}}
+\mbox{\hyperlink{_v_k___pass_resource_8cpp}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00001}00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00002}00002\ \textcolor{comment}{//\ Created\ by\ Administrator\ on\ 2025/4/14.}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00003}00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_f_c_t_a_p_i_8h}{../FCTAPI.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00005}00005\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_f_c_t}{FCT}}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00006}00006\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00007}\mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a72a17659f1efff4f33264391acc840bc}{00007}}\ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a72a17659f1efff4f33264391acc840bc}{VK\_PassResource::VK\_PassResource}}(\mbox{\hyperlink{class_f_c_t_1_1_v_k___context}{VK\_Context}}*\ ctx)}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00008}00008\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00009}00009\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_aa61429c15436c4289d2a93110af38195}{m\_ctx}}\ =\ ctx;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00010}00010\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00012}\mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_ab76207cd13bd5ada11880cf3228ce72a}{00012}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_ab76207cd13bd5ada11880cf3228ce72a}{VK\_PassResource::addConstBuffer}}(\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_const_buffer}{RHI::ConstBuffer}}*\ buffer)}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00013}00013\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (buffer)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_pass_resource_a87001a2c6b136ce66a75a71a938e1f78}{m\_constBuffers}}.push\_back(buffer);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a33e2e0be4beec0f521265b1ac654afa4}{markAllDescriptorSetsDirty}}();}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a1e963f0f016d110d6646f223ef890b0d}{markAllDescriptorSetsNeedRecreate}}();}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00019}00019\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00021}\mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_aef8d80b6d7372a7d2ab0c8abac97bddd}{00021}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_aef8d80b6d7372a7d2ab0c8abac97bddd}{VK\_PassResource::addSampler}}(\mbox{\hyperlink{class_f_c_t_1_1_sampler}{Sampler}}*\ sampler,\ \mbox{\hyperlink{class_f_c_t_1_1_sampler_element}{SamplerElement}}\ element)}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00022}00022\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (sampler)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_pass_resource_a5a87c09644f12ae3b72621bd182923d0}{m\_samplers}}.emplace\_back(sampler,\ element);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a33e2e0be4beec0f521265b1ac654afa4}{markAllDescriptorSetsDirty}}();}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a1e963f0f016d110d6646f223ef890b0d}{markAllDescriptorSetsNeedRecreate}}();}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00028}00028\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00030}\mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_adce903a017bf01a4df07064f8eae2310}{00030}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_adce903a017bf01a4df07064f8eae2310}{VK\_PassResource::addTexture}}(\mbox{\hyperlink{class_f_c_t_1_1_image}{Image}}*\ texture,\ \mbox{\hyperlink{class_f_c_t_1_1_texture_element}{TextureElement}}\ element)}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00031}00031\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (texture)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_pass_resource_ad346a8e3ea6aca1e38a9609d734429cd}{m\_textures}}[element]\ =\ texture;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a33e2e0be4beec0f521265b1ac654afa4}{markAllDescriptorSetsDirty}}();}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a1e963f0f016d110d6646f223ef890b0d}{markAllDescriptorSetsNeedRecreate}}();}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00037}00037\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00039}\mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a7fdcd488b03258cd09464b1d2fe05277}{00039}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a7fdcd488b03258cd09464b1d2fe05277}{VK\_PassResource::setTexture}}(\mbox{\hyperlink{class_f_c_t_1_1_image}{Image}}*\ texture,\ \mbox{\hyperlink{class_f_c_t_1_1_texture_element}{TextureElement}}\ element)}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00040}00040\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (texture)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_pass_resource_ad346a8e3ea6aca1e38a9609d734429cd}{m\_textures}}.find(element)!=\ \mbox{\hyperlink{class_f_c_t_1_1_pass_resource_ad346a8e3ea6aca1e38a9609d734429cd}{m\_textures}}.end())}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a1e963f0f016d110d6646f223ef890b0d}{markAllDescriptorSetsNeedRecreate}}();}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_pass_resource_ad346a8e3ea6aca1e38a9609d734429cd}{m\_textures}}[element]\ =\ texture;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a93eee85bea4d326222f4881569d02d94}{markDescriptorSetDirty}}(\mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_aa61429c15436c4289d2a93110af38195}{m\_ctx}}-\/>currentFrameIndex());}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00051}00051\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00053}\mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a33e2e0be4beec0f521265b1ac654afa4}{00053}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a33e2e0be4beec0f521265b1ac654afa4}{VK\_PassResource::markAllDescriptorSetsDirty}}()}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00054}00054\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ uint32\_t\ maxFrames\ =\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_aa61429c15436c4289d2a93110af38195}{m\_ctx}}-\/>maxFrameInFlight();}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_ab7255ad01052f5e4e395d46537f91742}{m\_dirtyFlags}}.resize(maxFrames,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00057}00057\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00059}\mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a93eee85bea4d326222f4881569d02d94}{00059}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a93eee85bea4d326222f4881569d02d94}{VK\_PassResource::markDescriptorSetDirty}}(uint32\_t\ frameIdx)}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00060}00060\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (frameIdx\ <\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_ab7255ad01052f5e4e395d46537f91742}{m\_dirtyFlags}}.size())\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_ab7255ad01052f5e4e395d46537f91742}{m\_dirtyFlags}}[frameIdx]\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00064}00064\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00065}\mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a0210cbf88dba34d267cdafac2071083f}{00065}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a0210cbf88dba34d267cdafac2071083f}{VK\_PassResource::createDescriptorSetsAndLayouts}}(uint32\_t\ frameIdx,}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<vk::DescriptorSetLayout>\&\ outLayouts,}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<vk::DescriptorSet>\&\ outDescriptorSets)}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00068}00068\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ vk::Device\ device\ =\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_aa61429c15436c4289d2a93110af38195}{m\_ctx}}-\/>getDevice();}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ descriptorPool\ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___descriptor_pool}{RHI::VK\_DescriptorPool}}*\textcolor{keyword}{>}(\mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_aa61429c15436c4289d2a93110af38195}{m\_ctx}}-\/>getDescriptorPool(\mbox{\hyperlink{class_f_c_t_1_1_pass_resource_a275ae375787ce9f0eb2616272fe31eae}{m\_wnd}}));}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ layout\ :\ outLayouts)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (layout)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ device.destroyDescriptorSetLayout(layout);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ layout\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!outDescriptorSets.empty())\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ device.freeDescriptorSets(descriptorPool-\/>getPool(),\ outDescriptorSets);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ outDescriptorSets.clear();}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ vk::SystemError\&\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ std::map<uint32\_t,\ std::vector<vk::DescriptorSetLayoutBinding>>\ setBindings;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}*\ constBuffer\ :\ \mbox{\hyperlink{class_f_c_t_1_1_pass_resource_a87001a2c6b136ce66a75a71a938e1f78}{m\_constBuffers}})\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ vkConstBuffer\ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer}{RHI::VK\_ConstBuffer}}*\textcolor{keyword}{>}(constBuffer);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ uniformLayout\ =\ vkConstBuffer-\/>\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_const_buffer_a5052583f15fca88b4da74fdf4d790cfc}{layout}}();}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ [setIndex,\ binding]\ =\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_aa61429c15436c4289d2a93110af38195}{m\_ctx}}-\/>getGenerator()-\/>getLayoutBinding(uniformLayout);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ vk::DescriptorSetLayoutBinding\ layoutBinding;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ layoutBinding.setBinding(binding);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ layoutBinding.setDescriptorType(vk::DescriptorType::eUniformBuffer);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ layoutBinding.setDescriptorCount(1);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ layoutBinding.setStageFlags(\mbox{\hyperlink{namespace_f_c_t_a797b8d2bea8308fe4de9470246c0812a}{ConvertToVkShaderStageFlags}}(uniformLayout.getShaderStages()));}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ setBindings[setIndex].push\_back(layoutBinding);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ [element,\ texture]\ :\ \mbox{\hyperlink{class_f_c_t_1_1_pass_resource_ad346a8e3ea6aca1e38a9609d734429cd}{m\_textures}})\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ [setIndex,\ binding]\ =\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_aa61429c15436c4289d2a93110af38195}{m\_ctx}}-\/>getGenerator()-\/>getTextureBinding(element);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ vk::DescriptorSetLayoutBinding\ layoutBinding;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ layoutBinding.setBinding(binding);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ layoutBinding.setDescriptorType(vk::DescriptorType::eSampledImage);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ layoutBinding.setDescriptorCount(1);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ layoutBinding.setStageFlags(\mbox{\hyperlink{namespace_f_c_t_a797b8d2bea8308fe4de9470246c0812a}{ConvertToVkShaderStageFlags}}(element.getShaderStages()));}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ setBindings[setIndex].push\_back(layoutBinding);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ [sampler,\ element]\ :\ \mbox{\hyperlink{class_f_c_t_1_1_pass_resource_a5a87c09644f12ae3b72621bd182923d0}{m\_samplers}})\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ [setIndex,\ binding]\ =\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_aa61429c15436c4289d2a93110af38195}{m\_ctx}}-\/>getGenerator()-\/>getSamplerBinding(element);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ vk::DescriptorSetLayoutBinding\ layoutBinding;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ layoutBinding.setBinding(binding);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ layoutBinding.setDescriptorType(vk::DescriptorType::eSampler);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ layoutBinding.setDescriptorCount(1);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ layoutBinding.setStageFlags(\mbox{\hyperlink{namespace_f_c_t_a797b8d2bea8308fe4de9470246c0812a}{ConvertToVkShaderStageFlags}}(element.getShaderStages()));}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ setBindings[setIndex].push\_back(layoutBinding);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (setBindings.empty())\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ outLayouts.clear();}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ outDescriptorSets.clear();}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ uint32\_t\ maxSetIndex\ =\ setBindings.rbegin()-\/>first;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ vk::DescriptorSetLayoutCreateInfo\ emptyLayoutInfo(}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ vk::DescriptorSetLayoutCreateFlags(),}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ 0,}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{nullptr}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ vk::DescriptorSetLayout\ emptyLayout;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ emptyLayout\ =\ device.createDescriptorSetLayout(emptyLayoutInfo);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ vk::SystemError\&\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Failed\ to\ create\ empty\ descriptor\ set\ layout:\ "{}}\ +\ std::string(e.what()));}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00146}00146\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ outLayouts.resize(maxSetIndex\ +\ 1,\ emptyLayout);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00148}00148\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ [setIndex,\ bindings]\ :\ setBindings)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ vk::DescriptorSetLayoutCreateInfo\ layoutInfo;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ layoutInfo.setBindingCount(\textcolor{keyword}{static\_cast<}uint32\_t\textcolor{keyword}{>}(bindings.size()));}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ layoutInfo.setPBindings(bindings.data());}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (outLayouts[setIndex]\ !=\ emptyLayout)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ device.destroyDescriptorSetLayout(outLayouts[setIndex]);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ outLayouts[setIndex]\ =\ device.createDescriptorSetLayout(layoutInfo);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ vk::SystemError\&\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ layout\ :\ outLayouts)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (layout)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ device.destroyDescriptorSetLayout(layout);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ layout\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Failed\ to\ create\ descriptor\ set\ layout:\ "{}}\ +\ std::string(e.what()));}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00168}00168\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00170}00170\ \ \ \ \ \ \ \ \ vk::DescriptorSetAllocateInfo\ allocInfo;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00171}00171\ \ \ \ \ \ \ \ \ allocInfo.setDescriptorPool(descriptorPool-\/>getPool());}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00172}00172\ \ \ \ \ \ \ \ \ allocInfo.setDescriptorSetCount(\textcolor{keyword}{static\_cast<}uint32\_t\textcolor{keyword}{>}(outLayouts.size()));}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00173}00173\ \ \ \ \ \ \ \ \ allocInfo.setPSetLayouts(outLayouts.data());}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00174}00174\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ outDescriptorSets\ =\ device.allocateDescriptorSets(allocInfo);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ vk::SystemError\&\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ layout\ :\ outLayouts)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (layout)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ device.destroyDescriptorSetLayout(layout);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ layout\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Failed\ to\ allocate\ descriptor\ sets\ for\ frame\ "{}}\ +}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::to\_string(frameIdx)\ +\ \textcolor{stringliteral}{"{}:\ "{}}\ +\ std::string(e.what()));}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00185}00185\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00186}00186\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00187}00187\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00188}00188\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00189}\mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a4818ec04167db30e0a2d545313e5bd95}{00189}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a4818ec04167db30e0a2d545313e5bd95}{VK\_PassResource::create}}()}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00190}00190\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_pass_resource_a87001a2c6b136ce66a75a71a938e1f78}{m\_constBuffers}}.empty()\ \&\&\ \mbox{\hyperlink{class_f_c_t_1_1_pass_resource_a5a87c09644f12ae3b72621bd182923d0}{m\_samplers}}.empty()\ \&\&\ \mbox{\hyperlink{class_f_c_t_1_1_pass_resource_ad346a8e3ea6aca1e38a9609d734429cd}{m\_textures}}.empty())\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00193}00193\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00194}00194\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00195}00195\ \ \ \ \ \ \ \ \ uint32\_t\ maxFrames\ =\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_aa61429c15436c4289d2a93110af38195}{m\_ctx}}-\/>maxFrameInFlight();}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00196}00196\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00197}00197\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_ada6a9cd1bd15621a37051de745d0cdfc}{m\_descriptorSets}}.resize(maxFrames);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00198}00198\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_ab7255ad01052f5e4e395d46537f91742}{m\_dirtyFlags}}.resize(maxFrames,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00199}00199\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00200}00200\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (uint32\_t\ frameIdx\ =\ 0;\ frameIdx\ <\ maxFrames;\ ++frameIdx)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_aab7111e185d71f25da05ce001cbf6603}{m\_descriptorSetLayouts}}.clear();}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a0210cbf88dba34d267cdafac2071083f}{createDescriptorSetsAndLayouts}}(frameIdx,\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_aab7111e185d71f25da05ce001cbf6603}{m\_descriptorSetLayouts}},\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_ada6a9cd1bd15621a37051de745d0cdfc}{m\_descriptorSets}}[frameIdx]))\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00203}00203\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_ab7255ad01052f5e4e395d46537f91742}{m\_dirtyFlags}}[frameIdx]\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a6b198b587cbcda927094f5f8a8a49889}{updateDescriptorSetsIfNeeded}}(frameIdx);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00207}00207\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00208}00208\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00209}\mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a6b198b587cbcda927094f5f8a8a49889}{00209}}\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a6b198b587cbcda927094f5f8a8a49889}{VK\_PassResource::updateDescriptorSetsIfNeeded}}(uint32\_t\ frameIdx)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00210}00210\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (frameIdx\ >=\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_ab7255ad01052f5e4e395d46537f91742}{m\_dirtyFlags}}.size()\ ||\ !\mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_ab7255ad01052f5e4e395d46537f91742}{m\_dirtyFlags}}[frameIdx])\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00212}00212\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00213}00213\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00214}00214\ \ \ \ \ \ \ \ \ vk::Device\ device\ =\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_aa61429c15436c4289d2a93110af38195}{m\_ctx}}-\/>getDevice();}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00215}00215\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00216}00216\ \ \ \ \ \ \ \ \ std::vector<vk::WriteDescriptorSet>\ descriptorWrites;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00217}00217\ \ \ \ \ \ \ \ \ descriptorWrites.reserve(\mbox{\hyperlink{class_f_c_t_1_1_pass_resource_a87001a2c6b136ce66a75a71a938e1f78}{m\_constBuffers}}.size()\ +\ \mbox{\hyperlink{class_f_c_t_1_1_pass_resource_ad346a8e3ea6aca1e38a9609d734429cd}{m\_textures}}.size()\ +\ \mbox{\hyperlink{class_f_c_t_1_1_pass_resource_a5a87c09644f12ae3b72621bd182923d0}{m\_samplers}}.size());}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00218}00218\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00219}00219\ \ \ \ \ \ \ \ \ std::vector<vk::DescriptorBufferInfo>\ bufferInfos;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00220}00220\ \ \ \ \ \ \ \ \ bufferInfos.reserve(\mbox{\hyperlink{class_f_c_t_1_1_pass_resource_a87001a2c6b136ce66a75a71a938e1f78}{m\_constBuffers}}.size());}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00221}00221\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00222}00222\ \ \ \ \ \ \ \ \ std::vector<vk::DescriptorImageInfo>\ textureInfos;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00223}00223\ \ \ \ \ \ \ \ \ textureInfos.reserve(\mbox{\hyperlink{class_f_c_t_1_1_pass_resource_ad346a8e3ea6aca1e38a9609d734429cd}{m\_textures}}.size());}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00224}00224\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00225}00225\ \ \ \ \ \ \ \ \ std::vector<vk::DescriptorImageInfo>\ samplerInfos;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00226}00226\ \ \ \ \ \ \ \ \ samplerInfos.reserve(\mbox{\hyperlink{class_f_c_t_1_1_pass_resource_a5a87c09644f12ae3b72621bd182923d0}{m\_samplers}}.size());}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00227}00227\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00228}00228\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_f_c_t_1_1_pass_resource_a87001a2c6b136ce66a75a71a938e1f78}{m\_constBuffers}}.size();\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ srcConstBuffer\ =\ \mbox{\hyperlink{class_f_c_t_1_1_pass_resource_a87001a2c6b136ce66a75a71a938e1f78}{m\_constBuffers}}[i];}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ constBuffer\ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer}{RHI::VK\_ConstBuffer}}*\textcolor{keyword}{>}(srcConstBuffer);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ uniformLayout\ =\ constBuffer-\/>\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_const_buffer_a5052583f15fca88b4da74fdf4d790cfc}{layout}}();}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ [setIndex,\ binding]\ =\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_aa61429c15436c4289d2a93110af38195}{m\_ctx}}-\/>getGenerator()-\/>getLayoutBinding(uniformLayout);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00233}00233\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (setIndex\ >=\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_ada6a9cd1bd15621a37051de745d0cdfc}{m\_descriptorSets}}[frameIdx].size())\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00237}00237\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ bufferInfos.push\_back(constBuffer-\/>currentBufferInfoWithoutUpdata());}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00239}00239\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ vk::WriteDescriptorSet\ descriptorWrite;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ descriptorWrite.setDstSet(\mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_ada6a9cd1bd15621a37051de745d0cdfc}{m\_descriptorSets}}[frameIdx][setIndex]);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ descriptorWrite.setDstBinding(binding);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ \ \ descriptorWrite.setDstArrayElement(0);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ descriptorWrite.setDescriptorType(vk::DescriptorType::eUniformBuffer);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ descriptorWrite.setDescriptorCount(1);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \ \ \ descriptorWrite.setPBufferInfo(\&bufferInfos[bufferInfos.size()\ -\/\ 1]);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00247}00247\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ descriptorWrites.push\_back(descriptorWrite);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00249}00249\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00250}00250\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00251}00251\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ [element,\ texture\ ]\ :\ \mbox{\hyperlink{class_f_c_t_1_1_pass_resource_ad346a8e3ea6aca1e38a9609d734429cd}{m\_textures}})\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00252}00252\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ vkTexture\ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___texture_view}{RHI::VK\_TextureView}}*\textcolor{keyword}{>}(texture-\/>currentTextureView());}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00253}00253\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ [setIndex,\ binding]\ =\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_aa61429c15436c4289d2a93110af38195}{m\_ctx}}-\/>getGenerator()-\/>getTextureBinding(element);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00254}00254\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00255}00255\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (setIndex\ >=\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_ada6a9cd1bd15621a37051de745d0cdfc}{m\_descriptorSets}}[frameIdx].size()\ ||\ !vkTexture)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00257}00257\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00258}00258\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00259}00259\ \ \ \ \ \ \ \ \ \ \ \ \ vk::DescriptorImageInfo\ imageInfo;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00260}00260\ \ \ \ \ \ \ \ \ \ \ \ \ imageInfo.setImageLayout(vk::ImageLayout::eShaderReadOnlyOptimal);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00261}00261\ \ \ \ \ \ \ \ \ \ \ \ \ imageInfo.setImageView(vkTexture-\/>view());}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00262}00262\ \ \ \ \ \ \ \ \ \ \ \ \ imageInfo.setSampler(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \ \ \ textureInfos.push\_back(imageInfo);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00264}00264\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00265}00265\ \ \ \ \ \ \ \ \ \ \ \ \ vk::WriteDescriptorSet\ descriptorWrite;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00266}00266\ \ \ \ \ \ \ \ \ \ \ \ \ descriptorWrite.setDstSet(\mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_ada6a9cd1bd15621a37051de745d0cdfc}{m\_descriptorSets}}[frameIdx][setIndex]);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00267}00267\ \ \ \ \ \ \ \ \ \ \ \ \ descriptorWrite.setDstBinding(binding);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00268}00268\ \ \ \ \ \ \ \ \ \ \ \ \ descriptorWrite.setDstArrayElement(0);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00269}00269\ \ \ \ \ \ \ \ \ \ \ \ \ descriptorWrite.setDescriptorType(vk::DescriptorType::eSampledImage);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00270}00270\ \ \ \ \ \ \ \ \ \ \ \ \ descriptorWrite.setDescriptorCount(1);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00271}00271\ \ \ \ \ \ \ \ \ \ \ \ \ descriptorWrite.setPImageInfo(\&textureInfos[textureInfos.size()\ -\/\ 1]);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00272}00272\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00273}00273\ \ \ \ \ \ \ \ \ \ \ \ \ descriptorWrites.push\_back(descriptorWrite);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00274}00274\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00275}00275\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00276}00276\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_f_c_t_1_1_pass_resource_a5a87c09644f12ae3b72621bd182923d0}{m\_samplers}}.size();\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00277}00277\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ [sampler,\ element]\ =\ \mbox{\hyperlink{class_f_c_t_1_1_pass_resource_a5a87c09644f12ae3b72621bd182923d0}{m\_samplers}}[i];}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00278}00278\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ vkSampler\ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___sampler}{RHI::VK\_Sampler}}*\textcolor{keyword}{>}(sampler);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00279}00279\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ [setIndex,\ binding]\ =\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_aa61429c15436c4289d2a93110af38195}{m\_ctx}}-\/>getGenerator()-\/>getSamplerBinding(element);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00280}00280\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00281}00281\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (setIndex\ >=\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_ada6a9cd1bd15621a37051de745d0cdfc}{m\_descriptorSets}}[frameIdx].size()\ ||\ !vkSampler)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00282}00282\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00283}00283\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00284}00284\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00285}00285\ \ \ \ \ \ \ \ \ \ \ \ \ vk::DescriptorImageInfo\ samplerInfo;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00286}00286\ \ \ \ \ \ \ \ \ \ \ \ \ samplerInfo.setSampler(vkSampler-\/>getSampler());}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00287}00287\ \ \ \ \ \ \ \ \ \ \ \ \ samplerInfo.setImageView(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00288}00288\ \ \ \ \ \ \ \ \ \ \ \ \ samplerInfo.setImageLayout(vk::ImageLayout::eUndefined);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00289}00289\ \ \ \ \ \ \ \ \ \ \ \ \ samplerInfos.push\_back(samplerInfo);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00290}00290\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00291}00291\ \ \ \ \ \ \ \ \ \ \ \ \ vk::WriteDescriptorSet\ descriptorWrite;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00292}00292\ \ \ \ \ \ \ \ \ \ \ \ \ descriptorWrite.setDstSet(\mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_ada6a9cd1bd15621a37051de745d0cdfc}{m\_descriptorSets}}[frameIdx][setIndex]);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00293}00293\ \ \ \ \ \ \ \ \ \ \ \ \ descriptorWrite.setDstBinding(binding);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00294}00294\ \ \ \ \ \ \ \ \ \ \ \ \ descriptorWrite.setDstArrayElement(0);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00295}00295\ \ \ \ \ \ \ \ \ \ \ \ \ descriptorWrite.setDescriptorType(vk::DescriptorType::eSampler);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00296}00296\ \ \ \ \ \ \ \ \ \ \ \ \ descriptorWrite.setDescriptorCount(1);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00297}00297\ \ \ \ \ \ \ \ \ \ \ \ \ descriptorWrite.setPImageInfo(\&samplerInfos[samplerInfos.size()\ -\/\ 1]);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00298}00298\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00299}00299\ \ \ \ \ \ \ \ \ \ \ \ \ descriptorWrites.push\_back(descriptorWrite);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00300}00300\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00301}00301\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00302}00302\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!descriptorWrites.empty())\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00303}00303\ \ \ \ \ \ \ \ \ \ \ \ \ device.updateDescriptorSets(descriptorWrites,\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00304}00304\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00305}00305\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00306}00306\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_ab7255ad01052f5e4e395d46537f91742}{m\_dirtyFlags}}[frameIdx]\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00307}00307\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00308}\mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a4073df698b9f3c62a2a72e73b1acea20}{00308}}\ \ \ \ \ vk::DescriptorSet\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a4073df698b9f3c62a2a72e73b1acea20}{VK\_PassResource::getDescriptorSet}}(uint32\_t\ frameIdx,\ uint32\_t\ setIndex)}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00309}00309\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00310}00310\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_abeddc4c3b08a49324c8da242bf7384ff}{recreateDescriptorSetsIfNeeded}}(frameIdx);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00311}00311\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a6b198b587cbcda927094f5f8a8a49889}{updateDescriptorSetsIfNeeded}}(frameIdx);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00312}00312\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00313}00313\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (frameIdx\ <\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_ada6a9cd1bd15621a37051de745d0cdfc}{m\_descriptorSets}}.size()\ \&\&\ setIndex\ <\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_ada6a9cd1bd15621a37051de745d0cdfc}{m\_descriptorSets}}[frameIdx].size())\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00314}00314\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_ada6a9cd1bd15621a37051de745d0cdfc}{m\_descriptorSets}}[frameIdx][setIndex];}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00315}00315\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00316}00316\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00317}00317\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00318}00318\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00319}\mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a1e963f0f016d110d6646f223ef890b0d}{00319}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a1e963f0f016d110d6646f223ef890b0d}{VK\_PassResource::markAllDescriptorSetsNeedRecreate}}()}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00320}00320\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00321}00321\ \ \ \ \ \ \ \ \ uint32\_t\ maxFrames\ =\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_aa61429c15436c4289d2a93110af38195}{m\_ctx}}-\/>maxFrameInFlight();}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00322}00322\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a274b9d8a323e38398e54baa74c9aae09}{m\_needRecreate}}.resize(maxFrames,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00323}00323\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ frameIdx\ =\ 0;\ frameIdx\ <\ maxFrames;\ ++frameIdx)}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00324}00324\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00325}00325\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a274b9d8a323e38398e54baa74c9aae09}{m\_needRecreate}}[frameIdx]\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00326}00326\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00327}00327\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00328}\mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_abeddc4c3b08a49324c8da242bf7384ff}{00328}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_abeddc4c3b08a49324c8da242bf7384ff}{VK\_PassResource::recreateDescriptorSetsIfNeeded}}(uint32\_t\ frameIdx)}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00329}00329\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00330}00330\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (frameIdx\ >=\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a274b9d8a323e38398e54baa74c9aae09}{m\_needRecreate}}.size()\ ||\ !\mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a274b9d8a323e38398e54baa74c9aae09}{m\_needRecreate}}[frameIdx])}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00331}00331\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00332}00332\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00333}00333\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00334}00334\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_aab7111e185d71f25da05ce001cbf6603}{m\_descriptorSetLayouts}}.clear();}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00335}00335\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a0210cbf88dba34d267cdafac2071083f}{createDescriptorSetsAndLayouts}}(frameIdx,\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_aab7111e185d71f25da05ce001cbf6603}{m\_descriptorSetLayouts}},\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_ada6a9cd1bd15621a37051de745d0cdfc}{m\_descriptorSets}}[frameIdx]))\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00336}00336\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_a539584b126825634a31a2e55f4c9a0f3}{fout}}\ <<\ std::hex\ <<\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_ada6a9cd1bd15621a37051de745d0cdfc}{m\_descriptorSets}}[frameIdx].data()\ \ <<\ \textcolor{stringliteral}{"{}\ has\ been\ created"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00337}00337\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a274b9d8a323e38398e54baa74c9aae09}{m\_needRecreate}}[frameIdx]\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00338}00338\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_ab7255ad01052f5e4e395d46537f91742}{m\_dirtyFlags}}[frameIdx]\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00339}00339\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00340}00340\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00341}00341\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00342}00342\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00343}00343\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00344}\mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a4c81bbc00f575af063187d6f3a75205d}{00344}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a4c81bbc00f575af063187d6f3a75205d}{VK\_PassResource::update}}()}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00345}00345\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00346}00346\ \ \ \ \ \ \ \ \ uint32\_t\ frameIdx\ =\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_aa61429c15436c4289d2a93110af38195}{m\_ctx}}-\/>currentSubmitFrameIndex();}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00347}00347\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_abeddc4c3b08a49324c8da242bf7384ff}{recreateDescriptorSetsIfNeeded}}(frameIdx);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00348}00348\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a6b198b587cbcda927094f5f8a8a49889}{updateDescriptorSetsIfNeeded}}(frameIdx);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00349}00349\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00350}\mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a7ad93d9edc1054a416d15f970f71c801}{00350}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a7ad93d9edc1054a416d15f970f71c801}{VK\_PassResource::bind}}(\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer}{RHI::CommandBuffer}}*\ cmdBuf,\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pipeline}{RHI::Pipeline}}*\ srcPipeline)}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00351}00351\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00352}00352\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00353}00353\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!srcPipeline\ ||\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_ada6a9cd1bd15621a37051de745d0cdfc}{m\_descriptorSets}}.empty())\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00354}00354\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00355}00355\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00356}00356\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00357}00357\ \ \ \ \ \ \ \ \ uint32\_t\ frameIdx\ =\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_aa61429c15436c4289d2a93110af38195}{m\_ctx}}-\/>currentSubmitFrameIndex();}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00358}00358\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00359}00359\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_abeddc4c3b08a49324c8da242bf7384ff}{recreateDescriptorSetsIfNeeded}}(frameIdx);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00360}00360\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a6b198b587cbcda927094f5f8a8a49889}{updateDescriptorSetsIfNeeded}}(frameIdx);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00361}00361\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00362}00362\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ vkCmdBuf\ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer}{RHI::VK\_CommandBuffer}}*\textcolor{keyword}{>}(cmdBuf);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00363}00363\ \ \ \ \ \ \ \ \ vk::CommandBuffer\ commandBuffer\ =\ vkCmdBuf-\/>\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer_ae8c7ddb229009bc08273d05e1bc270e5}{commandBuffer}}();}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00364}00364\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00365}00365\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ pipeline\ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline}{RHI::VK\_RasterizationPipeline}}*\textcolor{keyword}{>}(srcPipeline);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00366}00366\ \ \ \ \ \ \ \ \ vk::PipelineLayout\ pipelineLayout\ =\ pipeline-\/>\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___rasterization_pipeline_a6a678b39660774a4da6983fdd3e215a0}{pipelineLayout}}();}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00367}00367\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00368}00368\ \ \ \ \ \ \ \ \ vk::PipelineBindPoint\ bindPoint\ =\ vk::PipelineBindPoint::eGraphics;}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00369}00369\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00370}00370\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_ada6a9cd1bd15621a37051de745d0cdfc}{m\_descriptorSets}}[frameIdx].empty())\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00371}00371\ \ \ \ \ \ \ \ \ \ \ \ \ commandBuffer.bindDescriptorSets(}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00372}00372\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bindPoint,}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00373}00373\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pipelineLayout,}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00374}00374\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0,}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00375}00375\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}uint32\_t\textcolor{keyword}{>}(\mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_ada6a9cd1bd15621a37051de745d0cdfc}{m\_descriptorSets}}[frameIdx].size()),}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00376}00376\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_ada6a9cd1bd15621a37051de745d0cdfc}{m\_descriptorSets}}[frameIdx].data(),}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00377}00377\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0,}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00378}00378\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{nullptr}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00379}00379\ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00380}00380\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00381}00381\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_resource_8cpp_source_l00382}00382\ \}}
+
+\end{DoxyCode}

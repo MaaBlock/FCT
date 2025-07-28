@@ -1,0 +1,124 @@
+\doxysection{Image\+Render\+Target.\+cpp}
+\hypertarget{_image_render_target_8cpp_source}{}\label{_image_render_target_8cpp_source}\index{src/Context/ImageRenderTarget.cpp@{src/Context/ImageRenderTarget.cpp}}
+\mbox{\hyperlink{_image_render_target_8cpp}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00001}00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00002}00002\ \textcolor{comment}{//\ Created\ by\ Administrator\ on\ 2025/3/27.}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00003}00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_f_c_t_a_p_i_8h}{../FCTAPI.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00006}00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_f_c_t}{FCT}}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00007}00007\ \{}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00008}\mbox{\hyperlink{class_f_c_t_1_1_image_render_target_a9c90905bdc4d8a63a26f4ee8ffb49492}{00008}}\ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_a1f1ccd6c8741cf55008c982f25b9bf2b}{RenderTargetType}}\ \mbox{\hyperlink{class_f_c_t_1_1_image_render_target_a9c90905bdc4d8a63a26f4ee8ffb49492}{ImageRenderTarget::getType}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00009}00009\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00010}00010\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_renderTargetType;}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00011}00011\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00013}\mbox{\hyperlink{class_f_c_t_1_1_image_render_target_a0074d66a27905de8857b768626d26821}{00013}}\ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_image_render_target_a0074d66a27905de8857b768626d26821}{ImageRenderTarget::ImageRenderTarget}}(\mbox{\hyperlink{class_f_c_t_1_1_context}{Context}}*\ ctx)}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00014}00014\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ m\_ctx\ =\ ctx;}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ m\_renderTargetType\ =\ \mbox{\hyperlink{namespace_f_c_t_a1f1ccd6c8741cf55008c982f25b9bf2bae2bc2420b41c083955277862ca371ae9}{RenderTargetType::ImageTarget}};}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ m\_depthStencilBuffer\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00018}00018\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00020}\mbox{\hyperlink{class_f_c_t_1_1_image_render_target_a305a83be9a9bb4f4cd278bce2c0e7525}{00020}}\ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_image_render_target_a305a83be9a9bb4f4cd278bce2c0e7525}{ImageRenderTarget::\string~ImageRenderTarget}}()}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00021}00021\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00023}00023\ \textcolor{comment}{\ \ \ \ \ \ \ \ for\ (auto\ target\ :\ m\_renderTargetImages)}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00024}00024\ \textcolor{comment}{\ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00025}00025\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ target.second-\/>release();}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00026}00026\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}*/}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ m\_target-\/>release();}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00028}00028\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00030}\mbox{\hyperlink{class_f_c_t_1_1_image_render_target_ad11a4159861b3327bfa2d14a5c4667ee}{00030}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_image_render_target_ad11a4159861b3327bfa2d14a5c4667ee}{ImageRenderTarget::bindTarget}}(\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_image}{RHI::Image}}*\ image)}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00031}00031\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ renderTargetImage\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_f_c_t_1_1_single_buffer_image}{SingleBufferImage}}(m\_ctx);}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ renderTargetImage-\/>renderTargetType(m\_renderTargetType);}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ renderTargetImage-\/>create(image);}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ m\_width\ =\ image-\/>\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_image_a0a224d55375671eb11ba940eb25cdb78}{width}}();}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ m\_height\ =\ image-\/>\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_image_a85bfc158316802dcac8a06ad40ad4bc5}{height}}();}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00037}00037\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00039}\mbox{\hyperlink{class_f_c_t_1_1_image_render_target_aee48c36d36c6a73cb7b29dfde3d798a5}{00039}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_image_render_target_ad11a4159861b3327bfa2d14a5c4667ee}{ImageRenderTarget::bindTarget}}(\mbox{\hyperlink{class_f_c_t_1_1_image}{Image}}*\ image)}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00040}00040\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ m\_target\ =\ image;}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ m\_target-\/>\mbox{\hyperlink{class_f_c_t_1_1_ref_count_a59c2f131121de6503df8d363b6853d45}{addRef}}();}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00043}00043\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00045}\mbox{\hyperlink{class_f_c_t_1_1_image_render_target_a9465db149977c7e4bff3b1592727895a}{00045}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_image_render_target_a9465db149977c7e4bff3b1592727895a}{ImageRenderTarget::setDepthStencilBuffer}}(\mbox{\hyperlink{class_f_c_t_1_1_image}{Image}}*\ image)}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00046}00046\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ m\_depthStencilBuffer\ =\ image;}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ m\_depthStencilBuffer-\/>\mbox{\hyperlink{class_f_c_t_1_1_ref_count_a59c2f131121de6503df8d363b6853d45}{addRef}}();}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00049}00049\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00051}00051\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00052}00052\ \textcolor{comment}{\ \ \ \ void\ ImageRenderTarget::addRenderTarget(Image*\ image)}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00053}00053\ \textcolor{comment}{\ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00054}00054\ \textcolor{comment}{\ \ \ \ \ \ \ \ m\_renderTargetImages.push\_back(image);}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00055}00055\ \textcolor{comment}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00056}00056\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00057}00057\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00058}00058\ \textcolor{comment}{\ \ \ \ void\ ImageRenderTarget::addRenderTarget(RHI::Image*\ image)}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00059}00059\ \textcolor{comment}{\ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00060}00060\ \textcolor{comment}{\ \ \ \ \ \ \ \ auto\ renderTargetImage\ =\ new\ SingleBufferImage(m\_ctx);}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00061}00061\ \textcolor{comment}{\ \ \ \ \ \ \ \ renderTargetImage-\/>renderTargetType(m\_renderTargetType);}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00062}00062\ \textcolor{comment}{\ \ \ \ \ \ \ \ renderTargetImage-\/>create(image);}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00063}00063\ \textcolor{comment}{\ \ \ \ \ \ \ \ if\ (m\_renderTargetImages.empty())}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00064}00064\ \textcolor{comment}{\ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00065}00065\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ m\_width\ =\ image-\/>width();}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00066}00066\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ m\_height\ =\ image-\/>height();}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00067}00067\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00068}00068\ \textcolor{comment}{\#ifdef\ FCT\_DEBUG}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00069}00069\ \textcolor{comment}{\ \ \ \ \ \ \ \ else}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00070}00070\ \textcolor{comment}{\ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00071}00071\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ if\ (m\_width!=\ image-\/>width()\ ||\ m\_height!=\ image-\/>height())}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00072}00072\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00073}00073\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ferr\ <<\ "{}ImageRenderTarget::addRenderTarget:\ Image\ size\ not\ match!"{}\ <<\ std::endl;}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00074}00074\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00075}00075\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00076}00076\ \textcolor{comment}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00077}00077\ \textcolor{comment}{\ \ \ \ \ \ \ \ m\_renderTargetImages.push\_back(renderTargetImage);}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00078}00078\ \textcolor{comment}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00079}00079\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00080}00080\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00081}00081\ \textcolor{comment}{\ \ \ \ void\ ImageRenderTarget::addRenderTarget(std::vector<RHI::Image*>\ images)}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00082}00082\ \textcolor{comment}{\ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00083}00083\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00084}00084\ \textcolor{comment}{\ \ \ \ \}*/}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00085}00085\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00086}00086\ \textcolor{comment}{\ \ \ \ void\ ImageRenderTarget::bindRenderTarget(uint32\_t\ index,\ Image*\ image)}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00087}00087\ \textcolor{comment}{\ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00088}00088\ \textcolor{comment}{\ \ \ \ \ \ \ \ image-\/>addRef();}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00089}00089\ \textcolor{comment}{\ \ \ \ \ \ \ \ m\_renderTargetImages[index]\ =\ image;}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00090}00090\ \textcolor{comment}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00091}00091\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00092}00092\ \textcolor{comment}{\ \ \ \ void\ ImageRenderTarget::bindRenderTarget(uint32\_t\ index,\ RHI::Image*\ image)}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00093}00093\ \textcolor{comment}{\ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00094}00094\ \textcolor{comment}{\ \ \ \ \ \ \ \ auto\ renderTargetImage\ =\ new\ SingleBufferImage(m\_ctx);}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00095}00095\ \textcolor{comment}{\ \ \ \ \ \ \ \ renderTargetImage-\/>renderTargetType(m\_renderTargetType);}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00096}00096\ \textcolor{comment}{\ \ \ \ \ \ \ \ renderTargetImage-\/>create(image);}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00097}00097\ \textcolor{comment}{\ \ \ \ \ \ \ \ if\ (m\_renderTargetImages.empty())}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00098}00098\ \textcolor{comment}{\ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00099}00099\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ m\_width\ =\ image-\/>width();}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00100}00100\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ m\_height\ =\ image-\/>height();}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00101}00101\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00102}00102\ \textcolor{comment}{\#ifdef\ FCT\_DEBUG}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00103}00103\ \textcolor{comment}{\ \ \ \ \ \ \ \ else}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00104}00104\ \textcolor{comment}{\ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00105}00105\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ if\ (m\_width!=\ image-\/>width()\ ||\ m\_height!=\ image-\/>height())}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00106}00106\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00107}00107\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ferr\ <<\ "{}ImageRenderTarget::addRenderTarget:\ Image\ size\ not\ match!"{}\ <<\ std::endl;}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00108}00108\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00109}00109\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00110}00110\ \textcolor{comment}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00111}00111\ \textcolor{comment}{\ \ \ \ \ \ \ \ m\_renderTargetImages[index]\ =\ renderTargetImage;}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00112}00112\ \textcolor{comment}{\ \ \ \ \}*/}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00113}00113\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00114}00114\ \textcolor{comment}{\ \ \ \ std::vector<Image*>\ ImageRenderTarget::getTargetImages()}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00115}00115\ \textcolor{comment}{\ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00116}00116\ \textcolor{comment}{\ \ \ \ \ \ \ \ return\ m\_renderTargetImages;}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00117}00117\ \textcolor{comment}{\ \ \ \ \}*/}}
+\DoxyCodeLine{\Hypertarget{_image_render_target_8cpp_source_l00118}00118\ \}}
+
+\end{DoxyCode}

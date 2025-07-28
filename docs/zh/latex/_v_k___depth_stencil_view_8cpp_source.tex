@@ -1,0 +1,87 @@
+\doxysection{VK\+\_\+\+Depth\+Stencil\+View.\+cpp}
+\hypertarget{_v_k___depth_stencil_view_8cpp_source}{}\label{_v_k___depth_stencil_view_8cpp_source}\index{src/RHI/VK\_DepthStencilView.cpp@{src/RHI/VK\_DepthStencilView.cpp}}
+\mbox{\hyperlink{_v_k___depth_stencil_view_8cpp}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00001}00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00002}00002\ \textcolor{comment}{//\ Created\ by\ Administrator\ on\ 2025/4/16.}}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00003}00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_f_c_t_a_p_i_8h}{../FCTAPI.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00007}00007\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_f_c_t}{FCT}}}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00008}00008\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00009}00009\ \ \ \ \ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_f_c_t_1_1_r_h_i}{RHI}}}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00010}00010\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00011}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___depth_stencil_view_a09e8a502f21765a909c6e2597c0a0ae3}{00011}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___depth_stencil_view_a09e8a502f21765a909c6e2597c0a0ae3}{VK\_DepthStencilView::VK\_DepthStencilView}}(\mbox{\hyperlink{class_f_c_t_1_1_v_k___context}{VK\_Context}}*\ ctx)}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ \ \ \ \ :\ m\_ctx(ctx),\ m\_view(nullptr)}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00016}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___depth_stencil_view_ae370e6e2d69bea929e66e63bc48f116b}{00016}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___depth_stencil_view_ae370e6e2d69bea929e66e63bc48f116b}{VK\_DepthStencilView::\string~VK\_DepthStencilView}}()}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_view)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_ctx-\/>getDevice().destroyImageView(m\_view);}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_view\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00024}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___depth_stencil_view_a41255a411520208df60448c82e6d1b1c}{00024}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___depth_stencil_view_a41255a411520208df60448c82e6d1b1c}{VK\_DepthStencilView::create}}()}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_depth_stencil_view_ac02a1575735cbefe6fd41bb4fad4695f}{m\_image}})\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_a41993be9a3c6e8f05f5b7bda9a9015b2}{ferr}}\ <<\ \textcolor{stringliteral}{"{}Cannot\ create\ depth\ stencil\ view:\ no\ image\ set"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___image}{VK\_Image}}*\ vkImage\ =\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___image}{VK\_Image}}*\textcolor{keyword}{>}(\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_depth_stencil_view_ac02a1575735cbefe6fd41bb4fad4695f}{m\_image}});}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!vkImage)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_a41993be9a3c6e8f05f5b7bda9a9015b2}{ferr}}\ <<\ \textcolor{stringliteral}{"{}Cannot\ create\ depth\ stencil\ view:\ image\ is\ not\ a\ VK\_Image"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ vk::ImageViewType\ viewType\ =\ vk::ImageViewType::e2D;}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ vk::ImageAspectFlags\ aspectMask\ =\ vk::ImageAspectFlagBits::eDepth;}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4}{Format}}\ format\ =\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_depth_stencil_view_ac02a1575735cbefe6fd41bb4fad4695f}{m\_image}}-\/>format();}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ vk::Format\ vkFormat\ =\ \mbox{\hyperlink{namespace_f_c_t_ac1e051cf6058ce7121dd786478277836}{ToVkFormat}}(format);}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (vkFormat\ ==\ vk::Format::eD24UnormS8Uint\ ||}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vkFormat\ ==\ vk::Format::eD32SfloatS8Uint\ ||}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vkFormat\ ==\ vk::Format::eD16UnormS8Uint)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ aspectMask\ |=\ vk::ImageAspectFlagBits::eStencil;}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ vk::ImageViewCreateInfo\ viewInfo;}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ viewInfo.setImage(vkImage-\/>\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___image_aef6bb2015cbb8b91adaa0860b253069f}{getVkImage}}());}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (viewInfo.image\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_view\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ viewInfo.setViewType(viewType);}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ viewInfo.setFormat(vkFormat);}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ viewInfo.components.r\ =\ vk::ComponentSwizzle::eIdentity;}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ viewInfo.components.g\ =\ vk::ComponentSwizzle::eIdentity;}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ viewInfo.components.b\ =\ vk::ComponentSwizzle::eIdentity;}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ viewInfo.components.a\ =\ vk::ComponentSwizzle::eIdentity;}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ viewInfo.subresourceRange.aspectMask\ =\ aspectMask;}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ viewInfo.subresourceRange.baseMipLevel\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ viewInfo.subresourceRange.levelCount\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ viewInfo.subresourceRange.baseArrayLayer\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ viewInfo.subresourceRange.layerCount\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_view\ =\ m\_ctx-\/>getDevice().createImageView(viewInfo);}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_a41993be9a3c6e8f05f5b7bda9a9015b2}{ferr}}\ <<\ \textcolor{stringliteral}{"{}Failed\ to\ create\ depth\ stencil\ view:\ "{}}\ <<\ e.what()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_view\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00080}00080\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___depth_stencil_view_8cpp_source_l00081}00081\ \}}
+
+\end{DoxyCode}
