@@ -404,7 +404,12 @@ namespace FCT
 		if constexpr (std::is_same_v<T, ResourceManager>)
 		{
 			return m_resourceManager;
-		} else
+		}
+		else if constexpr (std::is_same_v<T, Device>)
+		{
+			return m_resourceDevice;
+		}
+		else
 		{
 			ferr << "try to get undefined context module." << std::endl;
 			return nullptr;

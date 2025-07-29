@@ -36,6 +36,7 @@ namespace FCT {
 
     ResourceManager::ResourceManager(Context* ctx)
     {
+        m_resourceDevice = ctx->getModule<Device>();
         m_context = ctx;
         m_context->subscribe<ContextEvent::WindowBound>([this](const ContextEvent::WindowBound& env)
         {
@@ -67,7 +68,7 @@ namespace FCT {
 
     Image* ResourceManager::allocateImage(std::string name, std::string dependency,ImageDesc desc)
     {
-        auto saved = m_dependencyGraph[name]->value;
+        auto saved = m_dependencyGraph[dependency]->value;
         auto ret = ImageSaved(saved);
         if (ret.mutilBuffer)
         {
@@ -77,8 +78,10 @@ namespace FCT {
             img->format(desc.format);
             img->width(savedImg->width());
             img->height(savedImg->height());
+            img->imageCount(savedImg->imageCount());
             img->as(desc.usage);
             img->create();
+            ret.img = img;
         }  else
         {
             auto savedImg = dynamic_cast<SingleBufferImage*>(saved.img);
@@ -89,6 +92,7 @@ namespace FCT {
             img->height(savedImg->height());
             img->as(desc.usage);
             img->create();
+            ret.img = img;
         }
         m_dependencyGraph[name] = {
             ret,

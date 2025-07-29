@@ -29,30 +29,6 @@ namespace FCT
         m_behavior = new BeforeCreateImageBehavior(this);
     }
 
-    void MutilBufferImage::create()
-    {
-        for (uint32_t i = 0; i < m_imageCount; ++i)
-        {
-            auto image = m_ctx->createResource<RHI::Image>();
-            image->width(m_width);
-            image->height(m_height);
-            image->format(m_format);
-            image->samples(m_samples);
-            image->usage(m_usage);
-            image->create();
-            m_images.push_back(image);
-        }
-
-        delete m_behavior;
-        m_behavior = new MutilBufferAffterCreateImageBehavior(this);
-
-        as(m_usage);
-
-        if (m_currentIndex >= m_images.size() && !m_images.empty())
-        {
-            m_currentIndex = 0;
-        }
-    }
     void MutilBufferImage::resize(uint32_t width, uint32_t height)
     {
         if (m_width == width && m_height == height)
@@ -111,8 +87,34 @@ namespace FCT
         }
 
     }
+
+    void MutilBufferImage::create()
+    {
+        for (uint32_t i = 0; i < m_imageCount; ++i)
+        {
+            auto image = m_ctx->createResource<RHI::Image>();
+            image->width(m_width);
+            image->height(m_height);
+            image->format(m_format);
+            image->samples(m_samples);
+            image->usage(m_usage);
+            image->create();
+            m_images.push_back(image);
+        }
+
+        delete m_behavior;
+        m_behavior = new MutilBufferAffterCreateImageBehavior(this);
+
+        as(m_usage);
+
+        if (m_currentIndex >= m_images.size() && !m_images.empty())
+        {
+            m_currentIndex = 0;
+        }
+    }
     void MutilBufferImage::create(std::vector<RHI::Image*> images)
     {
+        m_imageCount = images.size();
         for (auto img : m_images)
         {
             FCT_SAFE_RELEASE(img);
