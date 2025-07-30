@@ -4,6 +4,7 @@
 #include "../MutilThreadBase/RefCount.h"
 #include "../Base/Flags.h"
 #include "../Context/DataTypes.h"
+#include "./PipelineStage.h"
 #ifndef COMMANDBUFFER_H
 #define COMMANDBUFFER_H
 
@@ -20,11 +21,6 @@ namespace FCT
             Primary,
             Secondary
         };
-        enum class PipelineStage : size_t
-        {
-            colorAttachmentOutput = 0x1,
-        };
-        using PipelineStages = Flags<PipelineStage>;
         struct WaitSemaphoreDescription
         {
             Semaphore* semaphore;

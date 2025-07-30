@@ -22,11 +22,10 @@ namespace FCT
                 pass->create(this);
             }
             m_createInfo.attachmentCount = m_attachments.size();
-            m_createInfo.dependencyCount = 0;
             m_createInfo.pAttachments = m_attachments.data();
 
             std::vector<vk::SubpassDependency> dependencies;
-
+            /*
             bool hasDepthStencil = !m_depthAttachments.empty();
 
             vk::SubpassDependency dependency{};
@@ -96,8 +95,21 @@ namespace FCT
 
                     dependencies.push_back(subpassDependency);
                 }
+            }*/
+            for (auto desc : m_passDescs)
+            {
+                for (auto pre : desc.predecessors)
+                {
+                    vk::SubpassDependency dependency{};
+                    dependency.srcSubpass = toPassForDependencies(pre.pass);
+                    dependency.srcStageMask = ToVkPipelineStageFlags(pre.neighborStage);
+                    dependency.srcAccessMask = ToVkAccessFlags(pre.neighborAccess);
+                    dependency.dstSubpass = getPassIndex(desc.pass);
+                    dependency.dstStageMask = ToVkPipelineStageFlags(pre.currentStage);
+                    dependency.dstAccessMask = ToVkAccessFlags(pre.currentAccess);
+                    dependencies.push_back(dependency);
+                }
             }
-
             m_createInfo.setDependencies(dependencies);
 
             collectSubpasses();
@@ -391,6 +403,16 @@ namespace FCT
                 }
             }
         }
+
+        uint32_t VK_PassGroup::toPassForDependencies(Pass* pass)
+        {
+            if (pass == Pass::external || pass == Pass::begin || pass == Pass::present || !m_passIndices.contains(pass))
+            {
+                return VK_SUBPASS_EXTERNAL;
+            }
+            return m_passIndices[pass];
+        }
+
         /*
         void VK_PassGroup::collectImageViews() // 注意，顺序要保持和collectAttachments一样
         {

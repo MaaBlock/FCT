@@ -60,7 +60,7 @@ namespace FCT
             for (auto& desc : m_waitSemaphores)
             {
                 waitSemaphores.push_back(static_cast<VK_Semaphore*>(desc.semaphore)->semaphore());
-                waitStages.push_back(static_cast<vk::PipelineStageFlags>(static_cast<size_t>(desc.stages)));
+                waitStages.push_back(ToVkPipelineStageFlags(desc.stages));
             }
             submitInfo.setWaitSemaphores(waitSemaphores);
             submitInfo.setWaitDstStageMask(waitStages);

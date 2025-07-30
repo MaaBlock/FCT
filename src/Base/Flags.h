@@ -1,6 +1,4 @@
-//
-// Created by Administrator on 2025/4/3.
-//
+
 
 #ifndef FLAGS_H
 #define FLAGS_H
@@ -13,6 +11,20 @@ namespace FCT
     struct FlagTraits;
 
     //learning from vulkan-hpp
+    /**
+     * @cond CHINESE
+     * @tips 使用方法：
+     * @code
+     *    enum XX {
+     *      flag1 = 1 << 0,
+     *      flag1 = 1 << 1
+     *    };
+     *    FCT_DECLARE_FLAGS(XX);
+     * @endcode
+     * 这样就定义了一个 XXs flag
+     * @tparam BitType
+     * @endcond
+     */
     template <typename BitType>
     class Flags {
     public:
@@ -38,12 +50,15 @@ namespace FCT
         constexpr Flags<BitType> operator~() const noexcept { return Flags<BitType>(~m_mask); }
 
         Flags<BitType> & operator=(Flags<BitType> const & rhs) noexcept = default;
+        Flags<BitType> & operator=(BitType bit) noexcept { m_mask = static_cast<MaskType>(bit); return *this; }
         Flags<BitType> & operator|=(Flags<BitType> const & rhs) noexcept { m_mask |= rhs.m_mask; return *this; }
         Flags<BitType> & operator&=(Flags<BitType> const & rhs) noexcept { m_mask &= rhs.m_mask; return *this; }
         Flags<BitType> & operator^=(Flags<BitType> const & rhs) noexcept { m_mask ^= rhs.m_mask; return *this; }
 
         explicit constexpr operator bool() const noexcept { return !!m_mask; }
         explicit constexpr operator MaskType() const noexcept { return m_mask; }
+
+
 
     private:
         MaskType m_mask;
@@ -97,6 +112,7 @@ namespace FCT
         return flags ^ bit;
     }
 
+
     #define FCT_DECLARE_FLAGS(BitType) \
         template<> \
         struct FCT::FlagTraits<BitType> \
@@ -105,5 +121,13 @@ namespace FCT
         }; \
         using BitType##s = FCT::Flags<BitType>;
 
+    #define FCT_DECLARE_FLAG(BitType,flags) \
+        template<> \
+        struct FCT::FlagTraits<BitType> \
+        { \
+        static constexpr bool isBitmask = true; \
+        }; \
+        using flags = FCT::Flags<BitType>;
 }
+
 #endif //FLAGS_H

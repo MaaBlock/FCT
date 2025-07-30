@@ -32,6 +32,7 @@ namespace FCT
             void collectSubpasses();
             void collectAttachments();
             void collectImageViews();
+            uint32_t toPassForDependencies(Pass* pass);
             //std::map<FCT::Image*,uint32_t> m_imageIndices;
             //std::map<uint32_t,AttachmentSlot> m_attachmentSlots;
             std::map<uint32_t,AttachmentSlot> m_targetAttachments;

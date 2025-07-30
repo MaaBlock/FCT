@@ -32,6 +32,9 @@ namespace FCT
         class Pass : public RefCount
         {
         public:
+            static constexpr Pass* external = nullptr;
+            static constexpr Pass* present = reinterpret_cast<Pass*>(-1);
+            static constexpr Pass* begin = reinterpret_cast<Pass*>(-1);;
             Pass()
             {
                 m_group = nullptr;
