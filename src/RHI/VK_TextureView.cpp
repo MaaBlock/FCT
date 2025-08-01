@@ -37,10 +37,11 @@ namespace FCT
                 return;
             }
 
-            vk::ImageViewType viewType = vk::ImageViewType::e2D;
-            vk::ImageAspectFlags aspectMask = vk::ImageAspectFlagBits::eColor;
-
             Format format = m_image->format();
+            vk::ImageViewType viewType = vk::ImageViewType::e2D;
+
+            vk::ImageAspectFlags aspectMask = getImageAspectFlags(ToVkFormat(format));
+
 
             vk::ImageViewCreateInfo viewInfo;
             viewInfo.setImage(vkImage->getVkImage());
@@ -65,6 +66,26 @@ namespace FCT
                 ferr << "Failed to create texture view: " << e.what() << std::endl;
                 m_view = nullptr;
             }
+        }
+        vk::ImageAspectFlags VK_TextureView::getImageAspectFlags(vk::Format format)
+        {
+            if (format == vk::Format::eD16Unorm ||
+                format == vk::Format::eD32Sfloat ||
+                format == vk::Format::eX8D24UnormPack32) {
+                return vk::ImageAspectFlagBits::eDepth;
+                }
+
+            if (format == vk::Format::eD24UnormS8Uint ||
+                format == vk::Format::eD32SfloatS8Uint ||
+                format == vk::Format::eD16UnormS8Uint) {
+                return vk::ImageAspectFlagBits::eDepth | vk::ImageAspectFlagBits::eStencil;
+                }
+
+            if (format == vk::Format::eS8Uint) {
+                return vk::ImageAspectFlagBits::eStencil;
+            }
+
+            return vk::ImageAspectFlagBits::eColor;
         }
     }
 }

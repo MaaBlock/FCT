@@ -12,6 +12,7 @@ namespace FCT {
         memoryRead = 1 << 1,
         colorAttachmentWrite = 1 << 2,
         depthStencilAttachmentWrite = 1 << 3,
+        shaderRead = 1 << 4,
     };
     FCT_DECLARE_FLAGS(AccessFlag);
 #ifdef FCT_USE_VULKAN
@@ -26,6 +27,8 @@ namespace FCT {
                 return vk::AccessFlagBits::eColorAttachmentWrite;
             case AccessFlag::depthStencilAttachmentWrite:
                 return vk::AccessFlagBits::eDepthStencilAttachmentWrite;
+            case AccessFlag::shaderRead:
+                return vk::AccessFlagBits::eShaderRead;
             default:
                 return static_cast<vk::AccessFlagBits>(0);
         }
@@ -45,19 +48,6 @@ namespace FCT {
         return result;
     }*/
 #endif
-#define FCT_TO_FLAG(name,translateBitFunc,FlagBitType,FlagType) \
-    inline auto name(FlagType flags) \
-    { \
-        auto result = translateBitFunc(static_cast<FlagBitType>(0)) | translateBitFunc(static_cast<FlagBitType>(0)); \
-        for (uint32_t i = 0; i < 32; ++i) { \
-            FlagBitType singleFlag = static_cast<FlagBitType>(1u << i); \
-            if (flags & singleFlag) { \
-                result |= translateBitFunc(singleFlag); \
-            } \
-        } \
-        return result; \
-    }
-#define FCT_TO_FLAGS(name,translateBitFunc,FlagBitType) FCT_TO_FLAG(name, translateBitFunc, FlagBitType, FlagBitType##s)
     FCT_TO_FLAGS(ToVkAccessFlags,ToVkAccessFlagBits,AccessFlag);
 }
 

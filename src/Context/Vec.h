@@ -206,6 +206,10 @@ namespace FCT {
             }
             return Vec4(0.0f, 0.0f, 0.0f, 0.0f);
         }
+        Vec3 xyz() const
+        {
+            return Vec3(x, y, z);
+        }
     };
     template<typename T>
     struct Vector4

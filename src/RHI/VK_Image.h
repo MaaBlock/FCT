@@ -1,11 +1,10 @@
 //
 // Created by Administrator on 2025/3/27.
 //
-#include "../ThirdParty.h"
-#include "./Image.h"
 #ifndef FCT_VK_BUFFER_H
 #define FCT_VK_BUFFER_H
-
+#include "../ThirdParty.h"
+#include "./Image.h"
 namespace FCT
 {
     class VK_Context;
@@ -21,6 +20,7 @@ namespace FCT
             void updateData(const void* data, size_t dataSize, Fence* fence, std::function<void()>* onCompletion);
             void create(vk::Image image); // 注意，格式信息还是给自己填
             vk::Image getVkImage();
+            vk::Image image() const { return m_image; }
         private:
             VK_Context* m_ctx;
             vk::Image m_image;

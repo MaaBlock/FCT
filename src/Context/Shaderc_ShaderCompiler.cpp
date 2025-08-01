@@ -8,6 +8,7 @@ namespace FCT {
         m_options.SetSourceLanguage(shaderc_source_language_hlsl);
         m_options.SetTargetSpirv(shaderc_spirv_version_1_5);
         m_options.SetTargetEnvironment(shaderc_target_env_vulkan, shaderc_env_version_vulkan_1_2);
+
     }
 
     std::vector<char> Shaderc_ShaderCompiler::compile(const std::string& source, const std::string& entry_point, ShaderKind kind)

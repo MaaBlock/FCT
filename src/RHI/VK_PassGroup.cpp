@@ -352,7 +352,9 @@ namespace FCT
 
                         if (desc.format == vk::Format::eD24UnormS8Uint ||
                             desc.format == vk::Format::eD32SfloatS8Uint ||
-                            desc.format == vk::Format::eD16UnormS8Uint)
+                            desc.format == vk::Format::eD16UnormS8Uint ||
+                            desc.format == vk::Format::eD32Sfloat
+                            )
                         {
                             desc.stencilLoadOp = vk::AttachmentLoadOp::eLoad;
                             desc.stencilStoreOp = vk::AttachmentStoreOp::eStore;

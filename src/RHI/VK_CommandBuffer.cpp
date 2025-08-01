@@ -26,6 +26,12 @@ namespace FCT
             m_allocateInfo.commandPool = m_pool->pool();
             m_allocateInfo.commandBufferCount = 1;
             m_commandBuffer = m_pool->context()->device().allocateCommandBuffers(m_allocateInfo)[0];
+
+        }
+
+        void VK_CommandBuffer::nextPass()
+        {
+            m_commandBuffer.nextSubpass(vk::SubpassContents::eInline);
         }
 
         void VK_CommandBuffer::scissor(Vec2 lt, Vec2 rb)
@@ -51,6 +57,7 @@ namespace FCT
             }
         }
 
+
         void VK_CommandBuffer::submit()
         {
             vk::SubmitInfo submitInfo{};
@@ -70,8 +77,38 @@ namespace FCT
                 signalSemaphores.push_back(static_cast<VK_Semaphore*>(signalSemaphore)->semaphore());
             }
             submitInfo.setSignalSemaphores(signalSemaphores);
+
             m_pool->context()->getGraphicsQueue().submit(submitInfo,
                 static_cast<VK_Fence*>(m_fence)->fence());
+        }
+
+        void VK_CommandBuffer::barrier(FCT::Image* image, ImageLayout oldLayout, ImageLayout newLayout,
+            PipelineStages srcStage, PipelineStages dstStage, AccessFlags srcAccess, AccessFlags dstAccess,
+            ImageAspects aspectMask)
+        {
+            RHI::Image* fctImage = image->currentImage();
+            auto vkImage = static_cast<VK_Image*>(fctImage);
+            auto imageVk = vkImage->image();
+            auto newLayoutVk = ToVkImageLayout(newLayout);
+            auto oldLayoutVk = ToVkImageLayout(oldLayout);
+            vk::ImageMemoryBarrier barrier{};
+            barrier.srcQueueFamilyIndex = vk::QueueFamilyIgnored;
+            barrier.dstQueueFamilyIndex = vk::QueueFamilyIgnored;
+            barrier.image = imageVk;
+            barrier.oldLayout = oldLayoutVk;
+            barrier.newLayout = newLayoutVk;
+            barrier.srcAccessMask = ToVkAccessFlags(srcAccess);
+            barrier.dstAccessMask = ToVkAccessFlags(dstAccess);
+            barrier.subresourceRange.aspectMask = ToVkImageAspects(aspectMask);
+            barrier.subresourceRange.baseMipLevel = 0;
+            barrier.subresourceRange.levelCount = 1;
+            barrier.subresourceRange.baseArrayLayer = 0;
+            barrier.subresourceRange.layerCount = 1;
+            vk::PipelineStageFlags srcStageMask = ToVkPipelineStageFlags(srcStage);
+            vk::PipelineStageFlags dstStageMask = ToVkPipelineStageFlags(dstStage);
+            std::vector<vk::ImageMemoryBarrier> barriers{barrier};
+            m_commandBuffer.pipelineBarrier(srcStageMask, dstStageMask, vk::DependencyFlags(),
+                0, nullptr, 0, nullptr, 1, barriers.data());
         }
     }
 }

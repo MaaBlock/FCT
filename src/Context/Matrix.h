@@ -104,6 +104,22 @@ namespace FCT
 
 			return ret;
 		}
+
+		static Mat4 Ortho(float left, float right, float bottom, float top, float zNear, float zFar)
+		{
+			Mat4 result;
+			result.identity();
+
+			result.m[0] = 2.0f / (right - left);
+			result.m[5] = 2.0f / (top - bottom);
+			result.m[10] = -2.0f / (zFar - zNear);
+			result.m[3] = -(right + left) / (right - left);
+			result.m[7] = -(top + bottom) / (top - bottom);
+			result.m[11] = -(zFar + zNear) / (zFar - zNear);
+			result.m[15] = 1.0f;
+
+			return result;
+		}
 		static Mat4 LookAt(const Vec3& eye, const Vec3& center, const Vec3& up)
 		{
 			Vec3 f = (center - eye).normalize();

@@ -14,6 +14,7 @@ namespace FCT {
         bottomOfPipe = 1 << 2,
         topOfPipe = 1 << 3,
         lateFragmentTests = 1 << 4,
+        fragmentShader = 1 << 5,
     };
     FCT_DECLARE_FLAGS(PipelineStage);
 #ifdef FCT_USE_VULKAN
@@ -30,6 +31,8 @@ namespace FCT {
                 return vk::PipelineStageFlagBits::eTopOfPipe;
             case FCT::PipelineStage::lateFragmentTests:
                 return vk::PipelineStageFlagBits::eLateFragmentTests;
+            case FCT::PipelineStage::fragmentShader:
+                return vk::PipelineStageFlagBits::eFragmentShader;
             default:
                 return static_cast<vk::PipelineStageFlagBits>(0);
         }

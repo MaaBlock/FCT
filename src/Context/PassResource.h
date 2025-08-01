@@ -38,6 +38,7 @@ namespace FCT
         virtual void addSampler(Sampler* sampler,SamplerElement element) = 0;
         virtual void create() = 0;
         virtual void update() = 0;
+        virtual void markAllDescriptorSetsNeedRecreate() = 0;
         bool isBound(const TextureElement& element) const {
             return m_textures.find(element) != m_textures.end();
         }

@@ -2,7 +2,7 @@
 
 #ifndef FLAGS_H
 #define FLAGS_H
-
+#include "../ThirdParty.h"
 #include <type_traits>
 
 namespace FCT
@@ -128,6 +128,36 @@ namespace FCT
         static constexpr bool isBitmask = true; \
         }; \
         using flags = FCT::Flags<BitType>;
+    #define FCT_TO_FLAG(name,translateBitFunc,FlagBitType,FlagType) \
+        inline auto name(FlagType flags) \
+        { \
+            auto result = translateBitFunc(static_cast<FlagBitType>(0)) | translateBitFunc(static_cast<FlagBitType>(0)); \
+                for (uint32_t i = 0; i < 32; ++i) { \
+                    FlagBitType singleFlag = static_cast<FlagBitType>(1u << i); \
+                    if (flags & singleFlag) { \
+                        result |= translateBitFunc(singleFlag); \
+                    } \
+                } \
+            return result; \
+        }
+    #define FCT_TO_FLAGS(name,translateBitFunc,FlagBitType) FCT_TO_FLAG(name, translateBitFunc, FlagBitType, FlagBitType##s)
+#ifdef FCT_USE_VULKAN
+    #define FCT_TO_VK_FLAG_BIT_BEGIN(FlagBit) \
+        inline vk::##FlagBit##FlagBits ToVk##FlagBit(FlagBit bit) \
+        { \
+            switch (bit) \
+            {
+    #define FCT_TO_VK_FLAG_BIT_CASE(FlagBit,value,Value) \
+            case FlagBit::value: \
+                return vk::##FlagBit##FlagBits::e##Value;
+    #define FCT_TO_VK_FLAG_BIT_END(FlagBit) \
+            default: \
+                return vk::##FlagBit##FlagBits(0); \
+            } \
+        }
+    #define FCT_TO_VK_FLAGS(FlagBit) \
+        FCT_TO_FLAGS(ToVk##FlagBit##s,ToVk##FlagBit,FlagBit)
+#endif
 }
 
 #endif //FLAGS_H

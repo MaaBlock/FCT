@@ -1,16 +1,20 @@
 //
 // Created by Administrator on 2025/3/31.
 //
+#ifndef COMMANDBUFFER_H
+#define COMMANDBUFFER_H
+
 #include "../MutilThreadBase/RefCount.h"
 #include "../Base/Flags.h"
 #include "../Context/DataTypes.h"
 #include "./PipelineStage.h"
-#ifndef COMMANDBUFFER_H
-#define COMMANDBUFFER_H
-
+#include "./ImageAspect.h"
+#include "./ImageLayout.h"
+#include "./AccessFlags.h"
 
 namespace FCT
 {
+    class Image;
     namespace RHI
     {
         class RasterizationPipeline;
@@ -50,16 +54,18 @@ namespace FCT
             virtual void bindPipieline(RasterizationPipeline* pipeline) = 0;
             virtual void end() = 0;
             virtual void submit() = 0;
+            virtual void nextPass() = 0;
+            virtual void barrier(FCT::Image* image, ImageLayout oldLayout, ImageLayout newLayout,
+                        PipelineStages srcStage, PipelineStages dstStage,
+                        AccessFlags srcAccess, AccessFlags dstAccess,
+                        ImageAspects aspectMask = ImageAspect::color) = 0;
             Fence* fence() const { return m_fence; }
             void fence(Fence* fence);
             std::vector<WaitSemaphoreDescription>& waitSemaphores() { return m_waitSemaphores; }
             std::vector<Semaphore*>& signalSemaphores() { return m_signalSemaphores; }
             void clearWaitSemaphores();
-
             void addWaitSemaphore(Semaphore* semaphore,PipelineStages stage = PipelineStage::colorAttachmentOutput);
-
             void addSignalSemaphore(Semaphore* semaphore);
-
         protected:
             CommandBufferLevel m_level;
             Fence* m_fence;

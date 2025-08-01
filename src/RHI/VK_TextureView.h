@@ -13,6 +13,7 @@ namespace FCT
             VK_TextureView(VK_Context* ctx);
             ~VK_TextureView();
             void create() override;
+            vk::ImageAspectFlags getImageAspectFlags(vk::Format format);
             vk::ImageView view() const { return m_view; }
         protected:
             VK_Context* m_ctx;

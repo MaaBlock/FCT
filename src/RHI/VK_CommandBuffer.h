@@ -3,6 +3,9 @@
 //
 #include "./CommandBuffer.h"
 #include "VK_CommandPool.h"
+#include "AccessFlags.h"
+#include "PipelineStage.h"
+#include "ImageAspect.h"
 #ifndef VK_COMMANDBUFFER_H
 #define VK_COMMANDBUFFER_H
 
@@ -28,7 +31,7 @@ namespace FCT
                 vk::CommandBufferBeginInfo beginInfo{};
                 m_commandBuffer.begin(beginInfo);
             }
-
+            void nextPass() override;
             void viewport(Vec2 lt, Vec2 rb) override
             {
                 vk::Viewport viewport{};
@@ -42,7 +45,6 @@ namespace FCT
             }
             void scissor(Vec2 lt, Vec2 rb) override;
             void bindPipieline(RasterizationPipeline* pipeline) override;
-
             void draw(size_t vertexBegin, size_t instanceBegin, size_t vertexSize, size_t instanceSize) override
             {
                 m_commandBuffer.draw(static_cast<uint32_t>(vertexSize),static_cast<uint32_t>(instanceSize) ,static_cast<uint32_t>(vertexBegin), static_cast<uint32_t>(instanceBegin));
@@ -60,6 +62,7 @@ namespace FCT
             {
                 m_commandBuffer.drawIndexed(static_cast<uint32_t>(indexCount),static_cast<uint32_t>(instanceCount), static_cast<uint32_t>(indexBegin), static_cast<int32_t>(firstVertex), static_cast<uint32_t>(instanceBegin));
             }
+            void barrier(FCT::Image* image, ImageLayout oldLayout, ImageLayout newLayout, PipelineStages srcStage, PipelineStages dstStage, AccessFlags srcAccess, AccessFlags dstAccess, ImageAspects aspectMask) override;
         protected:
             VK_CommandPool* m_pool;
             vk::CommandBufferAllocateInfo m_allocateInfo;

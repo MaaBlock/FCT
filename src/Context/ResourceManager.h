@@ -36,13 +36,22 @@ namespace FCT
         Format format;
         ImageUsageFlags usage;
     };
+    struct TargetDesc
+    {
+        int width;
+        int height;
+        Samples samples;
+        Format format;
+        ImageUsageFlags usage;
+    };
     struct ImageSaved
     {
         ImageSaved(RHI::Swapchain* swapchain);
         ImageSaved(ImageSaved* denpendency);
         ImageSaved()
         {
-
+            mutilBuffer = true;
+            autoIndex = true;
         }
         Image* img;
         bool mutilBuffer;
@@ -112,7 +121,7 @@ namespace FCT
          * @return
          * @endcond
          */
-        Image* allocateTarget(std::string name);
+        Image* allocateTarget(std::string name,TargetDesc desc);
     };
 
 }

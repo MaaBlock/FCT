@@ -156,8 +156,25 @@ namespace FCT
     {
     }
 
-    Image* ResourceManager::allocateTarget(std::string target)
+    Image* ResourceManager::allocateTarget(std::string name, TargetDesc desc)
     {
-        return nullptr;
+
+        auto ret = ImageSaved();
+        auto img = m_resourceDevice->createResource<MutilBufferImage>();
+        img->samples(desc.samples);
+        img->format(desc.format);
+        img->width(desc.width);
+        img->height(desc.height);
+        img->imageCount(m_context->maxFrameInFlight());
+        img->as(desc.usage);
+        img->create();
+        ret.img = img;
+        m_dependencyGraph[name] = {
+            ret,
+            {},
+            {},
+        };
+        updateGraph();
+        return ret.img;
     }
 }

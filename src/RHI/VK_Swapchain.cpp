@@ -236,7 +236,7 @@ namespace FCT {
                 auto timeSinceRequest = duration_cast<milliseconds>(
                     now - m_lastRecreateRequestTime
                 ).count();
-                while (timeSinceRequest < RECREATE_DEBOUNCE_MS || !m_width || !m_height)
+                while (timeSinceRequest < RECREATE_DEBOUNCE_MS || !m_pendingWidth || !m_pendingHeight)
                 {
                     now = high_resolution_clock::now();
                     timeSinceRequest = duration_cast<milliseconds>(
@@ -307,6 +307,7 @@ namespace FCT {
             {
                 fence->waitFor();
                 fence->reset();
+                //fout << "nomarl reset fence" << std::endl;
             }
             try {
                 auto nextResult = dc.acquireNextImageKHR(
