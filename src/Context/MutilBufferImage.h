@@ -26,7 +26,7 @@ namespace FCT
         void create() override;
         void resize(uint32_t width, uint32_t height);
         void create(std::vector<RHI::Image*> images);
-        void as(ImageUsageFlags usage) override;
+        void as(ImageUsages usage) override;
         void bind(Context* ctx) override;
         Image* getImage() const override { return const_cast<MutilBufferImage*>(this); }
         std::vector<Image*> getTargetImages() override;
@@ -43,9 +43,13 @@ namespace FCT
         {
             return m_imageCount;
         }
+        std::vector<RHI::Image*> images() const { return m_images; }
+        std::vector<RHI::RenderTargetView*> rtvs() const { return m_rtvs; }
+        std::vector<RHI::DepthStencilView*> dsvs() const { return m_dsvs; }
+        std::vector<RHI::TextureView*> tvs() const { return m_tvs; }
     private:
         size_t m_imageCount = 0;
-        ImageUsageFlags m_usage;
+        ImageUsages m_usage;
         size_t m_currentIndex = 0;
         std::vector<RHI::Image*> m_images;
         std::vector<RHI::RenderTargetView*> m_rtvs;

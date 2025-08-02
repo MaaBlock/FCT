@@ -16,7 +16,7 @@ namespace FCT
         vk::PipelineColorBlendStateCreateInfo& colorBlendStateCreateInfo() { return m_createInfo; }
     private:
         VK_Context* m_ctx;
-        vk::PipelineColorBlendAttachmentState m_attachmentState;
+        std::vector<vk::PipelineColorBlendAttachmentState> m_attachmentStates;
         vk::PipelineColorBlendStateCreateInfo m_createInfo;
 
         vk::BlendFactor convertBlendFactor(BlendFactor factor) const;

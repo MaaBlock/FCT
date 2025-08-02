@@ -38,7 +38,7 @@ namespace FCT
 
         Format currentFormat = m_format;
         Samples currentSamples = m_samples;
-        ImageUsageFlags currentUsage = m_usage;
+        ImageUsages currentUsage = m_usage;
         uint32_t currentImageCount = m_imageCount;
 
         for (auto img : m_images)
@@ -146,7 +146,7 @@ namespace FCT
         as(m_usage);
     }
 
-    void MutilBufferImage::as(ImageUsageFlags usage)
+    void MutilBufferImage::as(ImageUsages usage)
     {
         m_usage |= usage;
         if (usage & ImageUsage::RenderTarget && m_rtvs.empty())

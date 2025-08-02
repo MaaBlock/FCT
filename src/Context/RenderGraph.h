@@ -1,11 +1,11 @@
-//
+﻿//
 // Created by Administrator on 2025/4/5.
 //
 
 #ifndef RENDERGRAPH_H
 #define RENDERGRAPH_H
-
-
+#include "../ThirdParty.h"
+#include "../RHI/ImageUsageFlags.h"
 namespace FCT
 {
     class MutilBufferImage;
@@ -13,6 +13,10 @@ namespace FCT
     class Pass;
     class Window;
     class Context;
+    namespace RHI
+    {
+        class Pass;
+    }
 
     enum class RenderGraphVertexType {
         Pass,
@@ -43,7 +47,7 @@ namespace FCT
 
 
     struct ResourceGraphVertex {
-
+        std::string name;
     };
     enum class ResourceGraphEdgeType {
         Reference,
@@ -79,7 +83,7 @@ namespace FCT
         Context* m_ctx;
         struct ImageResourceDesc
         {
-            ImageUsageFlags usage;
+            ImageUsages usage;
             uint32_t width;
             uint32_t height;
             Samples samples;

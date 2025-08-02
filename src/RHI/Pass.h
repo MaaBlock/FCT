@@ -1,13 +1,9 @@
-//
-// Created by Administrator on 2025/3/25.
-//
+#ifndef FCT_RHI_PASS_H
+#define FCT_RHI_PASS_H
 #include "../Base/Flags.h"
 #include "../MutilThreadBase/RefCount.h"
 #include "../Context/DataTypes.h"
 #include "../Context/Image.h"
-
-#ifndef FCT_RHI_PASS_H
-#define FCT_RHI_PASS_H
 namespace FCT
 {
     enum class ClearType : uint32_t

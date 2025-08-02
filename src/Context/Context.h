@@ -1,5 +1,4 @@
 ﻿#pragma once
-
 #include "../ThirdParty.h"
 #include "../ToolDefine.h"
 #include "../Bases.h"

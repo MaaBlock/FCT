@@ -94,6 +94,8 @@ namespace FCT::RHI
         if (!m_blendState)
         {
             m_blendState = new VK_BlendState(m_ctx);
+            if (m_pass->renderTargets().size())
+                m_blendState->targets(m_pass->renderTargets().rbegin()->first + 1);
             m_blendState->create();
         }
         if (!m_rasterizationState)

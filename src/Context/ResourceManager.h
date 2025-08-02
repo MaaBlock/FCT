@@ -34,7 +34,7 @@ namespace FCT
     struct ImageDesc
     {
         Format format;
-        ImageUsageFlags usage;
+        ImageUsages usage;
     };
     struct TargetDesc
     {
@@ -42,7 +42,7 @@ namespace FCT
         int height;
         Samples samples;
         Format format;
-        ImageUsageFlags usage;
+        ImageUsages usage;
     };
     struct ImageSaved
     {

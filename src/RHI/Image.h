@@ -64,7 +64,7 @@ namespace FCT
                 return m_height;
             }
             virtual void create() = 0;
-            void usage(ImageUsageFlags usage)
+            void usage(ImageUsages usage)
             {
                 m_usage = usage;
             }
@@ -75,7 +75,7 @@ namespace FCT
             Samples m_samples;
             uint32_t m_width;
             uint32_t m_height;
-            ImageUsageFlags m_usage;
+            ImageUsages m_usage;
             ImageInitData m_initData;
         };
     }

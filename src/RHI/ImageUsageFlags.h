@@ -14,7 +14,7 @@ namespace FCT
         Texture      = 0x4,
     };
 
-    using ImageUsageFlags = Flags<ImageUsage>;
+    FCT_DECLARE_FLAGS(ImageUsage);
 
     struct ImageInitData
     {

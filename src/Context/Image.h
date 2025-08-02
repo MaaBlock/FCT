@@ -58,7 +58,7 @@ namespace FCT {
         void renderTargetType(RenderTargetType type) { m_renderTargetType = type; }
 
         virtual void create() = 0;
-        virtual void as(ImageUsageFlags usage) = 0;
+        virtual void as(ImageUsages usage) = 0;
         virtual void bind(Context* ctx) {}
 
         Format format() const { return m_behavior->format(); }

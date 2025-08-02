@@ -1,35 +1,41 @@
-//
-// Created by Administrator on 2025/3/23.
-//
-
 #include "../FCTAPI.h"
 namespace FCT
 {
-    VK_BlendState::VK_BlendState(VK_Context* ctx) : m_attachmentState{} , m_createInfo{}
+    VK_BlendState::VK_BlendState(VK_Context* ctx) : m_createInfo{}
     {
         m_ctx = ctx;
     }
 
     void VK_BlendState::create()
     {
-        m_attachmentState.blendEnable = m_blendEnable;
-        m_attachmentState.srcColorBlendFactor = convertBlendFactor(m_srcColorBlendFactor);
-        m_attachmentState.dstColorBlendFactor = convertBlendFactor(m_dstColorBlendFactor);
-        m_attachmentState.colorBlendOp = convertBlendOp(m_colorBlendOp);
-        m_attachmentState.srcAlphaBlendFactor = convertBlendFactor(m_srcAlphaBlendFactor);
-        m_attachmentState.dstAlphaBlendFactor = convertBlendFactor(m_dstAlphaBlendFactor);
-        m_attachmentState.alphaBlendOp = convertBlendOp(m_alphaBlendOp);
-        m_attachmentState.colorWriteMask = static_cast<vk::ColorComponentFlags>(m_colorWriteMask);
+        // 清理之前的状态
+        m_attachmentStates.clear();
+        m_attachmentStates.reserve(m_targets.size());
+
+        // 为每个目标创建 attachment state
+        for (const auto& target : m_targets) {
+            vk::PipelineColorBlendAttachmentState attachmentState{};
+            attachmentState.blendEnable = target.enable;
+            attachmentState.srcColorBlendFactor = convertBlendFactor(target.srcColor);
+            attachmentState.dstColorBlendFactor = convertBlendFactor(target.dstColor);
+            attachmentState.colorBlendOp = convertBlendOp(target.colorOp);
+            attachmentState.srcAlphaBlendFactor = convertBlendFactor(target.srcAlpha);
+            attachmentState.dstAlphaBlendFactor = convertBlendFactor(target.dstAlpha);
+            attachmentState.alphaBlendOp = convertBlendOp(target.alphaOp);
+            attachmentState.colorWriteMask = static_cast<vk::ColorComponentFlags>(target.mask);
+            
+            m_attachmentStates.push_back(attachmentState);
+        }
 
         m_createInfo = vk::PipelineColorBlendStateCreateInfo()
-            .setLogicOpEnable(m_logicOpEnable)
+            .setLogicOpEnable(m_logicEnable)
             .setLogicOp(convertLogicOp(m_logicOp))
-            .setAttachmentCount(1)
-            .setPAttachments(&m_attachmentState)
+            .setAttachmentCount(static_cast<uint32_t>(m_attachmentStates.size()))
+            .setPAttachments(m_attachmentStates.data())
             .setBlendConstants({0.0f, 0.0f, 0.0f, 0.0f});
     }
 
-      vk::BlendFactor VK_BlendState::convertBlendFactor(BlendFactor factor) const
+    vk::BlendFactor VK_BlendState::convertBlendFactor(BlendFactor factor) const
     {
         switch (factor)
         {

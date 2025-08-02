@@ -27,7 +27,7 @@ namespace FCT
         }
         void create() override;
         void create(RHI::Image* image);
-        void as(ImageUsageFlags usage) override;
+        void as(ImageUsages usage) override;
         void bind(Context* ctx) override;
         void resize(uint32_t width, uint32_t height) override;
         Image* getImage() const override { return const_cast<SingleBufferImage*>(this); }
@@ -42,7 +42,7 @@ namespace FCT
         RHI::RenderTargetView* m_rtv;
         RHI::TextureView* m_srv;
         ImageInitData m_initData;
-        ImageUsageFlags m_usage;
+        ImageUsages m_usage;
     };
 }
 

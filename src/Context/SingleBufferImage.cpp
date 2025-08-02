@@ -58,7 +58,7 @@ namespace FCT
         m_behavior = new SingleBufferAfterCreateImageBehavior(this);
     }
 
-    void SingleBufferImage::as(ImageUsageFlags usage) {
+    void SingleBufferImage::as(ImageUsages usage) {
         if (usage & ImageUsage::RenderTarget && !m_rtv) {
             m_rtv = m_ctx->createResource<RHI::RenderTargetView>();
             m_rtv->image(m_image);
@@ -80,7 +80,7 @@ namespace FCT
 
         Format currentFormat = m_format;
         Samples currentSamples = m_samples;
-        ImageUsageFlags currentUsage = m_usage;
+        ImageUsages currentUsage = m_usage;
 
         FCT_SAFE_RELEASE(m_image);
 
