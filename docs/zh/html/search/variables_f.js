@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['samples_0',['samples',['../struct_f_c_t_1_1_render_graph_1_1_image_resource_desc.html#ae5b089bf3f66ab0681ed8ea95c1b2ee5',1,'FCT::RenderGraph::ImageResourceDesc']]],
+  ['samples_0',['samples',['../struct_f_c_t_1_1_render_graph_1_1_image_resource_desc.html#ae5b089bf3f66ab0681ed8ea95c1b2ee5',1,'FCT::RenderGraph::ImageResourceDesc::samples'],['../struct_f_c_t_1_1_target_desc.html#a9ca38e7ee241dd92f63f36de8847bd73',1,'FCT::TargetDesc::samples']]],
   ['scissorlt_1',['scissorLt',['../struct_f_c_t_1_1_viewport_job.html#a38edd67a5050d9446d202f0c93a7f9b8',1,'FCT::ViewportJob']]],
   ['scissorrb_2',['scissorRb',['../struct_f_c_t_1_1_viewport_job.html#a05246bda6cdfc3ba6cf78d0afe4a423c',1,'FCT::ViewportJob']]],
   ['screeninfonameinshder_3',['ScreenInfoNameInShder',['../class_f_c_t_1_1_vertex_context.html#a87782fd9229ab4b83226a2a1744a80e0',1,'FCT::VertexContext']]],
@@ -10,10 +10,12 @@ var searchData=
   ['size_7',['size',['../struct_f_c_t_1_1_image_init_data.html#a8307100c24ff7107883be8d5c13c1400',1,'FCT::ImageInitData']]],
   ['slot_8',['slot',['../struct_f_c_t_1_1_render_graph_1_1_image_resource_vertex.html#a55db22f9b483693cc1d257f2efa920ad',1,'FCT::RenderGraph::ImageResourceVertex::slot'],['../struct_f_c_t_1_1_r_h_i_1_1_attachment_slot.html#ab80c6340217c26d3e47382c08ff5c426',1,'FCT::RHI::AttachmentSlot::slot']]],
   ['sortedpasses_9',['sortedPasses',['../struct_f_c_t_1_1_render_graph_1_1_execution_order.html#ad18b63a83bafe6f229f83792fdc0255c',1,'FCT::RenderGraph::ExecutionOrder']]],
-  ['stages_10',['stages',['../struct_f_c_t_1_1_r_h_i_1_1_wait_semaphore_description.html#ae31410cb10185e3e7e93b885e9bba17e',1,'FCT::RHI::WaitSemaphoreDescription']]],
-  ['state_11',['state',['../struct_f_c_t_1_1_tradition_render_job.html#ab5af7a2e1c4a6153cd29a14541e932fa',1,'FCT::TraditionRenderJob']]],
-  ['stencil_12',['stencil',['../struct_f_c_t_1_1_pass_clear_value.html#ace48476fbf209c7d625ad4548a3bcc00',1,'FCT::PassClearValue']]],
-  ['successors_13',['successors',['../struct_f_c_t_1_1_token_graph_1_1_node_info.html#ac0b75b9b988cd91bee0d4309a41cd2b5',1,'FCT::TokenGraph::NodeInfo']]],
-  ['swapbuffersubmitticker_14',['SwapBufferSubmitTicker',['../namespace_f_c_t.html#a713521d343a445fb31ddf00b9665d59f',1,'FCT']]],
-  ['swapchain_15',['swapchain',['../struct_f_c_t_1_1_swapchain_event_1_1_recreate.html#a3d5210ecfa27eeb04fc88aef082343a1',1,'FCT::SwapchainEvent::Recreate']]]
+  ['srcalpha_10',['srcAlpha',['../struct_f_c_t_1_1_blend_state_1_1_target.html#a58666acd6745c59b44f0a3371ccff582',1,'FCT::BlendState::Target']]],
+  ['srccolor_11',['srcColor',['../struct_f_c_t_1_1_blend_state_1_1_target.html#a9600bfef411e25ca846bfe8bd0e288b2',1,'FCT::BlendState::Target']]],
+  ['stages_12',['stages',['../struct_f_c_t_1_1_r_h_i_1_1_wait_semaphore_description.html#ae31410cb10185e3e7e93b885e9bba17e',1,'FCT::RHI::WaitSemaphoreDescription']]],
+  ['state_13',['state',['../struct_f_c_t_1_1_tradition_render_job.html#ab5af7a2e1c4a6153cd29a14541e932fa',1,'FCT::TraditionRenderJob']]],
+  ['stencil_14',['stencil',['../struct_f_c_t_1_1_pass_clear_value.html#ace48476fbf209c7d625ad4548a3bcc00',1,'FCT::PassClearValue']]],
+  ['successors_15',['successors',['../struct_f_c_t_1_1_token_graph_1_1_node_info.html#ac0b75b9b988cd91bee0d4309a41cd2b5',1,'FCT::TokenGraph::NodeInfo::successors'],['../struct_f_c_t_1_1_r_h_i_1_1_pass_desc.html#aa791c05bcfd8050108bb6950f7cfaa4a',1,'FCT::RHI::PassDesc::successors']]],
+  ['swapbuffersubmitticker_16',['SwapBufferSubmitTicker',['../namespace_f_c_t.html#a713521d343a445fb31ddf00b9665d59f',1,'FCT']]],
+  ['swapchain_17',['swapchain',['../struct_f_c_t_1_1_swapchain_event_1_1_recreate.html#a3d5210ecfa27eeb04fc88aef082343a1',1,'FCT::SwapchainEvent::Recreate']]]
 ];

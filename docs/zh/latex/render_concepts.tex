@@ -1,0 +1,41 @@
+\chapter{渲染概念详解 }
+\hypertarget{render_concepts}{}\label{render_concepts}\index{渲染概念详解@{渲染概念详解}}
+\label{render_concepts_md_docs_2zh_2md_2render__concepts}%
+\Hypertarget{render_concepts_md_docs_2zh_2md_2render__concepts}%
+
+
+本文档详细介绍 MQEngine 中的核心渲染概念，这些概念是理解和使用引擎渲染系统的基础。\hypertarget{render_concepts_autotoc_md0}{}\doxysection{\texorpdfstring{目录}{目录}}\label{render_concepts_autotoc_md0}
+
+\begin{DoxyItemize}
+\item \doxysectlink{render_concepts_render_pipeline}{渲染管线 (Pipeline)}{1}
+\item \doxysectlink{render_concepts_render_pass}{渲染通道 (Pass)}{1}
+\item \doxysectlink{render_concepts_render_passgroup}{通道组 (Pass\+Group)}{1}
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{render_concepts_render_pipeline}{}\doxysection{\texorpdfstring{渲染管线 (Pipeline)}{渲染管线 (Pipeline)}}\label{render_concepts_render_pipeline}
+\hypertarget{render_concepts_autotoc_md2}{}\doxysubsection{\texorpdfstring{概念定义}{概念定义}}\label{render_concepts_autotoc_md2}
+\hypertarget{render_concepts_autotoc_md3}{}\doxysubsection{\texorpdfstring{管线类型}{管线类型}}\label{render_concepts_autotoc_md3}
+\hypertarget{render_concepts_autotoc_md4}{}\doxysubsubsection{\texorpdfstring{传统光栅化管线 (Traditional Pipeline)}{传统光栅化管线 (Traditional Pipeline)}}\label{render_concepts_autotoc_md4}
+图形管线用于传统的几何渲染，处理顶点变换、光栅化和片段着色：\hypertarget{render_concepts_autotoc_md5}{}\doxysubsubsection{\texorpdfstring{Mesh\+Shader光栅化管线 (Mesh\+Shader Pipeline)}{Mesh\+Shader光栅化管线 (Mesh\+Shader Pipeline)}}\label{render_concepts_autotoc_md5}
+\hypertarget{render_concepts_autotoc_md6}{}\doxysubsubsection{\texorpdfstring{光线追踪管线 (Ray\+Tracing Pipeline)}{光线追踪管线 (Ray\+Tracing Pipeline)}}\label{render_concepts_autotoc_md6}
+\DoxyHorRuler{0}
+\hypertarget{render_concepts_render_pass}{}\doxysection{\texorpdfstring{渲染通道 (Pass)}{渲染通道 (Pass)}}\label{render_concepts_render_pass}
+\hypertarget{render_concepts_autotoc_md8}{}\doxysubsection{\texorpdfstring{概念定义}{概念定义}}\label{render_concepts_autotoc_md8}
+渲染通道（\+Pass）可以有多个\+Pipeline\hypertarget{render_concepts_autotoc_md9}{}\doxysubsection{\texorpdfstring{核心特性}{核心特性}}\label{render_concepts_autotoc_md9}
+
+\begin{DoxyItemize}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}单一职责\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}：每个 Pass 只负责一种特定的渲染操作
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}可组合性\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}：多个 Pass 可以组合成复杂的渲染效果
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}资源管理\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}：管理自己的输入输出资源
+\end{DoxyItemize}\hypertarget{render_concepts_render_passgroup}{}\doxysection{\texorpdfstring{通道组 (Pass\+Group)}{通道组 (Pass\+Group)}}\label{render_concepts_render_passgroup}
+\hypertarget{render_concepts_autotoc_md10}{}\doxysubsection{\texorpdfstring{概念定义}{概念定义}}\label{render_concepts_autotoc_md10}
+通道组 (Pass\+Group)可以有多个\+Pass，但是target以及深度缓存大小必须一致\hypertarget{render_concepts_autotoc_md11}{}\doxysubsection{\texorpdfstring{设计目的}{设计目的}}\label{render_concepts_autotoc_md11}
+
+\begin{DoxyItemize}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}逻辑分组\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}：将功能相关的 Pass 组织在一起，便于管理和维护
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}依赖管理\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}：自动处理 Pass 间的数据依赖关系，确保正确的执行顺序
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}资源共享\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}：组内 Pass 可以高效共享中间渲染结果和资源
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}并行优化\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}：支持无依赖关系的 Pass 并行执行，提升渲染性能
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}可复用性\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}：整个 Pass\+Group 可以作为一个单元在不同场景中复用 
+\end{DoxyItemize}

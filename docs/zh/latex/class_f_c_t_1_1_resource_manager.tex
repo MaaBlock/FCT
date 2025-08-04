@@ -24,14 +24,14 @@ FCT\+::Resource\+Manager 的协作图\+:\nopagebreak
 \begin{DoxyCompactList}\small\item\em 分配中间\+Target / 图像 \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_f_c_t_1_1_resource_manager_a954addf5ebf3890aa5ed2853cb9efc32}{resize\+Image}} (std\+::string name, int width, int height)
 \begin{DoxyCompactList}\small\item\em 挂起resize一个image \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_f_c_t_1_1_image}{Image}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_resource_manager_a9cde1ea4128c958e0cfb5b0eabaa43d7}{allocate\+Target}} (std\+::string name)
+\mbox{\hyperlink{class_f_c_t_1_1_image}{Image}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_resource_manager_ab2a4326281e2905274f2a426cf236edb}{allocate\+Target}} (std\+::string name, \mbox{\hyperlink{struct_f_c_t_1_1_target_desc}{Target\+Desc}} desc)
 \begin{DoxyCompactList}\small\item\em 分配的是独立的\+Target,例如窗口一类的就算为独立\+Target \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{详细描述}
 
 
-在文件 \mbox{\hyperlink{_resource_manager_8h_source}{Resource\+Manager.\+h}} 第 \mbox{\hyperlink{_resource_manager_8h_source_l00062}{62}} 行定义.
+在文件 \mbox{\hyperlink{_resource_manager_8h_source}{Resource\+Manager.\+h}} 第 \mbox{\hyperlink{_resource_manager_8h_source_l00071}{71}} 行定义.
 
 
 
@@ -83,10 +83,9 @@ FCT\+::\+Resource\+Manager\+::\+Resource\+Manager (\begin{DoxyParamCaption}\item
 \end{DoxyReturn}
 
 
-在文件 \mbox{\hyperlink{_resource_manager_8cpp_source}{Resource\+Manager.\+cpp}} 第 \mbox{\hyperlink{_resource_manager_8cpp_source_l00068}{68}} 行定义.
+在文件 \mbox{\hyperlink{_resource_manager_8cpp_source}{Resource\+Manager.\+cpp}} 第 \mbox{\hyperlink{_resource_manager_8cpp_source_l00069}{69}} 行定义.
 
-函数调用图\+:
-\nopagebreak
+函数调用图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -115,29 +114,27 @@ FCT\+::\+Resource\+Manager\+::\+Resource\+Manager (\begin{DoxyParamCaption}\item
 \end{DoxyReturn}
 
 
-在文件 \mbox{\hyperlink{_resource_manager_8cpp_source}{Resource\+Manager.\+cpp}} 第 \mbox{\hyperlink{_resource_manager_8cpp_source_l00063}{63}} 行定义.
+在文件 \mbox{\hyperlink{_resource_manager_8cpp_source}{Resource\+Manager.\+cpp}} 第 \mbox{\hyperlink{_resource_manager_8cpp_source_l00064}{64}} 行定义.
 
-函数调用图\+:
-\nopagebreak
+函数调用图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_f_c_t_1_1_resource_manager_aeb733fce98bbcfc7f081bba86ed31e47_cgraph}
 \end{center}
 \end{figure}
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=200pt]{class_f_c_t_1_1_resource_manager_aeb733fce98bbcfc7f081bba86ed31e47_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{class_f_c_t_1_1_resource_manager_a9cde1ea4128c958e0cfb5b0eabaa43d7}\index{FCT::ResourceManager@{FCT::ResourceManager}!allocateTarget@{allocateTarget}}
+\Hypertarget{class_f_c_t_1_1_resource_manager_ab2a4326281e2905274f2a426cf236edb}\index{FCT::ResourceManager@{FCT::ResourceManager}!allocateTarget@{allocateTarget}}
 \index{allocateTarget@{allocateTarget}!FCT::ResourceManager@{FCT::ResourceManager}}
 \doxysubsubsection{\texorpdfstring{allocateTarget()}{allocateTarget()}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_resource_manager_a9cde1ea4128c958e0cfb5b0eabaa43d7} 
-\mbox{\hyperlink{class_f_c_t_1_1_image}{Image}} \texorpdfstring{$\ast$}{*} FCT\+::\+Resource\+Manager\+::allocate\+Target (\begin{DoxyParamCaption}\item[{std\+::string}]{name}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_resource_manager_ab2a4326281e2905274f2a426cf236edb} 
+\mbox{\hyperlink{class_f_c_t_1_1_image}{Image}} \texorpdfstring{$\ast$}{*} FCT\+::\+Resource\+Manager\+::allocate\+Target (\begin{DoxyParamCaption}\item[{std\+::string}]{name}{, }\item[{\mbox{\hyperlink{struct_f_c_t_1_1_target_desc}{Target\+Desc}}}]{desc}{}\end{DoxyParamCaption})}
 
 
 
@@ -153,8 +150,16 @@ FCT\+::\+Resource\+Manager\+::\+Resource\+Manager (\begin{DoxyParamCaption}\item
 \end{DoxyReturn}
 
 
-在文件 \mbox{\hyperlink{_resource_manager_8cpp_source}{Resource\+Manager.\+cpp}} 第 \mbox{\hyperlink{_resource_manager_8cpp_source_l00155}{155}} 行定义.
+在文件 \mbox{\hyperlink{_resource_manager_8cpp_source}{Resource\+Manager.\+cpp}} 第 \mbox{\hyperlink{_resource_manager_8cpp_source_l00159}{159}} 行定义.
 
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{class_f_c_t_1_1_resource_manager_ab2a4326281e2905274f2a426cf236edb_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_resource_manager_a954addf5ebf3890aa5ed2853cb9efc32}\index{FCT::ResourceManager@{FCT::ResourceManager}!resizeImage@{resizeImage}}
 \index{resizeImage@{resizeImage}!FCT::ResourceManager@{FCT::ResourceManager}}
 \doxysubsubsection{\texorpdfstring{resizeImage()}{resizeImage()}}
@@ -176,7 +181,7 @@ void FCT\+::\+Resource\+Manager\+::resize\+Image (\begin{DoxyParamCaption}\item[
 \end{DoxyParams}
 
 
-在文件 \mbox{\hyperlink{_resource_manager_8cpp_source}{Resource\+Manager.\+cpp}} 第 \mbox{\hyperlink{_resource_manager_8cpp_source_l00151}{151}} 行定义.
+在文件 \mbox{\hyperlink{_resource_manager_8cpp_source}{Resource\+Manager.\+cpp}} 第 \mbox{\hyperlink{_resource_manager_8cpp_source_l00155}{155}} 行定义.
 
 
 

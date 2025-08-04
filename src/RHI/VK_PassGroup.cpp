@@ -186,6 +186,8 @@ namespace FCT
 
             auto vkCmdBuf = static_cast<VK_CommandBuffer*>(cmdBuf);
             vkCmdBuf->commandBuffer().beginRenderPass(m_beginInfo, vk::SubpassContents::eInline);
+            m_currentPassIndex = 0;
+            m_passes[m_currentPassIndex]->executeClear(cmdBuf);
         }
 
         void VK_PassGroup::endSubmit(CommandBuffer* cmdBuf)
@@ -196,6 +198,17 @@ namespace FCT
             }
 
             vkCmdBuf->commandBuffer().endRenderPass();
+            if (m_currentPassIndex < m_passes.size() - 1)
+            {
+                fout << "[warnning] submit pass num < pass count.\n";
+            }
+        }
+
+        void VK_PassGroup::nextPass(CommandBuffer* cmdBuf)
+        {
+            cmdBuf->nextPass();
+            m_currentPassIndex = 1;
+            m_passes[m_currentPassIndex]->executeClear(cmdBuf);
         }
 
         void VK_PassGroup::collectSubpasses()

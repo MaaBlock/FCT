@@ -13,7 +13,9 @@ var namespace_f_c_t_1_1_r_h_i =
     [ "IndexData", "class_f_c_t_1_1_r_h_i_1_1_index_data.html", "class_f_c_t_1_1_r_h_i_1_1_index_data" ],
     [ "InputLayout", "class_f_c_t_1_1_r_h_i_1_1_input_layout.html", "class_f_c_t_1_1_r_h_i_1_1_input_layout" ],
     [ "Pass", "class_f_c_t_1_1_r_h_i_1_1_pass.html", "class_f_c_t_1_1_r_h_i_1_1_pass" ],
+    [ "PassDesc", "struct_f_c_t_1_1_r_h_i_1_1_pass_desc.html", "struct_f_c_t_1_1_r_h_i_1_1_pass_desc" ],
     [ "PassGroup", "class_f_c_t_1_1_r_h_i_1_1_pass_group.html", "class_f_c_t_1_1_r_h_i_1_1_pass_group" ],
+    [ "PassNeighbors", "struct_f_c_t_1_1_r_h_i_1_1_pass_neighbors.html", "struct_f_c_t_1_1_r_h_i_1_1_pass_neighbors" ],
     [ "Pipeline", "class_f_c_t_1_1_r_h_i_1_1_pipeline.html", "class_f_c_t_1_1_r_h_i_1_1_pipeline" ],
     [ "PixelShader", "class_f_c_t_1_1_r_h_i_1_1_pixel_shader.html", "class_f_c_t_1_1_r_h_i_1_1_pixel_shader" ],
     [ "RasterizationPipeline", "class_f_c_t_1_1_r_h_i_1_1_rasterization_pipeline.html", "class_f_c_t_1_1_r_h_i_1_1_rasterization_pipeline" ],
@@ -48,7 +50,6 @@ var namespace_f_c_t_1_1_r_h_i =
     [ "VK_VertexBuffer", "class_f_c_t_1_1_r_h_i_1_1_v_k___vertex_buffer.html", "class_f_c_t_1_1_r_h_i_1_1_v_k___vertex_buffer" ],
     [ "VK_VertexShader", "class_f_c_t_1_1_r_h_i_1_1_v_k___vertex_shader.html", "class_f_c_t_1_1_r_h_i_1_1_v_k___vertex_shader" ],
     [ "WaitSemaphoreDescription", "struct_f_c_t_1_1_r_h_i_1_1_wait_semaphore_description.html", "struct_f_c_t_1_1_r_h_i_1_1_wait_semaphore_description" ],
-    [ "PipelineStages", "namespace_f_c_t_1_1_r_h_i.html#a175639f6128e64cd2ba742715b157741", null ],
     [ "CommandBufferLevel", "namespace_f_c_t_1_1_r_h_i.html#a5da22e84cafb0e1536971983037e9fbb", [
       [ "Primary", "namespace_f_c_t_1_1_r_h_i.html#a5da22e84cafb0e1536971983037e9fbba074de7e7c226d5c60f8af14c20725352", null ],
       [ "Secondary", "namespace_f_c_t_1_1_r_h_i.html#a5da22e84cafb0e1536971983037e9fbba0c7d6cf19426e01dcfa32434828ed266", null ]
@@ -56,9 +57,6 @@ var namespace_f_c_t_1_1_r_h_i =
     [ "InputRate", "namespace_f_c_t_1_1_r_h_i.html#a0f81d87a9e2755ec0c644ddb522fd3a3", [
       [ "PerVertex", "namespace_f_c_t_1_1_r_h_i.html#a0f81d87a9e2755ec0c644ddb522fd3a3a47e73954b650524c96a2c612bfda4029", null ],
       [ "PerInstance", "namespace_f_c_t_1_1_r_h_i.html#a0f81d87a9e2755ec0c644ddb522fd3a3a638926405e39d8cd5227b49fa3156e1a", null ]
-    ] ],
-    [ "PipelineStage", "namespace_f_c_t_1_1_r_h_i.html#a01c5167b2393f4a915439498c590fa98", [
-      [ "colorAttachmentOutput", "namespace_f_c_t_1_1_r_h_i.html#a01c5167b2393f4a915439498c590fa98a4ecc54305ce317f6232ab7ce1acb4db6", null ]
     ] ],
     [ "ToVkVertexInputRate", "namespace_f_c_t_1_1_r_h_i.html#a7f1d79dca0dc6729185dd31b065ab492", null ]
 ];

@@ -21,6 +21,7 @@ namespace FCT
             void setDepthStencilAttachmentIndex(uint32_t index) { m_depthStencilAttachmentIndex = index; }
             void beginSubmit(CommandBuffer* cmdBuf) override;
             void endSubmit() override;
+            void executeClear(CommandBuffer* cmdBuf) override;
         protected:
             VK_Context* m_ctx;
             vk::SubpassDescription m_desc;

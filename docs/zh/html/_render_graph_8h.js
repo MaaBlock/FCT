@@ -2,7 +2,7 @@ var _render_graph_8h =
 [
     [ "FCT::PassGraphVertex", "struct_f_c_t_1_1_pass_graph_vertex.html", "struct_f_c_t_1_1_pass_graph_vertex" ],
     [ "FCT::PassGraphEdge", "struct_f_c_t_1_1_pass_graph_edge.html", "struct_f_c_t_1_1_pass_graph_edge" ],
-    [ "FCT::ResourceGraphVertex", "struct_f_c_t_1_1_resource_graph_vertex.html", null ],
+    [ "FCT::ResourceGraphVertex", "struct_f_c_t_1_1_resource_graph_vertex.html", "struct_f_c_t_1_1_resource_graph_vertex" ],
     [ "FCT::ResourceGraphEdge", "struct_f_c_t_1_1_resource_graph_edge.html", "struct_f_c_t_1_1_resource_graph_edge" ],
     [ "FCT::RenderGraph", "class_f_c_t_1_1_render_graph.html", "class_f_c_t_1_1_render_graph" ],
     [ "FCT::RenderGraph::ImageResourceDesc", "struct_f_c_t_1_1_render_graph_1_1_image_resource_desc.html", "struct_f_c_t_1_1_render_graph_1_1_image_resource_desc" ],

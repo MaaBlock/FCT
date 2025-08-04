@@ -12,26 +12,27 @@
 \DoxyCodeLine{\Hypertarget{_shaderc___shader_compiler_8cpp_source_l00008}00008\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_shaderc___shader_compiler_aae2560597a360cecdaa3b83fd57c00cf}{m\_options}}.SetSourceLanguage(shaderc\_source\_language\_hlsl);}
 \DoxyCodeLine{\Hypertarget{_shaderc___shader_compiler_8cpp_source_l00009}00009\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_shaderc___shader_compiler_aae2560597a360cecdaa3b83fd57c00cf}{m\_options}}.SetTargetSpirv(shaderc\_spirv\_version\_1\_5);}
 \DoxyCodeLine{\Hypertarget{_shaderc___shader_compiler_8cpp_source_l00010}00010\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_shaderc___shader_compiler_aae2560597a360cecdaa3b83fd57c00cf}{m\_options}}.SetTargetEnvironment(shaderc\_target\_env\_vulkan,\ shaderc\_env\_version\_vulkan\_1\_2);}
-\DoxyCodeLine{\Hypertarget{_shaderc___shader_compiler_8cpp_source_l00011}00011\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_shaderc___shader_compiler_8cpp_source_l00012}00012\ }
-\DoxyCodeLine{\Hypertarget{_shaderc___shader_compiler_8cpp_source_l00013}\mbox{\hyperlink{class_f_c_t_1_1_shaderc___shader_compiler_a0c07e76aa85db1819cd5efa115a130ee}{00013}}\ \ \ \ \ std::vector<char>\ \mbox{\hyperlink{class_f_c_t_1_1_shaderc___shader_compiler_a0c07e76aa85db1819cd5efa115a130ee}{Shaderc\_ShaderCompiler::compile}}(\textcolor{keyword}{const}\ std::string\&\ source,\ \textcolor{keyword}{const}\ std::string\&\ entry\_point,\ \mbox{\hyperlink{namespace_f_c_t_a99b96afabbbc9a9b5093989877721193}{ShaderKind}}\ kind)}
-\DoxyCodeLine{\Hypertarget{_shaderc___shader_compiler_8cpp_source_l00014}00014\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_shaderc___shader_compiler_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_a539584b126825634a31a2e55f4c9a0f3}{fout}}\ <<\ \textcolor{stringliteral}{"{}编译着色器"{}}\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{_shaderc___shader_compiler_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_a539584b126825634a31a2e55f4c9a0f3}{fout}}\ <<\ source\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{_shaderc___shader_compiler_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ result\ =\ \mbox{\hyperlink{class_f_c_t_1_1_shaderc___shader_compiler_a1bcd4d66331ec3f422eeb958390b90d7}{m\_compiler}}.CompileGlslToSpv(source.c\_str(),\ source.size(),\ \mbox{\hyperlink{namespace_f_c_t_aa50d4ee4e93b725f63ff598365539223}{FCTShaderKindToShaderrcShaderKind}}(kind),\ \textcolor{stringliteral}{"{}FCTShader"{}}}
-\DoxyCodeLine{\Hypertarget{_shaderc___shader_compiler_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ ,\ entry\_point.c\_str(),\ \mbox{\hyperlink{class_f_c_t_1_1_shaderc___shader_compiler_aae2560597a360cecdaa3b83fd57c00cf}{m\_options}});}
-\DoxyCodeLine{\Hypertarget{_shaderc___shader_compiler_8cpp_source_l00019}00019\ }
-\DoxyCodeLine{\Hypertarget{_shaderc___shader_compiler_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (result.GetCompilationStatus()\ !=\ shaderc\_compilation\_status\_success)\ \{}
-\DoxyCodeLine{\Hypertarget{_shaderc___shader_compiler_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_a41993be9a3c6e8f05f5b7bda9a9015b2}{ferr}}\ <<\ \textcolor{stringliteral}{"{}Shader\ compilation\ failed:\ "{}}\ <<\ result.GetErrorMessage()\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{_shaderc___shader_compiler_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{\};}
-\DoxyCodeLine{\Hypertarget{_shaderc___shader_compiler_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_shaderc___shader_compiler_8cpp_source_l00024}00024\ }
-\DoxyCodeLine{\Hypertarget{_shaderc___shader_compiler_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint32\_t*\ dataStart\ =\ result.cbegin();}
-\DoxyCodeLine{\Hypertarget{_shaderc___shader_compiler_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ byteStart\ =\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(dataStart);}
-\DoxyCodeLine{\Hypertarget{_shaderc___shader_compiler_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ byteSize\ =\ (result.cend()\ -\/\ result.cbegin())\ *\ \textcolor{keyword}{sizeof}(uint32\_t);}
-\DoxyCodeLine{\Hypertarget{_shaderc___shader_compiler_8cpp_source_l00028}00028\ }
-\DoxyCodeLine{\Hypertarget{_shaderc___shader_compiler_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::vector<char>(byteStart,\ byteStart\ +\ byteSize);}
-\DoxyCodeLine{\Hypertarget{_shaderc___shader_compiler_8cpp_source_l00030}00030\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_shaderc___shader_compiler_8cpp_source_l00031}00031\ \}}
+\DoxyCodeLine{\Hypertarget{_shaderc___shader_compiler_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_shaderc___shader_compiler_8cpp_source_l00012}00012\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_shaderc___shader_compiler_8cpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_shaderc___shader_compiler_8cpp_source_l00014}\mbox{\hyperlink{class_f_c_t_1_1_shaderc___shader_compiler_a0c07e76aa85db1819cd5efa115a130ee}{00014}}\ \ \ \ \ std::vector<char>\ \mbox{\hyperlink{class_f_c_t_1_1_shaderc___shader_compiler_a0c07e76aa85db1819cd5efa115a130ee}{Shaderc\_ShaderCompiler::compile}}(\textcolor{keyword}{const}\ std::string\&\ source,\ \textcolor{keyword}{const}\ std::string\&\ entry\_point,\ \mbox{\hyperlink{namespace_f_c_t_a99b96afabbbc9a9b5093989877721193}{ShaderKind}}\ kind)}
+\DoxyCodeLine{\Hypertarget{_shaderc___shader_compiler_8cpp_source_l00015}00015\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_shaderc___shader_compiler_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_a539584b126825634a31a2e55f4c9a0f3}{fout}}\ <<\ \textcolor{stringliteral}{"{}编译着色器"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_shaderc___shader_compiler_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_a539584b126825634a31a2e55f4c9a0f3}{fout}}\ <<\ source\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_shaderc___shader_compiler_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ result\ =\ \mbox{\hyperlink{class_f_c_t_1_1_shaderc___shader_compiler_a1bcd4d66331ec3f422eeb958390b90d7}{m\_compiler}}.CompileGlslToSpv(source.c\_str(),\ source.size(),\ \mbox{\hyperlink{namespace_f_c_t_aa50d4ee4e93b725f63ff598365539223}{FCTShaderKindToShaderrcShaderKind}}(kind),\ \textcolor{stringliteral}{"{}FCTShader"{}}}
+\DoxyCodeLine{\Hypertarget{_shaderc___shader_compiler_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ ,\ entry\_point.c\_str(),\ \mbox{\hyperlink{class_f_c_t_1_1_shaderc___shader_compiler_aae2560597a360cecdaa3b83fd57c00cf}{m\_options}});}
+\DoxyCodeLine{\Hypertarget{_shaderc___shader_compiler_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_shaderc___shader_compiler_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (result.GetCompilationStatus()\ !=\ shaderc\_compilation\_status\_success)\ \{}
+\DoxyCodeLine{\Hypertarget{_shaderc___shader_compiler_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_a41993be9a3c6e8f05f5b7bda9a9015b2}{ferr}}\ <<\ \textcolor{stringliteral}{"{}Shader\ compilation\ failed:\ "{}}\ <<\ result.GetErrorMessage()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_shaderc___shader_compiler_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{\};}
+\DoxyCodeLine{\Hypertarget{_shaderc___shader_compiler_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_shaderc___shader_compiler_8cpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_shaderc___shader_compiler_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint32\_t*\ dataStart\ =\ result.cbegin();}
+\DoxyCodeLine{\Hypertarget{_shaderc___shader_compiler_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ byteStart\ =\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(dataStart);}
+\DoxyCodeLine{\Hypertarget{_shaderc___shader_compiler_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ byteSize\ =\ (result.cend()\ -\/\ result.cbegin())\ *\ \textcolor{keyword}{sizeof}(uint32\_t);}
+\DoxyCodeLine{\Hypertarget{_shaderc___shader_compiler_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_shaderc___shader_compiler_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::vector<char>(byteStart,\ byteStart\ +\ byteSize);}
+\DoxyCodeLine{\Hypertarget{_shaderc___shader_compiler_8cpp_source_l00031}00031\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_shaderc___shader_compiler_8cpp_source_l00032}00032\ \}}
 
 \end{DoxyCode}

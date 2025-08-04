@@ -58,6 +58,15 @@ namespace FCT
             virtual void beginSubmit(CommandBuffer* cmdBuf) = 0;
             virtual void endSubmit(CommandBuffer* cmdBuf) = 0;
             virtual void create() = 0;
+            /**
+             * @cond CHINESE
+             * @brief 开始下一个pass的 提交
+             * @note pass提交顺序等于pass添加顺序不等于pass执行顺序
+             *       pass提交顺序只是把pass里的命令提交到 gpu的顺序，在gpu里的执行顺序由pass间的依赖关系决定
+             * @param cmdBuf
+             * @endcond
+             */
+            virtual void nextPass(CommandBuffer* cmdBuf) = 0;
             void addPass(Pass* pass);
             void addPass(const PassDesc& desc);
         protected:

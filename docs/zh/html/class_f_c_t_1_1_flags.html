@@ -98,7 +98,7 @@ FCT::Flags&lt; BitType &gt; 的协作图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_f_c_t_1_1_flags__coll__graph.png" border="0" usemap="#a_f_c_t_1_1_flags_3_01_bit_type_01_4_coll__map" loading="lazy" alt="Collaboration graph"/></div>
 <map name="a_f_c_t_1_1_flags_3_01_bit_type_01_4_coll__map" id="a_f_c_t_1_1_flags_3_01_bit_type_01_4_coll__map">
-<area shape="rect" title=" " alt="" coords="5,5,149,501"/>
+<area shape="rect" title=" " alt="" coords="5,5,149,523"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -124,6 +124,7 @@ Public 成员函数</h2></td></tr>
 <tr class="memitem:a71837213e692b52163ed70e2ce54c8f2" id="r_a71837213e692b52163ed70e2ce54c8f2"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="class_f_c_t_1_1_flags.html">Flags</a>&lt; BitType &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71837213e692b52163ed70e2ce54c8f2">operator^</a> (<a class="el" href="class_f_c_t_1_1_flags.html">Flags</a>&lt; BitType &gt; const &amp;rhs) const noexcept</td></tr>
 <tr class="memitem:a0f535e8bcd5fd02aa5923d9fa500049e" id="r_a0f535e8bcd5fd02aa5923d9fa500049e"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="class_f_c_t_1_1_flags.html">Flags</a>&lt; BitType &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f535e8bcd5fd02aa5923d9fa500049e">operator~</a> () const noexcept</td></tr>
 <tr class="memitem:ac8c84280334a607eae2056ee3e6ea906" id="r_ac8c84280334a607eae2056ee3e6ea906"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_f_c_t_1_1_flags.html">Flags</a>&lt; BitType &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac8c84280334a607eae2056ee3e6ea906">operator=</a> (<a class="el" href="class_f_c_t_1_1_flags.html">Flags</a>&lt; BitType &gt; const &amp;rhs) noexcept=default</td></tr>
+<tr class="memitem:a64eb869e8d744a882f7d3ddfadd24025" id="r_a64eb869e8d744a882f7d3ddfadd24025"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_f_c_t_1_1_flags.html">Flags</a>&lt; BitType &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a64eb869e8d744a882f7d3ddfadd24025">operator=</a> (BitType bit) noexcept</td></tr>
 <tr class="memitem:a2a2d009cf6d73da2057b6ef85c1e936a" id="r_a2a2d009cf6d73da2057b6ef85c1e936a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_f_c_t_1_1_flags.html">Flags</a>&lt; BitType &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a2d009cf6d73da2057b6ef85c1e936a">operator|=</a> (<a class="el" href="class_f_c_t_1_1_flags.html">Flags</a>&lt; BitType &gt; const &amp;rhs) noexcept</td></tr>
 <tr class="memitem:acb370a0df6bb61ddd1fc303b45d1831a" id="r_acb370a0df6bb61ddd1fc303b45d1831a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_f_c_t_1_1_flags.html">Flags</a>&lt; BitType &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acb370a0df6bb61ddd1fc303b45d1831a">operator&amp;=</a> (<a class="el" href="class_f_c_t_1_1_flags.html">Flags</a>&lt; BitType &gt; const &amp;rhs) noexcept</td></tr>
 <tr class="memitem:a446aff43ff50909e528fdab44162b7e6" id="r_a446aff43ff50909e528fdab44162b7e6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_f_c_t_1_1_flags.html">Flags</a>&lt; BitType &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a446aff43ff50909e528fdab44162b7e6">operator^=</a> (<a class="el" href="class_f_c_t_1_1_flags.html">Flags</a>&lt; BitType &gt; const &amp;rhs) noexcept</td></tr>
@@ -132,8 +133,20 @@ Public 成员函数</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">详细描述</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename BitType&gt;<br />
-class FCT::Flags&lt; BitType &gt;</div>
-<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00017">17</a> 行定义.</p>
+class FCT::Flags&lt; BitType &gt;</div><p>@tips 使用方法： </p><div class="fragment"><div class="line"><span class="keyword">enum</span> XX {</div>
+<div class="line">  flag1 = 1 &lt;&lt; 0,</div>
+<div class="line">  flag1 = 1 &lt;&lt; 1</div>
+<div class="line">};</div>
+<div class="line"><a class="code hl_define" href="_flags_8h.html#ad4f3528683d14cd2c679ec96189e968f">FCT_DECLARE_FLAGS</a>(XX);</div>
+<div class="ttc" id="a_flags_8h_html_ad4f3528683d14cd2c679ec96189e968f"><div class="ttname"><a href="_flags_8h.html#ad4f3528683d14cd2c679ec96189e968f">FCT_DECLARE_FLAGS</a></div><div class="ttdeci">#define FCT_DECLARE_FLAGS(BitType)</div><div class="ttdef"><b>定义</b> <a href="_flags_8h_source.html#l00116">Flags.h:116</a></div></div>
+</div><!-- fragment --><p> 这样就定义了一个 XXs flag </p><dl class="tparams"><dt>模板参数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">BitType</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00029">29</a> 行定义.</p>
 </div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">成员类型定义说明</h2>
 <a id="a8527c97cf2f049116f19d3aa9f4e6c86" name="a8527c97cf2f049116f19d3aa9f4e6c86"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8527c97cf2f049116f19d3aa9f4e6c86">&#9670;&#160;</a></span>MaskType</h2>
@@ -149,7 +162,7 @@ template&lt;typename BitType&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00019">19</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00031">31</a> 行定义.</p>
 
 </div>
 </div>
@@ -179,7 +192,7 @@ template&lt;typename BitType&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00021">21</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00033">33</a> 行定义.</p>
 <div class="dynheader">
 这是这个函数的调用关系图:</div>
 <div class="dyncontent">
@@ -224,7 +237,7 @@ template&lt;typename BitType&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00022">22</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00034">34</a> 行定义.</p>
 
 </div>
 </div>
@@ -280,7 +293,7 @@ template&lt;typename BitType&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00024">24</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00036">36</a> 行定义.</p>
 
 </div>
 </div>
@@ -310,7 +323,7 @@ template&lt;typename BitType&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00045">45</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00058">58</a> 行定义.</p>
 
 </div>
 </div>
@@ -339,7 +352,7 @@ template&lt;typename BitType&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00046">46</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00059">59</a> 行定义.</p>
 
 </div>
 </div>
@@ -368,7 +381,7 @@ template&lt;typename BitType&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00033">33</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00045">45</a> 行定义.</p>
 
 </div>
 </div>
@@ -397,7 +410,7 @@ template&lt;typename BitType&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00031">31</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00043">43</a> 行定义.</p>
 
 </div>
 </div>
@@ -426,7 +439,7 @@ template&lt;typename BitType&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00035">35</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00047">47</a> 行定义.</p>
 
 </div>
 </div>
@@ -455,7 +468,7 @@ template&lt;typename BitType&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00042">42</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00055">55</a> 行定义.</p>
 
 </div>
 </div>
@@ -484,7 +497,7 @@ template&lt;typename BitType&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00026">26</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00038">38</a> 行定义.</p>
 
 </div>
 </div>
@@ -513,12 +526,41 @@ template&lt;typename BitType&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00027">27</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00039">39</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a64eb869e8d744a882f7d3ddfadd24025" name="a64eb869e8d744a882f7d3ddfadd24025"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64eb869e8d744a882f7d3ddfadd24025">&#9670;&#160;</a></span>operator=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BitType&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_f_c_t_1_1_flags.html">Flags</a>&lt; BitType &gt; &amp; <a class="el" href="class_f_c_t_1_1_flags.html">FCT::Flags</a>&lt; BitType &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">BitType</td>          <td class="paramname"><span class="paramname"><em>bit</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00053">53</a> 行定义.</p>
 
 </div>
 </div>
 <a id="ac8c84280334a607eae2056ee3e6ea906" name="ac8c84280334a607eae2056ee3e6ea906"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac8c84280334a607eae2056ee3e6ea906">&#9670;&#160;</a></span>operator=()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8c84280334a607eae2056ee3e6ea906">&#9670;&#160;</a></span>operator=() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -569,7 +611,7 @@ template&lt;typename BitType&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00030">30</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00042">42</a> 行定义.</p>
 
 </div>
 </div>
@@ -598,7 +640,7 @@ template&lt;typename BitType&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00028">28</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00040">40</a> 行定义.</p>
 
 </div>
 </div>
@@ -627,7 +669,7 @@ template&lt;typename BitType&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00029">29</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00041">41</a> 行定义.</p>
 
 </div>
 </div>
@@ -656,7 +698,7 @@ template&lt;typename BitType&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00037">37</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00049">49</a> 行定义.</p>
 
 </div>
 </div>
@@ -685,7 +727,7 @@ template&lt;typename BitType&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00043">43</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00056">56</a> 行定义.</p>
 
 </div>
 </div>
@@ -714,7 +756,7 @@ template&lt;typename BitType&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00036">36</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00048">48</a> 行定义.</p>
 
 </div>
 </div>
@@ -743,7 +785,7 @@ template&lt;typename BitType&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00041">41</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00054">54</a> 行定义.</p>
 
 </div>
 </div>
@@ -772,7 +814,7 @@ template&lt;typename BitType&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00038">38</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00050">50</a> 行定义.</p>
 
 </div>
 </div>

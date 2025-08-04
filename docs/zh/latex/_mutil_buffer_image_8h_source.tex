@@ -29,8 +29,8 @@
 \DoxyCodeLine{\Hypertarget{_mutil_buffer_image_8h_source_l00025}\mbox{\hyperlink{class_f_c_t_1_1_mutil_buffer_image_ac20d7079024a790b21c4c6bc3b9d46bf}{00025}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_mutil_buffer_image_ac20d7079024a790b21c4c6bc3b9d46bf}{imageCount}}(\textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a33146ec5804be422936519224a3a7b3f}{count}})\ \{\ m\_imageCount\ =\ \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a33146ec5804be422936519224a3a7b3f}{count}};\ \}}
 \DoxyCodeLine{\Hypertarget{_mutil_buffer_image_8h_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_mutil_buffer_image_ad5f6bf8818e4645f3316af155c2d1e76}{create}}()\ \textcolor{keyword}{override};}
 \DoxyCodeLine{\Hypertarget{_mutil_buffer_image_8h_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_mutil_buffer_image_adefe88a4c195014b9c2b5e0c5949f0dc}{resize}}(uint32\_t\ \mbox{\hyperlink{class_f_c_t_1_1_image_af4b50a8b7479884c2cd0c0e990875c25}{width}},\ uint32\_t\ \mbox{\hyperlink{class_f_c_t_1_1_image_ab8acb1090a3b1bc3bb282196f7b9209f}{height}});}
-\DoxyCodeLine{\Hypertarget{_mutil_buffer_image_8h_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_mutil_buffer_image_ad5f6bf8818e4645f3316af155c2d1e76}{create}}(std::vector<RHI::Image*>\ images);}
-\DoxyCodeLine{\Hypertarget{_mutil_buffer_image_8h_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_mutil_buffer_image_a45d868bb75618407903b9c786ab28f8d}{as}}(\mbox{\hyperlink{namespace_f_c_t_a0cbb58fc2b9d03ebc10caf8a6f43d5d9}{ImageUsageFlags}}\ usage)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_mutil_buffer_image_8h_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_mutil_buffer_image_ad5f6bf8818e4645f3316af155c2d1e76}{create}}(std::vector<RHI::Image*>\ \mbox{\hyperlink{class_f_c_t_1_1_mutil_buffer_image_ae8c10c2b9f54f39c9912e9f0e67a9c57}{images}});}
+\DoxyCodeLine{\Hypertarget{_mutil_buffer_image_8h_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_mutil_buffer_image_a922687a9af38683519c069b1d0249da4}{as}}(ImageUsages\ usage)\ \textcolor{keyword}{override};}
 \DoxyCodeLine{\Hypertarget{_mutil_buffer_image_8h_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_mutil_buffer_image_a2b3635fafe7a058d07b9ff813945cf20}{bind}}(\mbox{\hyperlink{class_f_c_t_1_1_context}{Context}}*\ ctx)\ \textcolor{keyword}{override};}
 \DoxyCodeLine{\Hypertarget{_mutil_buffer_image_8h_source_l00031}\mbox{\hyperlink{class_f_c_t_1_1_mutil_buffer_image_a3b346923bc5f61153a33a0cda59b6084}{00031}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_image_a590a98656090f50a55bd884a37d2ecb3}{Image}}*\ \mbox{\hyperlink{class_f_c_t_1_1_mutil_buffer_image_a3b346923bc5f61153a33a0cda59b6084}{getImage}}()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{const\_cast<}\mbox{\hyperlink{class_f_c_t_1_1_mutil_buffer_image_a501cd636d88938597b99c2cbf152036f}{MutilBufferImage}}*\textcolor{keyword}{>}(\textcolor{keyword}{this});\ \}}
 \DoxyCodeLine{\Hypertarget{_mutil_buffer_image_8h_source_l00032}00032\ \ \ \ \ \ \ \ \ std::vector<Image*>\ \mbox{\hyperlink{class_f_c_t_1_1_mutil_buffer_image_a6a7e3c31fdb1ffae08ffa7039a29d13c}{getTargetImages}}()\ \textcolor{keyword}{override};}
@@ -47,19 +47,23 @@
 \DoxyCodeLine{\Hypertarget{_mutil_buffer_image_8h_source_l00043}00043\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
 \DoxyCodeLine{\Hypertarget{_mutil_buffer_image_8h_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_imageCount;}
 \DoxyCodeLine{\Hypertarget{_mutil_buffer_image_8h_source_l00045}00045\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_mutil_buffer_image_8h_source_l00046}00046\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{_mutil_buffer_image_8h_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ m\_imageCount\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{_mutil_buffer_image_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_a0cbb58fc2b9d03ebc10caf8a6f43d5d9}{ImageUsageFlags}}\ m\_usage;}
-\DoxyCodeLine{\Hypertarget{_mutil_buffer_image_8h_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ m\_currentIndex\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{_mutil_buffer_image_8h_source_l00050}00050\ \ \ \ \ \ \ \ \ std::vector<RHI::Image*>\ m\_images;}
-\DoxyCodeLine{\Hypertarget{_mutil_buffer_image_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ std::vector<RHI::RenderTargetView*>\ m\_rtvs;}
-\DoxyCodeLine{\Hypertarget{_mutil_buffer_image_8h_source_l00052}00052\ \ \ \ \ \ \ \ \ std::vector<RHI::DepthStencilView*>\ m\_dsvs;}
-\DoxyCodeLine{\Hypertarget{_mutil_buffer_image_8h_source_l00053}00053\ \ \ \ \ \ \ \ \ std::vector<RHI::TextureView*>\ m\_tvs;}
-\DoxyCodeLine{\Hypertarget{_mutil_buffer_image_8h_source_l00054}00054\ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{_mutil_buffer_image_8h_source_l00055}00055\ }
-\DoxyCodeLine{\Hypertarget{_mutil_buffer_image_8h_source_l00056}00056\ \}}
-\DoxyCodeLine{\Hypertarget{_mutil_buffer_image_8h_source_l00057}00057\ }
-\DoxyCodeLine{\Hypertarget{_mutil_buffer_image_8h_source_l00058}00058\ }
-\DoxyCodeLine{\Hypertarget{_mutil_buffer_image_8h_source_l00059}00059\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//MUTILBUFFERIMAGE\_H}}
+\DoxyCodeLine{\Hypertarget{_mutil_buffer_image_8h_source_l00046}\mbox{\hyperlink{class_f_c_t_1_1_mutil_buffer_image_ae8c10c2b9f54f39c9912e9f0e67a9c57}{00046}}\ \ \ \ \ \ \ \ \ std::vector<RHI::Image*>\ \mbox{\hyperlink{class_f_c_t_1_1_mutil_buffer_image_ae8c10c2b9f54f39c9912e9f0e67a9c57}{images}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_images;\ \}}
+\DoxyCodeLine{\Hypertarget{_mutil_buffer_image_8h_source_l00047}\mbox{\hyperlink{class_f_c_t_1_1_mutil_buffer_image_aa00fcf787b595f25af1c3a812df8d05b}{00047}}\ \ \ \ \ \ \ \ \ std::vector<RHI::RenderTargetView*>\ \mbox{\hyperlink{class_f_c_t_1_1_mutil_buffer_image_aa00fcf787b595f25af1c3a812df8d05b}{rtvs}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_rtvs;\ \}}
+\DoxyCodeLine{\Hypertarget{_mutil_buffer_image_8h_source_l00048}\mbox{\hyperlink{class_f_c_t_1_1_mutil_buffer_image_aa4f0a2a90e8622f1cb8eec73757aa897}{00048}}\ \ \ \ \ \ \ \ \ std::vector<RHI::DepthStencilView*>\ \mbox{\hyperlink{class_f_c_t_1_1_mutil_buffer_image_aa4f0a2a90e8622f1cb8eec73757aa897}{dsvs}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_dsvs;\ \}}
+\DoxyCodeLine{\Hypertarget{_mutil_buffer_image_8h_source_l00049}\mbox{\hyperlink{class_f_c_t_1_1_mutil_buffer_image_a097e8a71deace8c4da1711588d79a05d}{00049}}\ \ \ \ \ \ \ \ \ std::vector<RHI::TextureView*>\ \mbox{\hyperlink{class_f_c_t_1_1_mutil_buffer_image_a097e8a71deace8c4da1711588d79a05d}{tvs}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_tvs;\ \}}
+\DoxyCodeLine{\Hypertarget{_mutil_buffer_image_8h_source_l00050}00050\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_mutil_buffer_image_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ m\_imageCount\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_mutil_buffer_image_8h_source_l00052}00052\ \ \ \ \ \ \ \ \ ImageUsages\ m\_usage;}
+\DoxyCodeLine{\Hypertarget{_mutil_buffer_image_8h_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ m\_currentIndex\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_mutil_buffer_image_8h_source_l00054}00054\ \ \ \ \ \ \ \ \ std::vector<RHI::Image*>\ m\_images;}
+\DoxyCodeLine{\Hypertarget{_mutil_buffer_image_8h_source_l00055}00055\ \ \ \ \ \ \ \ \ std::vector<RHI::RenderTargetView*>\ m\_rtvs;}
+\DoxyCodeLine{\Hypertarget{_mutil_buffer_image_8h_source_l00056}00056\ \ \ \ \ \ \ \ \ std::vector<RHI::DepthStencilView*>\ m\_dsvs;}
+\DoxyCodeLine{\Hypertarget{_mutil_buffer_image_8h_source_l00057}00057\ \ \ \ \ \ \ \ \ std::vector<RHI::TextureView*>\ m\_tvs;}
+\DoxyCodeLine{\Hypertarget{_mutil_buffer_image_8h_source_l00058}00058\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_mutil_buffer_image_8h_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_mutil_buffer_image_8h_source_l00060}00060\ \}}
+\DoxyCodeLine{\Hypertarget{_mutil_buffer_image_8h_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_mutil_buffer_image_8h_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_mutil_buffer_image_8h_source_l00063}00063\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//MUTILBUFFERIMAGE\_H}}
 
 \end{DoxyCode}

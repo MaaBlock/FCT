@@ -14,7 +14,6 @@ var searchData=
   ['loadtexture_11',['loadTexture',['../class_f_c_t_1_1_context.html#a59944f3c38119994120f3623a36cddf6',1,'FCT::Context']]],
   ['location_12',['location',['../class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a12e04d867a7d6d8af3e37d0002e6aa38',1,'FCT::RHI::ShaderBinary']]],
   ['locationbysemantic_13',['locationBySemantic',['../class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a263ea3acc2ec1f1a46dcdb4aa588843f',1,'FCT::RHI::ShaderBinary']]],
-  ['logicop_14',['logicOp',['../class_f_c_t_1_1_blend_state.html#ab6cf0d97832071d6acefb9c96f6a3069',1,'FCT::BlendState::logicOp() const'],['../class_f_c_t_1_1_blend_state.html#a2eff95cba1dc69c53456c76e761192aa',1,'FCT::BlendState::logicOp(LogicOp op)']]],
-  ['logicopenable_15',['logicOpEnable',['../class_f_c_t_1_1_blend_state.html#a0bc6f4d5a82000d15e70597d29e22d71',1,'FCT::BlendState::logicOpEnable() const'],['../class_f_c_t_1_1_blend_state.html#ac86604a2473f51b5ca69e2879abc9977',1,'FCT::BlendState::logicOpEnable(bool enable)']]],
-  ['lookat_16',['LookAt',['../class_f_c_t_1_1_mat4.html#a60900bd8356d59476fe8ee42e54e857d',1,'FCT::Mat4']]]
+  ['logic_14',['logic',['../class_f_c_t_1_1_blend_state.html#a6a6a521da736b3803948f2e0c90a7f7e',1,'FCT::BlendState']]],
+  ['lookat_15',['LookAt',['../class_f_c_t_1_1_mat4.html#a60900bd8356d59476fe8ee42e54e857d',1,'FCT::Mat4']]]
 ];

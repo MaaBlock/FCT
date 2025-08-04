@@ -68,6 +68,7 @@ namespace FCT
             {
                 return m_group;
             }
+            virtual void executeClear(CommandBuffer* cmdBuf) = 0;
             auto& renderTargets()
             {
                 return m_renderTargets;

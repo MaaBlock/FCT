@@ -344,7 +344,7 @@ $(function(){initNavTree('_v_k___swapchain_8cpp_source.html','',''); });
 <div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>                <span class="keyword">auto</span> timeSinceRequest = duration_cast&lt;milliseconds&gt;(</div>
 <div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>                    now - m_lastRecreateRequestTime</div>
 <div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>                ).count();</div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>                <span class="keywordflow">while</span> (timeSinceRequest &lt; RECREATE_DEBOUNCE_MS || !<a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_swapchain.html#a27dc83e42bf02c7dbf2b2f64ddc4f372">m_width</a> || !<a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_swapchain.html#a721f7212bd66a3a09e8ffc9c8aeff29e">m_height</a>)</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>                <span class="keywordflow">while</span> (timeSinceRequest &lt; RECREATE_DEBOUNCE_MS || !m_pendingWidth || !m_pendingHeight)</div>
 <div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>                {</div>
 <div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>                    now = high_resolution_clock::now();</div>
 <div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>                    timeSinceRequest = duration_cast&lt;milliseconds&gt;(</div>
@@ -417,187 +417,188 @@ $(function(){initNavTree('_v_k___swapchain_8cpp_source.html','',''); });
 <div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>            {</div>
 <div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>                fence-&gt;waitFor();</div>
 <div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>                fence-&gt;reset();</div>
-<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>            }</div>
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>            <span class="keywordflow">try</span> {</div>
-<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>                <span class="keyword">auto</span> nextResult = dc.acquireNextImageKHR(</div>
-<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>                        m_swapchain,</div>
-<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>                        UINT64_MAX,</div>
-<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>                        m_prensentFinshSemphore-&gt;semaphore(),</div>
-<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>                        <span class="keyword">nullptr</span>,</div>
-<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>                        &amp;m_currentImageIndex</div>
-<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>                );</div>
-<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span> </div>
-<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>                <span class="keywordflow">if</span> (nextResult == vk::Result::eSuboptimalKHR) {</div>
-<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>                    m_recreatedFlag = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>                    <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>                }</div>
-<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>            } <span class="keywordflow">catch</span> (vk::OutOfDateKHRError&amp; e) {</div>
-<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>                m_recreatedFlag = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>                <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>            } <span class="keywordflow">catch</span> (vk::SystemError&amp; e) {</div>
-<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>                <a class="code hl_variable" href="namespace_f_c_t.html#a41993be9a3c6e8f05f5b7bda9a9015b2">ferr</a> &lt;&lt; <span class="stringliteral">&quot;fetal error in VK_Swapchain::present() - acquireNextImage&quot;</span> &lt;&lt; e.what() &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>                <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>            }</div>
-<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span> </div>
-<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>            m_fctImage-&gt;changeCurrentIndex(m_currentImageIndex);</div>
-<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>            <span class="keywordflow">if</span> (m_depthStencilImage)</div>
-<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>            {</div>
-<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>                m_depthStencilImage-&gt;changeCurrentIndex(m_currentImageIndex);</div>
-<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>            }</div>
-<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>        }</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>                <span class="comment">//fout &lt;&lt; &quot;nomarl reset fence&quot; &lt;&lt; std::endl;</span></div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>            }</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>            <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>                <span class="keyword">auto</span> nextResult = dc.acquireNextImageKHR(</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>                        m_swapchain,</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>                        UINT64_MAX,</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>                        m_prensentFinshSemphore-&gt;semaphore(),</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>                        <span class="keyword">nullptr</span>,</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>                        &amp;m_currentImageIndex</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>                );</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span> </div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>                <span class="keywordflow">if</span> (nextResult == vk::Result::eSuboptimalKHR) {</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>                    m_recreatedFlag = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>                    <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>                }</div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>            } <span class="keywordflow">catch</span> (vk::OutOfDateKHRError&amp; e) {</div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>                m_recreatedFlag = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>                <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>            } <span class="keywordflow">catch</span> (vk::SystemError&amp; e) {</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>                <a class="code hl_variable" href="namespace_f_c_t.html#a41993be9a3c6e8f05f5b7bda9a9015b2">ferr</a> &lt;&lt; <span class="stringliteral">&quot;fetal error in VK_Swapchain::present() - acquireNextImage&quot;</span> &lt;&lt; e.what() &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>                <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>            }</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span> </div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>            m_fctImage-&gt;changeCurrentIndex(m_currentImageIndex);</div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>            <span class="keywordflow">if</span> (m_depthStencilImage)</div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>            {</div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>                m_depthStencilImage-&gt;changeCurrentIndex(m_currentImageIndex);</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>            }</div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>        }</div>
 </div>
-<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span> </div>
-<div class="foldopen" id="foldopen00339" data-start="{" data-end="}">
-<div class="line"><a id="l00339" name="l00339"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a58f3695dff033e086411efc7ec36b61b">  339</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a58f3695dff033e086411efc7ec36b61b">VK_Swapchain::acquireFirstImage</a>() {</div>
-<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>            <span class="keyword">auto</span> dc = m_ctx-&gt;getDevice();</div>
-<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>            <a class="code hl_class" href="class_f_c_t_1_1_r_h_i_1_1_v_k___fence.html">VK_Fence</a>* fence = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>            <span class="keywordflow">try</span></div>
-<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>            {</div>
-<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>                <span class="keywordflow">if</span> (m_prensentFinshSemphore)</div>
-<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>                {</div>
-<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>                    m_prensentFinshSemphore-&gt;create();</div>
-<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>                    <span class="keyword">auto</span> nextResult = dc.acquireNextImageKHR(</div>
-<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>                            m_swapchain,</div>
-<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>                            UINT64_MAX,</div>
-<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>                            m_prensentFinshSemphore-&gt;semaphore(),</div>
-<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>                            <span class="keyword">nullptr</span>,</div>
-<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>                            &amp;m_currentImageIndex</div>
-<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>                    );</div>
-<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>                    <span class="keywordflow">if</span> (nextResult == vk::Result::eSuboptimalKHR) {</div>
-<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>                        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>                    }</div>
-<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>            } <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>            {</div>
-<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>                fence = <span class="keyword">new</span> <a class="code hl_class" href="class_f_c_t_1_1_r_h_i_1_1_v_k___fence.html">VK_Fence</a>(m_ctx);</div>
-<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>                fence-&gt;<a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___fence.html#a6165a4dbe87683eaa15803370bf04dcf">create</a>();</div>
-<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>                <span class="keyword">auto</span> nextResult = dc.acquireNextImageKHR(</div>
-<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>                        m_swapchain,</div>
-<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>                        UINT64_MAX,</div>
-<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>                        <span class="keyword">nullptr</span>,</div>
-<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>                        fence-&gt;<a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___fence.html#ab2196acf254a1d0f9dc0c40a44d3a034">fence</a>(),</div>
-<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>                        &amp;m_currentImageIndex</div>
-<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>                );</div>
-<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>                fence-&gt;<a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___fence.html#a13ba2227f44cf2d8f9282435dcd80676">waitFor</a>();</div>
-<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>                fence-&gt;<a class="code hl_function" href="class_f_c_t_1_1_ref_count.html#aaf57b2df79545f2b71ae9087865dee4c">release</a>();</div>
-<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>                <span class="keywordflow">if</span> (nextResult == vk::Result::eSuboptimalKHR) {</div>
-<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>                    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>                }</div>
-<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>            }</div>
-<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>            } <span class="keywordflow">catch</span> (vk::OutOfDateKHRError&amp; e)</div>
-<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>            {</div>
-<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>            }</div>
-<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>            m_fctImage-&gt;changeCurrentIndex(m_currentImageIndex);</div>
-<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>            <span class="keywordflow">if</span> (m_depthStencilImage)</div>
-<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>            {</div>
-<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>                m_depthStencilImage-&gt;changeCurrentIndex(m_currentImageIndex);</div>
-<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>            }</div>
-<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>        }</div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span> </div>
+<div class="foldopen" id="foldopen00340" data-start="{" data-end="}">
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a58f3695dff033e086411efc7ec36b61b">  340</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a58f3695dff033e086411efc7ec36b61b">VK_Swapchain::acquireFirstImage</a>() {</div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>            <span class="keyword">auto</span> dc = m_ctx-&gt;getDevice();</div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>            <a class="code hl_class" href="class_f_c_t_1_1_r_h_i_1_1_v_k___fence.html">VK_Fence</a>* fence = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>            <span class="keywordflow">try</span></div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>            {</div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>                <span class="keywordflow">if</span> (m_prensentFinshSemphore)</div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>                {</div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>                    m_prensentFinshSemphore-&gt;create();</div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>                    <span class="keyword">auto</span> nextResult = dc.acquireNextImageKHR(</div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>                            m_swapchain,</div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>                            UINT64_MAX,</div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>                            m_prensentFinshSemphore-&gt;semaphore(),</div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>                            <span class="keyword">nullptr</span>,</div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>                            &amp;m_currentImageIndex</div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>                    );</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>                    <span class="keywordflow">if</span> (nextResult == vk::Result::eSuboptimalKHR) {</div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>                        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>                    }</div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>            } <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>            {</div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>                fence = <span class="keyword">new</span> <a class="code hl_class" href="class_f_c_t_1_1_r_h_i_1_1_v_k___fence.html">VK_Fence</a>(m_ctx);</div>
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>                fence-&gt;<a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___fence.html#a6165a4dbe87683eaa15803370bf04dcf">create</a>();</div>
+<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>                <span class="keyword">auto</span> nextResult = dc.acquireNextImageKHR(</div>
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>                        m_swapchain,</div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>                        UINT64_MAX,</div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>                        <span class="keyword">nullptr</span>,</div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>                        fence-&gt;<a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___fence.html#ab2196acf254a1d0f9dc0c40a44d3a034">fence</a>(),</div>
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>                        &amp;m_currentImageIndex</div>
+<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>                );</div>
+<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>                fence-&gt;<a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___fence.html#a13ba2227f44cf2d8f9282435dcd80676">waitFor</a>();</div>
+<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>                fence-&gt;<a class="code hl_function" href="class_f_c_t_1_1_ref_count.html#aaf57b2df79545f2b71ae9087865dee4c">release</a>();</div>
+<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>                <span class="keywordflow">if</span> (nextResult == vk::Result::eSuboptimalKHR) {</div>
+<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>                    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>                }</div>
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>            }</div>
+<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>            } <span class="keywordflow">catch</span> (vk::OutOfDateKHRError&amp; e)</div>
+<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>            {</div>
+<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>            }</div>
+<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>            m_fctImage-&gt;changeCurrentIndex(m_currentImageIndex);</div>
+<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>            <span class="keywordflow">if</span> (m_depthStencilImage)</div>
+<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>            {</div>
+<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>                m_depthStencilImage-&gt;changeCurrentIndex(m_currentImageIndex);</div>
+<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>            }</div>
+<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>        }</div>
 </div>
-<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span> </div>
-<div class="foldopen" id="foldopen00386" data-start="{" data-end="}">
-<div class="line"><a id="l00386" name="l00386"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#aa788133c8149636bcff10880879ee4e4">  386</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#aa788133c8149636bcff10880879ee4e4">VK_Swapchain::needRecreate</a>(<span class="keywordtype">int</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_swapchain.html#a15fd90177e6fd7b0886b06d85b9b7b85">width</a>, <span class="keywordtype">int</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_swapchain.html#ac064791709b137ce6fcd8e9344767e1d">height</a>)</div>
-<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>        {</div>
-<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>            m_lastRecreateRequestTime = std::chrono::high_resolution_clock::now();</div>
-<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>            m_recreatedFlag = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>            m_pendingWidth = <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_swapchain.html#a15fd90177e6fd7b0886b06d85b9b7b85">width</a>;</div>
-<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>            m_pendingHeight = <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_swapchain.html#ac064791709b137ce6fcd8e9344767e1d">height</a>;</div>
-<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>            <span class="comment">//m_needRecreated = true;</span></div>
-<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span>            <span class="comment">//m_recreated = false;</span></div>
-<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span>            <span class="comment">//FCT_WAIT_FOR(m_recreated);</span></div>
-<div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span>        }</div>
+<div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span> </div>
+<div class="foldopen" id="foldopen00387" data-start="{" data-end="}">
+<div class="line"><a id="l00387" name="l00387"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#aa788133c8149636bcff10880879ee4e4">  387</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#aa788133c8149636bcff10880879ee4e4">VK_Swapchain::needRecreate</a>(<span class="keywordtype">int</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_swapchain.html#a15fd90177e6fd7b0886b06d85b9b7b85">width</a>, <span class="keywordtype">int</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_swapchain.html#ac064791709b137ce6fcd8e9344767e1d">height</a>)</div>
+<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>        {</div>
+<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>            m_lastRecreateRequestTime = std::chrono::high_resolution_clock::now();</div>
+<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>            m_recreatedFlag = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>            m_pendingWidth = <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_swapchain.html#a15fd90177e6fd7b0886b06d85b9b7b85">width</a>;</div>
+<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>            m_pendingHeight = <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_swapchain.html#ac064791709b137ce6fcd8e9344767e1d">height</a>;</div>
+<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span>            <span class="comment">//m_needRecreated = true;</span></div>
+<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span>            <span class="comment">//m_recreated = false;</span></div>
+<div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span>            <span class="comment">//FCT_WAIT_FOR(m_recreated);</span></div>
+<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span>        }</div>
 </div>
-<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span> </div>
-<div class="foldopen" id="foldopen00397" data-start="{" data-end="}">
-<div class="line"><a id="l00397" name="l00397"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#ab25446560682a0d918de20a6dca725ad">  397</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#ab25446560682a0d918de20a6dca725ad">VK_Swapchain::processRecreate</a>(<span class="keywordtype">bool</span> waitFence)</div>
-<div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span>        {</div>
-<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span>            <span class="keyword">auto</span> dc = m_ctx-&gt;getDevice();</div>
-<div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span>            <span class="keywordflow">if</span> (m_needRecreated)</div>
-<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>            {</div>
-<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span>                <span class="keywordflow">if</span> (waitFence)</div>
-<div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span>                {</div>
-<div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span>                    <span class="keywordflow">for</span> (<span class="keyword">auto</span> fence : <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_swapchain.html#ae720ea08e24b310ac7fe0c0ed23c3337">m_renderFinshFences</a>)</div>
-<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>                    {</div>
-<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span>                        fence-&gt;waitFor();</div>
-<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>                        fence-&gt;reset();</div>
-<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>                    }</div>
-<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span>                }</div>
-<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span>                <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a446c22557164109d53c6e28555a0f4dd">create</a>();</div>
-<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span>                m_needRecreated = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span>                m_recreated = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span>                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>            }</div>
-<div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span>        }</div>
+<div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span> </div>
+<div class="foldopen" id="foldopen00398" data-start="{" data-end="}">
+<div class="line"><a id="l00398" name="l00398"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#ab25446560682a0d918de20a6dca725ad">  398</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#ab25446560682a0d918de20a6dca725ad">VK_Swapchain::processRecreate</a>(<span class="keywordtype">bool</span> waitFence)</div>
+<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span>        {</div>
+<div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span>            <span class="keyword">auto</span> dc = m_ctx-&gt;getDevice();</div>
+<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>            <span class="keywordflow">if</span> (m_needRecreated)</div>
+<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span>            {</div>
+<div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span>                <span class="keywordflow">if</span> (waitFence)</div>
+<div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span>                {</div>
+<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>                    <span class="keywordflow">for</span> (<span class="keyword">auto</span> fence : <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_swapchain.html#ae720ea08e24b310ac7fe0c0ed23c3337">m_renderFinshFences</a>)</div>
+<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span>                    {</div>
+<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>                        fence-&gt;waitFor();</div>
+<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>                        fence-&gt;reset();</div>
+<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span>                    }</div>
+<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span>                }</div>
+<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span>                <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a446c22557164109d53c6e28555a0f4dd">create</a>();</div>
+<div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span>                m_needRecreated = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span>                m_recreated = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span>            }</div>
+<div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span>        }</div>
 </div>
-<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span> </div>
-<div class="foldopen" id="foldopen00418" data-start="{" data-end="}">
-<div class="line"><a id="l00418" name="l00418"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a46ee50ac34781999461d7ed1709f75a0">  418</a></span>        vk::Extent2D <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a46ee50ac34781999461d7ed1709f75a0">VK_Swapchain::getExtent</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span>            <span class="keywordflow">return</span> m_extent;</div>
-<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>        }</div>
+<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span> </div>
+<div class="foldopen" id="foldopen00419" data-start="{" data-end="}">
+<div class="line"><a id="l00419" name="l00419"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a46ee50ac34781999461d7ed1709f75a0">  419</a></span>        vk::Extent2D <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a46ee50ac34781999461d7ed1709f75a0">VK_Swapchain::getExtent</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>            <span class="keywordflow">return</span> m_extent;</div>
+<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>        }</div>
 </div>
-<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span> </div>
-<div class="foldopen" id="foldopen00422" data-start="{" data-end="}">
-<div class="line"><a id="l00422" name="l00422"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#aec5dab44339d78ba7899d85cc53b564f">  422</a></span>        <a class="code hl_enumeration" href="namespace_f_c_t.html#a0741721dca246274b1b72d07249443e4">Format</a> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#aec5dab44339d78ba7899d85cc53b564f">VK_Swapchain::getFormat</a>()<span class="keyword"> const</span></div>
-<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span><span class="keyword">        </span>{</div>
-<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="namespace_f_c_t.html#aae307910da6496d22fde7dd730866662">FromVkFormat</a>(m_imageFormat);</div>
-<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span>        }</div>
+<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span> </div>
+<div class="foldopen" id="foldopen00423" data-start="{" data-end="}">
+<div class="line"><a id="l00423" name="l00423"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#aec5dab44339d78ba7899d85cc53b564f">  423</a></span>        <a class="code hl_enumeration" href="namespace_f_c_t.html#a0741721dca246274b1b72d07249443e4">Format</a> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#aec5dab44339d78ba7899d85cc53b564f">VK_Swapchain::getFormat</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="namespace_f_c_t.html#aae307910da6496d22fde7dd730866662">FromVkFormat</a>(m_imageFormat);</div>
+<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span>        }</div>
 </div>
-<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span> </div>
-<div class="foldopen" id="foldopen00427" data-start="{" data-end="}">
-<div class="line"><a id="l00427" name="l00427"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a5f5eb310c0eff911ddcfd242ecd8646a">  427</a></span>        <a class="code hl_enumeration" href="namespace_f_c_t.html#a8cb0c505b8e8c6a531e659c7942eb182">Samples</a> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a5f5eb310c0eff911ddcfd242ecd8646a">VK_Swapchain::getSamples</a>()<span class="keyword"> const</span></div>
-<div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span><span class="keyword">        </span>{</div>
-<div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span>            <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespace_f_c_t.html#a8cb0c505b8e8c6a531e659c7942eb182af16981b72c70cf9ef716f38b848c5cf0">Samples::sample_1</a>;</div>
-<div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span>        }</div>
+<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span> </div>
+<div class="foldopen" id="foldopen00428" data-start="{" data-end="}">
+<div class="line"><a id="l00428" name="l00428"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a5f5eb310c0eff911ddcfd242ecd8646a">  428</a></span>        <a class="code hl_enumeration" href="namespace_f_c_t.html#a8cb0c505b8e8c6a531e659c7942eb182">Samples</a> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a5f5eb310c0eff911ddcfd242ecd8646a">VK_Swapchain::getSamples</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span>            <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespace_f_c_t.html#a8cb0c505b8e8c6a531e659c7942eb182af16981b72c70cf9ef716f38b848c5cf0">Samples::sample_1</a>;</div>
+<div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span>        }</div>
 </div>
-<div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span> </div>
-<div class="foldopen" id="foldopen00432" data-start="{" data-end="}">
-<div class="line"><a id="l00432" name="l00432"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#ad9f2d2c7fea5528211182d55b497c6ea">  432</a></span>        <a class="code hl_class" href="class_f_c_t_1_1_image_render_target.html">ImageRenderTarget</a>* <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#ad9f2d2c7fea5528211182d55b497c6ea">VK_Swapchain::target</a>()<span class="keyword"> const</span></div>
-<div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span><span class="keyword">        </span>{</div>
-<div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span>            <span class="keywordflow">return</span> m_target;</div>
-<div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span>        }</div>
+<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span> </div>
+<div class="foldopen" id="foldopen00433" data-start="{" data-end="}">
+<div class="line"><a id="l00433" name="l00433"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#ad9f2d2c7fea5528211182d55b497c6ea">  433</a></span>        <a class="code hl_class" href="class_f_c_t_1_1_image_render_target.html">ImageRenderTarget</a>* <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#ad9f2d2c7fea5528211182d55b497c6ea">VK_Swapchain::target</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span>            <span class="keywordflow">return</span> m_target;</div>
+<div class="line"><a id="l00436" name="l00436"></a><span class="lineno">  436</span>        }</div>
 </div>
-<div class="line"><a id="l00436" name="l00436"></a><span class="lineno">  436</span> </div>
-<div class="foldopen" id="foldopen00437" data-start="{" data-end="}">
-<div class="line"><a id="l00437" name="l00437"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a363ea8d0036083086d71fc193d562624">  437</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a363ea8d0036083086d71fc193d562624">VK_Swapchain::setPresentFinshSemaphore</a>(<a class="code hl_class" href="class_f_c_t_1_1_r_h_i_1_1_semaphore.html">RHI::Semaphore</a>* semaphore)</div>
-<div class="line"><a id="l00438" name="l00438"></a><span class="lineno">  438</span>        {</div>
-<div class="line"><a id="l00439" name="l00439"></a><span class="lineno">  439</span>            m_prensentFinshSemphore = <span class="keyword">static_cast&lt;</span><a class="code hl_class" href="class_f_c_t_1_1_r_h_i_1_1_v_k___semaphore.html">VK_Semaphore</a>*<span class="keyword">&gt;</span>(semaphore);</div>
-<div class="line"><a id="l00440" name="l00440"></a><span class="lineno">  440</span>        }</div>
+<div class="line"><a id="l00437" name="l00437"></a><span class="lineno">  437</span> </div>
+<div class="foldopen" id="foldopen00438" data-start="{" data-end="}">
+<div class="line"><a id="l00438" name="l00438"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a363ea8d0036083086d71fc193d562624">  438</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a363ea8d0036083086d71fc193d562624">VK_Swapchain::setPresentFinshSemaphore</a>(<a class="code hl_class" href="class_f_c_t_1_1_r_h_i_1_1_semaphore.html">RHI::Semaphore</a>* semaphore)</div>
+<div class="line"><a id="l00439" name="l00439"></a><span class="lineno">  439</span>        {</div>
+<div class="line"><a id="l00440" name="l00440"></a><span class="lineno">  440</span>            m_prensentFinshSemphore = <span class="keyword">static_cast&lt;</span><a class="code hl_class" href="class_f_c_t_1_1_r_h_i_1_1_v_k___semaphore.html">VK_Semaphore</a>*<span class="keyword">&gt;</span>(semaphore);</div>
+<div class="line"><a id="l00441" name="l00441"></a><span class="lineno">  441</span>        }</div>
 </div>
-<div class="line"><a id="l00441" name="l00441"></a><span class="lineno">  441</span> </div>
-<div class="foldopen" id="foldopen00442" data-start="{" data-end="}">
-<div class="line"><a id="l00442" name="l00442"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#ae1b985252d4e52726cdb9ea2a8bf1346">  442</a></span>        <a class="code hl_class" href="class_f_c_t_1_1_r_h_i_1_1_semaphore.html">RHI::Semaphore</a>* <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#ae1b985252d4e52726cdb9ea2a8bf1346">VK_Swapchain::getImageAvailableSemaphore</a>()</div>
-<div class="line"><a id="l00443" name="l00443"></a><span class="lineno">  443</span>        {</div>
-<div class="line"><a id="l00444" name="l00444"></a><span class="lineno">  444</span>            <span class="keywordflow">return</span> m_prensentFinshSemphore;</div>
-<div class="line"><a id="l00445" name="l00445"></a><span class="lineno">  445</span>        }</div>
+<div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span> </div>
+<div class="foldopen" id="foldopen00443" data-start="{" data-end="}">
+<div class="line"><a id="l00443" name="l00443"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#ae1b985252d4e52726cdb9ea2a8bf1346">  443</a></span>        <a class="code hl_class" href="class_f_c_t_1_1_r_h_i_1_1_semaphore.html">RHI::Semaphore</a>* <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#ae1b985252d4e52726cdb9ea2a8bf1346">VK_Swapchain::getImageAvailableSemaphore</a>()</div>
+<div class="line"><a id="l00444" name="l00444"></a><span class="lineno">  444</span>        {</div>
+<div class="line"><a id="l00445" name="l00445"></a><span class="lineno">  445</span>            <span class="keywordflow">return</span> m_prensentFinshSemphore;</div>
+<div class="line"><a id="l00446" name="l00446"></a><span class="lineno">  446</span>        }</div>
 </div>
-<div class="line"><a id="l00446" name="l00446"></a><span class="lineno">  446</span> </div>
-<div class="foldopen" id="foldopen00447" data-start="{" data-end="}">
-<div class="line"><a id="l00447" name="l00447"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a1dfe5081c8f7361d1b19ca69caf2f084">  447</a></span>        <a class="code hl_enumeration" href="namespace_f_c_t.html#a8cb0c505b8e8c6a531e659c7942eb182">Samples</a> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a1dfe5081c8f7361d1b19ca69caf2f084">VK_Swapchain::getSampleCount</a>()<span class="keyword"> const</span></div>
-<div class="line"><a id="l00448" name="l00448"></a><span class="lineno">  448</span><span class="keyword">        </span>{</div>
-<div class="line"><a id="l00449" name="l00449"></a><span class="lineno">  449</span>            <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespace_f_c_t.html#a8cb0c505b8e8c6a531e659c7942eb182af16981b72c70cf9ef716f38b848c5cf0">Samples::sample_1</a>;</div>
-<div class="line"><a id="l00450" name="l00450"></a><span class="lineno">  450</span>        }</div>
+<div class="line"><a id="l00447" name="l00447"></a><span class="lineno">  447</span> </div>
+<div class="foldopen" id="foldopen00448" data-start="{" data-end="}">
+<div class="line"><a id="l00448" name="l00448"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a1dfe5081c8f7361d1b19ca69caf2f084">  448</a></span>        <a class="code hl_enumeration" href="namespace_f_c_t.html#a8cb0c505b8e8c6a531e659c7942eb182">Samples</a> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a1dfe5081c8f7361d1b19ca69caf2f084">VK_Swapchain::getSampleCount</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00449" name="l00449"></a><span class="lineno">  449</span><span class="keyword">        </span>{</div>
+<div class="line"><a id="l00450" name="l00450"></a><span class="lineno">  450</span>            <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespace_f_c_t.html#a8cb0c505b8e8c6a531e659c7942eb182af16981b72c70cf9ef716f38b848c5cf0">Samples::sample_1</a>;</div>
+<div class="line"><a id="l00451" name="l00451"></a><span class="lineno">  451</span>        }</div>
 </div>
-<div class="line"><a id="l00451" name="l00451"></a><span class="lineno">  451</span> </div>
 <div class="line"><a id="l00452" name="l00452"></a><span class="lineno">  452</span> </div>
-<div class="foldopen" id="foldopen00453" data-start="{" data-end="}">
-<div class="line"><a id="l00453" name="l00453"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#ae9b902ead96898f1c4a953b1a7378cde">  453</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#ae9b902ead96898f1c4a953b1a7378cde">VK_Swapchain::enableDepthBuffer</a>(<a class="code hl_enumeration" href="namespace_f_c_t.html#a0741721dca246274b1b72d07249443e4">Format</a> format)</div>
-<div class="line"><a id="l00454" name="l00454"></a><span class="lineno">  454</span>        {</div>
-<div class="line"><a id="l00455" name="l00455"></a><span class="lineno">  455</span>            m_depthStencilImage = m_ctx-&gt;createResource&lt;<a class="code hl_class" href="class_f_c_t_1_1_mutil_buffer_image.html">MutilBufferImage</a>&gt;();</div>
-<div class="line"><a id="l00456" name="l00456"></a><span class="lineno">  456</span>            m_depthStencilImage-&gt;<a class="code hl_function" href="class_f_c_t_1_1_image.html#af4b50a8b7479884c2cd0c0e990875c25">width</a>(<a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_swapchain.html#a27dc83e42bf02c7dbf2b2f64ddc4f372">m_width</a>);</div>
-<div class="line"><a id="l00457" name="l00457"></a><span class="lineno">  457</span>            m_depthStencilImage-&gt;height(<a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_swapchain.html#a721f7212bd66a3a09e8ffc9c8aeff29e">m_height</a>);</div>
-<div class="line"><a id="l00458" name="l00458"></a><span class="lineno">  458</span>            m_depthStencilImage-&gt;format(format);</div>
-<div class="line"><a id="l00459" name="l00459"></a><span class="lineno">  459</span>            m_depthStencilImage-&gt;samples(<a class="code hl_enumvalue" href="namespace_f_c_t.html#a8cb0c505b8e8c6a531e659c7942eb182af16981b72c70cf9ef716f38b848c5cf0">Samples::sample_1</a>);</div>
-<div class="line"><a id="l00460" name="l00460"></a><span class="lineno">  460</span>            m_depthStencilImage-&gt;as(<a class="code hl_enumvalue" href="namespace_f_c_t.html#a7c79cf32fda44767f87c534ba3c7f1e5a2fa8076285272883c91e14402975a441">ImageUsage::DepthStencil</a>);</div>
-<div class="line"><a id="l00461" name="l00461"></a><span class="lineno">  461</span>            m_depthStencilImage-&gt;imageCount(m_images.size());</div>
-<div class="line"><a id="l00462" name="l00462"></a><span class="lineno">  462</span>            m_depthStencilImage-&gt;create();</div>
-<div class="line"><a id="l00463" name="l00463"></a><span class="lineno">  463</span>            m_target-&gt;setDepthStencilBuffer(m_depthStencilImage);</div>
-<div class="line"><a id="l00464" name="l00464"></a><span class="lineno">  464</span>        }</div>
+<div class="line"><a id="l00453" name="l00453"></a><span class="lineno">  453</span> </div>
+<div class="foldopen" id="foldopen00454" data-start="{" data-end="}">
+<div class="line"><a id="l00454" name="l00454"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#ae9b902ead96898f1c4a953b1a7378cde">  454</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#ae9b902ead96898f1c4a953b1a7378cde">VK_Swapchain::enableDepthBuffer</a>(<a class="code hl_enumeration" href="namespace_f_c_t.html#a0741721dca246274b1b72d07249443e4">Format</a> format)</div>
+<div class="line"><a id="l00455" name="l00455"></a><span class="lineno">  455</span>        {</div>
+<div class="line"><a id="l00456" name="l00456"></a><span class="lineno">  456</span>            m_depthStencilImage = m_ctx-&gt;createResource&lt;<a class="code hl_class" href="class_f_c_t_1_1_mutil_buffer_image.html">MutilBufferImage</a>&gt;();</div>
+<div class="line"><a id="l00457" name="l00457"></a><span class="lineno">  457</span>            m_depthStencilImage-&gt;<a class="code hl_function" href="class_f_c_t_1_1_image.html#af4b50a8b7479884c2cd0c0e990875c25">width</a>(<a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_swapchain.html#a27dc83e42bf02c7dbf2b2f64ddc4f372">m_width</a>);</div>
+<div class="line"><a id="l00458" name="l00458"></a><span class="lineno">  458</span>            m_depthStencilImage-&gt;height(<a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_swapchain.html#a721f7212bd66a3a09e8ffc9c8aeff29e">m_height</a>);</div>
+<div class="line"><a id="l00459" name="l00459"></a><span class="lineno">  459</span>            m_depthStencilImage-&gt;format(format);</div>
+<div class="line"><a id="l00460" name="l00460"></a><span class="lineno">  460</span>            m_depthStencilImage-&gt;samples(<a class="code hl_enumvalue" href="namespace_f_c_t.html#a8cb0c505b8e8c6a531e659c7942eb182af16981b72c70cf9ef716f38b848c5cf0">Samples::sample_1</a>);</div>
+<div class="line"><a id="l00461" name="l00461"></a><span class="lineno">  461</span>            m_depthStencilImage-&gt;as(<a class="code hl_enumvalue" href="namespace_f_c_t.html#a7c79cf32fda44767f87c534ba3c7f1e5a2fa8076285272883c91e14402975a441">ImageUsage::DepthStencil</a>);</div>
+<div class="line"><a id="l00462" name="l00462"></a><span class="lineno">  462</span>            m_depthStencilImage-&gt;imageCount(m_images.size());</div>
+<div class="line"><a id="l00463" name="l00463"></a><span class="lineno">  463</span>            m_depthStencilImage-&gt;create();</div>
+<div class="line"><a id="l00464" name="l00464"></a><span class="lineno">  464</span>            m_target-&gt;setDepthStencilBuffer(m_depthStencilImage);</div>
+<div class="line"><a id="l00465" name="l00465"></a><span class="lineno">  465</span>        }</div>
 </div>
-<div class="line"><a id="l00465" name="l00465"></a><span class="lineno">  465</span>    }</div>
-<div class="line"><a id="l00466" name="l00466"></a><span class="lineno">  466</span>}</div>
-<div class="line"><a id="l00467" name="l00467"></a><span class="lineno">  467</span> </div>
+<div class="line"><a id="l00466" name="l00466"></a><span class="lineno">  466</span>    }</div>
+<div class="line"><a id="l00467" name="l00467"></a><span class="lineno">  467</span>}</div>
+<div class="line"><a id="l00468" name="l00468"></a><span class="lineno">  468</span> </div>
 <div class="ttc" id="a_fence_8h_html"><div class="ttname"><a href="_fence_8h.html">Fence.h</a></div></div>
 <div class="ttc" id="a_mutil_buffer_image_8h_html"><div class="ttname"><a href="_mutil_buffer_image_8h.html">MutilBufferImage.h</a></div></div>
 <div class="ttc" id="a_r_h_i_2_image_8h_html"><div class="ttname"><a href="_r_h_i_2_image_8h.html">Image.h</a></div></div>
@@ -627,32 +628,32 @@ $(function(){initNavTree('_v_k___swapchain_8cpp_source.html','',''); });
 <div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___fence_html_a6165a4dbe87683eaa15803370bf04dcf"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___fence.html#a6165a4dbe87683eaa15803370bf04dcf">FCT::RHI::VK_Fence::create</a></div><div class="ttdeci">void create() override</div><div class="ttdef"><b>定义</b> <a href="_v_k___fence_8cpp_source.html#l00018">VK_Fence.cpp:18</a></div></div>
 <div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___fence_html_ab2196acf254a1d0f9dc0c40a44d3a034"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___fence.html#ab2196acf254a1d0f9dc0c40a44d3a034">FCT::RHI::VK_Fence::fence</a></div><div class="ttdeci">vk::Fence fence()</div><div class="ttdef"><b>定义</b> <a href="_v_k___fence_8h_source.html#l00023">VK_Fence.h:23</a></div></div>
 <div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___semaphore_html"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___semaphore.html">FCT::RHI::VK_Semaphore</a></div><div class="ttdef"><b>定义</b> <a href="_v_k___semaphore_8h_source.html#l00012">VK_Semaphore.h:12</a></div></div>
-<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_html_a1dfe5081c8f7361d1b19ca69caf2f084"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a1dfe5081c8f7361d1b19ca69caf2f084">FCT::RHI::VK_Swapchain::getSampleCount</a></div><div class="ttdeci">Samples getSampleCount() const override</div><div class="ttdef"><b>定义</b> <a href="#l00447">VK_Swapchain.cpp:447</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_html_a1dfe5081c8f7361d1b19ca69caf2f084"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a1dfe5081c8f7361d1b19ca69caf2f084">FCT::RHI::VK_Swapchain::getSampleCount</a></div><div class="ttdeci">Samples getSampleCount() const override</div><div class="ttdef"><b>定义</b> <a href="#l00448">VK_Swapchain.cpp:448</a></div></div>
 <div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_html_a317a59351a75bae4e75089d55927f8d1"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a317a59351a75bae4e75089d55927f8d1">FCT::RHI::VK_Swapchain::doRecreate</a></div><div class="ttdeci">bool doRecreate()</div><div class="ttdef"><b>定义</b> <a href="#l00216">VK_Swapchain.cpp:216</a></div></div>
 <div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_html_a33264ad79ca37ae01a536e2af696a0cc"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a33264ad79ca37ae01a536e2af696a0cc">FCT::RHI::VK_Swapchain::sync</a></div><div class="ttdeci">void sync() override</div><div class="ttdef"><b>定义</b> <a href="#l00229">VK_Swapchain.cpp:229</a></div></div>
-<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_html_a363ea8d0036083086d71fc193d562624"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a363ea8d0036083086d71fc193d562624">FCT::RHI::VK_Swapchain::setPresentFinshSemaphore</a></div><div class="ttdeci">void setPresentFinshSemaphore(RHI::Semaphore *semaphore) override</div><div class="ttdef"><b>定义</b> <a href="#l00437">VK_Swapchain.cpp:437</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_html_a363ea8d0036083086d71fc193d562624"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a363ea8d0036083086d71fc193d562624">FCT::RHI::VK_Swapchain::setPresentFinshSemaphore</a></div><div class="ttdeci">void setPresentFinshSemaphore(RHI::Semaphore *semaphore) override</div><div class="ttdef"><b>定义</b> <a href="#l00438">VK_Swapchain.cpp:438</a></div></div>
 <div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_html_a446c22557164109d53c6e28555a0f4dd"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a446c22557164109d53c6e28555a0f4dd">FCT::RHI::VK_Swapchain::create</a></div><div class="ttdeci">void create() override</div><div class="ttdef"><b>定义</b> <a href="#l00181">VK_Swapchain.cpp:181</a></div></div>
 <div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_html_a467c00a2686a99d5ada904a60b8830d9"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a467c00a2686a99d5ada904a60b8830d9">FCT::RHI::VK_Swapchain::image</a></div><div class="ttdeci">FCT::Image * image() const override</div><div class="ttdef"><b>定义</b> <a href="_v_k___swapchain_8h_source.html#l00047">VK_Swapchain.h:47</a></div></div>
-<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_html_a46ee50ac34781999461d7ed1709f75a0"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a46ee50ac34781999461d7ed1709f75a0">FCT::RHI::VK_Swapchain::getExtent</a></div><div class="ttdeci">vk::Extent2D getExtent() const</div><div class="ttdef"><b>定义</b> <a href="#l00418">VK_Swapchain.cpp:418</a></div></div>
-<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_html_a58f3695dff033e086411efc7ec36b61b"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a58f3695dff033e086411efc7ec36b61b">FCT::RHI::VK_Swapchain::acquireFirstImage</a></div><div class="ttdeci">bool acquireFirstImage()</div><div class="ttdef"><b>定义</b> <a href="#l00339">VK_Swapchain.cpp:339</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_html_a46ee50ac34781999461d7ed1709f75a0"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a46ee50ac34781999461d7ed1709f75a0">FCT::RHI::VK_Swapchain::getExtent</a></div><div class="ttdeci">vk::Extent2D getExtent() const</div><div class="ttdef"><b>定义</b> <a href="#l00419">VK_Swapchain.cpp:419</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_html_a58f3695dff033e086411efc7ec36b61b"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a58f3695dff033e086411efc7ec36b61b">FCT::RHI::VK_Swapchain::acquireFirstImage</a></div><div class="ttdeci">bool acquireFirstImage()</div><div class="ttdef"><b>定义</b> <a href="#l00340">VK_Swapchain.cpp:340</a></div></div>
 <div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_html_a5a8112f1b2a5ea25e4b43d4a2b197335"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a5a8112f1b2a5ea25e4b43d4a2b197335">FCT::RHI::VK_Swapchain::~VK_Swapchain</a></div><div class="ttdeci">~VK_Swapchain()</div><div class="ttdef"><b>定义</b> <a href="#l00026">VK_Swapchain.cpp:26</a></div></div>
 <div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_html_a5e45cb6c6c3818c3f49f1b0e7ad19814"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a5e45cb6c6c3818c3f49f1b0e7ad19814">FCT::RHI::VK_Swapchain::destroy</a></div><div class="ttdeci">void destroy()</div><div class="ttdef"><b>定义</b> <a href="#l00207">VK_Swapchain.cpp:207</a></div></div>
-<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_html_a5f5eb310c0eff911ddcfd242ecd8646a"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a5f5eb310c0eff911ddcfd242ecd8646a">FCT::RHI::VK_Swapchain::getSamples</a></div><div class="ttdeci">Samples getSamples() const override</div><div class="ttdef"><b>定义</b> <a href="#l00427">VK_Swapchain.cpp:427</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_html_a5f5eb310c0eff911ddcfd242ecd8646a"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a5f5eb310c0eff911ddcfd242ecd8646a">FCT::RHI::VK_Swapchain::getSamples</a></div><div class="ttdeci">Samples getSamples() const override</div><div class="ttdef"><b>定义</b> <a href="#l00428">VK_Swapchain.cpp:428</a></div></div>
 <div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_html_a78f21c203fe2759fe3cf2c702207e96e"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a78f21c203fe2759fe3cf2c702207e96e">FCT::RHI::VK_Swapchain::present</a></div><div class="ttdeci">void present() override</div><div class="ttdoc">提交present命令</div><div class="ttdef"><b>定义</b> <a href="#l00267">VK_Swapchain.cpp:267</a></div></div>
 <div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_html_a7f1dae09188ee9a889c7d7df1e031cad"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a7f1dae09188ee9a889c7d7df1e031cad">FCT::RHI::VK_Swapchain::getCurrentImageIndex</a></div><div class="ttdeci">uint32_t getCurrentImageIndex() const</div><div class="ttdef"><b>定义</b> <a href="#l00212">VK_Swapchain.cpp:212</a></div></div>
 <div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_html_a7f82f5f294583fdb6dc937e3ae7a72cb"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a7f82f5f294583fdb6dc937e3ae7a72cb">FCT::RHI::VK_Swapchain::VK_Swapchain</a></div><div class="ttdeci">VK_Swapchain(VK_Context *ctx)</div><div class="ttdef"><b>定义</b> <a href="#l00015">VK_Swapchain.cpp:15</a></div></div>
-<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_html_aa788133c8149636bcff10880879ee4e4"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#aa788133c8149636bcff10880879ee4e4">FCT::RHI::VK_Swapchain::needRecreate</a></div><div class="ttdeci">void needRecreate(int width, int height) override</div><div class="ttdoc">用于窗口通知需要 recreate</div><div class="ttdef"><b>定义</b> <a href="#l00386">VK_Swapchain.cpp:386</a></div></div>
-<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_html_ab25446560682a0d918de20a6dca725ad"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#ab25446560682a0d918de20a6dca725ad">FCT::RHI::VK_Swapchain::processRecreate</a></div><div class="ttdeci">bool processRecreate(bool waitFence=false)</div><div class="ttdef"><b>定义</b> <a href="#l00397">VK_Swapchain.cpp:397</a></div></div>
-<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_html_ad9f2d2c7fea5528211182d55b497c6ea"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#ad9f2d2c7fea5528211182d55b497c6ea">FCT::RHI::VK_Swapchain::target</a></div><div class="ttdeci">ImageRenderTarget * target() const override</div><div class="ttdoc">获取交换链对应的target</div><div class="ttdef"><b>定义</b> <a href="#l00432">VK_Swapchain.cpp:432</a></div></div>
-<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_html_ae1b985252d4e52726cdb9ea2a8bf1346"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#ae1b985252d4e52726cdb9ea2a8bf1346">FCT::RHI::VK_Swapchain::getImageAvailableSemaphore</a></div><div class="ttdeci">RHI::Semaphore * getImageAvailableSemaphore() override</div><div class="ttdoc">用于渲染命令同步的，获取到 图像，gpu可以执行渲染命令</div><div class="ttdef"><b>定义</b> <a href="#l00442">VK_Swapchain.cpp:442</a></div></div>
-<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_html_ae9b902ead96898f1c4a953b1a7378cde"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#ae9b902ead96898f1c4a953b1a7378cde">FCT::RHI::VK_Swapchain::enableDepthBuffer</a></div><div class="ttdeci">void enableDepthBuffer(Format format) override</div><div class="ttdoc">启用深度模板 缓存</div><div class="ttdef"><b>定义</b> <a href="#l00453">VK_Swapchain.cpp:453</a></div></div>
-<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_html_aec5dab44339d78ba7899d85cc53b564f"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#aec5dab44339d78ba7899d85cc53b564f">FCT::RHI::VK_Swapchain::getFormat</a></div><div class="ttdeci">Format getFormat() const override</div><div class="ttdef"><b>定义</b> <a href="#l00422">VK_Swapchain.cpp:422</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_html_aa788133c8149636bcff10880879ee4e4"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#aa788133c8149636bcff10880879ee4e4">FCT::RHI::VK_Swapchain::needRecreate</a></div><div class="ttdeci">void needRecreate(int width, int height) override</div><div class="ttdoc">用于窗口通知需要 recreate</div><div class="ttdef"><b>定义</b> <a href="#l00387">VK_Swapchain.cpp:387</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_html_ab25446560682a0d918de20a6dca725ad"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#ab25446560682a0d918de20a6dca725ad">FCT::RHI::VK_Swapchain::processRecreate</a></div><div class="ttdeci">bool processRecreate(bool waitFence=false)</div><div class="ttdef"><b>定义</b> <a href="#l00398">VK_Swapchain.cpp:398</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_html_ad9f2d2c7fea5528211182d55b497c6ea"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#ad9f2d2c7fea5528211182d55b497c6ea">FCT::RHI::VK_Swapchain::target</a></div><div class="ttdeci">ImageRenderTarget * target() const override</div><div class="ttdoc">获取交换链对应的target</div><div class="ttdef"><b>定义</b> <a href="#l00433">VK_Swapchain.cpp:433</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_html_ae1b985252d4e52726cdb9ea2a8bf1346"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#ae1b985252d4e52726cdb9ea2a8bf1346">FCT::RHI::VK_Swapchain::getImageAvailableSemaphore</a></div><div class="ttdeci">RHI::Semaphore * getImageAvailableSemaphore() override</div><div class="ttdoc">用于渲染命令同步的，获取到 图像，gpu可以执行渲染命令</div><div class="ttdef"><b>定义</b> <a href="#l00443">VK_Swapchain.cpp:443</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_html_ae9b902ead96898f1c4a953b1a7378cde"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#ae9b902ead96898f1c4a953b1a7378cde">FCT::RHI::VK_Swapchain::enableDepthBuffer</a></div><div class="ttdeci">void enableDepthBuffer(Format format) override</div><div class="ttdoc">启用深度模板 缓存</div><div class="ttdef"><b>定义</b> <a href="#l00454">VK_Swapchain.cpp:454</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_html_aec5dab44339d78ba7899d85cc53b564f"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#aec5dab44339d78ba7899d85cc53b564f">FCT::RHI::VK_Swapchain::getFormat</a></div><div class="ttdeci">Format getFormat() const override</div><div class="ttdef"><b>定义</b> <a href="#l00423">VK_Swapchain.cpp:423</a></div></div>
 <div class="ttc" id="aclass_f_c_t_1_1_ref_count_html_aaf57b2df79545f2b71ae9087865dee4c"><div class="ttname"><a href="class_f_c_t_1_1_ref_count.html#aaf57b2df79545f2b71ae9087865dee4c">FCT::RefCount::release</a></div><div class="ttdeci">void release()</div><div class="ttdef"><b>定义</b> <a href="_ref_count_8h_source.html#l00013">RefCount.h:13</a></div></div>
 <div class="ttc" id="aclass_f_c_t_1_1_v_k___context_html"><div class="ttname"><a href="class_f_c_t_1_1_v_k___context.html">FCT::VK_Context</a></div><div class="ttdef"><b>定义</b> <a href="_v_k___context_8h_source.html#l00011">VK_Context.h:11</a></div></div>
 <div class="ttc" id="aclass_f_c_t_1_1_v_k___context_html_af49b4a664f8566269de7d998c3c16640"><div class="ttname"><a href="class_f_c_t_1_1_v_k___context.html#af49b4a664f8566269de7d998c3c16640">FCT::VK_Context::getPhysicalDevice</a></div><div class="ttdeci">auto getPhysicalDevice() const</div><div class="ttdef"><b>定义</b> <a href="_v_k___context_8h_source.html#l00026">VK_Context.h:26</a></div></div>
 <div class="ttc" id="anamespace_f_c_t_1_1_context_resource_html_ad75a4148b45a9d45b79e4ed6d08b0001"><div class="ttname"><a href="namespace_f_c_t_1_1_context_resource.html#ad75a4148b45a9d45b79e4ed6d08b0001">FCT::ContextResource::MutilBufferImage</a></div><div class="ttdeci">FCT::MutilBufferImage MutilBufferImage</div><div class="ttdef"><b>定义</b> <a href="_device_8h_source.html#l00054">Device.h:54</a></div></div>
-<div class="ttc" id="anamespace_f_c_t_1_1_r_h_i_html"><div class="ttname"><a href="namespace_f_c_t_1_1_r_h_i.html">FCT::RHI</a></div><div class="ttdef"><b>定义</b> <a href="_context_8h_source.html#l00045">Context.h:46</a></div></div>
-<div class="ttc" id="anamespace_f_c_t_html"><div class="ttname"><a href="namespace_f_c_t.html">FCT</a></div><div class="ttdef"><b>定义</b> <a href="_flags_8h_source.html#l00010">Flags.h:11</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_1_1_r_h_i_html"><div class="ttname"><a href="namespace_f_c_t_1_1_r_h_i.html">FCT::RHI</a></div><div class="ttdef"><b>定义</b> <a href="_context_8h_source.html#l00044">Context.h:45</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html"><div class="ttname"><a href="namespace_f_c_t.html">FCT</a></div><div class="ttdef"><b>定义</b> <a href="_enums_8h_source.html#l00008">Enums.h:8</a></div></div>
 <div class="ttc" id="anamespace_f_c_t_html_a0741721dca246274b1b72d07249443e4"><div class="ttname"><a href="namespace_f_c_t.html#a0741721dca246274b1b72d07249443e4">FCT::Format</a></div><div class="ttdeci">Format</div><div class="ttdef"><b>定义</b> <a href="_context_2_format_8h_source.html#l00005">Format.h:5</a></div></div>
 <div class="ttc" id="anamespace_f_c_t_html_a1f1ccd6c8741cf55008c982f25b9bf2ba77b3213b6f5c8d994d2bcfcb58a2ec30"><div class="ttname"><a href="namespace_f_c_t.html#a1f1ccd6c8741cf55008c982f25b9bf2ba77b3213b6f5c8d994d2bcfcb58a2ec30">FCT::RenderTargetType::WindowTarget</a></div><div class="ttdeci">@ WindowTarget</div><div class="ttdef"><b>定义</b> <a href="_i_render_target_8h_source.html#l00006">IRenderTarget.h:6</a></div></div>
 <div class="ttc" id="anamespace_f_c_t_html_a41993be9a3c6e8f05f5b7bda9a9015b2"><div class="ttname"><a href="namespace_f_c_t.html#a41993be9a3c6e8f05f5b7bda9a9015b2">FCT::ferr</a></div><div class="ttdeci">std::ostream &amp; ferr</div><div class="ttdef"><b>定义</b> <a href="_out_stream_8cpp_source.html#l00009">OutStream.cpp:9</a></div></div>

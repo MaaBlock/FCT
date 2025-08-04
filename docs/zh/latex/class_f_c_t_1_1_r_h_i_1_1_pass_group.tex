@@ -6,7 +6,8 @@
 
 
 
-类 FCT\+::RHI\+::Pass\+Group 继承关系图\+:\nopagebreak
+类 FCT\+::RHI\+::Pass\+Group 继承关系图\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -15,7 +16,8 @@
 \end{figure}
 
 
-FCT\+::RHI\+::Pass\+Group 的协作图\+:\nopagebreak
+FCT\+::RHI\+::Pass\+Group 的协作图\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -36,6 +38,15 @@ virtual void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pass_group_a6cdf1e187170
 virtual void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pass_group_ac73d1fde0ad9372d68e367b1f91339bb}{create}} ()=0
 \item 
 void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pass_group_a4d87db776478552cb0d97d27498e2048}{add\+Pass}} (\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pass}{Pass}} \texorpdfstring{$\ast$}{*}pass)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pass_group_a7562f105268830178f04da42cbc0b5c3}{add\+Pass}} (const \mbox{\hyperlink{struct_f_c_t_1_1_r_h_i_1_1_pass_desc}{Pass\+Desc}} \&desc)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pass_group_a04ce13e87d749d39b2568c57c1539d10}{compute\+Stage}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pass_group_a59b01c9cc51a14c320536e464536e5ab}{compute\+Stage}} (\mbox{\hyperlink{struct_f_c_t_1_1_r_h_i_1_1_pass_desc}{Pass\+Desc}} pass\+Desc)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Protected 属性}
 \begin{DoxyCompactItemize}
@@ -45,13 +56,15 @@ std\+::vector$<$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pass_group}{Pass\+Gr
 std\+::vector$<$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pass_group}{Pass\+Group}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pass_group_abe4a511c5653fb299a52e7d03a1bdbd2}{m\+\_\+next\+Pass\+Group}}
 \item 
 std\+::vector$<$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pass}{Pass}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pass_group_ad23ceb570cbb2ceab73cdce492c5e3ae}{m\+\_\+passes}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_f_c_t_1_1_r_h_i_1_1_pass_desc}{Pass\+Desc}} $>$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pass_group_a263ae841b9107d34f576ab56b1deb2e9}{m\+\_\+pass\+Descs}}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{详细描述}
 
 
-在文件 \mbox{\hyperlink{_pass_group_8h_source}{Pass\+Group.\+h}} 第 \mbox{\hyperlink{_pass_group_8h_source_l00014}{14}} 行定义.
+在文件 \mbox{\hyperlink{_pass_group_8h_source}{Pass\+Group.\+h}} 第 \mbox{\hyperlink{_pass_group_8h_source_l00047}{47}} 行定义.
 
 
 
@@ -66,7 +79,7 @@ FCT\+::\+RHI\+::\+Pass\+Group\+::\+Pass\+Group (\begin{DoxyParamCaption}{}{}\end
 
 
 
-在文件 \mbox{\hyperlink{_pass_group_8h_source}{Pass\+Group.\+h}} 第 \mbox{\hyperlink{_pass_group_8h_source_l00017}{17}} 行定义.
+在文件 \mbox{\hyperlink{_pass_group_8h_source}{Pass\+Group.\+h}} 第 \mbox{\hyperlink{_pass_group_8h_source_l00050}{50}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_r_h_i_1_1_pass_group_abb9d627f3fa34e985fb57a63b7ee565c}\index{FCT::RHI::PassGroup@{FCT::RHI::PassGroup}!````~PassGroup@{\texorpdfstring{$\sim$}{\string~}PassGroup}}
 \index{````~PassGroup@{\texorpdfstring{$\sim$}{\string~}PassGroup}!FCT::RHI::PassGroup@{FCT::RHI::PassGroup}}
@@ -76,28 +89,47 @@ virtual FCT\+::\+RHI\+::\+Pass\+Group\+::\texorpdfstring{$\sim$}{\string~}\+Pass
 
 
 
-在文件 \mbox{\hyperlink{_pass_group_8h_source}{Pass\+Group.\+h}} 第 \mbox{\hyperlink{_pass_group_8h_source_l00021}{21}} 行定义.
+在文件 \mbox{\hyperlink{_pass_group_8h_source}{Pass\+Group.\+h}} 第 \mbox{\hyperlink{_pass_group_8h_source_l00054}{54}} 行定义.
 
 
 
 \label{doc-func-members}
 \Hypertarget{class_f_c_t_1_1_r_h_i_1_1_pass_group_doc-func-members}
 \doxysubsection{成员函数说明}
-\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_pass_group_a4d87db776478552cb0d97d27498e2048}\index{FCT::RHI::PassGroup@{FCT::RHI::PassGroup}!addPass@{addPass}}
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_pass_group_a7562f105268830178f04da42cbc0b5c3}\index{FCT::RHI::PassGroup@{FCT::RHI::PassGroup}!addPass@{addPass}}
 \index{addPass@{addPass}!FCT::RHI::PassGroup@{FCT::RHI::PassGroup}}
-\doxysubsubsection{\texorpdfstring{addPass()}{addPass()}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_pass_group_a4d87db776478552cb0d97d27498e2048} 
-void FCT\+::\+RHI\+::\+Pass\+Group\+::add\+Pass (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pass}{Pass}} \texorpdfstring{$\ast$}{*}}]{pass}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\doxysubsubsection{\texorpdfstring{addPass()}{addPass()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_pass_group_a7562f105268830178f04da42cbc0b5c3} 
+void FCT\+::\+RHI\+::\+Pass\+Group\+::add\+Pass (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_f_c_t_1_1_r_h_i_1_1_pass_desc}{Pass\+Desc}} \&}]{desc}{}\end{DoxyParamCaption})}
 
 
 
-在文件 \mbox{\hyperlink{_pass_group_8h_source}{Pass\+Group.\+h}} 第 \mbox{\hyperlink{_pass_group_8h_source_l00028}{28}} 行定义.
+在文件 \mbox{\hyperlink{_pass_group_8cpp_source}{Pass\+Group.\+cpp}} 第 \mbox{\hyperlink{_pass_group_8cpp_source_l00019}{19}} 行定义.
 
-函数调用图\+:\nopagebreak
+函数调用图\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=346pt]{class_f_c_t_1_1_r_h_i_1_1_pass_group_a4d87db776478552cb0d97d27498e2048_cgraph}
+\includegraphics[width=346pt]{class_f_c_t_1_1_r_h_i_1_1_pass_group_a7562f105268830178f04da42cbc0b5c3_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_pass_group_a4d87db776478552cb0d97d27498e2048}\index{FCT::RHI::PassGroup@{FCT::RHI::PassGroup}!addPass@{addPass}}
+\index{addPass@{addPass}!FCT::RHI::PassGroup@{FCT::RHI::PassGroup}}
+\doxysubsubsection{\texorpdfstring{addPass()}{addPass()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_pass_group_a4d87db776478552cb0d97d27498e2048} 
+void FCT\+::\+RHI\+::\+Pass\+Group\+::add\+Pass (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pass}{Pass}} \texorpdfstring{$\ast$}{*}}]{pass}{}\end{DoxyParamCaption})}
+
+
+
+在文件 \mbox{\hyperlink{_pass_group_8cpp_source}{Pass\+Group.\+cpp}} 第 \mbox{\hyperlink{_pass_group_8cpp_source_l00005}{5}} 行定义.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{class_f_c_t_1_1_r_h_i_1_1_pass_group_a4d87db776478552cb0d97d27498e2048_cgraph}
 \end{center}
 \end{figure}
 这是这个函数的调用关系图\+:
@@ -118,14 +150,51 @@ virtual void FCT\+::\+RHI\+::\+Pass\+Group\+::begin\+Submit (\begin{DoxyParamCap
 
 在 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_aaa999b2743887a306a316ba317ab1482}{FCT\+::\+RHI\+::\+VK\+\_\+\+Pass\+Group}} 内被实现.
 
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_f_c_t_1_1_r_h_i_1_1_pass_group_a6831041dc16b4edae6c1d5c7b8131c31_icgraph}
 \end{center}
 \end{figure}
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_pass_group_a04ce13e87d749d39b2568c57c1539d10}\index{FCT::RHI::PassGroup@{FCT::RHI::PassGroup}!computeStage@{computeStage}}
+\index{computeStage@{computeStage}!FCT::RHI::PassGroup@{FCT::RHI::PassGroup}}
+\doxysubsubsection{\texorpdfstring{computeStage()}{computeStage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_pass_group_a04ce13e87d749d39b2568c57c1539d10} 
+void FCT\+::\+RHI\+::\+Pass\+Group\+::compute\+Stage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_pass_group_8cpp_source}{Pass\+Group.\+cpp}} 第 \mbox{\hyperlink{_pass_group_8cpp_source_l00026}{26}} 行定义.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{class_f_c_t_1_1_r_h_i_1_1_pass_group_a04ce13e87d749d39b2568c57c1539d10_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{class_f_c_t_1_1_r_h_i_1_1_pass_group_a04ce13e87d749d39b2568c57c1539d10_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_pass_group_a59b01c9cc51a14c320536e464536e5ab}\index{FCT::RHI::PassGroup@{FCT::RHI::PassGroup}!computeStage@{computeStage}}
+\index{computeStage@{computeStage}!FCT::RHI::PassGroup@{FCT::RHI::PassGroup}}
+\doxysubsubsection{\texorpdfstring{computeStage()}{computeStage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_pass_group_a59b01c9cc51a14c320536e464536e5ab} 
+void FCT\+::\+RHI\+::\+Pass\+Group\+::compute\+Stage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_f_c_t_1_1_r_h_i_1_1_pass_desc}{Pass\+Desc}}}]{pass\+Desc}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Todo\+:自动推导逻辑
+
+Todo\+:自动推导逻辑
+
+在文件 \mbox{\hyperlink{_pass_group_8cpp_source}{Pass\+Group.\+cpp}} 第 \mbox{\hyperlink{_pass_group_8cpp_source_l00034}{34}} 行定义.
+
 \Hypertarget{class_f_c_t_1_1_r_h_i_1_1_pass_group_ac73d1fde0ad9372d68e367b1f91339bb}\index{FCT::RHI::PassGroup@{FCT::RHI::PassGroup}!create@{create}}
 \index{create@{create}!FCT::RHI::PassGroup@{FCT::RHI::PassGroup}}
 \doxysubsubsection{\texorpdfstring{create()}{create()}}
@@ -146,8 +215,7 @@ virtual void FCT\+::\+RHI\+::\+Pass\+Group\+::end\+Submit (\begin{DoxyParamCapti
 
 在 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_ab8f9be61498c2990d5828553474a515e}{FCT\+::\+RHI\+::\+VK\+\_\+\+Pass\+Group}} 内被实现.
 
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -167,7 +235,17 @@ std\+::vector$<$\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pass_group}{Pass\+Gro
 
 
 
-在文件 \mbox{\hyperlink{_pass_group_8h_source}{Pass\+Group.\+h}} 第 \mbox{\hyperlink{_pass_group_8h_source_l00035}{35}} 行定义.
+在文件 \mbox{\hyperlink{_pass_group_8h_source}{Pass\+Group.\+h}} 第 \mbox{\hyperlink{_pass_group_8h_source_l00067}{67}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_r_h_i_1_1_pass_group_a263ae841b9107d34f576ab56b1deb2e9}\index{FCT::RHI::PassGroup@{FCT::RHI::PassGroup}!m\_passDescs@{m\_passDescs}}
+\index{m\_passDescs@{m\_passDescs}!FCT::RHI::PassGroup@{FCT::RHI::PassGroup}}
+\doxysubsubsection{\texorpdfstring{m\_passDescs}{m\_passDescs}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_r_h_i_1_1_pass_group_a263ae841b9107d34f576ab56b1deb2e9} 
+std\+::vector$<$\mbox{\hyperlink{struct_f_c_t_1_1_r_h_i_1_1_pass_desc}{Pass\+Desc}}$>$ FCT\+::\+RHI\+::\+Pass\+Group\+::m\+\_\+pass\+Descs\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_pass_group_8h_source}{Pass\+Group.\+h}} 第 \mbox{\hyperlink{_pass_group_8h_source_l00069}{69}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_r_h_i_1_1_pass_group_ad23ceb570cbb2ceab73cdce492c5e3ae}\index{FCT::RHI::PassGroup@{FCT::RHI::PassGroup}!m\_passes@{m\_passes}}
 \index{m\_passes@{m\_passes}!FCT::RHI::PassGroup@{FCT::RHI::PassGroup}}
@@ -177,7 +255,7 @@ std\+::vector$<$\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pass}{Pass}}\texorpdf
 
 
 
-在文件 \mbox{\hyperlink{_pass_group_8h_source}{Pass\+Group.\+h}} 第 \mbox{\hyperlink{_pass_group_8h_source_l00036}{36}} 行定义.
+在文件 \mbox{\hyperlink{_pass_group_8h_source}{Pass\+Group.\+h}} 第 \mbox{\hyperlink{_pass_group_8h_source_l00068}{68}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_r_h_i_1_1_pass_group_acb8805b2cfafe2dc7b55444f9735c669}\index{FCT::RHI::PassGroup@{FCT::RHI::PassGroup}!m\_prevPassGroup@{m\_prevPassGroup}}
 \index{m\_prevPassGroup@{m\_prevPassGroup}!FCT::RHI::PassGroup@{FCT::RHI::PassGroup}}
@@ -187,10 +265,11 @@ std\+::vector$<$\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pass_group}{Pass\+Gro
 
 
 
-在文件 \mbox{\hyperlink{_pass_group_8h_source}{Pass\+Group.\+h}} 第 \mbox{\hyperlink{_pass_group_8h_source_l00034}{34}} 行定义.
+在文件 \mbox{\hyperlink{_pass_group_8h_source}{Pass\+Group.\+h}} 第 \mbox{\hyperlink{_pass_group_8h_source_l00066}{66}} 行定义.
 
 
 
 该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
 \item 
-src/\+RHI/\mbox{\hyperlink{_pass_group_8h}{Pass\+Group.\+h}}\end{DoxyCompactItemize}
+src/\+RHI/\mbox{\hyperlink{_pass_group_8h}{Pass\+Group.\+h}}\item 
+src/\+RHI/\mbox{\hyperlink{_pass_group_8cpp}{Pass\+Group.\+cpp}}\end{DoxyCompactItemize}

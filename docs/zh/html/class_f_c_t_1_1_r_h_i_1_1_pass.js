@@ -15,10 +15,13 @@ var class_f_c_t_1_1_r_h_i_1_1_pass =
     [ "index", "class_f_c_t_1_1_r_h_i_1_1_pass.html#ac037d9d7e331a780b70a1989f7f893ff", null ],
     [ "passGroup", "class_f_c_t_1_1_r_h_i_1_1_pass.html#a6b164a5314f7bb62fc0ab1989bd7c65f", null ],
     [ "renderTargets", "class_f_c_t_1_1_r_h_i_1_1_pass.html#a227276d998085bd8e33f6e25dbe46396", null ],
+    [ "begin", "class_f_c_t_1_1_r_h_i_1_1_pass.html#a7d465f5f79e0e65cabfe311d96976655", null ],
+    [ "external", "class_f_c_t_1_1_r_h_i_1_1_pass.html#a7a0e778492bf9fb5abcc0b2f648ad0ba", null ],
     [ "m_clearValue", "class_f_c_t_1_1_r_h_i_1_1_pass.html#a11f20cca6f091d8374e867fc24b651d2", null ],
     [ "m_depthStencil", "class_f_c_t_1_1_r_h_i_1_1_pass.html#ab348804e4c13576737a0564a017aab12", null ],
     [ "m_group", "class_f_c_t_1_1_r_h_i_1_1_pass.html#ac0e82ca03cee77668766a965b32c3c31", null ],
     [ "m_index", "class_f_c_t_1_1_r_h_i_1_1_pass.html#ab41b4758c6557c0596947beaeede42c1", null ],
     [ "m_renderTargets", "class_f_c_t_1_1_r_h_i_1_1_pass.html#a4ffe98d835ca8f04ac64fa33b169fa34", null ],
-    [ "m_textures", "class_f_c_t_1_1_r_h_i_1_1_pass.html#a16f1774d66625b0bd76da8d1d4091f24", null ]
+    [ "m_textures", "class_f_c_t_1_1_r_h_i_1_1_pass.html#a16f1774d66625b0bd76da8d1d4091f24", null ],
+    [ "present", "class_f_c_t_1_1_r_h_i_1_1_pass.html#a39f06b29f58ff75f7392852375001396", null ]
 ];

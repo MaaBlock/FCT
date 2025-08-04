@@ -9,6 +9,7 @@ var class_f_c_t_1_1_mat4 =
     [ "operator*", "class_f_c_t_1_1_mat4.html#acfa9e3551187cf2964a6aac401f11042", null ],
     [ "operator*", "class_f_c_t_1_1_mat4.html#ad9ed4ca219a5ec86a400a03784cde841", null ],
     [ "operator*=", "class_f_c_t_1_1_mat4.html#ac2c396a0ebb91b394f469e2808d56733", null ],
+    [ "Ortho", "class_f_c_t_1_1_mat4.html#ac770c2ef65f65b1244182689d33bfe66", null ],
     [ "Perspective", "class_f_c_t_1_1_mat4.html#a4ae8e785aa89f1940d449ce99de73cbc", null ],
     [ "rotateX", "class_f_c_t_1_1_mat4.html#a562982793290c6f0089523df97491ecf", null ],
     [ "rotateY", "class_f_c_t_1_1_mat4.html#af4a759e399a2f577c11094e3eb45a3b9", null ],

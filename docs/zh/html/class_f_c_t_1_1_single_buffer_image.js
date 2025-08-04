@@ -2,7 +2,7 @@ var class_f_c_t_1_1_single_buffer_image =
 [
     [ "SingleBufferImage", "class_f_c_t_1_1_single_buffer_image.html#a63d039663b5bc302cd0d333b960ddc97", null ],
     [ "~SingleBufferImage", "class_f_c_t_1_1_single_buffer_image.html#a85404f48fe168a76ba9df7942ad67421", null ],
-    [ "as", "class_f_c_t_1_1_single_buffer_image.html#af6ab61168d6a4afe6971edc770bd11ab", null ],
+    [ "as", "class_f_c_t_1_1_single_buffer_image.html#aaa3649766a007aef6f665fefd933a9ab", null ],
     [ "bind", "class_f_c_t_1_1_single_buffer_image.html#ad4d8198b88c9f704890f6fd3d3b3d3b9", null ],
     [ "create", "class_f_c_t_1_1_single_buffer_image.html#aa542818532e4290461370075f40e8539", null ],
     [ "create", "class_f_c_t_1_1_single_buffer_image.html#a4d291f9cf21eaa54b68dac19a9b0ead2", null ],
@@ -19,5 +19,5 @@ var class_f_c_t_1_1_single_buffer_image =
     [ "m_initData", "class_f_c_t_1_1_single_buffer_image.html#a3dfb00a6ba61daf4f0e3c4d5ee3d915b", null ],
     [ "m_rtv", "class_f_c_t_1_1_single_buffer_image.html#a145491437cead52c48a05632e164f511", null ],
     [ "m_srv", "class_f_c_t_1_1_single_buffer_image.html#aca06fc7c2e24b4d7d2a70120c757342a", null ],
-    [ "m_usage", "class_f_c_t_1_1_single_buffer_image.html#adcc80cd2991ea930902854a8fa74dba3", null ]
+    [ "m_usage", "class_f_c_t_1_1_single_buffer_image.html#aa227307a9a647fcdfecbc27ca7e413eb", null ]
 ];

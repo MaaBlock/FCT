@@ -25,6 +25,25 @@
 var NAVTREE =
 [
   [ "FCT", "index.html", [
+    [ "渲染概念详解", "render_concepts.html", [
+      [ "目录", "render_concepts.html#autotoc_md0", null ],
+      [ "渲染管线 (Pipeline)", "render_concepts.html#render_pipeline", [
+        [ "概念定义", "render_concepts.html#autotoc_md2", null ],
+        [ "管线类型", "render_concepts.html#autotoc_md3", [
+          [ "传统光栅化管线 (Traditional Pipeline)", "render_concepts.html#autotoc_md4", null ],
+          [ "MeshShader光栅化管线 (MeshShader Pipeline)", "render_concepts.html#autotoc_md5", null ],
+          [ "光线追踪管线 (RayTracing Pipeline)", "render_concepts.html#autotoc_md6", null ]
+        ] ]
+      ] ],
+      [ "渲染通道 (Pass)", "render_concepts.html#render_pass", [
+        [ "概念定义", "render_concepts.html#autotoc_md8", null ],
+        [ "核心特性", "render_concepts.html#autotoc_md9", null ]
+      ] ],
+      [ "通道组 (PassGroup)", "render_concepts.html#render_passgroup", [
+        [ "概念定义", "render_concepts.html#autotoc_md10", null ],
+        [ "设计目的", "render_concepts.html#autotoc_md11", null ]
+      ] ]
+    ] ],
     [ "命名空间", "namespaces.html", [
       [ "命名空间列表", "namespaces.html", "namespaces_dup" ],
       [ "命名空间成员", "namespacemembers.html", [
@@ -63,29 +82,30 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_activity_wrapper_8cpp.html",
-"_resource_manager_8cpp_source.html",
-"class_f_c_t_1_1_android___runtime.html#a065a479fc9e0808194381f762b63d4f0",
-"class_f_c_t_1_1_call_back_event_handler.html#a8457c73c6cb46ee6ed38174f403fae5e",
-"class_f_c_t_1_1_context.html#aed5ee768dbd1e64f831cf65024133505",
-"class_f_c_t_1_1_flags.html#a0f535e8bcd5fd02aa5923d9fa500049e",
-"class_f_c_t_1_1_image_loader.html",
+"_access_flags_8h.html",
+"_r_h_i_2_vertex_shader_8cpp_source.html",
+"_viewport_state_8h.html",
+"class_f_c_t_1_1_call_back_event_handler.html#ab5fee45986b03ce196aaead5b78152c7",
+"class_f_c_t_1_1_context.html#af425799b4b55dc83f161dff9fcef7d6f",
+"class_f_c_t_1_1_flags.html#a36a18bf4ebd345763165152b1c0b8419",
+"class_f_c_t_1_1_image_loader.html#af87b05475a0f11be29546717025d2c6f",
 "class_f_c_t_1_1_pass.html#a6f12820bcf0085948a94c1ddd2820a00",
-"class_f_c_t_1_1_r_h_i_1_1_i_index_data.html#a7195708b80666fd277c7bca2465331dd",
-"class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a07a491784b70c511c0fdac27e511a7ea",
-"class_f_c_t_1_1_r_h_i_1_1_v_k___fence.html#aac3ff4218dc7ec5dcbaf29fec9338dc3",
-"class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#aef5fca5bddf267c2fbffc582a76c6c0b",
-"class_f_c_t_1_1_render_graph.html",
-"class_f_c_t_1_1_sampler_element.html#ac12016dd6381710cb2bda22bd98d7c79",
-"class_f_c_t_1_1_texture_array.html#a465261477eca40c7c7a089318c5f194dab4b279046a02077466fa26cabb00c642",
-"class_f_c_t_1_1_v_k___context.html#a9171eabffff1b94dadd24467623fe442",
-"class_f_c_t_1_1_vertex_context.html#a15a716cb062421c0d6d5107bf1311043",
-"class_f_c_t_1_1_vertex_shader.html#a8d99e2b940895be398146ab0f9424231",
-"functions_vars_d.html",
-"namespace_f_c_t.html#a0741721dca246274b1b72d07249443e4af76dbb655425d5bbcf8f4b8f5d316960",
-"namespace_f_c_t.html#adb995786f2f649c122895cd47ab09d32a6c2ab859b54837522f9f738ef3bf846d",
-"struct_f_c_t_1_1_is_ref_count_base.html",
-"struct_f_c_t_1_1_tradition_render_job.html"
+"class_f_c_t_1_1_r_h_i_1_1_i_index_data.html",
+"class_f_c_t_1_1_r_h_i_1_1_render_target_view.html#a92a5835ef41d4c7e9a3f705369ddc359",
+"class_f_c_t_1_1_r_h_i_1_1_v_k___depth_stencil_view.html#a5e17cdcda2d8a32a56c4b200309d9b37",
+"class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a5a8112f1b2a5ea25e4b43d4a2b197335",
+"class_f_c_t_1_1_ref_count.html#a33146ec5804be422936519224a3a7b3f",
+"class_f_c_t_1_1_sampler.html#adb9c22e5ada05479222cabb5cfc26241",
+"class_f_c_t_1_1_texture.html#ad04e147799484f28b7f4fb0e8252d3c1",
+"class_f_c_t_1_1_v_k___context.html",
+"class_f_c_t_1_1_vertex_buffer.html#a4464f88008d49ee899a86410ca9ab9b9",
+"class_f_c_t_1_1_vertex_shader.html#a1cdfa620d51f7cb8d711bf8188a4aaa0",
+"functions_func_m.html",
+"namespace_f_c_t.html#a0741721dca246274b1b72d07249443e4ad0a8fa71e3197bbf9b23d6d93235f3ca",
+"namespace_f_c_t.html#aa6d1e7cd43d5bb06686de955be1a4309a4fbb0721d080fd298a216501832bee45",
+"struct_f_c_t_1_1_context_event_1_1_window_bound.html#aa37ca682c1c049ef1227104a4a8eb06b",
+"struct_f_c_t_1_1_r_h_i_1_1_pass_neighbors.html#a441b389b5e7f4a4aaa29c12a4f21054a",
+"struct_f_c_t_1_1_vec2.html#ae7a06b2810ca0b06e8a28a559a6fc3f5"
 ];
 
 var SYNCONMSG = '点击 关闭 面板同步';

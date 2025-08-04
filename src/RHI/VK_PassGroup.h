@@ -28,6 +28,7 @@ namespace FCT
             uint32_t getPassIndex(Pass* pass);
             void beginSubmit(CommandBuffer* cmdBuf) override;
             void endSubmit(CommandBuffer* cmdBuf) override;
+            void nextPass(CommandBuffer* cmdBuf) override;
         private:
             void collectSubpasses();
             void collectAttachments();
@@ -50,6 +51,7 @@ namespace FCT
             std::vector<vk::ClearValue> m_clearValues;
             std::unordered_map<RHI::CommandBuffer*,vk::Framebuffer> m_framebuffers;
             std::map<uint32_t, AttachmentSlot> m_depthAttachments;
+            uint32_t m_currentPassIndex;
 
             //std::vector<FCT::Image*> m_targets;
         };

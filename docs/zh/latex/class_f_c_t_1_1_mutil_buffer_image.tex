@@ -6,7 +6,8 @@
 
 
 
-类 FCT\+::Mutil\+Buffer\+Image 继承关系图\+:\nopagebreak
+类 FCT\+::Mutil\+Buffer\+Image 继承关系图\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -34,9 +35,9 @@ void \mbox{\hyperlink{class_f_c_t_1_1_mutil_buffer_image_ad5f6bf8818e4645f3316af
 \item 
 void \mbox{\hyperlink{class_f_c_t_1_1_mutil_buffer_image_adefe88a4c195014b9c2b5e0c5949f0dc}{resize}} (uint32\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_image_af4b50a8b7479884c2cd0c0e990875c25}{width}}, uint32\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_image_ab8acb1090a3b1bc3bb282196f7b9209f}{height}})
 \item 
-void \mbox{\hyperlink{class_f_c_t_1_1_mutil_buffer_image_afa73c8d24ef653bf66c67d68f929773a}{create}} (std\+::vector$<$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_image}{RHI\+::\+Image}} \texorpdfstring{$\ast$}{*} $>$ images)
+void \mbox{\hyperlink{class_f_c_t_1_1_mutil_buffer_image_afa73c8d24ef653bf66c67d68f929773a}{create}} (std\+::vector$<$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_image}{RHI\+::\+Image}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_f_c_t_1_1_mutil_buffer_image_ae8c10c2b9f54f39c9912e9f0e67a9c57}{images}})
 \item 
-void \mbox{\hyperlink{class_f_c_t_1_1_mutil_buffer_image_a45d868bb75618407903b9c786ab28f8d}{as}} (\mbox{\hyperlink{namespace_f_c_t_a0cbb58fc2b9d03ebc10caf8a6f43d5d9}{Image\+Usage\+Flags}} usage) override
+void \mbox{\hyperlink{class_f_c_t_1_1_mutil_buffer_image_a922687a9af38683519c069b1d0249da4}{as}} (Image\+Usages usage) override
 \item 
 void \mbox{\hyperlink{class_f_c_t_1_1_mutil_buffer_image_a2b3635fafe7a058d07b9ff813945cf20}{bind}} (\mbox{\hyperlink{class_f_c_t_1_1_context}{Context}} \texorpdfstring{$\ast$}{*}ctx) override
 \item 
@@ -57,6 +58,14 @@ void \mbox{\hyperlink{class_f_c_t_1_1_mutil_buffer_image_a6f226b4615f566314d524f
 \mbox{\hyperlink{struct_f_c_t_1_1_update_result}{Update\+Result}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_mutil_buffer_image_a3ff18e21ce3158433729bf32032f7114}{update\+To\+Current}} (void \texorpdfstring{$\ast$}{*}data, size\+\_\+t size) override
 \item 
 uint32\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_mutil_buffer_image_a012c134107bee13f1b83afc14d1e5e5a}{image\+Count}} () const
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_image}{RHI\+::\+Image}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_f_c_t_1_1_mutil_buffer_image_ae8c10c2b9f54f39c9912e9f0e67a9c57}{images}} () const
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_render_target_view}{RHI\+::\+Render\+Target\+View}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_f_c_t_1_1_mutil_buffer_image_aa00fcf787b595f25af1c3a812df8d05b}{rtvs}} () const
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_depth_stencil_view}{RHI\+::\+Depth\+Stencil\+View}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_f_c_t_1_1_mutil_buffer_image_aa4f0a2a90e8622f1cb8eec73757aa897}{dsvs}} () const
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_texture_view}{RHI\+::\+Texture\+View}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_f_c_t_1_1_mutil_buffer_image_a097e8a71deace8c4da1711588d79a05d}{tvs}} () const
 \end{DoxyCompactItemize}
 \doxysubsection*{Public 成员函数 继承自 \mbox{\hyperlink{class_f_c_t_1_1_image}{FCT\+::\+Image}}}
 \begin{DoxyCompactItemize}
@@ -157,8 +166,7 @@ FCT\+::\+Mutil\+Buffer\+Image\+::\+Mutil\+Buffer\+Image (\begin{DoxyParamCaption
 
 在文件 \mbox{\hyperlink{_mutil_buffer_image_8cpp_source}{Mutil\+Buffer\+Image.\+cpp}} 第 \mbox{\hyperlink{_mutil_buffer_image_8cpp_source_l00027}{27}} 行定义.
 
-函数调用图\+:
-\nopagebreak
+函数调用图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -177,26 +185,26 @@ FCT\+::\+Mutil\+Buffer\+Image\+::\+Mutil\+Buffer\+Image (\begin{DoxyParamCaption
 \label{doc-func-members}
 \Hypertarget{class_f_c_t_1_1_mutil_buffer_image_doc-func-members}
 \doxysubsection{成员函数说明}
-\Hypertarget{class_f_c_t_1_1_mutil_buffer_image_a45d868bb75618407903b9c786ab28f8d}\index{FCT::MutilBufferImage@{FCT::MutilBufferImage}!as@{as}}
+\Hypertarget{class_f_c_t_1_1_mutil_buffer_image_a922687a9af38683519c069b1d0249da4}\index{FCT::MutilBufferImage@{FCT::MutilBufferImage}!as@{as}}
 \index{as@{as}!FCT::MutilBufferImage@{FCT::MutilBufferImage}}
 \doxysubsubsection{\texorpdfstring{as()}{as()}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_mutil_buffer_image_a45d868bb75618407903b9c786ab28f8d} 
-void FCT\+::\+Mutil\+Buffer\+Image\+::as (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_f_c_t_a0cbb58fc2b9d03ebc10caf8a6f43d5d9}{Image\+Usage\+Flags}}}]{usage}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_mutil_buffer_image_a922687a9af38683519c069b1d0249da4} 
+void FCT\+::\+Mutil\+Buffer\+Image\+::as (\begin{DoxyParamCaption}\item[{Image\+Usages}]{usage}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
-实现了 \mbox{\hyperlink{class_f_c_t_1_1_image_a2e5175e18704b37ee3d3a971ddedbd98}{FCT\+::\+Image}}.
+实现了 \mbox{\hyperlink{class_f_c_t_1_1_image_a77507176df7c88f659b411937044b6e2}{FCT\+::\+Image}}.
 
 
 
-在文件 \mbox{\hyperlink{_mutil_buffer_image_8cpp_source}{Mutil\+Buffer\+Image.\+cpp}} 第 \mbox{\hyperlink{_mutil_buffer_image_8cpp_source_l00147}{147}} 行定义.
+在文件 \mbox{\hyperlink{_mutil_buffer_image_8cpp_source}{Mutil\+Buffer\+Image.\+cpp}} 第 \mbox{\hyperlink{_mutil_buffer_image_8cpp_source_l00149}{149}} 行定义.
 
 函数调用图\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_f_c_t_1_1_mutil_buffer_image_a45d868bb75618407903b9c786ab28f8d_cgraph}
+\includegraphics[width=350pt]{class_f_c_t_1_1_mutil_buffer_image_a922687a9af38683519c069b1d0249da4_cgraph}
 \end{center}
 \end{figure}
 这是这个函数的调用关系图\+:
@@ -204,7 +212,7 @@ void FCT\+::\+Mutil\+Buffer\+Image\+::as (\begin{DoxyParamCaption}\item[{\mbox{\
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_f_c_t_1_1_mutil_buffer_image_a45d868bb75618407903b9c786ab28f8d_icgraph}
+\includegraphics[width=350pt]{class_f_c_t_1_1_mutil_buffer_image_a922687a9af38683519c069b1d0249da4_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{class_f_c_t_1_1_mutil_buffer_image_a2b3635fafe7a058d07b9ff813945cf20}\index{FCT::MutilBufferImage@{FCT::MutilBufferImage}!bind@{bind}}
@@ -219,10 +227,9 @@ void FCT\+::\+Mutil\+Buffer\+Image\+::bind (\begin{DoxyParamCaption}\item[{\mbox
 
 
 
-在文件 \mbox{\hyperlink{_mutil_buffer_image_8cpp_source}{Mutil\+Buffer\+Image.\+cpp}} 第 \mbox{\hyperlink{_mutil_buffer_image_8cpp_source_l00182}{182}} 行定义.
+在文件 \mbox{\hyperlink{_mutil_buffer_image_8cpp_source}{Mutil\+Buffer\+Image.\+cpp}} 第 \mbox{\hyperlink{_mutil_buffer_image_8cpp_source_l00184}{184}} 行定义.
 
-函数调用图\+:
-\nopagebreak
+函数调用图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -239,8 +246,7 @@ void FCT\+::\+Mutil\+Buffer\+Image\+::change\+Current\+Index (\begin{DoxyParamCa
 
 在文件 \mbox{\hyperlink{_mutil_buffer_image_8h_source}{Mutil\+Buffer\+Image.\+h}} 第 \mbox{\hyperlink{_mutil_buffer_image_8h_source_l00037}{37}} 行定义.
 
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -259,7 +265,7 @@ void FCT\+::\+Mutil\+Buffer\+Image\+::create (\begin{DoxyParamCaption}{}{}\end{D
 
 
 
-在文件 \mbox{\hyperlink{_mutil_buffer_image_8cpp_source}{Mutil\+Buffer\+Image.\+cpp}} 第 \mbox{\hyperlink{_mutil_buffer_image_8cpp_source_l00032}{32}} 行定义.
+在文件 \mbox{\hyperlink{_mutil_buffer_image_8cpp_source}{Mutil\+Buffer\+Image.\+cpp}} 第 \mbox{\hyperlink{_mutil_buffer_image_8cpp_source_l00091}{91}} 行定义.
 
 函数调用图\+:
 \nopagebreak
@@ -269,8 +275,7 @@ void FCT\+::\+Mutil\+Buffer\+Image\+::create (\begin{DoxyParamCaption}{}{}\end{D
 \includegraphics[width=350pt]{class_f_c_t_1_1_mutil_buffer_image_ad5f6bf8818e4645f3316af155c2d1e76_cgraph}
 \end{center}
 \end{figure}
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -285,7 +290,7 @@ void FCT\+::\+Mutil\+Buffer\+Image\+::create (\begin{DoxyParamCaption}\item[{std
 
 
 
-在文件 \mbox{\hyperlink{_mutil_buffer_image_8cpp_source}{Mutil\+Buffer\+Image.\+cpp}} 第 \mbox{\hyperlink{_mutil_buffer_image_8cpp_source_l00114}{114}} 行定义.
+在文件 \mbox{\hyperlink{_mutil_buffer_image_8cpp_source}{Mutil\+Buffer\+Image.\+cpp}} 第 \mbox{\hyperlink{_mutil_buffer_image_8cpp_source_l00115}{115}} 行定义.
 
 函数调用图\+:
 \nopagebreak
@@ -307,7 +312,7 @@ void FCT\+::\+Mutil\+Buffer\+Image\+::create (\begin{DoxyParamCaption}\item[{std
 
 
 
-在文件 \mbox{\hyperlink{_mutil_buffer_image_8cpp_source}{Mutil\+Buffer\+Image.\+cpp}} 第 \mbox{\hyperlink{_mutil_buffer_image_8cpp_source_l00205}{205}} 行定义.
+在文件 \mbox{\hyperlink{_mutil_buffer_image_8cpp_source}{Mutil\+Buffer\+Image.\+cpp}} 第 \mbox{\hyperlink{_mutil_buffer_image_8cpp_source_l00207}{207}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_mutil_buffer_image_ae71f00131d5e9ec8738cb9de08fd39e9}\index{FCT::MutilBufferImage@{FCT::MutilBufferImage}!currentImage@{currentImage}}
 \index{currentImage@{currentImage}!FCT::MutilBufferImage@{FCT::MutilBufferImage}}
@@ -321,7 +326,7 @@ void FCT\+::\+Mutil\+Buffer\+Image\+::create (\begin{DoxyParamCaption}\item[{std
 
 
 
-在文件 \mbox{\hyperlink{_mutil_buffer_image_8cpp_source}{Mutil\+Buffer\+Image.\+cpp}} 第 \mbox{\hyperlink{_mutil_buffer_image_8cpp_source_l00210}{210}} 行定义.
+在文件 \mbox{\hyperlink{_mutil_buffer_image_8cpp_source}{Mutil\+Buffer\+Image.\+cpp}} 第 \mbox{\hyperlink{_mutil_buffer_image_8cpp_source_l00212}{212}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_mutil_buffer_image_a0e016eba97d4982f673682f571e5d49b}\index{FCT::MutilBufferImage@{FCT::MutilBufferImage}!currentTargetView@{currentTargetView}}
 \index{currentTargetView@{currentTargetView}!FCT::MutilBufferImage@{FCT::MutilBufferImage}}
@@ -335,7 +340,7 @@ void FCT\+::\+Mutil\+Buffer\+Image\+::create (\begin{DoxyParamCaption}\item[{std
 
 
 
-在文件 \mbox{\hyperlink{_mutil_buffer_image_8cpp_source}{Mutil\+Buffer\+Image.\+cpp}} 第 \mbox{\hyperlink{_mutil_buffer_image_8cpp_source_l00195}{195}} 行定义.
+在文件 \mbox{\hyperlink{_mutil_buffer_image_8cpp_source}{Mutil\+Buffer\+Image.\+cpp}} 第 \mbox{\hyperlink{_mutil_buffer_image_8cpp_source_l00197}{197}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_mutil_buffer_image_aa575aacdd5be46533ae864dc4b57ad78}\index{FCT::MutilBufferImage@{FCT::MutilBufferImage}!currentTextureView@{currentTextureView}}
 \index{currentTextureView@{currentTextureView}!FCT::MutilBufferImage@{FCT::MutilBufferImage}}
@@ -349,7 +354,17 @@ void FCT\+::\+Mutil\+Buffer\+Image\+::create (\begin{DoxyParamCaption}\item[{std
 
 
 
-在文件 \mbox{\hyperlink{_mutil_buffer_image_8cpp_source}{Mutil\+Buffer\+Image.\+cpp}} 第 \mbox{\hyperlink{_mutil_buffer_image_8cpp_source_l00200}{200}} 行定义.
+在文件 \mbox{\hyperlink{_mutil_buffer_image_8cpp_source}{Mutil\+Buffer\+Image.\+cpp}} 第 \mbox{\hyperlink{_mutil_buffer_image_8cpp_source_l00202}{202}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_mutil_buffer_image_aa4f0a2a90e8622f1cb8eec73757aa897}\index{FCT::MutilBufferImage@{FCT::MutilBufferImage}!dsvs@{dsvs}}
+\index{dsvs@{dsvs}!FCT::MutilBufferImage@{FCT::MutilBufferImage}}
+\doxysubsubsection{\texorpdfstring{dsvs()}{dsvs()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_mutil_buffer_image_aa4f0a2a90e8622f1cb8eec73757aa897} 
+std\+::vector$<$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_depth_stencil_view}{RHI\+::\+Depth\+Stencil\+View}} \texorpdfstring{$\ast$}{*} $>$ FCT\+::\+Mutil\+Buffer\+Image\+::dsvs (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_mutil_buffer_image_8h_source}{Mutil\+Buffer\+Image.\+h}} 第 \mbox{\hyperlink{_mutil_buffer_image_8h_source_l00048}{48}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_mutil_buffer_image_a3b346923bc5f61153a33a0cda59b6084}\index{FCT::MutilBufferImage@{FCT::MutilBufferImage}!getImage@{getImage}}
 \index{getImage@{getImage}!FCT::MutilBufferImage@{FCT::MutilBufferImage}}
@@ -365,8 +380,7 @@ void FCT\+::\+Mutil\+Buffer\+Image\+::create (\begin{DoxyParamCaption}\item[{std
 
 在文件 \mbox{\hyperlink{_mutil_buffer_image_8h_source}{Mutil\+Buffer\+Image.\+h}} 第 \mbox{\hyperlink{_mutil_buffer_image_8h_source_l00031}{31}} 行定义.
 
-函数调用图\+:
-\nopagebreak
+函数调用图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -385,7 +399,7 @@ std\+::vector$<$ \mbox{\hyperlink{class_f_c_t_1_1_image}{Image}} \texorpdfstring
 
 
 
-在文件 \mbox{\hyperlink{_mutil_buffer_image_8cpp_source}{Mutil\+Buffer\+Image.\+cpp}} 第 \mbox{\hyperlink{_mutil_buffer_image_8cpp_source_l00187}{187}} 行定义.
+在文件 \mbox{\hyperlink{_mutil_buffer_image_8cpp_source}{Mutil\+Buffer\+Image.\+cpp}} 第 \mbox{\hyperlink{_mutil_buffer_image_8cpp_source_l00189}{189}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_mutil_buffer_image_a012c134107bee13f1b83afc14d1e5e5a}\index{FCT::MutilBufferImage@{FCT::MutilBufferImage}!imageCount@{imageCount}}
 \index{imageCount@{imageCount}!FCT::MutilBufferImage@{FCT::MutilBufferImage}}
@@ -414,12 +428,29 @@ void FCT\+::\+Mutil\+Buffer\+Image\+::image\+Count (\begin{DoxyParamCaption}\ite
 \includegraphics[width=343pt]{class_f_c_t_1_1_mutil_buffer_image_ac20d7079024a790b21c4c6bc3b9d46bf_cgraph}
 \end{center}
 \end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_mutil_buffer_image_ac20d7079024a790b21c4c6bc3b9d46bf_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_f_c_t_1_1_mutil_buffer_image_ae8c10c2b9f54f39c9912e9f0e67a9c57}\index{FCT::MutilBufferImage@{FCT::MutilBufferImage}!images@{images}}
+\index{images@{images}!FCT::MutilBufferImage@{FCT::MutilBufferImage}}
+\doxysubsubsection{\texorpdfstring{images()}{images()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_mutil_buffer_image_ae8c10c2b9f54f39c9912e9f0e67a9c57} 
+std\+::vector$<$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_image}{RHI\+::\+Image}} \texorpdfstring{$\ast$}{*} $>$ FCT\+::\+Mutil\+Buffer\+Image\+::images (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_mutil_buffer_image_8h_source}{Mutil\+Buffer\+Image.\+h}} 第 \mbox{\hyperlink{_mutil_buffer_image_8h_source_l00046}{46}} 行定义.
+
 这是这个函数的调用关系图\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_f_c_t_1_1_mutil_buffer_image_ac20d7079024a790b21c4c6bc3b9d46bf_icgraph}
+\includegraphics[width=345pt]{class_f_c_t_1_1_mutil_buffer_image_ae8c10c2b9f54f39c9912e9f0e67a9c57_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{class_f_c_t_1_1_mutil_buffer_image_adefe88a4c195014b9c2b5e0c5949f0dc}\index{FCT::MutilBufferImage@{FCT::MutilBufferImage}!resize@{resize}}
@@ -434,7 +465,7 @@ void FCT\+::\+Mutil\+Buffer\+Image\+::resize (\begin{DoxyParamCaption}\item[{uin
 
 
 
-在文件 \mbox{\hyperlink{_mutil_buffer_image_8cpp_source}{Mutil\+Buffer\+Image.\+cpp}} 第 \mbox{\hyperlink{_mutil_buffer_image_8cpp_source_l00056}{56}} 行定义.
+在文件 \mbox{\hyperlink{_mutil_buffer_image_8cpp_source}{Mutil\+Buffer\+Image.\+cpp}} 第 \mbox{\hyperlink{_mutil_buffer_image_8cpp_source_l00032}{32}} 行定义.
 
 函数调用图\+:
 \nopagebreak
@@ -444,6 +475,26 @@ void FCT\+::\+Mutil\+Buffer\+Image\+::resize (\begin{DoxyParamCaption}\item[{uin
 \includegraphics[width=350pt]{class_f_c_t_1_1_mutil_buffer_image_adefe88a4c195014b9c2b5e0c5949f0dc_cgraph}
 \end{center}
 \end{figure}
+\Hypertarget{class_f_c_t_1_1_mutil_buffer_image_aa00fcf787b595f25af1c3a812df8d05b}\index{FCT::MutilBufferImage@{FCT::MutilBufferImage}!rtvs@{rtvs}}
+\index{rtvs@{rtvs}!FCT::MutilBufferImage@{FCT::MutilBufferImage}}
+\doxysubsubsection{\texorpdfstring{rtvs()}{rtvs()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_mutil_buffer_image_aa00fcf787b595f25af1c3a812df8d05b} 
+std\+::vector$<$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_render_target_view}{RHI\+::\+Render\+Target\+View}} \texorpdfstring{$\ast$}{*} $>$ FCT\+::\+Mutil\+Buffer\+Image\+::rtvs (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_mutil_buffer_image_8h_source}{Mutil\+Buffer\+Image.\+h}} 第 \mbox{\hyperlink{_mutil_buffer_image_8h_source_l00047}{47}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_mutil_buffer_image_a097e8a71deace8c4da1711588d79a05d}\index{FCT::MutilBufferImage@{FCT::MutilBufferImage}!tvs@{tvs}}
+\index{tvs@{tvs}!FCT::MutilBufferImage@{FCT::MutilBufferImage}}
+\doxysubsubsection{\texorpdfstring{tvs()}{tvs()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_mutil_buffer_image_a097e8a71deace8c4da1711588d79a05d} 
+std\+::vector$<$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_texture_view}{RHI\+::\+Texture\+View}} \texorpdfstring{$\ast$}{*} $>$ FCT\+::\+Mutil\+Buffer\+Image\+::tvs (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_mutil_buffer_image_8h_source}{Mutil\+Buffer\+Image.\+h}} 第 \mbox{\hyperlink{_mutil_buffer_image_8h_source_l00049}{49}} 行定义.
+
 \Hypertarget{class_f_c_t_1_1_mutil_buffer_image_a3ff18e21ce3158433729bf32032f7114}\index{FCT::MutilBufferImage@{FCT::MutilBufferImage}!updateToCurrent@{updateToCurrent}}
 \index{updateToCurrent@{updateToCurrent}!FCT::MutilBufferImage@{FCT::MutilBufferImage}}
 \doxysubsubsection{\texorpdfstring{updateToCurrent()}{updateToCurrent()}}
@@ -456,7 +507,7 @@ void FCT\+::\+Mutil\+Buffer\+Image\+::resize (\begin{DoxyParamCaption}\item[{uin
 
 
 
-在文件 \mbox{\hyperlink{_mutil_buffer_image_8cpp_source}{Mutil\+Buffer\+Image.\+cpp}} 第 \mbox{\hyperlink{_mutil_buffer_image_8cpp_source_l00215}{215}} 行定义.
+在文件 \mbox{\hyperlink{_mutil_buffer_image_8cpp_source}{Mutil\+Buffer\+Image.\+cpp}} 第 \mbox{\hyperlink{_mutil_buffer_image_8cpp_source_l00217}{217}} 行定义.
 
 
 

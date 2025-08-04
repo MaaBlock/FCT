@@ -1,0 +1,61 @@
+\doxysection{Pipeline\+Stage.\+h}
+\hypertarget{_pipeline_stage_8h_source}{}\label{_pipeline_stage_8h_source}\index{src/RHI/PipelineStage.h@{src/RHI/PipelineStage.h}}
+\mbox{\hyperlink{_pipeline_stage_8h}{浏览该文件的文档.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00001}00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00002}00002\ \textcolor{comment}{//\ Created\ by\ Administrator\ on\ 2025/7/30.}}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00003}00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00005}00005\ \textcolor{preprocessor}{\#ifndef\ PIPELINESTAGE\_H}}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00006}00006\ \textcolor{preprocessor}{\#define\ PIPELINESTAGE\_H}}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_third_party_8h}{../ThirdParty.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_flags_8h}{../Base/Flags.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00009}00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_f_c_t}{FCT}}\ \{}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00010}\mbox{\hyperlink{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0}{00010}}\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0}{PipelineStage}}\ :\ uint32\_t\ \{}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00012}\mbox{\hyperlink{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0a4ecc54305ce317f6232ab7ce1acb4db6}{00012}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0a4ecc54305ce317f6232ab7ce1acb4db6}{colorAttachmentOutput}}\ =\ 1\ <<\ 0,}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00013}\mbox{\hyperlink{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0ae3fc4223528e9526ae83b7442115e238}{00013}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0ae3fc4223528e9526ae83b7442115e238}{earlyFragmentTests}}\ =\ 1\ <<\ 1,}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00014}\mbox{\hyperlink{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0a6bd52102f595efa6dda67e13699fadda}{00014}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0a6bd52102f595efa6dda67e13699fadda}{bottomOfPipe}}\ =\ 1\ <<\ 2,}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00015}\mbox{\hyperlink{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0a807ac3da711c52fb45af7fcb38f2539e}{00015}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0a807ac3da711c52fb45af7fcb38f2539e}{topOfPipe}}\ =\ 1\ <<\ 3,}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00016}\mbox{\hyperlink{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0aa01b4d41eacfed301b529ecb0bf46b2d}{00016}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0aa01b4d41eacfed301b529ecb0bf46b2d}{lateFragmentTests}}\ =\ 1\ <<\ 4,}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00017}\mbox{\hyperlink{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0ab7a9af74fb126e298c469a805123c6a5}{00017}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0ab7a9af74fb126e298c469a805123c6a5}{fragmentShader}}\ =\ 1\ <<\ 5,}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00018}00018\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00019}\mbox{\hyperlink{namespace_f_c_t_a6e029a0133eb9f21b6e84407d21bda3e}{00019}}\ \ \ \ \ \mbox{\hyperlink{_flags_8h_ad4f3528683d14cd2c679ec96189e968f}{FCT\_DECLARE\_FLAGS}}(\mbox{\hyperlink{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0}{PipelineStage}});}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00020}00020\ \textcolor{preprocessor}{\#ifdef\ FCT\_USE\_VULKAN}}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00021}\mbox{\hyperlink{namespace_f_c_t_a3c285c41b3830a955aa47791cca04b73}{00021}}\ \ \ \ \ \textcolor{keyword}{inline}\ vk::PipelineStageFlagBits\ \mbox{\hyperlink{namespace_f_c_t_a3c285c41b3830a955aa47791cca04b73}{ToVkFlagBits}}(\mbox{\hyperlink{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0}{FCT::PipelineStage}}\ pipelineStage)}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00022}00022\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (pipelineStage)\ \{}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0a4ecc54305ce317f6232ab7ce1acb4db6}{FCT::PipelineStage::colorAttachmentOutput}}:}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vk::PipelineStageFlagBits::eColorAttachmentOutput;}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0ae3fc4223528e9526ae83b7442115e238}{FCT::PipelineStage::earlyFragmentTests}}:}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vk::PipelineStageFlagBits::eEarlyFragmentTests;}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0a6bd52102f595efa6dda67e13699fadda}{FCT::PipelineStage::bottomOfPipe}}:}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vk::PipelineStageFlagBits::eBottomOfPipe;}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0a807ac3da711c52fb45af7fcb38f2539e}{FCT::PipelineStage::topOfPipe}}:}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vk::PipelineStageFlagBits::eTopOfPipe;}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0aa01b4d41eacfed301b529ecb0bf46b2d}{FCT::PipelineStage::lateFragmentTests}}:}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vk::PipelineStageFlagBits::eLateFragmentTests;}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0ab7a9af74fb126e298c469a805123c6a5}{FCT::PipelineStage::fragmentShader}}:}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vk::PipelineStageFlagBits::eFragmentShader;}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}vk::PipelineStageFlagBits\textcolor{keyword}{>}(0);}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00038}00038\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00039}00039\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00040}\mbox{\hyperlink{namespace_f_c_t_ad0035281afbfe60d8ced3407f9c5f748}{00040}}\ \ \ \ \ \textcolor{keyword}{inline}\ vk::PipelineStageFlags\ \mbox{\hyperlink{namespace_f_c_t_ad0035281afbfe60d8ced3407f9c5f748}{ToVkPipelineStageFlags}}(FCT::PipelineStages\ pipelineStages)}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00041}00041\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00042}00042\ \ \ \ \ \ \ \ \ vk::PipelineStageFlags\ result;}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (uint32\_t\ i\ =\ 0;\ i\ <\ 32;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0}{FCT::PipelineStage}}\ singleStage\ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0}{FCT::PipelineStage}}\textcolor{keyword}{>}(1u\ <<\ i);}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pipelineStages\ \&\ singleStage)\ \{}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result\ |=\ \mbox{\hyperlink{namespace_f_c_t_a3c285c41b3830a955aa47791cca04b73}{ToVkFlagBits}}(singleStage);}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00049}00049\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00052}00052\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00053}00053\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00054}00054\ \}}
+\DoxyCodeLine{\Hypertarget{_pipeline_stage_8h_source_l00055}00055\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//PIPELINESTAGE\_H}}
+
+\end{DoxyCode}

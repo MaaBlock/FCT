@@ -6,7 +6,8 @@
 
 
 
-类 FCT\+::Blend\+State 继承关系图\+:\nopagebreak
+类 FCT\+::Blend\+State 继承关系图\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -15,13 +16,19 @@
 \end{figure}
 
 
-FCT\+::Blend\+State 的协作图\+:\nopagebreak
+FCT\+::Blend\+State 的协作图\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[height=550pt]{class_f_c_t_1_1_blend_state__coll__graph}
 \end{center}
 \end{figure}
+\doxysubsubsection*{类}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_f_c_t_1_1_blend_state_1_1_target}{Target}}
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Public 成员函数}
 \begin{DoxyCompactItemize}
 \item 
@@ -29,57 +36,35 @@ virtual \mbox{\hyperlink{class_f_c_t_1_1_blend_state_ac2ab6d8f13fa33d38b516fa9a8
 \item 
 virtual void \mbox{\hyperlink{class_f_c_t_1_1_blend_state_a08a9e83f7327ad8b7318706b321c8b12}{create}} ()=0
 \item 
-bool \mbox{\hyperlink{class_f_c_t_1_1_blend_state_a9ba6f9061a59a1eb937f37380be32f1e}{blend\+Enable}} () const
+\mbox{\hyperlink{class_f_c_t_1_1_blend_state}{Blend\+State}} \& \mbox{\hyperlink{class_f_c_t_1_1_blend_state_a0be4d1876413ba694098b04452a6986c}{enable}} (bool enable, int target=-\/1)
 \item 
-void \mbox{\hyperlink{class_f_c_t_1_1_blend_state_a10312f3db21b77f321c33e63fa2001c4}{blend\+Enable}} (bool enable)
+\mbox{\hyperlink{class_f_c_t_1_1_blend_state}{Blend\+State}} \& \mbox{\hyperlink{class_f_c_t_1_1_blend_state_a84ae7d158eee4b802b48a051684ad546}{factors}} (\mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75}{Blend\+Factor}} src, \mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75}{Blend\+Factor}} dst, int target=-\/1)
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_blend_state}{Blend\+State}} \& \mbox{\hyperlink{class_f_c_t_1_1_blend_state_a772422d2b6cb526e197b658d18fb2c88}{color\+Factors}} (\mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75}{Blend\+Factor}} src, \mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75}{Blend\+Factor}} dst, int target=-\/1)
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_blend_state}{Blend\+State}} \& \mbox{\hyperlink{class_f_c_t_1_1_blend_state_ae5b16f48b82be22b1960a3f6d219ecc7}{alpha\+Factors}} (\mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75}{Blend\+Factor}} src, \mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75}{Blend\+Factor}} dst, int target=-\/1)
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_blend_state}{Blend\+State}} \& \mbox{\hyperlink{class_f_c_t_1_1_blend_state_a118bfa72d1bf083fd1e524534c533e3e}{op}} (\mbox{\hyperlink{namespace_f_c_t_a63a2f041d347dd600f0083cb95d0a245}{Blend\+Op}} operation, int target=-\/1)
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_blend_state}{Blend\+State}} \& \mbox{\hyperlink{class_f_c_t_1_1_blend_state_a02d5609bc52e0ab07b532675d2b8ab05}{mask}} (uint8\+\_\+t write\+Mask, int target=-\/1)
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_blend_state}{Blend\+State}} \& \mbox{\hyperlink{class_f_c_t_1_1_blend_state_a6a6a521da736b3803948f2e0c90a7f7e}{logic}} (\mbox{\hyperlink{namespace_f_c_t_a01748ad436ae9c9f3aa57b324c0128b0}{Logic\+Op}} logic\+Op, bool \mbox{\hyperlink{class_f_c_t_1_1_blend_state_a0be4d1876413ba694098b04452a6986c}{enable}}=true)
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_blend_state}{Blend\+State}} \& \mbox{\hyperlink{class_f_c_t_1_1_blend_state_a790e8e264cca3b47f112ca3a245c3028}{alpha}} (int target=-\/1)
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_blend_state}{Blend\+State}} \& \mbox{\hyperlink{class_f_c_t_1_1_blend_state_a7fa7b2873eda5638db9ddb0ba1e8d319}{additive}} (int target=-\/1)
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_blend_state}{Blend\+State}} \& \mbox{\hyperlink{class_f_c_t_1_1_blend_state_abf53791f99ef6b147b64864f7ac52f47}{multiply}} (int target=-\/1)
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_blend_state}{Blend\+State}} \& \mbox{\hyperlink{class_f_c_t_1_1_blend_state_a8abb337bcae77652bf5396e49632f596}{opaque}} (int target=-\/1)
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_blend_state}{Blend\+State}} \& \mbox{\hyperlink{class_f_c_t_1_1_blend_state_a85805cd280a4e4b7dda693da734c57ee}{targets}} (int \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a33146ec5804be422936519224a3a7b3f}{count}})
+\item 
+bool \mbox{\hyperlink{class_f_c_t_1_1_blend_state_a9ba6f9061a59a1eb937f37380be32f1e}{blend\+Enable}} () const
 \item 
 \mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75}{Blend\+Factor}} \mbox{\hyperlink{class_f_c_t_1_1_blend_state_a07882a17cff3cc55f1f43049b3ee53fc}{src\+Color\+Blend\+Factor}} () const
 \item 
-void \mbox{\hyperlink{class_f_c_t_1_1_blend_state_ab8d5369b92d72225f2a9ff60cf91d3f2}{src\+Color\+Blend\+Factor}} (\mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75}{Blend\+Factor}} factor)
-\item 
-\mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75}{Blend\+Factor}} \mbox{\hyperlink{class_f_c_t_1_1_blend_state_a9f3359dd84acb98a75bc85c8c7d66561}{dst\+Color\+Blend\+Factor}} () const
-\item 
-void \mbox{\hyperlink{class_f_c_t_1_1_blend_state_aad036c37f58cb66cf592aa40eb94e055}{dst\+Color\+Blend\+Factor}} (\mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75}{Blend\+Factor}} factor)
-\item 
-\mbox{\hyperlink{namespace_f_c_t_a63a2f041d347dd600f0083cb95d0a245}{Blend\+Op}} \mbox{\hyperlink{class_f_c_t_1_1_blend_state_afbe1652b54d85373dcd6bc99bd29dd6e}{color\+Blend\+Op}} () const
-\item 
-void \mbox{\hyperlink{class_f_c_t_1_1_blend_state_a78aca84d3d5dcf04db4d700c66559128}{color\+Blend\+Op}} (\mbox{\hyperlink{namespace_f_c_t_a63a2f041d347dd600f0083cb95d0a245}{Blend\+Op}} op)
-\item 
-\mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75}{Blend\+Factor}} \mbox{\hyperlink{class_f_c_t_1_1_blend_state_a998f08759d10033e8c1e76ee1621272e}{src\+Alpha\+Blend\+Factor}} () const
-\item 
-void \mbox{\hyperlink{class_f_c_t_1_1_blend_state_a77a4d63eccb4f85b2e4c3f234a2feb35}{src\+Alpha\+Blend\+Factor}} (\mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75}{Blend\+Factor}} factor)
-\item 
-\mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75}{Blend\+Factor}} \mbox{\hyperlink{class_f_c_t_1_1_blend_state_aa15b039cccf5cda2e5dbec86802d7b12}{dst\+Alpha\+Blend\+Factor}} () const
-\item 
-void \mbox{\hyperlink{class_f_c_t_1_1_blend_state_ab062d876e566ff28d8737068a5080135}{dst\+Alpha\+Blend\+Factor}} (\mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75}{Blend\+Factor}} factor)
-\item 
-\mbox{\hyperlink{namespace_f_c_t_a63a2f041d347dd600f0083cb95d0a245}{Blend\+Op}} \mbox{\hyperlink{class_f_c_t_1_1_blend_state_aa787a4bde674fed1ac58d76e2455a219}{alpha\+Blend\+Op}} () const
-\item 
-void \mbox{\hyperlink{class_f_c_t_1_1_blend_state_ac3aa5d8ff6482b01ea53b0a86b4b6c0d}{alpha\+Blend\+Op}} (\mbox{\hyperlink{namespace_f_c_t_a63a2f041d347dd600f0083cb95d0a245}{Blend\+Op}} op)
-\item 
-uint8\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_blend_state_a931f7c9f64e427b937365ae8a92b437c}{color\+Write\+Mask}} () const
-\item 
-void \mbox{\hyperlink{class_f_c_t_1_1_blend_state_aa1dcb4abb1a46e6f7f85b69259c3038c}{color\+Write\+Mask}} (uint8\+\_\+t mask)
-\item 
-bool \mbox{\hyperlink{class_f_c_t_1_1_blend_state_a0bc6f4d5a82000d15e70597d29e22d71}{logic\+Op\+Enable}} () const
-\item 
-void \mbox{\hyperlink{class_f_c_t_1_1_blend_state_ac86604a2473f51b5ca69e2879abc9977}{logic\+Op\+Enable}} (bool enable)
-\item 
-\mbox{\hyperlink{namespace_f_c_t_a01748ad436ae9c9f3aa57b324c0128b0}{Logic\+Op}} \mbox{\hyperlink{class_f_c_t_1_1_blend_state_ab6cf0d97832071d6acefb9c96f6a3069}{logic\+Op}} () const
-\item 
-void \mbox{\hyperlink{class_f_c_t_1_1_blend_state_a2eff95cba1dc69c53456c76e761192aa}{logic\+Op}} (\mbox{\hyperlink{namespace_f_c_t_a01748ad436ae9c9f3aa57b324c0128b0}{Logic\+Op}} op)
-\item 
 \mbox{\hyperlink{namespace_f_c_t_a0100ef6b5595f1c6e1ca08fb82dc0f67}{Pipeline\+Resource\+Type}} \mbox{\hyperlink{class_f_c_t_1_1_blend_state_ad816ab51c5b9b23f8589d7a17685cf5b}{get\+Type}} () const override
-\item 
-void \mbox{\hyperlink{class_f_c_t_1_1_blend_state_ad692d56cd9d2a563fdb508c50f0f8c15}{config\+For\+Alpha\+Blend}} ()
-\item 
-void \mbox{\hyperlink{class_f_c_t_1_1_blend_state_a42a460c8cc6eb8bd9f4176a0febc0e6c}{config\+For\+Pre\+Multiplied\+Alpha\+Blend}} ()
-\item 
-void \mbox{\hyperlink{class_f_c_t_1_1_blend_state_ad8a4240e3197af78f20351e42f5e9283}{config\+For\+Additive\+Blend}} ()
-\item 
-void \mbox{\hyperlink{class_f_c_t_1_1_blend_state_af5138951160c8030769397bfa6e6c285}{config\+For\+Multiplicative\+Blend}} ()
-\item 
-void \mbox{\hyperlink{class_f_c_t_1_1_blend_state_ac64848ce5401509f2249a0af29a47052}{config\+For\+No\+Blend}} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Public 成员函数 继承自 \mbox{\hyperlink{class_f_c_t_1_1_i_pipeline_resource}{FCT\+::\+IPipeline\+Resource}}}
 \begin{DoxyCompactItemize}
@@ -103,26 +88,22 @@ size\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a33146ec5804be42293651922
 \item 
 \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a474ad3a918f2e87d75ff16075e1caeec}{operator bool}} () const
 \end{DoxyCompactItemize}
+\doxysubsubsection*{Protected 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Func$>$ }\\void \mbox{\hyperlink{class_f_c_t_1_1_blend_state_a454e1cbd4ad4318b2c332096bd785a25}{set\+For\+Targets}} (int target, Func func)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected 成员函数 继承自 \mbox{\hyperlink{class_f_c_t_1_1_ref_count}{FCT\+::\+Ref\+Count}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a0fea0bed50f726d3e11ddde802dac5da}{delete\+This}} ()
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected 属性}
 \begin{DoxyCompactItemize}
 \item 
-bool \mbox{\hyperlink{class_f_c_t_1_1_blend_state_a76a6584639084ef86e1d546f0b6671f9}{m\+\_\+blend\+Enable}} = true
+std\+::vector$<$ \mbox{\hyperlink{struct_f_c_t_1_1_blend_state_1_1_target}{Target}} $>$ \mbox{\hyperlink{class_f_c_t_1_1_blend_state_aea0ba2a127de6ec987fa24bbd89510c9}{m\+\_\+targets}} \{1\}
 \item 
-\mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75}{Blend\+Factor}} \mbox{\hyperlink{class_f_c_t_1_1_blend_state_a594509387b8a81c6d9b6eef8e058bc36}{m\+\_\+src\+Color\+Blend\+Factor}} = \mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75ad5c7b7f0102df3f7305c43f73fc3a498}{Blend\+Factor\+::\+Src\+Alpha}}
-\item 
-\mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75}{Blend\+Factor}} \mbox{\hyperlink{class_f_c_t_1_1_blend_state_a5ffe11a2253a45f3fef576d97be73720}{m\+\_\+dst\+Color\+Blend\+Factor}} = \mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75ac00a6016489cff63d50d489ce52254cc}{Blend\+Factor\+::\+One\+Minus\+Src\+Alpha}}
-\item 
-\mbox{\hyperlink{namespace_f_c_t_a63a2f041d347dd600f0083cb95d0a245}{Blend\+Op}} \mbox{\hyperlink{class_f_c_t_1_1_blend_state_abaa039a063f3795637362a709d4f7994}{m\+\_\+color\+Blend\+Op}} = \mbox{\hyperlink{namespace_f_c_t_a63a2f041d347dd600f0083cb95d0a245aec211f7c20af43e742bf2570c3cb84f9}{Blend\+Op\+::\+Add}}
-\item 
-\mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75}{Blend\+Factor}} \mbox{\hyperlink{class_f_c_t_1_1_blend_state_a2fbe7cf4c0fff6d4cf25086eb2ca7d77}{m\+\_\+src\+Alpha\+Blend\+Factor}} = \mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75a06c2cea18679d64399783748fa367bdd}{Blend\+Factor\+::\+One}}
-\item 
-\mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75}{Blend\+Factor}} \mbox{\hyperlink{class_f_c_t_1_1_blend_state_abcac625d55a768b6af2b6e7fea75dab5}{m\+\_\+dst\+Alpha\+Blend\+Factor}} = \mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75ac00a6016489cff63d50d489ce52254cc}{Blend\+Factor\+::\+One\+Minus\+Src\+Alpha}}
-\item 
-\mbox{\hyperlink{namespace_f_c_t_a63a2f041d347dd600f0083cb95d0a245}{Blend\+Op}} \mbox{\hyperlink{class_f_c_t_1_1_blend_state_a3619087caeacd4cf26456d360adec4b9}{m\+\_\+alpha\+Blend\+Op}} = \mbox{\hyperlink{namespace_f_c_t_a63a2f041d347dd600f0083cb95d0a245aec211f7c20af43e742bf2570c3cb84f9}{Blend\+Op\+::\+Add}}
-\item 
-uint8\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_blend_state_a011cec9d1987ab9f17fd83b19840130e}{m\+\_\+color\+Write\+Mask}} = 0xF
-\item 
-bool \mbox{\hyperlink{class_f_c_t_1_1_blend_state_a837e858d1fee6e0a47b800fd32be4a82}{m\+\_\+logic\+Op\+Enable}} = false
+bool \mbox{\hyperlink{class_f_c_t_1_1_blend_state_a8068d9486704f230ba2beda46f574b86}{m\+\_\+logic\+Enable}} = false
 \item 
 \mbox{\hyperlink{namespace_f_c_t_a01748ad436ae9c9f3aa57b324c0128b0}{Logic\+Op}} \mbox{\hyperlink{class_f_c_t_1_1_blend_state_a66748669aed8fee68ce097bd7b6da037}{m\+\_\+logic\+Op}} = \mbox{\hyperlink{namespace_f_c_t_a01748ad436ae9c9f3aa57b324c0128b0a5fb63579fc981698f97d55bfecb213ea}{Logic\+Op\+::\+Copy}}
 \end{DoxyCompactItemize}
@@ -131,18 +112,12 @@ bool \mbox{\hyperlink{class_f_c_t_1_1_blend_state_a837e858d1fee6e0a47b800fd32be4
 \item 
 std\+::atomic$<$ size\+\_\+t $>$ \mbox{\hyperlink{class_f_c_t_1_1_ref_count_aca88529f9b473d326168fa808fd02300}{m\+\_\+ref\+Count}}
 \end{DoxyCompactItemize}
-\doxysubsubsection*{额外继承的成员函数}
-\doxysubsection*{Protected 成员函数 继承自 \mbox{\hyperlink{class_f_c_t_1_1_ref_count}{FCT\+::\+Ref\+Count}}}
-\begin{DoxyCompactItemize}
-\item 
-virtual void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a0fea0bed50f726d3e11ddde802dac5da}{delete\+This}} ()
-\end{DoxyCompactItemize}
 
 
 \doxysubsection{详细描述}
 
 
-在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00057}{57}} 行定义.
+在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00022}{22}} 行定义.
 
 
 
@@ -160,136 +135,104 @@ virtual FCT\+::\+Blend\+State\+::\texorpdfstring{$\sim$}{\string~}\+Blend\+State
 \label{doc-func-members}
 \Hypertarget{class_f_c_t_1_1_blend_state_doc-func-members}
 \doxysubsection{成员函数说明}
-\Hypertarget{class_f_c_t_1_1_blend_state_aa787a4bde674fed1ac58d76e2455a219}\index{FCT::BlendState@{FCT::BlendState}!alphaBlendOp@{alphaBlendOp}}
-\index{alphaBlendOp@{alphaBlendOp}!FCT::BlendState@{FCT::BlendState}}
-\doxysubsubsection{\texorpdfstring{alphaBlendOp()}{alphaBlendOp()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_blend_state_aa787a4bde674fed1ac58d76e2455a219} 
-\mbox{\hyperlink{namespace_f_c_t_a63a2f041d347dd600f0083cb95d0a245}{Blend\+Op}} FCT\+::\+Blend\+State\+::alpha\+Blend\+Op (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00081}{81}} 行定义.
-
-\Hypertarget{class_f_c_t_1_1_blend_state_ac3aa5d8ff6482b01ea53b0a86b4b6c0d}\index{FCT::BlendState@{FCT::BlendState}!alphaBlendOp@{alphaBlendOp}}
-\index{alphaBlendOp@{alphaBlendOp}!FCT::BlendState@{FCT::BlendState}}
-\doxysubsubsection{\texorpdfstring{alphaBlendOp()}{alphaBlendOp()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_blend_state_ac3aa5d8ff6482b01ea53b0a86b4b6c0d} 
-void FCT\+::\+Blend\+State\+::alpha\+Blend\+Op (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_f_c_t_a63a2f041d347dd600f0083cb95d0a245}{Blend\+Op}}}]{op}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00082}{82}} 行定义.
-
-\Hypertarget{class_f_c_t_1_1_blend_state_a9ba6f9061a59a1eb937f37380be32f1e}\index{FCT::BlendState@{FCT::BlendState}!blendEnable@{blendEnable}}
-\index{blendEnable@{blendEnable}!FCT::BlendState@{FCT::BlendState}}
-\doxysubsubsection{\texorpdfstring{blendEnable()}{blendEnable()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_blend_state_a9ba6f9061a59a1eb937f37380be32f1e} 
-bool FCT\+::\+Blend\+State\+::blend\+Enable (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00063}{63}} 行定义.
-
-\Hypertarget{class_f_c_t_1_1_blend_state_a10312f3db21b77f321c33e63fa2001c4}\index{FCT::BlendState@{FCT::BlendState}!blendEnable@{blendEnable}}
-\index{blendEnable@{blendEnable}!FCT::BlendState@{FCT::BlendState}}
-\doxysubsubsection{\texorpdfstring{blendEnable()}{blendEnable()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_blend_state_a10312f3db21b77f321c33e63fa2001c4} 
-void FCT\+::\+Blend\+State\+::blend\+Enable (\begin{DoxyParamCaption}\item[{bool}]{enable}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00064}{64}} 行定义.
-
-\Hypertarget{class_f_c_t_1_1_blend_state_afbe1652b54d85373dcd6bc99bd29dd6e}\index{FCT::BlendState@{FCT::BlendState}!colorBlendOp@{colorBlendOp}}
-\index{colorBlendOp@{colorBlendOp}!FCT::BlendState@{FCT::BlendState}}
-\doxysubsubsection{\texorpdfstring{colorBlendOp()}{colorBlendOp()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_blend_state_afbe1652b54d85373dcd6bc99bd29dd6e} 
-\mbox{\hyperlink{namespace_f_c_t_a63a2f041d347dd600f0083cb95d0a245}{Blend\+Op}} FCT\+::\+Blend\+State\+::color\+Blend\+Op (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+\Hypertarget{class_f_c_t_1_1_blend_state_a7fa7b2873eda5638db9ddb0ba1e8d319}\index{FCT::BlendState@{FCT::BlendState}!additive@{additive}}
+\index{additive@{additive}!FCT::BlendState@{FCT::BlendState}}
+\doxysubsubsection{\texorpdfstring{additive()}{additive()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_blend_state_a7fa7b2873eda5638db9ddb0ba1e8d319} 
+\mbox{\hyperlink{class_f_c_t_1_1_blend_state}{Blend\+State}} \& FCT\+::\+Blend\+State\+::additive (\begin{DoxyParamCaption}\item[{int}]{target}{ = {\ttfamily -\/1}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00072}{72}} 行定义.
 
-\Hypertarget{class_f_c_t_1_1_blend_state_a78aca84d3d5dcf04db4d700c66559128}\index{FCT::BlendState@{FCT::BlendState}!colorBlendOp@{colorBlendOp}}
-\index{colorBlendOp@{colorBlendOp}!FCT::BlendState@{FCT::BlendState}}
-\doxysubsubsection{\texorpdfstring{colorBlendOp()}{colorBlendOp()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_blend_state_a78aca84d3d5dcf04db4d700c66559128} 
-void FCT\+::\+Blend\+State\+::color\+Blend\+Op (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_f_c_t_a63a2f041d347dd600f0083cb95d0a245}{Blend\+Op}}}]{op}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_blend_state_a7fa7b2873eda5638db9ddb0ba1e8d319_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_f_c_t_1_1_blend_state_a790e8e264cca3b47f112ca3a245c3028}\index{FCT::BlendState@{FCT::BlendState}!alpha@{alpha}}
+\index{alpha@{alpha}!FCT::BlendState@{FCT::BlendState}}
+\doxysubsubsection{\texorpdfstring{alpha()}{alpha()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_blend_state_a790e8e264cca3b47f112ca3a245c3028} 
+\mbox{\hyperlink{class_f_c_t_1_1_blend_state}{Blend\+State}} \& FCT\+::\+Blend\+State\+::alpha (\begin{DoxyParamCaption}\item[{int}]{target}{ = {\ttfamily -\/1}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00073}{73}} 行定义.
+在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00066}{66}} 行定义.
 
-\Hypertarget{class_f_c_t_1_1_blend_state_a931f7c9f64e427b937365ae8a92b437c}\index{FCT::BlendState@{FCT::BlendState}!colorWriteMask@{colorWriteMask}}
-\index{colorWriteMask@{colorWriteMask}!FCT::BlendState@{FCT::BlendState}}
-\doxysubsubsection{\texorpdfstring{colorWriteMask()}{colorWriteMask()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_blend_state_a931f7c9f64e427b937365ae8a92b437c} 
-uint8\+\_\+t FCT\+::\+Blend\+State\+::color\+Write\+Mask (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00084}{84}} 行定义.
-
-\Hypertarget{class_f_c_t_1_1_blend_state_aa1dcb4abb1a46e6f7f85b69259c3038c}\index{FCT::BlendState@{FCT::BlendState}!colorWriteMask@{colorWriteMask}}
-\index{colorWriteMask@{colorWriteMask}!FCT::BlendState@{FCT::BlendState}}
-\doxysubsubsection{\texorpdfstring{colorWriteMask()}{colorWriteMask()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_blend_state_aa1dcb4abb1a46e6f7f85b69259c3038c} 
-void FCT\+::\+Blend\+State\+::color\+Write\+Mask (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{mask}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_blend_state_a790e8e264cca3b47f112ca3a245c3028_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_f_c_t_1_1_blend_state_ae5b16f48b82be22b1960a3f6d219ecc7}\index{FCT::BlendState@{FCT::BlendState}!alphaFactors@{alphaFactors}}
+\index{alphaFactors@{alphaFactors}!FCT::BlendState@{FCT::BlendState}}
+\doxysubsubsection{\texorpdfstring{alphaFactors()}{alphaFactors()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_blend_state_ae5b16f48b82be22b1960a3f6d219ecc7} 
+\mbox{\hyperlink{class_f_c_t_1_1_blend_state}{Blend\+State}} \& FCT\+::\+Blend\+State\+::alpha\+Factors (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75}{Blend\+Factor}}}]{src}{, }\item[{\mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75}{Blend\+Factor}}}]{dst}{, }\item[{int}]{target}{ = {\ttfamily -\/1}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00085}{85}} 行定义.
+在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00045}{45}} 行定义.
 
-\Hypertarget{class_f_c_t_1_1_blend_state_ad8a4240e3197af78f20351e42f5e9283}\index{FCT::BlendState@{FCT::BlendState}!configForAdditiveBlend@{configForAdditiveBlend}}
-\index{configForAdditiveBlend@{configForAdditiveBlend}!FCT::BlendState@{FCT::BlendState}}
-\doxysubsubsection{\texorpdfstring{configForAdditiveBlend()}{configForAdditiveBlend()}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_blend_state_ad8a4240e3197af78f20351e42f5e9283} 
-void FCT\+::\+Blend\+State\+::config\+For\+Additive\+Blend (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00118}{118}} 行定义.
-
-\Hypertarget{class_f_c_t_1_1_blend_state_ad692d56cd9d2a563fdb508c50f0f8c15}\index{FCT::BlendState@{FCT::BlendState}!configForAlphaBlend@{configForAlphaBlend}}
-\index{configForAlphaBlend@{configForAlphaBlend}!FCT::BlendState@{FCT::BlendState}}
-\doxysubsubsection{\texorpdfstring{configForAlphaBlend()}{configForAlphaBlend()}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_blend_state_ad692d56cd9d2a563fdb508c50f0f8c15} 
-void FCT\+::\+Blend\+State\+::config\+For\+Alpha\+Blend (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00094}{94}} 行定义.
-
-\Hypertarget{class_f_c_t_1_1_blend_state_af5138951160c8030769397bfa6e6c285}\index{FCT::BlendState@{FCT::BlendState}!configForMultiplicativeBlend@{configForMultiplicativeBlend}}
-\index{configForMultiplicativeBlend@{configForMultiplicativeBlend}!FCT::BlendState@{FCT::BlendState}}
-\doxysubsubsection{\texorpdfstring{configForMultiplicativeBlend()}{configForMultiplicativeBlend()}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_blend_state_af5138951160c8030769397bfa6e6c285} 
-void FCT\+::\+Blend\+State\+::config\+For\+Multiplicative\+Blend (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_blend_state_ae5b16f48b82be22b1960a3f6d219ecc7_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_blend_state_ae5b16f48b82be22b1960a3f6d219ecc7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_f_c_t_1_1_blend_state_a9ba6f9061a59a1eb937f37380be32f1e}\index{FCT::BlendState@{FCT::BlendState}!blendEnable@{blendEnable}}
+\index{blendEnable@{blendEnable}!FCT::BlendState@{FCT::BlendState}}
+\doxysubsubsection{\texorpdfstring{blendEnable()}{blendEnable()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_blend_state_a9ba6f9061a59a1eb937f37380be32f1e} 
+bool FCT\+::\+Blend\+State\+::blend\+Enable (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00130}{130}} 行定义.
+在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00095}{95}} 行定义.
 
-\Hypertarget{class_f_c_t_1_1_blend_state_ac64848ce5401509f2249a0af29a47052}\index{FCT::BlendState@{FCT::BlendState}!configForNoBlend@{configForNoBlend}}
-\index{configForNoBlend@{configForNoBlend}!FCT::BlendState@{FCT::BlendState}}
-\doxysubsubsection{\texorpdfstring{configForNoBlend()}{configForNoBlend()}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_blend_state_ac64848ce5401509f2249a0af29a47052} 
-void FCT\+::\+Blend\+State\+::config\+For\+No\+Blend (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00142}{142}} 行定义.
-
-\Hypertarget{class_f_c_t_1_1_blend_state_a42a460c8cc6eb8bd9f4176a0febc0e6c}\index{FCT::BlendState@{FCT::BlendState}!configForPreMultipliedAlphaBlend@{configForPreMultipliedAlphaBlend}}
-\index{configForPreMultipliedAlphaBlend@{configForPreMultipliedAlphaBlend}!FCT::BlendState@{FCT::BlendState}}
-\doxysubsubsection{\texorpdfstring{configForPreMultipliedAlphaBlend()}{configForPreMultipliedAlphaBlend()}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_blend_state_a42a460c8cc6eb8bd9f4176a0febc0e6c} 
-void FCT\+::\+Blend\+State\+::config\+For\+Pre\+Multiplied\+Alpha\+Blend (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\Hypertarget{class_f_c_t_1_1_blend_state_a772422d2b6cb526e197b658d18fb2c88}\index{FCT::BlendState@{FCT::BlendState}!colorFactors@{colorFactors}}
+\index{colorFactors@{colorFactors}!FCT::BlendState@{FCT::BlendState}}
+\doxysubsubsection{\texorpdfstring{colorFactors()}{colorFactors()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_blend_state_a772422d2b6cb526e197b658d18fb2c88} 
+\mbox{\hyperlink{class_f_c_t_1_1_blend_state}{Blend\+State}} \& FCT\+::\+Blend\+State\+::color\+Factors (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75}{Blend\+Factor}}}]{src}{, }\item[{\mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75}{Blend\+Factor}}}]{dst}{, }\item[{int}]{target}{ = {\ttfamily -\/1}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00106}{106}} 行定义.
+在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00040}{40}} 行定义.
 
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_blend_state_a772422d2b6cb526e197b658d18fb2c88_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_blend_state_a772422d2b6cb526e197b658d18fb2c88_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_blend_state_a08a9e83f7327ad8b7318706b321c8b12}\index{FCT::BlendState@{FCT::BlendState}!create@{create}}
 \index{create@{create}!FCT::BlendState@{FCT::BlendState}}
 \doxysubsubsection{\texorpdfstring{create()}{create()}}
@@ -300,46 +243,58 @@ virtual void FCT\+::\+Blend\+State\+::create (\begin{DoxyParamCaption}{}{}\end{D
 
 在 \mbox{\hyperlink{class_f_c_t_1_1_v_k___blend_state_a1ba31cda03843da64e1242df6cc2415f}{FCT\+::\+VK\+\_\+\+Blend\+State}} 内被实现.
 
-\Hypertarget{class_f_c_t_1_1_blend_state_aa15b039cccf5cda2e5dbec86802d7b12}\index{FCT::BlendState@{FCT::BlendState}!dstAlphaBlendFactor@{dstAlphaBlendFactor}}
-\index{dstAlphaBlendFactor@{dstAlphaBlendFactor}!FCT::BlendState@{FCT::BlendState}}
-\doxysubsubsection{\texorpdfstring{dstAlphaBlendFactor()}{dstAlphaBlendFactor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_blend_state_aa15b039cccf5cda2e5dbec86802d7b12} 
-\mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75}{Blend\+Factor}} FCT\+::\+Blend\+State\+::dst\+Alpha\+Blend\+Factor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+\Hypertarget{class_f_c_t_1_1_blend_state_a0be4d1876413ba694098b04452a6986c}\index{FCT::BlendState@{FCT::BlendState}!enable@{enable}}
+\index{enable@{enable}!FCT::BlendState@{FCT::BlendState}}
+\doxysubsubsection{\texorpdfstring{enable()}{enable()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_blend_state_a0be4d1876413ba694098b04452a6986c} 
+\mbox{\hyperlink{class_f_c_t_1_1_blend_state}{Blend\+State}} \& FCT\+::\+Blend\+State\+::enable (\begin{DoxyParamCaption}\item[{bool}]{enable}{, }\item[{int}]{target}{ = {\ttfamily -\/1}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00078}{78}} 行定义.
+在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00027}{27}} 行定义.
 
-\Hypertarget{class_f_c_t_1_1_blend_state_ab062d876e566ff28d8737068a5080135}\index{FCT::BlendState@{FCT::BlendState}!dstAlphaBlendFactor@{dstAlphaBlendFactor}}
-\index{dstAlphaBlendFactor@{dstAlphaBlendFactor}!FCT::BlendState@{FCT::BlendState}}
-\doxysubsubsection{\texorpdfstring{dstAlphaBlendFactor()}{dstAlphaBlendFactor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_blend_state_ab062d876e566ff28d8737068a5080135} 
-void FCT\+::\+Blend\+State\+::dst\+Alpha\+Blend\+Factor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75}{Blend\+Factor}}}]{factor}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00079}{79}} 行定义.
-
-\Hypertarget{class_f_c_t_1_1_blend_state_a9f3359dd84acb98a75bc85c8c7d66561}\index{FCT::BlendState@{FCT::BlendState}!dstColorBlendFactor@{dstColorBlendFactor}}
-\index{dstColorBlendFactor@{dstColorBlendFactor}!FCT::BlendState@{FCT::BlendState}}
-\doxysubsubsection{\texorpdfstring{dstColorBlendFactor()}{dstColorBlendFactor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_blend_state_a9f3359dd84acb98a75bc85c8c7d66561} 
-\mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75}{Blend\+Factor}} FCT\+::\+Blend\+State\+::dst\+Color\+Blend\+Factor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00069}{69}} 行定义.
-
-\Hypertarget{class_f_c_t_1_1_blend_state_aad036c37f58cb66cf592aa40eb94e055}\index{FCT::BlendState@{FCT::BlendState}!dstColorBlendFactor@{dstColorBlendFactor}}
-\index{dstColorBlendFactor@{dstColorBlendFactor}!FCT::BlendState@{FCT::BlendState}}
-\doxysubsubsection{\texorpdfstring{dstColorBlendFactor()}{dstColorBlendFactor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_blend_state_aad036c37f58cb66cf592aa40eb94e055} 
-void FCT\+::\+Blend\+State\+::dst\+Color\+Blend\+Factor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75}{Blend\+Factor}}}]{factor}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_blend_state_a0be4d1876413ba694098b04452a6986c_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_blend_state_a0be4d1876413ba694098b04452a6986c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_f_c_t_1_1_blend_state_a84ae7d158eee4b802b48a051684ad546}\index{FCT::BlendState@{FCT::BlendState}!factors@{factors}}
+\index{factors@{factors}!FCT::BlendState@{FCT::BlendState}}
+\doxysubsubsection{\texorpdfstring{factors()}{factors()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_blend_state_a84ae7d158eee4b802b48a051684ad546} 
+\mbox{\hyperlink{class_f_c_t_1_1_blend_state}{Blend\+State}} \& FCT\+::\+Blend\+State\+::factors (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75}{Blend\+Factor}}}]{src}{, }\item[{\mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75}{Blend\+Factor}}}]{dst}{, }\item[{int}]{target}{ = {\ttfamily -\/1}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00070}{70}} 行定义.
+在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00032}{32}} 行定义.
 
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_blend_state_a84ae7d158eee4b802b48a051684ad546_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_blend_state_a84ae7d158eee4b802b48a051684ad546_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_blend_state_ad816ab51c5b9b23f8589d7a17685cf5b}\index{FCT::BlendState@{FCT::BlendState}!getType@{getType}}
 \index{getType@{getType}!FCT::BlendState@{FCT::BlendState}}
 \doxysubsubsection{\texorpdfstring{getType()}{getType()}}
@@ -352,152 +307,167 @@ void FCT\+::\+Blend\+State\+::dst\+Color\+Blend\+Factor (\begin{DoxyParamCaption
 
 
 
-在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00093}{93}} 行定义.
+在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00098}{98}} 行定义.
 
-\Hypertarget{class_f_c_t_1_1_blend_state_ab6cf0d97832071d6acefb9c96f6a3069}\index{FCT::BlendState@{FCT::BlendState}!logicOp@{logicOp}}
-\index{logicOp@{logicOp}!FCT::BlendState@{FCT::BlendState}}
-\doxysubsubsection{\texorpdfstring{logicOp()}{logicOp()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_blend_state_ab6cf0d97832071d6acefb9c96f6a3069} 
-\mbox{\hyperlink{namespace_f_c_t_a01748ad436ae9c9f3aa57b324c0128b0}{Logic\+Op}} FCT\+::\+Blend\+State\+::logic\+Op (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00090}{90}} 行定义.
-
-\Hypertarget{class_f_c_t_1_1_blend_state_a2eff95cba1dc69c53456c76e761192aa}\index{FCT::BlendState@{FCT::BlendState}!logicOp@{logicOp}}
-\index{logicOp@{logicOp}!FCT::BlendState@{FCT::BlendState}}
-\doxysubsubsection{\texorpdfstring{logicOp()}{logicOp()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_blend_state_a2eff95cba1dc69c53456c76e761192aa} 
-void FCT\+::\+Blend\+State\+::logic\+Op (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_f_c_t_a01748ad436ae9c9f3aa57b324c0128b0}{Logic\+Op}}}]{op}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\Hypertarget{class_f_c_t_1_1_blend_state_a6a6a521da736b3803948f2e0c90a7f7e}\index{FCT::BlendState@{FCT::BlendState}!logic@{logic}}
+\index{logic@{logic}!FCT::BlendState@{FCT::BlendState}}
+\doxysubsubsection{\texorpdfstring{logic()}{logic()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_blend_state_a6a6a521da736b3803948f2e0c90a7f7e} 
+\mbox{\hyperlink{class_f_c_t_1_1_blend_state}{Blend\+State}} \& FCT\+::\+Blend\+State\+::logic (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_f_c_t_a01748ad436ae9c9f3aa57b324c0128b0}{Logic\+Op}}}]{logic\+Op}{, }\item[{bool}]{enable}{ = {\ttfamily true}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00091}{91}} 行定义.
+在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00060}{60}} 行定义.
 
-\Hypertarget{class_f_c_t_1_1_blend_state_a0bc6f4d5a82000d15e70597d29e22d71}\index{FCT::BlendState@{FCT::BlendState}!logicOpEnable@{logicOpEnable}}
-\index{logicOpEnable@{logicOpEnable}!FCT::BlendState@{FCT::BlendState}}
-\doxysubsubsection{\texorpdfstring{logicOpEnable()}{logicOpEnable()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_blend_state_a0bc6f4d5a82000d15e70597d29e22d71} 
-bool FCT\+::\+Blend\+State\+::logic\+Op\+Enable (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00087}{87}} 行定义.
-
-\Hypertarget{class_f_c_t_1_1_blend_state_ac86604a2473f51b5ca69e2879abc9977}\index{FCT::BlendState@{FCT::BlendState}!logicOpEnable@{logicOpEnable}}
-\index{logicOpEnable@{logicOpEnable}!FCT::BlendState@{FCT::BlendState}}
-\doxysubsubsection{\texorpdfstring{logicOpEnable()}{logicOpEnable()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_blend_state_ac86604a2473f51b5ca69e2879abc9977} 
-void FCT\+::\+Blend\+State\+::logic\+Op\+Enable (\begin{DoxyParamCaption}\item[{bool}]{enable}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_blend_state_a6a6a521da736b3803948f2e0c90a7f7e_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_f_c_t_1_1_blend_state_a02d5609bc52e0ab07b532675d2b8ab05}\index{FCT::BlendState@{FCT::BlendState}!mask@{mask}}
+\index{mask@{mask}!FCT::BlendState@{FCT::BlendState}}
+\doxysubsubsection{\texorpdfstring{mask()}{mask()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_blend_state_a02d5609bc52e0ab07b532675d2b8ab05} 
+\mbox{\hyperlink{class_f_c_t_1_1_blend_state}{Blend\+State}} \& FCT\+::\+Blend\+State\+::mask (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{write\+Mask}{, }\item[{int}]{target}{ = {\ttfamily -\/1}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00088}{88}} 行定义.
+在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00055}{55}} 行定义.
 
-\Hypertarget{class_f_c_t_1_1_blend_state_a998f08759d10033e8c1e76ee1621272e}\index{FCT::BlendState@{FCT::BlendState}!srcAlphaBlendFactor@{srcAlphaBlendFactor}}
-\index{srcAlphaBlendFactor@{srcAlphaBlendFactor}!FCT::BlendState@{FCT::BlendState}}
-\doxysubsubsection{\texorpdfstring{srcAlphaBlendFactor()}{srcAlphaBlendFactor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_blend_state_a998f08759d10033e8c1e76ee1621272e} 
-\mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75}{Blend\+Factor}} FCT\+::\+Blend\+State\+::src\+Alpha\+Blend\+Factor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00075}{75}} 行定义.
-
-\Hypertarget{class_f_c_t_1_1_blend_state_a77a4d63eccb4f85b2e4c3f234a2feb35}\index{FCT::BlendState@{FCT::BlendState}!srcAlphaBlendFactor@{srcAlphaBlendFactor}}
-\index{srcAlphaBlendFactor@{srcAlphaBlendFactor}!FCT::BlendState@{FCT::BlendState}}
-\doxysubsubsection{\texorpdfstring{srcAlphaBlendFactor()}{srcAlphaBlendFactor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_blend_state_a77a4d63eccb4f85b2e4c3f234a2feb35} 
-void FCT\+::\+Blend\+State\+::src\+Alpha\+Blend\+Factor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75}{Blend\+Factor}}}]{factor}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_blend_state_a02d5609bc52e0ab07b532675d2b8ab05_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_f_c_t_1_1_blend_state_abf53791f99ef6b147b64864f7ac52f47}\index{FCT::BlendState@{FCT::BlendState}!multiply@{multiply}}
+\index{multiply@{multiply}!FCT::BlendState@{FCT::BlendState}}
+\doxysubsubsection{\texorpdfstring{multiply()}{multiply()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_blend_state_abf53791f99ef6b147b64864f7ac52f47} 
+\mbox{\hyperlink{class_f_c_t_1_1_blend_state}{Blend\+State}} \& FCT\+::\+Blend\+State\+::multiply (\begin{DoxyParamCaption}\item[{int}]{target}{ = {\ttfamily -\/1}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00076}{76}} 行定义.
+在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00079}{79}} 行定义.
 
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_blend_state_abf53791f99ef6b147b64864f7ac52f47_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_f_c_t_1_1_blend_state_a118bfa72d1bf083fd1e524534c533e3e}\index{FCT::BlendState@{FCT::BlendState}!op@{op}}
+\index{op@{op}!FCT::BlendState@{FCT::BlendState}}
+\doxysubsubsection{\texorpdfstring{op()}{op()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_blend_state_a118bfa72d1bf083fd1e524534c533e3e} 
+\mbox{\hyperlink{class_f_c_t_1_1_blend_state}{Blend\+State}} \& FCT\+::\+Blend\+State\+::op (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_f_c_t_a63a2f041d347dd600f0083cb95d0a245}{Blend\+Op}}}]{operation}{, }\item[{int}]{target}{ = {\ttfamily -\/1}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00050}{50}} 行定义.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_blend_state_a118bfa72d1bf083fd1e524534c533e3e_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_blend_state_a118bfa72d1bf083fd1e524534c533e3e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_f_c_t_1_1_blend_state_a8abb337bcae77652bf5396e49632f596}\index{FCT::BlendState@{FCT::BlendState}!opaque@{opaque}}
+\index{opaque@{opaque}!FCT::BlendState@{FCT::BlendState}}
+\doxysubsubsection{\texorpdfstring{opaque()}{opaque()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_blend_state_a8abb337bcae77652bf5396e49632f596} 
+\mbox{\hyperlink{class_f_c_t_1_1_blend_state}{Blend\+State}} \& FCT\+::\+Blend\+State\+::opaque (\begin{DoxyParamCaption}\item[{int}]{target}{ = {\ttfamily -\/1}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00085}{85}} 行定义.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_blend_state_a8abb337bcae77652bf5396e49632f596_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_f_c_t_1_1_blend_state_a454e1cbd4ad4318b2c332096bd785a25}\index{FCT::BlendState@{FCT::BlendState}!setForTargets@{setForTargets}}
+\index{setForTargets@{setForTargets}!FCT::BlendState@{FCT::BlendState}}
+\doxysubsubsection{\texorpdfstring{setForTargets()}{setForTargets()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_blend_state_a454e1cbd4ad4318b2c332096bd785a25} 
+template$<$typename Func$>$ \\
+void FCT\+::\+Blend\+State\+::set\+For\+Targets (\begin{DoxyParamCaption}\item[{int}]{target}{, }\item[{Func}]{func}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00114}{114}} 行定义.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_blend_state_a454e1cbd4ad4318b2c332096bd785a25_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_blend_state_a07882a17cff3cc55f1f43049b3ee53fc}\index{FCT::BlendState@{FCT::BlendState}!srcColorBlendFactor@{srcColorBlendFactor}}
 \index{srcColorBlendFactor@{srcColorBlendFactor}!FCT::BlendState@{FCT::BlendState}}
-\doxysubsubsection{\texorpdfstring{srcColorBlendFactor()}{srcColorBlendFactor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\doxysubsubsection{\texorpdfstring{srcColorBlendFactor()}{srcColorBlendFactor()}}
 {\footnotesize\ttfamily \label{class_f_c_t_1_1_blend_state_a07882a17cff3cc55f1f43049b3ee53fc} 
 \mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75}{Blend\+Factor}} FCT\+::\+Blend\+State\+::src\+Color\+Blend\+Factor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00066}{66}} 行定义.
+在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00096}{96}} 行定义.
 
-\Hypertarget{class_f_c_t_1_1_blend_state_ab8d5369b92d72225f2a9ff60cf91d3f2}\index{FCT::BlendState@{FCT::BlendState}!srcColorBlendFactor@{srcColorBlendFactor}}
-\index{srcColorBlendFactor@{srcColorBlendFactor}!FCT::BlendState@{FCT::BlendState}}
-\doxysubsubsection{\texorpdfstring{srcColorBlendFactor()}{srcColorBlendFactor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_blend_state_ab8d5369b92d72225f2a9ff60cf91d3f2} 
-void FCT\+::\+Blend\+State\+::src\+Color\+Blend\+Factor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75}{Blend\+Factor}}}]{factor}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\Hypertarget{class_f_c_t_1_1_blend_state_a85805cd280a4e4b7dda693da734c57ee}\index{FCT::BlendState@{FCT::BlendState}!targets@{targets}}
+\index{targets@{targets}!FCT::BlendState@{FCT::BlendState}}
+\doxysubsubsection{\texorpdfstring{targets()}{targets()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_blend_state_a85805cd280a4e4b7dda693da734c57ee} 
+\mbox{\hyperlink{class_f_c_t_1_1_blend_state}{Blend\+State}} \& FCT\+::\+Blend\+State\+::targets (\begin{DoxyParamCaption}\item[{int}]{count}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00067}{67}} 行定义.
+在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00090}{90}} 行定义.
 
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_blend_state_a85805cd280a4e4b7dda693da734c57ee_cgraph}
+\end{center}
+\end{figure}
 
 
 \label{doc-variable-members}
 \Hypertarget{class_f_c_t_1_1_blend_state_doc-variable-members}
 \doxysubsection{类成员变量说明}
-\Hypertarget{class_f_c_t_1_1_blend_state_a3619087caeacd4cf26456d360adec4b9}\index{FCT::BlendState@{FCT::BlendState}!m\_alphaBlendOp@{m\_alphaBlendOp}}
-\index{m\_alphaBlendOp@{m\_alphaBlendOp}!FCT::BlendState@{FCT::BlendState}}
-\doxysubsubsection{\texorpdfstring{m\_alphaBlendOp}{m\_alphaBlendOp}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_blend_state_a3619087caeacd4cf26456d360adec4b9} 
-\mbox{\hyperlink{namespace_f_c_t_a63a2f041d347dd600f0083cb95d0a245}{Blend\+Op}} FCT\+::\+Blend\+State\+::m\+\_\+alpha\+Blend\+Op = \mbox{\hyperlink{namespace_f_c_t_a63a2f041d347dd600f0083cb95d0a245aec211f7c20af43e742bf2570c3cb84f9}{Blend\+Op\+::\+Add}}\hspace{0.3cm}{\ttfamily [protected]}}
+\Hypertarget{class_f_c_t_1_1_blend_state_a8068d9486704f230ba2beda46f574b86}\index{FCT::BlendState@{FCT::BlendState}!m\_logicEnable@{m\_logicEnable}}
+\index{m\_logicEnable@{m\_logicEnable}!FCT::BlendState@{FCT::BlendState}}
+\doxysubsubsection{\texorpdfstring{m\_logicEnable}{m\_logicEnable}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_blend_state_a8068d9486704f230ba2beda46f574b86} 
+bool FCT\+::\+Blend\+State\+::m\+\_\+logic\+Enable = false\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
-在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00160}{160}} 行定义.
-
-\Hypertarget{class_f_c_t_1_1_blend_state_a76a6584639084ef86e1d546f0b6671f9}\index{FCT::BlendState@{FCT::BlendState}!m\_blendEnable@{m\_blendEnable}}
-\index{m\_blendEnable@{m\_blendEnable}!FCT::BlendState@{FCT::BlendState}}
-\doxysubsubsection{\texorpdfstring{m\_blendEnable}{m\_blendEnable}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_blend_state_a76a6584639084ef86e1d546f0b6671f9} 
-bool FCT\+::\+Blend\+State\+::m\+\_\+blend\+Enable = true\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00154}{154}} 行定义.
-
-\Hypertarget{class_f_c_t_1_1_blend_state_abaa039a063f3795637362a709d4f7994}\index{FCT::BlendState@{FCT::BlendState}!m\_colorBlendOp@{m\_colorBlendOp}}
-\index{m\_colorBlendOp@{m\_colorBlendOp}!FCT::BlendState@{FCT::BlendState}}
-\doxysubsubsection{\texorpdfstring{m\_colorBlendOp}{m\_colorBlendOp}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_blend_state_abaa039a063f3795637362a709d4f7994} 
-\mbox{\hyperlink{namespace_f_c_t_a63a2f041d347dd600f0083cb95d0a245}{Blend\+Op}} FCT\+::\+Blend\+State\+::m\+\_\+color\+Blend\+Op = \mbox{\hyperlink{namespace_f_c_t_a63a2f041d347dd600f0083cb95d0a245aec211f7c20af43e742bf2570c3cb84f9}{Blend\+Op\+::\+Add}}\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00157}{157}} 行定义.
-
-\Hypertarget{class_f_c_t_1_1_blend_state_a011cec9d1987ab9f17fd83b19840130e}\index{FCT::BlendState@{FCT::BlendState}!m\_colorWriteMask@{m\_colorWriteMask}}
-\index{m\_colorWriteMask@{m\_colorWriteMask}!FCT::BlendState@{FCT::BlendState}}
-\doxysubsubsection{\texorpdfstring{m\_colorWriteMask}{m\_colorWriteMask}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_blend_state_a011cec9d1987ab9f17fd83b19840130e} 
-uint8\+\_\+t FCT\+::\+Blend\+State\+::m\+\_\+color\+Write\+Mask = 0xF\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00161}{161}} 行定义.
-
-\Hypertarget{class_f_c_t_1_1_blend_state_abcac625d55a768b6af2b6e7fea75dab5}\index{FCT::BlendState@{FCT::BlendState}!m\_dstAlphaBlendFactor@{m\_dstAlphaBlendFactor}}
-\index{m\_dstAlphaBlendFactor@{m\_dstAlphaBlendFactor}!FCT::BlendState@{FCT::BlendState}}
-\doxysubsubsection{\texorpdfstring{m\_dstAlphaBlendFactor}{m\_dstAlphaBlendFactor}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_blend_state_abcac625d55a768b6af2b6e7fea75dab5} 
-\mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75}{Blend\+Factor}} FCT\+::\+Blend\+State\+::m\+\_\+dst\+Alpha\+Blend\+Factor = \mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75ac00a6016489cff63d50d489ce52254cc}{Blend\+Factor\+::\+One\+Minus\+Src\+Alpha}}\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00159}{159}} 行定义.
-
-\Hypertarget{class_f_c_t_1_1_blend_state_a5ffe11a2253a45f3fef576d97be73720}\index{FCT::BlendState@{FCT::BlendState}!m\_dstColorBlendFactor@{m\_dstColorBlendFactor}}
-\index{m\_dstColorBlendFactor@{m\_dstColorBlendFactor}!FCT::BlendState@{FCT::BlendState}}
-\doxysubsubsection{\texorpdfstring{m\_dstColorBlendFactor}{m\_dstColorBlendFactor}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_blend_state_a5ffe11a2253a45f3fef576d97be73720} 
-\mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75}{Blend\+Factor}} FCT\+::\+Blend\+State\+::m\+\_\+dst\+Color\+Blend\+Factor = \mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75ac00a6016489cff63d50d489ce52254cc}{Blend\+Factor\+::\+One\+Minus\+Src\+Alpha}}\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00156}{156}} 行定义.
+在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00110}{110}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_blend_state_a66748669aed8fee68ce097bd7b6da037}\index{FCT::BlendState@{FCT::BlendState}!m\_logicOp@{m\_logicOp}}
 \index{m\_logicOp@{m\_logicOp}!FCT::BlendState@{FCT::BlendState}}
@@ -507,37 +477,17 @@ uint8\+\_\+t FCT\+::\+Blend\+State\+::m\+\_\+color\+Write\+Mask = 0xF\hspace{0.3
 
 
 
-在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00163}{163}} 行定义.
+在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00111}{111}} 行定义.
 
-\Hypertarget{class_f_c_t_1_1_blend_state_a837e858d1fee6e0a47b800fd32be4a82}\index{FCT::BlendState@{FCT::BlendState}!m\_logicOpEnable@{m\_logicOpEnable}}
-\index{m\_logicOpEnable@{m\_logicOpEnable}!FCT::BlendState@{FCT::BlendState}}
-\doxysubsubsection{\texorpdfstring{m\_logicOpEnable}{m\_logicOpEnable}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_blend_state_a837e858d1fee6e0a47b800fd32be4a82} 
-bool FCT\+::\+Blend\+State\+::m\+\_\+logic\+Op\+Enable = false\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00162}{162}} 行定义.
-
-\Hypertarget{class_f_c_t_1_1_blend_state_a2fbe7cf4c0fff6d4cf25086eb2ca7d77}\index{FCT::BlendState@{FCT::BlendState}!m\_srcAlphaBlendFactor@{m\_srcAlphaBlendFactor}}
-\index{m\_srcAlphaBlendFactor@{m\_srcAlphaBlendFactor}!FCT::BlendState@{FCT::BlendState}}
-\doxysubsubsection{\texorpdfstring{m\_srcAlphaBlendFactor}{m\_srcAlphaBlendFactor}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_blend_state_a2fbe7cf4c0fff6d4cf25086eb2ca7d77} 
-\mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75}{Blend\+Factor}} FCT\+::\+Blend\+State\+::m\+\_\+src\+Alpha\+Blend\+Factor = \mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75a06c2cea18679d64399783748fa367bdd}{Blend\+Factor\+::\+One}}\hspace{0.3cm}{\ttfamily [protected]}}
+\Hypertarget{class_f_c_t_1_1_blend_state_aea0ba2a127de6ec987fa24bbd89510c9}\index{FCT::BlendState@{FCT::BlendState}!m\_targets@{m\_targets}}
+\index{m\_targets@{m\_targets}!FCT::BlendState@{FCT::BlendState}}
+\doxysubsubsection{\texorpdfstring{m\_targets}{m\_targets}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_blend_state_aea0ba2a127de6ec987fa24bbd89510c9} 
+std\+::vector$<$\mbox{\hyperlink{struct_f_c_t_1_1_blend_state_1_1_target}{Target}}$>$ FCT\+::\+Blend\+State\+::m\+\_\+targets \{1\}\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
-在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00158}{158}} 行定义.
-
-\Hypertarget{class_f_c_t_1_1_blend_state_a594509387b8a81c6d9b6eef8e058bc36}\index{FCT::BlendState@{FCT::BlendState}!m\_srcColorBlendFactor@{m\_srcColorBlendFactor}}
-\index{m\_srcColorBlendFactor@{m\_srcColorBlendFactor}!FCT::BlendState@{FCT::BlendState}}
-\doxysubsubsection{\texorpdfstring{m\_srcColorBlendFactor}{m\_srcColorBlendFactor}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_blend_state_a594509387b8a81c6d9b6eef8e058bc36} 
-\mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75}{Blend\+Factor}} FCT\+::\+Blend\+State\+::m\+\_\+src\+Color\+Blend\+Factor = \mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75ad5c7b7f0102df3f7305c43f73fc3a498}{Blend\+Factor\+::\+Src\+Alpha}}\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00155}{155}} 行定义.
+在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00109}{109}} 行定义.
 
 
 

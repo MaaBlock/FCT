@@ -41,36 +41,57 @@
 \DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
 \DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00039}00039\ }
-\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ vk::ImageViewType\ viewType\ =\ vk::ImageViewType::e2D;}
-\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ vk::ImageAspectFlags\ aspectMask\ =\ vk::ImageAspectFlagBits::eColor;}
+\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4}{Format}}\ format\ =\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_texture_view_a7f12fa9fb87f2c24a9fab5f65fbcc86b}{m\_image}}-\/>format();}
+\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ vk::ImageViewType\ viewType\ =\ vk::ImageViewType::e2D;}
 \DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00042}00042\ }
-\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4}{Format}}\ format\ =\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_texture_view_a7f12fa9fb87f2c24a9fab5f65fbcc86b}{m\_image}}-\/>format();}
+\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ vk::ImageAspectFlags\ aspectMask\ =\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___texture_view_a3790c080876d8eb54da8c24f2d13e97b}{getImageAspectFlags}}(\mbox{\hyperlink{namespace_f_c_t_ac1e051cf6058ce7121dd786478277836}{ToVkFormat}}(format));}
 \DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00044}00044\ }
-\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ vk::ImageViewCreateInfo\ viewInfo;}
-\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ viewInfo.setImage(vkImage-\/>\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___image_aef6bb2015cbb8b91adaa0860b253069f}{getVkImage}}());}
-\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ viewInfo.setViewType(viewType);}
-\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ viewInfo.setFormat(\mbox{\hyperlink{namespace_f_c_t_ac1e051cf6058ce7121dd786478277836}{ToVkFormat}}(format));}
-\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00049}00049\ }
-\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ viewInfo.components.r\ =\ vk::ComponentSwizzle::eR;}
-\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ viewInfo.components.g\ =\ vk::ComponentSwizzle::eG;}
-\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ viewInfo.components.b\ =\ vk::ComponentSwizzle::eB;}
-\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ viewInfo.components.a\ =\ vk::ComponentSwizzle::eA;}
-\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00054}00054\ }
-\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ viewInfo.subresourceRange.aspectMask\ =\ aspectMask;}
-\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ viewInfo.subresourceRange.baseMipLevel\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ viewInfo.subresourceRange.levelCount\ =\ 1;}
-\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ viewInfo.subresourceRange.baseArrayLayer\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ viewInfo.subresourceRange.layerCount\ =\ 1;}
-\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00060}00060\ }
-\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
-\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___texture_view_a5c095633c863876d031a50431011dc0c}{m\_view}}\ =\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___texture_view_ad8cfb4008b4c64b916e594005f44dab8}{m\_ctx}}-\/>getDevice().createImageView(viewInfo);}
-\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ e)\ \{}
-\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_a41993be9a3c6e8f05f5b7bda9a9015b2}{ferr}}\ <<\ \textcolor{stringliteral}{"{}Failed\ to\ create\ texture\ view:\ "{}}\ <<\ e.what()\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___texture_view_a5c095633c863876d031a50431011dc0c}{m\_view}}\ =\ \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00069}00069\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00070}00070\ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ vk::ImageViewCreateInfo\ viewInfo;}
+\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ viewInfo.setImage(vkImage-\/>\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___image_aef6bb2015cbb8b91adaa0860b253069f}{getVkImage}}());}
+\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ viewInfo.setViewType(viewType);}
+\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ viewInfo.setFormat(\mbox{\hyperlink{namespace_f_c_t_ac1e051cf6058ce7121dd786478277836}{ToVkFormat}}(format));}
+\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ viewInfo.components.r\ =\ vk::ComponentSwizzle::eR;}
+\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ viewInfo.components.g\ =\ vk::ComponentSwizzle::eG;}
+\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ viewInfo.components.b\ =\ vk::ComponentSwizzle::eB;}
+\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ viewInfo.components.a\ =\ vk::ComponentSwizzle::eA;}
+\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ viewInfo.subresourceRange.aspectMask\ =\ aspectMask;}
+\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ viewInfo.subresourceRange.baseMipLevel\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ viewInfo.subresourceRange.levelCount\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ viewInfo.subresourceRange.baseArrayLayer\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ viewInfo.subresourceRange.layerCount\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___texture_view_a5c095633c863876d031a50431011dc0c}{m\_view}}\ =\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___texture_view_ad8cfb4008b4c64b916e594005f44dab8}{m\_ctx}}-\/>getDevice().createImageView(viewInfo);}
+\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_a41993be9a3c6e8f05f5b7bda9a9015b2}{ferr}}\ <<\ \textcolor{stringliteral}{"{}Failed\ to\ create\ texture\ view:\ "{}}\ <<\ e.what()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___texture_view_a5c095633c863876d031a50431011dc0c}{m\_view}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00070}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___texture_view_a3790c080876d8eb54da8c24f2d13e97b}{00070}}\ \ \ \ \ \ \ \ \ vk::ImageAspectFlags\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___texture_view_a3790c080876d8eb54da8c24f2d13e97b}{VK\_TextureView::getImageAspectFlags}}(vk::Format\ format)}
+\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (format\ ==\ vk::Format::eD16Unorm\ ||}
+\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ format\ ==\ vk::Format::eD32Sfloat\ ||}
+\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ format\ ==\ vk::Format::eX8D24UnormPack32)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vk::ImageAspectFlagBits::eDepth;}
+\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (format\ ==\ vk::Format::eD24UnormS8Uint\ ||}
+\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ format\ ==\ vk::Format::eD32SfloatS8Uint\ ||}
+\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ format\ ==\ vk::Format::eD16UnormS8Uint)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vk::ImageAspectFlagBits::eDepth\ |\ vk::ImageAspectFlagBits::eStencil;}
+\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (format\ ==\ vk::Format::eS8Uint)\ \{}
+\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vk::ImageAspectFlagBits::eStencil;}
+\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vk::ImageAspectFlagBits::eColor;}
+\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00090}00090\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___texture_view_8cpp_source_l00091}00091\ \}}
 
 \end{DoxyCode}

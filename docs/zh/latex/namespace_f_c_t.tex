@@ -208,6 +208,8 @@ struct \mbox{\hyperlink{struct_f_c_t_1_1_stencil_op_state}{Stencil\+Op\+State}}
 \item 
 struct \mbox{\hyperlink{struct_f_c_t_1_1_submit_job}{Submit\+Job}}
 \item 
+struct \mbox{\hyperlink{struct_f_c_t_1_1_target_desc}{Target\+Desc}}
+\item 
 class \mbox{\hyperlink{class_f_c_t_1_1_texture}{Texture}}
 \item 
 class \mbox{\hyperlink{class_f_c_t_1_1_texture_array}{Texture\+Array}}
@@ -326,8 +328,6 @@ using \mbox{\hyperlink{namespace_f_c_t_a541d9708e0c1aa838437ddff4b111d4d}{Shader
 using \mbox{\hyperlink{namespace_f_c_t_a6ac4affd73cd6cf1ba455a683b2d69ba}{PRHISampler}} = \mbox{\hyperlink{class_f_c_t_1_1_sampler}{Sampler}}\texorpdfstring{$\ast$}{*}
 \item 
 using \mbox{\hyperlink{namespace_f_c_t_ad61b2f01faf2e7ae0c6b07b681f09734}{PSampler}} = \mbox{\hyperlink{class_f_c_t_1_1_sampler}{Sampler}}\texorpdfstring{$\ast$}{*}
-\item 
-using \mbox{\hyperlink{namespace_f_c_t_a0cbb58fc2b9d03ebc10caf8a6f43d5d9}{Image\+Usage\+Flags}} = \mbox{\hyperlink{class_f_c_t_1_1_flags}{Flags}}$<$\mbox{\hyperlink{namespace_f_c_t_a7c79cf32fda44767f87c534ba3c7f1e5}{Image\+Usage}}$>$
 \item 
 using \mbox{\hyperlink{namespace_f_c_t_a2b67c2197d2675193be9ca0fe8406c87}{UITask\+Function}} = std\+::function$<$void(void \texorpdfstring{$\ast$}{*})$>$
 \item 
@@ -640,6 +640,15 @@ enum class \mbox{\hyperlink{namespace_f_c_t_a7ec8d52d86a568cdd834ed3105281bfa}{M
 \mbox{\hyperlink{namespace_f_c_t_a7ec8d52d86a568cdd834ed3105281bfaa6adf97f83acf6453d4a6a4b1070f3754}{None}}
  \}
 \item 
+enum class \mbox{\hyperlink{namespace_f_c_t_a1f3fd882e4a9d228566255fb96faa014}{Access\+Flag}} \+: size\+\_\+t \{ \newline
+\mbox{\hyperlink{namespace_f_c_t_a1f3fd882e4a9d228566255fb96faa014a334c4a4c42fdb79d7ebc3e73b517e6f8}{none}} = 0
+, \mbox{\hyperlink{namespace_f_c_t_a1f3fd882e4a9d228566255fb96faa014a29842c3a0269b74e7697727f9eeece4a}{memory\+Read}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, \mbox{\hyperlink{namespace_f_c_t_a1f3fd882e4a9d228566255fb96faa014a4b8b70a490bde8df8e23094bddc525dd}{color\+Attachment\+Write}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+, \mbox{\hyperlink{namespace_f_c_t_a1f3fd882e4a9d228566255fb96faa014af3ed1368b35029f6300888e613b57cd8}{depth\+Stencil\+Attachment\+Write}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_a1f3fd882e4a9d228566255fb96faa014a3a596ffb408b017b309f905351f3f9b8}{shader\+Read}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 4
+ \}
+\item 
 enum class \mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75}{Blend\+Factor}} \{ \newline
 \mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75ad7ed4ee1df437474d005188535f74875}{Zero}}
 , \mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75a06c2cea18679d64399783748fa367bdd}{One}}
@@ -705,6 +714,52 @@ enum class \mbox{\hyperlink{namespace_f_c_t_a974ea50843d2c5ad8bbb8eb832cda07a}{S
 , \mbox{\hyperlink{namespace_f_c_t_a974ea50843d2c5ad8bbb8eb832cda07aa6ec565c329385c8d59333abc6a1003d1}{Decrement\+Wrap}}
  \}
 \item 
+enum class \mbox{\hyperlink{namespace_f_c_t_a47bc49ca12511f9acae146c133700f5f}{Image\+Aspect}} \{ \mbox{\hyperlink{namespace_f_c_t_a47bc49ca12511f9acae146c133700f5fa70dda5dfb8053dc6d1c492574bce9bfd}{color}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0
+, \mbox{\hyperlink{namespace_f_c_t_a47bc49ca12511f9acae146c133700f5fa12a055bf01a31369fe81ac35d85c7bc1}{depth}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, \mbox{\hyperlink{namespace_f_c_t_a47bc49ca12511f9acae146c133700f5fa667f218c5ed2c9cf25734500472e7c4a}{stencil}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+ \}
+\item 
+enum class \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309}{Image\+Layout}} \{ \newline
+\mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a5e543256c480ac577d30f76f9120eb74}{undefined}}
+, \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a958153f1b8b96ec4c4eb2147429105d9}{general}}
+, \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a8923b32e4694570bbb0524e5a53789d9}{color\+Attachment\+Optimal}}
+, \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a2187945bc3094af2dfc270e93c129682}{depth\+Stencil\+Attachment\+Optimal}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309ae3bcd1abe55880899783d560843a498c}{depth\+Stencil\+Read\+Only\+Optimal}}
+, \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a3953204ba39bf71dd2095950e55fcbb0}{shader\+Read\+Only\+Optimal}}
+, \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a87b8350e9f25da5c5015a522a49f4560}{transfer\+Src\+Optimal}}
+, \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a52766699ca66e0e8184911460299ba75}{transfer\+Dst\+Optimal}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309aa6d01e240f553ad51a2a5ab4aa1824e7}{preinitialized}}
+, \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a0c145b9832c2feb7e4f5d7171ab02104}{depth\+Read\+Only\+Stencil\+Attachment\+Optimal}}
+, \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a2a33260c4c880b4a53a1f1020c695deb}{depth\+Attachment\+Stencil\+Read\+Only\+Optimal}}
+, \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309ae6d985e12d3e8c23aef69647070b2b7e}{depth\+Attachment\+Optimal}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a5bf43795a5bd85101aea582e406db1f5}{depth\+Read\+Only\+Optimal}}
+, \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309aeb1a07166c0d5715e8264f4b5908b1f5}{stencil\+Attachment\+Optimal}}
+, \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a60da23cd1b9a615cc891986dfbf0d4ea}{stencil\+Read\+Only\+Optimal}}
+, \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a0c56b3541f1ae27c7171b8dd87b9947b}{read\+Only\+Optimal}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a98f8c8dea9874e9f11b35f0f02b599a4}{attachment\+Optimal}}
+, \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309afad70d120c4ebc351f9e756962fc928d}{rendering\+Local\+Read}}
+, \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a0f4cc0f78c17693ad38fed3eae6e0947}{present\+Src\+KHR}}
+, \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309ad979206c14140afc0b611c583f353441}{video\+Decode\+Dst\+KHR}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a92a88b59c9ab2b130baa5d4d4eb59cc3}{video\+Decode\+Src\+KHR}}
+, \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a705352f961e1f95f3d91ad4db26c44a8}{video\+Decode\+Dpb\+KHR}}
+, \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309aee3718705a3a4f2de159088ead34f67c}{shared\+Present\+KHR}}
+, \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a930601d435388ee4d57afa52e645c512}{fragment\+Density\+Map\+Optimal\+EXT}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a02a51ad6f63504ca08566c68f6b0786f}{fragment\+Shading\+Rate\+Attachment\+Optimal\+KHR}}
+, \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a4ac79e298654a08a862b24a0c5ccf47e}{shading\+Rate\+Optimal\+NV}}
+, \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a3fa78c61c71571554fde24a6e54468e8}{video\+Encode\+Dst\+KHR}}
+, \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a4fbb0721d080fd298a216501832bee45}{video\+Encode\+Src\+KHR}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309ada10e42aa62c287f96824b9d5b90aebd}{video\+Encode\+Dpb\+KHR}}
+, \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a584a03eaff0deb3633d25c02c7835f71}{attachment\+Feedback\+Loop\+Optimal\+EXT}}
+, \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a0e1301b6dbc114dcaad528d46c5b6abf}{video\+Encode\+Quantization\+Map\+KHR}}
+ \}
+\item 
 enum class \mbox{\hyperlink{namespace_f_c_t_a7c79cf32fda44767f87c534ba3c7f1e5}{Image\+Usage}} \+: unsigned int \{ \mbox{\hyperlink{namespace_f_c_t_a7c79cf32fda44767f87c534ba3c7f1e5a9b0bffda4bcb312168c0d6537cb04b4d}{Render\+Target}} = 0x1
 , \mbox{\hyperlink{namespace_f_c_t_a7c79cf32fda44767f87c534ba3c7f1e5a2fa8076285272883c91e14402975a441}{Depth\+Stencil}} = 0x2
 , \mbox{\hyperlink{namespace_f_c_t_a7c79cf32fda44767f87c534ba3c7f1e5aa3e8ae43188ae76d38f414b2bdb0077b}{Texture}} = 0x4
@@ -739,6 +794,16 @@ enum class \mbox{\hyperlink{namespace_f_c_t_a5d14bda42e5f9f565abd0b018262b564}{C
 enum \mbox{\hyperlink{namespace_f_c_t_a02e39e190de7cba24375f441d807cccc}{Pipeline\+Type}} \{ \mbox{\hyperlink{namespace_f_c_t_a02e39e190de7cba24375f441d807cccca50ae1c82c7832ab74385d9b341d916d1}{Traditional}}
 , \mbox{\hyperlink{namespace_f_c_t_a02e39e190de7cba24375f441d807cccca36c6f535151094d9b40813cb3cc2de16}{Ray\+Tracing}}
 , \mbox{\hyperlink{namespace_f_c_t_a02e39e190de7cba24375f441d807ccccaee28c6b028c6c0e7955643bbe3579e5a}{Mesh\+Shader}}
+ \}
+\item 
+enum class \mbox{\hyperlink{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0}{Pipeline\+Stage}} \+: uint32\+\_\+t \{ \newline
+\mbox{\hyperlink{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0a4ecc54305ce317f6232ab7ce1acb4db6}{color\+Attachment\+Output}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0
+, \mbox{\hyperlink{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0ae3fc4223528e9526ae83b7442115e238}{early\+Fragment\+Tests}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1
+, \mbox{\hyperlink{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0a6bd52102f595efa6dda67e13699fadda}{bottom\+Of\+Pipe}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2
+, \mbox{\hyperlink{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0a807ac3da711c52fb45af7fcb38f2539e}{top\+Of\+Pipe}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0aa01b4d41eacfed301b529ecb0bf46b2d}{late\+Fragment\+Tests}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 4
+, \mbox{\hyperlink{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0ab7a9af74fb126e298c469a805123c6a5}{fragment\+Shader}} = 1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 5
  \}
 \item 
 enum class \mbox{\hyperlink{namespace_f_c_t_aea3256d1f208053875c5a4793d1b561c}{Polygon\+Mode}} \{ \mbox{\hyperlink{namespace_f_c_t_aea3256d1f208053875c5a4793d1b561cadb3e3f51c9107e26c9bccf9a188ce2ed}{Fill}}
@@ -999,7 +1064,23 @@ void \mbox{\hyperlink{namespace_f_c_t_aae9e9c566a4946fdf40954bc6e462eb8}{safe\+A
 \item 
 void \mbox{\hyperlink{namespace_f_c_t_a397954f06cba94c6ba59c60eafdd0e93}{safe\+Release}} (\mbox{\hyperlink{class_f_c_t_1_1_ref_count}{Ref\+Count}} \texorpdfstring{$\ast$}{*}\&obj)
 \item 
+\mbox{\hyperlink{namespace_f_c_t_ad93e99d1d75c071b7db63bf76f81f5b0}{FCT\+\_\+\+DECLARE\+\_\+\+FLAGS}} (\mbox{\hyperlink{namespace_f_c_t_a1f3fd882e4a9d228566255fb96faa014}{Access\+Flag}})
+\item 
+vk\+::\+Access\+Flag\+Bits \mbox{\hyperlink{namespace_f_c_t_a07149acad04a681393dfb9ad1fa52ef5}{To\+Vk\+Access\+Flag\+Bits}} (\mbox{\hyperlink{namespace_f_c_t_a1f3fd882e4a9d228566255fb96faa014}{Access\+Flag}} flag)
+\item 
+\mbox{\hyperlink{namespace_f_c_t_a94393eae4e8678d3875c53432e2ce77e}{FCT\+\_\+\+TO\+\_\+\+FLAGS}} (To\+Vk\+Access\+Flags, \mbox{\hyperlink{namespace_f_c_t_a07149acad04a681393dfb9ad1fa52ef5}{To\+Vk\+Access\+Flag\+Bits}}, \mbox{\hyperlink{namespace_f_c_t_a1f3fd882e4a9d228566255fb96faa014}{Access\+Flag}})
+\item 
+\mbox{\hyperlink{namespace_f_c_t_a53f8d4a2c303865920fb984948137e46}{FCT\+\_\+\+DECLARE\+\_\+\+FLAGS}} (\mbox{\hyperlink{namespace_f_c_t_a47bc49ca12511f9acae146c133700f5f}{Image\+Aspect}})
+\item 
+\mbox{\hyperlink{namespace_f_c_t_a322a3985fd0273f25430eb081c84ea78}{FCT\+\_\+\+DECLARE\+\_\+\+FLAGS}} (\mbox{\hyperlink{namespace_f_c_t_a7c79cf32fda44767f87c534ba3c7f1e5}{Image\+Usage}})
+\item 
 \mbox{\hyperlink{namespace_f_c_t_a3d30f2c2d906a497cfb6e24a9efd6dff}{FCT\+\_\+\+DECLARE\+\_\+\+FLAGS}} (\mbox{\hyperlink{namespace_f_c_t_a5d14bda42e5f9f565abd0b018262b564}{Clear\+Type}})
+\item 
+\mbox{\hyperlink{namespace_f_c_t_a6e029a0133eb9f21b6e84407d21bda3e}{FCT\+\_\+\+DECLARE\+\_\+\+FLAGS}} (\mbox{\hyperlink{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0}{Pipeline\+Stage}})
+\item 
+vk\+::\+Pipeline\+Stage\+Flag\+Bits \mbox{\hyperlink{namespace_f_c_t_a3c285c41b3830a955aa47791cca04b73}{To\+Vk\+Flag\+Bits}} (\mbox{\hyperlink{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0}{FCT\+::\+Pipeline\+Stage}} pipeline\+Stage)
+\item 
+vk\+::\+Pipeline\+Stage\+Flags \mbox{\hyperlink{namespace_f_c_t_ad0035281afbfe60d8ced3407f9c5f748}{To\+Vk\+Pipeline\+Stage\+Flags}} (FCT\+::\+Pipeline\+Stages pipeline\+Stages)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{变量}
 \begin{DoxyCompactItemize}
@@ -1071,16 +1152,6 @@ using \mbox{\hyperlink{namespace_f_c_t_aa1479301f199fc13f9f893d2c9c77e71}{FCT\+:
 
 在文件 \mbox{\hyperlink{classdef_8h_source}{classdef.\+h}} 第 \mbox{\hyperlink{classdef_8h_source_l00009}{9}} 行定义.
 
-\Hypertarget{namespace_f_c_t_a0cbb58fc2b9d03ebc10caf8a6f43d5d9}\index{FCT@{FCT}!ImageUsageFlags@{ImageUsageFlags}}
-\index{ImageUsageFlags@{ImageUsageFlags}!FCT@{FCT}}
-\doxysubsubsection{\texorpdfstring{ImageUsageFlags}{ImageUsageFlags}}
-{\footnotesize\ttfamily \label{namespace_f_c_t_a0cbb58fc2b9d03ebc10caf8a6f43d5d9} 
-using \mbox{\hyperlink{namespace_f_c_t_a0cbb58fc2b9d03ebc10caf8a6f43d5d9}{FCT\+::\+Image\+Usage\+Flags}} = \mbox{\hyperlink{class_f_c_t_1_1_flags}{Flags}}$<$\mbox{\hyperlink{namespace_f_c_t_a7c79cf32fda44767f87c534ba3c7f1e5}{Image\+Usage}}$>$}
-
-
-
-在文件 \mbox{\hyperlink{_image_usage_flags_8h_source}{Image\+Usage\+Flags.\+h}} 第 \mbox{\hyperlink{_image_usage_flags_8h_source_l00017}{17}} 行定义.
-
 \Hypertarget{namespace_f_c_t_ab4a59b11fd31afd38f70a20820f77fe6}\index{FCT@{FCT}!InputPosTransformCallback@{InputPosTransformCallback}}
 \index{InputPosTransformCallback@{InputPosTransformCallback}!FCT@{FCT}}
 \doxysubsubsection{\texorpdfstring{InputPosTransformCallback}{InputPosTransformCallback}}
@@ -1110,7 +1181,7 @@ using \mbox{\hyperlink{namespace_f_c_t_ade60146e92314a0c13d22e0ce1e17b1d}{FCT\+:
 \end{DoxyCode}
 
 
-在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00060}{60}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00064}{64}} 行定义.
 
 \Hypertarget{namespace_f_c_t_a6ac4affd73cd6cf1ba455a683b2d69ba}\index{FCT@{FCT}!PRHISampler@{PRHISampler}}
 \index{PRHISampler@{PRHISampler}!FCT@{FCT}}
@@ -1175,7 +1246,7 @@ using \mbox{\hyperlink{namespace_f_c_t_ac41e778fbc977f4696d9b8be38b37ef6}{FCT\+:
 \end{DoxyCode}
 
 
-在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00067}{67}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00071}{71}} 行定义.
 
 \Hypertarget{namespace_f_c_t_a541d9708e0c1aa838437ddff4b111d4d}\index{FCT@{FCT}!ShaderStages@{ShaderStages}}
 \index{ShaderStages@{ShaderStages}!FCT@{FCT}}
@@ -1195,7 +1266,7 @@ using \mbox{\hyperlink{namespace_f_c_t_ab1ea6811dd963f80ea7b7b1b6aec0d3c}{FCT\+:
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00060}{60}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00059}{59}} 行定义.
 
 \Hypertarget{namespace_f_c_t_a8b1c77084f003979f0fe6c4ddb7e8eb6}\index{FCT@{FCT}!SubscribeId@{SubscribeId}}
 \index{SubscribeId@{SubscribeId}!FCT@{FCT}}
@@ -1215,7 +1286,7 @@ using \mbox{\hyperlink{namespace_f_c_t_a726db41259cdbddb2910a4854444d5b9}{FCT\+:
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00061}{61}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00060}{60}} 行定义.
 
 \Hypertarget{namespace_f_c_t_a4871ca624d38cba5f44a54de0e01a933}\index{FCT@{FCT}!TickerToken@{TickerToken}}
 \index{TickerToken@{TickerToken}!FCT@{FCT}}
@@ -1225,7 +1296,7 @@ using \mbox{\hyperlink{namespace_f_c_t_a4871ca624d38cba5f44a54de0e01a933}{FCT\+:
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00063}{63}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00062}{62}} 行定义.
 
 \Hypertarget{namespace_f_c_t_a2b67c2197d2675193be9ca0fe8406c87}\index{FCT@{FCT}!UITaskFunction@{UITaskFunction}}
 \index{UITaskFunction@{UITaskFunction}!FCT@{FCT}}
@@ -1272,6 +1343,38 @@ using \mbox{\hyperlink{namespace_f_c_t_a6d811410ceee415f27103e8cff52a127}{FCT\+:
 \label{doc-enum-members}
 \Hypertarget{namespace_f_c_t_doc-enum-members}
 \doxysubsection{枚举类型说明}
+\Hypertarget{namespace_f_c_t_a1f3fd882e4a9d228566255fb96faa014}\index{FCT@{FCT}!AccessFlag@{AccessFlag}}
+\index{AccessFlag@{AccessFlag}!FCT@{FCT}}
+\doxysubsubsection{\texorpdfstring{AccessFlag}{AccessFlag}}
+{\footnotesize\ttfamily \label{namespace_f_c_t_a1f3fd882e4a9d228566255fb96faa014} 
+enum class \mbox{\hyperlink{namespace_f_c_t_a1f3fd882e4a9d228566255fb96faa014}{FCT\+::\+Access\+Flag}} \+: size\+\_\+t\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}[2]{枚举值}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{none@{none}!FCT@{FCT}}\index{FCT@{FCT}!none@{none}}}\Hypertarget{namespace_f_c_t_a1f3fd882e4a9d228566255fb96faa014a334c4a4c42fdb79d7ebc3e73b517e6f8}\label{namespace_f_c_t_a1f3fd882e4a9d228566255fb96faa014a334c4a4c42fdb79d7ebc3e73b517e6f8} 
+none&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{memoryRead@{memoryRead}!FCT@{FCT}}\index{FCT@{FCT}!memoryRead@{memoryRead}}}\Hypertarget{namespace_f_c_t_a1f3fd882e4a9d228566255fb96faa014a29842c3a0269b74e7697727f9eeece4a}\label{namespace_f_c_t_a1f3fd882e4a9d228566255fb96faa014a29842c3a0269b74e7697727f9eeece4a} 
+memory\+Read&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{colorAttachmentWrite@{colorAttachmentWrite}!FCT@{FCT}}\index{FCT@{FCT}!colorAttachmentWrite@{colorAttachmentWrite}}}\Hypertarget{namespace_f_c_t_a1f3fd882e4a9d228566255fb96faa014a4b8b70a490bde8df8e23094bddc525dd}\label{namespace_f_c_t_a1f3fd882e4a9d228566255fb96faa014a4b8b70a490bde8df8e23094bddc525dd} 
+color\+Attachment\+Write&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{depthStencilAttachmentWrite@{depthStencilAttachmentWrite}!FCT@{FCT}}\index{FCT@{FCT}!depthStencilAttachmentWrite@{depthStencilAttachmentWrite}}}\Hypertarget{namespace_f_c_t_a1f3fd882e4a9d228566255fb96faa014af3ed1368b35029f6300888e613b57cd8}\label{namespace_f_c_t_a1f3fd882e4a9d228566255fb96faa014af3ed1368b35029f6300888e613b57cd8} 
+depth\+Stencil\+Attachment\+Write&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{shaderRead@{shaderRead}!FCT@{FCT}}\index{FCT@{FCT}!shaderRead@{shaderRead}}}\Hypertarget{namespace_f_c_t_a1f3fd882e4a9d228566255fb96faa014a3a596ffb408b017b309f905351f3f9b8}\label{namespace_f_c_t_a1f3fd882e4a9d228566255fb96faa014a3a596ffb408b017b309f905351f3f9b8} 
+shader\+Read&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+在文件 \mbox{\hyperlink{_access_flags_8h_source}{Access\+Flags.\+h}} 第 \mbox{\hyperlink{_access_flags_8h_source_l00010}{10}} 行定义.
+
 \Hypertarget{namespace_f_c_t_aeffaa324cc414eb87b89ba0f1bed673a}\index{FCT@{FCT}!AddressMode@{AddressMode}}
 \index{AddressMode@{AddressMode}!FCT@{FCT}}
 \doxysubsubsection{\texorpdfstring{AddressMode}{AddressMode}}
@@ -1378,7 +1481,7 @@ One\+Minus\+Src1\+Alpha&\\
 \end{DoxyEnumFields}
 
 
-在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00011}{11}} 行定义.
+在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00008}{8}} 行定义.
 
 \Hypertarget{namespace_f_c_t_a63a2f041d347dd600f0083cb95d0a245}\index{FCT@{FCT}!BlendOp@{BlendOp}}
 \index{BlendOp@{BlendOp}!FCT@{FCT}}
@@ -1410,7 +1513,7 @@ Max&\\
 \end{DoxyEnumFields}
 
 
-在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00030}{30}} 行定义.
+在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00015}{15}} 行定义.
 
 \Hypertarget{namespace_f_c_t_abbd9f55da7ce19953699d6544fba8a96}\index{FCT@{FCT}!BorderColor@{BorderColor}}
 \index{BorderColor@{BorderColor}!FCT@{FCT}}
@@ -1462,7 +1565,7 @@ depth\+Stencil&\\
 \end{DoxyEnumFields}
 
 
-在文件 \mbox{\hyperlink{_r_h_i_2_pass_8h_source}{Pass.\+h}} 第 \mbox{\hyperlink{_r_h_i_2_pass_8h_source_l00013}{13}} 行定义.
+在文件 \mbox{\hyperlink{_r_h_i_2_pass_8h_source}{Pass.\+h}} 第 \mbox{\hyperlink{_r_h_i_2_pass_8h_source_l00009}{9}} 行定义.
 
 \Hypertarget{namespace_f_c_t_ae72266666726fb6ad7e1a218a340b4c8}\index{FCT@{FCT}!CompareOp@{CompareOp}}
 \index{CompareOp@{CompareOp}!FCT@{FCT}}
@@ -2448,6 +2551,166 @@ Counter\+Clockwise&\\
 
 在文件 \mbox{\hyperlink{_rasterization_state_8h_source}{Rasterization\+State.\+h}} 第 \mbox{\hyperlink{_rasterization_state_8h_source_l00023}{23}} 行定义.
 
+\Hypertarget{namespace_f_c_t_a47bc49ca12511f9acae146c133700f5f}\index{FCT@{FCT}!ImageAspect@{ImageAspect}}
+\index{ImageAspect@{ImageAspect}!FCT@{FCT}}
+\doxysubsubsection{\texorpdfstring{ImageAspect}{ImageAspect}}
+{\footnotesize\ttfamily \label{namespace_f_c_t_a47bc49ca12511f9acae146c133700f5f} 
+enum class \mbox{\hyperlink{namespace_f_c_t_a47bc49ca12511f9acae146c133700f5f}{FCT\+::\+Image\+Aspect}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}[2]{枚举值}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{color@{color}!FCT@{FCT}}\index{FCT@{FCT}!color@{color}}}\Hypertarget{namespace_f_c_t_a47bc49ca12511f9acae146c133700f5fa70dda5dfb8053dc6d1c492574bce9bfd}\label{namespace_f_c_t_a47bc49ca12511f9acae146c133700f5fa70dda5dfb8053dc6d1c492574bce9bfd} 
+color&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{depth@{depth}!FCT@{FCT}}\index{FCT@{FCT}!depth@{depth}}}\Hypertarget{namespace_f_c_t_a47bc49ca12511f9acae146c133700f5fa12a055bf01a31369fe81ac35d85c7bc1}\label{namespace_f_c_t_a47bc49ca12511f9acae146c133700f5fa12a055bf01a31369fe81ac35d85c7bc1} 
+depth&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{stencil@{stencil}!FCT@{FCT}}\index{FCT@{FCT}!stencil@{stencil}}}\Hypertarget{namespace_f_c_t_a47bc49ca12511f9acae146c133700f5fa667f218c5ed2c9cf25734500472e7c4a}\label{namespace_f_c_t_a47bc49ca12511f9acae146c133700f5fa667f218c5ed2c9cf25734500472e7c4a} 
+stencil&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+在文件 \mbox{\hyperlink{_image_aspect_8h_source}{Image\+Aspect.\+h}} 第 \mbox{\hyperlink{_image_aspect_8h_source_l00006}{6}} 行定义.
+
+\Hypertarget{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309}\index{FCT@{FCT}!ImageLayout@{ImageLayout}}
+\index{ImageLayout@{ImageLayout}!FCT@{FCT}}
+\doxysubsubsection{\texorpdfstring{ImageLayout}{ImageLayout}}
+{\footnotesize\ttfamily \label{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309} 
+enum class \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309}{FCT\+::\+Image\+Layout}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}[2]{枚举值}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{undefined@{undefined}!FCT@{FCT}}\index{FCT@{FCT}!undefined@{undefined}}}\Hypertarget{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a5e543256c480ac577d30f76f9120eb74}\label{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a5e543256c480ac577d30f76f9120eb74} 
+undefined&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{general@{general}!FCT@{FCT}}\index{FCT@{FCT}!general@{general}}}\Hypertarget{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a958153f1b8b96ec4c4eb2147429105d9}\label{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a958153f1b8b96ec4c4eb2147429105d9} 
+general&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{colorAttachmentOptimal@{colorAttachmentOptimal}!FCT@{FCT}}\index{FCT@{FCT}!colorAttachmentOptimal@{colorAttachmentOptimal}}}\Hypertarget{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a8923b32e4694570bbb0524e5a53789d9}\label{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a8923b32e4694570bbb0524e5a53789d9} 
+color\+Attachment\+Optimal&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{depthStencilAttachmentOptimal@{depthStencilAttachmentOptimal}!FCT@{FCT}}\index{FCT@{FCT}!depthStencilAttachmentOptimal@{depthStencilAttachmentOptimal}}}\Hypertarget{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a2187945bc3094af2dfc270e93c129682}\label{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a2187945bc3094af2dfc270e93c129682} 
+depth\+Stencil\+Attachment\+Optimal&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{depthStencilReadOnlyOptimal@{depthStencilReadOnlyOptimal}!FCT@{FCT}}\index{FCT@{FCT}!depthStencilReadOnlyOptimal@{depthStencilReadOnlyOptimal}}}\Hypertarget{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309ae3bcd1abe55880899783d560843a498c}\label{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309ae3bcd1abe55880899783d560843a498c} 
+depth\+Stencil\+Read\+Only\+Optimal&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{shaderReadOnlyOptimal@{shaderReadOnlyOptimal}!FCT@{FCT}}\index{FCT@{FCT}!shaderReadOnlyOptimal@{shaderReadOnlyOptimal}}}\Hypertarget{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a3953204ba39bf71dd2095950e55fcbb0}\label{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a3953204ba39bf71dd2095950e55fcbb0} 
+shader\+Read\+Only\+Optimal&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{transferSrcOptimal@{transferSrcOptimal}!FCT@{FCT}}\index{FCT@{FCT}!transferSrcOptimal@{transferSrcOptimal}}}\Hypertarget{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a87b8350e9f25da5c5015a522a49f4560}\label{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a87b8350e9f25da5c5015a522a49f4560} 
+transfer\+Src\+Optimal&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{transferDstOptimal@{transferDstOptimal}!FCT@{FCT}}\index{FCT@{FCT}!transferDstOptimal@{transferDstOptimal}}}\Hypertarget{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a52766699ca66e0e8184911460299ba75}\label{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a52766699ca66e0e8184911460299ba75} 
+transfer\+Dst\+Optimal&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{preinitialized@{preinitialized}!FCT@{FCT}}\index{FCT@{FCT}!preinitialized@{preinitialized}}}\Hypertarget{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309aa6d01e240f553ad51a2a5ab4aa1824e7}\label{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309aa6d01e240f553ad51a2a5ab4aa1824e7} 
+preinitialized&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{depthReadOnlyStencilAttachmentOptimal@{depthReadOnlyStencilAttachmentOptimal}!FCT@{FCT}}\index{FCT@{FCT}!depthReadOnlyStencilAttachmentOptimal@{depthReadOnlyStencilAttachmentOptimal}}}\Hypertarget{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a0c145b9832c2feb7e4f5d7171ab02104}\label{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a0c145b9832c2feb7e4f5d7171ab02104} 
+depth\+Read\+Only\+Stencil\+Attachment\+Optimal&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{depthAttachmentStencilReadOnlyOptimal@{depthAttachmentStencilReadOnlyOptimal}!FCT@{FCT}}\index{FCT@{FCT}!depthAttachmentStencilReadOnlyOptimal@{depthAttachmentStencilReadOnlyOptimal}}}\Hypertarget{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a2a33260c4c880b4a53a1f1020c695deb}\label{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a2a33260c4c880b4a53a1f1020c695deb} 
+depth\+Attachment\+Stencil\+Read\+Only\+Optimal&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{depthAttachmentOptimal@{depthAttachmentOptimal}!FCT@{FCT}}\index{FCT@{FCT}!depthAttachmentOptimal@{depthAttachmentOptimal}}}\Hypertarget{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309ae6d985e12d3e8c23aef69647070b2b7e}\label{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309ae6d985e12d3e8c23aef69647070b2b7e} 
+depth\+Attachment\+Optimal&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{depthReadOnlyOptimal@{depthReadOnlyOptimal}!FCT@{FCT}}\index{FCT@{FCT}!depthReadOnlyOptimal@{depthReadOnlyOptimal}}}\Hypertarget{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a5bf43795a5bd85101aea582e406db1f5}\label{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a5bf43795a5bd85101aea582e406db1f5} 
+depth\+Read\+Only\+Optimal&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{stencilAttachmentOptimal@{stencilAttachmentOptimal}!FCT@{FCT}}\index{FCT@{FCT}!stencilAttachmentOptimal@{stencilAttachmentOptimal}}}\Hypertarget{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309aeb1a07166c0d5715e8264f4b5908b1f5}\label{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309aeb1a07166c0d5715e8264f4b5908b1f5} 
+stencil\+Attachment\+Optimal&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{stencilReadOnlyOptimal@{stencilReadOnlyOptimal}!FCT@{FCT}}\index{FCT@{FCT}!stencilReadOnlyOptimal@{stencilReadOnlyOptimal}}}\Hypertarget{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a60da23cd1b9a615cc891986dfbf0d4ea}\label{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a60da23cd1b9a615cc891986dfbf0d4ea} 
+stencil\+Read\+Only\+Optimal&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{readOnlyOptimal@{readOnlyOptimal}!FCT@{FCT}}\index{FCT@{FCT}!readOnlyOptimal@{readOnlyOptimal}}}\Hypertarget{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a0c56b3541f1ae27c7171b8dd87b9947b}\label{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a0c56b3541f1ae27c7171b8dd87b9947b} 
+read\+Only\+Optimal&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{attachmentOptimal@{attachmentOptimal}!FCT@{FCT}}\index{FCT@{FCT}!attachmentOptimal@{attachmentOptimal}}}\Hypertarget{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a98f8c8dea9874e9f11b35f0f02b599a4}\label{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a98f8c8dea9874e9f11b35f0f02b599a4} 
+attachment\+Optimal&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{renderingLocalRead@{renderingLocalRead}!FCT@{FCT}}\index{FCT@{FCT}!renderingLocalRead@{renderingLocalRead}}}\Hypertarget{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309afad70d120c4ebc351f9e756962fc928d}\label{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309afad70d120c4ebc351f9e756962fc928d} 
+rendering\+Local\+Read&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{presentSrcKHR@{presentSrcKHR}!FCT@{FCT}}\index{FCT@{FCT}!presentSrcKHR@{presentSrcKHR}}}\Hypertarget{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a0f4cc0f78c17693ad38fed3eae6e0947}\label{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a0f4cc0f78c17693ad38fed3eae6e0947} 
+present\+Src\+KHR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{videoDecodeDstKHR@{videoDecodeDstKHR}!FCT@{FCT}}\index{FCT@{FCT}!videoDecodeDstKHR@{videoDecodeDstKHR}}}\Hypertarget{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309ad979206c14140afc0b611c583f353441}\label{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309ad979206c14140afc0b611c583f353441} 
+video\+Decode\+Dst\+KHR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{videoDecodeSrcKHR@{videoDecodeSrcKHR}!FCT@{FCT}}\index{FCT@{FCT}!videoDecodeSrcKHR@{videoDecodeSrcKHR}}}\Hypertarget{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a92a88b59c9ab2b130baa5d4d4eb59cc3}\label{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a92a88b59c9ab2b130baa5d4d4eb59cc3} 
+video\+Decode\+Src\+KHR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{videoDecodeDpbKHR@{videoDecodeDpbKHR}!FCT@{FCT}}\index{FCT@{FCT}!videoDecodeDpbKHR@{videoDecodeDpbKHR}}}\Hypertarget{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a705352f961e1f95f3d91ad4db26c44a8}\label{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a705352f961e1f95f3d91ad4db26c44a8} 
+video\+Decode\+Dpb\+KHR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{sharedPresentKHR@{sharedPresentKHR}!FCT@{FCT}}\index{FCT@{FCT}!sharedPresentKHR@{sharedPresentKHR}}}\Hypertarget{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309aee3718705a3a4f2de159088ead34f67c}\label{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309aee3718705a3a4f2de159088ead34f67c} 
+shared\+Present\+KHR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{fragmentDensityMapOptimalEXT@{fragmentDensityMapOptimalEXT}!FCT@{FCT}}\index{FCT@{FCT}!fragmentDensityMapOptimalEXT@{fragmentDensityMapOptimalEXT}}}\Hypertarget{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a930601d435388ee4d57afa52e645c512}\label{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a930601d435388ee4d57afa52e645c512} 
+fragment\+Density\+Map\+Optimal\+EXT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{fragmentShadingRateAttachmentOptimalKHR@{fragmentShadingRateAttachmentOptimalKHR}!FCT@{FCT}}\index{FCT@{FCT}!fragmentShadingRateAttachmentOptimalKHR@{fragmentShadingRateAttachmentOptimalKHR}}}\Hypertarget{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a02a51ad6f63504ca08566c68f6b0786f}\label{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a02a51ad6f63504ca08566c68f6b0786f} 
+fragment\+Shading\+Rate\+Attachment\+Optimal\+KHR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{shadingRateOptimalNV@{shadingRateOptimalNV}!FCT@{FCT}}\index{FCT@{FCT}!shadingRateOptimalNV@{shadingRateOptimalNV}}}\Hypertarget{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a4ac79e298654a08a862b24a0c5ccf47e}\label{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a4ac79e298654a08a862b24a0c5ccf47e} 
+shading\+Rate\+Optimal\+NV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{videoEncodeDstKHR@{videoEncodeDstKHR}!FCT@{FCT}}\index{FCT@{FCT}!videoEncodeDstKHR@{videoEncodeDstKHR}}}\Hypertarget{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a3fa78c61c71571554fde24a6e54468e8}\label{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a3fa78c61c71571554fde24a6e54468e8} 
+video\+Encode\+Dst\+KHR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{videoEncodeSrcKHR@{videoEncodeSrcKHR}!FCT@{FCT}}\index{FCT@{FCT}!videoEncodeSrcKHR@{videoEncodeSrcKHR}}}\Hypertarget{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a4fbb0721d080fd298a216501832bee45}\label{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a4fbb0721d080fd298a216501832bee45} 
+video\+Encode\+Src\+KHR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{videoEncodeDpbKHR@{videoEncodeDpbKHR}!FCT@{FCT}}\index{FCT@{FCT}!videoEncodeDpbKHR@{videoEncodeDpbKHR}}}\Hypertarget{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309ada10e42aa62c287f96824b9d5b90aebd}\label{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309ada10e42aa62c287f96824b9d5b90aebd} 
+video\+Encode\+Dpb\+KHR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{attachmentFeedbackLoopOptimalEXT@{attachmentFeedbackLoopOptimalEXT}!FCT@{FCT}}\index{FCT@{FCT}!attachmentFeedbackLoopOptimalEXT@{attachmentFeedbackLoopOptimalEXT}}}\Hypertarget{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a584a03eaff0deb3633d25c02c7835f71}\label{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a584a03eaff0deb3633d25c02c7835f71} 
+attachment\+Feedback\+Loop\+Optimal\+EXT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{videoEncodeQuantizationMapKHR@{videoEncodeQuantizationMapKHR}!FCT@{FCT}}\index{FCT@{FCT}!videoEncodeQuantizationMapKHR@{videoEncodeQuantizationMapKHR}}}\Hypertarget{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a0e1301b6dbc114dcaad528d46c5b6abf}\label{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a0e1301b6dbc114dcaad528d46c5b6abf} 
+video\+Encode\+Quantization\+Map\+KHR&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+在文件 \mbox{\hyperlink{_image_layout_8h_source}{Image\+Layout.\+h}} 第 \mbox{\hyperlink{_image_layout_8h_source_l00009}{9}} 行定义.
+
 \Hypertarget{namespace_f_c_t_a7c79cf32fda44767f87c534ba3c7f1e5}\index{FCT@{FCT}!ImageUsage@{ImageUsage}}
 \index{ImageUsage@{ImageUsage}!FCT@{FCT}}
 \doxysubsubsection{\texorpdfstring{ImageUsage}{ImageUsage}}
@@ -2566,7 +2829,7 @@ Set&\\
 \end{DoxyEnumFields}
 
 
-在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00038}{38}} 行定义.
+在文件 \mbox{\hyperlink{_blend_state_8h_source}{Blend\+State.\+h}} 第 \mbox{\hyperlink{_blend_state_8h_source_l00017}{17}} 行定义.
 
 \Hypertarget{namespace_f_c_t_a7ec8d52d86a568cdd834ed3105281bfa}\index{FCT@{FCT}!ModelVertexAttribute@{ModelVertexAttribute}}
 \index{ModelVertexAttribute@{ModelVertexAttribute}!FCT@{FCT}}
@@ -2678,7 +2941,7 @@ Dependency&\\
 \end{DoxyEnumFields}
 
 
-在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00036}{36}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00040}{40}} 行定义.
 
 \Hypertarget{namespace_f_c_t_a0100ef6b5595f1c6e1ca08fb82dc0f67}\index{FCT@{FCT}!PipelineResourceType@{PipelineResourceType}}
 \index{PipelineResourceType@{PipelineResourceType}!FCT@{FCT}}
@@ -2747,6 +3010,42 @@ Viewport\+State&\\
 
 
 在文件 \mbox{\hyperlink{_i_pipeline_resource_8h_source}{IPipeline\+Resource.\+h}} 第 \mbox{\hyperlink{_i_pipeline_resource_8h_source_l00005}{5}} 行定义.
+
+\Hypertarget{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0}\index{FCT@{FCT}!PipelineStage@{PipelineStage}}
+\index{PipelineStage@{PipelineStage}!FCT@{FCT}}
+\doxysubsubsection{\texorpdfstring{PipelineStage}{PipelineStage}}
+{\footnotesize\ttfamily \label{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0} 
+enum class \mbox{\hyperlink{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0}{FCT\+::\+Pipeline\+Stage}} \+: uint32\+\_\+t\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}[2]{枚举值}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{colorAttachmentOutput@{colorAttachmentOutput}!FCT@{FCT}}\index{FCT@{FCT}!colorAttachmentOutput@{colorAttachmentOutput}}}\Hypertarget{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0a4ecc54305ce317f6232ab7ce1acb4db6}\label{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0a4ecc54305ce317f6232ab7ce1acb4db6} 
+color\+Attachment\+Output&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{earlyFragmentTests@{earlyFragmentTests}!FCT@{FCT}}\index{FCT@{FCT}!earlyFragmentTests@{earlyFragmentTests}}}\Hypertarget{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0ae3fc4223528e9526ae83b7442115e238}\label{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0ae3fc4223528e9526ae83b7442115e238} 
+early\+Fragment\+Tests&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{bottomOfPipe@{bottomOfPipe}!FCT@{FCT}}\index{FCT@{FCT}!bottomOfPipe@{bottomOfPipe}}}\Hypertarget{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0a6bd52102f595efa6dda67e13699fadda}\label{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0a6bd52102f595efa6dda67e13699fadda} 
+bottom\+Of\+Pipe&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{topOfPipe@{topOfPipe}!FCT@{FCT}}\index{FCT@{FCT}!topOfPipe@{topOfPipe}}}\Hypertarget{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0a807ac3da711c52fb45af7fcb38f2539e}\label{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0a807ac3da711c52fb45af7fcb38f2539e} 
+top\+Of\+Pipe&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{lateFragmentTests@{lateFragmentTests}!FCT@{FCT}}\index{FCT@{FCT}!lateFragmentTests@{lateFragmentTests}}}\Hypertarget{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0aa01b4d41eacfed301b529ecb0bf46b2d}\label{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0aa01b4d41eacfed301b529ecb0bf46b2d} 
+late\+Fragment\+Tests&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{fragmentShader@{fragmentShader}!FCT@{FCT}}\index{FCT@{FCT}!fragmentShader@{fragmentShader}}}\Hypertarget{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0ab7a9af74fb126e298c469a805123c6a5}\label{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0ab7a9af74fb126e298c469a805123c6a5} 
+fragment\+Shader&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+在文件 \mbox{\hyperlink{_pipeline_stage_8h_source}{Pipeline\+Stage.\+h}} 第 \mbox{\hyperlink{_pipeline_stage_8h_source_l00010}{10}} 行定义.
 
 \Hypertarget{namespace_f_c_t_a02e39e190de7cba24375f441d807cccc}\index{FCT@{FCT}!PipelineType@{PipelineType}}
 \index{PipelineType@{PipelineType}!FCT@{FCT}}
@@ -2834,7 +3133,7 @@ Resource&\\
 \end{DoxyEnumFields}
 
 
-在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00017}{17}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00021}{21}} 行定义.
 
 \Hypertarget{namespace_f_c_t_a1f1ccd6c8741cf55008c982f25b9bf2b}\index{FCT@{FCT}!RenderTargetType@{RenderTargetType}}
 \index{RenderTargetType@{RenderTargetType}!FCT@{FCT}}
@@ -2874,7 +3173,7 @@ Parent\+Child&\\
 \end{DoxyEnumFields}
 
 
-在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00048}{48}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00052}{52}} 行定义.
 
 \Hypertarget{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182}\index{FCT@{FCT}!Samples@{Samples}}
 \index{Samples@{Samples}!FCT@{FCT}}
@@ -3347,8 +3646,7 @@ vk\+::\+Shader\+Stage\+Flags FCT\+::\+Convert\+To\+Vk\+Shader\+Stage\+Flags (\be
 
 在文件 \mbox{\hyperlink{_uniform_8h_source}{Uniform.\+h}} 第 \mbox{\hyperlink{_uniform_8h_source_l00065}{65}} 行定义.
 
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3393,12 +3691,50 @@ float FCT\+::dot (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_f
 
 在文件 \mbox{\hyperlink{_vec_8h_source}{Vec.\+h}} 第 \mbox{\hyperlink{_vec_8h_source_l00179}{179}} 行定义.
 
+\Hypertarget{namespace_f_c_t_ad93e99d1d75c071b7db63bf76f81f5b0}\index{FCT@{FCT}!FCT\_DECLARE\_FLAGS@{FCT\_DECLARE\_FLAGS}}
+\index{FCT\_DECLARE\_FLAGS@{FCT\_DECLARE\_FLAGS}!FCT@{FCT}}
+\doxysubsubsection{\texorpdfstring{FCT\_DECLARE\_FLAGS()}{FCT\_DECLARE\_FLAGS()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily \label{namespace_f_c_t_ad93e99d1d75c071b7db63bf76f81f5b0} 
+FCT\+::\+FCT\+\_\+\+DECLARE\+\_\+\+FLAGS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_f_c_t_a1f3fd882e4a9d228566255fb96faa014}{Access\+Flag}}}]{}{}\end{DoxyParamCaption})}
+
 \Hypertarget{namespace_f_c_t_a3d30f2c2d906a497cfb6e24a9efd6dff}\index{FCT@{FCT}!FCT\_DECLARE\_FLAGS@{FCT\_DECLARE\_FLAGS}}
 \index{FCT\_DECLARE\_FLAGS@{FCT\_DECLARE\_FLAGS}!FCT@{FCT}}
-\doxysubsubsection{\texorpdfstring{FCT\_DECLARE\_FLAGS()}{FCT\_DECLARE\_FLAGS()}}
+\doxysubsubsection{\texorpdfstring{FCT\_DECLARE\_FLAGS()}{FCT\_DECLARE\_FLAGS()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
 {\footnotesize\ttfamily \label{namespace_f_c_t_a3d30f2c2d906a497cfb6e24a9efd6dff} 
 FCT\+::\+FCT\+\_\+\+DECLARE\+\_\+\+FLAGS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_f_c_t_a5d14bda42e5f9f565abd0b018262b564}{Clear\+Type}}}]{}{}\end{DoxyParamCaption})}
 
+\Hypertarget{namespace_f_c_t_a53f8d4a2c303865920fb984948137e46}\index{FCT@{FCT}!FCT\_DECLARE\_FLAGS@{FCT\_DECLARE\_FLAGS}}
+\index{FCT\_DECLARE\_FLAGS@{FCT\_DECLARE\_FLAGS}!FCT@{FCT}}
+\doxysubsubsection{\texorpdfstring{FCT\_DECLARE\_FLAGS()}{FCT\_DECLARE\_FLAGS()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily \label{namespace_f_c_t_a53f8d4a2c303865920fb984948137e46} 
+FCT\+::\+FCT\+\_\+\+DECLARE\+\_\+\+FLAGS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_f_c_t_a47bc49ca12511f9acae146c133700f5f}{Image\+Aspect}}}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespace_f_c_t_a322a3985fd0273f25430eb081c84ea78}\index{FCT@{FCT}!FCT\_DECLARE\_FLAGS@{FCT\_DECLARE\_FLAGS}}
+\index{FCT\_DECLARE\_FLAGS@{FCT\_DECLARE\_FLAGS}!FCT@{FCT}}
+\doxysubsubsection{\texorpdfstring{FCT\_DECLARE\_FLAGS()}{FCT\_DECLARE\_FLAGS()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily \label{namespace_f_c_t_a322a3985fd0273f25430eb081c84ea78} 
+FCT\+::\+FCT\+\_\+\+DECLARE\+\_\+\+FLAGS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_f_c_t_a7c79cf32fda44767f87c534ba3c7f1e5}{Image\+Usage}}}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespace_f_c_t_a6e029a0133eb9f21b6e84407d21bda3e}\index{FCT@{FCT}!FCT\_DECLARE\_FLAGS@{FCT\_DECLARE\_FLAGS}}
+\index{FCT\_DECLARE\_FLAGS@{FCT\_DECLARE\_FLAGS}!FCT@{FCT}}
+\doxysubsubsection{\texorpdfstring{FCT\_DECLARE\_FLAGS()}{FCT\_DECLARE\_FLAGS()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily \label{namespace_f_c_t_a6e029a0133eb9f21b6e84407d21bda3e} 
+FCT\+::\+FCT\+\_\+\+DECLARE\+\_\+\+FLAGS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0}{Pipeline\+Stage}}}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespace_f_c_t_a94393eae4e8678d3875c53432e2ce77e}\index{FCT@{FCT}!FCT\_TO\_FLAGS@{FCT\_TO\_FLAGS}}
+\index{FCT\_TO\_FLAGS@{FCT\_TO\_FLAGS}!FCT@{FCT}}
+\doxysubsubsection{\texorpdfstring{FCT\_TO\_FLAGS()}{FCT\_TO\_FLAGS()}}
+{\footnotesize\ttfamily \label{namespace_f_c_t_a94393eae4e8678d3875c53432e2ce77e} 
+FCT\+::\+FCT\+\_\+\+TO\+\_\+\+FLAGS (\begin{DoxyParamCaption}\item[{To\+Vk\+Access\+Flags}]{}{, }\item[{\mbox{\hyperlink{namespace_f_c_t_a07149acad04a681393dfb9ad1fa52ef5}{To\+Vk\+Access\+Flag\+Bits}}}]{}{, }\item[{\mbox{\hyperlink{namespace_f_c_t_a1f3fd882e4a9d228566255fb96faa014}{Access\+Flag}}}]{}{}\end{DoxyParamCaption})}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_f_c_t_a94393eae4e8678d3875c53432e2ce77e_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{namespace_f_c_t_aa50d4ee4e93b725f63ff598365539223}\index{FCT@{FCT}!FCTShaderKindToShaderrcShaderKind@{FCTShaderKindToShaderrcShaderKind}}
 \index{FCTShaderKindToShaderrcShaderKind@{FCTShaderKindToShaderrcShaderKind}!FCT@{FCT}}
 \doxysubsubsection{\texorpdfstring{FCTShaderKindToShaderrcShaderKind()}{FCTShaderKindToShaderrcShaderKind()}}
@@ -3409,8 +3745,7 @@ shaderc\+\_\+shader\+\_\+kind FCT\+::\+FCTShader\+Kind\+To\+Shaderrc\+Shader\+Ki
 
 在文件 \mbox{\hyperlink{_shaderc___shader_compiler_8h_source}{Shaderc\+\_\+\+Shader\+Compiler.\+h}} 第 \mbox{\hyperlink{_shaderc___shader_compiler_8h_source_l00008}{8}} 行定义.
 
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3427,8 +3762,7 @@ size\+\_\+t FCT\+::\+Format\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperli
 
 在文件 \mbox{\hyperlink{_context_2_format_8h_source}{Format.\+h}} 第 \mbox{\hyperlink{_context_2_format_8h_source_l00139}{139}} 行定义.
 
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3445,8 +3779,7 @@ const char \texorpdfstring{$\ast$}{*} FCT\+::\+Format\+To\+Shader\+Type (\begin{
 
 在文件 \mbox{\hyperlink{_context_2_format_8h_source}{Format.\+h}} 第 \mbox{\hyperlink{_context_2_format_8h_source_l00059}{59}} 行定义.
 
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3463,8 +3796,7 @@ const char \texorpdfstring{$\ast$}{*} FCT\+::\+Format\+To\+Shader\+Type (\begin{
 
 在文件 \mbox{\hyperlink{_context_2_format_8h_source}{Format.\+h}} 第 \mbox{\hyperlink{_context_2_format_8h_source_l00365}{365}} 行定义.
 
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3650,7 +3982,7 @@ template$<$typename Bit\+Type$>$ \\
 
 
 
-在文件 \mbox{\hyperlink{_flags_8h_source}{Flags.\+h}} 第 \mbox{\hyperlink{_flags_8h_source_l00089}{89}} 行定义.
+在文件 \mbox{\hyperlink{_flags_8h_source}{Flags.\+h}} 第 \mbox{\hyperlink{_flags_8h_source_l00104}{104}} 行定义.
 
 \Hypertarget{namespace_f_c_t_ad85dcfc5bcdf14438fa4cd5720a1b7a0}\index{FCT@{FCT}!operator\&@{operator\&}}
 \index{operator\&@{operator\&}!FCT@{FCT}}
@@ -3661,7 +3993,7 @@ template$<$typename Bit\+Type, typename std\+::enable\+\_\+if$<$ \mbox{\hyperlin
 
 
 
-在文件 \mbox{\hyperlink{_flags_8h_source}{Flags.\+h}} 第 \mbox{\hyperlink{_flags_8h_source_l00065}{65}} 行定义.
+在文件 \mbox{\hyperlink{_flags_8h_source}{Flags.\+h}} 第 \mbox{\hyperlink{_flags_8h_source_l00080}{80}} 行定义.
 
 \Hypertarget{namespace_f_c_t_ae15ff3f0467a7e7ca8d7092ccf3f7c81}\index{FCT@{FCT}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!FCT@{FCT}}
@@ -3671,7 +4003,7 @@ std\+::ostream \& FCT\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::o
 
 
 
-在文件 \mbox{\hyperlink{_matrix_8h_source}{Matrix.\+h}} 第 \mbox{\hyperlink{_matrix_8h_source_l00239}{239}} 行定义.
+在文件 \mbox{\hyperlink{_matrix_8h_source}{Matrix.\+h}} 第 \mbox{\hyperlink{_matrix_8h_source_l00255}{255}} 行定义.
 
 \Hypertarget{namespace_f_c_t_a50e3b828129f8c36b8b4bb342b1c750e}\index{FCT@{FCT}!operator\texorpdfstring{$^\wedge$}{\string^}@{operator\texorpdfstring{$^\wedge$}{\string^}}}
 \index{operator\texorpdfstring{$^\wedge$}{\string^}@{operator\texorpdfstring{$^\wedge$}{\string^}}!FCT@{FCT}}
@@ -3682,7 +4014,7 @@ template$<$typename Bit\+Type$>$ \\
 
 
 
-在文件 \mbox{\hyperlink{_flags_8h_source}{Flags.\+h}} 第 \mbox{\hyperlink{_flags_8h_source_l00095}{95}} 行定义.
+在文件 \mbox{\hyperlink{_flags_8h_source}{Flags.\+h}} 第 \mbox{\hyperlink{_flags_8h_source_l00110}{110}} 行定义.
 
 \Hypertarget{namespace_f_c_t_a067479ba41ce3d1fa49fddc9a5a4ac8b}\index{FCT@{FCT}!operator\texorpdfstring{$^\wedge$}{\string^}@{operator\texorpdfstring{$^\wedge$}{\string^}}}
 \index{operator\texorpdfstring{$^\wedge$}{\string^}@{operator\texorpdfstring{$^\wedge$}{\string^}}!FCT@{FCT}}
@@ -3693,7 +4025,7 @@ template$<$typename Bit\+Type, typename std\+::enable\+\_\+if$<$ \mbox{\hyperlin
 
 
 
-在文件 \mbox{\hyperlink{_flags_8h_source}{Flags.\+h}} 第 \mbox{\hyperlink{_flags_8h_source_l00071}{71}} 行定义.
+在文件 \mbox{\hyperlink{_flags_8h_source}{Flags.\+h}} 第 \mbox{\hyperlink{_flags_8h_source_l00086}{86}} 行定义.
 
 \Hypertarget{namespace_f_c_t_a1c4bb7f9803bfc22ee8a160dcd416e50}\index{FCT@{FCT}!operator\texttt{"|}@{operator\texttt{"|}}}
 \index{operator\texttt{"|}@{operator\texttt{"|}}!FCT@{FCT}}
@@ -3704,7 +4036,7 @@ template$<$typename Bit\+Type$>$ \\
 
 
 
-在文件 \mbox{\hyperlink{_flags_8h_source}{Flags.\+h}} 第 \mbox{\hyperlink{_flags_8h_source_l00083}{83}} 行定义.
+在文件 \mbox{\hyperlink{_flags_8h_source}{Flags.\+h}} 第 \mbox{\hyperlink{_flags_8h_source_l00098}{98}} 行定义.
 
 \Hypertarget{namespace_f_c_t_a4887c054ea0efbf025397906cc414f3d}\index{FCT@{FCT}!operator\texttt{"|}@{operator\texttt{"|}}}
 \index{operator\texttt{"|}@{operator\texttt{"|}}!FCT@{FCT}}
@@ -3715,7 +4047,7 @@ template$<$typename Bit\+Type, typename std\+::enable\+\_\+if$<$ \mbox{\hyperlin
 
 
 
-在文件 \mbox{\hyperlink{_flags_8h_source}{Flags.\+h}} 第 \mbox{\hyperlink{_flags_8h_source_l00059}{59}} 行定义.
+在文件 \mbox{\hyperlink{_flags_8h_source}{Flags.\+h}} 第 \mbox{\hyperlink{_flags_8h_source_l00074}{74}} 行定义.
 
 \Hypertarget{namespace_f_c_t_a03c44bf2b89a19ba58925807ab7a169b}\index{FCT@{FCT}!operator\texorpdfstring{$\sim$}{\string~}@{operator\texorpdfstring{$\sim$}{\string~}}}
 \index{operator\texorpdfstring{$\sim$}{\string~}@{operator\texorpdfstring{$\sim$}{\string~}}!FCT@{FCT}}
@@ -3726,7 +4058,7 @@ template$<$typename Bit\+Type, typename std\+::enable\+\_\+if$<$ \mbox{\hyperlin
 
 
 
-在文件 \mbox{\hyperlink{_flags_8h_source}{Flags.\+h}} 第 \mbox{\hyperlink{_flags_8h_source_l00077}{77}} 行定义.
+在文件 \mbox{\hyperlink{_flags_8h_source}{Flags.\+h}} 第 \mbox{\hyperlink{_flags_8h_source_l00092}{92}} 行定义.
 
 \Hypertarget{namespace_f_c_t_aae9e9c566a4946fdf40954bc6e462eb8}\index{FCT@{FCT}!safeAddRef@{safeAddRef}}
 \index{safeAddRef@{safeAddRef}!FCT@{FCT}}
@@ -3793,8 +4125,7 @@ void FCT\+::set\+Vertex\+Attribute\+From\+Model (\begin{DoxyParamCaption}\item[{
 \includegraphics[width=350pt]{namespace_f_c_t_af370987864bb4392790a3d5ab46db1dc_cgraph}
 \end{center}
 \end{figure}
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3811,8 +4142,7 @@ bool FCT\+::\+String\+Equals (\begin{DoxyParamCaption}\item[{const char \texorpd
 
 在文件 \mbox{\hyperlink{string_8h_source}{string.\+h}} 第 \mbox{\hyperlink{string_8h_source_l00008}{8}} 行定义.
 
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3829,12 +4159,47 @@ std\+::string FCT\+::\+Swapchain\+To\+Token (\begin{DoxyParamCaption}\item[{\mbo
 
 在文件 \mbox{\hyperlink{_resource_manager_8cpp_source}{Resource\+Manager.\+cpp}} 第 \mbox{\hyperlink{_resource_manager_8cpp_source_l00020}{20}} 行定义.
 
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_f_c_t_a897b9d524084119d15e466af7c8de628_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_f_c_t_a07149acad04a681393dfb9ad1fa52ef5}\index{FCT@{FCT}!ToVkAccessFlagBits@{ToVkAccessFlagBits}}
+\index{ToVkAccessFlagBits@{ToVkAccessFlagBits}!FCT@{FCT}}
+\doxysubsubsection{\texorpdfstring{ToVkAccessFlagBits()}{ToVkAccessFlagBits()}}
+{\footnotesize\ttfamily \label{namespace_f_c_t_a07149acad04a681393dfb9ad1fa52ef5} 
+vk\+::\+Access\+Flag\+Bits FCT\+::\+To\+Vk\+Access\+Flag\+Bits (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_f_c_t_a1f3fd882e4a9d228566255fb96faa014}{Access\+Flag}}}]{flag}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_access_flags_8h_source}{Access\+Flags.\+h}} 第 \mbox{\hyperlink{_access_flags_8h_source_l00019}{19}} 行定义.
+
 这是这个函数的调用关系图\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{namespace_f_c_t_a897b9d524084119d15e466af7c8de628_icgraph}
+\includegraphics[width=350pt]{namespace_f_c_t_a07149acad04a681393dfb9ad1fa52ef5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_f_c_t_a3c285c41b3830a955aa47791cca04b73}\index{FCT@{FCT}!ToVkFlagBits@{ToVkFlagBits}}
+\index{ToVkFlagBits@{ToVkFlagBits}!FCT@{FCT}}
+\doxysubsubsection{\texorpdfstring{ToVkFlagBits()}{ToVkFlagBits()}}
+{\footnotesize\ttfamily \label{namespace_f_c_t_a3c285c41b3830a955aa47791cca04b73} 
+vk\+::\+Pipeline\+Stage\+Flag\+Bits FCT\+::\+To\+Vk\+Flag\+Bits (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0}{FCT\+::\+Pipeline\+Stage}}}]{pipeline\+Stage}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_pipeline_stage_8h_source}{Pipeline\+Stage.\+h}} 第 \mbox{\hyperlink{_pipeline_stage_8h_source_l00021}{21}} 行定义.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_f_c_t_a3c285c41b3830a955aa47791cca04b73_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{namespace_f_c_t_ac1e051cf6058ce7121dd786478277836}\index{FCT@{FCT}!ToVkFormat@{ToVkFormat}}
@@ -3847,12 +4212,37 @@ vk\+::\+Format FCT\+::\+To\+Vk\+Format (\begin{DoxyParamCaption}\item[{\mbox{\hy
 
 在文件 \mbox{\hyperlink{_context_2_format_8h_source}{Format.\+h}} 第 \mbox{\hyperlink{_context_2_format_8h_source_l00268}{268}} 行定义.
 
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_f_c_t_ac1e051cf6058ce7121dd786478277836_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_f_c_t_ad0035281afbfe60d8ced3407f9c5f748}\index{FCT@{FCT}!ToVkPipelineStageFlags@{ToVkPipelineStageFlags}}
+\index{ToVkPipelineStageFlags@{ToVkPipelineStageFlags}!FCT@{FCT}}
+\doxysubsubsection{\texorpdfstring{ToVkPipelineStageFlags()}{ToVkPipelineStageFlags()}}
+{\footnotesize\ttfamily \label{namespace_f_c_t_ad0035281afbfe60d8ced3407f9c5f748} 
+vk\+::\+Pipeline\+Stage\+Flags FCT\+::\+To\+Vk\+Pipeline\+Stage\+Flags (\begin{DoxyParamCaption}\item[{FCT\+::\+Pipeline\+Stages}]{pipeline\+Stages}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_pipeline_stage_8h_source}{Pipeline\+Stage.\+h}} 第 \mbox{\hyperlink{_pipeline_stage_8h_source_l00040}{40}} 行定义.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_f_c_t_ad0035281afbfe60d8ced3407f9c5f748_cgraph}
+\end{center}
+\end{figure}
 这是这个函数的调用关系图\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{namespace_f_c_t_ac1e051cf6058ce7121dd786478277836_icgraph}
+\includegraphics[width=350pt]{namespace_f_c_t_ad0035281afbfe60d8ced3407f9c5f748_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{namespace_f_c_t_a630511e4e6f1b069a65ce7439723da72}\index{FCT@{FCT}!ToVkSampleCount@{ToVkSampleCount}}
@@ -3865,8 +4255,7 @@ vk\+::\+Sample\+Count\+Flag\+Bits FCT\+::\+To\+Vk\+Sample\+Count (\begin{DoxyPar
 
 在文件 \mbox{\hyperlink{_context_2_format_8h_source}{Format.\+h}} 第 \mbox{\hyperlink{_context_2_format_8h_source_l00229}{229}} 行定义.
 
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -3882,24 +4271,22 @@ std\+::string FCT\+::\+Window\+To\+Token (\begin{DoxyParamCaption}\item[{\mbox{\
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{allocateImage(Dependcy)}
-\DoxyCodeLine{\mbox{\hyperlink{class_f_c_t_1_1_image}{Image}}*\ \mbox{\hyperlink{namespace_f_c_t_a5d14bda42e5f9f565abd0b018262b564a12a055bf01a31369fe81ac35d85c7bc1}{depth}}\ =\ allocateImage(wnd);}
-\DoxyCodeLine{\mbox{\hyperlink{class_f_c_t_1_1_image}{Image}}*\ \mbox{\hyperlink{namespace_f_c_t_a5d14bda42e5f9f565abd0b018262b564a12a055bf01a31369fe81ac35d85c7bc1}{depth}}\ =\ allocateImage(target);}
+\DoxyCodeLine{\mbox{\hyperlink{class_f_c_t_1_1_image}{Image}}*\ \mbox{\hyperlink{namespace_f_c_t_a47bc49ca12511f9acae146c133700f5fa12a055bf01a31369fe81ac35d85c7bc1}{depth}}\ =\ allocateImage(wnd);}
+\DoxyCodeLine{\mbox{\hyperlink{class_f_c_t_1_1_image}{Image}}*\ \mbox{\hyperlink{namespace_f_c_t_a47bc49ca12511f9acae146c133700f5fa12a055bf01a31369fe81ac35d85c7bc1}{depth}}\ =\ allocateImage(target);}
 
 \end{DoxyCode}
  
 
 在文件 \mbox{\hyperlink{_resource_manager_8cpp_source}{Resource\+Manager.\+cpp}} 第 \mbox{\hyperlink{_resource_manager_8cpp_source_l00015}{15}} 行定义.
 
-函数调用图\+:
-\nopagebreak
+函数调用图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{namespace_f_c_t_a68b84e05c65710912752e24203b1514b_cgraph}
 \end{center}
 \end{figure}
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -4039,7 +4426,7 @@ const char\texorpdfstring{$\ast$}{*} FCT\+::\+Render\+Graph\+Excute\+Pass\+Submi
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00099}{99}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00098}{98}} 行定义.
 
 \Hypertarget{namespace_f_c_t_a7bd85aff3c2babcf1441a80ec00e70e4}\index{FCT@{FCT}!RenderGraphSubmitTickerName@{RenderGraphSubmitTickerName}}
 \index{RenderGraphSubmitTickerName@{RenderGraphSubmitTickerName}!FCT@{FCT}}
@@ -4049,7 +4436,7 @@ const char\texorpdfstring{$\ast$}{*} FCT\+::\+Render\+Graph\+Submit\+Ticker\+Nam
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00098}{98}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00097}{97}} 行定义.
 
 \Hypertarget{namespace_f_c_t_a3bec92bc39d2c90a357c13c4874e5e24}\index{FCT@{FCT}!RenderGraphSyncTicker\_SwapJobQueueName@{RenderGraphSyncTicker\_SwapJobQueueName}}
 \index{RenderGraphSyncTicker\_SwapJobQueueName@{RenderGraphSyncTicker\_SwapJobQueueName}!FCT@{FCT}}
@@ -4059,7 +4446,7 @@ const char\texorpdfstring{$\ast$}{*} FCT\+::\+Render\+Graph\+Sync\+Ticker\+\_\+\
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00101}{101}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00100}{100}} 行定义.
 
 \Hypertarget{namespace_f_c_t_a060d175d28f74076dcd676729d55a8e3}\index{FCT@{FCT}!SingleChunkObjectNums@{SingleChunkObjectNums}}
 \index{SingleChunkObjectNums@{SingleChunkObjectNums}!FCT@{FCT}}
@@ -4079,7 +4466,7 @@ const char\texorpdfstring{$\ast$}{*} FCT\+::\+Swap\+Buffer\+Submit\+Ticker = "{}
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00100}{100}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00099}{99}} 行定义.
 
 \Hypertarget{namespace_f_c_t_a7186c70e83eacf0988cfd2ab42e8050f}\index{FCT@{FCT}!VertexCommand\_ArcTo@{VertexCommand\_ArcTo}}
 \index{VertexCommand\_ArcTo@{VertexCommand\_ArcTo}!FCT@{FCT}}

@@ -200,6 +200,7 @@ $(function(){initNavTree('namespace_f_c_t.html','',''); });
 <tr class="memitem:StaticMesh" id="r_StaticMesh"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_f_c_t_1_1_static_mesh.html">StaticMesh</a></td></tr>
 <tr class="memitem:StencilOpState" id="r_StencilOpState"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_f_c_t_1_1_stencil_op_state.html">StencilOpState</a></td></tr>
 <tr class="memitem:SubmitJob" id="r_SubmitJob"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_f_c_t_1_1_submit_job.html">SubmitJob</a></td></tr>
+<tr class="memitem:TargetDesc" id="r_TargetDesc"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_f_c_t_1_1_target_desc.html">TargetDesc</a></td></tr>
 <tr class="memitem:Texture" id="r_Texture"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_f_c_t_1_1_texture.html">Texture</a></td></tr>
 <tr class="memitem:TextureArray" id="r_TextureArray"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_f_c_t_1_1_texture_array.html">TextureArray</a></td></tr>
 <tr class="memitem:TextureElement" id="r_TextureElement"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_f_c_t_1_1_texture_element.html">TextureElement</a></td></tr>
@@ -262,7 +263,6 @@ $(function(){initNavTree('namespace_f_c_t.html','',''); });
 <tr class="memitem:a541d9708e0c1aa838437ddff4b111d4d" id="r_a541d9708e0c1aa838437ddff4b111d4d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a541d9708e0c1aa838437ddff4b111d4d">ShaderStages</a> = <a class="el" href="class_f_c_t_1_1_flags.html">Flags</a>&lt;<a class="el" href="#adb995786f2f649c122895cd47ab09d32">ShaderStage</a>&gt;</td></tr>
 <tr class="memitem:a6ac4affd73cd6cf1ba455a683b2d69ba" id="r_a6ac4affd73cd6cf1ba455a683b2d69ba"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ac4affd73cd6cf1ba455a683b2d69ba">PRHISampler</a> = <a class="el" href="class_f_c_t_1_1_sampler.html">Sampler</a>*</td></tr>
 <tr class="memitem:ad61b2f01faf2e7ae0c6b07b681f09734" id="r_ad61b2f01faf2e7ae0c6b07b681f09734"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad61b2f01faf2e7ae0c6b07b681f09734">PSampler</a> = <a class="el" href="class_f_c_t_1_1_sampler.html">Sampler</a>*</td></tr>
-<tr class="memitem:a0cbb58fc2b9d03ebc10caf8a6f43d5d9" id="r_a0cbb58fc2b9d03ebc10caf8a6f43d5d9"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0cbb58fc2b9d03ebc10caf8a6f43d5d9">ImageUsageFlags</a> = <a class="el" href="class_f_c_t_1_1_flags.html">Flags</a>&lt;<a class="el" href="#a7c79cf32fda44767f87c534ba3c7f1e5">ImageUsage</a>&gt;</td></tr>
 <tr class="memitem:a2b67c2197d2675193be9ca0fe8406c87" id="r_a2b67c2197d2675193be9ca0fe8406c87"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b67c2197d2675193be9ca0fe8406c87">UITaskFunction</a> = std::function&lt;void(void *)&gt;</td></tr>
 <tr class="memitem:a9e86debfb8e07b3158f7c3f36555d3b4" id="r_a9e86debfb8e07b3158f7c3f36555d3b4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e86debfb8e07b3158f7c3f36555d3b4">ResizeCallBack</a> = std::function&lt;void(<a class="el" href="class_f_c_t_1_1_window.html">Window</a>* wnd, int width, int height)&gt;</td></tr>
 <tr class="memitem:afeb4bf1a3cf675cfa582cc37d4cb0946" id="r_afeb4bf1a3cf675cfa582cc37d4cb0946"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afeb4bf1a3cf675cfa582cc37d4cb0946">UiTicker</a> = std::function&lt;void(void)&gt;</td></tr>
@@ -561,6 +561,15 @@ $(function(){initNavTree('namespace_f_c_t.html','',''); });
 &#160;&#160;<a class="el" href="#a7ec8d52d86a568cdd834ed3105281bfaa6adf97f83acf6453d4a6a4b1070f3754">None</a>
 <br />
  }</td></tr>
+<tr class="memitem:a1f3fd882e4a9d228566255fb96faa014" id="r_a1f3fd882e4a9d228566255fb96faa014"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f3fd882e4a9d228566255fb96faa014">AccessFlag</a> : size_t { <br />
+&#160;&#160;<a class="el" href="#a1f3fd882e4a9d228566255fb96faa014a334c4a4c42fdb79d7ebc3e73b517e6f8">none</a> = 0
+, <a class="el" href="#a1f3fd882e4a9d228566255fb96faa014a29842c3a0269b74e7697727f9eeece4a">memoryRead</a> = 1 &lt;&lt; 1
+, <a class="el" href="#a1f3fd882e4a9d228566255fb96faa014a4b8b70a490bde8df8e23094bddc525dd">colorAttachmentWrite</a> = 1 &lt;&lt; 2
+, <a class="el" href="#a1f3fd882e4a9d228566255fb96faa014af3ed1368b35029f6300888e613b57cd8">depthStencilAttachmentWrite</a> = 1 &lt;&lt; 3
+, <br />
+&#160;&#160;<a class="el" href="#a1f3fd882e4a9d228566255fb96faa014a3a596ffb408b017b309f905351f3f9b8">shaderRead</a> = 1 &lt;&lt; 4
+<br />
+ }</td></tr>
 <tr class="memitem:aeb26fde385511ea278759f730bd57f75" id="r_aeb26fde385511ea278759f730bd57f75"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeb26fde385511ea278759f730bd57f75">BlendFactor</a> { <br />
 &#160;&#160;<a class="el" href="#aeb26fde385511ea278759f730bd57f75ad7ed4ee1df437474d005188535f74875">Zero</a>
 , <a class="el" href="#aeb26fde385511ea278759f730bd57f75a06c2cea18679d64399783748fa367bdd">One</a>
@@ -626,6 +635,51 @@ $(function(){initNavTree('namespace_f_c_t.html','',''); });
 , <a class="el" href="#a974ea50843d2c5ad8bbb8eb832cda07aa6ec565c329385c8d59333abc6a1003d1">DecrementWrap</a>
 <br />
  }</td></tr>
+<tr class="memitem:a47bc49ca12511f9acae146c133700f5f" id="r_a47bc49ca12511f9acae146c133700f5f"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a47bc49ca12511f9acae146c133700f5f">ImageAspect</a> { <a class="el" href="#a47bc49ca12511f9acae146c133700f5fa70dda5dfb8053dc6d1c492574bce9bfd">color</a> = 1 &lt;&lt; 0
+, <a class="el" href="#a47bc49ca12511f9acae146c133700f5fa12a055bf01a31369fe81ac35d85c7bc1">depth</a> = 1 &lt;&lt; 1
+, <a class="el" href="#a47bc49ca12511f9acae146c133700f5fa667f218c5ed2c9cf25734500472e7c4a">stencil</a> = 1 &lt;&lt; 2
+ }</td></tr>
+<tr class="memitem:aa6d1e7cd43d5bb06686de955be1a4309" id="r_aa6d1e7cd43d5bb06686de955be1a4309"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa6d1e7cd43d5bb06686de955be1a4309">ImageLayout</a> { <br />
+&#160;&#160;<a class="el" href="#aa6d1e7cd43d5bb06686de955be1a4309a5e543256c480ac577d30f76f9120eb74">undefined</a>
+, <a class="el" href="#aa6d1e7cd43d5bb06686de955be1a4309a958153f1b8b96ec4c4eb2147429105d9">general</a>
+, <a class="el" href="#aa6d1e7cd43d5bb06686de955be1a4309a8923b32e4694570bbb0524e5a53789d9">colorAttachmentOptimal</a>
+, <a class="el" href="#aa6d1e7cd43d5bb06686de955be1a4309a2187945bc3094af2dfc270e93c129682">depthStencilAttachmentOptimal</a>
+, <br />
+&#160;&#160;<a class="el" href="#aa6d1e7cd43d5bb06686de955be1a4309ae3bcd1abe55880899783d560843a498c">depthStencilReadOnlyOptimal</a>
+, <a class="el" href="#aa6d1e7cd43d5bb06686de955be1a4309a3953204ba39bf71dd2095950e55fcbb0">shaderReadOnlyOptimal</a>
+, <a class="el" href="#aa6d1e7cd43d5bb06686de955be1a4309a87b8350e9f25da5c5015a522a49f4560">transferSrcOptimal</a>
+, <a class="el" href="#aa6d1e7cd43d5bb06686de955be1a4309a52766699ca66e0e8184911460299ba75">transferDstOptimal</a>
+, <br />
+&#160;&#160;<a class="el" href="#aa6d1e7cd43d5bb06686de955be1a4309aa6d01e240f553ad51a2a5ab4aa1824e7">preinitialized</a>
+, <a class="el" href="#aa6d1e7cd43d5bb06686de955be1a4309a0c145b9832c2feb7e4f5d7171ab02104">depthReadOnlyStencilAttachmentOptimal</a>
+, <a class="el" href="#aa6d1e7cd43d5bb06686de955be1a4309a2a33260c4c880b4a53a1f1020c695deb">depthAttachmentStencilReadOnlyOptimal</a>
+, <a class="el" href="#aa6d1e7cd43d5bb06686de955be1a4309ae6d985e12d3e8c23aef69647070b2b7e">depthAttachmentOptimal</a>
+, <br />
+&#160;&#160;<a class="el" href="#aa6d1e7cd43d5bb06686de955be1a4309a5bf43795a5bd85101aea582e406db1f5">depthReadOnlyOptimal</a>
+, <a class="el" href="#aa6d1e7cd43d5bb06686de955be1a4309aeb1a07166c0d5715e8264f4b5908b1f5">stencilAttachmentOptimal</a>
+, <a class="el" href="#aa6d1e7cd43d5bb06686de955be1a4309a60da23cd1b9a615cc891986dfbf0d4ea">stencilReadOnlyOptimal</a>
+, <a class="el" href="#aa6d1e7cd43d5bb06686de955be1a4309a0c56b3541f1ae27c7171b8dd87b9947b">readOnlyOptimal</a>
+, <br />
+&#160;&#160;<a class="el" href="#aa6d1e7cd43d5bb06686de955be1a4309a98f8c8dea9874e9f11b35f0f02b599a4">attachmentOptimal</a>
+, <a class="el" href="#aa6d1e7cd43d5bb06686de955be1a4309afad70d120c4ebc351f9e756962fc928d">renderingLocalRead</a>
+, <a class="el" href="#aa6d1e7cd43d5bb06686de955be1a4309a0f4cc0f78c17693ad38fed3eae6e0947">presentSrcKHR</a>
+, <a class="el" href="#aa6d1e7cd43d5bb06686de955be1a4309ad979206c14140afc0b611c583f353441">videoDecodeDstKHR</a>
+, <br />
+&#160;&#160;<a class="el" href="#aa6d1e7cd43d5bb06686de955be1a4309a92a88b59c9ab2b130baa5d4d4eb59cc3">videoDecodeSrcKHR</a>
+, <a class="el" href="#aa6d1e7cd43d5bb06686de955be1a4309a705352f961e1f95f3d91ad4db26c44a8">videoDecodeDpbKHR</a>
+, <a class="el" href="#aa6d1e7cd43d5bb06686de955be1a4309aee3718705a3a4f2de159088ead34f67c">sharedPresentKHR</a>
+, <a class="el" href="#aa6d1e7cd43d5bb06686de955be1a4309a930601d435388ee4d57afa52e645c512">fragmentDensityMapOptimalEXT</a>
+, <br />
+&#160;&#160;<a class="el" href="#aa6d1e7cd43d5bb06686de955be1a4309a02a51ad6f63504ca08566c68f6b0786f">fragmentShadingRateAttachmentOptimalKHR</a>
+, <a class="el" href="#aa6d1e7cd43d5bb06686de955be1a4309a4ac79e298654a08a862b24a0c5ccf47e">shadingRateOptimalNV</a>
+, <a class="el" href="#aa6d1e7cd43d5bb06686de955be1a4309a3fa78c61c71571554fde24a6e54468e8">videoEncodeDstKHR</a>
+, <a class="el" href="#aa6d1e7cd43d5bb06686de955be1a4309a4fbb0721d080fd298a216501832bee45">videoEncodeSrcKHR</a>
+, <br />
+&#160;&#160;<a class="el" href="#aa6d1e7cd43d5bb06686de955be1a4309ada10e42aa62c287f96824b9d5b90aebd">videoEncodeDpbKHR</a>
+, <a class="el" href="#aa6d1e7cd43d5bb06686de955be1a4309a584a03eaff0deb3633d25c02c7835f71">attachmentFeedbackLoopOptimalEXT</a>
+, <a class="el" href="#aa6d1e7cd43d5bb06686de955be1a4309a0e1301b6dbc114dcaad528d46c5b6abf">videoEncodeQuantizationMapKHR</a>
+<br />
+ }</td></tr>
 <tr class="memitem:a7c79cf32fda44767f87c534ba3c7f1e5" id="r_a7c79cf32fda44767f87c534ba3c7f1e5"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c79cf32fda44767f87c534ba3c7f1e5">ImageUsage</a> : unsigned int { <a class="el" href="#a7c79cf32fda44767f87c534ba3c7f1e5a9b0bffda4bcb312168c0d6537cb04b4d">RenderTarget</a> = 0x1
 , <a class="el" href="#a7c79cf32fda44767f87c534ba3c7f1e5a2fa8076285272883c91e14402975a441">DepthStencil</a> = 0x2
 , <a class="el" href="#a7c79cf32fda44767f87c534ba3c7f1e5aa3e8ae43188ae76d38f414b2bdb0077b">Texture</a> = 0x4
@@ -658,6 +712,16 @@ $(function(){initNavTree('namespace_f_c_t.html','',''); });
 <tr class="memitem:a02e39e190de7cba24375f441d807cccc" id="r_a02e39e190de7cba24375f441d807cccc"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02e39e190de7cba24375f441d807cccc">PipelineType</a> { <a class="el" href="#a02e39e190de7cba24375f441d807cccca50ae1c82c7832ab74385d9b341d916d1">Traditional</a>
 , <a class="el" href="#a02e39e190de7cba24375f441d807cccca36c6f535151094d9b40813cb3cc2de16">RayTracing</a>
 , <a class="el" href="#a02e39e190de7cba24375f441d807ccccaee28c6b028c6c0e7955643bbe3579e5a">MeshShader</a>
+ }</td></tr>
+<tr class="memitem:aee548840338e7edaf410402fdc1b43f0" id="r_aee548840338e7edaf410402fdc1b43f0"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aee548840338e7edaf410402fdc1b43f0">PipelineStage</a> : uint32_t { <br />
+&#160;&#160;<a class="el" href="#aee548840338e7edaf410402fdc1b43f0a4ecc54305ce317f6232ab7ce1acb4db6">colorAttachmentOutput</a> = 1 &lt;&lt; 0
+, <a class="el" href="#aee548840338e7edaf410402fdc1b43f0ae3fc4223528e9526ae83b7442115e238">earlyFragmentTests</a> = 1 &lt;&lt; 1
+, <a class="el" href="#aee548840338e7edaf410402fdc1b43f0a6bd52102f595efa6dda67e13699fadda">bottomOfPipe</a> = 1 &lt;&lt; 2
+, <a class="el" href="#aee548840338e7edaf410402fdc1b43f0a807ac3da711c52fb45af7fcb38f2539e">topOfPipe</a> = 1 &lt;&lt; 3
+, <br />
+&#160;&#160;<a class="el" href="#aee548840338e7edaf410402fdc1b43f0aa01b4d41eacfed301b529ecb0bf46b2d">lateFragmentTests</a> = 1 &lt;&lt; 4
+, <a class="el" href="#aee548840338e7edaf410402fdc1b43f0ab7a9af74fb126e298c469a805123c6a5">fragmentShader</a> = 1 &lt;&lt; 5
+<br />
  }</td></tr>
 <tr class="memitem:aea3256d1f208053875c5a4793d1b561c" id="r_aea3256d1f208053875c5a4793d1b561c"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea3256d1f208053875c5a4793d1b561c">PolygonMode</a> { <a class="el" href="#aea3256d1f208053875c5a4793d1b561cadb3e3f51c9107e26c9bccf9a188ce2ed">Fill</a>
 , <a class="el" href="#aea3256d1f208053875c5a4793d1b561ca4803e6b9e63dabf04de980788d6a13c4">Line</a>
@@ -884,7 +948,15 @@ $(function(){initNavTree('namespace_f_c_t.html','',''); });
 <tr class="memitem:af370987864bb4392790a3d5ab46db1dc" id="r_af370987864bb4392790a3d5ab46db1dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af370987864bb4392790a3d5ab46db1dc">setVertexAttributeFromModel</a> (<a class="el" href="class_f_c_t_1_1_vertex.html">Vertex</a> &amp;vertex, size_t elementIndex, const <a class="el" href="class_f_c_t_1_1_vertex_element.html">VertexElement</a> &amp;element, const <a class="el" href="struct_f_c_t_1_1_model_vertex.html">ModelVertex</a> &amp;modelVertex)</td></tr>
 <tr class="memitem:aae9e9c566a4946fdf40954bc6e462eb8" id="r_aae9e9c566a4946fdf40954bc6e462eb8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aae9e9c566a4946fdf40954bc6e462eb8">safeAddRef</a> (<a class="el" href="class_f_c_t_1_1_ref_count.html">RefCount</a> *obj)</td></tr>
 <tr class="memitem:a397954f06cba94c6ba59c60eafdd0e93" id="r_a397954f06cba94c6ba59c60eafdd0e93"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a397954f06cba94c6ba59c60eafdd0e93">safeRelease</a> (<a class="el" href="class_f_c_t_1_1_ref_count.html">RefCount</a> *&amp;obj)</td></tr>
+<tr class="memitem:ad93e99d1d75c071b7db63bf76f81f5b0" id="r_ad93e99d1d75c071b7db63bf76f81f5b0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad93e99d1d75c071b7db63bf76f81f5b0">FCT_DECLARE_FLAGS</a> (<a class="el" href="#a1f3fd882e4a9d228566255fb96faa014">AccessFlag</a>)</td></tr>
+<tr class="memitem:a07149acad04a681393dfb9ad1fa52ef5" id="r_a07149acad04a681393dfb9ad1fa52ef5"><td class="memItemLeft" align="right" valign="top">vk::AccessFlagBits&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a07149acad04a681393dfb9ad1fa52ef5">ToVkAccessFlagBits</a> (<a class="el" href="#a1f3fd882e4a9d228566255fb96faa014">AccessFlag</a> flag)</td></tr>
+<tr class="memitem:a94393eae4e8678d3875c53432e2ce77e" id="r_a94393eae4e8678d3875c53432e2ce77e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a94393eae4e8678d3875c53432e2ce77e">FCT_TO_FLAGS</a> (ToVkAccessFlags, <a class="el" href="#a07149acad04a681393dfb9ad1fa52ef5">ToVkAccessFlagBits</a>, <a class="el" href="#a1f3fd882e4a9d228566255fb96faa014">AccessFlag</a>)</td></tr>
+<tr class="memitem:a53f8d4a2c303865920fb984948137e46" id="r_a53f8d4a2c303865920fb984948137e46"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a53f8d4a2c303865920fb984948137e46">FCT_DECLARE_FLAGS</a> (<a class="el" href="#a47bc49ca12511f9acae146c133700f5f">ImageAspect</a>)</td></tr>
+<tr class="memitem:a322a3985fd0273f25430eb081c84ea78" id="r_a322a3985fd0273f25430eb081c84ea78"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a322a3985fd0273f25430eb081c84ea78">FCT_DECLARE_FLAGS</a> (<a class="el" href="#a7c79cf32fda44767f87c534ba3c7f1e5">ImageUsage</a>)</td></tr>
 <tr class="memitem:a3d30f2c2d906a497cfb6e24a9efd6dff" id="r_a3d30f2c2d906a497cfb6e24a9efd6dff"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3d30f2c2d906a497cfb6e24a9efd6dff">FCT_DECLARE_FLAGS</a> (<a class="el" href="#a5d14bda42e5f9f565abd0b018262b564">ClearType</a>)</td></tr>
+<tr class="memitem:a6e029a0133eb9f21b6e84407d21bda3e" id="r_a6e029a0133eb9f21b6e84407d21bda3e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e029a0133eb9f21b6e84407d21bda3e">FCT_DECLARE_FLAGS</a> (<a class="el" href="#aee548840338e7edaf410402fdc1b43f0">PipelineStage</a>)</td></tr>
+<tr class="memitem:a3c285c41b3830a955aa47791cca04b73" id="r_a3c285c41b3830a955aa47791cca04b73"><td class="memItemLeft" align="right" valign="top">vk::PipelineStageFlagBits&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3c285c41b3830a955aa47791cca04b73">ToVkFlagBits</a> (<a class="el" href="#aee548840338e7edaf410402fdc1b43f0">FCT::PipelineStage</a> pipelineStage)</td></tr>
+<tr class="memitem:ad0035281afbfe60d8ced3407f9c5f748" id="r_ad0035281afbfe60d8ced3407f9c5f748"><td class="memItemLeft" align="right" valign="top">vk::PipelineStageFlags&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad0035281afbfe60d8ced3407f9c5f748">ToVkPipelineStageFlags</a> (FCT::PipelineStages pipelineStages)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 变量</h2></td></tr>
@@ -932,22 +1004,6 @@ $(function(){initNavTree('namespace_f_c_t.html','',''); });
 
 </div>
 </div>
-<a id="a0cbb58fc2b9d03ebc10caf8a6f43d5d9" name="a0cbb58fc2b9d03ebc10caf8a6f43d5d9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0cbb58fc2b9d03ebc10caf8a6f43d5d9">&#9670;&#160;</a></span>ImageUsageFlags</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="#a0cbb58fc2b9d03ebc10caf8a6f43d5d9">FCT::ImageUsageFlags</a> = <a class="el" href="class_f_c_t_1_1_flags.html">Flags</a>&lt;<a class="el" href="#a7c79cf32fda44767f87c534ba3c7f1e5">ImageUsage</a>&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">在文件 <a class="el" href="_image_usage_flags_8h_source.html">ImageUsageFlags.h</a> 第 <a class="el" href="_image_usage_flags_8h_source.html#l00017">17</a> 行定义.</p>
-
-</div>
-</div>
 <a id="ab4a59b11fd31afd38f70a20820f77fe6" name="ab4a59b11fd31afd38f70a20820f77fe6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab4a59b11fd31afd38f70a20820f77fe6">&#9670;&#160;</a></span>InputPosTransformCallback</h2>
 
@@ -982,10 +1038,10 @@ $(function(){initNavTree('namespace_f_c_t.html','',''); });
 <div class="line">        <a class="code hl_struct" href="struct_f_c_t_1_1_pass_graph_vertex.html">PassGraphVertex</a>,          </div>
 <div class="line">        <a class="code hl_struct" href="struct_f_c_t_1_1_pass_graph_edge.html">PassGraphEdge</a>             </div>
 <div class="line">    &gt;</div>
-<div class="ttc" id="astruct_f_c_t_1_1_pass_graph_edge_html"><div class="ttname"><a href="struct_f_c_t_1_1_pass_graph_edge.html">FCT::PassGraphEdge</a></div><div class="ttdef"><b>定义</b> <a href="_render_graph_8h_source.html#l00040">RenderGraph.h:40</a></div></div>
-<div class="ttc" id="astruct_f_c_t_1_1_pass_graph_vertex_html"><div class="ttname"><a href="struct_f_c_t_1_1_pass_graph_vertex.html">FCT::PassGraphVertex</a></div><div class="ttdef"><b>定义</b> <a href="_render_graph_8h_source.html#l00022">RenderGraph.h:22</a></div></div>
+<div class="ttc" id="astruct_f_c_t_1_1_pass_graph_edge_html"><div class="ttname"><a href="struct_f_c_t_1_1_pass_graph_edge.html">FCT::PassGraphEdge</a></div><div class="ttdef"><b>定义</b> <a href="_render_graph_8h_source.html#l00044">RenderGraph.h:44</a></div></div>
+<div class="ttc" id="astruct_f_c_t_1_1_pass_graph_vertex_html"><div class="ttname"><a href="struct_f_c_t_1_1_pass_graph_vertex.html">FCT::PassGraphVertex</a></div><div class="ttdef"><b>定义</b> <a href="_render_graph_8h_source.html#l00026">RenderGraph.h:26</a></div></div>
 </div><!-- fragment -->
-<p class="definition">在文件 <a class="el" href="_render_graph_8h_source.html">RenderGraph.h</a> 第 <a class="el" href="_render_graph_8h_source.html#l00060">60</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_render_graph_8h_source.html">RenderGraph.h</a> 第 <a class="el" href="_render_graph_8h_source.html#l00064">64</a> 行定义.</p>
 
 </div>
 </div>
@@ -1073,10 +1129,10 @@ $(function(){initNavTree('namespace_f_c_t.html','',''); });
 <div class="line">        <a class="code hl_struct" href="struct_f_c_t_1_1_resource_graph_vertex.html">ResourceGraphVertex</a>,      </div>
 <div class="line">        <a class="code hl_struct" href="struct_f_c_t_1_1_resource_graph_edge.html">ResourceGraphEdge</a>         </div>
 <div class="line">    &gt;</div>
-<div class="ttc" id="astruct_f_c_t_1_1_resource_graph_edge_html"><div class="ttname"><a href="struct_f_c_t_1_1_resource_graph_edge.html">FCT::ResourceGraphEdge</a></div><div class="ttdef"><b>定义</b> <a href="_render_graph_8h_source.html#l00052">RenderGraph.h:52</a></div></div>
-<div class="ttc" id="astruct_f_c_t_1_1_resource_graph_vertex_html"><div class="ttname"><a href="struct_f_c_t_1_1_resource_graph_vertex.html">FCT::ResourceGraphVertex</a></div><div class="ttdef"><b>定义</b> <a href="_render_graph_8h_source.html#l00045">RenderGraph.h:45</a></div></div>
+<div class="ttc" id="astruct_f_c_t_1_1_resource_graph_edge_html"><div class="ttname"><a href="struct_f_c_t_1_1_resource_graph_edge.html">FCT::ResourceGraphEdge</a></div><div class="ttdef"><b>定义</b> <a href="_render_graph_8h_source.html#l00056">RenderGraph.h:56</a></div></div>
+<div class="ttc" id="astruct_f_c_t_1_1_resource_graph_vertex_html"><div class="ttname"><a href="struct_f_c_t_1_1_resource_graph_vertex.html">FCT::ResourceGraphVertex</a></div><div class="ttdef"><b>定义</b> <a href="_render_graph_8h_source.html#l00049">RenderGraph.h:49</a></div></div>
 </div><!-- fragment -->
-<p class="definition">在文件 <a class="el" href="_render_graph_8h_source.html">RenderGraph.h</a> 第 <a class="el" href="_render_graph_8h_source.html#l00067">67</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_render_graph_8h_source.html">RenderGraph.h</a> 第 <a class="el" href="_render_graph_8h_source.html#l00071">71</a> 行定义.</p>
 
 </div>
 </div>
@@ -1108,7 +1164,7 @@ $(function(){initNavTree('namespace_f_c_t.html','',''); });
       </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_context_8h_source.html">Context.h</a> 第 <a class="el" href="_context_8h_source.html#l00060">60</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_context_8h_source.html">Context.h</a> 第 <a class="el" href="_context_8h_source.html#l00059">59</a> 行定义.</p>
 
 </div>
 </div>
@@ -1140,7 +1196,7 @@ $(function(){initNavTree('namespace_f_c_t.html','',''); });
       </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_context_8h_source.html">Context.h</a> 第 <a class="el" href="_context_8h_source.html#l00061">61</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_context_8h_source.html">Context.h</a> 第 <a class="el" href="_context_8h_source.html#l00060">60</a> 行定义.</p>
 
 </div>
 </div>
@@ -1156,7 +1212,7 @@ $(function(){initNavTree('namespace_f_c_t.html','',''); });
       </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_context_8h_source.html">Context.h</a> 第 <a class="el" href="_context_8h_source.html#l00063">63</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_context_8h_source.html">Context.h</a> 第 <a class="el" href="_context_8h_source.html#l00062">62</a> 行定义.</p>
 
 </div>
 </div>
@@ -1225,6 +1281,37 @@ $(function(){initNavTree('namespace_f_c_t.html','',''); });
 </div>
 </div>
 <a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">枚举类型说明</h2>
+<a id="a1f3fd882e4a9d228566255fb96faa014" name="a1f3fd882e4a9d228566255fb96faa014"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f3fd882e4a9d228566255fb96faa014">&#9670;&#160;</a></span>AccessFlag</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a1f3fd882e4a9d228566255fb96faa014">FCT::AccessFlag</a> : size_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a1f3fd882e4a9d228566255fb96faa014a334c4a4c42fdb79d7ebc3e73b517e6f8" name="a1f3fd882e4a9d228566255fb96faa014a334c4a4c42fdb79d7ebc3e73b517e6f8"></a>none&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a1f3fd882e4a9d228566255fb96faa014a29842c3a0269b74e7697727f9eeece4a" name="a1f3fd882e4a9d228566255fb96faa014a29842c3a0269b74e7697727f9eeece4a"></a>memoryRead&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a1f3fd882e4a9d228566255fb96faa014a4b8b70a490bde8df8e23094bddc525dd" name="a1f3fd882e4a9d228566255fb96faa014a4b8b70a490bde8df8e23094bddc525dd"></a>colorAttachmentWrite&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a1f3fd882e4a9d228566255fb96faa014af3ed1368b35029f6300888e613b57cd8" name="a1f3fd882e4a9d228566255fb96faa014af3ed1368b35029f6300888e613b57cd8"></a>depthStencilAttachmentWrite&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a1f3fd882e4a9d228566255fb96faa014a3a596ffb408b017b309f905351f3f9b8" name="a1f3fd882e4a9d228566255fb96faa014a3a596ffb408b017b309f905351f3f9b8"></a>shaderRead&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">在文件 <a class="el" href="_access_flags_8h_source.html">AccessFlags.h</a> 第 <a class="el" href="_access_flags_8h_source.html#l00010">10</a> 行定义.</p>
+
+</div>
+</div>
 <a id="aeffaa324cc414eb87b89ba0f1bed673a" name="aeffaa324cc414eb87b89ba0f1bed673a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeffaa324cc414eb87b89ba0f1bed673a">&#9670;&#160;</a></span>AddressMode</h2>
 
@@ -1294,7 +1381,7 @@ $(function(){initNavTree('namespace_f_c_t.html','',''); });
 <tr><td class="fieldname"><a id="aeb26fde385511ea278759f730bd57f75a88dfdcc65a80f412d0330f00579ab7f2" name="aeb26fde385511ea278759f730bd57f75a88dfdcc65a80f412d0330f00579ab7f2"></a>OneMinusSrc1Alpha&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">在文件 <a class="el" href="_blend_state_8h_source.html">BlendState.h</a> 第 <a class="el" href="_blend_state_8h_source.html#l00011">11</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_blend_state_8h_source.html">BlendState.h</a> 第 <a class="el" href="_blend_state_8h_source.html#l00008">8</a> 行定义.</p>
 
 </div>
 </div>
@@ -1325,7 +1412,7 @@ $(function(){initNavTree('namespace_f_c_t.html','',''); });
 <tr><td class="fieldname"><a id="a63a2f041d347dd600f0083cb95d0a245a6a061313d22e51e0f25b7cd4dc065233" name="a63a2f041d347dd600f0083cb95d0a245a6a061313d22e51e0f25b7cd4dc065233"></a>Max&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">在文件 <a class="el" href="_blend_state_8h_source.html">BlendState.h</a> 第 <a class="el" href="_blend_state_8h_source.html#l00030">30</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_blend_state_8h_source.html">BlendState.h</a> 第 <a class="el" href="_blend_state_8h_source.html#l00015">15</a> 行定义.</p>
 
 </div>
 </div>
@@ -1384,7 +1471,7 @@ $(function(){initNavTree('namespace_f_c_t.html','',''); });
 <tr><td class="fieldname"><a id="a5d14bda42e5f9f565abd0b018262b564ab9e904187d836d79d4fd0cbc4ea5420d" name="a5d14bda42e5f9f565abd0b018262b564ab9e904187d836d79d4fd0cbc4ea5420d"></a>depthStencil&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">在文件 <a class="el" href="_r_h_i_2_pass_8h_source.html">Pass.h</a> 第 <a class="el" href="_r_h_i_2_pass_8h_source.html#l00013">13</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_r_h_i_2_pass_8h_source.html">Pass.h</a> 第 <a class="el" href="_r_h_i_2_pass_8h_source.html#l00009">9</a> 行定义.</p>
 
 </div>
 </div>
@@ -1818,6 +1905,92 @@ $(function(){initNavTree('namespace_f_c_t.html','',''); });
 
 </div>
 </div>
+<a id="a47bc49ca12511f9acae146c133700f5f" name="a47bc49ca12511f9acae146c133700f5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47bc49ca12511f9acae146c133700f5f">&#9670;&#160;</a></span>ImageAspect</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a47bc49ca12511f9acae146c133700f5f">FCT::ImageAspect</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a47bc49ca12511f9acae146c133700f5fa70dda5dfb8053dc6d1c492574bce9bfd" name="a47bc49ca12511f9acae146c133700f5fa70dda5dfb8053dc6d1c492574bce9bfd"></a>color&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a47bc49ca12511f9acae146c133700f5fa12a055bf01a31369fe81ac35d85c7bc1" name="a47bc49ca12511f9acae146c133700f5fa12a055bf01a31369fe81ac35d85c7bc1"></a>depth&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a47bc49ca12511f9acae146c133700f5fa667f218c5ed2c9cf25734500472e7c4a" name="a47bc49ca12511f9acae146c133700f5fa667f218c5ed2c9cf25734500472e7c4a"></a>stencil&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">在文件 <a class="el" href="_image_aspect_8h_source.html">ImageAspect.h</a> 第 <a class="el" href="_image_aspect_8h_source.html#l00006">6</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aa6d1e7cd43d5bb06686de955be1a4309" name="aa6d1e7cd43d5bb06686de955be1a4309"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6d1e7cd43d5bb06686de955be1a4309">&#9670;&#160;</a></span>ImageLayout</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#aa6d1e7cd43d5bb06686de955be1a4309">FCT::ImageLayout</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="aa6d1e7cd43d5bb06686de955be1a4309a5e543256c480ac577d30f76f9120eb74" name="aa6d1e7cd43d5bb06686de955be1a4309a5e543256c480ac577d30f76f9120eb74"></a>undefined&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa6d1e7cd43d5bb06686de955be1a4309a958153f1b8b96ec4c4eb2147429105d9" name="aa6d1e7cd43d5bb06686de955be1a4309a958153f1b8b96ec4c4eb2147429105d9"></a>general&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa6d1e7cd43d5bb06686de955be1a4309a8923b32e4694570bbb0524e5a53789d9" name="aa6d1e7cd43d5bb06686de955be1a4309a8923b32e4694570bbb0524e5a53789d9"></a>colorAttachmentOptimal&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa6d1e7cd43d5bb06686de955be1a4309a2187945bc3094af2dfc270e93c129682" name="aa6d1e7cd43d5bb06686de955be1a4309a2187945bc3094af2dfc270e93c129682"></a>depthStencilAttachmentOptimal&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa6d1e7cd43d5bb06686de955be1a4309ae3bcd1abe55880899783d560843a498c" name="aa6d1e7cd43d5bb06686de955be1a4309ae3bcd1abe55880899783d560843a498c"></a>depthStencilReadOnlyOptimal&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa6d1e7cd43d5bb06686de955be1a4309a3953204ba39bf71dd2095950e55fcbb0" name="aa6d1e7cd43d5bb06686de955be1a4309a3953204ba39bf71dd2095950e55fcbb0"></a>shaderReadOnlyOptimal&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa6d1e7cd43d5bb06686de955be1a4309a87b8350e9f25da5c5015a522a49f4560" name="aa6d1e7cd43d5bb06686de955be1a4309a87b8350e9f25da5c5015a522a49f4560"></a>transferSrcOptimal&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa6d1e7cd43d5bb06686de955be1a4309a52766699ca66e0e8184911460299ba75" name="aa6d1e7cd43d5bb06686de955be1a4309a52766699ca66e0e8184911460299ba75"></a>transferDstOptimal&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa6d1e7cd43d5bb06686de955be1a4309aa6d01e240f553ad51a2a5ab4aa1824e7" name="aa6d1e7cd43d5bb06686de955be1a4309aa6d01e240f553ad51a2a5ab4aa1824e7"></a>preinitialized&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa6d1e7cd43d5bb06686de955be1a4309a0c145b9832c2feb7e4f5d7171ab02104" name="aa6d1e7cd43d5bb06686de955be1a4309a0c145b9832c2feb7e4f5d7171ab02104"></a>depthReadOnlyStencilAttachmentOptimal&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa6d1e7cd43d5bb06686de955be1a4309a2a33260c4c880b4a53a1f1020c695deb" name="aa6d1e7cd43d5bb06686de955be1a4309a2a33260c4c880b4a53a1f1020c695deb"></a>depthAttachmentStencilReadOnlyOptimal&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa6d1e7cd43d5bb06686de955be1a4309ae6d985e12d3e8c23aef69647070b2b7e" name="aa6d1e7cd43d5bb06686de955be1a4309ae6d985e12d3e8c23aef69647070b2b7e"></a>depthAttachmentOptimal&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa6d1e7cd43d5bb06686de955be1a4309a5bf43795a5bd85101aea582e406db1f5" name="aa6d1e7cd43d5bb06686de955be1a4309a5bf43795a5bd85101aea582e406db1f5"></a>depthReadOnlyOptimal&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa6d1e7cd43d5bb06686de955be1a4309aeb1a07166c0d5715e8264f4b5908b1f5" name="aa6d1e7cd43d5bb06686de955be1a4309aeb1a07166c0d5715e8264f4b5908b1f5"></a>stencilAttachmentOptimal&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa6d1e7cd43d5bb06686de955be1a4309a60da23cd1b9a615cc891986dfbf0d4ea" name="aa6d1e7cd43d5bb06686de955be1a4309a60da23cd1b9a615cc891986dfbf0d4ea"></a>stencilReadOnlyOptimal&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa6d1e7cd43d5bb06686de955be1a4309a0c56b3541f1ae27c7171b8dd87b9947b" name="aa6d1e7cd43d5bb06686de955be1a4309a0c56b3541f1ae27c7171b8dd87b9947b"></a>readOnlyOptimal&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa6d1e7cd43d5bb06686de955be1a4309a98f8c8dea9874e9f11b35f0f02b599a4" name="aa6d1e7cd43d5bb06686de955be1a4309a98f8c8dea9874e9f11b35f0f02b599a4"></a>attachmentOptimal&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa6d1e7cd43d5bb06686de955be1a4309afad70d120c4ebc351f9e756962fc928d" name="aa6d1e7cd43d5bb06686de955be1a4309afad70d120c4ebc351f9e756962fc928d"></a>renderingLocalRead&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa6d1e7cd43d5bb06686de955be1a4309a0f4cc0f78c17693ad38fed3eae6e0947" name="aa6d1e7cd43d5bb06686de955be1a4309a0f4cc0f78c17693ad38fed3eae6e0947"></a>presentSrcKHR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa6d1e7cd43d5bb06686de955be1a4309ad979206c14140afc0b611c583f353441" name="aa6d1e7cd43d5bb06686de955be1a4309ad979206c14140afc0b611c583f353441"></a>videoDecodeDstKHR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa6d1e7cd43d5bb06686de955be1a4309a92a88b59c9ab2b130baa5d4d4eb59cc3" name="aa6d1e7cd43d5bb06686de955be1a4309a92a88b59c9ab2b130baa5d4d4eb59cc3"></a>videoDecodeSrcKHR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa6d1e7cd43d5bb06686de955be1a4309a705352f961e1f95f3d91ad4db26c44a8" name="aa6d1e7cd43d5bb06686de955be1a4309a705352f961e1f95f3d91ad4db26c44a8"></a>videoDecodeDpbKHR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa6d1e7cd43d5bb06686de955be1a4309aee3718705a3a4f2de159088ead34f67c" name="aa6d1e7cd43d5bb06686de955be1a4309aee3718705a3a4f2de159088ead34f67c"></a>sharedPresentKHR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa6d1e7cd43d5bb06686de955be1a4309a930601d435388ee4d57afa52e645c512" name="aa6d1e7cd43d5bb06686de955be1a4309a930601d435388ee4d57afa52e645c512"></a>fragmentDensityMapOptimalEXT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa6d1e7cd43d5bb06686de955be1a4309a02a51ad6f63504ca08566c68f6b0786f" name="aa6d1e7cd43d5bb06686de955be1a4309a02a51ad6f63504ca08566c68f6b0786f"></a>fragmentShadingRateAttachmentOptimalKHR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa6d1e7cd43d5bb06686de955be1a4309a4ac79e298654a08a862b24a0c5ccf47e" name="aa6d1e7cd43d5bb06686de955be1a4309a4ac79e298654a08a862b24a0c5ccf47e"></a>shadingRateOptimalNV&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa6d1e7cd43d5bb06686de955be1a4309a3fa78c61c71571554fde24a6e54468e8" name="aa6d1e7cd43d5bb06686de955be1a4309a3fa78c61c71571554fde24a6e54468e8"></a>videoEncodeDstKHR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa6d1e7cd43d5bb06686de955be1a4309a4fbb0721d080fd298a216501832bee45" name="aa6d1e7cd43d5bb06686de955be1a4309a4fbb0721d080fd298a216501832bee45"></a>videoEncodeSrcKHR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa6d1e7cd43d5bb06686de955be1a4309ada10e42aa62c287f96824b9d5b90aebd" name="aa6d1e7cd43d5bb06686de955be1a4309ada10e42aa62c287f96824b9d5b90aebd"></a>videoEncodeDpbKHR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa6d1e7cd43d5bb06686de955be1a4309a584a03eaff0deb3633d25c02c7835f71" name="aa6d1e7cd43d5bb06686de955be1a4309a584a03eaff0deb3633d25c02c7835f71"></a>attachmentFeedbackLoopOptimalEXT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa6d1e7cd43d5bb06686de955be1a4309a0e1301b6dbc114dcaad528d46c5b6abf" name="aa6d1e7cd43d5bb06686de955be1a4309a0e1301b6dbc114dcaad528d46c5b6abf"></a>videoEncodeQuantizationMapKHR&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">在文件 <a class="el" href="_image_layout_8h_source.html">ImageLayout.h</a> 第 <a class="el" href="_image_layout_8h_source.html#l00009">9</a> 行定义.</p>
+
+</div>
+</div>
 <a id="a7c79cf32fda44767f87c534ba3c7f1e5" name="a7c79cf32fda44767f87c534ba3c7f1e5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7c79cf32fda44767f87c534ba3c7f1e5">&#9670;&#160;</a></span>ImageUsage</h2>
 
@@ -1913,7 +2086,7 @@ $(function(){initNavTree('namespace_f_c_t.html','',''); });
 <tr><td class="fieldname"><a id="a01748ad436ae9c9f3aa57b324c0128b0a5d5b78699e57104f2fa03bbdf7b9197b" name="a01748ad436ae9c9f3aa57b324c0128b0a5d5b78699e57104f2fa03bbdf7b9197b"></a>Set&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">在文件 <a class="el" href="_blend_state_8h_source.html">BlendState.h</a> 第 <a class="el" href="_blend_state_8h_source.html#l00038">38</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_blend_state_8h_source.html">BlendState.h</a> 第 <a class="el" href="_blend_state_8h_source.html#l00017">17</a> 行定义.</p>
 
 </div>
 </div>
@@ -1987,7 +2160,7 @@ $(function(){initNavTree('namespace_f_c_t.html','',''); });
 <tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="ae4037e5f73740942e7e5aaf4f351cf5ba90a95d6639a7bbbeff7f36a7ec8f3b10" name="ae4037e5f73740942e7e5aaf4f351cf5ba90a95d6639a7bbbeff7f36a7ec8f3b10"></a>Dependency&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">在文件 <a class="el" href="_render_graph_8h_source.html">RenderGraph.h</a> 第 <a class="el" href="_render_graph_8h_source.html#l00036">36</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_render_graph_8h_source.html">RenderGraph.h</a> 第 <a class="el" href="_render_graph_8h_source.html#l00040">40</a> 行定义.</p>
 
 </div>
 </div>
@@ -2028,6 +2201,38 @@ $(function(){initNavTree('namespace_f_c_t.html','',''); });
 </table>
 
 <p class="definition">在文件 <a class="el" href="_i_pipeline_resource_8h_source.html">IPipelineResource.h</a> 第 <a class="el" href="_i_pipeline_resource_8h_source.html#l00005">5</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aee548840338e7edaf410402fdc1b43f0" name="aee548840338e7edaf410402fdc1b43f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee548840338e7edaf410402fdc1b43f0">&#9670;&#160;</a></span>PipelineStage</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#aee548840338e7edaf410402fdc1b43f0">FCT::PipelineStage</a> : uint32_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="aee548840338e7edaf410402fdc1b43f0a4ecc54305ce317f6232ab7ce1acb4db6" name="aee548840338e7edaf410402fdc1b43f0a4ecc54305ce317f6232ab7ce1acb4db6"></a>colorAttachmentOutput&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aee548840338e7edaf410402fdc1b43f0ae3fc4223528e9526ae83b7442115e238" name="aee548840338e7edaf410402fdc1b43f0ae3fc4223528e9526ae83b7442115e238"></a>earlyFragmentTests&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aee548840338e7edaf410402fdc1b43f0a6bd52102f595efa6dda67e13699fadda" name="aee548840338e7edaf410402fdc1b43f0a6bd52102f595efa6dda67e13699fadda"></a>bottomOfPipe&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aee548840338e7edaf410402fdc1b43f0a807ac3da711c52fb45af7fcb38f2539e" name="aee548840338e7edaf410402fdc1b43f0a807ac3da711c52fb45af7fcb38f2539e"></a>topOfPipe&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aee548840338e7edaf410402fdc1b43f0aa01b4d41eacfed301b529ecb0bf46b2d" name="aee548840338e7edaf410402fdc1b43f0aa01b4d41eacfed301b529ecb0bf46b2d"></a>lateFragmentTests&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aee548840338e7edaf410402fdc1b43f0ab7a9af74fb126e298c469a805123c6a5" name="aee548840338e7edaf410402fdc1b43f0ab7a9af74fb126e298c469a805123c6a5"></a>fragmentShader&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">在文件 <a class="el" href="_pipeline_stage_8h_source.html">PipelineStage.h</a> 第 <a class="el" href="_pipeline_stage_8h_source.html#l00010">10</a> 行定义.</p>
 
 </div>
 </div>
@@ -2133,7 +2338,7 @@ $(function(){initNavTree('namespace_f_c_t.html','',''); });
 <tr><td class="fieldname"><a id="a06857f19619e14aebd3f3ac216280004abe8545ae7ab0276e15898aae7acfbd7a" name="a06857f19619e14aebd3f3ac216280004abe8545ae7ab0276e15898aae7acfbd7a"></a>Resource&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">在文件 <a class="el" href="_render_graph_8h_source.html">RenderGraph.h</a> 第 <a class="el" href="_render_graph_8h_source.html#l00017">17</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_render_graph_8h_source.html">RenderGraph.h</a> 第 <a class="el" href="_render_graph_8h_source.html#l00021">21</a> 行定义.</p>
 
 </div>
 </div>
@@ -2189,7 +2394,7 @@ $(function(){initNavTree('namespace_f_c_t.html','',''); });
 <tr><td class="fieldname"><a id="a805dd797988aa16fa60c338fe07cd744ac1f1a6f9e7b09bf6164a3c19e9f2b128" name="a805dd797988aa16fa60c338fe07cd744ac1f1a6f9e7b09bf6164a3c19e9f2b128"></a>ParentChild&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">在文件 <a class="el" href="_render_graph_8h_source.html">RenderGraph.h</a> 第 <a class="el" href="_render_graph_8h_source.html#l00048">48</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_render_graph_8h_source.html">RenderGraph.h</a> 第 <a class="el" href="_render_graph_8h_source.html#l00052">52</a> 行定义.</p>
 
 </div>
 </div>
@@ -2715,8 +2920,25 @@ template&lt;typename T&gt; </div>
 
 </div>
 </div>
+<a id="ad93e99d1d75c071b7db63bf76f81f5b0" name="ad93e99d1d75c071b7db63bf76f81f5b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad93e99d1d75c071b7db63bf76f81f5b0">&#9670;&#160;</a></span>FCT_DECLARE_FLAGS() <span class="overload">[1/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FCT::FCT_DECLARE_FLAGS </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a1f3fd882e4a9d228566255fb96faa014">AccessFlag</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a3d30f2c2d906a497cfb6e24a9efd6dff" name="a3d30f2c2d906a497cfb6e24a9efd6dff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3d30f2c2d906a497cfb6e24a9efd6dff">&#9670;&#160;</a></span>FCT_DECLARE_FLAGS()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d30f2c2d906a497cfb6e24a9efd6dff">&#9670;&#160;</a></span>FCT_DECLARE_FLAGS() <span class="overload">[2/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2729,6 +2951,93 @@ template&lt;typename T&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a53f8d4a2c303865920fb984948137e46" name="a53f8d4a2c303865920fb984948137e46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53f8d4a2c303865920fb984948137e46">&#9670;&#160;</a></span>FCT_DECLARE_FLAGS() <span class="overload">[3/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FCT::FCT_DECLARE_FLAGS </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a47bc49ca12511f9acae146c133700f5f">ImageAspect</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a322a3985fd0273f25430eb081c84ea78" name="a322a3985fd0273f25430eb081c84ea78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a322a3985fd0273f25430eb081c84ea78">&#9670;&#160;</a></span>FCT_DECLARE_FLAGS() <span class="overload">[4/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FCT::FCT_DECLARE_FLAGS </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a7c79cf32fda44767f87c534ba3c7f1e5">ImageUsage</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6e029a0133eb9f21b6e84407d21bda3e" name="a6e029a0133eb9f21b6e84407d21bda3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e029a0133eb9f21b6e84407d21bda3e">&#9670;&#160;</a></span>FCT_DECLARE_FLAGS() <span class="overload">[5/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FCT::FCT_DECLARE_FLAGS </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#aee548840338e7edaf410402fdc1b43f0">PipelineStage</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a94393eae4e8678d3875c53432e2ce77e" name="a94393eae4e8678d3875c53432e2ce77e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94393eae4e8678d3875c53432e2ce77e">&#9670;&#160;</a></span>FCT_TO_FLAGS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FCT::FCT_TO_FLAGS </td>
+          <td>(</td>
+          <td class="paramtype">ToVkAccessFlags</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a07149acad04a681393dfb9ad1fa52ef5">ToVkAccessFlagBits</a></td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a1f3fd882e4a9d228566255fb96faa014">AccessFlag</a></td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespace_f_c_t_a94393eae4e8678d3875c53432e2ce77e_cgraph.png" border="0" usemap="#anamespace_f_c_t_a94393eae4e8678d3875c53432e2ce77e_cgraph" loading="lazy" alt=""/></div>
+<map name="anamespace_f_c_t_a94393eae4e8678d3875c53432e2ce77e_cgraph" id="anamespace_f_c_t_a94393eae4e8678d3875c53432e2ce77e_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,161,32"/>
+<area shape="rect" href="namespace_f_c_t.html#a07149acad04a681393dfb9ad1fa52ef5" title=" " alt="" coords="209,5,385,32"/>
+<area shape="poly" title=" " alt="" coords="161,16,193,16,193,21,161,21"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -3337,7 +3646,7 @@ template&lt;typename BitType&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00089">89</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00104">104</a> 行定义.</p>
 
 </div>
 </div>
@@ -3370,7 +3679,7 @@ template&lt;typename BitType, typename std::enable_if&lt; <a class="el" href="st
 </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00065">65</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00080">80</a> 行定义.</p>
 
 </div>
 </div>
@@ -3401,7 +3710,7 @@ template&lt;typename BitType, typename std::enable_if&lt; <a class="el" href="st
 </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_matrix_8h_source.html">Matrix.h</a> 第 <a class="el" href="_matrix_8h_source.html#l00239">239</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_matrix_8h_source.html">Matrix.h</a> 第 <a class="el" href="_matrix_8h_source.html#l00255">255</a> 行定义.</p>
 
 </div>
 </div>
@@ -3434,7 +3743,7 @@ template&lt;typename BitType&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00095">95</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00110">110</a> 行定义.</p>
 
 </div>
 </div>
@@ -3467,7 +3776,7 @@ template&lt;typename BitType, typename std::enable_if&lt; <a class="el" href="st
 </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00071">71</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00086">86</a> 行定义.</p>
 
 </div>
 </div>
@@ -3500,7 +3809,7 @@ template&lt;typename BitType&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00083">83</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00098">98</a> 行定义.</p>
 
 </div>
 </div>
@@ -3533,7 +3842,7 @@ template&lt;typename BitType, typename std::enable_if&lt; <a class="el" href="st
 </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00059">59</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00074">74</a> 行定义.</p>
 
 </div>
 </div>
@@ -3562,7 +3871,7 @@ template&lt;typename BitType, typename std::enable_if&lt; <a class="el" href="st
 </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00077">77</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_flags_8h_source.html">Flags.h</a> 第 <a class="el" href="_flags_8h_source.html#l00092">92</a> 行定义.</p>
 
 </div>
 </div>
@@ -3828,6 +4137,87 @@ template&lt;typename BitType, typename std::enable_if&lt; <a class="el" href="st
 
 </div>
 </div>
+<a id="a07149acad04a681393dfb9ad1fa52ef5" name="a07149acad04a681393dfb9ad1fa52ef5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07149acad04a681393dfb9ad1fa52ef5">&#9670;&#160;</a></span>ToVkAccessFlagBits()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vk::AccessFlagBits FCT::ToVkAccessFlagBits </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a1f3fd882e4a9d228566255fb96faa014">AccessFlag</a></td>          <td class="paramname"><span class="paramname"><em>flag</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_access_flags_8h_source.html">AccessFlags.h</a> 第 <a class="el" href="_access_flags_8h_source.html#l00019">19</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespace_f_c_t_a07149acad04a681393dfb9ad1fa52ef5_icgraph.png" border="0" usemap="#anamespace_f_c_t_a07149acad04a681393dfb9ad1fa52ef5_icgraph" loading="lazy" alt=""/></div>
+<map name="anamespace_f_c_t_a07149acad04a681393dfb9ad1fa52ef5_icgraph" id="anamespace_f_c_t_a07149acad04a681393dfb9ad1fa52ef5_icgraph">
+<area shape="rect" title=" " alt="" coords="209,5,385,32"/>
+<area shape="rect" href="namespace_f_c_t.html#a94393eae4e8678d3875c53432e2ce77e" title=" " alt="" coords="5,5,161,32"/>
+<area shape="poly" title=" " alt="" coords="193,21,161,21,161,16,193,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3c285c41b3830a955aa47791cca04b73" name="a3c285c41b3830a955aa47791cca04b73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c285c41b3830a955aa47791cca04b73">&#9670;&#160;</a></span>ToVkFlagBits()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vk::PipelineStageFlagBits FCT::ToVkFlagBits </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#aee548840338e7edaf410402fdc1b43f0">FCT::PipelineStage</a></td>          <td class="paramname"><span class="paramname"><em>pipelineStage</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_pipeline_stage_8h_source.html">PipelineStage.h</a> 第 <a class="el" href="_pipeline_stage_8h_source.html#l00021">21</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespace_f_c_t_a3c285c41b3830a955aa47791cca04b73_icgraph.png" border="0" usemap="#anamespace_f_c_t_a3c285c41b3830a955aa47791cca04b73_icgraph" loading="lazy" alt=""/></div>
+<map name="anamespace_f_c_t_a3c285c41b3830a955aa47791cca04b73_icgraph" id="anamespace_f_c_t_a3c285c41b3830a955aa47791cca04b73_icgraph">
+<area shape="rect" title=" " alt="" coords="503,104,635,131"/>
+<area shape="rect" href="namespace_f_c_t.html#ad0035281afbfe60d8ced3407f9c5f748" title=" " alt="" coords="259,104,455,131"/>
+<area shape="poly" title=" " alt="" coords="488,120,456,120,456,115,488,115"/>
+<area shape="rect" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a17fce21c4c90520882b35b70c5eaf00f" title=" " alt="" coords="5,29,211,72"/>
+<area shape="poly" title=" " alt="" coords="289,102,190,75,191,70,290,97"/>
+<area shape="rect" href="class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group.html#afe3ebd57695705a749b0758a893aa3f8" title=" " alt="" coords="20,96,196,139"/>
+<area shape="poly" title=" " alt="" coords="243,120,197,120,197,115,243,115"/>
+<area shape="rect" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a1c04e2cf1b81f5a4c0355e9efec78a83" title=" " alt="" coords="5,163,211,205"/>
+<area shape="poly" title=" " alt="" coords="290,138,191,165,190,159,289,133"/>
+<area shape="poly" title=" " alt="" coords="148,16,133,10,108,8,84,10,70,15,64,21,66,28,61,29,59,19,67,10,83,5,108,3,135,5,150,11"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="ac1e051cf6058ce7121dd786478277836" name="ac1e051cf6058ce7121dd786478277836"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac1e051cf6058ce7121dd786478277836">&#9670;&#160;</a></span>ToVkFormat()</h2>
 
@@ -3875,6 +4265,58 @@ template&lt;typename BitType, typename std::enable_if&lt; <a class="el" href="st
 <area shape="rect" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a71d751f0564089be8f1c6cb3210dc65b" title=" " alt="" coords="201,223,348,265"/>
 <area shape="poly" title=" " alt="" coords="408,319,395,313,310,268,312,263,397,308,411,314"/>
 <area shape="poly" title=" " alt="" coords="185,233,153,228,154,223,186,228"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad0035281afbfe60d8ced3407f9c5f748" name="ad0035281afbfe60d8ced3407f9c5f748"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0035281afbfe60d8ced3407f9c5f748">&#9670;&#160;</a></span>ToVkPipelineStageFlags()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vk::PipelineStageFlags FCT::ToVkPipelineStageFlags </td>
+          <td>(</td>
+          <td class="paramtype">FCT::PipelineStages</td>          <td class="paramname"><span class="paramname"><em>pipelineStages</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_pipeline_stage_8h_source.html">PipelineStage.h</a> 第 <a class="el" href="_pipeline_stage_8h_source.html#l00040">40</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespace_f_c_t_ad0035281afbfe60d8ced3407f9c5f748_cgraph.png" border="0" usemap="#anamespace_f_c_t_ad0035281afbfe60d8ced3407f9c5f748_cgraph" loading="lazy" alt=""/></div>
+<map name="anamespace_f_c_t_ad0035281afbfe60d8ced3407f9c5f748_cgraph" id="anamespace_f_c_t_ad0035281afbfe60d8ced3407f9c5f748_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,202,32"/>
+<area shape="rect" href="namespace_f_c_t.html#a3c285c41b3830a955aa47791cca04b73" title=" " alt="" coords="250,5,382,32"/>
+<area shape="poly" title=" " alt="" coords="202,16,234,16,234,21,202,21"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespace_f_c_t_ad0035281afbfe60d8ced3407f9c5f748_icgraph.png" border="0" usemap="#anamespace_f_c_t_ad0035281afbfe60d8ced3407f9c5f748_icgraph" loading="lazy" alt=""/></div>
+<map name="anamespace_f_c_t_ad0035281afbfe60d8ced3407f9c5f748_icgraph" id="anamespace_f_c_t_ad0035281afbfe60d8ced3407f9c5f748_icgraph">
+<area shape="rect" title=" " alt="" coords="259,104,455,131"/>
+<area shape="rect" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a17fce21c4c90520882b35b70c5eaf00f" title=" " alt="" coords="5,29,211,72"/>
+<area shape="poly" title=" " alt="" coords="289,102,190,75,191,70,290,97"/>
+<area shape="rect" href="class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group.html#afe3ebd57695705a749b0758a893aa3f8" title=" " alt="" coords="20,96,196,139"/>
+<area shape="poly" title=" " alt="" coords="243,120,197,120,197,115,243,115"/>
+<area shape="rect" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a1c04e2cf1b81f5a4c0355e9efec78a83" title=" " alt="" coords="5,163,211,205"/>
+<area shape="poly" title=" " alt="" coords="290,138,191,165,190,159,289,133"/>
+<area shape="poly" title=" " alt="" coords="148,16,133,10,108,8,84,10,70,15,64,21,66,28,61,29,59,19,67,10,83,5,108,3,135,5,150,11"/>
 </map>
 </div>
 
@@ -3932,10 +4374,10 @@ template&lt;typename BitType, typename std::enable_if&lt; <a class="el" href="st
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line">allocateImage(Dependcy)</div>
-<div class="line"><a class="code hl_class" href="class_f_c_t_1_1_image.html">Image</a>* <a class="code hl_enumvalue" href="#a5d14bda42e5f9f565abd0b018262b564a12a055bf01a31369fe81ac35d85c7bc1">depth</a> = allocateImage(wnd);</div>
-<div class="line"><a class="code hl_class" href="class_f_c_t_1_1_image.html">Image</a>* <a class="code hl_enumvalue" href="#a5d14bda42e5f9f565abd0b018262b564a12a055bf01a31369fe81ac35d85c7bc1">depth</a> = allocateImage(target);</div>
+<div class="line"><a class="code hl_class" href="class_f_c_t_1_1_image.html">Image</a>* <a class="code hl_enumvalue" href="#a47bc49ca12511f9acae146c133700f5fa12a055bf01a31369fe81ac35d85c7bc1">depth</a> = allocateImage(wnd);</div>
+<div class="line"><a class="code hl_class" href="class_f_c_t_1_1_image.html">Image</a>* <a class="code hl_enumvalue" href="#a47bc49ca12511f9acae146c133700f5fa12a055bf01a31369fe81ac35d85c7bc1">depth</a> = allocateImage(target);</div>
 <div class="ttc" id="aclass_f_c_t_1_1_image_html"><div class="ttname"><a href="class_f_c_t_1_1_image.html">FCT::Image</a></div><div class="ttdef"><b>定义</b> <a href="_context_2_image_8h_source.html#l00049">Image.h:49</a></div></div>
-<div class="ttc" id="anamespace_f_c_t_html_a5d14bda42e5f9f565abd0b018262b564a12a055bf01a31369fe81ac35d85c7bc1"><div class="ttname"><a href="#a5d14bda42e5f9f565abd0b018262b564a12a055bf01a31369fe81ac35d85c7bc1">FCT::ClearType::depth</a></div><div class="ttdeci">@ depth</div><div class="ttdef"><b>定义</b> <a href="_r_h_i_2_pass_8h_source.html#l00016">Pass.h:16</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_a47bc49ca12511f9acae146c133700f5fa12a055bf01a31369fe81ac35d85c7bc1"><div class="ttname"><a href="#a47bc49ca12511f9acae146c133700f5fa12a055bf01a31369fe81ac35d85c7bc1">FCT::ImageAspect::depth</a></div><div class="ttdeci">@ depth</div><div class="ttdef"><b>定义</b> <a href="_image_aspect_8h_source.html#l00009">ImageAspect.h:9</a></div></div>
 </div><!-- fragment --> 
 <p class="definition">在文件 <a class="el" href="_resource_manager_8cpp_source.html">ResourceManager.cpp</a> 第 <a class="el" href="_resource_manager_8cpp_source.html#l00015">15</a> 行定义.</p>
 <div class="dynheader">
@@ -4249,7 +4691,7 @@ template&lt;typename BitType, typename std::enable_if&lt; <a class="el" href="st
 </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_context_8h_source.html">Context.h</a> 第 <a class="el" href="_context_8h_source.html#l00099">99</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_context_8h_source.html">Context.h</a> 第 <a class="el" href="_context_8h_source.html#l00098">98</a> 行定义.</p>
 
 </div>
 </div>
@@ -4273,7 +4715,7 @@ template&lt;typename BitType, typename std::enable_if&lt; <a class="el" href="st
 </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_context_8h_source.html">Context.h</a> 第 <a class="el" href="_context_8h_source.html#l00098">98</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_context_8h_source.html">Context.h</a> 第 <a class="el" href="_context_8h_source.html#l00097">97</a> 行定义.</p>
 
 </div>
 </div>
@@ -4297,7 +4739,7 @@ template&lt;typename BitType, typename std::enable_if&lt; <a class="el" href="st
 </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_context_8h_source.html">Context.h</a> 第 <a class="el" href="_context_8h_source.html#l00101">101</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_context_8h_source.html">Context.h</a> 第 <a class="el" href="_context_8h_source.html#l00100">100</a> 行定义.</p>
 
 </div>
 </div>
@@ -4345,7 +4787,7 @@ template&lt;typename BitType, typename std::enable_if&lt; <a class="el" href="st
 </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_context_8h_source.html">Context.h</a> 第 <a class="el" href="_context_8h_source.html#l00100">100</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_context_8h_source.html">Context.h</a> 第 <a class="el" href="_context_8h_source.html#l00099">99</a> 行定义.</p>
 
 </div>
 </div>

@@ -1,0 +1,68 @@
+\doxysection{src/\+RHI/\+Image\+Layout.h 文件参考}
+\hypertarget{_image_layout_8h}{}\label{_image_layout_8h}\index{src/RHI/ImageLayout.h@{src/RHI/ImageLayout.h}}
+{\ttfamily \#include "{}../\+Base/\+Enums.\+h"{}}\newline
+Image\+Layout.\+h 的引用(Include)关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_image_layout_8h__incl}
+\end{center}
+\end{figure}
+此图展示该文件被哪些文件直接或间接地引用了\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_image_layout_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{命名空间}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_f_c_t}{FCT}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{枚举}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309}{FCT\+::\+Image\+Layout}} \{ \newline
+\mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a5e543256c480ac577d30f76f9120eb74}{FCT\+::undefined}}
+, \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a958153f1b8b96ec4c4eb2147429105d9}{FCT\+::general}}
+, \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a8923b32e4694570bbb0524e5a53789d9}{FCT\+::color\+Attachment\+Optimal}}
+, \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a2187945bc3094af2dfc270e93c129682}{FCT\+::depth\+Stencil\+Attachment\+Optimal}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309ae3bcd1abe55880899783d560843a498c}{FCT\+::depth\+Stencil\+Read\+Only\+Optimal}}
+, \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a3953204ba39bf71dd2095950e55fcbb0}{FCT\+::shader\+Read\+Only\+Optimal}}
+, \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a87b8350e9f25da5c5015a522a49f4560}{FCT\+::transfer\+Src\+Optimal}}
+, \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a52766699ca66e0e8184911460299ba75}{FCT\+::transfer\+Dst\+Optimal}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309aa6d01e240f553ad51a2a5ab4aa1824e7}{FCT\+::preinitialized}}
+, \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a0c145b9832c2feb7e4f5d7171ab02104}{FCT\+::depth\+Read\+Only\+Stencil\+Attachment\+Optimal}}
+, \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a2a33260c4c880b4a53a1f1020c695deb}{FCT\+::depth\+Attachment\+Stencil\+Read\+Only\+Optimal}}
+, \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309ae6d985e12d3e8c23aef69647070b2b7e}{FCT\+::depth\+Attachment\+Optimal}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a5bf43795a5bd85101aea582e406db1f5}{FCT\+::depth\+Read\+Only\+Optimal}}
+, \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309aeb1a07166c0d5715e8264f4b5908b1f5}{FCT\+::stencil\+Attachment\+Optimal}}
+, \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a60da23cd1b9a615cc891986dfbf0d4ea}{FCT\+::stencil\+Read\+Only\+Optimal}}
+, \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a0c56b3541f1ae27c7171b8dd87b9947b}{FCT\+::read\+Only\+Optimal}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a98f8c8dea9874e9f11b35f0f02b599a4}{FCT\+::attachment\+Optimal}}
+, \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309afad70d120c4ebc351f9e756962fc928d}{FCT\+::rendering\+Local\+Read}}
+, \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a0f4cc0f78c17693ad38fed3eae6e0947}{FCT\+::present\+Src\+KHR}}
+, \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309ad979206c14140afc0b611c583f353441}{FCT\+::video\+Decode\+Dst\+KHR}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a92a88b59c9ab2b130baa5d4d4eb59cc3}{FCT\+::video\+Decode\+Src\+KHR}}
+, \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a705352f961e1f95f3d91ad4db26c44a8}{FCT\+::video\+Decode\+Dpb\+KHR}}
+, \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309aee3718705a3a4f2de159088ead34f67c}{FCT\+::shared\+Present\+KHR}}
+, \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a930601d435388ee4d57afa52e645c512}{FCT\+::fragment\+Density\+Map\+Optimal\+EXT}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a02a51ad6f63504ca08566c68f6b0786f}{FCT\+::fragment\+Shading\+Rate\+Attachment\+Optimal\+KHR}}
+, \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a4ac79e298654a08a862b24a0c5ccf47e}{FCT\+::shading\+Rate\+Optimal\+NV}}
+, \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a3fa78c61c71571554fde24a6e54468e8}{FCT\+::video\+Encode\+Dst\+KHR}}
+, \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a4fbb0721d080fd298a216501832bee45}{FCT\+::video\+Encode\+Src\+KHR}}
+, \newline
+\mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309ada10e42aa62c287f96824b9d5b90aebd}{FCT\+::video\+Encode\+Dpb\+KHR}}
+, \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a584a03eaff0deb3633d25c02c7835f71}{FCT\+::attachment\+Feedback\+Loop\+Optimal\+EXT}}
+, \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a0e1301b6dbc114dcaad528d46c5b6abf}{FCT\+::video\+Encode\+Quantization\+Map\+KHR}}
+ \}
+\end{DoxyCompactItemize}

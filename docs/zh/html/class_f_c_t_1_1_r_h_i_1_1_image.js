@@ -13,13 +13,13 @@ var class_f_c_t_1_1_r_h_i_1_1_image =
     [ "samples", "class_f_c_t_1_1_r_h_i_1_1_image.html#aa05dfb4ddb757d586bd345c2f82a0d1b", null ],
     [ "updateData", "class_f_c_t_1_1_r_h_i_1_1_image.html#ac5231897b42e64a8f2614bc67596c393", null ],
     [ "updateData", "class_f_c_t_1_1_r_h_i_1_1_image.html#abf2ba6605eeefa2a5c5ae06ecaffd378", null ],
-    [ "usage", "class_f_c_t_1_1_r_h_i_1_1_image.html#a527a5627b27be24635089073677dd106", null ],
+    [ "usage", "class_f_c_t_1_1_r_h_i_1_1_image.html#a0f0efe3f0dce8344248a00274a2cedcf", null ],
     [ "width", "class_f_c_t_1_1_r_h_i_1_1_image.html#a93407a0fdd2aa7ea273c43ac8ad50c49", null ],
     [ "width", "class_f_c_t_1_1_r_h_i_1_1_image.html#a0a224d55375671eb11ba940eb25cdb78", null ],
     [ "m_format", "class_f_c_t_1_1_r_h_i_1_1_image.html#aa5391a55ae9708ce4eeff32b0758290f", null ],
     [ "m_height", "class_f_c_t_1_1_r_h_i_1_1_image.html#a95d4b0a6bb195228371a65cdaa029693", null ],
     [ "m_initData", "class_f_c_t_1_1_r_h_i_1_1_image.html#a1ae68744727dc163c4c9b577d9634f17", null ],
     [ "m_samples", "class_f_c_t_1_1_r_h_i_1_1_image.html#aca8a30ca3b6dea20429770cd6ffac3d6", null ],
-    [ "m_usage", "class_f_c_t_1_1_r_h_i_1_1_image.html#a0aeed93852244b9715392fd36f3db7bc", null ],
+    [ "m_usage", "class_f_c_t_1_1_r_h_i_1_1_image.html#ab0fe6c77ce0e9b723d3e66384cbb4c49", null ],
     [ "m_width", "class_f_c_t_1_1_r_h_i_1_1_image.html#abe5d8b322123b8de96d7a37731b6c6a9", null ]
 ];

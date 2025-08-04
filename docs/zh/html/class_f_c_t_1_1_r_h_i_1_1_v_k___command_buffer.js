@@ -1,6 +1,7 @@
 var class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer =
 [
     [ "VK_CommandBuffer", "class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#adf6a0192fe851bf1c0b3603f80b1c74e", null ],
+    [ "barrier", "class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a17fce21c4c90520882b35b70c5eaf00f", null ],
     [ "begin", "class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a775aaa3a42bbf95deb9bbe90a5cc0bb3", null ],
     [ "bindPipieline", "class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#ad4e0a4fc9549049347c43099daaeda11", null ],
     [ "commandBuffer", "class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#ae8c7ddb229009bc08273d05e1bc270e5", null ],
@@ -9,6 +10,7 @@ var class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer =
     [ "draw", "class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a2a27873ed53662f3ab01bb1c21e2d94c", null ],
     [ "drawIndex", "class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a68767d12725e6beda5288ecde7997220", null ],
     [ "end", "class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a73183fe2b772f3d84539e19ae1f964db", null ],
+    [ "nextPass", "class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#aeeed414bba6e0d11d7df65090877d2ff", null ],
     [ "reset", "class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a58e7a54f640f832f155707df332e8d65", null ],
     [ "scissor", "class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a2add93b72d1289301a26fa2d9be60208", null ],
     [ "submit", "class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a1c04e2cf1b81f5a4c0355e9efec78a83", null ],

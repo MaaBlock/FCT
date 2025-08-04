@@ -118,11 +118,13 @@ var hierarchy =
     [ "FCT::ObjectPool< T, Args >", "class_f_c_t_1_1_object_pool.html", null ],
     [ "FCT::ObjectPoolChunk< T >", "class_f_c_t_1_1_object_pool_chunk.html", null ],
     [ "FCT::PassClearValue", "struct_f_c_t_1_1_pass_clear_value.html", null ],
+    [ "FCT::RHI::PassDesc", "struct_f_c_t_1_1_r_h_i_1_1_pass_desc.html", null ],
     [ "FCT::PassGraphEdge", "struct_f_c_t_1_1_pass_graph_edge.html", null ],
     [ "FCT::PassGraphVertex", "struct_f_c_t_1_1_pass_graph_vertex.html", null ],
     [ "FCT::RHI::PassGroup", "class_f_c_t_1_1_r_h_i_1_1_pass_group.html", [
       [ "FCT::RHI::VK_PassGroup", "class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group.html", null ]
     ] ],
+    [ "FCT::RHI::PassNeighbors", "struct_f_c_t_1_1_r_h_i_1_1_pass_neighbors.html", null ],
     [ "FCT::PassResource", "class_f_c_t_1_1_pass_resource.html", [
       [ "FCT::VK_PassResource", "class_f_c_t_1_1_v_k___pass_resource.html", null ]
     ] ],
@@ -250,6 +252,8 @@ var hierarchy =
       [ "AndroidErr", "class_android_err.html", null ],
       [ "Android_Out", "class_android___out.html", null ]
     ] ],
+    [ "FCT::BlendState::Target", "struct_f_c_t_1_1_blend_state_1_1_target.html", null ],
+    [ "FCT::TargetDesc", "struct_f_c_t_1_1_target_desc.html", null ],
     [ "FCT::TextureElement", "class_f_c_t_1_1_texture_element.html", null ],
     [ "FCT::TlsPtr< T >", "class_f_c_t_1_1_tls_ptr.html", null ],
     [ "FCT::TraditionPipelineState", "struct_f_c_t_1_1_tradition_pipeline_state.html", null ],

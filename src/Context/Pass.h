@@ -13,6 +13,7 @@ namespace FCT {
     namespace RHI
     {
         class RasterizationPipeline;
+
     }
     class Context;
     /**
