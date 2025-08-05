@@ -3,6 +3,7 @@
 //
 #include "../FCTAPI.h"
 #include "Context.h"
+#include "RenderGraph.h"
 
 
 namespace FCT {
@@ -62,7 +63,7 @@ namespace FCT {
     Context::Context(Runtime* runtime)
     {
         m_resourceManager = nullptr;
-        m_defaultGraph = new RenderGraph(this);
+        m_defaultGraph = new OldRenderGraph(this);
         m_currentGraph = m_defaultGraph;
         m_currentGraph->addRef();
         m_compiler = nullptr;

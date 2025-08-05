@@ -70,6 +70,7 @@
 #include <boost/bimap.hpp>
 #include <boost/bimap/unordered_set_of.hpp>
 #include <boost/graph/breadth_first_search.hpp>
+#include <boost/pending/disjoint_sets.hpp>
 
 
 #include <thread>

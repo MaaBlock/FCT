@@ -1,191 +1,199 @@
 ﻿//
-// Created by Administrator on 2025/4/5.
+// Created by Administrator on 2025/8/5.
 //
 
 #ifndef RENDERGRAPH_H
 #define RENDERGRAPH_H
-#include "../ThirdParty.h"
-#include "../RHI/ImageUsageFlags.h"
-namespace FCT
-{
-    class MutilBufferImage;
-    struct Job;
-    class Pass;
-    class Window;
+#include "./Format.h"
+#include "../Base/UnionFind.h"
+
+namespace FCT {
     class Context;
-    namespace RHI
+    class Device;
+    struct Size
     {
-        class Pass;
+        int32_t width;
+        int32_t height;
+        constexpr Size() noexcept : width(0), height(0) {}
+        constexpr Size(int32_t width, int32_t height) : width(width), height(height) {}
+    };
+    struct Texture
+    {
+        std::string_view name;
+        Size size;
+        Format format;
+        Samples samples;
+        constexpr Texture() noexcept {}
+        template<typename... Args>
+        constexpr Texture(std::string_view name,Args&&... args) noexcept
+            : name(name),format(Format::UNDEFINED),samples(Samples::sample_undefined), size() {
+            processArgs(std::forward<Args>(args)...);
+        }
+        template<typename... Rest>
+        constexpr void processArgs(const Size& other, Rest&&... rest) noexcept {
+            size = other;
+            processArgs(std::forward<Rest>(rest)...);
+        }
+        template<typename... Rest>
+        constexpr void processArgs(const Samples& other, Rest&&... rest) noexcept {
+            samples = other;
+            processArgs(std::forward<Rest>(rest)...);
+        }
+        template<typename... Rest>
+        constexpr void processArgs(const Format& other, Rest&&... rest) noexcept {
+            format = other;
+            processArgs(std::forward<Rest>(rest)...);
+        }
+        constexpr void processArgs() noexcept {}
+    };
+    class Window;
+    struct Target
+    {
+        std::string_view name;
+        Window* wnd;
+        Size size;
+        Format format;
+        Samples samples;
+        constexpr Target() noexcept{}
+        constexpr Target(Window* wnd) noexcept
+        {
+            this->wnd = wnd;
+        }
+        template<typename... Args>
+        constexpr Target(std::string_view name, Args&&... args) noexcept
+        {
+            this->name = name;
+            processArgs(std::forward<Args>(args)...);
+        }
+        template<typename... Rest>
+        constexpr void processArgs(const Size& other, Rest&&... rest) noexcept
+        {
+            size = other;
+            processArgs(std::forward<Rest>(rest)...);
+        }
+        template<typename... Rest>
+        constexpr void processArgs(const Samples& other, Rest&&... rest) noexcept
+        {
+            samples = other;
+            processArgs(std::forward<Rest>(rest)...);
+        }
+        template<typename... Rest>
+        constexpr void processArgs(const Format& other, Rest&&... rest) noexcept
+        {
+            format = other;
+            processArgs(std::forward<Rest>(rest)...);
+        }
+        constexpr void processArgs() noexcept {}
+
+    };
+    struct DepthStencil
+    {
+        std::string_view name;
+        Size size;
+        Format format;
+        Samples samples;
+        constexpr DepthStencil() noexcept {}
+        template<typename... Args>
+        constexpr DepthStencil(std::string_view name, Args&&... args) noexcept
+        {
+            this->name = name;
+            processArgs(std::forward<Args>(args)...);
+        }
+        template<typename... Rest>
+        constexpr void processArgs(const Size& other, Rest&&... rest) noexcept
+        {
+            size = other;
+            processArgs(std::forward<Rest>(rest)...);
+        }
+        template<typename... Rest>
+        constexpr void processArgs(const Samples& other, Rest&&... rest) noexcept
+        {
+            samples = other;
+            processArgs(std::forward<Rest>(rest)...);
+        }
+        template<typename... Rest>
+        constexpr void processArgs(const Format& other, Rest&&... rest) noexcept
+        {
+            format = other;
+            processArgs(std::forward<Rest>(rest)...);
+        }
+        constexpr void processArgs() noexcept {}
+    };
+    namespace RenderGraphConstVar
+    {
+        constexpr uint32_t MAX_TEXTURE_COUNT = 96;
+        constexpr uint32_t MAX_TARGET_COUNT = 8;
     }
-
-    enum class RenderGraphVertexType {
-        Pass,
-        Resource
-    };
-
-    struct PassGraphVertex {
-        std::string name;
-        Pass* pass;
-        RHI::Pass* rhiPass;
-        std::string target[8];
-        std::string depthStencil;
-        std::vector<std::string> textures;
-        PassGraphVertex()
-        {
-            pass = nullptr;
-            rhiPass = nullptr;
-        }
-    };
-
-    enum class PassGraphEdgeType {
-        Dependency
-    };
-
-    struct PassGraphEdge {
-        PassGraphEdgeType type;
-    };
-
-
-    struct ResourceGraphVertex {
-        std::string name;
-    };
-    enum class ResourceGraphEdgeType {
-        Reference,
-        ParentChild,//指向child
-    };
-    struct ResourceGraphEdge {
-        ResourceGraphEdgeType type;
-    };
-    /*
-     *1.分配CmdBuf
-     *2.给Pass分组
-     *3.给每个pass创建rhiPass，并给每个组创建passGroup
-     */
-    using PassGraphType = boost::adjacency_list<
-        boost::vecS,              // 外部边列表
-        boost::vecS,              // 外部顶点列表
-        boost::bidirectionalS,    // 双向图
-        PassGraphVertex,          // 顶点属性
-        PassGraphEdge             // 边属性
-    >;
-    using ResourceGraphType = boost::adjacency_list<
-        boost::vecS,              // 外部边列表
-        boost::vecS,              // 外部顶点列表
-        boost::bidirectionalS,    // 双向图
-        ResourceGraphVertex,      // 顶点属性
-        ResourceGraphEdge         // 边属性
-    >;
-
-
-    class RenderGraph : public RefCount
+    struct PassDesc
     {
-    protected:
+        std::string_view name;
+        Texture textures[RenderGraphConstVar::MAX_TEXTURE_COUNT];
+        Target targets[RenderGraphConstVar::MAX_TARGET_COUNT];
+        DepthStencil depthStencil;
+        size_t m_textureCount;
+        size_t m_targetsCount;
+        constexpr PassDesc(std::string_view name) : name(name)
+        {
+            m_textureCount = 0;
+            m_targetsCount = 0;
+        }
+        constexpr void addTexture(const Texture& texture) noexcept
+        {
+            if (m_textureCount < RenderGraphConstVar::MAX_TEXTURE_COUNT)
+            {
+                textures[m_textureCount++] = texture;
+            }
+        }
+        constexpr void addTarget(const Target& target) noexcept
+        {
+            if (m_targetsCount < RenderGraphConstVar::MAX_TARGET_COUNT)
+            {
+                targets[m_targetsCount++] = target;
+            }
+        }
+        constexpr void setDepthStencil(const DepthStencil& depthStencil) noexcept
+        {
+            this->depthStencil = depthStencil;
+        }
+
+        template<typename... Rest>
+        constexpr void processArgs(const Texture& other, Rest&&... rest) noexcept {
+            addTexture(other);
+            processArgs(std::forward<Rest>(rest)...);
+        }
+        template<typename... Rest>
+        constexpr void processArgs(const Target& other, Rest&&... rest) noexcept
+        {
+            addTarget(other);
+            processArgs(std::forward<Rest>(rest)...);
+        }
+        template<typename... Rest>
+        constexpr void processArgs(const DepthStencil& other, Rest&&... rest) noexcept
+        {
+            setDepthStencil(other);
+            processArgs(std::forward<Rest>(rest)...);
+        }
+        constexpr void processArgs() noexcept {}
+    };
+    class RenderGraph {
+    private:
         Context* m_ctx;
-        struct ImageResourceDesc
-        {
-            ImageUsages usage;
-            uint32_t width;
-            uint32_t height;
-            Samples samples;
-            bool isWnd;
-            bool dynamicSize;
-            ImageResourceDesc() : width(0), height(0),dynamicSize(true), samples(Samples::sample_undefined), isWnd(false)
-            {
-
-            }
-            ImageResourceDesc(bool isWnd) : width(0), height(0), samples(Samples::sample_undefined), isWnd(isWnd),dynamicSize(!isWnd)
-            {
-
-            }
-        };
-        uint32_t m_unnameWndBackBufferCount = 0;
-        uint32_t m_unnameWndStencilDepthCount = 0;
-        struct WindowImageResource
-        {
-            Window* wnd;
-            Image* img;
-        };
-        struct WindowDepthStencilResource
-        {
-            Window* wnd;
-            Image* img;
-        };
-        std::unordered_map<std::string, WindowImageResource> m_windowImageResources;
-        std::unordered_map<std::string, WindowDepthStencilResource> m_windowDepthStencilResources;
-        std::unordered_map<std::string, Image*> m_images;
-        std::unordered_map<Window*,std::string> m_windowBackBufferNames;
-        std::unordered_map<Window*,std::string> m_windowDepthStencilNames;
-        std::vector<Window*> m_bindedWindows;
-        std::unordered_map<std::string,ImageResourceDesc> m_imageResourceDescs;
-        std::unordered_map<std::string, PassGraphType::vertex_descriptor> m_passVertex;
-        std::unordered_map<std::string, TextureElement> m_textureLayouts;
-        std::unordered_map<std::string, ResourceGraphType::vertex_descriptor> m_resourceVertices;
-        std::vector<RHI::PassGroup*> m_passGroups;
-        std::vector<MutilBufferImage*> m_needUpdataFramesIndexImages;
-        struct ImageResourceVertex {
-            Image* img;
-            uint8_t slot = 0;
-        };
-        PassGraphType m_passGraph;
-        ResourceGraphType m_resourceGraph;
-        struct ExecutionOrder {
-            std::vector<PassGraphType::vertex_descriptor> sortedPasses;
-            std::vector<std::vector<PassGraphType::vertex_descriptor>> passGroups;
-        };
-        ExecutionOrder m_executionOrder;
+        Device* m_device;
+        std::unordered_map<std::string,PassDesc> m_originPasses;
     public:
-        Image* getResourceImage(std::string name)
-        {
-            auto it = m_images.find(name);
-            if (it!= m_images.end())
-            {
-                return it->second;
-            }
-            return nullptr;
-        }
         RenderGraph(Context* ctx);
-        void addPass(const std::string& name, Pass* pass);
-        void addWindowResource(Window* wnd);
-        void submit(Job* job,std::string name);
-        //显式依赖
-        void addPassDenpendency(const std::string& from,const std::string& to);
-        void bindOutputImage(const std::string& name, std::string image,uint8_t slot = 0);
-        void bindTextureImage(std::string name, std::string image, uint32_t width = 0, uint32_t height = 0, Samples samples =
-                                  Samples::sample_undefined);
-        void bindDepthStencil(const char* name, std::string image);
-        void bindOutput(const char* name, Window* wnd, uint8_t slot = 0);
-        void checkAndUpdateResourceSizes();
-        //推导出各个image的大小，从固定大小的 /窗口 的
-        //对于可能没有孤立的无法推导的 如果 一个单独的 pass，什么都没 连，然后输出了一个image，image还没有指定大小， 给予256*256
-        void generateImageGraph();
-        void computeSize();
-        void updateFrameIndices();
-        void saveExecutionOrder(const std::vector<PassGraphType::vertex_descriptor>& sortedPasses,
-                                const std::vector<std::vector<PassGraphType::vertex_descriptor>>& passGroups);
-        //从shaderGenreate获取resoureLayout，如果没有，就创建并添加新的resoureLayout
-        void generateImageResource();
-        void compile();
-        void analyzeImplicitDependencies();
-        bool isPassWritingToResource(const std::string& passName, const std::string& resourceName);
-        bool isPassReadingFromResource(const std::string& passName, const std::string& resourceName);
-        void execute(RHI::CommandBuffer* cmdBuf);
-        void printExecutionOrder();
-        void printResourceInfo();
-        std::vector<std::string> getPassTargetToWnd(Window* wnd);
-
-        Pass* getPassByName(const std::string& name)
-        {
-            auto it = m_passVertex.find(name);
-            if (it!= m_passVertex.end()) {
-                return m_passGraph[it->second].pass;
-            }
-            return nullptr;
+        ~RenderGraph();
+        template<typename... Args>
+        void addPass(std::string_view name,Args&&... args) {
+            PassDesc pass(name);
+            pass.processArgs(std::forward<Args>(args)...);
         }
+        void complie()
+        {
 
-        std::string formatToString(Format format);
-        void updateResource();
-        void swapJobQueue();
+        }
     };
 
-}
+} // FCT
+
 #endif //RENDERGRAPH_H

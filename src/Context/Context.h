@@ -8,12 +8,10 @@
 #include "../RHI/VertexShader.h"
 #include "../RHI/PixelShader.h"
 #include "../RHI/Swapcain.h"
-#include "./VertexBuffer.h"
 #include "./Material.h"
 #include "./DrawCall.h"
 #include "./ConstBuffer.h"
-#include "./Texture.h"
-#include "./TextureArray.h"
+#include "../ImageLoader/ImageLoader.h"
 #include "../Type/type.h"
 #include "./Image.h"
 #include "../RHI/CommandPool.h"
@@ -26,7 +24,7 @@
 #include "./ShaderCompiler.h"
 #include "./ShaderGenerator.h"
 #include "../ModelLoader/ModelLoader.h"
-#include "./RenderGraph.h"
+#include "./OldRenderGraph.h"
 #include "FencePool.h"
 #include "SemaphorePool.h"
 #include "./Device.h"
@@ -58,6 +56,7 @@ namespace FCT
 	class FencePool;
 	using SubmitTicker = std::function<void()>;
 	using SyncTicker = std::function<void()>;
+	class RenderGraph;
 
 	using TickerToken = uint32_t;
 	struct FrameResource
@@ -129,9 +128,9 @@ namespace FCT
 		void removeModule();
 		template <typename T>
 		T* getModule();
-
 	protected:
 		ModelLoader* m_modelLoader;
+		RenderGraph* m_renderGraph;
 	public:
 		StaticMesh<uint32_t>* createMesh(const ModelMesh* modelMesh, const VertexLayout& layout);
 		StaticMesh<uint32_t>* loadMesh(const std::string& filename,const std::string& meshName, const VertexLayout& layout);
@@ -306,16 +305,16 @@ namespace FCT
 
 		//render graph部分
 	protected:
-		RenderGraph* m_defaultGraph;
-		RenderGraph* m_currentGraph;
+		OldRenderGraph* m_defaultGraph;
+		OldRenderGraph* m_currentGraph;
 	public:
-		RenderGraph* currentGraph() { return m_currentGraph; }
+		OldRenderGraph* currentGraph() { return m_currentGraph; }
 		Image* getResourceImage(std::string name)
 		{
 			return m_currentGraph->getResourceImage(name);
 		}
 		//todo:这一系列转发函数想个办法优化
-		void setCurrentGraph(RenderGraph* graph)
+		void setCurrentGraph(OldRenderGraph* graph)
 		{
 			m_currentGraph->release();
 			m_currentGraph = graph;
@@ -377,7 +376,12 @@ namespace FCT
 		if constexpr (std::is_same_v<T, ResourceManager>)
 		{
 			FCT_SAFE_NEW(m_resourceManager,ResourceManager,this);
-		} else
+		}
+		else if constexpr (std::is_same_v<T, RenderGraph>)
+		{
+			FCT_SAFE_NEW(m_renderGraph,RenderGraph,this);
+		}
+		else
 		{
 			ferr << "Unsupported module type: " << typeid(T).name() << std::endl;
 		}
@@ -408,6 +412,10 @@ namespace FCT
 		{
 			return m_resourceDevice;
 		}
+		else if constexpr (std::is_same_v<T, RenderGraph>)
+		{
+            return m_renderGraph;
+        }
 		else
 		{
 			ferr << "try to get undefined context module." << std::endl;
