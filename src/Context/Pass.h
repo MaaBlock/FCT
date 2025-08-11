@@ -20,7 +20,7 @@ namespace FCT {
      * @brief 用于给RenderGraph给PassResource添加RenderGraph的资源
      */
     using RenderGraphPassResourceAddCallback = std::function<void(PassResource*)>;
-    class Pass : public RefCount
+    class OldPass : public RefCount
     {
     protected:
         std::map<uint32_t,Image*> m_targets;
@@ -30,7 +30,7 @@ namespace FCT {
         RHI::Pass* m_pass;
         RenderGraphPassResourceAddCallback m_addResourceCallback;
     public:
-        Pass()
+        OldPass()
         {
             m_addResourceCallback = [](PassResource* resource)
             {
@@ -49,13 +49,13 @@ namespace FCT {
         {
             m_pass = pass;
         }
-        virtual ~Pass() = default;
+        virtual ~OldPass() = default;
 
         PassClearValue getClearValue() const
         {
             return m_clearValue;
         }
-        Pass& enableClear(ClearTypes type,Vec4 color,float depth = 1.0f, uint8_t stencil = 0)
+        OldPass& enableClear(ClearTypes type,Vec4 color,float depth = 1.0f, uint8_t stencil = 0)
         {
             m_clearValue.types = type;
             m_clearValue.color = color;

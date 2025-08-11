@@ -6,7 +6,7 @@ namespace FCT
 
     }
 
-    void OldRenderGraph::addPass(const std::string& name, Pass* pass)
+    void OldRenderGraph::addPass(const std::string& name, OldPass* pass)
     {
         pass->addRef();
         PassGraphVertex v;
@@ -70,7 +70,7 @@ namespace FCT
     void OldRenderGraph::submit(Job* job, std::string name)
     {
         PassGraphType::vertex_descriptor vd = m_passVertex[name];
-        Pass* pass = m_passGraph[vd].pass;
+        OldPass* pass = m_passGraph[vd].pass;
         pass->submit(job);
     }
 

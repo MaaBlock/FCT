@@ -10,7 +10,7 @@ namespace FCT
 {
     class MutilBufferImage;
     struct Job;
-    class Pass;
+    class OldPass;
     class Window;
     class Context;
     namespace RHI
@@ -25,7 +25,7 @@ namespace FCT
 
     struct PassGraphVertex {
         std::string name;
-        Pass* pass;
+        OldPass* pass;
         RHI::Pass* rhiPass;
         std::string target[8];
         std::string depthStencil;
@@ -144,7 +144,7 @@ namespace FCT
             return nullptr;
         }
         OldRenderGraph(Context* ctx);
-        void addPass(const std::string& name, Pass* pass);
+        void addPass(const std::string& name, OldPass* pass);
         void addWindowResource(Window* wnd);
         void submit(Job* job,std::string name);
         //显式依赖
@@ -173,7 +173,7 @@ namespace FCT
         void printResourceInfo();
         std::vector<std::string> getPassTargetToWnd(Window* wnd);
 
-        Pass* getPassByName(const std::string& name)
+        OldPass* getPassByName(const std::string& name)
         {
             auto it = m_passVertex.find(name);
             if (it!= m_passVertex.end()) {

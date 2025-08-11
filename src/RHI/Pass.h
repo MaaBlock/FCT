@@ -4,16 +4,9 @@
 #include "../MutilThreadBase/RefCount.h"
 #include "../Context/DataTypes.h"
 #include "../Context/Image.h"
+#include "../Context/ClearTypes.h"
 namespace FCT
 {
-    enum class ClearType : uint32_t
-    {
-        color = 0x1,
-        depth = 0x2,
-        stencil = 0x4,
-        depthStencil = depth | stencil
-    };
-    FCT_DECLARE_FLAGS(ClearType);
     struct PassClearValue
     {
         ClearTypes types;

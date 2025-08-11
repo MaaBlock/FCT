@@ -26,6 +26,17 @@ graph TD
 只用来获取图像信息,可以不去除as,这样用户
 要么自行创建MutilBufferImage/SingleBufferImage
 要么通过ResourceManager allocate
+## frameBuffer Cache
+将原本的framebuffer每帧一重建改为根据dirty来检查重建的
+FrameBuffer Cache
+## 添加合适的提示信息
+比如使用者vulkan版本低于1.2，应当提示vulkan版本低于1.2,需升级驱动，然后exit
+如果用户运行的是debug版本，且没有验证层时应报错并提示安装vulkan sdk，然后exit
+## 将ResourceManager改为使用SizeNode节点
+将ResourceManager改为使用SizeNode节点构成的并查集,
+而不是使用TokenGraph
+## 为将ResourceManager添加对Scale的支持
+## 真正支持RenderGraph里读对scale的支持[需完成前一个todo]
 # [main]
 ```mermaid
 graph TD

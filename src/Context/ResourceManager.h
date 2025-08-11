@@ -10,6 +10,7 @@
 #include "Device.h"
 #include "Format.h"
 #include "../RHI/ImageUsageFlags.h"
+#include "../Base/FractionScale2D.h"
 namespace FCT
 {
     class Image;
@@ -34,6 +35,7 @@ namespace FCT
     struct ImageDesc
     {
         Format format;
+        Samples samples;
         ImageUsages usage;
     };
     struct TargetDesc
@@ -68,7 +70,7 @@ namespace FCT
     {
         constexpr const char* ImageGraph_ChangeIndex = "ImageGraph_ChangeIndex";
     }
-    class ResourceManager {
+    class  ResourceManager {
     public:
         ResourceManager(Context* ctx);
         /**

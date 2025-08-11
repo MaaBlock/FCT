@@ -154,11 +154,10 @@ namespace FCT
 {
     void ResourceManager::resizeImage(std::string name, int width, int height)
     {
-    }
 
+    }
     Image* ResourceManager::allocateTarget(std::string name, TargetDesc desc)
     {
-
         auto ret = ImageSaved();
         auto img = m_resourceDevice->createResource<MutilBufferImage>();
         img->samples(desc.samples);

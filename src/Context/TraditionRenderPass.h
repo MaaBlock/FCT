@@ -7,7 +7,7 @@
 namespace FCT
 {
 
-class TraditionRenderPass : public Pass
+class TraditionRenderPass : public OldPass
 {
 protected:
      struct TraditionRenderJobQueue

@@ -1,4 +1,4 @@
-#include "./VertexPath.h"
+﻿#include "./VertexPath.h"
 namespace FCT
 {
     struct VertexScreenInfo {
@@ -158,7 +158,7 @@ namespace FCT
             }
             m_uploadPassName = uploadPassName;
 
-            Pass* uploadPass = new TraditionRenderPass(m_ctx);
+            OldPass* uploadPass = new TraditionRenderPass(m_ctx);
             m_ctx->addPass(uploadPassName, uploadPass);
             uploadPass->release();
 

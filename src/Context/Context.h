@@ -3,6 +3,7 @@
 #include "../ToolDefine.h"
 #include "../Bases.h"
 #include "../Memory/ObjectPool.h"
+#include "./RenderGraph.h"
 #include "../MutilThreadBase/Computation.h"
 #include "./DataTypes.h"
 #include "../RHI/VertexShader.h"
@@ -33,12 +34,13 @@
 #include "../Base/IEventSystem.h"
 #include "./ResourceManager.h"
 #include "./ContextEvent.h"
+#include "./RenderGraph.h"
 namespace FCT
 {
 	class RasterizationState;
 
 	class BlendState;
-	class Pass;
+	class OldPass;
 	namespace RHI
 	{
 		class TextureView;
@@ -320,7 +322,7 @@ namespace FCT
 			m_currentGraph = graph;
 			m_currentGraph->addRef();
 		}
-		void addPass(const std::string& name, Pass* pass)
+		void addPass(const std::string& name, OldPass* pass)
 		{
 			m_currentGraph->addPass(name, pass);
 		}
@@ -361,7 +363,7 @@ namespace FCT
 		{
 
 		}
-		Pass* findPass(const std::string& name)
+		OldPass* findPass(const std::string& name)
 		{
 			return m_currentGraph->getPassByName(name);
 		}

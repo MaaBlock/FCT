@@ -1,0 +1,143 @@
+\doxysection{FCT\+::Union\+Find\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} 模板类 参考}
+\hypertarget{class_f_c_t_1_1_union_find}{}\label{class_f_c_t_1_1_union_find}\index{FCT::UnionFind$<$ T $>$@{FCT::UnionFind$<$ T $>$}}
+
+
+{\ttfamily \#include $<$Union\+Find.\+h$>$}
+
+
+
+FCT\+::Union\+Find\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} 的协作图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{class_f_c_t_1_1_union_find__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+T \mbox{\hyperlink{class_f_c_t_1_1_union_find_aefdbe6dccbb14c9d8c3d045b089b4830}{find}} (const T \&x) const
+\item 
+bool \mbox{\hyperlink{class_f_c_t_1_1_union_find_ac38dbd142db5399f5327473597fa57a3}{unite}} (const T \&x, const T \&y)
+\item 
+bool \mbox{\hyperlink{class_f_c_t_1_1_union_find_ad85745a0e5754ced3c39509412016e1c}{connected}} (const T \&x, const T \&y) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unordered\+\_\+map$<$ T, T $>$ \mbox{\hyperlink{class_f_c_t_1_1_union_find_a7d354faaec9e98c99d62d0e4ff10298c}{m\+\_\+parent}}
+\item 
+std\+::unordered\+\_\+map$<$ T, int $>$ \mbox{\hyperlink{class_f_c_t_1_1_union_find_a44b8d2765ccf1603c38bec72a924bfd6}{m\+\_\+rank}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+\subsubsection*{template$<$typename T$>$\newline
+class FCT\+::\+Union\+Find$<$ T $>$}
+
+
+在文件 \mbox{\hyperlink{_union_find_8h_source}{Union\+Find.\+h}} 第 \mbox{\hyperlink{_union_find_8h_source_l00010}{10}} 行定义.
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_f_c_t_1_1_union_find_doc-func-members}
+\doxysubsection{成员函数说明}
+\Hypertarget{class_f_c_t_1_1_union_find_ad85745a0e5754ced3c39509412016e1c}\index{FCT::UnionFind$<$ T $>$@{FCT::UnionFind$<$ T $>$}!connected@{connected}}
+\index{connected@{connected}!FCT::UnionFind$<$ T $>$@{FCT::UnionFind$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{connected()}{connected()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_union_find_ad85745a0e5754ced3c39509412016e1c} 
+template$<$typename T$>$ \\
+bool \mbox{\hyperlink{class_f_c_t_1_1_union_find}{FCT\+::\+Union\+Find}}$<$ T $>$\+::connected (\begin{DoxyParamCaption}\item[{const T \&}]{x}{, }\item[{const T \&}]{y}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_union_find_8h_source}{Union\+Find.\+h}} 第 \mbox{\hyperlink{_union_find_8h_source_l00046}{46}} 行定义.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_union_find_ad85745a0e5754ced3c39509412016e1c_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_f_c_t_1_1_union_find_aefdbe6dccbb14c9d8c3d045b089b4830}\index{FCT::UnionFind$<$ T $>$@{FCT::UnionFind$<$ T $>$}!find@{find}}
+\index{find@{find}!FCT::UnionFind$<$ T $>$@{FCT::UnionFind$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_union_find_aefdbe6dccbb14c9d8c3d045b089b4830} 
+template$<$typename T$>$ \\
+T \mbox{\hyperlink{class_f_c_t_1_1_union_find}{FCT\+::\+Union\+Find}}$<$ T $>$\+::find (\begin{DoxyParamCaption}\item[{const T \&}]{x}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_union_find_8h_source}{Union\+Find.\+h}} 第 \mbox{\hyperlink{_union_find_8h_source_l00016}{16}} 行定义.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{class_f_c_t_1_1_union_find_aefdbe6dccbb14c9d8c3d045b089b4830_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_union_find_aefdbe6dccbb14c9d8c3d045b089b4830_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_f_c_t_1_1_union_find_ac38dbd142db5399f5327473597fa57a3}\index{FCT::UnionFind$<$ T $>$@{FCT::UnionFind$<$ T $>$}!unite@{unite}}
+\index{unite@{unite}!FCT::UnionFind$<$ T $>$@{FCT::UnionFind$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{unite()}{unite()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_union_find_ac38dbd142db5399f5327473597fa57a3} 
+template$<$typename T$>$ \\
+bool \mbox{\hyperlink{class_f_c_t_1_1_union_find}{FCT\+::\+Union\+Find}}$<$ T $>$\+::unite (\begin{DoxyParamCaption}\item[{const T \&}]{x}{, }\item[{const T \&}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_union_find_8h_source}{Union\+Find.\+h}} 第 \mbox{\hyperlink{_union_find_8h_source_l00029}{29}} 行定义.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{class_f_c_t_1_1_union_find_ac38dbd142db5399f5327473597fa57a3_cgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_f_c_t_1_1_union_find_doc-variable-members}
+\doxysubsection{类成员变量说明}
+\Hypertarget{class_f_c_t_1_1_union_find_a7d354faaec9e98c99d62d0e4ff10298c}\index{FCT::UnionFind$<$ T $>$@{FCT::UnionFind$<$ T $>$}!m\_parent@{m\_parent}}
+\index{m\_parent@{m\_parent}!FCT::UnionFind$<$ T $>$@{FCT::UnionFind$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{m\_parent}{m\_parent}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_union_find_a7d354faaec9e98c99d62d0e4ff10298c} 
+template$<$typename T$>$ \\
+std\+::unordered\+\_\+map$<$T, T$>$ \mbox{\hyperlink{class_f_c_t_1_1_union_find}{FCT\+::\+Union\+Find}}$<$ T $>$\+::m\+\_\+parent\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_union_find_8h_source}{Union\+Find.\+h}} 第 \mbox{\hyperlink{_union_find_8h_source_l00012}{12}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_union_find_a44b8d2765ccf1603c38bec72a924bfd6}\index{FCT::UnionFind$<$ T $>$@{FCT::UnionFind$<$ T $>$}!m\_rank@{m\_rank}}
+\index{m\_rank@{m\_rank}!FCT::UnionFind$<$ T $>$@{FCT::UnionFind$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{m\_rank}{m\_rank}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_union_find_a44b8d2765ccf1603c38bec72a924bfd6} 
+template$<$typename T$>$ \\
+std\+::unordered\+\_\+map$<$T, int$>$ \mbox{\hyperlink{class_f_c_t_1_1_union_find}{FCT\+::\+Union\+Find}}$<$ T $>$\+::m\+\_\+rank\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_union_find_8h_source}{Union\+Find.\+h}} 第 \mbox{\hyperlink{_union_find_8h_source_l00013}{13}} 行定义.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Base/\mbox{\hyperlink{_union_find_8h}{Union\+Find.\+h}}\end{DoxyCompactItemize}

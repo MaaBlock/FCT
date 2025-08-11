@@ -1,0 +1,276 @@
+\doxysection{FCT\+::Pass\+Desc结构体 参考}
+\hypertarget{struct_f_c_t_1_1_pass_desc}{}\label{struct_f_c_t_1_1_pass_desc}\index{FCT::PassDesc@{FCT::PassDesc}}
+
+
+{\ttfamily \#include $<$Render\+Graph.\+h$>$}
+
+
+
+FCT\+::Pass\+Desc 的协作图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{struct_f_c_t_1_1_pass_desc__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+constexpr \mbox{\hyperlink{struct_f_c_t_1_1_pass_desc_ab922ce99bf9b000e90aea92a05ab5010}{Pass\+Desc}} (std\+::string\+\_\+view \mbox{\hyperlink{struct_f_c_t_1_1_pass_desc_ac59c1f5593cdf3cc7b562e639da4e66a}{name}})
+\item 
+constexpr void \mbox{\hyperlink{struct_f_c_t_1_1_pass_desc_ad08b786290d56782c4e325ace31a326b}{add\+Texture}} (const \mbox{\hyperlink{struct_f_c_t_1_1_texture}{Texture}} \&texture) noexcept
+\item 
+constexpr void \mbox{\hyperlink{struct_f_c_t_1_1_pass_desc_a68f1c5f6a60dd60a978a3fce767cfb68}{add\+Target}} (const \mbox{\hyperlink{struct_f_c_t_1_1_target}{Target}} \&target) noexcept
+\item 
+constexpr void \mbox{\hyperlink{struct_f_c_t_1_1_pass_desc_a20cd543b1560d2d8a2e7b7b099f0492b}{set\+Depth\+Stencil}} (const \mbox{\hyperlink{struct_f_c_t_1_1_depth_stencil}{Depth\+Stencil}} \&\mbox{\hyperlink{struct_f_c_t_1_1_pass_desc_a2fe5cb6533b2d9173a7b1ca0c8ac232f}{depth\+Stencil}}) noexcept
+\item 
+{\footnotesize template$<$typename... Rest$>$ }\\constexpr void \mbox{\hyperlink{struct_f_c_t_1_1_pass_desc_ac84a4f8d6086ab61f200e23ca5c6ee3d}{process\+Args}} (const \mbox{\hyperlink{struct_f_c_t_1_1_texture}{Texture}} \&other, Rest \&\&... rest) noexcept
+\item 
+{\footnotesize template$<$typename... Rest$>$ }\\constexpr void \mbox{\hyperlink{struct_f_c_t_1_1_pass_desc_a178e7fdaca9866f790574d58e574b375}{process\+Args}} (const \mbox{\hyperlink{struct_f_c_t_1_1_target}{Target}} \&other, Rest \&\&... rest) noexcept
+\item 
+{\footnotesize template$<$typename... Rest$>$ }\\constexpr void \mbox{\hyperlink{struct_f_c_t_1_1_pass_desc_a0f5050934e7eb9e6b96a523163f02b9c}{process\+Args}} (const \mbox{\hyperlink{struct_f_c_t_1_1_depth_stencil}{Depth\+Stencil}} \&other, Rest \&\&... rest) noexcept
+\item 
+constexpr void \mbox{\hyperlink{struct_f_c_t_1_1_pass_desc_afb1652147c764819da9a1f8d5d238679}{process\+Args}} () noexcept
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public 属性}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string\+\_\+view \mbox{\hyperlink{struct_f_c_t_1_1_pass_desc_ac59c1f5593cdf3cc7b562e639da4e66a}{name}}
+\item 
+\mbox{\hyperlink{struct_f_c_t_1_1_texture}{Texture}} \mbox{\hyperlink{struct_f_c_t_1_1_pass_desc_a097f76f14ab3d521626b010e8af66f86}{textures}} \mbox{[}\mbox{\hyperlink{namespace_f_c_t_1_1_render_graph_const_var_add7537a401d1df77c3b1c28c769adba1}{Render\+Graph\+Const\+Var\+::\+MAX\+\_\+\+TEXTURE\+\_\+\+COUNT}}\mbox{]}
+\item 
+\mbox{\hyperlink{struct_f_c_t_1_1_target}{Target}} \mbox{\hyperlink{struct_f_c_t_1_1_pass_desc_af0f08b42ec25d794cb49e4201ffd7ca0}{targets}} \mbox{[}\mbox{\hyperlink{namespace_f_c_t_1_1_render_graph_const_var_acbdf1419b00bff03061fa00fc5413dbc}{Render\+Graph\+Const\+Var\+::\+MAX\+\_\+\+TARGET\+\_\+\+COUNT}}\mbox{]}
+\item 
+\mbox{\hyperlink{struct_f_c_t_1_1_depth_stencil}{Depth\+Stencil}} \mbox{\hyperlink{struct_f_c_t_1_1_pass_desc_a2fe5cb6533b2d9173a7b1ca0c8ac232f}{depth\+Stencil}}
+\item 
+size\+\_\+t \mbox{\hyperlink{struct_f_c_t_1_1_pass_desc_aa8b1295f426f8b7c53d6ec9ba5f9704e}{m\+\_\+texture\+Count}}
+\item 
+size\+\_\+t \mbox{\hyperlink{struct_f_c_t_1_1_pass_desc_a547552842b4bad11ea33437036c5cfe2}{m\+\_\+targets\+Count}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+
+
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00134}{134}} 行定义.
+
+
+
+\label{doc-constructors}
+\Hypertarget{struct_f_c_t_1_1_pass_desc_doc-constructors}
+\doxysubsection{构造及析构函数说明}
+\Hypertarget{struct_f_c_t_1_1_pass_desc_ab922ce99bf9b000e90aea92a05ab5010}\index{FCT::PassDesc@{FCT::PassDesc}!PassDesc@{PassDesc}}
+\index{PassDesc@{PassDesc}!FCT::PassDesc@{FCT::PassDesc}}
+\doxysubsubsection{\texorpdfstring{PassDesc()}{PassDesc()}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_pass_desc_ab922ce99bf9b000e90aea92a05ab5010} 
+FCT\+::\+Pass\+Desc\+::\+Pass\+Desc (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00142}{142}} 行定义.
+
+
+
+\label{doc-func-members}
+\Hypertarget{struct_f_c_t_1_1_pass_desc_doc-func-members}
+\doxysubsection{成员函数说明}
+\Hypertarget{struct_f_c_t_1_1_pass_desc_a68f1c5f6a60dd60a978a3fce767cfb68}\index{FCT::PassDesc@{FCT::PassDesc}!addTarget@{addTarget}}
+\index{addTarget@{addTarget}!FCT::PassDesc@{FCT::PassDesc}}
+\doxysubsubsection{\texorpdfstring{addTarget()}{addTarget()}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_pass_desc_a68f1c5f6a60dd60a978a3fce767cfb68} 
+void FCT\+::\+Pass\+Desc\+::add\+Target (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_f_c_t_1_1_target}{Target}} \&}]{target}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00154}{154}} 行定义.
+
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_f_c_t_1_1_pass_desc_a68f1c5f6a60dd60a978a3fce767cfb68_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{struct_f_c_t_1_1_pass_desc_ad08b786290d56782c4e325ace31a326b}\index{FCT::PassDesc@{FCT::PassDesc}!addTexture@{addTexture}}
+\index{addTexture@{addTexture}!FCT::PassDesc@{FCT::PassDesc}}
+\doxysubsubsection{\texorpdfstring{addTexture()}{addTexture()}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_pass_desc_ad08b786290d56782c4e325ace31a326b} 
+void FCT\+::\+Pass\+Desc\+::add\+Texture (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_f_c_t_1_1_texture}{Texture}} \&}]{texture}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00147}{147}} 行定义.
+
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_f_c_t_1_1_pass_desc_ad08b786290d56782c4e325ace31a326b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{struct_f_c_t_1_1_pass_desc_afb1652147c764819da9a1f8d5d238679}\index{FCT::PassDesc@{FCT::PassDesc}!processArgs@{processArgs}}
+\index{processArgs@{processArgs}!FCT::PassDesc@{FCT::PassDesc}}
+\doxysubsubsection{\texorpdfstring{processArgs()}{processArgs()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_pass_desc_afb1652147c764819da9a1f8d5d238679} 
+void FCT\+::\+Pass\+Desc\+::process\+Args (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00183}{183}} 行定义.
+
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_f_c_t_1_1_pass_desc_afb1652147c764819da9a1f8d5d238679_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{struct_f_c_t_1_1_pass_desc_a0f5050934e7eb9e6b96a523163f02b9c}\index{FCT::PassDesc@{FCT::PassDesc}!processArgs@{processArgs}}
+\index{processArgs@{processArgs}!FCT::PassDesc@{FCT::PassDesc}}
+\doxysubsubsection{\texorpdfstring{processArgs()}{processArgs()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_pass_desc_a0f5050934e7eb9e6b96a523163f02b9c} 
+template$<$typename... Rest$>$ \\
+void FCT\+::\+Pass\+Desc\+::process\+Args (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_f_c_t_1_1_depth_stencil}{Depth\+Stencil}} \&}]{other}{, }\item[{Rest \&\&...}]{rest}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00178}{178}} 行定义.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_f_c_t_1_1_pass_desc_a0f5050934e7eb9e6b96a523163f02b9c_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{struct_f_c_t_1_1_pass_desc_a178e7fdaca9866f790574d58e574b375}\index{FCT::PassDesc@{FCT::PassDesc}!processArgs@{processArgs}}
+\index{processArgs@{processArgs}!FCT::PassDesc@{FCT::PassDesc}}
+\doxysubsubsection{\texorpdfstring{processArgs()}{processArgs()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_pass_desc_a178e7fdaca9866f790574d58e574b375} 
+template$<$typename... Rest$>$ \\
+void FCT\+::\+Pass\+Desc\+::process\+Args (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_f_c_t_1_1_target}{Target}} \&}]{other}{, }\item[{Rest \&\&...}]{rest}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00172}{172}} 行定义.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_f_c_t_1_1_pass_desc_a178e7fdaca9866f790574d58e574b375_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{struct_f_c_t_1_1_pass_desc_ac84a4f8d6086ab61f200e23ca5c6ee3d}\index{FCT::PassDesc@{FCT::PassDesc}!processArgs@{processArgs}}
+\index{processArgs@{processArgs}!FCT::PassDesc@{FCT::PassDesc}}
+\doxysubsubsection{\texorpdfstring{processArgs()}{processArgs()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_pass_desc_ac84a4f8d6086ab61f200e23ca5c6ee3d} 
+template$<$typename... Rest$>$ \\
+void FCT\+::\+Pass\+Desc\+::process\+Args (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_f_c_t_1_1_texture}{Texture}} \&}]{other}{, }\item[{Rest \&\&...}]{rest}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00167}{167}} 行定义.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_f_c_t_1_1_pass_desc_ac84a4f8d6086ab61f200e23ca5c6ee3d_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_f_c_t_1_1_pass_desc_ac84a4f8d6086ab61f200e23ca5c6ee3d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{struct_f_c_t_1_1_pass_desc_a20cd543b1560d2d8a2e7b7b099f0492b}\index{FCT::PassDesc@{FCT::PassDesc}!setDepthStencil@{setDepthStencil}}
+\index{setDepthStencil@{setDepthStencil}!FCT::PassDesc@{FCT::PassDesc}}
+\doxysubsubsection{\texorpdfstring{setDepthStencil()}{setDepthStencil()}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_pass_desc_a20cd543b1560d2d8a2e7b7b099f0492b} 
+void FCT\+::\+Pass\+Desc\+::set\+Depth\+Stencil (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_f_c_t_1_1_depth_stencil}{Depth\+Stencil}} \&}]{depth\+Stencil}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
+
+
+
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00161}{161}} 行定义.
+
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_f_c_t_1_1_pass_desc_a20cd543b1560d2d8a2e7b7b099f0492b_icgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-variable-members}
+\Hypertarget{struct_f_c_t_1_1_pass_desc_doc-variable-members}
+\doxysubsection{类成员变量说明}
+\Hypertarget{struct_f_c_t_1_1_pass_desc_a2fe5cb6533b2d9173a7b1ca0c8ac232f}\index{FCT::PassDesc@{FCT::PassDesc}!depthStencil@{depthStencil}}
+\index{depthStencil@{depthStencil}!FCT::PassDesc@{FCT::PassDesc}}
+\doxysubsubsection{\texorpdfstring{depthStencil}{depthStencil}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_pass_desc_a2fe5cb6533b2d9173a7b1ca0c8ac232f} 
+\mbox{\hyperlink{struct_f_c_t_1_1_depth_stencil}{Depth\+Stencil}} FCT\+::\+Pass\+Desc\+::depth\+Stencil}
+
+
+
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00139}{139}} 行定义.
+
+\Hypertarget{struct_f_c_t_1_1_pass_desc_a547552842b4bad11ea33437036c5cfe2}\index{FCT::PassDesc@{FCT::PassDesc}!m\_targetsCount@{m\_targetsCount}}
+\index{m\_targetsCount@{m\_targetsCount}!FCT::PassDesc@{FCT::PassDesc}}
+\doxysubsubsection{\texorpdfstring{m\_targetsCount}{m\_targetsCount}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_pass_desc_a547552842b4bad11ea33437036c5cfe2} 
+size\+\_\+t FCT\+::\+Pass\+Desc\+::m\+\_\+targets\+Count}
+
+
+
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00141}{141}} 行定义.
+
+\Hypertarget{struct_f_c_t_1_1_pass_desc_aa8b1295f426f8b7c53d6ec9ba5f9704e}\index{FCT::PassDesc@{FCT::PassDesc}!m\_textureCount@{m\_textureCount}}
+\index{m\_textureCount@{m\_textureCount}!FCT::PassDesc@{FCT::PassDesc}}
+\doxysubsubsection{\texorpdfstring{m\_textureCount}{m\_textureCount}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_pass_desc_aa8b1295f426f8b7c53d6ec9ba5f9704e} 
+size\+\_\+t FCT\+::\+Pass\+Desc\+::m\+\_\+texture\+Count}
+
+
+
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00140}{140}} 行定义.
+
+\Hypertarget{struct_f_c_t_1_1_pass_desc_ac59c1f5593cdf3cc7b562e639da4e66a}\index{FCT::PassDesc@{FCT::PassDesc}!name@{name}}
+\index{name@{name}!FCT::PassDesc@{FCT::PassDesc}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_pass_desc_ac59c1f5593cdf3cc7b562e639da4e66a} 
+std\+::string\+\_\+view FCT\+::\+Pass\+Desc\+::name}
+
+
+
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00136}{136}} 行定义.
+
+\Hypertarget{struct_f_c_t_1_1_pass_desc_af0f08b42ec25d794cb49e4201ffd7ca0}\index{FCT::PassDesc@{FCT::PassDesc}!targets@{targets}}
+\index{targets@{targets}!FCT::PassDesc@{FCT::PassDesc}}
+\doxysubsubsection{\texorpdfstring{targets}{targets}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_pass_desc_af0f08b42ec25d794cb49e4201ffd7ca0} 
+\mbox{\hyperlink{struct_f_c_t_1_1_target}{Target}} FCT\+::\+Pass\+Desc\+::targets\mbox{[}\mbox{\hyperlink{namespace_f_c_t_1_1_render_graph_const_var_acbdf1419b00bff03061fa00fc5413dbc}{Render\+Graph\+Const\+Var\+::\+MAX\+\_\+\+TARGET\+\_\+\+COUNT}}\mbox{]}}
+
+
+
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00138}{138}} 行定义.
+
+\Hypertarget{struct_f_c_t_1_1_pass_desc_a097f76f14ab3d521626b010e8af66f86}\index{FCT::PassDesc@{FCT::PassDesc}!textures@{textures}}
+\index{textures@{textures}!FCT::PassDesc@{FCT::PassDesc}}
+\doxysubsubsection{\texorpdfstring{textures}{textures}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_pass_desc_a097f76f14ab3d521626b010e8af66f86} 
+\mbox{\hyperlink{struct_f_c_t_1_1_texture}{Texture}} FCT\+::\+Pass\+Desc\+::textures\mbox{[}\mbox{\hyperlink{namespace_f_c_t_1_1_render_graph_const_var_add7537a401d1df77c3b1c28c769adba1}{Render\+Graph\+Const\+Var\+::\+MAX\+\_\+\+TEXTURE\+\_\+\+COUNT}}\mbox{]}}
+
+
+
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00137}{137}} 行定义.
+
+
+
+该结构体的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Context/\mbox{\hyperlink{_render_graph_8h}{Render\+Graph.\+h}}\end{DoxyCompactItemize}
