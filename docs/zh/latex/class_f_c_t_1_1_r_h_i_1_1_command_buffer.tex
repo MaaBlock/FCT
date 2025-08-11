@@ -6,8 +6,7 @@
 
 
 
-类 FCT\+::RHI\+::Command\+Buffer 继承关系图\+:
-\nopagebreak
+类 FCT\+::RHI\+::Command\+Buffer 继承关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -70,15 +69,6 @@ void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer_ad58a19944cc5db8b
 void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer_ae144aad972520d4c900c99d7dbfc9479}{add\+Wait\+Semaphore}} (\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore}{Semaphore}} \texorpdfstring{$\ast$}{*}semaphore, Pipeline\+Stages stage=\mbox{\hyperlink{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0a4ecc54305ce317f6232ab7ce1acb4db6}{Pipeline\+Stage\+::color\+Attachment\+Output}})
 \item 
 void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer_abfc610f45b65f65b5bb52f41c78f09cf}{add\+Signal\+Semaphore}} (\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore}{Semaphore}} \texorpdfstring{$\ast$}{*}semaphore)
-\end{DoxyCompactItemize}
-\doxysubsection*{Public 成员函数 继承自 \mbox{\hyperlink{class_f_c_t_1_1_ref_count}{FCT\+::\+Ref\+Count}}}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\hyperlink{class_f_c_t_1_1_ref_count_a681b72d7bd32fd7e4b9ec861cd74370e}{Ref\+Count}} ()
-\item 
-\mbox{\hyperlink{class_f_c_t_1_1_ref_count_ae2948e0ae155079956caced23c85bb2b}{Ref\+Count}} (size\+\_\+t ref\+Count)
-\item 
-virtual \mbox{\hyperlink{class_f_c_t_1_1_ref_count_af028e09f8a1492fdd5c788b6eb75754f}{\texorpdfstring{$\sim$}{\string~}\+Ref\+Count}} ()
 \item 
 void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a59c2f131121de6503df8d363b6853d45}{add\+Ref}} ()
 \item 
@@ -87,6 +77,11 @@ void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_aaf57b2df79545f2b71ae9087865dee4
 size\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a33146ec5804be422936519224a3a7b3f}{count}} ()
 \item 
 \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a474ad3a918f2e87d75ff16075e1caeec}{operator bool}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a0fea0bed50f726d3e11ddde802dac5da}{delete\+This}} ()
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Protected 属性}
 \begin{DoxyCompactItemize}
@@ -98,17 +93,8 @@ size\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a33146ec5804be42293651922
 std\+::vector$<$ \mbox{\hyperlink{struct_f_c_t_1_1_r_h_i_1_1_wait_semaphore_description}{Wait\+Semaphore\+Description}} $>$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer_ad2452899803c38a48073e719b03a834f}{m\+\_\+wait\+Semaphores}}
 \item 
 std\+::vector$<$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore}{Semaphore}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer_a95543c0e6dac8f1d0796ee304db977dc}{m\+\_\+signal\+Semaphores}}
-\end{DoxyCompactItemize}
-\doxysubsection*{Protected 属性 继承自 \mbox{\hyperlink{class_f_c_t_1_1_ref_count}{FCT\+::\+Ref\+Count}}}
-\begin{DoxyCompactItemize}
 \item 
 std\+::atomic$<$ size\+\_\+t $>$ \mbox{\hyperlink{class_f_c_t_1_1_ref_count_aca88529f9b473d326168fa808fd02300}{m\+\_\+ref\+Count}}
-\end{DoxyCompactItemize}
-\doxysubsubsection*{额外继承的成员函数}
-\doxysubsection*{Protected 成员函数 继承自 \mbox{\hyperlink{class_f_c_t_1_1_ref_count}{FCT\+::\+Ref\+Count}}}
-\begin{DoxyCompactItemize}
-\item 
-virtual void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a0fea0bed50f726d3e11ddde802dac5da}{delete\+This}} ()
 \end{DoxyCompactItemize}
 
 
@@ -154,6 +140,24 @@ FCT\+::\+RHI\+::\+Command\+Buffer\+::\texorpdfstring{$\sim$}{\string~}\+Command\
 \label{doc-func-members}
 \Hypertarget{class_f_c_t_1_1_r_h_i_1_1_command_buffer_doc-func-members}
 \doxysubsection{成员函数说明}
+\Hypertarget{class_f_c_t_1_1_ref_count_a59c2f131121de6503df8d363b6853d45}\index{FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}!addRef@{addRef}}
+\index{addRef@{addRef}!FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{addRef()}{addRef()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_ref_count_a59c2f131121de6503df8d363b6853d45} 
+void FCT\+::\+Ref\+Count\+::add\+Ref (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+在文件 \mbox{\hyperlink{_ref_count_8h_source}{Ref\+Count.\+h}} 第 \mbox{\hyperlink{_ref_count_8h_source_l00010}{10}} 行定义.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_ref_count_a59c2f131121de6503df8d363b6853d45_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_r_h_i_1_1_command_buffer_abfc610f45b65f65b5bb52f41c78f09cf}\index{FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}!addSignalSemaphore@{addSignalSemaphore}}
 \index{addSignalSemaphore@{addSignalSemaphore}!FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}}
 \doxysubsubsection{\texorpdfstring{addSignalSemaphore()}{addSignalSemaphore()}}
@@ -235,6 +239,23 @@ void FCT\+::\+RHI\+::\+Command\+Buffer\+::clear\+Wait\+Semaphores (\begin{DoxyPa
 
 在文件 \mbox{\hyperlink{_command_buffer_8cpp_source}{Command\+Buffer.\+cpp}} 第 \mbox{\hyperlink{_command_buffer_8cpp_source_l00031}{31}} 行定义.
 
+\Hypertarget{class_f_c_t_1_1_ref_count_a33146ec5804be422936519224a3a7b3f}\index{FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}!count@{count}}
+\index{count@{count}!FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{count()}{count()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_ref_count_a33146ec5804be422936519224a3a7b3f} 
+size\+\_\+t FCT\+::\+Ref\+Count\+::count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+在文件 \mbox{\hyperlink{_ref_count_8h_source}{Ref\+Count.\+h}} 第 \mbox{\hyperlink{_ref_count_8h_source_l00019}{19}} 行定义.
+
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_ref_count_a33146ec5804be422936519224a3a7b3f_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_r_h_i_1_1_command_buffer_af9a481365826f007bebca4f5fcff8cbb}\index{FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}!create@{create}}
 \index{create@{create}!FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}}
 \doxysubsubsection{\texorpdfstring{create()}{create()}}
@@ -245,6 +266,27 @@ virtual void FCT\+::\+RHI\+::\+Command\+Buffer\+::create (\begin{DoxyParamCaptio
 
 在 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer_af9ab46232edcdf36f5b40e6724f8391d}{FCT\+::\+RHI\+::\+VK\+\_\+\+Command\+Buffer}} 内被实现.
 
+\Hypertarget{class_f_c_t_1_1_ref_count_a0fea0bed50f726d3e11ddde802dac5da}\index{FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}!deleteThis@{deleteThis}}
+\index{deleteThis@{deleteThis}!FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{deleteThis()}{deleteThis()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_ref_count_a0fea0bed50f726d3e11ddde802dac5da} 
+virtual void FCT\+::\+Ref\+Count\+::delete\+This (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+被 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_fence_a3e7497fa088fbeae2a9e9f2acce771c9}{FCT\+::\+RHI\+::\+Fence}} , 以及 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore_ad7b72415b5c2e15a44bf488c7e27c4cd}{FCT\+::\+RHI\+::\+Semaphore}} 重载.
+
+
+
+在文件 \mbox{\hyperlink{_ref_count_8h_source}{Ref\+Count.\+h}} 第 \mbox{\hyperlink{_ref_count_8h_source_l00027}{27}} 行定义.
+
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_ref_count_a0fea0bed50f726d3e11ddde802dac5da_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_r_h_i_1_1_command_buffer_a262d898496ad60211fc2fa512305e89a}\index{FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}!draw@{draw}}
 \index{draw@{draw}!FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}}
 \doxysubsubsection{\texorpdfstring{draw()}{draw()}}
@@ -357,6 +399,47 @@ virtual void FCT\+::\+RHI\+::\+Command\+Buffer\+::next\+Pass (\begin{DoxyParamCa
 
 在 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer_aeeed414bba6e0d11d7df65090877d2ff}{FCT\+::\+RHI\+::\+VK\+\_\+\+Command\+Buffer}} 内被实现.
 
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_r_h_i_1_1_command_buffer_a444c04caf037251a1e85b1fa3e997dd2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_f_c_t_1_1_ref_count_a474ad3a918f2e87d75ff16075e1caeec}\index{FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}!operator bool@{operator bool}}
+\index{operator bool@{operator bool}!FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{operator bool()}{operator bool()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_ref_count_a474ad3a918f2e87d75ff16075e1caeec} 
+FCT\+::\+Ref\+Count\+::operator bool (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+在文件 \mbox{\hyperlink{_ref_count_8h_source}{Ref\+Count.\+h}} 第 \mbox{\hyperlink{_ref_count_8h_source_l00022}{22}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_ref_count_aaf57b2df79545f2b71ae9087865dee4c}\index{FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}!release@{release}}
+\index{release@{release}!FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{release()}{release()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_ref_count_aaf57b2df79545f2b71ae9087865dee4c} 
+void FCT\+::\+Ref\+Count\+::release (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+在文件 \mbox{\hyperlink{_ref_count_8h_source}{Ref\+Count.\+h}} 第 \mbox{\hyperlink{_ref_count_8h_source_l00013}{13}} 行定义.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_ref_count_aaf57b2df79545f2b71ae9087865dee4c_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_ref_count_aaf57b2df79545f2b71ae9087865dee4c_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_r_h_i_1_1_command_buffer_a36fc74c77c0ddd889ac2127e402f3e64}\index{FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}!reset@{reset}}
 \index{reset@{reset}!FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}}
 \doxysubsubsection{\texorpdfstring{reset()}{reset()}}
@@ -469,6 +552,16 @@ std\+::vector$<$ \mbox{\hyperlink{struct_f_c_t_1_1_r_h_i_1_1_wait_semaphore_desc
 
 
 在文件 \mbox{\hyperlink{_command_buffer_8h_source}{Command\+Buffer.\+h}} 第 \mbox{\hyperlink{_command_buffer_8h_source_l00070}{70}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_ref_count_aca88529f9b473d326168fa808fd02300}\index{FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}!m\_refCount@{m\_refCount}}
+\index{m\_refCount@{m\_refCount}!FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}}
+\doxysubsubsection{\texorpdfstring{m\_refCount}{m\_refCount}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_ref_count_aca88529f9b473d326168fa808fd02300} 
+std\+::atomic$<$size\+\_\+t$>$ FCT\+::\+Ref\+Count\+::m\+\_\+ref\+Count\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+在文件 \mbox{\hyperlink{_ref_count_8h_source}{Ref\+Count.\+h}} 第 \mbox{\hyperlink{_ref_count_8h_source_l00030}{30}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_r_h_i_1_1_command_buffer_a95543c0e6dac8f1d0796ee304db977dc}\index{FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}!m\_signalSemaphores@{m\_signalSemaphores}}
 \index{m\_signalSemaphores@{m\_signalSemaphores}!FCT::RHI::CommandBuffer@{FCT::RHI::CommandBuffer}}

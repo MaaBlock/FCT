@@ -1,21 +1,24 @@
 var searchData=
 [
-  ['samples_0',['samples',['../struct_f_c_t_1_1_render_graph_1_1_image_resource_desc.html#ae5b089bf3f66ab0681ed8ea95c1b2ee5',1,'FCT::RenderGraph::ImageResourceDesc::samples'],['../struct_f_c_t_1_1_target_desc.html#a9ca38e7ee241dd92f63f36de8847bd73',1,'FCT::TargetDesc::samples']]],
+  ['samples_0',['samples',['../struct_f_c_t_1_1_old_render_graph_1_1_image_resource_desc.html#ac11283a646fb3c47f24806bb77cd0f01',1,'FCT::OldRenderGraph::ImageResourceDesc::samples'],['../struct_f_c_t_1_1_texture.html#a8e46348899b7f2c369fc030c0916e955',1,'FCT::Texture::samples'],['../struct_f_c_t_1_1_target.html#a69dbde933e52040e535493cc6aa8d4e2',1,'FCT::Target::samples'],['../struct_f_c_t_1_1_depth_stencil.html#a061159c3319e82bcbb5e5d632af0d7fa',1,'FCT::DepthStencil::samples'],['../struct_f_c_t_1_1_image_desc.html#a0b73884831bd7c314b312c62f5e73c01',1,'FCT::ImageDesc::samples'],['../struct_f_c_t_1_1_target_desc.html#a9ca38e7ee241dd92f63f36de8847bd73',1,'FCT::TargetDesc::samples']]],
   ['scissorlt_1',['scissorLt',['../struct_f_c_t_1_1_viewport_job.html#a38edd67a5050d9446d202f0c93a7f9b8',1,'FCT::ViewportJob']]],
   ['scissorrb_2',['scissorRb',['../struct_f_c_t_1_1_viewport_job.html#a05246bda6cdfc3ba6cf78d0afe4a423c',1,'FCT::ViewportJob']]],
   ['screeninfonameinshder_3',['ScreenInfoNameInShder',['../class_f_c_t_1_1_vertex_context.html#a87782fd9229ab4b83226a2a1744a80e0',1,'FCT::VertexContext']]],
   ['semaphore_4',['semaphore',['../struct_f_c_t_1_1_r_h_i_1_1_wait_semaphore_description.html#a7217c4372a9b9372e92dc4c8df8e977c',1,'FCT::RHI::WaitSemaphoreDescription']]],
   ['singlechunkobjectnums_5',['SingleChunkObjectNums',['../namespace_f_c_t.html#a060d175d28f74076dcd676729d55a8e3',1,'FCT']]],
   ['singlemvp_6',['SingleMVP',['../namespace_f_c_t_1_1_predefined_uniforms.html#af114142471391885833735e0ac67ccbf',1,'FCT::PredefinedUniforms']]],
-  ['size_7',['size',['../struct_f_c_t_1_1_image_init_data.html#a8307100c24ff7107883be8d5c13c1400',1,'FCT::ImageInitData']]],
-  ['slot_8',['slot',['../struct_f_c_t_1_1_render_graph_1_1_image_resource_vertex.html#a55db22f9b483693cc1d257f2efa920ad',1,'FCT::RenderGraph::ImageResourceVertex::slot'],['../struct_f_c_t_1_1_r_h_i_1_1_attachment_slot.html#ab80c6340217c26d3e47382c08ff5c426',1,'FCT::RHI::AttachmentSlot::slot']]],
-  ['sortedpasses_9',['sortedPasses',['../struct_f_c_t_1_1_render_graph_1_1_execution_order.html#ad18b63a83bafe6f229f83792fdc0255c',1,'FCT::RenderGraph::ExecutionOrder']]],
+  ['size_7',['size',['../struct_f_c_t_1_1_texture.html#ac1a33df833eaa33dbfcd69c712f5e696',1,'FCT::Texture::size'],['../struct_f_c_t_1_1_target.html#a4d0e240fb11368a1922365a65ae261b8',1,'FCT::Target::size'],['../struct_f_c_t_1_1_depth_stencil.html#a16d19725ddeecfe422a7fc3d634f0a37',1,'FCT::DepthStencil::size'],['../struct_f_c_t_1_1_image_desc.html#a76a5051e42d8b6a82b4ebe43ed352867',1,'FCT::ImageDesc::size'],['../struct_f_c_t_1_1_image_init_data.html#a8307100c24ff7107883be8d5c13c1400',1,'FCT::ImageInitData::size']]],
+  ['slot_8',['slot',['../struct_f_c_t_1_1_old_render_graph_1_1_image_resource_vertex.html#ad996d9262e98e8966d48b7949ebf45be',1,'FCT::OldRenderGraph::ImageResourceVertex::slot'],['../struct_f_c_t_1_1_r_h_i_1_1_attachment_slot.html#ab80c6340217c26d3e47382c08ff5c426',1,'FCT::RHI::AttachmentSlot::slot']]],
+  ['sortedpasses_9',['sortedPasses',['../struct_f_c_t_1_1_old_render_graph_1_1_execution_order.html#a72871512264c62ae45c5ee79e5c005aa',1,'FCT::OldRenderGraph::ExecutionOrder']]],
   ['srcalpha_10',['srcAlpha',['../struct_f_c_t_1_1_blend_state_1_1_target.html#a58666acd6745c59b44f0a3371ccff582',1,'FCT::BlendState::Target']]],
   ['srccolor_11',['srcColor',['../struct_f_c_t_1_1_blend_state_1_1_target.html#a9600bfef411e25ca846bfe8bd0e288b2',1,'FCT::BlendState::Target']]],
   ['stages_12',['stages',['../struct_f_c_t_1_1_r_h_i_1_1_wait_semaphore_description.html#ae31410cb10185e3e7e93b885e9bba17e',1,'FCT::RHI::WaitSemaphoreDescription']]],
-  ['state_13',['state',['../struct_f_c_t_1_1_tradition_render_job.html#ab5af7a2e1c4a6153cd29a14541e932fa',1,'FCT::TraditionRenderJob']]],
-  ['stencil_14',['stencil',['../struct_f_c_t_1_1_pass_clear_value.html#ace48476fbf209c7d625ad4548a3bcc00',1,'FCT::PassClearValue']]],
-  ['successors_15',['successors',['../struct_f_c_t_1_1_token_graph_1_1_node_info.html#ac0b75b9b988cd91bee0d4309a41cd2b5',1,'FCT::TokenGraph::NodeInfo::successors'],['../struct_f_c_t_1_1_r_h_i_1_1_pass_desc.html#aa791c05bcfd8050108bb6950f7cfaa4a',1,'FCT::RHI::PassDesc::successors']]],
-  ['swapbuffersubmitticker_16',['SwapBufferSubmitTicker',['../namespace_f_c_t.html#a713521d343a445fb31ddf00b9665d59f',1,'FCT']]],
-  ['swapchain_17',['swapchain',['../struct_f_c_t_1_1_swapchain_event_1_1_recreate.html#a3d5210ecfa27eeb04fc88aef082343a1',1,'FCT::SwapchainEvent::Recreate']]]
+  ['starttime_13',['startTime',['../class_f_c_t_1_1_scope_timer.html#aa3503242170b3f29ab89b935555baee0',1,'FCT::ScopeTimer']]],
+  ['starttoken_14',['startToken',['../class_f_c_t_1_1_token_graph_1_1_token_graph_b_f_s_visitor.html#a6e3b055a16c08c7e95b464d2a16a20ee',1,'FCT::TokenGraph::TokenGraphBFSVisitor']]],
+  ['state_15',['state',['../struct_f_c_t_1_1_tradition_render_job.html#ab5af7a2e1c4a6153cd29a14541e932fa',1,'FCT::TraditionRenderJob']]],
+  ['stencil_16',['stencil',['../struct_f_c_t_1_1_pass_clear_value.html#ace48476fbf209c7d625ad4548a3bcc00',1,'FCT::PassClearValue']]],
+  ['stopped_17',['stopped',['../class_f_c_t_1_1_scope_timer.html#a16e990767ef8efb8b84a8fe65fb2990d',1,'FCT::ScopeTimer']]],
+  ['successors_18',['successors',['../struct_f_c_t_1_1_token_graph_1_1_node_info.html#ac0b75b9b988cd91bee0d4309a41cd2b5',1,'FCT::TokenGraph::NodeInfo::successors'],['../struct_f_c_t_1_1_r_h_i_1_1_pass_desc.html#aa791c05bcfd8050108bb6950f7cfaa4a',1,'FCT::RHI::PassDesc::successors']]],
+  ['swapbuffersubmitticker_19',['SwapBufferSubmitTicker',['../namespace_f_c_t.html#a713521d343a445fb31ddf00b9665d59f',1,'FCT']]],
+  ['swapchain_20',['swapchain',['../struct_f_c_t_1_1_swapchain_event_1_1_recreate.html#a3d5210ecfa27eeb04fc88aef082343a1',1,'FCT::SwapchainEvent::Recreate']]]
 ];

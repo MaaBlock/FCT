@@ -6,11 +6,12 @@
 
 
 
-FCT\+::Const\+Layout 的协作图\+:\nopagebreak
+FCT\+::Const\+Layout 的协作图\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=195pt]{class_f_c_t_1_1_const_layout__coll__graph}
+\includegraphics[height=550pt]{class_f_c_t_1_1_const_layout__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public 成员函数}
@@ -47,6 +48,39 @@ constexpr size\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_const_layout_a0a8a499091b
 constexpr size\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_const_layout_ac743b55dbd96a8a59f71a2cfdf1a7d21}{get\+Element\+Offset}} (const char \texorpdfstring{$\ast$}{*}name) const noexcept
 \item 
 constexpr size\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_const_layout_a605386ce0cf04c116124cd837625e014}{get\+Element\+Offset}} (\mbox{\hyperlink{namespace_f_c_t_aca2f02796bb2000f510d9542ef85e9d1}{Const\+Type}} type) const noexcept
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+constexpr void \mbox{\hyperlink{class_f_c_t_1_1_const_layout_aa5c7054521cd53f6cde84571709ffaaf}{process\+Args}} () noexcept
+\item 
+{\footnotesize template$<$typename... Rest$>$ }\\constexpr void \mbox{\hyperlink{class_f_c_t_1_1_const_layout_a54b8f1fb04a87ca80b5cde3afea97cdf}{process\+Args}} (\mbox{\hyperlink{namespace_f_c_t_a0236e673f1b6fe9736bc596d7e50dc7e}{Update\+Frequency}} frequency, Rest \&\&... rest) noexcept
+\item 
+{\footnotesize template$<$typename... Rest$>$ }\\constexpr void \mbox{\hyperlink{class_f_c_t_1_1_const_layout_a275ea4d16a08f21ba1220fd8ce32d968}{process\+Args}} (const \mbox{\hyperlink{class_f_c_t_1_1_const_element}{Const\+Element}} \&element, Rest \&\&... rest) noexcept
+\item 
+{\footnotesize template$<$typename... Rest$>$ }\\constexpr void \mbox{\hyperlink{class_f_c_t_1_1_const_layout_a9a64d3fa029da06f22280994d7f191ba}{process\+Args}} (\mbox{\hyperlink{namespace_f_c_t_a541d9708e0c1aa838437ddff4b111d4d}{Shader\+Stages}} stages, Rest \&\&... rest) noexcept
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_const_layout_a66e790e45cc6916536cea760f7b31c32}{m\+\_\+name}} = "{}"{}
+\item 
+\mbox{\hyperlink{namespace_f_c_t_a541d9708e0c1aa838437ddff4b111d4d}{Shader\+Stages}} \mbox{\hyperlink{class_f_c_t_1_1_const_layout_a3e32d17c9e545061051f25fa7d0743cf}{m\+\_\+shader\+Stages}} = \mbox{\hyperlink{namespace_f_c_t_adb995786f2f649c122895cd47ab09d32ab1c94ca2fbc3e78fc30069c8d0f01680}{Shader\+Stage\+::\+All}}
+\item 
+\mbox{\hyperlink{namespace_f_c_t_a0236e673f1b6fe9736bc596d7e50dc7e}{Update\+Frequency}} \mbox{\hyperlink{class_f_c_t_1_1_const_layout_afdf4969849d53f026fa92af2f6a282ad}{m\+\_\+update\+Frequency}} = \mbox{\hyperlink{namespace_f_c_t_a0236e673f1b6fe9736bc596d7e50dc7ea5ac98a9f1bddc1b15896f0e02bf06839}{Update\+Frequency\+::\+Per\+Frame}}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_const_element}{Const\+Element}} \mbox{\hyperlink{class_f_c_t_1_1_const_layout_a6b3632ea74c208e1fda719f8423fbeb8}{m\+\_\+elements}} \mbox{[}\mbox{\hyperlink{class_f_c_t_1_1_const_layout_a741bc2d14fea6ceaa53d04e7a75fc25c}{Max\+Elements}}\mbox{]} \{\}
+\item 
+size\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_const_layout_a28762c336bbc645099bd40f541cdfd8d}{m\+\_\+offsets}} \mbox{[}\mbox{\hyperlink{class_f_c_t_1_1_const_layout_a741bc2d14fea6ceaa53d04e7a75fc25c}{Max\+Elements}}\mbox{]} \{\}
+\item 
+size\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_const_layout_a4471d7da57c33219857ddc04d561b09f}{m\+\_\+element\+Count}} = 0
+\item 
+size\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_const_layout_a0fd1bc7d40890d25cbb6a32e2b60dbdb}{m\+\_\+size}} = 0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{静态 Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr size\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_const_layout_a741bc2d14fea6ceaa53d04e7a75fc25c}{Max\+Elements}} = 16
 \end{DoxyCompactItemize}
 
 
@@ -88,6 +122,14 @@ FCT\+::\+Const\+Layout\+::\+Const\+Layout (\begin{DoxyParamCaption}\item[{const 
 
 在文件 \mbox{\hyperlink{_uniform_8h_source}{Uniform.\+h}} 第 \mbox{\hyperlink{_uniform_8h_source_l00256}{256}} 行定义.
 
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_const_layout_afeede6aae5b6aa1847f435f4e6387af1_cgraph}
+\end{center}
+\end{figure}
 
 
 \label{doc-func-members}
@@ -103,6 +145,14 @@ void FCT\+::\+Const\+Layout\+::add\+Element (\begin{DoxyParamCaption}\item[{cons
 
 在文件 \mbox{\hyperlink{_uniform_8h_source}{Uniform.\+h}} 第 \mbox{\hyperlink{_uniform_8h_source_l00280}{280}} 行定义.
 
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_const_layout_a55b0bf6ea4c25523cf2ab23a7c927e09_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_const_layout_a4f2d2420681bcc12f93318d1e6872506}\index{FCT::ConstLayout@{FCT::ConstLayout}!findElementIndex@{findElementIndex}}
 \index{findElementIndex@{findElementIndex}!FCT::ConstLayout@{FCT::ConstLayout}}
 \doxysubsubsection{\texorpdfstring{findElementIndex()}{findElementIndex()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -252,6 +302,14 @@ const char \texorpdfstring{$\ast$}{*} FCT\+::\+Const\+Layout\+::get\+Name (\begi
 
 在文件 \mbox{\hyperlink{_uniform_8h_source}{Uniform.\+h}} 第 \mbox{\hyperlink{_uniform_8h_source_l00266}{266}} 行定义.
 
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_const_layout_a361eb69afc00719e0705f874651cbe79_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_const_layout_a4a750fc67fe1eb870c1b745a4a25fea2}\index{FCT::ConstLayout@{FCT::ConstLayout}!getTotalSize@{getTotalSize}}
 \index{getTotalSize@{getTotalSize}!FCT::ConstLayout@{FCT::ConstLayout}}
 \doxysubsubsection{\texorpdfstring{getTotalSize()}{getTotalSize()}}
@@ -289,6 +347,166 @@ bool FCT\+::\+Const\+Layout\+::operator== (\begin{DoxyParamCaption}\item[{const 
 \includegraphics[width=350pt]{class_f_c_t_1_1_const_layout_abc41d1cdd6ebac4eda53694db8550ad2_cgraph}
 \end{center}
 \end{figure}
+\Hypertarget{class_f_c_t_1_1_const_layout_aa5c7054521cd53f6cde84571709ffaaf}\index{FCT::ConstLayout@{FCT::ConstLayout}!processArgs@{processArgs}}
+\index{processArgs@{processArgs}!FCT::ConstLayout@{FCT::ConstLayout}}
+\doxysubsubsection{\texorpdfstring{processArgs()}{processArgs()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_const_layout_aa5c7054521cd53f6cde84571709ffaaf} 
+void FCT\+::\+Const\+Layout\+::process\+Args (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [private]}, {\ttfamily [noexcept]}}
+
+
+
+在文件 \mbox{\hyperlink{_uniform_8h_source}{Uniform.\+h}} 第 \mbox{\hyperlink{_uniform_8h_source_l00356}{356}} 行定义.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_const_layout_aa5c7054521cd53f6cde84571709ffaaf_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_f_c_t_1_1_const_layout_a275ea4d16a08f21ba1220fd8ce32d968}\index{FCT::ConstLayout@{FCT::ConstLayout}!processArgs@{processArgs}}
+\index{processArgs@{processArgs}!FCT::ConstLayout@{FCT::ConstLayout}}
+\doxysubsubsection{\texorpdfstring{processArgs()}{processArgs()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_const_layout_a275ea4d16a08f21ba1220fd8ce32d968} 
+template$<$typename... Rest$>$ \\
+void FCT\+::\+Const\+Layout\+::process\+Args (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_f_c_t_1_1_const_element}{Const\+Element}} \&}]{element}{, }\item[{Rest \&\&...}]{rest}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [private]}, {\ttfamily [noexcept]}}
+
+
+
+在文件 \mbox{\hyperlink{_uniform_8h_source}{Uniform.\+h}} 第 \mbox{\hyperlink{_uniform_8h_source_l00367}{367}} 行定义.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_const_layout_a275ea4d16a08f21ba1220fd8ce32d968_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_f_c_t_1_1_const_layout_a9a64d3fa029da06f22280994d7f191ba}\index{FCT::ConstLayout@{FCT::ConstLayout}!processArgs@{processArgs}}
+\index{processArgs@{processArgs}!FCT::ConstLayout@{FCT::ConstLayout}}
+\doxysubsubsection{\texorpdfstring{processArgs()}{processArgs()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_const_layout_a9a64d3fa029da06f22280994d7f191ba} 
+template$<$typename... Rest$>$ \\
+void FCT\+::\+Const\+Layout\+::process\+Args (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_f_c_t_a541d9708e0c1aa838437ddff4b111d4d}{Shader\+Stages}}}]{stages}{, }\item[{Rest \&\&...}]{rest}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [private]}, {\ttfamily [noexcept]}}
+
+
+
+在文件 \mbox{\hyperlink{_uniform_8h_source}{Uniform.\+h}} 第 \mbox{\hyperlink{_uniform_8h_source_l00373}{373}} 行定义.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_const_layout_a9a64d3fa029da06f22280994d7f191ba_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_f_c_t_1_1_const_layout_a54b8f1fb04a87ca80b5cde3afea97cdf}\index{FCT::ConstLayout@{FCT::ConstLayout}!processArgs@{processArgs}}
+\index{processArgs@{processArgs}!FCT::ConstLayout@{FCT::ConstLayout}}
+\doxysubsubsection{\texorpdfstring{processArgs()}{processArgs()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_const_layout_a54b8f1fb04a87ca80b5cde3afea97cdf} 
+template$<$typename... Rest$>$ \\
+void FCT\+::\+Const\+Layout\+::process\+Args (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_f_c_t_a0236e673f1b6fe9736bc596d7e50dc7e}{Update\+Frequency}}}]{frequency}{, }\item[{Rest \&\&...}]{rest}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [private]}, {\ttfamily [noexcept]}}
+
+
+
+在文件 \mbox{\hyperlink{_uniform_8h_source}{Uniform.\+h}} 第 \mbox{\hyperlink{_uniform_8h_source_l00361}{361}} 行定义.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_const_layout_a54b8f1fb04a87ca80b5cde3afea97cdf_cgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_f_c_t_1_1_const_layout_doc-variable-members}
+\doxysubsection{类成员变量说明}
+\Hypertarget{class_f_c_t_1_1_const_layout_a4471d7da57c33219857ddc04d561b09f}\index{FCT::ConstLayout@{FCT::ConstLayout}!m\_elementCount@{m\_elementCount}}
+\index{m\_elementCount@{m\_elementCount}!FCT::ConstLayout@{FCT::ConstLayout}}
+\doxysubsubsection{\texorpdfstring{m\_elementCount}{m\_elementCount}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_const_layout_a4471d7da57c33219857ddc04d561b09f} 
+size\+\_\+t FCT\+::\+Const\+Layout\+::m\+\_\+element\+Count = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_uniform_8h_source}{Uniform.\+h}} 第 \mbox{\hyperlink{_uniform_8h_source_l00384}{384}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_const_layout_a6b3632ea74c208e1fda719f8423fbeb8}\index{FCT::ConstLayout@{FCT::ConstLayout}!m\_elements@{m\_elements}}
+\index{m\_elements@{m\_elements}!FCT::ConstLayout@{FCT::ConstLayout}}
+\doxysubsubsection{\texorpdfstring{m\_elements}{m\_elements}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_const_layout_a6b3632ea74c208e1fda719f8423fbeb8} 
+\mbox{\hyperlink{class_f_c_t_1_1_const_element}{Const\+Element}} FCT\+::\+Const\+Layout\+::m\+\_\+elements\mbox{[}\mbox{\hyperlink{class_f_c_t_1_1_const_layout_a741bc2d14fea6ceaa53d04e7a75fc25c}{Max\+Elements}}\mbox{]} \{\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_uniform_8h_source}{Uniform.\+h}} 第 \mbox{\hyperlink{_uniform_8h_source_l00382}{382}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_const_layout_a66e790e45cc6916536cea760f7b31c32}\index{FCT::ConstLayout@{FCT::ConstLayout}!m\_name@{m\_name}}
+\index{m\_name@{m\_name}!FCT::ConstLayout@{FCT::ConstLayout}}
+\doxysubsubsection{\texorpdfstring{m\_name}{m\_name}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_const_layout_a66e790e45cc6916536cea760f7b31c32} 
+const char\texorpdfstring{$\ast$}{*} FCT\+::\+Const\+Layout\+::m\+\_\+name = "{}"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_uniform_8h_source}{Uniform.\+h}} 第 \mbox{\hyperlink{_uniform_8h_source_l00379}{379}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_const_layout_a28762c336bbc645099bd40f541cdfd8d}\index{FCT::ConstLayout@{FCT::ConstLayout}!m\_offsets@{m\_offsets}}
+\index{m\_offsets@{m\_offsets}!FCT::ConstLayout@{FCT::ConstLayout}}
+\doxysubsubsection{\texorpdfstring{m\_offsets}{m\_offsets}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_const_layout_a28762c336bbc645099bd40f541cdfd8d} 
+size\+\_\+t FCT\+::\+Const\+Layout\+::m\+\_\+offsets\mbox{[}\mbox{\hyperlink{class_f_c_t_1_1_const_layout_a741bc2d14fea6ceaa53d04e7a75fc25c}{Max\+Elements}}\mbox{]} \{\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_uniform_8h_source}{Uniform.\+h}} 第 \mbox{\hyperlink{_uniform_8h_source_l00383}{383}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_const_layout_a3e32d17c9e545061051f25fa7d0743cf}\index{FCT::ConstLayout@{FCT::ConstLayout}!m\_shaderStages@{m\_shaderStages}}
+\index{m\_shaderStages@{m\_shaderStages}!FCT::ConstLayout@{FCT::ConstLayout}}
+\doxysubsubsection{\texorpdfstring{m\_shaderStages}{m\_shaderStages}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_const_layout_a3e32d17c9e545061051f25fa7d0743cf} 
+\mbox{\hyperlink{namespace_f_c_t_a541d9708e0c1aa838437ddff4b111d4d}{Shader\+Stages}} FCT\+::\+Const\+Layout\+::m\+\_\+shader\+Stages = \mbox{\hyperlink{namespace_f_c_t_adb995786f2f649c122895cd47ab09d32ab1c94ca2fbc3e78fc30069c8d0f01680}{Shader\+Stage\+::\+All}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_uniform_8h_source}{Uniform.\+h}} 第 \mbox{\hyperlink{_uniform_8h_source_l00380}{380}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_const_layout_a0fd1bc7d40890d25cbb6a32e2b60dbdb}\index{FCT::ConstLayout@{FCT::ConstLayout}!m\_size@{m\_size}}
+\index{m\_size@{m\_size}!FCT::ConstLayout@{FCT::ConstLayout}}
+\doxysubsubsection{\texorpdfstring{m\_size}{m\_size}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_const_layout_a0fd1bc7d40890d25cbb6a32e2b60dbdb} 
+size\+\_\+t FCT\+::\+Const\+Layout\+::m\+\_\+size = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_uniform_8h_source}{Uniform.\+h}} 第 \mbox{\hyperlink{_uniform_8h_source_l00385}{385}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_const_layout_afdf4969849d53f026fa92af2f6a282ad}\index{FCT::ConstLayout@{FCT::ConstLayout}!m\_updateFrequency@{m\_updateFrequency}}
+\index{m\_updateFrequency@{m\_updateFrequency}!FCT::ConstLayout@{FCT::ConstLayout}}
+\doxysubsubsection{\texorpdfstring{m\_updateFrequency}{m\_updateFrequency}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_const_layout_afdf4969849d53f026fa92af2f6a282ad} 
+\mbox{\hyperlink{namespace_f_c_t_a0236e673f1b6fe9736bc596d7e50dc7e}{Update\+Frequency}} FCT\+::\+Const\+Layout\+::m\+\_\+update\+Frequency = \mbox{\hyperlink{namespace_f_c_t_a0236e673f1b6fe9736bc596d7e50dc7ea5ac98a9f1bddc1b15896f0e02bf06839}{Update\+Frequency\+::\+Per\+Frame}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_uniform_8h_source}{Uniform.\+h}} 第 \mbox{\hyperlink{_uniform_8h_source_l00381}{381}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_const_layout_a741bc2d14fea6ceaa53d04e7a75fc25c}\index{FCT::ConstLayout@{FCT::ConstLayout}!MaxElements@{MaxElements}}
+\index{MaxElements@{MaxElements}!FCT::ConstLayout@{FCT::ConstLayout}}
+\doxysubsubsection{\texorpdfstring{MaxElements}{MaxElements}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_const_layout_a741bc2d14fea6ceaa53d04e7a75fc25c} 
+size\+\_\+t FCT\+::\+Const\+Layout\+::\+Max\+Elements = 16\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_uniform_8h_source}{Uniform.\+h}} 第 \mbox{\hyperlink{_uniform_8h_source_l00378}{378}} 行定义.
+
 
 
 该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}

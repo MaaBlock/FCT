@@ -7,8 +7,12 @@ var class_f_c_t_1_1_r_h_i_1_1_v_k___vertex_buffer =
     [ "createSingleBuffer", "class_f_c_t_1_1_r_h_i_1_1_v_k___vertex_buffer.html#a94f2bde04350f02677f42f9e8b0633eb", null ],
     [ "mapBuffer", "class_f_c_t_1_1_r_h_i_1_1_v_k___vertex_buffer.html#a4fa01274fb3247077bd12eccd51644a1", null ],
     [ "mapBuffer", "class_f_c_t_1_1_r_h_i_1_1_v_k___vertex_buffer.html#ad47d4e2ef3f2baec690047f075bcbc89", null ],
+    [ "reserve", "class_f_c_t_1_1_r_h_i_1_1_v_k___vertex_buffer.html#ac7d157abfd66a8c11eb25ef8fe7bea35", null ],
     [ "resize", "class_f_c_t_1_1_r_h_i_1_1_v_k___vertex_buffer.html#abc554a8d2ffe3b93ef11160c8c653f85", null ],
     [ "resizeBufferIfNeeded", "class_f_c_t_1_1_r_h_i_1_1_v_k___vertex_buffer.html#a46b2d2d7442a110301a6cb31267a3658", null ],
+    [ "updataBuffer", "class_f_c_t_1_1_r_h_i_1_1_v_k___vertex_buffer.html#a34b4e36ee999256bfded0937c2457e93", null ],
+    [ "updateFrequency", "class_f_c_t_1_1_r_h_i_1_1_v_k___vertex_buffer.html#a09d57a40e70f35cbc46c3900fff37bd7", null ],
+    [ "vertexBuffer", "class_f_c_t_1_1_r_h_i_1_1_v_k___vertex_buffer.html#a7b420e365ee7c6998d92f4a50047ef75", null ],
     [ "m_buffer", "class_f_c_t_1_1_r_h_i_1_1_v_k___vertex_buffer.html#a59e30a359320b61772bd3d970e4a557e", null ],
     [ "m_buffers", "class_f_c_t_1_1_r_h_i_1_1_v_k___vertex_buffer.html#aa6feb5f2a1c359d97e44d82a02171bce", null ],
     [ "m_ctx", "class_f_c_t_1_1_r_h_i_1_1_v_k___vertex_buffer.html#aea2d996be08c48b79276495b26eae90d", null ],
@@ -16,5 +20,9 @@ var class_f_c_t_1_1_r_h_i_1_1_v_k___vertex_buffer =
     [ "m_memories", "class_f_c_t_1_1_r_h_i_1_1_v_k___vertex_buffer.html#abb06d6881608bfac9b45eeb29261a3eb", null ],
     [ "m_memory", "class_f_c_t_1_1_r_h_i_1_1_v_k___vertex_buffer.html#a34daecc009ebc27867745c1969b7504c", null ],
     [ "m_newSize", "class_f_c_t_1_1_r_h_i_1_1_v_k___vertex_buffer.html#ab9acb8339dd6cda0b7310425be2abb15", null ],
-    [ "m_pendingResize", "class_f_c_t_1_1_r_h_i_1_1_v_k___vertex_buffer.html#a8409c358d5c57e9bec743dabc4f643a5", null ]
+    [ "m_pendingResize", "class_f_c_t_1_1_r_h_i_1_1_v_k___vertex_buffer.html#a8409c358d5c57e9bec743dabc4f643a5", null ],
+    [ "m_size", "class_f_c_t_1_1_r_h_i_1_1_v_k___vertex_buffer.html#aba8bc9e8f432764bf5633c08b63c630f", null ],
+    [ "m_stride", "class_f_c_t_1_1_r_h_i_1_1_v_k___vertex_buffer.html#a76f842742994a86541af694405e40a18", null ],
+    [ "m_updateFrequency", "class_f_c_t_1_1_r_h_i_1_1_v_k___vertex_buffer.html#aadc39e9165b47bcee2ff99c74138dc71", null ],
+    [ "m_vertexBuffer", "class_f_c_t_1_1_r_h_i_1_1_v_k___vertex_buffer.html#a66d99a73d4a53ebac806b6c406bfa76e", null ]
 ];

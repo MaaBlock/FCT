@@ -98,7 +98,9 @@ FCT::VertexLayout 的协作图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_f_c_t_1_1_vertex_layout__coll__graph.png" border="0" usemap="#a_f_c_t_1_1_vertex_layout_coll__map" loading="lazy" alt="Collaboration graph"/></div>
 <map name="a_f_c_t_1_1_vertex_layout_coll__map" id="a_f_c_t_1_1_vertex_layout_coll__map">
-<area shape="rect" title=" " alt="" coords="5,5,209,309"/>
+<area shape="rect" title=" " alt="" coords="5,467,209,813"/>
+<area shape="rect" href="class_f_c_t_1_1_vertex_element.html" title=" " alt="" coords="40,5,174,395"/>
+<area shape="poly" title=" " alt="" coords="110,394,110,450,105,450,105,394"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -117,6 +119,16 @@ Public 成员函数</h2></td></tr>
 <tr class="memitem:a3ad89b1d6626b454fbc6c869c611a0a1" id="r_a3ad89b1d6626b454fbc6c869c611a0a1"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3ad89b1d6626b454fbc6c869c611a0a1">getElementOffset</a> (size_t index) const noexcept</td></tr>
 <tr class="memitem:a524184454d9e4dc63f8d4fed949a9d0b" id="r_a524184454d9e4dc63f8d4fed949a9d0b"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a524184454d9e4dc63f8d4fed949a9d0b">getElementOffsetByType</a> (<a class="el" href="namespace_f_c_t.html#aa946ca9a7d9318f0c9a8e49b9df96b06">VtxType</a> type) const noexcept</td></tr>
 <tr class="memitem:a491e58f4ddb893bc51c3fb5aec4fc16d" id="r_a491e58f4ddb893bc51c3fb5aec4fc16d"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a491e58f4ddb893bc51c3fb5aec4fc16d">getElementOffsetBySemantic</a> (const char *semantic) const noexcept</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a2607fc048496f05722e83c6524347317" id="r_a2607fc048496f05722e83c6524347317"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_f_c_t_1_1_vertex_element.html">VertexElement</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2607fc048496f05722e83c6524347317">m_elements</a> [<a class="el" href="#ab21148e6c842fffabb262b5d2524524d">MaxElements</a>] {}</td></tr>
+<tr class="memitem:ae08626387512928c70619c3a7fcf21d4" id="r_ae08626387512928c70619c3a7fcf21d4"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae08626387512928c70619c3a7fcf21d4">m_elementCount</a> = 0</td></tr>
+<tr class="memitem:af114b1dfc1d945eb949d6027a375ef12" id="r_af114b1dfc1d945eb949d6027a375ef12"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af114b1dfc1d945eb949d6027a375ef12">m_stride</a> = 0</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-static-attribs" class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+静态 Private 属性</h2></td></tr>
+<tr class="memitem:ab21148e6c842fffabb262b5d2524524d" id="r_ab21148e6c842fffabb262b5d2524524d"><td class="memItemLeft" align="right" valign="top">static constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab21148e6c842fffabb262b5d2524524d">MaxElements</a> = 64</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">详细描述</h2>
 <div class="textblock">
@@ -584,6 +596,103 @@ template&lt;typename... Elements&gt; </div>
 </div><div class="memdoc">
 
 <p class="definition">在文件 <a class="el" href="_vertex_8h_source.html">Vertex.h</a> 第 <a class="el" href="_vertex_8h_source.html#l00250">250</a> 行定义.</p>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">类成员变量说明</h2>
+<a id="ae08626387512928c70619c3a7fcf21d4" name="ae08626387512928c70619c3a7fcf21d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae08626387512928c70619c3a7fcf21d4">&#9670;&#160;</a></span>m_elementCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t FCT::VertexLayout::m_elementCount = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_vertex_8h_source.html">Vertex.h</a> 第 <a class="el" href="_vertex_8h_source.html#l00303">303</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a2607fc048496f05722e83c6524347317" name="a2607fc048496f05722e83c6524347317"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2607fc048496f05722e83c6524347317">&#9670;&#160;</a></span>m_elements</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_f_c_t_1_1_vertex_element.html">VertexElement</a> FCT::VertexLayout::m_elements[<a class="el" href="#ab21148e6c842fffabb262b5d2524524d">MaxElements</a>] {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_vertex_8h_source.html">Vertex.h</a> 第 <a class="el" href="_vertex_8h_source.html#l00302">302</a> 行定义.</p>
+
+</div>
+</div>
+<a id="af114b1dfc1d945eb949d6027a375ef12" name="af114b1dfc1d945eb949d6027a375ef12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af114b1dfc1d945eb949d6027a375ef12">&#9670;&#160;</a></span>m_stride</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t FCT::VertexLayout::m_stride = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_vertex_8h_source.html">Vertex.h</a> 第 <a class="el" href="_vertex_8h_source.html#l00304">304</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ab21148e6c842fffabb262b5d2524524d" name="ab21148e6c842fffabb262b5d2524524d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab21148e6c842fffabb262b5d2524524d">&#9670;&#160;</a></span>MaxElements</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t FCT::VertexLayout::MaxElements = 64</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_vertex_8h_source.html">Vertex.h</a> 第 <a class="el" href="_vertex_8h_source.html#l00301">301</a> 行定义.</p>
 
 </div>
 </div>

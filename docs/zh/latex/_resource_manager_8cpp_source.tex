@@ -40,28 +40,28 @@
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00036}00036\ }
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00037}\mbox{\hyperlink{class_f_c_t_1_1_resource_manager_a4f992dc6effcc7cd3e6d154b1aa10a50}{00037}}\ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_resource_manager_a4f992dc6effcc7cd3e6d154b1aa10a50}{ResourceManager::ResourceManager}}(\mbox{\hyperlink{class_f_c_t_1_1_context}{Context}}*\ ctx)}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00038}00038\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ m\_resourceDevice\ =\ ctx-\/>\mbox{\hyperlink{class_f_c_t_1_1_context_ae521169daf8c304c7aaeb0e78ab031e3}{getModule}}<\mbox{\hyperlink{class_f_c_t_1_1_device}{Device}}>();}
-\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ m\_context\ =\ ctx;}
-\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ m\_context-\/>\mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a7270900dc7047e4f81324f58002066ad}{subscribe}}<\mbox{\hyperlink{struct_f_c_t_1_1_context_event_1_1_window_bound}{ContextEvent::WindowBound}}>([\textcolor{keyword}{this}](\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_f_c_t_1_1_context_event_1_1_window_bound}{ContextEvent::WindowBound}}\&\ env)}
+\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_resource_manager_afef6c064768005c18b49c21da416d3d0}{m\_resourceDevice}}\ =\ ctx-\/>\mbox{\hyperlink{class_f_c_t_1_1_context_ae521169daf8c304c7aaeb0e78ab031e3}{getModule}}<\mbox{\hyperlink{class_f_c_t_1_1_device}{Device}}>();}
+\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_resource_manager_a58fb20c20e5bbebfda29dcceb9bd56ed}{m\_context}}\ =\ ctx;}
+\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_resource_manager_a58fb20c20e5bbebfda29dcceb9bd56ed}{m\_context}}-\/>subscribe<\mbox{\hyperlink{struct_f_c_t_1_1_context_event_1_1_window_bound}{ContextEvent::WindowBound}}>([\textcolor{keyword}{this}](\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_f_c_t_1_1_context_event_1_1_window_bound}{ContextEvent::WindowBound}}\&\ env)}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ registerWindow(env.window);}
+\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_resource_manager_a954245509d71e21eaa0dbe13c7b77d19}{registerWindow}}(env.window);}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \});}
-\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ tickerGraph\ =\ m\_context-\/>submitTickers();}
+\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ tickerGraph\ =\ \mbox{\hyperlink{class_f_c_t_1_1_resource_manager_a58fb20c20e5bbebfda29dcceb9bd56ed}{m\_context}}-\/>submitTickers();}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ tickerGraph[\mbox{\hyperlink{namespace_f_c_t_1_1_inner_ticker_a552dfcb5d9fa093138c982454bdeb835}{InnerTicker::ImageGraph\_ChangeIndex}}]\ =\ \{}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{keyword}{this}]()}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ image\ :\ m\_needChangeIndexImages)}
+\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ image\ :\ \mbox{\hyperlink{class_f_c_t_1_1_resource_manager_ad529b84a87058bd8f480b3dd30325e56}{m\_needChangeIndexImages}})}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ img\ =\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_f_c_t_1_1_mutil_buffer_image}{MutilBufferImage}}*\textcolor{keyword}{>}(image.img);}
-\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ img-\/>\mbox{\hyperlink{class_f_c_t_1_1_mutil_buffer_image_a6f226b4615f566314d524fff91a83e83}{changeCurrentIndex}}(m\_context-\/>currentLogicFrameIndex());}
+\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ img-\/>\mbox{\hyperlink{class_f_c_t_1_1_mutil_buffer_image_a6f226b4615f566314d524fff91a83e83}{changeCurrentIndex}}(\mbox{\hyperlink{class_f_c_t_1_1_resource_manager_a58fb20c20e5bbebfda29dcceb9bd56ed}{m\_context}}-\/>currentLogicFrameIndex());}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \},}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \{\mbox{\hyperlink{namespace_f_c_t_a713521d343a445fb31ddf00b9665d59f}{SwapBufferSubmitTicker}}\},}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \{\}}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ wnd\ :\ m\_context-\/>getBindWindows())}
+\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ wnd\ :\ \mbox{\hyperlink{class_f_c_t_1_1_resource_manager_a58fb20c20e5bbebfda29dcceb9bd56ed}{m\_context}}-\/>getBindWindows())}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ registerWindow(wnd);}
+\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_resource_manager_a954245509d71e21eaa0dbe13c7b77d19}{registerWindow}}(wnd);}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00062}00062\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00063}00063\ }
@@ -72,12 +72,12 @@
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00068}00068\ }
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00069}\mbox{\hyperlink{class_f_c_t_1_1_resource_manager_a42c083caec12c65230370c7dcfa5a118}{00069}}\ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_image}{Image}}*\ \mbox{\hyperlink{class_f_c_t_1_1_resource_manager_aeb733fce98bbcfc7f081bba86ed31e47}{ResourceManager::allocateImage}}(std::string\ name,\ std::string\ dependency,\mbox{\hyperlink{struct_f_c_t_1_1_image_desc}{ImageDesc}}\ desc)}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00070}00070\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ saved\ =\ m\_dependencyGraph[dependency]-\/>value;}
+\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ saved\ =\ \mbox{\hyperlink{class_f_c_t_1_1_resource_manager_a7b4ea6c70c937b2930d37829ca4d7c6c}{m\_dependencyGraph}}[dependency]-\/>value;}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ ret\ =\ \mbox{\hyperlink{struct_f_c_t_1_1_image_saved}{ImageSaved}}(saved);}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ret.mutilBuffer)}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ savedImg\ =\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_f_c_t_1_1_mutil_buffer_image}{MutilBufferImage}}*\textcolor{keyword}{>}(saved.img);}
-\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ img\ =\ m\_resourceDevice-\/>createResource<\mbox{\hyperlink{class_f_c_t_1_1_mutil_buffer_image}{MutilBufferImage}}>();}
+\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ img\ =\ \mbox{\hyperlink{class_f_c_t_1_1_resource_manager_afef6c064768005c18b49c21da416d3d0}{m\_resourceDevice}}-\/>createResource<\mbox{\hyperlink{class_f_c_t_1_1_mutil_buffer_image}{MutilBufferImage}}>();}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ img-\/>\mbox{\hyperlink{class_f_c_t_1_1_image_a736f4899f0f23e52e4e52d6469f3ba90}{samples}}(savedImg-\/>samples());}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ img-\/>format(desc.\mbox{\hyperlink{struct_f_c_t_1_1_image_desc_aa46ef53fdc8e204c8ba6a716c505059b}{format}});}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ img-\/>width(savedImg-\/>width());}
@@ -89,7 +89,7 @@
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \}\ \ \textcolor{keywordflow}{else}}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ savedImg\ =\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_f_c_t_1_1_single_buffer_image}{SingleBufferImage}}*\textcolor{keyword}{>}(saved.img);}
-\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ img\ =\ m\_resourceDevice-\/>createResource<\mbox{\hyperlink{class_f_c_t_1_1_single_buffer_image}{SingleBufferImage}}>();}
+\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ img\ =\ \mbox{\hyperlink{class_f_c_t_1_1_resource_manager_afef6c064768005c18b49c21da416d3d0}{m\_resourceDevice}}-\/>createResource<\mbox{\hyperlink{class_f_c_t_1_1_single_buffer_image}{SingleBufferImage}}>();}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ img-\/>\mbox{\hyperlink{class_f_c_t_1_1_image_a736f4899f0f23e52e4e52d6469f3ba90}{samples}}(savedImg-\/>samples());}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ img-\/>format(desc.\mbox{\hyperlink{struct_f_c_t_1_1_image_desc_aa46ef53fdc8e204c8ba6a716c505059b}{format}});}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ img-\/>width(savedImg-\/>width());}
@@ -98,56 +98,56 @@
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ img-\/>create();}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ ret.img\ =\ img;}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ m\_dependencyGraph[name]\ =\ \{}
+\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_resource_manager_a7b4ea6c70c937b2930d37829ca4d7c6c}{m\_dependencyGraph}}[name]\ =\ \{}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ ret,}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \{dependency\},}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \{\},}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ updateGraph();}
+\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_resource_manager_a909ee0ce75929ac350afe4588d06a56a}{updateGraph}}();}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ret.img;}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00104}00104\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00105}00105\ }
-\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00106}00106\ \ \ \ \ \textcolor{keywordtype}{void}\ ResourceManager::updateGraph()}
+\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00106}\mbox{\hyperlink{class_f_c_t_1_1_resource_manager_a909ee0ce75929ac350afe4588d06a56a}{00106}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_resource_manager_a909ee0ce75929ac350afe4588d06a56a}{ResourceManager::updateGraph}}()}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00107}00107\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ m\_dependencyGraph.update();}
-\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ m\_needChangeIndexImages\ =\ m\_dependencyGraph.computeOrder([](\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_f_c_t_1_1_image_saved}{ImageSaved}}\&\ saved)}
+\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_resource_manager_a7b4ea6c70c937b2930d37829ca4d7c6c}{m\_dependencyGraph}}.update();}
+\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_resource_manager_ad529b84a87058bd8f480b3dd30325e56}{m\_needChangeIndexImages}}\ =\ \mbox{\hyperlink{class_f_c_t_1_1_resource_manager_a7b4ea6c70c937b2930d37829ca4d7c6c}{m\_dependencyGraph}}.computeOrder([](\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_f_c_t_1_1_image_saved}{ImageSaved}}\&\ saved)}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ saved.\mbox{\hyperlink{struct_f_c_t_1_1_image_saved_a417f60c4c0ae3f513c51cd1b43f57342}{mutilBuffer}}\ \&\&\ saved.\mbox{\hyperlink{struct_f_c_t_1_1_image_saved_a7ef9a9d0c938517c96b06df913cfce49}{autoIndex}};}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \});}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00113}00113\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00114}00114\ }
-\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00115}00115\ \ \ \ \ \textcolor{keywordtype}{void}\ ResourceManager::registerWindow(\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}}*\ wnd)}
+\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00115}\mbox{\hyperlink{class_f_c_t_1_1_resource_manager_a954245509d71e21eaa0dbe13c7b77d19}{00115}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_resource_manager_a954245509d71e21eaa0dbe13c7b77d19}{ResourceManager::registerWindow}}(\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}}*\ wnd)}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00116}00116\ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ std::string\ token\ =\ \mbox{\hyperlink{namespace_f_c_t_a68b84e05c65710912752e24203b1514b}{WindowToToken}}(wnd);}
-\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ RHI::Swapchain*\ swapchain\ =\ wnd-\/>swapchain();}
-\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ swapchain-\/>subscribe<SwapchainEvent::Recreate>([\textcolor{keyword}{this}](\textcolor{keyword}{const}\ SwapchainEvent::Recreate\&\ env)}
+\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_swapchain}{RHI::Swapchain}}*\ swapchain\ =\ wnd-\/>\mbox{\hyperlink{class_f_c_t_1_1_window_a7d345c18f51bb043f3b69bd887537f24}{swapchain}}();}
+\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ swapchain-\/>\mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a7270900dc7047e4f81324f58002066ad}{subscribe}}<\mbox{\hyperlink{struct_f_c_t_1_1_swapchain_event_1_1_recreate}{SwapchainEvent::Recreate}}>([\textcolor{keyword}{this}](\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_f_c_t_1_1_swapchain_event_1_1_recreate}{SwapchainEvent::Recreate}}\&\ env)}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ resizeSub(}
+\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_resource_manager_a1a396277acf6d8a877ec019680dc3adc}{resizeSub}}(}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_a897b9d524084119d15e466af7c8de628}{SwapchainToToken}}(env.swapchain),}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ env.width,}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ env.height);}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \});}
-\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ m\_dependencyGraph[token]\ =\ \{}
-\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ ImageSaved(swapchain),}
+\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_resource_manager_a7b4ea6c70c937b2930d37829ca4d7c6c}{m\_dependencyGraph}}[token]\ =\ \{}
+\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_f_c_t_1_1_image_saved}{ImageSaved}}(swapchain),}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \{\},}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \{\},}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ updateGraph();}
+\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_resource_manager_a909ee0ce75929ac350afe4588d06a56a}{updateGraph}}();}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00132}00132\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00133}00133\ }
-\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00134}00134\ \ \ \ \ \textcolor{keywordtype}{void}\ ResourceManager::resizeSub(std::string\ token,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height)}
+\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00134}\mbox{\hyperlink{class_f_c_t_1_1_resource_manager_a1a396277acf6d8a877ec019680dc3adc}{00134}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_resource_manager_a1a396277acf6d8a877ec019680dc3adc}{ResourceManager::resizeSub}}(std::string\ token,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height)}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00135}00135\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ m\_dependencyGraph.visitBFS(token,[width,height](ImageSaved\ img)}
+\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_resource_manager_a7b4ea6c70c937b2930d37829ca4d7c6c}{m\_dependencyGraph}}.visitBFS(token,[width,height](\mbox{\hyperlink{struct_f_c_t_1_1_image_saved}{ImageSaved}}\ img)}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ img.img-\/>resize(width,height);}
+\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ img.\mbox{\hyperlink{struct_f_c_t_1_1_image_saved_aad7b5335cea344ad8483c3617c967ca5}{img}}-\/>\mbox{\hyperlink{class_f_c_t_1_1_image_acb1ab72cc0a3baa278e7ce68f28cacdc}{resize}}(width,height);}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \},\textcolor{keyword}{false});}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00140}00140\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00141}00141\ }
-\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00142}00142\ \ \ \ \ \textcolor{keywordtype}{void}\ ResourceManager::resize(std::string\ token,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height)}
+\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00142}\mbox{\hyperlink{class_f_c_t_1_1_resource_manager_a49de35a354ac61f32450c9a3a02b19f9}{00142}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_resource_manager_a49de35a354ac61f32450c9a3a02b19f9}{ResourceManager::resize}}(std::string\ token,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height)}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00143}00143\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ m\_dependencyGraph.visitBFS(token,[width,height](ImageSaved\ img)}
+\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_resource_manager_a7b4ea6c70c937b2930d37829ca4d7c6c}{m\_dependencyGraph}}.visitBFS(token,[width,height](\mbox{\hyperlink{struct_f_c_t_1_1_image_saved}{ImageSaved}}\ img)}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ img.img-\/>resize(width,height);}
+\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ img.\mbox{\hyperlink{struct_f_c_t_1_1_image_saved_aad7b5335cea344ad8483c3617c967ca5}{img}}-\/>\mbox{\hyperlink{class_f_c_t_1_1_image_acb1ab72cc0a3baa278e7ce68f28cacdc}{resize}}(width,height);}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \},\textcolor{keyword}{true});}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00148}00148\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00149}00149\ }
@@ -164,21 +164,21 @@
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00160}00160\ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00161}00161\ }
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ ret\ =\ \mbox{\hyperlink{struct_f_c_t_1_1_image_saved}{ImageSaved}}();}
-\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ img\ =\ m\_resourceDevice-\/>createResource<\mbox{\hyperlink{class_f_c_t_1_1_mutil_buffer_image}{MutilBufferImage}}>();}
+\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ img\ =\ \mbox{\hyperlink{class_f_c_t_1_1_resource_manager_afef6c064768005c18b49c21da416d3d0}{m\_resourceDevice}}-\/>createResource<\mbox{\hyperlink{class_f_c_t_1_1_mutil_buffer_image}{MutilBufferImage}}>();}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00164}00164\ \ \ \ \ \ \ \ \ img-\/>\mbox{\hyperlink{class_f_c_t_1_1_image_a736f4899f0f23e52e4e52d6469f3ba90}{samples}}(desc.\mbox{\hyperlink{struct_f_c_t_1_1_target_desc_a9ca38e7ee241dd92f63f36de8847bd73}{samples}});}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ img-\/>format(desc.\mbox{\hyperlink{struct_f_c_t_1_1_target_desc_a07a94f48df077eb82e8866d25a018014}{format}});}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ img-\/>width(desc.\mbox{\hyperlink{struct_f_c_t_1_1_target_desc_a47b74534d516b69bad255b982de69f57}{width}});}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ img-\/>height(desc.\mbox{\hyperlink{struct_f_c_t_1_1_target_desc_a581bdc01aa06a2cc9200fdaa64c56547}{height}});}
-\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00168}00168\ \ \ \ \ \ \ \ \ img-\/>imageCount(m\_context-\/>maxFrameInFlight());}
+\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00168}00168\ \ \ \ \ \ \ \ \ img-\/>imageCount(\mbox{\hyperlink{class_f_c_t_1_1_resource_manager_a58fb20c20e5bbebfda29dcceb9bd56ed}{m\_context}}-\/>maxFrameInFlight());}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00169}00169\ \ \ \ \ \ \ \ \ img-\/>as(desc.\mbox{\hyperlink{struct_f_c_t_1_1_target_desc_a00ce97aed07e2be0a4024d16a24baa9f}{usage}});}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00170}00170\ \ \ \ \ \ \ \ \ img-\/>create();}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00171}00171\ \ \ \ \ \ \ \ \ ret.img\ =\ img;}
-\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00172}00172\ \ \ \ \ \ \ \ \ m\_dependencyGraph[name]\ =\ \{}
+\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00172}00172\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_resource_manager_a7b4ea6c70c937b2930d37829ca4d7c6c}{m\_dependencyGraph}}[name]\ =\ \{}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ ret,}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \{\},}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \{\},}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00177}00177\ \ \ \ \ \ \ \ \ updateGraph();}
+\DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00177}00177\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_resource_manager_a909ee0ce75929ac350afe4588d06a56a}{updateGraph}}();}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00178}00178\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ret.img;}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00179}00179\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_resource_manager_8cpp_source_l00180}00180\ \}}

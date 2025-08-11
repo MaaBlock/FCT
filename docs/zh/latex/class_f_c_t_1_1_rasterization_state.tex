@@ -6,7 +6,8 @@
 
 
 
-类 FCT\+::Rasterization\+State 继承关系图\+:\nopagebreak
+类 FCT\+::Rasterization\+State 继承关系图\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -94,20 +95,6 @@ bool \mbox{\hyperlink{class_f_c_t_1_1_rasterization_state_aa884f1a2abf996477d64b
 void \mbox{\hyperlink{class_f_c_t_1_1_rasterization_state_a19978956acaa0cfba67bdd082c075bbe}{alpha\+To\+One\+Enable}} (bool enable)
 \item 
 \mbox{\hyperlink{namespace_f_c_t_a0100ef6b5595f1c6e1ca08fb82dc0f67}{Pipeline\+Resource\+Type}} \mbox{\hyperlink{class_f_c_t_1_1_rasterization_state_a90f704b7e5a9fcd386d908689876906e}{get\+Type}} () const override
-\end{DoxyCompactItemize}
-\doxysubsection*{Public 成员函数 继承自 \mbox{\hyperlink{class_f_c_t_1_1_i_pipeline_resource}{FCT\+::\+IPipeline\+Resource}}}
-\begin{DoxyCompactItemize}
-\item 
-virtual \mbox{\hyperlink{class_f_c_t_1_1_i_pipeline_resource_a8db158a7ce7f29a72763cbc336a36655}{\texorpdfstring{$\sim$}{\string~}\+IPipeline\+Resource}} ()
-\end{DoxyCompactItemize}
-\doxysubsection*{Public 成员函数 继承自 \mbox{\hyperlink{class_f_c_t_1_1_ref_count}{FCT\+::\+Ref\+Count}}}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\hyperlink{class_f_c_t_1_1_ref_count_a681b72d7bd32fd7e4b9ec861cd74370e}{Ref\+Count}} ()
-\item 
-\mbox{\hyperlink{class_f_c_t_1_1_ref_count_ae2948e0ae155079956caced23c85bb2b}{Ref\+Count}} (size\+\_\+t ref\+Count)
-\item 
-virtual \mbox{\hyperlink{class_f_c_t_1_1_ref_count_af028e09f8a1492fdd5c788b6eb75754f}{\texorpdfstring{$\sim$}{\string~}\+Ref\+Count}} ()
 \item 
 void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a59c2f131121de6503df8d363b6853d45}{add\+Ref}} ()
 \item 
@@ -116,6 +103,11 @@ void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_aaf57b2df79545f2b71ae9087865dee4
 size\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a33146ec5804be422936519224a3a7b3f}{count}} ()
 \item 
 \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a474ad3a918f2e87d75ff16075e1caeec}{operator bool}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a0fea0bed50f726d3e11ddde802dac5da}{delete\+This}} ()
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Protected 属性}
 \begin{DoxyCompactItemize}
@@ -151,17 +143,8 @@ uint32\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_rasterization_state_aaa4dcd7b1b4a
 bool \mbox{\hyperlink{class_f_c_t_1_1_rasterization_state_a8944fcab42c355c3071d04422d1ab45e}{m\+\_\+alpha\+To\+Coverage\+Enable}} = false
 \item 
 bool \mbox{\hyperlink{class_f_c_t_1_1_rasterization_state_acb84f9c5d08b76190b322f21999c5c91}{m\+\_\+alpha\+To\+One\+Enable}} = false
-\end{DoxyCompactItemize}
-\doxysubsection*{Protected 属性 继承自 \mbox{\hyperlink{class_f_c_t_1_1_ref_count}{FCT\+::\+Ref\+Count}}}
-\begin{DoxyCompactItemize}
 \item 
 std\+::atomic$<$ size\+\_\+t $>$ \mbox{\hyperlink{class_f_c_t_1_1_ref_count_aca88529f9b473d326168fa808fd02300}{m\+\_\+ref\+Count}}
-\end{DoxyCompactItemize}
-\doxysubsubsection*{额外继承的成员函数}
-\doxysubsection*{Protected 成员函数 继承自 \mbox{\hyperlink{class_f_c_t_1_1_ref_count}{FCT\+::\+Ref\+Count}}}
-\begin{DoxyCompactItemize}
-\item 
-virtual void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a0fea0bed50f726d3e11ddde802dac5da}{delete\+This}} ()
 \end{DoxyCompactItemize}
 
 
@@ -186,6 +169,24 @@ virtual FCT\+::\+Rasterization\+State\+::\texorpdfstring{$\sim$}{\string~}\+Rast
 \label{doc-func-members}
 \Hypertarget{class_f_c_t_1_1_rasterization_state_doc-func-members}
 \doxysubsection{成员函数说明}
+\Hypertarget{class_f_c_t_1_1_ref_count_a59c2f131121de6503df8d363b6853d45}\index{FCT::RasterizationState@{FCT::RasterizationState}!addRef@{addRef}}
+\index{addRef@{addRef}!FCT::RasterizationState@{FCT::RasterizationState}}
+\doxysubsubsection{\texorpdfstring{addRef()}{addRef()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_ref_count_a59c2f131121de6503df8d363b6853d45} 
+void FCT\+::\+Ref\+Count\+::add\+Ref (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+在文件 \mbox{\hyperlink{_ref_count_8h_source}{Ref\+Count.\+h}} 第 \mbox{\hyperlink{_ref_count_8h_source_l00010}{10}} 行定义.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_ref_count_a59c2f131121de6503df8d363b6853d45_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_rasterization_state_a6777c85f8ffc5ad2c6ee777059ef926b}\index{FCT::RasterizationState@{FCT::RasterizationState}!alphaToCoverageEnable@{alphaToCoverageEnable}}
 \index{alphaToCoverageEnable@{alphaToCoverageEnable}!FCT::RasterizationState@{FCT::RasterizationState}}
 \doxysubsubsection{\texorpdfstring{alphaToCoverageEnable()}{alphaToCoverageEnable()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -226,6 +227,23 @@ void FCT\+::\+Rasterization\+State\+::alpha\+To\+One\+Enable (\begin{DoxyParamCa
 
 在文件 \mbox{\hyperlink{_rasterization_state_8h_source}{Rasterization\+State.\+h}} 第 \mbox{\hyperlink{_rasterization_state_8h_source_l00080}{80}} 行定义.
 
+\Hypertarget{class_f_c_t_1_1_ref_count_a33146ec5804be422936519224a3a7b3f}\index{FCT::RasterizationState@{FCT::RasterizationState}!count@{count}}
+\index{count@{count}!FCT::RasterizationState@{FCT::RasterizationState}}
+\doxysubsubsection{\texorpdfstring{count()}{count()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_ref_count_a33146ec5804be422936519224a3a7b3f} 
+size\+\_\+t FCT\+::\+Ref\+Count\+::count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+在文件 \mbox{\hyperlink{_ref_count_8h_source}{Ref\+Count.\+h}} 第 \mbox{\hyperlink{_ref_count_8h_source_l00019}{19}} 行定义.
+
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_ref_count_a33146ec5804be422936519224a3a7b3f_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_rasterization_state_af6f8ca0babdec8dabf3459a14d9bfe39}\index{FCT::RasterizationState@{FCT::RasterizationState}!create@{create}}
 \index{create@{create}!FCT::RasterizationState@{FCT::RasterizationState}}
 \doxysubsubsection{\texorpdfstring{create()}{create()}}
@@ -263,6 +281,27 @@ void FCT\+::\+Rasterization\+State\+::cull\+Mode (\begin{DoxyParamCaption}\item[
 
 在文件 \mbox{\hyperlink{_rasterization_state_8h_source}{Rasterization\+State.\+h}} 第 \mbox{\hyperlink{_rasterization_state_8h_source_l00038}{38}} 行定义.
 
+\Hypertarget{class_f_c_t_1_1_ref_count_a0fea0bed50f726d3e11ddde802dac5da}\index{FCT::RasterizationState@{FCT::RasterizationState}!deleteThis@{deleteThis}}
+\index{deleteThis@{deleteThis}!FCT::RasterizationState@{FCT::RasterizationState}}
+\doxysubsubsection{\texorpdfstring{deleteThis()}{deleteThis()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_ref_count_a0fea0bed50f726d3e11ddde802dac5da} 
+virtual void FCT\+::\+Ref\+Count\+::delete\+This (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+被 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_fence_a3e7497fa088fbeae2a9e9f2acce771c9}{FCT\+::\+RHI\+::\+Fence}} , 以及 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore_ad7b72415b5c2e15a44bf488c7e27c4cd}{FCT\+::\+RHI\+::\+Semaphore}} 重载.
+
+
+
+在文件 \mbox{\hyperlink{_ref_count_8h_source}{Ref\+Count.\+h}} 第 \mbox{\hyperlink{_ref_count_8h_source_l00027}{27}} 行定义.
+
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_ref_count_a0fea0bed50f726d3e11ddde802dac5da_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_rasterization_state_aad9dd596a9490aba51f324fcdad4a710}\index{FCT::RasterizationState@{FCT::RasterizationState}!depthBiasClamp@{depthBiasClamp}}
 \index{depthBiasClamp@{depthBiasClamp}!FCT::RasterizationState@{FCT::RasterizationState}}
 \doxysubsubsection{\texorpdfstring{depthBiasClamp()}{depthBiasClamp()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -506,6 +545,16 @@ void FCT\+::\+Rasterization\+State\+::multisample\+Enable (\begin{DoxyParamCapti
 
 在文件 \mbox{\hyperlink{_rasterization_state_8h_source}{Rasterization\+State.\+h}} 第 \mbox{\hyperlink{_rasterization_state_8h_source_l00065}{65}} 行定义.
 
+\Hypertarget{class_f_c_t_1_1_ref_count_a474ad3a918f2e87d75ff16075e1caeec}\index{FCT::RasterizationState@{FCT::RasterizationState}!operator bool@{operator bool}}
+\index{operator bool@{operator bool}!FCT::RasterizationState@{FCT::RasterizationState}}
+\doxysubsubsection{\texorpdfstring{operator bool()}{operator bool()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_ref_count_a474ad3a918f2e87d75ff16075e1caeec} 
+FCT\+::\+Ref\+Count\+::operator bool (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+在文件 \mbox{\hyperlink{_ref_count_8h_source}{Ref\+Count.\+h}} 第 \mbox{\hyperlink{_ref_count_8h_source_l00022}{22}} 行定义.
+
 \Hypertarget{class_f_c_t_1_1_rasterization_state_a486fc0b5c55a3a928ccf0de3b2cb8e88}\index{FCT::RasterizationState@{FCT::RasterizationState}!polygonMode@{polygonMode}}
 \index{polygonMode@{polygonMode}!FCT::RasterizationState@{FCT::RasterizationState}}
 \doxysubsubsection{\texorpdfstring{polygonMode()}{polygonMode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -560,6 +609,30 @@ void FCT\+::\+Rasterization\+State\+::rasterizer\+Discard\+Enable (\begin{DoxyPa
 
 在文件 \mbox{\hyperlink{_rasterization_state_8h_source}{Rasterization\+State.\+h}} 第 \mbox{\hyperlink{_rasterization_state_8h_source_l00050}{50}} 行定义.
 
+\Hypertarget{class_f_c_t_1_1_ref_count_aaf57b2df79545f2b71ae9087865dee4c}\index{FCT::RasterizationState@{FCT::RasterizationState}!release@{release}}
+\index{release@{release}!FCT::RasterizationState@{FCT::RasterizationState}}
+\doxysubsubsection{\texorpdfstring{release()}{release()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_ref_count_aaf57b2df79545f2b71ae9087865dee4c} 
+void FCT\+::\+Ref\+Count\+::release (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+在文件 \mbox{\hyperlink{_ref_count_8h_source}{Ref\+Count.\+h}} 第 \mbox{\hyperlink{_ref_count_8h_source_l00013}{13}} 行定义.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_ref_count_aaf57b2df79545f2b71ae9087865dee4c_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_ref_count_aaf57b2df79545f2b71ae9087865dee4c_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_rasterization_state_ac5d5b1ec2f364b76bb063c741910df96}\index{FCT::RasterizationState@{FCT::RasterizationState}!sampleCount@{sampleCount}}
 \index{sampleCount@{sampleCount}!FCT::RasterizationState@{FCT::RasterizationState}}
 \doxysubsubsection{\texorpdfstring{sampleCount()}{sampleCount()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -751,6 +824,16 @@ bool FCT\+::\+Rasterization\+State\+::m\+\_\+rasterizer\+Discard\+Enable = false
 
 
 在文件 \mbox{\hyperlink{_rasterization_state_8h_source}{Rasterization\+State.\+h}} 第 \mbox{\hyperlink{_rasterization_state_8h_source_l00090}{90}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_ref_count_aca88529f9b473d326168fa808fd02300}\index{FCT::RasterizationState@{FCT::RasterizationState}!m\_refCount@{m\_refCount}}
+\index{m\_refCount@{m\_refCount}!FCT::RasterizationState@{FCT::RasterizationState}}
+\doxysubsubsection{\texorpdfstring{m\_refCount}{m\_refCount}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_ref_count_aca88529f9b473d326168fa808fd02300} 
+std\+::atomic$<$size\+\_\+t$>$ FCT\+::\+Ref\+Count\+::m\+\_\+ref\+Count\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+在文件 \mbox{\hyperlink{_ref_count_8h_source}{Ref\+Count.\+h}} 第 \mbox{\hyperlink{_ref_count_8h_source_l00030}{30}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_rasterization_state_a012e93a6c4be5eac880087abc04ef97a}\index{FCT::RasterizationState@{FCT::RasterizationState}!m\_sampleCount@{m\_sampleCount}}
 \index{m\_sampleCount@{m\_sampleCount}!FCT::RasterizationState@{FCT::RasterizationState}}

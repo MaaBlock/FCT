@@ -9,5 +9,8 @@ var class_f_c_t_1_1_sampler_element =
     [ "getShaderStages", "class_f_c_t_1_1_sampler_element.html#a2a6b3c52f47ad61fb4bccd49dd6fdb01", null ],
     [ "getUpdateFrequency", "class_f_c_t_1_1_sampler_element.html#a677e75abff2dc5c4b06220fdffafc4bd", null ],
     [ "operator!=", "class_f_c_t_1_1_sampler_element.html#ac12016dd6381710cb2bda22bd98d7c79", null ],
-    [ "operator==", "class_f_c_t_1_1_sampler_element.html#a75b4ba542fdd2d1b83ef509f6f35bdb3", null ]
+    [ "operator==", "class_f_c_t_1_1_sampler_element.html#a75b4ba542fdd2d1b83ef509f6f35bdb3", null ],
+    [ "m_name", "class_f_c_t_1_1_sampler_element.html#a7c99b5da0f7a68f987830b1670d2cc14", null ],
+    [ "m_stages", "class_f_c_t_1_1_sampler_element.html#a7e3cc705c3208ec24507149e062c4e1e", null ],
+    [ "m_updateFrequency", "class_f_c_t_1_1_sampler_element.html#a1c028d07fecdbb73adba0a516a1a3bda", null ]
 ];

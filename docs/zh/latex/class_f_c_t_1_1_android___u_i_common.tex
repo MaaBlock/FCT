@@ -6,7 +6,8 @@
 
 
 
-FCT\+::Android\+\_\+\+UICommon 的协作图\+:\nopagebreak
+FCT\+::Android\+\_\+\+UICommon 的协作图\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,6 +22,23 @@ void \mbox{\hyperlink{class_f_c_t_1_1_android___u_i_common_aaeaeacd62a9429bcbe1f
 void \mbox{\hyperlink{class_f_c_t_1_1_android___u_i_common_aed8e1476f299c45f05ed5614d13c50d3}{cleanup}} ()
 \item 
 void \mbox{\hyperlink{class_f_c_t_1_1_android___u_i_common_af98191e9c0fd2c6f6cb2df4746cbae03}{post\+Ui\+Task}} (\mbox{\hyperlink{namespace_f_c_t_a2b67c2197d2675193be9ca0fe8406c87}{UITask\+Function}} task, void \texorpdfstring{$\ast$}{*}param=nullptr, bool waited=true)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_android___u_i_common_a8e837e6fa3b2844721963958408e4b46}{process\+Ui\+Task}} (int fd)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{静态 Private 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_f_c_t_1_1_android___u_i_common_af18baf88ffc931322c5d63968882d704}{looper\+Work}} (int fd, int events, void \texorpdfstring{$\ast$}{*}data)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+ALooper \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_android___u_i_common_a1baa5664ea36ab1593ada5af8bb82dbf}{m\+\_\+ui\+Looper}}
+\item 
+int \mbox{\hyperlink{class_f_c_t_1_1_android___u_i_common_a48884eb290ec7bb8790c9d2f651d35cf}{m\+\_\+message\+Pipe}} \mbox{[}2\mbox{]}
 \end{DoxyCompactItemize}
 
 
@@ -44,6 +62,32 @@ void FCT\+::\+Android\+\_\+\+UICommon\+::cleanup (\begin{DoxyParamCaption}{}{}\e
 
 在文件 \mbox{\hyperlink{_android___u_i_common_8cpp_source}{Android\+\_\+\+UICommon.\+cpp}} 第 \mbox{\hyperlink{_android___u_i_common_8cpp_source_l00019}{19}} 行定义.
 
+\Hypertarget{class_f_c_t_1_1_android___u_i_common_af18baf88ffc931322c5d63968882d704}\index{FCT::Android\_UICommon@{FCT::Android\_UICommon}!looperWork@{looperWork}}
+\index{looperWork@{looperWork}!FCT::Android\_UICommon@{FCT::Android\_UICommon}}
+\doxysubsubsection{\texorpdfstring{looperWork()}{looperWork()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_android___u_i_common_af18baf88ffc931322c5d63968882d704} 
+int FCT\+::\+Android\+\_\+\+UICommon\+::looper\+Work (\begin{DoxyParamCaption}\item[{int}]{fd}{, }\item[{int}]{events}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_android___u_i_common_8cpp_source}{Android\+\_\+\+UICommon.\+cpp}} 第 \mbox{\hyperlink{_android___u_i_common_8cpp_source_l00055}{55}} 行定义.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_android___u_i_common_af18baf88ffc931322c5d63968882d704_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_android___u_i_common_af18baf88ffc931322c5d63968882d704_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_android___u_i_common_af98191e9c0fd2c6f6cb2df4746cbae03}\index{FCT::Android\_UICommon@{FCT::Android\_UICommon}!postUiTask@{postUiTask}}
 \index{postUiTask@{postUiTask}!FCT::Android\_UICommon@{FCT::Android\_UICommon}}
 \doxysubsubsection{\texorpdfstring{postUiTask()}{postUiTask()}}
@@ -63,6 +107,57 @@ void FCT\+::\+Android\+\_\+\+UICommon\+::preinit (\begin{DoxyParamCaption}{}{}\e
 
 
 在文件 \mbox{\hyperlink{_android___u_i_common_8cpp_source}{Android\+\_\+\+UICommon.\+cpp}} 第 \mbox{\hyperlink{_android___u_i_common_8cpp_source_l00008}{8}} 行定义.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_android___u_i_common_aaeaeacd62a9429bcbe1f43dc86458402_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_f_c_t_1_1_android___u_i_common_a8e837e6fa3b2844721963958408e4b46}\index{FCT::Android\_UICommon@{FCT::Android\_UICommon}!processUiTask@{processUiTask}}
+\index{processUiTask@{processUiTask}!FCT::Android\_UICommon@{FCT::Android\_UICommon}}
+\doxysubsubsection{\texorpdfstring{processUiTask()}{processUiTask()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_android___u_i_common_a8e837e6fa3b2844721963958408e4b46} 
+void FCT\+::\+Android\+\_\+\+UICommon\+::process\+Ui\+Task (\begin{DoxyParamCaption}\item[{int}]{fd}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_android___u_i_common_8cpp_source}{Android\+\_\+\+UICommon.\+cpp}} 第 \mbox{\hyperlink{_android___u_i_common_8cpp_source_l00026}{26}} 行定义.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_android___u_i_common_a8e837e6fa3b2844721963958408e4b46_icgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_f_c_t_1_1_android___u_i_common_doc-variable-members}
+\doxysubsection{类成员变量说明}
+\Hypertarget{class_f_c_t_1_1_android___u_i_common_a48884eb290ec7bb8790c9d2f651d35cf}\index{FCT::Android\_UICommon@{FCT::Android\_UICommon}!m\_messagePipe@{m\_messagePipe}}
+\index{m\_messagePipe@{m\_messagePipe}!FCT::Android\_UICommon@{FCT::Android\_UICommon}}
+\doxysubsubsection{\texorpdfstring{m\_messagePipe}{m\_messagePipe}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_android___u_i_common_a48884eb290ec7bb8790c9d2f651d35cf} 
+int FCT\+::\+Android\+\_\+\+UICommon\+::m\+\_\+message\+Pipe\mbox{[}2\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_android___u_i_common_8h_source}{Android\+\_\+\+UICommon.\+h}} 第 \mbox{\hyperlink{_android___u_i_common_8h_source_l00027}{27}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_android___u_i_common_a1baa5664ea36ab1593ada5af8bb82dbf}\index{FCT::Android\_UICommon@{FCT::Android\_UICommon}!m\_uiLooper@{m\_uiLooper}}
+\index{m\_uiLooper@{m\_uiLooper}!FCT::Android\_UICommon@{FCT::Android\_UICommon}}
+\doxysubsubsection{\texorpdfstring{m\_uiLooper}{m\_uiLooper}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_android___u_i_common_a1baa5664ea36ab1593ada5af8bb82dbf} 
+ALooper\texorpdfstring{$\ast$}{*} FCT\+::\+Android\+\_\+\+UICommon\+::m\+\_\+ui\+Looper\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_android___u_i_common_8h_source}{Android\+\_\+\+UICommon.\+h}} 第 \mbox{\hyperlink{_android___u_i_common_8h_source_l00026}{26}} 行定义.
 
 
 

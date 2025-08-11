@@ -16,8 +16,7 @@
 \end{figure}
 
 
-FCT\+::RHI\+::Image 的协作图\+:
-\nopagebreak
+FCT\+::RHI\+::Image 的协作图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -58,15 +57,6 @@ void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_image_a0f0efe3f0dce8344248a00274
 virtual void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_image_ac5231897b42e64a8f2614bc67596c393}{update\+Data}} (const void \texorpdfstring{$\ast$}{*}data, size\+\_\+t data\+Size)=0
 \item 
 virtual void \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_image_abf2ba6605eeefa2a5c5ae06ecaffd378}{update\+Data}} (const void \texorpdfstring{$\ast$}{*}data, size\+\_\+t data\+Size, \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_fence}{Fence}} \texorpdfstring{$\ast$}{*}fence, std\+::function$<$ void()$>$ \texorpdfstring{$\ast$}{*}on\+Completion)=0
-\end{DoxyCompactItemize}
-\doxysubsection*{Public 成员函数 继承自 \mbox{\hyperlink{class_f_c_t_1_1_ref_count}{FCT\+::\+Ref\+Count}}}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\hyperlink{class_f_c_t_1_1_ref_count_a681b72d7bd32fd7e4b9ec861cd74370e}{Ref\+Count}} ()
-\item 
-\mbox{\hyperlink{class_f_c_t_1_1_ref_count_ae2948e0ae155079956caced23c85bb2b}{Ref\+Count}} (size\+\_\+t ref\+Count)
-\item 
-virtual \mbox{\hyperlink{class_f_c_t_1_1_ref_count_af028e09f8a1492fdd5c788b6eb75754f}{\texorpdfstring{$\sim$}{\string~}\+Ref\+Count}} ()
 \item 
 void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a59c2f131121de6503df8d363b6853d45}{add\+Ref}} ()
 \item 
@@ -75,6 +65,11 @@ void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_aaf57b2df79545f2b71ae9087865dee4
 size\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a33146ec5804be422936519224a3a7b3f}{count}} ()
 \item 
 \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a474ad3a918f2e87d75ff16075e1caeec}{operator bool}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a0fea0bed50f726d3e11ddde802dac5da}{delete\+This}} ()
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Protected 属性}
 \begin{DoxyCompactItemize}
@@ -90,17 +85,8 @@ uint32\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_image_a95d4b0a6bb195228
 Image\+Usages \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_image_ab0fe6c77ce0e9b723d3e66384cbb4c49}{m\+\_\+usage}}
 \item 
 \mbox{\hyperlink{struct_f_c_t_1_1_image_init_data}{Image\+Init\+Data}} \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_image_a1ae68744727dc163c4c9b577d9634f17}{m\+\_\+init\+Data}}
-\end{DoxyCompactItemize}
-\doxysubsection*{Protected 属性 继承自 \mbox{\hyperlink{class_f_c_t_1_1_ref_count}{FCT\+::\+Ref\+Count}}}
-\begin{DoxyCompactItemize}
 \item 
 std\+::atomic$<$ size\+\_\+t $>$ \mbox{\hyperlink{class_f_c_t_1_1_ref_count_aca88529f9b473d326168fa808fd02300}{m\+\_\+ref\+Count}}
-\end{DoxyCompactItemize}
-\doxysubsubsection*{额外继承的成员函数}
-\doxysubsection*{Protected 成员函数 继承自 \mbox{\hyperlink{class_f_c_t_1_1_ref_count}{FCT\+::\+Ref\+Count}}}
-\begin{DoxyCompactItemize}
-\item 
-virtual void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a0fea0bed50f726d3e11ddde802dac5da}{delete\+This}} ()
 \end{DoxyCompactItemize}
 
 
@@ -135,6 +121,41 @@ FCT\+::\+RHI\+::\+Image\+::\texorpdfstring{$\sim$}{\string~}\+Image (\begin{Doxy
 \label{doc-func-members}
 \Hypertarget{class_f_c_t_1_1_r_h_i_1_1_image_doc-func-members}
 \doxysubsection{成员函数说明}
+\Hypertarget{class_f_c_t_1_1_ref_count_a59c2f131121de6503df8d363b6853d45}\index{FCT::RHI::Image@{FCT::RHI::Image}!addRef@{addRef}}
+\index{addRef@{addRef}!FCT::RHI::Image@{FCT::RHI::Image}}
+\doxysubsubsection{\texorpdfstring{addRef()}{addRef()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_ref_count_a59c2f131121de6503df8d363b6853d45} 
+void FCT\+::\+Ref\+Count\+::add\+Ref (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+在文件 \mbox{\hyperlink{_ref_count_8h_source}{Ref\+Count.\+h}} 第 \mbox{\hyperlink{_ref_count_8h_source_l00010}{10}} 行定义.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_ref_count_a59c2f131121de6503df8d363b6853d45_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_f_c_t_1_1_ref_count_a33146ec5804be422936519224a3a7b3f}\index{FCT::RHI::Image@{FCT::RHI::Image}!count@{count}}
+\index{count@{count}!FCT::RHI::Image@{FCT::RHI::Image}}
+\doxysubsubsection{\texorpdfstring{count()}{count()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_ref_count_a33146ec5804be422936519224a3a7b3f} 
+size\+\_\+t FCT\+::\+Ref\+Count\+::count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+在文件 \mbox{\hyperlink{_ref_count_8h_source}{Ref\+Count.\+h}} 第 \mbox{\hyperlink{_ref_count_8h_source_l00019}{19}} 行定义.
+
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_ref_count_a33146ec5804be422936519224a3a7b3f_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_r_h_i_1_1_image_a17c6eb12f2b9db95d21d8097189f8d1f}\index{FCT::RHI::Image@{FCT::RHI::Image}!create@{create}}
 \index{create@{create}!FCT::RHI::Image@{FCT::RHI::Image}}
 \doxysubsubsection{\texorpdfstring{create()}{create()}}
@@ -145,6 +166,27 @@ virtual void FCT\+::\+RHI\+::\+Image\+::create (\begin{DoxyParamCaption}{}{}\end
 
 在 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___image_aee51778aeb3dcee2e1f4b73a425c76d5}{FCT\+::\+RHI\+::\+VK\+\_\+\+Image}} 内被实现.
 
+\Hypertarget{class_f_c_t_1_1_ref_count_a0fea0bed50f726d3e11ddde802dac5da}\index{FCT::RHI::Image@{FCT::RHI::Image}!deleteThis@{deleteThis}}
+\index{deleteThis@{deleteThis}!FCT::RHI::Image@{FCT::RHI::Image}}
+\doxysubsubsection{\texorpdfstring{deleteThis()}{deleteThis()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_ref_count_a0fea0bed50f726d3e11ddde802dac5da} 
+virtual void FCT\+::\+Ref\+Count\+::delete\+This (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+被 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_fence_a3e7497fa088fbeae2a9e9f2acce771c9}{FCT\+::\+RHI\+::\+Fence}} , 以及 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore_ad7b72415b5c2e15a44bf488c7e27c4cd}{FCT\+::\+RHI\+::\+Semaphore}} 重载.
+
+
+
+在文件 \mbox{\hyperlink{_ref_count_8h_source}{Ref\+Count.\+h}} 第 \mbox{\hyperlink{_ref_count_8h_source_l00027}{27}} 行定义.
+
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_ref_count_a0fea0bed50f726d3e11ddde802dac5da_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_r_h_i_1_1_image_a2317326a14c08c47527d45484b201060}\index{FCT::RHI::Image@{FCT::RHI::Image}!format@{format}}
 \index{format@{format}!FCT::RHI::Image@{FCT::RHI::Image}}
 \doxysubsubsection{\texorpdfstring{format()}{format()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -233,6 +275,40 @@ void FCT\+::\+RHI\+::\+Image\+::init\+Data (\begin{DoxyParamCaption}\item[{void 
 
 在文件 \mbox{\hyperlink{_r_h_i_2_image_8h_source}{Image.\+h}} 第 \mbox{\hyperlink{_r_h_i_2_image_8h_source_l00053}{53}} 行定义.
 
+\Hypertarget{class_f_c_t_1_1_ref_count_a474ad3a918f2e87d75ff16075e1caeec}\index{FCT::RHI::Image@{FCT::RHI::Image}!operator bool@{operator bool}}
+\index{operator bool@{operator bool}!FCT::RHI::Image@{FCT::RHI::Image}}
+\doxysubsubsection{\texorpdfstring{operator bool()}{operator bool()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_ref_count_a474ad3a918f2e87d75ff16075e1caeec} 
+FCT\+::\+Ref\+Count\+::operator bool (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+在文件 \mbox{\hyperlink{_ref_count_8h_source}{Ref\+Count.\+h}} 第 \mbox{\hyperlink{_ref_count_8h_source_l00022}{22}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_ref_count_aaf57b2df79545f2b71ae9087865dee4c}\index{FCT::RHI::Image@{FCT::RHI::Image}!release@{release}}
+\index{release@{release}!FCT::RHI::Image@{FCT::RHI::Image}}
+\doxysubsubsection{\texorpdfstring{release()}{release()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_ref_count_aaf57b2df79545f2b71ae9087865dee4c} 
+void FCT\+::\+Ref\+Count\+::release (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+在文件 \mbox{\hyperlink{_ref_count_8h_source}{Ref\+Count.\+h}} 第 \mbox{\hyperlink{_ref_count_8h_source_l00013}{13}} 行定义.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_ref_count_aaf57b2df79545f2b71ae9087865dee4c_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_ref_count_aaf57b2df79545f2b71ae9087865dee4c_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_r_h_i_1_1_image_a925a5b5b445c15ac754c44ecb34efab0}\index{FCT::RHI::Image@{FCT::RHI::Image}!samples@{samples}}
 \index{samples@{samples}!FCT::RHI::Image@{FCT::RHI::Image}}
 \doxysubsubsection{\texorpdfstring{samples()}{samples()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -297,16 +373,14 @@ void FCT\+::\+RHI\+::\+Image\+::usage (\begin{DoxyParamCaption}\item[{Image\+Usa
 
 在文件 \mbox{\hyperlink{_r_h_i_2_image_8h_source}{Image.\+h}} 第 \mbox{\hyperlink{_r_h_i_2_image_8h_source_l00067}{67}} 行定义.
 
-函数调用图\+:
-\nopagebreak
+函数调用图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=204pt]{class_f_c_t_1_1_r_h_i_1_1_image_a0f0efe3f0dce8344248a00274a2cedcf_cgraph}
 \end{center}
 \end{figure}
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -381,6 +455,16 @@ uint32\+\_\+t FCT\+::\+RHI\+::\+Image\+::m\+\_\+height\hspace{0.3cm}{\ttfamily [
 
 
 在文件 \mbox{\hyperlink{_r_h_i_2_image_8h_source}{Image.\+h}} 第 \mbox{\hyperlink{_r_h_i_2_image_8h_source_l00079}{79}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_ref_count_aca88529f9b473d326168fa808fd02300}\index{FCT::RHI::Image@{FCT::RHI::Image}!m\_refCount@{m\_refCount}}
+\index{m\_refCount@{m\_refCount}!FCT::RHI::Image@{FCT::RHI::Image}}
+\doxysubsubsection{\texorpdfstring{m\_refCount}{m\_refCount}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_ref_count_aca88529f9b473d326168fa808fd02300} 
+std\+::atomic$<$size\+\_\+t$>$ FCT\+::\+Ref\+Count\+::m\+\_\+ref\+Count\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+在文件 \mbox{\hyperlink{_ref_count_8h_source}{Ref\+Count.\+h}} 第 \mbox{\hyperlink{_ref_count_8h_source_l00030}{30}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_r_h_i_1_1_image_aca8a30ca3b6dea20429770cd6ffac3d6}\index{FCT::RHI::Image@{FCT::RHI::Image}!m\_samples@{m\_samples}}
 \index{m\_samples@{m\_samples}!FCT::RHI::Image@{FCT::RHI::Image}}

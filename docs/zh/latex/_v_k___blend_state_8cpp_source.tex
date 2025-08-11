@@ -5,41 +5,41 @@
 \DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_f_c_t_a_p_i_8h}{../FCTAPI.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00002}00002\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_f_c_t}{FCT}}}
 \DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00003}00003\ \{}
-\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00004}\mbox{\hyperlink{class_f_c_t_1_1_v_k___blend_state_ac65574630e0848efa335be9f9d155fcf}{00004}}\ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_v_k___blend_state_ac65574630e0848efa335be9f9d155fcf}{VK\_BlendState::VK\_BlendState}}(\mbox{\hyperlink{class_f_c_t_1_1_v_k___context}{VK\_Context}}*\ ctx)\ :\ m\_createInfo\{\}}
+\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00004}\mbox{\hyperlink{class_f_c_t_1_1_v_k___blend_state_ac65574630e0848efa335be9f9d155fcf}{00004}}\ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_v_k___blend_state_ac65574630e0848efa335be9f9d155fcf}{VK\_BlendState::VK\_BlendState}}(\mbox{\hyperlink{class_f_c_t_1_1_v_k___context}{VK\_Context}}*\ ctx)\ :\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___blend_state_a419f0f78547d18b3c48a508a39542016}{m\_createInfo}}\{\}}
 \DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00005}00005\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00006}00006\ \ \ \ \ \ \ \ \ m\_ctx\ =\ ctx;}
+\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00006}00006\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_v_k___blend_state_ab0fb7050999a840b4ba7c2cc7a6a49a6}{m\_ctx}}\ =\ ctx;}
 \DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00007}00007\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00008}00008\ }
 \DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00009}\mbox{\hyperlink{class_f_c_t_1_1_v_k___blend_state_a1ba31cda03843da64e1242df6cc2415f}{00009}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___blend_state_a1ba31cda03843da64e1242df6cc2415f}{VK\_BlendState::create}}()}
 \DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00010}00010\ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 清理之前的状态}}
-\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ m\_attachmentStates.\mbox{\hyperlink{class_f_c_t_1_1_v_k___context_a8ee2816d720658cca4b90b0bfad1840d}{clear}}();}
-\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ m\_attachmentStates.reserve(\mbox{\hyperlink{class_f_c_t_1_1_blend_state_aea0ba2a127de6ec987fa24bbd89510c9}{m\_targets}}.size());}
+\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_v_k___blend_state_afa405e8e4092866dd28a563ac8f0c567}{m\_attachmentStates}}.clear();}
+\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_v_k___blend_state_afa405e8e4092866dd28a563ac8f0c567}{m\_attachmentStates}}.reserve(\mbox{\hyperlink{class_f_c_t_1_1_blend_state_aea0ba2a127de6ec987fa24bbd89510c9}{m\_targets}}.size());}
 \DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00014}00014\ }
 \DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 为每个目标创建\ attachment\ state}}
 \DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ target\ :\ \mbox{\hyperlink{class_f_c_t_1_1_blend_state_aea0ba2a127de6ec987fa24bbd89510c9}{m\_targets}})\ \{}
 \DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ vk::PipelineColorBlendAttachmentState\ attachmentState\{\};}
 \DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ attachmentState.blendEnable\ =\ target.enable;}
-\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ attachmentState.srcColorBlendFactor\ =\ convertBlendFactor(target.srcColor);}
-\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ attachmentState.dstColorBlendFactor\ =\ convertBlendFactor(target.dstColor);}
-\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ attachmentState.colorBlendOp\ =\ convertBlendOp(target.colorOp);}
-\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ attachmentState.srcAlphaBlendFactor\ =\ convertBlendFactor(target.srcAlpha);}
-\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ attachmentState.dstAlphaBlendFactor\ =\ convertBlendFactor(target.dstAlpha);}
-\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ attachmentState.alphaBlendOp\ =\ convertBlendOp(target.alphaOp);}
+\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ attachmentState.srcColorBlendFactor\ =\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___blend_state_af7ccb3f02210f80ab92b4bbd3b5f5660}{convertBlendFactor}}(target.srcColor);}
+\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ attachmentState.dstColorBlendFactor\ =\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___blend_state_af7ccb3f02210f80ab92b4bbd3b5f5660}{convertBlendFactor}}(target.dstColor);}
+\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ attachmentState.colorBlendOp\ =\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___blend_state_a4915480a16d5be45465599f6bb9842a1}{convertBlendOp}}(target.colorOp);}
+\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ attachmentState.srcAlphaBlendFactor\ =\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___blend_state_af7ccb3f02210f80ab92b4bbd3b5f5660}{convertBlendFactor}}(target.srcAlpha);}
+\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ attachmentState.dstAlphaBlendFactor\ =\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___blend_state_af7ccb3f02210f80ab92b4bbd3b5f5660}{convertBlendFactor}}(target.dstAlpha);}
+\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ attachmentState.alphaBlendOp\ =\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___blend_state_a4915480a16d5be45465599f6bb9842a1}{convertBlendOp}}(target.alphaOp);}
 \DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ attachmentState.colorWriteMask\ =\ \textcolor{keyword}{static\_cast<}vk::ColorComponentFlags\textcolor{keyword}{>}(target.mask);}
 \DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ m\_attachmentStates.push\_back(attachmentState);}
+\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_v_k___blend_state_afa405e8e4092866dd28a563ac8f0c567}{m\_attachmentStates}}.push\_back(attachmentState);}
 \DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00029}00029\ }
-\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ m\_createInfo\ =\ vk::PipelineColorBlendStateCreateInfo()}
+\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_v_k___blend_state_a419f0f78547d18b3c48a508a39542016}{m\_createInfo}}\ =\ vk::PipelineColorBlendStateCreateInfo()}
 \DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ .setLogicOpEnable(\mbox{\hyperlink{class_f_c_t_1_1_blend_state_a8068d9486704f230ba2beda46f574b86}{m\_logicEnable}})}
-\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ .setLogicOp(convertLogicOp(\mbox{\hyperlink{class_f_c_t_1_1_blend_state_a66748669aed8fee68ce097bd7b6da037}{m\_logicOp}}))}
-\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ .setAttachmentCount(\textcolor{keyword}{static\_cast<}uint32\_t\textcolor{keyword}{>}(m\_attachmentStates.size()))}
-\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ .setPAttachments(m\_attachmentStates.data())}
+\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ .setLogicOp(\mbox{\hyperlink{class_f_c_t_1_1_v_k___blend_state_aebc42c51c573a6cdb54b67328b688013}{convertLogicOp}}(\mbox{\hyperlink{class_f_c_t_1_1_blend_state_a66748669aed8fee68ce097bd7b6da037}{m\_logicOp}}))}
+\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ .setAttachmentCount(\textcolor{keyword}{static\_cast<}uint32\_t\textcolor{keyword}{>}(\mbox{\hyperlink{class_f_c_t_1_1_v_k___blend_state_afa405e8e4092866dd28a563ac8f0c567}{m\_attachmentStates}}.size()))}
+\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ .setPAttachments(\mbox{\hyperlink{class_f_c_t_1_1_v_k___blend_state_afa405e8e4092866dd28a563ac8f0c567}{m\_attachmentStates}}.data())}
 \DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ .setBlendConstants(\{0.0f,\ 0.0f,\ 0.0f,\ 0.0f\});}
 \DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00036}00036\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00037}00037\ }
-\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00038}00038\ \ \ \ \ vk::BlendFactor\ VK\_BlendState::convertBlendFactor(\mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75}{BlendFactor}}\ factor)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00038}\mbox{\hyperlink{class_f_c_t_1_1_v_k___blend_state_af7ccb3f02210f80ab92b4bbd3b5f5660}{00038}}\ \ \ \ \ vk::BlendFactor\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___blend_state_af7ccb3f02210f80ab92b4bbd3b5f5660}{VK\_BlendState::convertBlendFactor}}(\mbox{\hyperlink{namespace_f_c_t_aeb26fde385511ea278759f730bd57f75}{BlendFactor}}\ factor)\textcolor{keyword}{\ const}}
 \DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00039}00039\ \textcolor{keyword}{\ \ \ \ }\{}
 \DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (factor)}
 \DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \{}
@@ -63,7 +63,7 @@
 \DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00060}00060\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00061}00061\ }
-\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00062}00062\ \ \ \ \ vk::BlendOp\ VK\_BlendState::convertBlendOp(\mbox{\hyperlink{namespace_f_c_t_a63a2f041d347dd600f0083cb95d0a245}{BlendOp}}\ op)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00062}\mbox{\hyperlink{class_f_c_t_1_1_v_k___blend_state_a4915480a16d5be45465599f6bb9842a1}{00062}}\ \ \ \ \ vk::BlendOp\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___blend_state_a4915480a16d5be45465599f6bb9842a1}{VK\_BlendState::convertBlendOp}}(\mbox{\hyperlink{namespace_f_c_t_a63a2f041d347dd600f0083cb95d0a245}{BlendOp}}\ \mbox{\hyperlink{class_f_c_t_1_1_blend_state_a118bfa72d1bf083fd1e524534c533e3e}{op}})\textcolor{keyword}{\ const}}
 \DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00063}00063\ \textcolor{keyword}{\ \ \ \ }\{}
 \DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{class_f_c_t_1_1_blend_state_a118bfa72d1bf083fd1e524534c533e3e}{op}})}
 \DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \{}
@@ -76,7 +76,7 @@
 \DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00073}00073\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00074}00074\ }
-\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00075}00075\ \ \ \ \ vk::LogicOp\ VK\_BlendState::convertLogicOp(\mbox{\hyperlink{namespace_f_c_t_a01748ad436ae9c9f3aa57b324c0128b0}{LogicOp}}\ op)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00075}\mbox{\hyperlink{class_f_c_t_1_1_v_k___blend_state_aebc42c51c573a6cdb54b67328b688013}{00075}}\ \ \ \ \ vk::LogicOp\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___blend_state_aebc42c51c573a6cdb54b67328b688013}{VK\_BlendState::convertLogicOp}}(\mbox{\hyperlink{namespace_f_c_t_a01748ad436ae9c9f3aa57b324c0128b0}{LogicOp}}\ \mbox{\hyperlink{class_f_c_t_1_1_blend_state_a118bfa72d1bf083fd1e524534c533e3e}{op}})\textcolor{keyword}{\ const}}
 \DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00076}00076\ \textcolor{keyword}{\ \ \ \ }\{}
 \DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{class_f_c_t_1_1_blend_state_a118bfa72d1bf083fd1e524534c533e3e}{op}})}
 \DoxyCodeLine{\Hypertarget{_v_k___blend_state_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \{}

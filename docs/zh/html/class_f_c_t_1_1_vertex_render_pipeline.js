@@ -5,6 +5,7 @@ var class_f_c_t_1_1_vertex_render_pipeline =
     [ "begin", "class_f_c_t_1_1_vertex_render_pipeline.html#a40a3d39299dfad1ca221905f909e9e6d", null ],
     [ "beginPath", "class_f_c_t_1_1_vertex_render_pipeline.html#a6919830aaeca3382e7727ceec2981578", null ],
     [ "circle", "class_f_c_t_1_1_vertex_render_pipeline.html#ab17c6c99c653f7e60fb22c2137e7ed85", null ],
+    [ "createFactory", "class_f_c_t_1_1_vertex_render_pipeline.html#a8d48e7a747ec75dfe32ce12afde599da", null ],
     [ "curveTo", "class_f_c_t_1_1_vertex_render_pipeline.html#a14d3525feb02231a9817804d731372af", null ],
     [ "curveTo", "class_f_c_t_1_1_vertex_render_pipeline.html#a9cff1ef8c0ff8a256a2e13cf1ac8a63f", null ],
     [ "drawChar", "class_f_c_t_1_1_vertex_render_pipeline.html#a7323cf4b8ce74497275f47f86c4b4ded", null ],
@@ -16,5 +17,12 @@ var class_f_c_t_1_1_vertex_render_pipeline =
     [ "rectangle", "class_f_c_t_1_1_vertex_render_pipeline.html#a17072ff3d371c88ba9cf2138fb88a6a9", null ],
     [ "roundedRect", "class_f_c_t_1_1_vertex_render_pipeline.html#afcb5907fa820ec4aa892c5577504c55d", null ],
     [ "setColor", "class_f_c_t_1_1_vertex_render_pipeline.html#a534c184d2e455a770d0b9beed7aaf4b5", null ],
-    [ "setTransform", "class_f_c_t_1_1_vertex_render_pipeline.html#af617d607479a7d4b3363202c41a608e0", null ]
+    [ "setTransform", "class_f_c_t_1_1_vertex_render_pipeline.html#af617d607479a7d4b3363202c41a608e0", null ],
+    [ "unwrapperArcTo", "class_f_c_t_1_1_vertex_render_pipeline.html#ab3f8faf7f60bdf84c706f21adda7944b", null ],
+    [ "m_commandQueue", "class_f_c_t_1_1_vertex_render_pipeline.html#a3d4781653ce645d08202a4cb7e922fc2", null ],
+    [ "m_screeen", "class_f_c_t_1_1_vertex_render_pipeline.html#a0cd5b2ef1e7542cd53c7b4e53aea0c80", null ],
+    [ "m_vrf", "class_f_c_t_1_1_vertex_render_pipeline.html#a3627141258e876ba2a07600e3deaebc2", null ],
+    [ "m_vrMaterial", "class_f_c_t_1_1_vertex_render_pipeline.html#a3a1849eeb27dc6a07ac5141b8238d6ed", null ],
+    [ "m_vrps", "class_f_c_t_1_1_vertex_render_pipeline.html#a17558e89794d6dcacc96f370fd992248", null ],
+    [ "m_vrvs", "class_f_c_t_1_1_vertex_render_pipeline.html#a9d1ffce140d045485b15ceaa65f72017", null ]
 ];

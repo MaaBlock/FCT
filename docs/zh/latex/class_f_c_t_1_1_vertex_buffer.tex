@@ -6,11 +6,12 @@
 
 
 
-FCT\+::Vertex\+Buffer 的协作图\+:\nopagebreak
+FCT\+::Vertex\+Buffer 的协作图\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=172pt]{class_f_c_t_1_1_vertex_buffer__coll__graph}
+\includegraphics[height=550pt]{class_f_c_t_1_1_vertex_buffer__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public 成员函数}
@@ -49,6 +50,22 @@ size\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_vertex_buffer_a438a337f0773072d8a51
 \mbox{\hyperlink{class_f_c_t_1_1_const_vertex}{Const\+Vertex}} \mbox{\hyperlink{class_f_c_t_1_1_vertex_buffer_a9328faad5127ddce37a5ab47491ed8ab}{back}} () const noexcept
 \item 
 {\footnotesize template$<$typename... Args$>$ }\\void \mbox{\hyperlink{class_f_c_t_1_1_vertex_buffer_a28227e8ac75acde61503b6a4a24f39ae}{emplace\+Back}} (Args \&\&... args)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T$>$ }\\void \mbox{\hyperlink{class_f_c_t_1_1_vertex_buffer_a8eb679e38a9035c01a77d1020bbf40ae}{set\+Attributes}} (\mbox{\hyperlink{class_f_c_t_1_1_vertex}{Vertex}} \&vertex, size\+\_\+t element\+Index, T \&\&value)
+\item 
+{\footnotesize template$<$typename T, typename... Rest$>$ }\\void \mbox{\hyperlink{class_f_c_t_1_1_vertex_buffer_a5b11dc22cdb9d192b15bdf840d510a55}{set\+Attributes}} (\mbox{\hyperlink{class_f_c_t_1_1_vertex}{Vertex}} \&vertex, size\+\_\+t element\+Index, T \&\&first, Rest \&\&... rest)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{class_f_c_t_1_1_vertex_buffer_a847aab889258d2b6693a366086c9e5e8}{m\+\_\+data}}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_vertex_layout}{Vertex\+Layout}} \mbox{\hyperlink{class_f_c_t_1_1_vertex_buffer_ac9327de325b53bdb06f8dd8f7f9fe85f}{m\+\_\+layout}}
+\item 
+size\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_vertex_buffer_a960aff9f71f1f1bcccf3526a0fc652af}{m\+\_\+stride}}
 \end{DoxyCompactItemize}
 
 
@@ -156,7 +173,8 @@ void FCT\+::\+Vertex\+Buffer\+::emplace\+Back (\begin{DoxyParamCaption}\item[{Ar
 
 在文件 \mbox{\hyperlink{_vertex_8h_source}{Vertex.\+h}} 第 \mbox{\hyperlink{_vertex_8h_source_l00620}{620}} 行定义.
 
-函数调用图\+:\nopagebreak
+函数调用图\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -294,6 +312,87 @@ void FCT\+::\+Vertex\+Buffer\+::resize (\begin{DoxyParamCaption}\item[{size\+\_\
 \includegraphics[width=350pt]{class_f_c_t_1_1_vertex_buffer_ae074d04e391f6cbbdbe0231aa1a12d64_icgraph}
 \end{center}
 \end{figure}
+\Hypertarget{class_f_c_t_1_1_vertex_buffer_a5b11dc22cdb9d192b15bdf840d510a55}\index{FCT::VertexBuffer@{FCT::VertexBuffer}!setAttributes@{setAttributes}}
+\index{setAttributes@{setAttributes}!FCT::VertexBuffer@{FCT::VertexBuffer}}
+\doxysubsubsection{\texorpdfstring{setAttributes()}{setAttributes()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_vertex_buffer_a5b11dc22cdb9d192b15bdf840d510a55} 
+template$<$typename T, typename... Rest$>$ \\
+void FCT\+::\+Vertex\+Buffer\+::set\+Attributes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_vertex}{Vertex}} \&}]{vertex}{, }\item[{size\+\_\+t}]{element\+Index}{, }\item[{T \&\&}]{first}{, }\item[{Rest \&\&...}]{rest}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_vertex_8h_source}{Vertex.\+h}} 第 \mbox{\hyperlink{_vertex_8h_source_l00639}{639}} 行定义.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_vertex_buffer_a5b11dc22cdb9d192b15bdf840d510a55_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_f_c_t_1_1_vertex_buffer_a8eb679e38a9035c01a77d1020bbf40ae}\index{FCT::VertexBuffer@{FCT::VertexBuffer}!setAttributes@{setAttributes}}
+\index{setAttributes@{setAttributes}!FCT::VertexBuffer@{FCT::VertexBuffer}}
+\doxysubsubsection{\texorpdfstring{setAttributes()}{setAttributes()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_vertex_buffer_a8eb679e38a9035c01a77d1020bbf40ae} 
+template$<$typename T$>$ \\
+void FCT\+::\+Vertex\+Buffer\+::set\+Attributes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_vertex}{Vertex}} \&}]{vertex}{, }\item[{size\+\_\+t}]{element\+Index}{, }\item[{T \&\&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_vertex_8h_source}{Vertex.\+h}} 第 \mbox{\hyperlink{_vertex_8h_source_l00632}{632}} 行定义.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{class_f_c_t_1_1_vertex_buffer_a8eb679e38a9035c01a77d1020bbf40ae_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{class_f_c_t_1_1_vertex_buffer_a8eb679e38a9035c01a77d1020bbf40ae_icgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_f_c_t_1_1_vertex_buffer_doc-variable-members}
+\doxysubsection{类成员变量说明}
+\Hypertarget{class_f_c_t_1_1_vertex_buffer_a847aab889258d2b6693a366086c9e5e8}\index{FCT::VertexBuffer@{FCT::VertexBuffer}!m\_data@{m\_data}}
+\index{m\_data@{m\_data}!FCT::VertexBuffer@{FCT::VertexBuffer}}
+\doxysubsubsection{\texorpdfstring{m\_data}{m\_data}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_vertex_buffer_a847aab889258d2b6693a366086c9e5e8} 
+std\+::vector$<$uint8\+\_\+t$>$ FCT\+::\+Vertex\+Buffer\+::m\+\_\+data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_vertex_8h_source}{Vertex.\+h}} 第 \mbox{\hyperlink{_vertex_8h_source_l00646}{646}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_vertex_buffer_ac9327de325b53bdb06f8dd8f7f9fe85f}\index{FCT::VertexBuffer@{FCT::VertexBuffer}!m\_layout@{m\_layout}}
+\index{m\_layout@{m\_layout}!FCT::VertexBuffer@{FCT::VertexBuffer}}
+\doxysubsubsection{\texorpdfstring{m\_layout}{m\_layout}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_vertex_buffer_ac9327de325b53bdb06f8dd8f7f9fe85f} 
+\mbox{\hyperlink{class_f_c_t_1_1_vertex_layout}{Vertex\+Layout}} FCT\+::\+Vertex\+Buffer\+::m\+\_\+layout\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_vertex_8h_source}{Vertex.\+h}} 第 \mbox{\hyperlink{_vertex_8h_source_l00647}{647}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_vertex_buffer_a960aff9f71f1f1bcccf3526a0fc652af}\index{FCT::VertexBuffer@{FCT::VertexBuffer}!m\_stride@{m\_stride}}
+\index{m\_stride@{m\_stride}!FCT::VertexBuffer@{FCT::VertexBuffer}}
+\doxysubsubsection{\texorpdfstring{m\_stride}{m\_stride}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_vertex_buffer_a960aff9f71f1f1bcccf3526a0fc652af} 
+size\+\_\+t FCT\+::\+Vertex\+Buffer\+::m\+\_\+stride\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_vertex_8h_source}{Vertex.\+h}} 第 \mbox{\hyperlink{_vertex_8h_source_l00648}{648}} 行定义.
+
 
 
 该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}

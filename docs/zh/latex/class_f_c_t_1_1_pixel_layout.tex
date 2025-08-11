@@ -6,11 +6,12 @@
 
 
 
-FCT\+::Pixel\+Layout 的协作图\+:\nopagebreak
+FCT\+::Pixel\+Layout 的协作图\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=233pt]{class_f_c_t_1_1_pixel_layout__coll__graph}
+\includegraphics[height=550pt]{class_f_c_t_1_1_pixel_layout__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public 成员函数}
@@ -46,6 +47,29 @@ constexpr size\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_pixel_layout_a36cbbde7050
 \item 
 constexpr void \mbox{\hyperlink{class_f_c_t_1_1_pixel_layout_a8763feb76cfcbde52734edb2461689d0}{ensure\+Position\+First}} () noexcept
 \end{DoxyCompactItemize}
+\doxysubsubsection*{Private 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+constexpr void \mbox{\hyperlink{class_f_c_t_1_1_pixel_layout_aac2e5e07066989085a7082efe7b202d8}{add\+Elements}} () noexcept
+\item 
+{\footnotesize template$<$typename... Rest$>$ }\\constexpr void \mbox{\hyperlink{class_f_c_t_1_1_pixel_layout_a0c656b8552566406f97d9ef5938e73d8}{add\+Elements}} (const \mbox{\hyperlink{class_f_c_t_1_1_vertex_element}{Vertex\+Element}} \&element, Rest \&\&... rest) noexcept
+\item 
+{\footnotesize template$<$typename... Rest$>$ }\\constexpr void \mbox{\hyperlink{class_f_c_t_1_1_pixel_layout_a76fe5d57424890eb3efeab5ec3a63280}{add\+Elements}} (const \mbox{\hyperlink{class_f_c_t_1_1_vertex_layout}{Vertex\+Layout}} \&layout, Rest \&\&... rest) noexcept
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_vertex_element}{Vertex\+Element}} \mbox{\hyperlink{class_f_c_t_1_1_pixel_layout_a84a9316cb4e597631f11b825482735dc}{m\+\_\+elements}} \mbox{[}\mbox{\hyperlink{class_f_c_t_1_1_pixel_layout_aac0a807df6ad812954aa26c4fc8f3d38}{Max\+Elements}}\mbox{]}
+\item 
+size\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_pixel_layout_a747df8e61a51b57426c51933a68daaa2}{m\+\_\+element\+Count}}
+\item 
+size\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_pixel_layout_a91c58c715b35b7a0797ca9b84aff3df4}{m\+\_\+stride}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{静态 Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr size\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_pixel_layout_aac0a807df6ad812954aa26c4fc8f3d38}{Max\+Elements}} = 64
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{详细描述}
@@ -69,7 +93,8 @@ FCT\+::\+Pixel\+Layout\+::\+Pixel\+Layout (\begin{DoxyParamCaption}\item[{Args \
 
 在文件 \mbox{\hyperlink{_vertex_8h_source}{Vertex.\+h}} 第 \mbox{\hyperlink{_vertex_8h_source_l00312}{312}} 行定义.
 
-函数调用图\+:\nopagebreak
+函数调用图\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -98,16 +123,35 @@ void FCT\+::\+Pixel\+Layout\+::add\+Element (\begin{DoxyParamCaption}\item[{cons
 
 在文件 \mbox{\hyperlink{_vertex_8h_source}{Vertex.\+h}} 第 \mbox{\hyperlink{_vertex_8h_source_l00316}{316}} 行定义.
 
-这是这个函数的调用关系图\+:\nopagebreak
+这是这个函数的调用关系图\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_f_c_t_1_1_pixel_layout_a8fa475d46aec662de2fdaabcedff838f_icgraph}
 \end{center}
 \end{figure}
+\Hypertarget{class_f_c_t_1_1_pixel_layout_aac2e5e07066989085a7082efe7b202d8}\index{FCT::PixelLayout@{FCT::PixelLayout}!addElements@{addElements}}
+\index{addElements@{addElements}!FCT::PixelLayout@{FCT::PixelLayout}}
+\doxysubsubsection{\texorpdfstring{addElements()}{addElements()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_pixel_layout_aac2e5e07066989085a7082efe7b202d8} 
+void FCT\+::\+Pixel\+Layout\+::add\+Elements (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [private]}, {\ttfamily [noexcept]}}
+
+
+
+在文件 \mbox{\hyperlink{_vertex_8h_source}{Vertex.\+h}} 第 \mbox{\hyperlink{_vertex_8h_source_l00412}{412}} 行定义.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_pixel_layout_aac2e5e07066989085a7082efe7b202d8_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_pixel_layout_ae5cf8c9ad5b8d39661706b9c1a024602}\index{FCT::PixelLayout@{FCT::PixelLayout}!addElements@{addElements}}
 \index{addElements@{addElements}!FCT::PixelLayout@{FCT::PixelLayout}}
-\doxysubsubsection{\texorpdfstring{addElements()}{addElements()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\doxysubsubsection{\texorpdfstring{addElements()}{addElements()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
 {\footnotesize\ttfamily \label{class_f_c_t_1_1_pixel_layout_ae5cf8c9ad5b8d39661706b9c1a024602} 
 void FCT\+::\+Pixel\+Layout\+::add\+Elements (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_f_c_t_1_1_pixel_layout}{Pixel\+Layout}} \&}]{layout}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
 
@@ -115,16 +159,36 @@ void FCT\+::\+Pixel\+Layout\+::add\+Elements (\begin{DoxyParamCaption}\item[{con
 
 在文件 \mbox{\hyperlink{_vertex_8h_source}{Vertex.\+h}} 第 \mbox{\hyperlink{_vertex_8h_source_l00329}{329}} 行定义.
 
-函数调用图\+:\nopagebreak
+函数调用图\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_f_c_t_1_1_pixel_layout_ae5cf8c9ad5b8d39661706b9c1a024602_cgraph}
 \end{center}
 \end{figure}
+\Hypertarget{class_f_c_t_1_1_pixel_layout_a0c656b8552566406f97d9ef5938e73d8}\index{FCT::PixelLayout@{FCT::PixelLayout}!addElements@{addElements}}
+\index{addElements@{addElements}!FCT::PixelLayout@{FCT::PixelLayout}}
+\doxysubsubsection{\texorpdfstring{addElements()}{addElements()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_pixel_layout_a0c656b8552566406f97d9ef5938e73d8} 
+template$<$typename... Rest$>$ \\
+void FCT\+::\+Pixel\+Layout\+::add\+Elements (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_f_c_t_1_1_vertex_element}{Vertex\+Element}} \&}]{element}{, }\item[{Rest \&\&...}]{rest}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [private]}, {\ttfamily [noexcept]}}
+
+
+
+在文件 \mbox{\hyperlink{_vertex_8h_source}{Vertex.\+h}} 第 \mbox{\hyperlink{_vertex_8h_source_l00415}{415}} 行定义.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_pixel_layout_a0c656b8552566406f97d9ef5938e73d8_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_pixel_layout_ae9bd9cb879d58b312fbfa7f3311df416}\index{FCT::PixelLayout@{FCT::PixelLayout}!addElements@{addElements}}
 \index{addElements@{addElements}!FCT::PixelLayout@{FCT::PixelLayout}}
-\doxysubsubsection{\texorpdfstring{addElements()}{addElements()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\doxysubsubsection{\texorpdfstring{addElements()}{addElements()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
 {\footnotesize\ttfamily \label{class_f_c_t_1_1_pixel_layout_ae9bd9cb879d58b312fbfa7f3311df416} 
 void FCT\+::\+Pixel\+Layout\+::add\+Elements (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_f_c_t_1_1_vertex_layout}{Vertex\+Layout}} \&}]{layout}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}}
 
@@ -139,11 +203,23 @@ void FCT\+::\+Pixel\+Layout\+::add\+Elements (\begin{DoxyParamCaption}\item[{con
 \includegraphics[width=350pt]{class_f_c_t_1_1_pixel_layout_ae9bd9cb879d58b312fbfa7f3311df416_cgraph}
 \end{center}
 \end{figure}
-这是这个函数的调用关系图\+:\nopagebreak
+\Hypertarget{class_f_c_t_1_1_pixel_layout_a76fe5d57424890eb3efeab5ec3a63280}\index{FCT::PixelLayout@{FCT::PixelLayout}!addElements@{addElements}}
+\index{addElements@{addElements}!FCT::PixelLayout@{FCT::PixelLayout}}
+\doxysubsubsection{\texorpdfstring{addElements()}{addElements()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_pixel_layout_a76fe5d57424890eb3efeab5ec3a63280} 
+template$<$typename... Rest$>$ \\
+void FCT\+::\+Pixel\+Layout\+::add\+Elements (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_f_c_t_1_1_vertex_layout}{Vertex\+Layout}} \&}]{layout}{, }\item[{Rest \&\&...}]{rest}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [private]}, {\ttfamily [noexcept]}}
+
+
+
+在文件 \mbox{\hyperlink{_vertex_8h_source}{Vertex.\+h}} 第 \mbox{\hyperlink{_vertex_8h_source_l00421}{421}} 行定义.
+
+函数调用图\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_f_c_t_1_1_pixel_layout_ae9bd9cb879d58b312fbfa7f3311df416_icgraph}
+\includegraphics[width=350pt]{class_f_c_t_1_1_pixel_layout_a76fe5d57424890eb3efeab5ec3a63280_cgraph}
 \end{center}
 \end{figure}
 \Hypertarget{class_f_c_t_1_1_pixel_layout_a8763feb76cfcbde52734edb2461689d0}\index{FCT::PixelLayout@{FCT::PixelLayout}!ensurePositionFirst@{ensurePositionFirst}}
@@ -346,6 +422,51 @@ size\+\_\+t FCT\+::\+Pixel\+Layout\+::get\+Stride (\begin{DoxyParamCaption}{}{}\
 
 
 在文件 \mbox{\hyperlink{_vertex_8h_source}{Vertex.\+h}} 第 \mbox{\hyperlink{_vertex_8h_source_l00343}{343}} 行定义.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_f_c_t_1_1_pixel_layout_doc-variable-members}
+\doxysubsection{类成员变量说明}
+\Hypertarget{class_f_c_t_1_1_pixel_layout_a747df8e61a51b57426c51933a68daaa2}\index{FCT::PixelLayout@{FCT::PixelLayout}!m\_elementCount@{m\_elementCount}}
+\index{m\_elementCount@{m\_elementCount}!FCT::PixelLayout@{FCT::PixelLayout}}
+\doxysubsubsection{\texorpdfstring{m\_elementCount}{m\_elementCount}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_pixel_layout_a747df8e61a51b57426c51933a68daaa2} 
+size\+\_\+t FCT\+::\+Pixel\+Layout\+::m\+\_\+element\+Count\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_vertex_8h_source}{Vertex.\+h}} 第 \mbox{\hyperlink{_vertex_8h_source_l00428}{428}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_pixel_layout_a84a9316cb4e597631f11b825482735dc}\index{FCT::PixelLayout@{FCT::PixelLayout}!m\_elements@{m\_elements}}
+\index{m\_elements@{m\_elements}!FCT::PixelLayout@{FCT::PixelLayout}}
+\doxysubsubsection{\texorpdfstring{m\_elements}{m\_elements}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_pixel_layout_a84a9316cb4e597631f11b825482735dc} 
+\mbox{\hyperlink{class_f_c_t_1_1_vertex_element}{Vertex\+Element}} FCT\+::\+Pixel\+Layout\+::m\+\_\+elements\mbox{[}\mbox{\hyperlink{class_f_c_t_1_1_pixel_layout_aac0a807df6ad812954aa26c4fc8f3d38}{Max\+Elements}}\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_vertex_8h_source}{Vertex.\+h}} 第 \mbox{\hyperlink{_vertex_8h_source_l00427}{427}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_pixel_layout_a91c58c715b35b7a0797ca9b84aff3df4}\index{FCT::PixelLayout@{FCT::PixelLayout}!m\_stride@{m\_stride}}
+\index{m\_stride@{m\_stride}!FCT::PixelLayout@{FCT::PixelLayout}}
+\doxysubsubsection{\texorpdfstring{m\_stride}{m\_stride}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_pixel_layout_a91c58c715b35b7a0797ca9b84aff3df4} 
+size\+\_\+t FCT\+::\+Pixel\+Layout\+::m\+\_\+stride\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_vertex_8h_source}{Vertex.\+h}} 第 \mbox{\hyperlink{_vertex_8h_source_l00429}{429}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_pixel_layout_aac0a807df6ad812954aa26c4fc8f3d38}\index{FCT::PixelLayout@{FCT::PixelLayout}!MaxElements@{MaxElements}}
+\index{MaxElements@{MaxElements}!FCT::PixelLayout@{FCT::PixelLayout}}
+\doxysubsubsection{\texorpdfstring{MaxElements}{MaxElements}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_pixel_layout_aac0a807df6ad812954aa26c4fc8f3d38} 
+size\+\_\+t FCT\+::\+Pixel\+Layout\+::\+Max\+Elements = 64\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_vertex_8h_source}{Vertex.\+h}} 第 \mbox{\hyperlink{_vertex_8h_source_l00426}{426}} 行定义.
 
 
 

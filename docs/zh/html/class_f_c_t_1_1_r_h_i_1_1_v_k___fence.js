@@ -1,10 +1,26 @@
 var class_f_c_t_1_1_r_h_i_1_1_v_k___fence =
 [
+    [ "DeleterType", "class_f_c_t_1_1_r_h_i_1_1_v_k___fence.html#aa11d4656b54ed291143d6c79da4c407b", null ],
     [ "VK_Fence", "class_f_c_t_1_1_r_h_i_1_1_v_k___fence.html#aac3ff4218dc7ec5dcbaf29fec9338dc3", null ],
+    [ "addRef", "class_f_c_t_1_1_r_h_i_1_1_v_k___fence.html#a59c2f131121de6503df8d363b6853d45", null ],
+    [ "applyDeleter", "class_f_c_t_1_1_r_h_i_1_1_v_k___fence.html#aeb6edd1024ec555f8eb0321092ee874b", null ],
+    [ "count", "class_f_c_t_1_1_r_h_i_1_1_v_k___fence.html#a33146ec5804be422936519224a3a7b3f", null ],
     [ "create", "class_f_c_t_1_1_r_h_i_1_1_v_k___fence.html#a6165a4dbe87683eaa15803370bf04dcf", null ],
+    [ "createSignaled", "class_f_c_t_1_1_r_h_i_1_1_v_k___fence.html#a43d06055c67368363995103306fef123", null ],
+    [ "deleteThis", "class_f_c_t_1_1_r_h_i_1_1_v_k___fence.html#a3e7497fa088fbeae2a9e9f2acce771c9", null ],
     [ "destroy", "class_f_c_t_1_1_r_h_i_1_1_v_k___fence.html#add8bc5c5fad4178b0ab42fce60dc4757", null ],
     [ "fence", "class_f_c_t_1_1_r_h_i_1_1_v_k___fence.html#ab2196acf254a1d0f9dc0c40a44d3a034", null ],
     [ "fencePtr", "class_f_c_t_1_1_r_h_i_1_1_v_k___fence.html#ac6f3918bb2fbc62adf143c471120d92f", null ],
+    [ "initSignal", "class_f_c_t_1_1_r_h_i_1_1_v_k___fence.html#a6a71e59f84ee58fa587e70b8f8c57150", null ],
+    [ "operator bool", "class_f_c_t_1_1_r_h_i_1_1_v_k___fence.html#a474ad3a918f2e87d75ff16075e1caeec", null ],
+    [ "release", "class_f_c_t_1_1_r_h_i_1_1_v_k___fence.html#aaf57b2df79545f2b71ae9087865dee4c", null ],
     [ "reset", "class_f_c_t_1_1_r_h_i_1_1_v_k___fence.html#a3a3d8e4685ebdc45b7cf190f67ef274c", null ],
-    [ "waitFor", "class_f_c_t_1_1_r_h_i_1_1_v_k___fence.html#a13ba2227f44cf2d8f9282435dcd80676", null ]
+    [ "setDeleter", "class_f_c_t_1_1_r_h_i_1_1_v_k___fence.html#ac6cac75cc5ab38b97e56f59f0a93934e", null ],
+    [ "setDeleterFunc", "class_f_c_t_1_1_r_h_i_1_1_v_k___fence.html#af36f7eff01c8c86ebfb148b827ca1a9f", null ],
+    [ "waitFor", "class_f_c_t_1_1_r_h_i_1_1_v_k___fence.html#a13ba2227f44cf2d8f9282435dcd80676", null ],
+    [ "m_ctx", "class_f_c_t_1_1_r_h_i_1_1_v_k___fence.html#a3b081cfdc7892abc57744e303914f478", null ],
+    [ "m_deleter", "class_f_c_t_1_1_r_h_i_1_1_v_k___fence.html#a40fd462f6d22d8bc9a3eea4158cb8826", null ],
+    [ "m_fence", "class_f_c_t_1_1_r_h_i_1_1_v_k___fence.html#a186997be1d6fef6a318108547e43f21b", null ],
+    [ "m_refCount", "class_f_c_t_1_1_r_h_i_1_1_v_k___fence.html#aca88529f9b473d326168fa808fd02300", null ],
+    [ "m_signaled", "class_f_c_t_1_1_r_h_i_1_1_v_k___fence.html#a56a04928b14d59bd085df73755c2d45b", null ]
 ];

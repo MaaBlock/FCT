@@ -6,7 +6,8 @@
 
 
 
-类 FCT\+::Call\+Back\+Event\+Handler 继承关系图\+:\nopagebreak
+类 FCT\+::Call\+Back\+Event\+Handler 继承关系图\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -15,7 +16,8 @@
 \end{figure}
 
 
-FCT\+::Call\+Back\+Event\+Handler 的协作图\+:\nopagebreak
+FCT\+::Call\+Back\+Event\+Handler 的协作图\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -119,15 +121,6 @@ void \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a954e4d0827e6b0be5
 void \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a73b35034a48c95a5fe2bd97220307592}{clear\+Key\+Up\+Callbacks}} ()
 \item 
 void \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a1c1dc86731d9bdc0e9edc9b296258f48}{invoke\+Resize\+Callbacks}} (\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}wnd, int width, int height)
-\end{DoxyCompactItemize}
-\doxysubsection*{Public 成员函数 继承自 \mbox{\hyperlink{class_f_c_t_1_1_ref_count}{FCT\+::\+Ref\+Count}}}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\hyperlink{class_f_c_t_1_1_ref_count_a681b72d7bd32fd7e4b9ec861cd74370e}{Ref\+Count}} ()
-\item 
-\mbox{\hyperlink{class_f_c_t_1_1_ref_count_ae2948e0ae155079956caced23c85bb2b}{Ref\+Count}} (size\+\_\+t ref\+Count)
-\item 
-virtual \mbox{\hyperlink{class_f_c_t_1_1_ref_count_af028e09f8a1492fdd5c788b6eb75754f}{\texorpdfstring{$\sim$}{\string~}\+Ref\+Count}} ()
 \item 
 void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a59c2f131121de6503df8d363b6853d45}{add\+Ref}} ()
 \item 
@@ -137,16 +130,38 @@ size\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a33146ec5804be42293651922
 \item 
 \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a474ad3a918f2e87d75ff16075e1caeec}{operator bool}} () const
 \end{DoxyCompactItemize}
-\doxysubsubsection*{额外继承的成员函数}
-\doxysubsection*{Protected 成员函数 继承自 \mbox{\hyperlink{class_f_c_t_1_1_ref_count}{FCT\+::\+Ref\+Count}}}
+\doxysubsubsection*{Protected 成员函数}
 \begin{DoxyCompactItemize}
 \item 
 virtual void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a0fea0bed50f726d3e11ddde802dac5da}{delete\+This}} ()
 \end{DoxyCompactItemize}
-\doxysubsection*{Protected 属性 继承自 \mbox{\hyperlink{class_f_c_t_1_1_ref_count}{FCT\+::\+Ref\+Count}}}
+\doxysubsubsection*{Protected 属性}
 \begin{DoxyCompactItemize}
 \item 
 std\+::atomic$<$ size\+\_\+t $>$ \mbox{\hyperlink{class_f_c_t_1_1_ref_count_aca88529f9b473d326168fa808fd02300}{m\+\_\+ref\+Count}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}}, \mbox{\hyperlink{namespace_f_c_t_a9e86debfb8e07b3158f7c3f36555d3b4}{Resize\+Call\+Back}} $>$ \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_aac2f5f24478b7ada5186fa763e5a3a63}{m\+\_\+resize\+Callbacks}}
+\item 
+std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}}, \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a53669ac876ac17958f126e05fb75fe01}{LButton\+Down\+Call\+Back}} $>$ \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a5f8e90b29f190a8b5f841380283f2685}{m\+\_\+l\+Button\+Down\+Callbacks}}
+\item 
+std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}}, \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a5f58140a936d4735bb9e0bba5a6c7366}{LButton\+Up\+Call\+Back}} $>$ \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a74d1b53732c3290f9a71a91da484cb0b}{m\+\_\+l\+Button\+Up\+Callbacks}}
+\item 
+std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}}, \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a3adcf93e289b9cec2101285e42bb8762}{RButton\+Down\+Call\+Back}} $>$ \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a1eac928322ac64de99dd96c8a18b69d4}{m\+\_\+r\+Button\+Down\+Callbacks}}
+\item 
+std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}}, \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a44355cfb5142de3488022dae130365f9}{RButton\+Up\+Call\+Back}} $>$ \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a23868a9b55795ab150feb9a718edf990}{m\+\_\+r\+Button\+Up\+Callbacks}}
+\item 
+std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}}, \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a0c4378b803f64808cb0a8825bd7a2e23}{Mouse\+Move\+Call\+Back}} $>$ \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a1d5fad80cecf89c81fd8b0e42da06979}{m\+\_\+mouse\+Move\+Callbacks}}
+\item 
+std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}}, \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a495d82b1fc8b2e862cc09385f2fa5078}{Mouse\+Wheel\+Call\+Back}} $>$ \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a63988251524cb55f4d55399e2c111df6}{m\+\_\+mouse\+Wheel\+Callbacks}}
+\item 
+std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}}, \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8d9d4ed687033c258166a69dd6f77eaa}{Key\+Down\+Call\+Back}} $>$ \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_ab1507e1f71d1a6960b6af8ac5000bf42}{m\+\_\+key\+Down\+Callbacks}}
+\item 
+std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}}, \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_aeb36839a3be9a52fbce66187c4c121ff}{Key\+Up\+Call\+Back}} $>$ \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_ae3848591d5172fd0c3c38737e0dfddbb}{m\+\_\+key\+Up\+Callbacks}}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}} \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_ac78bf5b88d0c186794ad81cbba7b378e}{m\+\_\+next\+Id}} = 0
 \end{DoxyCompactItemize}
 
 
@@ -335,6 +350,24 @@ using \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a44355cfb5142de34
 
 在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00088}{88}} 行定义.
 
+\Hypertarget{class_f_c_t_1_1_ref_count_a59c2f131121de6503df8d363b6853d45}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!addRef@{addRef}}
+\index{addRef@{addRef}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{addRef()}{addRef()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_ref_count_a59c2f131121de6503df8d363b6853d45} 
+void FCT\+::\+Ref\+Count\+::add\+Ref (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+在文件 \mbox{\hyperlink{_ref_count_8h_source}{Ref\+Count.\+h}} 第 \mbox{\hyperlink{_ref_count_8h_source_l00010}{10}} 行定义.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_ref_count_a59c2f131121de6503df8d363b6853d45_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_call_back_event_handler_a237fc8ca6ab7f20e2cbcaf1ae9d11091}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!addResizeCallback@{addResizeCallback}}
 \index{addResizeCallback@{addResizeCallback}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
 \doxysubsubsection{\texorpdfstring{addResizeCallback()}{addResizeCallback()}}
@@ -435,6 +468,44 @@ void FCT\+::\+Call\+Back\+Event\+Handler\+::clear\+Resize\+Callbacks (\begin{Dox
 
 在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00142}{142}} 行定义.
 
+\Hypertarget{class_f_c_t_1_1_ref_count_a33146ec5804be422936519224a3a7b3f}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!count@{count}}
+\index{count@{count}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{count()}{count()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_ref_count_a33146ec5804be422936519224a3a7b3f} 
+size\+\_\+t FCT\+::\+Ref\+Count\+::count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+在文件 \mbox{\hyperlink{_ref_count_8h_source}{Ref\+Count.\+h}} 第 \mbox{\hyperlink{_ref_count_8h_source_l00019}{19}} 行定义.
+
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_ref_count_a33146ec5804be422936519224a3a7b3f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_f_c_t_1_1_ref_count_a0fea0bed50f726d3e11ddde802dac5da}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!deleteThis@{deleteThis}}
+\index{deleteThis@{deleteThis}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{deleteThis()}{deleteThis()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_ref_count_a0fea0bed50f726d3e11ddde802dac5da} 
+virtual void FCT\+::\+Ref\+Count\+::delete\+This (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+被 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_fence_a3e7497fa088fbeae2a9e9f2acce771c9}{FCT\+::\+RHI\+::\+Fence}} , 以及 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore_ad7b72415b5c2e15a44bf488c7e27c4cd}{FCT\+::\+RHI\+::\+Semaphore}} 重载.
+
+
+
+在文件 \mbox{\hyperlink{_ref_count_8h_source}{Ref\+Count.\+h}} 第 \mbox{\hyperlink{_ref_count_8h_source_l00027}{27}} 行定义.
+
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_ref_count_a0fea0bed50f726d3e11ddde802dac5da_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_call_back_event_handler_a1c1dc86731d9bdc0e9edc9b296258f48}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!invokeResizeCallbacks@{invokeResizeCallbacks}}
 \index{invokeResizeCallbacks@{invokeResizeCallbacks}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
 \doxysubsubsection{\texorpdfstring{invokeResizeCallbacks()}{invokeResizeCallbacks()}}
@@ -585,6 +656,40 @@ void FCT\+::\+Call\+Back\+Event\+Handler\+::on\+Resize (\begin{DoxyParamCaption}
 \includegraphics[width=350pt]{class_f_c_t_1_1_call_back_event_handler_ade2d3b896c4c0594e55c88d60ead788c_icgraph}
 \end{center}
 \end{figure}
+\Hypertarget{class_f_c_t_1_1_ref_count_a474ad3a918f2e87d75ff16075e1caeec}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!operator bool@{operator bool}}
+\index{operator bool@{operator bool}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{operator bool()}{operator bool()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_ref_count_a474ad3a918f2e87d75ff16075e1caeec} 
+FCT\+::\+Ref\+Count\+::operator bool (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+在文件 \mbox{\hyperlink{_ref_count_8h_source}{Ref\+Count.\+h}} 第 \mbox{\hyperlink{_ref_count_8h_source_l00022}{22}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_ref_count_aaf57b2df79545f2b71ae9087865dee4c}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!release@{release}}
+\index{release@{release}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{release()}{release()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_ref_count_aaf57b2df79545f2b71ae9087865dee4c} 
+void FCT\+::\+Ref\+Count\+::release (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+在文件 \mbox{\hyperlink{_ref_count_8h_source}{Ref\+Count.\+h}} 第 \mbox{\hyperlink{_ref_count_8h_source_l00013}{13}} 行定义.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_ref_count_aaf57b2df79545f2b71ae9087865dee4c_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_ref_count_aaf57b2df79545f2b71ae9087865dee4c_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_call_back_event_handler_abce9bc3d6dcd7ad626f7ebf1b945ff2e}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!removeKeyDownCallback@{removeKeyDownCallback}}
 \index{removeKeyDownCallback@{removeKeyDownCallback}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
 \doxysubsubsection{\texorpdfstring{removeKeyDownCallback()}{removeKeyDownCallback()}}
@@ -674,6 +779,121 @@ void FCT\+::\+Call\+Back\+Event\+Handler\+::remove\+Resize\+Callback (\begin{Dox
 
 
 在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00113}{113}} 行定义.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_doc-variable-members}
+\doxysubsection{类成员变量说明}
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_ab1507e1f71d1a6960b6af8ac5000bf42}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!m\_keyDownCallbacks@{m\_keyDownCallbacks}}
+\index{m\_keyDownCallbacks@{m\_keyDownCallbacks}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{m\_keyDownCallbacks}{m\_keyDownCallbacks}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_ab1507e1f71d1a6960b6af8ac5000bf42} 
+std\+::unordered\+\_\+map$<$\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}}, \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8d9d4ed687033c258166a69dd6f77eaa}{Key\+Down\+Call\+Back}}$>$ FCT\+::\+Call\+Back\+Event\+Handler\+::m\+\_\+key\+Down\+Callbacks\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00181}{181}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_ae3848591d5172fd0c3c38737e0dfddbb}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!m\_keyUpCallbacks@{m\_keyUpCallbacks}}
+\index{m\_keyUpCallbacks@{m\_keyUpCallbacks}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{m\_keyUpCallbacks}{m\_keyUpCallbacks}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_ae3848591d5172fd0c3c38737e0dfddbb} 
+std\+::unordered\+\_\+map$<$\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}}, \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_aeb36839a3be9a52fbce66187c4c121ff}{Key\+Up\+Call\+Back}}$>$ FCT\+::\+Call\+Back\+Event\+Handler\+::m\+\_\+key\+Up\+Callbacks\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00182}{182}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_a5f8e90b29f190a8b5f841380283f2685}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!m\_lButtonDownCallbacks@{m\_lButtonDownCallbacks}}
+\index{m\_lButtonDownCallbacks@{m\_lButtonDownCallbacks}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{m\_lButtonDownCallbacks}{m\_lButtonDownCallbacks}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_a5f8e90b29f190a8b5f841380283f2685} 
+std\+::unordered\+\_\+map$<$\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}}, \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a53669ac876ac17958f126e05fb75fe01}{LButton\+Down\+Call\+Back}}$>$ FCT\+::\+Call\+Back\+Event\+Handler\+::m\+\_\+l\+Button\+Down\+Callbacks\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00175}{175}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_a74d1b53732c3290f9a71a91da484cb0b}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!m\_lButtonUpCallbacks@{m\_lButtonUpCallbacks}}
+\index{m\_lButtonUpCallbacks@{m\_lButtonUpCallbacks}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{m\_lButtonUpCallbacks}{m\_lButtonUpCallbacks}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_a74d1b53732c3290f9a71a91da484cb0b} 
+std\+::unordered\+\_\+map$<$\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}}, \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a5f58140a936d4735bb9e0bba5a6c7366}{LButton\+Up\+Call\+Back}}$>$ FCT\+::\+Call\+Back\+Event\+Handler\+::m\+\_\+l\+Button\+Up\+Callbacks\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00176}{176}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_a1d5fad80cecf89c81fd8b0e42da06979}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!m\_mouseMoveCallbacks@{m\_mouseMoveCallbacks}}
+\index{m\_mouseMoveCallbacks@{m\_mouseMoveCallbacks}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{m\_mouseMoveCallbacks}{m\_mouseMoveCallbacks}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_a1d5fad80cecf89c81fd8b0e42da06979} 
+std\+::unordered\+\_\+map$<$\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}}, \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a0c4378b803f64808cb0a8825bd7a2e23}{Mouse\+Move\+Call\+Back}}$>$ FCT\+::\+Call\+Back\+Event\+Handler\+::m\+\_\+mouse\+Move\+Callbacks\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00179}{179}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_a63988251524cb55f4d55399e2c111df6}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!m\_mouseWheelCallbacks@{m\_mouseWheelCallbacks}}
+\index{m\_mouseWheelCallbacks@{m\_mouseWheelCallbacks}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{m\_mouseWheelCallbacks}{m\_mouseWheelCallbacks}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_a63988251524cb55f4d55399e2c111df6} 
+std\+::unordered\+\_\+map$<$\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}}, \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a495d82b1fc8b2e862cc09385f2fa5078}{Mouse\+Wheel\+Call\+Back}}$>$ FCT\+::\+Call\+Back\+Event\+Handler\+::m\+\_\+mouse\+Wheel\+Callbacks\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00180}{180}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_ac78bf5b88d0c186794ad81cbba7b378e}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!m\_nextId@{m\_nextId}}
+\index{m\_nextId@{m\_nextId}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{m\_nextId}{m\_nextId}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_ac78bf5b88d0c186794ad81cbba7b378e} 
+\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}} FCT\+::\+Call\+Back\+Event\+Handler\+::m\+\_\+next\+Id = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00183}{183}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_a1eac928322ac64de99dd96c8a18b69d4}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!m\_rButtonDownCallbacks@{m\_rButtonDownCallbacks}}
+\index{m\_rButtonDownCallbacks@{m\_rButtonDownCallbacks}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{m\_rButtonDownCallbacks}{m\_rButtonDownCallbacks}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_a1eac928322ac64de99dd96c8a18b69d4} 
+std\+::unordered\+\_\+map$<$\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}}, \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a3adcf93e289b9cec2101285e42bb8762}{RButton\+Down\+Call\+Back}}$>$ FCT\+::\+Call\+Back\+Event\+Handler\+::m\+\_\+r\+Button\+Down\+Callbacks\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00177}{177}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_a23868a9b55795ab150feb9a718edf990}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!m\_rButtonUpCallbacks@{m\_rButtonUpCallbacks}}
+\index{m\_rButtonUpCallbacks@{m\_rButtonUpCallbacks}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{m\_rButtonUpCallbacks}{m\_rButtonUpCallbacks}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_a23868a9b55795ab150feb9a718edf990} 
+std\+::unordered\+\_\+map$<$\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}}, \mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a44355cfb5142de3488022dae130365f9}{RButton\+Up\+Call\+Back}}$>$ FCT\+::\+Call\+Back\+Event\+Handler\+::m\+\_\+r\+Button\+Up\+Callbacks\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00178}{178}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_ref_count_aca88529f9b473d326168fa808fd02300}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!m\_refCount@{m\_refCount}}
+\index{m\_refCount@{m\_refCount}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{m\_refCount}{m\_refCount}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_ref_count_aca88529f9b473d326168fa808fd02300} 
+std\+::atomic$<$size\+\_\+t$>$ FCT\+::\+Ref\+Count\+::m\+\_\+ref\+Count\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+在文件 \mbox{\hyperlink{_ref_count_8h_source}{Ref\+Count.\+h}} 第 \mbox{\hyperlink{_ref_count_8h_source_l00030}{30}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_call_back_event_handler_aac2f5f24478b7ada5186fa763e5a3a63}\index{FCT::CallBackEventHandler@{FCT::CallBackEventHandler}!m\_resizeCallbacks@{m\_resizeCallbacks}}
+\index{m\_resizeCallbacks@{m\_resizeCallbacks}!FCT::CallBackEventHandler@{FCT::CallBackEventHandler}}
+\doxysubsubsection{\texorpdfstring{m\_resizeCallbacks}{m\_resizeCallbacks}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_call_back_event_handler_aac2f5f24478b7ada5186fa763e5a3a63} 
+std\+::unordered\+\_\+map$<$\mbox{\hyperlink{class_f_c_t_1_1_call_back_event_handler_a8457c73c6cb46ee6ed38174f403fae5e}{Callback\+Id}}, \mbox{\hyperlink{namespace_f_c_t_a9e86debfb8e07b3158f7c3f36555d3b4}{Resize\+Call\+Back}}$>$ FCT\+::\+Call\+Back\+Event\+Handler\+::m\+\_\+resize\+Callbacks\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_call_back_handler_8h_source}{Call\+Back\+Handler.\+h}} 第 \mbox{\hyperlink{_call_back_handler_8h_source_l00174}{174}} 行定义.
 
 
 

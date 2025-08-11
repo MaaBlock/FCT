@@ -10,7 +10,7 @@ namespace FCT {
 	template<typename Token,typename Value>
 	class TokenGraph : public Noncopyable
 	{
-	public:
+	private:
 		class NodeProbe;
 		struct NodeInfo
 		{
@@ -203,30 +203,6 @@ namespace FCT {
 				}
 			}
 		};
-		/**
-		 * @cond CHINESE
-		 * @tparam Visitor
-		 * @param startToken
-		 * @param visitor 参数为 Value
-		 * @param includeStart 是否包含起点自身
-		 * @endcond
-		 */
-		template<typename Visitor>
-		void visitBFS(Token startToken, Visitor visitor, bool includeStart = true) const
-		{
-			auto start_vertex_it = m_vertex.left.find(startToken);
-			if (start_vertex_it == m_vertex.left.end()) {
-				return;
-			}
-
-			std::map<BoostVertex, boost::default_color_type> vertex_color_map;
-			auto color_pmap = boost::make_assoc_property_map(vertex_color_map);
-
-			TokenGraphBFSVisitor<Visitor> bfs_visitor(this, visitor, startToken, includeStart);
-
-			boost::breadth_first_search(m_graph, start_vertex_it->second,
-				boost::visitor(bfs_visitor).color_map(color_pmap));
-		}
 		bool isZeroRefVertex(Token token) const
 		{
 			auto it = m_vertex.left.find(token);
@@ -255,6 +231,31 @@ namespace FCT {
 			}
 		}
 	public:
+
+		/**
+		 * @cond CHINESE
+		 * @tparam Visitor
+		 * @param startToken
+		 * @param visitor 参数为 Value
+		 * @param includeStart 是否包含起点自身
+		 * @endcond
+		 */
+		template<typename Visitor>
+		void visitBFS(Token startToken, Visitor visitor, bool includeStart = true) const
+		{
+			auto start_vertex_it = m_vertex.left.find(startToken);
+			if (start_vertex_it == m_vertex.left.end()) {
+				return;
+			}
+
+			std::map<BoostVertex, boost::default_color_type> vertex_color_map;
+			auto color_pmap = boost::make_assoc_property_map(vertex_color_map);
+
+			TokenGraphBFSVisitor<Visitor> bfs_visitor(this, visitor, startToken, includeStart);
+
+			boost::breadth_first_search(m_graph, start_vertex_it->second,
+				boost::visitor(bfs_visitor).color_map(color_pmap));
+		}
 		void addNode(NodeInfo info)
 		{
 			addVertex(info.token);
@@ -488,6 +489,120 @@ namespace FCT {
 			}
 			return ret;
 		}
+
+	public:
+		/**
+		 * dfs
+		 */
+		template<typename Visitor>
+		class TokenGraphDFSVisitor : public boost::default_dfs_visitor
+		{
+		private:
+			const TokenGraph* graph;
+			Visitor visitor;
+			mutable std::set<Token> visitedTokens;
+
+		public:
+			TokenGraphDFSVisitor(const TokenGraph* g, Visitor v)
+				: graph(g), visitor(v) {}
+
+			template<typename VertexDescriptor, typename Graph>
+			void discover_vertex(VertexDescriptor v, const Graph& g) const
+			{
+				auto vertex_token_it = graph->m_vertex.right.find(v);
+				if (vertex_token_it != graph->m_vertex.right.end()) {
+					Token token = vertex_token_it->second;
+					if (graph->hasNode(token) && visitedTokens.find(token) == visitedTokens.end()) {
+						visitedTokens.insert(token);
+						visitor(graph->m_nodeMap.at(token).value);
+					}
+				}
+			}
+		};
+	    template<typename Visitor>
+	    void visitDFSFromRoots(Visitor visitor) const
+		{
+			std::vector<BoostVertex> rootVertices;
+
+			for (auto [v_iter, v_end] = boost::vertices(m_graph); v_iter != v_end; ++v_iter) {
+				if (boost::in_degree(*v_iter, m_graph) == 0) {
+					auto vertex_token_it = m_vertex.right.find(*v_iter);
+					if (vertex_token_it != m_vertex.right.end() && hasNode(vertex_token_it->second)) {
+						rootVertices.push_back(*v_iter);
+					}
+				}
+			}
+
+			std::map<BoostVertex, boost::default_color_type> vertex_color_map;
+			auto color_pmap = boost::make_assoc_property_map(vertex_color_map);
+
+			TokenGraphDFSVisitor<Visitor> dfs_visitor(this, visitor);
+
+			for (BoostVertex root : rootVertices) {
+				boost::depth_first_visit(m_graph, root,
+					boost::visitor(dfs_visitor).color_map(color_pmap));
+			}
+		}
+		std::vector<Token> getActivePredecessors(const Token& token) const
+	    {
+	    	std::vector<Token> activePredecessors;
+
+	    	auto token_it = m_vertex.left.find(token);
+	    	if (token_it == m_vertex.left.end()) {
+	    		return activePredecessors;
+	    	}
+
+	    	BoostVertex vertex = token_it->second;
+
+	    	auto [in_edge_iter, in_edge_end] = boost::in_edges(vertex, m_graph);
+	    	for (auto edge_iter = in_edge_iter; edge_iter != in_edge_end; ++edge_iter) {
+	    		BoostVertex source_vertex = boost::source(*edge_iter, m_graph);
+
+	    		auto vertex_token_it = m_vertex.right.find(source_vertex);
+	    		if (vertex_token_it != m_vertex.right.end()) {
+	    			Token predecessor_token = vertex_token_it->second;
+
+	    			if (hasNode(predecessor_token)) {
+	    				activePredecessors.push_back(predecessor_token);
+	    			} else {
+	    				auto subPredecessors = getActivePredecessors(predecessor_token);
+	    				activePredecessors.insert(activePredecessors.end(), subPredecessors.begin(), subPredecessors.end());
+	    			}
+	    		}
+	    	}
+
+	    	return activePredecessors;
+	    }
+		        std::vector<Token> getActiveSuccessors(const Token& token) const
+        {
+        	std::vector<Token> activeSuccessors;
+
+        	auto token_it = m_vertex.left.find(token);
+        	if (token_it == m_vertex.left.end()) {
+        		return activeSuccessors;
+        	}
+
+        	BoostVertex vertex = token_it->second;
+
+        	auto [out_edge_iter, out_edge_end] = boost::out_edges(vertex, m_graph);
+        	for (auto edge_iter = out_edge_iter; edge_iter != out_edge_end; ++edge_iter) {
+        		BoostVertex target_vertex = boost::target(*edge_iter, m_graph);
+
+        		auto vertex_token_it = m_vertex.right.find(target_vertex);
+        		if (vertex_token_it != m_vertex.right.end()) {
+        			Token successor_token = vertex_token_it->second;
+
+        			if (hasNode(successor_token)) {
+        				activeSuccessors.push_back(successor_token);
+        			} else {
+        				auto subSuccessors = getActiveSuccessors(successor_token);
+        				activeSuccessors.insert(activeSuccessors.end(), subSuccessors.begin(), subSuccessors.end());
+        			}
+        		}
+        	}
+
+        	return activeSuccessors;
+        }
 	private:
 		TokenGraphSavedBoostGraph m_graph;
 		boost::bimap<

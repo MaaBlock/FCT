@@ -28,39 +28,41 @@
 \DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_a52fc44df89cb18d6d3d2f7f899e594e0}{VK\_PassGroup}}(\mbox{\hyperlink{class_f_c_t_1_1_v_k___context}{VK\_Context}}*\ ctx);}
 \DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//uint32\_t\ getImageIndex(FCT::Image*\ image);}}
 \DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_afe3ebd57695705a749b0758a893aa3f8}{create}}();}
-\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00027}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_a8476dc2b0d820f9267672bfa72836f41}{00027}}\ \ \ \ \ \ \ \ \ \ \ \ \ vk::RenderPass\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_a8476dc2b0d820f9267672bfa72836f41}{getRenderPass}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_renderPass;\ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00027}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_a8476dc2b0d820f9267672bfa72836f41}{00027}}\ \ \ \ \ \ \ \ \ \ \ \ \ vk::RenderPass\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_a8476dc2b0d820f9267672bfa72836f41}{getRenderPass}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_a433ba6ce96dc5d5d3fc82637e4fd1dc6}{m\_renderPass}};\ \}}
 \DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_a4848b5d5340bbdfd3daa3394d9ce8221}{getPassIndex}}(\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pass}{Pass}}*\ pass);}
 \DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_aaa999b2743887a306a316ba317ab1482}{beginSubmit}}(\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer}{CommandBuffer}}*\ cmdBuf)\ \textcolor{keyword}{override};}
 \DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_ab8f9be61498c2990d5828553474a515e}{endSubmit}}(\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer}{CommandBuffer}}*\ cmdBuf)\ \textcolor{keyword}{override};}
-\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ collectSubpasses();}
-\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ collectAttachments();}
-\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ collectImageViews();}
-\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ toPassForDependencies(\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pass}{Pass}}*\ pass);}
-\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::map<FCT::Image*,uint32\_t>\ m\_imageIndices;}}
-\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::map<uint32\_t,AttachmentSlot>\ m\_attachmentSlots;}}
-\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ std::map<uint32\_t,AttachmentSlot>\ m\_targetAttachments;}
-\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ std::map<Pass*,uint32\_t>\ m\_passIndices;}
-\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<vk::AttachmentDescription>\ m\_attachments;}
-\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<vk::SubpassDescription>\ m\_subpasses;}
-\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<vk::ImageView>\ m\_framebufferViews;}
-\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_v_k___context}{VK\_Context}}*\ m\_ctx;}
-\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ vk::RenderPassCreateInfo\ m\_createInfo;}
-\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ vk::RenderPass\ m\_renderPass;}
-\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_i_render_target}{IRenderTarget}}*\ m\_target;}
-\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ vk::RenderPassBeginInfo\ m\_beginInfo;}
-\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ vk::FramebufferCreateInfo\ m\_framebufferInfo;}
-\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//vk::Framebuffer\ m\_framebuffer;}}
-\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<vk::ClearValue>\ m\_clearValues;}
-\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ std::unordered\_map<RHI::CommandBuffer*,vk::Framebuffer>\ m\_framebuffers;}
-\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ std::map<uint32\_t,\ AttachmentSlot>\ m\_depthAttachments;}
-\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00053}00053\ }
-\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::vector<FCT::Image*>\ m\_targets;}}
-\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00055}00055\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00056}00056\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00057}00057\ \}}
-\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00058}00058\ }
-\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00059}00059\ }
-\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00060}00060\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//VK\_PASSGROUP\_H}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_a54811b348f165c55f83a933cbf59bbc2}{nextPass}}(\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer}{CommandBuffer}}*\ cmdBuf)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_aa1c30d1fc7789bc3db14c5fc6d42fd4c}{collectSubpasses}}();}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_a284551b099ae13c6d4e1578be57c069a}{collectAttachments}}();}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_a082de110961c9826d5ab7f207e0bb383}{collectImageViews}}();}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_abfc05e04215fb4e8050b228781619ab9}{toPassForDependencies}}(\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pass}{Pass}}*\ pass);}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::map<FCT::Image*,uint32\_t>\ m\_imageIndices;}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::map<uint32\_t,AttachmentSlot>\ m\_attachmentSlots;}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00039}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_ae323487498d7613ab41984cd59588fec}{00039}}\ \ \ \ \ \ \ \ \ \ \ \ \ std::map<uint32\_t,AttachmentSlot>\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_ae323487498d7613ab41984cd59588fec}{m\_targetAttachments}};}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00040}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_a385018bff07bd0897aaae381605f7159}{00040}}\ \ \ \ \ \ \ \ \ \ \ \ \ std::map<Pass*,uint32\_t>\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_a385018bff07bd0897aaae381605f7159}{m\_passIndices}};}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00041}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_a81cdfbde1a97d76c00367719b76c1749}{00041}}\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<vk::AttachmentDescription>\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_a81cdfbde1a97d76c00367719b76c1749}{m\_attachments}};}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00042}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_a7ed012c9070209cbb9eecba5c0710367}{00042}}\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<vk::SubpassDescription>\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_a7ed012c9070209cbb9eecba5c0710367}{m\_subpasses}};}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00043}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_ae81a6dfb84f847451e95dcf0a6acaa4d}{00043}}\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<vk::ImageView>\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_ae81a6dfb84f847451e95dcf0a6acaa4d}{m\_framebufferViews}};}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00044}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_aafc83a02a4d872f2f8f43ad60c131dc3}{00044}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_v_k___context}{VK\_Context}}*\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_aafc83a02a4d872f2f8f43ad60c131dc3}{m\_ctx}};}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00045}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_aac6b1e2cae8b9b297a74a89dac04639e}{00045}}\ \ \ \ \ \ \ \ \ \ \ \ \ vk::RenderPassCreateInfo\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_aac6b1e2cae8b9b297a74a89dac04639e}{m\_createInfo}};}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00046}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_a433ba6ce96dc5d5d3fc82637e4fd1dc6}{00046}}\ \ \ \ \ \ \ \ \ \ \ \ \ vk::RenderPass\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_a433ba6ce96dc5d5d3fc82637e4fd1dc6}{m\_renderPass}};}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00047}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_a54040173880a4531a77f7bdb5aa39c01}{00047}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_i_render_target}{IRenderTarget}}*\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_a54040173880a4531a77f7bdb5aa39c01}{m\_target}};}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00048}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_a93e992bb9298f3ffe8b3cd1e11c1a9b8}{00048}}\ \ \ \ \ \ \ \ \ \ \ \ \ vk::RenderPassBeginInfo\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_a93e992bb9298f3ffe8b3cd1e11c1a9b8}{m\_beginInfo}};}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00049}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_a503b3b8fb03aa9588a8adf127569c849}{00049}}\ \ \ \ \ \ \ \ \ \ \ \ \ vk::FramebufferCreateInfo\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_a503b3b8fb03aa9588a8adf127569c849}{m\_framebufferInfo}};}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//vk::Framebuffer\ m\_framebuffer;}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00051}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_affb95f53ca890e413ebd3633a5c71408}{00051}}\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<vk::ClearValue>\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_affb95f53ca890e413ebd3633a5c71408}{m\_clearValues}};}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00052}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_a31bc2c5051808d0e1fcd3de9fe682214}{00052}}\ \ \ \ \ \ \ \ \ \ \ \ \ std::unordered\_map<RHI::CommandBuffer*,vk::Framebuffer>\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_a31bc2c5051808d0e1fcd3de9fe682214}{m\_framebuffers}};}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00053}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_ab03fe0c86f4a5614249c00978b91163d}{00053}}\ \ \ \ \ \ \ \ \ \ \ \ \ std::map<uint32\_t,\ AttachmentSlot>\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_ab03fe0c86f4a5614249c00978b91163d}{m\_depthAttachments}};}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00054}\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_abd5c2ee11e2d024f7e3c774e1bc19b3d}{00054}}\ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group_abd5c2ee11e2d024f7e3c774e1bc19b3d}{m\_currentPassIndex}};}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::vector<FCT::Image*>\ m\_targets;}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00057}00057\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00058}00058\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00059}00059\ \}}
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_v_k___pass_group_8h_source_l00062}00062\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//VK\_PASSGROUP\_H}}
 
 \end{DoxyCode}

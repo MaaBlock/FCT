@@ -7,8 +7,21 @@ var class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer =
     [ "create", "class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer.html#a4014386949d65a9c42f1a186962db2bb", null ],
     [ "destroy", "class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer.html#a6f1b0bf731a8ba32d399ce620a5f6553", null ],
     [ "getIndexType", "class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer.html#ad7a0939f7df3c393e77a3b349c3f9cc2", null ],
+    [ "indexBuffer", "class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer.html#a35bf84f0d9532a974157956b06a500ba", null ],
     [ "mapBuffer", "class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer.html#ae6585b7e6f531246ddf5bc18b5312894", null ],
     [ "mapBuffer", "class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer.html#a683555340360d8ebd33c4d04aecd5107", null ],
+    [ "reserve", "class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer.html#a1aebb139f22e933da94e5861e62a9a3e", null ],
     [ "resize", "class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer.html#aef48c71a9da6cd5ac182463cb7e4b828", null ],
-    [ "resizeBuffer", "class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer.html#a5fab9bea75d15501038296ec234eb228", null ]
+    [ "resizeBuffer", "class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer.html#a5fab9bea75d15501038296ec234eb228", null ],
+    [ "updataBuffer", "class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer.html#a1e6bd83966cd61dee0b473690ca60504", null ],
+    [ "updateFrequency", "class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer.html#aa95b42d0f7d5eabce24cdfb8e9972750", null ],
+    [ "m_buffers", "class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer.html#ae440e8e6a2a54b6fa4e7094bbf31a272", null ],
+    [ "m_ctx", "class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer.html#abd557e8c2095c22f3af706b5404ae8c9", null ],
+    [ "m_dirtyFlags", "class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer.html#af245ac8833559214734782d44e1bb254", null ],
+    [ "m_indexData", "class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer.html#a81fe7da714ea60484df00323dd1ac7d6", null ],
+    [ "m_isCreated", "class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer.html#aa9b57865c6609282b624369eb2a2929d", null ],
+    [ "m_memories", "class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer.html#ad646f9b88c00c800e59f7c76b9d13f63", null ],
+    [ "m_size", "class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer.html#af580a15c37bfc8e4670b35699047ab42", null ],
+    [ "m_stride", "class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer.html#a95ca93f6961bb742c5636ec73779aa3e", null ],
+    [ "m_updateFrequency", "class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer.html#a72a476c96a56cf8738d7c13409ee7733", null ]
 ];

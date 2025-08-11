@@ -25,6 +25,7 @@ var hierarchy =
         [ "FCT::RHI::VK_Semaphore", "class_f_c_t_1_1_r_h_i_1_1_v_k___semaphore.html", null ]
       ] ]
     ] ],
+    [ "FCT::DepthStencil", "struct_f_c_t_1_1_depth_stencil.html", null ],
     [ "FCT::RHI::DescriptorPool", "class_f_c_t_1_1_r_h_i_1_1_descriptor_pool.html", [
       [ "FCT::RHI::VK_DescriptorPool", "class_f_c_t_1_1_r_h_i_1_1_v_k___descriptor_pool.html", null ]
     ] ],
@@ -32,7 +33,7 @@ var hierarchy =
       [ "FCT::VK_Device", "class_f_c_t_1_1_v_k___device.html", null ]
     ] ],
     [ "FCT::DynamicMesh< IndexType >", "class_f_c_t_1_1_dynamic_mesh.html", null ],
-    [ "FCT::RenderGraph::ExecutionOrder", "struct_f_c_t_1_1_render_graph_1_1_execution_order.html", null ],
+    [ "FCT::OldRenderGraph::ExecutionOrder", "struct_f_c_t_1_1_old_render_graph_1_1_execution_order.html", null ],
     [ "FCT::FencePool", "class_f_c_t_1_1_fence_pool.html", [
       [ "FCT::VK_FencePool", "class_f_c_t_1_1_v_k___fence_pool.html", null ]
     ] ],
@@ -47,6 +48,9 @@ var hierarchy =
     [ "FCT::GLFW_UICommon", "class_f_c_t_1_1_g_l_f_w___u_i_common.html", null ],
     [ "Font::GlyphInfo", "struct_font_1_1_glyph_info.html", null ],
     [ "std::hash< FCT::TextureElement >", "structstd_1_1hash_3_01_f_c_t_1_1_texture_element_01_4.html", null ],
+    [ "FCT::IEventSystem< Config >::IEventHandler", "struct_f_c_t_1_1_i_event_system_1_1_i_event_handler.html", [
+      [ "FCT::IEventSystem< Config >::EventHandler< Event >", "struct_f_c_t_1_1_i_event_system_1_1_event_handler.html", null ]
+    ] ],
     [ "FCT::IEventSystem< Config >", "class_f_c_t_1_1_i_event_system.html", null ],
     [ "FCT::IEventSystem< EventSystemConfig::TriggerOnly >", "class_f_c_t_1_1_i_event_system.html", [
       [ "FCT::Context", "class_f_c_t_1_1_context.html", [
@@ -70,8 +74,8 @@ var hierarchy =
     [ "FCT::ImageLoader", "class_f_c_t_1_1_image_loader.html", [
       [ "FCT::FreeImage_ImageLoader", "class_f_c_t_1_1_free_image___image_loader.html", null ]
     ] ],
-    [ "FCT::RenderGraph::ImageResourceDesc", "struct_f_c_t_1_1_render_graph_1_1_image_resource_desc.html", null ],
-    [ "FCT::RenderGraph::ImageResourceVertex", "struct_f_c_t_1_1_render_graph_1_1_image_resource_vertex.html", null ],
+    [ "FCT::OldRenderGraph::ImageResourceDesc", "struct_f_c_t_1_1_old_render_graph_1_1_image_resource_desc.html", null ],
+    [ "FCT::OldRenderGraph::ImageResourceVertex", "struct_f_c_t_1_1_old_render_graph_1_1_image_resource_vertex.html", null ],
     [ "FCT::ImageSaved", "struct_f_c_t_1_1_image_saved.html", null ],
     [ "FCT::RHI::IndexBuffer", "class_f_c_t_1_1_r_h_i_1_1_index_buffer.html", [
       [ "FCT::RHI::VK_IndexBuffer", "class_f_c_t_1_1_r_h_i_1_1_v_k___index_buffer.html", null ]
@@ -118,6 +122,7 @@ var hierarchy =
     [ "FCT::ObjectPool< T, Args >", "class_f_c_t_1_1_object_pool.html", null ],
     [ "FCT::ObjectPoolChunk< T >", "class_f_c_t_1_1_object_pool_chunk.html", null ],
     [ "FCT::PassClearValue", "struct_f_c_t_1_1_pass_clear_value.html", null ],
+    [ "FCT::PassDesc", "struct_f_c_t_1_1_pass_desc.html", null ],
     [ "FCT::RHI::PassDesc", "struct_f_c_t_1_1_r_h_i_1_1_pass_desc.html", null ],
     [ "FCT::PassGraphEdge", "struct_f_c_t_1_1_pass_graph_edge.html", null ],
     [ "FCT::PassGraphVertex", "struct_f_c_t_1_1_pass_graph_vertex.html", null ],
@@ -133,6 +138,7 @@ var hierarchy =
       [ "FCT::VertexRenderPipeline", "class_f_c_t_1_1_vertex_render_pipeline.html", null ]
     ] ],
     [ "FCT::PixelLayout", "class_f_c_t_1_1_pixel_layout.html", null ],
+    [ "FCT::IEventSystem< Config >::QueuedEvent", "struct_f_c_t_1_1_i_event_system_1_1_queued_event.html", null ],
     [ "FCT::EventSystemConfig::QueueOnly", "struct_f_c_t_1_1_event_system_config_1_1_queue_only.html", null ],
     [ "FCT::SwapchainEvent::Recreate", "struct_f_c_t_1_1_swapchain_event_1_1_recreate.html", null ],
     [ "FCT::RefCount", "class_f_c_t_1_1_ref_count.html", [
@@ -163,8 +169,6 @@ var hierarchy =
           [ "FCT::VK_RasterizationState", "class_f_c_t_1_1_v_k___rasterization_state.html", null ]
         ] ],
         [ "FCT::RootSign", "class_f_c_t_1_1_root_sign.html", null ],
-        [ "FCT::Texture", "class_f_c_t_1_1_texture.html", null ],
-        [ "FCT::TextureArray", "class_f_c_t_1_1_texture_array.html", null ],
         [ "FCT::VertexShader", "class_f_c_t_1_1_vertex_shader.html", [
           [ "FCT::VK_VertexShader", "class_f_c_t_1_1_v_k___vertex_shader.html", null ]
         ] ],
@@ -181,6 +185,7 @@ var hierarchy =
         ] ],
         [ "FCT::TraditionRenderJob", "struct_f_c_t_1_1_tradition_render_job.html", null ]
       ] ],
+      [ "FCT::OldRenderGraph", "class_f_c_t_1_1_old_render_graph.html", null ],
       [ "FCT::Pass", "class_f_c_t_1_1_pass.html", [
         [ "FCT::TraditionRenderPass", "class_f_c_t_1_1_tradition_render_pass.html", null ]
       ] ],
@@ -215,12 +220,12 @@ var hierarchy =
       [ "FCT::RHI::TextureView", "class_f_c_t_1_1_r_h_i_1_1_texture_view.html", [
         [ "FCT::RHI::VK_TextureView", "class_f_c_t_1_1_r_h_i_1_1_v_k___texture_view.html", null ]
       ] ],
-      [ "FCT::RenderGraph", "class_f_c_t_1_1_render_graph.html", null ],
       [ "FCT::VertexPath", "class_f_c_t_1_1_vertex_path.html", null ],
       [ "FCT::Window", "class_f_c_t_1_1_window.html", null ]
     ] ],
     [ "FCT::RefCountPolicy< T, isRefCountBase >", "class_f_c_t_1_1_ref_count_policy.html", null ],
     [ "FCT::RefCountPolicy< T, false >", "class_f_c_t_1_1_ref_count_policy_3_01_t_00_01false_01_4.html", null ],
+    [ "FCT::RenderGraph", "class_f_c_t_1_1_render_graph.html", null ],
     [ "FCT::ResourceGraphEdge", "struct_f_c_t_1_1_resource_graph_edge.html", null ],
     [ "FCT::ResourceGraphVertex", "struct_f_c_t_1_1_resource_graph_vertex.html", null ],
     [ "FCT::ResourceLayout", "class_f_c_t_1_1_resource_layout.html", null ],
@@ -246,6 +251,7 @@ var hierarchy =
     ] ],
     [ "FCT::ShaderGenerator", "class_f_c_t_1_1_shader_generator.html", null ],
     [ "FCT::SharePtr< T >", "class_f_c_t_1_1_share_ptr.html", null ],
+    [ "FCT::Size", "struct_f_c_t_1_1_size.html", null ],
     [ "FCT::StaticMesh< IndexType >", "class_f_c_t_1_1_static_mesh.html", null ],
     [ "FCT::StencilOpState", "struct_f_c_t_1_1_stencil_op_state.html", null ],
     [ "std::stringbuf", null, [
@@ -253,7 +259,9 @@ var hierarchy =
       [ "Android_Out", "class_android___out.html", null ]
     ] ],
     [ "FCT::BlendState::Target", "struct_f_c_t_1_1_blend_state_1_1_target.html", null ],
+    [ "FCT::Target", "struct_f_c_t_1_1_target.html", null ],
     [ "FCT::TargetDesc", "struct_f_c_t_1_1_target_desc.html", null ],
+    [ "FCT::Texture", "struct_f_c_t_1_1_texture.html", null ],
     [ "FCT::TextureElement", "class_f_c_t_1_1_texture_element.html", null ],
     [ "FCT::TlsPtr< T >", "class_f_c_t_1_1_tls_ptr.html", null ],
     [ "FCT::TraditionPipelineState", "struct_f_c_t_1_1_tradition_pipeline_state.html", null ],
@@ -262,6 +270,7 @@ var hierarchy =
     [ "FCT::UiTaskData", "struct_f_c_t_1_1_ui_task_data.html", null ],
     [ "FCT::UITaskTrans", "struct_f_c_t_1_1_u_i_task_trans.html", null ],
     [ "FCT::UniformBuffer", "class_f_c_t_1_1_uniform_buffer.html", null ],
+    [ "FCT::UnionFind< T >", "class_f_c_t_1_1_union_find.html", null ],
     [ "FCT::UpdateResult", "struct_f_c_t_1_1_update_result.html", null ],
     [ "FCT::Vec2", "struct_f_c_t_1_1_vec2.html", null ],
     [ "FCT::Vec3", "struct_f_c_t_1_1_vec3.html", null ],
@@ -290,6 +299,6 @@ var hierarchy =
       [ "FCT::SetParamWindowBehavior", "class_f_c_t_1_1_set_param_window_behavior.html", null ]
     ] ],
     [ "FCT::ContextEvent::WindowBound", "struct_f_c_t_1_1_context_event_1_1_window_bound.html", null ],
-    [ "FCT::RenderGraph::WindowDepthStencilResource", "struct_f_c_t_1_1_render_graph_1_1_window_depth_stencil_resource.html", null ],
-    [ "FCT::RenderGraph::WindowImageResource", "struct_f_c_t_1_1_render_graph_1_1_window_image_resource.html", null ]
+    [ "FCT::OldRenderGraph::WindowDepthStencilResource", "struct_f_c_t_1_1_old_render_graph_1_1_window_depth_stencil_resource.html", null ],
+    [ "FCT::OldRenderGraph::WindowImageResource", "struct_f_c_t_1_1_old_render_graph_1_1_window_image_resource.html", null ]
 ];

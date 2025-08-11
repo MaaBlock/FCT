@@ -9,5 +9,9 @@ var class_f_c_t_1_1_uniform_buffer =
     [ "getValue", "class_f_c_t_1_1_uniform_buffer.html#a153fb938737fe4f3366a2270f1572d8c", null ],
     [ "isDirty", "class_f_c_t_1_1_uniform_buffer.html#a01555ae6bb0063c7540deaa7bd614a1a", null ],
     [ "setValue", "class_f_c_t_1_1_uniform_buffer.html#a23fdd4dd17734bffc2ff8b1875bbb17b", null ],
-    [ "setValue", "class_f_c_t_1_1_uniform_buffer.html#a4d46fbaa51f1f1f3877c239704a1f665", null ]
+    [ "setValue", "class_f_c_t_1_1_uniform_buffer.html#a4d46fbaa51f1f1f3877c239704a1f665", null ],
+    [ "m_data", "class_f_c_t_1_1_uniform_buffer.html#aa484b24a4ee6ea1d3a6dd278259e330c", null ],
+    [ "m_dirty", "class_f_c_t_1_1_uniform_buffer.html#a359e998629d43522d66a9247dd786dee", null ],
+    [ "m_layout", "class_f_c_t_1_1_uniform_buffer.html#aa15ae67ec0213c53b7cb2a9fdc669865", null ],
+    [ "m_size", "class_f_c_t_1_1_uniform_buffer.html#aecb3952e2338e5287e26bfcf90e9dd40", null ]
 ];

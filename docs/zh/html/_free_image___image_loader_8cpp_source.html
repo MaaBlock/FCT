@@ -101,7 +101,7 @@ $(function(){initNavTree('_free_image___image_loader_8cpp_source.html','',''); }
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_free_image___image_loader.html#ad8baa49fb40cbcf38ce90e8e9c250449">    7</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_free_image___image_loader.html#ad8baa49fb40cbcf38ce90e8e9c250449">FreeImage_ImageLoader::Init</a>()</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    {</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        FreeImage_Initialise();</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        FreeImage_SetOutputMessage(freeImageErrorHandler);</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        FreeImage_SetOutputMessage(<a class="code hl_function" href="class_f_c_t_1_1_free_image___image_loader.html#a373b660f6a07d74e17bc73e0531102f7">freeImageErrorHandler</a>);</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    }</div>
 </div>
 <div class="foldopen" id="foldopen00012" data-start="{" data-end="}">
@@ -202,17 +202,20 @@ $(function(){initNavTree('_free_image___image_loader_8cpp_source.html','',''); }
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    }</div>
 </div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keywordtype">void</span> FreeImage_ImageLoader::freeImageErrorHandler(FREE_IMAGE_FORMAT fif, <span class="keyword">const</span> <span class="keywordtype">char</span> *message) {</div>
+<div class="foldopen" id="foldopen00098" data-start="{" data-end="}">
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_free_image___image_loader.html#a373b660f6a07d74e17bc73e0531102f7">   98</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_free_image___image_loader.html#a373b660f6a07d74e17bc73e0531102f7">FreeImage_ImageLoader::freeImageErrorHandler</a>(FREE_IMAGE_FORMAT fif, <span class="keyword">const</span> <span class="keywordtype">char</span> *message) {</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        std::cerr &lt;&lt; <span class="stringliteral">&quot;FreeImage error: &quot;</span>;</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        <span class="keywordflow">if</span> (fif != FIF_UNKNOWN) {</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            std::cerr &lt;&lt; FreeImage_GetFormatFromFIF(fif) &lt;&lt; <span class="stringliteral">&quot; Format - &quot;</span>;</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        }</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        std::cerr &lt;&lt; message &lt;&lt; std::endl;</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    }</div>
+</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>} <span class="comment">// namespace FCT</span></div>
 <div class="ttc" id="a_free_image___image_loader_8h_html"><div class="ttname"><a href="_free_image___image_loader_8h.html">FreeImage_ImageLoader.h</a></div></div>
 <div class="ttc" id="aclass_f_c_t_1_1_free_image___image_loader_html_a2d46f44e1f6e7cd8175a1ec5d0ebb492"><div class="ttname"><a href="class_f_c_t_1_1_free_image___image_loader.html#a2d46f44e1f6e7cd8175a1ec5d0ebb492">FCT::FreeImage_ImageLoader::~FreeImage_ImageLoader</a></div><div class="ttdeci">~FreeImage_ImageLoader()</div><div class="ttdef"><b>定义</b> <a href="#l00019">FreeImage_ImageLoader.cpp:19</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_free_image___image_loader_html_a373b660f6a07d74e17bc73e0531102f7"><div class="ttname"><a href="class_f_c_t_1_1_free_image___image_loader.html#a373b660f6a07d74e17bc73e0531102f7">FCT::FreeImage_ImageLoader::freeImageErrorHandler</a></div><div class="ttdeci">static void freeImageErrorHandler(FREE_IMAGE_FORMAT fif, const char *message)</div><div class="ttdef"><b>定义</b> <a href="#l00098">FreeImage_ImageLoader.cpp:98</a></div></div>
 <div class="ttc" id="aclass_f_c_t_1_1_free_image___image_loader_html_a3cafb50378c292ac9a91923f05d14c16"><div class="ttname"><a href="class_f_c_t_1_1_free_image___image_loader.html#a3cafb50378c292ac9a91923f05d14c16">FCT::FreeImage_ImageLoader::Tern</a></div><div class="ttdeci">static void Tern()</div><div class="ttdef"><b>定义</b> <a href="#l00012">FreeImage_ImageLoader.cpp:12</a></div></div>
 <div class="ttc" id="aclass_f_c_t_1_1_free_image___image_loader_html_a415cc10447a2086a5711ca55575cbf69"><div class="ttname"><a href="class_f_c_t_1_1_free_image___image_loader.html#a415cc10447a2086a5711ca55575cbf69">FCT::FreeImage_ImageLoader::save</a></div><div class="ttdeci">bool save(const std::string &amp;filename, const ImageData &amp;imageData) override</div><div class="ttdef"><b>定义</b> <a href="#l00068">FreeImage_ImageLoader.cpp:68</a></div></div>
 <div class="ttc" id="aclass_f_c_t_1_1_free_image___image_loader_html_ad8baa49fb40cbcf38ce90e8e9c250449"><div class="ttname"><a href="class_f_c_t_1_1_free_image___image_loader.html#ad8baa49fb40cbcf38ce90e8e9c250449">FCT::FreeImage_ImageLoader::Init</a></div><div class="ttdeci">static void Init()</div><div class="ttdef"><b>定义</b> <a href="#l00007">FreeImage_ImageLoader.cpp:7</a></div></div>

@@ -98,7 +98,11 @@ FCT::VertexBuffer 的协作图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_f_c_t_1_1_vertex_buffer__coll__graph.png" border="0" usemap="#a_f_c_t_1_1_vertex_buffer_coll__map" loading="lazy" alt="Collaboration graph"/></div>
 <map name="a_f_c_t_1_1_vertex_buffer_coll__map" id="a_f_c_t_1_1_vertex_buffer_coll__map">
-<area shape="rect" title=" " alt="" coords="5,5,127,416"/>
+<area shape="rect" title=" " alt="" coords="46,885,168,1360"/>
+<area shape="rect" href="class_f_c_t_1_1_vertex_layout.html" title=" " alt="" coords="5,467,209,813"/>
+<area shape="poly" title=" " alt="" coords="110,813,110,869,105,869,105,813"/>
+<area shape="rect" href="class_f_c_t_1_1_vertex_element.html" title=" " alt="" coords="40,5,174,395"/>
+<area shape="poly" title=" " alt="" coords="110,394,110,450,105,450,105,394"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -122,6 +126,19 @@ Public 成员函数</h2></td></tr>
 <tr class="memitem:a9328faad5127ddce37a5ab47491ed8ab" id="r_a9328faad5127ddce37a5ab47491ed8ab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_f_c_t_1_1_const_vertex.html">ConstVertex</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9328faad5127ddce37a5ab47491ed8ab">back</a> () const noexcept</td></tr>
 <tr class="memitem:a28227e8ac75acde61503b6a4a24f39ae" id="r_a28227e8ac75acde61503b6a4a24f39ae"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
 <tr class="memitem:a28227e8ac75acde61503b6a4a24f39ae template"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a28227e8ac75acde61503b6a4a24f39ae">emplaceBack</a> (Args &amp;&amp;... args)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:a8eb679e38a9035c01a77d1020bbf40ae" id="r_a8eb679e38a9035c01a77d1020bbf40ae"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a8eb679e38a9035c01a77d1020bbf40ae template"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8eb679e38a9035c01a77d1020bbf40ae">setAttributes</a> (<a class="el" href="class_f_c_t_1_1_vertex.html">Vertex</a> &amp;vertex, size_t elementIndex, T &amp;&amp;value)</td></tr>
+<tr class="memitem:a5b11dc22cdb9d192b15bdf840d510a55" id="r_a5b11dc22cdb9d192b15bdf840d510a55"><td class="memTemplParams" colspan="2">template&lt;typename T, typename... Rest&gt; </td></tr>
+<tr class="memitem:a5b11dc22cdb9d192b15bdf840d510a55 template"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5b11dc22cdb9d192b15bdf840d510a55">setAttributes</a> (<a class="el" href="class_f_c_t_1_1_vertex.html">Vertex</a> &amp;vertex, size_t elementIndex, T &amp;&amp;first, Rest &amp;&amp;... rest)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a847aab889258d2b6693a366086c9e5e8" id="r_a847aab889258d2b6693a366086c9e5e8"><td class="memItemLeft" align="right" valign="top">std::vector&lt; uint8_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a847aab889258d2b6693a366086c9e5e8">m_data</a></td></tr>
+<tr class="memitem:ac9327de325b53bdb06f8dd8f7f9fe85f" id="r_ac9327de325b53bdb06f8dd8f7f9fe85f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_f_c_t_1_1_vertex_layout.html">VertexLayout</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac9327de325b53bdb06f8dd8f7f9fe85f">m_layout</a></td></tr>
+<tr class="memitem:a960aff9f71f1f1bcccf3526a0fc652af" id="r_a960aff9f71f1f1bcccf3526a0fc652af"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a960aff9f71f1f1bcccf3526a0fc652af">m_stride</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">详细描述</h2>
 <div class="textblock">
@@ -334,11 +351,15 @@ template&lt;typename... Args&gt; </div>
 <div class="dyncontent">
 <div class="center"><img src="class_f_c_t_1_1_vertex_buffer_a28227e8ac75acde61503b6a4a24f39ae_cgraph.png" border="0" usemap="#aclass_f_c_t_1_1_vertex_buffer_a28227e8ac75acde61503b6a4a24f39ae_cgraph" loading="lazy" alt=""/></div>
 <map name="aclass_f_c_t_1_1_vertex_buffer_a28227e8ac75acde61503b6a4a24f39ae_cgraph" id="aclass_f_c_t_1_1_vertex_buffer_a28227e8ac75acde61503b6a4a24f39ae_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,139,48"/>
+<area shape="rect" title=" " alt="" coords="5,39,139,81"/>
 <area shape="rect" href="class_f_c_t_1_1_vertex_buffer.html#a438a337f0773072d8a51c66d564fc091" title=" " alt="" coords="187,5,320,48"/>
-<area shape="poly" title=" " alt="" coords="139,24,171,24,171,29,139,29"/>
-<area shape="rect" href="class_f_c_t_1_1_vertex_buffer.html#a91e4796287b76cd2f4a35ead234b086a" title=" " alt="" coords="368,5,501,48"/>
-<area shape="poly" title=" " alt="" coords="320,24,353,24,353,29,320,29"/>
+<area shape="poly" title=" " alt="" coords="138,45,171,39,172,44,139,50"/>
+<area shape="rect" href="class_f_c_t_1_1_vertex_buffer.html#a8eb679e38a9035c01a77d1020bbf40ae" title=" " alt="" coords="187,72,320,115"/>
+<area shape="poly" title=" " alt="" coords="139,70,172,76,171,81,138,75"/>
+<area shape="rect" href="class_f_c_t_1_1_vertex_buffer.html#a91e4796287b76cd2f4a35ead234b086a" title=" " alt="" coords="384,5,518,48"/>
+<area shape="poly" title=" " alt="" coords="320,24,369,24,369,29,320,29"/>
+<area shape="rect" href="class_f_c_t_1_1_vertex.html#a51775e41a37ee82ac416a2785666d1be" title=" " alt="" coords="368,80,534,107"/>
+<area shape="poly" title=" " alt="" coords="320,91,352,91,352,96,320,96"/>
 </map>
 </div>
 
@@ -678,6 +699,195 @@ template&lt;typename... Args&gt; </div>
 <area shape="poly" title=" " alt="" coords="202,29,170,29,170,24,202,24"/>
 </map>
 </div>
+
+</div>
+</div>
+<a id="a5b11dc22cdb9d192b15bdf840d510a55" name="a5b11dc22cdb9d192b15bdf840d510a55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b11dc22cdb9d192b15bdf840d510a55">&#9670;&#160;</a></span>setAttributes() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, typename... Rest&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FCT::VertexBuffer::setAttributes </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_f_c_t_1_1_vertex.html">Vertex</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>vertex</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>elementIndex</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>first</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Rest &amp;&amp;...</td>          <td class="paramname"><span class="paramname"><em>rest</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_vertex_8h_source.html">Vertex.h</a> 第 <a class="el" href="_vertex_8h_source.html#l00639">639</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_vertex_buffer_a5b11dc22cdb9d192b15bdf840d510a55_cgraph.png" border="0" usemap="#aclass_f_c_t_1_1_vertex_buffer_a5b11dc22cdb9d192b15bdf840d510a55_cgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_vertex_buffer_a5b11dc22cdb9d192b15bdf840d510a55_cgraph" id="aclass_f_c_t_1_1_vertex_buffer_a5b11dc22cdb9d192b15bdf840d510a55_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,139,48"/>
+<area shape="rect" href="class_f_c_t_1_1_vertex.html#a51775e41a37ee82ac416a2785666d1be" title=" " alt="" coords="368,13,534,40"/>
+<area shape="poly" title=" " alt="" coords="139,21,187,20,320,20,352,21,352,26,320,25,187,25,139,27"/>
+<area shape="rect" href="class_f_c_t_1_1_vertex_buffer.html#a8eb679e38a9035c01a77d1020bbf40ae" title=" " alt="" coords="187,35,320,77"/>
+<area shape="poly" title=" " alt="" coords="139,35,172,40,171,45,138,40"/>
+<area shape="poly" title=" " alt="" coords="320,44,352,39,353,44,321,49"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8eb679e38a9035c01a77d1020bbf40ae" name="a8eb679e38a9035c01a77d1020bbf40ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8eb679e38a9035c01a77d1020bbf40ae">&#9670;&#160;</a></span>setAttributes() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FCT::VertexBuffer::setAttributes </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_f_c_t_1_1_vertex.html">Vertex</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>vertex</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>elementIndex</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_vertex_8h_source.html">Vertex.h</a> 第 <a class="el" href="_vertex_8h_source.html#l00632">632</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_vertex_buffer_a8eb679e38a9035c01a77d1020bbf40ae_cgraph.png" border="0" usemap="#aclass_f_c_t_1_1_vertex_buffer_a8eb679e38a9035c01a77d1020bbf40ae_cgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_vertex_buffer_a8eb679e38a9035c01a77d1020bbf40ae_cgraph" id="aclass_f_c_t_1_1_vertex_buffer_a8eb679e38a9035c01a77d1020bbf40ae_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,139,48"/>
+<area shape="rect" href="class_f_c_t_1_1_vertex.html#a51775e41a37ee82ac416a2785666d1be" title=" " alt="" coords="187,13,353,40"/>
+<area shape="poly" title=" " alt="" coords="139,24,171,24,171,29,139,29"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_vertex_buffer_a8eb679e38a9035c01a77d1020bbf40ae_icgraph.png" border="0" usemap="#aclass_f_c_t_1_1_vertex_buffer_a8eb679e38a9035c01a77d1020bbf40ae_icgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_vertex_buffer_a8eb679e38a9035c01a77d1020bbf40ae_icgraph" id="aclass_f_c_t_1_1_vertex_buffer_a8eb679e38a9035c01a77d1020bbf40ae_icgraph">
+<area shape="rect" title=" " alt="" coords="187,39,320,81"/>
+<area shape="rect" href="class_f_c_t_1_1_vertex_buffer.html#a28227e8ac75acde61503b6a4a24f39ae" title=" " alt="" coords="5,5,139,48"/>
+<area shape="poly" title=" " alt="" coords="171,48,138,42,139,36,172,42"/>
+<area shape="rect" href="class_f_c_t_1_1_vertex_buffer.html#a5b11dc22cdb9d192b15bdf840d510a55" title=" " alt="" coords="5,72,139,115"/>
+<area shape="poly" title=" " alt="" coords="172,78,139,84,138,78,171,72"/>
+</map>
+</div>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">类成员变量说明</h2>
+<a id="a847aab889258d2b6693a366086c9e5e8" name="a847aab889258d2b6693a366086c9e5e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a847aab889258d2b6693a366086c9e5e8">&#9670;&#160;</a></span>m_data</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;uint8_t&gt; FCT::VertexBuffer::m_data</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_vertex_8h_source.html">Vertex.h</a> 第 <a class="el" href="_vertex_8h_source.html#l00646">646</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ac9327de325b53bdb06f8dd8f7f9fe85f" name="ac9327de325b53bdb06f8dd8f7f9fe85f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9327de325b53bdb06f8dd8f7f9fe85f">&#9670;&#160;</a></span>m_layout</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_f_c_t_1_1_vertex_layout.html">VertexLayout</a> FCT::VertexBuffer::m_layout</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_vertex_8h_source.html">Vertex.h</a> 第 <a class="el" href="_vertex_8h_source.html#l00647">647</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a960aff9f71f1f1bcccf3526a0fc652af" name="a960aff9f71f1f1bcccf3526a0fc652af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a960aff9f71f1f1bcccf3526a0fc652af">&#9670;&#160;</a></span>m_stride</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t FCT::VertexBuffer::m_stride</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_vertex_8h_source.html">Vertex.h</a> 第 <a class="el" href="_vertex_8h_source.html#l00648">648</a> 行定义.</p>
 
 </div>
 </div>

@@ -9,23 +9,23 @@
 \DoxyCodeLine{\Hypertarget{_win32___runtime_8cpp_source_l00005}00005\ \ \ \ \ }
 \DoxyCodeLine{\Hypertarget{_win32___runtime_8cpp_source_l00006}00006\ \ \ \ \ \};}
 \DoxyCodeLine{\Hypertarget{_win32___runtime_8cpp_source_l00007}00007\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_runtime_a8935358c013f37d5ec950099c888c89c}{Runtime::init}}()\ \{}
-\DoxyCodeLine{\Hypertarget{_win32___runtime_8cpp_source_l00008}00008\ \ \ \ \ \ \ \ \ g\_common\ =\ \mbox{\hyperlink{_memory_cheak_8h_a0fee0225d38ce42671a1fb5630db4434}{FCT\_NEW}}(\mbox{\hyperlink{struct_f_c_t_1_1_win32___runtime_common}{Win32\_RuntimeCommon}});}
+\DoxyCodeLine{\Hypertarget{_win32___runtime_8cpp_source_l00008}00008\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_runtime_ac8957ab52a379f3ef953b938ace24ebb}{g\_common}}\ =\ \mbox{\hyperlink{_memory_cheak_8h_a0fee0225d38ce42671a1fb5630db4434}{FCT\_NEW}}(\mbox{\hyperlink{struct_f_c_t_1_1_win32___runtime_common}{Win32\_RuntimeCommon}});}
 \DoxyCodeLine{\Hypertarget{_win32___runtime_8cpp_source_l00009}00009\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_win32___runtime_8cpp_source_l00010}00010\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_runtime_a7e06f2fd3bd29b1196861fa8b62aee37}{Runtime::term}}()\ \{}
-\DoxyCodeLine{\Hypertarget{_win32___runtime_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_memory_cheak_8h_a208ca9335e0fa05cd26667978959abd5}{FCT\_DELETE}}(g\_common);}
+\DoxyCodeLine{\Hypertarget{_win32___runtime_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_memory_cheak_8h_a208ca9335e0fa05cd26667978959abd5}{FCT\_DELETE}}(\mbox{\hyperlink{class_f_c_t_1_1_runtime_ac8957ab52a379f3ef953b938ace24ebb}{g\_common}});}
 \DoxyCodeLine{\Hypertarget{_win32___runtime_8cpp_source_l00012}00012\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_win32___runtime_8cpp_source_l00013}00013\ }
 \DoxyCodeLine{\Hypertarget{_win32___runtime_8cpp_source_l00014}00014\ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_window}{Window}}*\ \mbox{\hyperlink{class_f_c_t_1_1_runtime_adf96ab1ae1ec05e6777ab9b3fdef8d55}{Runtime::createWindow}}()}
 \DoxyCodeLine{\Hypertarget{_win32___runtime_8cpp_source_l00015}00015\ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_win32___runtime_8cpp_source_l00016}00016\ \textcolor{preprocessor}{\#ifdef\ FCT\_USE\_GLFW}}
-\DoxyCodeLine{\Hypertarget{_win32___runtime_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ Window*\ window\ =\ \mbox{\hyperlink{_memory_cheak_8h_a0fee0225d38ce42671a1fb5630db4434}{FCT\_NEW}}(GLFW\_Window,g\_common-\/>glfwUICommon,\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_win32___runtime_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ Window*\ window\ =\ \mbox{\hyperlink{_memory_cheak_8h_a0fee0225d38ce42671a1fb5630db4434}{FCT\_NEW}}(GLFW\_Window,\mbox{\hyperlink{class_f_c_t_1_1_runtime_ac8957ab52a379f3ef953b938ace24ebb}{g\_common}}-\/>glfwUICommon,\textcolor{keyword}{this});}
 \DoxyCodeLine{\Hypertarget{_win32___runtime_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ window;}
 \DoxyCodeLine{\Hypertarget{_win32___runtime_8cpp_source_l00019}00019\ \textcolor{preprocessor}{\#endif}}
 \DoxyCodeLine{\Hypertarget{_win32___runtime_8cpp_source_l00020}00020\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_win32___runtime_8cpp_source_l00021}00021\ }
 \DoxyCodeLine{\Hypertarget{_win32___runtime_8cpp_source_l00022}00022\ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_context}{Context}}*\ \mbox{\hyperlink{class_f_c_t_1_1_runtime_ade286afead1866b1749ba244f0da78e3}{Runtime::createContext}}()}
 \DoxyCodeLine{\Hypertarget{_win32___runtime_8cpp_source_l00023}00023\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_win32___runtime_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{_memory_cheak_8h_a0fee0225d38ce42671a1fb5630db4434}{FCT\_NEW}}(VK\_Context,g\_common-\/>vkContextCommon);}
+\DoxyCodeLine{\Hypertarget{_win32___runtime_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{_memory_cheak_8h_a0fee0225d38ce42671a1fb5630db4434}{FCT\_NEW}}(VK\_Context,\mbox{\hyperlink{class_f_c_t_1_1_runtime_ac8957ab52a379f3ef953b938ace24ebb}{g\_common}}-\/>vkContextCommon);}
 \DoxyCodeLine{\Hypertarget{_win32___runtime_8cpp_source_l00025}00025\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_win32___runtime_8cpp_source_l00026}00026\ }
 \DoxyCodeLine{\Hypertarget{_win32___runtime_8cpp_source_l00027}\mbox{\hyperlink{class_f_c_t_1_1_runtime_a828db6219f2af0c96807a71e0543440b}{00027}}\ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_image_loader}{ImageLoader}}*\ \mbox{\hyperlink{class_f_c_t_1_1_runtime_a828db6219f2af0c96807a71e0543440b}{Runtime::createImageLoader}}()}

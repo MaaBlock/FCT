@@ -98,7 +98,7 @@ FCT::GLFW_UICommon 的协作图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_f_c_t_1_1_g_l_f_w___u_i_common__coll__graph.png" border="0" usemap="#a_f_c_t_1_1_g_l_f_w___u_i_common_coll__map" loading="lazy" alt="Collaboration graph"/></div>
 <map name="a_f_c_t_1_1_g_l_f_w___u_i_common_coll__map" id="a_f_c_t_1_1_g_l_f_w___u_i_common_coll__map">
-<area shape="rect" title=" " alt="" coords="5,5,161,160"/>
+<area shape="rect" title=" " alt="" coords="5,5,161,267"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -109,6 +109,15 @@ Public 成员函数</h2></td></tr>
 <tr class="memitem:a1183eb3169f972ed2c8a953b18ea1289" id="r_a1183eb3169f972ed2c8a953b18ea1289"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1183eb3169f972ed2c8a953b18ea1289">postUiTask</a> (<a class="el" href="namespace_f_c_t.html#a2b67c2197d2675193be9ca0fe8406c87">UITaskFunction</a> task, void *param=nullptr, bool waited=true)</td></tr>
 <tr class="memitem:ab65593b736f1021e27f762c10757e26b" id="r_ab65593b736f1021e27f762c10757e26b"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab65593b736f1021e27f762c10757e26b">postTicker</a> (<a class="el" href="namespace_f_c_t.html#afeb4bf1a3cf675cfa582cc37d4cb0946">UiTicker</a> ticker)</td></tr>
 <tr class="memitem:a269758bd5d03e11a93abe04e7ea7cf61" id="r_a269758bd5d03e11a93abe04e7ea7cf61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a269758bd5d03e11a93abe04e7ea7cf61">sendUiTask</a> (<a class="el" href="namespace_f_c_t.html#a2b67c2197d2675193be9ca0fe8406c87">UITaskFunction</a> task, void *param=nullptr, bool waited=true)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a8e5a78f4bb988a3aa4fdfe6c3aacadbb" id="r_a8e5a78f4bb988a3aa4fdfe6c3aacadbb"><td class="memItemLeft" align="right" valign="top">std::thread&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e5a78f4bb988a3aa4fdfe6c3aacadbb">m_uiThread</a></td></tr>
+<tr class="memitem:a78cf47bf3b2763fd2955c5d038563bfe" id="r_a78cf47bf3b2763fd2955c5d038563bfe"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a78cf47bf3b2763fd2955c5d038563bfe">m_running</a></td></tr>
+<tr class="memitem:a9a4f42d60486461076e63227c22bb169" id="r_a9a4f42d60486461076e63227c22bb169"><td class="memItemLeft" align="right" valign="top">boost::lockfree::queue&lt; <a class="el" href="struct_f_c_t_1_1_u_i_task_trans.html">UITaskTrans</a>, boost::lockfree::capacity&lt; 1024 &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a4f42d60486461076e63227c22bb169">m_taskQueue</a></td></tr>
+<tr class="memitem:a291d842f94c408d78277264464f28876" id="r_a291d842f94c408d78277264464f28876"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; uint32_t, <a class="el" href="namespace_f_c_t.html#afeb4bf1a3cf675cfa582cc37d4cb0946">UiTicker</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a291d842f94c408d78277264464f28876">m_ticker</a></td></tr>
+<tr class="memitem:ab8b47461a7a0c7c1c8d41c1ba96c302b" id="r_ab8b47461a7a0c7c1c8d41c1ba96c302b"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab8b47461a7a0c7c1c8d41c1ba96c302b">m_tickerId</a> = 0</td></tr>
+<tr class="memitem:aa48dc4f37c3b209ba27d29f750c0dfdc" id="r_aa48dc4f37c3b209ba27d29f750c0dfdc"><td class="memItemLeft" align="right" valign="top">std::thread::id&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa48dc4f37c3b209ba27d29f750c0dfdc">m_uiThreadId</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">详细描述</h2>
 <div class="textblock">
@@ -273,6 +282,151 @@ Public 成员函数</h2></td></tr>
 <area shape="poly" title=" " alt="" coords="172,24,204,24,204,29,172,29"/>
 </map>
 </div>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">类成员变量说明</h2>
+<a id="a78cf47bf3b2763fd2955c5d038563bfe" name="a78cf47bf3b2763fd2955c5d038563bfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78cf47bf3b2763fd2955c5d038563bfe">&#9670;&#160;</a></span>m_running</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool FCT::GLFW_UICommon::m_running</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_g_l_f_w___u_i_common_8h_source.html">GLFW_UICommon.h</a> 第 <a class="el" href="_g_l_f_w___u_i_common_8h_source.html#l00049">49</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a9a4f42d60486461076e63227c22bb169" name="a9a4f42d60486461076e63227c22bb169"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a4f42d60486461076e63227c22bb169">&#9670;&#160;</a></span>m_taskQueue</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::lockfree::queue&lt;<a class="el" href="struct_f_c_t_1_1_u_i_task_trans.html">UITaskTrans</a>, boost::lockfree::capacity&lt;1024&gt; &gt; FCT::GLFW_UICommon::m_taskQueue</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_g_l_f_w___u_i_common_8h_source.html">GLFW_UICommon.h</a> 第 <a class="el" href="_g_l_f_w___u_i_common_8h_source.html#l00050">50</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a291d842f94c408d78277264464f28876" name="a291d842f94c408d78277264464f28876"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a291d842f94c408d78277264464f28876">&#9670;&#160;</a></span>m_ticker</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt;uint32_t,<a class="el" href="namespace_f_c_t.html#afeb4bf1a3cf675cfa582cc37d4cb0946">UiTicker</a>&gt; FCT::GLFW_UICommon::m_ticker</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_g_l_f_w___u_i_common_8h_source.html">GLFW_UICommon.h</a> 第 <a class="el" href="_g_l_f_w___u_i_common_8h_source.html#l00051">51</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ab8b47461a7a0c7c1c8d41c1ba96c302b" name="ab8b47461a7a0c7c1c8d41c1ba96c302b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8b47461a7a0c7c1c8d41c1ba96c302b">&#9670;&#160;</a></span>m_tickerId</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t FCT::GLFW_UICommon::m_tickerId = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_g_l_f_w___u_i_common_8h_source.html">GLFW_UICommon.h</a> 第 <a class="el" href="_g_l_f_w___u_i_common_8h_source.html#l00052">52</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a8e5a78f4bb988a3aa4fdfe6c3aacadbb" name="a8e5a78f4bb988a3aa4fdfe6c3aacadbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e5a78f4bb988a3aa4fdfe6c3aacadbb">&#9670;&#160;</a></span>m_uiThread</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::thread FCT::GLFW_UICommon::m_uiThread</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_g_l_f_w___u_i_common_8h_source.html">GLFW_UICommon.h</a> 第 <a class="el" href="_g_l_f_w___u_i_common_8h_source.html#l00048">48</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aa48dc4f37c3b209ba27d29f750c0dfdc" name="aa48dc4f37c3b209ba27d29f750c0dfdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa48dc4f37c3b209ba27d29f750c0dfdc">&#9670;&#160;</a></span>m_uiThreadId</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::thread::id FCT::GLFW_UICommon::m_uiThreadId</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_g_l_f_w___u_i_common_8h_source.html">GLFW_UICommon.h</a> 第 <a class="el" href="_g_l_f_w___u_i_common_8h_source.html#l00053">53</a> 行定义.</p>
 
 </div>
 </div>

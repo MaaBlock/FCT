@@ -16,5 +16,10 @@ var class_f_c_t_1_1_vertex_buffer =
     [ "getVertexCount", "class_f_c_t_1_1_vertex_buffer.html#a91e4796287b76cd2f4a35ead234b086a", null ],
     [ "operator[]", "class_f_c_t_1_1_vertex_buffer.html#ac9f10e99f76551a17bf20b9b071303b4", null ],
     [ "reserve", "class_f_c_t_1_1_vertex_buffer.html#a342624913471e83d75700e6e326abe46", null ],
-    [ "resize", "class_f_c_t_1_1_vertex_buffer.html#ae074d04e391f6cbbdbe0231aa1a12d64", null ]
+    [ "resize", "class_f_c_t_1_1_vertex_buffer.html#ae074d04e391f6cbbdbe0231aa1a12d64", null ],
+    [ "setAttributes", "class_f_c_t_1_1_vertex_buffer.html#a5b11dc22cdb9d192b15bdf840d510a55", null ],
+    [ "setAttributes", "class_f_c_t_1_1_vertex_buffer.html#a8eb679e38a9035c01a77d1020bbf40ae", null ],
+    [ "m_data", "class_f_c_t_1_1_vertex_buffer.html#a847aab889258d2b6693a366086c9e5e8", null ],
+    [ "m_layout", "class_f_c_t_1_1_vertex_buffer.html#ac9327de325b53bdb06f8dd8f7f9fe85f", null ],
+    [ "m_stride", "class_f_c_t_1_1_vertex_buffer.html#a960aff9f71f1f1bcccf3526a0fc652af", null ]
 ];

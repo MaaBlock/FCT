@@ -6,11 +6,12 @@
 
 
 
-FCT\+::Resource\+Manager 的协作图\+:\nopagebreak
+FCT\+::Resource\+Manager 的协作图\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=192pt]{class_f_c_t_1_1_resource_manager__coll__graph}
+\includegraphics[height=550pt]{class_f_c_t_1_1_resource_manager__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public 成员函数}
@@ -26,6 +27,32 @@ void \mbox{\hyperlink{class_f_c_t_1_1_resource_manager_a954addf5ebf3890aa5ed2853
 \begin{DoxyCompactList}\small\item\em 挂起resize一个image \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_f_c_t_1_1_image}{Image}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_resource_manager_ab2a4326281e2905274f2a426cf236edb}{allocate\+Target}} (std\+::string name, \mbox{\hyperlink{struct_f_c_t_1_1_target_desc}{Target\+Desc}} desc)
 \begin{DoxyCompactList}\small\item\em 分配的是独立的\+Target,例如窗口一类的就算为独立\+Target \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_resource_manager_a909ee0ce75929ac350afe4588d06a56a}{update\+Graph}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_resource_manager_ad5246ffe3f7357be10898fd24268b277}{addvance\+Frame}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_resource_manager_a954245509d71e21eaa0dbe13c7b77d19}{register\+Window}} (\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}wnd)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_resource_manager_a1a396277acf6d8a877ec019680dc3adc}{resize\+Sub}} (std\+::string token, int width, int height)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_resource_manager_a49de35a354ac61f32450c9a3a02b19f9}{resize}} (std\+::string token, int width, int height)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_token_graph}{Token\+Graph}}$<$ std\+::string, \mbox{\hyperlink{struct_f_c_t_1_1_image_saved}{Image\+Saved}} $>$ \mbox{\hyperlink{class_f_c_t_1_1_resource_manager_a7b4ea6c70c937b2930d37829ca4d7c6c}{m\+\_\+dependency\+Graph}}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_f_c_t_1_1_resource_manager_a5e0ea4d0a63050b103f35f7617d157bc}{m\+\_\+target}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_f_c_t_1_1_image_saved}{Image\+Saved}} $>$ \mbox{\hyperlink{class_f_c_t_1_1_resource_manager_ad529b84a87058bd8f480b3dd30325e56}{m\+\_\+need\+Change\+Index\+Images}}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_device}{Device}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_resource_manager_afef6c064768005c18b49c21da416d3d0}{m\+\_\+resource\+Device}}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_context}{Context}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_resource_manager_a58fb20c20e5bbebfda29dcceb9bd56ed}{m\+\_\+context}}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{详细描述}
@@ -61,6 +88,12 @@ FCT\+::\+Resource\+Manager\+::\+Resource\+Manager (\begin{DoxyParamCaption}\item
 \label{doc-func-members}
 \Hypertarget{class_f_c_t_1_1_resource_manager_doc-func-members}
 \doxysubsection{成员函数说明}
+\Hypertarget{class_f_c_t_1_1_resource_manager_ad5246ffe3f7357be10898fd24268b277}\index{FCT::ResourceManager@{FCT::ResourceManager}!addvanceFrame@{addvanceFrame}}
+\index{addvanceFrame@{addvanceFrame}!FCT::ResourceManager@{FCT::ResourceManager}}
+\doxysubsubsection{\texorpdfstring{addvanceFrame()}{addvanceFrame()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_resource_manager_ad5246ffe3f7357be10898fd24268b277} 
+void FCT\+::\+Resource\+Manager\+::addvance\+Frame (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
 \Hypertarget{class_f_c_t_1_1_resource_manager_a42c083caec12c65230370c7dcfa5a118}\index{FCT::ResourceManager@{FCT::ResourceManager}!allocateImage@{allocateImage}}
 \index{allocateImage@{allocateImage}!FCT::ResourceManager@{FCT::ResourceManager}}
 \doxysubsubsection{\texorpdfstring{allocateImage()}{allocateImage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -85,11 +118,12 @@ FCT\+::\+Resource\+Manager\+::\+Resource\+Manager (\begin{DoxyParamCaption}\item
 
 在文件 \mbox{\hyperlink{_resource_manager_8cpp_source}{Resource\+Manager.\+cpp}} 第 \mbox{\hyperlink{_resource_manager_8cpp_source_l00069}{69}} 行定义.
 
-函数调用图\+:\nopagebreak
+函数调用图\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=347pt]{class_f_c_t_1_1_resource_manager_a42c083caec12c65230370c7dcfa5a118_cgraph}
+\includegraphics[width=350pt]{class_f_c_t_1_1_resource_manager_a42c083caec12c65230370c7dcfa5a118_cgraph}
 \end{center}
 \end{figure}
 \Hypertarget{class_f_c_t_1_1_resource_manager_aeb733fce98bbcfc7f081bba86ed31e47}\index{FCT::ResourceManager@{FCT::ResourceManager}!allocateImage@{allocateImage}}
@@ -157,7 +191,51 @@ FCT\+::\+Resource\+Manager\+::\+Resource\+Manager (\begin{DoxyParamCaption}\item
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=347pt]{class_f_c_t_1_1_resource_manager_ab2a4326281e2905274f2a426cf236edb_cgraph}
+\includegraphics[width=350pt]{class_f_c_t_1_1_resource_manager_ab2a4326281e2905274f2a426cf236edb_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_f_c_t_1_1_resource_manager_a954245509d71e21eaa0dbe13c7b77d19}\index{FCT::ResourceManager@{FCT::ResourceManager}!registerWindow@{registerWindow}}
+\index{registerWindow@{registerWindow}!FCT::ResourceManager@{FCT::ResourceManager}}
+\doxysubsubsection{\texorpdfstring{registerWindow()}{registerWindow()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_resource_manager_a954245509d71e21eaa0dbe13c7b77d19} 
+void FCT\+::\+Resource\+Manager\+::register\+Window (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}}]{wnd}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_resource_manager_8cpp_source}{Resource\+Manager.\+cpp}} 第 \mbox{\hyperlink{_resource_manager_8cpp_source_l00115}{115}} 行定义.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_resource_manager_a954245509d71e21eaa0dbe13c7b77d19_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_resource_manager_a954245509d71e21eaa0dbe13c7b77d19_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_f_c_t_1_1_resource_manager_a49de35a354ac61f32450c9a3a02b19f9}\index{FCT::ResourceManager@{FCT::ResourceManager}!resize@{resize}}
+\index{resize@{resize}!FCT::ResourceManager@{FCT::ResourceManager}}
+\doxysubsubsection{\texorpdfstring{resize()}{resize()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_resource_manager_a49de35a354ac61f32450c9a3a02b19f9} 
+void FCT\+::\+Resource\+Manager\+::resize (\begin{DoxyParamCaption}\item[{std\+::string}]{token}{, }\item[{int}]{width}{, }\item[{int}]{height}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_resource_manager_8cpp_source}{Resource\+Manager.\+cpp}} 第 \mbox{\hyperlink{_resource_manager_8cpp_source_l00142}{142}} 行定义.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_resource_manager_a49de35a354ac61f32450c9a3a02b19f9_cgraph}
 \end{center}
 \end{figure}
 \Hypertarget{class_f_c_t_1_1_resource_manager_a954addf5ebf3890aa5ed2853cb9efc32}\index{FCT::ResourceManager@{FCT::ResourceManager}!resizeImage@{resizeImage}}
@@ -182,6 +260,105 @@ void FCT\+::\+Resource\+Manager\+::resize\+Image (\begin{DoxyParamCaption}\item[
 
 
 在文件 \mbox{\hyperlink{_resource_manager_8cpp_source}{Resource\+Manager.\+cpp}} 第 \mbox{\hyperlink{_resource_manager_8cpp_source_l00155}{155}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_resource_manager_a1a396277acf6d8a877ec019680dc3adc}\index{FCT::ResourceManager@{FCT::ResourceManager}!resizeSub@{resizeSub}}
+\index{resizeSub@{resizeSub}!FCT::ResourceManager@{FCT::ResourceManager}}
+\doxysubsubsection{\texorpdfstring{resizeSub()}{resizeSub()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_resource_manager_a1a396277acf6d8a877ec019680dc3adc} 
+void FCT\+::\+Resource\+Manager\+::resize\+Sub (\begin{DoxyParamCaption}\item[{std\+::string}]{token}{, }\item[{int}]{width}{, }\item[{int}]{height}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_resource_manager_8cpp_source}{Resource\+Manager.\+cpp}} 第 \mbox{\hyperlink{_resource_manager_8cpp_source_l00134}{134}} 行定义.
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_resource_manager_a1a396277acf6d8a877ec019680dc3adc_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_resource_manager_a1a396277acf6d8a877ec019680dc3adc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_f_c_t_1_1_resource_manager_a909ee0ce75929ac350afe4588d06a56a}\index{FCT::ResourceManager@{FCT::ResourceManager}!updateGraph@{updateGraph}}
+\index{updateGraph@{updateGraph}!FCT::ResourceManager@{FCT::ResourceManager}}
+\doxysubsubsection{\texorpdfstring{updateGraph()}{updateGraph()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_resource_manager_a909ee0ce75929ac350afe4588d06a56a} 
+void FCT\+::\+Resource\+Manager\+::update\+Graph (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_resource_manager_8cpp_source}{Resource\+Manager.\+cpp}} 第 \mbox{\hyperlink{_resource_manager_8cpp_source_l00106}{106}} 行定义.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_resource_manager_a909ee0ce75929ac350afe4588d06a56a_icgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_f_c_t_1_1_resource_manager_doc-variable-members}
+\doxysubsection{类成员变量说明}
+\Hypertarget{class_f_c_t_1_1_resource_manager_a58fb20c20e5bbebfda29dcceb9bd56ed}\index{FCT::ResourceManager@{FCT::ResourceManager}!m\_context@{m\_context}}
+\index{m\_context@{m\_context}!FCT::ResourceManager@{FCT::ResourceManager}}
+\doxysubsubsection{\texorpdfstring{m\_context}{m\_context}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_resource_manager_a58fb20c20e5bbebfda29dcceb9bd56ed} 
+\mbox{\hyperlink{class_f_c_t_1_1_context}{Context}}\texorpdfstring{$\ast$}{*} FCT\+::\+Resource\+Manager\+::m\+\_\+context\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_resource_manager_8h_source}{Resource\+Manager.\+h}} 第 \mbox{\hyperlink{_resource_manager_8h_source_l00105}{105}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_resource_manager_a7b4ea6c70c937b2930d37829ca4d7c6c}\index{FCT::ResourceManager@{FCT::ResourceManager}!m\_dependencyGraph@{m\_dependencyGraph}}
+\index{m\_dependencyGraph@{m\_dependencyGraph}!FCT::ResourceManager@{FCT::ResourceManager}}
+\doxysubsubsection{\texorpdfstring{m\_dependencyGraph}{m\_dependencyGraph}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_resource_manager_a7b4ea6c70c937b2930d37829ca4d7c6c} 
+\mbox{\hyperlink{class_f_c_t_1_1_token_graph}{Token\+Graph}}$<$std\+::string,\mbox{\hyperlink{struct_f_c_t_1_1_image_saved}{Image\+Saved}}$>$ FCT\+::\+Resource\+Manager\+::m\+\_\+dependency\+Graph\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_resource_manager_8h_source}{Resource\+Manager.\+h}} 第 \mbox{\hyperlink{_resource_manager_8h_source_l00101}{101}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_resource_manager_ad529b84a87058bd8f480b3dd30325e56}\index{FCT::ResourceManager@{FCT::ResourceManager}!m\_needChangeIndexImages@{m\_needChangeIndexImages}}
+\index{m\_needChangeIndexImages@{m\_needChangeIndexImages}!FCT::ResourceManager@{FCT::ResourceManager}}
+\doxysubsubsection{\texorpdfstring{m\_needChangeIndexImages}{m\_needChangeIndexImages}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_resource_manager_ad529b84a87058bd8f480b3dd30325e56} 
+std\+::vector$<$\mbox{\hyperlink{struct_f_c_t_1_1_image_saved}{Image\+Saved}}$>$ FCT\+::\+Resource\+Manager\+::m\+\_\+need\+Change\+Index\+Images\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_resource_manager_8h_source}{Resource\+Manager.\+h}} 第 \mbox{\hyperlink{_resource_manager_8h_source_l00103}{103}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_resource_manager_afef6c064768005c18b49c21da416d3d0}\index{FCT::ResourceManager@{FCT::ResourceManager}!m\_resourceDevice@{m\_resourceDevice}}
+\index{m\_resourceDevice@{m\_resourceDevice}!FCT::ResourceManager@{FCT::ResourceManager}}
+\doxysubsubsection{\texorpdfstring{m\_resourceDevice}{m\_resourceDevice}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_resource_manager_afef6c064768005c18b49c21da416d3d0} 
+\mbox{\hyperlink{class_f_c_t_1_1_device}{Device}}\texorpdfstring{$\ast$}{*} FCT\+::\+Resource\+Manager\+::m\+\_\+resource\+Device\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_resource_manager_8h_source}{Resource\+Manager.\+h}} 第 \mbox{\hyperlink{_resource_manager_8h_source_l00104}{104}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_resource_manager_a5e0ea4d0a63050b103f35f7617d157bc}\index{FCT::ResourceManager@{FCT::ResourceManager}!m\_target@{m\_target}}
+\index{m\_target@{m\_target}!FCT::ResourceManager@{FCT::ResourceManager}}
+\doxysubsubsection{\texorpdfstring{m\_target}{m\_target}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_resource_manager_a5e0ea4d0a63050b103f35f7617d157bc} 
+std\+::vector$<$std\+::string$>$ FCT\+::\+Resource\+Manager\+::m\+\_\+target\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_resource_manager_8h_source}{Resource\+Manager.\+h}} 第 \mbox{\hyperlink{_resource_manager_8h_source_l00102}{102}} 行定义.
 
 
 

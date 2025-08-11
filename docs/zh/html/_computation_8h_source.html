@@ -101,28 +101,28 @@ $(function(){initNavTree('_computation_8h_source.html','',''); });
 <div class="foldopen" id="foldopen00008" data-start="{" data-end="};">
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="class_computation.html">    8</a></span><span class="keyword">class </span><a class="code hl_function" href="class_computation.html#a09b5f6b8e7698a7bfaeff20643852402">Computation</a> {</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    std::future&lt;T&gt; m_future;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    T m_value;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordtype">bool</span> m_isFuture;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="class_computation.html#a7d449a1564bf92561d4ae3bebe40aa2b">   10</a></span>    std::future&lt;T&gt; <a class="code hl_variable" href="class_computation.html#a7d449a1564bf92561d4ae3bebe40aa2b">m_future</a>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="class_computation.html#aeecfaedf93670a1edc8dbfa7440b3dd3">   11</a></span>    T <a class="code hl_variable" href="class_computation.html#aeecfaedf93670a1edc8dbfa7440b3dd3">m_value</a>;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="class_computation.html#ad905e8bfdce9406d1739e3c5857e2aaf">   12</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_computation.html#ad905e8bfdce9406d1739e3c5857e2aaf">m_isFuture</a>;</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">public</span>:</div>
 <div class="foldopen" id="foldopen00014" data-start="{" data-end="}">
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_computation.html#a09b5f6b8e7698a7bfaeff20643852402">   14</a></span>    <a class="code hl_function" href="class_computation.html#a09b5f6b8e7698a7bfaeff20643852402">Computation</a>(std::future&lt;T&gt;&amp;&amp; future) {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        m_future = future;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        m_isFuture = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <a class="code hl_variable" href="class_computation.html#a7d449a1564bf92561d4ae3bebe40aa2b">m_future</a> = future;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <a class="code hl_variable" href="class_computation.html#ad905e8bfdce9406d1739e3c5857e2aaf">m_isFuture</a> = <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    }</div>
 </div>
 <div class="foldopen" id="foldopen00018" data-start="{" data-end="}">
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_computation.html#a674820b72861a647c8ae817d0c596415">   18</a></span>    <a class="code hl_function" href="class_computation.html#a674820b72861a647c8ae817d0c596415">Computation</a>(T value) {</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        m_value = value;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        m_isFuture = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <a class="code hl_variable" href="class_computation.html#aeecfaedf93670a1edc8dbfa7440b3dd3">m_value</a> = value;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <a class="code hl_variable" href="class_computation.html#ad905e8bfdce9406d1739e3c5857e2aaf">m_isFuture</a> = <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    }</div>
 </div>
 <div class="foldopen" id="foldopen00022" data-start="{" data-end="}">
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="class_computation.html#a0a98ea86f188e68cc2f3f45b2249f84d">   22</a></span>    T <a class="code hl_function" href="class_computation.html#a0a98ea86f188e68cc2f3f45b2249f84d">get</a>() {</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordflow">if</span> (m_isFuture) {</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            <span class="keywordflow">return</span> m_future;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_computation.html#ad905e8bfdce9406d1739e3c5857e2aaf">m_isFuture</a>) {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="class_computation.html#a7d449a1564bf92561d4ae3bebe40aa2b">m_future</a>;</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        }</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keywordflow">return</span> m_value;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="class_computation.html#aeecfaedf93670a1edc8dbfa7440b3dd3">m_value</a>;</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    }</div>
 </div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>};</div>
@@ -132,6 +132,9 @@ $(function(){initNavTree('_computation_8h_source.html','',''); });
 <div class="ttc" id="aclass_computation_html_a09b5f6b8e7698a7bfaeff20643852402"><div class="ttname"><a href="class_computation.html#a09b5f6b8e7698a7bfaeff20643852402">Computation::Computation</a></div><div class="ttdeci">Computation(std::future&lt; T &gt; &amp;&amp;future)</div><div class="ttdef"><b>定义</b> <a href="#l00014">Computation.h:14</a></div></div>
 <div class="ttc" id="aclass_computation_html_a0a98ea86f188e68cc2f3f45b2249f84d"><div class="ttname"><a href="class_computation.html#a0a98ea86f188e68cc2f3f45b2249f84d">Computation::get</a></div><div class="ttdeci">T get()</div><div class="ttdef"><b>定义</b> <a href="#l00022">Computation.h:22</a></div></div>
 <div class="ttc" id="aclass_computation_html_a674820b72861a647c8ae817d0c596415"><div class="ttname"><a href="class_computation.html#a674820b72861a647c8ae817d0c596415">Computation::Computation</a></div><div class="ttdeci">Computation(T value)</div><div class="ttdef"><b>定义</b> <a href="#l00018">Computation.h:18</a></div></div>
+<div class="ttc" id="aclass_computation_html_a7d449a1564bf92561d4ae3bebe40aa2b"><div class="ttname"><a href="class_computation.html#a7d449a1564bf92561d4ae3bebe40aa2b">Computation::m_future</a></div><div class="ttdeci">std::future&lt; T &gt; m_future</div><div class="ttdef"><b>定义</b> <a href="#l00010">Computation.h:10</a></div></div>
+<div class="ttc" id="aclass_computation_html_ad905e8bfdce9406d1739e3c5857e2aaf"><div class="ttname"><a href="class_computation.html#ad905e8bfdce9406d1739e3c5857e2aaf">Computation::m_isFuture</a></div><div class="ttdeci">bool m_isFuture</div><div class="ttdef"><b>定义</b> <a href="#l00012">Computation.h:12</a></div></div>
+<div class="ttc" id="aclass_computation_html_aeecfaedf93670a1edc8dbfa7440b3dd3"><div class="ttname"><a href="class_computation.html#aeecfaedf93670a1edc8dbfa7440b3dd3">Computation::m_value</a></div><div class="ttdeci">T m_value</div><div class="ttdef"><b>定义</b> <a href="#l00011">Computation.h:11</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

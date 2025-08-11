@@ -2,8 +2,13 @@ var class_f_c_t_1_1_pass =
 [
     [ "Pass", "class_f_c_t_1_1_pass.html#ab20d39aec49d5ef829a4c7db8050d4f4", null ],
     [ "~Pass", "class_f_c_t_1_1_pass.html#ade112f7033ca69fd05ee092e9dca864d", null ],
+    [ "addRef", "class_f_c_t_1_1_pass.html#a59c2f131121de6503df8d363b6853d45", null ],
+    [ "count", "class_f_c_t_1_1_pass.html#a33146ec5804be422936519224a3a7b3f", null ],
+    [ "deleteThis", "class_f_c_t_1_1_pass.html#a0fea0bed50f726d3e11ddde802dac5da", null ],
     [ "enableClear", "class_f_c_t_1_1_pass.html#a0022da63a187843cb9470c30a716e58e", null ],
     [ "getClearValue", "class_f_c_t_1_1_pass.html#a26c9f3c3102b5a8f0a83349e273c1c5f", null ],
+    [ "operator bool", "class_f_c_t_1_1_pass.html#a474ad3a918f2e87d75ff16075e1caeec", null ],
+    [ "release", "class_f_c_t_1_1_pass.html#aaf57b2df79545f2b71ae9087865dee4c", null ],
     [ "rhiPass", "class_f_c_t_1_1_pass.html#a61e8691ce33bb57c2225db9c3f9c67f2", null ],
     [ "setDepthStencil", "class_f_c_t_1_1_pass.html#a52dd1cd0e59908d457aa1c057d2bd3fc", null ],
     [ "setPassResourceAddCallback", "class_f_c_t_1_1_pass.html#a07b9e84c9ad93245dedfbfc923af2f44", null ],
@@ -19,5 +24,6 @@ var class_f_c_t_1_1_pass =
     [ "m_ctx", "class_f_c_t_1_1_pass.html#ab4b7652b15a935e9c3fab9b9c86493a8", null ],
     [ "m_depthStencil", "class_f_c_t_1_1_pass.html#a08201787453cf3f76db400616b1d1988", null ],
     [ "m_pass", "class_f_c_t_1_1_pass.html#ae69191b9a84ab87dec5a68ef2706b808", null ],
+    [ "m_refCount", "class_f_c_t_1_1_pass.html#aca88529f9b473d326168fa808fd02300", null ],
     [ "m_targets", "class_f_c_t_1_1_pass.html#a2652b85a9ab1c30c536a0978b9702017", null ]
 ];

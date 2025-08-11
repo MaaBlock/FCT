@@ -104,49 +104,51 @@ $(function(){initNavTree('_android___out_8h_source.html','',''); });
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="class_android___out.html">   10</a></span><span class="keyword">class </span><a class="code hl_function" href="class_android___out.html#a64b94b3277cb677d85feaeea4a1210fa">Android_Out</a>: <span class="keyword">public</span> std::stringbuf {</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">public</span>:</div>
 <div class="foldopen" id="foldopen00012" data-start="{" data-end="}">
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="class_android___out.html#a64b94b3277cb677d85feaeea4a1210fa">   12</a></span>    <a class="code hl_function" href="class_android___out.html#a64b94b3277cb677d85feaeea4a1210fa">Android_Out</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* logTag) : m_logTag(logTag){</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="class_android___out.html#a64b94b3277cb677d85feaeea4a1210fa">   12</a></span>    <a class="code hl_function" href="class_android___out.html#a64b94b3277cb677d85feaeea4a1210fa">Android_Out</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* logTag) : <a class="code hl_variable" href="class_android___out.html#a5a279c86edfb7bce37800378c18c0770">m_logTag</a>(logTag){</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    }</div>
 </div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">protected</span>:</div>
 <div class="foldopen" id="foldopen00016" data-start="{" data-end="}">
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="class_android___out.html#a7ebf2e1c50a97c9fe3ee2e20cf27afa9">   16</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_android___out.html#a7ebf2e1c50a97c9fe3ee2e20cf27afa9">sync</a>()<span class="keyword"> override </span>{</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        __android_log_print(ANDROID_LOG_DEBUG, m_logTag, <span class="stringliteral">&quot;%s&quot;</span>, str().c_str());</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        __android_log_print(ANDROID_LOG_DEBUG, <a class="code hl_variable" href="class_android___out.html#a5a279c86edfb7bce37800378c18c0770">m_logTag</a>, <span class="stringliteral">&quot;%s&quot;</span>, str().c_str());</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        str(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    }</div>
 </div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* m_logTag;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_android___out.html#a5a279c86edfb7bce37800378c18c0770">   23</a></span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code hl_variable" href="class_android___out.html#a5a279c86edfb7bce37800378c18c0770">m_logTag</a>;</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>};</div>
 </div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
 <div class="foldopen" id="foldopen00026" data-start="{" data-end="};">
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="class_android_err.html">   26</a></span><span class="keyword">class </span><a class="code hl_function" href="class_android_err.html#aaaece8dc1312e6ac5d0b7c4ed1cae5ae">AndroidErr</a>: <span class="keyword">public</span> std::stringbuf {</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_android_err.html#aaaece8dc1312e6ac5d0b7c4ed1cae5ae">   28</a></span>    <a class="code hl_function" href="class_android_err.html#aaaece8dc1312e6ac5d0b7c4ed1cae5ae">AndroidErr</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* kLogTag) : m_logTag(kLogTag){}</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_android_err.html#aaaece8dc1312e6ac5d0b7c4ed1cae5ae">   28</a></span>    <a class="code hl_function" href="class_android_err.html#aaaece8dc1312e6ac5d0b7c4ed1cae5ae">AndroidErr</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* kLogTag) : <a class="code hl_variable" href="class_android_err.html#adb99f3fdb926d3d7e51428eb745c3ef3">m_logTag</a>(kLogTag){}</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">protected</span>:</div>
 <div class="foldopen" id="foldopen00030" data-start="{" data-end="}">
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_android_err.html#a65352a234a904c16e79dc3567119e2a2">   30</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_android_err.html#a65352a234a904c16e79dc3567119e2a2">sync</a>()<span class="keyword"> override </span>{</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        __android_log_print(ANDROID_LOG_ERROR, m_logTag, <span class="stringliteral">&quot;%s&quot;</span>, str().c_str());</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        __android_log_print(ANDROID_LOG_ERROR, <a class="code hl_variable" href="class_android_err.html#adb99f3fdb926d3d7e51428eb745c3ef3">m_logTag</a>, <span class="stringliteral">&quot;%s&quot;</span>, str().c_str());</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        str(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    }</div>
 </div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* m_logTag;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_android_err.html#adb99f3fdb926d3d7e51428eb745c3ef3">   37</a></span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code hl_variable" href="class_android_err.html#adb99f3fdb926d3d7e51428eb745c3ef3">m_logTag</a>;</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>};</div>
 </div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#endif </span><span class="comment">//ANDROIDGLINVESTIGATIONS_ANDROIDOUT_H</span></div>
 <div class="ttc" id="a_android___out_8h_html_a0967dfc0b3ade12b1f2cc0185805cae0"><div class="ttname"><a href="_android___out_8h.html#a0967dfc0b3ade12b1f2cc0185805cae0">aerr</a></div><div class="ttdeci">std::ostream aerr</div></div>
 <div class="ttc" id="a_android___out_8h_html_a3d7e840e14fca88b9ade9d4ea79e0507"><div class="ttname"><a href="_android___out_8h.html#a3d7e840e14fca88b9ade9d4ea79e0507">aout</a></div><div class="ttdeci">std::ostream aout</div></div>
+<div class="ttc" id="aclass_android___out_html_a5a279c86edfb7bce37800378c18c0770"><div class="ttname"><a href="class_android___out.html#a5a279c86edfb7bce37800378c18c0770">Android_Out::m_logTag</a></div><div class="ttdeci">const char * m_logTag</div><div class="ttdef"><b>定义</b> <a href="#l00023">Android_Out.h:23</a></div></div>
 <div class="ttc" id="aclass_android___out_html_a64b94b3277cb677d85feaeea4a1210fa"><div class="ttname"><a href="class_android___out.html#a64b94b3277cb677d85feaeea4a1210fa">Android_Out::Android_Out</a></div><div class="ttdeci">Android_Out(const char *logTag)</div><div class="ttdef"><b>定义</b> <a href="#l00012">Android_Out.h:12</a></div></div>
 <div class="ttc" id="aclass_android___out_html_a7ebf2e1c50a97c9fe3ee2e20cf27afa9"><div class="ttname"><a href="class_android___out.html#a7ebf2e1c50a97c9fe3ee2e20cf27afa9">Android_Out::sync</a></div><div class="ttdeci">virtual int sync() override</div><div class="ttdef"><b>定义</b> <a href="#l00016">Android_Out.h:16</a></div></div>
 <div class="ttc" id="aclass_android_err_html_a65352a234a904c16e79dc3567119e2a2"><div class="ttname"><a href="class_android_err.html#a65352a234a904c16e79dc3567119e2a2">AndroidErr::sync</a></div><div class="ttdeci">virtual int sync() override</div><div class="ttdef"><b>定义</b> <a href="#l00030">Android_Out.h:30</a></div></div>
 <div class="ttc" id="aclass_android_err_html_aaaece8dc1312e6ac5d0b7c4ed1cae5ae"><div class="ttname"><a href="class_android_err.html#aaaece8dc1312e6ac5d0b7c4ed1cae5ae">AndroidErr::AndroidErr</a></div><div class="ttdeci">AndroidErr(const char *kLogTag)</div><div class="ttdef"><b>定义</b> <a href="#l00028">Android_Out.h:28</a></div></div>
+<div class="ttc" id="aclass_android_err_html_adb99f3fdb926d3d7e51428eb745c3ef3"><div class="ttname"><a href="class_android_err.html#adb99f3fdb926d3d7e51428eb745c3ef3">AndroidErr::m_logTag</a></div><div class="ttdeci">const char * m_logTag</div><div class="ttdef"><b>定义</b> <a href="#l00037">Android_Out.h:37</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

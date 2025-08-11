@@ -21,8 +21,9 @@ var searchData=
   ['comparemask_18',['compareMask',['../struct_f_c_t_1_1_stencil_op_state.html#a1b761400e8af84b17e74c9cef6e7a51e',1,'FCT::StencilOpState']]],
   ['compareop_19',['compareOp',['../struct_f_c_t_1_1_stencil_op_state.html#a96346417d122516ea1b2ecfd568f770d',1,'FCT::StencilOpState']]],
   ['context_20',['context',['../struct_f_c_t_1_1_context_event_1_1_window_bound.html#aa37ca682c1c049ef1227104a4a8eb06b',1,'FCT::ContextEvent::WindowBound']]],
-  ['ctx_21',['ctx',['../struct_f_c_t_1_1_frame_resource.html#a9bf1808b86624fddd49aa21c03234ffe',1,'FCT::FrameResource']]],
-  ['currentaccess_22',['currentAccess',['../struct_f_c_t_1_1_r_h_i_1_1_pass_neighbors.html#a92a1a4aad29e299dd53f9fc375c2adac',1,'FCT::RHI::PassNeighbors']]],
-  ['currentframe_23',['currentFrame',['../struct_f_c_t_1_1_update_result.html#a78d6639c3ce3835e4afd3c3abb37c791',1,'FCT::UpdateResult']]],
-  ['currentstage_24',['currentStage',['../struct_f_c_t_1_1_r_h_i_1_1_pass_neighbors.html#a441b389b5e7f4a4aaa29c12a4f21054a',1,'FCT::RHI::PassNeighbors']]]
+  ['createsurface_21',['createSurface',['../class_f_c_t_1_1_android___window.html#a29f427cbdc8f7b61967031b96193b695',1,'FCT::Android_Window']]],
+  ['ctx_22',['ctx',['../struct_f_c_t_1_1_frame_resource.html#a9bf1808b86624fddd49aa21c03234ffe',1,'FCT::FrameResource']]],
+  ['currentaccess_23',['currentAccess',['../struct_f_c_t_1_1_r_h_i_1_1_pass_neighbors.html#a92a1a4aad29e299dd53f9fc375c2adac',1,'FCT::RHI::PassNeighbors']]],
+  ['currentframe_24',['currentFrame',['../struct_f_c_t_1_1_update_result.html#a78d6639c3ce3835e4afd3c3abb37c791',1,'FCT::UpdateResult']]],
+  ['currentstage_25',['currentStage',['../struct_f_c_t_1_1_r_h_i_1_1_pass_neighbors.html#a441b389b5e7f4a4aaa29c12a4f21054a',1,'FCT::RHI::PassNeighbors']]]
 ];

@@ -96,31 +96,49 @@ $(function(){initNavTree('render_concepts.html','',''); });
 <h1 class="doxsection"><a class="anchor" id="autotoc_md0"></a>
 目录</h1>
 <ul>
+<li><a class="el" href="#render_drawcall">DrawCall</a></li>
 <li><a class="el" href="#render_pipeline">渲染管线 (Pipeline)</a></li>
 <li><a class="el" href="#render_pass">渲染通道 (Pass)</a></li>
 <li><a class="el" href="#render_passgroup">通道组 (PassGroup)</a></li>
 </ul>
 <hr  />
-<h1 class="doxsection"><a class="anchor" id="render_pipeline"></a>
-渲染管线 (Pipeline)</h1>
+<h1 class="doxsection"><a class="anchor" id="render_drawcall"></a>
+DrawCall</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
 概念定义</h2>
+<p>执行一次Draw操作 </p>
+<h1 class="doxsection"><a class="anchor" id="render_pipeline"></a>
+渲染管线 (Pipeline)</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
+概念定义</h2>
+<p>一次Draw操作所包含的所有状态信息 </p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
 管线类型</h2>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
-传统光栅化管线 (Traditional Pipeline)</h3>
-<p>图形管线用于传统的几何渲染，处理顶点变换、光栅化和片段着色：</p>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
+传统光栅化管线 (Traditional Pipeline)</h3>
+<h4 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
+概念定义</h4>
+<h4 class="doxsection"><a class="anchor" id="autotoc_md7"></a>
+流程图</h4>
+<h4 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
+包含的状态</h4>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md9"></a>
 MeshShader光栅化管线 (MeshShader Pipeline)</h3>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
+<h4 class="doxsection"><a class="anchor" id="autotoc_md10"></a>
+概念定义</h4>
+<h4 class="doxsection"><a class="anchor" id="autotoc_md11"></a>
+流程图</h4>
+<h4 class="doxsection"><a class="anchor" id="autotoc_md12"></a>
+包含的状态</h4>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md13"></a>
 光线追踪管线 (RayTracing Pipeline)</h3>
 <hr  />
 <h1 class="doxsection"><a class="anchor" id="render_pass"></a>
 渲染通道 (Pass)</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md15"></a>
 概念定义</h2>
 <p>渲染通道（Pass）可以有多个Pipeline</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md9"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md16"></a>
 核心特性</h2>
 <ul>
 <li>**单一职责**：每个 Pass 只负责一种特定的渲染操作</li>
@@ -129,10 +147,10 @@ MeshShader光栅化管线 (MeshShader Pipeline)</h3>
 </ul>
 <h1 class="doxsection"><a class="anchor" id="render_passgroup"></a>
 通道组 (PassGroup)</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md10"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md17"></a>
 概念定义</h2>
 <p>通道组 (PassGroup)可以有多个Pass，但是target以及深度缓存大小必须一致</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md11"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md18"></a>
 设计目的</h2>
 <ul>
 <li>**逻辑分组**：将功能相关的 Pass 组织在一起，便于管理和维护</li>

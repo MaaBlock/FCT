@@ -1,9 +1,12 @@
 var class_f_c_t_1_1_depth_stencil_state =
 [
     [ "~DepthStencilState", "class_f_c_t_1_1_depth_stencil_state.html#ac7d32b971b50162bbae28a51688ad0ac", null ],
+    [ "addRef", "class_f_c_t_1_1_depth_stencil_state.html#a59c2f131121de6503df8d363b6853d45", null ],
     [ "back", "class_f_c_t_1_1_depth_stencil_state.html#a624c93648e85549da5139c2554306418", null ],
     [ "back", "class_f_c_t_1_1_depth_stencil_state.html#aaffe127f6ae79fed98fd00b43928a555", null ],
+    [ "count", "class_f_c_t_1_1_depth_stencil_state.html#a33146ec5804be422936519224a3a7b3f", null ],
     [ "create", "class_f_c_t_1_1_depth_stencil_state.html#a0c82431e95880b99474c3d5d7d5b3f45", null ],
+    [ "deleteThis", "class_f_c_t_1_1_depth_stencil_state.html#a0fea0bed50f726d3e11ddde802dac5da", null ],
     [ "depthBoundsTestEnable", "class_f_c_t_1_1_depth_stencil_state.html#a4849245467bf25560d83aa8e3a8af146", null ],
     [ "depthBoundsTestEnable", "class_f_c_t_1_1_depth_stencil_state.html#a99f4278c45b6930be711e01a87d34702", null ],
     [ "depthCompareOp", "class_f_c_t_1_1_depth_stencil_state.html#a933b343d07b1a5e6f32f764ef545bccc", null ],
@@ -19,6 +22,8 @@ var class_f_c_t_1_1_depth_stencil_state =
     [ "maxDepthBounds", "class_f_c_t_1_1_depth_stencil_state.html#abaa3d9401f842b2be403f4a73308ccaa", null ],
     [ "minDepthBounds", "class_f_c_t_1_1_depth_stencil_state.html#aa9b59d00e5cb112b3ada572c90b09932", null ],
     [ "minDepthBounds", "class_f_c_t_1_1_depth_stencil_state.html#aee47d5546744d1bdfb429ea42016b268", null ],
+    [ "operator bool", "class_f_c_t_1_1_depth_stencil_state.html#a474ad3a918f2e87d75ff16075e1caeec", null ],
+    [ "release", "class_f_c_t_1_1_depth_stencil_state.html#aaf57b2df79545f2b71ae9087865dee4c", null ],
     [ "stencilTestEnable", "class_f_c_t_1_1_depth_stencil_state.html#a227e0ace13c22ce4409584501d5e2321", null ],
     [ "stencilTestEnable", "class_f_c_t_1_1_depth_stencil_state.html#aa4d6be4b7b271c93b4dffb6c26bf1f6a", null ],
     [ "m_back", "class_f_c_t_1_1_depth_stencil_state.html#a1ba29da1ff2cf3cff84b26d6e413d4fb", null ],
@@ -29,5 +34,6 @@ var class_f_c_t_1_1_depth_stencil_state =
     [ "m_front", "class_f_c_t_1_1_depth_stencil_state.html#a4f0f1b83e20157685af5946e9ffab3bf", null ],
     [ "m_maxDepthBounds", "class_f_c_t_1_1_depth_stencil_state.html#a3808cfa358b87d428c9aa2162586fe1e", null ],
     [ "m_minDepthBounds", "class_f_c_t_1_1_depth_stencil_state.html#ad354fe3cbf1c7ab219daf256f154ea5f", null ],
+    [ "m_refCount", "class_f_c_t_1_1_depth_stencil_state.html#aca88529f9b473d326168fa808fd02300", null ],
     [ "m_stencilTestEnable", "class_f_c_t_1_1_depth_stencil_state.html#accdb39eb3c2a38516fd096324826d74e", null ]
 ];

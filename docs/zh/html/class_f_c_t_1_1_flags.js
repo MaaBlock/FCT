@@ -22,5 +22,6 @@ var class_f_c_t_1_1_flags =
     [ "operator^=", "class_f_c_t_1_1_flags.html#a446aff43ff50909e528fdab44162b7e6", null ],
     [ "operator|", "class_f_c_t_1_1_flags.html#a29baa8bdaf770008211c5294aacc6973", null ],
     [ "operator|=", "class_f_c_t_1_1_flags.html#a2a2d009cf6d73da2057b6ef85c1e936a", null ],
-    [ "operator~", "class_f_c_t_1_1_flags.html#a0f535e8bcd5fd02aa5923d9fa500049e", null ]
+    [ "operator~", "class_f_c_t_1_1_flags.html#a0f535e8bcd5fd02aa5923d9fa500049e", null ],
+    [ "m_mask", "class_f_c_t_1_1_flags.html#a51e7053864d33fdc68233fd5b3c5e2f8", null ]
 ];

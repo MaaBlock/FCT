@@ -6,7 +6,8 @@
 
 
 
-FCT\+::Scope\+Timer 的协作图\+:\nopagebreak
+FCT\+::Scope\+Timer 的协作图\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -28,6 +29,20 @@ void \mbox{\hyperlink{class_f_c_t_1_1_scope_timer_a2803ceae81eb377ed3bfa7c45bf41
 static double \mbox{\hyperlink{class_f_c_t_1_1_scope_timer_a9d388adcbb5261bfe534ede761751a0a}{get\+Time}} (const std\+::string \&timer\+Name)
 \item 
 static void \mbox{\hyperlink{class_f_c_t_1_1_scope_timer_a8e5583787ba4c72862156e4cdce30b9a}{print\+All}} (std\+::ostream \&out=\mbox{\hyperlink{namespace_f_c_t_a539584b126825634a31a2e55f4c9a0f3}{fout}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_f_c_t_1_1_scope_timer_aecb778a65b57c32db679efd26828a459}{name}}
+\item 
+std\+::chrono\+::high\+\_\+resolution\+\_\+clock\+::time\+\_\+point \mbox{\hyperlink{class_f_c_t_1_1_scope_timer_aa3503242170b3f29ab89b935555baee0}{start\+Time}}
+\item 
+bool \mbox{\hyperlink{class_f_c_t_1_1_scope_timer_a16e990767ef8efb8b84a8fe65fb2990d}{stopped}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{静态 Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::map$<$ std\+::string, double $>$ \mbox{\hyperlink{class_f_c_t_1_1_scope_timer_a9c8319c5c921a8cd9b9db5a1c2eae8b6}{timings}}
 \end{DoxyCompactItemize}
 
 
@@ -110,6 +125,51 @@ void FCT\+::\+Scope\+Timer\+::stop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCa
 \includegraphics[width=350pt]{class_f_c_t_1_1_scope_timer_a2803ceae81eb377ed3bfa7c45bf41452_icgraph}
 \end{center}
 \end{figure}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_f_c_t_1_1_scope_timer_doc-variable-members}
+\doxysubsection{类成员变量说明}
+\Hypertarget{class_f_c_t_1_1_scope_timer_aecb778a65b57c32db679efd26828a459}\index{FCT::ScopeTimer@{FCT::ScopeTimer}!name@{name}}
+\index{name@{name}!FCT::ScopeTimer@{FCT::ScopeTimer}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_scope_timer_aecb778a65b57c32db679efd26828a459} 
+std\+::string FCT\+::\+Scope\+Timer\+::name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_scope_timer_8h_source}{Scope\+Timer.\+h}} 第 \mbox{\hyperlink{_scope_timer_8h_source_l00013}{13}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_scope_timer_aa3503242170b3f29ab89b935555baee0}\index{FCT::ScopeTimer@{FCT::ScopeTimer}!startTime@{startTime}}
+\index{startTime@{startTime}!FCT::ScopeTimer@{FCT::ScopeTimer}}
+\doxysubsubsection{\texorpdfstring{startTime}{startTime}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_scope_timer_aa3503242170b3f29ab89b935555baee0} 
+std\+::chrono\+::high\+\_\+resolution\+\_\+clock\+::time\+\_\+point FCT\+::\+Scope\+Timer\+::start\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_scope_timer_8h_source}{Scope\+Timer.\+h}} 第 \mbox{\hyperlink{_scope_timer_8h_source_l00014}{14}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_scope_timer_a16e990767ef8efb8b84a8fe65fb2990d}\index{FCT::ScopeTimer@{FCT::ScopeTimer}!stopped@{stopped}}
+\index{stopped@{stopped}!FCT::ScopeTimer@{FCT::ScopeTimer}}
+\doxysubsubsection{\texorpdfstring{stopped}{stopped}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_scope_timer_a16e990767ef8efb8b84a8fe65fb2990d} 
+bool FCT\+::\+Scope\+Timer\+::stopped\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_scope_timer_8h_source}{Scope\+Timer.\+h}} 第 \mbox{\hyperlink{_scope_timer_8h_source_l00015}{15}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_scope_timer_a9c8319c5c921a8cd9b9db5a1c2eae8b6}\index{FCT::ScopeTimer@{FCT::ScopeTimer}!timings@{timings}}
+\index{timings@{timings}!FCT::ScopeTimer@{FCT::ScopeTimer}}
+\doxysubsubsection{\texorpdfstring{timings}{timings}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_scope_timer_a9c8319c5c921a8cd9b9db5a1c2eae8b6} 
+std\+::map$<$ std\+::string, double $>$ FCT\+::\+Scope\+Timer\+::timings\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_scope_timer_8h_source}{Scope\+Timer.\+h}} 第 \mbox{\hyperlink{_scope_timer_8h_source_l00016}{16}} 行定义.
+
 
 
 该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}

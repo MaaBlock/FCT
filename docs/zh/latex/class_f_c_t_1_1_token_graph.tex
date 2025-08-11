@@ -6,7 +6,8 @@
 
 
 
-类 FCT\+::Token\+Graph\texorpdfstring{$<$}{<} Token, Value \texorpdfstring{$>$}{>} 继承关系图\+:\nopagebreak
+类 FCT\+::Token\+Graph\texorpdfstring{$<$}{<} Token, Value \texorpdfstring{$>$}{>} 继承关系图\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -15,7 +16,8 @@
 \end{figure}
 
 
-FCT\+::Token\+Graph\texorpdfstring{$<$}{<} Token, Value \texorpdfstring{$>$}{>} 的协作图\+:\nopagebreak
+FCT\+::Token\+Graph\texorpdfstring{$<$}{<} Token, Value \texorpdfstring{$>$}{>} 的协作图\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -87,20 +89,16 @@ void \mbox{\hyperlink{class_f_c_t_1_1_token_graph_afeea24bc135a350c3a9edfb04992e
 \item 
 std\+::vector$<$ Value $>$ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a9c0d24c314b735638568a4e09ae22fc1}{compute\+Order}} (std\+::function$<$ bool(const Value \&)$>$ can\+Visit)
 \end{DoxyCompactItemize}
-\doxysubsection*{Public 成员函数 继承自 \mbox{\hyperlink{class_f_c_t_1_1_noncopyable}{FCT\+::\+Noncopyable}}}
+\doxysubsubsection*{Private 属性}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_f_c_t_1_1_noncopyable_afc03f8dc02939159e8c46492cc51e37d}{Noncopyable}} (const \mbox{\hyperlink{class_f_c_t_1_1_noncopyable}{Noncopyable}} \&)=delete
+\mbox{\hyperlink{class_f_c_t_1_1_token_graph_adc95b88b4fafd0b1c715e285f87f0145}{Token\+Graph\+Saved\+Boost\+Graph}} \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a6d34ba4622f8e78957fbc4c77d493a64}{m\+\_\+graph}}
 \item 
-void \mbox{\hyperlink{class_f_c_t_1_1_noncopyable_a371b1d1a1991f063e4794ce655d52ea7}{operator=}} (const \mbox{\hyperlink{class_f_c_t_1_1_noncopyable}{Noncopyable}} \&)=delete
-\end{DoxyCompactItemize}
-\doxysubsubsection*{额外继承的成员函数}
-\doxysubsection*{Protected 成员函数 继承自 \mbox{\hyperlink{class_f_c_t_1_1_noncopyable}{FCT\+::\+Noncopyable}}}
-\begin{DoxyCompactItemize}
+boost\+::bimap$<$ boost\+::bimaps\+::unordered\+\_\+set\+\_\+of$<$ Token $>$, \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a364c08f0b65d2dd81dbc1ed21c7f2453}{Boost\+Vertex}} $>$ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_adb5bfa48cd56e57b4be4029eb58a4681}{m\+\_\+vertex}}
 \item 
-\mbox{\hyperlink{class_f_c_t_1_1_noncopyable_a69629c8be6a7d4d3e48139aef83b47b3}{Noncopyable}} ()=default
+std\+::unordered\+\_\+map$<$ Token, \mbox{\hyperlink{struct_f_c_t_1_1_token_graph_1_1_node_info}{Node\+Info}} $>$ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a7326db59736e2649fa10a09663e04588}{m\+\_\+node\+Map}}
 \item 
-\mbox{\hyperlink{class_f_c_t_1_1_noncopyable_a25f74cf3785181f40e408ffac5326531}{\texorpdfstring{$\sim$}{\string~}\+Noncopyable}} ()=default
+std\+::vector$<$ Value $>$ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a48da549221a754b501a24610d0a93e13}{m\+\_\+order}}
 \end{DoxyCompactItemize}
 
 
@@ -583,6 +581,55 @@ void \mbox{\hyperlink{class_f_c_t_1_1_token_graph}{FCT\+::\+Token\+Graph}}$<$ To
 
 
 在文件 \mbox{\hyperlink{_token_graph_8h_source}{Token\+Graph.\+h}} 第 \mbox{\hyperlink{_token_graph_8h_source_l00215}{215}} 行定义.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_f_c_t_1_1_token_graph_doc-variable-members}
+\doxysubsection{类成员变量说明}
+\Hypertarget{class_f_c_t_1_1_token_graph_a6d34ba4622f8e78957fbc4c77d493a64}\index{FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}!m\_graph@{m\_graph}}
+\index{m\_graph@{m\_graph}!FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}}
+\doxysubsubsection{\texorpdfstring{m\_graph}{m\_graph}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_token_graph_a6d34ba4622f8e78957fbc4c77d493a64} 
+template$<$typename Token, typename Value$>$ \\
+\mbox{\hyperlink{class_f_c_t_1_1_token_graph_adc95b88b4fafd0b1c715e285f87f0145}{Token\+Graph\+Saved\+Boost\+Graph}} \mbox{\hyperlink{class_f_c_t_1_1_token_graph}{FCT\+::\+Token\+Graph}}$<$ Token, Value $>$\+::m\+\_\+graph\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_token_graph_8h_source}{Token\+Graph.\+h}} 第 \mbox{\hyperlink{_token_graph_8h_source_l00492}{492}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_token_graph_a7326db59736e2649fa10a09663e04588}\index{FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}!m\_nodeMap@{m\_nodeMap}}
+\index{m\_nodeMap@{m\_nodeMap}!FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}}
+\doxysubsubsection{\texorpdfstring{m\_nodeMap}{m\_nodeMap}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_token_graph_a7326db59736e2649fa10a09663e04588} 
+template$<$typename Token, typename Value$>$ \\
+std\+::unordered\+\_\+map$<$Token, \mbox{\hyperlink{struct_f_c_t_1_1_token_graph_1_1_node_info}{Node\+Info}}$>$ \mbox{\hyperlink{class_f_c_t_1_1_token_graph}{FCT\+::\+Token\+Graph}}$<$ Token, Value $>$\+::m\+\_\+node\+Map\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_token_graph_8h_source}{Token\+Graph.\+h}} 第 \mbox{\hyperlink{_token_graph_8h_source_l00498}{498}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_token_graph_a48da549221a754b501a24610d0a93e13}\index{FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}!m\_order@{m\_order}}
+\index{m\_order@{m\_order}!FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}}
+\doxysubsubsection{\texorpdfstring{m\_order}{m\_order}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_token_graph_a48da549221a754b501a24610d0a93e13} 
+template$<$typename Token, typename Value$>$ \\
+std\+::vector$<$Value$>$ \mbox{\hyperlink{class_f_c_t_1_1_token_graph}{FCT\+::\+Token\+Graph}}$<$ Token, Value $>$\+::m\+\_\+order\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_token_graph_8h_source}{Token\+Graph.\+h}} 第 \mbox{\hyperlink{_token_graph_8h_source_l00499}{499}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_token_graph_adb5bfa48cd56e57b4be4029eb58a4681}\index{FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}!m\_vertex@{m\_vertex}}
+\index{m\_vertex@{m\_vertex}!FCT::TokenGraph$<$ Token, Value $>$@{FCT::TokenGraph$<$ Token, Value $>$}}
+\doxysubsubsection{\texorpdfstring{m\_vertex}{m\_vertex}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_token_graph_adb5bfa48cd56e57b4be4029eb58a4681} 
+template$<$typename Token, typename Value$>$ \\
+boost\+::bimap$<$ boost\+::bimaps\+::unordered\+\_\+set\+\_\+of$<$Token$>$, \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a364c08f0b65d2dd81dbc1ed21c7f2453}{Boost\+Vertex}} $>$ \mbox{\hyperlink{class_f_c_t_1_1_token_graph}{FCT\+::\+Token\+Graph}}$<$ Token, Value $>$\+::m\+\_\+vertex\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_token_graph_8h_source}{Token\+Graph.\+h}} 第 \mbox{\hyperlink{_token_graph_8h_source_l00496}{496}} 行定义.
 
 
 

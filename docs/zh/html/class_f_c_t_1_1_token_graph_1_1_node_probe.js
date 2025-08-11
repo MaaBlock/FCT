@@ -1,5 +1,6 @@
 var class_f_c_t_1_1_token_graph_1_1_node_probe =
 [
+    [ "NodeProbe", "class_f_c_t_1_1_token_graph_1_1_node_probe.html#a0a95b264ee65b25f6f05a5673a5d6953", null ],
     [ "~NodeProbe", "class_f_c_t_1_1_token_graph_1_1_node_probe.html#a7bf54abd0b5f7cd4b18a0326c3d90f89", null ],
     [ "NodeProbe", "class_f_c_t_1_1_token_graph_1_1_node_probe.html#a15878e8663b77aed84dc43b72453aad8", null ],
     [ "NodeProbe", "class_f_c_t_1_1_token_graph_1_1_node_probe.html#ab18dba0bb2037c251766ec7e03c1c156", null ],
@@ -15,5 +16,10 @@ var class_f_c_t_1_1_token_graph_1_1_node_probe =
     [ "removePredecessor", "class_f_c_t_1_1_token_graph_1_1_node_probe.html#aba89376b46becadd6e7385fe3be42252", null ],
     [ "removeSuccessor", "class_f_c_t_1_1_token_graph_1_1_node_probe.html#adf83090536742d9d779719f5f86f4e07", null ],
     [ "token", "class_f_c_t_1_1_token_graph_1_1_node_probe.html#ab50b8d7d79a2f23e1e82966f9d630524", null ],
-    [ "TokenGraph", "class_f_c_t_1_1_token_graph_1_1_node_probe.html#ad78c7d42fd03ab4a06fa9c31e51b2d9e", null ]
+    [ "TokenGraph", "class_f_c_t_1_1_token_graph_1_1_node_probe.html#ad78c7d42fd03ab4a06fa9c31e51b2d9e", null ],
+    [ "m_exists", "class_f_c_t_1_1_token_graph_1_1_node_probe.html#ae1026891b904bedc32c1a029861354f6", null ],
+    [ "m_graph", "class_f_c_t_1_1_token_graph_1_1_node_probe.html#a098a57c16015fa7a85ce1d6e96b6311e", null ],
+    [ "m_modified", "class_f_c_t_1_1_token_graph_1_1_node_probe.html#a921ed2a37bd8b6594de1d5d5e86462b7", null ],
+    [ "m_nodeInfo", "class_f_c_t_1_1_token_graph_1_1_node_probe.html#a3cb232e78eb0ddc205c9aadfb3fab65c", null ],
+    [ "m_token", "class_f_c_t_1_1_token_graph_1_1_node_probe.html#ab56be8f013b954a40073d733e5d365eb", null ]
 ];

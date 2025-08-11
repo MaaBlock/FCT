@@ -27,5 +27,9 @@ var class_f_c_t_1_1_token_graph =
     [ "removeWeakRef", "class_f_c_t_1_1_token_graph.html#a89c8a44fcf101e851132d4fd5b40e496", null ],
     [ "update", "class_f_c_t_1_1_token_graph.html#af33f08e17dfc9d269f4f422dbc503518", null ],
     [ "updateNode", "class_f_c_t_1_1_token_graph.html#afeea24bc135a350c3a9edfb04992e8d8", null ],
-    [ "visitBFS", "class_f_c_t_1_1_token_graph.html#aa8af4a56c5321a15a4afc3e091bbf323", null ]
+    [ "visitBFS", "class_f_c_t_1_1_token_graph.html#aa8af4a56c5321a15a4afc3e091bbf323", null ],
+    [ "m_graph", "class_f_c_t_1_1_token_graph.html#a6d34ba4622f8e78957fbc4c77d493a64", null ],
+    [ "m_nodeMap", "class_f_c_t_1_1_token_graph.html#a7326db59736e2649fa10a09663e04588", null ],
+    [ "m_order", "class_f_c_t_1_1_token_graph.html#a48da549221a754b501a24610d0a93e13", null ],
+    [ "m_vertex", "class_f_c_t_1_1_token_graph.html#adb5bfa48cd56e57b4be4029eb58a4681", null ]
 ];

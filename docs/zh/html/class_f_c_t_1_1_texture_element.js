@@ -13,5 +13,9 @@ var class_f_c_t_1_1_texture_element =
     [ "getUpdateFrequency", "class_f_c_t_1_1_texture_element.html#a8dfb7ad3a25db63761184bef8fe8e989", null ],
     [ "operator bool", "class_f_c_t_1_1_texture_element.html#a257f7a0d75735a6ed85beaeb33c2dbe8", null ],
     [ "operator!=", "class_f_c_t_1_1_texture_element.html#a86600db946ad9db81132d5ff93628e99", null ],
-    [ "operator==", "class_f_c_t_1_1_texture_element.html#a2b85b73beaad3e22e78f99e09971101d", null ]
+    [ "operator==", "class_f_c_t_1_1_texture_element.html#a2b85b73beaad3e22e78f99e09971101d", null ],
+    [ "m_name", "class_f_c_t_1_1_texture_element.html#a4865bcb06d3cddb478d5048419447cf1", null ],
+    [ "m_stages", "class_f_c_t_1_1_texture_element.html#ae0b8a152eb511a8e12a02cbf7ba88c62", null ],
+    [ "m_type", "class_f_c_t_1_1_texture_element.html#ada7b291f4694ded5953594e7c80246bf", null ],
+    [ "m_updateFrequency", "class_f_c_t_1_1_texture_element.html#a50b2e02792cc280bc2e0d956e6e0d8e2", null ]
 ];

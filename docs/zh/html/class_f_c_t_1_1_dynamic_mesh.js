@@ -16,8 +16,18 @@ var class_f_c_t_1_1_dynamic_mesh =
     [ "getVertexCount", "class_f_c_t_1_1_dynamic_mesh.html#ac94f553f5d98ef2054ec03cf43d6b0a7", null ],
     [ "reserveIndices", "class_f_c_t_1_1_dynamic_mesh.html#aff33950fb8c0c3c0b710ce84ff066e85", null ],
     [ "reserveVertices", "class_f_c_t_1_1_dynamic_mesh.html#a9ca46e041a61833a2d2b381766fac837", null ],
+    [ "resizeIndexBuffer", "class_f_c_t_1_1_dynamic_mesh.html#acb3987987d64755c95eb1cba780117cf", null ],
+    [ "resizeVertexBuffer", "class_f_c_t_1_1_dynamic_mesh.html#a1889373ebd02103a40fc469f4f61ec2e", null ],
     [ "setIndices", "class_f_c_t_1_1_dynamic_mesh.html#a2114a783d0a81e5fbaa2d308bfa7689f", null ],
     [ "update", "class_f_c_t_1_1_dynamic_mesh.html#acf6a6304e85ea9f6e46267555682a0e0", null ],
     [ "updateIndexData", "class_f_c_t_1_1_dynamic_mesh.html#a6ea772570deda654e096db4e12008c24", null ],
-    [ "updateVertexData", "class_f_c_t_1_1_dynamic_mesh.html#a6e9c55156cb74487fcba0f5d83476e0b", null ]
+    [ "updateVertexData", "class_f_c_t_1_1_dynamic_mesh.html#a6e9c55156cb74487fcba0f5d83476e0b", null ],
+    [ "m_cpuIndices", "class_f_c_t_1_1_dynamic_mesh.html#a7c8dbfc2f23ff2908e7cd15004698711", null ],
+    [ "m_cpuVertex", "class_f_c_t_1_1_dynamic_mesh.html#a3563de21fe5eabb690c30870f7cb5c30", null ],
+    [ "m_ctx", "class_f_c_t_1_1_dynamic_mesh.html#a89d4745a5251ceab0493c1f991193b7c", null ],
+    [ "m_gpuIndex", "class_f_c_t_1_1_dynamic_mesh.html#a6eb1fccce4f9725b07085390d5fb0bf5", null ],
+    [ "m_gpuVertex", "class_f_c_t_1_1_dynamic_mesh.html#ab5335a06e4c6249ffe506485f26bde0f", null ],
+    [ "m_indexCapacity", "class_f_c_t_1_1_dynamic_mesh.html#ac36d21e00b5036d63f0c4cfedfe08264", null ],
+    [ "m_vertexCapacity", "class_f_c_t_1_1_dynamic_mesh.html#ac528aa24875a3e93bd75c43102dd1632", null ],
+    [ "m_vertexLayout", "class_f_c_t_1_1_dynamic_mesh.html#a4870a11316d28f6e631ffa364851fba1", null ]
 ];

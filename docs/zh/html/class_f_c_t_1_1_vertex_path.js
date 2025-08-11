@@ -2,14 +2,17 @@ var class_f_c_t_1_1_vertex_path =
 [
     [ "CommandType", "class_f_c_t_1_1_vertex_path.html#aa58aaa0f03b30771c4eeaf6240240696", null ],
     [ "VertexPath", "class_f_c_t_1_1_vertex_path.html#a47ab2ed1831ea4e299509ee9e2841037", null ],
+    [ "addRef", "class_f_c_t_1_1_vertex_path.html#a59c2f131121de6503df8d363b6853d45", null ],
     [ "arcTo", "class_f_c_t_1_1_vertex_path.html#a6ff7a824190b799d5e1ab729e57a6d7d", null ],
     [ "beginPath", "class_f_c_t_1_1_vertex_path.html#a6120c62c6215eeaef9ee2d1761ed6b13", null ],
     [ "circle", "class_f_c_t_1_1_vertex_path.html#a4c184d2b8589d81710d2a854297f5c5d", null ],
     [ "clear", "class_f_c_t_1_1_vertex_path.html#abe8395136f982559b16bfd1d8394e624", null ],
     [ "clearDirty", "class_f_c_t_1_1_vertex_path.html#a192f1c3799123975f33c0be57f671ec9", null ],
     [ "closePath", "class_f_c_t_1_1_vertex_path.html#ae23cb61addbb89285b126f33f669e03b", null ],
+    [ "count", "class_f_c_t_1_1_vertex_path.html#a33146ec5804be422936519224a3a7b3f", null ],
     [ "curveTo", "class_f_c_t_1_1_vertex_path.html#a88117fbd3fe65c73784ef97ab97c2675", null ],
     [ "curveTo", "class_f_c_t_1_1_vertex_path.html#a3ec97d66a51dbe6739ad570aa5b6c3cc", null ],
+    [ "deleteThis", "class_f_c_t_1_1_vertex_path.html#a0fea0bed50f726d3e11ddde802dac5da", null ],
     [ "end", "class_f_c_t_1_1_vertex_path.html#a2b35cdb190516676965cc7fe3d3e81c6", null ],
     [ "endPath", "class_f_c_t_1_1_vertex_path.html#ad442863883024db93cb955ef9b9d3812", null ],
     [ "fillRect", "class_f_c_t_1_1_vertex_path.html#a16dc9a5a0d8ce3c0885c2c6f46e8f5a7", null ],
@@ -17,6 +20,8 @@ var class_f_c_t_1_1_vertex_path =
     [ "getCommandQueue", "class_f_c_t_1_1_vertex_path.html#a80200e783df21aa4e130e200ec9ca66e", null ],
     [ "lineTo", "class_f_c_t_1_1_vertex_path.html#a9e8020682aec9883ce9151e8f3cefed7", null ],
     [ "moveTo", "class_f_c_t_1_1_vertex_path.html#af7faad5e51f9380966e73ca6227d8c2d", null ],
+    [ "operator bool", "class_f_c_t_1_1_vertex_path.html#a474ad3a918f2e87d75ff16075e1caeec", null ],
+    [ "release", "class_f_c_t_1_1_vertex_path.html#aaf57b2df79545f2b71ae9087865dee4c", null ],
     [ "setColor", "class_f_c_t_1_1_vertex_path.html#a871705e4a113f1244aea2f8f6741a615", null ],
     [ "setTransform", "class_f_c_t_1_1_vertex_path.html#a5483b0d4034257bbb0a778c5d76df297", null ],
     [ "unwrapperArcTo", "class_f_c_t_1_1_vertex_path.html#ab89ff47759cbf4e8dbc990e8ab060ea7", null ],
@@ -28,5 +33,6 @@ var class_f_c_t_1_1_vertex_path =
     [ "m_maxBounds", "class_f_c_t_1_1_vertex_path.html#a2e9350ac9cd26c979fb74e2b04f97f20", null ],
     [ "m_minBounds", "class_f_c_t_1_1_vertex_path.html#a3f5ecbb9dbb433ba26f559acea96e55f", null ],
     [ "m_pathStart", "class_f_c_t_1_1_vertex_path.html#a163fe684408acbbd4957c38725cae116", null ],
+    [ "m_refCount", "class_f_c_t_1_1_vertex_path.html#aca88529f9b473d326168fa808fd02300", null ],
     [ "transform", "class_f_c_t_1_1_vertex_path.html#a2b45cd766fac46fb7ee7e7c87724c358", null ]
 ];

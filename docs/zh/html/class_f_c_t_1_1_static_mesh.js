@@ -11,5 +11,11 @@ var class_f_c_t_1_1_static_mesh =
     [ "getVertexCount", "class_f_c_t_1_1_static_mesh.html#a5a025603c6064e231a9ab76871798548", null ],
     [ "setIndices", "class_f_c_t_1_1_static_mesh.html#a7fbfa8fd440f036d1276be07ccd73fd2", null ],
     [ "updateIndexData", "class_f_c_t_1_1_static_mesh.html#a6955b934ce46f94b3036c7f6987cb6b6", null ],
-    [ "updateVertexData", "class_f_c_t_1_1_static_mesh.html#a9c2ccefbd920dc1258e2b2508c5d5506", null ]
+    [ "updateVertexData", "class_f_c_t_1_1_static_mesh.html#a9c2ccefbd920dc1258e2b2508c5d5506", null ],
+    [ "m_cpuIndices", "class_f_c_t_1_1_static_mesh.html#a0009379c9fbcd08398897a5153c922ee", null ],
+    [ "m_cpuVertex", "class_f_c_t_1_1_static_mesh.html#adcfadc02d8ff717562621fb672d1ef8a", null ],
+    [ "m_ctx", "class_f_c_t_1_1_static_mesh.html#aec954b4011cb2eda0e7204b6ca1e578a", null ],
+    [ "m_gpuIndex", "class_f_c_t_1_1_static_mesh.html#ad26a261954f1daa95ade6e5f80d41e59", null ],
+    [ "m_gpuVertex", "class_f_c_t_1_1_static_mesh.html#a93e8fc64d0de06376dd6ec60a2b465f6", null ],
+    [ "m_vertexLayout", "class_f_c_t_1_1_static_mesh.html#a2236273b8e328babaa4791f37665cff6", null ]
 ];

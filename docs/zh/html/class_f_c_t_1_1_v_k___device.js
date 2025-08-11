@@ -1,6 +1,7 @@
 var class_f_c_t_1_1_v_k___device =
 [
     [ "VK_Device", "class_f_c_t_1_1_v_k___device.html#a5baab0c61ed0d93cfedd563d5a814277", null ],
+    [ "createResource", "class_f_c_t_1_1_v_k___device.html#a767564c02b1e777a52888b5f2c436344", null ],
     [ "newBlendState", "class_f_c_t_1_1_v_k___device.html#a307488e5490b561f8774a0ff4871e832", null ],
     [ "newFencePool", "class_f_c_t_1_1_v_k___device.html#a7c42ac16133acdae9df2fe4844a1bfe5", null ],
     [ "newMutilBufferImage", "class_f_c_t_1_1_v_k___device.html#ade2447e82ac6040d82aa26eddbccac71", null ],

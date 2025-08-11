@@ -12,22 +12,22 @@
 \DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00008}\mbox{\hyperlink{class_f_c_t_1_1_android___runtime_a23271583a7ede482dc6b00e1b7222de0}{00008}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_android___runtime_a23271583a7ede482dc6b00e1b7222de0}{Android\_Runtime::init}}(JNIEnv\ *env,\ jobject\ activity)\ \{}
 \DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00009}00009\ \ \ \ \ \ \ \ \ JavaVM*\ vm;}
 \DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00010}00010\ \ \ \ \ \ \ \ \ env-\/>GetJavaVM(\&vm);}
-\DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ m\_vm\ =\ \textcolor{keyword}{new}\ jni::JvmRef<jni::kDefaultJvm>\{vm\};}
-\DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ m\_activity\ =\ \textcolor{keyword}{new}\ jni::GlobalObject<FCTMainActivityJavaClass>(}
+\DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_android___runtime_aa26315aab116e2a2f69c0fda9113fd99}{m\_vm}}\ =\ \textcolor{keyword}{new}\ jni::JvmRef<jni::kDefaultJvm>\{vm\};}
+\DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_android___runtime_a33007d117a6ad2dd6bd31f826e13065e}{m\_activity}}\ =\ \textcolor{keyword}{new}\ jni::GlobalObject<FCTMainActivityJavaClass>(}
 \DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::move(jni::LocalObject<FCTMainActivityJavaClass>}
 \DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{activity\}));}
 \DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_a539584b126825634a31a2e55f4c9a0f3}{fout}}\ <<\ \textcolor{stringliteral}{"{}FCT\ Device\ Info:"{}}\ <<\ std::endl;}
 \DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_a539584b126825634a31a2e55f4c9a0f3}{fout}}\ <<\ \textcolor{stringliteral}{"{}Size:\ "{}}\ <<\ \mbox{\hyperlink{class_f_c_t_1_1_android___runtime_ab15a459be46259fffc454bfdfa890232}{getDeviceWidth}}()\ <<\ \textcolor{stringliteral}{"{}x"{}}\ <<\ \mbox{\hyperlink{class_f_c_t_1_1_android___runtime_a065a479fc9e0808194381f762b63d4f0}{getDeviceHeight}}()\ <<\ std::endl;}
 \DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00017}00017\ }
-\DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ m\_uiCommon\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_f_c_t_1_1_android___u_i_common}{Android\_UICommon}}();}
-\DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ m\_uiCommon-\/>preinit();}
+\DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_android___runtime_a76ba4c7521719ef78319c710a4ec6e23}{m\_uiCommon}}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_f_c_t_1_1_android___u_i_common}{Android\_UICommon}}();}
+\DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_android___runtime_a76ba4c7521719ef78319c710a4ec6e23}{m\_uiCommon}}-\/>preinit();}
 \DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00020}00020\ }
-\DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ m\_userThread\ =\ \textcolor{keyword}{new}\ std::thread([\textcolor{keyword}{this}]\{}
-\DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ jni::ThreadGuard\ threadGuard\ =\ m\_vm-\/>BuildThreadGuard();}
+\DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_android___runtime_a11cb878af67d4c2ab12f110dc7c94ab1}{m\_userThread}}\ =\ \textcolor{keyword}{new}\ std::thread([\textcolor{keyword}{this}]\{}
+\DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ jni::ThreadGuard\ threadGuard\ =\ \mbox{\hyperlink{class_f_c_t_1_1_android___runtime_aa26315aab116e2a2f69c0fda9113fd99}{m\_vm}}-\/>BuildThreadGuard();}
 \DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_android___runtime_ac0f94d065de3d9d9f26c04eb10a0c322}{entry}}();}
 \DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_android___runtime_a817c1ef5cba32bd83c4d72e74126bd75}{cleanUp}}();}
 \DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \});}
-\DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ m\_userThread-\/>detach();}
+\DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_android___runtime_a11cb878af67d4c2ab12f110dc7c94ab1}{m\_userThread}}-\/>detach();}
 \DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00027}00027\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00028}00028\ }
 \DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00029}\mbox{\hyperlink{class_f_c_t_1_1_android___runtime_a74df7e0391a2c5dd78da41b81f6a7732}{00029}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_android___runtime_a74df7e0391a2c5dd78da41b81f6a7732}{Android\_Runtime::term}}()\ \{}
@@ -39,16 +39,16 @@
 \DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00035}00035\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00036}00036\ }
 \DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00037}\mbox{\hyperlink{class_f_c_t_1_1_android___runtime_a817c1ef5cba32bd83c4d72e74126bd75}{00037}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_android___runtime_a817c1ef5cba32bd83c4d72e74126bd75}{Android\_Runtime::cleanUp}}()\ \{}
-\DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ m\_uiCommon-\/>cleanup();}
-\DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ m\_uiCommon;}
+\DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_android___runtime_a76ba4c7521719ef78319c710a4ec6e23}{m\_uiCommon}}-\/>cleanup();}
+\DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ \mbox{\hyperlink{class_f_c_t_1_1_android___runtime_a76ba4c7521719ef78319c710a4ec6e23}{m\_uiCommon}};}
 \DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00040}00040\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00041}00041\ }
 \DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00042}\mbox{\hyperlink{class_f_c_t_1_1_android___runtime_a065a479fc9e0808194381f762b63d4f0}{00042}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_f_c_t_1_1_android___runtime_a065a479fc9e0808194381f762b63d4f0}{Android\_Runtime::getDeviceHeight}}()\ \{}
-\DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_activity-\/>Call<\textcolor{stringliteral}{"{}getDeviceHeight"{}}>();}
+\DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_f_c_t_1_1_android___runtime_a33007d117a6ad2dd6bd31f826e13065e}{m\_activity}}-\/>Call<\textcolor{stringliteral}{"{}getDeviceHeight"{}}>();}
 \DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00044}00044\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00045}00045\ }
 \DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00046}\mbox{\hyperlink{class_f_c_t_1_1_android___runtime_ab15a459be46259fffc454bfdfa890232}{00046}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_f_c_t_1_1_android___runtime_ab15a459be46259fffc454bfdfa890232}{Android\_Runtime::getDeviceWidth}}()\ \{}
-\DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \ m\_activity-\/>Call<\textcolor{stringliteral}{"{}getDeviceWidth"{}}>();}
+\DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \ \mbox{\hyperlink{class_f_c_t_1_1_android___runtime_a33007d117a6ad2dd6bd31f826e13065e}{m\_activity}}-\/>Call<\textcolor{stringliteral}{"{}getDeviceWidth"{}}>();}
 \DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00048}00048\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00049}\mbox{\hyperlink{struct_f_c_t_1_1_android___runtime_common}{00049}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_f_c_t_1_1_android___runtime_common}{Android\_RuntimeCommon}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{struct_f_c_t_1_1_runtime_common}{RuntimeCommon}}\ \{}
 \DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00050}00050\ }
@@ -74,7 +74,7 @@
 \DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00070}00070\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00071}00071\ }
 \DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00072}\mbox{\hyperlink{class_f_c_t_1_1_runtime_ade286afead1866b1749ba244f0da78e3}{00072}}\ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_context}{Context}}\ *\mbox{\hyperlink{class_f_c_t_1_1_runtime_ade286afead1866b1749ba244f0da78e3}{Runtime::createContext}}()\ \{}
-\DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___context}{VK\_Context}}(g\_common-\/>vkContextCommon);}
+\DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___context}{VK\_Context}}(\mbox{\hyperlink{class_f_c_t_1_1_runtime_ac8957ab52a379f3ef953b938ace24ebb}{g\_common}}-\/>vkContextCommon);}
 \DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00074}00074\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00075}00075\ \}}
 \DoxyCodeLine{\Hypertarget{_android___runtime_8cpp_source_l00076}00076\ }

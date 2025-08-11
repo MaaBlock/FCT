@@ -6,7 +6,8 @@
 
 
 
-类 FCT\+::Depth\+Stencil\+State 继承关系图\+:\nopagebreak
+类 FCT\+::Depth\+Stencil\+State 继承关系图\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -66,20 +67,6 @@ float \mbox{\hyperlink{class_f_c_t_1_1_depth_stencil_state_a6bc0e53dbbc4de641ef9
 void \mbox{\hyperlink{class_f_c_t_1_1_depth_stencil_state_abaa3d9401f842b2be403f4a73308ccaa}{max\+Depth\+Bounds}} (float value)
 \item 
 \mbox{\hyperlink{namespace_f_c_t_a0100ef6b5595f1c6e1ca08fb82dc0f67}{Pipeline\+Resource\+Type}} \mbox{\hyperlink{class_f_c_t_1_1_depth_stencil_state_a098436493ee193b23be8a2dee4ef1e0f}{get\+Type}} () const override
-\end{DoxyCompactItemize}
-\doxysubsection*{Public 成员函数 继承自 \mbox{\hyperlink{class_f_c_t_1_1_i_pipeline_resource}{FCT\+::\+IPipeline\+Resource}}}
-\begin{DoxyCompactItemize}
-\item 
-virtual \mbox{\hyperlink{class_f_c_t_1_1_i_pipeline_resource_a8db158a7ce7f29a72763cbc336a36655}{\texorpdfstring{$\sim$}{\string~}\+IPipeline\+Resource}} ()
-\end{DoxyCompactItemize}
-\doxysubsection*{Public 成员函数 继承自 \mbox{\hyperlink{class_f_c_t_1_1_ref_count}{FCT\+::\+Ref\+Count}}}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\hyperlink{class_f_c_t_1_1_ref_count_a681b72d7bd32fd7e4b9ec861cd74370e}{Ref\+Count}} ()
-\item 
-\mbox{\hyperlink{class_f_c_t_1_1_ref_count_ae2948e0ae155079956caced23c85bb2b}{Ref\+Count}} (size\+\_\+t ref\+Count)
-\item 
-virtual \mbox{\hyperlink{class_f_c_t_1_1_ref_count_af028e09f8a1492fdd5c788b6eb75754f}{\texorpdfstring{$\sim$}{\string~}\+Ref\+Count}} ()
 \item 
 void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a59c2f131121de6503df8d363b6853d45}{add\+Ref}} ()
 \item 
@@ -88,6 +75,11 @@ void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_aaf57b2df79545f2b71ae9087865dee4
 size\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a33146ec5804be422936519224a3a7b3f}{count}} ()
 \item 
 \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a474ad3a918f2e87d75ff16075e1caeec}{operator bool}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a0fea0bed50f726d3e11ddde802dac5da}{delete\+This}} ()
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Protected 属性}
 \begin{DoxyCompactItemize}
@@ -109,17 +101,8 @@ bool \mbox{\hyperlink{class_f_c_t_1_1_depth_stencil_state_accdb39eb3c2a38516fd09
 float \mbox{\hyperlink{class_f_c_t_1_1_depth_stencil_state_ad354fe3cbf1c7ab219daf256f154ea5f}{m\+\_\+min\+Depth\+Bounds}} = 0.\+0f
 \item 
 float \mbox{\hyperlink{class_f_c_t_1_1_depth_stencil_state_a3808cfa358b87d428c9aa2162586fe1e}{m\+\_\+max\+Depth\+Bounds}} = 1.\+0f
-\end{DoxyCompactItemize}
-\doxysubsection*{Protected 属性 继承自 \mbox{\hyperlink{class_f_c_t_1_1_ref_count}{FCT\+::\+Ref\+Count}}}
-\begin{DoxyCompactItemize}
 \item 
 std\+::atomic$<$ size\+\_\+t $>$ \mbox{\hyperlink{class_f_c_t_1_1_ref_count_aca88529f9b473d326168fa808fd02300}{m\+\_\+ref\+Count}}
-\end{DoxyCompactItemize}
-\doxysubsubsection*{额外继承的成员函数}
-\doxysubsection*{Protected 成员函数 继承自 \mbox{\hyperlink{class_f_c_t_1_1_ref_count}{FCT\+::\+Ref\+Count}}}
-\begin{DoxyCompactItemize}
-\item 
-virtual void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a0fea0bed50f726d3e11ddde802dac5da}{delete\+This}} ()
 \end{DoxyCompactItemize}
 
 
@@ -144,6 +127,24 @@ virtual FCT\+::\+Depth\+Stencil\+State\+::\texorpdfstring{$\sim$}{\string~}\+Dep
 \label{doc-func-members}
 \Hypertarget{class_f_c_t_1_1_depth_stencil_state_doc-func-members}
 \doxysubsection{成员函数说明}
+\Hypertarget{class_f_c_t_1_1_ref_count_a59c2f131121de6503df8d363b6853d45}\index{FCT::DepthStencilState@{FCT::DepthStencilState}!addRef@{addRef}}
+\index{addRef@{addRef}!FCT::DepthStencilState@{FCT::DepthStencilState}}
+\doxysubsubsection{\texorpdfstring{addRef()}{addRef()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_ref_count_a59c2f131121de6503df8d363b6853d45} 
+void FCT\+::\+Ref\+Count\+::add\+Ref (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+在文件 \mbox{\hyperlink{_ref_count_8h_source}{Ref\+Count.\+h}} 第 \mbox{\hyperlink{_ref_count_8h_source_l00010}{10}} 行定义.
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_ref_count_a59c2f131121de6503df8d363b6853d45_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_depth_stencil_state_a624c93648e85549da5139c2554306418}\index{FCT::DepthStencilState@{FCT::DepthStencilState}!back@{back}}
 \index{back@{back}!FCT::DepthStencilState@{FCT::DepthStencilState}}
 \doxysubsubsection{\texorpdfstring{back()}{back()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -164,6 +165,23 @@ void FCT\+::\+Depth\+Stencil\+State\+::back (\begin{DoxyParamCaption}\item[{cons
 
 在文件 \mbox{\hyperlink{_depth_stencil_state_8h_source}{Depth\+Stencil\+State.\+h}} 第 \mbox{\hyperlink{_depth_stencil_state_8h_source_l00057}{57}} 行定义.
 
+\Hypertarget{class_f_c_t_1_1_ref_count_a33146ec5804be422936519224a3a7b3f}\index{FCT::DepthStencilState@{FCT::DepthStencilState}!count@{count}}
+\index{count@{count}!FCT::DepthStencilState@{FCT::DepthStencilState}}
+\doxysubsubsection{\texorpdfstring{count()}{count()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_ref_count_a33146ec5804be422936519224a3a7b3f} 
+size\+\_\+t FCT\+::\+Ref\+Count\+::count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+在文件 \mbox{\hyperlink{_ref_count_8h_source}{Ref\+Count.\+h}} 第 \mbox{\hyperlink{_ref_count_8h_source_l00019}{19}} 行定义.
+
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_ref_count_a33146ec5804be422936519224a3a7b3f_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_depth_stencil_state_a0c82431e95880b99474c3d5d7d5b3f45}\index{FCT::DepthStencilState@{FCT::DepthStencilState}!create@{create}}
 \index{create@{create}!FCT::DepthStencilState@{FCT::DepthStencilState}}
 \doxysubsubsection{\texorpdfstring{create()}{create()}}
@@ -174,6 +192,27 @@ virtual void FCT\+::\+Depth\+Stencil\+State\+::create (\begin{DoxyParamCaption}{
 
 在 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___depth_stencil_state_af809dfa675e3ec435296c433ee1e00b0}{FCT\+::\+RHI\+::\+VK\+\_\+\+Depth\+Stencil\+State}} 内被实现.
 
+\Hypertarget{class_f_c_t_1_1_ref_count_a0fea0bed50f726d3e11ddde802dac5da}\index{FCT::DepthStencilState@{FCT::DepthStencilState}!deleteThis@{deleteThis}}
+\index{deleteThis@{deleteThis}!FCT::DepthStencilState@{FCT::DepthStencilState}}
+\doxysubsubsection{\texorpdfstring{deleteThis()}{deleteThis()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_ref_count_a0fea0bed50f726d3e11ddde802dac5da} 
+virtual void FCT\+::\+Ref\+Count\+::delete\+This (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [inherited]}}
+
+
+
+被 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_fence_a3e7497fa088fbeae2a9e9f2acce771c9}{FCT\+::\+RHI\+::\+Fence}} , 以及 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore_ad7b72415b5c2e15a44bf488c7e27c4cd}{FCT\+::\+RHI\+::\+Semaphore}} 重载.
+
+
+
+在文件 \mbox{\hyperlink{_ref_count_8h_source}{Ref\+Count.\+h}} 第 \mbox{\hyperlink{_ref_count_8h_source_l00027}{27}} 行定义.
+
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_ref_count_a0fea0bed50f726d3e11ddde802dac5da_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_depth_stencil_state_a4849245467bf25560d83aa8e3a8af146}\index{FCT::DepthStencilState@{FCT::DepthStencilState}!depthBoundsTestEnable@{depthBoundsTestEnable}}
 \index{depthBoundsTestEnable@{depthBoundsTestEnable}!FCT::DepthStencilState@{FCT::DepthStencilState}}
 \doxysubsubsection{\texorpdfstring{depthBoundsTestEnable()}{depthBoundsTestEnable()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -328,6 +367,40 @@ void FCT\+::\+Depth\+Stencil\+State\+::min\+Depth\+Bounds (\begin{DoxyParamCapti
 
 在文件 \mbox{\hyperlink{_depth_stencil_state_8h_source}{Depth\+Stencil\+State.\+h}} 第 \mbox{\hyperlink{_depth_stencil_state_8h_source_l00060}{60}} 行定义.
 
+\Hypertarget{class_f_c_t_1_1_ref_count_a474ad3a918f2e87d75ff16075e1caeec}\index{FCT::DepthStencilState@{FCT::DepthStencilState}!operator bool@{operator bool}}
+\index{operator bool@{operator bool}!FCT::DepthStencilState@{FCT::DepthStencilState}}
+\doxysubsubsection{\texorpdfstring{operator bool()}{operator bool()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_ref_count_a474ad3a918f2e87d75ff16075e1caeec} 
+FCT\+::\+Ref\+Count\+::operator bool (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+在文件 \mbox{\hyperlink{_ref_count_8h_source}{Ref\+Count.\+h}} 第 \mbox{\hyperlink{_ref_count_8h_source_l00022}{22}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_ref_count_aaf57b2df79545f2b71ae9087865dee4c}\index{FCT::DepthStencilState@{FCT::DepthStencilState}!release@{release}}
+\index{release@{release}!FCT::DepthStencilState@{FCT::DepthStencilState}}
+\doxysubsubsection{\texorpdfstring{release()}{release()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_ref_count_aaf57b2df79545f2b71ae9087865dee4c} 
+void FCT\+::\+Ref\+Count\+::release (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+
+
+
+在文件 \mbox{\hyperlink{_ref_count_8h_source}{Ref\+Count.\+h}} 第 \mbox{\hyperlink{_ref_count_8h_source_l00013}{13}} 行定义.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_ref_count_aaf57b2df79545f2b71ae9087865dee4c_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_ref_count_aaf57b2df79545f2b71ae9087865dee4c_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_depth_stencil_state_a227e0ace13c22ce4409584501d5e2321}\index{FCT::DepthStencilState@{FCT::DepthStencilState}!stencilTestEnable@{stencilTestEnable}}
 \index{stencilTestEnable@{stencilTestEnable}!FCT::DepthStencilState@{FCT::DepthStencilState}}
 \doxysubsubsection{\texorpdfstring{stencilTestEnable()}{stencilTestEnable()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -432,6 +505,16 @@ float FCT\+::\+Depth\+Stencil\+State\+::m\+\_\+min\+Depth\+Bounds = 0.\+0f\hspac
 
 
 在文件 \mbox{\hyperlink{_depth_stencil_state_8h_source}{Depth\+Stencil\+State.\+h}} 第 \mbox{\hyperlink{_depth_stencil_state_8h_source_l00075}{75}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_ref_count_aca88529f9b473d326168fa808fd02300}\index{FCT::DepthStencilState@{FCT::DepthStencilState}!m\_refCount@{m\_refCount}}
+\index{m\_refCount@{m\_refCount}!FCT::DepthStencilState@{FCT::DepthStencilState}}
+\doxysubsubsection{\texorpdfstring{m\_refCount}{m\_refCount}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_ref_count_aca88529f9b473d326168fa808fd02300} 
+std\+::atomic$<$size\+\_\+t$>$ FCT\+::\+Ref\+Count\+::m\+\_\+ref\+Count\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+在文件 \mbox{\hyperlink{_ref_count_8h_source}{Ref\+Count.\+h}} 第 \mbox{\hyperlink{_ref_count_8h_source_l00030}{30}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_depth_stencil_state_accdb39eb3c2a38516fd096324826d74e}\index{FCT::DepthStencilState@{FCT::DepthStencilState}!m\_stencilTestEnable@{m\_stencilTestEnable}}
 \index{m\_stencilTestEnable@{m\_stencilTestEnable}!FCT::DepthStencilState@{FCT::DepthStencilState}}

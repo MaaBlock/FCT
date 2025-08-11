@@ -31,16 +31,16 @@
 \DoxyCodeLine{\Hypertarget{_g_l_f_w___u_i_common_8h_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___u_i_common_a1183eb3169f972ed2c8a953b18ea1289}{postUiTask}}(\mbox{\hyperlink{namespace_f_c_t_a2b67c2197d2675193be9ca0fe8406c87}{UITaskFunction}}\ task,\textcolor{keywordtype}{void}*\ param\ =\ \textcolor{keyword}{nullptr},\textcolor{keywordtype}{bool}\ waited\ =\ \textcolor{keyword}{true});}
 \DoxyCodeLine{\Hypertarget{_g_l_f_w___u_i_common_8h_source_l00028}\mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___u_i_common_ab65593b736f1021e27f762c10757e26b}{00028}}\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___u_i_common_ab65593b736f1021e27f762c10757e26b}{postTicker}}(\mbox{\hyperlink{namespace_f_c_t_afeb4bf1a3cf675cfa582cc37d4cb0946}{UiTicker}}\ ticker)}
 \DoxyCodeLine{\Hypertarget{_g_l_f_w___u_i_common_8h_source_l00029}00029\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_g_l_f_w___u_i_common_8h_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ \textcolor{keywordtype}{id}\ =\ ++m\_tickerId;}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___u_i_common_8h_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ \textcolor{keywordtype}{id}\ =\ ++\mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___u_i_common_ab8b47461a7a0c7c1c8d41c1ba96c302b}{m\_tickerId}};}
 \DoxyCodeLine{\Hypertarget{_g_l_f_w___u_i_common_8h_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___u_i_common_a1183eb3169f972ed2c8a953b18ea1289}{postUiTask}}([\textcolor{keyword}{this},ticker,\textcolor{keywordtype}{id}](\textcolor{keywordtype}{void}*)}
 \DoxyCodeLine{\Hypertarget{_g_l_f_w___u_i_common_8h_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_g_l_f_w___u_i_common_8h_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_ticker[id]\ =\ ticker;}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___u_i_common_8h_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___u_i_common_a291d842f94c408d78277264464f28876}{m\_ticker}}[id]\ =\ ticker;}
 \DoxyCodeLine{\Hypertarget{_g_l_f_w___u_i_common_8h_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
 \DoxyCodeLine{\Hypertarget{_g_l_f_w___u_i_common_8h_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ id;}
 \DoxyCodeLine{\Hypertarget{_g_l_f_w___u_i_common_8h_source_l00036}00036\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_g_l_f_w___u_i_common_8h_source_l00037}\mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___u_i_common_a269758bd5d03e11a93abe04e7ea7cf61}{00037}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___u_i_common_a269758bd5d03e11a93abe04e7ea7cf61}{sendUiTask}}(\mbox{\hyperlink{namespace_f_c_t_a2b67c2197d2675193be9ca0fe8406c87}{UITaskFunction}}\ task,\textcolor{keywordtype}{void}*\ param\ =\ \textcolor{keyword}{nullptr},\textcolor{keywordtype}{bool}\ waited\ =\ \textcolor{keyword}{true})}
 \DoxyCodeLine{\Hypertarget{_g_l_f_w___u_i_common_8h_source_l00038}00038\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_g_l_f_w___u_i_common_8h_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_uiThreadId\ ==\ std::this\_thread::get\_id())}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___u_i_common_8h_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___u_i_common_aa48dc4f37c3b209ba27d29f750c0dfdc}{m\_uiThreadId}}\ ==\ std::this\_thread::get\_id())}
 \DoxyCodeLine{\Hypertarget{_g_l_f_w___u_i_common_8h_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_g_l_f_w___u_i_common_8h_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ task(param);}
 \DoxyCodeLine{\Hypertarget{_g_l_f_w___u_i_common_8h_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}}
@@ -49,12 +49,12 @@
 \DoxyCodeLine{\Hypertarget{_g_l_f_w___u_i_common_8h_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_g_l_f_w___u_i_common_8h_source_l00046}00046\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_g_l_f_w___u_i_common_8h_source_l00047}00047\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{_g_l_f_w___u_i_common_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ std::thread\ m\_uiThread;}
-\DoxyCodeLine{\Hypertarget{_g_l_f_w___u_i_common_8h_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_running;}
-\DoxyCodeLine{\Hypertarget{_g_l_f_w___u_i_common_8h_source_l00050}00050\ \ \ \ \ \ \ \ \ boost::lockfree::queue<UITaskTrans,\ boost::lockfree::capacity<1024>>\ m\_taskQueue;}
-\DoxyCodeLine{\Hypertarget{_g_l_f_w___u_i_common_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ std::unordered\_map<uint32\_t,UiTicker>\ m\_ticker;}
-\DoxyCodeLine{\Hypertarget{_g_l_f_w___u_i_common_8h_source_l00052}00052\ \ \ \ \ \ \ \ \ uint32\_t\ m\_tickerId\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{_g_l_f_w___u_i_common_8h_source_l00053}00053\ \ \ \ \ \ \ \ \ std::thread::id\ m\_uiThreadId;}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___u_i_common_8h_source_l00048}\mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___u_i_common_a8e5a78f4bb988a3aa4fdfe6c3aacadbb}{00048}}\ \ \ \ \ \ \ \ \ std::thread\ \mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___u_i_common_a8e5a78f4bb988a3aa4fdfe6c3aacadbb}{m\_uiThread}};}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___u_i_common_8h_source_l00049}\mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___u_i_common_a78cf47bf3b2763fd2955c5d038563bfe}{00049}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___u_i_common_a78cf47bf3b2763fd2955c5d038563bfe}{m\_running}};}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___u_i_common_8h_source_l00050}\mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___u_i_common_a9a4f42d60486461076e63227c22bb169}{00050}}\ \ \ \ \ \ \ \ \ boost::lockfree::queue<UITaskTrans,\ boost::lockfree::capacity<1024>>\ \mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___u_i_common_a9a4f42d60486461076e63227c22bb169}{m\_taskQueue}};}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___u_i_common_8h_source_l00051}\mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___u_i_common_a291d842f94c408d78277264464f28876}{00051}}\ \ \ \ \ \ \ \ \ std::unordered\_map<uint32\_t,UiTicker>\ \mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___u_i_common_a291d842f94c408d78277264464f28876}{m\_ticker}};}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___u_i_common_8h_source_l00052}\mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___u_i_common_ab8b47461a7a0c7c1c8d41c1ba96c302b}{00052}}\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___u_i_common_ab8b47461a7a0c7c1c8d41c1ba96c302b}{m\_tickerId}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_g_l_f_w___u_i_common_8h_source_l00053}\mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___u_i_common_aa48dc4f37c3b209ba27d29f750c0dfdc}{00053}}\ \ \ \ \ \ \ \ \ std::thread::id\ \mbox{\hyperlink{class_f_c_t_1_1_g_l_f_w___u_i_common_aa48dc4f37c3b209ba27d29f750c0dfdc}{m\_uiThreadId}};}
 \DoxyCodeLine{\Hypertarget{_g_l_f_w___u_i_common_8h_source_l00054}00054\ \ \ \ \ \};}
 \DoxyCodeLine{\Hypertarget{_g_l_f_w___u_i_common_8h_source_l00055}00055\ }
 \DoxyCodeLine{\Hypertarget{_g_l_f_w___u_i_common_8h_source_l00056}00056\ \}}

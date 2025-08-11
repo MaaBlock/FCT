@@ -40,25 +40,25 @@
 \DoxyCodeLine{\Hypertarget{_ref_count_8h_source_l00052}\mbox{\hyperlink{class_f_c_t_1_1_deletable_trait_aa11d4656b54ed291143d6c79da4c407b}{00052}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_f_c_t_1_1_deletable_trait_aa11d4656b54ed291143d6c79da4c407b}{DeleterType}}\ =\ std::function<void(T*)>;}
 \DoxyCodeLine{\Hypertarget{_ref_count_8h_source_l00053}00053\ }
 \DoxyCodeLine{\Hypertarget{_ref_count_8h_source_l00054}\mbox{\hyperlink{class_f_c_t_1_1_deletable_trait_ac6cac75cc5ab38b97e56f59f0a93934e}{00054}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_deletable_trait_ac6cac75cc5ab38b97e56f59f0a93934e}{setDeleter}}(\mbox{\hyperlink{class_f_c_t_1_1_deletable_trait_aa11d4656b54ed291143d6c79da4c407b}{DeleterType}}\ deleter)\ \{}
-\DoxyCodeLine{\Hypertarget{_ref_count_8h_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ m\_deleter\ =\ std::move(deleter);}
+\DoxyCodeLine{\Hypertarget{_ref_count_8h_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_deletable_trait_a40fd462f6d22d8bc9a3eea4158cb8826}{m\_deleter}}\ =\ std::move(deleter);}
 \DoxyCodeLine{\Hypertarget{_ref_count_8h_source_l00056}00056\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_ref_count_8h_source_l00057}00057\ }
 \DoxyCodeLine{\Hypertarget{_ref_count_8h_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Func>}
 \DoxyCodeLine{\Hypertarget{_ref_count_8h_source_l00059}\mbox{\hyperlink{class_f_c_t_1_1_deletable_trait_af36f7eff01c8c86ebfb148b827ca1a9f}{00059}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_deletable_trait_af36f7eff01c8c86ebfb148b827ca1a9f}{setDeleterFunc}}(Func\&\&\ func)\ \{}
-\DoxyCodeLine{\Hypertarget{_ref_count_8h_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ m\_deleter\ =\ [f\ =\ std::forward<Func>(func)](T*\ ptr)\ \{\ f(ptr);\ \};}
+\DoxyCodeLine{\Hypertarget{_ref_count_8h_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_deletable_trait_a40fd462f6d22d8bc9a3eea4158cb8826}{m\_deleter}}\ =\ [f\ =\ std::forward<Func>(func)](T*\ ptr)\ \{\ f(ptr);\ \};}
 \DoxyCodeLine{\Hypertarget{_ref_count_8h_source_l00061}00061\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_ref_count_8h_source_l00062}00062\ }
 \DoxyCodeLine{\Hypertarget{_ref_count_8h_source_l00063}00063\ \ \ \ \ \textcolor{keyword}{protected}:}
 \DoxyCodeLine{\Hypertarget{_ref_count_8h_source_l00064}\mbox{\hyperlink{class_f_c_t_1_1_deletable_trait_aeb6edd1024ec555f8eb0321092ee874b}{00064}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_f_c_t_1_1_deletable_trait_aeb6edd1024ec555f8eb0321092ee874b}{applyDeleter}}(T*\ ptr)\ \{}
-\DoxyCodeLine{\Hypertarget{_ref_count_8h_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_deleter)\ \{}
-\DoxyCodeLine{\Hypertarget{_ref_count_8h_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_deleter(ptr);}
+\DoxyCodeLine{\Hypertarget{_ref_count_8h_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_deletable_trait_a40fd462f6d22d8bc9a3eea4158cb8826}{m\_deleter}})\ \{}
+\DoxyCodeLine{\Hypertarget{_ref_count_8h_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_deletable_trait_a40fd462f6d22d8bc9a3eea4158cb8826}{m\_deleter}}(ptr);}
 \DoxyCodeLine{\Hypertarget{_ref_count_8h_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
 \DoxyCodeLine{\Hypertarget{_ref_count_8h_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_ref_count_8h_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
 \DoxyCodeLine{\Hypertarget{_ref_count_8h_source_l00070}00070\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_ref_count_8h_source_l00071}00071\ }
 \DoxyCodeLine{\Hypertarget{_ref_count_8h_source_l00072}00072\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{_ref_count_8h_source_l00073}00073\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_deletable_trait_aa11d4656b54ed291143d6c79da4c407b}{DeleterType}}\ m\_deleter;}
+\DoxyCodeLine{\Hypertarget{_ref_count_8h_source_l00073}\mbox{\hyperlink{class_f_c_t_1_1_deletable_trait_a40fd462f6d22d8bc9a3eea4158cb8826}{00073}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_deletable_trait_aa11d4656b54ed291143d6c79da4c407b}{DeleterType}}\ \mbox{\hyperlink{class_f_c_t_1_1_deletable_trait_a40fd462f6d22d8bc9a3eea4158cb8826}{m\_deleter}};}
 \DoxyCodeLine{\Hypertarget{_ref_count_8h_source_l00074}00074\ \ \ \ \ \};}
 \DoxyCodeLine{\Hypertarget{_ref_count_8h_source_l00075}00075\ }
 \DoxyCodeLine{\Hypertarget{_ref_count_8h_source_l00082}00082\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ U\ =\ T>}

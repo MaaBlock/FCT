@@ -43,7 +43,7 @@ var namespace_f_c_t_1_1_r_h_i =
     [ "VK_RenderTargetView", "class_f_c_t_1_1_r_h_i_1_1_v_k___render_target_view.html", "class_f_c_t_1_1_r_h_i_1_1_v_k___render_target_view" ],
     [ "VK_Sampler", "class_f_c_t_1_1_r_h_i_1_1_v_k___sampler.html", "class_f_c_t_1_1_r_h_i_1_1_v_k___sampler" ],
     [ "VK_Semaphore", "class_f_c_t_1_1_r_h_i_1_1_v_k___semaphore.html", "class_f_c_t_1_1_r_h_i_1_1_v_k___semaphore" ],
-    [ "VK_ShaderBinary", "class_f_c_t_1_1_r_h_i_1_1_v_k___shader_binary.html", null ],
+    [ "VK_ShaderBinary", "class_f_c_t_1_1_r_h_i_1_1_v_k___shader_binary.html", "class_f_c_t_1_1_r_h_i_1_1_v_k___shader_binary" ],
     [ "VK_Swapchain", "class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html", "class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain" ],
     [ "VK_TextureView", "class_f_c_t_1_1_r_h_i_1_1_v_k___texture_view.html", "class_f_c_t_1_1_r_h_i_1_1_v_k___texture_view" ],
     [ "VK_TraditionalPipeline", "class_f_c_t_1_1_r_h_i_1_1_v_k___traditional_pipeline.html", "class_f_c_t_1_1_r_h_i_1_1_v_k___traditional_pipeline" ],

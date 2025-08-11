@@ -148,6 +148,8 @@ namespace FCT {
 #include <filesystem>
 #include <set>
 #include <queue>
+#include <optional>
+#include <type_traits>
 
 
 #endif // FCT_THIRDPARTY_HEADER

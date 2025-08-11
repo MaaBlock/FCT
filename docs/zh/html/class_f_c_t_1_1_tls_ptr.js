@@ -7,5 +7,6 @@ var class_f_c_t_1_1_tls_ptr =
     [ "get", "class_f_c_t_1_1_tls_ptr.html#a4b602225c2c546b1351c13ddd7241499", null ],
     [ "operator*", "class_f_c_t_1_1_tls_ptr.html#a36cb2750ab1cd8b43155ebde97c3bb4a", null ],
     [ "operator->", "class_f_c_t_1_1_tls_ptr.html#ad37530cdabab1fc881927f38dfc4b5d3", null ],
-    [ "operator=", "class_f_c_t_1_1_tls_ptr.html#a015f3564157fa5c17bfecf4be6cfed0b", null ]
+    [ "operator=", "class_f_c_t_1_1_tls_ptr.html#a015f3564157fa5c17bfecf4be6cfed0b", null ],
+    [ "m_ptr", "class_f_c_t_1_1_tls_ptr.html#aec7e2abcb2e6af3f82279a4de6cf153d", null ]
 ];

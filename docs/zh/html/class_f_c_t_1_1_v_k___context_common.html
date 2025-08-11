@@ -98,7 +98,16 @@ FCT::VK_ContextCommon 的协作图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_f_c_t_1_1_v_k___context_common__coll__graph.png" border="0" usemap="#a_f_c_t_1_1_v_k___context_common_coll__map" loading="lazy" alt="Collaboration graph"/></div>
 <map name="a_f_c_t_1_1_v_k___context_common_coll__map" id="a_f_c_t_1_1_v_k___context_common_coll__map">
-<area shape="rect" title=" " alt="" coords="5,5,173,245"/>
+<area shape="rect" title=" " alt="" coords="5,5,173,331"/>
+<area shape="rect" href="struct_f_c_t_1_1_runtime_common.html" title=" " alt="" coords="194,403,339,472"/>
+<area shape="poly" title=" " alt="" coords="111,329,123,354,138,377,157,395,180,408,177,413,154,399,134,380,118,357,106,332"/>
+<area shape="rect" href="class_f_c_t_1_1_runtime.html" title=" " alt="" coords="30,544,173,933"/>
+<area shape="poly" title=" " alt="" coords="94,545,90,348,96,348,100,544"/>
+<area shape="poly" title=" " alt="" coords="251,473,183,595,178,592,246,470"/>
+<area shape="rect" href="class_f_c_t_1_1_g_l_f_w___u_i_common.html" title=" " alt="" coords="206,37,362,299"/>
+<area shape="poly" title=" " alt="" coords="278,299,272,386,267,386,273,298"/>
+<area shape="rect" href="class_f_c_t_1_1_freetype___font_common.html" title=" " alt="" coords="386,112,566,224"/>
+<area shape="poly" title=" " alt="" coords="466,225,437,303,414,344,386,381,356,404,352,400,382,377,410,341,432,301,461,223"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -113,6 +122,15 @@ Public 成员函数</h2></td></tr>
 <tr class="memitem:a6ee176ea379714e7bb818a18c621d497" id="r_a6ee176ea379714e7bb818a18c621d497"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ee176ea379714e7bb818a18c621d497">getPhysicalDevice</a> ()</td></tr>
 <tr class="memitem:a351b7beceecafa4c3e461d5ae991bd55" id="r_a351b7beceecafa4c3e461d5ae991bd55"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a351b7beceecafa4c3e461d5ae991bd55">getInstance</a> ()</td></tr>
 <tr class="memitem:a85fc6e953c7fc59e6752343d93694391" id="r_a85fc6e953c7fc59e6752343d93694391"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a85fc6e953c7fc59e6752343d93694391">runtime</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a6f537163a091b4022232f80ae7349ec1" id="r_a6f537163a091b4022232f80ae7349ec1"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f537163a091b4022232f80ae7349ec1">m_pickDeviceId</a></td></tr>
+<tr class="memitem:a578408f83409e73fea38d7bce63592a6" id="r_a578408f83409e73fea38d7bce63592a6"><td class="memItemLeft" align="right" valign="top">vk::Instance&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a578408f83409e73fea38d7bce63592a6">m_instance</a></td></tr>
+<tr class="memitem:ac76216acd7ee695b2398e2bbb75becbe" id="r_ac76216acd7ee695b2398e2bbb75becbe"><td class="memItemLeft" align="right" valign="top">std::vector&lt; const char * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac76216acd7ee695b2398e2bbb75becbe">m_layers</a></td></tr>
+<tr class="memitem:a10eec0999bc4d3e7d7dc59e5cb582386" id="r_a10eec0999bc4d3e7d7dc59e5cb582386"><td class="memItemLeft" align="right" valign="top">std::vector&lt; vk::PhysicalDevice &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a10eec0999bc4d3e7d7dc59e5cb582386">m_physicalDevices</a></td></tr>
+<tr class="memitem:abaa787f2ed2b90f49111b0e21780b809" id="r_abaa787f2ed2b90f49111b0e21780b809"><td class="memItemLeft" align="right" valign="top">vk::detail::DynamicLoader&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abaa787f2ed2b90f49111b0e21780b809">m_loader</a></td></tr>
+<tr class="memitem:a093161d230c9e400cc3ec5833f676058" id="r_a093161d230c9e400cc3ec5833f676058"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_f_c_t_1_1_runtime.html">Runtime</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a093161d230c9e400cc3ec5833f676058">m_runtime</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">详细描述</h2>
 <div class="textblock">
@@ -409,6 +427,151 @@ Public 成员函数</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">在文件 <a class="el" href="_v_k___context_common_8h_source.html">VK_ContextCommon.h</a> 第 <a class="el" href="_v_k___context_common_8h_source.html#l00075">75</a> 行定义.</p>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">类成员变量说明</h2>
+<a id="a578408f83409e73fea38d7bce63592a6" name="a578408f83409e73fea38d7bce63592a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a578408f83409e73fea38d7bce63592a6">&#9670;&#160;</a></span>m_instance</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vk::Instance FCT::VK_ContextCommon::m_instance</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_v_k___context_common_8h_source.html">VK_ContextCommon.h</a> 第 <a class="el" href="_v_k___context_common_8h_source.html#l00093">93</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ac76216acd7ee695b2398e2bbb75becbe" name="ac76216acd7ee695b2398e2bbb75becbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac76216acd7ee695b2398e2bbb75becbe">&#9670;&#160;</a></span>m_layers</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;const char*&gt; FCT::VK_ContextCommon::m_layers</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_v_k___context_common_8h_source.html">VK_ContextCommon.h</a> 第 <a class="el" href="_v_k___context_common_8h_source.html#l00094">94</a> 行定义.</p>
+
+</div>
+</div>
+<a id="abaa787f2ed2b90f49111b0e21780b809" name="abaa787f2ed2b90f49111b0e21780b809"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abaa787f2ed2b90f49111b0e21780b809">&#9670;&#160;</a></span>m_loader</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vk::detail::DynamicLoader FCT::VK_ContextCommon::m_loader</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_v_k___context_common_8h_source.html">VK_ContextCommon.h</a> 第 <a class="el" href="_v_k___context_common_8h_source.html#l00096">96</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a10eec0999bc4d3e7d7dc59e5cb582386" name="a10eec0999bc4d3e7d7dc59e5cb582386"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10eec0999bc4d3e7d7dc59e5cb582386">&#9670;&#160;</a></span>m_physicalDevices</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;vk::PhysicalDevice&gt; FCT::VK_ContextCommon::m_physicalDevices</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_v_k___context_common_8h_source.html">VK_ContextCommon.h</a> 第 <a class="el" href="_v_k___context_common_8h_source.html#l00095">95</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a6f537163a091b4022232f80ae7349ec1" name="a6f537163a091b4022232f80ae7349ec1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f537163a091b4022232f80ae7349ec1">&#9670;&#160;</a></span>m_pickDeviceId</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t FCT::VK_ContextCommon::m_pickDeviceId</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_v_k___context_common_8h_source.html">VK_ContextCommon.h</a> 第 <a class="el" href="_v_k___context_common_8h_source.html#l00092">92</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a093161d230c9e400cc3ec5833f676058" name="a093161d230c9e400cc3ec5833f676058"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a093161d230c9e400cc3ec5833f676058">&#9670;&#160;</a></span>m_runtime</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_f_c_t_1_1_runtime.html">Runtime</a>* FCT::VK_ContextCommon::m_runtime</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_v_k___context_common_8h_source.html">VK_ContextCommon.h</a> 第 <a class="el" href="_v_k___context_common_8h_source.html#l00097">97</a> 行定义.</p>
 
 </div>
 </div>

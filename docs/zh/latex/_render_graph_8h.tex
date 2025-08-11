@@ -1,6 +1,7 @@
 \doxysection{src/\+Context/\+Render\+Graph.h 文件参考}
 \hypertarget{_render_graph_8h}{}\label{_render_graph_8h}\index{src/Context/RenderGraph.h@{src/Context/RenderGraph.h}}
-{\ttfamily \#include "{}../\+Third\+Party.\+h"{}}\newline
+{\ttfamily \#include "{}./\+Format.\+h"{}}\newline
+{\ttfamily \#include "{}../\+Base/\+Union\+Find.\+h"{}}\newline
 {\ttfamily \#include "{}../\+RHI/\+Image\+Usage\+Flags.\+h"{}}\newline
 Render\+Graph.\+h 的引用(Include)关系图\+:
 \nopagebreak
@@ -20,51 +21,31 @@ Render\+Graph.\+h 的引用(Include)关系图\+:
 \doxysubsubsection*{类}
 \begin{DoxyCompactItemize}
 \item 
-struct \mbox{\hyperlink{struct_f_c_t_1_1_pass_graph_vertex}{FCT\+::\+Pass\+Graph\+Vertex}}
+struct \mbox{\hyperlink{struct_f_c_t_1_1_size}{FCT\+::\+Size}}
 \item 
-struct \mbox{\hyperlink{struct_f_c_t_1_1_pass_graph_edge}{FCT\+::\+Pass\+Graph\+Edge}}
+struct \mbox{\hyperlink{struct_f_c_t_1_1_texture}{FCT\+::\+Texture}}
 \item 
-struct \mbox{\hyperlink{struct_f_c_t_1_1_resource_graph_vertex}{FCT\+::\+Resource\+Graph\+Vertex}}
+struct \mbox{\hyperlink{struct_f_c_t_1_1_target}{FCT\+::\+Target}}
 \item 
-struct \mbox{\hyperlink{struct_f_c_t_1_1_resource_graph_edge}{FCT\+::\+Resource\+Graph\+Edge}}
+struct \mbox{\hyperlink{struct_f_c_t_1_1_depth_stencil}{FCT\+::\+Depth\+Stencil}}
+\item 
+struct \mbox{\hyperlink{struct_f_c_t_1_1_pass_desc}{FCT\+::\+Pass\+Desc}}
+\item 
+struct \mbox{\hyperlink{struct_f_c_t_1_1_image_desc}{FCT\+::\+Image\+Desc}}
 \item 
 class \mbox{\hyperlink{class_f_c_t_1_1_render_graph}{FCT\+::\+Render\+Graph}}
-\item 
-struct \mbox{\hyperlink{struct_f_c_t_1_1_render_graph_1_1_image_resource_desc}{FCT\+::\+Render\+Graph\+::\+Image\+Resource\+Desc}}
-\item 
-struct \mbox{\hyperlink{struct_f_c_t_1_1_render_graph_1_1_window_image_resource}{FCT\+::\+Render\+Graph\+::\+Window\+Image\+Resource}}
-\item 
-struct \mbox{\hyperlink{struct_f_c_t_1_1_render_graph_1_1_window_depth_stencil_resource}{FCT\+::\+Render\+Graph\+::\+Window\+Depth\+Stencil\+Resource}}
-\item 
-struct \mbox{\hyperlink{struct_f_c_t_1_1_render_graph_1_1_image_resource_vertex}{FCT\+::\+Render\+Graph\+::\+Image\+Resource\+Vertex}}
-\item 
-struct \mbox{\hyperlink{struct_f_c_t_1_1_render_graph_1_1_execution_order}{FCT\+::\+Render\+Graph\+::\+Execution\+Order}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{命名空间}
 \begin{DoxyCompactItemize}
 \item 
 namespace \mbox{\hyperlink{namespace_f_c_t}{FCT}}
 \item 
-namespace \mbox{\hyperlink{namespace_f_c_t_1_1_r_h_i}{FCT\+::\+RHI}}
+namespace \mbox{\hyperlink{namespace_f_c_t_1_1_render_graph_const_var}{FCT\+::\+Render\+Graph\+Const\+Var}}
 \end{DoxyCompactItemize}
-\doxysubsubsection*{类型定义}
+\doxysubsubsection*{变量}
 \begin{DoxyCompactItemize}
 \item 
-using \mbox{\hyperlink{namespace_f_c_t_ade60146e92314a0c13d22e0ce1e17b1d}{FCT\+::\+Pass\+Graph\+Type}}
+constexpr uint32\+\_\+t \mbox{\hyperlink{namespace_f_c_t_1_1_render_graph_const_var_add7537a401d1df77c3b1c28c769adba1}{FCT\+::\+Render\+Graph\+Const\+Var\+::\+MAX\+\_\+\+TEXTURE\+\_\+\+COUNT}} = 96
 \item 
-using \mbox{\hyperlink{namespace_f_c_t_ac41e778fbc977f4696d9b8be38b37ef6}{FCT\+::\+Resource\+Graph\+Type}}
-\end{DoxyCompactItemize}
-\doxysubsubsection*{枚举}
-\begin{DoxyCompactItemize}
-\item 
-enum class \mbox{\hyperlink{namespace_f_c_t_a06857f19619e14aebd3f3ac216280004}{FCT\+::\+Render\+Graph\+Vertex\+Type}} \{ \mbox{\hyperlink{namespace_f_c_t_a06857f19619e14aebd3f3ac216280004ab9b57aae83585e17ede4570dcede353c}{FCT\+::\+Pass}}
-, \mbox{\hyperlink{namespace_f_c_t_a06857f19619e14aebd3f3ac216280004abe8545ae7ab0276e15898aae7acfbd7a}{FCT\+::\+Resource}}
- \}
-\item 
-enum class \mbox{\hyperlink{namespace_f_c_t_ae4037e5f73740942e7e5aaf4f351cf5b}{FCT\+::\+Pass\+Graph\+Edge\+Type}} \{ \mbox{\hyperlink{namespace_f_c_t_ae4037e5f73740942e7e5aaf4f351cf5ba90a95d6639a7bbbeff7f36a7ec8f3b10}{FCT\+::\+Dependency}}
- \}
-\item 
-enum class \mbox{\hyperlink{namespace_f_c_t_a805dd797988aa16fa60c338fe07cd744}{FCT\+::\+Resource\+Graph\+Edge\+Type}} \{ \mbox{\hyperlink{namespace_f_c_t_a805dd797988aa16fa60c338fe07cd744a63d5049791d9d79d86e9a108b0a999ca}{FCT\+::\+Reference}}
-, \mbox{\hyperlink{namespace_f_c_t_a805dd797988aa16fa60c338fe07cd744ac1f1a6f9e7b09bf6164a3c19e9f2b128}{FCT\+::\+Parent\+Child}}
- \}
+constexpr uint32\+\_\+t \mbox{\hyperlink{namespace_f_c_t_1_1_render_graph_const_var_acbdf1419b00bff03061fa00fc5413dbc}{FCT\+::\+Render\+Graph\+Const\+Var\+::\+MAX\+\_\+\+TARGET\+\_\+\+COUNT}} = 8
 \end{DoxyCompactItemize}

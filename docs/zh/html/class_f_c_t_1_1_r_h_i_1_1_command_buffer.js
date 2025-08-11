@@ -2,13 +2,16 @@ var class_f_c_t_1_1_r_h_i_1_1_command_buffer =
 [
     [ "CommandBuffer", "class_f_c_t_1_1_r_h_i_1_1_command_buffer.html#a8af059f4d01c98a51f554a4bf5611b37", null ],
     [ "~CommandBuffer", "class_f_c_t_1_1_r_h_i_1_1_command_buffer.html#a37569dfcd26f0a0f5543df5cb4c95cc4", null ],
+    [ "addRef", "class_f_c_t_1_1_r_h_i_1_1_command_buffer.html#a59c2f131121de6503df8d363b6853d45", null ],
     [ "addSignalSemaphore", "class_f_c_t_1_1_r_h_i_1_1_command_buffer.html#abfc610f45b65f65b5bb52f41c78f09cf", null ],
     [ "addWaitSemaphore", "class_f_c_t_1_1_r_h_i_1_1_command_buffer.html#ae144aad972520d4c900c99d7dbfc9479", null ],
     [ "barrier", "class_f_c_t_1_1_r_h_i_1_1_command_buffer.html#ae36a3e6c90f015300e742735022401b0", null ],
     [ "begin", "class_f_c_t_1_1_r_h_i_1_1_command_buffer.html#a2ee5ecd3bd6318d5670b3ce97bb0255e", null ],
     [ "bindPipieline", "class_f_c_t_1_1_r_h_i_1_1_command_buffer.html#a8bd734a4a7c9e940e66094e1dd45a4fa", null ],
     [ "clearWaitSemaphores", "class_f_c_t_1_1_r_h_i_1_1_command_buffer.html#ad58a19944cc5db8baed7d3d7ad4e6f45", null ],
+    [ "count", "class_f_c_t_1_1_r_h_i_1_1_command_buffer.html#a33146ec5804be422936519224a3a7b3f", null ],
     [ "create", "class_f_c_t_1_1_r_h_i_1_1_command_buffer.html#af9a481365826f007bebca4f5fcff8cbb", null ],
+    [ "deleteThis", "class_f_c_t_1_1_r_h_i_1_1_command_buffer.html#a0fea0bed50f726d3e11ddde802dac5da", null ],
     [ "draw", "class_f_c_t_1_1_r_h_i_1_1_command_buffer.html#a262d898496ad60211fc2fa512305e89a", null ],
     [ "drawIndex", "class_f_c_t_1_1_r_h_i_1_1_command_buffer.html#a3a719a2cc8851e679be8f15297ad5684", null ],
     [ "end", "class_f_c_t_1_1_r_h_i_1_1_command_buffer.html#aa69be42699909e13451d41ac3dd50f5e", null ],
@@ -16,6 +19,8 @@ var class_f_c_t_1_1_r_h_i_1_1_command_buffer =
     [ "fence", "class_f_c_t_1_1_r_h_i_1_1_command_buffer.html#a6513f4ee5d3a68153b1840d01be019c0", null ],
     [ "level", "class_f_c_t_1_1_r_h_i_1_1_command_buffer.html#aeb7fd44b2d4c3158d76e716dd129a1e7", null ],
     [ "nextPass", "class_f_c_t_1_1_r_h_i_1_1_command_buffer.html#a444c04caf037251a1e85b1fa3e997dd2", null ],
+    [ "operator bool", "class_f_c_t_1_1_r_h_i_1_1_command_buffer.html#a474ad3a918f2e87d75ff16075e1caeec", null ],
+    [ "release", "class_f_c_t_1_1_r_h_i_1_1_command_buffer.html#aaf57b2df79545f2b71ae9087865dee4c", null ],
     [ "reset", "class_f_c_t_1_1_r_h_i_1_1_command_buffer.html#a36fc74c77c0ddd889ac2127e402f3e64", null ],
     [ "scissor", "class_f_c_t_1_1_r_h_i_1_1_command_buffer.html#a7b51ab7bd9f18283c84a477454ef9fbf", null ],
     [ "signalSemaphores", "class_f_c_t_1_1_r_h_i_1_1_command_buffer.html#a83a09058c209a34a5831aeea2a146cfd", null ],
@@ -24,6 +29,7 @@ var class_f_c_t_1_1_r_h_i_1_1_command_buffer =
     [ "waitSemaphores", "class_f_c_t_1_1_r_h_i_1_1_command_buffer.html#a5be27292ce3da760492eef18291cec75", null ],
     [ "m_fence", "class_f_c_t_1_1_r_h_i_1_1_command_buffer.html#aacc5fa9c5c6cd09ee426524bed6a4ba2", null ],
     [ "m_level", "class_f_c_t_1_1_r_h_i_1_1_command_buffer.html#af3dcfa6dbb473476a545dda2c9cea0fa", null ],
+    [ "m_refCount", "class_f_c_t_1_1_r_h_i_1_1_command_buffer.html#aca88529f9b473d326168fa808fd02300", null ],
     [ "m_signalSemaphores", "class_f_c_t_1_1_r_h_i_1_1_command_buffer.html#a95543c0e6dac8f1d0796ee304db977dc", null ],
     [ "m_waitSemaphores", "class_f_c_t_1_1_r_h_i_1_1_command_buffer.html#ad2452899803c38a48073e719b03a834f", null ]
 ];

@@ -27,21 +27,32 @@ var NAVTREE =
   [ "FCT", "index.html", [
     [ "渲染概念详解", "render_concepts.html", [
       [ "目录", "render_concepts.html#autotoc_md0", null ],
+      [ "DrawCall", "render_concepts.html#render_drawcall", [
+        [ "概念定义", "render_concepts.html#autotoc_md2", null ]
+      ] ],
       [ "渲染管线 (Pipeline)", "render_concepts.html#render_pipeline", [
-        [ "概念定义", "render_concepts.html#autotoc_md2", null ],
-        [ "管线类型", "render_concepts.html#autotoc_md3", [
-          [ "传统光栅化管线 (Traditional Pipeline)", "render_concepts.html#autotoc_md4", null ],
-          [ "MeshShader光栅化管线 (MeshShader Pipeline)", "render_concepts.html#autotoc_md5", null ],
-          [ "光线追踪管线 (RayTracing Pipeline)", "render_concepts.html#autotoc_md6", null ]
+        [ "概念定义", "render_concepts.html#autotoc_md3", null ],
+        [ "管线类型", "render_concepts.html#autotoc_md4", [
+          [ "传统光栅化管线 (Traditional Pipeline)", "render_concepts.html#autotoc_md5", [
+            [ "概念定义", "render_concepts.html#autotoc_md6", null ],
+            [ "流程图", "render_concepts.html#autotoc_md7", null ],
+            [ "包含的状态", "render_concepts.html#autotoc_md8", null ]
+          ] ],
+          [ "MeshShader光栅化管线 (MeshShader Pipeline)", "render_concepts.html#autotoc_md9", [
+            [ "概念定义", "render_concepts.html#autotoc_md10", null ],
+            [ "流程图", "render_concepts.html#autotoc_md11", null ],
+            [ "包含的状态", "render_concepts.html#autotoc_md12", null ]
+          ] ],
+          [ "光线追踪管线 (RayTracing Pipeline)", "render_concepts.html#autotoc_md13", null ]
         ] ]
       ] ],
       [ "渲染通道 (Pass)", "render_concepts.html#render_pass", [
-        [ "概念定义", "render_concepts.html#autotoc_md8", null ],
-        [ "核心特性", "render_concepts.html#autotoc_md9", null ]
+        [ "概念定义", "render_concepts.html#autotoc_md15", null ],
+        [ "核心特性", "render_concepts.html#autotoc_md16", null ]
       ] ],
       [ "通道组 (PassGroup)", "render_concepts.html#render_passgroup", [
-        [ "概念定义", "render_concepts.html#autotoc_md10", null ],
-        [ "设计目的", "render_concepts.html#autotoc_md11", null ]
+        [ "概念定义", "render_concepts.html#autotoc_md17", null ],
+        [ "设计目的", "render_concepts.html#autotoc_md18", null ]
       ] ]
     ] ],
     [ "命名空间", "namespaces.html", [
@@ -83,29 +94,41 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_access_flags_8h.html",
-"_r_h_i_2_vertex_shader_8cpp_source.html",
-"_viewport_state_8h.html",
-"class_f_c_t_1_1_call_back_event_handler.html#ab5fee45986b03ce196aaead5b78152c7",
-"class_f_c_t_1_1_context.html#af425799b4b55dc83f161dff9fcef7d6f",
-"class_f_c_t_1_1_flags.html#a36a18bf4ebd345763165152b1c0b8419",
-"class_f_c_t_1_1_image_loader.html#af87b05475a0f11be29546717025d2c6f",
-"class_f_c_t_1_1_pass.html#a6f12820bcf0085948a94c1ddd2820a00",
-"class_f_c_t_1_1_r_h_i_1_1_i_index_data.html",
-"class_f_c_t_1_1_r_h_i_1_1_render_target_view.html#a92a5835ef41d4c7e9a3f705369ddc359",
-"class_f_c_t_1_1_r_h_i_1_1_v_k___depth_stencil_view.html#a5e17cdcda2d8a32a56c4b200309d9b37",
-"class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a5a8112f1b2a5ea25e4b43d4a2b197335",
-"class_f_c_t_1_1_ref_count.html#a33146ec5804be422936519224a3a7b3f",
-"class_f_c_t_1_1_sampler.html#adb9c22e5ada05479222cabb5cfc26241",
-"class_f_c_t_1_1_texture.html#ad04e147799484f28b7f4fb0e8252d3c1",
-"class_f_c_t_1_1_v_k___context.html",
-"class_f_c_t_1_1_vertex_buffer.html#a4464f88008d49ee899a86410ca9ab9b9",
-"class_f_c_t_1_1_vertex_shader.html#a1cdfa620d51f7cb8d711bf8188a4aaa0",
-"functions_func_m.html",
-"namespace_f_c_t.html#a0741721dca246274b1b72d07249443e4ad0a8fa71e3197bbf9b23d6d93235f3ca",
-"namespace_f_c_t.html#aa6d1e7cd43d5bb06686de955be1a4309a4fbb0721d080fd298a216501832bee45",
-"struct_f_c_t_1_1_context_event_1_1_window_bound.html#aa37ca682c1c049ef1227104a4a8eb06b",
-"struct_f_c_t_1_1_r_h_i_1_1_pass_neighbors.html#a441b389b5e7f4a4aaa29c12a4f21054a",
-"struct_f_c_t_1_1_vec2.html#ae7a06b2810ca0b06e8a28a559a6fc3f5"
+"_r_h_i_2_vertex_buffer_8h_source.html",
+"_window_8cpp_source.html",
+"class_f_c_t_1_1_android___window.html#af49287ab5b42fe00bc8d58afa3a78193",
+"class_f_c_t_1_1_const_element.html#a090b9d9a65d4ca3c9876ed53f4ccb599",
+"class_f_c_t_1_1_context.html#acf52c4b63240d4b3fbfa15b6c76cbf6a",
+"class_f_c_t_1_1_dynamic_mesh.html#a842a008e1c0b751547897f2ef1c6dc20",
+"class_f_c_t_1_1_g_l_f_w___window.html#a53143e7dd7f81cbd35ee917f688c8682",
+"class_f_c_t_1_1_image_loader.html#a8ec1c74db7d2e07693d553e72b0e09d3",
+"class_f_c_t_1_1_mutil_buffer_image.html#a474ad3a918f2e87d75ff16075e1caeec",
+"class_f_c_t_1_1_pass.html#a2652b85a9ab1c30c536a0978b9702017",
+"class_f_c_t_1_1_r_h_i_1_1_command_pool.html#a474ad3a918f2e87d75ff16075e1caeec",
+"class_f_c_t_1_1_r_h_i_1_1_pass.html#a0dfbe0f748cbeb987c01d3243f765ffa",
+"class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a12e04d867a7d6d8af3e37d0002e6aa38",
+"class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#af9ab46232edcdf36f5b40e6724f8391d",
+"class_f_c_t_1_1_r_h_i_1_1_v_k___fence.html#aca88529f9b473d326168fa808fd02300",
+"class_f_c_t_1_1_r_h_i_1_1_v_k___pass.html#aca88529f9b473d326168fa808fd02300",
+"class_f_c_t_1_1_r_h_i_1_1_v_k___sampler.html#a4392804436f52f506b21e697ee4afe3f",
+"class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a77689c6c29ca31417432c3becf58e572",
+"class_f_c_t_1_1_r_h_i_1_1_v_k___vertex_buffer.html#ad47d4e2ef3f2baec690047f075bcbc89",
+"class_f_c_t_1_1_ref_count_policy_3_01_t_00_01false_01_4.html#a1620a6a8ceeb42e6082989991c235212",
+"class_f_c_t_1_1_scope_timer.html#a2803ceae81eb377ed3bfa7c45bf41452",
+"class_f_c_t_1_1_static_mesh.html#a93e8fc64d0de06376dd6ec60a2b465f6",
+"class_f_c_t_1_1_tradition_render_pass.html#ab1e7f34eab48d38498091a919fac16f5",
+"class_f_c_t_1_1_v_k___context.html#a813189ede7dce600ccd248fa36f175bd",
+"class_f_c_t_1_1_v_k___pass_resource.html#a1e963f0f016d110d6646f223ef890b0d",
+"class_f_c_t_1_1_v_k___vertex_shader.html#af2b310ed2c214fbcb48fcff8c0b95d49",
+"class_f_c_t_1_1_vertex_layout.html#a441a3dd87b89c01f6fccbbace0351fdf",
+"class_f_c_t_1_1_vertex_submit_job.html#a7046f00757bf73a98198916070c67507",
+"functions_h.html",
+"namespace_f_c_t.html#a0741721dca246274b1b72d07249443e4ae00f80e3640e18f2997325c36fe0ef90",
+"namespace_f_c_t.html#aa6d1e7cd43d5bb06686de955be1a4309a98f8c8dea9874e9f11b35f0f02b599a4",
+"struct_f_c_t_1_1_context_1_1_logic_task_data.html#ae273e1531b2699d45f8d035b098ac98f",
+"struct_f_c_t_1_1_old_render_graph_1_1_execution_order.html#af157a6650240d4fabf393cf29f51b84d",
+"struct_f_c_t_1_1_target.html#a692b9871e71567bd50d4a87197209184",
+"struct_f_c_t_1_1_vec4.html#aa56e8c00476d6d6ade1d987b0089652c"
 ];
 
 var SYNCONMSG = '点击 关闭 面板同步';

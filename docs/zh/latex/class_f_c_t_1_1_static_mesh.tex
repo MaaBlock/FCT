@@ -6,11 +6,12 @@
 
 
 
-FCT\+::Static\+Mesh\texorpdfstring{$<$}{<} Index\+Type \texorpdfstring{$>$}{>} 的协作图\+:\nopagebreak
+FCT\+::Static\+Mesh\texorpdfstring{$<$}{<} Index\+Type \texorpdfstring{$>$}{>} 的协作图\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=225pt]{class_f_c_t_1_1_static_mesh__coll__graph}
+\includegraphics[height=550pt]{class_f_c_t_1_1_static_mesh__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public 成员函数}
@@ -39,6 +40,21 @@ void \mbox{\hyperlink{class_f_c_t_1_1_static_mesh_a6955b934ce46f94b3036c7f6987cb
 size\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_static_mesh_a64de326e17658bc3d24b104d787f42b4}{get\+Index\+Count}} () const
 \item 
 size\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_static_mesh_a5a025603c6064e231a9ab76871798548}{get\+Vertex\+Count}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_context}{Context}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_static_mesh_aec954b4011cb2eda0e7204b6ca1e578a}{m\+\_\+ctx}}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_vertex_layout}{Vertex\+Layout}} \mbox{\hyperlink{class_f_c_t_1_1_static_mesh_a2236273b8e328babaa4791f37665cff6}{m\+\_\+vertex\+Layout}}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_vertex_buffer}{Vertex\+Buffer}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_static_mesh_adcfadc02d8ff717562621fb672d1ef8a}{m\+\_\+cpu\+Vertex}}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_vertex_buffer}{RHI\+::\+Vertex\+Buffer}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_static_mesh_a93e8fc64d0de06376dd6ec60a2b465f6}{m\+\_\+gpu\+Vertex}}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_index_buffer}{RHI\+::\+Index\+Buffer}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_static_mesh_ad26a261954f1daa95ade6e5f80d41e59}{m\+\_\+gpu\+Index}}
+\item 
+std\+::vector$<$ Index\+Type $>$ \mbox{\hyperlink{class_f_c_t_1_1_static_mesh_a0009379c9fbcd08398897a5153c922ee}{m\+\_\+cpu\+Indices}}
 \end{DoxyCompactItemize}
 
 
@@ -115,13 +131,6 @@ void \mbox{\hyperlink{class_f_c_t_1_1_static_mesh}{FCT\+::\+Static\+Mesh}}$<$ In
 
 在文件 \mbox{\hyperlink{_mesh_8hpp_source}{Mesh.\+hpp}} 第 \mbox{\hyperlink{_mesh_8hpp_source_l00005}{5}} 行定义.
 
-函数调用图\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_f_c_t_1_1_static_mesh_ab14ba8e6a44b67f1b25c8ad6794e63a6_cgraph}
-\end{center}
-\end{figure}
 这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -226,6 +235,77 @@ void \mbox{\hyperlink{class_f_c_t_1_1_static_mesh}{FCT\+::\+Static\+Mesh}}$<$ In
 
 
 在文件 \mbox{\hyperlink{_mesh_8h_source}{Mesh.\+h}} 第 \mbox{\hyperlink{_mesh_8h_source_l00070}{70}} 行定义.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_f_c_t_1_1_static_mesh_doc-variable-members}
+\doxysubsection{类成员变量说明}
+\Hypertarget{class_f_c_t_1_1_static_mesh_a0009379c9fbcd08398897a5153c922ee}\index{FCT::StaticMesh$<$ IndexType $>$@{FCT::StaticMesh$<$ IndexType $>$}!m\_cpuIndices@{m\_cpuIndices}}
+\index{m\_cpuIndices@{m\_cpuIndices}!FCT::StaticMesh$<$ IndexType $>$@{FCT::StaticMesh$<$ IndexType $>$}}
+\doxysubsubsection{\texorpdfstring{m\_cpuIndices}{m\_cpuIndices}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_static_mesh_a0009379c9fbcd08398897a5153c922ee} 
+template$<$typename Index\+Type = uint16\+\_\+t$>$ \\
+std\+::vector$<$Index\+Type$>$ \mbox{\hyperlink{class_f_c_t_1_1_static_mesh}{FCT\+::\+Static\+Mesh}}$<$ Index\+Type $>$\+::m\+\_\+cpu\+Indices\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_mesh_8h_source}{Mesh.\+h}} 第 \mbox{\hyperlink{_mesh_8h_source_l00096}{96}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_static_mesh_adcfadc02d8ff717562621fb672d1ef8a}\index{FCT::StaticMesh$<$ IndexType $>$@{FCT::StaticMesh$<$ IndexType $>$}!m\_cpuVertex@{m\_cpuVertex}}
+\index{m\_cpuVertex@{m\_cpuVertex}!FCT::StaticMesh$<$ IndexType $>$@{FCT::StaticMesh$<$ IndexType $>$}}
+\doxysubsubsection{\texorpdfstring{m\_cpuVertex}{m\_cpuVertex}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_static_mesh_adcfadc02d8ff717562621fb672d1ef8a} 
+template$<$typename Index\+Type = uint16\+\_\+t$>$ \\
+\mbox{\hyperlink{class_f_c_t_1_1_vertex_buffer}{Vertex\+Buffer}}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_static_mesh}{FCT\+::\+Static\+Mesh}}$<$ Index\+Type $>$\+::m\+\_\+cpu\+Vertex\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_mesh_8h_source}{Mesh.\+h}} 第 \mbox{\hyperlink{_mesh_8h_source_l00093}{93}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_static_mesh_aec954b4011cb2eda0e7204b6ca1e578a}\index{FCT::StaticMesh$<$ IndexType $>$@{FCT::StaticMesh$<$ IndexType $>$}!m\_ctx@{m\_ctx}}
+\index{m\_ctx@{m\_ctx}!FCT::StaticMesh$<$ IndexType $>$@{FCT::StaticMesh$<$ IndexType $>$}}
+\doxysubsubsection{\texorpdfstring{m\_ctx}{m\_ctx}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_static_mesh_aec954b4011cb2eda0e7204b6ca1e578a} 
+template$<$typename Index\+Type = uint16\+\_\+t$>$ \\
+\mbox{\hyperlink{class_f_c_t_1_1_context}{Context}}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_static_mesh}{FCT\+::\+Static\+Mesh}}$<$ Index\+Type $>$\+::m\+\_\+ctx\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_mesh_8h_source}{Mesh.\+h}} 第 \mbox{\hyperlink{_mesh_8h_source_l00091}{91}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_static_mesh_ad26a261954f1daa95ade6e5f80d41e59}\index{FCT::StaticMesh$<$ IndexType $>$@{FCT::StaticMesh$<$ IndexType $>$}!m\_gpuIndex@{m\_gpuIndex}}
+\index{m\_gpuIndex@{m\_gpuIndex}!FCT::StaticMesh$<$ IndexType $>$@{FCT::StaticMesh$<$ IndexType $>$}}
+\doxysubsubsection{\texorpdfstring{m\_gpuIndex}{m\_gpuIndex}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_static_mesh_ad26a261954f1daa95ade6e5f80d41e59} 
+template$<$typename Index\+Type = uint16\+\_\+t$>$ \\
+\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_index_buffer}{RHI\+::\+Index\+Buffer}}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_static_mesh}{FCT\+::\+Static\+Mesh}}$<$ Index\+Type $>$\+::m\+\_\+gpu\+Index\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_mesh_8h_source}{Mesh.\+h}} 第 \mbox{\hyperlink{_mesh_8h_source_l00095}{95}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_static_mesh_a93e8fc64d0de06376dd6ec60a2b465f6}\index{FCT::StaticMesh$<$ IndexType $>$@{FCT::StaticMesh$<$ IndexType $>$}!m\_gpuVertex@{m\_gpuVertex}}
+\index{m\_gpuVertex@{m\_gpuVertex}!FCT::StaticMesh$<$ IndexType $>$@{FCT::StaticMesh$<$ IndexType $>$}}
+\doxysubsubsection{\texorpdfstring{m\_gpuVertex}{m\_gpuVertex}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_static_mesh_a93e8fc64d0de06376dd6ec60a2b465f6} 
+template$<$typename Index\+Type = uint16\+\_\+t$>$ \\
+\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_vertex_buffer}{RHI\+::\+Vertex\+Buffer}}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_static_mesh}{FCT\+::\+Static\+Mesh}}$<$ Index\+Type $>$\+::m\+\_\+gpu\+Vertex\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_mesh_8h_source}{Mesh.\+h}} 第 \mbox{\hyperlink{_mesh_8h_source_l00094}{94}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_static_mesh_a2236273b8e328babaa4791f37665cff6}\index{FCT::StaticMesh$<$ IndexType $>$@{FCT::StaticMesh$<$ IndexType $>$}!m\_vertexLayout@{m\_vertexLayout}}
+\index{m\_vertexLayout@{m\_vertexLayout}!FCT::StaticMesh$<$ IndexType $>$@{FCT::StaticMesh$<$ IndexType $>$}}
+\doxysubsubsection{\texorpdfstring{m\_vertexLayout}{m\_vertexLayout}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_static_mesh_a2236273b8e328babaa4791f37665cff6} 
+template$<$typename Index\+Type = uint16\+\_\+t$>$ \\
+\mbox{\hyperlink{class_f_c_t_1_1_vertex_layout}{Vertex\+Layout}} \mbox{\hyperlink{class_f_c_t_1_1_static_mesh}{FCT\+::\+Static\+Mesh}}$<$ Index\+Type $>$\+::m\+\_\+vertex\+Layout\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_mesh_8h_source}{Mesh.\+h}} 第 \mbox{\hyperlink{_mesh_8h_source_l00092}{92}} 行定义.
 
 
 

@@ -38,55 +38,55 @@
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00034}\mbox{\hyperlink{class_f_c_t_1_1_i_event_system}{00034}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_f_c_t_1_1_i_event_system}{IEventSystem}}\ \{}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00035}00035\ \ \ \ \ \textcolor{keyword}{private}:}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Event>}
-\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{auto}\ getEventTypeId()\ \{}
+\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00037}\mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a831449ceeadb7739752dfbbeaad9bd6d}{00037}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a831449ceeadb7739752dfbbeaad9bd6d}{getEventTypeId}}()\ \{}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ entt::type\_hash<Event>::value();}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00039}00039\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00040}00040\ }
-\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }IEventHandler\ \{}
-\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \string~IEventHandler()\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ handle(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ event)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00041}\mbox{\hyperlink{struct_f_c_t_1_1_i_event_system_1_1_i_event_handler}{00041}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_f_c_t_1_1_i_event_system_1_1_i_event_handler}{IEventHandler}}\ \{}
+\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00042}\mbox{\hyperlink{struct_f_c_t_1_1_i_event_system_1_1_i_event_handler_a13df995f82c8ab8de53f39821b0384b7}{00042}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{struct_f_c_t_1_1_i_event_system_1_1_i_event_handler_a13df995f82c8ab8de53f39821b0384b7}{\string~IEventHandler}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00043}\mbox{\hyperlink{struct_f_c_t_1_1_i_event_system_1_1_i_event_handler_ab97d304325d42b504268a3cbc93aa155}{00043}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_f_c_t_1_1_i_event_system_1_1_i_event_handler_ab97d304325d42b504268a3cbc93aa155}{handle}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ event)\ =\ 0;}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00044}00044\ \ \ \ \ \ \ \ \ \};}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00045}00045\ }
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Event>}
-\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }EventHandler\ :\ IEventHandler\ \{}
-\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ std::function<void(\textcolor{keyword}{const}\ Event\&)>\ handler;}
+\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00047}\mbox{\hyperlink{struct_f_c_t_1_1_i_event_system_1_1_event_handler}{00047}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_f_c_t_1_1_i_event_system_1_1_event_handler_afdc28c661c594317ca2a7afe25b45264}{EventHandler}}\ :\ \mbox{\hyperlink{struct_f_c_t_1_1_i_event_system_1_1_i_event_handler}{IEventHandler}}\ \{}
+\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00048}\mbox{\hyperlink{struct_f_c_t_1_1_i_event_system_1_1_event_handler_a79a85742ccff3b739673460087d12752}{00048}}\ \ \ \ \ \ \ \ \ \ \ \ \ std::function<void(\textcolor{keyword}{const}\ Event\&)>\ \mbox{\hyperlink{struct_f_c_t_1_1_i_event_system_1_1_event_handler_a79a85742ccff3b739673460087d12752}{handler}};}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00049}00049\ }
-\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ EventHandler(std::function<\textcolor{keywordtype}{void}(\textcolor{keyword}{const}\ Event\&)>\ h)\ :\ handler(std::move(h))\ \{\}}
+\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00050}\mbox{\hyperlink{struct_f_c_t_1_1_i_event_system_1_1_event_handler_afdc28c661c594317ca2a7afe25b45264}{00050}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_f_c_t_1_1_i_event_system_1_1_event_handler_afdc28c661c594317ca2a7afe25b45264}{EventHandler}}(std::function<\textcolor{keywordtype}{void}(\textcolor{keyword}{const}\ Event\&)>\ h)\ :\ \mbox{\hyperlink{struct_f_c_t_1_1_i_event_system_1_1_event_handler_a79a85742ccff3b739673460087d12752}{handler}}(\mbox{\hyperlink{namespacestd}{std}}::move(h))\ \{\}}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00051}00051\ }
-\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ handle(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ event)\textcolor{keyword}{\ override\ }\{}
-\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ handler(*\textcolor{keyword}{static\_cast<}\textcolor{keyword}{const\ }Event*\textcolor{keyword}{>}(event));}
+\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00052}\mbox{\hyperlink{struct_f_c_t_1_1_i_event_system_1_1_event_handler_afffe97b58fb99f80a5be37f89518e193}{00052}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_f_c_t_1_1_i_event_system_1_1_event_handler_afffe97b58fb99f80a5be37f89518e193}{handle}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ event)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_f_c_t_1_1_i_event_system_1_1_event_handler_a79a85742ccff3b739673460087d12752}{handler}}(*\textcolor{keyword}{static\_cast<}\textcolor{keyword}{const\ }Event*\textcolor{keyword}{>}(event));}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00055}00055\ \ \ \ \ \ \ \ \ \};}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00056}00056\ }
-\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }QueuedEvent\ \{}
-\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ std::unique\_ptr<void,\ void(*)(\textcolor{keywordtype}{void}*)>\ data;}
-\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ std::function<void(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*)>\ trigger\_func;}
+\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00057}\mbox{\hyperlink{struct_f_c_t_1_1_i_event_system_1_1_queued_event}{00057}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_f_c_t_1_1_i_event_system_1_1_queued_event_a562c710b8c5b6893c89c7c488bfe0925}{QueuedEvent}}\ \{}
+\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00058}\mbox{\hyperlink{struct_f_c_t_1_1_i_event_system_1_1_queued_event_aeb7e035453f323935bbb16ef71d416b2}{00058}}\ \ \ \ \ \ \ \ \ \ \ \ \ std::unique\_ptr<void,\ void(*)(\textcolor{keywordtype}{void}*)>\ \mbox{\hyperlink{struct_f_c_t_1_1_i_event_system_1_1_queued_event_aeb7e035453f323935bbb16ef71d416b2}{data}};}
+\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00059}\mbox{\hyperlink{struct_f_c_t_1_1_i_event_system_1_1_queued_event_af92da15b8015cd8bf16fa984b8956e01}{00059}}\ \ \ \ \ \ \ \ \ \ \ \ \ std::function<void(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*)>\ \mbox{\hyperlink{struct_f_c_t_1_1_i_event_system_1_1_queued_event_af92da15b8015cd8bf16fa984b8956e01}{trigger\_func}};}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00060}00060\ }
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Event>}
-\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ QueuedEvent(Event\&\&\ event)}
-\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ data(\textcolor{keyword}{new}\ Event(std::forward<Event>(event)),\ [](\textcolor{keywordtype}{void}*\ ptr)\ \{\ \textcolor{keyword}{delete}\ \textcolor{keyword}{static\_cast<}Event*\textcolor{keyword}{>}(ptr);\ \})}
-\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ,\ trigger\_func([\textcolor{keyword}{this}](\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*)\ \{}
-\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ evt\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keyword}{const\ }Event*\textcolor{keyword}{>}(data.get());}
+\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00062}\mbox{\hyperlink{struct_f_c_t_1_1_i_event_system_1_1_queued_event_a562c710b8c5b6893c89c7c488bfe0925}{00062}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_f_c_t_1_1_i_event_system_1_1_queued_event_a562c710b8c5b6893c89c7c488bfe0925}{QueuedEvent}}(Event\&\&\ event)}
+\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{struct_f_c_t_1_1_i_event_system_1_1_queued_event_aeb7e035453f323935bbb16ef71d416b2}{data}}(new\ Event(\mbox{\hyperlink{namespacestd}{std}}::forward<Event>(event)),\ [](void*\ ptr)\ \{\ \textcolor{keyword}{delete}\ \textcolor{keyword}{static\_cast<}Event*\textcolor{keyword}{>}(ptr);\ \})}
+\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ,\ \mbox{\hyperlink{struct_f_c_t_1_1_i_event_system_1_1_queued_event_af92da15b8015cd8bf16fa984b8956e01}{trigger\_func}}([\textcolor{keyword}{this}](\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*)\ \{}
+\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ evt\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keyword}{const\ }Event*\textcolor{keyword}{>}(\mbox{\hyperlink{struct_f_c_t_1_1_i_event_system_1_1_queued_event_aeb7e035453f323935bbb16ef71d416b2}{data}}.get());}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \})\ \{\}}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00067}00067\ \ \ \ \ \ \ \ \ \};}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00068}00068\ }
-\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00069}00069\ \ \ \ \ \ \ \ \ std::unordered\_map<entt::id\_type,\ std::unordered\_map<SubscribeId,\ std::unique\_ptr<IEventHandler>>>\ m\_handlers;}
+\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00069}\mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a22e34dffd042442de7489d9041593647}{00069}}\ \ \ \ \ \ \ \ \ std::unordered\_map<entt::id\_type,\ std::unordered\_map<SubscribeId,\ std::unique\_ptr<IEventHandler>>>\ \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a22e34dffd042442de7489d9041593647}{m\_handlers}};}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00070}00070\ }
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00071}00071\ \ \ \ \ \ \ \ \ std::conditional\_t<Config::EnableQueue,}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ std::unordered\_map<entt::id\_type,\ std::vector<std::function<void()>>>,}
-\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ std::monostate>\ m\_eventQueue;}
+\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00073}\mbox{\hyperlink{class_f_c_t_1_1_i_event_system_ac1a6fdf7719000f53dff74e887528a6f}{00073}}\ \ \ \ \ \ \ \ \ \ \ \ \ std::monostate>\ \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_ac1a6fdf7719000f53dff74e887528a6f}{m\_eventQueue}};}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00074}00074\ }
-\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00075}00075\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_a8b1c77084f003979f0fe6c4ddb7e8eb6}{SubscribeId}}\ m\_nextSubscribeId\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00075}\mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a291c4e6c183a43db009d4461d2c5c706}{00075}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_a8b1c77084f003979f0fe6c4ddb7e8eb6}{SubscribeId}}\ \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a291c4e6c183a43db009d4461d2c5c706}{m\_nextSubscribeId}}\ =\ 1;}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00076}00076\ }
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00077}00077\ \ \ \ \ \textcolor{keyword}{public}:}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00078}00078\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Event>}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00079}\mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a59cef3fb278dbd26a9bfdcd81407835c}{00079}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a59cef3fb278dbd26a9bfdcd81407835c}{trigger}}(\textcolor{keyword}{const}\ Event\&\ event)}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ Config::EnableTrigger}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00081}00081\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{auto}\ eventTypeId\ =\ getEventTypeId<Event>();}
+\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{auto}\ eventTypeId\ =\ \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a831449ceeadb7739752dfbbeaad9bd6d}{getEventTypeId<Event>}}();}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00083}00083\ }
-\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ m\_handlers.find(eventTypeId);}
-\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ m\_handlers.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a22e34dffd042442de7489d9041593647}{m\_handlers}}.find(eventTypeId);}
+\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a22e34dffd042442de7489d9041593647}{m\_handlers}}.end())\ \{}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ [\textcolor{keywordtype}{id},\ handler]\ :\ it-\/>second)\ \{}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ handler-\/>handle(\&event);}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
@@ -97,23 +97,23 @@
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00093}\mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a43cccfe74d41690355f7d97601a67bb7}{00093}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a43cccfe74d41690355f7d97601a67bb7}{enqueue}}(Event\&\&\ event)}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ Config::EnableQueue}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00095}00095\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{auto}\ eventTypeId\ =\ getEventTypeId<Event>();}
+\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{auto}\ eventTypeId\ =\ \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a831449ceeadb7739752dfbbeaad9bd6d}{getEventTypeId<Event>}}();}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00097}00097\ }
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ triggerLambda\ =\ [\textcolor{keyword}{this},\ evt\ =\ std::forward<Event>(event)]()\ \textcolor{keyword}{mutable}\ \{}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a59cef3fb278dbd26a9bfdcd81407835c}{trigger}}(evt);}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00101}00101\ }
-\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ m\_eventQueue[eventTypeId].emplace\_back(std::move(triggerLambda));}
+\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_ac1a6fdf7719000f53dff74e887528a6f}{m\_eventQueue}}[eventTypeId].emplace\_back(std::move(triggerLambda));}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00103}00103\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00104}00104\ }
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00105}00105\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Event>}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00106}\mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a2b11fa6ab70e609902f655dd736a4cd0}{00106}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a2b11fa6ab70e609902f655dd736a4cd0}{update}}()}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ Config::EnableQueue}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00108}00108\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{auto}\ eventTypeId\ =\ getEventTypeId<Event>();}
+\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{auto}\ eventTypeId\ =\ \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a831449ceeadb7739752dfbbeaad9bd6d}{getEventTypeId<Event>}}();}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00110}00110\ }
-\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ m\_eventQueue.find(eventTypeId);}
-\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ m\_eventQueue.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_ac1a6fdf7719000f53dff74e887528a6f}{m\_eventQueue}}.find(eventTypeId);}
+\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_ac1a6fdf7719000f53dff74e887528a6f}{m\_eventQueue}}.end())\ \{}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ queue\ =\ it-\/>second;}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ triggerFunc\ :\ queue)\ \{}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ triggerFunc();}
@@ -125,7 +125,7 @@
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00121}\mbox{\hyperlink{class_f_c_t_1_1_i_event_system_ad2331301d8b3d7b9505cfd4cc1641b24}{00121}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_ad2331301d8b3d7b9505cfd4cc1641b24}{updateAll}}()}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ Config::EnableQueue}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00123}00123\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ [typeId,\ queue]\ :\ m\_eventQueue)\ \{}
+\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ [typeId,\ queue]\ :\ \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_ac1a6fdf7719000f53dff74e887528a6f}{m\_eventQueue}})\ \{}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ triggerFunc\ :\ queue)\ \{}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ triggerFunc();}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
@@ -135,45 +135,45 @@
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00131}00131\ }
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00132}00132\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Event,\ \textcolor{keyword}{typename}\ Func>}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00133}\mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a7270900dc7047e4f81324f58002066ad}{00133}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_a8b1c77084f003979f0fe6c4ddb7e8eb6}{SubscribeId}}\ \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a7270900dc7047e4f81324f58002066ad}{subscribe}}(Func\&\&\ func)\ \{}
-\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{auto}\ eventTypeId\ =\ getEventTypeId<Event>();}
+\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{auto}\ eventTypeId\ =\ \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a831449ceeadb7739752dfbbeaad9bd6d}{getEventTypeId<Event>}}();}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00135}00135\ }
-\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ subscribeId\ =\ m\_nextSubscribeId++;}
+\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ subscribeId\ =\ \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a291c4e6c183a43db009d4461d2c5c706}{m\_nextSubscribeId}}++;}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00137}00137\ }
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ handler\ =\ std::make\_unique<EventHandler<Event>>(}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::function<void(const\ Event\&)>(std::forward<Func>(func))}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ );}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00141}00141\ }
-\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ m\_handlers[eventTypeId][subscribeId]\ =\ std::move(handler);}
+\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a22e34dffd042442de7489d9041593647}{m\_handlers}}[eventTypeId][subscribeId]\ =\ std::move(handler);}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00143}00143\ }
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ subscribeId;}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00145}00145\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00146}00146\ }
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00147}00147\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Event>}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00148}\mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a084c953a75c413b6a2c856e4d474030b}{00148}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a084c953a75c413b6a2c856e4d474030b}{unsubscribe}}(\mbox{\hyperlink{namespace_f_c_t_a8b1c77084f003979f0fe6c4ddb7e8eb6}{SubscribeId}}\ subscribeId)\ \{}
-\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{auto}\ eventTypeId\ =\ getEventTypeId<Event>();}
+\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{auto}\ eventTypeId\ =\ \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a831449ceeadb7739752dfbbeaad9bd6d}{getEventTypeId<Event>}}();}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00150}00150\ }
-\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ m\_handlers.find(eventTypeId);}
-\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ m\_handlers.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a22e34dffd042442de7489d9041593647}{m\_handlers}}.find(eventTypeId);}
+\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a22e34dffd042442de7489d9041593647}{m\_handlers}}.end())\ \{}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ it-\/>second.erase(subscribeId);}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it-\/>second.empty())\ \{}
-\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_handlers.erase(it);}
+\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a22e34dffd042442de7489d9041593647}{m\_handlers}}.erase(it);}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00158}00158\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00159}00159\ }
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00160}00160\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Event>}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00161}\mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a9a1e4a28230992fedf7c1d3450d2fd90}{00161}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a9a1e4a28230992fedf7c1d3450d2fd90}{unsubscribeAll}}()\ \{}
-\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{auto}\ eventTypeId\ =\ getEventTypeId<Event>();}
-\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ m\_handlers.erase(eventTypeId);}
+\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{auto}\ eventTypeId\ =\ \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a831449ceeadb7739752dfbbeaad9bd6d}{getEventTypeId<Event>}}();}
+\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a22e34dffd042442de7489d9041593647}{m\_handlers}}.erase(eventTypeId);}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00164}00164\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00165}00165\ }
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00166}\mbox{\hyperlink{class_f_c_t_1_1_i_event_system_acfc5f32e8e8cdcf0e3069b7b5711f05a}{00166}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_acfc5f32e8e8cdcf0e3069b7b5711f05a}{unsubscribe}}(\mbox{\hyperlink{namespace_f_c_t_a8b1c77084f003979f0fe6c4ddb7e8eb6}{SubscribeId}}\ subscribeId)\ \{}
-\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ [typeId,\ handlers]\ :\ m\_handlers)\ \{}
+\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ [typeId,\ handlers]\ :\ \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a22e34dffd042442de7489d9041593647}{m\_handlers}})\ \{}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ handlers.find(subscribeId);}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ handlers.end())\ \{}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ handlers.erase(it);}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (handlers.empty())\ \{}
-\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_handlers.erase(typeId);}
+\DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a22e34dffd042442de7489d9041593647}{m\_handlers}}.erase(typeId);}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
 \DoxyCodeLine{\Hypertarget{_i_event_system_8h_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}

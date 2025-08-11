@@ -7,5 +7,7 @@ var class_f_c_t_1_1_const_element =
     [ "getName", "class_f_c_t_1_1_const_element.html#aeac67180995bd3f5e4d6c3773d303b7b", null ],
     [ "getSize", "class_f_c_t_1_1_const_element.html#a11d4871d0df3dcc1365b0fcf75a533d6", null ],
     [ "getType", "class_f_c_t_1_1_const_element.html#ad4a045f6dae5696f56faac68b353e3b6", null ],
-    [ "operator bool", "class_f_c_t_1_1_const_element.html#a9e642ff5a1d554198947e8a7ee3d6733", null ]
+    [ "operator bool", "class_f_c_t_1_1_const_element.html#a9e642ff5a1d554198947e8a7ee3d6733", null ],
+    [ "m_name", "class_f_c_t_1_1_const_element.html#a20ab5c97cf2d156212300b16c301e416", null ],
+    [ "m_type", "class_f_c_t_1_1_const_element.html#a4869097ba4ed034083105697d62751b7", null ]
 ];

@@ -6,20 +6,22 @@
 
 
 
-类 FCT\+::Vertex\+Render\+Pipeline 继承关系图\+:\nopagebreak
+类 FCT\+::Vertex\+Render\+Pipeline 继承关系图\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=207pt]{class_f_c_t_1_1_vertex_render_pipeline__inherit__graph}
+\includegraphics[height=550pt]{class_f_c_t_1_1_vertex_render_pipeline__inherit__graph}
 \end{center}
 \end{figure}
 
 
-FCT\+::Vertex\+Render\+Pipeline 的协作图\+:\nopagebreak
+FCT\+::Vertex\+Render\+Pipeline 的协作图\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=207pt]{class_f_c_t_1_1_vertex_render_pipeline__coll__graph}
+\includegraphics[height=550pt]{class_f_c_t_1_1_vertex_render_pipeline__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public 成员函数}
@@ -58,6 +60,28 @@ void \mbox{\hyperlink{class_f_c_t_1_1_vertex_render_pipeline_ae319314103231f6e74
 void \mbox{\hyperlink{class_f_c_t_1_1_vertex_render_pipeline_a7323cf4b8ce74497275f47f86c4b4ded}{draw\+Char}} (\mbox{\hyperlink{class_font}{Font}} \texorpdfstring{$\ast$}{*}font, char32\+\_\+t ch, int x, int y)
 \item 
 void \mbox{\hyperlink{class_f_c_t_1_1_vertex_render_pipeline_a6105cf915fd1c914a880d135a8ba6033}{end}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_vertex_render_pipeline_ab3f8faf7f60bdf84c706f21adda7944b}{unwrapper\+Arc\+To}} (\mbox{\hyperlink{struct_f_c_t_1_1_vec2}{Vec2}} center, float begin\+Angle, float end\+Angle, float q)
+\item 
+Vertex\+Factory \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_vertex_render_pipeline_a8d48e7a747ec75dfe32ce12afde599da}{create\+Factory}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_vertex_shader}{Vertex\+Shader}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_vertex_render_pipeline_a9d1ffce140d045485b15ceaa65f72017}{m\+\_\+vrvs}}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_pixel_shader}{Pixel\+Shader}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_vertex_render_pipeline_a17558e89794d6dcacc96f370fd992248}{m\+\_\+vrps}}
+\item 
+Vertex\+Factory \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_vertex_render_pipeline_a3627141258e876ba2a07600e3deaebc2}{m\+\_\+vrf}}
+\item 
+Material \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_vertex_render_pipeline_a3a1849eeb27dc6a07ac5141b8238d6ed}{m\+\_\+vr\+Material}}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_vertex_render_screen}{Vertex\+Render\+Screen}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_vertex_render_pipeline_a0cd5b2ef1e7542cd53c7b4e53aea0c80}{m\+\_\+screeen}}
+\item 
+std\+::vector$<$ float $>$ \mbox{\hyperlink{class_f_c_t_1_1_vertex_render_pipeline_a3d4781653ce645d08202a4cb7e922fc2}{m\+\_\+command\+Queue}}
 \end{DoxyCompactItemize}
 
 
@@ -105,6 +129,12 @@ void FCT\+::\+Vertex\+Render\+Pipeline\+::begin\+Path (\begin{DoxyParamCaption}\
 \doxysubsubsection{\texorpdfstring{circle()}{circle()}}
 {\footnotesize\ttfamily \label{class_f_c_t_1_1_vertex_render_pipeline_ab17c6c99c653f7e60fb22c2137e7ed85} 
 void FCT\+::\+Vertex\+Render\+Pipeline\+::circle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_f_c_t_1_1_vec2}{Vec2}}}]{center}{, }\item[{float}]{radius}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_f_c_t_1_1_vertex_render_pipeline_a8d48e7a747ec75dfe32ce12afde599da}\index{FCT::VertexRenderPipeline@{FCT::VertexRenderPipeline}!createFactory@{createFactory}}
+\index{createFactory@{createFactory}!FCT::VertexRenderPipeline@{FCT::VertexRenderPipeline}}
+\doxysubsubsection{\texorpdfstring{createFactory()}{createFactory()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_vertex_render_pipeline_a8d48e7a747ec75dfe32ce12afde599da} 
+Vertex\+Factory \texorpdfstring{$\ast$}{*} FCT\+::\+Vertex\+Render\+Pipeline\+::create\+Factory (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 \Hypertarget{class_f_c_t_1_1_vertex_render_pipeline_a14d3525feb02231a9817804d731372af}\index{FCT::VertexRenderPipeline@{FCT::VertexRenderPipeline}!curveTo@{curveTo}}
 \index{curveTo@{curveTo}!FCT::VertexRenderPipeline@{FCT::VertexRenderPipeline}}
@@ -177,6 +207,77 @@ void FCT\+::\+Vertex\+Render\+Pipeline\+::set\+Color (\begin{DoxyParamCaption}\i
 \doxysubsubsection{\texorpdfstring{setTransform()}{setTransform()}}
 {\footnotesize\ttfamily \label{class_f_c_t_1_1_vertex_render_pipeline_af617d607479a7d4b3363202c41a608e0} 
 void FCT\+::\+Vertex\+Render\+Pipeline\+::set\+Transform (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_f_c_t_1_1_mat4}{Mat4}} \&}]{transform}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_f_c_t_1_1_vertex_render_pipeline_ab3f8faf7f60bdf84c706f21adda7944b}\index{FCT::VertexRenderPipeline@{FCT::VertexRenderPipeline}!unwrapperArcTo@{unwrapperArcTo}}
+\index{unwrapperArcTo@{unwrapperArcTo}!FCT::VertexRenderPipeline@{FCT::VertexRenderPipeline}}
+\doxysubsubsection{\texorpdfstring{unwrapperArcTo()}{unwrapperArcTo()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_vertex_render_pipeline_ab3f8faf7f60bdf84c706f21adda7944b} 
+void FCT\+::\+Vertex\+Render\+Pipeline\+::unwrapper\+Arc\+To (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_f_c_t_1_1_vec2}{Vec2}}}]{center}{, }\item[{float}]{begin\+Angle}{, }\item[{float}]{end\+Angle}{, }\item[{float}]{q}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_f_c_t_1_1_vertex_render_pipeline_doc-variable-members}
+\doxysubsection{类成员变量说明}
+\Hypertarget{class_f_c_t_1_1_vertex_render_pipeline_a3d4781653ce645d08202a4cb7e922fc2}\index{FCT::VertexRenderPipeline@{FCT::VertexRenderPipeline}!m\_commandQueue@{m\_commandQueue}}
+\index{m\_commandQueue@{m\_commandQueue}!FCT::VertexRenderPipeline@{FCT::VertexRenderPipeline}}
+\doxysubsubsection{\texorpdfstring{m\_commandQueue}{m\_commandQueue}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_vertex_render_pipeline_a3d4781653ce645d08202a4cb7e922fc2} 
+std\+::vector$<$float$>$ FCT\+::\+Vertex\+Render\+Pipeline\+::m\+\_\+command\+Queue\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_vertex_render_pipeline_8h_source}{Vertex\+Render\+Pipeline.\+h}} 第 \mbox{\hyperlink{_vertex_render_pipeline_8h_source_l00056}{56}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_vertex_render_pipeline_a0cd5b2ef1e7542cd53c7b4e53aea0c80}\index{FCT::VertexRenderPipeline@{FCT::VertexRenderPipeline}!m\_screeen@{m\_screeen}}
+\index{m\_screeen@{m\_screeen}!FCT::VertexRenderPipeline@{FCT::VertexRenderPipeline}}
+\doxysubsubsection{\texorpdfstring{m\_screeen}{m\_screeen}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_vertex_render_pipeline_a0cd5b2ef1e7542cd53c7b4e53aea0c80} 
+\mbox{\hyperlink{class_f_c_t_1_1_vertex_render_screen}{Vertex\+Render\+Screen}}\texorpdfstring{$\ast$}{*} FCT\+::\+Vertex\+Render\+Pipeline\+::m\+\_\+screeen\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_vertex_render_pipeline_8h_source}{Vertex\+Render\+Pipeline.\+h}} 第 \mbox{\hyperlink{_vertex_render_pipeline_8h_source_l00054}{54}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_vertex_render_pipeline_a3627141258e876ba2a07600e3deaebc2}\index{FCT::VertexRenderPipeline@{FCT::VertexRenderPipeline}!m\_vrf@{m\_vrf}}
+\index{m\_vrf@{m\_vrf}!FCT::VertexRenderPipeline@{FCT::VertexRenderPipeline}}
+\doxysubsubsection{\texorpdfstring{m\_vrf}{m\_vrf}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_vertex_render_pipeline_a3627141258e876ba2a07600e3deaebc2} 
+Vertex\+Factory\texorpdfstring{$\ast$}{*} FCT\+::\+Vertex\+Render\+Pipeline\+::m\+\_\+vrf\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_vertex_render_pipeline_8h_source}{Vertex\+Render\+Pipeline.\+h}} 第 \mbox{\hyperlink{_vertex_render_pipeline_8h_source_l00052}{52}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_vertex_render_pipeline_a3a1849eeb27dc6a07ac5141b8238d6ed}\index{FCT::VertexRenderPipeline@{FCT::VertexRenderPipeline}!m\_vrMaterial@{m\_vrMaterial}}
+\index{m\_vrMaterial@{m\_vrMaterial}!FCT::VertexRenderPipeline@{FCT::VertexRenderPipeline}}
+\doxysubsubsection{\texorpdfstring{m\_vrMaterial}{m\_vrMaterial}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_vertex_render_pipeline_a3a1849eeb27dc6a07ac5141b8238d6ed} 
+Material\texorpdfstring{$\ast$}{*} FCT\+::\+Vertex\+Render\+Pipeline\+::m\+\_\+vr\+Material\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_vertex_render_pipeline_8h_source}{Vertex\+Render\+Pipeline.\+h}} 第 \mbox{\hyperlink{_vertex_render_pipeline_8h_source_l00053}{53}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_vertex_render_pipeline_a17558e89794d6dcacc96f370fd992248}\index{FCT::VertexRenderPipeline@{FCT::VertexRenderPipeline}!m\_vrps@{m\_vrps}}
+\index{m\_vrps@{m\_vrps}!FCT::VertexRenderPipeline@{FCT::VertexRenderPipeline}}
+\doxysubsubsection{\texorpdfstring{m\_vrps}{m\_vrps}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_vertex_render_pipeline_a17558e89794d6dcacc96f370fd992248} 
+\mbox{\hyperlink{class_f_c_t_1_1_pixel_shader}{Pixel\+Shader}}\texorpdfstring{$\ast$}{*} FCT\+::\+Vertex\+Render\+Pipeline\+::m\+\_\+vrps\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_vertex_render_pipeline_8h_source}{Vertex\+Render\+Pipeline.\+h}} 第 \mbox{\hyperlink{_vertex_render_pipeline_8h_source_l00051}{51}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_vertex_render_pipeline_a9d1ffce140d045485b15ceaa65f72017}\index{FCT::VertexRenderPipeline@{FCT::VertexRenderPipeline}!m\_vrvs@{m\_vrvs}}
+\index{m\_vrvs@{m\_vrvs}!FCT::VertexRenderPipeline@{FCT::VertexRenderPipeline}}
+\doxysubsubsection{\texorpdfstring{m\_vrvs}{m\_vrvs}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_vertex_render_pipeline_a9d1ffce140d045485b15ceaa65f72017} 
+\mbox{\hyperlink{class_f_c_t_1_1_vertex_shader}{Vertex\+Shader}}\texorpdfstring{$\ast$}{*} FCT\+::\+Vertex\+Render\+Pipeline\+::m\+\_\+vrvs\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_vertex_render_pipeline_8h_source}{Vertex\+Render\+Pipeline.\+h}} 第 \mbox{\hyperlink{_vertex_render_pipeline_8h_source_l00050}{50}} 行定义.
 
 
 

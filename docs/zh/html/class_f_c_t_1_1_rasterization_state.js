@@ -1,13 +1,16 @@
 var class_f_c_t_1_1_rasterization_state =
 [
     [ "~RasterizationState", "class_f_c_t_1_1_rasterization_state.html#a06b34033a8738bd0ad0c2e1e87aaebb6", null ],
+    [ "addRef", "class_f_c_t_1_1_rasterization_state.html#a59c2f131121de6503df8d363b6853d45", null ],
     [ "alphaToCoverageEnable", "class_f_c_t_1_1_rasterization_state.html#a6777c85f8ffc5ad2c6ee777059ef926b", null ],
     [ "alphaToCoverageEnable", "class_f_c_t_1_1_rasterization_state.html#aa75b1336f7221d79ae8622fd49e5ff10", null ],
     [ "alphaToOneEnable", "class_f_c_t_1_1_rasterization_state.html#aa884f1a2abf996477d64b2cae33bafd3", null ],
     [ "alphaToOneEnable", "class_f_c_t_1_1_rasterization_state.html#a19978956acaa0cfba67bdd082c075bbe", null ],
+    [ "count", "class_f_c_t_1_1_rasterization_state.html#a33146ec5804be422936519224a3a7b3f", null ],
     [ "create", "class_f_c_t_1_1_rasterization_state.html#af6f8ca0babdec8dabf3459a14d9bfe39", null ],
     [ "cullMode", "class_f_c_t_1_1_rasterization_state.html#ab9cf4df9f0d5f754c2e3dff05bed3d1c", null ],
     [ "cullMode", "class_f_c_t_1_1_rasterization_state.html#ada3ff034443e1e4163e83c01c7cabb63", null ],
+    [ "deleteThis", "class_f_c_t_1_1_rasterization_state.html#a0fea0bed50f726d3e11ddde802dac5da", null ],
     [ "depthBiasClamp", "class_f_c_t_1_1_rasterization_state.html#aad9dd596a9490aba51f324fcdad4a710", null ],
     [ "depthBiasClamp", "class_f_c_t_1_1_rasterization_state.html#a9e2f9bbc47019320f8bb24445beb46d0", null ],
     [ "depthBiasConstantFactor", "class_f_c_t_1_1_rasterization_state.html#a90cc51a507e9efe4d0e2152317324168", null ],
@@ -27,10 +30,12 @@ var class_f_c_t_1_1_rasterization_state =
     [ "minSampleShading", "class_f_c_t_1_1_rasterization_state.html#a32d7bb1bf6ed15d58e813b45c55dbf52", null ],
     [ "multisampleEnable", "class_f_c_t_1_1_rasterization_state.html#a5e5bbb4441bc3113136f88ffc7a89b96", null ],
     [ "multisampleEnable", "class_f_c_t_1_1_rasterization_state.html#a1653e69ba74ca4c2b72f7640ffadf60a", null ],
+    [ "operator bool", "class_f_c_t_1_1_rasterization_state.html#a474ad3a918f2e87d75ff16075e1caeec", null ],
     [ "polygonMode", "class_f_c_t_1_1_rasterization_state.html#a486fc0b5c55a3a928ccf0de3b2cb8e88", null ],
     [ "polygonMode", "class_f_c_t_1_1_rasterization_state.html#a50ff72ac14c65b26ca65fcb2fed887b7", null ],
     [ "rasterizerDiscardEnable", "class_f_c_t_1_1_rasterization_state.html#a6a174ac7ef952eb6664ba4b46fef4207", null ],
     [ "rasterizerDiscardEnable", "class_f_c_t_1_1_rasterization_state.html#aa54e76c20192e4b63d51b3f2198a417a", null ],
+    [ "release", "class_f_c_t_1_1_rasterization_state.html#aaf57b2df79545f2b71ae9087865dee4c", null ],
     [ "sampleCount", "class_f_c_t_1_1_rasterization_state.html#ac5d5b1ec2f364b76bb063c741910df96", null ],
     [ "sampleCount", "class_f_c_t_1_1_rasterization_state.html#a0d93705332eb3200072581ef554ea181", null ],
     [ "sampleMask", "class_f_c_t_1_1_rasterization_state.html#a985650102ee4141473af93797663d6ea", null ],
@@ -49,6 +54,7 @@ var class_f_c_t_1_1_rasterization_state =
     [ "m_multisampleEnable", "class_f_c_t_1_1_rasterization_state.html#a2ea7b0543cb27b446efe699ad0cc2252", null ],
     [ "m_polygonMode", "class_f_c_t_1_1_rasterization_state.html#abee941dd8172ff399e18e2b6c8e226e9", null ],
     [ "m_rasterizerDiscardEnable", "class_f_c_t_1_1_rasterization_state.html#a544ed75abaa414d455a389ab7b557ccc", null ],
+    [ "m_refCount", "class_f_c_t_1_1_rasterization_state.html#aca88529f9b473d326168fa808fd02300", null ],
     [ "m_sampleCount", "class_f_c_t_1_1_rasterization_state.html#a012e93a6c4be5eac880087abc04ef97a", null ],
     [ "m_sampleMask", "class_f_c_t_1_1_rasterization_state.html#aaa4dcd7b1b4a7ac16197cd538e0796dd", null ]
 ];
