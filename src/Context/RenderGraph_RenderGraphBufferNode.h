@@ -96,11 +96,11 @@ namespace FCT
             return *this;
         }
         Format getFormat() const noexcept {
-            return m_format != Format::UNDEFINED ? m_format : Format::R8G8B8A8_UNORM;
+            return m_format;
         }
 
         Samples getSamples() const noexcept {
-            return m_samples != Samples::sample_undefined ? m_samples : Samples::sample_1;
+            return m_samples;
         }
 
         ImageUsages getUsage() const noexcept {
@@ -109,6 +109,17 @@ namespace FCT
 
         bool isFilled() const noexcept {
             return m_filled;
+        }
+        void fillDefaultData() override
+        {
+            if (m_format == Format::UNDEFINED)
+            {
+                m_format = Format::R8G8B8A8_UNORM;
+            }
+            if (m_samples == Samples::sample_undefined)
+            {
+                m_samples = Samples::sample_1;
+            }
         }
 
     private:
@@ -172,6 +183,10 @@ namespace FCT
         Window* m_window;
 
     public:
+        void fillDefaultData() override
+        {
+
+        }
         RenderGraphWindowTargetNode() : RenderGraphImageNode(), m_filled(false), m_window(nullptr)
         {
         }
@@ -237,6 +252,10 @@ namespace FCT
         bool m_filled;
         Window* m_window;
     public:
+        void fillDefaultData() override
+        {
+
+        }
         RenderGraphWindowDepthStencilNode() : RenderGraphImageNode(), m_filled(false), m_window(nullptr)
         {
         }

@@ -13,7 +13,7 @@ namespace FCT {
         uint8_t stencil;
         EnablePassClear() noexcept : types(0), color(0.0f, 0.0f, 0.0f, 1.0f), depth(1.0f), stencil(0) {}
         template<typename... Args>
-        constexpr EnablePassClear(Args&&... args) noexcept
+        constexpr EnablePassClear(Args&&... args) noexcept : types(0), color(0.0f, 0.0f, 0.0f, 1.0f), depth(1.0f), stencil(0)
         {
             processArgs(std::forward<Args>(args)...);
         }

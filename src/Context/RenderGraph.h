@@ -114,7 +114,7 @@ namespace FCT
             return m_depthStencilIncomingEdges;
         }
         virtual Image* getImage() const = 0;
-
+        virtual void fillDefaultData() = 0;
     private:
         std::vector<TextureEdge*> m_textureOutgoingEdges;
         std::vector<TargetEdge*> m_targetIncomingEdges;
@@ -292,7 +292,7 @@ namespace FCT
         template<typename Func>
         SubscribeId subscribe(std::string passName,Func&& func)
         {
-            SubscribeId subId = subscribe<PassSubmitEvent>([passName, func](const PassSubmitEvent& env)
+            SubscribeId subId = IEventSystem<EventSystemConfig::TriggerOnly>::subscribe<PassSubmitEvent>([passName, func](const PassSubmitEvent& env)
             {
                 if (env.passName == passName)
                 {
@@ -324,6 +324,7 @@ namespace FCT
         }
         void executeAllPassGroups(RHI::CommandBuffer* cmdBuffer);
         RHI::Pass* getPass(const std::string& name) const;
+        Image* getImage(const std::string& name) const;
     private:
         PipelineStage convertShaderStageToPipelineStage(ShaderStage stage) const;
         std::unordered_map<std::string, std::vector<std::string>> m_passGroupOrders;

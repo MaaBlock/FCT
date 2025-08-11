@@ -290,6 +290,9 @@ namespace FCT
 
     void RenderGraph::allocateResources()
     {
+        for (auto& [name, imageNode] : m_imageNodes) {
+            imageNode->fillDefaultData();
+        }
         auto* resourceManager = m_ctx->getModule<ResourceManager>();
         if (!resourceManager) {
             throw std::runtime_error("ResourceManager not available");
@@ -388,12 +391,13 @@ namespace FCT
             }
 
             const auto& targetEdges = passNode.getTargetOutgoingEdges();
-            for (const auto& edge : targetEdges) {
+            for (size_t i = 0; i < targetEdges.size(); ++i) {
+                const auto& edge = targetEdges[i];
                 auto imageNodeIt = m_imageNodes.find(edge->toImage);
                 if (imageNodeIt != m_imageNodes.end()) {
                     Image* image = imageNodeIt->second->getImage();
                     if (image) {
-                        rhiPass->bindTarget(edge->order, image);
+                        rhiPass->bindTarget(static_cast<int>(i), image);
                     }
                 }
             }
@@ -855,5 +859,14 @@ namespace FCT
     RHI::Pass* RenderGraph::getPass(const std::string& name) const
     {
         return m_allocatedPasses.at(name);
+    }
+
+    Image* RenderGraph::getImage(const std::string& name) const
+    {
+        auto imageNodeIt = m_imageNodes.find(name);
+        if (imageNodeIt!= m_imageNodes.end()) {
+            return imageNodeIt->second->getImage();
+        }
+        return nullptr;
     }
 }// FCT
