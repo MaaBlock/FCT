@@ -186,7 +186,17 @@ namespace FCT
         std::string passName;
         RHI::CommandBuffer* cmdBuf;
     };
+
+    namespace RenderGraphTickers
+    {
+        constexpr const char* RenderGraphSubmit = "RenderGraphSubmit";
+    }
     class RenderGraph : private IEventSystem<EventSystemConfig::TriggerOnly>{
+    private:
+        uint32_t m_commandBufferIndex = 0;
+        void initForSubmit();
+    public:
+
     private:
         struct ImageState {
             ImageLayout currentLayout = ImageLayout::undefined;
@@ -315,6 +325,9 @@ namespace FCT
         }
         void compile()
         {
+            /***todo:change for CommanderBufferGraph ***/
+            initForSubmit();
+            /*****/
             resolveTextureSizes();
             groupPasses();
             allocateResources();

@@ -87,34 +87,6 @@ namespace FCT {
         m_maxFrameInFlight = 3;
         m_imageLoader = runtime->createImageLoader();
         m_modelLoader = runtime->createModelLoader();
-        m_submitTickers[RenderGraphSubmitTickerName] = {
-            [this]()
-            {
-                m_currentGraph->updateFrameIndices();
-                m_currentGraph->checkAndUpdateResourceSizes();
-                m_currentGraph->updateResource();
-            },
-            {},
-            {
-                RenderGraphExcutePassSubmitTickerName
-            }
-        };
-        m_submitTickers[RenderGraphExcutePassSubmitTickerName] = {
-            [this]()
-            {
-                ScopeTimer submitCmdAndWaitUploadTimer("submitCmdAndWaitUpload");
-                auto cmdBuf = getCmdBuf(m_bindWindows[0], 0);
-                cmdBuf->reset();
-                cmdBuf->begin();
-                excutePasses(cmdBuf);
-                cmdBuf->end();
-                cmdBuf->submit();
-            },
-            {},
-            {
-                SwapBufferSubmitTicker
-            }
-        };
         m_submitTickers[SwapBufferSubmitTicker] = {
             [this]()
             {
@@ -128,15 +100,6 @@ namespace FCT {
             {}
         };
         m_submitTickers.update();
-        m_syncTickers[RenderGraphSyncTicker_SwapJobQueueName] =
-            {
-                [this]()
-                {
-                    m_currentGraph->swapJobQueue();
-                },
-            {InnerSync::CheckRecreateSwapchainSync},
-            {}
-            };
         m_syncTickers[InnerSync::CheckRecreateSwapchainSync] =
             {
             [this]()

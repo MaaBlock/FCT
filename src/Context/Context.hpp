@@ -195,7 +195,7 @@ namespace FCT {
 		m_frameResources[wnd] = std::move(frameResources);
 		m_descriptorPools[wnd] = createResource<RHI::DescriptorPool>();
 		m_descriptorPools[wnd]->create();
-		allocBaseCommandBuffers(wnd);
+		//allocBaseCommandBuffers(wnd);
 	}
 
 	inline RHI::DescriptorPool* Context::getDescriptorPool(Window* wnd)

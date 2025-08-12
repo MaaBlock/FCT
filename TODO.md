@@ -37,6 +37,10 @@ FrameBuffer Cache
 而不是使用TokenGraph
 ## 为将ResourceManager添加对Scale的支持
 ## 真正支持RenderGraph里读对scale的支持[需完成前一个todo]
+## 完成CommandBufferGraph
+## RenderGraph的命令使用完成CommandBufferGraph以便可以多窗口
+## RenderGraph需要多窗口支持
+
 # [main]
 ```mermaid
 graph TD

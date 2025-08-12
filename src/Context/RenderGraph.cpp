@@ -1,5 +1,6 @@
 ﻿#include "../UI/Window.h"
 #include "./Context.h"
+#include "./Context.hpp"
 #include "../RHI/PassGroup.h"
 
 namespace FCT
@@ -13,6 +14,27 @@ namespace FCT
     {
         return m_window->getCurrentTarget()->depthStencilBuffer();
     }
+
+    void RenderGraph::initForSubmit()
+    {
+        Window* window = m_ctx->getBindWindows()[0];
+        m_commandBufferIndex = m_ctx->allocBaseCommandBuffers(window);
+        auto& submitGraph = m_ctx->submitTickers();
+        submitGraph[RenderGraphTickers::RenderGraphSubmit] = {[this,window]()
+        {
+            auto cmdBuf = m_ctx->getCmdBuf(window,m_commandBufferIndex);
+            cmdBuf->reset();
+            cmdBuf->begin();
+            executeAllPassGroups(cmdBuf);
+            cmdBuf->end();
+            cmdBuf->submit();
+        },
+        {},
+        {SwapBufferSubmitTicker}
+        };
+        submitGraph.update();
+    }
+
     RenderGraphImageNode* RenderGraph::getOrCreateImageNode(const std::string& name, const Texture& texture)
     {
         auto it = m_imageNodes.find(name);
@@ -529,6 +551,7 @@ namespace FCT
     RenderGraph::RenderGraph(Context* ctx)
     {
         m_ctx = ctx;
+        //auto submitGraph = m_ctx->submitTickers();
     }
 
     void RenderGraph::createPassGroups() {
