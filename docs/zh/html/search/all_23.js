@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['目录_0',['目录',['../render_concepts.html#autotoc_md0',1,'']]]
+  ['核心特性_0',['核心特性',['../render_concepts.html#autotoc_md26',1,'']]]
 ];

@@ -6,8 +6,7 @@
 
 
 
-类 FCT\+::RHI\+::VK\+\_\+\+Swapchain 继承关系图\+:
-\nopagebreak
+类 FCT\+::RHI\+::VK\+\_\+\+Swapchain 继承关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -16,8 +15,7 @@
 \end{figure}
 
 
-FCT\+::RHI\+::VK\+\_\+\+Swapchain 的协作图\+:
-\nopagebreak
+FCT\+::RHI\+::VK\+\_\+\+Swapchain 的协作图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -99,15 +97,15 @@ size\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a33146ec5804be42293651922
 \item 
 \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a474ad3a918f2e87d75ff16075e1caeec}{operator bool}} () const
 \item 
-void \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a59cef3fb278dbd26a9bfdcd81407835c}{trigger}} (const Event \&event)
+void \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a1d00b7b39876287ffe06ad1c140646f7}{trigger}} (const Event \&event)
 \item 
-void \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a43cccfe74d41690355f7d97601a67bb7}{enqueue}} (Event \&\&event)
+void \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a038abe615383d3992d2bccf2273db0bd}{enqueue}} (Event \&\&event)
 \item 
 void \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a2b11fa6ab70e609902f655dd736a4cd0}{update}} ()
 \item 
 void \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_ad2331301d8b3d7b9505cfd4cc1641b24}{update\+All}} ()
 \item 
-\mbox{\hyperlink{namespace_f_c_t_a8b1c77084f003979f0fe6c4ddb7e8eb6}{Subscribe\+Id}} \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a7270900dc7047e4f81324f58002066ad}{subscribe}} (Func \&\&func)
+\mbox{\hyperlink{namespace_f_c_t_a8b1c77084f003979f0fe6c4ddb7e8eb6}{Subscribe\+Id}} \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a6eeb72a9c1dacd521fd4056727aa80bb}{subscribe}} (Func \&\&func)
 \item 
 void \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a084c953a75c413b6a2c856e4d474030b}{unsubscribe}} (\mbox{\hyperlink{namespace_f_c_t_a8b1c77084f003979f0fe6c4ddb7e8eb6}{Subscribe\+Id}} subscribe\+Id)
 \item 
@@ -208,7 +206,7 @@ uint32\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a77689c
 \begin{DoxyCompactList}\small\item\em 窗口resize的时候传递的大小 \end{DoxyCompactList}\item 
 uint32\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a916151cfc65a7b1fdcd86cc60ec42968}{m\+\_\+pending\+Height}} = 0
 \item 
-std\+::unordered\+\_\+map$<$ entt\+::id\+\_\+type, std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{namespace_f_c_t_a8b1c77084f003979f0fe6c4ddb7e8eb6}{Subscribe\+Id}}, std\+::unique\+\_\+ptr$<$ IEvent\+Handler $>$ $>$ $>$ \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a22e34dffd042442de7489d9041593647}{m\+\_\+handlers}}
+std\+::conditional\+\_\+t$<$ \mbox{\hyperlink{struct_f_c_t_1_1_event_system_config_1_1_trigger_only_ae2391cd921ad84545419019ede084564}{Event\+System\+Config\+::\+Trigger\+Only\+::\+Event\+As\+Data}}, std\+::unordered\+\_\+map$<$ entt\+::id\+\_\+type, std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{namespace_f_c_t_a8b1c77084f003979f0fe6c4ddb7e8eb6}{Subscribe\+Id}}, std\+::unique\+\_\+ptr$<$ IEvent\+Handler $>$ $>$ $>$, std\+::unordered\+\_\+map$<$ entt\+::id\+\_\+type, std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{namespace_f_c_t_a8b1c77084f003979f0fe6c4ddb7e8eb6}{Subscribe\+Id}}, std\+::unique\+\_\+ptr$<$ IEvent\+Identifier\+Handler $>$ $>$ $>$ $>$ \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_acab222a6a3fc80b9d6e1fec3d67afd34}{m\+\_\+handlers}}
 \item 
 std\+::conditional\+\_\+t$<$ \mbox{\hyperlink{struct_f_c_t_1_1_event_system_config_1_1_trigger_only_a3984fd09f2bff8af77fdd4deba82cc90}{Event\+System\+Config\+::\+Trigger\+Only\+::\+Enable\+Queue}}, std\+::unordered\+\_\+map$<$ entt\+::id\+\_\+type, std\+::vector$<$ std\+::function$<$ void()$>$ $>$ $>$, std\+::monostate $>$ \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_ac1a6fdf7719000f53dff74e887528a6f}{m\+\_\+event\+Queue}}
 \item 
@@ -294,8 +292,7 @@ void FCT\+::\+Ref\+Count\+::add\+Ref (\begin{DoxyParamCaption}{}{}\end{DoxyParam
 
 在文件 \mbox{\hyperlink{_ref_count_8h_source}{Ref\+Count.\+h}} 第 \mbox{\hyperlink{_ref_count_8h_source_l00010}{10}} 行定义.
 
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -349,8 +346,7 @@ vk\+::\+Swapchain\+Create\+Info\+KHR FCT\+::\+RHI\+::\+VK\+\_\+\+Swapchain\+::bu
 
 在文件 \mbox{\hyperlink{_v_k___swapchain_8cpp_source}{VK\+\_\+\+Swapchain.\+cpp}} 第 \mbox{\hyperlink{_v_k___swapchain_8cpp_source_l00061}{61}} 行定义.
 
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -367,8 +363,7 @@ vk\+::\+Present\+Mode\+KHR FCT\+::\+RHI\+::\+VK\+\_\+\+Swapchain\+::choose\+Swap
 
 在文件 \mbox{\hyperlink{_v_k___swapchain_8cpp_source}{VK\+\_\+\+Swapchain.\+cpp}} 第 \mbox{\hyperlink{_v_k___swapchain_8cpp_source_l00197}{197}} 行定义.
 
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -385,8 +380,7 @@ vk\+::\+Surface\+Format\+KHR FCT\+::\+RHI\+::\+VK\+\_\+\+Swapchain\+::choose\+Sw
 
 在文件 \mbox{\hyperlink{_v_k___swapchain_8cpp_source}{VK\+\_\+\+Swapchain.\+cpp}} 第 \mbox{\hyperlink{_v_k___swapchain_8cpp_source_l00186}{186}} 行定义.
 
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -403,16 +397,14 @@ void FCT\+::\+RHI\+::\+VK\+\_\+\+Swapchain\+::cleanup\+Old\+Resources (\begin{Do
 
 在文件 \mbox{\hyperlink{_v_k___swapchain_8cpp_source}{VK\+\_\+\+Swapchain.\+cpp}} 第 \mbox{\hyperlink{_v_k___swapchain_8cpp_source_l00029}{29}} 行定义.
 
-函数调用图\+:
-\nopagebreak
+函数调用图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a25d5069c63245aa31c484e2bd28b4062_cgraph}
 \end{center}
 \end{figure}
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -494,8 +486,7 @@ void FCT\+::\+RHI\+::\+VK\+\_\+\+Swapchain\+::create (\begin{DoxyParamCaption}\i
 
 在文件 \mbox{\hyperlink{_v_k___swapchain_8cpp_source}{VK\+\_\+\+Swapchain.\+cpp}} 第 \mbox{\hyperlink{_v_k___swapchain_8cpp_source_l00166}{166}} 行定义.
 
-函数调用图\+:
-\nopagebreak
+函数调用图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -512,16 +503,14 @@ void FCT\+::\+RHI\+::\+VK\+\_\+\+Swapchain\+::create\+Images\+And\+Targets (\beg
 
 在文件 \mbox{\hyperlink{_v_k___swapchain_8cpp_source}{VK\+\_\+\+Swapchain.\+cpp}} 第 \mbox{\hyperlink{_v_k___swapchain_8cpp_source_l00132}{132}} 行定义.
 
-函数调用图\+:
-\nopagebreak
+函数调用图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a52665e41ea6c66516cae5d53e6750fea_cgraph}
 \end{center}
 \end{figure}
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -538,16 +527,14 @@ void FCT\+::\+RHI\+::\+VK\+\_\+\+Swapchain\+::create\+Swapchain (\begin{DoxyPara
 
 在文件 \mbox{\hyperlink{_v_k___swapchain_8cpp_source}{VK\+\_\+\+Swapchain.\+cpp}} 第 \mbox{\hyperlink{_v_k___swapchain_8cpp_source_l00093}{93}} 行定义.
 
-函数调用图\+:
-\nopagebreak
+函数调用图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_abe06ca873564784cd4686b3d95fa48e3_cgraph}
 \end{center}
 \end{figure}
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -632,15 +619,15 @@ void FCT\+::\+RHI\+::\+VK\+\_\+\+Swapchain\+::enable\+Depth\+Buffer (\begin{Doxy
 
 在文件 \mbox{\hyperlink{_v_k___swapchain_8cpp_source}{VK\+\_\+\+Swapchain.\+cpp}} 第 \mbox{\hyperlink{_v_k___swapchain_8cpp_source_l00454}{454}} 行定义.
 
-\Hypertarget{class_f_c_t_1_1_i_event_system_a43cccfe74d41690355f7d97601a67bb7}\index{FCT::RHI::VK\_Swapchain@{FCT::RHI::VK\_Swapchain}!enqueue@{enqueue}}
+\Hypertarget{class_f_c_t_1_1_i_event_system_a038abe615383d3992d2bccf2273db0bd}\index{FCT::RHI::VK\_Swapchain@{FCT::RHI::VK\_Swapchain}!enqueue@{enqueue}}
 \index{enqueue@{enqueue}!FCT::RHI::VK\_Swapchain@{FCT::RHI::VK\_Swapchain}}
 \doxysubsubsection{\texorpdfstring{enqueue()}{enqueue()}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_i_event_system_a43cccfe74d41690355f7d97601a67bb7} 
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_i_event_system_a038abe615383d3992d2bccf2273db0bd} 
 void \mbox{\hyperlink{class_f_c_t_1_1_i_event_system}{FCT\+::\+IEvent\+System}}$<$ \mbox{\hyperlink{struct_f_c_t_1_1_event_system_config_1_1_trigger_only}{Event\+System\+Config\+::\+Trigger\+Only}} $>$\+::enqueue (\begin{DoxyParamCaption}\item[{Event \&\&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
 
 
 
-在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00093}{93}} 行定义.
+在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00138}{138}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a7f1dae09188ee9a889c7d7df1e031cad}\index{FCT::RHI::VK\_Swapchain@{FCT::RHI::VK\_Swapchain}!getCurrentImageIndex@{getCurrentImageIndex}}
 \index{getCurrentImageIndex@{getCurrentImageIndex}!FCT::RHI::VK\_Swapchain@{FCT::RHI::VK\_Swapchain}}
@@ -660,7 +647,7 @@ constexpr auto \mbox{\hyperlink{class_f_c_t_1_1_i_event_system}{FCT\+::\+IEvent\
 
 
 
-在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00037}{37}} 行定义.
+在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00049}{49}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a46ee50ac34781999461d7ed1709f75a0}\index{FCT::RHI::VK\_Swapchain@{FCT::RHI::VK\_Swapchain}!getExtent@{getExtent}}
 \index{getExtent@{getExtent}!FCT::RHI::VK\_Swapchain@{FCT::RHI::VK\_Swapchain}}
@@ -693,8 +680,7 @@ vk\+::\+Extent2D FCT\+::\+RHI\+::\+VK\+\_\+\+Swapchain\+::get\+Extent (\begin{Do
 \includegraphics[width=350pt]{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_aec5dab44339d78ba7899d85cc53b564f_cgraph}
 \end{center}
 \end{figure}
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -779,8 +765,7 @@ vk\+::\+Fence FCT\+::\+RHI\+::\+VK\+\_\+\+Swapchain\+::get\+In\+Flight\+Fence (\
 
 在文件 \mbox{\hyperlink{_v_k___swapchain_8cpp_source}{VK\+\_\+\+Swapchain.\+cpp}} 第 \mbox{\hyperlink{_v_k___swapchain_8cpp_source_l00428}{428}} 行定义.
 
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -817,8 +802,7 @@ uint32\+\_\+t FCT\+::\+RHI\+::\+Swapchain\+::height (\begin{DoxyParamCaption}{}{
 
 在文件 \mbox{\hyperlink{_swapcain_8h_source}{Swapcain.\+h}} 第 \mbox{\hyperlink{_swapcain_8h_source_l00165}{165}} 行定义.
 
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -842,8 +826,7 @@ uint32\+\_\+t FCT\+::\+RHI\+::\+Swapchain\+::height (\begin{DoxyParamCaption}{}{
 
 在文件 \mbox{\hyperlink{_v_k___swapchain_8h_source}{VK\+\_\+\+Swapchain.\+h}} 第 \mbox{\hyperlink{_v_k___swapchain_8h_source_l00047}{47}} 行定义.
 
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -997,8 +980,7 @@ void FCT\+::\+RHI\+::\+VK\+\_\+\+Swapchain\+::setup\+Queue\+Families (\begin{Dox
 
 在文件 \mbox{\hyperlink{_v_k___swapchain_8cpp_source}{VK\+\_\+\+Swapchain.\+cpp}} 第 \mbox{\hyperlink{_v_k___swapchain_8cpp_source_l00038}{38}} 行定义.
 
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1029,15 +1011,15 @@ void FCT\+::\+RHI\+::\+Swapchain\+::size (\begin{DoxyParamCaption}\item[{int}]{w
 \includegraphics[width=342pt]{class_f_c_t_1_1_r_h_i_1_1_swapchain_a853393e879382a74faf92aa6a5ac4402_cgraph}
 \end{center}
 \end{figure}
-\Hypertarget{class_f_c_t_1_1_i_event_system_a7270900dc7047e4f81324f58002066ad}\index{FCT::RHI::VK\_Swapchain@{FCT::RHI::VK\_Swapchain}!subscribe@{subscribe}}
+\Hypertarget{class_f_c_t_1_1_i_event_system_a6eeb72a9c1dacd521fd4056727aa80bb}\index{FCT::RHI::VK\_Swapchain@{FCT::RHI::VK\_Swapchain}!subscribe@{subscribe}}
 \index{subscribe@{subscribe}!FCT::RHI::VK\_Swapchain@{FCT::RHI::VK\_Swapchain}}
 \doxysubsubsection{\texorpdfstring{subscribe()}{subscribe()}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_i_event_system_a7270900dc7047e4f81324f58002066ad} 
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_i_event_system_a6eeb72a9c1dacd521fd4056727aa80bb} 
 \mbox{\hyperlink{namespace_f_c_t_a8b1c77084f003979f0fe6c4ddb7e8eb6}{Subscribe\+Id}} \mbox{\hyperlink{class_f_c_t_1_1_i_event_system}{FCT\+::\+IEvent\+System}}$<$ \mbox{\hyperlink{struct_f_c_t_1_1_event_system_config_1_1_trigger_only}{Event\+System\+Config\+::\+Trigger\+Only}} $>$\+::subscribe (\begin{DoxyParamCaption}\item[{Func \&\&}]{func}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
 
 
 
-在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00133}{133}} 行定义.
+在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00192}{192}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a33264ad79ca37ae01a536e2af696a0cc}\index{FCT::RHI::VK\_Swapchain@{FCT::RHI::VK\_Swapchain}!sync@{sync}}
 \index{sync@{sync}!FCT::RHI::VK\_Swapchain@{FCT::RHI::VK\_Swapchain}}
@@ -1081,22 +1063,21 @@ void FCT\+::\+RHI\+::\+VK\+\_\+\+Swapchain\+::sync (\begin{DoxyParamCaption}{}{}
 
 在文件 \mbox{\hyperlink{_v_k___swapchain_8cpp_source}{VK\+\_\+\+Swapchain.\+cpp}} 第 \mbox{\hyperlink{_v_k___swapchain_8cpp_source_l00433}{433}} 行定义.
 
-\Hypertarget{class_f_c_t_1_1_i_event_system_a59cef3fb278dbd26a9bfdcd81407835c}\index{FCT::RHI::VK\_Swapchain@{FCT::RHI::VK\_Swapchain}!trigger@{trigger}}
+\Hypertarget{class_f_c_t_1_1_i_event_system_a1d00b7b39876287ffe06ad1c140646f7}\index{FCT::RHI::VK\_Swapchain@{FCT::RHI::VK\_Swapchain}!trigger@{trigger}}
 \index{trigger@{trigger}!FCT::RHI::VK\_Swapchain@{FCT::RHI::VK\_Swapchain}}
 \doxysubsubsection{\texorpdfstring{trigger()}{trigger()}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_i_event_system_a59cef3fb278dbd26a9bfdcd81407835c} 
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_i_event_system_a1d00b7b39876287ffe06ad1c140646f7} 
 void \mbox{\hyperlink{class_f_c_t_1_1_i_event_system}{FCT\+::\+IEvent\+System}}$<$ \mbox{\hyperlink{struct_f_c_t_1_1_event_system_config_1_1_trigger_only}{Event\+System\+Config\+::\+Trigger\+Only}} $>$\+::trigger (\begin{DoxyParamCaption}\item[{const Event \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
 
 
 
-在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00079}{79}} 行定义.
+在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00110}{110}} 行定义.
 
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_f_c_t_1_1_i_event_system_a59cef3fb278dbd26a9bfdcd81407835c_icgraph}
+\includegraphics[width=350pt]{class_f_c_t_1_1_i_event_system_a1d00b7b39876287ffe06ad1c140646f7_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{class_f_c_t_1_1_i_event_system_a084c953a75c413b6a2c856e4d474030b}\index{FCT::RHI::VK\_Swapchain@{FCT::RHI::VK\_Swapchain}!unsubscribe@{unsubscribe}}
@@ -1107,7 +1088,7 @@ void \mbox{\hyperlink{class_f_c_t_1_1_i_event_system}{FCT\+::\+IEvent\+System}}$
 
 
 
-在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00148}{148}} 行定义.
+在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00226}{226}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_i_event_system_a9a1e4a28230992fedf7c1d3450d2fd90}\index{FCT::RHI::VK\_Swapchain@{FCT::RHI::VK\_Swapchain}!unsubscribeAll@{unsubscribeAll}}
 \index{unsubscribeAll@{unsubscribeAll}!FCT::RHI::VK\_Swapchain@{FCT::RHI::VK\_Swapchain}}
@@ -1117,7 +1098,7 @@ void \mbox{\hyperlink{class_f_c_t_1_1_i_event_system}{FCT\+::\+IEvent\+System}}$
 
 
 
-在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00161}{161}} 行定义.
+在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00239}{239}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_i_event_system_a2b11fa6ab70e609902f655dd736a4cd0}\index{FCT::RHI::VK\_Swapchain@{FCT::RHI::VK\_Swapchain}!update@{update}}
 \index{update@{update}!FCT::RHI::VK\_Swapchain@{FCT::RHI::VK\_Swapchain}}
@@ -1127,7 +1108,7 @@ void \mbox{\hyperlink{class_f_c_t_1_1_i_event_system}{FCT\+::\+IEvent\+System}}$
 
 
 
-在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00106}{106}} 行定义.
+在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00165}{165}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_i_event_system_ad2331301d8b3d7b9505cfd4cc1641b24}\index{FCT::RHI::VK\_Swapchain@{FCT::RHI::VK\_Swapchain}!updateAll@{updateAll}}
 \index{updateAll@{updateAll}!FCT::RHI::VK\_Swapchain@{FCT::RHI::VK\_Swapchain}}
@@ -1137,7 +1118,7 @@ void \mbox{\hyperlink{class_f_c_t_1_1_i_event_system}{FCT\+::\+IEvent\+System}}$
 
 
 
-在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00121}{121}} 行定义.
+在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00180}{180}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_r_h_i_1_1_swapchain_a15fd90177e6fd7b0886b06d85b9b7b85}\index{FCT::RHI::VK\_Swapchain@{FCT::RHI::VK\_Swapchain}!width@{width}}
 \index{width@{width}!FCT::RHI::VK\_Swapchain@{FCT::RHI::VK\_Swapchain}}
@@ -1152,8 +1133,7 @@ uint32\+\_\+t FCT\+::\+RHI\+::\+Swapchain\+::width (\begin{DoxyParamCaption}{}{}
 
 在文件 \mbox{\hyperlink{_swapcain_8h_source}{Swapcain.\+h}} 第 \mbox{\hyperlink{_swapcain_8h_source_l00156}{156}} 行定义.
 
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1241,7 +1221,7 @@ std\+::conditional\+\_\+t$<$\mbox{\hyperlink{struct_f_c_t_1_1_event_system_confi
 
 
 
-在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00073}{73}} 行定义.
+在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00104}{104}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_ad2c364d0afc8f16adf67f9eb557619b6}\index{FCT::RHI::VK\_Swapchain@{FCT::RHI::VK\_Swapchain}!m\_extent@{m\_extent}}
 \index{m\_extent@{m\_extent}!FCT::RHI::VK\_Swapchain@{FCT::RHI::VK\_Swapchain}}
@@ -1273,15 +1253,15 @@ std\+::vector$<$\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_image}{RHI\+::\+Image
 
 在文件 \mbox{\hyperlink{_v_k___swapchain_8h_source}{VK\+\_\+\+Swapchain.\+h}} 第 \mbox{\hyperlink{_v_k___swapchain_8h_source_l00069}{69}} 行定义.
 
-\Hypertarget{class_f_c_t_1_1_i_event_system_a22e34dffd042442de7489d9041593647}\index{FCT::RHI::VK\_Swapchain@{FCT::RHI::VK\_Swapchain}!m\_handlers@{m\_handlers}}
+\Hypertarget{class_f_c_t_1_1_i_event_system_acab222a6a3fc80b9d6e1fec3d67afd34}\index{FCT::RHI::VK\_Swapchain@{FCT::RHI::VK\_Swapchain}!m\_handlers@{m\_handlers}}
 \index{m\_handlers@{m\_handlers}!FCT::RHI::VK\_Swapchain@{FCT::RHI::VK\_Swapchain}}
 \doxysubsubsection{\texorpdfstring{m\_handlers}{m\_handlers}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_i_event_system_a22e34dffd042442de7489d9041593647} 
-std\+::unordered\+\_\+map$<$entt\+::id\+\_\+type, std\+::unordered\+\_\+map$<$\mbox{\hyperlink{namespace_f_c_t_a8b1c77084f003979f0fe6c4ddb7e8eb6}{Subscribe\+Id}}, std\+::unique\+\_\+ptr$<$IEvent\+Handler$>$ $>$ $>$ \mbox{\hyperlink{class_f_c_t_1_1_i_event_system}{FCT\+::\+IEvent\+System}}$<$ \mbox{\hyperlink{struct_f_c_t_1_1_event_system_config_1_1_trigger_only}{Event\+System\+Config\+::\+Trigger\+Only}} $>$\+::m\+\_\+handlers\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_i_event_system_acab222a6a3fc80b9d6e1fec3d67afd34} 
+std\+::conditional\+\_\+t$<$\mbox{\hyperlink{struct_f_c_t_1_1_event_system_config_1_1_trigger_only_ae2391cd921ad84545419019ede084564}{Event\+System\+Config\+::\+Trigger\+Only\+::\+Event\+As\+Data}}, std\+::unordered\+\_\+map$<$entt\+::id\+\_\+type, std\+::unordered\+\_\+map$<$\mbox{\hyperlink{namespace_f_c_t_a8b1c77084f003979f0fe6c4ddb7e8eb6}{Subscribe\+Id}}, std\+::unique\+\_\+ptr$<$IEvent\+Handler$>$ $>$ $>$, std\+::unordered\+\_\+map$<$entt\+::id\+\_\+type, std\+::unordered\+\_\+map$<$\mbox{\hyperlink{namespace_f_c_t_a8b1c77084f003979f0fe6c4ddb7e8eb6}{Subscribe\+Id}}, std\+::unique\+\_\+ptr$<$IEvent\+Identifier\+Handler$>$ $>$ $>$ $>$ \mbox{\hyperlink{class_f_c_t_1_1_i_event_system}{FCT\+::\+IEvent\+System}}$<$ \mbox{\hyperlink{struct_f_c_t_1_1_event_system_config_1_1_trigger_only}{Event\+System\+Config\+::\+Trigger\+Only}} $>$\+::m\+\_\+handlers\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
 
 
 
-在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00069}{69}} 行定义.
+在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00100}{100}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_r_h_i_1_1_swapchain_a7baa8e838359215e45fe7b7dd0fa3306}\index{FCT::RHI::VK\_Swapchain@{FCT::RHI::VK\_Swapchain}!m\_hasRecreatedInThisFrame@{m\_hasRecreatedInThisFrame}}
 \index{m\_hasRecreatedInThisFrame@{m\_hasRecreatedInThisFrame}!FCT::RHI::VK\_Swapchain@{FCT::RHI::VK\_Swapchain}}
@@ -1369,7 +1349,7 @@ bool FCT\+::\+RHI\+::\+VK\+\_\+\+Swapchain\+::m\+\_\+need\+Recreated\hspace{0.3c
 
 
 
-在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00075}{75}} 行定义.
+在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00106}{106}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain_a916151cfc65a7b1fdcd86cc60ec42968}\index{FCT::RHI::VK\_Swapchain@{FCT::RHI::VK\_Swapchain}!m\_pendingHeight@{m\_pendingHeight}}
 \index{m\_pendingHeight@{m\_pendingHeight}!FCT::RHI::VK\_Swapchain@{FCT::RHI::VK\_Swapchain}}

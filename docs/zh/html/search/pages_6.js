@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['光线追踪管线_20raytracing_20pipeline_0',['光线追踪管线 (RayTracing Pipeline)',['../render_concepts.html#autotoc_md13',1,'']]]
+  ['traditional_20pipeline_0',['传统光栅化管线 (Traditional Pipeline)',['../render_concepts.html#autotoc_md14',1,'']]]
 ];

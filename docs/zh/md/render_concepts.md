@@ -31,8 +31,7 @@
 
 ---
 
-## 渲染通道 (Pass) {#render_pass}
-
+## 渲染通道 (Pass) {#render_pass
 ### 概念定义
 
 渲染通道（Pass）可以有多个Pipeline

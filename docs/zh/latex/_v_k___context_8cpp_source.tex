@@ -258,13 +258,13 @@
 \DoxyCodeLine{\Hypertarget{_v_k___context_8cpp_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vk::ImageAspectFlagBits::eColor,\ data,\ dataSize,\ outFence,\ cleanUpCallback);}
 \DoxyCodeLine{\Hypertarget{_v_k___context_8cpp_source_l00255}00255\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_v_k___context_8cpp_source_l00256}00256\ }
-\DoxyCodeLine{\Hypertarget{_v_k___context_8cpp_source_l00257}\mbox{\hyperlink{class_f_c_t_1_1_v_k___context_a60302b67c23a40ae9c2f7e55fdae5627}{00257}}\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_ab12afb4949df6e03b57d5c0d70e9f2d3}{VK\_Context::transferDataToImage}}(vk::Image\ dstImage,\ uint32\_t\ width,\ uint32\_t\ height,\ uint32\_t\ \mbox{\hyperlink{namespace_f_c_t_a47bc49ca12511f9acae146c133700f5fa12a055bf01a31369fe81ac35d85c7bc1}{depth}},}
+\DoxyCodeLine{\Hypertarget{_v_k___context_8cpp_source_l00257}\mbox{\hyperlink{class_f_c_t_1_1_v_k___context_a60302b67c23a40ae9c2f7e55fdae5627}{00257}}\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_ab12afb4949df6e03b57d5c0d70e9f2d3}{VK\_Context::transferDataToImage}}(vk::Image\ dstImage,\ uint32\_t\ width,\ uint32\_t\ height,\ uint32\_t\ \mbox{\hyperlink{namespace_f_c_t_a5d14bda42e5f9f565abd0b018262b564a12a055bf01a31369fe81ac35d85c7bc1}{depth}},}
 \DoxyCodeLine{\Hypertarget{_v_k___context_8cpp_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vk::Format\ format,\ uint32\_t\ mipLevels,\ uint32\_t\ arrayLayers,}
 \DoxyCodeLine{\Hypertarget{_v_k___context_8cpp_source_l00259}00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vk::ImageAspectFlags\ aspectMask,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ data,\ \textcolor{keywordtype}{size\_t}\ dataSize,}
 \DoxyCodeLine{\Hypertarget{_v_k___context_8cpp_source_l00260}00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vk::Fence*\ outFence,\ std::function<\textcolor{keywordtype}{void}()>*\ cleanUpCallback)}
 \DoxyCodeLine{\Hypertarget{_v_k___context_8cpp_source_l00261}00261\ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_v_k___context_8cpp_source_l00262}00262\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ pixelSize\ =\ \mbox{\hyperlink{namespace_f_c_t_ac86fb834c984f8ec9509b181da5bb16c}{FormatSize}}(\mbox{\hyperlink{namespace_f_c_t_aae307910da6496d22fde7dd730866662}{FromVkFormat}}(format));}
-\DoxyCodeLine{\Hypertarget{_v_k___context_8cpp_source_l00263}00263\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ fullImageSize\ =\ width\ *\ height\ *\ \mbox{\hyperlink{namespace_f_c_t_a47bc49ca12511f9acae146c133700f5fa12a055bf01a31369fe81ac35d85c7bc1}{depth}}\ *\ pixelSize;}
+\DoxyCodeLine{\Hypertarget{_v_k___context_8cpp_source_l00263}00263\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ fullImageSize\ =\ width\ *\ height\ *\ \mbox{\hyperlink{namespace_f_c_t_a5d14bda42e5f9f565abd0b018262b564a12a055bf01a31369fe81ac35d85c7bc1}{depth}}\ *\ pixelSize;}
 \DoxyCodeLine{\Hypertarget{_v_k___context_8cpp_source_l00264}00264\ \ \ \ \ \ \ \ \ vk::BufferCreateInfo\ stagingBufferInfo;}
 \DoxyCodeLine{\Hypertarget{_v_k___context_8cpp_source_l00265}00265\ \ \ \ \ \ \ \ \ stagingBufferInfo.setSize(fullImageSize);}
 \DoxyCodeLine{\Hypertarget{_v_k___context_8cpp_source_l00266}00266\ \ \ \ \ \ \ \ \ stagingBufferInfo.setUsage(vk::BufferUsageFlagBits::eTransferSrc);}
@@ -338,7 +338,7 @@
 \DoxyCodeLine{\Hypertarget{_v_k___context_8cpp_source_l00334}00334\ \ \ \ \ \ \ \ \ \ \ \ \ region.setImageSubresource(vk::ImageSubresourceLayers(}
 \DoxyCodeLine{\Hypertarget{_v_k___context_8cpp_source_l00335}00335\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ aspectMask,\ 0,\ 0,\ arrayLayers));}
 \DoxyCodeLine{\Hypertarget{_v_k___context_8cpp_source_l00336}00336\ \ \ \ \ \ \ \ \ \ \ \ \ region.setImageOffset(vk::Offset3D(0,\ 0,\ 0));}
-\DoxyCodeLine{\Hypertarget{_v_k___context_8cpp_source_l00337}00337\ \ \ \ \ \ \ \ \ \ \ \ \ region.setImageExtent(vk::Extent3D(width,\ height,\ \mbox{\hyperlink{namespace_f_c_t_a47bc49ca12511f9acae146c133700f5fa12a055bf01a31369fe81ac35d85c7bc1}{depth}}));}
+\DoxyCodeLine{\Hypertarget{_v_k___context_8cpp_source_l00337}00337\ \ \ \ \ \ \ \ \ \ \ \ \ region.setImageExtent(vk::Extent3D(width,\ height,\ \mbox{\hyperlink{namespace_f_c_t_a5d14bda42e5f9f565abd0b018262b564a12a055bf01a31369fe81ac35d85c7bc1}{depth}}));}
 \DoxyCodeLine{\Hypertarget{_v_k___context_8cpp_source_l00338}00338\ }
 \DoxyCodeLine{\Hypertarget{_v_k___context_8cpp_source_l00339}00339\ \ \ \ \ \ \ \ \ \ \ \ \ cmdBuffer.copyBufferToImage(}
 \DoxyCodeLine{\Hypertarget{_v_k___context_8cpp_source_l00340}00340\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stagingBuffer,}
@@ -500,7 +500,7 @@
 \DoxyCodeLine{\Hypertarget{_v_k___context_8cpp_source_l00496}00496\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_v_k___context_8cpp_source_l00497}00497\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_v_k___context_8cpp_source_l00498}00498\ }
-\DoxyCodeLine{\Hypertarget{_v_k___context_8cpp_source_l00499}\mbox{\hyperlink{class_f_c_t_1_1_v_k___context_a9171eabffff1b94dadd24467623fe442}{00499}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_a9171eabffff1b94dadd24467623fe442}{VK\_Context::create}}()}
+\DoxyCodeLine{\Hypertarget{_v_k___context_8cpp_source_l00499}\mbox{\hyperlink{class_f_c_t_1_1_v_k___context_a1d71e1811838e0f1215734f2256bcbce}{00499}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_a1d71e1811838e0f1215734f2256bcbce}{VK\_Context::createPlatform}}()}
 \DoxyCodeLine{\Hypertarget{_v_k___context_8cpp_source_l00500}00500\ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_v_k___context_8cpp_source_l00501}00501\ }
 \DoxyCodeLine{\Hypertarget{_v_k___context_8cpp_source_l00502}00502\ \ \ \ \ \}}

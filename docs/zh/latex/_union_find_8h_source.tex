@@ -8,51 +8,95 @@
 \DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00004}00004\ }
 \DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00005}00005\ \textcolor{preprocessor}{\#ifndef\ UNIONFIND\_H}}
 \DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00006}00006\ \textcolor{preprocessor}{\#define\ UNIONFIND\_H}}
-\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_third_party_8h}{../ThirdParty.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00008}00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_f_c_t}{FCT}}\ \{}
-\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00009}00009\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00009}00009\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\textcolor{keyword}{typename}\ ShareType\ =\ \textcolor{keywordtype}{void}>}
 \DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00010}\mbox{\hyperlink{class_f_c_t_1_1_union_find}{00010}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_f_c_t_1_1_union_find}{UnionFind}}\ \{}
 \DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00011}00011\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00012}\mbox{\hyperlink{class_f_c_t_1_1_union_find_a7d354faaec9e98c99d62d0e4ff10298c}{00012}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{mutable}\ std::unordered\_map<T,\ T>\ \mbox{\hyperlink{class_f_c_t_1_1_union_find_a7d354faaec9e98c99d62d0e4ff10298c}{m\_parent}};}
-\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00013}\mbox{\hyperlink{class_f_c_t_1_1_union_find_a44b8d2765ccf1603c38bec72a924bfd6}{00013}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{mutable}\ std::unordered\_map<T,\ int>\ \mbox{\hyperlink{class_f_c_t_1_1_union_find_a44b8d2765ccf1603c38bec72a924bfd6}{m\_rank}};}
-\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00014}00014\ }
-\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00016}\mbox{\hyperlink{class_f_c_t_1_1_union_find_aefdbe6dccbb14c9d8c3d045b089b4830}{00016}}\ \ \ \ \ \ \ \ \ T\ \mbox{\hyperlink{class_f_c_t_1_1_union_find_aefdbe6dccbb14c9d8c3d045b089b4830}{find}}(\textcolor{keyword}{const}\ T\&\ x)\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_union_find_a7d354faaec9e98c99d62d0e4ff10298c}{m\_parent}}.find(x)\ ==\ \mbox{\hyperlink{class_f_c_t_1_1_union_find_a7d354faaec9e98c99d62d0e4ff10298c}{m\_parent}}.end())\ \{}
-\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_union_find_a7d354faaec9e98c99d62d0e4ff10298c}{m\_parent}}[x]\ =\ x;}
-\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_union_find_a44b8d2765ccf1603c38bec72a924bfd6}{m\_rank}}[x]\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ x;}
-\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00022}00022\ }
-\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_union_find_a7d354faaec9e98c99d62d0e4ff10298c}{m\_parent}}[x]\ !=\ x)\ \{}
-\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_union_find_a7d354faaec9e98c99d62d0e4ff10298c}{m\_parent}}[x]\ =\ \mbox{\hyperlink{class_f_c_t_1_1_union_find_aefdbe6dccbb14c9d8c3d045b089b4830}{find}}(\mbox{\hyperlink{class_f_c_t_1_1_union_find_a7d354faaec9e98c99d62d0e4ff10298c}{m\_parent}}[x]);}
-\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_f_c_t_1_1_union_find_a7d354faaec9e98c99d62d0e4ff10298c}{m\_parent}}[x];}
-\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00027}00027\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00012}\mbox{\hyperlink{class_f_c_t_1_1_union_find_a55a0fa4f66cf4a253034220a31010720}{00012}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{mutable}\ std::unordered\_map<T,\ T>\ \mbox{\hyperlink{class_f_c_t_1_1_union_find_a55a0fa4f66cf4a253034220a31010720}{m\_parent}};}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00013}\mbox{\hyperlink{class_f_c_t_1_1_union_find_a33ac7c2310db9f906d10ceac226bfc44}{00013}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{mutable}\ std::unordered\_map<T,\ int>\ \mbox{\hyperlink{class_f_c_t_1_1_union_find_a33ac7c2310db9f906d10ceac226bfc44}{m\_rank}};}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{keyword}{mutable}\ std::conditional\_t<!std::is\_void\_v<ShareType>,}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::unordered\_map<T,\ std::optional<ShareType>>,}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00016}\mbox{\hyperlink{class_f_c_t_1_1_union_find_ab410c02dfa51e584341dad3e71b6d3e6}{00016}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}>\ \mbox{\hyperlink{class_f_c_t_1_1_union_find_ab410c02dfa51e584341dad3e71b6d3e6}{m\_sharedData}};}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00019}\mbox{\hyperlink{class_f_c_t_1_1_union_find_a3b4ed2ee9ea5e3cdb7ac0b9fcbbe8ae3}{00019}}\ \ \ \ \ \ \ \ \ T\ \mbox{\hyperlink{class_f_c_t_1_1_union_find_a3b4ed2ee9ea5e3cdb7ac0b9fcbbe8ae3}{find}}(\textcolor{keyword}{const}\ T\&\ x)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_union_find_a55a0fa4f66cf4a253034220a31010720}{m\_parent}}.find(x)\ ==\ \mbox{\hyperlink{class_f_c_t_1_1_union_find_a55a0fa4f66cf4a253034220a31010720}{m\_parent}}.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_union_find_a55a0fa4f66cf4a253034220a31010720}{m\_parent}}[x]\ =\ x;}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_union_find_a33ac7c2310db9f906d10ceac226bfc44}{m\_rank}}[x]\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (!std::is\_void\_v<ShareType>)\ \{}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_union_find_ab410c02dfa51e584341dad3e71b6d3e6}{m\_sharedData}}[x]\ =\ std::nullopt;}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ x;}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00028}00028\ }
-\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00029}\mbox{\hyperlink{class_f_c_t_1_1_union_find_ac38dbd142db5399f5327473597fa57a3}{00029}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_f_c_t_1_1_union_find_ac38dbd142db5399f5327473597fa57a3}{unite}}(\textcolor{keyword}{const}\ T\&\ x,\ \textcolor{keyword}{const}\ T\&\ y)\ \{}
-\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ T\ rootX\ =\ \mbox{\hyperlink{class_f_c_t_1_1_union_find_aefdbe6dccbb14c9d8c3d045b089b4830}{find}}(x);}
-\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ T\ rootY\ =\ \mbox{\hyperlink{class_f_c_t_1_1_union_find_aefdbe6dccbb14c9d8c3d045b089b4830}{find}}(y);}
-\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00032}00032\ }
-\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (rootX\ ==\ rootY)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_union_find_a55a0fa4f66cf4a253034220a31010720}{m\_parent}}[x]\ !=\ x)\ \{}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_union_find_a55a0fa4f66cf4a253034220a31010720}{m\_parent}}[x]\ =\ \mbox{\hyperlink{class_f_c_t_1_1_union_find_a3b4ed2ee9ea5e3cdb7ac0b9fcbbe8ae3}{find}}(\mbox{\hyperlink{class_f_c_t_1_1_union_find_a55a0fa4f66cf4a253034220a31010720}{m\_parent}}[x]);}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_f_c_t_1_1_union_find_a55a0fa4f66cf4a253034220a31010720}{m\_parent}}[x];}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00033}00033\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00034}00034\ }
-\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_union_find_a44b8d2765ccf1603c38bec72a924bfd6}{m\_rank}}[rootX]\ <\ \mbox{\hyperlink{class_f_c_t_1_1_union_find_a44b8d2765ccf1603c38bec72a924bfd6}{m\_rank}}[rootY])\ \{}
-\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_union_find_a7d354faaec9e98c99d62d0e4ff10298c}{m\_parent}}[rootX]\ =\ rootY;}
-\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_union_find_a44b8d2765ccf1603c38bec72a924bfd6}{m\_rank}}[rootX]\ >\ \mbox{\hyperlink{class_f_c_t_1_1_union_find_a44b8d2765ccf1603c38bec72a924bfd6}{m\_rank}}[rootY])\ \{}
-\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_union_find_a7d354faaec9e98c99d62d0e4ff10298c}{m\_parent}}[rootY]\ =\ rootX;}
-\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_union_find_a7d354faaec9e98c99d62d0e4ff10298c}{m\_parent}}[rootY]\ =\ rootX;}
-\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_union_find_a44b8d2765ccf1603c38bec72a924bfd6}{m\_rank}}[rootX]++;}
-\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00044}00044\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00045}00045\ }
-\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00046}\mbox{\hyperlink{class_f_c_t_1_1_union_find_ad85745a0e5754ced3c39509412016e1c}{00046}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_f_c_t_1_1_union_find_ad85745a0e5754ced3c39509412016e1c}{connected}}(\textcolor{keyword}{const}\ T\&\ x,\ \textcolor{keyword}{const}\ T\&\ y)\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_f_c_t_1_1_union_find_aefdbe6dccbb14c9d8c3d045b089b4830}{find}}(x)\ ==\ \mbox{\hyperlink{class_f_c_t_1_1_union_find_aefdbe6dccbb14c9d8c3d045b089b4830}{find}}(y);}
-\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00049}00049\ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00050}00050\ }
-\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00051}00051\ \}\ \textcolor{comment}{//\ namespace\ FCT}}
-\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00052}00052\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//UNIONFIND\_H}}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00035}\mbox{\hyperlink{class_f_c_t_1_1_union_find_a1ed255da951ccfa3db6cfac23bb4fc2a}{00035}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_f_c_t_1_1_union_find_a1ed255da951ccfa3db6cfac23bb4fc2a}{unite}}(\textcolor{keyword}{const}\ T\&\ x,\ \textcolor{keyword}{const}\ T\&\ y)\ \{}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ T\ rootX\ =\ \mbox{\hyperlink{class_f_c_t_1_1_union_find_a3b4ed2ee9ea5e3cdb7ac0b9fcbbe8ae3}{find}}(x);}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ T\ rootY\ =\ \mbox{\hyperlink{class_f_c_t_1_1_union_find_a3b4ed2ee9ea5e3cdb7ac0b9fcbbe8ae3}{find}}(y);}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (rootX\ ==\ rootY)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_union_find_a33ac7c2310db9f906d10ceac226bfc44}{m\_rank}}[rootX]\ <\ \mbox{\hyperlink{class_f_c_t_1_1_union_find_a33ac7c2310db9f906d10ceac226bfc44}{m\_rank}}[rootY])\ \{}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_union_find_a55a0fa4f66cf4a253034220a31010720}{m\_parent}}[rootX]\ =\ rootY;}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (!std::is\_void\_v<ShareType>)\ \{}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_f_c_t_1_1_union_find_ab410c02dfa51e584341dad3e71b6d3e6}{m\_sharedData}}[rootY].has\_value()\ \&\&\ \mbox{\hyperlink{class_f_c_t_1_1_union_find_ab410c02dfa51e584341dad3e71b6d3e6}{m\_sharedData}}[rootX].has\_value())\ \{}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_union_find_ab410c02dfa51e584341dad3e71b6d3e6}{m\_sharedData}}[rootY]\ =\ \mbox{\hyperlink{class_f_c_t_1_1_union_find_ab410c02dfa51e584341dad3e71b6d3e6}{m\_sharedData}}[rootX];}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_union_find_a33ac7c2310db9f906d10ceac226bfc44}{m\_rank}}[rootX]\ >\ \mbox{\hyperlink{class_f_c_t_1_1_union_find_a33ac7c2310db9f906d10ceac226bfc44}{m\_rank}}[rootY])\ \{}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_union_find_a55a0fa4f66cf4a253034220a31010720}{m\_parent}}[rootY]\ =\ rootX;}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (!std::is\_void\_v<ShareType>)\ \{}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_f_c_t_1_1_union_find_ab410c02dfa51e584341dad3e71b6d3e6}{m\_sharedData}}[rootX].has\_value()\ \&\&\ \mbox{\hyperlink{class_f_c_t_1_1_union_find_ab410c02dfa51e584341dad3e71b6d3e6}{m\_sharedData}}[rootY].has\_value())\ \{}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_union_find_ab410c02dfa51e584341dad3e71b6d3e6}{m\_sharedData}}[rootX]\ =\ \mbox{\hyperlink{class_f_c_t_1_1_union_find_ab410c02dfa51e584341dad3e71b6d3e6}{m\_sharedData}}[rootY];}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_union_find_a55a0fa4f66cf4a253034220a31010720}{m\_parent}}[rootY]\ =\ rootX;}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_union_find_a33ac7c2310db9f906d10ceac226bfc44}{m\_rank}}[rootX]++;}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (!std::is\_void\_v<ShareType>)\ \{}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_f_c_t_1_1_union_find_ab410c02dfa51e584341dad3e71b6d3e6}{m\_sharedData}}[rootX].has\_value()\ \&\&\ \mbox{\hyperlink{class_f_c_t_1_1_union_find_ab410c02dfa51e584341dad3e71b6d3e6}{m\_sharedData}}[rootY].has\_value())\ \{}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_union_find_ab410c02dfa51e584341dad3e71b6d3e6}{m\_sharedData}}[rootX]\ =\ \mbox{\hyperlink{class_f_c_t_1_1_union_find_ab410c02dfa51e584341dad3e71b6d3e6}{m\_sharedData}}[rootY];}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00065}00065\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00067}\mbox{\hyperlink{class_f_c_t_1_1_union_find_a66e31bbd4036e9a411d4f5db9ad946c3}{00067}}\ \ \ \ \ \ \ \ \ std::unordered\_map<T,\ std::vector<T>>\ \mbox{\hyperlink{class_f_c_t_1_1_union_find_a66e31bbd4036e9a411d4f5db9ad946c3}{getGroups}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ std::unordered\_map<T,\ std::vector<T>>\ groups;}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ [element,\ \_]\ :\ \mbox{\hyperlink{class_f_c_t_1_1_union_find_a55a0fa4f66cf4a253034220a31010720}{m\_parent}})\ \{}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ root\ =\ \mbox{\hyperlink{class_f_c_t_1_1_union_find_a3b4ed2ee9ea5e3cdb7ac0b9fcbbe8ae3}{find}}(element);}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ groups[root].push\_back(element);}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ groups;}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00076}00076\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00077}\mbox{\hyperlink{class_f_c_t_1_1_union_find_a04f762c63c853ddb72cdcad6f64951fd}{00077}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_f_c_t_1_1_union_find_a04f762c63c853ddb72cdcad6f64951fd}{connected}}(\textcolor{keyword}{const}\ T\&\ x,\ \textcolor{keyword}{const}\ T\&\ y)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_f_c_t_1_1_union_find_a3b4ed2ee9ea5e3cdb7ac0b9fcbbe8ae3}{find}}(x)\ ==\ \mbox{\hyperlink{class_f_c_t_1_1_union_find_a3b4ed2ee9ea5e3cdb7ac0b9fcbbe8ae3}{find}}(y);}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00079}00079\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00080}\mbox{\hyperlink{class_f_c_t_1_1_union_find_a341b7bafd4da82e6c3c203f17b148089}{00080}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_union_find_a341b7bafd4da82e6c3c203f17b148089}{shared}}(\textcolor{keyword}{const}\ T\&\ x,\ \textcolor{keyword}{const}\ ShareType\&\ data)}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00081}00081\ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ (!std::is\_void\_v<ShareType>)}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00082}00082\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ T\ root\ =\ \mbox{\hyperlink{class_f_c_t_1_1_union_find_a3b4ed2ee9ea5e3cdb7ac0b9fcbbe8ae3}{find}}(x);}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_union_find_ab410c02dfa51e584341dad3e71b6d3e6}{m\_sharedData}}[root]\ =\ data;}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00085}00085\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00087}\mbox{\hyperlink{class_f_c_t_1_1_union_find_a955e4550adf88f4e7ea2ab11f08c0075}{00087}}\ \ \ \ \ \ \ \ \ std::optional<ShareType>\ \mbox{\hyperlink{class_f_c_t_1_1_union_find_a955e4550adf88f4e7ea2ab11f08c0075}{shared}}(\textcolor{keyword}{const}\ T\&\ x)\ \textcolor{keyword}{const}}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ (!std::is\_void\_v<ShareType>)}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00089}00089\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ T\ root\ =\ \mbox{\hyperlink{class_f_c_t_1_1_union_find_a3b4ed2ee9ea5e3cdb7ac0b9fcbbe8ae3}{find}}(x);}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{class_f_c_t_1_1_union_find_ab410c02dfa51e584341dad3e71b6d3e6}{m\_sharedData}}.find(root);}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (it\ !=\ \mbox{\hyperlink{class_f_c_t_1_1_union_find_ab410c02dfa51e584341dad3e71b6d3e6}{m\_sharedData}}.end())\ ?\ it-\/>second\ :\ std::nullopt;}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00093}00093\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00094}00094\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00095}00095\ \};\textcolor{comment}{//\ namespace\ FCT}}
+\DoxyCodeLine{\Hypertarget{_union_find_8h_source_l00096}00096\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//UNIONFIND\_H}}
 
 \end{DoxyCode}

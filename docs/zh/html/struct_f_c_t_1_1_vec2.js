@@ -2,6 +2,7 @@ var struct_f_c_t_1_1_vec2 =
 [
     [ "Vec2", "struct_f_c_t_1_1_vec2.html#a43d454e00e233db6aad7ae72c5412454", null ],
     [ "Vec2", "struct_f_c_t_1_1_vec2.html#a90185fc34156cb6713bd417792dbcdf5", null ],
+    [ "Vec2", "struct_f_c_t_1_1_vec2.html#ad19ecc2cd6dc79397802e4db08ec772f", null ],
     [ "distance", "struct_f_c_t_1_1_vec2.html#a4599ef4906ad9b76cb95bdd05cd5a467", null ],
     [ "length", "struct_f_c_t_1_1_vec2.html#a5c4020ce25aff670e0d79ee12de1f522", null ],
     [ "operator*", "struct_f_c_t_1_1_vec2.html#a2a739056e899c65db16ebadb94cab1b9", null ],

@@ -14,7 +14,7 @@
 \DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00010}00010\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Token,\textcolor{keyword}{typename}\ Value>}
 \DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00011}\mbox{\hyperlink{class_f_c_t_1_1_token_graph}{00011}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_f_c_t_1_1_token_graph}{TokenGraph}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_f_c_t_1_1_noncopyable_a69629c8be6a7d4d3e48139aef83b47b3}{Noncopyable}}}
 \DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00012}00012\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00013}00013\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00013}00013\ \ \ \ \ \textcolor{keyword}{private}:}
 \DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe}{NodeProbe}};}
 \DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00015}\mbox{\hyperlink{struct_f_c_t_1_1_token_graph_1_1_node_info}{00015}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_f_c_t_1_1_token_graph_1_1_node_info_a543787b91c0dfc8be4ae5bdeba11346b}{NodeInfo}}}
 \DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00016}00016\ \ \ \ \ \ \ \ \ \{}
@@ -207,294 +207,406 @@
 \DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00205}00205\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00214}00214\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Visitor>}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00215}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_aa8af4a56c5321a15a4afc3e091bbf323}{00215}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_aa8af4a56c5321a15a4afc3e091bbf323}{visitBFS}}(Token\ startToken,\ Visitor\ visitor,\ \textcolor{keywordtype}{bool}\ includeStart\ =\ \textcolor{keyword}{true})\textcolor{keyword}{\ const}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00216}00216\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ start\_vertex\_it\ =\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_adb5bfa48cd56e57b4be4029eb58a4681}{m\_vertex}}.left.find(startToken);}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00218}00218\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (start\_vertex\_it\ ==\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_adb5bfa48cd56e57b4be4029eb58a4681}{m\_vertex}}.left.end())\ \{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00219}00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00221}00221\ }
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ std::map<BoostVertex,\ boost::default\_color\_type>\ vertex\_color\_map;}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ color\_pmap\ =\ boost::make\_assoc\_property\_map(vertex\_color\_map);}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00224}00224\ }
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_token_graph_b_f_s_visitor}{TokenGraphBFSVisitor<Visitor>}}\ bfs\_visitor(\textcolor{keyword}{this},\ visitor,\ startToken,\ includeStart);}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00226}00226\ }
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ boost::breadth\_first\_search(\mbox{\hyperlink{class_f_c_t_1_1_token_graph_a6d34ba4622f8e78957fbc4c77d493a64}{m\_graph}},\ start\_vertex\_it-\/>second,}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boost::visitor(bfs\_visitor).color\_map(color\_pmap));}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00229}00229\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00230}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_a377fea90122f6dd9a5a5fa76eee5d65c}{00230}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a377fea90122f6dd9a5a5fa76eee5d65c}{isZeroRefVertex}}(Token\ token)\textcolor{keyword}{\ const}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00231}00231\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_adb5bfa48cd56e57b4be4029eb58a4681}{m\_vertex}}.left.find(token);}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a6d34ba4622f8e78957fbc4c77d493a64}{m\_graph}}[it-\/>second]\ ==\ 0;}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00234}00234\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00235}00235\ }
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00236}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_a87fb2cf76d3e2e338c88843e81dea586}{00236}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a87fb2cf76d3e2e338c88843e81dea586}{removeEdge}}(Token\ node,\ Token\ rhs,\textcolor{keywordtype}{bool}\ isSuccessor)}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00237}00237\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isSuccessor)}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00239}00239\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_token_graph_a199cfa86da74b741af72ecbfa3918d93}{hasEdge}}(node,\ rhs))}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a89c8a44fcf101e851132d4fd5b40e496}{removeWeakRef}}(node,\ rhs);}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_token_graph_a199cfa86da74b741af72ecbfa3918d93}{hasEdge}}(rhs,\ node))}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a89c8a44fcf101e851132d4fd5b40e496}{removeWeakRef}}(rhs,\ node);}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00249}00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00250}00250\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00251}00251\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a89c8a44fcf101e851132d4fd5b40e496}{removeWeakRef}}(rhs);}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00252}00252\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_token_graph_a377fea90122f6dd9a5a5fa76eee5d65c}{isZeroRefVertex}}(rhs)\ \&\&\ !\mbox{\hyperlink{class_f_c_t_1_1_token_graph_af49a2237bb4cf2b7e5399c3235ee1ece}{hasNode}}(rhs))}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00253}00253\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_af64b875be97104a009a295518c8ea325}{removeVertex}}(rhs);}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00255}00255\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00256}00256\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00257}00257\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00258}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_afd28b63ee29ca7f50551eb3b3cde1498}{00258}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_afd28b63ee29ca7f50551eb3b3cde1498}{addNode}}(\mbox{\hyperlink{struct_f_c_t_1_1_token_graph_1_1_node_info}{NodeInfo}}\ info)}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00259}00259\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00260}00260\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a078ec745ddf9a87d14d34cd004e914f0}{addVertex}}(info.\mbox{\hyperlink{struct_f_c_t_1_1_token_graph_1_1_node_info_a5f8caa2e459f8df9f0b0d6c9d895dbb5}{token}});}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00261}00261\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a7326db59736e2649fa10a09663e04588}{m\_nodeMap}}[info.\mbox{\hyperlink{struct_f_c_t_1_1_token_graph_1_1_node_info_a5f8caa2e459f8df9f0b0d6c9d895dbb5}{token}}]\ =\ info;}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00262}00262\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ predecessor\ :\ info.\mbox{\hyperlink{struct_f_c_t_1_1_token_graph_1_1_node_info_af1796e9f84451145ea9ae4e72ae8c969}{predecessors}})\ \{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_adef26c12e175fca63765fbb52a84bf52}{addEdge}}(\ info.\mbox{\hyperlink{struct_f_c_t_1_1_token_graph_1_1_node_info_a5f8caa2e459f8df9f0b0d6c9d895dbb5}{token}},predecessor,\ \textcolor{keyword}{false});}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00264}00264\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00265}00265\ }
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00266}00266\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ successor\ :\ info.\mbox{\hyperlink{struct_f_c_t_1_1_token_graph_1_1_node_info_ac0b75b9b988cd91bee0d4309a41cd2b5}{successors}})\ \{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00267}00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_adef26c12e175fca63765fbb52a84bf52}{addEdge}}(info.\mbox{\hyperlink{struct_f_c_t_1_1_token_graph_1_1_node_info_a5f8caa2e459f8df9f0b0d6c9d895dbb5}{token}},\ successor,\ \textcolor{keyword}{true});}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00268}00268\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00269}00269\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00270}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_aba061ed742eff635cc5970f8ea283ab5}{00270}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_aba061ed742eff635cc5970f8ea283ab5}{addNode}}(Token\ token,}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00271}00271\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Value\ value,}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00272}00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<Token>\ predecessors,}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00273}00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<Token>\ successors)}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00274}00274\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00275}00275\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_f_c_t_1_1_token_graph_1_1_node_info}{NodeInfo}}\ info\ =\ \{\ token,\ value,\ predecessors,\ successors\ \};}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00276}00276\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_afd28b63ee29ca7f50551eb3b3cde1498}{addNode}}(info);}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00277}00277\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00278}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_aa7517c57efb792b948b8f739455b9378}{00278}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_aa7517c57efb792b948b8f739455b9378}{removeNode}}(\textcolor{keyword}{const}\ Token\&\ token)}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00279}00279\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00280}00280\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ predecessor\ :\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a7326db59736e2649fa10a09663e04588}{m\_nodeMap}}[token].predecessors)}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00281}00281\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00282}00282\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a87fb2cf76d3e2e338c88843e81dea586}{removeEdge}}(predecessor,\ token,\ \textcolor{keyword}{false});}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00283}00283\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00284}00284\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ successor\ :\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a7326db59736e2649fa10a09663e04588}{m\_nodeMap}}[token].successors)}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00285}00285\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00286}00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a87fb2cf76d3e2e338c88843e81dea586}{removeEdge}}(token,\ successor,\ \textcolor{keyword}{true});}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00287}00287\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00288}00288\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a7326db59736e2649fa10a09663e04588}{m\_nodeMap}}.erase(token);}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00289}00289\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_token_graph_a377fea90122f6dd9a5a5fa76eee5d65c}{isZeroRefVertex}}(token))}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00290}00290\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00291}00291\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_af64b875be97104a009a295518c8ea325}{removeVertex}}(token);}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00292}00292\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00293}00293\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00294}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_af33f08e17dfc9d269f4f422dbc503518}{00294}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_af33f08e17dfc9d269f4f422dbc503518}{update}}()}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00295}00295\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00296}00296\ \ \ \ \ \ \ \ \ \ \ \ \ std::deque<BoostVertex>\ sortedVertices;}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00297}00297\ }
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00298}00298\ \ \ \ \ \ \ \ \ \ \ \ \ std::map<BoostVertex,\ std::size\_t>\ vertex\_index\_map;}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00299}00299\ \ \ \ \ \ \ \ \ \ \ \ \ std::size\_t\ index\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00300}00300\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ [v\_iter,\ v\_end]\ =\ boost::vertices(\mbox{\hyperlink{class_f_c_t_1_1_token_graph_a6d34ba4622f8e78957fbc4c77d493a64}{m\_graph}});\ v\_iter\ !=\ v\_end;\ ++v\_iter)\ \{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00301}00301\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vertex\_index\_map[*v\_iter]\ =\ index++;}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00302}00302\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00303}00303\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ index\_pmap\ =\ boost::make\_assoc\_property\_map(vertex\_index\_map);}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00304}00304\ }
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00305}00305\ \ \ \ \ \ \ \ \ \ \ \ \ std::map<BoostVertex,\ boost::default\_color\_type>\ vertex\_color\_map;}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00306}00306\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ color\_pmap\ =\ boost::make\_assoc\_property\_map(vertex\_color\_map);}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00307}00307\ }
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00308}00308\ \ \ \ \ \ \ \ \ \ \ \ \ boost::topological\_sort(\mbox{\hyperlink{class_f_c_t_1_1_token_graph_a6d34ba4622f8e78957fbc4c77d493a64}{m\_graph}},\ std::front\_inserter(sortedVertices),}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00309}00309\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boost::vertex\_index\_map(index\_pmap).color\_map(color\_pmap));}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00310}00310\ }
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00311}00311\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a48da549221a754b501a24610d0a93e13}{m\_order}}.clear();}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00312}00312\ }
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00313}00313\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ vertex\ :\ sortedVertices)\ \{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00314}00314\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_adb5bfa48cd56e57b4be4029eb58a4681}{m\_vertex}}.right.find(vertex);}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00315}00315\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_adb5bfa48cd56e57b4be4029eb58a4681}{m\_vertex}}.right.end())\ \{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00316}00316\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Token\ token\ =\ it-\/>second;}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00317}00317\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_token_graph_af49a2237bb4cf2b7e5399c3235ee1ece}{hasNode}}(token))\ \{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00318}00318\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a48da549221a754b501a24610d0a93e13}{m\_order}}.push\_back(\mbox{\hyperlink{class_f_c_t_1_1_token_graph_a7326db59736e2649fa10a09663e04588}{m\_nodeMap}}[token].value);}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00319}00319\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00320}00320\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00321}00321\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00322}00322\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00323}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe}{00323}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a0a95b264ee65b25f6f05a5673a5d6953}{NodeProbe}}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00324}00324\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00325}00325\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00326}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a0a95b264ee65b25f6f05a5673a5d6953}{00326}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a0a95b264ee65b25f6f05a5673a5d6953}{NodeProbe}}(\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ad78c7d42fd03ab4a06fa9c31e51b2d9e}{TokenGraph}}\&\ graph,\ Token\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ab50b8d7d79a2f23e1e82966f9d630524}{token}})}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00327}00327\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a098a57c16015fa7a85ce1d6e96b6311e}{m\_graph}}(graph),\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ab56be8f013b954a40073d733e5d365eb}{m\_token}}(\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ab50b8d7d79a2f23e1e82966f9d630524}{token}}),\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a921ed2a37bd8b6594de1d5d5e86462b7}{m\_modified}}(false)}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00328}00328\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00329}00329\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a098a57c16015fa7a85ce1d6e96b6311e}{m\_graph}}.m\_nodeMap.find(\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ab50b8d7d79a2f23e1e82966f9d630524}{token}})!=\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a098a57c16015fa7a85ce1d6e96b6311e}{m\_graph}}.m\_nodeMap.end())}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00330}00330\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00331}00331\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_nodeInfo\ =\ m\_graph.m\_nodeMap[token];}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00332}00332\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_exists\ =\ true;}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00333}00333\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00334}00334\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00335}00335\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_nodeInfo\ =\ \{\};}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00336}00336\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ae1026891b904bedc32c1a029861354f6}{m\_exists}}\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00337}00337\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00338}00338\ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00339}00339\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00340}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ad78c7d42fd03ab4a06fa9c31e51b2d9e}{00340}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ad78c7d42fd03ab4a06fa9c31e51b2d9e}{TokenGraph}};}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00341}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a7bf54abd0b5f7cd4b18a0326c3d90f89}{00341}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a7bf54abd0b5f7cd4b18a0326c3d90f89}{\string~NodeProbe}}()}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00342}00342\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00343}00343\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ae1026891b904bedc32c1a029861354f6}{m\_exists}})}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00344}00344\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00345}00345\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a921ed2a37bd8b6594de1d5d5e86462b7}{m\_modified}})}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00346}00346\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00347}00347\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a3cb232e78eb0ddc205c9aadfb3fab65c}{m\_nodeInfo}}.token\ =\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ab56be8f013b954a40073d733e5d365eb}{m\_token}};}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00348}00348\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a098a57c16015fa7a85ce1d6e96b6311e}{m\_graph}}.addNode(\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a3cb232e78eb0ddc205c9aadfb3fab65c}{m\_nodeInfo}});}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00349}00349\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00350}00350\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00351}00351\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00352}00352\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a921ed2a37bd8b6594de1d5d5e86462b7}{m\_modified}})\ \{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00353}00353\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a098a57c16015fa7a85ce1d6e96b6311e}{m\_graph}}.updateNode(\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a3cb232e78eb0ddc205c9aadfb3fab65c}{m\_nodeInfo}});}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00354}00354\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00355}00355\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00356}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a15878e8663b77aed84dc43b72453aad8}{00356}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a15878e8663b77aed84dc43b72453aad8}{NodeProbe}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a0a95b264ee65b25f6f05a5673a5d6953}{NodeProbe}}\&)\ =\ \textcolor{keyword}{delete};}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00357}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a2f0e86b182ef95460af66188ec9be9d0}{00357}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a0a95b264ee65b25f6f05a5673a5d6953}{NodeProbe}}\&\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a2f0e86b182ef95460af66188ec9be9d0}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a0a95b264ee65b25f6f05a5673a5d6953}{NodeProbe}}\&)\ =\ \textcolor{keyword}{delete};}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00358}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ab18dba0bb2037c251766ec7e03c1c156}{00358}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ab18dba0bb2037c251766ec7e03c1c156}{NodeProbe}}(\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a0a95b264ee65b25f6f05a5673a5d6953}{NodeProbe}}\&\&\ other)\ noexcept}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00359}00359\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a6d34ba4622f8e78957fbc4c77d493a64}{m\_graph}}(other.m\_graph),\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ab56be8f013b954a40073d733e5d365eb}{m\_token}}(std::move(other.m\_token)),}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00360}00360\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a3cb232e78eb0ddc205c9aadfb3fab65c}{m\_nodeInfo}}(std::move(other.m\_nodeInfo)),\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a921ed2a37bd8b6594de1d5d5e86462b7}{m\_modified}}(other.m\_modified),}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00361}00361\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ae1026891b904bedc32c1a029861354f6}{m\_exists}}(other.m\_exists)}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00362}00362\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00363}00363\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ other.m\_modified\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00364}00364\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00365}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a0f30a80d8b87760d0218fd8f11fdf604}{00365}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a0a95b264ee65b25f6f05a5673a5d6953}{NodeProbe}}\&\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a0f30a80d8b87760d0218fd8f11fdf604}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_f_c_t_1_1_token_graph_1_1_node_info}{NodeInfo}}\&\ info)}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00366}00366\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00367}00367\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a3cb232e78eb0ddc205c9aadfb3fab65c}{m\_nodeInfo}}\ =\ info;}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00368}00368\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a3cb232e78eb0ddc205c9aadfb3fab65c}{m\_nodeInfo}}.token\ =\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ab56be8f013b954a40073d733e5d365eb}{m\_token}};}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00369}00369\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a921ed2a37bd8b6594de1d5d5e86462b7}{m\_modified}}\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00370}00370\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00371}00371\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00372}00372\ }
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00373}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a9fcbfea33dfb0a4ef6661680c0283f9a}{00373}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_f_c_t_1_1_token_graph_1_1_node_info}{NodeInfo}}*\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a9fcbfea33dfb0a4ef6661680c0283f9a}{operator-\/>}}()}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00374}00374\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00375}00375\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a921ed2a37bd8b6594de1d5d5e86462b7}{m\_modified}}\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00376}00376\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \&\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a3cb232e78eb0ddc205c9aadfb3fab65c}{m\_nodeInfo}};}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00377}00377\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00378}00378\ }
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00379}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_aacb02766e0b981924163394447c9538c}{00379}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_f_c_t_1_1_token_graph_1_1_node_info}{NodeInfo}}*\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_aacb02766e0b981924163394447c9538c}{operator-\/>}}()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00380}00380\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00381}00381\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \&\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a3cb232e78eb0ddc205c9aadfb3fab65c}{m\_nodeInfo}};}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00382}00382\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00383}00383\ }
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00384}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a5234d5ca5c3fff1fb2fc2601f07bf1b3}{00384}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_f_c_t_1_1_token_graph_1_1_node_info}{NodeInfo}}\&\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a5234d5ca5c3fff1fb2fc2601f07bf1b3}{operator*}}()}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00385}00385\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00386}00386\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a921ed2a37bd8b6594de1d5d5e86462b7}{m\_modified}}\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00387}00387\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a3cb232e78eb0ddc205c9aadfb3fab65c}{m\_nodeInfo}};}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00388}00388\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00389}00389\ }
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00390}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a886402fc2896aa32027cecef6c46e22d}{00390}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_f_c_t_1_1_token_graph_1_1_node_info}{NodeInfo}}\&\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a886402fc2896aa32027cecef6c46e22d}{operator*}}()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00391}00391\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00392}00392\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a3cb232e78eb0ddc205c9aadfb3fab65c}{m\_nodeInfo}};}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00393}00393\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00394}00394\ }
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00395}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ae25bf93c626b192231ac167aacbfa826}{00395}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ae25bf93c626b192231ac167aacbfa826}{exists}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ae1026891b904bedc32c1a029861354f6}{m\_exists}};\ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00396}00396\ }
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00397}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ab50b8d7d79a2f23e1e82966f9d630524}{00397}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Token\&\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ab50b8d7d79a2f23e1e82966f9d630524}{token}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ab56be8f013b954a40073d733e5d365eb}{m\_token}};\ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00398}00398\ }
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00399}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a1d95d0e021fb970583d8459ede85ca05}{00399}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a0a95b264ee65b25f6f05a5673a5d6953}{NodeProbe}}\&\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a1d95d0e021fb970583d8459ede85ca05}{addPredecessor}}(\textcolor{keyword}{const}\ Token\&\ pred)}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00400}00400\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00401}00401\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ preds\ =\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a3cb232e78eb0ddc205c9aadfb3fab65c}{m\_nodeInfo}}.predecessors;}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00402}00402\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::find(preds.begin(),\ preds.end(),\ pred)\ ==\ preds.end())\ \{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00403}00403\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ preds.push\_back(pred);}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00404}00404\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a921ed2a37bd8b6594de1d5d5e86462b7}{m\_modified}}\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00405}00405\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00406}00406\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00407}00407\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00408}00408\ }
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00409}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_aba89376b46becadd6e7385fe3be42252}{00409}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a0a95b264ee65b25f6f05a5673a5d6953}{NodeProbe}}\&\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_aba89376b46becadd6e7385fe3be42252}{removePredecessor}}(\textcolor{keyword}{const}\ Token\&\ pred)}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00410}00410\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00411}00411\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ preds\ =\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a3cb232e78eb0ddc205c9aadfb3fab65c}{m\_nodeInfo}}.predecessors;}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00412}00412\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ std::find(preds.begin(),\ preds.end(),\ pred);}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00413}00413\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ preds.end())\ \{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00414}00414\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ preds.erase(it);}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00415}00415\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a921ed2a37bd8b6594de1d5d5e86462b7}{m\_modified}}\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00416}00416\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00417}00417\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00418}00418\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00419}00419\ }
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00420}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a1698941cf7dc3e5d69aba55eefd4e0a4}{00420}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a0a95b264ee65b25f6f05a5673a5d6953}{NodeProbe}}\&\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a1698941cf7dc3e5d69aba55eefd4e0a4}{addSuccessor}}(\textcolor{keyword}{const}\ Token\&\ succ)}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00421}00421\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00422}00422\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ succs\ =\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a3cb232e78eb0ddc205c9aadfb3fab65c}{m\_nodeInfo}}.successors;}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00423}00423\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::find(succs.begin(),\ succs.end(),\ succ)\ ==\ succs.end())\ \{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00424}00424\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ succs.push\_back(succ);}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00425}00425\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a921ed2a37bd8b6594de1d5d5e86462b7}{m\_modified}}\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00426}00426\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00427}00427\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00428}00428\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00429}00429\ }
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00430}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_adf83090536742d9d779719f5f86f4e07}{00430}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a0a95b264ee65b25f6f05a5673a5d6953}{NodeProbe}}\&\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_adf83090536742d9d779719f5f86f4e07}{removeSuccessor}}(\textcolor{keyword}{const}\ Token\&\ succ)}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00431}00431\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00432}00432\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ succs\ =\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a3cb232e78eb0ddc205c9aadfb3fab65c}{m\_nodeInfo}}.successors;}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00433}00433\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ std::find(succs.begin(),\ succs.end(),\ succ);}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00434}00434\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ succs.end())\ \{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00435}00435\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ succs.erase(it);}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00436}00436\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a921ed2a37bd8b6594de1d5d5e86462b7}{m\_modified}}\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00437}00437\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00438}00438\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00439}00439\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00440}00440\ }
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00441}00441\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00442}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a098a57c16015fa7a85ce1d6e96b6311e}{00442}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ad78c7d42fd03ab4a06fa9c31e51b2d9e}{TokenGraph}}\&\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a098a57c16015fa7a85ce1d6e96b6311e}{m\_graph}};}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00443}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ab56be8f013b954a40073d733e5d365eb}{00443}}\ \ \ \ \ \ \ \ \ \ \ \ \ Token\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ab56be8f013b954a40073d733e5d365eb}{m\_token}};}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00444}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a3cb232e78eb0ddc205c9aadfb3fab65c}{00444}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_f_c_t_1_1_token_graph_1_1_node_info}{NodeInfo}}\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a3cb232e78eb0ddc205c9aadfb3fab65c}{m\_nodeInfo}};}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00445}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a921ed2a37bd8b6594de1d5d5e86462b7}{00445}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a921ed2a37bd8b6594de1d5d5e86462b7}{m\_modified}};}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00446}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ae1026891b904bedc32c1a029861354f6}{00446}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ae1026891b904bedc32c1a029861354f6}{m\_exists}};}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00447}00447\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00448}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_a761119710050fcfb17b8d3b4af84fc7a}{00448}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe}{NodeProbe}}\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a761119710050fcfb17b8d3b4af84fc7a}{operator[]}}(Token\ token)}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00449}00449\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00450}00450\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe}{NodeProbe}}(*\textcolor{keyword}{this},\ token);}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00451}00451\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00452}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_ac00b14851a393161f371cb4bb28f8da2}{00452}}\ \ \ \ \ \ \ \ \ std::vector<Value>\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_ac00b14851a393161f371cb4bb28f8da2}{order}}()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00453}00453\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00454}00454\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a48da549221a754b501a24610d0a93e13}{m\_order}};}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00455}00455\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00456}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_afeea24bc135a350c3a9edfb04992e8d8}{00456}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_afeea24bc135a350c3a9edfb04992e8d8}{updateNode}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_f_c_t_1_1_token_graph_1_1_node_info}{NodeInfo}}\&\ info)}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00457}00457\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00458}00458\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_aa7517c57efb792b948b8f739455b9378}{removeNode}}(info.\mbox{\hyperlink{struct_f_c_t_1_1_token_graph_1_1_node_info_a5f8caa2e459f8df9f0b0d6c9d895dbb5}{token}});}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00459}00459\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_afd28b63ee29ca7f50551eb3b3cde1498}{addNode}}(info);}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00460}00460\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00461}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_a9c0d24c314b735638568a4e09ae22fc1}{00461}}\ \ \ \ \ \ \ \ \ std::vector<Value>\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a9c0d24c314b735638568a4e09ae22fc1}{computeOrder}}(std::function<\textcolor{keywordtype}{bool}(\textcolor{keyword}{const}\ Value\&)>\ canVisit)}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00462}00462\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00463}00463\ \ \ \ \ \ \ \ \ \ \ \ \ std::deque<BoostVertex>\ sortedVertices;}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00464}00464\ }
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00465}00465\ \ \ \ \ \ \ \ \ \ \ \ \ std::map<BoostVertex,\ std::size\_t>\ vertex\_index\_map;}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00466}00466\ \ \ \ \ \ \ \ \ \ \ \ \ std::size\_t\ index\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00467}00467\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ [v\_iter,\ v\_end]\ =\ boost::vertices(\mbox{\hyperlink{class_f_c_t_1_1_token_graph_a6d34ba4622f8e78957fbc4c77d493a64}{m\_graph}});\ v\_iter\ !=\ v\_end;\ ++v\_iter)\ \{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00468}00468\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vertex\_index\_map[*v\_iter]\ =\ index++;}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00469}00469\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00470}00470\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ index\_pmap\ =\ boost::make\_assoc\_property\_map(vertex\_index\_map);}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00471}00471\ }
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00472}00472\ \ \ \ \ \ \ \ \ \ \ \ \ std::map<BoostVertex,\ boost::default\_color\_type>\ vertex\_color\_map;}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00473}00473\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ color\_pmap\ =\ boost::make\_assoc\_property\_map(vertex\_color\_map);}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00474}00474\ }
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00475}00475\ \ \ \ \ \ \ \ \ \ \ \ \ boost::topological\_sort(\mbox{\hyperlink{class_f_c_t_1_1_token_graph_a6d34ba4622f8e78957fbc4c77d493a64}{m\_graph}},\ std::front\_inserter(sortedVertices),}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00476}00476\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boost::vertex\_index\_map(index\_pmap).color\_map(color\_pmap));}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00477}00477\ }
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00478}00478\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<Value>\ ret;}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00479}00479\ }
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00480}00480\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ vertex\ :\ sortedVertices)\ \{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00481}00481\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_adb5bfa48cd56e57b4be4029eb58a4681}{m\_vertex}}.right.find(vertex);}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00482}00482\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_adb5bfa48cd56e57b4be4029eb58a4681}{m\_vertex}}.right.end())\ \{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00483}00483\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Token\ token\ =\ it-\/>second;}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00484}00484\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_token_graph_af49a2237bb4cf2b7e5399c3235ee1ece}{hasNode}}(token)\ \&\&\ canVisit(\mbox{\hyperlink{class_f_c_t_1_1_token_graph_a7326db59736e2649fa10a09663e04588}{m\_nodeMap}}[token].value))\ \{}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00485}00485\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ret.push\_back(\mbox{\hyperlink{class_f_c_t_1_1_token_graph_a7326db59736e2649fa10a09663e04588}{m\_nodeMap}}[token].value);}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00486}00486\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00487}00487\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00488}00488\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00489}00489\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ret;}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00490}00490\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00491}00491\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00492}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_a6d34ba4622f8e78957fbc4c77d493a64}{00492}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_adc95b88b4fafd0b1c715e285f87f0145}{TokenGraphSavedBoostGraph}}\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a6d34ba4622f8e78957fbc4c77d493a64}{m\_graph}};}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00493}00493\ \ \ \ \ \ \ \ \ boost::bimap<}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00494}00494\ \ \ \ \ \ \ \ \ \ \ \ \ boost::bimaps::unordered\_set\_of<Token>,}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00495}00495\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a364c08f0b65d2dd81dbc1ed21c7f2453}{BoostVertex}}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00496}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_adb5bfa48cd56e57b4be4029eb58a4681}{00496}}\ \ \ \ \ \ \ \ \ >\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_adb5bfa48cd56e57b4be4029eb58a4681}{m\_vertex}};}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00497}00497\ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::unordered\_map<Token,BoostVertex>\ m\_vertex;}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00498}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_a7326db59736e2649fa10a09663e04588}{00498}}\ \ \ \ \ \ \ \ \ std::unordered\_map<Token,\ NodeInfo>\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a7326db59736e2649fa10a09663e04588}{m\_nodeMap}};}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00499}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_a48da549221a754b501a24610d0a93e13}{00499}}\ \ \ \ \ \ \ \ \ std::vector<Value>\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a48da549221a754b501a24610d0a93e13}{m\_order}};}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00500}00500\ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00501}00501\ \}}
-\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00502}00502\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//TOKENGRAPH\_H}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00206}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_a377fea90122f6dd9a5a5fa76eee5d65c}{00206}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a377fea90122f6dd9a5a5fa76eee5d65c}{isZeroRefVertex}}(Token\ token)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00207}00207\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_adb5bfa48cd56e57b4be4029eb58a4681}{m\_vertex}}.left.find(token);}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a6d34ba4622f8e78957fbc4c77d493a64}{m\_graph}}[it-\/>second]\ ==\ 0;}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00210}00210\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00211}00211\ }
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00212}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_a87fb2cf76d3e2e338c88843e81dea586}{00212}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a87fb2cf76d3e2e338c88843e81dea586}{removeEdge}}(Token\ node,\ Token\ rhs,\textcolor{keywordtype}{bool}\ isSuccessor)}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00213}00213\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isSuccessor)}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_token_graph_a199cfa86da74b741af72ecbfa3918d93}{hasEdge}}(node,\ rhs))}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00218}00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a89c8a44fcf101e851132d4fd5b40e496}{removeWeakRef}}(node,\ rhs);}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00219}00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00221}00221\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_token_graph_a199cfa86da74b741af72ecbfa3918d93}{hasEdge}}(rhs,\ node))}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a89c8a44fcf101e851132d4fd5b40e496}{removeWeakRef}}(rhs,\ node);}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a89c8a44fcf101e851132d4fd5b40e496}{removeWeakRef}}(rhs);}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_token_graph_a377fea90122f6dd9a5a5fa76eee5d65c}{isZeroRefVertex}}(rhs)\ \&\&\ !\mbox{\hyperlink{class_f_c_t_1_1_token_graph_af49a2237bb4cf2b7e5399c3235ee1ece}{hasNode}}(rhs))}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_af64b875be97104a009a295518c8ea325}{removeVertex}}(rhs);}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00232}00232\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00233}00233\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00234}00234\ }
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00243}00243\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Visitor>}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00244}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_aa8af4a56c5321a15a4afc3e091bbf323}{00244}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_aa8af4a56c5321a15a4afc3e091bbf323}{visitBFS}}(Token\ startToken,\ Visitor\ visitor,\ \textcolor{keywordtype}{bool}\ includeStart\ =\ \textcolor{keyword}{true})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00245}00245\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ start\_vertex\_it\ =\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_adb5bfa48cd56e57b4be4029eb58a4681}{m\_vertex}}.left.find(startToken);}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (start\_vertex\_it\ ==\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_adb5bfa48cd56e57b4be4029eb58a4681}{m\_vertex}}.left.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00249}00249\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00250}00250\ }
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00251}00251\ \ \ \ \ \ \ \ \ \ \ \ \ std::map<BoostVertex,\ boost::default\_color\_type>\ vertex\_color\_map;}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00252}00252\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ color\_pmap\ =\ boost::make\_assoc\_property\_map(vertex\_color\_map);}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00253}00253\ }
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_token_graph_b_f_s_visitor}{TokenGraphBFSVisitor<Visitor>}}\ bfs\_visitor(\textcolor{keyword}{this},\ visitor,\ startToken,\ includeStart);}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00255}00255\ }
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ boost::breadth\_first\_search(\mbox{\hyperlink{class_f_c_t_1_1_token_graph_a6d34ba4622f8e78957fbc4c77d493a64}{m\_graph}},\ start\_vertex\_it-\/>second,}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00257}00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boost::visitor(bfs\_visitor).color\_map(color\_pmap));}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00258}00258\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00259}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_afd28b63ee29ca7f50551eb3b3cde1498}{00259}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_afd28b63ee29ca7f50551eb3b3cde1498}{addNode}}(\mbox{\hyperlink{struct_f_c_t_1_1_token_graph_1_1_node_info}{NodeInfo}}\ info)}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00260}00260\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00261}00261\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a078ec745ddf9a87d14d34cd004e914f0}{addVertex}}(info.\mbox{\hyperlink{struct_f_c_t_1_1_token_graph_1_1_node_info_a5f8caa2e459f8df9f0b0d6c9d895dbb5}{token}});}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00262}00262\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a7326db59736e2649fa10a09663e04588}{m\_nodeMap}}[info.\mbox{\hyperlink{struct_f_c_t_1_1_token_graph_1_1_node_info_a5f8caa2e459f8df9f0b0d6c9d895dbb5}{token}}]\ =\ info;}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ predecessor\ :\ info.\mbox{\hyperlink{struct_f_c_t_1_1_token_graph_1_1_node_info_af1796e9f84451145ea9ae4e72ae8c969}{predecessors}})\ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00264}00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_adef26c12e175fca63765fbb52a84bf52}{addEdge}}(\ info.\mbox{\hyperlink{struct_f_c_t_1_1_token_graph_1_1_node_info_a5f8caa2e459f8df9f0b0d6c9d895dbb5}{token}},predecessor,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00265}00265\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00266}00266\ }
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00267}00267\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ successor\ :\ info.\mbox{\hyperlink{struct_f_c_t_1_1_token_graph_1_1_node_info_ac0b75b9b988cd91bee0d4309a41cd2b5}{successors}})\ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00268}00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_adef26c12e175fca63765fbb52a84bf52}{addEdge}}(info.\mbox{\hyperlink{struct_f_c_t_1_1_token_graph_1_1_node_info_a5f8caa2e459f8df9f0b0d6c9d895dbb5}{token}},\ successor,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00269}00269\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00270}00270\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00271}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_aba061ed742eff635cc5970f8ea283ab5}{00271}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_aba061ed742eff635cc5970f8ea283ab5}{addNode}}(Token\ token,}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00272}00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Value\ value,}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00273}00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<Token>\ predecessors,}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00274}00274\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<Token>\ successors)}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00275}00275\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00276}00276\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_f_c_t_1_1_token_graph_1_1_node_info}{NodeInfo}}\ info\ =\ \{\ token,\ value,\ predecessors,\ successors\ \};}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00277}00277\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_afd28b63ee29ca7f50551eb3b3cde1498}{addNode}}(info);}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00278}00278\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00279}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_aa7517c57efb792b948b8f739455b9378}{00279}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_aa7517c57efb792b948b8f739455b9378}{removeNode}}(\textcolor{keyword}{const}\ Token\&\ token)}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00280}00280\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00281}00281\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ predecessor\ :\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a7326db59736e2649fa10a09663e04588}{m\_nodeMap}}[token].predecessors)}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00282}00282\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00283}00283\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a87fb2cf76d3e2e338c88843e81dea586}{removeEdge}}(predecessor,\ token,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00284}00284\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00285}00285\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ successor\ :\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a7326db59736e2649fa10a09663e04588}{m\_nodeMap}}[token].successors)}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00286}00286\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00287}00287\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a87fb2cf76d3e2e338c88843e81dea586}{removeEdge}}(token,\ successor,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00288}00288\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00289}00289\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a7326db59736e2649fa10a09663e04588}{m\_nodeMap}}.erase(token);}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00290}00290\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_token_graph_a377fea90122f6dd9a5a5fa76eee5d65c}{isZeroRefVertex}}(token))}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00291}00291\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00292}00292\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_af64b875be97104a009a295518c8ea325}{removeVertex}}(token);}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00293}00293\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00294}00294\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00295}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_af33f08e17dfc9d269f4f422dbc503518}{00295}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_af33f08e17dfc9d269f4f422dbc503518}{update}}()}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00296}00296\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00297}00297\ \ \ \ \ \ \ \ \ \ \ \ \ std::deque<BoostVertex>\ sortedVertices;}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00298}00298\ }
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00299}00299\ \ \ \ \ \ \ \ \ \ \ \ \ std::map<BoostVertex,\ std::size\_t>\ vertex\_index\_map;}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00300}00300\ \ \ \ \ \ \ \ \ \ \ \ \ std::size\_t\ index\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00301}00301\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ [v\_iter,\ v\_end]\ =\ boost::vertices(\mbox{\hyperlink{class_f_c_t_1_1_token_graph_a6d34ba4622f8e78957fbc4c77d493a64}{m\_graph}});\ v\_iter\ !=\ v\_end;\ ++v\_iter)\ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00302}00302\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vertex\_index\_map[*v\_iter]\ =\ index++;}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00303}00303\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00304}00304\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ index\_pmap\ =\ boost::make\_assoc\_property\_map(vertex\_index\_map);}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00305}00305\ }
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00306}00306\ \ \ \ \ \ \ \ \ \ \ \ \ std::map<BoostVertex,\ boost::default\_color\_type>\ vertex\_color\_map;}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00307}00307\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ color\_pmap\ =\ boost::make\_assoc\_property\_map(vertex\_color\_map);}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00308}00308\ }
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00309}00309\ \ \ \ \ \ \ \ \ \ \ \ \ boost::topological\_sort(\mbox{\hyperlink{class_f_c_t_1_1_token_graph_a6d34ba4622f8e78957fbc4c77d493a64}{m\_graph}},\ std::front\_inserter(sortedVertices),}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00310}00310\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boost::vertex\_index\_map(index\_pmap).color\_map(color\_pmap));}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00311}00311\ }
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00312}00312\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a48da549221a754b501a24610d0a93e13}{m\_order}}.clear();}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00313}00313\ }
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00314}00314\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ vertex\ :\ sortedVertices)\ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00315}00315\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_adb5bfa48cd56e57b4be4029eb58a4681}{m\_vertex}}.right.find(vertex);}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00316}00316\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_adb5bfa48cd56e57b4be4029eb58a4681}{m\_vertex}}.right.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00317}00317\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Token\ token\ =\ it-\/>second;}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00318}00318\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_token_graph_af49a2237bb4cf2b7e5399c3235ee1ece}{hasNode}}(token))\ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00319}00319\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a48da549221a754b501a24610d0a93e13}{m\_order}}.push\_back(\mbox{\hyperlink{class_f_c_t_1_1_token_graph_a7326db59736e2649fa10a09663e04588}{m\_nodeMap}}[token].value);}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00320}00320\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00321}00321\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00322}00322\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00323}00323\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00324}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe}{00324}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a0a95b264ee65b25f6f05a5673a5d6953}{NodeProbe}}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00325}00325\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00326}00326\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00327}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a0a95b264ee65b25f6f05a5673a5d6953}{00327}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a0a95b264ee65b25f6f05a5673a5d6953}{NodeProbe}}(\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ad78c7d42fd03ab4a06fa9c31e51b2d9e}{TokenGraph}}\&\ graph,\ Token\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ab50b8d7d79a2f23e1e82966f9d630524}{token}})}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00328}00328\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a098a57c16015fa7a85ce1d6e96b6311e}{m\_graph}}(graph),\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ab56be8f013b954a40073d733e5d365eb}{m\_token}}(\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ab50b8d7d79a2f23e1e82966f9d630524}{token}}),\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a921ed2a37bd8b6594de1d5d5e86462b7}{m\_modified}}(false)}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00329}00329\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00330}00330\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a098a57c16015fa7a85ce1d6e96b6311e}{m\_graph}}.m\_nodeMap.find(\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ab50b8d7d79a2f23e1e82966f9d630524}{token}})!=\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a098a57c16015fa7a85ce1d6e96b6311e}{m\_graph}}.m\_nodeMap.end())}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00331}00331\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00332}00332\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_nodeInfo\ =\ m\_graph.m\_nodeMap[token];}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00333}00333\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_exists\ =\ true;}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00334}00334\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00335}00335\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00336}00336\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_nodeInfo\ =\ \{\};}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00337}00337\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ae1026891b904bedc32c1a029861354f6}{m\_exists}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00338}00338\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00339}00339\ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00340}00340\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00341}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ad78c7d42fd03ab4a06fa9c31e51b2d9e}{00341}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ad78c7d42fd03ab4a06fa9c31e51b2d9e}{TokenGraph}};}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00342}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a7bf54abd0b5f7cd4b18a0326c3d90f89}{00342}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a7bf54abd0b5f7cd4b18a0326c3d90f89}{\string~NodeProbe}}()}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00343}00343\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00344}00344\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ae1026891b904bedc32c1a029861354f6}{m\_exists}})}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00345}00345\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00346}00346\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a921ed2a37bd8b6594de1d5d5e86462b7}{m\_modified}})}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00347}00347\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00348}00348\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a3cb232e78eb0ddc205c9aadfb3fab65c}{m\_nodeInfo}}.token\ =\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ab56be8f013b954a40073d733e5d365eb}{m\_token}};}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00349}00349\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a098a57c16015fa7a85ce1d6e96b6311e}{m\_graph}}.addNode(\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a3cb232e78eb0ddc205c9aadfb3fab65c}{m\_nodeInfo}});}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00350}00350\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00351}00351\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00352}00352\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00353}00353\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a921ed2a37bd8b6594de1d5d5e86462b7}{m\_modified}})\ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00354}00354\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a098a57c16015fa7a85ce1d6e96b6311e}{m\_graph}}.updateNode(\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a3cb232e78eb0ddc205c9aadfb3fab65c}{m\_nodeInfo}});}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00355}00355\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00356}00356\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00357}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a15878e8663b77aed84dc43b72453aad8}{00357}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a15878e8663b77aed84dc43b72453aad8}{NodeProbe}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a0a95b264ee65b25f6f05a5673a5d6953}{NodeProbe}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00358}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a2f0e86b182ef95460af66188ec9be9d0}{00358}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a0a95b264ee65b25f6f05a5673a5d6953}{NodeProbe}}\&\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a2f0e86b182ef95460af66188ec9be9d0}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a0a95b264ee65b25f6f05a5673a5d6953}{NodeProbe}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00359}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ab18dba0bb2037c251766ec7e03c1c156}{00359}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ab18dba0bb2037c251766ec7e03c1c156}{NodeProbe}}(\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a0a95b264ee65b25f6f05a5673a5d6953}{NodeProbe}}\&\&\ other)\ noexcept}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00360}00360\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a6d34ba4622f8e78957fbc4c77d493a64}{m\_graph}}(other.m\_graph),\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ab56be8f013b954a40073d733e5d365eb}{m\_token}}(std::move(other.m\_token)),}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00361}00361\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a3cb232e78eb0ddc205c9aadfb3fab65c}{m\_nodeInfo}}(std::move(other.m\_nodeInfo)),\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a921ed2a37bd8b6594de1d5d5e86462b7}{m\_modified}}(other.m\_modified),}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00362}00362\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ae1026891b904bedc32c1a029861354f6}{m\_exists}}(other.m\_exists)}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00363}00363\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00364}00364\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ other.m\_modified\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00365}00365\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00366}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a0f30a80d8b87760d0218fd8f11fdf604}{00366}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a0a95b264ee65b25f6f05a5673a5d6953}{NodeProbe}}\&\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a0f30a80d8b87760d0218fd8f11fdf604}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_f_c_t_1_1_token_graph_1_1_node_info}{NodeInfo}}\&\ info)}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00367}00367\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00368}00368\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a3cb232e78eb0ddc205c9aadfb3fab65c}{m\_nodeInfo}}\ =\ info;}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00369}00369\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a3cb232e78eb0ddc205c9aadfb3fab65c}{m\_nodeInfo}}.token\ =\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ab56be8f013b954a40073d733e5d365eb}{m\_token}};}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00370}00370\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a921ed2a37bd8b6594de1d5d5e86462b7}{m\_modified}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00371}00371\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00372}00372\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00373}00373\ }
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00374}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a9fcbfea33dfb0a4ef6661680c0283f9a}{00374}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_f_c_t_1_1_token_graph_1_1_node_info}{NodeInfo}}*\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a9fcbfea33dfb0a4ef6661680c0283f9a}{operator-\/>}}()}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00375}00375\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00376}00376\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a921ed2a37bd8b6594de1d5d5e86462b7}{m\_modified}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00377}00377\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \&\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a3cb232e78eb0ddc205c9aadfb3fab65c}{m\_nodeInfo}};}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00378}00378\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00379}00379\ }
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00380}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_aacb02766e0b981924163394447c9538c}{00380}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_f_c_t_1_1_token_graph_1_1_node_info}{NodeInfo}}*\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_aacb02766e0b981924163394447c9538c}{operator-\/>}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00381}00381\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00382}00382\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \&\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a3cb232e78eb0ddc205c9aadfb3fab65c}{m\_nodeInfo}};}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00383}00383\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00384}00384\ }
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00385}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a5234d5ca5c3fff1fb2fc2601f07bf1b3}{00385}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_f_c_t_1_1_token_graph_1_1_node_info}{NodeInfo}}\&\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a5234d5ca5c3fff1fb2fc2601f07bf1b3}{operator*}}()}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00386}00386\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00387}00387\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a921ed2a37bd8b6594de1d5d5e86462b7}{m\_modified}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00388}00388\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a3cb232e78eb0ddc205c9aadfb3fab65c}{m\_nodeInfo}};}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00389}00389\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00390}00390\ }
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00391}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a886402fc2896aa32027cecef6c46e22d}{00391}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_f_c_t_1_1_token_graph_1_1_node_info}{NodeInfo}}\&\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a886402fc2896aa32027cecef6c46e22d}{operator*}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00392}00392\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00393}00393\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a3cb232e78eb0ddc205c9aadfb3fab65c}{m\_nodeInfo}};}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00394}00394\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00395}00395\ }
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00396}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ae25bf93c626b192231ac167aacbfa826}{00396}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ae25bf93c626b192231ac167aacbfa826}{exists}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ae1026891b904bedc32c1a029861354f6}{m\_exists}};\ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00397}00397\ }
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00398}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ab50b8d7d79a2f23e1e82966f9d630524}{00398}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Token\&\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ab50b8d7d79a2f23e1e82966f9d630524}{token}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ab56be8f013b954a40073d733e5d365eb}{m\_token}};\ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00399}00399\ }
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00400}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a1d95d0e021fb970583d8459ede85ca05}{00400}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a0a95b264ee65b25f6f05a5673a5d6953}{NodeProbe}}\&\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a1d95d0e021fb970583d8459ede85ca05}{addPredecessor}}(\textcolor{keyword}{const}\ Token\&\ pred)}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00401}00401\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00402}00402\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ preds\ =\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a3cb232e78eb0ddc205c9aadfb3fab65c}{m\_nodeInfo}}.predecessors;}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00403}00403\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::find(preds.begin(),\ preds.end(),\ pred)\ ==\ preds.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00404}00404\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ preds.push\_back(pred);}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00405}00405\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a921ed2a37bd8b6594de1d5d5e86462b7}{m\_modified}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00406}00406\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00407}00407\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00408}00408\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00409}00409\ }
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00410}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_aba89376b46becadd6e7385fe3be42252}{00410}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a0a95b264ee65b25f6f05a5673a5d6953}{NodeProbe}}\&\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_aba89376b46becadd6e7385fe3be42252}{removePredecessor}}(\textcolor{keyword}{const}\ Token\&\ pred)}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00411}00411\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00412}00412\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ preds\ =\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a3cb232e78eb0ddc205c9aadfb3fab65c}{m\_nodeInfo}}.predecessors;}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00413}00413\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ std::find(preds.begin(),\ preds.end(),\ pred);}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00414}00414\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ preds.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00415}00415\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ preds.erase(it);}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00416}00416\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a921ed2a37bd8b6594de1d5d5e86462b7}{m\_modified}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00417}00417\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00418}00418\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00419}00419\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00420}00420\ }
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00421}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a1698941cf7dc3e5d69aba55eefd4e0a4}{00421}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a0a95b264ee65b25f6f05a5673a5d6953}{NodeProbe}}\&\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a1698941cf7dc3e5d69aba55eefd4e0a4}{addSuccessor}}(\textcolor{keyword}{const}\ Token\&\ succ)}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00422}00422\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00423}00423\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ succs\ =\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a3cb232e78eb0ddc205c9aadfb3fab65c}{m\_nodeInfo}}.successors;}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00424}00424\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::find(succs.begin(),\ succs.end(),\ succ)\ ==\ succs.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00425}00425\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ succs.push\_back(succ);}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00426}00426\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a921ed2a37bd8b6594de1d5d5e86462b7}{m\_modified}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00427}00427\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00428}00428\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00429}00429\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00430}00430\ }
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00431}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_adf83090536742d9d779719f5f86f4e07}{00431}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a0a95b264ee65b25f6f05a5673a5d6953}{NodeProbe}}\&\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_adf83090536742d9d779719f5f86f4e07}{removeSuccessor}}(\textcolor{keyword}{const}\ Token\&\ succ)}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00432}00432\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00433}00433\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ succs\ =\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a3cb232e78eb0ddc205c9aadfb3fab65c}{m\_nodeInfo}}.successors;}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00434}00434\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ std::find(succs.begin(),\ succs.end(),\ succ);}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00435}00435\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ succs.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00436}00436\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ succs.erase(it);}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00437}00437\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a921ed2a37bd8b6594de1d5d5e86462b7}{m\_modified}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00438}00438\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00439}00439\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00440}00440\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00441}00441\ }
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00442}00442\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00443}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a098a57c16015fa7a85ce1d6e96b6311e}{00443}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ad78c7d42fd03ab4a06fa9c31e51b2d9e}{TokenGraph}}\&\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a098a57c16015fa7a85ce1d6e96b6311e}{m\_graph}};}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00444}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ab56be8f013b954a40073d733e5d365eb}{00444}}\ \ \ \ \ \ \ \ \ \ \ \ \ Token\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ab56be8f013b954a40073d733e5d365eb}{m\_token}};}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00445}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a3cb232e78eb0ddc205c9aadfb3fab65c}{00445}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_f_c_t_1_1_token_graph_1_1_node_info}{NodeInfo}}\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a3cb232e78eb0ddc205c9aadfb3fab65c}{m\_nodeInfo}};}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00446}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a921ed2a37bd8b6594de1d5d5e86462b7}{00446}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_a921ed2a37bd8b6594de1d5d5e86462b7}{m\_modified}};}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00447}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ae1026891b904bedc32c1a029861354f6}{00447}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe_ae1026891b904bedc32c1a029861354f6}{m\_exists}};}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00448}00448\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00449}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_a761119710050fcfb17b8d3b4af84fc7a}{00449}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe}{NodeProbe}}\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a761119710050fcfb17b8d3b4af84fc7a}{operator[]}}(Token\ token)}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00450}00450\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00451}00451\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_node_probe}{NodeProbe}}(*\textcolor{keyword}{this},\ token);}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00452}00452\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00453}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_ac00b14851a393161f371cb4bb28f8da2}{00453}}\ \ \ \ \ \ \ \ \ std::vector<Value>\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_ac00b14851a393161f371cb4bb28f8da2}{order}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00454}00454\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00455}00455\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a48da549221a754b501a24610d0a93e13}{m\_order}};}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00456}00456\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00457}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_afeea24bc135a350c3a9edfb04992e8d8}{00457}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_afeea24bc135a350c3a9edfb04992e8d8}{updateNode}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_f_c_t_1_1_token_graph_1_1_node_info}{NodeInfo}}\&\ info)}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00458}00458\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00459}00459\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_aa7517c57efb792b948b8f739455b9378}{removeNode}}(info.\mbox{\hyperlink{struct_f_c_t_1_1_token_graph_1_1_node_info_a5f8caa2e459f8df9f0b0d6c9d895dbb5}{token}});}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00460}00460\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_afd28b63ee29ca7f50551eb3b3cde1498}{addNode}}(info);}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00461}00461\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00462}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_a9c0d24c314b735638568a4e09ae22fc1}{00462}}\ \ \ \ \ \ \ \ \ std::vector<Value>\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a9c0d24c314b735638568a4e09ae22fc1}{computeOrder}}(std::function<\textcolor{keywordtype}{bool}(\textcolor{keyword}{const}\ Value\&)>\ canVisit)}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00463}00463\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00464}00464\ \ \ \ \ \ \ \ \ \ \ \ \ std::deque<BoostVertex>\ sortedVertices;}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00465}00465\ }
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00466}00466\ \ \ \ \ \ \ \ \ \ \ \ \ std::map<BoostVertex,\ std::size\_t>\ vertex\_index\_map;}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00467}00467\ \ \ \ \ \ \ \ \ \ \ \ \ std::size\_t\ index\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00468}00468\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ [v\_iter,\ v\_end]\ =\ boost::vertices(\mbox{\hyperlink{class_f_c_t_1_1_token_graph_a6d34ba4622f8e78957fbc4c77d493a64}{m\_graph}});\ v\_iter\ !=\ v\_end;\ ++v\_iter)\ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00469}00469\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vertex\_index\_map[*v\_iter]\ =\ index++;}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00470}00470\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00471}00471\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ index\_pmap\ =\ boost::make\_assoc\_property\_map(vertex\_index\_map);}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00472}00472\ }
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00473}00473\ \ \ \ \ \ \ \ \ \ \ \ \ std::map<BoostVertex,\ boost::default\_color\_type>\ vertex\_color\_map;}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00474}00474\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ color\_pmap\ =\ boost::make\_assoc\_property\_map(vertex\_color\_map);}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00475}00475\ }
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00476}00476\ \ \ \ \ \ \ \ \ \ \ \ \ boost::topological\_sort(\mbox{\hyperlink{class_f_c_t_1_1_token_graph_a6d34ba4622f8e78957fbc4c77d493a64}{m\_graph}},\ std::front\_inserter(sortedVertices),}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00477}00477\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boost::vertex\_index\_map(index\_pmap).color\_map(color\_pmap));}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00478}00478\ }
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00479}00479\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<Value>\ ret;}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00480}00480\ }
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00481}00481\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ vertex\ :\ sortedVertices)\ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00482}00482\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_adb5bfa48cd56e57b4be4029eb58a4681}{m\_vertex}}.right.find(vertex);}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00483}00483\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_adb5bfa48cd56e57b4be4029eb58a4681}{m\_vertex}}.right.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00484}00484\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Token\ token\ =\ it-\/>second;}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00485}00485\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_token_graph_af49a2237bb4cf2b7e5399c3235ee1ece}{hasNode}}(token)\ \&\&\ canVisit(\mbox{\hyperlink{class_f_c_t_1_1_token_graph_a7326db59736e2649fa10a09663e04588}{m\_nodeMap}}[token].value))\ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00486}00486\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ret.push\_back(\mbox{\hyperlink{class_f_c_t_1_1_token_graph_a7326db59736e2649fa10a09663e04588}{m\_nodeMap}}[token].value);}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00487}00487\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00488}00488\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00489}00489\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00490}00490\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ret;}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00491}00491\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00492}00492\ }
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00493}00493\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00497}00497\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Visitor>}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00498}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_token_graph_d_f_s_visitor}{00498}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_token_graph_d_f_s_visitor_a377fdfdccfe29720ecb63e0a359e58c9}{TokenGraphDFSVisitor}}\ :\ \textcolor{keyword}{public}\ boost::default\_dfs\_visitor}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00499}00499\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00500}00500\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00501}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_token_graph_d_f_s_visitor_a2e9ab15293640e7863a0038beb69c812}{00501}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph}{TokenGraph}}*\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_token_graph_d_f_s_visitor_a2e9ab15293640e7863a0038beb69c812}{graph}};}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00502}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_token_graph_d_f_s_visitor_abdb142d0ef01e7b8b8d8489808165ab2}{00502}}\ \ \ \ \ \ \ \ \ \ \ \ \ Visitor\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_token_graph_d_f_s_visitor_abdb142d0ef01e7b8b8d8489808165ab2}{visitor}};}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00503}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_token_graph_d_f_s_visitor_af32377396dbfc08541fadb3c577a7462}{00503}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{mutable}\ std::set<Token>\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_token_graph_d_f_s_visitor_af32377396dbfc08541fadb3c577a7462}{visitedTokens}};}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00504}00504\ }
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00505}00505\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00506}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_token_graph_d_f_s_visitor_a377fdfdccfe29720ecb63e0a359e58c9}{00506}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_token_graph_d_f_s_visitor_a377fdfdccfe29720ecb63e0a359e58c9}{TokenGraphDFSVisitor}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph}{TokenGraph}}*\ g,\ Visitor\ v)}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00507}00507\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_token_graph_d_f_s_visitor_a2e9ab15293640e7863a0038beb69c812}{graph}}(g),\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_token_graph_d_f_s_visitor_abdb142d0ef01e7b8b8d8489808165ab2}{visitor}}(v)\ \{\}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00508}00508\ }
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00509}00509\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ VertexDescriptor,\ \textcolor{keyword}{typename}\ Graph>}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00510}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_token_graph_d_f_s_visitor_a568af70ae8b8759a978593b015db0d30}{00510}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_token_graph_d_f_s_visitor_a568af70ae8b8759a978593b015db0d30}{discover\_vertex}}(VertexDescriptor\ v,\ \textcolor{keyword}{const}\ Graph\&\ g)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00511}00511\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00512}00512\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ vertex\_token\_it\ =\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_token_graph_d_f_s_visitor_a2e9ab15293640e7863a0038beb69c812}{graph}}-\/>m\_vertex.right.find(v);}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00513}00513\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (vertex\_token\_it\ !=\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_token_graph_d_f_s_visitor_a2e9ab15293640e7863a0038beb69c812}{graph}}-\/>m\_vertex.right.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00514}00514\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Token\ token\ =\ vertex\_token\_it-\/>second;}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00515}00515\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_token_graph_d_f_s_visitor_a2e9ab15293640e7863a0038beb69c812}{graph}}-\/>hasNode(token)\ \&\&\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_token_graph_d_f_s_visitor_af32377396dbfc08541fadb3c577a7462}{visitedTokens}}.find(token)\ ==\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_token_graph_d_f_s_visitor_af32377396dbfc08541fadb3c577a7462}{visitedTokens}}.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00516}00516\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_token_graph_d_f_s_visitor_af32377396dbfc08541fadb3c577a7462}{visitedTokens}}.insert(token);}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00517}00517\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_token_graph_d_f_s_visitor_abdb142d0ef01e7b8b8d8489808165ab2}{visitor}}(\mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_token_graph_d_f_s_visitor_a2e9ab15293640e7863a0038beb69c812}{graph}}-\/>m\_nodeMap.at(token).value);}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00518}00518\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00519}00519\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00520}00520\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00521}00521\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00522}00522\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ Visitor>}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00523}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_a5830ad430e9b3aa4767b4e0b5d9687d3}{00523}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a5830ad430e9b3aa4767b4e0b5d9687d3}{visitDFSFromRoots}}(Visitor\ visitor)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00524}00524\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00525}00525\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<BoostVertex>\ rootVertices;}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00526}00526\ }
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00527}00527\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ [v\_iter,\ v\_end]\ =\ boost::vertices(\mbox{\hyperlink{class_f_c_t_1_1_token_graph_a6d34ba4622f8e78957fbc4c77d493a64}{m\_graph}});\ v\_iter\ !=\ v\_end;\ ++v\_iter)\ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00528}00528\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (boost::in\_degree(*v\_iter,\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a6d34ba4622f8e78957fbc4c77d493a64}{m\_graph}})\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00529}00529\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ vertex\_token\_it\ =\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_adb5bfa48cd56e57b4be4029eb58a4681}{m\_vertex}}.right.find(*v\_iter);}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00530}00530\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (vertex\_token\_it\ !=\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_adb5bfa48cd56e57b4be4029eb58a4681}{m\_vertex}}.right.end()\ \&\&\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_af49a2237bb4cf2b7e5399c3235ee1ece}{hasNode}}(vertex\_token\_it-\/>second))\ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00531}00531\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rootVertices.push\_back(*v\_iter);}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00532}00532\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00533}00533\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00534}00534\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00535}00535\ }
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00536}00536\ \ \ \ \ \ \ \ \ \ \ \ \ std::map<BoostVertex,\ boost::default\_color\_type>\ vertex\_color\_map;}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00537}00537\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ color\_pmap\ =\ boost::make\_assoc\_property\_map(vertex\_color\_map);}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00538}00538\ }
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00539}00539\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_1_1_token_graph_d_f_s_visitor}{TokenGraphDFSVisitor<Visitor>}}\ dfs\_visitor(\textcolor{keyword}{this},\ visitor);}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00540}00540\ }
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00541}00541\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{class_f_c_t_1_1_token_graph_a364c08f0b65d2dd81dbc1ed21c7f2453}{BoostVertex}}\ root\ :\ rootVertices)\ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00542}00542\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boost::depth\_first\_visit(\mbox{\hyperlink{class_f_c_t_1_1_token_graph_a6d34ba4622f8e78957fbc4c77d493a64}{m\_graph}},\ root,}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00543}00543\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boost::visitor(dfs\_visitor).color\_map(color\_pmap));}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00544}00544\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00545}00545\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00546}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_a8961c35016bfec7c673fed8a94d59f23}{00546}}\ \ \ \ \ \ \ \ \ std::vector<Token>\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a8961c35016bfec7c673fed8a94d59f23}{getActivePredecessors}}(\textcolor{keyword}{const}\ Token\&\ token)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00547}00547\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00548}00548\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<Token>\ activePredecessors;}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00549}00549\ }
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00550}00550\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ token\_it\ =\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_adb5bfa48cd56e57b4be4029eb58a4681}{m\_vertex}}.left.find(token);}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00551}00551\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (token\_it\ ==\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_adb5bfa48cd56e57b4be4029eb58a4681}{m\_vertex}}.left.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00552}00552\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ activePredecessors;}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00553}00553\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00554}00554\ }
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00555}00555\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a364c08f0b65d2dd81dbc1ed21c7f2453}{BoostVertex}}\ vertex\ =\ token\_it-\/>second;}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00556}00556\ }
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00557}00557\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ [in\_edge\_iter,\ in\_edge\_end]\ =\ boost::in\_edges(vertex,\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a6d34ba4622f8e78957fbc4c77d493a64}{m\_graph}});}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00558}00558\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ edge\_iter\ =\ in\_edge\_iter;\ edge\_iter\ !=\ in\_edge\_end;\ ++edge\_iter)\ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00559}00559\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a364c08f0b65d2dd81dbc1ed21c7f2453}{BoostVertex}}\ source\_vertex\ =\ boost::source(*edge\_iter,\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a6d34ba4622f8e78957fbc4c77d493a64}{m\_graph}});}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00560}00560\ }
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00561}00561\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ vertex\_token\_it\ =\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_adb5bfa48cd56e57b4be4029eb58a4681}{m\_vertex}}.right.find(source\_vertex);}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00562}00562\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (vertex\_token\_it\ !=\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_adb5bfa48cd56e57b4be4029eb58a4681}{m\_vertex}}.right.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00563}00563\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Token\ predecessor\_token\ =\ vertex\_token\_it-\/>second;}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00564}00564\ }
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00565}00565\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_token_graph_af49a2237bb4cf2b7e5399c3235ee1ece}{hasNode}}(predecessor\_token))\ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00566}00566\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ activePredecessors.push\_back(predecessor\_token);}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00567}00567\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00568}00568\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ subPredecessors\ =\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a8961c35016bfec7c673fed8a94d59f23}{getActivePredecessors}}(predecessor\_token);}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00569}00569\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ activePredecessors.insert(activePredecessors.end(),\ subPredecessors.begin(),\ subPredecessors.end());}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00570}00570\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00571}00571\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00572}00572\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00573}00573\ }
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00574}00574\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ activePredecessors;}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00575}00575\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00576}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_ae2ee2ca201f0b8e9433909db40d05973}{00576}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<Token>\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_ae2ee2ca201f0b8e9433909db40d05973}{getActiveSuccessors}}(\textcolor{keyword}{const}\ Token\&\ token)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00577}00577\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00578}00578\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<Token>\ activeSuccessors;}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00579}00579\ }
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00580}00580\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ token\_it\ =\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_adb5bfa48cd56e57b4be4029eb58a4681}{m\_vertex}}.left.find(token);}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00581}00581\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (token\_it\ ==\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_adb5bfa48cd56e57b4be4029eb58a4681}{m\_vertex}}.left.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00582}00582\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ activeSuccessors;}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00583}00583\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00584}00584\ }
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00585}00585\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a364c08f0b65d2dd81dbc1ed21c7f2453}{BoostVertex}}\ vertex\ =\ token\_it-\/>second;}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00586}00586\ }
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00587}00587\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ [out\_edge\_iter,\ out\_edge\_end]\ =\ boost::out\_edges(vertex,\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a6d34ba4622f8e78957fbc4c77d493a64}{m\_graph}});}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00588}00588\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ edge\_iter\ =\ out\_edge\_iter;\ edge\_iter\ !=\ out\_edge\_end;\ ++edge\_iter)\ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00589}00589\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a364c08f0b65d2dd81dbc1ed21c7f2453}{BoostVertex}}\ target\_vertex\ =\ boost::target(*edge\_iter,\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a6d34ba4622f8e78957fbc4c77d493a64}{m\_graph}});}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00590}00590\ }
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00591}00591\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ vertex\_token\_it\ =\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_adb5bfa48cd56e57b4be4029eb58a4681}{m\_vertex}}.right.find(target\_vertex);}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00592}00592\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (vertex\_token\_it\ !=\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_adb5bfa48cd56e57b4be4029eb58a4681}{m\_vertex}}.right.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00593}00593\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Token\ successor\_token\ =\ vertex\_token\_it-\/>second;}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00594}00594\ }
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00595}00595\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_token_graph_af49a2237bb4cf2b7e5399c3235ee1ece}{hasNode}}(successor\_token))\ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00596}00596\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ activeSuccessors.push\_back(successor\_token);}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00597}00597\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00598}00598\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ subSuccessors\ =\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_ae2ee2ca201f0b8e9433909db40d05973}{getActiveSuccessors}}(successor\_token);}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00599}00599\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ activeSuccessors.insert(activeSuccessors.end(),\ subSuccessors.begin(),\ subSuccessors.end());}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00600}00600\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00601}00601\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00602}00602\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00603}00603\ }
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00604}00604\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ activeSuccessors;}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00605}00605\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00606}00606\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00607}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_a6d34ba4622f8e78957fbc4c77d493a64}{00607}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_adc95b88b4fafd0b1c715e285f87f0145}{TokenGraphSavedBoostGraph}}\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a6d34ba4622f8e78957fbc4c77d493a64}{m\_graph}};}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00608}00608\ \ \ \ \ \ \ \ \ boost::bimap<}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00609}00609\ \ \ \ \ \ \ \ \ \ \ \ \ boost::bimaps::unordered\_set\_of<Token>,}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00610}00610\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a364c08f0b65d2dd81dbc1ed21c7f2453}{BoostVertex}}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00611}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_adb5bfa48cd56e57b4be4029eb58a4681}{00611}}\ \ \ \ \ \ \ \ \ >\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_adb5bfa48cd56e57b4be4029eb58a4681}{m\_vertex}};}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00612}00612\ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::unordered\_map<Token,BoostVertex>\ m\_vertex;}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00613}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_a7326db59736e2649fa10a09663e04588}{00613}}\ \ \ \ \ \ \ \ \ std::unordered\_map<Token,\ NodeInfo>\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a7326db59736e2649fa10a09663e04588}{m\_nodeMap}};}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00614}\mbox{\hyperlink{class_f_c_t_1_1_token_graph_a48da549221a754b501a24610d0a93e13}{00614}}\ \ \ \ \ \ \ \ \ std::vector<Value>\ \mbox{\hyperlink{class_f_c_t_1_1_token_graph_a48da549221a754b501a24610d0a93e13}{m\_order}};}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00615}00615\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00616}00616\ \}}
+\DoxyCodeLine{\Hypertarget{_token_graph_8h_source_l00617}00617\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//TOKENGRAPH\_H}}
 
 \end{DoxyCode}

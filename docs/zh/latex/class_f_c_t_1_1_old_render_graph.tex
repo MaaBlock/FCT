@@ -15,8 +15,7 @@
 \end{figure}
 
 
-FCT\+::Old\+Render\+Graph 的协作图\+:
-\nopagebreak
+FCT\+::Old\+Render\+Graph 的协作图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -43,7 +42,7 @@ struct \mbox{\hyperlink{struct_f_c_t_1_1_old_render_graph_1_1_window_image_resou
 \item 
 \mbox{\hyperlink{class_f_c_t_1_1_old_render_graph_ab598f1b242d4accae890d189898b2032}{Old\+Render\+Graph}} (\mbox{\hyperlink{class_f_c_t_1_1_context}{Context}} \texorpdfstring{$\ast$}{*}ctx)
 \item 
-void \mbox{\hyperlink{class_f_c_t_1_1_old_render_graph_a8cf9f4b4534e94557f66589d7ddac933}{add\+Pass}} (const std\+::string \&name, \mbox{\hyperlink{class_f_c_t_1_1_pass}{Pass}} \texorpdfstring{$\ast$}{*}pass)
+void \mbox{\hyperlink{class_f_c_t_1_1_old_render_graph_a13cfd8276f10ed265389fcc693e860ea}{add\+Pass}} (const std\+::string \&name, \mbox{\hyperlink{class_f_c_t_1_1_old_pass}{Old\+Pass}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{namespace_f_c_t_adfd269e2894c507f2ea4d65f7d0337cca1a1dc91c907325c69271ddf0c944bc72}{pass}})
 \item 
 void \mbox{\hyperlink{class_f_c_t_1_1_old_render_graph_a278ba21d6ca7fde15a01d9e36a645a70}{add\+Window\+Resource}} (\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}wnd)
 \item 
@@ -51,11 +50,11 @@ void \mbox{\hyperlink{class_f_c_t_1_1_old_render_graph_abf58b578a11ef1d757a4995d
 \item 
 void \mbox{\hyperlink{class_f_c_t_1_1_old_render_graph_aa7aaa564b1e3057b2eef9ea60f3575d8}{add\+Pass\+Denpendency}} (const std\+::string \&from, const std\+::string \&to)
 \item 
-void \mbox{\hyperlink{class_f_c_t_1_1_old_render_graph_a18892f0fbc912a4d44845b40ca87f51e}{bind\+Output\+Image}} (const std\+::string \&name, std\+::string image, uint8\+\_\+t slot=0)
+void \mbox{\hyperlink{class_f_c_t_1_1_old_render_graph_a18892f0fbc912a4d44845b40ca87f51e}{bind\+Output\+Image}} (const std\+::string \&name, std\+::string \mbox{\hyperlink{namespace_f_c_t_adfd269e2894c507f2ea4d65f7d0337cca78805a221a988e79ef3f42d7c5bfd418}{image}}, uint8\+\_\+t slot=0)
 \item 
-void \mbox{\hyperlink{class_f_c_t_1_1_old_render_graph_a142a07ffc4f537a0200ed8a0c44d7016}{bind\+Texture\+Image}} (std\+::string name, std\+::string image, uint32\+\_\+t width=0, uint32\+\_\+t height=0, \mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182}{Samples}} samples=\mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a1f5d8e7e094ddab8199dc672aaba3e23}{Samples\+::sample\+\_\+undefined}})
+void \mbox{\hyperlink{class_f_c_t_1_1_old_render_graph_a142a07ffc4f537a0200ed8a0c44d7016}{bind\+Texture\+Image}} (std\+::string name, std\+::string \mbox{\hyperlink{namespace_f_c_t_adfd269e2894c507f2ea4d65f7d0337cca78805a221a988e79ef3f42d7c5bfd418}{image}}, uint32\+\_\+t width=0, uint32\+\_\+t height=0, \mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182}{Samples}} samples=\mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a1f5d8e7e094ddab8199dc672aaba3e23}{Samples\+::sample\+\_\+undefined}})
 \item 
-void \mbox{\hyperlink{class_f_c_t_1_1_old_render_graph_a9def19fb65391325e1f4771045231a0e}{bind\+Depth\+Stencil}} (const char \texorpdfstring{$\ast$}{*}name, std\+::string image)
+void \mbox{\hyperlink{class_f_c_t_1_1_old_render_graph_a9def19fb65391325e1f4771045231a0e}{bind\+Depth\+Stencil}} (const char \texorpdfstring{$\ast$}{*}name, std\+::string \mbox{\hyperlink{namespace_f_c_t_adfd269e2894c507f2ea4d65f7d0337cca78805a221a988e79ef3f42d7c5bfd418}{image}})
 \item 
 void \mbox{\hyperlink{class_f_c_t_1_1_old_render_graph_a856746b0a124d6069e7cda6b4c6baf8d}{bind\+Output}} (const char \texorpdfstring{$\ast$}{*}name, \mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}wnd, uint8\+\_\+t slot=0)
 \item 
@@ -87,7 +86,7 @@ void \mbox{\hyperlink{class_f_c_t_1_1_old_render_graph_aeba324cd304a4483896e5cbd
 \item 
 std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_f_c_t_1_1_old_render_graph_a3af931ca6902077d59e99879400bea1d}{get\+Pass\+Target\+To\+Wnd}} (\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}wnd)
 \item 
-\mbox{\hyperlink{class_f_c_t_1_1_pass}{Pass}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_old_render_graph_a7e0d71f8550df08f6baa8e9b2a08ebe2}{get\+Pass\+By\+Name}} (const std\+::string \&name)
+\mbox{\hyperlink{class_f_c_t_1_1_old_pass}{Old\+Pass}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_old_render_graph_abe94e0696c29a6264070c0942b26aee6}{get\+Pass\+By\+Name}} (const std\+::string \&name)
 \item 
 std\+::string \mbox{\hyperlink{class_f_c_t_1_1_old_render_graph_a2fab86e82dd257157535198654da5f6c}{format\+To\+String}} (\mbox{\hyperlink{namespace_f_c_t_a0741721dca246274b1b72d07249443e4}{Format}} format)
 \item 
@@ -176,23 +175,16 @@ FCT\+::\+Old\+Render\+Graph\+::\+Old\+Render\+Graph (\begin{DoxyParamCaption}\it
 \label{doc-func-members}
 \Hypertarget{class_f_c_t_1_1_old_render_graph_doc-func-members}
 \doxysubsection{成员函数说明}
-\Hypertarget{class_f_c_t_1_1_old_render_graph_a8cf9f4b4534e94557f66589d7ddac933}\index{FCT::OldRenderGraph@{FCT::OldRenderGraph}!addPass@{addPass}}
+\Hypertarget{class_f_c_t_1_1_old_render_graph_a13cfd8276f10ed265389fcc693e860ea}\index{FCT::OldRenderGraph@{FCT::OldRenderGraph}!addPass@{addPass}}
 \index{addPass@{addPass}!FCT::OldRenderGraph@{FCT::OldRenderGraph}}
 \doxysubsubsection{\texorpdfstring{addPass()}{addPass()}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_old_render_graph_a8cf9f4b4534e94557f66589d7ddac933} 
-void FCT\+::\+Old\+Render\+Graph\+::add\+Pass (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{\mbox{\hyperlink{class_f_c_t_1_1_pass}{Pass}} \texorpdfstring{$\ast$}{*}}]{pass}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_old_render_graph_a13cfd8276f10ed265389fcc693e860ea} 
+void FCT\+::\+Old\+Render\+Graph\+::add\+Pass (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{\mbox{\hyperlink{class_f_c_t_1_1_old_pass}{Old\+Pass}} \texorpdfstring{$\ast$}{*}}]{pass}{}\end{DoxyParamCaption})}
 
 
 
 在文件 \mbox{\hyperlink{_old_render_graph_8cpp_source}{Old\+Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_old_render_graph_8cpp_source_l00009}{9}} 行定义.
 
-函数调用图\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_f_c_t_1_1_old_render_graph_a8cf9f4b4534e94557f66589d7ddac933_cgraph}
-\end{center}
-\end{figure}
 \Hypertarget{class_f_c_t_1_1_old_render_graph_aa7aaa564b1e3057b2eef9ea60f3575d8}\index{FCT::OldRenderGraph@{FCT::OldRenderGraph}!addPassDenpendency@{addPassDenpendency}}
 \index{addPassDenpendency@{addPassDenpendency}!FCT::OldRenderGraph@{FCT::OldRenderGraph}}
 \doxysubsubsection{\texorpdfstring{addPassDenpendency()}{addPassDenpendency()}}
@@ -220,8 +212,7 @@ void FCT\+::\+Ref\+Count\+::add\+Ref (\begin{DoxyParamCaption}{}{}\end{DoxyParam
 
 在文件 \mbox{\hyperlink{_ref_count_8h_source}{Ref\+Count.\+h}} 第 \mbox{\hyperlink{_ref_count_8h_source_l00010}{10}} 行定义.
 
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -501,11 +492,11 @@ void FCT\+::\+Old\+Render\+Graph\+::generate\+Image\+Resource (\begin{DoxyParamC
 \includegraphics[width=350pt]{class_f_c_t_1_1_old_render_graph_af139f52664ebb46c739f89ba80a253b3_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{class_f_c_t_1_1_old_render_graph_a7e0d71f8550df08f6baa8e9b2a08ebe2}\index{FCT::OldRenderGraph@{FCT::OldRenderGraph}!getPassByName@{getPassByName}}
+\Hypertarget{class_f_c_t_1_1_old_render_graph_abe94e0696c29a6264070c0942b26aee6}\index{FCT::OldRenderGraph@{FCT::OldRenderGraph}!getPassByName@{getPassByName}}
 \index{getPassByName@{getPassByName}!FCT::OldRenderGraph@{FCT::OldRenderGraph}}
 \doxysubsubsection{\texorpdfstring{getPassByName()}{getPassByName()}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_old_render_graph_a7e0d71f8550df08f6baa8e9b2a08ebe2} 
-\mbox{\hyperlink{class_f_c_t_1_1_pass}{Pass}} \texorpdfstring{$\ast$}{*} FCT\+::\+Old\+Render\+Graph\+::get\+Pass\+By\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_old_render_graph_abe94e0696c29a6264070c0942b26aee6} 
+\mbox{\hyperlink{class_f_c_t_1_1_old_pass}{Old\+Pass}} \texorpdfstring{$\ast$}{*} FCT\+::\+Old\+Render\+Graph\+::get\+Pass\+By\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -653,13 +644,6 @@ void FCT\+::\+Old\+Render\+Graph\+::submit (\begin{DoxyParamCaption}\item[{\mbox
 
 在文件 \mbox{\hyperlink{_old_render_graph_8cpp_source}{Old\+Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_old_render_graph_8cpp_source_l00070}{70}} 行定义.
 
-函数调用图\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=328pt]{class_f_c_t_1_1_old_render_graph_abf58b578a11ef1d757a4995d0ddd3a2e_cgraph}
-\end{center}
-\end{figure}
 \Hypertarget{class_f_c_t_1_1_old_render_graph_ab5722e9a13e0fc960a2619e346a1b8b8}\index{FCT::OldRenderGraph@{FCT::OldRenderGraph}!swapJobQueue@{swapJobQueue}}
 \index{swapJobQueue@{swapJobQueue}!FCT::OldRenderGraph@{FCT::OldRenderGraph}}
 \doxysubsubsection{\texorpdfstring{swapJobQueue()}{swapJobQueue()}}

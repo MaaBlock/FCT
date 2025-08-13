@@ -6,8 +6,7 @@
 
 
 
-类 FCT\+::VK\+\_\+\+Context 继承关系图\+:
-\nopagebreak
+类 FCT\+::VK\+\_\+\+Context 继承关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -16,19 +15,13 @@
 \end{figure}
 
 
-FCT\+::VK\+\_\+\+Context 的协作图\+:
-\nopagebreak
+FCT\+::VK\+\_\+\+Context 的协作图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[height=550pt]{class_f_c_t_1_1_v_k___context__coll__graph}
 \end{center}
 \end{figure}
-\doxysubsubsection*{Public 类型}
-\begin{DoxyCompactItemize}
-\item 
-using \mbox{\hyperlink{class_f_c_t_1_1_context_a3e4665afe2d6148769a19bb997a8c8da}{begin\+Frame\+Ticker}} = std\+::function$<$void()$>$
-\end{DoxyCompactItemize}
 \doxysubsubsection*{Public 成员函数}
 \begin{DoxyCompactItemize}
 \item 
@@ -40,7 +33,7 @@ using \mbox{\hyperlink{class_f_c_t_1_1_context_a3e4665afe2d6148769a19bb997a8c8da
 \item 
 uint32\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_a1bf72f69947ffd460eaa26c07d51bff9}{find\+Memory\+Type}} (uint32\+\_\+t type\+Filter, vk\+::\+Memory\+Property\+Flags properties)
 \item 
-void \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_a9171eabffff1b94dadd24467623fe442}{create}} ()
+void \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_a1d71e1811838e0f1215734f2256bcbce}{create\+Platform}} ()
 \item 
 auto \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_afc7bb90fee91dc8aec3b2f3f18ec6693}{device}} ()
 \item 
@@ -56,7 +49,7 @@ void \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_a7f244f76223bfb050dc550efa64
 \item 
 void \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_afb26ca9ab344135c07590cf5d485d94d}{submit\+Command\+Buffer}} ()
 \item 
-void \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_a8ee2816d720658cca4b90b0bfad1840d}{clear}} (\mbox{\hyperlink{struct_f_c_t_1_1_vec4}{Vec4}} \mbox{\hyperlink{namespace_f_c_t_a47bc49ca12511f9acae146c133700f5fa70dda5dfb8053dc6d1c492574bce9bfd}{color}}, float \mbox{\hyperlink{namespace_f_c_t_a47bc49ca12511f9acae146c133700f5fa12a055bf01a31369fe81ac35d85c7bc1}{depth}}=1.\+0, float \mbox{\hyperlink{namespace_f_c_t_a47bc49ca12511f9acae146c133700f5fa667f218c5ed2c9cf25734500472e7c4a}{stencil}}=0.\+0)
+void \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_a8ee2816d720658cca4b90b0bfad1840d}{clear}} (\mbox{\hyperlink{struct_f_c_t_1_1_vec4}{Vec4}} \mbox{\hyperlink{namespace_f_c_t_a5d14bda42e5f9f565abd0b018262b564a70dda5dfb8053dc6d1c492574bce9bfd}{color}}, float \mbox{\hyperlink{namespace_f_c_t_a5d14bda42e5f9f565abd0b018262b564a12a055bf01a31369fe81ac35d85c7bc1}{depth}}=1.\+0, float \mbox{\hyperlink{namespace_f_c_t_a5d14bda42e5f9f565abd0b018262b564a667f218c5ed2c9cf25734500472e7c4a}{stencil}}=0.\+0)
 \item 
 uint32\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_a389acbb8f9cd7c1922fb86bc078aa4fe}{get\+Graphics\+Queue\+Family}} () const
 \item 
@@ -76,9 +69,11 @@ void \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_a6e11a276d21ef62c3917fd9dba5
 \item 
 void \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_ab12afb4949df6e03b57d5c0d70e9f2d3}{transfer\+Data\+To\+Image}} (vk\+::\+Image dst\+Image, uint32\+\_\+t width, uint32\+\_\+t height, vk\+::\+Format format, const void \texorpdfstring{$\ast$}{*}data, size\+\_\+t data\+Size, vk\+::\+Fence \texorpdfstring{$\ast$}{*}out\+Fence=nullptr, std\+::function$<$ void()$>$ \texorpdfstring{$\ast$}{*}clean\+Up\+Callback=nullptr)
 \item 
-void \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_a60302b67c23a40ae9c2f7e55fdae5627}{transfer\+Data\+To\+Image}} (vk\+::\+Image dst\+Image, uint32\+\_\+t width, uint32\+\_\+t height, uint32\+\_\+t \mbox{\hyperlink{namespace_f_c_t_a47bc49ca12511f9acae146c133700f5fa12a055bf01a31369fe81ac35d85c7bc1}{depth}}, vk\+::\+Format format, uint32\+\_\+t mip\+Levels, uint32\+\_\+t array\+Layers, vk\+::\+Image\+Aspect\+Flags aspect\+Mask, const void \texorpdfstring{$\ast$}{*}data, size\+\_\+t data\+Size, vk\+::\+Fence \texorpdfstring{$\ast$}{*}out\+Fence=nullptr, std\+::function$<$ void()$>$ \texorpdfstring{$\ast$}{*}clean\+Up\+Callback=nullptr)
+void \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_a60302b67c23a40ae9c2f7e55fdae5627}{transfer\+Data\+To\+Image}} (vk\+::\+Image dst\+Image, uint32\+\_\+t width, uint32\+\_\+t height, uint32\+\_\+t \mbox{\hyperlink{namespace_f_c_t_a5d14bda42e5f9f565abd0b018262b564a12a055bf01a31369fe81ac35d85c7bc1}{depth}}, vk\+::\+Format format, uint32\+\_\+t mip\+Levels, uint32\+\_\+t array\+Layers, vk\+::\+Image\+Aspect\+Flags aspect\+Mask, const void \texorpdfstring{$\ast$}{*}data, size\+\_\+t data\+Size, vk\+::\+Fence \texorpdfstring{$\ast$}{*}out\+Fence=nullptr, std\+::function$<$ void()$>$ \texorpdfstring{$\ast$}{*}clean\+Up\+Callback=nullptr)
 \item 
 {\footnotesize template$<$typename T$>$ }\\T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_a4a2f3241a3ce158e6616d28335d3f8d9}{create\+Resource}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_context_aca428358dd6341005465817b2a17f1f4}{create}} (Context\+Create\+Flags flag=\mbox{\hyperlink{namespace_f_c_t_a0f42c8db4cad8b73d402562d575b1a1baf48e7c18fc823c3bb7afa0dadd597603}{Context\+Create\+Flag\+::default\+Config}})
 \item 
 {\footnotesize template$<$typename T$>$ }\\void \mbox{\hyperlink{class_f_c_t_1_1_context_acf52c4b63240d4b3fbfa15b6c76cbf6a}{add\+Module}} ()
 \item 
@@ -93,10 +88,6 @@ void \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_a60302b67c23a40ae9c2f7e55fda
 auto \& \mbox{\hyperlink{class_f_c_t_1_1_context_a66d1da4b7d6f4fb370fc581c9c872689}{sync\+Tickers}} ()
 \item 
 void \mbox{\hyperlink{class_f_c_t_1_1_context_a355396139ecceed7a06651842fa2e4c0}{flush}} ()
-\item 
-void \mbox{\hyperlink{class_f_c_t_1_1_context_a9055c3d8311647def65c4a9263f107d1}{begin\+Frame\+Tick}} ()
-\item 
-void \mbox{\hyperlink{class_f_c_t_1_1_context_a56287dc37f625bb3e6ce0f358aaf88b7}{add\+Begin\+Frame\+Ticker}} (const \mbox{\hyperlink{class_f_c_t_1_1_context_a3e4665afe2d6148769a19bb997a8c8da}{begin\+Frame\+Ticker}} \&ticker)
 \item 
 virtual void \mbox{\hyperlink{class_f_c_t_1_1_context_ac1edb04d29eac81265919c82eb22c229}{swap\+Queue}} ()
 \item 
@@ -160,7 +151,7 @@ uint32\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_context_a4504a7c6fffee974dac31811
 \item 
 void \mbox{\hyperlink{class_f_c_t_1_1_context_a540b8367d0fde773672f949c5fa4e208}{set\+Current\+Graph}} (\mbox{\hyperlink{class_f_c_t_1_1_old_render_graph}{Old\+Render\+Graph}} \texorpdfstring{$\ast$}{*}graph)
 \item 
-void \mbox{\hyperlink{class_f_c_t_1_1_context_a2c0b83b16518d18c2031faae140808da}{add\+Pass}} (const std\+::string \&name, \mbox{\hyperlink{class_f_c_t_1_1_pass}{Pass}} \texorpdfstring{$\ast$}{*}pass)
+void \mbox{\hyperlink{class_f_c_t_1_1_context_aede19ad2c123c7f164784333ee892831}{add\+Pass}} (const std\+::string \&name, \mbox{\hyperlink{class_f_c_t_1_1_old_pass}{Old\+Pass}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{namespace_f_c_t_adfd269e2894c507f2ea4d65f7d0337cca1a1dc91c907325c69271ddf0c944bc72}{pass}})
 \item 
 void \mbox{\hyperlink{class_f_c_t_1_1_context_a9feca7241fe59a755ac9da9b6dde7b58}{submit}} (\mbox{\hyperlink{struct_f_c_t_1_1_job}{Job}} \texorpdfstring{$\ast$}{*}job, std\+::string name)
 \item 
@@ -168,11 +159,11 @@ void \mbox{\hyperlink{class_f_c_t_1_1_context_afb74d05d2931b29f4a05684ddb5661d8}
 \item 
 void \mbox{\hyperlink{class_f_c_t_1_1_context_a74710a923fb4868c24138bf947d88bf5}{add\+Pass\+Denpendency}} (const std\+::string \&from, const std\+::string \&to)
 \item 
-void \mbox{\hyperlink{class_f_c_t_1_1_context_a06339c0255fec76082e5f16aefc97040}{bind\+Output\+Image}} (const std\+::string \&name, std\+::string image, uint8\+\_\+t slot=0)
+void \mbox{\hyperlink{class_f_c_t_1_1_context_a06339c0255fec76082e5f16aefc97040}{bind\+Output\+Image}} (const std\+::string \&name, std\+::string \mbox{\hyperlink{namespace_f_c_t_adfd269e2894c507f2ea4d65f7d0337cca78805a221a988e79ef3f42d7c5bfd418}{image}}, uint8\+\_\+t slot=0)
 \item 
-void \mbox{\hyperlink{class_f_c_t_1_1_context_a94129a46f922769a7ea271911eba1865}{bind\+Texture\+Image}} (std\+::string name, std\+::string image, uint32\+\_\+t width=0, uint32\+\_\+t height=0, \mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182}{Samples}} samples=\mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a1f5d8e7e094ddab8199dc672aaba3e23}{Samples\+::sample\+\_\+undefined}})
+void \mbox{\hyperlink{class_f_c_t_1_1_context_a94129a46f922769a7ea271911eba1865}{bind\+Texture\+Image}} (std\+::string name, std\+::string \mbox{\hyperlink{namespace_f_c_t_adfd269e2894c507f2ea4d65f7d0337cca78805a221a988e79ef3f42d7c5bfd418}{image}}, uint32\+\_\+t width=0, uint32\+\_\+t height=0, \mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182}{Samples}} samples=\mbox{\hyperlink{namespace_f_c_t_a8cb0c505b8e8c6a531e659c7942eb182a1f5d8e7e094ddab8199dc672aaba3e23}{Samples\+::sample\+\_\+undefined}})
 \item 
-void \mbox{\hyperlink{class_f_c_t_1_1_context_aa7fd8323e50c4d202c9a50b102dd23c2}{bind\+Depth\+Stencil}} (const char \texorpdfstring{$\ast$}{*}name, std\+::string image)
+void \mbox{\hyperlink{class_f_c_t_1_1_context_aa7fd8323e50c4d202c9a50b102dd23c2}{bind\+Depth\+Stencil}} (const char \texorpdfstring{$\ast$}{*}name, std\+::string \mbox{\hyperlink{namespace_f_c_t_adfd269e2894c507f2ea4d65f7d0337cca78805a221a988e79ef3f42d7c5bfd418}{image}})
 \item 
 void \mbox{\hyperlink{class_f_c_t_1_1_context_a9b5d0e563de01c7a495c1380bb6e6e2b}{bind\+Output}} (const char \texorpdfstring{$\ast$}{*}name, \mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}wnd, uint8\+\_\+t slot=0)
 \item 
@@ -180,7 +171,7 @@ void \mbox{\hyperlink{class_f_c_t_1_1_context_af13e72a95c7f89b191875fc2606a26f8}
 \item 
 void \mbox{\hyperlink{class_f_c_t_1_1_context_ae4f518c9281a700abb5a5ecf7ba20413}{excute}} ()
 \item 
-\mbox{\hyperlink{class_f_c_t_1_1_pass}{Pass}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_af301bb0cbec7b6bb310b8ab6bd3afab7}{find\+Pass}} (const std\+::string \&name)
+\mbox{\hyperlink{class_f_c_t_1_1_old_pass}{Old\+Pass}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_a1bf88a76fb7445bcf7fb4338cd223a51}{find\+Pass}} (const std\+::string \&name)
 \item 
 void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a59c2f131121de6503df8d363b6853d45}{add\+Ref}} ()
 \item 
@@ -190,15 +181,15 @@ size\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a33146ec5804be42293651922
 \item 
 \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a474ad3a918f2e87d75ff16075e1caeec}{operator bool}} () const
 \item 
-void \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a59cef3fb278dbd26a9bfdcd81407835c}{trigger}} (const Event \&event)
+void \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a1d00b7b39876287ffe06ad1c140646f7}{trigger}} (const Event \&event)
 \item 
-void \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a43cccfe74d41690355f7d97601a67bb7}{enqueue}} (Event \&\&event)
+void \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a038abe615383d3992d2bccf2273db0bd}{enqueue}} (Event \&\&event)
 \item 
 void \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a2b11fa6ab70e609902f655dd736a4cd0}{update}} ()
 \item 
 void \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_ad2331301d8b3d7b9505cfd4cc1641b24}{update\+All}} ()
 \item 
-\mbox{\hyperlink{namespace_f_c_t_a8b1c77084f003979f0fe6c4ddb7e8eb6}{Subscribe\+Id}} \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a7270900dc7047e4f81324f58002066ad}{subscribe}} (Func \&\&func)
+\mbox{\hyperlink{namespace_f_c_t_a8b1c77084f003979f0fe6c4ddb7e8eb6}{Subscribe\+Id}} \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a6eeb72a9c1dacd521fd4056727aa80bb}{subscribe}} (Func \&\&func)
 \item 
 void \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a084c953a75c413b6a2c856e4d474030b}{unsubscribe}} (\mbox{\hyperlink{namespace_f_c_t_a8b1c77084f003979f0fe6c4ddb7e8eb6}{Subscribe\+Id}} subscribe\+Id)
 \item 
@@ -223,8 +214,6 @@ virtual void \mbox{\hyperlink{class_f_c_t_1_1_ref_count_a0fea0bed50f726d3e11ddde
 \mbox{\hyperlink{class_f_c_t_1_1_render_graph}{Render\+Graph}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_context_a0d02241fc7acae01ed3a4290d08c919f}{m\+\_\+render\+Graph}}
 \item 
 boost\+::lockfree\+::queue$<$ \mbox{\hyperlink{struct_f_c_t_1_1_context_1_1_logic_task_data}{Logic\+Task\+Data}} \texorpdfstring{$\ast$}{*}, boost\+::lockfree\+::capacity$<$ 1024 $>$ $>$ \mbox{\hyperlink{class_f_c_t_1_1_context_afb417ec1d038fde6232213b19dfded5a}{m\+\_\+logic\+Task}}
-\item 
-std\+::vector$<$ \mbox{\hyperlink{class_f_c_t_1_1_context_a3e4665afe2d6148769a19bb997a8c8da}{begin\+Frame\+Ticker}} $>$ \mbox{\hyperlink{class_f_c_t_1_1_context_a2048188b5503fbdbd83b68402e21d204}{m\+\_\+begin\+Frame\+Ticker}}
 \item 
 \mbox{\hyperlink{class_f_c_t_1_1_token_graph}{Token\+Graph}}$<$ std\+::string, \mbox{\hyperlink{namespace_f_c_t_ab1ea6811dd963f80ea7b7b1b6aec0d3c}{Submit\+Ticker}} $>$ \mbox{\hyperlink{class_f_c_t_1_1_context_a9f3723358760e931498769cdad4e6820}{m\+\_\+submit\+Tickers}}
 \item 
@@ -303,7 +292,7 @@ vk\+::\+Queue \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_aa31955989323b2d0f1
 \item 
 vk\+::\+Command\+Pool \mbox{\hyperlink{class_f_c_t_1_1_v_k___context_afc9d438b522486a57bd3753aacaea40c}{m\+\_\+transfer\+Command\+Pool}}
 \item 
-std\+::unordered\+\_\+map$<$ entt\+::id\+\_\+type, std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{namespace_f_c_t_a8b1c77084f003979f0fe6c4ddb7e8eb6}{Subscribe\+Id}}, std\+::unique\+\_\+ptr$<$ IEvent\+Handler $>$ $>$ $>$ \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a22e34dffd042442de7489d9041593647}{m\+\_\+handlers}}
+std\+::conditional\+\_\+t$<$ \mbox{\hyperlink{struct_f_c_t_1_1_event_system_config_1_1_trigger_only_ae2391cd921ad84545419019ede084564}{Event\+System\+Config\+::\+Trigger\+Only\+::\+Event\+As\+Data}}, std\+::unordered\+\_\+map$<$ entt\+::id\+\_\+type, std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{namespace_f_c_t_a8b1c77084f003979f0fe6c4ddb7e8eb6}{Subscribe\+Id}}, std\+::unique\+\_\+ptr$<$ IEvent\+Handler $>$ $>$ $>$, std\+::unordered\+\_\+map$<$ entt\+::id\+\_\+type, std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{namespace_f_c_t_a8b1c77084f003979f0fe6c4ddb7e8eb6}{Subscribe\+Id}}, std\+::unique\+\_\+ptr$<$ IEvent\+Identifier\+Handler $>$ $>$ $>$ $>$ \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_acab222a6a3fc80b9d6e1fec3d67afd34}{m\+\_\+handlers}}
 \item 
 std\+::conditional\+\_\+t$<$ \mbox{\hyperlink{struct_f_c_t_1_1_event_system_config_1_1_trigger_only_a3984fd09f2bff8af77fdd4deba82cc90}{Event\+System\+Config\+::\+Trigger\+Only\+::\+Enable\+Queue}}, std\+::unordered\+\_\+map$<$ entt\+::id\+\_\+type, std\+::vector$<$ std\+::function$<$ void()$>$ $>$ $>$, std\+::monostate $>$ \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_ac1a6fdf7719000f53dff74e887528a6f}{m\+\_\+event\+Queue}}
 \item 
@@ -315,21 +304,6 @@ std\+::conditional\+\_\+t$<$ \mbox{\hyperlink{struct_f_c_t_1_1_event_system_conf
 
 
 在文件 \mbox{\hyperlink{_v_k___context_8h_source}{VK\+\_\+\+Context.\+h}} 第 \mbox{\hyperlink{_v_k___context_8h_source_l00011}{11}} 行定义.
-
-
-
-\label{doc-typedef-members}
-\Hypertarget{class_f_c_t_1_1_v_k___context_doc-typedef-members}
-\doxysubsection{成员类型定义说明}
-\Hypertarget{class_f_c_t_1_1_context_a3e4665afe2d6148769a19bb997a8c8da}\index{FCT::VK\_Context@{FCT::VK\_Context}!beginFrameTicker@{beginFrameTicker}}
-\index{beginFrameTicker@{beginFrameTicker}!FCT::VK\_Context@{FCT::VK\_Context}}
-\doxysubsubsection{\texorpdfstring{beginFrameTicker}{beginFrameTicker}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a3e4665afe2d6148769a19bb997a8c8da} 
-using \mbox{\hyperlink{class_f_c_t_1_1_context_a3e4665afe2d6148769a19bb997a8c8da}{FCT\+::\+Context\+::begin\+Frame\+Ticker}} = std\+::function$<$void()$>$\hspace{0.3cm}{\ttfamily [inherited]}}
-
-
-
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00166}{166}} 行定义.
 
 
 
@@ -346,8 +320,7 @@ FCT\+::\+VK\+\_\+\+Context\+::\+VK\+\_\+\+Context (\begin{DoxyParamCaption}\item
 
 在文件 \mbox{\hyperlink{_v_k___context_8cpp_source}{VK\+\_\+\+Context.\+cpp}} 第 \mbox{\hyperlink{_v_k___context_8cpp_source_l00034}{34}} 行定义.
 
-函数调用图\+:
-\nopagebreak
+函数调用图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -369,16 +342,6 @@ FCT\+::\+VK\+\_\+\+Context\+::\texorpdfstring{$\sim$}{\string~}\+VK\+\_\+\+Conte
 \label{doc-func-members}
 \Hypertarget{class_f_c_t_1_1_v_k___context_doc-func-members}
 \doxysubsection{成员函数说明}
-\Hypertarget{class_f_c_t_1_1_context_a56287dc37f625bb3e6ce0f358aaf88b7}\index{FCT::VK\_Context@{FCT::VK\_Context}!addBeginFrameTicker@{addBeginFrameTicker}}
-\index{addBeginFrameTicker@{addBeginFrameTicker}!FCT::VK\_Context@{FCT::VK\_Context}}
-\doxysubsubsection{\texorpdfstring{addBeginFrameTicker()}{addBeginFrameTicker()}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a56287dc37f625bb3e6ce0f358aaf88b7} 
-void FCT\+::\+Context\+::add\+Begin\+Frame\+Ticker (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_f_c_t_1_1_context_a3e4665afe2d6148769a19bb997a8c8da}{begin\+Frame\+Ticker}} \&}]{ticker}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
-
-
-
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00176}{176}} 行定义.
-
 \Hypertarget{class_f_c_t_1_1_context_acf52c4b63240d4b3fbfa15b6c76cbf6a}\index{FCT::VK\_Context@{FCT::VK\_Context}!addModule@{addModule}}
 \index{addModule@{addModule}!FCT::VK\_Context@{FCT::VK\_Context}}
 \doxysubsubsection{\texorpdfstring{addModule()}{addModule()}}
@@ -388,17 +351,24 @@ void FCT\+::\+Context\+::add\+Module (\begin{DoxyParamCaption}{}{}\end{DoxyParam
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00374}{374}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00369}{369}} 行定义.
 
-\Hypertarget{class_f_c_t_1_1_context_a2c0b83b16518d18c2031faae140808da}\index{FCT::VK\_Context@{FCT::VK\_Context}!addPass@{addPass}}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_context_acf52c4b63240d4b3fbfa15b6c76cbf6a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_f_c_t_1_1_context_aede19ad2c123c7f164784333ee892831}\index{FCT::VK\_Context@{FCT::VK\_Context}!addPass@{addPass}}
 \index{addPass@{addPass}!FCT::VK\_Context@{FCT::VK\_Context}}
 \doxysubsubsection{\texorpdfstring{addPass()}{addPass()}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a2c0b83b16518d18c2031faae140808da} 
-void FCT\+::\+Context\+::add\+Pass (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{\mbox{\hyperlink{class_f_c_t_1_1_pass}{Pass}} \texorpdfstring{$\ast$}{*}}]{pass}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_aede19ad2c123c7f164784333ee892831} 
+void FCT\+::\+Context\+::add\+Pass (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{\mbox{\hyperlink{class_f_c_t_1_1_old_pass}{Old\+Pass}} \texorpdfstring{$\ast$}{*}}]{pass}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00323}{323}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00317}{317}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_context_a74710a923fb4868c24138bf947d88bf5}\index{FCT::VK\_Context@{FCT::VK\_Context}!addPassDenpendency@{addPassDenpendency}}
 \index{addPassDenpendency@{addPassDenpendency}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -408,7 +378,7 @@ void FCT\+::\+Context\+::add\+Pass\+Denpendency (\begin{DoxyParamCaption}\item[{
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00336}{336}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00330}{330}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_ref_count_a59c2f131121de6503df8d363b6853d45}\index{FCT::VK\_Context@{FCT::VK\_Context}!addRef@{addRef}}
 \index{addRef@{addRef}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -420,8 +390,7 @@ void FCT\+::\+Ref\+Count\+::add\+Ref (\begin{DoxyParamCaption}{}{}\end{DoxyParam
 
 在文件 \mbox{\hyperlink{_ref_count_8h_source}{Ref\+Count.\+h}} 第 \mbox{\hyperlink{_ref_count_8h_source_l00010}{10}} 行定义.
 
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -436,7 +405,7 @@ void FCT\+::\+Context\+::advance\+Logic\+Frame (\begin{DoxyParamCaption}{}{}\end
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00286}{286}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00280}{280}} 行定义.
 
 这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
@@ -453,7 +422,7 @@ void FCT\+::\+Context\+::advance\+Submit\+Frame (\begin{DoxyParamCaption}{}{}\en
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00290}{290}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00284}{284}} 行定义.
 
 这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
@@ -472,13 +441,6 @@ uint32\+\_\+t FCT\+::\+Context\+::alloc\+Base\+Command\+Buffers (\begin{DoxyPara
 
 在文件 \mbox{\hyperlink{_context_8hpp_source}{Context.\+hpp}} 第 \mbox{\hyperlink{_context_8hpp_source_l00145}{145}} 行定义.
 
-这是这个函数的调用关系图\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_f_c_t_1_1_context_a229f460b0c9e0f9f63b1e16e2f27d8af_icgraph}
-\end{center}
-\end{figure}
 \Hypertarget{class_f_c_t_1_1_v_k___context_a8dbebdd5340f76ecfa6039602e403a89}\index{FCT::VK\_Context@{FCT::VK\_Context}!beginCommandBuffer@{beginCommandBuffer}}
 \index{beginCommandBuffer@{beginCommandBuffer}!FCT::VK\_Context@{FCT::VK\_Context}}
 \doxysubsubsection{\texorpdfstring{beginCommandBuffer()}{beginCommandBuffer()}}
@@ -489,23 +451,6 @@ void FCT\+::\+VK\+\_\+\+Context\+::begin\+Command\+Buffer (\begin{DoxyParamCapti
 
 在文件 \mbox{\hyperlink{_v_k___context_8cpp_source}{VK\+\_\+\+Context.\+cpp}} 第 \mbox{\hyperlink{_v_k___context_8cpp_source_l00520}{520}} 行定义.
 
-\Hypertarget{class_f_c_t_1_1_context_a9055c3d8311647def65c4a9263f107d1}\index{FCT::VK\_Context@{FCT::VK\_Context}!beginFrameTick@{beginFrameTick}}
-\index{beginFrameTick@{beginFrameTick}!FCT::VK\_Context@{FCT::VK\_Context}}
-\doxysubsubsection{\texorpdfstring{beginFrameTick()}{beginFrameTick()}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a9055c3d8311647def65c4a9263f107d1} 
-void FCT\+::\+Context\+::begin\+Frame\+Tick (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
-
-
-
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00170}{170}} 行定义.
-
-这是这个函数的调用关系图\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_f_c_t_1_1_context_a9055c3d8311647def65c4a9263f107d1_icgraph}
-\end{center}
-\end{figure}
 \Hypertarget{class_f_c_t_1_1_v_k___context_ad5e7885fc2f821b9f477cf9fd0cabba4}\index{FCT::VK\_Context@{FCT::VK\_Context}!beginSingleTimeCommands@{beginSingleTimeCommands}}
 \index{beginSingleTimeCommands@{beginSingleTimeCommands}!FCT::VK\_Context@{FCT::VK\_Context}}
 \doxysubsubsection{\texorpdfstring{beginSingleTimeCommands()}{beginSingleTimeCommands()}}
@@ -548,7 +493,7 @@ void FCT\+::\+Context\+::bind\+Depth\+Stencil (\begin{DoxyParamCaption}\item[{co
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00348}{348}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00342}{342}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_context_a9b5d0e563de01c7a495c1380bb6e6e2b}\index{FCT::VK\_Context@{FCT::VK\_Context}!bindOutput@{bindOutput}}
 \index{bindOutput@{bindOutput}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -558,7 +503,7 @@ void FCT\+::\+Context\+::bind\+Output (\begin{DoxyParamCaption}\item[{const char
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00352}{352}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00346}{346}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_context_a06339c0255fec76082e5f16aefc97040}\index{FCT::VK\_Context@{FCT::VK\_Context}!bindOutputImage@{bindOutputImage}}
 \index{bindOutputImage@{bindOutputImage}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -568,7 +513,7 @@ void FCT\+::\+Context\+::bind\+Output\+Image (\begin{DoxyParamCaption}\item[{con
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00340}{340}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00334}{334}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_context_a94129a46f922769a7ea271911eba1865}\index{FCT::VK\_Context@{FCT::VK\_Context}!bindTextureImage@{bindTextureImage}}
 \index{bindTextureImage@{bindTextureImage}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -578,7 +523,7 @@ void FCT\+::\+Context\+::bind\+Texture\+Image (\begin{DoxyParamCaption}\item[{st
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00344}{344}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00338}{338}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_v_k___context_a8ee2816d720658cca4b90b0bfad1840d}\index{FCT::VK\_Context@{FCT::VK\_Context}!clear@{clear}}
 \index{clear@{clear}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -598,7 +543,7 @@ void FCT\+::\+Context\+::compile\+Passes (\begin{DoxyParamCaption}{}{}\end{DoxyP
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00332}{332}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00326}{326}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_ref_count_a33146ec5804be422936519224a3a7b3f}\index{FCT::VK\_Context@{FCT::VK\_Context}!count@{count}}
 \index{count@{count}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -617,20 +562,30 @@ size\+\_\+t FCT\+::\+Ref\+Count\+::count (\begin{DoxyParamCaption}{}{}\end{DoxyP
 \includegraphics[width=350pt]{class_f_c_t_1_1_ref_count_a33146ec5804be422936519224a3a7b3f_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{class_f_c_t_1_1_v_k___context_a9171eabffff1b94dadd24467623fe442}\index{FCT::VK\_Context@{FCT::VK\_Context}!create@{create}}
+\Hypertarget{class_f_c_t_1_1_context_aca428358dd6341005465817b2a17f1f4}\index{FCT::VK\_Context@{FCT::VK\_Context}!create@{create}}
 \index{create@{create}!FCT::VK\_Context@{FCT::VK\_Context}}
 \doxysubsubsection{\texorpdfstring{create()}{create()}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_v_k___context_a9171eabffff1b94dadd24467623fe442} 
-void FCT\+::\+VK\+\_\+\+Context\+::create (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_aca428358dd6341005465817b2a17f1f4} 
+void FCT\+::\+Context\+::create (\begin{DoxyParamCaption}\item[{Context\+Create\+Flags}]{flag}{ = {\ttfamily \mbox{\hyperlink{namespace_f_c_t_a0f42c8db4cad8b73d402562d575b1a1baf48e7c18fc823c3bb7afa0dadd597603}{Context\+Create\+Flag\+::default\+Config}}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inherited]}}
 
 
 
-实现了 \mbox{\hyperlink{class_f_c_t_1_1_context_a2050b198b0059f2643e7ab4169d06ebf}{FCT\+::\+Context}}.
+在文件 \mbox{\hyperlink{_context_8cpp_source}{Context.\+cpp}} 第 \mbox{\hyperlink{_context_8cpp_source_l00135}{135}} 行定义.
 
-
-
-在文件 \mbox{\hyperlink{_v_k___context_8cpp_source}{VK\+\_\+\+Context.\+cpp}} 第 \mbox{\hyperlink{_v_k___context_8cpp_source_l00499}{499}} 行定义.
-
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_context_aca428358dd6341005465817b2a17f1f4_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_context_aca428358dd6341005465817b2a17f1f4_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_v_k___context_a756824d85a9fc18ed65cce867e85196d}\index{FCT::VK\_Context@{FCT::VK\_Context}!createCommandPoolAndBuffers@{createCommandPoolAndBuffers}}
 \index{createCommandPoolAndBuffers@{createCommandPoolAndBuffers}!FCT::VK\_Context@{FCT::VK\_Context}}
 \doxysubsubsection{\texorpdfstring{createCommandPoolAndBuffers()}{createCommandPoolAndBuffers()}}
@@ -641,8 +596,7 @@ void FCT\+::\+VK\+\_\+\+Context\+::create\+Command\+Pool\+And\+Buffers (\begin{D
 
 在文件 \mbox{\hyperlink{_v_k___context_8cpp_source}{VK\+\_\+\+Context.\+cpp}} 第 \mbox{\hyperlink{_v_k___context_8cpp_source_l00176}{176}} 行定义.
 
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -674,10 +628,9 @@ void FCT\+::\+Context\+::create\+Compiler (\begin{DoxyParamCaption}{}{}\end{Doxy
 
 
 
-在文件 \mbox{\hyperlink{_context_8cpp_source}{Context.\+cpp}} 第 \mbox{\hyperlink{_context_8cpp_source_l00171}{171}} 行定义.
+在文件 \mbox{\hyperlink{_context_8cpp_source}{Context.\+cpp}} 第 \mbox{\hyperlink{_context_8cpp_source_l00145}{145}} 行定义.
 
-函数调用图\+:
-\nopagebreak
+函数调用图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -691,6 +644,20 @@ void FCT\+::\+Context\+::create\+Compiler (\begin{DoxyParamCaption}{}{}\end{Doxy
 \includegraphics[width=350pt]{class_f_c_t_1_1_context_a896b22c78ba26980de3d661a9c40033d_icgraph}
 \end{center}
 \end{figure}
+\Hypertarget{class_f_c_t_1_1_v_k___context_a1d71e1811838e0f1215734f2256bcbce}\index{FCT::VK\_Context@{FCT::VK\_Context}!createPlatform@{createPlatform}}
+\index{createPlatform@{createPlatform}!FCT::VK\_Context@{FCT::VK\_Context}}
+\doxysubsubsection{\texorpdfstring{createPlatform()}{createPlatform()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_v_k___context_a1d71e1811838e0f1215734f2256bcbce} 
+void FCT\+::\+VK\+\_\+\+Context\+::create\+Platform (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+实现了 \mbox{\hyperlink{class_f_c_t_1_1_context_aa0cc4fc490eef27bad7c0680724fe04a}{FCT\+::\+Context}}.
+
+
+
+在文件 \mbox{\hyperlink{_v_k___context_8cpp_source}{VK\+\_\+\+Context.\+cpp}} 第 \mbox{\hyperlink{_v_k___context_8cpp_source_l00499}{499}} 行定义.
+
 \Hypertarget{class_f_c_t_1_1_context_a4a2f3241a3ce158e6616d28335d3f8d9}\index{FCT::VK\_Context@{FCT::VK\_Context}!createResource@{createResource}}
 \index{createResource@{createResource}!FCT::VK\_Context@{FCT::VK\_Context}}
 \doxysubsubsection{\texorpdfstring{createResource()}{createResource()}}
@@ -700,7 +667,7 @@ T \texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::create\+Resource (\begin{DoxyPa
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00119}{119}} 行定义.
+在文件 \mbox{\hyperlink{_context_8hpp_source}{Context.\+hpp}} 第 \mbox{\hyperlink{_context_8hpp_source_l00207}{207}} 行定义.
 
 这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
@@ -765,7 +732,7 @@ uint32\+\_\+t FCT\+::\+Context\+::current\+Frame\+Index (\begin{DoxyParamCaption
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00276}{276}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00270}{270}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_context_a24680e4b67aee16f5cdcbb829929f1d0}\index{FCT::VK\_Context@{FCT::VK\_Context}!currentGraph@{currentGraph}}
 \index{currentGraph@{currentGraph}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -775,7 +742,7 @@ uint32\+\_\+t FCT\+::\+Context\+::current\+Frame\+Index (\begin{DoxyParamCaption
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00311}{311}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00305}{305}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_context_a4504a7c6fffee974dac318116a8cb00c}\index{FCT::VK\_Context@{FCT::VK\_Context}!currentLogicFrameIndex@{currentLogicFrameIndex}}
 \index{currentLogicFrameIndex@{currentLogicFrameIndex}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -785,7 +752,7 @@ uint32\+\_\+t FCT\+::\+Context\+::current\+Logic\+Frame\+Index (\begin{DoxyParam
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00298}{298}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00292}{292}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_context_abbd56d15cc27f255113384c136a0c09f}\index{FCT::VK\_Context@{FCT::VK\_Context}!currentSubmitFrameIndex@{currentSubmitFrameIndex}}
 \index{currentSubmitFrameIndex@{currentSubmitFrameIndex}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -795,7 +762,7 @@ uint32\+\_\+t FCT\+::\+Context\+::current\+Submit\+Frame\+Index (\begin{DoxyPara
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00267}{267}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00261}{261}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_context_ad65777e7264df95bb14d0e6e5d88e259}\index{FCT::VK\_Context@{FCT::VK\_Context}!defaultTick@{defaultTick}}
 \index{defaultTick@{defaultTick}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -805,7 +772,7 @@ void FCT\+::\+Context\+::default\+Tick (\begin{DoxyParamCaption}{}{}\end{DoxyPar
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00193}{193}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00187}{187}} 行定义.
 
 这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
@@ -889,15 +856,15 @@ void FCT\+::\+VK\+\_\+\+Context\+::end\+Single\+Time\+Transfer\+Commands (\begin
 \includegraphics[width=350pt]{class_f_c_t_1_1_v_k___context_a99642b9b71f878fea26c968ed997949f_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{class_f_c_t_1_1_i_event_system_a43cccfe74d41690355f7d97601a67bb7}\index{FCT::VK\_Context@{FCT::VK\_Context}!enqueue@{enqueue}}
+\Hypertarget{class_f_c_t_1_1_i_event_system_a038abe615383d3992d2bccf2273db0bd}\index{FCT::VK\_Context@{FCT::VK\_Context}!enqueue@{enqueue}}
 \index{enqueue@{enqueue}!FCT::VK\_Context@{FCT::VK\_Context}}
 \doxysubsubsection{\texorpdfstring{enqueue()}{enqueue()}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_i_event_system_a43cccfe74d41690355f7d97601a67bb7} 
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_i_event_system_a038abe615383d3992d2bccf2273db0bd} 
 void \mbox{\hyperlink{class_f_c_t_1_1_i_event_system}{FCT\+::\+IEvent\+System}}$<$ \mbox{\hyperlink{struct_f_c_t_1_1_event_system_config_1_1_trigger_only}{Event\+System\+Config\+::\+Trigger\+Only}} $>$\+::enqueue (\begin{DoxyParamCaption}\item[{Event \&\&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
 
 
 
-在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00093}{93}} 行定义.
+在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00138}{138}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_context_ae4f518c9281a700abb5a5ecf7ba20413}\index{FCT::VK\_Context@{FCT::VK\_Context}!excute@{excute}}
 \index{excute@{excute}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -907,7 +874,7 @@ void FCT\+::\+Context\+::excute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCapti
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00360}{360}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00354}{354}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_context_af13e72a95c7f89b191875fc2606a26f8}\index{FCT::VK\_Context@{FCT::VK\_Context}!excutePasses@{excutePasses}}
 \index{excutePasses@{excutePasses}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -917,15 +884,8 @@ void FCT\+::\+Context\+::excute\+Passes (\begin{DoxyParamCaption}\item[{\mbox{\h
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00356}{356}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00350}{350}} 行定义.
 
-这是这个函数的调用关系图\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_f_c_t_1_1_context_af13e72a95c7f89b191875fc2606a26f8_icgraph}
-\end{center}
-\end{figure}
 \Hypertarget{class_f_c_t_1_1_v_k___context_a1bf72f69947ffd460eaa26c07d51bff9}\index{FCT::VK\_Context@{FCT::VK\_Context}!findMemoryType@{findMemoryType}}
 \index{findMemoryType@{findMemoryType}!FCT::VK\_Context@{FCT::VK\_Context}}
 \doxysubsubsection{\texorpdfstring{findMemoryType()}{findMemoryType()}}
@@ -950,15 +910,15 @@ uint32\+\_\+t FCT\+::\+VK\+\_\+\+Context\+::find\+Memory\+Type (\begin{DoxyParam
 \includegraphics[width=350pt]{class_f_c_t_1_1_v_k___context_a1bf72f69947ffd460eaa26c07d51bff9_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{class_f_c_t_1_1_context_af301bb0cbec7b6bb310b8ab6bd3afab7}\index{FCT::VK\_Context@{FCT::VK\_Context}!findPass@{findPass}}
+\Hypertarget{class_f_c_t_1_1_context_a1bf88a76fb7445bcf7fb4338cd223a51}\index{FCT::VK\_Context@{FCT::VK\_Context}!findPass@{findPass}}
 \index{findPass@{findPass}!FCT::VK\_Context@{FCT::VK\_Context}}
 \doxysubsubsection{\texorpdfstring{findPass()}{findPass()}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_af301bb0cbec7b6bb310b8ab6bd3afab7} 
-\mbox{\hyperlink{class_f_c_t_1_1_pass}{Pass}} \texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::find\+Pass (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a1bf88a76fb7445bcf7fb4338cd223a51} 
+\mbox{\hyperlink{class_f_c_t_1_1_old_pass}{Old\+Pass}} \texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::find\+Pass (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00364}{364}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00358}{358}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_context_a355396139ecceed7a06651842fa2e4c0}\index{FCT::VK\_Context@{FCT::VK\_Context}!flush@{flush}}
 \index{flush@{flush}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -968,13 +928,13 @@ void FCT\+::\+Context\+::flush (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaptio
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00151}{151}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00159}{159}} 行定义.
 
 函数调用图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_f_c_t_1_1_context_a355396139ecceed7a06651842fa2e4c0_cgraph}
+\includegraphics[width=346pt]{class_f_c_t_1_1_context_a355396139ecceed7a06651842fa2e4c0_cgraph}
 \end{center}
 \end{figure}
 \Hypertarget{class_f_c_t_1_1_context_aebda281ffc27ef8841d7e35c7d4345b0}\index{FCT::VK\_Context@{FCT::VK\_Context}!freeCommandBuffers@{freeCommandBuffers}}
@@ -995,7 +955,7 @@ const std\+::vector$<$ \mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorp
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00226}{226}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00220}{220}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_context_afed262a94e3490f5fa2607ae90d1e26a}\index{FCT::VK\_Context@{FCT::VK\_Context}!getCmdBuf@{getCmdBuf}}
 \index{getCmdBuf@{getCmdBuf}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -1007,13 +967,6 @@ const std\+::vector$<$ \mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorp
 
 在文件 \mbox{\hyperlink{_context_8hpp_source}{Context.\+hpp}} 第 \mbox{\hyperlink{_context_8hpp_source_l00137}{137}} 行定义.
 
-这是这个函数的调用关系图\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_f_c_t_1_1_context_afed262a94e3490f5fa2607ae90d1e26a_icgraph}
-\end{center}
-\end{figure}
 \Hypertarget{class_f_c_t_1_1_context_a10e40a05886dd341038c3edfee6300a3}\index{FCT::VK\_Context@{FCT::VK\_Context}!getCompiler@{getCompiler}}
 \index{getCompiler@{getCompiler}!FCT::VK\_Context@{FCT::VK\_Context}}
 \doxysubsubsection{\texorpdfstring{getCompiler()}{getCompiler()}}
@@ -1022,7 +975,7 @@ const std\+::vector$<$ \mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorp
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00207}{207}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00201}{201}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_context_aa0ea88368be61837378cbd8a3cebd170}\index{FCT::VK\_Context@{FCT::VK\_Context}!getDescriptorPool@{getDescriptorPool}}
 \index{getDescriptorPool@{getDescriptorPool}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -1052,7 +1005,7 @@ constexpr auto \mbox{\hyperlink{class_f_c_t_1_1_i_event_system}{FCT\+::\+IEvent\
 
 
 
-在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00037}{37}} 行定义.
+在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00049}{49}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_context_a4fddfb4fc06ff56cecee12d1eeb6d4a4}\index{FCT::VK\_Context@{FCT::VK\_Context}!getGenerator@{getGenerator}}
 \index{getGenerator@{getGenerator}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -1062,7 +1015,7 @@ constexpr auto \mbox{\hyperlink{class_f_c_t_1_1_i_event_system}{FCT\+::\+IEvent\
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00208}{208}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00202}{202}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_v_k___context_a5b111965bb63a7ebab82c7b63ddb2445}\index{FCT::VK\_Context@{FCT::VK\_Context}!getGraphicsQueue@{getGraphicsQueue}}
 \index{getGraphicsQueue@{getGraphicsQueue}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -1093,10 +1046,9 @@ T \texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::get\+Module (\begin{DoxyParamCa
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00404}{404}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00399}{399}} 行定义.
 
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1111,7 +1063,7 @@ std\+::vector$<$ std\+::string $>$ FCT\+::\+Context\+::get\+Pass\+Target\+To\+Wn
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00214}{214}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00208}{208}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_v_k___context_af49b4a664f8566269de7d998c3c16640}\index{FCT::VK\_Context@{FCT::VK\_Context}!getPhysicalDevice@{getPhysicalDevice}}
 \index{getPhysicalDevice@{getPhysicalDevice}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -1138,7 +1090,7 @@ const char \texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::get\+Render\+Graph\+Su
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00294}{294}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00288}{288}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_context_a9c52657124df86c17bed8d538364ab88}\index{FCT::VK\_Context@{FCT::VK\_Context}!getResourceImage@{getResourceImage}}
 \index{getResourceImage@{getResourceImage}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -1148,7 +1100,7 @@ const char \texorpdfstring{$\ast$}{*} FCT\+::\+Context\+::get\+Render\+Graph\+Su
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00312}{312}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00306}{306}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_v_k___context_a621493e99719d89afb6d833e6d955a0a}\index{FCT::VK\_Context@{FCT::VK\_Context}!getVkInstance@{getVkInstance}}
 \index{getVkInstance@{getVkInstance}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -1216,10 +1168,9 @@ void FCT\+::\+Context\+::init\+Wnd\+Frame\+Resources (\begin{DoxyParamCaption}\i
 
 
 
-在文件 \mbox{\hyperlink{_context_8cpp_source}{Context.\+cpp}} 第 \mbox{\hyperlink{_context_8cpp_source_l00198}{198}} 行定义.
+在文件 \mbox{\hyperlink{_context_8cpp_source}{Context.\+cpp}} 第 \mbox{\hyperlink{_context_8cpp_source_l00172}{172}} 行定义.
 
-函数调用图\+:
-\nopagebreak
+函数调用图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1236,13 +1187,6 @@ void FCT\+::\+Context\+::init\+Wnd\+Frame\+Resources (\begin{DoxyParamCaption}\i
 
 在文件 \mbox{\hyperlink{_context_8cpp_source}{Context.\+cpp}} 第 \mbox{\hyperlink{_context_8cpp_source_l00019}{19}} 行定义.
 
-函数调用图\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_f_c_t_1_1_context_a59944f3c38119994120f3623a36cddf6_cgraph}
-\end{center}
-\end{figure}
 \Hypertarget{class_f_c_t_1_1_context_a9053397bba286120ce3de5ebd6fc0b37}\index{FCT::VK\_Context@{FCT::VK\_Context}!maxFrameInFlight@{maxFrameInFlight}}
 \index{maxFrameInFlight@{maxFrameInFlight}!FCT::VK\_Context@{FCT::VK\_Context}}
 \doxysubsubsection{\texorpdfstring{maxFrameInFlight()}{maxFrameInFlight()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -1251,8 +1195,15 @@ uint32\+\_\+t FCT\+::\+Context\+::max\+Frame\+In\+Flight (\begin{DoxyParamCaptio
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00265}{265}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00259}{259}} 行定义.
 
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_context_a9053397bba286120ce3de5ebd6fc0b37_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_context_a3466c5b1edcfac32da5248a7d4ad5e0c}\index{FCT::VK\_Context@{FCT::VK\_Context}!maxFrameInFlight@{maxFrameInFlight}}
 \index{maxFrameInFlight@{maxFrameInFlight}!FCT::VK\_Context@{FCT::VK\_Context}}
 \doxysubsubsection{\texorpdfstring{maxFrameInFlight()}{maxFrameInFlight()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
@@ -1310,7 +1261,7 @@ void FCT\+::\+Context\+::on\+Window\+Bound (\begin{DoxyParamCaption}\item[{\mbox
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00197}{197}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00191}{191}} 行定义.
 
 函数调用图\+:\nopagebreak
 \begin{figure}[H]
@@ -1337,7 +1288,7 @@ void FCT\+::\+Context\+::post\+Logic\+Task (\begin{DoxyParamCaption}\item[{const
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00143}{143}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00151}{151}} 行定义.
 
 这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
@@ -1379,8 +1330,15 @@ void FCT\+::\+Context\+::remove\+Module (\begin{DoxyParamCaption}{}{}\end{DoxyPa
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00391}{391}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00386}{386}} 行定义.
 
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_context_a05e8c8d40abcf62f40930007b5ddcd35_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_f_c_t_1_1_context_a540b8367d0fde773672f949c5fa4e208}\index{FCT::VK\_Context@{FCT::VK\_Context}!setCurrentGraph@{setCurrentGraph}}
 \index{setCurrentGraph@{setCurrentGraph}!FCT::VK\_Context@{FCT::VK\_Context}}
 \doxysubsubsection{\texorpdfstring{setCurrentGraph()}{setCurrentGraph()}}
@@ -1389,7 +1347,7 @@ void FCT\+::\+Context\+::set\+Current\+Graph (\begin{DoxyParamCaption}\item[{\mb
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00317}{317}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00311}{311}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_context_a9feca7241fe59a755ac9da9b6dde7b58}\index{FCT::VK\_Context@{FCT::VK\_Context}!submit@{submit}}
 \index{submit@{submit}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -1399,7 +1357,7 @@ void FCT\+::\+Context\+::submit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00328}{328}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00322}{322}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_v_k___context_afb26ca9ab344135c07590cf5d485d94d}\index{FCT::VK\_Context@{FCT::VK\_Context}!submitCommandBuffer@{submitCommandBuffer}}
 \index{submitCommandBuffer@{submitCommandBuffer}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -1419,7 +1377,7 @@ void FCT\+::\+Context\+::submit\+Thread (\begin{DoxyParamCaption}{}{}\end{DoxyPa
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00181}{181}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00175}{175}} 行定义.
 
 函数调用图\+:\nopagebreak
 \begin{figure}[H]
@@ -1443,17 +1401,17 @@ auto \& FCT\+::\+Context\+::submit\+Tickers (\begin{DoxyParamCaption}{}{}\end{Do
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00222}{222}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00216}{216}} 行定义.
 
-\Hypertarget{class_f_c_t_1_1_i_event_system_a7270900dc7047e4f81324f58002066ad}\index{FCT::VK\_Context@{FCT::VK\_Context}!subscribe@{subscribe}}
+\Hypertarget{class_f_c_t_1_1_i_event_system_a6eeb72a9c1dacd521fd4056727aa80bb}\index{FCT::VK\_Context@{FCT::VK\_Context}!subscribe@{subscribe}}
 \index{subscribe@{subscribe}!FCT::VK\_Context@{FCT::VK\_Context}}
 \doxysubsubsection{\texorpdfstring{subscribe()}{subscribe()}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_i_event_system_a7270900dc7047e4f81324f58002066ad} 
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_i_event_system_a6eeb72a9c1dacd521fd4056727aa80bb} 
 \mbox{\hyperlink{namespace_f_c_t_a8b1c77084f003979f0fe6c4ddb7e8eb6}{Subscribe\+Id}} \mbox{\hyperlink{class_f_c_t_1_1_i_event_system}{FCT\+::\+IEvent\+System}}$<$ \mbox{\hyperlink{struct_f_c_t_1_1_event_system_config_1_1_trigger_only}{Event\+System\+Config\+::\+Trigger\+Only}} $>$\+::subscribe (\begin{DoxyParamCaption}\item[{Func \&\&}]{func}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
 
 
 
-在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00133}{133}} 行定义.
+在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00192}{192}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_context_a5e894d71be6d4ed0f8aaa5383314667a}\index{FCT::VK\_Context@{FCT::VK\_Context}!swapBuffers@{swapBuffers}}
 \index{swapBuffers@{swapBuffers}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -1490,7 +1448,7 @@ auto \& FCT\+::\+Context\+::sync\+Tickers (\begin{DoxyParamCaption}{}{}\end{Doxy
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00150}{150}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00158}{158}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_v_k___context_a6e11a276d21ef62c3917fd9dba515e2c}\index{FCT::VK\_Context@{FCT::VK\_Context}!transferDataToBuffer@{transferDataToBuffer}}
 \index{transferDataToBuffer@{transferDataToBuffer}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -1550,22 +1508,21 @@ void FCT\+::\+VK\+\_\+\+Context\+::transfer\+Data\+To\+Image (\begin{DoxyParamCa
 \includegraphics[width=213pt]{class_f_c_t_1_1_v_k___context_ab12afb4949df6e03b57d5c0d70e9f2d3_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{class_f_c_t_1_1_i_event_system_a59cef3fb278dbd26a9bfdcd81407835c}\index{FCT::VK\_Context@{FCT::VK\_Context}!trigger@{trigger}}
+\Hypertarget{class_f_c_t_1_1_i_event_system_a1d00b7b39876287ffe06ad1c140646f7}\index{FCT::VK\_Context@{FCT::VK\_Context}!trigger@{trigger}}
 \index{trigger@{trigger}!FCT::VK\_Context@{FCT::VK\_Context}}
 \doxysubsubsection{\texorpdfstring{trigger()}{trigger()}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_i_event_system_a59cef3fb278dbd26a9bfdcd81407835c} 
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_i_event_system_a1d00b7b39876287ffe06ad1c140646f7} 
 void \mbox{\hyperlink{class_f_c_t_1_1_i_event_system}{FCT\+::\+IEvent\+System}}$<$ \mbox{\hyperlink{struct_f_c_t_1_1_event_system_config_1_1_trigger_only}{Event\+System\+Config\+::\+Trigger\+Only}} $>$\+::trigger (\begin{DoxyParamCaption}\item[{const Event \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
 
 
 
-在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00079}{79}} 行定义.
+在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00110}{110}} 行定义.
 
-这是这个函数的调用关系图\+:
-\nopagebreak
+这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_f_c_t_1_1_i_event_system_a59cef3fb278dbd26a9bfdcd81407835c_icgraph}
+\includegraphics[width=350pt]{class_f_c_t_1_1_i_event_system_a1d00b7b39876287ffe06ad1c140646f7_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{class_f_c_t_1_1_i_event_system_a084c953a75c413b6a2c856e4d474030b}\index{FCT::VK\_Context@{FCT::VK\_Context}!unsubscribe@{unsubscribe}}
@@ -1576,7 +1533,7 @@ void \mbox{\hyperlink{class_f_c_t_1_1_i_event_system}{FCT\+::\+IEvent\+System}}$
 
 
 
-在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00148}{148}} 行定义.
+在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00226}{226}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_i_event_system_a9a1e4a28230992fedf7c1d3450d2fd90}\index{FCT::VK\_Context@{FCT::VK\_Context}!unsubscribeAll@{unsubscribeAll}}
 \index{unsubscribeAll@{unsubscribeAll}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -1586,7 +1543,7 @@ void \mbox{\hyperlink{class_f_c_t_1_1_i_event_system}{FCT\+::\+IEvent\+System}}$
 
 
 
-在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00161}{161}} 行定义.
+在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00239}{239}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_i_event_system_a2b11fa6ab70e609902f655dd736a4cd0}\index{FCT::VK\_Context@{FCT::VK\_Context}!update@{update}}
 \index{update@{update}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -1596,7 +1553,7 @@ void \mbox{\hyperlink{class_f_c_t_1_1_i_event_system}{FCT\+::\+IEvent\+System}}$
 
 
 
-在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00106}{106}} 行定义.
+在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00165}{165}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_i_event_system_ad2331301d8b3d7b9505cfd4cc1641b24}\index{FCT::VK\_Context@{FCT::VK\_Context}!updateAll@{updateAll}}
 \index{updateAll@{updateAll}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -1606,7 +1563,7 @@ void \mbox{\hyperlink{class_f_c_t_1_1_i_event_system}{FCT\+::\+IEvent\+System}}$
 
 
 
-在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00121}{121}} 行定义.
+在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00180}{180}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_context_aa1a6b5e7d6b49a399d8715e95af0f4ad}\index{FCT::VK\_Context@{FCT::VK\_Context}!waitCurrentFlush@{waitCurrentFlush}}
 \index{waitCurrentFlush@{waitCurrentFlush}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -1616,23 +1573,13 @@ void FCT\+::\+Context\+::wait\+Current\+Flush (\begin{DoxyParamCaption}{}{}\end{
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00210}{210}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00204}{204}} 行定义.
 
 
 
 \label{doc-variable-members}
 \Hypertarget{class_f_c_t_1_1_v_k___context_doc-variable-members}
 \doxysubsection{类成员变量说明}
-\Hypertarget{class_f_c_t_1_1_context_a2048188b5503fbdbd83b68402e21d204}\index{FCT::VK\_Context@{FCT::VK\_Context}!m\_beginFrameTicker@{m\_beginFrameTicker}}
-\index{m\_beginFrameTicker@{m\_beginFrameTicker}!FCT::VK\_Context@{FCT::VK\_Context}}
-\doxysubsubsection{\texorpdfstring{m\_beginFrameTicker}{m\_beginFrameTicker}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_context_a2048188b5503fbdbd83b68402e21d204} 
-std\+::vector$<$\mbox{\hyperlink{class_f_c_t_1_1_context_a3e4665afe2d6148769a19bb997a8c8da}{begin\+Frame\+Ticker}}$>$ FCT\+::\+Context\+::m\+\_\+begin\+Frame\+Ticker\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
-
-
-
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00168}{168}} 行定义.
-
 \Hypertarget{class_f_c_t_1_1_context_ab7073c87ebf502dcf3aef25ec8cd256e}\index{FCT::VK\_Context@{FCT::VK\_Context}!m\_bindWindows@{m\_bindWindows}}
 \index{m\_bindWindows@{m\_bindWindows}!FCT::VK\_Context@{FCT::VK\_Context}}
 \doxysubsubsection{\texorpdfstring{m\_bindWindows}{m\_bindWindows}}
@@ -1641,7 +1588,7 @@ std\+::vector$<$\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}}\texorpdfstring
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00231}{231}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00225}{225}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_v_k___context_aaf4a5289abf9c31fa4217daaa111ad6c}\index{FCT::VK\_Context@{FCT::VK\_Context}!m\_commandBuffers@{m\_commandBuffers}}
 \index{m\_commandBuffers@{m\_commandBuffers}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -1681,7 +1628,7 @@ vk\+::\+Command\+Pool FCT\+::\+VK\+\_\+\+Context\+::m\+\_\+command\+Pool\hspace{
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00236}{236}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00230}{230}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_context_a884452f9647279f66f76eef51c658687}\index{FCT::VK\_Context@{FCT::VK\_Context}!m\_ctxRunning@{m\_ctxRunning}}
 \index{m\_ctxRunning@{m\_ctxRunning}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -1691,7 +1638,7 @@ bool FCT\+::\+Context\+::m\+\_\+ctx\+Running\hspace{0.3cm}{\ttfamily [protected]
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00235}{235}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00229}{229}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_context_a9ee4c75d34c392e75747ce303df85bf5}\index{FCT::VK\_Context@{FCT::VK\_Context}!m\_currentFlush@{m\_currentFlush}}
 \index{m\_currentFlush@{m\_currentFlush}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -1701,7 +1648,7 @@ bool FCT\+::\+Context\+::m\+\_\+current\+Flush\hspace{0.3cm}{\ttfamily [protecte
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00233}{233}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00227}{227}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_context_aeba1795b4d8c171e4f443869ede262e2}\index{FCT::VK\_Context@{FCT::VK\_Context}!m\_currentGraph@{m\_currentGraph}}
 \index{m\_currentGraph@{m\_currentGraph}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -1711,7 +1658,7 @@ bool FCT\+::\+Context\+::m\+\_\+current\+Flush\hspace{0.3cm}{\ttfamily [protecte
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00309}{309}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00303}{303}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_context_a3be8d4c1282856d741ad2ee040620e33}\index{FCT::VK\_Context@{FCT::VK\_Context}!m\_defaultGraph@{m\_defaultGraph}}
 \index{m\_defaultGraph@{m\_defaultGraph}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -1721,7 +1668,7 @@ bool FCT\+::\+Context\+::m\+\_\+current\+Flush\hspace{0.3cm}{\ttfamily [protecte
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00308}{308}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00302}{302}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_context_a1c31068bae9e283c04f664abfa70dca4}\index{FCT::VK\_Context@{FCT::VK\_Context}!m\_descriptorPools@{m\_descriptorPools}}
 \index{m\_descriptorPools@{m\_descriptorPools}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -1731,7 +1678,7 @@ std\+::map$<$\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}}\texorpdfstring{$\
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00241}{241}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00235}{235}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_v_k___context_a7b75911b9f3adf7f8a86b79850549750}\index{FCT::VK\_Context@{FCT::VK\_Context}!m\_device@{m\_device}}
 \index{m\_device@{m\_device}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -1751,7 +1698,7 @@ std\+::conditional\+\_\+t$<$\mbox{\hyperlink{struct_f_c_t_1_1_event_system_confi
 
 
 
-在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00073}{73}} 行定义.
+在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00104}{104}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_context_aed5ee768dbd1e64f831cf65024133505}\index{FCT::VK\_Context@{FCT::VK\_Context}!m\_frameIndex@{m\_frameIndex}}
 \index{m\_frameIndex@{m\_frameIndex}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -1761,7 +1708,7 @@ size\+\_\+t FCT\+::\+Context\+::m\+\_\+frame\+Index = 0\hspace{0.3cm}{\ttfamily 
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00243}{243}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00237}{237}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_context_ae5a23c79de8756181d7e019c5541e0bf}\index{FCT::VK\_Context@{FCT::VK\_Context}!m\_frameResources@{m\_frameResources}}
 \index{m\_frameResources@{m\_frameResources}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -1771,7 +1718,7 @@ std\+::map$<$\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}}\texorpdfstring{$\
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00240}{240}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00234}{234}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_context_ac7fcac233cb62b85e35990a42560c105}\index{FCT::VK\_Context@{FCT::VK\_Context}!m\_generator@{m\_generator}}
 \index{m\_generator@{m\_generator}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -1781,7 +1728,7 @@ std\+::map$<$\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}}\texorpdfstring{$\
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00237}{237}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00231}{231}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_v_k___context_a29446a4f75f20a1f3dd4334e39a6148b}\index{FCT::VK\_Context@{FCT::VK\_Context}!m\_graphicsQueue@{m\_graphicsQueue}}
 \index{m\_graphicsQueue@{m\_graphicsQueue}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -1803,15 +1750,15 @@ uint32\+\_\+t FCT\+::\+VK\+\_\+\+Context\+::m\+\_\+graphics\+Queue\+Family\+Inde
 
 在文件 \mbox{\hyperlink{_v_k___context_8h_source}{VK\+\_\+\+Context.\+h}} 第 \mbox{\hyperlink{_v_k___context_8h_source_l00062}{62}} 行定义.
 
-\Hypertarget{class_f_c_t_1_1_i_event_system_a22e34dffd042442de7489d9041593647}\index{FCT::VK\_Context@{FCT::VK\_Context}!m\_handlers@{m\_handlers}}
+\Hypertarget{class_f_c_t_1_1_i_event_system_acab222a6a3fc80b9d6e1fec3d67afd34}\index{FCT::VK\_Context@{FCT::VK\_Context}!m\_handlers@{m\_handlers}}
 \index{m\_handlers@{m\_handlers}!FCT::VK\_Context@{FCT::VK\_Context}}
 \doxysubsubsection{\texorpdfstring{m\_handlers}{m\_handlers}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_i_event_system_a22e34dffd042442de7489d9041593647} 
-std\+::unordered\+\_\+map$<$entt\+::id\+\_\+type, std\+::unordered\+\_\+map$<$\mbox{\hyperlink{namespace_f_c_t_a8b1c77084f003979f0fe6c4ddb7e8eb6}{Subscribe\+Id}}, std\+::unique\+\_\+ptr$<$IEvent\+Handler$>$ $>$ $>$ \mbox{\hyperlink{class_f_c_t_1_1_i_event_system}{FCT\+::\+IEvent\+System}}$<$ \mbox{\hyperlink{struct_f_c_t_1_1_event_system_config_1_1_trigger_only}{Event\+System\+Config\+::\+Trigger\+Only}} $>$\+::m\+\_\+handlers\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_i_event_system_acab222a6a3fc80b9d6e1fec3d67afd34} 
+std\+::conditional\+\_\+t$<$\mbox{\hyperlink{struct_f_c_t_1_1_event_system_config_1_1_trigger_only_ae2391cd921ad84545419019ede084564}{Event\+System\+Config\+::\+Trigger\+Only\+::\+Event\+As\+Data}}, std\+::unordered\+\_\+map$<$entt\+::id\+\_\+type, std\+::unordered\+\_\+map$<$\mbox{\hyperlink{namespace_f_c_t_a8b1c77084f003979f0fe6c4ddb7e8eb6}{Subscribe\+Id}}, std\+::unique\+\_\+ptr$<$IEvent\+Handler$>$ $>$ $>$, std\+::unordered\+\_\+map$<$entt\+::id\+\_\+type, std\+::unordered\+\_\+map$<$\mbox{\hyperlink{namespace_f_c_t_a8b1c77084f003979f0fe6c4ddb7e8eb6}{Subscribe\+Id}}, std\+::unique\+\_\+ptr$<$IEvent\+Identifier\+Handler$>$ $>$ $>$ $>$ \mbox{\hyperlink{class_f_c_t_1_1_i_event_system}{FCT\+::\+IEvent\+System}}$<$ \mbox{\hyperlink{struct_f_c_t_1_1_event_system_config_1_1_trigger_only}{Event\+System\+Config\+::\+Trigger\+Only}} $>$\+::m\+\_\+handlers\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [inherited]}}
 
 
 
-在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00069}{69}} 行定义.
+在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00100}{100}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_context_a86e60a6457143d658b445cdb55bddb8a}\index{FCT::VK\_Context@{FCT::VK\_Context}!m\_imageLoader@{m\_imageLoader}}
 \index{m\_imageLoader@{m\_imageLoader}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -1821,7 +1768,7 @@ std\+::unordered\+\_\+map$<$entt\+::id\+\_\+type, std\+::unordered\+\_\+map$<$\m
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00304}{304}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00298}{298}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_context_a72fda74f84f568d35396bde11ed1a134}\index{FCT::VK\_Context@{FCT::VK\_Context}!m\_logicFrameIndex@{m\_logicFrameIndex}}
 \index{m\_logicFrameIndex@{m\_logicFrameIndex}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -1831,7 +1778,7 @@ size\+\_\+t FCT\+::\+Context\+::m\+\_\+logic\+Frame\+Index = 0\hspace{0.3cm}{\tt
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00244}{244}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00238}{238}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_context_afb417ec1d038fde6232213b19dfded5a}\index{FCT::VK\_Context@{FCT::VK\_Context}!m\_logicTask@{m\_logicTask}}
 \index{m\_logicTask@{m\_logicTask}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -1841,7 +1788,7 @@ boost\+::lockfree\+::queue$<$\mbox{\hyperlink{struct_f_c_t_1_1_context_1_1_logic
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00142}{142}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00150}{150}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_context_a0a83bc9311ede1a9044f514ee85e8a23}\index{FCT::VK\_Context@{FCT::VK\_Context}!m\_maxFrameInFlight@{m\_maxFrameInFlight}}
 \index{m\_maxFrameInFlight@{m\_maxFrameInFlight}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -1851,7 +1798,7 @@ uint32\+\_\+t FCT\+::\+Context\+::m\+\_\+max\+Frame\+In\+Flight\hspace{0.3cm}{\t
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00239}{239}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00233}{233}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_context_a4dac183a4ae06a784937d0f98b90634d}\index{FCT::VK\_Context@{FCT::VK\_Context}!m\_modelLoader@{m\_modelLoader}}
 \index{m\_modelLoader@{m\_modelLoader}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -1861,7 +1808,7 @@ uint32\+\_\+t FCT\+::\+Context\+::m\+\_\+max\+Frame\+In\+Flight\hspace{0.3cm}{\t
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00132}{132}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00140}{140}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_context_af70b8941135949280dae113210b633d8}\index{FCT::VK\_Context@{FCT::VK\_Context}!m\_nextFrame@{m\_nextFrame}}
 \index{m\_nextFrame@{m\_nextFrame}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -1871,7 +1818,7 @@ bool FCT\+::\+Context\+::m\+\_\+next\+Frame\hspace{0.3cm}{\ttfamily [protected]}
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00232}{232}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00226}{226}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_i_event_system_a291c4e6c183a43db009d4461d2c5c706}\index{FCT::VK\_Context@{FCT::VK\_Context}!m\_nextSubscribeId@{m\_nextSubscribeId}}
 \index{m\_nextSubscribeId@{m\_nextSubscribeId}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -1881,7 +1828,7 @@ bool FCT\+::\+Context\+::m\+\_\+next\+Frame\hspace{0.3cm}{\ttfamily [protected]}
 
 
 
-在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00075}{75}} 行定义.
+在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00106}{106}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_v_k___context_a16123c738cb523902346ab6b25a14cd1}\index{FCT::VK\_Context@{FCT::VK\_Context}!m\_phyDevice@{m\_phyDevice}}
 \index{m\_phyDevice@{m\_phyDevice}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -1911,7 +1858,7 @@ std\+::atomic$<$size\+\_\+t$>$ FCT\+::\+Ref\+Count\+::m\+\_\+ref\+Count\hspace{0
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00133}{133}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00141}{141}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_context_aa7d571bdac4448073430a5a07b985d23}\index{FCT::VK\_Context@{FCT::VK\_Context}!m\_resourceDevice@{m\_resourceDevice}}
 \index{m\_resourceDevice@{m\_resourceDevice}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -1921,7 +1868,7 @@ std\+::atomic$<$size\+\_\+t$>$ FCT\+::\+Ref\+Count\+::m\+\_\+ref\+Count\hspace{0
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00114}{114}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00124}{124}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_context_aa09a4eb2ceb2a619cfdd5bc9a3bc444a}\index{FCT::VK\_Context@{FCT::VK\_Context}!m\_resourceManager@{m\_resourceManager}}
 \index{m\_resourceManager@{m\_resourceManager}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -1931,7 +1878,7 @@ std\+::atomic$<$size\+\_\+t$>$ FCT\+::\+Ref\+Count\+::m\+\_\+ref\+Count\hspace{0
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00370}{370}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00364}{364}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_context_a115978ad7379160ae37e15394f997e57}\index{FCT::VK\_Context@{FCT::VK\_Context}!m\_submitFrameIndex@{m\_submitFrameIndex}}
 \index{m\_submitFrameIndex@{m\_submitFrameIndex}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -1941,7 +1888,7 @@ size\+\_\+t FCT\+::\+Context\+::m\+\_\+submit\+Frame\+Index = 0\hspace{0.3cm}{\t
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00245}{245}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00239}{239}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_context_a8120cc50999faef6525e4eaa1c7c9724}\index{FCT::VK\_Context@{FCT::VK\_Context}!m\_submitThread@{m\_submitThread}}
 \index{m\_submitThread@{m\_submitThread}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -1951,7 +1898,7 @@ std\+::thread FCT\+::\+Context\+::m\+\_\+submit\+Thread\hspace{0.3cm}{\ttfamily 
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00234}{234}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00228}{228}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_context_af6b38f1cae0ed69cef0b975ecbf7ae17}\index{FCT::VK\_Context@{FCT::VK\_Context}!m\_submitThreadId@{m\_submitThreadId}}
 \index{m\_submitThreadId@{m\_submitThreadId}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -1961,7 +1908,7 @@ std\+::thread\+::id FCT\+::\+Context\+::m\+\_\+submit\+Thread\+Id\hspace{0.3cm}{
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00246}{246}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00240}{240}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_context_a9f3723358760e931498769cdad4e6820}\index{FCT::VK\_Context@{FCT::VK\_Context}!m\_submitTickers@{m\_submitTickers}}
 \index{m\_submitTickers@{m\_submitTickers}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -1971,7 +1918,7 @@ std\+::thread\+::id FCT\+::\+Context\+::m\+\_\+submit\+Thread\+Id\hspace{0.3cm}{
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00228}{228}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00222}{222}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_context_a9db519c58becad823dbf34c91128bc84}\index{FCT::VK\_Context@{FCT::VK\_Context}!m\_syncTickers@{m\_syncTickers}}
 \index{m\_syncTickers@{m\_syncTickers}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -1981,7 +1928,7 @@ std\+::thread\+::id FCT\+::\+Context\+::m\+\_\+submit\+Thread\+Id\hspace{0.3cm}{
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00229}{229}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00223}{223}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_context_afd3e26eb12b319cee7d9ac8fc86f9293}\index{FCT::VK\_Context@{FCT::VK\_Context}!m\_ticker@{m\_ticker}}
 \index{m\_ticker@{m\_ticker}!FCT::VK\_Context@{FCT::VK\_Context}}
@@ -1991,7 +1938,7 @@ std\+::thread\+::id FCT\+::\+Context\+::m\+\_\+submit\+Thread\+Id\hspace{0.3cm}{
 
 
 
-在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00230}{230}} 行定义.
+在文件 \mbox{\hyperlink{_context_8h_source}{Context.\+h}} 第 \mbox{\hyperlink{_context_8h_source_l00224}{224}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_v_k___context_afc9d438b522486a57bd3753aacaea40c}\index{FCT::VK\_Context@{FCT::VK\_Context}!m\_transferCommandPool@{m\_transferCommandPool}}
 \index{m\_transferCommandPool@{m\_transferCommandPool}!FCT::VK\_Context@{FCT::VK\_Context}}

@@ -98,30 +98,42 @@ FCT::IEventSystem&lt; Config &gt; 的协作图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_f_c_t_1_1_i_event_system__coll__graph.png" border="0" usemap="#a_f_c_t_1_1_i_event_system_3_01_config_01_4_coll__map" loading="lazy" alt="Collaboration graph"/></div>
 <map name="a_f_c_t_1_1_i_event_system_3_01_config_01_4_coll__map" id="a_f_c_t_1_1_i_event_system_3_01_config_01_4_coll__map">
-<area shape="rect" title=" " alt="" coords="5,5,141,304"/>
+<area shape="rect" title=" " alt="" coords="5,5,141,368"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 类</h2></td></tr>
 <tr class="memitem:EventHandler" id="r_EventHandler"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_f_c_t_1_1_i_event_system_1_1_event_handler.html">EventHandler</a></td></tr>
+<tr class="memitem:EventIdentifierHandler" id="r_EventIdentifierHandler"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_f_c_t_1_1_i_event_system_1_1_event_identifier_handler.html">EventIdentifierHandler</a></td></tr>
 <tr class="memitem:IEventHandler" id="r_IEventHandler"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_f_c_t_1_1_i_event_system_1_1_i_event_handler.html">IEventHandler</a></td></tr>
+<tr class="memitem:IEventIdentifierHandler" id="r_IEventIdentifierHandler"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_f_c_t_1_1_i_event_system_1_1_i_event_identifier_handler.html">IEventIdentifierHandler</a></td></tr>
 <tr class="memitem:QueuedEvent" id="r_QueuedEvent"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_f_c_t_1_1_i_event_system_1_1_queued_event.html">QueuedEvent</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
-<tr class="memitem:a59cef3fb278dbd26a9bfdcd81407835c" id="r_a59cef3fb278dbd26a9bfdcd81407835c"><td class="memTemplParams" colspan="2">template&lt;typename Event&gt; <br />
-requires Config::EnableTrigger</td></tr>
-<tr class="memitem:a59cef3fb278dbd26a9bfdcd81407835c template"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a59cef3fb278dbd26a9bfdcd81407835c">trigger</a> (const Event &amp;event)</td></tr>
-<tr class="memitem:a43cccfe74d41690355f7d97601a67bb7" id="r_a43cccfe74d41690355f7d97601a67bb7"><td class="memTemplParams" colspan="2">template&lt;typename Event&gt; <br />
-requires Config::EnableQueue</td></tr>
-<tr class="memitem:a43cccfe74d41690355f7d97601a67bb7 template"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a43cccfe74d41690355f7d97601a67bb7">enqueue</a> (Event &amp;&amp;event)</td></tr>
+<tr class="memitem:a1d00b7b39876287ffe06ad1c140646f7" id="r_a1d00b7b39876287ffe06ad1c140646f7"><td class="memTemplParams" colspan="2">template&lt;typename Event&gt; <br />
+requires (Config::EnableTrigger &amp;&amp; Config::EventAsData)</td></tr>
+<tr class="memitem:a1d00b7b39876287ffe06ad1c140646f7 template"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1d00b7b39876287ffe06ad1c140646f7">trigger</a> (const Event &amp;event)</td></tr>
+<tr class="memitem:a55a70ccfd80c22fb3e188dc426006a55" id="r_a55a70ccfd80c22fb3e188dc426006a55"><td class="memTemplParams" colspan="2">template&lt;typename Event&gt; <br />
+requires (Config::EnableTrigger &amp;&amp; !Config::EventAsData)</td></tr>
+<tr class="memitem:a55a70ccfd80c22fb3e188dc426006a55 template"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a55a70ccfd80c22fb3e188dc426006a55">trigger</a> ()</td></tr>
+<tr class="memitem:a038abe615383d3992d2bccf2273db0bd" id="r_a038abe615383d3992d2bccf2273db0bd"><td class="memTemplParams" colspan="2">template&lt;typename Event&gt; <br />
+requires (Config::EnableQueue &amp;&amp; Config::EventAsData)</td></tr>
+<tr class="memitem:a038abe615383d3992d2bccf2273db0bd template"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a038abe615383d3992d2bccf2273db0bd">enqueue</a> (Event &amp;&amp;event)</td></tr>
+<tr class="memitem:a59478cac6f492999e98a44cc57735cc1" id="r_a59478cac6f492999e98a44cc57735cc1"><td class="memTemplParams" colspan="2">template&lt;typename Event&gt; <br />
+requires (Config::EnableQueue &amp;&amp; !Config::EventAsData)</td></tr>
+<tr class="memitem:a59478cac6f492999e98a44cc57735cc1 template"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a59478cac6f492999e98a44cc57735cc1">enqueue</a> ()</td></tr>
 <tr class="memitem:a2b11fa6ab70e609902f655dd736a4cd0" id="r_a2b11fa6ab70e609902f655dd736a4cd0"><td class="memTemplParams" colspan="2">template&lt;typename Event&gt; <br />
 requires Config::EnableQueue</td></tr>
 <tr class="memitem:a2b11fa6ab70e609902f655dd736a4cd0 template"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b11fa6ab70e609902f655dd736a4cd0">update</a> ()</td></tr>
 <tr class="memitem:ad2331301d8b3d7b9505cfd4cc1641b24" id="r_ad2331301d8b3d7b9505cfd4cc1641b24"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad2331301d8b3d7b9505cfd4cc1641b24">updateAll</a> ()</td></tr>
-<tr class="memitem:a7270900dc7047e4f81324f58002066ad" id="r_a7270900dc7047e4f81324f58002066ad"><td class="memTemplParams" colspan="2">template&lt;typename Event, typename Func&gt; </td></tr>
-<tr class="memitem:a7270900dc7047e4f81324f58002066ad template"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_f_c_t.html#a8b1c77084f003979f0fe6c4ddb7e8eb6">SubscribeId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7270900dc7047e4f81324f58002066ad">subscribe</a> (Func &amp;&amp;func)</td></tr>
+<tr class="memitem:a6eeb72a9c1dacd521fd4056727aa80bb" id="r_a6eeb72a9c1dacd521fd4056727aa80bb"><td class="memTemplParams" colspan="2">template&lt;typename Event, typename Func&gt; <br />
+requires Config::EventAsData</td></tr>
+<tr class="memitem:a6eeb72a9c1dacd521fd4056727aa80bb template"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_f_c_t.html#a8b1c77084f003979f0fe6c4ddb7e8eb6">SubscribeId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6eeb72a9c1dacd521fd4056727aa80bb">subscribe</a> (Func &amp;&amp;func)</td></tr>
+<tr class="memitem:a8155929ef3f86d1b1cdfd9af38ad814d" id="r_a8155929ef3f86d1b1cdfd9af38ad814d"><td class="memTemplParams" colspan="2">template&lt;typename Event, typename Func&gt; <br />
+requires (!Config::EventAsData)</td></tr>
+<tr class="memitem:a8155929ef3f86d1b1cdfd9af38ad814d template"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_f_c_t.html#a8b1c77084f003979f0fe6c4ddb7e8eb6">SubscribeId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8155929ef3f86d1b1cdfd9af38ad814d">subscribe</a> (Func &amp;&amp;func)</td></tr>
 <tr class="memitem:a084c953a75c413b6a2c856e4d474030b" id="r_a084c953a75c413b6a2c856e4d474030b"><td class="memTemplParams" colspan="2">template&lt;typename Event&gt; </td></tr>
 <tr class="memitem:a084c953a75c413b6a2c856e4d474030b template"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a084c953a75c413b6a2c856e4d474030b">unsubscribe</a> (<a class="el" href="namespace_f_c_t.html#a8b1c77084f003979f0fe6c4ddb7e8eb6">SubscribeId</a> subscribeId)</td></tr>
 <tr class="memitem:a9a1e4a28230992fedf7c1d3450d2fd90" id="r_a9a1e4a28230992fedf7c1d3450d2fd90"><td class="memTemplParams" colspan="2">template&lt;typename Event&gt; </td></tr>
@@ -135,17 +147,17 @@ requires Config::EnableQueue</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private 属性</h2></td></tr>
-<tr class="memitem:a22e34dffd042442de7489d9041593647" id="r_a22e34dffd042442de7489d9041593647"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; entt::id_type, std::unordered_map&lt; <a class="el" href="namespace_f_c_t.html#a8b1c77084f003979f0fe6c4ddb7e8eb6">SubscribeId</a>, std::unique_ptr&lt; <a class="el" href="struct_f_c_t_1_1_i_event_system_1_1_i_event_handler.html">IEventHandler</a> &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a22e34dffd042442de7489d9041593647">m_handlers</a></td></tr>
+<tr class="memitem:acab222a6a3fc80b9d6e1fec3d67afd34" id="r_acab222a6a3fc80b9d6e1fec3d67afd34"><td class="memItemLeft" align="right" valign="top">std::conditional_t&lt; Config::EventAsData, std::unordered_map&lt; entt::id_type, std::unordered_map&lt; <a class="el" href="namespace_f_c_t.html#a8b1c77084f003979f0fe6c4ddb7e8eb6">SubscribeId</a>, std::unique_ptr&lt; <a class="el" href="struct_f_c_t_1_1_i_event_system_1_1_i_event_handler.html">IEventHandler</a> &gt; &gt; &gt;, std::unordered_map&lt; entt::id_type, std::unordered_map&lt; <a class="el" href="namespace_f_c_t.html#a8b1c77084f003979f0fe6c4ddb7e8eb6">SubscribeId</a>, std::unique_ptr&lt; <a class="el" href="struct_f_c_t_1_1_i_event_system_1_1_i_event_identifier_handler.html">IEventIdentifierHandler</a> &gt; &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acab222a6a3fc80b9d6e1fec3d67afd34">m_handlers</a></td></tr>
 <tr class="memitem:ac1a6fdf7719000f53dff74e887528a6f" id="r_ac1a6fdf7719000f53dff74e887528a6f"><td class="memItemLeft" align="right" valign="top">std::conditional_t&lt; Config::EnableQueue, std::unordered_map&lt; entt::id_type, std::vector&lt; std::function&lt; void()&gt; &gt; &gt;, std::monostate &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac1a6fdf7719000f53dff74e887528a6f">m_eventQueue</a></td></tr>
 <tr class="memitem:a291c4e6c183a43db009d4461d2c5c706" id="r_a291c4e6c183a43db009d4461d2c5c706"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_f_c_t.html#a8b1c77084f003979f0fe6c4ddb7e8eb6">SubscribeId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a291c4e6c183a43db009d4461d2c5c706">m_nextSubscribeId</a> = 1</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">详细描述</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename Config = EventSystemConfig::Full&gt;<br />
 class FCT::IEventSystem&lt; Config &gt;</div>
-<p class="definition">在文件 <a class="el" href="_i_event_system_8h_source.html">IEventSystem.h</a> 第 <a class="el" href="_i_event_system_8h_source.html#l00034">34</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_i_event_system_8h_source.html">IEventSystem.h</a> 第 <a class="el" href="_i_event_system_8h_source.html#l00046">46</a> 行定义.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">成员函数说明</h2>
-<a id="a43cccfe74d41690355f7d97601a67bb7" name="a43cccfe74d41690355f7d97601a67bb7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a43cccfe74d41690355f7d97601a67bb7">&#9670;&#160;</a></span>enqueue()</h2>
+<a id="a59478cac6f492999e98a44cc57735cc1" name="a59478cac6f492999e98a44cc57735cc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59478cac6f492999e98a44cc57735cc1">&#9670;&#160;</a></span>enqueue() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -153,7 +165,39 @@ class FCT::IEventSystem&lt; Config &gt;</div>
 template&lt;typename Config = EventSystemConfig::Full&gt; </div>
 <div class="memtemplate">
 template&lt;typename Event&gt; <br />
-requires Config::EnableQueue</div>
+requires (Config::EnableQueue &amp;&amp; !Config::EventAsData)</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_f_c_t_1_1_i_event_system.html">FCT::IEventSystem</a>&lt; Config &gt;::enqueue </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_i_event_system_8h_source.html">IEventSystem.h</a> 第 <a class="el" href="_i_event_system_8h_source.html#l00151">151</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a038abe615383d3992d2bccf2273db0bd" name="a038abe615383d3992d2bccf2273db0bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a038abe615383d3992d2bccf2273db0bd">&#9670;&#160;</a></span>enqueue() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Config = EventSystemConfig::Full&gt; </div>
+<div class="memtemplate">
+template&lt;typename Event&gt; <br />
+requires (Config::EnableQueue &amp;&amp; Config::EventAsData)</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -172,20 +216,7 @@ requires Config::EnableQueue</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_i_event_system_8h_source.html">IEventSystem.h</a> 第 <a class="el" href="_i_event_system_8h_source.html#l00093">93</a> 行定义.</p>
-<div class="dynheader">
-函数调用图:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_f_c_t_1_1_i_event_system_a43cccfe74d41690355f7d97601a67bb7_cgraph.png" border="0" usemap="#aclass_f_c_t_1_1_i_event_system_a43cccfe74d41690355f7d97601a67bb7_cgraph" loading="lazy" alt=""/></div>
-<map name="aclass_f_c_t_1_1_i_event_system_a43cccfe74d41690355f7d97601a67bb7_cgraph" id="aclass_f_c_t_1_1_i_event_system_a43cccfe74d41690355f7d97601a67bb7_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,151,48"/>
-<area shape="rect" href="class_f_c_t_1_1_i_event_system.html#a831449ceeadb7739752dfbbeaad9bd6d" title=" " alt="" coords="392,5,537,48"/>
-<area shape="poly" title=" " alt="" coords="151,21,199,20,344,20,376,21,376,26,344,25,199,25,151,27"/>
-<area shape="rect" href="class_f_c_t_1_1_i_event_system.html#a59cef3fb278dbd26a9bfdcd81407835c" title=" " alt="" coords="199,35,344,77"/>
-<area shape="poly" title=" " alt="" coords="151,35,183,40,183,45,150,40"/>
-<area shape="poly" title=" " alt="" coords="344,42,376,37,377,43,345,48"/>
-</map>
-</div>
+<p class="definition">在文件 <a class="el" href="_i_event_system_8h_source.html">IEventSystem.h</a> 第 <a class="el" href="_i_event_system_8h_source.html#l00138">138</a> 行定义.</p>
 
 </div>
 </div>
@@ -216,44 +247,44 @@ template&lt;typename Event&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_i_event_system_8h_source.html">IEventSystem.h</a> 第 <a class="el" href="_i_event_system_8h_source.html#l00037">37</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_i_event_system_8h_source.html">IEventSystem.h</a> 第 <a class="el" href="_i_event_system_8h_source.html#l00049">49</a> 行定义.</p>
 <div class="dynheader">
 这是这个函数的调用关系图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_f_c_t_1_1_i_event_system_a831449ceeadb7739752dfbbeaad9bd6d_icgraph.png" border="0" usemap="#aclass_f_c_t_1_1_i_event_system_a831449ceeadb7739752dfbbeaad9bd6d_icgraph" loading="lazy" alt=""/></div>
 <map name="aclass_f_c_t_1_1_i_event_system_a831449ceeadb7739752dfbbeaad9bd6d_icgraph" id="aclass_f_c_t_1_1_i_event_system_a831449ceeadb7739752dfbbeaad9bd6d_icgraph">
-<area shape="rect" title=" " alt="" coords="615,139,761,181"/>
-<area shape="rect" href="class_f_c_t_1_1_i_event_system.html#a43cccfe74d41690355f7d97601a67bb7" title=" " alt="" coords="221,9,366,52"/>
-<area shape="poly" title=" " alt="" coords="665,127,625,73,597,48,566,29,517,14,464,8,413,10,367,16,366,11,413,5,465,3,518,9,568,24,601,44,629,70,670,124"/>
-<area shape="rect" href="class_f_c_t_1_1_i_event_system.html#a7270900dc7047e4f81324f58002066ad" title=" " alt="" coords="422,105,567,148"/>
-<area shape="poly" title=" " alt="" coords="600,147,567,142,568,137,601,142"/>
-<area shape="rect" href="class_f_c_t_1_1_i_event_system.html#a59cef3fb278dbd26a9bfdcd81407835c" title=" " alt="" coords="422,39,567,81"/>
-<area shape="poly" title=" " alt="" coords="635,133,566,96,543,84,545,79,569,91,637,128"/>
-<area shape="rect" href="class_f_c_t_1_1_i_event_system.html#a084c953a75c413b6a2c856e4d474030b" title=" " alt="" coords="422,172,567,215"/>
-<area shape="poly" title=" " alt="" coords="601,178,568,183,567,178,600,172"/>
-<area shape="rect" href="class_f_c_t_1_1_i_event_system.html#a9a1e4a28230992fedf7c1d3450d2fd90" title=" " alt="" coords="422,239,567,281"/>
-<area shape="poly" title=" " alt="" coords="637,192,569,229,545,240,543,236,566,224,635,187"/>
-<area shape="rect" href="class_f_c_t_1_1_i_event_system.html#a2b11fa6ab70e609902f655dd736a4cd0" title=" " alt="" coords="422,305,567,348"/>
-<area shape="poly" title=" " alt="" coords="665,196,623,246,569,295,551,307,548,302,566,291,619,242,660,192"/>
-<area shape="rect" href="class_f_c_t_1_1_resource_manager.html#a954245509d71e21eaa0dbe13c7b77d19" title=" " alt="" coords="214,105,374,148"/>
-<area shape="poly" title=" " alt="" coords="406,129,375,129,375,124,406,124"/>
-<area shape="rect" href="class_f_c_t_1_1_resource_manager.html#a4f992dc6effcc7cd3e6d154b1aa10a50" title=" " alt="" coords="5,105,166,148"/>
-<area shape="poly" title=" " alt="" coords="198,129,166,129,166,124,198,124"/>
-<area shape="poly" title=" " alt="" coords="406,50,366,44,367,39,407,44"/>
+<area shape="rect" title=" " alt="" coords="222,239,367,281"/>
+<area shape="rect" href="class_f_c_t_1_1_i_event_system.html#a59478cac6f492999e98a44cc57735cc1" title=" " alt="" coords="17,5,162,48"/>
+<area shape="poly" title=" " alt="" coords="277,225,261,187,238,144,208,100,172,62,155,51,158,46,175,58,212,97,242,141,266,185,282,223"/>
+<area shape="rect" href="class_f_c_t_1_1_i_event_system.html#a038abe615383d3992d2bccf2273db0bd" title=" " alt="" coords="17,72,162,115"/>
+<area shape="poly" title=" " alt="" coords="268,228,226,177,200,152,172,129,153,117,155,113,175,124,204,148,230,174,272,224"/>
+<area shape="rect" href="class_f_c_t_1_1_i_event_system.html#a6eeb72a9c1dacd521fd4056727aa80bb" title=" " alt="" coords="17,139,162,181"/>
+<area shape="poly" title=" " alt="" coords="242,233,172,196,147,184,149,179,175,191,245,228"/>
+<area shape="rect" href="class_f_c_t_1_1_i_event_system.html#a55a70ccfd80c22fb3e188dc426006a55" title=" " alt="" coords="17,205,162,248"/>
+<area shape="poly" title=" " alt="" coords="206,248,162,241,163,236,207,243"/>
+<area shape="rect" href="class_f_c_t_1_1_i_event_system.html#a1d00b7b39876287ffe06ad1c140646f7" title=" " alt="" coords="17,272,162,315"/>
+<area shape="poly" title=" " alt="" coords="207,277,163,284,162,279,206,272"/>
+<area shape="rect" href="class_f_c_t_1_1_i_event_system.html#a084c953a75c413b6a2c856e4d474030b" title=" " alt="" coords="13,339,166,381"/>
+<area shape="poly" title=" " alt="" coords="245,292,175,329,149,341,147,336,172,324,242,287"/>
+<area shape="rect" href="class_f_c_t_1_1_i_event_system.html#a9a1e4a28230992fedf7c1d3450d2fd90" title=" " alt="" coords="5,405,174,448"/>
+<area shape="poly" title=" " alt="" coords="272,296,230,346,204,372,175,396,155,407,153,403,172,391,200,368,226,343,268,292"/>
+<area shape="rect" href="class_f_c_t_1_1_i_event_system.html#a2b11fa6ab70e609902f655dd736a4cd0" title=" " alt="" coords="17,472,162,515"/>
+<area shape="poly" title=" " alt="" coords="282,297,266,335,242,379,212,423,175,462,158,474,155,469,172,458,208,420,238,376,261,333,277,295"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a7270900dc7047e4f81324f58002066ad" name="a7270900dc7047e4f81324f58002066ad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7270900dc7047e4f81324f58002066ad">&#9670;&#160;</a></span>subscribe()</h2>
+<a id="a6eeb72a9c1dacd521fd4056727aa80bb" name="a6eeb72a9c1dacd521fd4056727aa80bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6eeb72a9c1dacd521fd4056727aa80bb">&#9670;&#160;</a></span>subscribe() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename Config = EventSystemConfig::Full&gt; </div>
 <div class="memtemplate">
-template&lt;typename Event, typename Func&gt; </div>
+template&lt;typename Event, typename Func&gt; <br />
+requires Config::EventAsData</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -272,34 +303,58 @@ template&lt;typename Event, typename Func&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_i_event_system_8h_source.html">IEventSystem.h</a> 第 <a class="el" href="_i_event_system_8h_source.html#l00133">133</a> 行定义.</p>
-<div class="dynheader">
-函数调用图:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_f_c_t_1_1_i_event_system_a7270900dc7047e4f81324f58002066ad_cgraph.png" border="0" usemap="#aclass_f_c_t_1_1_i_event_system_a7270900dc7047e4f81324f58002066ad_cgraph" loading="lazy" alt=""/></div>
-<map name="aclass_f_c_t_1_1_i_event_system_a7270900dc7047e4f81324f58002066ad_cgraph" id="aclass_f_c_t_1_1_i_event_system_a7270900dc7047e4f81324f58002066ad_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,151,48"/>
-<area shape="rect" href="class_f_c_t_1_1_i_event_system.html#a831449ceeadb7739752dfbbeaad9bd6d" title=" " alt="" coords="199,5,344,48"/>
-<area shape="poly" title=" " alt="" coords="151,24,183,24,183,29,151,29"/>
-</map>
-</div>
+<p class="definition">在文件 <a class="el" href="_i_event_system_8h_source.html">IEventSystem.h</a> 第 <a class="el" href="_i_event_system_8h_source.html#l00192">192</a> 行定义.</p>
 <div class="dynheader">
 这是这个函数的调用关系图:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_f_c_t_1_1_i_event_system_a7270900dc7047e4f81324f58002066ad_icgraph.png" border="0" usemap="#aclass_f_c_t_1_1_i_event_system_a7270900dc7047e4f81324f58002066ad_icgraph" loading="lazy" alt=""/></div>
-<map name="aclass_f_c_t_1_1_i_event_system_a7270900dc7047e4f81324f58002066ad_icgraph" id="aclass_f_c_t_1_1_i_event_system_a7270900dc7047e4f81324f58002066ad_icgraph">
-<area shape="rect" title=" " alt="" coords="422,5,567,48"/>
-<area shape="rect" href="class_f_c_t_1_1_resource_manager.html#a954245509d71e21eaa0dbe13c7b77d19" title=" " alt="" coords="214,5,374,48"/>
-<area shape="poly" title=" " alt="" coords="406,29,375,29,375,24,406,24"/>
+<div class="center"><img src="class_f_c_t_1_1_i_event_system_a6eeb72a9c1dacd521fd4056727aa80bb_icgraph.png" border="0" usemap="#aclass_f_c_t_1_1_i_event_system_a6eeb72a9c1dacd521fd4056727aa80bb_icgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_i_event_system_a6eeb72a9c1dacd521fd4056727aa80bb_icgraph" id="aclass_f_c_t_1_1_i_event_system_a6eeb72a9c1dacd521fd4056727aa80bb_icgraph">
+<area shape="rect" title=" " alt="" coords="457,35,602,77"/>
+<area shape="rect" href="class_f_c_t_1_1_resource_manager.html#a954245509d71e21eaa0dbe13c7b77d19" title=" " alt="" coords="231,5,392,48"/>
+<area shape="poly" title=" " alt="" coords="441,47,392,40,392,35,442,42"/>
+<area shape="rect" href="class_f_c_t_1_1_render_graph.html#a2a15e7fd084be3edf0405d30bc484909" title=" " alt="" coords="214,72,409,99"/>
+<area shape="poly" title=" " alt="" coords="442,70,410,75,409,70,441,65"/>
 <area shape="rect" href="class_f_c_t_1_1_resource_manager.html#a4f992dc6effcc7cd3e6d154b1aa10a50" title=" " alt="" coords="5,5,166,48"/>
-<area shape="poly" title=" " alt="" coords="198,29,166,29,166,24,198,24"/>
+<area shape="poly" title=" " alt="" coords="216,29,166,29,166,24,216,24"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a59cef3fb278dbd26a9bfdcd81407835c" name="a59cef3fb278dbd26a9bfdcd81407835c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a59cef3fb278dbd26a9bfdcd81407835c">&#9670;&#160;</a></span>trigger()</h2>
+<a id="a8155929ef3f86d1b1cdfd9af38ad814d" name="a8155929ef3f86d1b1cdfd9af38ad814d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8155929ef3f86d1b1cdfd9af38ad814d">&#9670;&#160;</a></span>subscribe() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Config = EventSystemConfig::Full&gt; </div>
+<div class="memtemplate">
+template&lt;typename Event, typename Func&gt; <br />
+requires (!Config::EventAsData)</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_f_c_t.html#a8b1c77084f003979f0fe6c4ddb7e8eb6">SubscribeId</a> <a class="el" href="class_f_c_t_1_1_i_event_system.html">FCT::IEventSystem</a>&lt; Config &gt;::subscribe </td>
+          <td>(</td>
+          <td class="paramtype">Func &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>func</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_i_event_system_8h_source.html">IEventSystem.h</a> 第 <a class="el" href="_i_event_system_8h_source.html#l00208">208</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a55a70ccfd80c22fb3e188dc426006a55" name="a55a70ccfd80c22fb3e188dc426006a55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55a70ccfd80c22fb3e188dc426006a55">&#9670;&#160;</a></span>trigger() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -307,7 +362,51 @@ template&lt;typename Event, typename Func&gt; </div>
 template&lt;typename Config = EventSystemConfig::Full&gt; </div>
 <div class="memtemplate">
 template&lt;typename Event&gt; <br />
-requires Config::EnableTrigger</div>
+requires (Config::EnableTrigger &amp;&amp; !Config::EventAsData)</div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_f_c_t_1_1_i_event_system.html">FCT::IEventSystem</a>&lt; Config &gt;::trigger </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_i_event_system_8h_source.html">IEventSystem.h</a> 第 <a class="el" href="_i_event_system_8h_source.html#l00124">124</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_i_event_system_a55a70ccfd80c22fb3e188dc426006a55_icgraph.png" border="0" usemap="#aclass_f_c_t_1_1_i_event_system_a55a70ccfd80c22fb3e188dc426006a55_icgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_i_event_system_a55a70ccfd80c22fb3e188dc426006a55_icgraph" id="aclass_f_c_t_1_1_i_event_system_a55a70ccfd80c22fb3e188dc426006a55_icgraph">
+<area shape="rect" title=" " alt="" coords="199,39,344,81"/>
+<area shape="rect" href="class_f_c_t_1_1_i_event_system.html#a59478cac6f492999e98a44cc57735cc1" title=" " alt="" coords="5,5,151,48"/>
+<area shape="poly" title=" " alt="" coords="183,47,151,42,152,37,184,42"/>
+<area shape="rect" href="class_f_c_t_1_1_i_event_system.html#a038abe615383d3992d2bccf2273db0bd" title=" " alt="" coords="5,72,151,115"/>
+<area shape="poly" title=" " alt="" coords="184,78,152,83,151,78,183,73"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1d00b7b39876287ffe06ad1c140646f7" name="a1d00b7b39876287ffe06ad1c140646f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d00b7b39876287ffe06ad1c140646f7">&#9670;&#160;</a></span>trigger() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Config = EventSystemConfig::Full&gt; </div>
+<div class="memtemplate">
+template&lt;typename Event&gt; <br />
+requires (Config::EnableTrigger &amp;&amp; Config::EventAsData)</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -326,27 +425,7 @@ requires Config::EnableTrigger</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_i_event_system_8h_source.html">IEventSystem.h</a> 第 <a class="el" href="_i_event_system_8h_source.html#l00079">79</a> 行定义.</p>
-<div class="dynheader">
-函数调用图:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_f_c_t_1_1_i_event_system_a59cef3fb278dbd26a9bfdcd81407835c_cgraph.png" border="0" usemap="#aclass_f_c_t_1_1_i_event_system_a59cef3fb278dbd26a9bfdcd81407835c_cgraph" loading="lazy" alt=""/></div>
-<map name="aclass_f_c_t_1_1_i_event_system_a59cef3fb278dbd26a9bfdcd81407835c_cgraph" id="aclass_f_c_t_1_1_i_event_system_a59cef3fb278dbd26a9bfdcd81407835c_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,151,48"/>
-<area shape="rect" href="class_f_c_t_1_1_i_event_system.html#a831449ceeadb7739752dfbbeaad9bd6d" title=" " alt="" coords="199,5,344,48"/>
-<area shape="poly" title=" " alt="" coords="151,24,183,24,183,29,151,29"/>
-</map>
-</div>
-<div class="dynheader">
-这是这个函数的调用关系图:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_f_c_t_1_1_i_event_system_a59cef3fb278dbd26a9bfdcd81407835c_icgraph.png" border="0" usemap="#aclass_f_c_t_1_1_i_event_system_a59cef3fb278dbd26a9bfdcd81407835c_icgraph" loading="lazy" alt=""/></div>
-<map name="aclass_f_c_t_1_1_i_event_system_a59cef3fb278dbd26a9bfdcd81407835c_icgraph" id="aclass_f_c_t_1_1_i_event_system_a59cef3fb278dbd26a9bfdcd81407835c_icgraph">
-<area shape="rect" title=" " alt="" coords="199,5,344,48"/>
-<area shape="rect" href="class_f_c_t_1_1_i_event_system.html#a43cccfe74d41690355f7d97601a67bb7" title=" " alt="" coords="5,5,151,48"/>
-<area shape="poly" title=" " alt="" coords="183,29,151,29,151,24,183,24"/>
-</map>
-</div>
+<p class="definition">在文件 <a class="el" href="_i_event_system_8h_source.html">IEventSystem.h</a> 第 <a class="el" href="_i_event_system_8h_source.html#l00110">110</a> 行定义.</p>
 
 </div>
 </div>
@@ -377,15 +456,15 @@ template&lt;typename Event&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_i_event_system_8h_source.html">IEventSystem.h</a> 第 <a class="el" href="_i_event_system_8h_source.html#l00148">148</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_i_event_system_8h_source.html">IEventSystem.h</a> 第 <a class="el" href="_i_event_system_8h_source.html#l00226">226</a> 行定义.</p>
 <div class="dynheader">
-函数调用图:</div>
+这是这个函数的调用关系图:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_f_c_t_1_1_i_event_system_a084c953a75c413b6a2c856e4d474030b_cgraph.png" border="0" usemap="#aclass_f_c_t_1_1_i_event_system_a084c953a75c413b6a2c856e4d474030b_cgraph" loading="lazy" alt=""/></div>
-<map name="aclass_f_c_t_1_1_i_event_system_a084c953a75c413b6a2c856e4d474030b_cgraph" id="aclass_f_c_t_1_1_i_event_system_a084c953a75c413b6a2c856e4d474030b_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,151,48"/>
-<area shape="rect" href="class_f_c_t_1_1_i_event_system.html#a831449ceeadb7739752dfbbeaad9bd6d" title=" " alt="" coords="199,5,344,48"/>
-<area shape="poly" title=" " alt="" coords="151,24,183,24,183,29,151,29"/>
+<div class="center"><img src="class_f_c_t_1_1_i_event_system_a084c953a75c413b6a2c856e4d474030b_icgraph.png" border="0" usemap="#aclass_f_c_t_1_1_i_event_system_a084c953a75c413b6a2c856e4d474030b_icgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_i_event_system_a084c953a75c413b6a2c856e4d474030b_icgraph" id="aclass_f_c_t_1_1_i_event_system_a084c953a75c413b6a2c856e4d474030b_icgraph">
+<area shape="rect" title=" " alt="" coords="263,5,408,48"/>
+<area shape="rect" href="class_f_c_t_1_1_render_graph.html#a18e20b658a05c4651bdf3ac96beec642" title=" " alt="" coords="5,13,215,40"/>
+<area shape="poly" title=" " alt="" coords="247,29,215,29,215,24,247,24"/>
 </map>
 </div>
 
@@ -416,7 +495,7 @@ template&lt;typename Config = EventSystemConfig::Full&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_i_event_system_8h_source.html">IEventSystem.h</a> 第 <a class="el" href="_i_event_system_8h_source.html#l00166">166</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_i_event_system_8h_source.html">IEventSystem.h</a> 第 <a class="el" href="_i_event_system_8h_source.html#l00244">244</a> 行定义.</p>
 
 </div>
 </div>
@@ -447,17 +526,7 @@ template&lt;typename Event&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_i_event_system_8h_source.html">IEventSystem.h</a> 第 <a class="el" href="_i_event_system_8h_source.html#l00161">161</a> 行定义.</p>
-<div class="dynheader">
-函数调用图:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_f_c_t_1_1_i_event_system_a9a1e4a28230992fedf7c1d3450d2fd90_cgraph.png" border="0" usemap="#aclass_f_c_t_1_1_i_event_system_a9a1e4a28230992fedf7c1d3450d2fd90_cgraph" loading="lazy" alt=""/></div>
-<map name="aclass_f_c_t_1_1_i_event_system_a9a1e4a28230992fedf7c1d3450d2fd90_cgraph" id="aclass_f_c_t_1_1_i_event_system_a9a1e4a28230992fedf7c1d3450d2fd90_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,151,48"/>
-<area shape="rect" href="class_f_c_t_1_1_i_event_system.html#a831449ceeadb7739752dfbbeaad9bd6d" title=" " alt="" coords="199,5,344,48"/>
-<area shape="poly" title=" " alt="" coords="151,24,183,24,183,29,151,29"/>
-</map>
-</div>
+<p class="definition">在文件 <a class="el" href="_i_event_system_8h_source.html">IEventSystem.h</a> 第 <a class="el" href="_i_event_system_8h_source.html#l00239">239</a> 行定义.</p>
 
 </div>
 </div>
@@ -489,17 +558,7 @@ requires Config::EnableQueue</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_i_event_system_8h_source.html">IEventSystem.h</a> 第 <a class="el" href="_i_event_system_8h_source.html#l00106">106</a> 行定义.</p>
-<div class="dynheader">
-函数调用图:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_f_c_t_1_1_i_event_system_a2b11fa6ab70e609902f655dd736a4cd0_cgraph.png" border="0" usemap="#aclass_f_c_t_1_1_i_event_system_a2b11fa6ab70e609902f655dd736a4cd0_cgraph" loading="lazy" alt=""/></div>
-<map name="aclass_f_c_t_1_1_i_event_system_a2b11fa6ab70e609902f655dd736a4cd0_cgraph" id="aclass_f_c_t_1_1_i_event_system_a2b11fa6ab70e609902f655dd736a4cd0_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,151,48"/>
-<area shape="rect" href="class_f_c_t_1_1_i_event_system.html#a831449ceeadb7739752dfbbeaad9bd6d" title=" " alt="" coords="199,5,344,48"/>
-<area shape="poly" title=" " alt="" coords="151,24,183,24,183,29,151,29"/>
-</map>
-</div>
+<p class="definition">在文件 <a class="el" href="_i_event_system_8h_source.html">IEventSystem.h</a> 第 <a class="el" href="_i_event_system_8h_source.html#l00165">165</a> 行定义.</p>
 
 </div>
 </div>
@@ -528,7 +587,7 @@ template&lt;typename Config = EventSystemConfig::Full&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_i_event_system_8h_source.html">IEventSystem.h</a> 第 <a class="el" href="_i_event_system_8h_source.html#l00121">121</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_i_event_system_8h_source.html">IEventSystem.h</a> 第 <a class="el" href="_i_event_system_8h_source.html#l00180">180</a> 行定义.</p>
 
 </div>
 </div>
@@ -555,12 +614,12 @@ template&lt;typename Config = EventSystemConfig::Full&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_i_event_system_8h_source.html">IEventSystem.h</a> 第 <a class="el" href="_i_event_system_8h_source.html#l00073">73</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_i_event_system_8h_source.html">IEventSystem.h</a> 第 <a class="el" href="_i_event_system_8h_source.html#l00104">104</a> 行定义.</p>
 
 </div>
 </div>
-<a id="a22e34dffd042442de7489d9041593647" name="a22e34dffd042442de7489d9041593647"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a22e34dffd042442de7489d9041593647">&#9670;&#160;</a></span>m_handlers</h2>
+<a id="acab222a6a3fc80b9d6e1fec3d67afd34" name="acab222a6a3fc80b9d6e1fec3d67afd34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acab222a6a3fc80b9d6e1fec3d67afd34">&#9670;&#160;</a></span>m_handlers</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -571,7 +630,7 @@ template&lt;typename Config = EventSystemConfig::Full&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::unordered_map&lt;entt::id_type, std::unordered_map&lt;<a class="el" href="namespace_f_c_t.html#a8b1c77084f003979f0fe6c4ddb7e8eb6">SubscribeId</a>, std::unique_ptr&lt;<a class="el" href="struct_f_c_t_1_1_i_event_system_1_1_i_event_handler.html">IEventHandler</a>&gt; &gt; &gt; <a class="el" href="class_f_c_t_1_1_i_event_system.html">FCT::IEventSystem</a>&lt; Config &gt;::m_handlers</td>
+          <td class="memname">std::conditional_t&lt;Config::EventAsData, std::unordered_map&lt;entt::id_type, std::unordered_map&lt;<a class="el" href="namespace_f_c_t.html#a8b1c77084f003979f0fe6c4ddb7e8eb6">SubscribeId</a>, std::unique_ptr&lt;<a class="el" href="struct_f_c_t_1_1_i_event_system_1_1_i_event_handler.html">IEventHandler</a>&gt; &gt; &gt;, std::unordered_map&lt;entt::id_type, std::unordered_map&lt;<a class="el" href="namespace_f_c_t.html#a8b1c77084f003979f0fe6c4ddb7e8eb6">SubscribeId</a>, std::unique_ptr&lt;<a class="el" href="struct_f_c_t_1_1_i_event_system_1_1_i_event_identifier_handler.html">IEventIdentifierHandler</a>&gt; &gt; &gt; &gt; <a class="el" href="class_f_c_t_1_1_i_event_system.html">FCT::IEventSystem</a>&lt; Config &gt;::m_handlers</td>
         </tr>
       </table>
   </td>
@@ -581,7 +640,7 @@ template&lt;typename Config = EventSystemConfig::Full&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_i_event_system_8h_source.html">IEventSystem.h</a> 第 <a class="el" href="_i_event_system_8h_source.html#l00069">69</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_i_event_system_8h_source.html">IEventSystem.h</a> 第 <a class="el" href="_i_event_system_8h_source.html#l00100">100</a> 行定义.</p>
 
 </div>
 </div>
@@ -607,7 +666,7 @@ template&lt;typename Config = EventSystemConfig::Full&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">在文件 <a class="el" href="_i_event_system_8h_source.html">IEventSystem.h</a> 第 <a class="el" href="_i_event_system_8h_source.html#l00075">75</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_i_event_system_8h_source.html">IEventSystem.h</a> 第 <a class="el" href="_i_event_system_8h_source.html#l00106">106</a> 行定义.</p>
 
 </div>
 </div>

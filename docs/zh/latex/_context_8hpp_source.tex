@@ -199,14 +199,20 @@
 \DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00195}00195\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_context_ae5a23c79de8756181d7e019c5541e0bf}{m\_frameResources}}[wnd]\ =\ std::move(frameResources);}
 \DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00196}00196\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_context_a1c31068bae9e283c04f664abfa70dca4}{m\_descriptorPools}}[wnd]\ =\ \mbox{\hyperlink{class_f_c_t_1_1_context_a4a2f3241a3ce158e6616d28335d3f8d9}{createResource<RHI::DescriptorPool>}}();}
 \DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00197}00197\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_context_a1c31068bae9e283c04f664abfa70dca4}{m\_descriptorPools}}[wnd]-\/>create();}
-\DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00198}00198\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_context_a229f460b0c9e0f9f63b1e16e2f27d8af}{allocBaseCommandBuffers}}(wnd);}
+\DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00198}00198\ \ \ \ \ \ \ \ \ \textcolor{comment}{//allocBaseCommandBuffers(wnd);}}
 \DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00199}00199\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00200}00200\ }
 \DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00201}\mbox{\hyperlink{class_f_c_t_1_1_context_aa0ea88368be61837378cbd8a3cebd170}{00201}}\ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_descriptor_pool}{RHI::DescriptorPool}}*\ \mbox{\hyperlink{class_f_c_t_1_1_context_aa0ea88368be61837378cbd8a3cebd170}{Context::getDescriptorPool}}(\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}}*\ wnd)}
 \DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00202}00202\ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00203}00203\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_f_c_t_1_1_context_a1c31068bae9e283c04f664abfa70dca4}{m\_descriptorPools}}[wnd];}
 \DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00204}00204\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00205}00205\ \}}
-\DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00206}00206\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00205}00205\ }
+\DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00206}00206\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00207}\mbox{\hyperlink{class_f_c_t_1_1_context_a4a2f3241a3ce158e6616d28335d3f8d9}{00207}}\ \ \ \ \ \textcolor{keyword}{inline}\ T*\ \mbox{\hyperlink{class_f_c_t_1_1_context_a4a2f3241a3ce158e6616d28335d3f8d9}{Context::createResource}}()}
+\DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00208}00208\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00209}00209\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_f_c_t_1_1_context_aa7d571bdac4448073430a5a07b985d23}{m\_resourceDevice}}-\/>createResource<T>();}
+\DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00210}00210\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00211}00211\ \}}
+\DoxyCodeLine{\Hypertarget{_context_8hpp_source_l00212}00212\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}
