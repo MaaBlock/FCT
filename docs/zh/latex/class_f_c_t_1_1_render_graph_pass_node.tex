@@ -1,0 +1,293 @@
+\doxysection{FCT\+::Render\+Graph\+Pass\+Node类 参考}
+\hypertarget{class_f_c_t_1_1_render_graph_pass_node}{}\label{class_f_c_t_1_1_render_graph_pass_node}\index{FCT::RenderGraphPassNode@{FCT::RenderGraphPassNode}}
+
+
+{\ttfamily \#include $<$Render\+Graph.\+h$>$}
+
+
+
+类 FCT\+::Render\+Graph\+Pass\+Node 继承关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=255pt]{class_f_c_t_1_1_render_graph_pass_node__inherit__graph}
+\end{center}
+\end{figure}
+
+
+FCT\+::Render\+Graph\+Pass\+Node 的协作图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_f_c_t_1_1_render_graph_pass_node__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_render_graph_pass_node_af565b4a36c52650d73f846d221c5d85e}{Render\+Graph\+Pass\+Node}} ()
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_render_graph_pass_node_a4889a4182a88f17b666d0662dc022d85}{Render\+Graph\+Pass\+Node}} (std\+::string \mbox{\hyperlink{class_f_c_t_1_1_render_graph_node_a80ca9b32bb21a8af3a7997ff218d560c}{name}})
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_render_graph_pass_node_af750f0161fe4d0bf1e99f17342ca50de}{add\+Incoming\+Edge}} (\mbox{\hyperlink{class_f_c_t_1_1_texture_edge}{Texture\+Edge}} \texorpdfstring{$\ast$}{*}edge)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_render_graph_pass_node_a63758055d14b3d2f865a1c69b9310945}{add\+Outgoing\+Edge}} (\mbox{\hyperlink{class_f_c_t_1_1_target_edge}{Target\+Edge}} \texorpdfstring{$\ast$}{*}edge)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_render_graph_pass_node_a0ea280e15c7cdc70bd65825875491b88}{add\+Outgoing\+Edge}} (\mbox{\hyperlink{class_f_c_t_1_1_depth_stencil_edge}{Depth\+Stencil\+Edge}} \texorpdfstring{$\ast$}{*}edge)
+\item 
+const std\+::vector$<$ \mbox{\hyperlink{class_f_c_t_1_1_texture_edge}{Texture\+Edge}} \texorpdfstring{$\ast$}{*} $>$ \& \mbox{\hyperlink{class_f_c_t_1_1_render_graph_pass_node_a678de16037723499cc732b76589dd738}{get\+Texture\+Incoming\+Edges}} () const
+\item 
+const std\+::vector$<$ \mbox{\hyperlink{class_f_c_t_1_1_target_edge}{Target\+Edge}} \texorpdfstring{$\ast$}{*} $>$ \& \mbox{\hyperlink{class_f_c_t_1_1_render_graph_pass_node_a85c4782b27c6c062dfe221c1c74da6ef}{get\+Target\+Outgoing\+Edges}} () const
+\item 
+const std\+::vector$<$ \mbox{\hyperlink{class_f_c_t_1_1_depth_stencil_edge}{Depth\+Stencil\+Edge}} \texorpdfstring{$\ast$}{*} $>$ \& \mbox{\hyperlink{class_f_c_t_1_1_render_graph_pass_node_a46c4ae533410cc0acfa18c73ce8c4a27}{get\+Depth\+Stencil\+Outgoing\+Edges}} () const
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_render_graph_pass_node_aa7e42fed20418c99c3619362eccd711d}{apply\+Pass\+Desc}} (const \mbox{\hyperlink{struct_f_c_t_1_1_pass_desc}{Pass\+Desc}} \&desc)
+\item 
+const \mbox{\hyperlink{struct_f_c_t_1_1_enable_pass_clear}{Enable\+Pass\+Clear}} \& \mbox{\hyperlink{class_f_c_t_1_1_render_graph_pass_node_afb65dbb483aca7e85b8f6b07abea0ff3}{get\+Clear\+Info}} () const
+\item 
+constexpr bool \mbox{\hyperlink{class_f_c_t_1_1_render_graph_node_a6588dda6d19c66185d4b144558313ef8}{operator==}} (const \mbox{\hyperlink{class_f_c_t_1_1_render_graph_node}{Render\+Graph\+Node}} \&other) const noexcept
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public 属性}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_f_c_t_1_1_render_graph_node_a80ca9b32bb21a8af3a7997ff218d560c}{name}}
+\item 
+\mbox{\hyperlink{namespace_f_c_t_adfd269e2894c507f2ea4d65f7d0337cc}{Render\+Graph\+Node\+Type}} \mbox{\hyperlink{class_f_c_t_1_1_render_graph_node_a012ddbc284e36aa2c2bdc909580ba5ac}{type}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected 属性}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_f_c_t_1_1_render_graph_node_a3c1c5e851e0458fec80988a8a6ab75d4}{m\+\_\+name}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_f_c_t_1_1_texture_edge}{Texture\+Edge}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_pass_node_a483aaf089fd0e687a4eb7483e124c0ca}{m\+\_\+texture\+Incoming\+Edges}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_f_c_t_1_1_target_edge}{Target\+Edge}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_pass_node_a27eba767ef0c8c080f60f82ef2dabb25}{m\+\_\+target\+Outgoing\+Edges}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_f_c_t_1_1_depth_stencil_edge}{Depth\+Stencil\+Edge}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_pass_node_a66e52abecc92520075a4aa9098833f06}{m\+\_\+depth\+Stencil\+Outgoing\+Edges}}
+\item 
+\mbox{\hyperlink{struct_f_c_t_1_1_enable_pass_clear}{Enable\+Pass\+Clear}} \mbox{\hyperlink{class_f_c_t_1_1_render_graph_pass_node_a420ae7900beb30dab137d39fa6511c5a}{m\+\_\+clear\+Info}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+
+
+在文件 \mbox{\hyperlink{_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_context_2_render_graph_8h_source_l00139}{139}} 行定义.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_f_c_t_1_1_render_graph_pass_node_doc-constructors}
+\doxysubsection{构造及析构函数说明}
+\Hypertarget{class_f_c_t_1_1_render_graph_pass_node_af565b4a36c52650d73f846d221c5d85e}\index{FCT::RenderGraphPassNode@{FCT::RenderGraphPassNode}!RenderGraphPassNode@{RenderGraphPassNode}}
+\index{RenderGraphPassNode@{RenderGraphPassNode}!FCT::RenderGraphPassNode@{FCT::RenderGraphPassNode}}
+\doxysubsubsection{\texorpdfstring{RenderGraphPassNode()}{RenderGraphPassNode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_pass_node_af565b4a36c52650d73f846d221c5d85e} 
+FCT\+::\+Render\+Graph\+Pass\+Node\+::\+Render\+Graph\+Pass\+Node (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_context_2_render_graph_8h_source_l00142}{142}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_render_graph_pass_node_a4889a4182a88f17b666d0662dc022d85}\index{FCT::RenderGraphPassNode@{FCT::RenderGraphPassNode}!RenderGraphPassNode@{RenderGraphPassNode}}
+\index{RenderGraphPassNode@{RenderGraphPassNode}!FCT::RenderGraphPassNode@{FCT::RenderGraphPassNode}}
+\doxysubsubsection{\texorpdfstring{RenderGraphPassNode()}{RenderGraphPassNode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_pass_node_a4889a4182a88f17b666d0662dc022d85} 
+FCT\+::\+Render\+Graph\+Pass\+Node\+::\+Render\+Graph\+Pass\+Node (\begin{DoxyParamCaption}\item[{std\+::string}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_context_2_render_graph_8h_source_l00144}{144}} 行定义.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_render_graph_pass_node_a4889a4182a88f17b666d0662dc022d85_cgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-func-members}
+\Hypertarget{class_f_c_t_1_1_render_graph_pass_node_doc-func-members}
+\doxysubsection{成员函数说明}
+\Hypertarget{class_f_c_t_1_1_render_graph_pass_node_af750f0161fe4d0bf1e99f17342ca50de}\index{FCT::RenderGraphPassNode@{FCT::RenderGraphPassNode}!addIncomingEdge@{addIncomingEdge}}
+\index{addIncomingEdge@{addIncomingEdge}!FCT::RenderGraphPassNode@{FCT::RenderGraphPassNode}}
+\doxysubsubsection{\texorpdfstring{addIncomingEdge()}{addIncomingEdge()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_pass_node_af750f0161fe4d0bf1e99f17342ca50de} 
+void FCT\+::\+Render\+Graph\+Pass\+Node\+::add\+Incoming\+Edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_texture_edge}{Texture\+Edge}} \texorpdfstring{$\ast$}{*}}]{edge}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_context_2_render_graph_8h_source_l00149}{149}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_render_graph_pass_node_a0ea280e15c7cdc70bd65825875491b88}\index{FCT::RenderGraphPassNode@{FCT::RenderGraphPassNode}!addOutgoingEdge@{addOutgoingEdge}}
+\index{addOutgoingEdge@{addOutgoingEdge}!FCT::RenderGraphPassNode@{FCT::RenderGraphPassNode}}
+\doxysubsubsection{\texorpdfstring{addOutgoingEdge()}{addOutgoingEdge()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_pass_node_a0ea280e15c7cdc70bd65825875491b88} 
+void FCT\+::\+Render\+Graph\+Pass\+Node\+::add\+Outgoing\+Edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_depth_stencil_edge}{Depth\+Stencil\+Edge}} \texorpdfstring{$\ast$}{*}}]{edge}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_context_2_render_graph_8h_source_l00157}{157}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_render_graph_pass_node_a63758055d14b3d2f865a1c69b9310945}\index{FCT::RenderGraphPassNode@{FCT::RenderGraphPassNode}!addOutgoingEdge@{addOutgoingEdge}}
+\index{addOutgoingEdge@{addOutgoingEdge}!FCT::RenderGraphPassNode@{FCT::RenderGraphPassNode}}
+\doxysubsubsection{\texorpdfstring{addOutgoingEdge()}{addOutgoingEdge()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_pass_node_a63758055d14b3d2f865a1c69b9310945} 
+void FCT\+::\+Render\+Graph\+Pass\+Node\+::add\+Outgoing\+Edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_target_edge}{Target\+Edge}} \texorpdfstring{$\ast$}{*}}]{edge}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_context_2_render_graph_8h_source_l00153}{153}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_render_graph_pass_node_aa7e42fed20418c99c3619362eccd711d}\index{FCT::RenderGraphPassNode@{FCT::RenderGraphPassNode}!applyPassDesc@{applyPassDesc}}
+\index{applyPassDesc@{applyPassDesc}!FCT::RenderGraphPassNode@{FCT::RenderGraphPassNode}}
+\doxysubsubsection{\texorpdfstring{applyPassDesc()}{applyPassDesc()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_pass_node_aa7e42fed20418c99c3619362eccd711d} 
+void FCT\+::\+Render\+Graph\+Pass\+Node\+::apply\+Pass\+Desc (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_f_c_t_1_1_pass_desc}{Pass\+Desc}} \&}]{desc}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_context_2_render_graph_8h_source_l00172}{172}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_render_graph_pass_node_afb65dbb483aca7e85b8f6b07abea0ff3}\index{FCT::RenderGraphPassNode@{FCT::RenderGraphPassNode}!getClearInfo@{getClearInfo}}
+\index{getClearInfo@{getClearInfo}!FCT::RenderGraphPassNode@{FCT::RenderGraphPassNode}}
+\doxysubsubsection{\texorpdfstring{getClearInfo()}{getClearInfo()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_pass_node_afb65dbb483aca7e85b8f6b07abea0ff3} 
+const \mbox{\hyperlink{struct_f_c_t_1_1_enable_pass_clear}{Enable\+Pass\+Clear}} \& FCT\+::\+Render\+Graph\+Pass\+Node\+::get\+Clear\+Info (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_context_2_render_graph_8h_source_l00175}{175}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_render_graph_pass_node_a46c4ae533410cc0acfa18c73ce8c4a27}\index{FCT::RenderGraphPassNode@{FCT::RenderGraphPassNode}!getDepthStencilOutgoingEdges@{getDepthStencilOutgoingEdges}}
+\index{getDepthStencilOutgoingEdges@{getDepthStencilOutgoingEdges}!FCT::RenderGraphPassNode@{FCT::RenderGraphPassNode}}
+\doxysubsubsection{\texorpdfstring{getDepthStencilOutgoingEdges()}{getDepthStencilOutgoingEdges()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_pass_node_a46c4ae533410cc0acfa18c73ce8c4a27} 
+const std\+::vector$<$ \mbox{\hyperlink{class_f_c_t_1_1_depth_stencil_edge}{Depth\+Stencil\+Edge}} \texorpdfstring{$\ast$}{*} $>$ \& FCT\+::\+Render\+Graph\+Pass\+Node\+::get\+Depth\+Stencil\+Outgoing\+Edges (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_context_2_render_graph_8h_source_l00169}{169}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_render_graph_pass_node_a85c4782b27c6c062dfe221c1c74da6ef}\index{FCT::RenderGraphPassNode@{FCT::RenderGraphPassNode}!getTargetOutgoingEdges@{getTargetOutgoingEdges}}
+\index{getTargetOutgoingEdges@{getTargetOutgoingEdges}!FCT::RenderGraphPassNode@{FCT::RenderGraphPassNode}}
+\doxysubsubsection{\texorpdfstring{getTargetOutgoingEdges()}{getTargetOutgoingEdges()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_pass_node_a85c4782b27c6c062dfe221c1c74da6ef} 
+const std\+::vector$<$ \mbox{\hyperlink{class_f_c_t_1_1_target_edge}{Target\+Edge}} \texorpdfstring{$\ast$}{*} $>$ \& FCT\+::\+Render\+Graph\+Pass\+Node\+::get\+Target\+Outgoing\+Edges (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_context_2_render_graph_8h_source_l00165}{165}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_render_graph_pass_node_a678de16037723499cc732b76589dd738}\index{FCT::RenderGraphPassNode@{FCT::RenderGraphPassNode}!getTextureIncomingEdges@{getTextureIncomingEdges}}
+\index{getTextureIncomingEdges@{getTextureIncomingEdges}!FCT::RenderGraphPassNode@{FCT::RenderGraphPassNode}}
+\doxysubsubsection{\texorpdfstring{getTextureIncomingEdges()}{getTextureIncomingEdges()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_pass_node_a678de16037723499cc732b76589dd738} 
+const std\+::vector$<$ \mbox{\hyperlink{class_f_c_t_1_1_texture_edge}{Texture\+Edge}} \texorpdfstring{$\ast$}{*} $>$ \& FCT\+::\+Render\+Graph\+Pass\+Node\+::get\+Texture\+Incoming\+Edges (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_context_2_render_graph_8h_source_l00161}{161}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_render_graph_node_a6588dda6d19c66185d4b144558313ef8}\index{FCT::RenderGraphPassNode@{FCT::RenderGraphPassNode}!operator==@{operator==}}
+\index{operator==@{operator==}!FCT::RenderGraphPassNode@{FCT::RenderGraphPassNode}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_node_a6588dda6d19c66185d4b144558313ef8} 
+bool FCT\+::\+Render\+Graph\+Node\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_f_c_t_1_1_render_graph_node}{Render\+Graph\+Node}} \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}, {\ttfamily [inherited]}}
+
+
+
+在文件 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source_l00053}{53}} 行定义.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_render_graph_node_a6588dda6d19c66185d4b144558313ef8_cgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_f_c_t_1_1_render_graph_pass_node_doc-variable-members}
+\doxysubsection{类成员变量说明}
+\Hypertarget{class_f_c_t_1_1_render_graph_pass_node_a420ae7900beb30dab137d39fa6511c5a}\index{FCT::RenderGraphPassNode@{FCT::RenderGraphPassNode}!m\_clearInfo@{m\_clearInfo}}
+\index{m\_clearInfo@{m\_clearInfo}!FCT::RenderGraphPassNode@{FCT::RenderGraphPassNode}}
+\doxysubsubsection{\texorpdfstring{m\_clearInfo}{m\_clearInfo}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_pass_node_a420ae7900beb30dab137d39fa6511c5a} 
+\mbox{\hyperlink{struct_f_c_t_1_1_enable_pass_clear}{Enable\+Pass\+Clear}} FCT\+::\+Render\+Graph\+Pass\+Node\+::m\+\_\+clear\+Info\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_context_2_render_graph_8h_source_l00182}{182}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_render_graph_pass_node_a66e52abecc92520075a4aa9098833f06}\index{FCT::RenderGraphPassNode@{FCT::RenderGraphPassNode}!m\_depthStencilOutgoingEdges@{m\_depthStencilOutgoingEdges}}
+\index{m\_depthStencilOutgoingEdges@{m\_depthStencilOutgoingEdges}!FCT::RenderGraphPassNode@{FCT::RenderGraphPassNode}}
+\doxysubsubsection{\texorpdfstring{m\_depthStencilOutgoingEdges}{m\_depthStencilOutgoingEdges}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_pass_node_a66e52abecc92520075a4aa9098833f06} 
+std\+::vector$<$\mbox{\hyperlink{class_f_c_t_1_1_depth_stencil_edge}{Depth\+Stencil\+Edge}}\texorpdfstring{$\ast$}{*}$>$ FCT\+::\+Render\+Graph\+Pass\+Node\+::m\+\_\+depth\+Stencil\+Outgoing\+Edges\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_context_2_render_graph_8h_source_l00181}{181}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_render_graph_node_a3c1c5e851e0458fec80988a8a6ab75d4}\index{FCT::RenderGraphPassNode@{FCT::RenderGraphPassNode}!m\_name@{m\_name}}
+\index{m\_name@{m\_name}!FCT::RenderGraphPassNode@{FCT::RenderGraphPassNode}}
+\doxysubsubsection{\texorpdfstring{m\_name}{m\_name}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_node_a3c1c5e851e0458fec80988a8a6ab75d4} 
+std\+::string FCT\+::\+Render\+Graph\+Node\+::m\+\_\+name\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_context_2_render_graph_8h_source_l00054}{54}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_render_graph_pass_node_a27eba767ef0c8c080f60f82ef2dabb25}\index{FCT::RenderGraphPassNode@{FCT::RenderGraphPassNode}!m\_targetOutgoingEdges@{m\_targetOutgoingEdges}}
+\index{m\_targetOutgoingEdges@{m\_targetOutgoingEdges}!FCT::RenderGraphPassNode@{FCT::RenderGraphPassNode}}
+\doxysubsubsection{\texorpdfstring{m\_targetOutgoingEdges}{m\_targetOutgoingEdges}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_pass_node_a27eba767ef0c8c080f60f82ef2dabb25} 
+std\+::vector$<$\mbox{\hyperlink{class_f_c_t_1_1_target_edge}{Target\+Edge}}\texorpdfstring{$\ast$}{*}$>$ FCT\+::\+Render\+Graph\+Pass\+Node\+::m\+\_\+target\+Outgoing\+Edges\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_context_2_render_graph_8h_source_l00180}{180}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_render_graph_pass_node_a483aaf089fd0e687a4eb7483e124c0ca}\index{FCT::RenderGraphPassNode@{FCT::RenderGraphPassNode}!m\_textureIncomingEdges@{m\_textureIncomingEdges}}
+\index{m\_textureIncomingEdges@{m\_textureIncomingEdges}!FCT::RenderGraphPassNode@{FCT::RenderGraphPassNode}}
+\doxysubsubsection{\texorpdfstring{m\_textureIncomingEdges}{m\_textureIncomingEdges}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_pass_node_a483aaf089fd0e687a4eb7483e124c0ca} 
+std\+::vector$<$\mbox{\hyperlink{class_f_c_t_1_1_texture_edge}{Texture\+Edge}}\texorpdfstring{$\ast$}{*}$>$ FCT\+::\+Render\+Graph\+Pass\+Node\+::m\+\_\+texture\+Incoming\+Edges\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_context_2_render_graph_8h_source_l00179}{179}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_render_graph_node_a80ca9b32bb21a8af3a7997ff218d560c}\index{FCT::RenderGraphPassNode@{FCT::RenderGraphPassNode}!name@{name}}
+\index{name@{name}!FCT::RenderGraphPassNode@{FCT::RenderGraphPassNode}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_node_a80ca9b32bb21a8af3a7997ff218d560c} 
+std\+::string FCT\+::\+Render\+Graph\+Node\+::name\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+在文件 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source_l00051}{51}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_render_graph_node_a012ddbc284e36aa2c2bdc909580ba5ac}\index{FCT::RenderGraphPassNode@{FCT::RenderGraphPassNode}!type@{type}}
+\index{type@{type}!FCT::RenderGraphPassNode@{FCT::RenderGraphPassNode}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_node_a012ddbc284e36aa2c2bdc909580ba5ac} 
+\mbox{\hyperlink{namespace_f_c_t_adfd269e2894c507f2ea4d65f7d0337cc}{Render\+Graph\+Node\+Type}} FCT\+::\+Render\+Graph\+Node\+::type\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+在文件 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source_l00052}{52}} 行定义.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Context/\mbox{\hyperlink{_context_2_render_graph_8h}{Render\+Graph.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,417 @@
+\doxysection{FCT\+::Texture\+Size结构体 参考}
+\hypertarget{struct_f_c_t_1_1_texture_size}{}\label{struct_f_c_t_1_1_texture_size}\index{FCT::TextureSize@{FCT::TextureSize}}
+
+
+{\ttfamily \#include $<$Render\+Graph\+\_\+\+Texture\+Size.\+h$>$}
+
+
+
+FCT\+::Texture\+Size 的协作图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{struct_f_c_t_1_1_texture_size__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 类型}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{struct_f_c_t_1_1_texture_size_a3f776cd36015e144601331611f54fadb}{Type}} \{ \mbox{\hyperlink{struct_f_c_t_1_1_texture_size_a3f776cd36015e144601331611f54fadbab51ca26c6c89cfc9bec338f7a0d3e0c8}{Absolute}}
+, \mbox{\hyperlink{struct_f_c_t_1_1_texture_size_a3f776cd36015e144601331611f54fadba2ca9469819fb0fb61ff98e914a7ccca0}{Relative}}
+, \mbox{\hyperlink{struct_f_c_t_1_1_texture_size_a3f776cd36015e144601331611f54fadbaec0fc0100c4fc1ce4eea230c3dc10360}{Undefined}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_f_c_t_1_1_texture_size_a77f7d504a1c8ad174e3fdaa74c663942}{Texture\+Size}} (uint32\+\_\+t w, uint32\+\_\+t h) noexcept
+\item 
+\mbox{\hyperlink{struct_f_c_t_1_1_texture_size_a6bf8350945d96bcfb6de9d282af684ca}{Texture\+Size}} (const \mbox{\hyperlink{struct_f_c_t_1_1_fraction}{Fraction}} \&relW, const \mbox{\hyperlink{struct_f_c_t_1_1_fraction}{Fraction}} \&relH) noexcept
+\item 
+\mbox{\hyperlink{struct_f_c_t_1_1_texture_size_ac95107f884def36f7ff4ca23b5c5eaf5}{Texture\+Size}} (int32\+\_\+t numW, int32\+\_\+t denW, int32\+\_\+t numH, int32\+\_\+t denH) noexcept
+\item 
+\mbox{\hyperlink{struct_f_c_t_1_1_texture_size_adc21aa262c5b8b6749f3217b545ce9ed}{Texture\+Size}} () noexcept
+\item 
+bool \mbox{\hyperlink{struct_f_c_t_1_1_texture_size_a4111995d295aff53f342dad274df61f2}{is\+Full\+Size}} () const noexcept
+\item 
+float \mbox{\hyperlink{struct_f_c_t_1_1_texture_size_aca1ad804db8e6e1cacf86e39d9a622d4}{get\+Relative\+Width\+Float}} () const noexcept
+\item 
+float \mbox{\hyperlink{struct_f_c_t_1_1_texture_size_aa153c88577bca30baf39cd176d29f9d5}{get\+Relative\+Height\+Float}} () const noexcept
+\end{DoxyCompactItemize}
+\doxysubsubsection*{静态 Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{struct_f_c_t_1_1_texture_size}{Texture\+Size}} \mbox{\hyperlink{struct_f_c_t_1_1_texture_size_a4ac6823b2fde1ce1286ba09c3d7dc60a}{Absolute}} (uint32\+\_\+t w, uint32\+\_\+t h)
+\item 
+static \mbox{\hyperlink{struct_f_c_t_1_1_texture_size}{Texture\+Size}} \mbox{\hyperlink{struct_f_c_t_1_1_texture_size_a7162fe60b9eaafa8da0655b21575e401}{Relative}} (const \mbox{\hyperlink{struct_f_c_t_1_1_fraction}{Fraction}} \&w, const \mbox{\hyperlink{struct_f_c_t_1_1_fraction}{Fraction}} \&h)
+\item 
+static \mbox{\hyperlink{struct_f_c_t_1_1_texture_size}{Texture\+Size}} \mbox{\hyperlink{struct_f_c_t_1_1_texture_size_a249d15457d382223e0c4751f713aa805}{Relative}} (int32\+\_\+t numW, int32\+\_\+t denW, int32\+\_\+t numH, int32\+\_\+t denH)
+\item 
+static \mbox{\hyperlink{struct_f_c_t_1_1_texture_size}{Texture\+Size}} \mbox{\hyperlink{struct_f_c_t_1_1_texture_size_a091d1fa7484af677583f12a4d15ad8b8}{Full\+Size}} ()
+\item 
+static \mbox{\hyperlink{struct_f_c_t_1_1_texture_size}{Texture\+Size}} \mbox{\hyperlink{struct_f_c_t_1_1_texture_size_afb8f69af737d21468c44147170d818fd}{Half\+Size}} ()
+\item 
+static \mbox{\hyperlink{struct_f_c_t_1_1_texture_size}{Texture\+Size}} \mbox{\hyperlink{struct_f_c_t_1_1_texture_size_ab4882713c8355b1321386575881cfff6}{Quarter\+Size}} ()
+\item 
+static \mbox{\hyperlink{struct_f_c_t_1_1_texture_size}{Texture\+Size}} \mbox{\hyperlink{struct_f_c_t_1_1_texture_size_a36708cf9732f3594bb009fce10a1c5c7}{Third\+Size}} ()
+\item 
+static \mbox{\hyperlink{struct_f_c_t_1_1_texture_size}{Texture\+Size}} \mbox{\hyperlink{struct_f_c_t_1_1_texture_size_a2fc0f48439ac27200472855b88ed244f}{Two\+Thirds\+Size}} ()
+\item 
+static \mbox{\hyperlink{struct_f_c_t_1_1_texture_size}{Texture\+Size}} \mbox{\hyperlink{struct_f_c_t_1_1_texture_size_ac21c87ae16bca127f67860fcd345229c}{Three\+Quarters\+Size}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public 属性}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_f_c_t_1_1_texture_size_a3f776cd36015e144601331611f54fadb}{Type}} \mbox{\hyperlink{struct_f_c_t_1_1_texture_size_afd6201e8a128282eb4f347ab0b1ecabf}{type}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_f_c_t_1_1_texture_size_a955db4328b76b1f266679e789b6a9cf8}{width}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_f_c_t_1_1_texture_size_a727213614de5c7b06e5ac4af6bc03f4e}{height}}
+\item 
+\mbox{\hyperlink{struct_f_c_t_1_1_fraction}{Fraction}} \mbox{\hyperlink{struct_f_c_t_1_1_texture_size_a72c08bf5385a26856469109a7e689383}{relative\+Width}}
+\item 
+\mbox{\hyperlink{struct_f_c_t_1_1_fraction}{Fraction}} \mbox{\hyperlink{struct_f_c_t_1_1_texture_size_afdc72b2db8677b695d3bf43c26ab4f63}{relative\+Height}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+
+
+在文件 \mbox{\hyperlink{_render_graph___texture_size_8h_source}{Render\+Graph\+\_\+\+Texture\+Size.\+h}} 第 \mbox{\hyperlink{_render_graph___texture_size_8h_source_l00004}{4}} 行定义.
+
+
+
+\label{doc-enum-members}
+\Hypertarget{struct_f_c_t_1_1_texture_size_doc-enum-members}
+\doxysubsection{成员枚举类型说明}
+\Hypertarget{struct_f_c_t_1_1_texture_size_a3f776cd36015e144601331611f54fadb}\index{FCT::TextureSize@{FCT::TextureSize}!Type@{Type}}
+\index{Type@{Type}!FCT::TextureSize@{FCT::TextureSize}}
+\doxysubsubsection{\texorpdfstring{Type}{Type}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_texture_size_a3f776cd36015e144601331611f54fadb} 
+enum class \mbox{\hyperlink{struct_f_c_t_1_1_texture_size_a3f776cd36015e144601331611f54fadb}{FCT\+::\+Texture\+Size\+::\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}[2]{枚举值}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Absolute@{Absolute}!FCT::TextureSize@{FCT::TextureSize}}\index{FCT::TextureSize@{FCT::TextureSize}!Absolute@{Absolute}}}\Hypertarget{struct_f_c_t_1_1_texture_size_a3f776cd36015e144601331611f54fadbab51ca26c6c89cfc9bec338f7a0d3e0c8}\label{struct_f_c_t_1_1_texture_size_a3f776cd36015e144601331611f54fadbab51ca26c6c89cfc9bec338f7a0d3e0c8} 
+Absolute&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Relative@{Relative}!FCT::TextureSize@{FCT::TextureSize}}\index{FCT::TextureSize@{FCT::TextureSize}!Relative@{Relative}}}\Hypertarget{struct_f_c_t_1_1_texture_size_a3f776cd36015e144601331611f54fadba2ca9469819fb0fb61ff98e914a7ccca0}\label{struct_f_c_t_1_1_texture_size_a3f776cd36015e144601331611f54fadba2ca9469819fb0fb61ff98e914a7ccca0} 
+Relative&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Undefined@{Undefined}!FCT::TextureSize@{FCT::TextureSize}}\index{FCT::TextureSize@{FCT::TextureSize}!Undefined@{Undefined}}}\Hypertarget{struct_f_c_t_1_1_texture_size_a3f776cd36015e144601331611f54fadbaec0fc0100c4fc1ce4eea230c3dc10360}\label{struct_f_c_t_1_1_texture_size_a3f776cd36015e144601331611f54fadbaec0fc0100c4fc1ce4eea230c3dc10360} 
+Undefined&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+在文件 \mbox{\hyperlink{_render_graph___texture_size_8h_source}{Render\+Graph\+\_\+\+Texture\+Size.\+h}} 第 \mbox{\hyperlink{_render_graph___texture_size_8h_source_l00006}{6}} 行定义.
+
+
+
+\label{doc-constructors}
+\Hypertarget{struct_f_c_t_1_1_texture_size_doc-constructors}
+\doxysubsection{构造及析构函数说明}
+\Hypertarget{struct_f_c_t_1_1_texture_size_a77f7d504a1c8ad174e3fdaa74c663942}\index{FCT::TextureSize@{FCT::TextureSize}!TextureSize@{TextureSize}}
+\index{TextureSize@{TextureSize}!FCT::TextureSize@{FCT::TextureSize}}
+\doxysubsubsection{\texorpdfstring{TextureSize()}{TextureSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_texture_size_a77f7d504a1c8ad174e3fdaa74c663942} 
+FCT\+::\+Texture\+Size\+::\+Texture\+Size (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{w}{, }\item[{uint32\+\_\+t}]{h}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+在文件 \mbox{\hyperlink{_render_graph___texture_size_8h_source}{Render\+Graph\+\_\+\+Texture\+Size.\+h}} 第 \mbox{\hyperlink{_render_graph___texture_size_8h_source_l00019}{19}} 行定义.
+
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_f_c_t_1_1_texture_size_a77f7d504a1c8ad174e3fdaa74c663942_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{struct_f_c_t_1_1_texture_size_a6bf8350945d96bcfb6de9d282af684ca}\index{FCT::TextureSize@{FCT::TextureSize}!TextureSize@{TextureSize}}
+\index{TextureSize@{TextureSize}!FCT::TextureSize@{FCT::TextureSize}}
+\doxysubsubsection{\texorpdfstring{TextureSize()}{TextureSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_texture_size_a6bf8350945d96bcfb6de9d282af684ca} 
+FCT\+::\+Texture\+Size\+::\+Texture\+Size (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_f_c_t_1_1_fraction}{Fraction}} \&}]{relW}{, }\item[{const \mbox{\hyperlink{struct_f_c_t_1_1_fraction}{Fraction}} \&}]{relH}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+在文件 \mbox{\hyperlink{_render_graph___texture_size_8h_source}{Render\+Graph\+\_\+\+Texture\+Size.\+h}} 第 \mbox{\hyperlink{_render_graph___texture_size_8h_source_l00022}{22}} 行定义.
+
+\Hypertarget{struct_f_c_t_1_1_texture_size_ac95107f884def36f7ff4ca23b5c5eaf5}\index{FCT::TextureSize@{FCT::TextureSize}!TextureSize@{TextureSize}}
+\index{TextureSize@{TextureSize}!FCT::TextureSize@{FCT::TextureSize}}
+\doxysubsubsection{\texorpdfstring{TextureSize()}{TextureSize()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_texture_size_ac95107f884def36f7ff4ca23b5c5eaf5} 
+FCT\+::\+Texture\+Size\+::\+Texture\+Size (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{numW}{, }\item[{int32\+\_\+t}]{denW}{, }\item[{int32\+\_\+t}]{numH}{, }\item[{int32\+\_\+t}]{denH}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+在文件 \mbox{\hyperlink{_render_graph___texture_size_8h_source}{Render\+Graph\+\_\+\+Texture\+Size.\+h}} 第 \mbox{\hyperlink{_render_graph___texture_size_8h_source_l00025}{25}} 行定义.
+
+\Hypertarget{struct_f_c_t_1_1_texture_size_adc21aa262c5b8b6749f3217b545ce9ed}\index{FCT::TextureSize@{FCT::TextureSize}!TextureSize@{TextureSize}}
+\index{TextureSize@{TextureSize}!FCT::TextureSize@{FCT::TextureSize}}
+\doxysubsubsection{\texorpdfstring{TextureSize()}{TextureSize()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_texture_size_adc21aa262c5b8b6749f3217b545ce9ed} 
+FCT\+::\+Texture\+Size\+::\+Texture\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+在文件 \mbox{\hyperlink{_render_graph___texture_size_8h_source}{Render\+Graph\+\_\+\+Texture\+Size.\+h}} 第 \mbox{\hyperlink{_render_graph___texture_size_8h_source_l00029}{29}} 行定义.
+
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_f_c_t_1_1_texture_size_adc21aa262c5b8b6749f3217b545ce9ed_icgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-func-members}
+\Hypertarget{struct_f_c_t_1_1_texture_size_doc-func-members}
+\doxysubsection{成员函数说明}
+\Hypertarget{struct_f_c_t_1_1_texture_size_a4ac6823b2fde1ce1286ba09c3d7dc60a}\index{FCT::TextureSize@{FCT::TextureSize}!Absolute@{Absolute}}
+\index{Absolute@{Absolute}!FCT::TextureSize@{FCT::TextureSize}}
+\doxysubsubsection{\texorpdfstring{Absolute()}{Absolute()}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_texture_size_a4ac6823b2fde1ce1286ba09c3d7dc60a} 
+\mbox{\hyperlink{struct_f_c_t_1_1_texture_size}{Texture\+Size}} FCT\+::\+Texture\+Size\+::\+Absolute (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{w}{, }\item[{uint32\+\_\+t}]{h}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+在文件 \mbox{\hyperlink{_render_graph___texture_size_8h_source}{Render\+Graph\+\_\+\+Texture\+Size.\+h}} 第 \mbox{\hyperlink{_render_graph___texture_size_8h_source_l00032}{32}} 行定义.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_f_c_t_1_1_texture_size_a4ac6823b2fde1ce1286ba09c3d7dc60a_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{struct_f_c_t_1_1_texture_size_a091d1fa7484af677583f12a4d15ad8b8}\index{FCT::TextureSize@{FCT::TextureSize}!FullSize@{FullSize}}
+\index{FullSize@{FullSize}!FCT::TextureSize@{FCT::TextureSize}}
+\doxysubsubsection{\texorpdfstring{FullSize()}{FullSize()}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_texture_size_a091d1fa7484af677583f12a4d15ad8b8} 
+\mbox{\hyperlink{struct_f_c_t_1_1_texture_size}{Texture\+Size}} FCT\+::\+Texture\+Size\+::\+Full\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+在文件 \mbox{\hyperlink{_render_graph___texture_size_8h_source}{Render\+Graph\+\_\+\+Texture\+Size.\+h}} 第 \mbox{\hyperlink{_render_graph___texture_size_8h_source_l00044}{44}} 行定义.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_f_c_t_1_1_texture_size_a091d1fa7484af677583f12a4d15ad8b8_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{struct_f_c_t_1_1_texture_size_aa153c88577bca30baf39cd176d29f9d5}\index{FCT::TextureSize@{FCT::TextureSize}!getRelativeHeightFloat@{getRelativeHeightFloat}}
+\index{getRelativeHeightFloat@{getRelativeHeightFloat}!FCT::TextureSize@{FCT::TextureSize}}
+\doxysubsubsection{\texorpdfstring{getRelativeHeightFloat()}{getRelativeHeightFloat()}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_texture_size_aa153c88577bca30baf39cd176d29f9d5} 
+float FCT\+::\+Texture\+Size\+::get\+Relative\+Height\+Float (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+在文件 \mbox{\hyperlink{_render_graph___texture_size_8h_source}{Render\+Graph\+\_\+\+Texture\+Size.\+h}} 第 \mbox{\hyperlink{_render_graph___texture_size_8h_source_l00080}{80}} 行定义.
+
+\Hypertarget{struct_f_c_t_1_1_texture_size_aca1ad804db8e6e1cacf86e39d9a622d4}\index{FCT::TextureSize@{FCT::TextureSize}!getRelativeWidthFloat@{getRelativeWidthFloat}}
+\index{getRelativeWidthFloat@{getRelativeWidthFloat}!FCT::TextureSize@{FCT::TextureSize}}
+\doxysubsubsection{\texorpdfstring{getRelativeWidthFloat()}{getRelativeWidthFloat()}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_texture_size_aca1ad804db8e6e1cacf86e39d9a622d4} 
+float FCT\+::\+Texture\+Size\+::get\+Relative\+Width\+Float (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+在文件 \mbox{\hyperlink{_render_graph___texture_size_8h_source}{Render\+Graph\+\_\+\+Texture\+Size.\+h}} 第 \mbox{\hyperlink{_render_graph___texture_size_8h_source_l00076}{76}} 行定义.
+
+\Hypertarget{struct_f_c_t_1_1_texture_size_afb8f69af737d21468c44147170d818fd}\index{FCT::TextureSize@{FCT::TextureSize}!HalfSize@{HalfSize}}
+\index{HalfSize@{HalfSize}!FCT::TextureSize@{FCT::TextureSize}}
+\doxysubsubsection{\texorpdfstring{HalfSize()}{HalfSize()}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_texture_size_afb8f69af737d21468c44147170d818fd} 
+\mbox{\hyperlink{struct_f_c_t_1_1_texture_size}{Texture\+Size}} FCT\+::\+Texture\+Size\+::\+Half\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+在文件 \mbox{\hyperlink{_render_graph___texture_size_8h_source}{Render\+Graph\+\_\+\+Texture\+Size.\+h}} 第 \mbox{\hyperlink{_render_graph___texture_size_8h_source_l00048}{48}} 行定义.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_f_c_t_1_1_texture_size_afb8f69af737d21468c44147170d818fd_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{struct_f_c_t_1_1_texture_size_a4111995d295aff53f342dad274df61f2}\index{FCT::TextureSize@{FCT::TextureSize}!isFullSize@{isFullSize}}
+\index{isFullSize@{isFullSize}!FCT::TextureSize@{FCT::TextureSize}}
+\doxysubsubsection{\texorpdfstring{isFullSize()}{isFullSize()}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_texture_size_a4111995d295aff53f342dad274df61f2} 
+bool FCT\+::\+Texture\+Size\+::is\+Full\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+在文件 \mbox{\hyperlink{_render_graph___texture_size_8h_source}{Render\+Graph\+\_\+\+Texture\+Size.\+h}} 第 \mbox{\hyperlink{_render_graph___texture_size_8h_source_l00070}{70}} 行定义.
+
+\Hypertarget{struct_f_c_t_1_1_texture_size_ab4882713c8355b1321386575881cfff6}\index{FCT::TextureSize@{FCT::TextureSize}!QuarterSize@{QuarterSize}}
+\index{QuarterSize@{QuarterSize}!FCT::TextureSize@{FCT::TextureSize}}
+\doxysubsubsection{\texorpdfstring{QuarterSize()}{QuarterSize()}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_texture_size_ab4882713c8355b1321386575881cfff6} 
+\mbox{\hyperlink{struct_f_c_t_1_1_texture_size}{Texture\+Size}} FCT\+::\+Texture\+Size\+::\+Quarter\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+在文件 \mbox{\hyperlink{_render_graph___texture_size_8h_source}{Render\+Graph\+\_\+\+Texture\+Size.\+h}} 第 \mbox{\hyperlink{_render_graph___texture_size_8h_source_l00052}{52}} 行定义.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_f_c_t_1_1_texture_size_ab4882713c8355b1321386575881cfff6_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{struct_f_c_t_1_1_texture_size_a7162fe60b9eaafa8da0655b21575e401}\index{FCT::TextureSize@{FCT::TextureSize}!Relative@{Relative}}
+\index{Relative@{Relative}!FCT::TextureSize@{FCT::TextureSize}}
+\doxysubsubsection{\texorpdfstring{Relative()}{Relative()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_texture_size_a7162fe60b9eaafa8da0655b21575e401} 
+\mbox{\hyperlink{struct_f_c_t_1_1_texture_size}{Texture\+Size}} FCT\+::\+Texture\+Size\+::\+Relative (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_f_c_t_1_1_fraction}{Fraction}} \&}]{w}{, }\item[{const \mbox{\hyperlink{struct_f_c_t_1_1_fraction}{Fraction}} \&}]{h}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+在文件 \mbox{\hyperlink{_render_graph___texture_size_8h_source}{Render\+Graph\+\_\+\+Texture\+Size.\+h}} 第 \mbox{\hyperlink{_render_graph___texture_size_8h_source_l00036}{36}} 行定义.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_f_c_t_1_1_texture_size_a7162fe60b9eaafa8da0655b21575e401_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{struct_f_c_t_1_1_texture_size_a249d15457d382223e0c4751f713aa805}\index{FCT::TextureSize@{FCT::TextureSize}!Relative@{Relative}}
+\index{Relative@{Relative}!FCT::TextureSize@{FCT::TextureSize}}
+\doxysubsubsection{\texorpdfstring{Relative()}{Relative()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_texture_size_a249d15457d382223e0c4751f713aa805} 
+\mbox{\hyperlink{struct_f_c_t_1_1_texture_size}{Texture\+Size}} FCT\+::\+Texture\+Size\+::\+Relative (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{numW}{, }\item[{int32\+\_\+t}]{denW}{, }\item[{int32\+\_\+t}]{numH}{, }\item[{int32\+\_\+t}]{denH}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+在文件 \mbox{\hyperlink{_render_graph___texture_size_8h_source}{Render\+Graph\+\_\+\+Texture\+Size.\+h}} 第 \mbox{\hyperlink{_render_graph___texture_size_8h_source_l00040}{40}} 行定义.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_f_c_t_1_1_texture_size_a249d15457d382223e0c4751f713aa805_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{struct_f_c_t_1_1_texture_size_a36708cf9732f3594bb009fce10a1c5c7}\index{FCT::TextureSize@{FCT::TextureSize}!ThirdSize@{ThirdSize}}
+\index{ThirdSize@{ThirdSize}!FCT::TextureSize@{FCT::TextureSize}}
+\doxysubsubsection{\texorpdfstring{ThirdSize()}{ThirdSize()}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_texture_size_a36708cf9732f3594bb009fce10a1c5c7} 
+\mbox{\hyperlink{struct_f_c_t_1_1_texture_size}{Texture\+Size}} FCT\+::\+Texture\+Size\+::\+Third\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+在文件 \mbox{\hyperlink{_render_graph___texture_size_8h_source}{Render\+Graph\+\_\+\+Texture\+Size.\+h}} 第 \mbox{\hyperlink{_render_graph___texture_size_8h_source_l00057}{57}} 行定义.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_f_c_t_1_1_texture_size_a36708cf9732f3594bb009fce10a1c5c7_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{struct_f_c_t_1_1_texture_size_ac21c87ae16bca127f67860fcd345229c}\index{FCT::TextureSize@{FCT::TextureSize}!ThreeQuartersSize@{ThreeQuartersSize}}
+\index{ThreeQuartersSize@{ThreeQuartersSize}!FCT::TextureSize@{FCT::TextureSize}}
+\doxysubsubsection{\texorpdfstring{ThreeQuartersSize()}{ThreeQuartersSize()}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_texture_size_ac21c87ae16bca127f67860fcd345229c} 
+\mbox{\hyperlink{struct_f_c_t_1_1_texture_size}{Texture\+Size}} FCT\+::\+Texture\+Size\+::\+Three\+Quarters\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+在文件 \mbox{\hyperlink{_render_graph___texture_size_8h_source}{Render\+Graph\+\_\+\+Texture\+Size.\+h}} 第 \mbox{\hyperlink{_render_graph___texture_size_8h_source_l00065}{65}} 行定义.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_f_c_t_1_1_texture_size_ac21c87ae16bca127f67860fcd345229c_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{struct_f_c_t_1_1_texture_size_a2fc0f48439ac27200472855b88ed244f}\index{FCT::TextureSize@{FCT::TextureSize}!TwoThirdsSize@{TwoThirdsSize}}
+\index{TwoThirdsSize@{TwoThirdsSize}!FCT::TextureSize@{FCT::TextureSize}}
+\doxysubsubsection{\texorpdfstring{TwoThirdsSize()}{TwoThirdsSize()}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_texture_size_a2fc0f48439ac27200472855b88ed244f} 
+\mbox{\hyperlink{struct_f_c_t_1_1_texture_size}{Texture\+Size}} FCT\+::\+Texture\+Size\+::\+Two\+Thirds\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+在文件 \mbox{\hyperlink{_render_graph___texture_size_8h_source}{Render\+Graph\+\_\+\+Texture\+Size.\+h}} 第 \mbox{\hyperlink{_render_graph___texture_size_8h_source_l00061}{61}} 行定义.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_f_c_t_1_1_texture_size_a2fc0f48439ac27200472855b88ed244f_cgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-variable-members}
+\Hypertarget{struct_f_c_t_1_1_texture_size_doc-variable-members}
+\doxysubsection{类成员变量说明}
+\Hypertarget{struct_f_c_t_1_1_texture_size_a727213614de5c7b06e5ac4af6bc03f4e}\index{FCT::TextureSize@{FCT::TextureSize}!height@{height}}
+\index{height@{height}!FCT::TextureSize@{FCT::TextureSize}}
+\doxysubsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_texture_size_a727213614de5c7b06e5ac4af6bc03f4e} 
+uint32\+\_\+t FCT\+::\+Texture\+Size\+::height}
+
+
+
+在文件 \mbox{\hyperlink{_render_graph___texture_size_8h_source}{Render\+Graph\+\_\+\+Texture\+Size.\+h}} 第 \mbox{\hyperlink{_render_graph___texture_size_8h_source_l00014}{14}} 行定义.
+
+\Hypertarget{struct_f_c_t_1_1_texture_size_afdc72b2db8677b695d3bf43c26ab4f63}\index{FCT::TextureSize@{FCT::TextureSize}!relativeHeight@{relativeHeight}}
+\index{relativeHeight@{relativeHeight}!FCT::TextureSize@{FCT::TextureSize}}
+\doxysubsubsection{\texorpdfstring{relativeHeight}{relativeHeight}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_texture_size_afdc72b2db8677b695d3bf43c26ab4f63} 
+\mbox{\hyperlink{struct_f_c_t_1_1_fraction}{Fraction}} FCT\+::\+Texture\+Size\+::relative\+Height}
+
+
+
+在文件 \mbox{\hyperlink{_render_graph___texture_size_8h_source}{Render\+Graph\+\_\+\+Texture\+Size.\+h}} 第 \mbox{\hyperlink{_render_graph___texture_size_8h_source_l00017}{17}} 行定义.
+
+\Hypertarget{struct_f_c_t_1_1_texture_size_a72c08bf5385a26856469109a7e689383}\index{FCT::TextureSize@{FCT::TextureSize}!relativeWidth@{relativeWidth}}
+\index{relativeWidth@{relativeWidth}!FCT::TextureSize@{FCT::TextureSize}}
+\doxysubsubsection{\texorpdfstring{relativeWidth}{relativeWidth}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_texture_size_a72c08bf5385a26856469109a7e689383} 
+\mbox{\hyperlink{struct_f_c_t_1_1_fraction}{Fraction}} FCT\+::\+Texture\+Size\+::relative\+Width}
+
+
+
+在文件 \mbox{\hyperlink{_render_graph___texture_size_8h_source}{Render\+Graph\+\_\+\+Texture\+Size.\+h}} 第 \mbox{\hyperlink{_render_graph___texture_size_8h_source_l00016}{16}} 行定义.
+
+\Hypertarget{struct_f_c_t_1_1_texture_size_afd6201e8a128282eb4f347ab0b1ecabf}\index{FCT::TextureSize@{FCT::TextureSize}!type@{type}}
+\index{type@{type}!FCT::TextureSize@{FCT::TextureSize}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_texture_size_afd6201e8a128282eb4f347ab0b1ecabf} 
+\mbox{\hyperlink{struct_f_c_t_1_1_texture_size_a3f776cd36015e144601331611f54fadb}{Type}} FCT\+::\+Texture\+Size\+::type}
+
+
+
+在文件 \mbox{\hyperlink{_render_graph___texture_size_8h_source}{Render\+Graph\+\_\+\+Texture\+Size.\+h}} 第 \mbox{\hyperlink{_render_graph___texture_size_8h_source_l00012}{12}} 行定义.
+
+\Hypertarget{struct_f_c_t_1_1_texture_size_a955db4328b76b1f266679e789b6a9cf8}\index{FCT::TextureSize@{FCT::TextureSize}!width@{width}}
+\index{width@{width}!FCT::TextureSize@{FCT::TextureSize}}
+\doxysubsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_texture_size_a955db4328b76b1f266679e789b6a9cf8} 
+uint32\+\_\+t FCT\+::\+Texture\+Size\+::width}
+
+
+
+在文件 \mbox{\hyperlink{_render_graph___texture_size_8h_source}{Render\+Graph\+\_\+\+Texture\+Size.\+h}} 第 \mbox{\hyperlink{_render_graph___texture_size_8h_source_l00013}{13}} 行定义.
+
+
+
+该结构体的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Context/\mbox{\hyperlink{_render_graph___texture_size_8h}{Render\+Graph\+\_\+\+Texture\+Size.\+h}}\end{DoxyCompactItemize}

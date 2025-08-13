@@ -1,0 +1,438 @@
+\doxysection{FCT\+::Size\+Node结构体 参考}
+\hypertarget{struct_f_c_t_1_1_size_node}{}\label{struct_f_c_t_1_1_size_node}\index{FCT::SizeNode@{FCT::SizeNode}}
+
+
+{\ttfamily \#include $<$Size\+Node.\+h$>$}
+
+
+
+类 FCT\+::Size\+Node 继承关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{struct_f_c_t_1_1_size_node__inherit__graph}
+\end{center}
+\end{figure}
+
+
+FCT\+::Size\+Node 的协作图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{struct_f_c_t_1_1_size_node__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{struct_f_c_t_1_1_size_node_a9c20ece8352294d323e7ca769c755a77}{\texorpdfstring{$\sim$}{\string~}\+Size\+Node}} ()=default
+\item 
+\mbox{\hyperlink{struct_f_c_t_1_1_size_node_a58e72e8da4ae87a88a9d7fc4acf0e409}{Size\+Node}} () noexcept
+\item 
+\mbox{\hyperlink{struct_f_c_t_1_1_size_node_abc622423d5cbcba48444814bb09ba85c}{Size\+Node}} (uint32\+\_\+t w, uint32\+\_\+t h) noexcept
+\item 
+\mbox{\hyperlink{struct_f_c_t_1_1_size_node}{Size\+Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_f_c_t_1_1_size_node_ac5aefcf81e75a39b50265debc5e4d5c9}{find\+Root}} () const noexcept
+\item 
+\mbox{\hyperlink{struct_f_c_t_1_1_fraction_scale2_d}{Fraction\+Scale2D}} \mbox{\hyperlink{struct_f_c_t_1_1_size_node_a594073559f1d124a47eee71707d448db}{get\+Scale\+To\+Root}} () const noexcept
+\item 
+bool \mbox{\hyperlink{struct_f_c_t_1_1_size_node_acf11f833ff138217d89c73e637459435}{unite}} (\mbox{\hyperlink{struct_f_c_t_1_1_size_node}{Size\+Node}} \texorpdfstring{$\ast$}{*}other, const \mbox{\hyperlink{struct_f_c_t_1_1_fraction_scale2_d}{Fraction\+Scale2D}} \&scale=\mbox{\hyperlink{struct_f_c_t_1_1_fraction_scale2_d}{Fraction\+Scale2D}}()) const noexcept
+\item 
+bool \mbox{\hyperlink{struct_f_c_t_1_1_size_node_a031839a2731bd111329ca4ae053daacf}{set\+Fixed}} () const noexcept
+\item 
+bool \mbox{\hyperlink{struct_f_c_t_1_1_size_node_acfb461494835804d7d781a41c6b1e5a9}{set\+Fixed\+Size}} (uint32\+\_\+t w, uint32\+\_\+t h) const noexcept
+\item 
+bool \mbox{\hyperlink{struct_f_c_t_1_1_size_node_adb6c1e18a71d00f2ab4a29e2a5defb14}{get\+Computed\+Size}} (uint32\+\_\+t \&w, uint32\+\_\+t \&h) const noexcept
+\item 
+bool \mbox{\hyperlink{struct_f_c_t_1_1_size_node_a776e363250eaa977723697fa032ddc64}{is\+Size\+Determined}} () const noexcept
+\item 
+const \mbox{\hyperlink{struct_f_c_t_1_1_size_node}{Size\+Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_f_c_t_1_1_size_node_a40d6857c7cb710e741227d54a014a2bb}{get\+Root}} () const noexcept
+\item 
+bool \mbox{\hyperlink{struct_f_c_t_1_1_size_node_a5db1bd1ad56685ff1f9da64c6ca5f24c}{is\+Connected}} (const \mbox{\hyperlink{struct_f_c_t_1_1_size_node}{Size\+Node}} \texorpdfstring{$\ast$}{*}other) const noexcept
+\item 
+bool \mbox{\hyperlink{struct_f_c_t_1_1_size_node_a9732b5716dda9bc16fcaf86f60a4faaf}{is\+Same\+Size}} (const \mbox{\hyperlink{struct_f_c_t_1_1_size_node}{Size\+Node}} \texorpdfstring{$\ast$}{*}other) const noexcept
+\item 
+\mbox{\hyperlink{struct_f_c_t_1_1_fraction_scale2_d}{Fraction\+Scale2D}} \mbox{\hyperlink{struct_f_c_t_1_1_size_node_a64ca4efaa33707d1dfd6ff6d673b7d4d}{get\+Relative\+Scale}} (const \mbox{\hyperlink{struct_f_c_t_1_1_size_node}{Size\+Node}} \texorpdfstring{$\ast$}{*}other) const noexcept
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public 属性}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_f_c_t_1_1_size_node}{Size\+Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_f_c_t_1_1_size_node_af454a90b3935e183ee99873d1a319d3a}{parent}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_f_c_t_1_1_size_node_a841dd2fb34c5e249eedde53b3282b792}{width}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_f_c_t_1_1_size_node_ab8a0870435eb0ece05113559ace858be}{height}}
+\item 
+bool \mbox{\hyperlink{struct_f_c_t_1_1_size_node_ac88975034f7d124dd3509a739fce8aac}{size\+Fixed}}
+\item 
+\mbox{\hyperlink{struct_f_c_t_1_1_fraction_scale2_d}{Fraction\+Scale2D}} \mbox{\hyperlink{struct_f_c_t_1_1_size_node_aa7907fd33836d334cad7298a745bf999}{scale\+To\+Parent}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+
+
+在文件 \mbox{\hyperlink{_size_node_8h_source}{Size\+Node.\+h}} 第 \mbox{\hyperlink{_size_node_8h_source_l00006}{6}} 行定义.
+
+
+
+\label{doc-constructors}
+\Hypertarget{struct_f_c_t_1_1_size_node_doc-constructors}
+\doxysubsection{构造及析构函数说明}
+\Hypertarget{struct_f_c_t_1_1_size_node_a9c20ece8352294d323e7ca769c755a77}\index{FCT::SizeNode@{FCT::SizeNode}!````~SizeNode@{\texorpdfstring{$\sim$}{\string~}SizeNode}}
+\index{````~SizeNode@{\texorpdfstring{$\sim$}{\string~}SizeNode}!FCT::SizeNode@{FCT::SizeNode}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}SizeNode()}{\string~SizeNode()}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_size_node_a9c20ece8352294d323e7ca769c755a77} 
+virtual FCT\+::\+Size\+Node\+::\texorpdfstring{$\sim$}{\string~}\+Size\+Node (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+\Hypertarget{struct_f_c_t_1_1_size_node_a58e72e8da4ae87a88a9d7fc4acf0e409}\index{FCT::SizeNode@{FCT::SizeNode}!SizeNode@{SizeNode}}
+\index{SizeNode@{SizeNode}!FCT::SizeNode@{FCT::SizeNode}}
+\doxysubsubsection{\texorpdfstring{SizeNode()}{SizeNode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_size_node_a58e72e8da4ae87a88a9d7fc4acf0e409} 
+FCT\+::\+Size\+Node\+::\+Size\+Node (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+在文件 \mbox{\hyperlink{_size_node_8h_source}{Size\+Node.\+h}} 第 \mbox{\hyperlink{_size_node_8h_source_l00014}{14}} 行定义.
+
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_f_c_t_1_1_size_node_a58e72e8da4ae87a88a9d7fc4acf0e409_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{struct_f_c_t_1_1_size_node_abc622423d5cbcba48444814bb09ba85c}\index{FCT::SizeNode@{FCT::SizeNode}!SizeNode@{SizeNode}}
+\index{SizeNode@{SizeNode}!FCT::SizeNode@{FCT::SizeNode}}
+\doxysubsubsection{\texorpdfstring{SizeNode()}{SizeNode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_size_node_abc622423d5cbcba48444814bb09ba85c} 
+FCT\+::\+Size\+Node\+::\+Size\+Node (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{w}{, }\item[{uint32\+\_\+t}]{h}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+在文件 \mbox{\hyperlink{_size_node_8h_source}{Size\+Node.\+h}} 第 \mbox{\hyperlink{_size_node_8h_source_l00017}{17}} 行定义.
+
+
+
+\label{doc-func-members}
+\Hypertarget{struct_f_c_t_1_1_size_node_doc-func-members}
+\doxysubsection{成员函数说明}
+\Hypertarget{struct_f_c_t_1_1_size_node_ac5aefcf81e75a39b50265debc5e4d5c9}\index{FCT::SizeNode@{FCT::SizeNode}!findRoot@{findRoot}}
+\index{findRoot@{findRoot}!FCT::SizeNode@{FCT::SizeNode}}
+\doxysubsubsection{\texorpdfstring{findRoot()}{findRoot()}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_size_node_ac5aefcf81e75a39b50265debc5e4d5c9} 
+\mbox{\hyperlink{struct_f_c_t_1_1_size_node}{Size\+Node}} \texorpdfstring{$\ast$}{*} FCT\+::\+Size\+Node\+::find\+Root (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+在文件 \mbox{\hyperlink{_size_node_8h_source}{Size\+Node.\+h}} 第 \mbox{\hyperlink{_size_node_8h_source_l00020}{20}} 行定义.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_f_c_t_1_1_size_node_ac5aefcf81e75a39b50265debc5e4d5c9_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_f_c_t_1_1_size_node_ac5aefcf81e75a39b50265debc5e4d5c9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{struct_f_c_t_1_1_size_node_adb6c1e18a71d00f2ab4a29e2a5defb14}\index{FCT::SizeNode@{FCT::SizeNode}!getComputedSize@{getComputedSize}}
+\index{getComputedSize@{getComputedSize}!FCT::SizeNode@{FCT::SizeNode}}
+\doxysubsubsection{\texorpdfstring{getComputedSize()}{getComputedSize()}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_size_node_adb6c1e18a71d00f2ab4a29e2a5defb14} 
+bool FCT\+::\+Size\+Node\+::get\+Computed\+Size (\begin{DoxyParamCaption}\item[{uint32\+\_\+t \&}]{w}{, }\item[{uint32\+\_\+t \&}]{h}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+在文件 \mbox{\hyperlink{_size_node_8h_source}{Size\+Node.\+h}} 第 \mbox{\hyperlink{_size_node_8h_source_l00135}{135}} 行定义.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_f_c_t_1_1_size_node_adb6c1e18a71d00f2ab4a29e2a5defb14_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{struct_f_c_t_1_1_size_node_a64ca4efaa33707d1dfd6ff6d673b7d4d}\index{FCT::SizeNode@{FCT::SizeNode}!getRelativeScale@{getRelativeScale}}
+\index{getRelativeScale@{getRelativeScale}!FCT::SizeNode@{FCT::SizeNode}}
+\doxysubsubsection{\texorpdfstring{getRelativeScale()}{getRelativeScale()}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_size_node_a64ca4efaa33707d1dfd6ff6d673b7d4d} 
+\mbox{\hyperlink{struct_f_c_t_1_1_fraction_scale2_d}{Fraction\+Scale2D}} FCT\+::\+Size\+Node\+::get\+Relative\+Scale (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_f_c_t_1_1_size_node}{Size\+Node}} \texorpdfstring{$\ast$}{*}}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+在文件 \mbox{\hyperlink{_size_node_8h_source}{Size\+Node.\+h}} 第 \mbox{\hyperlink{_size_node_8h_source_l00165}{165}} 行定义.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_f_c_t_1_1_size_node_a64ca4efaa33707d1dfd6ff6d673b7d4d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{struct_f_c_t_1_1_size_node_a40d6857c7cb710e741227d54a014a2bb}\index{FCT::SizeNode@{FCT::SizeNode}!getRoot@{getRoot}}
+\index{getRoot@{getRoot}!FCT::SizeNode@{FCT::SizeNode}}
+\doxysubsubsection{\texorpdfstring{getRoot()}{getRoot()}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_size_node_a40d6857c7cb710e741227d54a014a2bb} 
+const \mbox{\hyperlink{struct_f_c_t_1_1_size_node}{Size\+Node}} \texorpdfstring{$\ast$}{*} FCT\+::\+Size\+Node\+::get\+Root (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+在文件 \mbox{\hyperlink{_size_node_8h_source}{Size\+Node.\+h}} 第 \mbox{\hyperlink{_size_node_8h_source_l00153}{153}} 行定义.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_f_c_t_1_1_size_node_a40d6857c7cb710e741227d54a014a2bb_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_f_c_t_1_1_size_node_a40d6857c7cb710e741227d54a014a2bb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{struct_f_c_t_1_1_size_node_a594073559f1d124a47eee71707d448db}\index{FCT::SizeNode@{FCT::SizeNode}!getScaleToRoot@{getScaleToRoot}}
+\index{getScaleToRoot@{getScaleToRoot}!FCT::SizeNode@{FCT::SizeNode}}
+\doxysubsubsection{\texorpdfstring{getScaleToRoot()}{getScaleToRoot()}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_size_node_a594073559f1d124a47eee71707d448db} 
+\mbox{\hyperlink{struct_f_c_t_1_1_fraction_scale2_d}{Fraction\+Scale2D}} FCT\+::\+Size\+Node\+::get\+Scale\+To\+Root (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+在文件 \mbox{\hyperlink{_size_node_8h_source}{Size\+Node.\+h}} 第 \mbox{\hyperlink{_size_node_8h_source_l00029}{29}} 行定义.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_f_c_t_1_1_size_node_a594073559f1d124a47eee71707d448db_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_f_c_t_1_1_size_node_a594073559f1d124a47eee71707d448db_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{struct_f_c_t_1_1_size_node_a5db1bd1ad56685ff1f9da64c6ca5f24c}\index{FCT::SizeNode@{FCT::SizeNode}!isConnected@{isConnected}}
+\index{isConnected@{isConnected}!FCT::SizeNode@{FCT::SizeNode}}
+\doxysubsubsection{\texorpdfstring{isConnected()}{isConnected()}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_size_node_a5db1bd1ad56685ff1f9da64c6ca5f24c} 
+bool FCT\+::\+Size\+Node\+::is\+Connected (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_f_c_t_1_1_size_node}{Size\+Node}} \texorpdfstring{$\ast$}{*}}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+在文件 \mbox{\hyperlink{_size_node_8h_source}{Size\+Node.\+h}} 第 \mbox{\hyperlink{_size_node_8h_source_l00157}{157}} 行定义.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_f_c_t_1_1_size_node_a5db1bd1ad56685ff1f9da64c6ca5f24c_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_f_c_t_1_1_size_node_a5db1bd1ad56685ff1f9da64c6ca5f24c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{struct_f_c_t_1_1_size_node_a9732b5716dda9bc16fcaf86f60a4faaf}\index{FCT::SizeNode@{FCT::SizeNode}!isSameSize@{isSameSize}}
+\index{isSameSize@{isSameSize}!FCT::SizeNode@{FCT::SizeNode}}
+\doxysubsubsection{\texorpdfstring{isSameSize()}{isSameSize()}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_size_node_a9732b5716dda9bc16fcaf86f60a4faaf} 
+bool FCT\+::\+Size\+Node\+::is\+Same\+Size (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_f_c_t_1_1_size_node}{Size\+Node}} \texorpdfstring{$\ast$}{*}}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+在文件 \mbox{\hyperlink{_size_node_8h_source}{Size\+Node.\+h}} 第 \mbox{\hyperlink{_size_node_8h_source_l00160}{160}} 行定义.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_f_c_t_1_1_size_node_a9732b5716dda9bc16fcaf86f60a4faaf_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_f_c_t_1_1_size_node_a9732b5716dda9bc16fcaf86f60a4faaf_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{struct_f_c_t_1_1_size_node_a776e363250eaa977723697fa032ddc64}\index{FCT::SizeNode@{FCT::SizeNode}!isSizeDetermined@{isSizeDetermined}}
+\index{isSizeDetermined@{isSizeDetermined}!FCT::SizeNode@{FCT::SizeNode}}
+\doxysubsubsection{\texorpdfstring{isSizeDetermined()}{isSizeDetermined()}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_size_node_a776e363250eaa977723697fa032ddc64} 
+bool FCT\+::\+Size\+Node\+::is\+Size\+Determined (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+在文件 \mbox{\hyperlink{_size_node_8h_source}{Size\+Node.\+h}} 第 \mbox{\hyperlink{_size_node_8h_source_l00149}{149}} 行定义.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_f_c_t_1_1_size_node_a776e363250eaa977723697fa032ddc64_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_f_c_t_1_1_size_node_a776e363250eaa977723697fa032ddc64_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{struct_f_c_t_1_1_size_node_a031839a2731bd111329ca4ae053daacf}\index{FCT::SizeNode@{FCT::SizeNode}!setFixed@{setFixed}}
+\index{setFixed@{setFixed}!FCT::SizeNode@{FCT::SizeNode}}
+\doxysubsubsection{\texorpdfstring{setFixed()}{setFixed()}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_size_node_a031839a2731bd111329ca4ae053daacf} 
+bool FCT\+::\+Size\+Node\+::set\+Fixed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+在文件 \mbox{\hyperlink{_size_node_8h_source}{Size\+Node.\+h}} 第 \mbox{\hyperlink{_size_node_8h_source_l00102}{102}} 行定义.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_f_c_t_1_1_size_node_a031839a2731bd111329ca4ae053daacf_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_f_c_t_1_1_size_node_a031839a2731bd111329ca4ae053daacf_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{struct_f_c_t_1_1_size_node_acfb461494835804d7d781a41c6b1e5a9}\index{FCT::SizeNode@{FCT::SizeNode}!setFixedSize@{setFixedSize}}
+\index{setFixedSize@{setFixedSize}!FCT::SizeNode@{FCT::SizeNode}}
+\doxysubsubsection{\texorpdfstring{setFixedSize()}{setFixedSize()}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_size_node_acfb461494835804d7d781a41c6b1e5a9} 
+bool FCT\+::\+Size\+Node\+::set\+Fixed\+Size (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{w}{, }\item[{uint32\+\_\+t}]{h}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+在文件 \mbox{\hyperlink{_size_node_8h_source}{Size\+Node.\+h}} 第 \mbox{\hyperlink{_size_node_8h_source_l00116}{116}} 行定义.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_f_c_t_1_1_size_node_acfb461494835804d7d781a41c6b1e5a9_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_f_c_t_1_1_size_node_acfb461494835804d7d781a41c6b1e5a9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{struct_f_c_t_1_1_size_node_acf11f833ff138217d89c73e637459435}\index{FCT::SizeNode@{FCT::SizeNode}!unite@{unite}}
+\index{unite@{unite}!FCT::SizeNode@{FCT::SizeNode}}
+\doxysubsubsection{\texorpdfstring{unite()}{unite()}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_size_node_acf11f833ff138217d89c73e637459435} 
+bool FCT\+::\+Size\+Node\+::unite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_f_c_t_1_1_size_node}{Size\+Node}} \texorpdfstring{$\ast$}{*}}]{other}{, }\item[{const \mbox{\hyperlink{struct_f_c_t_1_1_fraction_scale2_d}{Fraction\+Scale2D}} \&}]{scale}{ = {\ttfamily \mbox{\hyperlink{struct_f_c_t_1_1_fraction_scale2_d}{Fraction\+Scale2D}}()}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+将当前节点与另一个节点合并到同一个大小组中 
+\begin{DoxyParams}{参数}
+{\em other} & 要合并的目标节点 \\
+\hline
+{\em scale} & 当前节点相对于目标节点的缩放比例 (this\+\_\+size = other\+\_\+size \texorpdfstring{$\ast$}{*} scale) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+合并是否成功，如果两个节点已经在同一组但缩放比例不匹配则返回false 
+\end{DoxyReturn}
+
+
+在文件 \mbox{\hyperlink{_size_node_8h_source}{Size\+Node.\+h}} 第 \mbox{\hyperlink{_size_node_8h_source_l00045}{45}} 行定义.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_f_c_t_1_1_size_node_acf11f833ff138217d89c73e637459435_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_f_c_t_1_1_size_node_acf11f833ff138217d89c73e637459435_icgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-variable-members}
+\Hypertarget{struct_f_c_t_1_1_size_node_doc-variable-members}
+\doxysubsection{类成员变量说明}
+\Hypertarget{struct_f_c_t_1_1_size_node_ab8a0870435eb0ece05113559ace858be}\index{FCT::SizeNode@{FCT::SizeNode}!height@{height}}
+\index{height@{height}!FCT::SizeNode@{FCT::SizeNode}}
+\doxysubsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_size_node_ab8a0870435eb0ece05113559ace858be} 
+uint32\+\_\+t FCT\+::\+Size\+Node\+::height\hspace{0.3cm}{\ttfamily [mutable]}}
+
+
+
+在文件 \mbox{\hyperlink{_size_node_8h_source}{Size\+Node.\+h}} 第 \mbox{\hyperlink{_size_node_8h_source_l00010}{10}} 行定义.
+
+\Hypertarget{struct_f_c_t_1_1_size_node_af454a90b3935e183ee99873d1a319d3a}\index{FCT::SizeNode@{FCT::SizeNode}!parent@{parent}}
+\index{parent@{parent}!FCT::SizeNode@{FCT::SizeNode}}
+\doxysubsubsection{\texorpdfstring{parent}{parent}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_size_node_af454a90b3935e183ee99873d1a319d3a} 
+\mbox{\hyperlink{struct_f_c_t_1_1_size_node}{Size\+Node}}\texorpdfstring{$\ast$}{*} FCT\+::\+Size\+Node\+::parent\hspace{0.3cm}{\ttfamily [mutable]}}
+
+
+
+在文件 \mbox{\hyperlink{_size_node_8h_source}{Size\+Node.\+h}} 第 \mbox{\hyperlink{_size_node_8h_source_l00008}{8}} 行定义.
+
+\Hypertarget{struct_f_c_t_1_1_size_node_aa7907fd33836d334cad7298a745bf999}\index{FCT::SizeNode@{FCT::SizeNode}!scaleToParent@{scaleToParent}}
+\index{scaleToParent@{scaleToParent}!FCT::SizeNode@{FCT::SizeNode}}
+\doxysubsubsection{\texorpdfstring{scaleToParent}{scaleToParent}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_size_node_aa7907fd33836d334cad7298a745bf999} 
+\mbox{\hyperlink{struct_f_c_t_1_1_fraction_scale2_d}{Fraction\+Scale2D}} FCT\+::\+Size\+Node\+::scale\+To\+Parent\hspace{0.3cm}{\ttfamily [mutable]}}
+
+
+
+在文件 \mbox{\hyperlink{_size_node_8h_source}{Size\+Node.\+h}} 第 \mbox{\hyperlink{_size_node_8h_source_l00012}{12}} 行定义.
+
+\Hypertarget{struct_f_c_t_1_1_size_node_ac88975034f7d124dd3509a739fce8aac}\index{FCT::SizeNode@{FCT::SizeNode}!sizeFixed@{sizeFixed}}
+\index{sizeFixed@{sizeFixed}!FCT::SizeNode@{FCT::SizeNode}}
+\doxysubsubsection{\texorpdfstring{sizeFixed}{sizeFixed}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_size_node_ac88975034f7d124dd3509a739fce8aac} 
+bool FCT\+::\+Size\+Node\+::size\+Fixed\hspace{0.3cm}{\ttfamily [mutable]}}
+
+
+
+在文件 \mbox{\hyperlink{_size_node_8h_source}{Size\+Node.\+h}} 第 \mbox{\hyperlink{_size_node_8h_source_l00011}{11}} 行定义.
+
+\Hypertarget{struct_f_c_t_1_1_size_node_a841dd2fb34c5e249eedde53b3282b792}\index{FCT::SizeNode@{FCT::SizeNode}!width@{width}}
+\index{width@{width}!FCT::SizeNode@{FCT::SizeNode}}
+\doxysubsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily \label{struct_f_c_t_1_1_size_node_a841dd2fb34c5e249eedde53b3282b792} 
+uint32\+\_\+t FCT\+::\+Size\+Node\+::width\hspace{0.3cm}{\ttfamily [mutable]}}
+
+
+
+在文件 \mbox{\hyperlink{_size_node_8h_source}{Size\+Node.\+h}} 第 \mbox{\hyperlink{_size_node_8h_source_l00009}{9}} 行定义.
+
+
+
+该结构体的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Context/\mbox{\hyperlink{_size_node_8h}{Size\+Node.\+h}}\end{DoxyCompactItemize}
