@@ -1,0 +1,317 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FCT: RHI渲染硬件接口</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FCT
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('rhi_overview.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">RHI渲染硬件接口 </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p>渲染硬件接口的概念和FCT中的实现 */</p>
+<ul>
+<li></li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md60"></a>
+RHI - 渲染硬件接口</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md61"></a>
+什么是RHI？</h2>
+<p>RHI（Render Hardware Interface，渲染硬件接口）是一个抽象层，它隐藏了不同图形API之间的差异，为上层应用提供统一的渲染接口。</p>
+<p>想象一下：</p><ul>
+<li>你想开发一个跨平台的图形应用</li>
+<li>Windows上有DirectX，Linux/Mac上有OpenGL，移动设备上有OpenGL ES，现代平台还有Vulkan</li>
+<li>每个API的调用方式、概念、数据格式都不同</li>
+<li>RHI就像一个"翻译官"，让你用同一套代码在所有平台上运行</li>
+</ul>
+<p><b>简单来说</b>：RHI让你不用关心底层用的是什么图形API，专注于渲染逻辑本身。</p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md62"></a>
+为什么需要RHI？</h2>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md63"></a>
+问题：图形API的碎片化</h3>
+<div class="dotgraph">
+<img src="dot_inline_dotgraph_7.png" alt="dot_inline_dotgraph_7.png" border="0" usemap="#dot_inline_dotgraph_7.map"/>
+</div>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md64"></a>
+解决方案：RHI抽象层</h3>
+<div class="dotgraph">
+<img src="dot_inline_dotgraph_8.png" alt="dot_inline_dotgraph_8.png" border="0" usemap="#dot_inline_dotgraph_8.map"/>
+</div>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md65"></a>
+FCT中的RHI设计</h2>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md66"></a>
+架构概览</h3>
+<div class="dotgraph">
+<img src="dot_inline_dotgraph_9.png" alt="dot_inline_dotgraph_9.png" border="0" usemap="#dot_inline_dotgraph_9.map"/>
+</div>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md67"></a>
+Context类 - 渲染上下文的核心</h3>
+<p>在FCT中，<span class="tt">Context</span>类是整个渲染系统的核心，它包含了多个专门的模块：</p>
+<div class="dotgraph">
+<img src="dot_inline_dotgraph_10.png" alt="dot_inline_dotgraph_10.png" border="0" usemap="#dot_inline_dotgraph_10.map"/>
+</div>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md68"></a>
+1. Device模块 - RHI资源创建器</h3>
+<p><b>职责</b>：负责创建所有的RHI资源</p>
+<p>Context提供了强类型的createResource模板方法，支持创建各种类型的资源：</p>
+<div class="fragment"><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line">T* createResource();</div>
+</div><!-- fragment --><p><b>支持的资源类型</b>：</p>
+<h4 class="doxsection"><a class="anchor" id="autotoc_md69"></a>
+着色器资源</h4>
+<div class="fragment"><div class="line"><span class="comment">// 高级着色器（FCT封装）</span></div>
+<div class="line"><span class="keyword">auto</span> vs = m_ctx-&gt;createResource&lt;VertexShader&gt;();</div>
+<div class="line"><span class="keyword">auto</span> ps = m_ctx-&gt;createResource&lt;PixelShader&gt;();</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 底层RHI着色器</span></div>
+<div class="line"><span class="keyword">auto</span> rhiVs = m_ctx-&gt;createResource&lt;RHI::VertexShader&gt;();</div>
+<div class="line"><span class="keyword">auto</span> rhiPs = m_ctx-&gt;createResource&lt;RHI::PixelShader&gt;();</div>
+</div><!-- fragment --><h4 class="doxsection"><a class="anchor" id="autotoc_md70"></a>
+缓冲区资源</h4>
+<div class="fragment"><div class="line"><span class="comment">// 常量缓冲区</span></div>
+<div class="line"><span class="keyword">auto</span> constBuffer = m_ctx-&gt;createResource&lt;RHI::ConstBuffer&gt;();</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 顶点和索引缓冲区</span></div>
+<div class="line"><span class="keyword">auto</span> vertexBuffer = m_ctx-&gt;createResource&lt;RHI::VertexBuffer&gt;();</div>
+<div class="line"><span class="keyword">auto</span> indexBuffer = m_ctx-&gt;createResource&lt;RHI::IndexBuffer&gt;();</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 输入布局</span></div>
+<div class="line"><span class="keyword">auto</span> inputLayout = m_ctx-&gt;createResource&lt;RHI::InputLayout&gt;();</div>
+</div><!-- fragment --><h4 class="doxsection"><a class="anchor" id="autotoc_md71"></a>
+图像和纹理资源</h4>
+<div class="fragment"><div class="line"><span class="comment">// 高级图像封装</span></div>
+<div class="line"><span class="keyword">auto</span> image = m_ctx-&gt;createResource&lt;Image&gt;();</div>
+<div class="line"><span class="keyword">auto</span> singleBufferImage = m_ctx-&gt;createResource&lt;SingleBufferImage&gt;();</div>
+<div class="line"><span class="keyword">auto</span> multiBufferImage = m_ctx-&gt;createResource&lt;MutilBufferImage&gt;();</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 底层RHI图像</span></div>
+<div class="line"><span class="keyword">auto</span> rhiImage = m_ctx-&gt;createResource&lt;RHI::Image&gt;();</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 视图资源</span></div>
+<div class="line"><span class="keyword">auto</span> renderTargetView = m_ctx-&gt;createResource&lt;RHI::RenderTargetView&gt;();</div>
+<div class="line"><span class="keyword">auto</span> depthStencilView = m_ctx-&gt;createResource&lt;RHI::DepthStencilView&gt;();</div>
+<div class="line"><span class="keyword">auto</span> textureView = m_ctx-&gt;createResource&lt;RHI::TextureView&gt;();</div>
+</div><!-- fragment --><h4 class="doxsection"><a class="anchor" id="autotoc_md72"></a>
+渲染状态资源</h4>
+<div class="fragment"><div class="line"><span class="comment">// 渲染状态</span></div>
+<div class="line"><span class="keyword">auto</span> rasterState = m_ctx-&gt;createResource&lt;RasterizationState&gt;();</div>
+<div class="line"><span class="keyword">auto</span> blendState = m_ctx-&gt;createResource&lt;BlendState&gt;();</div>
+<div class="line"><span class="keyword">auto</span> sampler = m_ctx-&gt;createResource&lt;Sampler&gt;();</div>
+</div><!-- fragment --><h4 class="doxsection"><a class="anchor" id="autotoc_md73"></a>
+渲染管线资源</h4>
+<div class="fragment"><div class="line"><span class="comment">// 交换链</span></div>
+<div class="line"><span class="keyword">auto</span> swapchain = m_ctx-&gt;createResource&lt;RHI::Swapchain&gt;();</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 渲染Pass</span></div>
+<div class="line"><span class="keyword">auto</span> passGroup = m_ctx-&gt;createResource&lt;RHI::PassGroup&gt;();</div>
+<div class="line"><span class="keyword">auto</span> pass = m_ctx-&gt;createResource&lt;RHI::Pass&gt;();</div>
+<div class="line"><span class="keyword">auto</span> passResource = m_ctx-&gt;createResource&lt;PassResource&gt;();</div>
+</div><!-- fragment --><h4 class="doxsection"><a class="anchor" id="autotoc_md74"></a>
+同步和命令资源</h4>
+<div class="fragment"><div class="line"><span class="comment">// 同步原语</span></div>
+<div class="line"><span class="keyword">auto</span> fence = m_ctx-&gt;createResource&lt;RHI::Fence&gt;();</div>
+<div class="line"><span class="keyword">auto</span> semaphore = m_ctx-&gt;createResource&lt;RHI::Semaphore&gt;();</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 命令相关</span></div>
+<div class="line"><span class="keyword">auto</span> commandPool = m_ctx-&gt;createResource&lt;RHI::CommandPool&gt;();</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 描述符</span></div>
+<div class="line"><span class="keyword">auto</span> descriptorPool = m_ctx-&gt;createResource&lt;RHI::DescriptorPool&gt;();</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 资源池</span></div>
+<div class="line"><span class="keyword">auto</span> semaphorePool = m_ctx-&gt;createResource&lt;SemaphorePool&gt;();</div>
+<div class="line"><span class="keyword">auto</span> fencePool = m_ctx-&gt;createResource&lt;FencePool&gt;();</div>
+</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md75"></a>
+2. ResourceManager模块 - 资源依赖管理器</h3>
+<p><b>职责</b>：管理图像资源之间的依赖关系</p>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md76"></a>
+3. CommandBufferGraph模块 - 同步和命令管理器</h3>
+<p><b>职责</b>：管理同步相关的资源和CommandBuffer</p>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md77"></a>
+4. RenderGraph模块 - 渲染图管理器</h3>
+<p><b>职责</b>：管理整个渲染流程的图结构</p>
+<p>RenderGraph通过声明式的API来构建渲染流程，自动处理资源依赖和同步：</p>
+<div class="fragment"><div class="line"><span class="comment">// 获取RenderGraph模块</span></div>
+<div class="line"><span class="keyword">auto</span> graph = m_ctx-&gt;getModule&lt;RenderGraph&gt;();</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 添加渲染Pass</span></div>
+<div class="line">graph-&gt;addPass(passName, ...resources);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 编译渲染图</span></div>
+<div class="line">graph-&gt;compile();</div>
+</div><!-- fragment --><h4 class="doxsection"><a class="anchor" id="autotoc_md78"></a>
+Pass资源类型</h4>
+<p><b>清除操作</b>： </p><div class="fragment"><div class="line"><span class="comment">// 启用Pass清除</span></div>
+<div class="line">EnablePassClear(ClearType::depth, 1.0f)                    <span class="comment">// 清除深度</span></div>
+<div class="line">EnablePassClear(ClearType::color, Vec4(0,0,0,1))          <span class="comment">// 清除颜色</span></div>
+<div class="line">EnablePassClear(ClearType::color | ClearType::depthStencil, <span class="comment">// 清除颜色和深度</span></div>
+<div class="line">Vec4(0,0,0,1))</div>
+</div><!-- fragment --><p><b>深度模板缓冲区</b>： </p><div class="fragment"><div class="line"><span class="comment">// 创建深度缓冲区</span></div>
+<div class="line">DepthStencil(<span class="stringliteral">&quot;DepthFromLigth0Image&quot;</span>,    <span class="comment">// 资源名称</span></div>
+<div class="line">2048, 2048,                         <span class="comment">// 尺寸</span></div>
+<div class="line">Format::D32_SFLOAT,                 <span class="comment">// 格式</span></div>
+<div class="line">Samples::sample_1)                  <span class="comment">// 采样数</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 使用窗口深度缓冲区</span></div>
+<div class="line">DepthStencil(<span class="stringliteral">&quot;mainWindowDS&quot;</span>, m_wnd)</div>
+</div><!-- fragment --><p><b>渲染目标</b>： </p><div class="fragment"><div class="line"><span class="comment">// 创建渲染目标</span></div>
+<div class="line">Target(<span class="stringliteral">&quot;PosTarget&quot;</span>)                     <span class="comment">// 自动创建</span></div>
+<div class="line">Target(<span class="stringliteral">&quot;RetTarget&quot;</span>)                     <span class="comment">// 自动创建</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 使用窗口渲染目标</span></div>
+<div class="line">Target(<span class="stringliteral">&quot;mainWindowColor&quot;</span>, m_wnd)</div>
+</div><!-- fragment --><p><b>纹理输入</b>： </p><div class="fragment"><div class="line"><span class="comment">// 将其他Pass的输出作为纹理输入</span></div>
+<div class="line">Texture(<span class="stringliteral">&quot;DepthFromLigth0Image&quot;</span>)         <span class="comment">// 阴影贴图</span></div>
+<div class="line">Texture(<span class="stringliteral">&quot;PosTarget&quot;</span>)                    <span class="comment">// 位置纹理</span></div>
+<div class="line">Texture(<span class="stringliteral">&quot;RetTarget&quot;</span>)                    <span class="comment">// 其他纹理</span></div>
+</div><!-- fragment --><h4 class="doxsection"><a class="anchor" id="autotoc_md79"></a>
+完整的渲染图示例</h4>
+<div class="fragment"><div class="line"><span class="keyword">auto</span> graph = m_ctx-&gt;getModule&lt;RenderGraph&gt;();</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 1. 阴影贴图Pass</span></div>
+<div class="line">graph-&gt;addPass(</div>
+<div class="line"><span class="stringliteral">&quot;ShadowMapPass&quot;</span>,</div>
+<div class="line">EnablePassClear(ClearType::depth, 1.0f),</div>
+<div class="line">DepthStencil(<span class="stringliteral">&quot;DepthFromLigth0Image&quot;</span>,</div>
+<div class="line">2048, 2048,</div>
+<div class="line">Format::D32_SFLOAT,</div>
+<div class="line">Samples::sample_1</div>
+<div class="line">)</div>
+<div class="line">);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 2. 主要物体渲染Pass</span></div>
+<div class="line">graph-&gt;addPass(</div>
+<div class="line"><span class="stringliteral">&quot;ObjectPass&quot;</span>,</div>
+<div class="line">Texture(<span class="stringliteral">&quot;DepthFromLigth0Image&quot;</span>),                        <span class="comment">// 使用阴影贴图</span></div>
+<div class="line">EnablePassClear(ClearType::color | ClearType::depthStencil,</div>
+<div class="line">Vec4(0,0,0,1)),</div>
+<div class="line">Target(<span class="stringliteral">&quot;mainWindowColor&quot;</span>, m_wnd),                       <span class="comment">// 主窗口颜色</span></div>
+<div class="line">Target(<span class="stringliteral">&quot;PosTarget&quot;</span>),                                    <span class="comment">// 位置缓冲区</span></div>
+<div class="line">Target(<span class="stringliteral">&quot;RetTarget&quot;</span>),                                    <span class="comment">// 其他缓冲区</span></div>
+<div class="line">DepthStencil(<span class="stringliteral">&quot;mainWindowDS&quot;</span>, m_wnd)                    <span class="comment">// 主窗口深度</span></div>
+<div class="line">);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 3. ImGui界面Pass</span></div>
+<div class="line">graph-&gt;addPass(</div>
+<div class="line"><span class="stringliteral">&quot;ImguiPass&quot;</span>,</div>
+<div class="line">Target(<span class="stringliteral">&quot;mainWindowColor&quot;</span>, m_wnd),                       <span class="comment">// 渲染到主窗口</span></div>
+<div class="line">Texture(<span class="stringliteral">&quot;PosTarget&quot;</span>),                                   <span class="comment">// 读取位置纹理</span></div>
+<div class="line">Texture(<span class="stringliteral">&quot;RetTarget&quot;</span>),                                   <span class="comment">// 读取其他纹理</span></div>
+<div class="line">DepthStencil(<span class="stringliteral">&quot;mainWindowDS&quot;</span>, m_wnd)                    <span class="comment">// 使用主窗口深度</span></div>
+<div class="line">);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 编译渲染图（自动处理依赖和同步）</span></div>
+<div class="line">graph-&gt;compile();</div>
+</div><!-- fragment --><h4 class="doxsection"><a class="anchor" id="autotoc_md80"></a>
+渲染图的优势</h4>
+<ol type="1">
+<li><b>自动依赖管理</b>：RenderGraph自动分析Pass之间的资源依赖关系</li>
+<li><b>资源生命周期优化</b>：自动管理临时资源的创建和销毁</li>
+<li><b>内存优化</b>：重用不再需要的资源内存</li>
+<li><b>同步优化</b>：自动插入必要的同步点</li>
+<li><b>声明式API</b>：简洁直观的Pass声明方式</li>
+</ol>
+<div class="dotgraph">
+<img src="dot_inline_dotgraph_11.png" alt="dot_inline_dotgraph_11.png" border="0" usemap="#dot_inline_dotgraph_11.map"/>
+</div>
+ </div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>
