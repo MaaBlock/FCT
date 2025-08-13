@@ -1,9 +1,5 @@
 var searchData=
 [
-  ['渲染概念详解_0',['渲染概念详解',['../render_concepts.html',1,'']]],
-  ['渲染管线分类_1',['渲染管线分类',['../md_docs_2zh_2md_2pipeline__comparison.html#autotoc_md26',1,'']]],
-  ['渲染管线概述_2',['渲染管线概述',['../md_docs_2zh_2md_2pipeline__comparison.html',1,'']]],
-  ['渲染管线流程_3',['渲染管线流程',['../md_docs_2zh_2md_2how__3d__object__rendered.html#autotoc_md10',1,'']]],
-  ['渲染管线_20pipeline_4',['渲染管线 (Pipeline)',['../render_concepts.html#render_pipeline',1,'']]],
-  ['渲染通道_20pass_20render_5fpass_5',['渲染通道 (Pass) {render_pass',['../render_concepts.html#autotoc_md48',1,'']]]
+  ['概念定义_0',['概念定义',['../render_concepts.html#autotoc_md42',1,'概念定义'],['../render_concepts.html#autotoc_md43',1,'概念定义'],['../render_concepts.html#autotoc_md46',1,'概念定义'],['../render_concepts.html#autotoc_md50',1,'概念定义'],['../render_concepts.html#autotoc_md56',1,'概念定义'],['../render_concepts.html#autotoc_md58',1,'概念定义']]],
+  ['概述_1',['概述',['../md_docs_2zh_2md_2vertex__shader.html#autotoc_md83',1,'']]]
 ];

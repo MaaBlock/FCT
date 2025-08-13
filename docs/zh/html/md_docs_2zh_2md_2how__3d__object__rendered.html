@@ -91,63 +91,63 @@ $(function(){initNavTree('md_docs_2zh_2md_2how__3d__object__rendered.html','',''
   <div class="headertitle"><div class="title">一个3D物体是怎么被画出来的 </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md9"></a></p>
+<div class="textblock"><p><a class="anchor" id="autotoc_md16"></a></p>
 <p>当你在屏幕上看到一个3D物体时，它实际上经历了一个复杂的渲染过程。这个过程将3D空间中的几何数据转换为屏幕上的2D像素。</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md10"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md17"></a>
 渲染管线流程</h1>
 <p>一个3D物体从数据到屏幕显示，需要经过以下几个主要阶段：</p>
 <div class="dotgraph">
 <img src="dot_inline_dotgraph_2.png" alt="dot_inline_dotgraph_2.png" border="0" usemap="#dot_inline_dotgraph_2.map"/>
 </div>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md11"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md18"></a>
 详细流程</h1>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md12"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md19"></a>
 详细流程</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md13"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md20"></a>
 1. 加载3D模型</h2>
 <p>3D物体首先以数字形式存在，一般包含：</p><ul>
 <li>顶点坐标（位置信息）</li>
 <li>顶点属性（颜色、法线、纹理坐标等）</li>
 <li>索引信息（定义哪些顶点组成三角形）</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md14"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md21"></a>
 2. 变换到屏幕坐标</h2>
 <p>3D图形经过矩阵运算，转换成为2D屏幕上的坐标。</p>
 <p>通常发生在<a class="el" href="md_docs_2zh_2md_2vertex__shader.html">顶点着色器</a></p>
 <p>变换详见<a class="el" href="md_docs_2zh_2md_23d__transforms.html">3D渲染下的各种变换</a></p>
 <p><a class="el" href="md_docs_2zh_2md_2vertex__shader.html">顶点着色器</a>同时还会处理其他顶点属性（颜色、法线、纹理坐标等）</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md15"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md22"></a>
 3. 图元装配与裁剪</h2>
 <ul>
 <li>将变换后的顶点组装成基本图形（通常是三角形）</li>
 <li>裁剪处理：将屏幕外看不到的三角形移除，将能看到一部分的三角形切割，只保留可见部分</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md16"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md23"></a>
 4. 视口变换</h2>
 <p>将标准化设备坐标（NDC）转换为屏幕像素坐标：</p><ul>
 <li>X、Y坐标：从[-1,1]映射到实际屏幕像素范围（如0-1919, 0-1079）</li>
 <li>Z坐标：从[-1,1]映射到深度缓冲区范围（通常是[0,1]）</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md17"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md24"></a>
 5. 光栅化</h2>
 <p>确定每个三角形覆盖屏幕上的哪些像素， 并为每个像素计算插值后的顶点属性（如颜色、纹理坐标、法线等）</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md18"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md25"></a>
 6. 计算颜色</h2>
 <p>像素着色器为每个像素计算最终结果：</p><ul>
 <li>应用材质和纹理</li>
 <li>计算光照效果</li>
 <li>处理透明度等特效</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md19"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md26"></a>
 7. 深度测试</h2>
 <p>通过比较像素的深度值，确定哪些像素应该被显示（前面的物体遮挡后面的物体</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md20"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md27"></a>
 8. 混合</h2>
 <p>处理透明物体的颜色混合</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md21"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md28"></a>
 9. 输出</h2>
 <p>最终的像素颜色被写入帧缓冲区，显示在屏幕上</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md22"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md29"></a>
 关键概念</h1>
 <ul>
 <li><b>顶点</b>：3D物体的基本构成单元，包含位置和属性信息</li>
@@ -155,7 +155,7 @@ $(function(){initNavTree('md_docs_2zh_2md_2how__3d__object__rendered.html','',''
 <li><b>变换矩阵</b>：用于坐标转换的数学工具</li>
 <li><b>着色器</b>：在GPU上运行的小程序，处理顶点和像素</li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md23"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md30"></a>
 相关文档</h1>
 <ul>
 <li><a class="el" href="md_docs_2zh_2md_2vertex__shader.html">顶点着色器详解</a></li>

@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['变换到屏幕坐标_0',['2. 变换到屏幕坐标',['../md_docs_2zh_2md_2how__3d__object__rendered.html#autotoc_md14',1,'']]],
-  ['变换流程概览_1',['变换流程概览',['../md_docs_2zh_2md_23d__transforms.html#autotoc_md1',1,'']]],
-  ['变换矩阵_2',['变换矩阵',['../md_docs_2zh_2md_23d__transforms.html#autotoc_md8',1,'']]]
+  ['像素着色器优化_0',['像素着色器优化',['../md_docs_2zh_2md_2shader__overview.html#autotoc_md78',1,'']]],
+  ['像素着色器（pixel_20shader_20fragment_20shader）_1',['3. 像素着色器（Pixel Shader / Fragment Shader）',['../md_docs_2zh_2md_2shader__overview.html#autotoc_md67',1,'']]]
 ];

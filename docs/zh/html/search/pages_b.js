@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['meshshader光栅化管线_20meshshader_20pipeline_0',['MeshShader光栅化管线 (MeshShader Pipeline)',['../render_concepts.html#autotoc_md42',1,'']]],
-  ['meshshader管线_1',['1.2 MeshShader管线',['../md_docs_2zh_2md_2pipeline__comparison.html#autotoc_md30',1,'']]],
-  ['meshshader_20pipeline_2',['MeshShader光栅化管线 (MeshShader Pipeline)',['../render_concepts.html#autotoc_md42',1,'']]],
-  ['model_20transform_3',['1. 模型变换 (Model Transform)',['../md_docs_2zh_2md_23d__transforms.html#autotoc_md3',1,'']]]
+  ['fct中的顶点着色器_0',['FCT中的顶点着色器',['../md_docs_2zh_2md_2vertex__shader.html#autotoc_md84',1,'']]],
+  ['fragment_20shader）_1',['3. 像素着色器（Pixel Shader / Fragment Shader）',['../md_docs_2zh_2md_2shader__overview.html#autotoc_md67',1,'']]]
 ];

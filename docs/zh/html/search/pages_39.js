@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['透视除法_20perspective_20division_0',['4. 透视除法 (Perspective Division)',['../md_docs_2zh_2md_23d__transforms.html#autotoc_md6',1,'']]]
+  ['着色器分类_0',['着色器分类',['../md_docs_2zh_2md_2shader__overview.html#autotoc_md63',1,'']]],
+  ['着色器开发流程_1',['着色器开发流程',['../md_docs_2zh_2md_2shader__overview.html#autotoc_md73',1,'']]],
+  ['着色器概述_2',['着色器概述',['../md_docs_2zh_2md_2shader__overview.html',1,'']]],
+  ['着色器语言对比_3',['着色器语言对比',['../md_docs_2zh_2md_2shader__overview.html#autotoc_md72',1,'']]]
 ];

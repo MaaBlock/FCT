@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['fct中的顶点着色器_0',['FCT中的顶点着色器',['../md_docs_2zh_2md_2vertex__shader.html#autotoc_md77',1,'']]],
-  ['fragment_20shader）_1',['3. 像素着色器（Pixel Shader / Fragment Shader）',['../md_docs_2zh_2md_2shader__overview.html#autotoc_md60',1,'']]]
+  ['device_20coordinates_0',['5. 标准化设备坐标 (NDC - Normalized Device Coordinates)',['../md_docs_2zh_2md_23d__transforms.html#autotoc_md7',1,'']]],
+  ['division_1',['4. 透视除法 (Perspective Division)',['../md_docs_2zh_2md_23d__transforms.html#autotoc_md13',1,'']]],
+  ['drawcall_2',['DrawCall',['../render_concepts.html#render_drawcall',1,'']]]
 ];

@@ -1,8 +1,8 @@
 \chapter{顶点着色器详解 }
 \hypertarget{md_docs_2zh_2md_2vertex__shader}{}\label{md_docs_2zh_2md_2vertex__shader}\index{顶点着色器详解@{顶点着色器详解}}
-\label{md_docs_2zh_2md_2vertex__shader_autotoc_md75}%
-\Hypertarget{md_docs_2zh_2md_2vertex__shader_autotoc_md75}%
-\hypertarget{md_docs_2zh_2md_2vertex__shader_autotoc_md76}{}\doxysection{\texorpdfstring{概述}{概述}}\label{md_docs_2zh_2md_2vertex__shader_autotoc_md76}
+\label{md_docs_2zh_2md_2vertex__shader_autotoc_md82}%
+\Hypertarget{md_docs_2zh_2md_2vertex__shader_autotoc_md82}%
+\hypertarget{md_docs_2zh_2md_2vertex__shader_autotoc_md83}{}\doxysection{\texorpdfstring{概述}{概述}}\label{md_docs_2zh_2md_2vertex__shader_autotoc_md83}
 顶点着色器（\+Vertex Shader）允许你对顶点进行变换和处理。
 
 想象一下：
@@ -24,8 +24,8 @@
 \item \doxysectlink{md_docs_2zh_2md_23d__transforms}{3\+D渲染下的各种变换}{0}
 \item \doxysectlink{md_docs_2zh_2md_2how__3d__object__rendered}{一个3\+D物体是怎么被画出来的}{0} 
 \end{DoxyItemize}\end{quote}
-\hypertarget{md_docs_2zh_2md_2vertex__shader_autotoc_md77}{}\doxysection{\texorpdfstring{FCT中的顶点着色器}{FCT中的顶点着色器}}\label{md_docs_2zh_2md_2vertex__shader_autotoc_md77}
-FCT库提供了 {\ttfamily Vertex\+Shader} 类来简化顶点着色器的创建和管理： \hypertarget{md_docs_2zh_2md_2vertex__shader_autotoc_md78}{}\doxysubsection{\texorpdfstring{基本使用示例}{基本使用示例}}\label{md_docs_2zh_2md_2vertex__shader_autotoc_md78}
+\hypertarget{md_docs_2zh_2md_2vertex__shader_autotoc_md84}{}\doxysection{\texorpdfstring{FCT中的顶点着色器}{FCT中的顶点着色器}}\label{md_docs_2zh_2md_2vertex__shader_autotoc_md84}
+FCT库提供了 {\ttfamily Vertex\+Shader} 类来简化顶点着色器的创建和管理： \hypertarget{md_docs_2zh_2md_2vertex__shader_autotoc_md85}{}\doxysubsection{\texorpdfstring{基本使用示例}{基本使用示例}}\label{md_docs_2zh_2md_2vertex__shader_autotoc_md85}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{comment}{//\ 1.\ 定义顶点数据结构（告诉FCT顶点包含什么信息）}}
@@ -74,7 +74,7 @@ FCT库提供了 {\ttfamily Vertex\+Shader} 类来简化顶点着色器的创建�
 \DoxyCodeLine{vs-\/>create();}
 
 \end{DoxyCode}
-\hypertarget{md_docs_2zh_2md_2vertex__shader_autotoc_md79}{}\doxysubsection{\texorpdfstring{布局系统详解}{布局系统详解}}\label{md_docs_2zh_2md_2vertex__shader_autotoc_md79}
+\hypertarget{md_docs_2zh_2md_2vertex__shader_autotoc_md86}{}\doxysubsection{\texorpdfstring{布局系统详解}{布局系统详解}}\label{md_docs_2zh_2md_2vertex__shader_autotoc_md86}
 FCT使用声明式的布局系统来定义着色器的输入输出：
 
 
@@ -83,7 +83,7 @@ FCT使用声明式的布局系统来定义着色器的输入输出：
 \item {\bfseries{Pixel\+Layout}} -\/ 定义传递给像素着色器的数据
 \item {\bfseries{Const\+Layout}} -\/ 定义常量缓冲区的结构
 \item {\bfseries{Resource\+Layout}} -\/ 定义纹理和采样器等资源
-\end{DoxyItemize}\hypertarget{md_docs_2zh_2md_2vertex__shader_autotoc_md80}{}\doxysubsection{\texorpdfstring{代码生成机制}{代码生成机制}}\label{md_docs_2zh_2md_2vertex__shader_autotoc_md80}
+\end{DoxyItemize}\hypertarget{md_docs_2zh_2md_2vertex__shader_autotoc_md87}{}\doxysubsection{\texorpdfstring{代码生成机制}{代码生成机制}}\label{md_docs_2zh_2md_2vertex__shader_autotoc_md87}
 FCT会根据布局自动生成：
 
 
@@ -92,7 +92,7 @@ FCT会根据布局自动生成：
 \item {\bfseries{输出结构体}} ({\ttfamily Shader\+Out}) -\/ 基于 {\ttfamily Pixel\+Layout}
 \item {\bfseries{常量缓冲区}} -\/ 基于 {\ttfamily Const\+Layout}
 \item {\bfseries{资源绑定}} -\/ 基于 {\ttfamily Resource\+Layout}
-\end{DoxyEnumerate}\hypertarget{md_docs_2zh_2md_2vertex__shader_autotoc_md81}{}\doxysubsection{\texorpdfstring{自定义着色器代码}{自定义着色器代码}}\label{md_docs_2zh_2md_2vertex__shader_autotoc_md81}
+\end{DoxyEnumerate}\hypertarget{md_docs_2zh_2md_2vertex__shader_autotoc_md88}{}\doxysubsection{\texorpdfstring{自定义着色器代码}{自定义着色器代码}}\label{md_docs_2zh_2md_2vertex__shader_autotoc_md88}
 用户只需要编写主要的变换逻辑：
 
 
@@ -116,14 +116,14 @@ FCT会根据布局自动生成：
 \DoxyCodeLine{\}}
 
 \end{DoxyCode}
-\hypertarget{md_docs_2zh_2md_2vertex__shader_autotoc_md82}{}\doxysubsection{\texorpdfstring{优势特点}{优势特点}}\label{md_docs_2zh_2md_2vertex__shader_autotoc_md82}
+\hypertarget{md_docs_2zh_2md_2vertex__shader_autotoc_md89}{}\doxysubsection{\texorpdfstring{优势特点}{优势特点}}\label{md_docs_2zh_2md_2vertex__shader_autotoc_md89}
 
 \begin{DoxyItemize}
 \item {\bfseries{类型安全}}：编译时检查布局匹配
 \item {\bfseries{自动生成}}：减少样板代码
 \item {\bfseries{灵活扩展}}：支持自定义数据类型
 \item {\bfseries{性能优化}}：自动优化内存布局
-\end{DoxyItemize}\hypertarget{md_docs_2zh_2md_2vertex__shader_autotoc_md83}{}\doxysection{\texorpdfstring{相关文档}{相关文档}}\label{md_docs_2zh_2md_2vertex__shader_autotoc_md83}
+\end{DoxyItemize}\hypertarget{md_docs_2zh_2md_2vertex__shader_autotoc_md90}{}\doxysection{\texorpdfstring{相关文档}{相关文档}}\label{md_docs_2zh_2md_2vertex__shader_autotoc_md90}
 
 \begin{DoxyItemize}
 \item \doxysectlink{md_docs_2zh_2md_2shader__overview}{着色器概述}{0}

@@ -7,7 +7,6 @@
 渲染管线是将3D模型数据转换为屏幕上像素的过程。不同的渲染管线提供不同的处理方式和效果。
 
 ## 渲染管线分类
-
 \dot
 digraph pipeline_classification {
 rankdir=TD;
@@ -22,6 +21,7 @@ rankdir=TD;
     
     D [label="传统光栅化管线", fillcolor=lightyellow];
     E [label="MeshShader管线", fillcolor=lightyellow];
+    F [label="光线追踪渲染管线", fillcolor=lightyellow];
     
     D1 [label="顶点着色器", fillcolor=white];
     D2 [label="几何着色器", fillcolor=white];
@@ -31,23 +31,24 @@ rankdir=TD;
     E2 [label="网格着色器", fillcolor=white];
     E3 [label="片段着色器", fillcolor=white];
     
-    C1 [label="光线生成", fillcolor=white];
-    C2 [label="相交测试", fillcolor=white];
-    C3 [label="着色计算", fillcolor=white];
+    F1 [label="光线生成", fillcolor=white];
+    F2 [label="相交测试", fillcolor=white];
+    F3 [label="着色计算", fillcolor=white];
     
     A -> B;
     A -> C;
     B -> D;
     B -> E;
+    C -> F;
     D -> D1;
     D -> D2;
     D -> D3;
     E -> E1;
     E -> E2;
     E -> E3;
-    C -> C1;
-    C -> C2;
-    C -> C3;
+    F -> F1;
+    F -> F2;
+    F -> F3;
 }
 \enddot
 
@@ -146,7 +147,7 @@ rankdir=LR;
 - 高端游戏和应用
 - 需要动态几何的场景
 
-### 2. 光线追踪渲染
+### 2. 光线追踪渲染管线
 
 <b>工作原理</b>：
 光线追踪通过模拟光线在场景中的传播来生成图像，提供物理准确的光照效果。

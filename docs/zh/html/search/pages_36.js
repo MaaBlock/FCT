@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['详细分类说明_0',['详细分类说明',['../md_docs_2zh_2md_2pipeline__comparison.html#autotoc_md27',1,'']]],
-  ['详细变换步骤_1',['详细变换步骤',['../md_docs_2zh_2md_23d__transforms.html#autotoc_md2',1,'']]],
-  ['详细流程_2',['详细流程',['../md_docs_2zh_2md_2how__3d__object__rendered.html#autotoc_md11',1,'详细流程'],['../md_docs_2zh_2md_2how__3d__object__rendered.html#autotoc_md12',1,'详细流程']]]
+  ['现代管线着色器_0',['现代管线着色器',['../md_docs_2zh_2md_2shader__overview.html#autotoc_md68',1,'']]]
 ];

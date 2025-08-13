@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['核心特性_0',['核心特性',['../render_concepts.html#autotoc_md50',1,'']]],
-  ['核心特点_1',['核心特点',['../md_docs_2zh_2md_2shader__overview.html#autotoc_md55',1,'']]]
+  ['坐标系详解_0',['坐标系详解',['../md_docs_2zh_2md_23d__transforms.html#autotoc_md2',1,'']]]
 ];

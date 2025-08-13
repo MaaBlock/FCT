@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['什么是渲染管线？_0',['什么是渲染管线？',['../md_docs_2zh_2md_2pipeline__comparison.html#autotoc_md25',1,'']]],
-  ['什么是着色器？_1',['什么是着色器？',['../md_docs_2zh_2md_2shader__overview.html#autotoc_md54',1,'']]]
+  ['世界坐标_20world_20space_0',['2. 世界坐标 (World Space)',['../md_docs_2zh_2md_23d__transforms.html#autotoc_md4',1,'']]]
 ];

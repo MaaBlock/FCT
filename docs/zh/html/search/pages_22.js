@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['性能优化建议_0',['性能优化建议',['../md_docs_2zh_2md_2shader__overview.html#autotoc_md68',1,'']]],
-  ['性能对比_1',['性能对比',['../md_docs_2zh_2md_2pipeline__comparison.html#autotoc_md32',1,'']]]
+  ['包含的状态_0',['包含的状态',['../render_concepts.html#autotoc_md48',1,'包含的状态'],['../render_concepts.html#autotoc_md52',1,'包含的状态']]]
 ];

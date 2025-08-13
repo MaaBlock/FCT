@@ -9,31 +9,74 @@
 \begin{DoxyImageNoCaption}
   \mbox{\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{dot_inline_dotgraph_1}}
 \end{DoxyImageNoCaption}
- \hypertarget{md_docs_2zh_2md_23d__transforms_autotoc_md2}{}\doxysection{\texorpdfstring{详细变换步骤}{详细变换步骤}}\label{md_docs_2zh_2md_23d__transforms_autotoc_md2}
-\hypertarget{md_docs_2zh_2md_23d__transforms_autotoc_md3}{}\doxysubsection{\texorpdfstring{1. 模型变换 (Model Transform)}{1. 模型变换 (Model Transform)}}\label{md_docs_2zh_2md_23d__transforms_autotoc_md3}
+\hypertarget{md_docs_2zh_2md_23d__transforms_autotoc_md2}{}\doxysection{\texorpdfstring{坐标系详解}{坐标系详解}}\label{md_docs_2zh_2md_23d__transforms_autotoc_md2}
+\hypertarget{md_docs_2zh_2md_23d__transforms_autotoc_md3}{}\doxysubsection{\texorpdfstring{1. 局部坐标 (Local Space / Object Space)}{1. 局部坐标 (Local Space / Object Space)}}\label{md_docs_2zh_2md_23d__transforms_autotoc_md3}
+
+\begin{DoxyItemize}
+\item {\bfseries{定义}}：物体自身的坐标系，以物体中心为原点
+\item {\bfseries{特点}}：每个物体都有自己独立的局部坐标系
+\item {\bfseries{用途}}：建模时使用，便于物体的创建和编辑
+\item {\bfseries{示例}}：一个立方体的顶点坐标可能是 (-\/1,-\/1,-\/1) 到 (1,1,1)
+\end{DoxyItemize}\hypertarget{md_docs_2zh_2md_23d__transforms_autotoc_md4}{}\doxysubsection{\texorpdfstring{2. 世界坐标 (World Space)}{2. 世界坐标 (World Space)}}\label{md_docs_2zh_2md_23d__transforms_autotoc_md4}
+
+\begin{DoxyItemize}
+\item {\bfseries{定义}}：整个3\+D场景的全局坐标系
+\item {\bfseries{特点}}：所有物体都统一在这个坐标系中
+\item {\bfseries{用途}}：确定物体在场景中的绝对位置和相对关系
+\item {\bfseries{示例}}：房间中的桌子位于 (5,0,3)，椅子位于 (5,0,1)
+\end{DoxyItemize}\hypertarget{md_docs_2zh_2md_23d__transforms_autotoc_md5}{}\doxysubsection{\texorpdfstring{3. 观察坐标 (View Space / Camera Space)}{3. 观察坐标 (View Space / Camera Space)}}\label{md_docs_2zh_2md_23d__transforms_autotoc_md5}
+
+\begin{DoxyItemize}
+\item {\bfseries{定义}}：以摄像机为原点的坐标系
+\item {\bfseries{特点}}：摄像机位于原点，看向-\/\+Z方向，\+Y轴向上
+\item {\bfseries{用途}}：简化后续的投影计算
+\item {\bfseries{示例}}：摄像机前方2米的物体坐标为 (0,0,-\/2)
+\end{DoxyItemize}\hypertarget{md_docs_2zh_2md_23d__transforms_autotoc_md6}{}\doxysubsection{\texorpdfstring{4. 裁剪坐标 (Clip Space)}{4. 裁剪坐标 (Clip Space)}}\label{md_docs_2zh_2md_23d__transforms_autotoc_md6}
+
+\begin{DoxyItemize}
+\item {\bfseries{定义}}：应用投影变换后的坐标系
+\item {\bfseries{特点}}：包含齐次坐标的w分量，用于透视除法
+\item {\bfseries{用途}}：进行视锥体裁剪，剔除不可见的几何体
+\item {\bfseries{示例}}：坐标范围通常在 \mbox{[}-\/w, w\mbox{]} 之间
+\end{DoxyItemize}\hypertarget{md_docs_2zh_2md_23d__transforms_autotoc_md7}{}\doxysubsection{\texorpdfstring{5. 标准化设备坐标 (NDC -\/ Normalized Device Coordinates)}{5. 标准化设备坐标 (NDC -\/ Normalized Device Coordinates)}}\label{md_docs_2zh_2md_23d__transforms_autotoc_md7}
+
+\begin{DoxyItemize}
+\item {\bfseries{定义}}：经过透视除法后的标准化坐标
+\item {\bfseries{特点}}：坐标范围固定在 \mbox{[}-\/1, 1\mbox{]} 之间（\+Open\+GL）或 \mbox{[}0, 1\mbox{]}（\+Direct\+X）
+\item {\bfseries{用途}}：与具体屏幕分辨率无关的标准化表示
+\item {\bfseries{示例}}：屏幕中心为 (0,0)，四个角为 (±1,±1)
+\end{DoxyItemize}\hypertarget{md_docs_2zh_2md_23d__transforms_autotoc_md8}{}\doxysubsection{\texorpdfstring{6. 屏幕坐标 (Screen Space)}{6. 屏幕坐标 (Screen Space)}}\label{md_docs_2zh_2md_23d__transforms_autotoc_md8}
+
+\begin{DoxyItemize}
+\item {\bfseries{定义}}：最终的像素坐标
+\item {\bfseries{特点}}：以像素为单位，左上角通常为原点
+\item {\bfseries{用途}}：直接对应屏幕上的像素位置
+\item {\bfseries{示例}}：1920x1080屏幕的坐标范围为 (0,0) 到 (1919,1079)
+\end{DoxyItemize}\hypertarget{md_docs_2zh_2md_23d__transforms_autotoc_md9}{}\doxysection{\texorpdfstring{详细变换步骤}{详细变换步骤}}\label{md_docs_2zh_2md_23d__transforms_autotoc_md9}
+\hypertarget{md_docs_2zh_2md_23d__transforms_autotoc_md10}{}\doxysubsection{\texorpdfstring{1. 模型变换 (Model Transform)}{1. 模型变换 (Model Transform)}}\label{md_docs_2zh_2md_23d__transforms_autotoc_md10}
 将物体从局部坐标系转换到世界坐标系
 \begin{DoxyItemize}
-\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}平移\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}：移动物体位置
-\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}旋转\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}：改变物体朝向
-\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}缩放\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}：改变物体大小
-\end{DoxyItemize}\hypertarget{md_docs_2zh_2md_23d__transforms_autotoc_md4}{}\doxysubsection{\texorpdfstring{2. 视图变换 (View Transform)}{2. 视图变换 (View Transform)}}\label{md_docs_2zh_2md_23d__transforms_autotoc_md4}
+\item {\bfseries{平移}}：移动物体位置
+\item {\bfseries{旋转}}：改变物体朝向
+\item {\bfseries{缩放}}：改变物体大小
+\end{DoxyItemize}\hypertarget{md_docs_2zh_2md_23d__transforms_autotoc_md11}{}\doxysubsection{\texorpdfstring{2. 视图变换 (View Transform)}{2. 视图变换 (View Transform)}}\label{md_docs_2zh_2md_23d__transforms_autotoc_md11}
 将世界坐标转换到摄像机坐标系
 \begin{DoxyItemize}
 \item 以摄像机为原点建立新的坐标系
 \item 摄像机看向的方向为-\/\+Z轴
-\end{DoxyItemize}\hypertarget{md_docs_2zh_2md_23d__transforms_autotoc_md5}{}\doxysubsection{\texorpdfstring{3. 投影变换 (Projection Transform)}{3. 投影变换 (Projection Transform)}}\label{md_docs_2zh_2md_23d__transforms_autotoc_md5}
+\end{DoxyItemize}\hypertarget{md_docs_2zh_2md_23d__transforms_autotoc_md12}{}\doxysubsection{\texorpdfstring{3. 投影变换 (Projection Transform)}{3. 投影变换 (Projection Transform)}}\label{md_docs_2zh_2md_23d__transforms_autotoc_md12}
 将3\+D坐标投影到2\+D平面
 \begin{DoxyItemize}
-\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}透视投影\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}：模拟人眼视觉，远小近大
-\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}正交投影\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}：平行投影，不考虑距离
-\end{DoxyItemize}\hypertarget{md_docs_2zh_2md_23d__transforms_autotoc_md6}{}\doxysubsection{\texorpdfstring{4. 透视除法 (Perspective Division)}{4. 透视除法 (Perspective Division)}}\label{md_docs_2zh_2md_23d__transforms_autotoc_md6}
+\item {\bfseries{透视投影}}：模拟人眼视觉，远小近大
+\item {\bfseries{正交投影}}：平行投影，不考虑距离
+\end{DoxyItemize}\hypertarget{md_docs_2zh_2md_23d__transforms_autotoc_md13}{}\doxysubsection{\texorpdfstring{4. 透视除法 (Perspective Division)}{4. 透视除法 (Perspective Division)}}\label{md_docs_2zh_2md_23d__transforms_autotoc_md13}
 将裁剪坐标转换为标准化设备坐标
 \begin{DoxyItemize}
 \item 除以w分量实现透视效果
-\end{DoxyItemize}\hypertarget{md_docs_2zh_2md_23d__transforms_autotoc_md7}{}\doxysubsection{\texorpdfstring{5. 视口变换 (Viewport Transform)}{5. 视口变换 (Viewport Transform)}}\label{md_docs_2zh_2md_23d__transforms_autotoc_md7}
+\end{DoxyItemize}\hypertarget{md_docs_2zh_2md_23d__transforms_autotoc_md14}{}\doxysubsection{\texorpdfstring{5. 视口变换 (Viewport Transform)}{5. 视口变换 (Viewport Transform)}}\label{md_docs_2zh_2md_23d__transforms_autotoc_md14}
 将\+NDC转换为屏幕像素坐标
 \begin{DoxyItemize}
 \item X、\+Y坐标映射到屏幕分辨率
 \item Z坐标映射到深度缓冲区范围
-\end{DoxyItemize}\hypertarget{md_docs_2zh_2md_23d__transforms_autotoc_md8}{}\doxysection{\texorpdfstring{变换矩阵}{变换矩阵}}\label{md_docs_2zh_2md_23d__transforms_autotoc_md8}
+\end{DoxyItemize}\hypertarget{md_docs_2zh_2md_23d__transforms_autotoc_md15}{}\doxysection{\texorpdfstring{变换矩阵}{变换矩阵}}\label{md_docs_2zh_2md_23d__transforms_autotoc_md15}
 每个变换都可以用4x4矩阵表示，多个变换可以通过矩阵乘法组合： 
