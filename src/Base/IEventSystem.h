@@ -17,17 +17,29 @@ namespace FCT
         struct QueueOnly {
             static constexpr bool EnableQueue = true;
             static constexpr bool EnableTrigger = false;
+            static constexpr bool EventAsData = true;
         };
         struct TriggerOnly {
             static constexpr bool EnableQueue = false;
             static constexpr bool EnableTrigger = true;
+            static constexpr bool EventAsData = true;
         };
         struct Full {
             static constexpr bool EnableQueue = true;
             static constexpr bool EnableTrigger = true;
+            static constexpr bool EventAsData = true;
+        };
+        struct IdentifierFull {
+            static constexpr bool EnableQueue = true;
+            static constexpr bool EnableTrigger = true;
+            static constexpr bool EventAsData = false;
+        };
+        struct IdentifierTriggerOnly {
+            static constexpr bool EnableQueue = true;
+            static constexpr bool EnableTrigger = true;
+            static constexpr bool EventAsData = false;
         };
     }
-
     using SubscribeId = std::size_t;
 
     template<typename Config = EventSystemConfig::Full>
@@ -66,7 +78,26 @@ namespace FCT
                 }) {}
         };
 
-        std::unordered_map<entt::id_type, std::unordered_map<SubscribeId, std::unique_ptr<IEventHandler>>> m_handlers;
+
+        struct IEventIdentifierHandler {
+            virtual ~IEventIdentifierHandler() = default;
+            virtual void handle() = 0;
+        };
+
+        template<typename Event>
+       struct EventIdentifierHandler : IEventIdentifierHandler {
+            std::function<void()> handler;
+
+            EventIdentifierHandler(std::function<void()> h) : handler(std::move(h)) {}
+
+            void handle() override {
+                handler();
+            }
+        };
+
+        std::conditional_t<Config::EventAsData,
+         std::unordered_map<entt::id_type, std::unordered_map<SubscribeId, std::unique_ptr<IEventHandler>>>,
+         std::unordered_map<entt::id_type, std::unordered_map<SubscribeId, std::unique_ptr<IEventIdentifierHandler>>>> m_handlers;
 
         std::conditional_t<Config::EnableQueue,
             std::unordered_map<entt::id_type, std::vector<std::function<void()>>>,
@@ -76,8 +107,8 @@ namespace FCT
 
     public:
         template<typename Event>
-        void trigger(const Event& event)
-            requires Config::EnableTrigger
+       void trigger(const Event& event)
+           requires (Config::EnableTrigger && Config::EventAsData)
         {
             constexpr auto eventTypeId = getEventTypeId<Event>();
 
@@ -90,8 +121,22 @@ namespace FCT
         }
 
         template<typename Event>
-        void enqueue(Event&& event)
-            requires Config::EnableQueue
+       void trigger()
+           requires (Config::EnableTrigger && !Config::EventAsData)
+        {
+            constexpr auto eventTypeId = getEventTypeId<Event>();
+
+            auto it = m_handlers.find(eventTypeId);
+            if (it != m_handlers.end()) {
+                for (const auto& [id, handler] : it->second) {
+                    handler->handle();
+                }
+            }
+        }
+
+        template<typename Event>
+       void enqueue(Event&& event)
+           requires (Config::EnableQueue && Config::EventAsData)
         {
             constexpr auto eventTypeId = getEventTypeId<Event>();
 
@@ -101,6 +146,20 @@ namespace FCT
 
             m_eventQueue[eventTypeId].emplace_back(std::move(triggerLambda));
         }
+
+        template<typename Event>
+        void enqueue()
+            requires (Config::EnableQueue && !Config::EventAsData)
+        {
+            constexpr auto eventTypeId = getEventTypeId<Event>();
+
+            auto triggerLambda = [this]() {
+                this->template trigger<Event>();
+            };
+
+            m_eventQueue[eventTypeId].emplace_back(std::move(triggerLambda));
+        }
+
 
         template<typename Event>
         void update()
@@ -130,7 +189,9 @@ namespace FCT
         }
 
         template<typename Event, typename Func>
-        SubscribeId subscribe(Func&& func) {
+        SubscribeId subscribe(Func&& func)
+            requires Config::EventAsData
+        {
             constexpr auto eventTypeId = getEventTypeId<Event>();
 
             auto subscribeId = m_nextSubscribeId++;
@@ -143,6 +204,23 @@ namespace FCT
 
             return subscribeId;
         }
+        template<typename Event, typename Func>
+        SubscribeId subscribe(Func&& func)
+            requires (!Config::EventAsData)
+        {
+            constexpr auto eventTypeId = getEventTypeId<Event>();
+
+            auto subscribeId = m_nextSubscribeId++;
+
+            auto handler = std::make_unique<EventIdentifierHandler<Event>>(
+                std::function<void()>(std::forward<Func>(func))
+            );
+
+            m_handlers[eventTypeId][subscribeId] = std::move(handler);
+
+            return subscribeId;
+        }
+
 
         template<typename Event>
         void unsubscribe(SubscribeId subscribeId) {
@@ -176,5 +254,7 @@ namespace FCT
             }
         }
     };
+    template<typename Config = EventSystemConfig::Full>
+    using EventDispatcher = IEventSystem<Config>;
 }
 #endif //EVENTSYSTEM_H

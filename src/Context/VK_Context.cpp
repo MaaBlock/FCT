@@ -496,7 +496,7 @@ namespace FCT
         }
     }
 
-    void VK_Context::create()
+    void VK_Context::createPlatform()
     {
 
     }

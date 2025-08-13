@@ -16,6 +16,12 @@ namespace FCT {
         using MouseWheelCallBack = std::function<void(Window* wnd, int delta)>;
         using KeyDownCallBack = std::function<void(Window* wnd, int key)>;
         using KeyUpCallBack = std::function<void(Window* wnd, int key)>;
+
+        /**
+         * @cond CHINESE
+         * @note CallbackId保证不等于0
+         * @endcond
+         */
         using CallbackId = size_t;
 
         void onResize(Window* wnd, int width, int height) override {
@@ -180,6 +186,6 @@ namespace FCT {
         std::unordered_map<CallbackId, MouseWheelCallBack> m_mouseWheelCallbacks;
         std::unordered_map<CallbackId, KeyDownCallBack> m_keyDownCallbacks;
         std::unordered_map<CallbackId, KeyUpCallBack> m_keyUpCallbacks;
-        CallbackId m_nextId = 0;
+        CallbackId m_nextId = 1;
     };
 }

@@ -5,6 +5,7 @@
 #ifndef FCT_AUTOVIEWPORT_H
 #define FCT_AUTOVIEWPORT_H
 #include "../RHI/CommandBuffer.h"
+#include "./CallBackHandler.h"
 namespace FCT
 {
     class Context;
@@ -15,6 +16,8 @@ namespace FCT
         AutoViewport();
         AutoViewport(Vec2 windowSize, Vec2 viewportSize);
         void ctx(FCT::Context* ctx);
+        void window(Window* wnd);
+        void enable(bool enable);
         void resize(int width, int height);
         void computeViewport();
         void submit(RHI::CommandBuffer* cmdBuf);
@@ -28,8 +31,10 @@ namespace FCT
         float m_windowWidth, m_windowHeight;
         float m_viewportWidth, m_viewportHeight;
         float m_viewportOffsetX, m_viewportOffsetY;
+        CallBackEventHandler::CallbackId m_resizeCallBack = 0;
         FCT::Context* m_ctx;
         std::vector<std::string> m_passes;
+        Window* m_wnd;
     };
 }
 #endif //AUTOREVIEWPORT_H

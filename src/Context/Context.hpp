@@ -202,5 +202,11 @@ namespace FCT {
 	{
 		return m_descriptorPools[wnd];
 	}
+
+	template <typename T>
+	inline T* Context::createResource()
+	{
+		return m_resourceDevice->createResource<T>();
+	}
 }
 #endif

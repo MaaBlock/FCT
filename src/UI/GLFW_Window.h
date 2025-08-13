@@ -9,9 +9,23 @@
 
 namespace FCT
 {
+    class GLFW_SwapchainTargetWrapper : public SwapchainTargetWrapper
+    {
+    public:
+        GLFW_SwapchainTargetWrapper(void* surface) : surface(surface) {}
+        void* getNativeHandler() override
+        {
+            return surface;
+        }
+    private:
+        void* surface;
+
+    };
     class GLFW_WindowBehavior;
     class GLFW_Window : public Window
     {
+    private:
+        SwapchainTargetWrapper* getSwapchainTarget(Context* ctx) override;
     public:
         friend class GLFW_WindowBehavior;
         GLFW_Window(GLFW_UICommon* common, Runtime* rt);
@@ -21,9 +35,8 @@ namespace FCT
         void invokeMouseCallbacks(int button, int action, int mods);
         void invokeKeyCallbacks(int key, int scancode, int action, int mods);
         void invokeScrollCallbacks(int xoffset, int yoffset);
-        void create();
+        void createPlatform();
         bool isRunning() const override;
-        void bind(Context* ctx) override;
         void swapBuffers() override;
         int getWidth() override;
         int getHeight() override;

@@ -132,6 +132,16 @@ namespace FCT {
         m_submitThread.join();
     }
 
+    void Context::create(ContextCreateFlags flag)
+    {
+        createPlatform();
+        if (flag & ContextCreateFlag::withModuleResourceManage)
+            addModule<ResourceManager>();
+        if (flag & ContextCreateFlag::withModuleRenderGraph)
+            addModule<RenderGraph>();
+        maxFrameInFlight(3);
+    }
+
     StaticMesh<uint32_t>* Context::createMesh(const ModelMesh* modelMesh, const VertexLayout& layout)
     {
         if (!modelMesh) {

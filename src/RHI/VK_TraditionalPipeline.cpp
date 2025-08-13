@@ -7,6 +7,7 @@
 #include "../Context/PixelShader.h"
 #include "./VK_VertexShader.h"
 #include "./VK_PixelShader.h"
+#include "../Context/Context.hpp"
 namespace FCT
 {
     namespace RHI

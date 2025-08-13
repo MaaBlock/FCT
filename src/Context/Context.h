@@ -110,6 +110,14 @@ namespace FCT
 	 *		if you want to
 	 */
 	class Runtime;
+	enum class ContextCreateFlag
+	{
+		withModuleResourceManage	             = 0x1,
+		withModuleRenderGraph		             = 0x2,
+		defaultConfig = withModuleResourceManage
+						| withModuleRenderGraph,
+	};
+	FCT_DECLARE_FLAGS(ContextCreateFlag)
 	class Context : public RefCount,public IEventSystem<EventSystemConfig::TriggerOnly>
 	{
 	protected:
@@ -118,12 +126,10 @@ namespace FCT
 		Context(Runtime* runtime);
 		virtual ~Context();
 		template <typename T>
-		T* createResource()
-		{
-			return m_resourceDevice->createResource<T>();
-		}
+		T* createResource();
 		virtual RHI::RasterizationPipeline* createTraditionPipeline() = 0;
-		virtual void create() = 0;
+		virtual void createPlatform() = 0;
+		void create(ContextCreateFlags flag = ContextCreateFlag::defaultConfig);
 		template <typename T>
 		void addModule();
 		template <typename T>
@@ -371,6 +377,7 @@ namespace FCT
 	protected:
 		ResourceManager* m_resourceManager;
 	};
+
 
 	template <typename T>
 	void Context::addModule()

@@ -18,6 +18,32 @@ namespace FCT
 #endif
 }
 
+FCT::SwapchainTargetWrapper* FCT::GLFW_Window::getSwapchainTarget(Context* srcCtx)
+{
+    FCT::SwapchainTargetWrapper* ret = nullptr;
+    m_ctx = srcCtx;
+    if (false) {
+
+    }
+#ifdef FCT_USE_VULKAN
+    else if (dynamic_cast<VK_Context*>(srcCtx))
+    {
+        auto ctx = dynamic_cast<VK_Context*>(srcCtx);
+        auto res = glfwCreateWindowSurface(ctx->getVkInstance(), m_window, nullptr, &m_vkSurface);
+        if (res!= VK_SUCCESS)
+        {
+            ferr << "Failed to create Vulkan surface. Error code: " << res << std::endl;
+        }
+        m_swapchainNativeHandle = &m_vkSurface;
+        ret = new GLFW_SwapchainTargetWrapper(m_swapchainNativeHandle);
+    }
+#endif
+    else {
+        ferr << "没有受支持的context" << std::endl;
+    }
+    return ret;
+}
+
 FCT::GLFW_Window::GLFW_Window(GLFW_UICommon* common, Runtime* rt)
 {
     m_common = common;
@@ -100,7 +126,7 @@ void FCT::GLFW_Window::invokeScrollCallbacks(int xoffset, int yoffset)
     }
 }
 
-void FCT::GLFW_Window::create()
+void FCT::GLFW_Window::createPlatform()
 {
     m_common->postUiTask([this](void*)
     {
@@ -140,65 +166,6 @@ void FCT::GLFW_Window::create()
 bool FCT::GLFW_Window::isRunning() const
 {
 	return !glfwWindowShouldClose(m_window);
-}
-
-void FCT::GLFW_Window::bind(Context* srcCtx)
- {
-        m_ctx = srcCtx;
-        //m_ctx->setPresentWindow(this);
-        //m_ctx->setFlushWindow(this);
-        if (false) {
-
-        }
-#ifdef FCT_USE_VULKAN
-        else if (dynamic_cast<VK_Context*>(srcCtx)) {
-            auto ctx = dynamic_cast<VK_Context*>(srcCtx);
-            auto res = glfwCreateWindowSurface(ctx->getVkInstance(), m_window, nullptr, &m_vkSurface);
-            if (res!= VK_SUCCESS)
-            {
-                ferr << "Failed to create Vulkan surface. Error code: " << res << std::endl;
-            }
-            m_swapchainNativeHandle = &m_vkSurface;
-            recreateSwapchain(m_width,m_height);
-            /*
-            recreateSwapChain = std::bind(&GLFW_Window::createVulkanSwapChain, this);
-            present = std::bind(&GLFW_Window::presentVulkan, this);*/
-            /*
-            bool needReWaited;
-            do {
-                needReWaited = false;
-                while (!hasSurface()) {
-                    std::this_thread::sleep_for(std::chrono::milliseconds(1));
-                }
-                m_nativeSurfaceMutex.lock();
-                if (!hasSurface()) {
-                    needReWaited = true;
-                    m_nativeSurfaceMutex.unlock();
-                    continue;
-                }
-                createVulkanSurface();
-                createVulkanSwapChain();
-                m_needRecreateSwapChain = false;
-                m_contextReource = new Vulkan_WndResource();
-                recreateSwapChain = std::bind(&Android_Window::createVulkanSwapChain, this);
-                present = std::bind(&Android_Window::presentVulkan, this);
-                destorySurface = std::bind(&Android_Window::destroyVulkanSurface, this);
-                createSurface = std::bind(&Android_Window::createVulkanSurface, this);
-
-                m_nativeSurfaceMutex.unlock();
-
-            } while (needReWaited);
-            */
-        }
-#endif
-        else {
-            ferr << "没有受支持的context" << std::endl;
-        }
-        if (m_needEnableDepthBuffer)
-        {
-            enableDepthBuffer(m_depthBufferFormat);
-        }
-        m_ctx->onWindowBound(this);
 }
 
 void FCT::GLFW_Window::swapBuffers()

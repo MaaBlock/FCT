@@ -15,7 +15,7 @@ namespace FCT {
         RHI::RasterizationPipeline* createTraditionPipeline() override;
         //void create(IRenderTarget* target) override;
         uint32_t findMemoryType(uint32_t typeFilter, vk::MemoryPropertyFlags properties);
-        void create();
+        void createPlatform();
         auto device()
         {
             return m_device;

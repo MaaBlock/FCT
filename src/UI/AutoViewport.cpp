@@ -1,4 +1,5 @@
-#include "../FCTAPI.h"
+#include "../Context/Context.h"
+#include "./Window.h"
 namespace FCT
 {
     AutoViewport::AutoViewport()
@@ -19,6 +20,23 @@ namespace FCT
     void AutoViewport::ctx(FCT::Context* ctx)
     {
         this->m_ctx = ctx;
+    }
+
+    void AutoViewport::window(Window* wnd)
+    {
+        m_wnd = wnd;
+    }
+
+    void AutoViewport::enable(bool enable)
+    {
+        if (m_resizeCallBack)
+        {
+            m_wnd->getCallBack()->removeResizeCallback(m_resizeCallBack);
+        }
+        m_resizeCallBack = m_wnd->getCallBack()->addResizeCallback([this](Window* w,int width,int height)
+        {
+            resize(width,height);
+        });
     }
 
     void AutoViewport::resize(int width, int height)
@@ -58,6 +76,7 @@ namespace FCT
 
     void AutoViewport::submit()
     {
+        /*
         if (m_needReviewport) {
             computeViewport();
             m_needReviewport = false;
@@ -71,6 +90,7 @@ namespace FCT
             m_ctx->submit(job, name);
         }
         job->release();
+        */
     }
 
     void AutoViewport::addPass(const std::string& name)

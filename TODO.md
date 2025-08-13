@@ -40,12 +40,12 @@ FrameBuffer Cache
 ## 完成CommandBufferGraph
 ## RenderGraph的命令使用完成CommandBufferGraph以便可以多窗口
 ## RenderGraph需要多窗口支持
-
+## 将Context平台拆分成其它的类
 # [main]
 ```mermaid
 graph TD
-    1[简化命名，使得其符合直觉]
-    2[对于用来自定义的函数，添加_前缀,
+    1[简化命名,使得其符合直觉]
+    2[对于用来自定义的函数,添加_前缀,
     表明当使用这些函数的时候,
     用户需要知道自己在干什么]
     1-->2
@@ -61,7 +61,7 @@ a.g. PipelineResource
 
 ```mermaid
 graph TD
-    1[将Pipeline系列分离为俩个类，
+    1[将Pipeline系列分离为俩个类,
     一个负责平台，
     一个负责生成默认资源]
 ```

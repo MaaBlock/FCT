@@ -12,6 +12,7 @@
 #include "./AutoViewport.h"
 #include "./InputStateEventHanndler.h"
 #include "../Context/Context.h"
+#include "../base/IModuleManager.h"
 
 namespace FCT {
 	namespace RHI
@@ -31,9 +32,41 @@ namespace FCT {
     class SetParamWindowBehavior;
 	class EventHandler;
     using VFuncII = std::function<void(int,int)>;
+	class SwapchainTargetWrapper
+	{
+	public:
+		virtual ~SwapchainTargetWrapper() = default;
+		virtual void* getNativeHandler() = 0;
+	private:
+	};
+	namespace WindowModule
+	{
+		struct Swapchain {
+			Context* ctx;
+			explicit Swapchain(Context* context) : ctx(context) {}
+		};
+
+		struct AutoViewport {
+			uint32_t width, height;
+			AutoViewport(uint32_t w, uint32_t h) : width(w), height(h) {}
+		};
+
+		struct DepthStencil {
+			Format format;
+			explicit DepthStencil(Format fmt) : format(fmt) {}
+		};
+	}
+	enum class WindowCreateFlag
+	{
+		withDefaultDepthStencil = 1 << 0,
+		withAutoViewport = 1 << 1,
+		defaultConfig = withDefaultDepthStencil | withAutoViewport
+	};
+	FCT_DECLARE_FLAGS(WindowCreateFlag);
 	class Window : public RefCount,public IRenderTarget {
     protected:
         WindowBehavior* m_behavior;
+		virtual SwapchainTargetWrapper* getSwapchainTarget(Context* ctx) = 0;
     public:
         friend class SetParamWindowBehavior;
 		RenderTargetType getType() const override { return RenderTargetType::WindowTarget; }
@@ -48,16 +81,10 @@ namespace FCT {
         void size(int w, int h) {
             m_behavior->size(w, h);
         }
-        /**
-         *@cond ENGLISH
-         *@note if binded context,must call context->flush() every frame.
-         *@endcond
-         *@cond CHINESE
-         *@note 如果绑定了上下文,需要每帧调用一次ctx->flush()
-         */
-        virtual void bind(Context* ctx) override = 0;
-        virtual void create() = 0;
-		virtual bool isRunning() const = 0;
+        virtual void createPlatform() = 0;
+		void create(WindowCreateFlags flags = WindowCreateFlag::defaultConfig);
+        void bind(Context* ctx) override;
+        virtual bool isRunning() const = 0;
 		virtual void swapBuffers() = 0;
 		virtual int getWidth() = 0;
 		virtual int getHeight() = 0;
@@ -128,39 +155,40 @@ namespace FCT {
 		{
 			return m_swapchain->getSampleCount();
 		}
-		void enableAutoViewport(Vec2 viewportSize)
-		{
-			m_autoViewport = AutoViewport(Vec2(getWidth(),getHeight()),viewportSize);
-			m_callbackHandler->addResizeCallback([this](Window* wnd, int width, int height)
-			{
-				m_autoViewport.resize(width,height);
-			});
-			m_ctx->addBeginFrameTicker([this]()
-			{
-				m_autoViewport.submit();
-			});
-			m_enableAutoViewport = true;
-		}
-		void disableAutoViewport()
-		{
-			m_enableAutoViewport = false;
-		}
-		void enableAutoViewportForAllCurrentTargetToWndPass()
-		{
-			if (m_enableAutoViewport)
-			{
-				m_autoViewport.ctx(m_ctx);
-				m_autoViewport.enableForWndAllPass(this);
-			}
-		}
 		RHI::Swapchain* swapchain() const
 		{
 			return m_swapchain;
 		}
+		template<typename... Components>
+	    void addModule(Components&&... components) {
+			(addSingleComponent(std::forward<Components>(components)), ...);
+		}
+
+		template<typename Component>
+		auto getModule() const -> std::conditional_t<
+			std::is_same_v<Component, WindowModule::Swapchain>, RHI::Swapchain*,
+			std::conditional_t<
+				std::is_same_v<Component, WindowModule::AutoViewport>, AutoViewport*,
+				std::conditional_t<
+					std::is_same_v<Component, WindowModule::DepthStencil>, Format,
+					void*
+				>
+			>
+		> {
+			if constexpr (std::is_same_v<Component, WindowModule::Swapchain>) {
+				return m_swapchain;
+			} else if constexpr (std::is_same_v<Component, WindowModule::AutoViewport>) {
+				return m_autoViewport;
+			} else if constexpr (std::is_same_v<Component, WindowModule::DepthStencil>) {
+				return m_depthBufferFormat;
+			} else {
+				static_assert(sizeof(Component) == 0, "Unsupported module type");
+				return nullptr;
+			}
+		}
 	private:
 	protected:
-		bool m_enableAutoViewport;
-		AutoViewport m_autoViewport;
+		AutoViewport* m_autoViewport;
 		CallBackEventHandler* m_callbackHandler;
 		std::vector<EventHandler*> m_handlers;
         int m_x,m_y, m_width, m_height;
@@ -169,11 +197,15 @@ namespace FCT {
 		bool m_needEnableDepthBuffer;
 		Format m_depthBufferFormat;
         Context* m_ctx;
+		EventDispatcher<EventSystemConfig::IdentifierTriggerOnly> m_delayModuleCreate;
 	private:
-
+		void addSingleComponent(const WindowModule::Swapchain& component);
+        void addSingleComponent(const WindowModule::AutoViewport& component);
+        void addSingleComponent(const WindowModule::DepthStencil& component);
 	};
 
-    class SetParamWindowBehavior : public WindowBehavior {
+
+	class SetParamWindowBehavior : public WindowBehavior {
     private:
         Window* m_window;
     public:
@@ -191,6 +223,8 @@ namespace FCT {
         }
     };
     inline Window::Window() {
+    	m_autoViewport = nullptr;
+    	m_swapchain = nullptr;
     	m_needEnableDepthBuffer = false;
         m_behavior = new SetParamWindowBehavior(this);
         m_callbackHandler = new CallBackEventHandler();
@@ -204,5 +238,6 @@ namespace FCT {
     	});
         registerHandler(m_callbackHandler);
     }
+
 }
 #endif

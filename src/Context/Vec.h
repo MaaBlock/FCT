@@ -13,6 +13,12 @@ namespace FCT {
             this->y = static_cast<float>(y);
         }
         Vec2(float x = 0.0f, float y = 0.0f) : x(x), y(y) {}
+        Vec2(uint32_t x, uint32_t y)
+        {
+            this->x = static_cast<float>(x);
+            this->y = static_cast<float>(y);
+        }
+
         Vec2 &operator+=(const Vec2 &rhs)
         {
             x += rhs.x;
