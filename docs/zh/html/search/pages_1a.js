@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['管线类型_0',['管线类型',['../render_concepts.html#autotoc_md16',1,'']]]
+  ['几何着色器（geometry_20shader）_0',['2. 几何着色器（Geometry Shader）',['../md_docs_2zh_2md_2shader__overview.html#autotoc_md59',1,'']]]
 ];

@@ -1,32 +1,32 @@
 \chapter{渲染管线概述 }
 \hypertarget{md_docs_2zh_2md_2pipeline__comparison}{}\label{md_docs_2zh_2md_2pipeline__comparison}\index{渲染管线概述@{渲染管线概述}}
-\label{md_docs_2zh_2md_2pipeline__comparison_autotoc_md0}%
-\Hypertarget{md_docs_2zh_2md_2pipeline__comparison_autotoc_md0}%
+\label{md_docs_2zh_2md_2pipeline__comparison_autotoc_md24}%
+\Hypertarget{md_docs_2zh_2md_2pipeline__comparison_autotoc_md24}%
 
 
-本指南旨在帮助新加入的\+FCT库开发者理解不同渲染管线的基本概念和区别。通过掌握这些知识，您将能够更好地修改和扩展\+FCT库中的管线类层次结构。\hypertarget{md_docs_2zh_2md_2pipeline__comparison_autotoc_md1}{}\doxysection{\texorpdfstring{什么是渲染管线？}{什么是渲染管线？}}\label{md_docs_2zh_2md_2pipeline__comparison_autotoc_md1}
-渲染管线是将3\+D模型数据转换为屏幕上像素的过程。不同的渲染管线提供不同的处理方式和效果。\hypertarget{md_docs_2zh_2md_2pipeline__comparison_autotoc_md2}{}\doxysection{\texorpdfstring{渲染管线分类}{渲染管线分类}}\label{md_docs_2zh_2md_2pipeline__comparison_autotoc_md2}
+本指南旨在帮助新加入的\+FCT库开发者理解不同渲染管线的基本概念和区别。通过掌握这些知识，您将能够更好地修改和扩展\+FCT库中的管线类层次结构。\hypertarget{md_docs_2zh_2md_2pipeline__comparison_autotoc_md25}{}\doxysection{\texorpdfstring{什么是渲染管线？}{什么是渲染管线？}}\label{md_docs_2zh_2md_2pipeline__comparison_autotoc_md25}
+渲染管线是将3\+D模型数据转换为屏幕上像素的过程。不同的渲染管线提供不同的处理方式和效果。\hypertarget{md_docs_2zh_2md_2pipeline__comparison_autotoc_md26}{}\doxysection{\texorpdfstring{渲染管线分类}{渲染管线分类}}\label{md_docs_2zh_2md_2pipeline__comparison_autotoc_md26}
 
 \begin{DoxyImageNoCaption}
-  \mbox{\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{dot_inline_dotgraph_1}}
+  \mbox{\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{dot_inline_dotgraph_3}}
 \end{DoxyImageNoCaption}
-\hypertarget{md_docs_2zh_2md_2pipeline__comparison_autotoc_md3}{}\doxysection{\texorpdfstring{详细分类说明}{详细分类说明}}\label{md_docs_2zh_2md_2pipeline__comparison_autotoc_md3}
-\hypertarget{md_docs_2zh_2md_2pipeline__comparison_autotoc_md4}{}\doxysubsection{\texorpdfstring{1. 光栅化渲染}{1. 光栅化渲染}}\label{md_docs_2zh_2md_2pipeline__comparison_autotoc_md4}
-光栅化渲染是将3\+D场景转换为2\+D图像的传统方法。它通过将3\+D几何体投影到2\+D屏幕空间，然后填充像素来工作。\hypertarget{md_docs_2zh_2md_2pipeline__comparison_autotoc_md5}{}\doxysubsubsection{\texorpdfstring{1.\+1 传统光栅化管线}{1.\+1 传统光栅化管线}}\label{md_docs_2zh_2md_2pipeline__comparison_autotoc_md5}
-\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}工作原理\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}：
+\hypertarget{md_docs_2zh_2md_2pipeline__comparison_autotoc_md27}{}\doxysection{\texorpdfstring{详细分类说明}{详细分类说明}}\label{md_docs_2zh_2md_2pipeline__comparison_autotoc_md27}
+\hypertarget{md_docs_2zh_2md_2pipeline__comparison_autotoc_md28}{}\doxysubsection{\texorpdfstring{1. 光栅化渲染}{1. 光栅化渲染}}\label{md_docs_2zh_2md_2pipeline__comparison_autotoc_md28}
+光栅化渲染是将3\+D场景转换为2\+D图像的传统方法。它通过将3\+D几何体投影到2\+D屏幕空间，然后填充像素来工作。\hypertarget{md_docs_2zh_2md_2pipeline__comparison_autotoc_md29}{}\doxysubsubsection{\texorpdfstring{1.\+1 传统光栅化管线}{1.\+1 传统光栅化管线}}\label{md_docs_2zh_2md_2pipeline__comparison_autotoc_md29}
+{\bfseries{工作原理}}：
 \begin{DoxyItemize}
 \item 顶点处理 → 图元装配 → 光栅化 → 片段处理 → 输出合并
 \end{DoxyItemize}
 
-\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}管线阶段\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}：
+{\bfseries{管线阶段}}：
 
 
 \begin{DoxyImageNoCaption}
-  \mbox{\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{dot_inline_dotgraph_2}}
+  \mbox{\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{dot_inline_dotgraph_4}}
 \end{DoxyImageNoCaption}
 
 
-\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}特点\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}：
+{\bfseries{特点}}：
 \begin{DoxyItemize}
 \item ✅ 成熟稳定，硬件支持广泛
 \item ✅ 开发工具完善，学习资源丰富
@@ -35,25 +35,30 @@
 \item ❌ 难以处理复杂的几何变换
 \end{DoxyItemize}
 
-\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}适用场景\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}：
+{\bfseries{适用场景}}：
 \begin{DoxyItemize}
 \item 游戏开发（特别是移动游戏）
 \item 实时应用
 \item 初学者学习
 \item 需要广泛硬件兼容性的项目
-\end{DoxyItemize}\hypertarget{md_docs_2zh_2md_2pipeline__comparison_autotoc_md6}{}\doxysubsubsection{\texorpdfstring{1.\+2 Mesh\+Shader管线}{1.\+2 Mesh\+Shader管线}}\label{md_docs_2zh_2md_2pipeline__comparison_autotoc_md6}
-\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}工作原理\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}：
+\end{DoxyItemize}
+
+{\bfseries{详细了解}}：
+\begin{DoxyItemize}
+\item \doxysectlink{md_docs_2zh_2md_2vertex__shader}{顶点着色器详解}{0} -\/ 深入了解顶点处理阶段
+\end{DoxyItemize}\hypertarget{md_docs_2zh_2md_2pipeline__comparison_autotoc_md30}{}\doxysubsubsection{\texorpdfstring{1.\+2 Mesh\+Shader管线}{1.\+2 Mesh\+Shader管线}}\label{md_docs_2zh_2md_2pipeline__comparison_autotoc_md30}
+{\bfseries{工作原理}}：
 \begin{DoxyItemize}
 \item 任务着色器 → 网格着色器 → 光栅化 → 片段处理 → 输出合并
 \end{DoxyItemize}
 
-\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}管线阶段\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}： 
+{\bfseries{管线阶段}}： 
 \begin{DoxyImageNoCaption}
-  \mbox{\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{dot_inline_dotgraph_3}}
+  \mbox{\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{dot_inline_dotgraph_5}}
 \end{DoxyImageNoCaption}
 
 
-\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}特点\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}：
+{\bfseries{特点}}：
 \begin{DoxyItemize}
 \item ✅ 更灵活的几何处理能力
 \item ✅ 支持程序化几何生成
@@ -64,22 +69,22 @@
 \item ❌ 调试工具相对较少
 \end{DoxyItemize}
 
-\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}适用场景\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}：
+{\bfseries{适用场景}}：
 \begin{DoxyItemize}
 \item 复杂场景渲染
 \item 程序化内容生成
 \item 高端游戏和应用
 \item 需要动态几何的场景
-\end{DoxyItemize}\hypertarget{md_docs_2zh_2md_2pipeline__comparison_autotoc_md7}{}\doxysubsection{\texorpdfstring{2. 光线追踪渲染}{2. 光线追踪渲染}}\label{md_docs_2zh_2md_2pipeline__comparison_autotoc_md7}
-\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}工作原理\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}： 光线追踪通过模拟光线在场景中的传播来生成图像，提供物理准确的光照效果。
+\end{DoxyItemize}\hypertarget{md_docs_2zh_2md_2pipeline__comparison_autotoc_md31}{}\doxysubsection{\texorpdfstring{2. 光线追踪渲染}{2. 光线追踪渲染}}\label{md_docs_2zh_2md_2pipeline__comparison_autotoc_md31}
+{\bfseries{工作原理}}： 光线追踪通过模拟光线在场景中的传播来生成图像，提供物理准确的光照效果。
 
-\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}管线阶段\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}： 
+{\bfseries{管线阶段}}： 
 \begin{DoxyImageNoCaption}
-  \mbox{\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{dot_inline_dotgraph_4}}
+  \mbox{\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{dot_inline_dotgraph_6}}
 \end{DoxyImageNoCaption}
 
 
-\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}特点\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}：
+{\bfseries{特点}}：
 \begin{DoxyItemize}
 \item ✅ 物理准确的光照
 \item ✅ 真实的反射和折射
@@ -90,13 +95,13 @@
 \item ❌ 实时应用受限
 \end{DoxyItemize}
 
-\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}适用场景\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}：
+{\bfseries{适用场景}}：
 \begin{DoxyItemize}
 \item 电影和动画制作
 \item 建筑可视化
 \item 产品渲染
 \item 高质量离线渲染
-\end{DoxyItemize}\hypertarget{md_docs_2zh_2md_2pipeline__comparison_autotoc_md8}{}\doxysection{\texorpdfstring{性能对比}{性能对比}}\label{md_docs_2zh_2md_2pipeline__comparison_autotoc_md8}
+\end{DoxyItemize}\hypertarget{md_docs_2zh_2md_2pipeline__comparison_autotoc_md32}{}\doxysection{\texorpdfstring{性能对比}{性能对比}}\label{md_docs_2zh_2md_2pipeline__comparison_autotoc_md32}
 \tabulinesep=1mm
 \begin{longtabu}spread 0pt [c]{*{5}{|X[-1]}|}
 \hline

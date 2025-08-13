@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['通道组_20passgroup_0',['通道组 (PassGroup)',['../render_concepts.html#render_passgroup',1,'']]]
+  ['图元装配与裁剪_0',['3. 图元装配与裁剪',['../md_docs_2zh_2md_2how__3d__object__rendered.html#autotoc_md15',1,'']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['traditional_20pipeline_0',['传统光栅化管线 (Traditional Pipeline)',['../render_concepts.html#autotoc_md14',1,'']]]
+  ['7_20深度测试_0',['7. 深度测试',['../md_docs_2zh_2md_2how__3d__object__rendered.html#autotoc_md19',1,'']]]
 ];

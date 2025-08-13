@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['渲染概念详解_0',['渲染概念详解',['../render_concepts.html',1,'']]],
-  ['渲染管线分类_1',['渲染管线分类',['../md_docs_2zh_2md_2pipeline__comparison.html#autotoc_md2',1,'']]],
-  ['渲染管线概述_2',['渲染管线概述',['../md_docs_2zh_2md_2pipeline__comparison.html',1,'']]],
-  ['渲染管线_20pipeline_3',['渲染管线 (Pipeline)',['../render_concepts.html#render_pipeline',1,'']]],
-  ['渲染通道_20pass_20render_5fpass_4',['渲染通道 (Pass) {render_pass',['../render_concepts.html#autotoc_md24',1,'']]]
+  ['traditional_20pipeline_0',['传统光栅化管线 (Traditional Pipeline)',['../render_concepts.html#autotoc_md38',1,'']]],
+  ['transform_1',['Transform',['../md_docs_2zh_2md_23d__transforms.html#autotoc_md3',1,'1. 模型变换 (Model Transform)'],['../md_docs_2zh_2md_23d__transforms.html#autotoc_md4',1,'2. 视图变换 (View Transform)'],['../md_docs_2zh_2md_23d__transforms.html#autotoc_md5',1,'3. 投影变换 (Projection Transform)'],['../md_docs_2zh_2md_23d__transforms.html#autotoc_md7',1,'5. 视口变换 (Viewport Transform)']]]
 ];

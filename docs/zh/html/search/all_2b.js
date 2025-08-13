@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['通道组_20passgroup_0',['通道组 (PassGroup)',['../render_concepts.html#render_passgroup',1,'']]]
+  ['像素着色器优化_0',['像素着色器优化',['../md_docs_2zh_2md_2shader__overview.html#autotoc_md71',1,'']]],
+  ['像素着色器（pixel_20shader_20fragment_20shader）_1',['3. 像素着色器（Pixel Shader / Fragment Shader）',['../md_docs_2zh_2md_2shader__overview.html#autotoc_md60',1,'']]]
 ];

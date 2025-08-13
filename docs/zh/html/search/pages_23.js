@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['🔍_20详细对比分析_0',['🔍 详细对比分析',['../md_docs_2zh_2md_2pipeline__comparison.html#autotoc_md3',1,'']]]
+  ['总结_0',['总结',['../md_docs_2zh_2md_2shader__overview.html#autotoc_md74',1,'']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['概念定义_0',['概念定义',['../render_concepts.html#autotoc_md14',1,'概念定义'],['../render_concepts.html#autotoc_md15',1,'概念定义'],['../render_concepts.html#autotoc_md18',1,'概念定义'],['../render_concepts.html#autotoc_md22',1,'概念定义'],['../render_concepts.html#autotoc_md28',1,'概念定义'],['../render_concepts.html#autotoc_md30',1,'概念定义']]]
+  ['优势特点_0',['优势特点',['../md_docs_2zh_2md_2vertex__shader.html#autotoc_md82',1,'']]]
 ];

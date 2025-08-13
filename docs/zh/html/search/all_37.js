@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['💡_20实际应用场景_0',['💡 实际应用场景',['../md_docs_2zh_2md_2pipeline__comparison.html#autotoc_md10',1,'']]]
+  ['总结_0',['总结',['../md_docs_2zh_2md_2shader__overview.html#autotoc_md74',1,'']]]
 ];

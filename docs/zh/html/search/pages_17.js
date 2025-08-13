@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['渲染概念详解_0',['渲染概念详解',['../render_concepts.html',1,'']]],
-  ['渲染管线_20pipeline_1',['渲染管线 (Pipeline)',['../render_concepts.html#render_pipeline',1,'']]],
-  ['渲染通道_20pass_20render_5fpass_2',['渲染通道 (Pass) {render_pass',['../render_concepts.html#autotoc_md27',1,'']]]
+  ['像素着色器优化_0',['像素着色器优化',['../md_docs_2zh_2md_2shader__overview.html#autotoc_md71',1,'']]],
+  ['像素着色器（pixel_20shader_20fragment_20shader）_1',['3. 像素着色器（Pixel Shader / Fragment Shader）',['../md_docs_2zh_2md_2shader__overview.html#autotoc_md60',1,'']]]
 ];

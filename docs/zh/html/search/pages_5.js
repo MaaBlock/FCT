@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['raytracing_20pipeline_0',['光线追踪管线 (RayTracing Pipeline)',['../render_concepts.html#autotoc_md22',1,'']]],
-  ['render_5fpass_1',['渲染通道 (Pass) {render_pass',['../render_concepts.html#autotoc_md24',1,'']]]
+  ['6_20计算颜色_0',['6. 计算颜色',['../md_docs_2zh_2md_2how__3d__object__rendered.html#autotoc_md18',1,'']]]
 ];

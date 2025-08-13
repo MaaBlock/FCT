@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['🎯_20什么是渲染管线？_0',['🎯 什么是渲染管线？',['../md_docs_2zh_2md_2pipeline__comparison.html#autotoc_md1',1,'']]],
-  ['🎯_20选择建议流程图_1',['🎯 选择建议流程图',['../md_docs_2zh_2md_2pipeline__comparison.html#autotoc_md7',1,'']]]
+  ['基本使用示例_0',['基本使用示例',['../md_docs_2zh_2md_2vertex__shader.html#autotoc_md78',1,'']]]
 ];
