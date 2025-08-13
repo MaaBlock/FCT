@@ -169,22 +169,8 @@ namespace FCT
 				ticker();
 			}
 			nextFrame();
-			beginFrameTick();
 		}
-		using beginFrameTicker = std::function<void()>;
-	protected:
-		std::vector<beginFrameTicker> m_beginFrameTicker;
 	public:
-		void beginFrameTick()
-		{
-			for (auto& ticker : m_beginFrameTicker) {
-                ticker();
-            }
-		}
-		void addBeginFrameTicker(const beginFrameTicker& ticker)
-		{
-			m_beginFrameTicker.push_back(ticker);
-		}
 		virtual void swapQueue();
 		void submitThread()
 		{
