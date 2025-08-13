@@ -1,4 +1,4 @@
-# 渲染管线概述
+﻿# 渲染管线概述
 
 本指南旨在帮助新加入的FCT库开发者理解不同渲染管线的基本概念和区别。通过掌握这些知识，您将能够更好地修改和扩展FCT库中的管线类层次结构。
 
@@ -8,26 +8,48 @@
 
 ## 渲染管线分类
 
-```mermaid
-graph TD
-A[渲染管线] --> B[光栅化渲染]
-A --> C[光线追踪渲染]
+\dot
+digraph pipeline_classification {
+rankdir=TD;
 
-    B --> D[传统光栅化管线]
-    B --> E[MeshShader管线]
+    graph [fontname="SimHei", charset="UTF-8"];
+    node [shape=box, style=filled, fontname="SimHei"];
+    edge [fontname="SimHei"];
+
+    A [label="渲染管线", fillcolor=lightgray];
+    B [label="光栅化渲染", fillcolor=lightblue];
+    C [label="光线追踪渲染", fillcolor=lightgreen];
     
-    D --> D1[顶点着色器]
-    D --> D2[几何着色器]
-    D --> D3[片段着色器]
+    D [label="传统光栅化管线", fillcolor=lightyellow];
+    E [label="MeshShader管线", fillcolor=lightyellow];
     
-    E --> E1[任务着色器]
-    E --> E2[网格着色器]
-    E --> E3[片段着色器]
+    D1 [label="顶点着色器", fillcolor=white];
+    D2 [label="几何着色器", fillcolor=white];
+    D3 [label="片段着色器", fillcolor=white];
     
-    C --> C1[光线生成]
-    C --> C2[相交测试]
-    C --> C3[着色计算]
-```
+    E1 [label="任务着色器", fillcolor=white];
+    E2 [label="网格着色器", fillcolor=white];
+    E3 [label="片段着色器", fillcolor=white];
+    
+    C1 [label="光线生成", fillcolor=white];
+    C2 [label="相交测试", fillcolor=white];
+    C3 [label="着色计算", fillcolor=white];
+    
+    A -> B;
+    A -> C;
+    B -> D;
+    B -> E;
+    D -> D1;
+    D -> D2;
+    D -> D3;
+    E -> E1;
+    E -> E2;
+    E -> E3;
+    C -> C1;
+    C -> C2;
+    C -> C3;
+}
+\enddot
 
 ## 详细分类说明
 
@@ -41,16 +63,28 @@ A --> C[光线追踪渲染]
 - 顶点处理 → 图元装配 → 光栅化 → 片段处理 → 输出合并
 
 **管线阶段**：
-```mermaid
-graph LR
-A[顶点数据] --> B[顶点着色器]
-B --> C[图元装配]
-C --> D[光栅化]
-D --> E[片段着色器]
-E --> F[深度测试]
-F --> G[颜色混合]
-G --> H[帧缓冲]
-```
+
+\dot
+digraph pipeline_classification {
+rankdir=TD;
+
+    graph [fontname="SimHei", charset="UTF-8"];
+    node [shape=box, style=filled, fontname="SimHei"];
+    edge [fontname="SimHei"];
+
+    A [label="顶点数据"];
+    B [label="片段着色器"];
+    C [label="图元装配"];
+    D [label="光栅化"];
+    E [label="片段着色器"];
+    F [label="深度测试"];
+    G [label="颜色混合"];
+    H [label="帧缓冲"];
+    
+    A -> B -> C -> D -> E -> F -> G -> H;
+}
+\enddot
+
 
 **特点**：
 - ✅ 成熟稳定，硬件支持广泛
@@ -71,16 +105,27 @@ G --> H[帧缓冲]
 - 任务着色器 → 网格着色器 → 光栅化 → 片段处理 → 输出合并
 
 **管线阶段**：
-```mermaid
-graph LR
-A[Meshlet数据] --> B[任务着色器]
-B --> C[网格着色器]
-C --> D[光栅化]
-D --> E[片段着色器]
-E --> F[深度测试]
-F --> G[颜色混合]
-G --> H[帧缓冲]
-```
+\dot
+digraph mesh_shader_pipeline {
+rankdir=LR;
+
+    graph [fontname="SimHei", charset="UTF-8"];
+    node [shape=box, style=filled, fontname="SimHei"];
+    edge [fontname="SimHei"];
+
+    A [label="Meshlet数据"];
+    B [label="任务着色器"];
+    C [label="网格着色器"];
+    D [label="光栅化"];
+    E [label="像素着色器"];
+    F [label="深度测试"];
+    G [label="颜色混合"];
+    H [label="帧缓冲"];
+    
+    A -> B -> C -> D -> E -> F -> G -> H;
+}
+\enddot
+
 
 **特点**：
 - ✅ 更灵活的几何处理能力
@@ -106,7 +151,10 @@ G --> H[帧缓冲]
 \dot
 digraph raytracing_pipeline {
 rankdir=LR;
-node [shape=box, style=filled, fillcolor=lightblue];
+
+    graph [fontname="SimHei", charset="UTF-8"];
+    node [shape=box, style=filled, fontname="SimHei"];
+    edge [fontname="SimHei"];
 
     A [label="光线生成"];
     B [label="场景遍历"];
