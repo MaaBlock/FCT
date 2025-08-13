@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['加载3d模型_0',['1. 加载3D模型',['../md_docs_2zh_2md_2how__3d__object__rendered.html#autotoc_md20',1,'']]]
+  ['几何着色器（geometry_20shader）_0',['2. 几何着色器（Geometry Shader）',['../md_docs_2zh_2md_2rendering_2shader__overview.html#autotoc_md87',1,'']]]
 ];

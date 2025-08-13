@@ -25,53 +25,53 @@
 var NAVTREE =
 [
   [ "FCT", "index.html", [
-    [ "3D渲染下的各种变换", "md_docs_2zh_2md_23d__transforms.html", [
-      [ "变换流程概览", "md_docs_2zh_2md_23d__transforms.html#autotoc_md1", null ],
-      [ "坐标系详解", "md_docs_2zh_2md_23d__transforms.html#autotoc_md2", [
-        [ "1. 局部坐标 (Local Space / Object Space)", "md_docs_2zh_2md_23d__transforms.html#autotoc_md3", null ],
-        [ "2. 世界坐标 (World Space)", "md_docs_2zh_2md_23d__transforms.html#autotoc_md4", null ],
-        [ "3. 观察坐标 (View Space / Camera Space)", "md_docs_2zh_2md_23d__transforms.html#autotoc_md5", null ],
-        [ "4. 裁剪坐标 (Clip Space)", "md_docs_2zh_2md_23d__transforms.html#autotoc_md6", null ],
-        [ "5. 标准化设备坐标 (NDC - Normalized Device Coordinates)", "md_docs_2zh_2md_23d__transforms.html#autotoc_md7", null ],
-        [ "6. 屏幕坐标 (Screen Space)", "md_docs_2zh_2md_23d__transforms.html#autotoc_md8", null ]
+    [ "3D渲染下的各种变换", "md_docs_2zh_2md_2rendering_23d__transforms.html", [
+      [ "变换流程概览", "md_docs_2zh_2md_2rendering_23d__transforms.html#autotoc_md1", null ],
+      [ "坐标系详解", "md_docs_2zh_2md_2rendering_23d__transforms.html#autotoc_md2", [
+        [ "1. 局部坐标 (Local Space / Object Space)", "md_docs_2zh_2md_2rendering_23d__transforms.html#autotoc_md3", null ],
+        [ "2. 世界坐标 (World Space)", "md_docs_2zh_2md_2rendering_23d__transforms.html#autotoc_md4", null ],
+        [ "3. 观察坐标 (View Space / Camera Space)", "md_docs_2zh_2md_2rendering_23d__transforms.html#autotoc_md5", null ],
+        [ "4. 裁剪坐标 (Clip Space)", "md_docs_2zh_2md_2rendering_23d__transforms.html#autotoc_md6", null ],
+        [ "5. 标准化设备坐标 (NDC - Normalized Device Coordinates)", "md_docs_2zh_2md_2rendering_23d__transforms.html#autotoc_md7", null ],
+        [ "6. 屏幕坐标 (Screen Space)", "md_docs_2zh_2md_2rendering_23d__transforms.html#autotoc_md8", null ]
       ] ],
-      [ "详细变换步骤", "md_docs_2zh_2md_23d__transforms.html#autotoc_md9", [
-        [ "1. 模型变换 (Model Transform)", "md_docs_2zh_2md_23d__transforms.html#autotoc_md10", null ],
-        [ "2. 视图变换 (View Transform)", "md_docs_2zh_2md_23d__transforms.html#autotoc_md11", null ],
-        [ "3. 投影变换 (Projection Transform)", "md_docs_2zh_2md_23d__transforms.html#autotoc_md12", null ],
-        [ "4. 透视除法 (Perspective Division)", "md_docs_2zh_2md_23d__transforms.html#autotoc_md13", null ],
-        [ "5. 视口变换 (Viewport Transform)", "md_docs_2zh_2md_23d__transforms.html#autotoc_md14", null ]
+      [ "详细变换步骤", "md_docs_2zh_2md_2rendering_23d__transforms.html#autotoc_md9", [
+        [ "1. 模型变换 (Model Transform)", "md_docs_2zh_2md_2rendering_23d__transforms.html#autotoc_md10", null ],
+        [ "2. 视图变换 (View Transform)", "md_docs_2zh_2md_2rendering_23d__transforms.html#autotoc_md11", null ],
+        [ "3. 投影变换 (Projection Transform)", "md_docs_2zh_2md_2rendering_23d__transforms.html#autotoc_md12", null ],
+        [ "4. 透视除法 (Perspective Division)", "md_docs_2zh_2md_2rendering_23d__transforms.html#autotoc_md13", null ],
+        [ "5. 视口变换 (Viewport Transform)", "md_docs_2zh_2md_2rendering_23d__transforms.html#autotoc_md14", null ]
       ] ],
-      [ "变换矩阵", "md_docs_2zh_2md_23d__transforms.html#autotoc_md15", null ]
+      [ "变换矩阵", "md_docs_2zh_2md_2rendering_23d__transforms.html#autotoc_md15", null ]
     ] ],
-    [ "一个3D物体是怎么被画出来的", "md_docs_2zh_2md_2how__3d__object__rendered.html", [
-      [ "渲染管线流程", "md_docs_2zh_2md_2how__3d__object__rendered.html#autotoc_md17", null ],
-      [ "详细流程", "md_docs_2zh_2md_2how__3d__object__rendered.html#autotoc_md18", null ],
-      [ "详细流程", "md_docs_2zh_2md_2how__3d__object__rendered.html#autotoc_md19", [
-        [ "1. 加载3D模型", "md_docs_2zh_2md_2how__3d__object__rendered.html#autotoc_md20", null ],
-        [ "2. 变换到屏幕坐标", "md_docs_2zh_2md_2how__3d__object__rendered.html#autotoc_md21", null ],
-        [ "3. 图元装配与裁剪", "md_docs_2zh_2md_2how__3d__object__rendered.html#autotoc_md22", null ],
-        [ "4. 视口变换", "md_docs_2zh_2md_2how__3d__object__rendered.html#autotoc_md23", null ],
-        [ "5. 光栅化", "md_docs_2zh_2md_2how__3d__object__rendered.html#autotoc_md24", null ],
-        [ "6. 计算颜色", "md_docs_2zh_2md_2how__3d__object__rendered.html#autotoc_md25", null ],
-        [ "7. 深度测试", "md_docs_2zh_2md_2how__3d__object__rendered.html#autotoc_md26", null ],
-        [ "8. 混合", "md_docs_2zh_2md_2how__3d__object__rendered.html#autotoc_md27", null ],
-        [ "9. 输出", "md_docs_2zh_2md_2how__3d__object__rendered.html#autotoc_md28", null ]
+    [ "一个3D物体是怎么被画出来的", "md_docs_2zh_2md_2rendering_2how__3d__object__rendered.html", [
+      [ "渲染管线流程", "md_docs_2zh_2md_2rendering_2how__3d__object__rendered.html#autotoc_md17", null ],
+      [ "详细流程", "md_docs_2zh_2md_2rendering_2how__3d__object__rendered.html#autotoc_md18", null ],
+      [ "详细流程", "md_docs_2zh_2md_2rendering_2how__3d__object__rendered.html#autotoc_md19", [
+        [ "1. 加载3D模型", "md_docs_2zh_2md_2rendering_2how__3d__object__rendered.html#autotoc_md20", null ],
+        [ "2. 变换到屏幕坐标", "md_docs_2zh_2md_2rendering_2how__3d__object__rendered.html#autotoc_md21", null ],
+        [ "3. 图元装配与裁剪", "md_docs_2zh_2md_2rendering_2how__3d__object__rendered.html#autotoc_md22", null ],
+        [ "4. 视口变换", "md_docs_2zh_2md_2rendering_2how__3d__object__rendered.html#autotoc_md23", null ],
+        [ "5. 光栅化", "md_docs_2zh_2md_2rendering_2how__3d__object__rendered.html#autotoc_md24", null ],
+        [ "6. 计算颜色", "md_docs_2zh_2md_2rendering_2how__3d__object__rendered.html#autotoc_md25", null ],
+        [ "7. 深度测试", "md_docs_2zh_2md_2rendering_2how__3d__object__rendered.html#autotoc_md26", null ],
+        [ "8. 混合", "md_docs_2zh_2md_2rendering_2how__3d__object__rendered.html#autotoc_md27", null ],
+        [ "9. 输出", "md_docs_2zh_2md_2rendering_2how__3d__object__rendered.html#autotoc_md28", null ]
       ] ],
-      [ "关键概念", "md_docs_2zh_2md_2how__3d__object__rendered.html#autotoc_md29", null ],
-      [ "相关文档", "md_docs_2zh_2md_2how__3d__object__rendered.html#autotoc_md30", null ]
+      [ "关键概念", "md_docs_2zh_2md_2rendering_2how__3d__object__rendered.html#autotoc_md29", null ],
+      [ "相关文档", "md_docs_2zh_2md_2rendering_2how__3d__object__rendered.html#autotoc_md30", null ]
     ] ],
-    [ "渲染管线概述", "md_docs_2zh_2md_2pipeline__comparison.html", [
-      [ "什么是渲染管线？", "md_docs_2zh_2md_2pipeline__comparison.html#autotoc_md32", null ],
-      [ "渲染管线分类", "md_docs_2zh_2md_2pipeline__comparison.html#autotoc_md33", null ],
-      [ "详细分类说明", "md_docs_2zh_2md_2pipeline__comparison.html#autotoc_md34", [
-        [ "1. 光栅化渲染", "md_docs_2zh_2md_2pipeline__comparison.html#autotoc_md35", [
-          [ "1.1 传统光栅化管线", "md_docs_2zh_2md_2pipeline__comparison.html#autotoc_md36", null ],
-          [ "1.2 MeshShader管线", "md_docs_2zh_2md_2pipeline__comparison.html#autotoc_md37", null ]
+    [ "渲染管线概述", "md_docs_2zh_2md_2rendering_2pipeline__comparison.html", [
+      [ "什么是渲染管线？", "md_docs_2zh_2md_2rendering_2pipeline__comparison.html#autotoc_md32", null ],
+      [ "渲染管线分类", "md_docs_2zh_2md_2rendering_2pipeline__comparison.html#autotoc_md33", null ],
+      [ "详细分类说明", "md_docs_2zh_2md_2rendering_2pipeline__comparison.html#autotoc_md34", [
+        [ "1. 光栅化渲染", "md_docs_2zh_2md_2rendering_2pipeline__comparison.html#autotoc_md35", [
+          [ "1.1 传统光栅化管线", "md_docs_2zh_2md_2rendering_2pipeline__comparison.html#autotoc_md36", null ],
+          [ "1.2 MeshShader管线", "md_docs_2zh_2md_2rendering_2pipeline__comparison.html#autotoc_md37", null ]
         ] ],
-        [ "2. 光线追踪渲染管线", "md_docs_2zh_2md_2pipeline__comparison.html#autotoc_md38", null ]
+        [ "2. 光线追踪渲染管线", "md_docs_2zh_2md_2rendering_2pipeline__comparison.html#autotoc_md38", null ]
       ] ],
-      [ "性能对比", "md_docs_2zh_2md_2pipeline__comparison.html#autotoc_md39", null ]
+      [ "性能对比", "md_docs_2zh_2md_2rendering_2pipeline__comparison.html#autotoc_md39", null ]
     ] ],
     [ "渲染概念详解", "render_concepts.html", [
       [ "目录", "render_concepts.html#autotoc_md40", null ],
@@ -103,44 +103,70 @@ var NAVTREE =
         [ "设计目的", "render_concepts.html#autotoc_md59", null ]
       ] ]
     ] ],
-    [ "着色器概述", "md_docs_2zh_2md_2shader__overview.html", [
-      [ "什么是着色器？", "md_docs_2zh_2md_2shader__overview.html#autotoc_md61", [
-        [ "核心特点", "md_docs_2zh_2md_2shader__overview.html#autotoc_md62", null ]
+    [ "RHI - 渲染硬件接口", "md_docs_2zh_2md_2rendering_2rhi.html", [
+      [ "什么是RHI？", "md_docs_2zh_2md_2rendering_2rhi.html#autotoc_md61", null ],
+      [ "为什么需要RHI？", "md_docs_2zh_2md_2rendering_2rhi.html#autotoc_md62", [
+        [ "问题：图形API的碎片化", "md_docs_2zh_2md_2rendering_2rhi.html#autotoc_md63", null ],
+        [ "解决方案：RHI抽象层", "md_docs_2zh_2md_2rendering_2rhi.html#autotoc_md64", null ]
       ] ],
-      [ "着色器分类", "md_docs_2zh_2md_2shader__overview.html#autotoc_md63", null ],
-      [ "传统管线着色器", "md_docs_2zh_2md_2shader__overview.html#autotoc_md64", [
-        [ "1. 顶点着色器（Vertex Shader）", "md_docs_2zh_2md_2shader__overview.html#autotoc_md65", null ],
-        [ "2. 几何着色器（Geometry Shader）", "md_docs_2zh_2md_2shader__overview.html#autotoc_md66", null ],
-        [ "3. 像素着色器（Pixel Shader / Fragment Shader）", "md_docs_2zh_2md_2shader__overview.html#autotoc_md67", null ]
-      ] ],
-      [ "现代管线着色器", "md_docs_2zh_2md_2shader__overview.html#autotoc_md68", [
-        [ "1. 任务着色器（Task Shader）", "md_docs_2zh_2md_2shader__overview.html#autotoc_md69", null ],
-        [ "2. 网格着色器（Mesh Shader）", "md_docs_2zh_2md_2shader__overview.html#autotoc_md70", null ]
-      ] ],
-      [ "计算着色器（Compute Shader）", "md_docs_2zh_2md_2shader__overview.html#autotoc_md71", null ],
-      [ "着色器语言对比", "md_docs_2zh_2md_2shader__overview.html#autotoc_md72", null ],
-      [ "着色器开发流程", "md_docs_2zh_2md_2shader__overview.html#autotoc_md73", [
-        [ "开发步骤", "md_docs_2zh_2md_2shader__overview.html#autotoc_md74", null ]
-      ] ],
-      [ "性能优化建议", "md_docs_2zh_2md_2shader__overview.html#autotoc_md75", [
-        [ "通用优化", "md_docs_2zh_2md_2shader__overview.html#autotoc_md76", null ],
-        [ "顶点着色器优化", "md_docs_2zh_2md_2shader__overview.html#autotoc_md77", null ],
-        [ "像素着色器优化", "md_docs_2zh_2md_2shader__overview.html#autotoc_md78", null ]
-      ] ],
-      [ "调试工具", "md_docs_2zh_2md_2shader__overview.html#autotoc_md79", null ],
-      [ "相关文档", "md_docs_2zh_2md_2shader__overview.html#autotoc_md80", null ],
-      [ "总结", "md_docs_2zh_2md_2shader__overview.html#autotoc_md81", null ]
+      [ "FCT中的RHI设计", "md_docs_2zh_2md_2rendering_2rhi.html#autotoc_md65", [
+        [ "架构概览", "md_docs_2zh_2md_2rendering_2rhi.html#autotoc_md66", null ],
+        [ "Context类 - 渲染上下文的核心", "md_docs_2zh_2md_2rendering_2rhi.html#autotoc_md67", null ],
+        [ "1. Device模块 - RHI资源创建器", "md_docs_2zh_2md_2rendering_2rhi.html#autotoc_md68", [
+          [ "着色器资源", "md_docs_2zh_2md_2rendering_2rhi.html#autotoc_md69", null ],
+          [ "缓冲区资源", "md_docs_2zh_2md_2rendering_2rhi.html#autotoc_md70", null ],
+          [ "图像和纹理资源", "md_docs_2zh_2md_2rendering_2rhi.html#autotoc_md71", null ],
+          [ "渲染状态资源", "md_docs_2zh_2md_2rendering_2rhi.html#autotoc_md72", null ],
+          [ "渲染管线资源", "md_docs_2zh_2md_2rendering_2rhi.html#autotoc_md73", null ],
+          [ "同步和命令资源", "md_docs_2zh_2md_2rendering_2rhi.html#autotoc_md74", null ]
+        ] ],
+        [ "2. ResourceManager模块 - 资源依赖管理器", "md_docs_2zh_2md_2rendering_2rhi.html#autotoc_md75", null ],
+        [ "3. CommandBufferGraph模块 - 同步和命令管理器", "md_docs_2zh_2md_2rendering_2rhi.html#autotoc_md76", null ],
+        [ "4. RenderGraph模块 - 渲染图管理器", "md_docs_2zh_2md_2rendering_2rhi.html#autotoc_md77", [
+          [ "Pass资源类型", "md_docs_2zh_2md_2rendering_2rhi.html#autotoc_md78", null ],
+          [ "完整的渲染图示例", "md_docs_2zh_2md_2rendering_2rhi.html#autotoc_md79", null ],
+          [ "渲染图的优势", "md_docs_2zh_2md_2rendering_2rhi.html#autotoc_md80", null ]
+        ] ]
+      ] ]
     ] ],
-    [ "顶点着色器详解", "md_docs_2zh_2md_2vertex__shader.html", [
-      [ "概述", "md_docs_2zh_2md_2vertex__shader.html#autotoc_md83", null ],
-      [ "FCT中的顶点着色器", "md_docs_2zh_2md_2vertex__shader.html#autotoc_md84", [
-        [ "基本使用示例", "md_docs_2zh_2md_2vertex__shader.html#autotoc_md85", null ],
-        [ "布局系统详解", "md_docs_2zh_2md_2vertex__shader.html#autotoc_md86", null ],
-        [ "代码生成机制", "md_docs_2zh_2md_2vertex__shader.html#autotoc_md87", null ],
-        [ "自定义着色器代码", "md_docs_2zh_2md_2vertex__shader.html#autotoc_md88", null ],
-        [ "优势特点", "md_docs_2zh_2md_2vertex__shader.html#autotoc_md89", null ]
+    [ "着色器概述", "md_docs_2zh_2md_2rendering_2shader__overview.html", [
+      [ "什么是着色器？", "md_docs_2zh_2md_2rendering_2shader__overview.html#autotoc_md82", [
+        [ "核心特点", "md_docs_2zh_2md_2rendering_2shader__overview.html#autotoc_md83", null ]
       ] ],
-      [ "相关文档", "md_docs_2zh_2md_2vertex__shader.html#autotoc_md90", null ]
+      [ "着色器分类", "md_docs_2zh_2md_2rendering_2shader__overview.html#autotoc_md84", null ],
+      [ "传统管线着色器", "md_docs_2zh_2md_2rendering_2shader__overview.html#autotoc_md85", [
+        [ "1. 顶点着色器（Vertex Shader）", "md_docs_2zh_2md_2rendering_2shader__overview.html#autotoc_md86", null ],
+        [ "2. 几何着色器（Geometry Shader）", "md_docs_2zh_2md_2rendering_2shader__overview.html#autotoc_md87", null ],
+        [ "3. 像素着色器（Pixel Shader / Fragment Shader）", "md_docs_2zh_2md_2rendering_2shader__overview.html#autotoc_md88", null ]
+      ] ],
+      [ "现代管线着色器", "md_docs_2zh_2md_2rendering_2shader__overview.html#autotoc_md89", [
+        [ "1. 任务着色器（Task Shader）", "md_docs_2zh_2md_2rendering_2shader__overview.html#autotoc_md90", null ],
+        [ "2. 网格着色器（Mesh Shader）", "md_docs_2zh_2md_2rendering_2shader__overview.html#autotoc_md91", null ]
+      ] ],
+      [ "计算着色器（Compute Shader）", "md_docs_2zh_2md_2rendering_2shader__overview.html#autotoc_md92", null ],
+      [ "着色器语言对比", "md_docs_2zh_2md_2rendering_2shader__overview.html#autotoc_md93", null ],
+      [ "着色器开发流程", "md_docs_2zh_2md_2rendering_2shader__overview.html#autotoc_md94", [
+        [ "开发步骤", "md_docs_2zh_2md_2rendering_2shader__overview.html#autotoc_md95", null ]
+      ] ],
+      [ "性能优化建议", "md_docs_2zh_2md_2rendering_2shader__overview.html#autotoc_md96", [
+        [ "通用优化", "md_docs_2zh_2md_2rendering_2shader__overview.html#autotoc_md97", null ],
+        [ "顶点着色器优化", "md_docs_2zh_2md_2rendering_2shader__overview.html#autotoc_md98", null ],
+        [ "像素着色器优化", "md_docs_2zh_2md_2rendering_2shader__overview.html#autotoc_md99", null ]
+      ] ],
+      [ "调试工具", "md_docs_2zh_2md_2rendering_2shader__overview.html#autotoc_md100", null ],
+      [ "相关文档", "md_docs_2zh_2md_2rendering_2shader__overview.html#autotoc_md101", null ],
+      [ "总结", "md_docs_2zh_2md_2rendering_2shader__overview.html#autotoc_md102", null ]
+    ] ],
+    [ "顶点着色器详解", "md_docs_2zh_2md_2rendering_2vertex__shader.html", [
+      [ "概述", "md_docs_2zh_2md_2rendering_2vertex__shader.html#autotoc_md104", null ],
+      [ "FCT中的顶点着色器", "md_docs_2zh_2md_2rendering_2vertex__shader.html#autotoc_md105", [
+        [ "基本使用示例", "md_docs_2zh_2md_2rendering_2vertex__shader.html#autotoc_md106", null ],
+        [ "布局系统详解", "md_docs_2zh_2md_2rendering_2vertex__shader.html#autotoc_md107", null ],
+        [ "代码生成机制", "md_docs_2zh_2md_2rendering_2vertex__shader.html#autotoc_md108", null ],
+        [ "自定义着色器代码", "md_docs_2zh_2md_2rendering_2vertex__shader.html#autotoc_md109", null ],
+        [ "优势特点", "md_docs_2zh_2md_2rendering_2vertex__shader.html#autotoc_md110", null ]
+      ] ],
+      [ "相关文档", "md_docs_2zh_2md_2rendering_2vertex__shader.html#autotoc_md111", null ]
     ] ],
     [ "命名空间", "namespaces.html", [
       [ "命名空间列表", "namespaces.html", "namespaces_dup" ],
@@ -212,15 +238,15 @@ var NAVTREEINDEX =
 "class_f_c_t_1_1_v_k___viewport_state.html#adb929759aca9a702e5a27e8e541bb057",
 "class_f_c_t_1_1_vertex_path.html#a33146ec5804be422936519224a3a7b3f",
 "class_f_c_t_1_1_window.html#a58737ce5ad34870d946ce4cf65b6218e",
-"md_docs_2zh_2md_2shader__overview.html#autotoc_md74",
-"namespace_f_c_t.html#a124d36d9f90f447cc81380138ca967ceaf48e7c18fc823c3bb7afa0dadd597603",
-"namespace_f_c_t.html#abbd9f55da7ce19953699d6544fba8a96ae264fa6d4bbd78199f1533e4e2a9d261",
-"struct_f_c_t_1_1_compiled_group.html#a9ea586559cadc3252328bc7c41e86930",
-"struct_f_c_t_1_1_i_event_system_1_1_i_event_identifier_handler.html#a057b178978f75dfa96c3c303e1862014",
-"struct_f_c_t_1_1_pass_desc.html#a0f5050934e7eb9e6b96a523163f02b9c",
-"struct_f_c_t_1_1_size_node.html#a841dd2fb34c5e249eedde53b3282b792",
-"struct_f_c_t_1_1_tradition_pipeline_state.html#a804345ae58b1309fc5561e92e0357e11",
-"struct_f_c_t_1_1_viewport_job.html#a474ad3a918f2e87d75ff16075e1caeec"
+"md_docs_2zh_2md_2rendering_2rhi.html#autotoc_md73",
+"namespace_f_c_t.html#a0741721dca246274b1b72d07249443e4af55c1c722034e92213df328d31e33c62",
+"namespace_f_c_t.html#aa946ca9a7d9318f0c9a8e49b9df96b06a4b27cd2fd42dcad88c2b5ca40571dd51",
+"struct_f_c_t_1_1_buffer_desc.html#a61daffc003607527501c12b077af9fa4",
+"struct_f_c_t_1_1_i_event_system_1_1_event_handler.html#a79a85742ccff3b739673460087d12752",
+"struct_f_c_t_1_1_pass_clear.html#acb0e6bf98af99a2f0406e414bc5aeb03",
+"struct_f_c_t_1_1_size2.html#a83aab2b405a71b74dc7d3497a543d54b",
+"struct_f_c_t_1_1_token_graph_1_1_node_info.html#a60df33ce55efbe8a65f82c9c20986da8",
+"struct_f_c_t_1_1_vertex_screen_info.html"
 ];
 
 var SYNCONMSG = '点击 关闭 面板同步';
