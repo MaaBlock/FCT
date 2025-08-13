@@ -4,7 +4,7 @@
 \Hypertarget{render_concepts_md_docs_2zh_2md_2render__concepts}%
 
 
-本文档详细介绍 MQEngine 中的核心渲染概念，这些概念是理解和使用引擎渲染系统的基础。\hypertarget{render_concepts_autotoc_md9}{}\doxysection{\texorpdfstring{目录}{目录}}\label{render_concepts_autotoc_md9}
+本文档详细介绍 MQEngine 中的核心渲染概念，这些概念是理解和使用引擎渲染系统的基础。\hypertarget{render_concepts_autotoc_md33}{}\doxysection{\texorpdfstring{目录}{目录}}\label{render_concepts_autotoc_md33}
 
 \begin{DoxyItemize}
 \item \doxysectlink{render_concepts_render_drawcall}{Draw\+Call}{1}
@@ -15,31 +15,31 @@
 
 \DoxyHorRuler{0}
 \hypertarget{render_concepts_render_drawcall}{}\doxysection{\texorpdfstring{Draw\+Call}{Draw\+Call}}\label{render_concepts_render_drawcall}
-\hypertarget{render_concepts_autotoc_md11}{}\doxysubsection{\texorpdfstring{概念定义}{概念定义}}\label{render_concepts_autotoc_md11}
+\hypertarget{render_concepts_autotoc_md35}{}\doxysubsection{\texorpdfstring{概念定义}{概念定义}}\label{render_concepts_autotoc_md35}
 执行一次\+Draw操作 \hypertarget{render_concepts_render_pipeline}{}\doxysection{\texorpdfstring{渲染管线 (Pipeline)}{渲染管线 (Pipeline)}}\label{render_concepts_render_pipeline}
-\hypertarget{render_concepts_autotoc_md12}{}\doxysubsection{\texorpdfstring{概念定义}{概念定义}}\label{render_concepts_autotoc_md12}
-一次\+Draw操作所包含的所有状态信息 \hypertarget{render_concepts_autotoc_md13}{}\doxysubsection{\texorpdfstring{管线类型}{管线类型}}\label{render_concepts_autotoc_md13}
-\hypertarget{render_concepts_autotoc_md14}{}\doxysubsubsection{\texorpdfstring{传统光栅化管线 (Traditional Pipeline)}{传统光栅化管线 (Traditional Pipeline)}}\label{render_concepts_autotoc_md14}
-\hypertarget{render_concepts_autotoc_md15}{}\doxysubsubsubsection{\texorpdfstring{概念定义}{概念定义}}\label{render_concepts_autotoc_md15}
-\hypertarget{render_concepts_autotoc_md16}{}\doxysubsubsubsection{\texorpdfstring{流程图}{流程图}}\label{render_concepts_autotoc_md16}
-\hypertarget{render_concepts_autotoc_md17}{}\doxysubsubsubsection{\texorpdfstring{包含的状态}{包含的状态}}\label{render_concepts_autotoc_md17}
-\hypertarget{render_concepts_autotoc_md18}{}\doxysubsubsection{\texorpdfstring{Mesh\+Shader光栅化管线 (Mesh\+Shader Pipeline)}{Mesh\+Shader光栅化管线 (Mesh\+Shader Pipeline)}}\label{render_concepts_autotoc_md18}
-\hypertarget{render_concepts_autotoc_md19}{}\doxysubsubsubsection{\texorpdfstring{概念定义}{概念定义}}\label{render_concepts_autotoc_md19}
-\hypertarget{render_concepts_autotoc_md20}{}\doxysubsubsubsection{\texorpdfstring{流程图}{流程图}}\label{render_concepts_autotoc_md20}
-\hypertarget{render_concepts_autotoc_md21}{}\doxysubsubsubsection{\texorpdfstring{包含的状态}{包含的状态}}\label{render_concepts_autotoc_md21}
-\hypertarget{render_concepts_autotoc_md22}{}\doxysubsubsection{\texorpdfstring{光线追踪管线 (Ray\+Tracing Pipeline)}{光线追踪管线 (Ray\+Tracing Pipeline)}}\label{render_concepts_autotoc_md22}
+\hypertarget{render_concepts_autotoc_md36}{}\doxysubsection{\texorpdfstring{概念定义}{概念定义}}\label{render_concepts_autotoc_md36}
+一次\+Draw操作所包含的所有状态信息 \hypertarget{render_concepts_autotoc_md37}{}\doxysubsection{\texorpdfstring{管线类型}{管线类型}}\label{render_concepts_autotoc_md37}
+\hypertarget{render_concepts_autotoc_md38}{}\doxysubsubsection{\texorpdfstring{传统光栅化管线 (Traditional Pipeline)}{传统光栅化管线 (Traditional Pipeline)}}\label{render_concepts_autotoc_md38}
+\hypertarget{render_concepts_autotoc_md39}{}\doxysubsubsubsection{\texorpdfstring{概念定义}{概念定义}}\label{render_concepts_autotoc_md39}
+\hypertarget{render_concepts_autotoc_md40}{}\doxysubsubsubsection{\texorpdfstring{流程图}{流程图}}\label{render_concepts_autotoc_md40}
+\hypertarget{render_concepts_autotoc_md41}{}\doxysubsubsubsection{\texorpdfstring{包含的状态}{包含的状态}}\label{render_concepts_autotoc_md41}
+\hypertarget{render_concepts_autotoc_md42}{}\doxysubsubsection{\texorpdfstring{Mesh\+Shader光栅化管线 (Mesh\+Shader Pipeline)}{Mesh\+Shader光栅化管线 (Mesh\+Shader Pipeline)}}\label{render_concepts_autotoc_md42}
+\hypertarget{render_concepts_autotoc_md43}{}\doxysubsubsubsection{\texorpdfstring{概念定义}{概念定义}}\label{render_concepts_autotoc_md43}
+\hypertarget{render_concepts_autotoc_md44}{}\doxysubsubsubsection{\texorpdfstring{流程图}{流程图}}\label{render_concepts_autotoc_md44}
+\hypertarget{render_concepts_autotoc_md45}{}\doxysubsubsubsection{\texorpdfstring{包含的状态}{包含的状态}}\label{render_concepts_autotoc_md45}
+\hypertarget{render_concepts_autotoc_md46}{}\doxysubsubsection{\texorpdfstring{光线追踪管线 (Ray\+Tracing Pipeline)}{光线追踪管线 (Ray\+Tracing Pipeline)}}\label{render_concepts_autotoc_md46}
 \DoxyHorRuler{0}
-\hypertarget{render_concepts_autotoc_md24}{}\doxysection{\texorpdfstring{渲染通道 (Pass) \{\#render\+\_\+pass}{渲染通道 (Pass) \{\#render\+\_\+pass}}\label{render_concepts_autotoc_md24}
-\hypertarget{render_concepts_autotoc_md25}{}\doxysubsection{\texorpdfstring{概念定义}{概念定义}}\label{render_concepts_autotoc_md25}
-渲染通道（\+Pass）可以有多个\+Pipeline\hypertarget{render_concepts_autotoc_md26}{}\doxysubsection{\texorpdfstring{核心特性}{核心特性}}\label{render_concepts_autotoc_md26}
+\hypertarget{render_concepts_autotoc_md48}{}\doxysection{\texorpdfstring{渲染通道 (Pass) \{\#render\+\_\+pass}{渲染通道 (Pass) \{\#render\+\_\+pass}}\label{render_concepts_autotoc_md48}
+\hypertarget{render_concepts_autotoc_md49}{}\doxysubsection{\texorpdfstring{概念定义}{概念定义}}\label{render_concepts_autotoc_md49}
+渲染通道（\+Pass）可以有多个\+Pipeline\hypertarget{render_concepts_autotoc_md50}{}\doxysubsection{\texorpdfstring{核心特性}{核心特性}}\label{render_concepts_autotoc_md50}
 
 \begin{DoxyItemize}
 \item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}单一职责\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}：每个 Pass 只负责一种特定的渲染操作
 \item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}可组合性\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}：多个 Pass 可以组合成复杂的渲染效果
 \item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}资源管理\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}：管理自己的输入输出资源
 \end{DoxyItemize}\hypertarget{render_concepts_render_passgroup}{}\doxysection{\texorpdfstring{通道组 (Pass\+Group)}{通道组 (Pass\+Group)}}\label{render_concepts_render_passgroup}
-\hypertarget{render_concepts_autotoc_md27}{}\doxysubsection{\texorpdfstring{概念定义}{概念定义}}\label{render_concepts_autotoc_md27}
-通道组 (Pass\+Group)可以有多个\+Pass，但是target以及深度缓存大小必须一致\hypertarget{render_concepts_autotoc_md28}{}\doxysubsection{\texorpdfstring{设计目的}{设计目的}}\label{render_concepts_autotoc_md28}
+\hypertarget{render_concepts_autotoc_md51}{}\doxysubsection{\texorpdfstring{概念定义}{概念定义}}\label{render_concepts_autotoc_md51}
+通道组 (Pass\+Group)可以有多个\+Pass，但是target以及深度缓存大小必须一致\hypertarget{render_concepts_autotoc_md52}{}\doxysubsection{\texorpdfstring{设计目的}{设计目的}}\label{render_concepts_autotoc_md52}
 
 \begin{DoxyItemize}
 \item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}逻辑分组\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}：将功能相关的 Pass 组织在一起，便于管理和维护

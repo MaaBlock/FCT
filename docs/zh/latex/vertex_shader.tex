@@ -1,0 +1,138 @@
+\chapter{顶点着色器详解 }
+\hypertarget{vertex_shader}{}\label{vertex_shader}\index{顶点着色器详解@{顶点着色器详解}}
+\texorpdfstring{$\ast$}{*}/\hypertarget{vertex_shader_autotoc_md29}{}\doxysection{\texorpdfstring{顶点着色器详解}{顶点着色器详解}}\label{vertex_shader_autotoc_md29}
+\hypertarget{vertex_shader_autotoc_md30}{}\doxysubsection{\texorpdfstring{概述}{概述}}\label{vertex_shader_autotoc_md30}
+顶点着色器（\+Vertex Shader）是图形渲染管线中的第一个可编程阶段，负责处理输入的顶点数据并将其转换为屏幕空间坐标。每个顶点都会独立地通过顶点着色器进行处理。\hypertarget{vertex_shader_autotoc_md31}{}\doxysubsection{\texorpdfstring{工作原理}{工作原理}}\label{vertex_shader_autotoc_md31}
+
+\begin{DoxyImageNoCaption}
+  \mbox{\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{dot_inline_dotgraph_5}}
+\end{DoxyImageNoCaption}
+\hypertarget{vertex_shader_autotoc_md32}{}\doxysubsection{\texorpdfstring{主要功能}{主要功能}}\label{vertex_shader_autotoc_md32}
+\hypertarget{vertex_shader_autotoc_md33}{}\doxysubsubsection{\texorpdfstring{1. 坐标变换}{1. 坐标变换}}\label{vertex_shader_autotoc_md33}
+
+\begin{DoxyItemize}
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}模型变换\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}：将顶点从模型空间转换到世界空间
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}视图变换\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}：将顶点从世界空间转换到相机空间
+\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}投影变换\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}：将顶点从相机空间转换到裁剪空间
+\end{DoxyItemize}\hypertarget{vertex_shader_autotoc_md34}{}\doxysubsubsection{\texorpdfstring{2. 属性计算}{2. 属性计算}}\label{vertex_shader_autotoc_md34}
+
+\begin{DoxyItemize}
+\item 计算光照所需的法线向量
+\item 处理纹理坐标
+\item 计算顶点颜色
+\item 传递自定义属性给片段着色器
+\end{DoxyItemize}\hypertarget{vertex_shader_autotoc_md35}{}\doxysubsubsection{\texorpdfstring{3. 顶点动画}{3. 顶点动画}}\label{vertex_shader_autotoc_md35}
+
+\begin{DoxyItemize}
+\item 骨骼动画（蒙皮）
+\item 顶点变形
+\item 程序化动画
+\end{DoxyItemize}\hypertarget{vertex_shader_autotoc_md36}{}\doxysubsection{\texorpdfstring{输入和输出}{输入和输出}}\label{vertex_shader_autotoc_md36}
+\hypertarget{vertex_shader_autotoc_md37}{}\doxysubsubsection{\texorpdfstring{输入属性}{输入属性}}\label{vertex_shader_autotoc_md37}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{//\ 顶点位置}
+\DoxyCodeLine{layout(location\ =\ 0)\ in\ vec3\ aPosition;}
+\DoxyCodeLine{//\ 法线向量}
+\DoxyCodeLine{layout(location\ =\ 1)\ in\ vec3\ aNormal;}
+\DoxyCodeLine{//\ 纹理坐标}
+\DoxyCodeLine{layout(location\ =\ 2)\ in\ vec2\ aTexCoord;}
+\DoxyCodeLine{//\ 顶点颜色}
+\DoxyCodeLine{layout(location\ =\ 3)\ in\ vec4\ aColor;}
+
+\end{DoxyCode}
+\hypertarget{vertex_shader_autotoc_md38}{}\doxysubsubsection{\texorpdfstring{输出属性}{输出属性}}\label{vertex_shader_autotoc_md38}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{//\ 传递给片段着色器的属性}
+\DoxyCodeLine{out\ vec3\ FragPos;}
+\DoxyCodeLine{out\ vec3\ Normal;}
+\DoxyCodeLine{out\ vec2\ TexCoord;}
+\DoxyCodeLine{out\ vec4\ Color;}
+\DoxyCodeLine{}
+\DoxyCodeLine{//\ 必须输出的内置变量}
+\DoxyCodeLine{gl\_Position\ =\ projectionMatrix\ *\ viewMatrix\ *\ modelMatrix\ *\ vec4(aPosition,\ 1.0);}
+
+\end{DoxyCode}
+\hypertarget{vertex_shader_autotoc_md39}{}\doxysubsection{\texorpdfstring{常见应用场景}{常见应用场景}}\label{vertex_shader_autotoc_md39}
+\hypertarget{vertex_shader_autotoc_md40}{}\doxysubsubsection{\texorpdfstring{1. 基础渲染}{1. 基础渲染}}\label{vertex_shader_autotoc_md40}
+
+\begin{DoxyItemize}
+\item 简单的\+MVP变换
+\item 基本的属性传递
+\end{DoxyItemize}\hypertarget{vertex_shader_autotoc_md41}{}\doxysubsubsection{\texorpdfstring{2. 光照计算}{2. 光照计算}}\label{vertex_shader_autotoc_md41}
+
+\begin{DoxyItemize}
+\item 计算世界空间法线
+\item 传递顶点到光源的向量
+\item 预计算光照强度
+\end{DoxyItemize}\hypertarget{vertex_shader_autotoc_md42}{}\doxysubsubsection{\texorpdfstring{3. 动画系统}{3. 动画系统}}\label{vertex_shader_autotoc_md42}
+
+\begin{DoxyItemize}
+\item 骨骼动画的顶点蒙皮
+\item 变形目标动画
+\item 程序化顶点动画
+\end{DoxyItemize}\hypertarget{vertex_shader_autotoc_md43}{}\doxysubsubsection{\texorpdfstring{4. 特效处理}{4. 特效处理}}\label{vertex_shader_autotoc_md43}
+
+\begin{DoxyItemize}
+\item 顶点噪声
+\item 波浪效果
+\item 爆炸效果
+\end{DoxyItemize}\hypertarget{vertex_shader_autotoc_md44}{}\doxysubsection{\texorpdfstring{性能考虑}{性能考虑}}\label{vertex_shader_autotoc_md44}
+\hypertarget{vertex_shader_autotoc_md45}{}\doxysubsubsection{\texorpdfstring{优化建议}{优化建议}}\label{vertex_shader_autotoc_md45}
+
+\begin{DoxyItemize}
+\item ✅ 尽量在顶点着色器中进行计算，减少片段着色器负担
+\item ✅ 使用uniform变量存储不变的数据
+\item ✅ 避免在顶点着色器中进行复杂的分支操作
+\item ❌ 不要在顶点着色器中进行纹理采样（除非必要）
+\end{DoxyItemize}\hypertarget{vertex_shader_autotoc_md46}{}\doxysubsubsection{\texorpdfstring{性能特点}{性能特点}}\label{vertex_shader_autotoc_md46}
+
+\begin{DoxyItemize}
+\item 顶点数量直接影响性能
+\item 计算复杂度与顶点数成正比
+\item 现代\+GPU对顶点处理优化良好
+\end{DoxyItemize}\hypertarget{vertex_shader_autotoc_md47}{}\doxysubsection{\texorpdfstring{在\+FCT中的实现}{在\+FCT中的实现}}\label{vertex_shader_autotoc_md47}
+FCT库中的顶点着色器实现遵循以下设计原则：\hypertarget{vertex_shader_autotoc_md48}{}\doxysubsubsection{\texorpdfstring{1. 模块化设计}{1. 模块化设计}}\label{vertex_shader_autotoc_md48}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{class\ }\mbox{\hyperlink{namespace_f_c_t_1_1_context_resource_aa4d17b706adb09314d47a203d76c631f}{VertexShader}}\ \{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ setMVPMatrix(\textcolor{keyword}{const}\ Matrix4\&\ mvp)\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ setAttributes(\textcolor{keyword}{const}\ VertexAttributes\&\ attrs)\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ execute()\ =\ 0;}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+\hypertarget{vertex_shader_autotoc_md49}{}\doxysubsubsection{\texorpdfstring{2. 可配置性}{2. 可配置性}}\label{vertex_shader_autotoc_md49}
+
+\begin{DoxyItemize}
+\item 支持动态着色器编译
+\item 提供预定义的着色器模板
+\item 允许自定义着色器代码
+\end{DoxyItemize}\hypertarget{vertex_shader_autotoc_md50}{}\doxysubsubsection{\texorpdfstring{3. 平台兼容性}{3. 平台兼容性}}\label{vertex_shader_autotoc_md50}
+
+\begin{DoxyItemize}
+\item 支持\+Open\+GL、\+Vulkan、\+DirectX
+\item 自动处理\+API差异
+\item 统一的着色器接口
+\end{DoxyItemize}\hypertarget{vertex_shader_autotoc_md51}{}\doxysubsection{\texorpdfstring{调试技巧}{调试技巧}}\label{vertex_shader_autotoc_md51}
+\hypertarget{vertex_shader_autotoc_md52}{}\doxysubsubsection{\texorpdfstring{1. 可视化调试}{1. 可视化调试}}\label{vertex_shader_autotoc_md52}
+
+\begin{DoxyItemize}
+\item 使用颜色编码显示法线方向
+\item 输出\+UV坐标作为颜色
+\item 显示变换矩阵的影响
+\end{DoxyItemize}\hypertarget{vertex_shader_autotoc_md53}{}\doxysubsubsection{\texorpdfstring{2. 性能分析}{2. 性能分析}}\label{vertex_shader_autotoc_md53}
+
+\begin{DoxyItemize}
+\item 监控顶点处理时间
+\item 分析顶点着色器的\+GPU占用
+\item 优化顶点数据布局
+\end{DoxyItemize}\hypertarget{vertex_shader_autotoc_md54}{}\doxysubsection{\texorpdfstring{相关文档}{相关文档}}\label{vertex_shader_autotoc_md54}
+
+\begin{DoxyItemize}
+\item \doxysectlink{md_docs_2zh_2md_2pipeline__comparison}{渲染管线概述}{0}
+\item 片段着色器详解
+\item 着色器编程指南 
+\end{DoxyItemize}

@@ -1,0 +1,248 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FCT: 着色器概述</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FCT
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('md_docs_2zh_2md_2shader__overview.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">着色器概述 </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="autotoc_md53"></a></p>
+<p>本指南旨在帮助FCT库开发者理解着色器的基本概念、类型和工作原理。着色器是现代图形渲染管线的核心组件。</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md54"></a>
+什么是着色器？</h1>
+<p>着色器（Shader）允许用户自定义一段程序在GPU上运行，用于控制图形渲染管线中特定阶段的处理逻辑。它们决定了顶点如何变换、像素如何着色、以及各种视觉效果如何实现。</p>
+<blockquote class="doxtable">
+<p><b>FCT库说明</b>：FCT库使用基于HLSL的着色器语言，这是微软开发的高级着色器语言，具有优秀的工具支持和性能表现。 </p>
+</blockquote>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md55"></a>
+核心特点</h2>
+<ul>
+<li><b>并行执行</b>：在GPU的多个核心上同时运行</li>
+<li><b>专用语言</b>：使用GLSL、HLSL或SPIR-V等着色器语言编写</li>
+<li><b>管线集成</b>：与图形渲染管线紧密集成</li>
+<li><b>实时处理</b>：能够实时处理大量数据</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md56"></a>
+着色器分类</h1>
+<div class="dotgraph">
+<img src="dot_inline_dotgraph_7.png" alt="dot_inline_dotgraph_7.png" border="0" usemap="#dot_inline_dotgraph_7.map"/>
+</div>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md57"></a>
+传统管线着色器</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md58"></a>
+1. 顶点着色器（Vertex Shader）</h2>
+<p><b>功能</b>：处理每个顶点的变换和属性计算</p>
+<p><b>详情了解</b>：</p><ul>
+<li><a class="el" href="md_docs_2zh_2md_2vertex__shader.html">顶点着色器详解</a> - 深入了解顶点处理</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md59"></a>
+2. 几何着色器（Geometry Shader）</h2>
+<p><b>功能</b>：处理图元（点、线、三角形），可以生成新的几何体</p>
+<p><b>详情了解</b>：</p><ul>
+<li>几何着色器详解 - 几何处理技术</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md60"></a>
+3. 像素着色器（Pixel Shader / Fragment Shader）</h2>
+<p><b>功能</b>：计算每个像素的最终颜色</p>
+<blockquote class="doxtable">
+<p><b>注意</b>：像素着色器也被称为片段着色器（Fragment Shader），两个术语指的是同一个概念。在DirectX中通常称为像素着色器，在OpenGL中通常称为片段着色器。 </p>
+</blockquote>
+<p><b>详情了解</b>：</p><ul>
+<li>像素着色器详解 - 像素着色技术</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md61"></a>
+现代管线着色器</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md62"></a>
+1. 任务着色器（Task Shader）</h2>
+<p><b>功能</b>：决定哪些网格着色器工作组需要执行</p>
+<p><b>详情了解</b>：</p><ul>
+<li>任务着色器详解 - 工作负载管理</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md63"></a>
+2. 网格着色器（Mesh Shader）</h2>
+<p><b>功能</b>：生成图元和顶点数据</p>
+<p><b>详情了解</b>：</p><ul>
+<li>网格着色器详解 - 现代几何处理</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md64"></a>
+计算着色器（Compute Shader）</h1>
+<p><b>功能</b>：执行通用并行计算任务</p>
+<p><b>详情了解</b>：</p><ul>
+<li>计算着色器详解 - 通用GPU计算</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md65"></a>
+着色器语言对比</h1>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">语言  </th><th class="markdownTableHeadNone">平台支持  </th><th class="markdownTableHeadNone">特点  </th><th class="markdownTableHeadNone">适用场景  </th><th class="markdownTableHeadNone">FCT使用  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">GLSL  </td><td class="markdownTableBodyNone">OpenGL/Vulkan  </td><td class="markdownTableBodyNone">类C语法，跨平台  </td><td class="markdownTableBodyNone">通用图形开发  </td><td class="markdownTableBodyNone">❌  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">HLSL  </td><td class="markdownTableBodyNone">DirectX  </td><td class="markdownTableBodyNone">微软生态，工具完善  </td><td class="markdownTableBodyNone">Windows平台开发  </td><td class="markdownTableBodyNone">✅ <b>FCT基于此</b>  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">SPIR-V  </td><td class="markdownTableBodyNone">Vulkan/OpenCL  </td><td class="markdownTableBodyNone">中间表示，高性能  </td><td class="markdownTableBodyNone">现代图形API  </td><td class="markdownTableBodyNone">❌  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">MSL  </td><td class="markdownTableBodyNone">Metal  </td><td class="markdownTableBodyNone">苹果平台专用  </td><td class="markdownTableBodyNone">iOS/macOS开发  </td><td class="markdownTableBodyNone">❌  </td></tr>
+</table>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md66"></a>
+着色器开发流程</h1>
+<div class="dotgraph">
+<img src="dot_inline_dotgraph_8.png" alt="dot_inline_dotgraph_8.png" border="0" usemap="#dot_inline_dotgraph_8.map"/>
+</div>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md67"></a>
+开发步骤</h2>
+<ol type="1">
+<li><b>设计阶段</b>：确定着色器功能和输入输出</li>
+<li><b>编码阶段</b>：使用着色器语言编写代码</li>
+<li><b>编译阶段</b>：将源码编译为中间代码或机器码</li>
+<li><b>集成阶段</b>：将着色器集成到渲染管线中</li>
+<li><b>调试阶段</b>：使用图形调试工具进行优化</li>
+</ol>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md68"></a>
+性能优化建议</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md69"></a>
+通用优化</h2>
+<ul>
+<li><b>减少分支</b>：避免复杂的条件语句</li>
+<li><b>向量化操作</b>：充分利用GPU的向量处理能力</li>
+<li><b>纹理优化</b>：合理使用纹理格式和过滤方式</li>
+<li><b>精度控制</b>：根据需要选择合适的数据精度</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md70"></a>
+顶点着色器优化</h2>
+<ul>
+<li>预计算不变的变换矩阵</li>
+<li>减少顶点属性数量</li>
+<li>使用实例化渲染减少draw call</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md71"></a>
+像素着色器优化</h2>
+<ul>
+<li>早期深度测试</li>
+<li>减少纹理采样次数</li>
+<li>优化光照计算复杂度</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md72"></a>
+调试工具</h1>
+<ul>
+<li><b>RenderDoc</b>：跨平台图形调试器</li>
+<li><b>NVIDIA Nsight</b>：NVIDIA GPU专用调试工具</li>
+<li><b>AMD GPU PerfStudio</b>：AMD GPU性能分析</li>
+<li><b>Intel GPA</b>：Intel集成显卡调试工具</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md73"></a>
+相关文档</h1>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md74"></a>
+总结</h1>
+<p>着色器是现代图形编程的核心，理解不同类型着色器的功能和特点对于开发高质量的图形应用至关重要。在FCT库的开发中，我们需要：</p>
+<ol type="1">
+<li>根据目标平台选择合适的着色器语言</li>
+<li>设计灵活的着色器管理系统</li>
+<li>提供易用的着色器编译和加载接口</li>
+<li>支持着色器的热重载和调试功能</li>
+</ol>
+<p>通过掌握这些知识，你将能够更好地参与FCT库中着色器相关功能的开发和维护。 </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>
