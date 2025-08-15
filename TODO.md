@@ -30,6 +30,15 @@ FrameBuffer Cache
 ## PassResource适应一帧一个描述符集池[需完成前一个todo]
 ## Imgui改为单独一个描述符集池
 ## 重写矢量渲染
+## 重构Pipeline
+```mermaid
+graph TD
+    1[将Pipeline系列分离为俩个类,
+    一个负责平台，
+    一个负责生成默认资源]
+    2[去除RHI::TraditionPipeline结构体]
+    3[添加真正的RHI::TraditionPipeline结构体]
+```
 # [main]
 ```mermaid
 graph TD
@@ -47,10 +56,3 @@ graph TD
     2-->1-->3
 ```
 a.g. PipelineResource
-
-```mermaid
-graph TD
-    1[将Pipeline系列分离为俩个类,
-    一个负责平台，
-    一个负责生成默认资源]
-```

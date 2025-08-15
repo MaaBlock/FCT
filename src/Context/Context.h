@@ -198,7 +198,6 @@ namespace FCT
 			m_submitFrameIndex = (m_submitFrameIndex + 1) % m_maxFrameInFlight;
 		}
 		/** @} */
-
 	protected:
 		// 模块组件
 		FlowControl* m_flowControl;

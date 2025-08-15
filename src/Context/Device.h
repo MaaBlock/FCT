@@ -21,6 +21,7 @@ namespace FCT {
     class FencePool;
 
     namespace RHI {
+        class RasterizationPipeline;
         class VertexShader;
         class PixelShader;
         class ConstBuffer;
@@ -38,6 +39,10 @@ namespace FCT {
         class RenderTargetView;
         class DepthStencilView;
         class TextureView;
+        struct TraditionalPipeline
+        {
+
+        };
     }
 
     /**

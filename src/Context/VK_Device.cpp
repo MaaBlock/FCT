@@ -27,6 +27,7 @@
 #include "../RHI/VK_RasterizationState.h"
 #include "../RHI/VK_BlendState.h"
 #include "../RHI/VK_Sampler.h"
+#include "../RHI/VK_TraditionalPipeline.h"
 #include "./VK_PassResource.h"
 #include "./VK_SemaphorePool.h"
 #include "./VK_FencePool.h"
