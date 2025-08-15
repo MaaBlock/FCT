@@ -21,7 +21,6 @@ var class_f_c_t_1_1_render_graph_window_target_node =
     [ "isSameSize", "class_f_c_t_1_1_render_graph_window_target_node.html#a9732b5716dda9bc16fcaf86f60a4faaf", null ],
     [ "isSizeDetermined", "class_f_c_t_1_1_render_graph_window_target_node.html#a776e363250eaa977723697fa032ddc64", null ],
     [ "isValidWindowTarget", "class_f_c_t_1_1_render_graph_window_target_node.html#ab0ac670e307da7e784eed71e716b8166", null ],
-    [ "operator==", "class_f_c_t_1_1_render_graph_window_target_node.html#a6588dda6d19c66185d4b144558313ef8", null ],
     [ "operator|=", "class_f_c_t_1_1_render_graph_window_target_node.html#a44e05a0066532c23268aae9e986957e8", null ],
     [ "operator|=", "class_f_c_t_1_1_render_graph_window_target_node.html#a1f24f1202798965c730d03a8131ba8f4", null ],
     [ "operator|=", "class_f_c_t_1_1_render_graph_window_target_node.html#a255b9bf1c55aa665115ee97631acd148", null ],
@@ -37,10 +36,8 @@ var class_f_c_t_1_1_render_graph_window_target_node =
     [ "m_targetOrderCounter", "class_f_c_t_1_1_render_graph_window_target_node.html#a70f59dcbc3659740a4e4227c217e8efa", null ],
     [ "m_textureOutgoingEdges", "class_f_c_t_1_1_render_graph_window_target_node.html#a8f83f6323192b025507c0e5b2e148268", null ],
     [ "m_window", "class_f_c_t_1_1_render_graph_window_target_node.html#afcacdca90d0c54731936c077a9550ab0", null ],
-    [ "name", "class_f_c_t_1_1_render_graph_window_target_node.html#a80ca9b32bb21a8af3a7997ff218d560c", null ],
     [ "parent", "class_f_c_t_1_1_render_graph_window_target_node.html#af454a90b3935e183ee99873d1a319d3a", null ],
     [ "scaleToParent", "class_f_c_t_1_1_render_graph_window_target_node.html#aa7907fd33836d334cad7298a745bf999", null ],
     [ "sizeFixed", "class_f_c_t_1_1_render_graph_window_target_node.html#ac88975034f7d124dd3509a739fce8aac", null ],
-    [ "type", "class_f_c_t_1_1_render_graph_window_target_node.html#a012ddbc284e36aa2c2bdc909580ba5ac", null ],
     [ "width", "class_f_c_t_1_1_render_graph_window_target_node.html#a841dd2fb34c5e249eedde53b3282b792", null ]
 ];

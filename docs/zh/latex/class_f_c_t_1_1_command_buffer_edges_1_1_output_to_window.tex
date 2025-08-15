@@ -1,0 +1,241 @@
+\doxysection{FCT\+::Command\+Buffer\+Edges\+::Output\+To\+Window类 参考}
+\hypertarget{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window}{}\label{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window}\index{FCT::CommandBufferEdges::OutputToWindow@{FCT::CommandBufferEdges::OutputToWindow}}
+
+
+{\ttfamily \#include $<$Command\+Buffer\+Graph.\+h$>$}
+
+
+
+类 FCT\+::Command\+Buffer\+Edges\+::Output\+To\+Window 继承关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window__inherit__graph}
+\end{center}
+\end{figure}
+
+
+FCT\+::Command\+Buffer\+Edges\+::Output\+To\+Window 的协作图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public 成员函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_add3fd426af1c2cc6c6917d0ce7a2c6d1}{Output\+To\+Window}} (\mbox{\hyperlink{class_f_c_t_1_1_fence_pool}{Fence\+Pool}} \texorpdfstring{$\ast$}{*}fence\+Pool, \mbox{\hyperlink{class_f_c_t_1_1_semaphore_pool}{Semaphore\+Pool}} \texorpdfstring{$\ast$}{*}semaphore\+Pool)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_a5c96d35b4eea24343ed299a661aae080}{set\+Source\+Node}} (\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer}{Command\+Buffer\+Nodes\+::\+Command\+Buffer}} \texorpdfstring{$\ast$}{*}source)
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_a0d0486a0b7e72dd04edc5640a70df87f}{set\+Target\+Node}} (\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_output_to_window}{Command\+Buffer\+Nodes\+::\+Output\+To\+Window}} \texorpdfstring{$\ast$}{*}target)
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer}{Command\+Buffer\+Nodes\+::\+Command\+Buffer}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_a35b349e23bce8ae1a8a4be3f89fe89a9}{get\+Source\+Node}} () const
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_output_to_window}{Command\+Buffer\+Nodes\+::\+Output\+To\+Window}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_aeba68cd480d3238cfaad33120975b99b}{get\+Target\+Node}} () const
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore}{RHI\+::\+Semaphore}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_a54159b9ad501f2243dd78e56659b85ca}{get\+Render\+Finished\+Semaphore}} (uint32\+\_\+t frame\+Index) const
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_fence}{RHI\+::\+Fence}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_a071156d05f25ff5b7778137b770622dd}{get\+Fence}} (uint32\+\_\+t frame\+Index) const
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_a73d0e7b1ab264c419371d9410e61f5de}{update\+Synchronization}} (uint32\+\_\+t new\+Max\+Frame\+In\+Flight) override
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected 属性}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_semaphore_pool}{Semaphore\+Pool}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_edges_1_1_edge_base_a028ec53a2f00fc735208fb6acec21ca9}{m\+\_\+semaphore\+Pool}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private 属性}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_fence_pool}{Fence\+Pool}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_a6d663d787bca5b28ac88b9fe609f6248}{m\+\_\+fence\+Pool}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore}{RHI\+::\+Semaphore}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_a2a0c611116da3b4211202c8e90522050}{m\+\_\+render\+Finished}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_fence}{RHI\+::\+Fence}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_a5325e7b5bc6bd7ac23bc58c36f26ae38}{m\+\_\+fences}}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer}{Command\+Buffer\+Nodes\+::\+Command\+Buffer}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_a069bb394353d710fe1e89e7e9f15ae7c}{m\+\_\+source\+Node}} = nullptr
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_output_to_window}{Command\+Buffer\+Nodes\+::\+Output\+To\+Window}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_ad4feeea8518896fa6af437adca7cb5ad}{m\+\_\+target\+Node}} = nullptr
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+
+
+在文件 \mbox{\hyperlink{_command_buffer_graph_8h_source}{Command\+Buffer\+Graph.\+h}} 第 \mbox{\hyperlink{_command_buffer_graph_8h_source_l00074}{74}} 行定义.
+
+
+
+\label{doc-constructors}
+\Hypertarget{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_doc-constructors}
+\doxysubsection{构造及析构函数说明}
+\Hypertarget{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_add3fd426af1c2cc6c6917d0ce7a2c6d1}\index{FCT::CommandBufferEdges::OutputToWindow@{FCT::CommandBufferEdges::OutputToWindow}!OutputToWindow@{OutputToWindow}}
+\index{OutputToWindow@{OutputToWindow}!FCT::CommandBufferEdges::OutputToWindow@{FCT::CommandBufferEdges::OutputToWindow}}
+\doxysubsubsection{\texorpdfstring{OutputToWindow()}{OutputToWindow()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_add3fd426af1c2cc6c6917d0ce7a2c6d1} 
+FCT\+::\+Command\+Buffer\+Edges\+::\+Output\+To\+Window\+::\+Output\+To\+Window (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_fence_pool}{Fence\+Pool}} \texorpdfstring{$\ast$}{*}}]{fence\+Pool}{, }\item[{\mbox{\hyperlink{class_f_c_t_1_1_semaphore_pool}{Semaphore\+Pool}} \texorpdfstring{$\ast$}{*}}]{semaphore\+Pool}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_command_buffer_graph_8h_source}{Command\+Buffer\+Graph.\+h}} 第 \mbox{\hyperlink{_command_buffer_graph_8h_source_l00077}{77}} 行定义.
+
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_add3fd426af1c2cc6c6917d0ce7a2c6d1_cgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-func-members}
+\Hypertarget{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_doc-func-members}
+\doxysubsection{成员函数说明}
+\Hypertarget{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_a071156d05f25ff5b7778137b770622dd}\index{FCT::CommandBufferEdges::OutputToWindow@{FCT::CommandBufferEdges::OutputToWindow}!getFence@{getFence}}
+\index{getFence@{getFence}!FCT::CommandBufferEdges::OutputToWindow@{FCT::CommandBufferEdges::OutputToWindow}}
+\doxysubsubsection{\texorpdfstring{getFence()}{getFence()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_a071156d05f25ff5b7778137b770622dd} 
+\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_fence}{RHI\+::\+Fence}} \texorpdfstring{$\ast$}{*} FCT\+::\+Command\+Buffer\+Edges\+::\+Output\+To\+Window\+::get\+Fence (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{frame\+Index}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_command_buffer_graph_8h_source}{Command\+Buffer\+Graph.\+h}} 第 \mbox{\hyperlink{_command_buffer_graph_8h_source_l00101}{101}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_a54159b9ad501f2243dd78e56659b85ca}\index{FCT::CommandBufferEdges::OutputToWindow@{FCT::CommandBufferEdges::OutputToWindow}!getRenderFinishedSemaphore@{getRenderFinishedSemaphore}}
+\index{getRenderFinishedSemaphore@{getRenderFinishedSemaphore}!FCT::CommandBufferEdges::OutputToWindow@{FCT::CommandBufferEdges::OutputToWindow}}
+\doxysubsubsection{\texorpdfstring{getRenderFinishedSemaphore()}{getRenderFinishedSemaphore()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_a54159b9ad501f2243dd78e56659b85ca} 
+\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore}{RHI\+::\+Semaphore}} \texorpdfstring{$\ast$}{*} FCT\+::\+Command\+Buffer\+Edges\+::\+Output\+To\+Window\+::get\+Render\+Finished\+Semaphore (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{frame\+Index}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_command_buffer_graph_8h_source}{Command\+Buffer\+Graph.\+h}} 第 \mbox{\hyperlink{_command_buffer_graph_8h_source_l00094}{94}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_a35b349e23bce8ae1a8a4be3f89fe89a9}\index{FCT::CommandBufferEdges::OutputToWindow@{FCT::CommandBufferEdges::OutputToWindow}!getSourceNode@{getSourceNode}}
+\index{getSourceNode@{getSourceNode}!FCT::CommandBufferEdges::OutputToWindow@{FCT::CommandBufferEdges::OutputToWindow}}
+\doxysubsubsection{\texorpdfstring{getSourceNode()}{getSourceNode()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_a35b349e23bce8ae1a8a4be3f89fe89a9} 
+\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer}{Command\+Buffer\+Nodes\+::\+Command\+Buffer}} \texorpdfstring{$\ast$}{*} FCT\+::\+Command\+Buffer\+Edges\+::\+Output\+To\+Window\+::get\+Source\+Node (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_command_buffer_graph_8h_source}{Command\+Buffer\+Graph.\+h}} 第 \mbox{\hyperlink{_command_buffer_graph_8h_source_l00086}{86}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_aeba68cd480d3238cfaad33120975b99b}\index{FCT::CommandBufferEdges::OutputToWindow@{FCT::CommandBufferEdges::OutputToWindow}!getTargetNode@{getTargetNode}}
+\index{getTargetNode@{getTargetNode}!FCT::CommandBufferEdges::OutputToWindow@{FCT::CommandBufferEdges::OutputToWindow}}
+\doxysubsubsection{\texorpdfstring{getTargetNode()}{getTargetNode()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_aeba68cd480d3238cfaad33120975b99b} 
+\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_output_to_window}{Command\+Buffer\+Nodes\+::\+Output\+To\+Window}} \texorpdfstring{$\ast$}{*} FCT\+::\+Command\+Buffer\+Edges\+::\+Output\+To\+Window\+::get\+Target\+Node (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_command_buffer_graph_8h_source}{Command\+Buffer\+Graph.\+h}} 第 \mbox{\hyperlink{_command_buffer_graph_8h_source_l00090}{90}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_a5c96d35b4eea24343ed299a661aae080}\index{FCT::CommandBufferEdges::OutputToWindow@{FCT::CommandBufferEdges::OutputToWindow}!setSourceNode@{setSourceNode}}
+\index{setSourceNode@{setSourceNode}!FCT::CommandBufferEdges::OutputToWindow@{FCT::CommandBufferEdges::OutputToWindow}}
+\doxysubsubsection{\texorpdfstring{setSourceNode()}{setSourceNode()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_a5c96d35b4eea24343ed299a661aae080} 
+void FCT\+::\+Command\+Buffer\+Edges\+::\+Output\+To\+Window\+::set\+Source\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer}{Command\+Buffer\+Nodes\+::\+Command\+Buffer}} \texorpdfstring{$\ast$}{*}}]{source}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_command_buffer_graph_8h_source}{Command\+Buffer\+Graph.\+h}} 第 \mbox{\hyperlink{_command_buffer_graph_8h_source_l00079}{79}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_a0d0486a0b7e72dd04edc5640a70df87f}\index{FCT::CommandBufferEdges::OutputToWindow@{FCT::CommandBufferEdges::OutputToWindow}!setTargetNode@{setTargetNode}}
+\index{setTargetNode@{setTargetNode}!FCT::CommandBufferEdges::OutputToWindow@{FCT::CommandBufferEdges::OutputToWindow}}
+\doxysubsubsection{\texorpdfstring{setTargetNode()}{setTargetNode()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_a0d0486a0b7e72dd04edc5640a70df87f} 
+void FCT\+::\+Command\+Buffer\+Edges\+::\+Output\+To\+Window\+::set\+Target\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_output_to_window}{Command\+Buffer\+Nodes\+::\+Output\+To\+Window}} \texorpdfstring{$\ast$}{*}}]{target}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+在文件 \mbox{\hyperlink{_command_buffer_graph_8h_source}{Command\+Buffer\+Graph.\+h}} 第 \mbox{\hyperlink{_command_buffer_graph_8h_source_l00083}{83}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_a73d0e7b1ab264c419371d9410e61f5de}\index{FCT::CommandBufferEdges::OutputToWindow@{FCT::CommandBufferEdges::OutputToWindow}!updateSynchronization@{updateSynchronization}}
+\index{updateSynchronization@{updateSynchronization}!FCT::CommandBufferEdges::OutputToWindow@{FCT::CommandBufferEdges::OutputToWindow}}
+\doxysubsubsection{\texorpdfstring{updateSynchronization()}{updateSynchronization()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_a73d0e7b1ab264c419371d9410e61f5de} 
+void FCT\+::\+Command\+Buffer\+Edges\+::\+Output\+To\+Window\+::update\+Synchronization (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{new\+Max\+Frame\+In\+Flight}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+实现了 \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_edges_1_1_edge_base_a44e52c6bfa388ff7df984527760f0a29}{FCT\+::\+Command\+Buffer\+Edges\+::\+Edge\+Base}}.
+
+
+
+在文件 \mbox{\hyperlink{_command_buffer_graph_8cpp_source}{Command\+Buffer\+Graph.\+cpp}} 第 \mbox{\hyperlink{_command_buffer_graph_8cpp_source_l00166}{166}} 行定义.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_doc-variable-members}
+\doxysubsection{类成员变量说明}
+\Hypertarget{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_a6d663d787bca5b28ac88b9fe609f6248}\index{FCT::CommandBufferEdges::OutputToWindow@{FCT::CommandBufferEdges::OutputToWindow}!m\_fencePool@{m\_fencePool}}
+\index{m\_fencePool@{m\_fencePool}!FCT::CommandBufferEdges::OutputToWindow@{FCT::CommandBufferEdges::OutputToWindow}}
+\doxysubsubsection{\texorpdfstring{m\_fencePool}{m\_fencePool}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_a6d663d787bca5b28ac88b9fe609f6248} 
+\mbox{\hyperlink{class_f_c_t_1_1_fence_pool}{Fence\+Pool}}\texorpdfstring{$\ast$}{*} FCT\+::\+Command\+Buffer\+Edges\+::\+Output\+To\+Window\+::m\+\_\+fence\+Pool\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_command_buffer_graph_8h_source}{Command\+Buffer\+Graph.\+h}} 第 \mbox{\hyperlink{_command_buffer_graph_8h_source_l00109}{109}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_a5325e7b5bc6bd7ac23bc58c36f26ae38}\index{FCT::CommandBufferEdges::OutputToWindow@{FCT::CommandBufferEdges::OutputToWindow}!m\_fences@{m\_fences}}
+\index{m\_fences@{m\_fences}!FCT::CommandBufferEdges::OutputToWindow@{FCT::CommandBufferEdges::OutputToWindow}}
+\doxysubsubsection{\texorpdfstring{m\_fences}{m\_fences}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_a5325e7b5bc6bd7ac23bc58c36f26ae38} 
+std\+::vector$<$\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_fence}{RHI\+::\+Fence}}\texorpdfstring{$\ast$}{*}$>$ FCT\+::\+Command\+Buffer\+Edges\+::\+Output\+To\+Window\+::m\+\_\+fences\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_command_buffer_graph_8h_source}{Command\+Buffer\+Graph.\+h}} 第 \mbox{\hyperlink{_command_buffer_graph_8h_source_l00111}{111}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_a2a0c611116da3b4211202c8e90522050}\index{FCT::CommandBufferEdges::OutputToWindow@{FCT::CommandBufferEdges::OutputToWindow}!m\_renderFinished@{m\_renderFinished}}
+\index{m\_renderFinished@{m\_renderFinished}!FCT::CommandBufferEdges::OutputToWindow@{FCT::CommandBufferEdges::OutputToWindow}}
+\doxysubsubsection{\texorpdfstring{m\_renderFinished}{m\_renderFinished}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_a2a0c611116da3b4211202c8e90522050} 
+std\+::vector$<$\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_semaphore}{RHI\+::\+Semaphore}}\texorpdfstring{$\ast$}{*}$>$ FCT\+::\+Command\+Buffer\+Edges\+::\+Output\+To\+Window\+::m\+\_\+render\+Finished\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_command_buffer_graph_8h_source}{Command\+Buffer\+Graph.\+h}} 第 \mbox{\hyperlink{_command_buffer_graph_8h_source_l00110}{110}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_command_buffer_edges_1_1_edge_base_a028ec53a2f00fc735208fb6acec21ca9}\index{FCT::CommandBufferEdges::OutputToWindow@{FCT::CommandBufferEdges::OutputToWindow}!m\_semaphorePool@{m\_semaphorePool}}
+\index{m\_semaphorePool@{m\_semaphorePool}!FCT::CommandBufferEdges::OutputToWindow@{FCT::CommandBufferEdges::OutputToWindow}}
+\doxysubsubsection{\texorpdfstring{m\_semaphorePool}{m\_semaphorePool}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_command_buffer_edges_1_1_edge_base_a028ec53a2f00fc735208fb6acec21ca9} 
+\mbox{\hyperlink{class_f_c_t_1_1_semaphore_pool}{Semaphore\+Pool}}\texorpdfstring{$\ast$}{*} FCT\+::\+Command\+Buffer\+Edges\+::\+Edge\+Base\+::m\+\_\+semaphore\+Pool\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
+
+
+
+在文件 \mbox{\hyperlink{_command_buffer_graph_8h_source}{Command\+Buffer\+Graph.\+h}} 第 \mbox{\hyperlink{_command_buffer_graph_8h_source_l00040}{40}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_a069bb394353d710fe1e89e7e9f15ae7c}\index{FCT::CommandBufferEdges::OutputToWindow@{FCT::CommandBufferEdges::OutputToWindow}!m\_sourceNode@{m\_sourceNode}}
+\index{m\_sourceNode@{m\_sourceNode}!FCT::CommandBufferEdges::OutputToWindow@{FCT::CommandBufferEdges::OutputToWindow}}
+\doxysubsubsection{\texorpdfstring{m\_sourceNode}{m\_sourceNode}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_a069bb394353d710fe1e89e7e9f15ae7c} 
+\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer}{Command\+Buffer\+Nodes\+::\+Command\+Buffer}}\texorpdfstring{$\ast$}{*} FCT\+::\+Command\+Buffer\+Edges\+::\+Output\+To\+Window\+::m\+\_\+source\+Node = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_command_buffer_graph_8h_source}{Command\+Buffer\+Graph.\+h}} 第 \mbox{\hyperlink{_command_buffer_graph_8h_source_l00112}{112}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_ad4feeea8518896fa6af437adca7cb5ad}\index{FCT::CommandBufferEdges::OutputToWindow@{FCT::CommandBufferEdges::OutputToWindow}!m\_targetNode@{m\_targetNode}}
+\index{m\_targetNode@{m\_targetNode}!FCT::CommandBufferEdges::OutputToWindow@{FCT::CommandBufferEdges::OutputToWindow}}
+\doxysubsubsection{\texorpdfstring{m\_targetNode}{m\_targetNode}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_ad4feeea8518896fa6af437adca7cb5ad} 
+\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_output_to_window}{Command\+Buffer\+Nodes\+::\+Output\+To\+Window}}\texorpdfstring{$\ast$}{*} FCT\+::\+Command\+Buffer\+Edges\+::\+Output\+To\+Window\+::m\+\_\+target\+Node = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_command_buffer_graph_8h_source}{Command\+Buffer\+Graph.\+h}} 第 \mbox{\hyperlink{_command_buffer_graph_8h_source_l00113}{113}} 行定义.
+
+
+
+该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Context/\mbox{\hyperlink{_command_buffer_graph_8h}{Command\+Buffer\+Graph.\+h}}\item 
+src/\+Context/\mbox{\hyperlink{_command_buffer_graph_8cpp}{Command\+Buffer\+Graph.\+cpp}}\end{DoxyCompactItemize}

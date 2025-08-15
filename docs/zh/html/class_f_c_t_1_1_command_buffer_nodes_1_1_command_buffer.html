@@ -1,0 +1,643 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FCT: FCT::CommandBufferNodes::CommandBuffer类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FCT
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer.html','','class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">FCT::CommandBufferNodes::CommandBuffer类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_command_buffer_graph_8h_source.html">CommandBufferGraph.h</a>&gt;</code></p>
+<div class="dynheader">
+类 FCT::CommandBufferNodes::CommandBuffer 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer__inherit__graph.png" border="0" usemap="#a_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
+<map name="a_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_inherit__map" id="a_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_inherit__map">
+<area shape="rect" title=" " alt="" coords="9,285,193,517"/>
+<area shape="rect" href="class_f_c_t_1_1_command_buffer_nodes_1_1_node_base.html" title=" " alt="" coords="5,5,196,237"/>
+<area shape="poly" title=" " alt="" coords="104,252,104,285,98,285,98,252"/>
+</map>
+</div>
+<div class="dynheader">
+FCT::CommandBufferNodes::CommandBuffer 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer__coll__graph.png" border="0" usemap="#a_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_coll__map" loading="lazy" alt="Collaboration graph"/></div>
+<map name="a_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_coll__map" id="a_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_coll__map">
+<area shape="rect" title=" " alt="" coords="70,555,254,768"/>
+<area shape="rect" href="class_f_c_t_1_1_command_buffer_nodes_1_1_node_base.html" title=" " alt="" coords="5,253,196,485"/>
+<area shape="poly" title=" " alt="" coords="131,499,143,555,137,556,126,501"/>
+<area shape="rect" href="class_f_c_t_1_1_r_h_i_1_1_command_pool.html" title=" " alt="" coords="220,328,390,411"/>
+<area shape="poly" title=" " alt="" coords="288,412,224,541,219,539,283,409"/>
+<area shape="rect" href="class_f_c_t_1_1_ref_count.html" title=" " alt="" coords="241,5,369,204"/>
+<area shape="poly" title=" " alt="" coords="308,219,308,328,302,328,302,219"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a69a5e1d7e6832e7fb42ca3fd1b9f1a5b" id="r_a69a5e1d7e6832e7fb42ca3fd1b9f1a5b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a69a5e1d7e6832e7fb42ca3fd1b9f1a5b">CommandBuffer</a> (<a class="el" href="class_f_c_t_1_1_r_h_i_1_1_command_pool.html">RHI::CommandPool</a> *pool)</td></tr>
+<tr class="memitem:a634ef1903aac0b9c3147d95b04007e9b" id="r_a634ef1903aac0b9c3147d95b04007e9b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a634ef1903aac0b9c3147d95b04007e9b">updateSynchronization</a> (uint32_t newMaxFrameInFlight) override</td></tr>
+<tr class="memitem:af2c36e5ce88d7106bb7c709d33e2441b" id="r_af2c36e5ce88d7106bb7c709d33e2441b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af2c36e5ce88d7106bb7c709d33e2441b">addOutputEdge</a> (<a class="el" href="class_f_c_t_1_1_command_buffer_edges_1_1_edge_base.html">CommandBufferEdges::EdgeBase</a> *edge) override</td></tr>
+<tr class="memitem:aebb69df57bf3046eeaf8f28165103767" id="r_aebb69df57bf3046eeaf8f28165103767"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aebb69df57bf3046eeaf8f28165103767">addInputEdge</a> (<a class="el" href="class_f_c_t_1_1_command_buffer_edges_1_1_edge_base.html">CommandBufferEdges::EdgeBase</a> *edge) override</td></tr>
+<tr class="memitem:a4134de95939336b610283e5803c2b265" id="r_a4134de95939336b610283e5803c2b265"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_f_c_t_1_1_r_h_i_1_1_command_buffer.html">RHI::CommandBuffer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4134de95939336b610283e5803c2b265">getCommandBuffer</a> (uint32_t frameIndex) const</td></tr>
+<tr class="memitem:a5f41c4fad7ff24fec98bd64e45f487e0" id="r_a5f41c4fad7ff24fec98bd64e45f487e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5f41c4fad7ff24fec98bd64e45f487e0">fillSynchronization</a> (uint32_t frameIndex) override</td></tr>
+<tr class="memitem:a2057cd287253b712d7f9361730947542" id="r_a2057cd287253b712d7f9361730947542"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_f_c_t_1_1_command_buffer_nodes_1_1_node_base.html#a2057cd287253b712d7f9361730947542">fillAllSynchronization</a> ()</td></tr>
+<tr class="memitem:a8ec6bf83ef2c11fe68499fdc306d7150" id="r_a8ec6bf83ef2c11fe68499fdc306d7150"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_f_c_t_1_1_command_buffer_nodes_1_1_node_base.html#a8ec6bf83ef2c11fe68499fdc306d7150">markFrameDirty</a> (uint32_t frameIndex)</td></tr>
+<tr class="memitem:a4d8fe0d4816d46f005738c0ba7c6c435" id="r_a4d8fe0d4816d46f005738c0ba7c6c435"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_f_c_t_1_1_command_buffer_nodes_1_1_node_base.html#a4d8fe0d4816d46f005738c0ba7c6c435">markFrameClean</a> (uint32_t frameIndex)</td></tr>
+<tr class="memitem:a553e804184a21ade5801289f63dd1b4b" id="r_a553e804184a21ade5801289f63dd1b4b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_f_c_t_1_1_command_buffer_nodes_1_1_node_base.html#a553e804184a21ade5801289f63dd1b4b">markAllFramesDirty</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected 属性</h2></td></tr>
+<tr class="memitem:a5434bc1cda776b1d1ebd83e572ff0abf" id="r_a5434bc1cda776b1d1ebd83e572ff0abf"><td class="memItemLeft" align="right" valign="top">std::vector&lt; uint8_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_f_c_t_1_1_command_buffer_nodes_1_1_node_base.html#a5434bc1cda776b1d1ebd83e572ff0abf">m_frameDirty</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a4b809e57010a6a1d60f4f3e3a3636604" id="r_a4b809e57010a6a1d60f4f3e3a3636604"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_f_c_t_1_1_command_buffer_edges_1_1_edge_base.html">CommandBufferEdges::EdgeBase</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4b809e57010a6a1d60f4f3e3a3636604">m_outputEdges</a></td></tr>
+<tr class="memitem:ad135b9660bdb62a3f3bc4ed6321162c4" id="r_ad135b9660bdb62a3f3bc4ed6321162c4"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_f_c_t_1_1_command_buffer_edges_1_1_edge_base.html">CommandBufferEdges::EdgeBase</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad135b9660bdb62a3f3bc4ed6321162c4">m_inputEdges</a></td></tr>
+<tr class="memitem:aad0d02c9b56e9991eff70fbd7737fc1b" id="r_aad0d02c9b56e9991eff70fbd7737fc1b"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_f_c_t_1_1_r_h_i_1_1_command_buffer.html">RHI::CommandBuffer</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad0d02c9b56e9991eff70fbd7737fc1b">m_cmdBuffers</a></td></tr>
+<tr class="memitem:a40bf9a2a11c793868fa98090856790e6" id="r_a40bf9a2a11c793868fa98090856790e6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_f_c_t_1_1_r_h_i_1_1_command_pool.html">RHI::CommandPool</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a40bf9a2a11c793868fa98090856790e6">m_pool</a></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">详细描述</h2>
+<div class="textblock">
+<p class="definition">在文件 <a class="el" href="_command_buffer_graph_8h_source.html">CommandBufferGraph.h</a> 第 <a class="el" href="_command_buffer_graph_8h_source.html#l00243">243</a> 行定义.</p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">构造及析构函数说明</h2>
+<a id="a69a5e1d7e6832e7fb42ca3fd1b9f1a5b" name="a69a5e1d7e6832e7fb42ca3fd1b9f1a5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69a5e1d7e6832e7fb42ca3fd1b9f1a5b">&#9670;&#160;</a></span>CommandBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FCT::CommandBufferNodes::CommandBuffer::CommandBuffer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_f_c_t_1_1_r_h_i_1_1_command_pool.html">RHI::CommandPool</a> *</td>          <td class="paramname"><span class="paramname"><em>pool</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_command_buffer_graph_8cpp_source.html">CommandBufferGraph.cpp</a> 第 <a class="el" href="_command_buffer_graph_8cpp_source.html#l00067">67</a> 行定义.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">成员函数说明</h2>
+<a id="aebb69df57bf3046eeaf8f28165103767" name="aebb69df57bf3046eeaf8f28165103767"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebb69df57bf3046eeaf8f28165103767">&#9670;&#160;</a></span>addInputEdge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FCT::CommandBufferNodes::CommandBuffer::addInputEdge </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_f_c_t_1_1_command_buffer_edges_1_1_edge_base.html">CommandBufferEdges::EdgeBase</a> *</td>          <td class="paramname"><span class="paramname"><em>edge</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>重载 <a class="el" href="class_f_c_t_1_1_command_buffer_nodes_1_1_node_base.html#ae25d65833c9a856a966e319387f28946">FCT::CommandBufferNodes::NodeBase</a> .</p>
+
+<p class="definition">在文件 <a class="el" href="_command_buffer_graph_8cpp_source.html">CommandBufferGraph.cpp</a> 第 <a class="el" href="_command_buffer_graph_8cpp_source.html#l00097">97</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_aebb69df57bf3046eeaf8f28165103767_icgraph.png" border="0" usemap="#aclass_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_aebb69df57bf3046eeaf8f28165103767_icgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_aebb69df57bf3046eeaf8f28165103767_icgraph" id="aclass_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_aebb69df57bf3046eeaf8f28165103767_icgraph">
+<area shape="rect" title=" " alt="" coords="717,5,942,44"/>
+<area shape="rect" href="class_f_c_t_1_1_command_buffer_graph.html#a1a70c152689550368cdb975a7b006c16" title=" " alt="" coords="466,5,669,44"/>
+<area shape="poly" title=" " alt="" coords="702,27,670,27,670,22,702,22"/>
+<area shape="rect" href="class_f_c_t_1_1_command_buffer_graph.html#a5ab1e5b29ecf07e486656f1bc7eb5bc8" title=" " alt="" coords="236,5,418,44"/>
+<area shape="poly" title=" " alt="" coords="451,27,419,27,419,22,451,22"/>
+<area shape="rect" href="class_f_c_t_1_1_command_buffer_graph.html#a92863872dce08aee85ab07899a6cc4b2" title=" " alt="" coords="5,5,188,44"/>
+<area shape="poly" title=" " alt="" coords="220,27,188,27,188,22,220,22"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af2c36e5ce88d7106bb7c709d33e2441b" name="af2c36e5ce88d7106bb7c709d33e2441b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2c36e5ce88d7106bb7c709d33e2441b">&#9670;&#160;</a></span>addOutputEdge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FCT::CommandBufferNodes::CommandBuffer::addOutputEdge </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_f_c_t_1_1_command_buffer_edges_1_1_edge_base.html">CommandBufferEdges::EdgeBase</a> *</td>          <td class="paramname"><span class="paramname"><em>edge</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>重载 <a class="el" href="class_f_c_t_1_1_command_buffer_nodes_1_1_node_base.html#a71a70a7d8177137c50ba30f2efcd7306">FCT::CommandBufferNodes::NodeBase</a> .</p>
+
+<p class="definition">在文件 <a class="el" href="_command_buffer_graph_8cpp_source.html">CommandBufferGraph.cpp</a> 第 <a class="el" href="_command_buffer_graph_8cpp_source.html#l00091">91</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_af2c36e5ce88d7106bb7c709d33e2441b_icgraph.png" border="0" usemap="#aclass_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_af2c36e5ce88d7106bb7c709d33e2441b_icgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_af2c36e5ce88d7106bb7c709d33e2441b_icgraph" id="aclass_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_af2c36e5ce88d7106bb7c709d33e2441b_icgraph">
+<area shape="rect" title=" " alt="" coords="703,5,935,44"/>
+<area shape="rect" href="class_f_c_t_1_1_command_buffer_graph.html#ae9870dd3acfb1ef99532cd3102a627b8" title=" " alt="" coords="466,5,655,44"/>
+<area shape="poly" title=" " alt="" coords="688,27,656,27,656,22,688,22"/>
+<area shape="rect" href="class_f_c_t_1_1_command_buffer_graph.html#a22881c9977ce024dc339b56604e37bbd" title=" " alt="" coords="236,5,418,44"/>
+<area shape="poly" title=" " alt="" coords="451,27,418,27,418,22,451,22"/>
+<area shape="rect" href="class_f_c_t_1_1_command_buffer_graph.html#a92863872dce08aee85ab07899a6cc4b2" title=" " alt="" coords="5,5,188,44"/>
+<area shape="poly" title=" " alt="" coords="220,27,188,27,188,22,220,22"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2057cd287253b712d7f9361730947542" name="a2057cd287253b712d7f9361730947542"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2057cd287253b712d7f9361730947542">&#9670;&#160;</a></span>fillAllSynchronization()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void FCT::CommandBufferNodes::NodeBase::fillAllSynchronization </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_command_buffer_graph_8h_source.html">CommandBufferGraph.h</a> 第 <a class="el" href="_command_buffer_graph_8h_source.html#l00125">125</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_command_buffer_nodes_1_1_node_base_a2057cd287253b712d7f9361730947542_cgraph.png" border="0" usemap="#aclass_f_c_t_1_1_command_buffer_nodes_1_1_node_base_a2057cd287253b712d7f9361730947542_cgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_command_buffer_nodes_1_1_node_base_a2057cd287253b712d7f9361730947542_cgraph" id="aclass_f_c_t_1_1_command_buffer_nodes_1_1_node_base_a2057cd287253b712d7f9361730947542_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,265,44"/>
+<area shape="rect" href="class_f_c_t_1_1_command_buffer_nodes_1_1_node_base.html#ac8e55f28f0b5eb93dd01a7cfef2cee74" title=" " alt="" coords="313,5,551,44"/>
+<area shape="poly" title=" " alt="" coords="265,22,297,22,297,27,265,27"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5f41c4fad7ff24fec98bd64e45f487e0" name="a5f41c4fad7ff24fec98bd64e45f487e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f41c4fad7ff24fec98bd64e45f487e0">&#9670;&#160;</a></span>fillSynchronization()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FCT::CommandBufferNodes::CommandBuffer::fillSynchronization </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>frameIndex</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>重载 <a class="el" href="class_f_c_t_1_1_command_buffer_nodes_1_1_node_base.html#ac8e55f28f0b5eb93dd01a7cfef2cee74">FCT::CommandBufferNodes::NodeBase</a> .</p>
+
+<p class="definition">在文件 <a class="el" href="_command_buffer_graph_8cpp_source.html">CommandBufferGraph.cpp</a> 第 <a class="el" href="_command_buffer_graph_8cpp_source.html#l00112">112</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_a5f41c4fad7ff24fec98bd64e45f487e0_cgraph.png" border="0" usemap="#aclass_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_a5f41c4fad7ff24fec98bd64e45f487e0_cgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_a5f41c4fad7ff24fec98bd64e45f487e0_cgraph" id="aclass_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_a5f41c4fad7ff24fec98bd64e45f487e0_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,279,44"/>
+<area shape="rect" href="class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer.html#a4134de95939336b610283e5803c2b265" title=" " alt="" coords="327,5,579,44"/>
+<area shape="poly" title=" " alt="" coords="279,22,311,22,311,27,279,27"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4134de95939336b610283e5803c2b265" name="a4134de95939336b610283e5803c2b265"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4134de95939336b610283e5803c2b265">&#9670;&#160;</a></span>getCommandBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_f_c_t_1_1_r_h_i_1_1_command_buffer.html">RHI::CommandBuffer</a> * FCT::CommandBufferNodes::CommandBuffer::getCommandBuffer </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>frameIndex</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_command_buffer_graph_8cpp_source.html">CommandBufferGraph.cpp</a> 第 <a class="el" href="_command_buffer_graph_8cpp_source.html#l00103">103</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_a4134de95939336b610283e5803c2b265_icgraph.png" border="0" usemap="#aclass_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_a4134de95939336b610283e5803c2b265_icgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_a4134de95939336b610283e5803c2b265_icgraph" id="aclass_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_a4134de95939336b610283e5803c2b265_icgraph">
+<area shape="rect" title=" " alt="" coords="327,37,579,76"/>
+<area shape="rect" href="class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer.html#a5f41c4fad7ff24fec98bd64e45f487e0" title=" " alt="" coords="5,5,279,44"/>
+<area shape="poly" title=" " alt="" coords="311,45,279,41,279,36,311,39"/>
+<area shape="rect" href="class_f_c_t_1_1_command_buffer_graph.html#a98a519c938e553a1a7f9d5470f625935" title=" " alt="" coords="51,68,233,107"/>
+<area shape="poly" title=" " alt="" coords="311,73,234,81,233,76,311,68"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a553e804184a21ade5801289f63dd1b4b" name="a553e804184a21ade5801289f63dd1b4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a553e804184a21ade5801289f63dd1b4b">&#9670;&#160;</a></span>markAllFramesDirty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FCT::CommandBufferNodes::NodeBase::markAllFramesDirty </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_command_buffer_graph_8h_source.html">CommandBufferGraph.h</a> 第 <a class="el" href="_command_buffer_graph_8h_source.html#l00142">142</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_command_buffer_nodes_1_1_node_base_a553e804184a21ade5801289f63dd1b4b_icgraph.png" border="0" usemap="#aclass_f_c_t_1_1_command_buffer_nodes_1_1_node_base_a553e804184a21ade5801289f63dd1b4b_icgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_command_buffer_nodes_1_1_node_base_a553e804184a21ade5801289f63dd1b4b_icgraph" id="aclass_f_c_t_1_1_command_buffer_nodes_1_1_node_base_a553e804184a21ade5801289f63dd1b4b_icgraph">
+<area shape="rect" title=" " alt="" coords="299,100,530,139"/>
+<area shape="rect" href="class_f_c_t_1_1_command_buffer_nodes_1_1_input_from_window.html#a2f682faf8d8aefcf879c7b67b58acfc4" title=" " alt="" coords="9,5,247,44"/>
+<area shape="poly" title=" " alt="" coords="352,96,250,58,213,47,215,42,252,53,354,91"/>
+<area shape="rect" href="class_f_c_t_1_1_command_buffer_nodes_1_1_output_to_window.html#ab2e869508b4c97f746890a8be060128d" title=" " alt="" coords="12,68,244,107"/>
+<area shape="poly" title=" " alt="" coords="283,107,244,103,244,98,283,102"/>
+<area shape="rect" href="class_f_c_t_1_1_command_buffer_nodes_1_1_input_from_window.html#a8c0111f2437264b65c9d5a47f2698f08" title=" " alt="" coords="5,131,251,169"/>
+<area shape="poly" title=" " alt="" coords="283,136,251,140,251,134,283,131"/>
+<area shape="rect" href="class_f_c_t_1_1_command_buffer_nodes_1_1_output_to_window.html#a702a2bded159cabd500133579c48407f" title=" " alt="" coords="9,193,247,232"/>
+<area shape="poly" title=" " alt="" coords="351,147,251,183,210,195,209,190,250,178,349,142"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4d8fe0d4816d46f005738c0ba7c6c435" name="a4d8fe0d4816d46f005738c0ba7c6c435"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d8fe0d4816d46f005738c0ba7c6c435">&#9670;&#160;</a></span>markFrameClean()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FCT::CommandBufferNodes::NodeBase::markFrameClean </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>frameIndex</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_command_buffer_graph_8h_source.html">CommandBufferGraph.h</a> 第 <a class="el" href="_command_buffer_graph_8h_source.html#l00136">136</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_command_buffer_nodes_1_1_node_base_a4d8fe0d4816d46f005738c0ba7c6c435_icgraph.png" border="0" usemap="#aclass_f_c_t_1_1_command_buffer_nodes_1_1_node_base_a4d8fe0d4816d46f005738c0ba7c6c435_icgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_command_buffer_nodes_1_1_node_base_a4d8fe0d4816d46f005738c0ba7c6c435_icgraph" id="aclass_f_c_t_1_1_command_buffer_nodes_1_1_node_base_a4d8fe0d4816d46f005738c0ba7c6c435_icgraph">
+<area shape="rect" title=" " alt="" coords="341,37,544,76"/>
+<area shape="rect" href="class_f_c_t_1_1_command_buffer_nodes_1_1_input_from_window.html#a12aa610b00799b35f9e6627eeb9d3327" title=" " alt="" coords="5,5,293,44"/>
+<area shape="poly" title=" " alt="" coords="325,47,293,43,293,38,325,41"/>
+<area shape="rect" href="class_f_c_t_1_1_command_buffer_nodes_1_1_output_to_window.html#a2af63352e104c0716c30d346e6793d50" title=" " alt="" coords="9,68,289,107"/>
+<area shape="poly" title=" " alt="" coords="325,72,290,75,289,70,325,66"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8ec6bf83ef2c11fe68499fdc306d7150" name="a8ec6bf83ef2c11fe68499fdc306d7150"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ec6bf83ef2c11fe68499fdc306d7150">&#9670;&#160;</a></span>markFrameDirty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FCT::CommandBufferNodes::NodeBase::markFrameDirty </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>frameIndex</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_command_buffer_graph_8h_source.html">CommandBufferGraph.h</a> 第 <a class="el" href="_command_buffer_graph_8h_source.html#l00130">130</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a634ef1903aac0b9c3147d95b04007e9b" name="a634ef1903aac0b9c3147d95b04007e9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a634ef1903aac0b9c3147d95b04007e9b">&#9670;&#160;</a></span>updateSynchronization()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FCT::CommandBufferNodes::CommandBuffer::updateSynchronization </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>newMaxFrameInFlight</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>实现了 <a class="el" href="class_f_c_t_1_1_command_buffer_nodes_1_1_node_base.html#a42177640cb2ab72f2dbe60ded801bba5">FCT::CommandBufferNodes::NodeBase</a>.</p>
+
+<p class="definition">在文件 <a class="el" href="_command_buffer_graph_8cpp_source.html">CommandBufferGraph.cpp</a> 第 <a class="el" href="_command_buffer_graph_8cpp_source.html#l00072">72</a> 行定义.</p>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">类成员变量说明</h2>
+<a id="aad0d02c9b56e9991eff70fbd7737fc1b" name="aad0d02c9b56e9991eff70fbd7737fc1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad0d02c9b56e9991eff70fbd7737fc1b">&#9670;&#160;</a></span>m_cmdBuffers</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="class_f_c_t_1_1_r_h_i_1_1_command_buffer.html">RHI::CommandBuffer</a>*&gt; FCT::CommandBufferNodes::CommandBuffer::m_cmdBuffers</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_command_buffer_graph_8h_source.html">CommandBufferGraph.h</a> 第 <a class="el" href="_command_buffer_graph_8h_source.html#l00255">255</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a5434bc1cda776b1d1ebd83e572ff0abf" name="a5434bc1cda776b1d1ebd83e572ff0abf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5434bc1cda776b1d1ebd83e572ff0abf">&#9670;&#160;</a></span>m_frameDirty</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;uint8_t&gt; FCT::CommandBufferNodes::NodeBase::m_frameDirty</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_command_buffer_graph_8h_source.html">CommandBufferGraph.h</a> 第 <a class="el" href="_command_buffer_graph_8h_source.html#l00146">146</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ad135b9660bdb62a3f3bc4ed6321162c4" name="ad135b9660bdb62a3f3bc4ed6321162c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad135b9660bdb62a3f3bc4ed6321162c4">&#9670;&#160;</a></span>m_inputEdges</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="class_f_c_t_1_1_command_buffer_edges_1_1_edge_base.html">CommandBufferEdges::EdgeBase</a>*&gt; FCT::CommandBufferNodes::CommandBuffer::m_inputEdges</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_command_buffer_graph_8h_source.html">CommandBufferGraph.h</a> 第 <a class="el" href="_command_buffer_graph_8h_source.html#l00254">254</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a4b809e57010a6a1d60f4f3e3a3636604" name="a4b809e57010a6a1d60f4f3e3a3636604"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b809e57010a6a1d60f4f3e3a3636604">&#9670;&#160;</a></span>m_outputEdges</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="class_f_c_t_1_1_command_buffer_edges_1_1_edge_base.html">CommandBufferEdges::EdgeBase</a>*&gt; FCT::CommandBufferNodes::CommandBuffer::m_outputEdges</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_command_buffer_graph_8h_source.html">CommandBufferGraph.h</a> 第 <a class="el" href="_command_buffer_graph_8h_source.html#l00253">253</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a40bf9a2a11c793868fa98090856790e6" name="a40bf9a2a11c793868fa98090856790e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40bf9a2a11c793868fa98090856790e6">&#9670;&#160;</a></span>m_pool</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_f_c_t_1_1_r_h_i_1_1_command_pool.html">RHI::CommandPool</a>* FCT::CommandBufferNodes::CommandBuffer::m_pool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_command_buffer_graph_8h_source.html">CommandBufferGraph.h</a> 第 <a class="el" href="_command_buffer_graph_8h_source.html#l00256">256</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/Context/<a class="el" href="_command_buffer_graph_8h_source.html">CommandBufferGraph.h</a></li>
+<li>src/Context/<a class="el" href="_command_buffer_graph_8cpp_source.html">CommandBufferGraph.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespace_f_c_t.html">FCT</a></li><li class="navelem"><a href="namespace_f_c_t_1_1_command_buffer_nodes.html">CommandBufferNodes</a></li><li class="navelem"><a href="class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer.html">CommandBuffer</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

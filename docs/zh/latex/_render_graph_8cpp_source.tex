@@ -2,23 +2,945 @@
 \hypertarget{_render_graph_8cpp_source}{}\label{_render_graph_8cpp_source}\index{src/Context/RenderGraph.cpp@{src/Context/RenderGraph.cpp}}
 \mbox{\hyperlink{_render_graph_8cpp}{浏览该文件的文档.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00001}00001\ \textcolor{comment}{//}}
-\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00002}00002\ \textcolor{comment}{//\ Created\ by\ Administrator\ on\ 2025/8/5.}}
-\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00003}00003\ \textcolor{comment}{//}}
-\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00004}00004\ }
-\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_render_graph_8h}{RenderGraph.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_context_8h}{Context.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00007}00007\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_f_c_t}{FCT}}\ \{}
-\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00008}\mbox{\hyperlink{class_f_c_t_1_1_render_graph_a19ae7a486768d9c79e762e48ecdd5fb1}{00008}}\ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a19ae7a486768d9c79e762e48ecdd5fb1}{RenderGraph::RenderGraph}}(\mbox{\hyperlink{class_f_c_t_1_1_context}{Context}}*\ ctx)}
-\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00009}00009\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00010}00010\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a5ddd2f8e30260d20b99e205e4c0e0f9b}{m\_ctx}}\ =\ ctx;}
-\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a9c141d6fe04b4526550663fdfcf8aba8}{m\_device}}\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a5ddd2f8e30260d20b99e205e4c0e0f9b}{m\_ctx}}-\/>getModule<\mbox{\hyperlink{class_f_c_t_1_1_device}{Device}}>();}
-\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00012}00012\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00013}00013\ }
-\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00014}\mbox{\hyperlink{class_f_c_t_1_1_render_graph_a2a2482bea06c07a22d39ca8f2e60b3e5}{00014}}\ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a2a2482bea06c07a22d39ca8f2e60b3e5}{RenderGraph::\string~RenderGraph}}()}
-\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00015}00015\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00016}00016\ }
-\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00017}00017\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00018}00018\ \}\ \textcolor{comment}{//\ FCT}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_window_8h}{../UI/Window.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_context_8h}{./Context.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_context_8hpp}{./Context.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_pass_group_8h}{../RHI/PassGroup.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00006}00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_f_c_t}{FCT}}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00007}00007\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00008}\mbox{\hyperlink{class_f_c_t_1_1_render_graph_window_target_node_a796a737afa215ddb5119fcd0a3f15be9}{00008}}\ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_image}{Image}}*\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_window_target_node_a796a737afa215ddb5119fcd0a3f15be9}{RenderGraphWindowTargetNode::getImage}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00009}00009\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00010}00010\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_window_target_node_afcacdca90d0c54731936c077a9550ab0}{m\_window}}-\/>getCurrentTarget()-\/>targetImage();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00011}00011\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00013}\mbox{\hyperlink{class_f_c_t_1_1_render_graph_window_depth_stencil_node_a393a6151593cebb2c1fef09398ac17f8}{00013}}\ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_image}{Image}}*\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_window_depth_stencil_node_a393a6151593cebb2c1fef09398ac17f8}{RenderGraphWindowDepthStencilNode::getImage}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00014}00014\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_window_depth_stencil_node_ac14554f66dda5b0f96017c65c55d85e6}{m\_window}}-\/>getCurrentTarget()-\/>depthStencilBuffer();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00016}00016\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00018}\mbox{\hyperlink{class_f_c_t_1_1_render_graph_acff635849f03546c4469bd64f6f082e5}{00018}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_acff635849f03546c4469bd64f6f082e5}{RenderGraph::initForSubmit}}()}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00019}00019\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_aff16efa335f7c1ea867850a8c81883a5}{m\_commandBufferToken}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ submitGraph\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a4ecd6861bbe8c1c4ce57884c410c0e7f}{m\_flowControl}}-\/>submitTickers();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ submitGraph[\mbox{\hyperlink{namespace_f_c_t_1_1_render_graph_tickers_abedce7e95b0c3907eaae658a450b2461}{RenderGraphTickers::RenderGraphSubmit}}]\ =\ \{[\textcolor{keyword}{this}]()}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ cmdGraph\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a80d728593d9adaaf7ae73c405a1ffb51}{m\_commandBufferGraph}};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ cmdBuf\ =\ cmdGraph-\/>getCommandBuffer(\mbox{\hyperlink{class_f_c_t_1_1_render_graph_aff16efa335f7c1ea867850a8c81883a5}{m\_commandBufferToken}});}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ cmdBuf-\/>reset();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ cmdBuf-\/>begin();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_ac374234ca05eb3f5eee8c3f6f095fe4b}{executeAllPassGroups}}(cmdBuf);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ cmdBuf-\/>end();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ cmdBuf-\/>submit();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \},\{\},}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \{\mbox{\hyperlink{namespace_f_c_t_a713521d343a445fb31ddf00b9665d59f}{SwapBufferSubmitTicker}}\}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ submitGraph.update();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00035}00035\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00037}\mbox{\hyperlink{class_f_c_t_1_1_render_graph_a38b8df6c7764da4903710711edeb83a3}{00037}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a38b8df6c7764da4903710711edeb83a3}{RenderGraph::allocateCommandBuffer}}()}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00038}00038\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ cmdGraph\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a80d728593d9adaaf7ae73c405a1ffb51}{m\_commandBufferGraph}};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_render_graph_aff16efa335f7c1ea867850a8c81883a5}{m\_commandBufferToken}})}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ std::vector<CommandBufferGraph::NodeRef>\ windowNodes;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ [imageName,\ imageNode]\ :\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}})\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_window}{Window}}*\ window\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ windowTargetNode\ =\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_f_c_t_1_1_render_graph_window_target_node}{RenderGraphWindowTargetNode}}*\textcolor{keyword}{>}(imageNode.get());}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (windowTargetNode\ \&\&\ windowTargetNode-\/>isValidWindowTarget())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ window\ =\ windowTargetNode-\/>getWindow();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!window)\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ windowDepthNode\ =\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_f_c_t_1_1_render_graph_window_depth_stencil_node}{RenderGraphWindowDepthStencilNode}}*\textcolor{keyword}{>}(imageNode.get());}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (windowDepthNode\ \&\&\ windowDepthNode-\/>isValidWindowDepthStencil())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ window\ =\ windowDepthNode-\/>getWindow();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (window)\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ alreadyAdded\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ node\ :\ windowNodes)\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (node.type\ ==\ \mbox{\hyperlink{struct_f_c_t_1_1_command_buffer_graph_1_1_node_ref_a6b2ce16bbc23091b2cac4d991c8f65b3ae4119e85010a5f7562d08c445842bcd5}{CommandBufferGraph::NodeRef::WindowType}}\ \&\&\ node.window\ ==\ window)\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ alreadyAdded\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!alreadyAdded)\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ windowNodes.emplace\_back(window);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_aff16efa335f7c1ea867850a8c81883a5}{m\_commandBufferToken}}\ =\ cmdGraph-\/>addBuffer(windowNodes,\ windowNodes);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00081}00081\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00083}\mbox{\hyperlink{class_f_c_t_1_1_render_graph_a110c2e0eb2765c0a62c24aadacb77573}{00083}}\ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a110c2e0eb2765c0a62c24aadacb77573}{RenderGraph::RenderGraph}}(\mbox{\hyperlink{class_f_c_t_1_1_device}{Device}}*\ device,\ \mbox{\hyperlink{class_f_c_t_1_1_flow_control}{FlowControl}}*\ flowControl,\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph}{CommandBufferGraph}}*\ commandBufferGraph,}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_resource_manager}{ResourceManager}}*\ resourceManager)}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00085}00085\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a4bc83d491c76082db2a8656766b062b6}{m\_resourceDevice}}\ =\ device;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a4ecd6861bbe8c1c4ce57884c410c0e7f}{m\_flowControl}}\ =\ flowControl;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a80d728593d9adaaf7ae73c405a1ffb51}{m\_commandBufferGraph}}\ =\ commandBufferGraph;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a92b182fcf84fe0ac7d0f112c280f6758}{m\_resourceManager}}\ =\ resourceManager;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_acff635849f03546c4469bd64f6f082e5}{initForSubmit}}();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00091}00091\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00093}\mbox{\hyperlink{class_f_c_t_1_1_render_graph_a557b441965bf4be1f98dfe3c956961cb}{00093}}\ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_image_node}{RenderGraphImageNode}}*\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a557b441965bf4be1f98dfe3c956961cb}{RenderGraph::getOrCreateImageNode}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_f_c_t_1_1_texture}{Texture}}\&\ texture)}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00094}00094\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}.find(name);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ *(it-\/>second)\ |=\ texture;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ it-\/>second.get();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ node\ =\ std::make\_unique<RenderGraphBufferNode>(texture);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_image_node}{RenderGraphImageNode}}*\ nodePtr\ =\ node.get();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}[name]\ =\ std::move(node);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ nodePtr;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00105}00105\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00107}\mbox{\hyperlink{class_f_c_t_1_1_render_graph_af0c1033668050cc3fb12074ccd91fdaf}{00107}}\ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_image_node}{RenderGraphImageNode}}*\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a557b441965bf4be1f98dfe3c956961cb}{RenderGraph::getOrCreateImageNode}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_f_c_t_1_1_target}{Target}}\&\ target)}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00108}00108\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}.find(name);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ *(it-\/>second)\ |=\ target;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ it-\/>second.get();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (target.\mbox{\hyperlink{struct_f_c_t_1_1_target_a358738784986c3ec020d9a994fb19717}{isWindow}})\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ node\ =\ std::make\_unique<RenderGraphWindowTargetNode>(target);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_image_node}{RenderGraphImageNode}}*\ nodePtr\ =\ node.get();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}[name]\ =\ std::move(node);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ nodePtr;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ node\ =\ std::make\_unique<RenderGraphBufferNode>(target);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_image_node}{RenderGraphImageNode}}*\ nodePtr\ =\ node.get();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}[name]\ =\ std::move(node);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ nodePtr;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00126}00126\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00128}\mbox{\hyperlink{class_f_c_t_1_1_render_graph_a8d26ecf865ef6b611d715826608c92db}{00128}}\ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_image_node}{RenderGraphImageNode}}*\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a557b441965bf4be1f98dfe3c956961cb}{RenderGraph::getOrCreateImageNode}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_f_c_t_1_1_depth_stencil}{DepthStencil}}\&\ \mbox{\hyperlink{namespace_f_c_t_a5d14bda42e5f9f565abd0b018262b564ab9e904187d836d79d4fd0cbc4ea5420d}{depthStencil}})}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00129}00129\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}.find(name);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ *(it-\/>second)\ |=\ \mbox{\hyperlink{namespace_f_c_t_a5d14bda42e5f9f565abd0b018262b564ab9e904187d836d79d4fd0cbc4ea5420d}{depthStencil}};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ it-\/>second.get();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{namespace_f_c_t_a5d14bda42e5f9f565abd0b018262b564ab9e904187d836d79d4fd0cbc4ea5420d}{depthStencil}}.isWindow)\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ node\ =\ std::make\_unique<RenderGraphWindowDepthStencilNode>(\mbox{\hyperlink{namespace_f_c_t_a5d14bda42e5f9f565abd0b018262b564ab9e904187d836d79d4fd0cbc4ea5420d}{depthStencil}});}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_image_node}{RenderGraphImageNode}}*\ nodePtr\ =\ node.get();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}[name]\ =\ std::move(node);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ nodePtr;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ node\ =\ std::make\_unique<RenderGraphBufferNode>(\mbox{\hyperlink{namespace_f_c_t_a5d14bda42e5f9f565abd0b018262b564ab9e904187d836d79d4fd0cbc4ea5420d}{depthStencil}});}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_image_node}{RenderGraphImageNode}}*\ nodePtr\ =\ node.get();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}[name]\ =\ std::move(node);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ nodePtr;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00147}00147\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00148}00148\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00149}\mbox{\hyperlink{class_f_c_t_1_1_render_graph_a12d5fdcc70fa6f64eff143d56326cb06}{00149}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a12d5fdcc70fa6f64eff143d56326cb06}{RenderGraph::createTextureEdge}}(\textcolor{keyword}{const}\ std::string\&\ passName,\ \textcolor{keyword}{const}\ std::string\&\ textureName,}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_f_c_t_1_1_texture}{Texture}}\&\ texture)}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00151}00151\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ pass\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a8bbc2d9678e6ca16dba1c4d50468030d}{m\_passNodes}}[passName];}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00154}00154\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ edge\ =\ std::make\_unique<TextureEdge>();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00155}00155\ \ \ \ \ \ \ \ \ edge-\/>size\ =\ texture.\mbox{\hyperlink{struct_f_c_t_1_1_texture_a9d27cf9279148249a8eb1826d49b3710}{size}};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00156}00156\ \ \ \ \ \ \ \ \ edge-\/>fromImage\ =\ textureName;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ edge-\/>toPass\ =\ passName;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00158}00158\ \ \ \ \ \ \ \ \ edge-\/>stage\ =\ \mbox{\hyperlink{namespace_f_c_t_ac9e0a1bad7b11b12279ab47db6451c94}{getEarliestStage}}(texture.\mbox{\hyperlink{struct_f_c_t_1_1_texture_a5e0145f2671b83aaa72432b25a1254c9}{stages}});}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00159}00159\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00160}00160\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_texture_edge}{TextureEdge}}*\ edgePtr\ =\ edge.get();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00161}00161\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ imageNodeIt\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}.find(textureName);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (imageNodeIt\ !=\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ imageNodeIt-\/>second-\/>addOutgoingEdge(edgePtr);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ pass.addIncomingEdge(edgePtr);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00167}00167\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00168}00168\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a94aab527dae029fb493ce542fdffb1a4}{m\_edges}}.push\_back(std::move(edge));}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00169}00169\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00170}00170\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00171}\mbox{\hyperlink{class_f_c_t_1_1_render_graph_ae41a5f38066ff7a45901b251f1ee0a13}{00171}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_ae41a5f38066ff7a45901b251f1ee0a13}{RenderGraph::createTargetEdge}}(\textcolor{keyword}{const}\ std::string\&\ passName,\ \textcolor{keyword}{const}\ std::string\&\ targetName,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_f_c_t_1_1_target}{Target}}\&\ target)}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00172}00172\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00173}00173\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ pass\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a8bbc2d9678e6ca16dba1c4d50468030d}{m\_passNodes}}[passName];}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00174}00174\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00175}00175\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ edge\ =\ std::make\_unique<TargetEdge>();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \ edge-\/>fromPass\ =\ passName;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00177}00177\ \ \ \ \ \ \ \ \ edge-\/>toImage\ =\ targetName;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00178}00178\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00179}00179\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_target_edge}{TargetEdge}}*\ edgePtr\ =\ edge.get();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00180}00180\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00181}00181\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ imageNodeIt\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}.find(targetName);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00182}00182\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (imageNodeIt\ !=\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ imageNodeIt-\/>second-\/>addIncomingEdge(edgePtr);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00184}00184\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00185}00185\ \ \ \ \ \ \ \ \ pass.addOutgoingEdge(edgePtr);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00186}00186\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00187}00187\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a94aab527dae029fb493ce542fdffb1a4}{m\_edges}}.push\_back(std::move(edge));}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00188}00188\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00189}00189\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00190}\mbox{\hyperlink{class_f_c_t_1_1_render_graph_ad3b131aa50a2ba677941481c5b4aaa83}{00190}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_ad3b131aa50a2ba677941481c5b4aaa83}{RenderGraph::createDepthStencilEdge}}(\textcolor{keyword}{const}\ std::string\&\ passName,\ \textcolor{keyword}{const}\ std::string\&\ depthStencilName,}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_f_c_t_1_1_depth_stencil}{DepthStencil}}\&\ \mbox{\hyperlink{namespace_f_c_t_a5d14bda42e5f9f565abd0b018262b564ab9e904187d836d79d4fd0cbc4ea5420d}{depthStencil}})}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00192}00192\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00193}00193\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ pass\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a8bbc2d9678e6ca16dba1c4d50468030d}{m\_passNodes}}[passName];}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00194}00194\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00195}00195\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ edge\ =\ std::make\_unique<DepthStencilEdge>();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00196}00196\ \ \ \ \ \ \ \ \ edge-\/>fromPass\ =\ passName;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00197}00197\ \ \ \ \ \ \ \ \ edge-\/>toImage\ =\ depthStencilName;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00198}00198\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00199}00199\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_depth_stencil_edge}{DepthStencilEdge}}*\ edgePtr\ =\ edge.get();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00200}00200\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00201}00201\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ imageNodeIt\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}.find(depthStencilName);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00202}00202\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (imageNodeIt\ !=\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ imageNodeIt-\/>second-\/>addIncomingEdge(edgePtr);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00204}00204\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00205}00205\ \ \ \ \ \ \ \ \ pass.addOutgoingEdge(edgePtr);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00206}00206\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00207}00207\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a94aab527dae029fb493ce542fdffb1a4}{m\_edges}}.push\_back(std::move(edge));}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00208}00208\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00209}00209\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00210}\mbox{\hyperlink{class_f_c_t_1_1_render_graph_a6027a8bddbd54ca652688a771e80d8cc}{00210}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a6027a8bddbd54ca652688a771e80d8cc}{RenderGraph::addPass}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_f_c_t_1_1_pass_desc}{PassDesc}}\&\ desc)}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00211}00211\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00212}00212\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a8bbc2d9678e6ca16dba1c4d50468030d}{m\_passNodes}}[desc.\mbox{\hyperlink{struct_f_c_t_1_1_pass_desc_a700b4e9be57701e9ac5b791122a8a36d}{name}}]\ =\ desc.\mbox{\hyperlink{struct_f_c_t_1_1_pass_desc_a700b4e9be57701e9ac5b791122a8a36d}{name}};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00213}00213\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ pass\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a8bbc2d9678e6ca16dba1c4d50468030d}{m\_passNodes}}[desc.\mbox{\hyperlink{struct_f_c_t_1_1_pass_desc_a700b4e9be57701e9ac5b791122a8a36d}{name}}];}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00214}00214\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00215}00215\ \ \ \ \ \ \ \ \ pass.applyPassDesc(desc);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00216}00216\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00217}00217\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ texture\ :\ desc.\mbox{\hyperlink{struct_f_c_t_1_1_pass_desc_a144da16eba36b54ebb8913b420ea8eda}{textures}})}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00218}00218\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00219}00219\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a557b441965bf4be1f98dfe3c956961cb}{getOrCreateImageNode}}(texture.name,\ texture);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a12d5fdcc70fa6f64eff143d56326cb06}{createTextureEdge}}(desc.\mbox{\hyperlink{struct_f_c_t_1_1_pass_desc_a700b4e9be57701e9ac5b791122a8a36d}{name}},\ texture.name,\ texture);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00221}00221\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00222}00222\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00223}00223\ \ \ \ \ \ \ \ \ std::vector<RenderGraphImageNode*>\ renderTargetNodes;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00224}00224\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00225}00225\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ target\ :\ desc.\mbox{\hyperlink{struct_f_c_t_1_1_pass_desc_a4bfe50cbe83a45a5d5bcfdc7c0e46b4d}{targets}})}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00226}00226\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ node\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a557b441965bf4be1f98dfe3c956961cb}{getOrCreateImageNode}}(target.name,\ target);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ renderTargetNodes.push\_back(node);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_ae41a5f38066ff7a45901b251f1ee0a13}{createTargetEdge}}(desc.\mbox{\hyperlink{struct_f_c_t_1_1_pass_desc_a700b4e9be57701e9ac5b791122a8a36d}{name}},\ target.name,\ target);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00230}00230\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00231}00231\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00232}00232\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ \mbox{\hyperlink{namespace_f_c_t_a5d14bda42e5f9f565abd0b018262b564ab9e904187d836d79d4fd0cbc4ea5420d}{depthStencil}}\ :\ desc.\mbox{\hyperlink{struct_f_c_t_1_1_pass_desc_abe4540f2840f9ed18e9947a2edd29c7c}{depthStencils}})}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00233}00233\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ node\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a557b441965bf4be1f98dfe3c956961cb}{getOrCreateImageNode}}(\mbox{\hyperlink{namespace_f_c_t_a5d14bda42e5f9f565abd0b018262b564ab9e904187d836d79d4fd0cbc4ea5420d}{depthStencil}}.name,\ \mbox{\hyperlink{namespace_f_c_t_a5d14bda42e5f9f565abd0b018262b564ab9e904187d836d79d4fd0cbc4ea5420d}{depthStencil}});}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ renderTargetNodes.push\_back(node);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_ad3b131aa50a2ba677941481c5b4aaa83}{createDepthStencilEdge}}(desc.\mbox{\hyperlink{struct_f_c_t_1_1_pass_desc_a700b4e9be57701e9ac5b791122a8a36d}{name}},\ \mbox{\hyperlink{namespace_f_c_t_a5d14bda42e5f9f565abd0b018262b564ab9e904187d836d79d4fd0cbc4ea5420d}{depthStencil}}.name,\ \mbox{\hyperlink{namespace_f_c_t_a5d14bda42e5f9f565abd0b018262b564ab9e904187d836d79d4fd0cbc4ea5420d}{depthStencil}});}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00237}00237\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00238}00238\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00239}00239\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (renderTargetNodes.size()\ >\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_image_node}{RenderGraphImageNode}}*\ firstNode\ =\ renderTargetNodes[0];}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 1;\ i\ <\ renderTargetNodes.size();\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ firstNode-\/>\mbox{\hyperlink{struct_f_c_t_1_1_size_node_acf11f833ff138217d89c73e637459435}{unite}}(renderTargetNodes[i]);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00244}00244\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00245}00245\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00246}00246\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00247}\mbox{\hyperlink{class_f_c_t_1_1_render_graph_adc5fb8038856ec115d0834aadef091d1}{00247}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_adc5fb8038856ec115d0834aadef091d1}{RenderGraph::resolveTextureSizes}}()}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00248}00248\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00249}00249\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ [passName,\ pass]\ :\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a8bbc2d9678e6ca16dba1c4d50468030d}{m\_passNodes}})\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00250}00250\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<RenderGraphImageNode*>\ referenceNodes;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00251}00251\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00252}00252\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}*\ targetEdge\ :\ pass.getTargetOutgoingEdges())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00253}00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ imageNodeIt\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}.find(targetEdge-\/>toImage);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (imageNodeIt\ !=\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00255}00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ referenceNodes.push\_back(imageNodeIt-\/>second.get());}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00257}00257\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00258}00258\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00259}00259\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}*\ depthStencilEdge\ :\ pass.getDepthStencilOutgoingEdges())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00260}00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ imageNodeIt\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}.find(depthStencilEdge-\/>toImage);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00261}00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (imageNodeIt\ !=\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00262}00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ referenceNodes.push\_back(imageNodeIt-\/>second.get());}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00264}00264\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00265}00265\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00266}00266\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (referenceNodes.empty())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00267}00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00268}00268\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00269}00269\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00270}00270\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_image_node}{RenderGraphImageNode}}*\ referenceNode\ =\ referenceNodes[0];}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00271}00271\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00272}00272\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}*\ textureEdge\ :\ pass.getTextureIncomingEdges())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00273}00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ imageNodeIt\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}.find(textureEdge-\/>fromImage);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00274}00274\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (imageNodeIt\ ==\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00275}00275\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00276}00276\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00277}00277\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00278}00278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_image_node}{RenderGraphImageNode}}*\ textureNode\ =\ imageNodeIt-\/>second.get();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00279}00279\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00280}00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (textureEdge-\/>size.type\ ==\ \mbox{\hyperlink{struct_f_c_t_1_1_texture_size_a3f776cd36015e144601331611f54fadbaec0fc0100c4fc1ce4eea230c3dc10360}{TextureSize::Type::Undefined}})\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00281}00281\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!textureNode-\/>\mbox{\hyperlink{struct_f_c_t_1_1_size_node_a776e363250eaa977723697fa032ddc64}{isSizeDetermined}}())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00282}00282\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ textureNode-\/>\mbox{\hyperlink{struct_f_c_t_1_1_size_node_acf11f833ff138217d89c73e637459435}{unite}}(referenceNode);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00283}00283\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00284}00284\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00285}00285\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (textureEdge-\/>size.type\ ==\ \mbox{\hyperlink{struct_f_c_t_1_1_texture_size_a3f776cd36015e144601331611f54fadba2ca9469819fb0fb61ff98e914a7ccca0}{TextureSize::Type::Relative}})\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00286}00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_f_c_t_1_1_fraction_scale2_d}{FractionScale2D}}\ scale(textureEdge-\/>size.relativeWidth,\ textureEdge-\/>size.relativeHeight);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00287}00287\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ textureNode-\/>\mbox{\hyperlink{struct_f_c_t_1_1_size_node_acf11f833ff138217d89c73e637459435}{unite}}(referenceNode,\ scale);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00288}00288\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00289}00289\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00290}00290\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00291}00291\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00292}00292\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00293}\mbox{\hyperlink{class_f_c_t_1_1_render_graph_a64311028d43559d0e6e2e52c5b5a3ebf}{00293}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a64311028d43559d0e6e2e52c5b5a3ebf}{RenderGraph::groupPasses}}()}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00294}00294\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00295}00295\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ [passName,\ passNode]\ :\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a8bbc2d9678e6ca16dba1c4d50468030d}{m\_passNodes}})\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00296}00296\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a9b755e0c12e56561d51beefc03d60036}{m\_passesUnions}}.unite(passName,\ passName);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00297}00297\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00298}00298\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00299}00299\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ [passName,\ passNode]\ :\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a8bbc2d9678e6ca16dba1c4d50468030d}{m\_passNodes}})\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00300}00300\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}*\ textureEdge\ :\ passNode.getTextureIncomingEdges())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00301}00301\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ imageName\ =\ textureEdge-\/>fromImage;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00302}00302\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00303}00303\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ imageIt\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}.find(imageName);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00304}00304\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (imageIt\ ==\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}.end())\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00305}00305\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00306}00306\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_image_node}{RenderGraphImageNode}}*\ imageNode\ =\ imageIt-\/>second.get();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00307}00307\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00308}00308\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_image_node}{RenderGraphImageNode}}*\ passRenderTarget\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00309}00309\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00310}00310\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}*\ targetEdge\ :\ passNode.getTargetOutgoingEdges())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00311}00311\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ targetIt\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}.find(targetEdge-\/>toImage);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00312}00312\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (targetIt\ !=\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00313}00313\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ passRenderTarget\ =\ targetIt-\/>second.get();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00314}00314\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00315}00315\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00316}00316\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00317}00317\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00318}00318\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!passRenderTarget)\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00319}00319\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}*\ depthEdge\ :\ passNode.getDepthStencilOutgoingEdges())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00320}00320\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ depthIt\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}.find(depthEdge-\/>toImage);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00321}00321\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (depthIt\ !=\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00322}00322\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ passRenderTarget\ =\ depthIt-\/>second.get();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00323}00323\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00324}00324\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00325}00325\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00326}00326\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00327}00327\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00328}00328\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (passRenderTarget\ \&\&\ imageNode-\/>\mbox{\hyperlink{struct_f_c_t_1_1_size_node_a9732b5716dda9bc16fcaf86f60a4faaf}{isSameSize}}(passRenderTarget))\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00329}00329\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}*\ targetEdge\ :\ imageNode-\/>\mbox{\hyperlink{class_f_c_t_1_1_render_graph_image_node_a6f8306c127786e2b187e08563c44c7ba}{getTargetIncomingEdges}}())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00330}00330\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a9b755e0c12e56561d51beefc03d60036}{m\_passesUnions}}.unite(passName,\ targetEdge-\/>fromPass);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00331}00331\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00332}00332\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00333}00333\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}*\ depthEdge\ :\ imageNode-\/>\mbox{\hyperlink{class_f_c_t_1_1_render_graph_image_node_a8c36c428f511ba1561a283e56bf17248}{getDepthStencilIncomingEdges}}())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00334}00334\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a9b755e0c12e56561d51beefc03d60036}{m\_passesUnions}}.unite(passName,\ depthEdge-\/>fromPass);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00335}00335\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00336}00336\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00337}00337\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00338}00338\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00339}00339\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00340}00340\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ [imageName,\ imageNode]\ :\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}})\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00341}00341\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::string>\ targetPasses;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00342}00342\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::string>\ depthStencilPasses;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00343}00343\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00344}00344\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}*\ targetEdge\ :\ imageNode-\/>getTargetIncomingEdges())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00345}00345\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ targetPasses.push\_back(targetEdge-\/>fromPass);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00346}00346\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00347}00347\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00348}00348\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}*\ depthEdge\ :\ imageNode-\/>getDepthStencilIncomingEdges())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00349}00349\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ depthStencilPasses.push\_back(depthEdge-\/>fromPass);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00350}00350\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00351}00351\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00352}00352\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 1;\ i\ <\ targetPasses.size();\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00353}00353\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a9b755e0c12e56561d51beefc03d60036}{m\_passesUnions}}.unite(targetPasses[0],\ targetPasses[i]);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00354}00354\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00355}00355\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00356}00356\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 1;\ i\ <\ depthStencilPasses.size();\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00357}00357\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a9b755e0c12e56561d51beefc03d60036}{m\_passesUnions}}.unite(depthStencilPasses[0],\ depthStencilPasses[i]);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00358}00358\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00359}00359\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00360}00360\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!targetPasses.empty()\ \&\&\ !depthStencilPasses.empty())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00361}00361\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a9b755e0c12e56561d51beefc03d60036}{m\_passesUnions}}.unite(targetPasses[0],\ depthStencilPasses[0]);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00362}00362\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00363}00363\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00364}00364\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00365}00365\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00366}00366\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00367}00367\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00368}\mbox{\hyperlink{class_f_c_t_1_1_render_graph_a87457dca5aacecf0895cf2cc946a5763}{00368}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a87457dca5aacecf0895cf2cc946a5763}{RenderGraph::allocateResources}}()}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00369}00369\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00370}00370\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ [name,\ imageNode]\ :\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}})\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00371}00371\ \ \ \ \ \ \ \ \ \ \ \ \ imageNode-\/>fillDefaultData();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00372}00372\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00373}00373\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ resourceManager\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a92b182fcf84fe0ac7d0f112c280f6758}{m\_resourceManager}};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00374}00374\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!resourceManager)\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00375}00375\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}ResourceManager\ not\ available"{}});}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00376}00376\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00377}00377\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00378}00378\ \ \ \ \ \ \ \ \ std::set<const\ SizeNode*>\ processedRoots;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00379}00379\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00380}00380\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ [name,\ imageNode]\ :\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}})\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00381}00381\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ bufferNode\ =\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_f_c_t_1_1_render_graph_buffer_node}{RenderGraphBufferNode}}*\textcolor{keyword}{>}(imageNode.get());}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00382}00382\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!bufferNode\ ||\ !bufferNode-\/>isFilled())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00383}00383\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00384}00384\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00385}00385\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00386}00386\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_f_c_t_1_1_size_node}{SizeNode}}*\ root\ =\ bufferNode-\/>\mbox{\hyperlink{struct_f_c_t_1_1_size_node_a40d6857c7cb710e741227d54a014a2bb}{getRoot}}();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00387}00387\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00388}00388\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (root\ ==\ bufferNode\ \&\&\ processedRoots.find(root)\ ==\ processedRoots.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00389}00389\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ processedRoots.insert(root);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00390}00390\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00391}00391\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ width,\ height;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00392}00392\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ hasFixedSize\ =\ bufferNode-\/>getComputedSize(width,\ height);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00393}00393\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00394}00394\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (hasFixedSize)\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00395}00395\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_f_c_t_1_1_target_desc}{TargetDesc}}\ targetDesc;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00396}00396\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ targetDesc.\mbox{\hyperlink{struct_f_c_t_1_1_target_desc_a47b74534d516b69bad255b982de69f57}{width}}\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(width);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00397}00397\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ targetDesc.\mbox{\hyperlink{struct_f_c_t_1_1_target_desc_a581bdc01aa06a2cc9200fdaa64c56547}{height}}\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(height);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00398}00398\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ targetDesc.\mbox{\hyperlink{struct_f_c_t_1_1_target_desc_a9ca38e7ee241dd92f63f36de8847bd73}{samples}}\ =\ bufferNode-\/>getSamples();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00399}00399\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ targetDesc.\mbox{\hyperlink{struct_f_c_t_1_1_target_desc_a07a94f48df077eb82e8866d25a018014}{format}}\ =\ bufferNode-\/>getFormat();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00400}00400\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ targetDesc.\mbox{\hyperlink{struct_f_c_t_1_1_target_desc_a00ce97aed07e2be0a4024d16a24baa9f}{usage}}\ =\ bufferNode-\/>getUsage();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00401}00401\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00402}00402\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_image}{Image}}*\ allocatedImage\ =\ resourceManager-\/>allocateTarget(name,\ targetDesc);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00403}00403\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bufferNode-\/>setAllocatedImage(allocatedImage);\ \textcolor{comment}{//\ 调用setAllocatedImage保存图像}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00404}00404\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a17875c1ed28e3696222557c593b9e74b}{m\_allocatedImages}}[name]\ =\ allocatedImage;\ \textcolor{comment}{//\ 存储分配的图像}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00405}00405\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00406}00406\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Root\ node\ has\ no\ fixed\ size:\ "{}}\ +\ name);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00407}00407\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00408}00408\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00409}00409\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00410}00410\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00411}00411\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ [name,\ imageNode]\ :\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}})\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00412}00412\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ bufferNode\ =\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_f_c_t_1_1_render_graph_buffer_node}{RenderGraphBufferNode}}*\textcolor{keyword}{>}(imageNode.get());}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00413}00413\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!bufferNode\ ||\ !bufferNode-\/>isFilled())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00414}00414\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00415}00415\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00416}00416\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00417}00417\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_f_c_t_1_1_size_node}{SizeNode}}*\ root\ =\ bufferNode-\/>\mbox{\hyperlink{struct_f_c_t_1_1_size_node_a40d6857c7cb710e741227d54a014a2bb}{getRoot}}();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00418}00418\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00419}00419\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (root\ !=\ bufferNode)\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00420}00420\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_f_c_t_1_1_image_desc}{ImageDesc}}\ imageDesc;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00421}00421\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ imageDesc.\mbox{\hyperlink{struct_f_c_t_1_1_image_desc_aa46ef53fdc8e204c8ba6a716c505059b}{format}}\ =\ bufferNode-\/>getFormat();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00422}00422\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ imageDesc.\mbox{\hyperlink{struct_f_c_t_1_1_image_desc_a0b73884831bd7c314b312c62f5e73c01}{samples}}\ =\ bufferNode-\/>getSamples();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00423}00423\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ imageDesc.\mbox{\hyperlink{struct_f_c_t_1_1_image_desc_ab679efe910b07fe5958cca911d61c77c}{usage}}\ =\ bufferNode-\/>getUsage();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00424}00424\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00425}00425\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_image}{Image}}*\ allocatedImage\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00426}00426\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00427}00427\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ dependencyName;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00428}00428\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ [otherName,\ otherNode]\ :\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}})\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00429}00429\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (otherNode-\/>getRoot()\ ==\ root\ \&\&\ otherNode-\/>\mbox{\hyperlink{struct_f_c_t_1_1_size_node_a40d6857c7cb710e741227d54a014a2bb}{getRoot}}()\ ==\ otherNode.get())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00430}00430\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dependencyName\ =\ otherName;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00431}00431\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00432}00432\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00433}00433\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00434}00434\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00435}00435\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!dependencyName.empty())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00436}00436\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ windowTargetNode\ =\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_f_c_t_1_1_render_graph_window_target_node}{RenderGraphWindowTargetNode}}*\textcolor{keyword}{>}(}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00437}00437\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}[dependencyName].get());}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00438}00438\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ windowDepthNode\ =\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_f_c_t_1_1_render_graph_window_depth_stencil_node}{RenderGraphWindowDepthStencilNode}}*\textcolor{keyword}{>}(}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00439}00439\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}[dependencyName].get());}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00440}00440\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00441}00441\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (windowTargetNode\ \&\&\ windowTargetNode-\/>isValidWindowTarget())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00442}00442\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ allocatedImage\ =\ resourceManager-\/>allocateImage(}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00443}00443\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ name,\ windowTargetNode-\/>getWindow(),\ imageDesc);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00444}00444\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (windowDepthNode\ \&\&\ windowDepthNode-\/>isValidWindowDepthStencil())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00445}00445\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ allocatedImage\ =\ resourceManager-\/>allocateImage(}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00446}00446\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ name,\ windowDepthNode-\/>getWindow(),\ imageDesc);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00447}00447\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00448}00448\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ allocatedImage\ =\ resourceManager-\/>allocateImage(}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00449}00449\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ name,\ dependencyName,\ imageDesc);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00450}00450\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00451}00451\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00452}00452\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bufferNode-\/>setAllocatedImage(allocatedImage);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00453}00453\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a17875c1ed28e3696222557c593b9e74b}{m\_allocatedImages}}[name]\ =\ allocatedImage;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00454}00454\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00455}00455\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Cannot\ determine\ dependency\ for\ image:\ "{}}\ +\ name);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00456}00456\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00457}00457\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00458}00458\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00459}00459\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00460}00460\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00461}\mbox{\hyperlink{class_f_c_t_1_1_render_graph_ae1da1bdcbc804b2284f43ff8cf079360}{00461}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_ae1da1bdcbc804b2284f43ff8cf079360}{RenderGraph::createRHIPasses}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00462}00462\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ [passName,\ passNode]\ :\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a8bbc2d9678e6ca16dba1c4d50468030d}{m\_passNodes}})\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00463}00463\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pass}{RHI::Pass}}*\ rhiPass\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a4bc83d491c76082db2a8656766b062b6}{m\_resourceDevice}}-\/>createResource<\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pass}{RHI::Pass}}>();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00464}00464\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00465}00465\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_f_c_t_1_1_enable_pass_clear}{EnablePassClear}}\&\ clearInfo\ =\ passNode.getClearInfo();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00466}00466\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (clearInfo.types)\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00467}00467\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rhiPass-\/>\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pass_abc6d3d656e42dcc326a93df3e234469f}{enableClear}}(clearInfo.types,\ clearInfo.color,\ clearInfo.depth,\ clearInfo.stencil);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00468}00468\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00469}00469\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00470}00470\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ targetEdges\ =\ passNode.getTargetOutgoingEdges();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00471}00471\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ targetEdges.size();\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00472}00472\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ edge\ =\ targetEdges[i];}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00473}00473\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ imageNodeIt\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}.find(edge-\/>toImage);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00474}00474\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (imageNodeIt\ !=\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00475}00475\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_image}{Image}}*\ image\ =\ imageNodeIt-\/>second-\/>\mbox{\hyperlink{class_f_c_t_1_1_image_a934f49a3f75d3eb1a89ea1a51f5481bf}{getImage}}();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00476}00476\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (image)\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00477}00477\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rhiPass-\/>\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pass_ae0c987eccb3de45f5008a5fe795200ce}{bindTarget}}(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(i),\ image);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00478}00478\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00479}00479\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00480}00480\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00481}00481\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00482}00482\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ depthStencilEdges\ =\ passNode.getDepthStencilOutgoingEdges();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00483}00483\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ edge\ :\ depthStencilEdges)\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00484}00484\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ imageNodeIt\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}.find(edge-\/>toImage);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00485}00485\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (imageNodeIt\ !=\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00486}00486\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_image}{Image}}*\ image\ =\ imageNodeIt-\/>second-\/>\mbox{\hyperlink{class_f_c_t_1_1_image_a934f49a3f75d3eb1a89ea1a51f5481bf}{getImage}}();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00487}00487\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (image)\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00488}00488\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rhiPass-\/>\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pass_a10081bc141a93556358669058e270603}{depthStencil}}(image);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00489}00489\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00490}00490\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00491}00491\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00492}00492\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00493}00493\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_acb8b3015a4177cbbdd79e8f6a8da467b}{m\_allocatedPasses}}[passName]\ =\ rhiPass;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00494}00494\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00495}00495\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00496}\mbox{\hyperlink{class_f_c_t_1_1_render_graph_ad54d6ba2079f5378d0923c3418ae672d}{00496}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_ad54d6ba2079f5378d0923c3418ae672d}{RenderGraph::analyzePassGroupDependencies}}(}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00497}00497\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ groupLeader,}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00498}00498\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::string>\&\ groupMembers,}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00499}00499\ \ \ \ \ std::map<std::string,\ std::set<std::string>>\&\ dependencies}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00500}00500\ )\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00501}00501\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dependencies.find(groupLeader)\ ==\ dependencies.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00502}00502\ \ \ \ \ \ \ \ \ \ \ \ \ dependencies[groupLeader]\ =\ std::set<std::string>();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00503}00503\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00504}00504\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00505}00505\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ std::string\&\ passName\ :\ groupMembers)\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00506}00506\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ passNodeIt\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a8bbc2d9678e6ca16dba1c4d50468030d}{m\_passNodes}}.find(passName);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00507}00507\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (passNodeIt\ ==\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a8bbc2d9678e6ca16dba1c4d50468030d}{m\_passNodes}}.end())\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00508}00508\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00509}00509\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ passNode\ =\ passNodeIt-\/>second;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00510}00510\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00511}00511\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}*\ textureEdge\ :\ passNode.getTextureIncomingEdges())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00512}00512\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ imageNodeIt\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}.find(textureEdge-\/>fromImage);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00513}00513\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (imageNodeIt\ ==\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}.end())\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00514}00514\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00515}00515\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ imageNode\ =\ imageNodeIt-\/>second;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00516}00516\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00517}00517\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}*\ targetEdge\ :\ imageNode-\/>getTargetIncomingEdges())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00518}00518\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ producerPass\ =\ targetEdge-\/>fromPass;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00519}00519\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00520}00520\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ allGroups\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a9b755e0c12e56561d51beefc03d60036}{m\_passesUnions}}.getGroups();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00521}00521\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ [otherGroupLeader,\ otherGroupMembers]\ :\ allGroups)\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00522}00522\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (otherGroupLeader\ !=\ groupLeader\ \&\&}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00523}00523\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::find(otherGroupMembers.begin(),\ otherGroupMembers.end(),\ producerPass)\ !=\ otherGroupMembers.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00524}00524\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dependencies[groupLeader].insert(otherGroupLeader);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00525}00525\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00526}00526\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00527}00527\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00528}00528\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00529}00529\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00530}00530\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}*\ depthEdge\ :\ imageNode-\/>getDepthStencilIncomingEdges())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00531}00531\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ producerPass\ =\ depthEdge-\/>fromPass;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00532}00532\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00533}00533\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ allGroups\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a9b755e0c12e56561d51beefc03d60036}{m\_passesUnions}}.getGroups();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00534}00534\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ [otherGroupLeader,\ otherGroupMembers]\ :\ allGroups)\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00535}00535\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (otherGroupLeader\ !=\ groupLeader\ \&\&}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00536}00536\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::find(otherGroupMembers.begin(),\ otherGroupMembers.end(),\ producerPass)\ !=\ otherGroupMembers.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00537}00537\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dependencies[groupLeader].insert(otherGroupLeader);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00538}00538\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00539}00539\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00540}00540\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00541}00541\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00542}00542\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00543}00543\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00544}00544\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00545}00545\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00546}\mbox{\hyperlink{class_f_c_t_1_1_render_graph_ac6af1c3f2193e7c88964ce4cc9f37d65}{00546}}\ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_ac6af1c3f2193e7c88964ce4cc9f37d65}{RenderGraph::topologicalSort}}(}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00547}00547\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::map<std::string,\ std::set<std::string>>\&\ dependencies}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00548}00548\ \ \ \ \ )\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00549}00549\ \ \ \ \ \ \ \ \ std::vector<std::string>\ result;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00550}00550\ \ \ \ \ \ \ \ \ std::map<std::string,\ int>\ inDegree;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00551}00551\ \ \ \ \ \ \ \ \ std::queue<std::string>\ queue;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00552}00552\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00553}00553\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ [node,\ deps]\ :\ dependencies)\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00554}00554\ \ \ \ \ \ \ \ \ \ \ \ \ inDegree[node]\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00555}00555\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00556}00556\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00557}00557\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ [node,\ deps]\ :\ dependencies)\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00558}00558\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ std::string\&\ dep\ :\ deps)\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00559}00559\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (inDegree.find(dep)\ !=\ inDegree.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00560}00560\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ inDegree[node]++;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00561}00561\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00562}00562\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00563}00563\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00564}00564\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00565}00565\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ [node,\ degree]\ :\ inDegree)\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00566}00566\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (degree\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00567}00567\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ queue.push(node);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00568}00568\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00569}00569\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00570}00570\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00571}00571\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!queue.empty())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00572}00572\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ current\ =\ queue.front();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00573}00573\ \ \ \ \ \ \ \ \ \ \ \ \ queue.pop();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00574}00574\ \ \ \ \ \ \ \ \ \ \ \ \ result.push\_back(current);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00575}00575\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00576}00576\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ [node,\ deps]\ :\ dependencies)\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00577}00577\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (deps.find(current)\ !=\ deps.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00578}00578\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ inDegree[node]-\/-\/;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00579}00579\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (inDegree[node]\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00580}00580\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ queue.push(node);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00581}00581\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00582}00582\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00583}00583\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00584}00584\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00585}00585\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00586}00586\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (result.size()\ !=\ dependencies.size())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00587}00587\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Circular\ dependency\ detected\ in\ PassGroups"{}});}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00588}00588\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00589}00589\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00590}00590\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00591}00591\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00592}00592\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00593}\mbox{\hyperlink{class_f_c_t_1_1_render_graph_a54bda548f267dd3019bc390ac5f1ee52}{00593}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a54bda548f267dd3019bc390ac5f1ee52}{RenderGraph::computePassGroupExecutionOrder}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00594}00594\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ passGroups\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a9b755e0c12e56561d51beefc03d60036}{m\_passesUnions}}.getGroups();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00595}00595\ \ \ \ \ \ \ \ \ std::map<std::string,\ std::set<std::string>>\ dependencies;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00596}00596\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00597}00597\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ [groupLeader,\ groupMembers]\ :\ passGroups)\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00598}00598\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_ad54d6ba2079f5378d0923c3418ae672d}{analyzePassGroupDependencies}}(groupLeader,\ groupMembers,\ dependencies);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00599}00599\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00600}00600\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00601}00601\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a934aa6af128eaeb5b7cd4111480509d3}{m\_passGroupExecutionOrder}}\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_ac6af1c3f2193e7c88964ce4cc9f37d65}{topologicalSort}}(dependencies);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00602}00602\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00603}00603\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a026e34fc52f3b7d6f85858440deacd18}{simulateExecutionAndAnalyzeBarriers}}();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00604}00604\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00605}00605\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00606}00606\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00607}\mbox{\hyperlink{class_f_c_t_1_1_render_graph_ab195fe60a7dd017668c078e20501b850}{00607}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_ab195fe60a7dd017668c078e20501b850}{RenderGraph::createPassGroups}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00608}00608\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ passGroups\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a9b755e0c12e56561d51beefc03d60036}{m\_passesUnions}}.getGroups();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00609}00609\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00610}00610\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ [groupLeader,\ groupMembers]\ :\ passGroups)\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00611}00611\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pass_group}{RHI::PassGroup}}*\ passGroup\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a4bc83d491c76082db2a8656766b062b6}{m\_resourceDevice}}-\/>createResource<\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pass_group}{RHI::PassGroup}}>();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00612}00612\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00613}00613\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::string>\ orderedPassNames;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00614}00614\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00615}00615\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ std::string\&\ passName\ :\ groupMembers)\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00616}00616\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ passIt\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_acb8b3015a4177cbbdd79e8f6a8da467b}{m\_allocatedPasses}}.find(passName);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00617}00617\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (passIt\ ==\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_acb8b3015a4177cbbdd79e8f6a8da467b}{m\_allocatedPasses}}.end())\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00618}00618\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00619}00619\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pass}{RHI::Pass}}*\ currentPass\ =\ passIt-\/>second;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00620}00620\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<RHI::PassNeighbors>\ predecessors;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00621}00621\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<RHI::PassNeighbors>\ successors;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00622}00622\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00623}00623\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ passNodeIt\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a8bbc2d9678e6ca16dba1c4d50468030d}{m\_passNodes}}.find(passName);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00624}00624\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (passNodeIt\ !=\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a8bbc2d9678e6ca16dba1c4d50468030d}{m\_passNodes}}.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00625}00625\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ passNode\ =\ passNodeIt-\/>second;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00626}00626\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00627}00627\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ outputsToWindow\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00628}00628\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//判断\ target和depth是否窗口}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00629}00629\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}*\ targetEdge\ :\ passNode.getTargetOutgoingEdges())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00630}00630\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ imageNodeIt\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}.find(targetEdge-\/>toImage);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00631}00631\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (imageNodeIt\ !=\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00632}00632\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ windowTargetNode\ =\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_f_c_t_1_1_render_graph_window_target_node}{RenderGraphWindowTargetNode}}*\textcolor{keyword}{>}(}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00633}00633\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ imageNodeIt-\/>second.get());}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00634}00634\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (windowTargetNode\ \&\&\ windowTargetNode-\/>isValidWindowTarget())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00635}00635\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ outputsToWindow\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00636}00636\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00637}00637\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00638}00638\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00639}00639\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00640}00640\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00641}00641\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!outputsToWindow)\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00642}00642\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}*\ depthEdge\ :\ passNode.getDepthStencilOutgoingEdges())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00643}00643\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ imageNodeIt\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}.find(depthEdge-\/>toImage);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00644}00644\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (imageNodeIt\ !=\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00645}00645\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ windowDepthNode\ =\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_f_c_t_1_1_render_graph_window_depth_stencil_node}{RenderGraphWindowDepthStencilNode}}*\textcolor{keyword}{>}(}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00646}00646\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ imageNodeIt-\/>second.get());}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00647}00647\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (windowDepthNode\ \&\&\ windowDepthNode-\/>isValidWindowDepthStencil())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00648}00648\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ outputsToWindow\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00649}00649\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00650}00650\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00651}00651\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00652}00652\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00653}00653\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00654}00654\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00655}00655\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (outputsToWindow)\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00656}00656\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ successors.emplace\_back(}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00657}00657\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pass_a39f06b29f58ff75f7392852375001396}{RHI::Pass::present}}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00658}00658\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00659}00659\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00660}00660\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00661}00661\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}*\ textureEdge\ :\ passNode.getTextureIncomingEdges())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00662}00662\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ imageNodeIt\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}.find(textureEdge-\/>fromImage);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00663}00663\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (imageNodeIt\ !=\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00664}00664\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ imageNode\ =\ imageNodeIt-\/>second;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00665}00665\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00666}00666\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 检查Target边}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00667}00667\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}*\ targetEdge\ :\ imageNode-\/>getTargetIncomingEdges())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00668}00668\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::find(groupMembers.begin(),\ groupMembers.end(),\ targetEdge-\/>fromPass)\ !=\ groupMembers.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00669}00669\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ predecessorPassIt\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_acb8b3015a4177cbbdd79e8f6a8da467b}{m\_allocatedPasses}}.find(targetEdge-\/>fromPass);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00670}00670\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (predecessorPassIt\ !=\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_acb8b3015a4177cbbdd79e8f6a8da467b}{m\_allocatedPasses}}.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00671}00671\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ predecessors.emplace\_back(}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00672}00672\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ predecessorPassIt-\/>second,}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00673}00673\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0a4ecc54305ce317f6232ab7ce1acb4db6}{PipelineStage::colorAttachmentOutput}},}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00674}00674\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_a1f3fd882e4a9d228566255fb96faa014a4b8b70a490bde8df8e23094bddc525dd}{AccessFlag::colorAttachmentWrite}},}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00675}00675\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_ac41e1cf8dea17e1da4c8f26522ce6e17}{convertShaderStageToPipelineStage}}(textureEdge-\/>stage),}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00676}00676\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_a1f3fd882e4a9d228566255fb96faa014a3a596ffb408b017b309f905351f3f9b8}{AccessFlag::shaderRead}}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00677}00677\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00678}00678\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00679}00679\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00680}00680\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00681}00681\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00682}00682\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 检查DepthStencil边}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00683}00683\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}*\ depthEdge\ :\ imageNode-\/>getDepthStencilIncomingEdges())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00684}00684\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::find(groupMembers.begin(),\ groupMembers.end(),\ depthEdge-\/>fromPass)\ !=\ groupMembers.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00685}00685\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ predecessorPassIt\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_acb8b3015a4177cbbdd79e8f6a8da467b}{m\_allocatedPasses}}.find(depthEdge-\/>fromPass);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00686}00686\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (predecessorPassIt\ !=\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_acb8b3015a4177cbbdd79e8f6a8da467b}{m\_allocatedPasses}}.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00687}00687\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ predecessors.emplace\_back(}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00688}00688\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ predecessorPassIt-\/>second,}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00689}00689\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0aa01b4d41eacfed301b529ecb0bf46b2d}{PipelineStage::lateFragmentTests}},}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00690}00690\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_a1f3fd882e4a9d228566255fb96faa014af3ed1368b35029f6300888e613b57cd8}{AccessFlag::depthStencilAttachmentWrite}},}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00691}00691\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_ac41e1cf8dea17e1da4c8f26522ce6e17}{convertShaderStageToPipelineStage}}(textureEdge-\/>stage),}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00692}00692\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_a1f3fd882e4a9d228566255fb96faa014a3a596ffb408b017b309f905351f3f9b8}{AccessFlag::shaderRead}}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00693}00693\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00694}00694\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00695}00695\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00696}00696\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00697}00697\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00698}00698\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00699}00699\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00700}00700\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00701}00701\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ orderedPassNames.push\_back(passName);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00702}00702\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00703}00703\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ passGroup-\/>\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pass_group_a4d87db776478552cb0d97d27498e2048}{addPass}}(\{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00704}00704\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentPass,}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00705}00705\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ predecessors,}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00706}00706\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ successors}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00707}00707\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00708}00708\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00709}00709\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00710}00710\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_ae80359d99dd887e498d5b86f441e2c56}{m\_passGroupOrders}}[groupLeader]\ =\ std::move(orderedPassNames);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00711}00711\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00712}00712\ \ \ \ \ \ \ \ \ \ \ \ \ passGroup-\/>\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pass_group_ac73d1fde0ad9372d68e367b1f91339bb}{create}}();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00713}00713\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00714}00714\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a8801403275fe3e48f6ce99e7307b0373}{m\_allocatedPassGroups}}[groupLeader]\ =\ passGroup;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00715}00715\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00716}00716\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00717}\mbox{\hyperlink{class_f_c_t_1_1_render_graph_a66221b20e9e581034e3f17c69f2fa4e7}{00717}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a66221b20e9e581034e3f17c69f2fa4e7}{RenderGraph::submitPassGroup}}(\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer}{RHI::CommandBuffer}}*\ cmdBuffer,}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00718}00718\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ groupLeader)\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00719}00719\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ passGroup\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a8801403275fe3e48f6ce99e7307b0373}{m\_allocatedPassGroups}}.at(groupLeader);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00720}00720\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ orderIt\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_ae80359d99dd887e498d5b86f441e2c56}{m\_passGroupOrders}}.find(groupLeader);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00721}00721\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (orderIt\ ==\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_ae80359d99dd887e498d5b86f441e2c56}{m\_passGroupOrders}}.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00722}00722\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00723}00723\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00724}00724\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00725}00725\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::string>\&\ orderedPassNames\ =\ orderIt-\/>second;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00726}00726\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00727}00727\ \ \ \ \ \ \ \ \ passGroup-\/>beginSubmit(cmdBuffer);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00728}00728\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00729}00729\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ orderedPassNames.size();\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00730}00730\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ passName\ =\ orderedPassNames[i];}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00731}00731\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00732}00732\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_f_c_t_1_1_pass_submit_event}{PassSubmitEvent}}\ env;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00733}00733\ \ \ \ \ \ \ \ \ \ \ \ \ env.\mbox{\hyperlink{struct_f_c_t_1_1_pass_submit_event_a5052c933f52daa42a33087b14cc34cb6}{passName}}\ =\ passName;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00734}00734\ \ \ \ \ \ \ \ \ \ \ \ \ env.\mbox{\hyperlink{struct_f_c_t_1_1_pass_submit_event_afb3720f24096b4aa34c49d58186d566b}{cmdBuf}}\ =\ cmdBuffer;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00735}00735\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a1d00b7b39876287ffe06ad1c140646f7}{trigger}}(env);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00736}00736\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00737}00737\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ <\ orderedPassNames.size()\ -\/\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00738}00738\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ passGroup-\/>nextPass(cmdBuffer);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00739}00739\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00740}00740\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00741}00741\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00742}00742\ \ \ \ \ \ \ \ \ passGroup-\/>endSubmit(cmdBuffer);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00743}00743\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00744}\mbox{\hyperlink{class_f_c_t_1_1_render_graph_a026e34fc52f3b7d6f85858440deacd18}{00744}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a026e34fc52f3b7d6f85858440deacd18}{RenderGraph::simulateExecutionAndAnalyzeBarriers}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00745}00745\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ passGroups\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a9b755e0c12e56561d51beefc03d60036}{m\_passesUnions}}.getGroups();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00746}00746\ \ \ \ \ \ \ \ \ std::unordered\_map<Image*,\ ImageState>\ imageStates;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00747}00747\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00748}00748\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ [imageName,\ imageNode]\ :\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}})\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00749}00749\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_image}{Image}}*\ image\ =\ imageNode-\/>\mbox{\hyperlink{class_f_c_t_1_1_image_a934f49a3f75d3eb1a89ea1a51f5481bf}{getImage}}();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00750}00750\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (image)\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00751}00751\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ imageStates[image]\ =\ \mbox{\hyperlink{struct_f_c_t_1_1_render_graph_1_1_image_state}{ImageState}}\{\};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00752}00752\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00753}00753\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00754}00754\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00755}00755\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ std::string\&\ groupLeader\ :\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a934aa6af128eaeb5b7cd4111480509d3}{m\_passGroupExecutionOrder}})\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00756}00756\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ groupIt\ =\ passGroups.find(groupLeader);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00757}00757\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (groupIt\ ==\ passGroups.end())\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00758}00758\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00759}00759\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ groupMembers\ =\ groupIt-\/>second;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00760}00760\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00761}00761\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<BarrierInfo>\ barriers\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_acb07b830dee99dc3fd5caca92fa2d0fa}{checkBarriersBeforePassGroup}}(groupLeader,\ groupMembers,\ imageStates);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00762}00762\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00763}00763\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!barriers.empty())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00764}00764\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_aa030ebf008f488bcbf0d7298f972b983}{m\_passGroupBarriers}}[groupLeader]\ =\ std::move(barriers);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00765}00765\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00766}00766\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00767}00767\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a0c1b2b5ed8d8fbc640af7643ac55387c}{simulatePassGroupExecution}}(groupLeader,\ groupMembers,\ imageStates);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00768}00768\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00769}00769\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00770}00770\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00771}\mbox{\hyperlink{class_f_c_t_1_1_render_graph_acb07b830dee99dc3fd5caca92fa2d0fa}{00771}}\ \ \ \ \ std::vector<RenderGraph::BarrierInfo>\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_acb07b830dee99dc3fd5caca92fa2d0fa}{RenderGraph::checkBarriersBeforePassGroup}}(}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00772}00772\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ groupLeader,}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00773}00773\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::string>\&\ groupMembers,}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00774}00774\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::unordered\_map<Image*,\ ImageState>\&\ imageStates)\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00775}00775\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00776}00776\ \ \ \ \ \ \ \ \ std::vector<BarrierInfo>\ barriers;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00777}00777\ \ \ \ \ \ \ \ \ std::set<Image*>\ processedImages;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00778}00778\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00779}00779\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ std::string\&\ passName\ :\ groupMembers)\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00780}00780\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ passIt\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a8bbc2d9678e6ca16dba1c4d50468030d}{m\_passNodes}}.find(passName);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00781}00781\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (passIt\ ==\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a8bbc2d9678e6ca16dba1c4d50468030d}{m\_passNodes}}.end())\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00782}00782\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00783}00783\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ passNode\ =\ passIt-\/>second;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00784}00784\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00785}00785\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}*\ textureEdge\ :\ passNode.getTextureIncomingEdges())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00786}00786\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ imageNodeIt\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}.find(textureEdge-\/>fromImage);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00787}00787\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (imageNodeIt\ ==\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}.end())\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00788}00788\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00789}00789\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_image}{Image}}*\ image\ =\ imageNodeIt-\/>second-\/>\mbox{\hyperlink{class_f_c_t_1_1_image_a934f49a3f75d3eb1a89ea1a51f5481bf}{getImage}}();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00790}00790\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!image\ ||\ processedImages.\mbox{\hyperlink{class_f_c_t_1_1_ref_count_a33146ec5804be422936519224a3a7b3f}{count}}(image))\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00791}00791\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00792}00792\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ stateIt\ =\ imageStates.find(image);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00793}00793\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (stateIt\ ==\ imageStates.end())\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00794}00794\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00795}00795\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_f_c_t_1_1_render_graph_1_1_image_state}{ImageState}}\&\ currentState\ =\ stateIt-\/>second;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00796}00796\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00797}00797\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0}{PipelineStage}}\ requiredStage\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_ac41e1cf8dea17e1da4c8f26522ce6e17}{convertShaderStageToPipelineStage}}(textureEdge-\/>stage);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00798}00798\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_a1f3fd882e4a9d228566255fb96faa014}{AccessFlag}}\ requiredAccess\ =\ \mbox{\hyperlink{namespace_f_c_t_a1f3fd882e4a9d228566255fb96faa014a3a596ffb408b017b309f905351f3f9b8}{AccessFlag::shaderRead}};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00799}00799\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309}{ImageLayout}}\ requiredLayout\ =\ \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a3953204ba39bf71dd2095950e55fcbb0}{ImageLayout::shaderReadOnlyOptimal}};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00800}00800\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00801}00801\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ needsBarrier\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00802}00802\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00803}00803\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (currentState.\mbox{\hyperlink{struct_f_c_t_1_1_render_graph_1_1_image_state_abaeabd72633f6dcf62122f03534d176d}{currentLayout}}\ !=\ requiredLayout\ \&\&}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00804}00804\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentState.\mbox{\hyperlink{struct_f_c_t_1_1_render_graph_1_1_image_state_abaeabd72633f6dcf62122f03534d176d}{currentLayout}}\ !=\ \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a5e543256c480ac577d30f76f9120eb74}{ImageLayout::undefined}})\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00805}00805\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ needsBarrier\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00806}00806\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00807}00807\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00808}00808\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!currentState.\mbox{\hyperlink{struct_f_c_t_1_1_render_graph_1_1_image_state_abbd39318cf051a4eb176c9d868923542}{lastWriterGroup}}.empty()\ \&\&}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00809}00809\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentState.\mbox{\hyperlink{struct_f_c_t_1_1_render_graph_1_1_image_state_abbd39318cf051a4eb176c9d868923542}{lastWriterGroup}}\ !=\ groupLeader\ \&\&}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00810}00810\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (currentState.\mbox{\hyperlink{struct_f_c_t_1_1_render_graph_1_1_image_state_a619f4dc207e81813889132adae86b744}{lastAccess}}\ \&\ (\mbox{\hyperlink{namespace_f_c_t_a1f3fd882e4a9d228566255fb96faa014a4b8b70a490bde8df8e23094bddc525dd}{AccessFlag::colorAttachmentWrite}}\ |\ \mbox{\hyperlink{namespace_f_c_t_a1f3fd882e4a9d228566255fb96faa014af3ed1368b35029f6300888e613b57cd8}{AccessFlag::depthStencilAttachmentWrite}})))\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00811}00811\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ needsBarrier\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00812}00812\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00813}00813\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00814}00814\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (needsBarrier)\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00815}00815\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_f_c_t_1_1_render_graph_1_1_barrier_info}{BarrierInfo}}\ barrier;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00816}00816\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ barrier.\mbox{\hyperlink{struct_f_c_t_1_1_render_graph_1_1_barrier_info_a2026ef07404f51c9498482badf4e5364}{image}}\ =\ image;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00817}00817\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ barrier.\mbox{\hyperlink{struct_f_c_t_1_1_render_graph_1_1_barrier_info_ab59a278d7a9a9fe82ddc2aa87e4e9a6d}{oldLayout}}\ =\ currentState.\mbox{\hyperlink{struct_f_c_t_1_1_render_graph_1_1_image_state_abaeabd72633f6dcf62122f03534d176d}{currentLayout}};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00818}00818\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ barrier.\mbox{\hyperlink{struct_f_c_t_1_1_render_graph_1_1_barrier_info_a5605d7ada9ddb797b202023e5dbbc654}{newLayout}}\ =\ requiredLayout;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00819}00819\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ barrier.\mbox{\hyperlink{struct_f_c_t_1_1_render_graph_1_1_barrier_info_acc614548db8576f80be202b1fa664ab3}{srcStage}}\ =\ currentState.\mbox{\hyperlink{struct_f_c_t_1_1_render_graph_1_1_image_state_a9162324e5c53989ae755814963e81180}{lastStage}};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00820}00820\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ barrier.\mbox{\hyperlink{struct_f_c_t_1_1_render_graph_1_1_barrier_info_a5d6431c3a17b8f60a238afd33907b0e2}{dstStage}}\ =\ requiredStage;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00821}00821\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ barrier.\mbox{\hyperlink{struct_f_c_t_1_1_render_graph_1_1_barrier_info_abbb64005de67a607acf6c2305fad710d}{srcAccess}}\ =\ currentState.\mbox{\hyperlink{struct_f_c_t_1_1_render_graph_1_1_image_state_a619f4dc207e81813889132adae86b744}{lastAccess}};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00822}00822\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ barrier.\mbox{\hyperlink{struct_f_c_t_1_1_render_graph_1_1_barrier_info_afd229e1d4a78f1aca5a6e6e11404cef6}{dstAccess}}\ =\ requiredAccess;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00823}00823\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00824}00824\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (currentState.\mbox{\hyperlink{struct_f_c_t_1_1_render_graph_1_1_image_state_abaeabd72633f6dcf62122f03534d176d}{currentLayout}}\ ==\ \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309ae6d985e12d3e8c23aef69647070b2b7e}{ImageLayout::depthAttachmentOptimal}}\ ||}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00825}00825\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentState.\mbox{\hyperlink{struct_f_c_t_1_1_render_graph_1_1_image_state_abaeabd72633f6dcf62122f03534d176d}{currentLayout}}\ ==\ \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a2187945bc3094af2dfc270e93c129682}{ImageLayout::depthStencilAttachmentOptimal}})\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00826}00826\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ barrier.\mbox{\hyperlink{struct_f_c_t_1_1_render_graph_1_1_barrier_info_ac0d18be20938142fe60bcb28f2392589}{aspect}}\ =\ \mbox{\hyperlink{namespace_f_c_t_a47bc49ca12511f9acae146c133700f5fa12a055bf01a31369fe81ac35d85c7bc1}{ImageAspect::depth}};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00827}00827\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00828}00828\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ barrier.\mbox{\hyperlink{struct_f_c_t_1_1_render_graph_1_1_barrier_info_ac0d18be20938142fe60bcb28f2392589}{aspect}}\ =\ \mbox{\hyperlink{namespace_f_c_t_a47bc49ca12511f9acae146c133700f5fa70dda5dfb8053dc6d1c492574bce9bfd}{ImageAspect::color}};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00829}00829\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00830}00830\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00831}00831\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ barriers.push\_back(barrier);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00832}00832\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ processedImages.insert(image);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00833}00833\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00834}00834\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00835}00835\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00836}00836\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00837}00837\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ barriers;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00838}00838\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00839}00839\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00840}\mbox{\hyperlink{class_f_c_t_1_1_render_graph_a0c1b2b5ed8d8fbc640af7643ac55387c}{00840}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a0c1b2b5ed8d8fbc640af7643ac55387c}{RenderGraph::simulatePassGroupExecution}}(}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00841}00841\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ groupLeader,}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00842}00842\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::string>\&\ groupMembers,}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00843}00843\ \ \ \ \ \ \ \ \ std::unordered\_map<Image*,\ ImageState>\&\ imageStates)\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00844}00844\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00845}00845\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ std::string\&\ passName\ :\ groupMembers)\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00846}00846\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ passIt\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a8bbc2d9678e6ca16dba1c4d50468030d}{m\_passNodes}}.find(passName);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00847}00847\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (passIt\ ==\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a8bbc2d9678e6ca16dba1c4d50468030d}{m\_passNodes}}.end())\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00848}00848\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00849}00849\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ passNode\ =\ passIt-\/>second;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00850}00850\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00851}00851\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}*\ targetEdge\ :\ passNode.getTargetOutgoingEdges())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00852}00852\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ imageNodeIt\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}.find(targetEdge-\/>toImage);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00853}00853\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (imageNodeIt\ ==\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}.end())\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00854}00854\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00855}00855\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_image}{Image}}*\ image\ =\ imageNodeIt-\/>second-\/>\mbox{\hyperlink{class_f_c_t_1_1_image_a934f49a3f75d3eb1a89ea1a51f5481bf}{getImage}}();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00856}00856\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!image)\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00857}00857\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00858}00858\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_f_c_t_1_1_render_graph_1_1_image_state}{ImageState}}\&\ state\ =\ imageStates[image];}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00859}00859\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ state.\mbox{\hyperlink{struct_f_c_t_1_1_render_graph_1_1_image_state_abaeabd72633f6dcf62122f03534d176d}{currentLayout}}\ =\ \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a8923b32e4694570bbb0524e5a53789d9}{ImageLayout::colorAttachmentOptimal}};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00860}00860\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ state.\mbox{\hyperlink{struct_f_c_t_1_1_render_graph_1_1_image_state_a9162324e5c53989ae755814963e81180}{lastStage}}\ =\ \mbox{\hyperlink{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0a4ecc54305ce317f6232ab7ce1acb4db6}{PipelineStage::colorAttachmentOutput}};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00861}00861\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ state.\mbox{\hyperlink{struct_f_c_t_1_1_render_graph_1_1_image_state_a619f4dc207e81813889132adae86b744}{lastAccess}}\ =\ \mbox{\hyperlink{namespace_f_c_t_a1f3fd882e4a9d228566255fb96faa014a4b8b70a490bde8df8e23094bddc525dd}{AccessFlag::colorAttachmentWrite}};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00862}00862\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ state.\mbox{\hyperlink{struct_f_c_t_1_1_render_graph_1_1_image_state_abbd39318cf051a4eb176c9d868923542}{lastWriterGroup}}\ =\ groupLeader;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00863}00863\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00864}00864\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00865}00865\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}*\ depthEdge\ :\ passNode.getDepthStencilOutgoingEdges())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00866}00866\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ imageNodeIt\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}.find(depthEdge-\/>toImage);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00867}00867\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (imageNodeIt\ ==\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}.end())\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00868}00868\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00869}00869\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_image}{Image}}*\ image\ =\ imageNodeIt-\/>second-\/>\mbox{\hyperlink{class_f_c_t_1_1_image_a934f49a3f75d3eb1a89ea1a51f5481bf}{getImage}}();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00870}00870\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!image)\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00871}00871\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00872}00872\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_f_c_t_1_1_render_graph_1_1_image_state}{ImageState}}\&\ state\ =\ imageStates[image];}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00873}00873\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ state.\mbox{\hyperlink{struct_f_c_t_1_1_render_graph_1_1_image_state_abaeabd72633f6dcf62122f03534d176d}{currentLayout}}\ =\ \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309ae6d985e12d3e8c23aef69647070b2b7e}{ImageLayout::depthAttachmentOptimal}};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00874}00874\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ state.\mbox{\hyperlink{struct_f_c_t_1_1_render_graph_1_1_image_state_a9162324e5c53989ae755814963e81180}{lastStage}}\ =\ \mbox{\hyperlink{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0aa01b4d41eacfed301b529ecb0bf46b2d}{PipelineStage::lateFragmentTests}};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00875}00875\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ state.\mbox{\hyperlink{struct_f_c_t_1_1_render_graph_1_1_image_state_a619f4dc207e81813889132adae86b744}{lastAccess}}\ =\ \mbox{\hyperlink{namespace_f_c_t_a1f3fd882e4a9d228566255fb96faa014af3ed1368b35029f6300888e613b57cd8}{AccessFlag::depthStencilAttachmentWrite}};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00876}00876\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ state.\mbox{\hyperlink{struct_f_c_t_1_1_render_graph_1_1_image_state_abbd39318cf051a4eb176c9d868923542}{lastWriterGroup}}\ =\ groupLeader;}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00877}00877\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00878}00878\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00879}00879\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}*\ textureEdge\ :\ passNode.getTextureIncomingEdges())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00880}00880\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ imageNodeIt\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}.find(textureEdge-\/>fromImage);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00881}00881\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (imageNodeIt\ ==\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}.end())\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00882}00882\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00883}00883\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_image}{Image}}*\ image\ =\ imageNodeIt-\/>second-\/>\mbox{\hyperlink{class_f_c_t_1_1_image_a934f49a3f75d3eb1a89ea1a51f5481bf}{getImage}}();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00884}00884\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!image)\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00885}00885\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00886}00886\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_f_c_t_1_1_render_graph_1_1_image_state}{ImageState}}\&\ state\ =\ imageStates[image];}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00887}00887\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (state.\mbox{\hyperlink{struct_f_c_t_1_1_render_graph_1_1_image_state_abaeabd72633f6dcf62122f03534d176d}{currentLayout}}\ !=\ \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a3953204ba39bf71dd2095950e55fcbb0}{ImageLayout::shaderReadOnlyOptimal}})\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00888}00888\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ state.\mbox{\hyperlink{struct_f_c_t_1_1_render_graph_1_1_image_state_abaeabd72633f6dcf62122f03534d176d}{currentLayout}}\ =\ \mbox{\hyperlink{namespace_f_c_t_aa6d1e7cd43d5bb06686de955be1a4309a3953204ba39bf71dd2095950e55fcbb0}{ImageLayout::shaderReadOnlyOptimal}};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00889}00889\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ state.\mbox{\hyperlink{struct_f_c_t_1_1_render_graph_1_1_image_state_a9162324e5c53989ae755814963e81180}{lastStage}}\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_ac41e1cf8dea17e1da4c8f26522ce6e17}{convertShaderStageToPipelineStage}}(textureEdge-\/>stage);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00890}00890\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ state.\mbox{\hyperlink{struct_f_c_t_1_1_render_graph_1_1_image_state_a619f4dc207e81813889132adae86b744}{lastAccess}}\ =\ \mbox{\hyperlink{namespace_f_c_t_a1f3fd882e4a9d228566255fb96faa014a3a596ffb408b017b309f905351f3f9b8}{AccessFlag::shaderRead}};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00891}00891\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00892}00892\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00893}00893\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00894}00894\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00895}\mbox{\hyperlink{class_f_c_t_1_1_render_graph_ac41e1cf8dea17e1da4c8f26522ce6e17}{00895}}\ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0}{PipelineStage}}\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_ac41e1cf8dea17e1da4c8f26522ce6e17}{RenderGraph::convertShaderStageToPipelineStage}}(\mbox{\hyperlink{namespace_f_c_t_adb995786f2f649c122895cd47ab09d32}{ShaderStage}}\ stage)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00896}00896\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (stage)\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00897}00897\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_f_c_t_adb995786f2f649c122895cd47ab09d32ab22b929ba52471a02d18bb3a4e4472e6}{ShaderStage::Vertex}}:}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00898}00898\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0aad696db0ad6020514296472a072d1c5f}{PipelineStage::vertexShader}};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00899}00899\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_f_c_t_adb995786f2f649c122895cd47ab09d32a37d01b98065725fe3a1d30acf3a0064a}{ShaderStage::Fragment}}:}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00900}00900\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0ab7a9af74fb126e298c469a805123c6a5}{PipelineStage::fragmentShader}};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00901}00901\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_f_c_t_adb995786f2f649c122895cd47ab09d32aa623a8d0366bf079411aa30be45b2d10}{ShaderStage::Compute}}:}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00902}00902\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0aade9101be56f4088db88f5209a9267c4}{PipelineStage::computeShader}};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00903}00903\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00904}00904\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0ab7a9af74fb126e298c469a805123c6a5}{PipelineStage::fragmentShader}};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00905}00905\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00906}00906\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00907}\mbox{\hyperlink{class_f_c_t_1_1_render_graph_a7cc6ba1fe53dd19049aaca5485969ec5}{00907}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a7cc6ba1fe53dd19049aaca5485969ec5}{RenderGraph::executeBarriers}}(\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer}{RHI::CommandBuffer}}*\ cmdBuffer,\ \textcolor{keyword}{const}\ std::vector<BarrierInfo>\&\ barriers)\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00908}00908\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ barrier\ :\ barriers)\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00909}00909\ \ \ \ \ \ \ \ \ \ \ \ \ cmdBuffer-\/>\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer_ae36a3e6c90f015300e742735022401b0}{barrier}}(}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00910}00910\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ barrier.image,}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00911}00911\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ barrier.oldLayout,}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00912}00912\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ barrier.newLayout,}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00913}00913\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ barrier.srcStage,}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00914}00914\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ barrier.dstStage,}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00915}00915\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ barrier.srcAccess,}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00916}00916\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ barrier.dstAccess,}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00917}00917\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ barrier.aspect}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00918}00918\ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00919}00919\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00920}00920\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00921}\mbox{\hyperlink{class_f_c_t_1_1_render_graph_ac374234ca05eb3f5eee8c3f6f095fe4b}{00921}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_ac374234ca05eb3f5eee8c3f6f095fe4b}{RenderGraph::executeAllPassGroups}}(\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer}{RHI::CommandBuffer}}*\ cmdBuffer)}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00922}00922\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00923}00923\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ std::string\&\ groupLeader\ :\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a934aa6af128eaeb5b7cd4111480509d3}{m\_passGroupExecutionOrder}})\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00924}00924\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ barrierIt\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_aa030ebf008f488bcbf0d7298f972b983}{m\_passGroupBarriers}}.find(groupLeader);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00925}00925\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (barrierIt\ !=\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_aa030ebf008f488bcbf0d7298f972b983}{m\_passGroupBarriers}}.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00926}00926\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a7cc6ba1fe53dd19049aaca5485969ec5}{executeBarriers}}(cmdBuffer,\ barrierIt-\/>second);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00927}00927\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00928}00928\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a66221b20e9e581034e3f17c69f2fa4e7}{submitPassGroup}}(cmdBuffer,\ groupLeader);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00929}00929\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00930}00930\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00931}00931\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00932}\mbox{\hyperlink{class_f_c_t_1_1_render_graph_a73f229fce93004e480a73e0ae241a543}{00932}}\ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pass}{RHI::Pass}}*\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a73f229fce93004e480a73e0ae241a543}{RenderGraph::getPass}}(\textcolor{keyword}{const}\ std::string\&\ name)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00933}00933\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00934}00934\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_acb8b3015a4177cbbdd79e8f6a8da467b}{m\_allocatedPasses}}.at(name);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00935}00935\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00936}00936\ }
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00937}\mbox{\hyperlink{class_f_c_t_1_1_render_graph_a84e68041d7a9a73366103d9222f2c550}{00937}}\ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_image}{Image}}*\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a84e68041d7a9a73366103d9222f2c550}{RenderGraph::getImage}}(\textcolor{keyword}{const}\ std::string\&\ name)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00938}00938\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00939}00939\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ imageNodeIt\ =\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}.find(name);}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00940}00940\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (imageNodeIt!=\ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\_imageNodes}}.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00941}00941\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ imageNodeIt-\/>second-\/>getImage();}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00942}00942\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00943}00943\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00944}00944\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_render_graph_8cpp_source_l00945}00945\ \}\textcolor{comment}{//\ FCT}}
 
 \end{DoxyCode}
