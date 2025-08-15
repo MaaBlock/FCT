@@ -1,5 +1,7 @@
 var namespace_f_c_t =
 [
+    [ "CommandBufferEdges", "namespace_f_c_t_1_1_command_buffer_edges.html", "namespace_f_c_t_1_1_command_buffer_edges" ],
+    [ "CommandBufferNodes", "namespace_f_c_t_1_1_command_buffer_nodes.html", "namespace_f_c_t_1_1_command_buffer_nodes" ],
     [ "ContextEvent", "namespace_f_c_t_1_1_context_event.html", "namespace_f_c_t_1_1_context_event" ],
     [ "ContextResource", "namespace_f_c_t_1_1_context_resource.html", [
       [ "Image", "namespace_f_c_t_1_1_context_resource.html#a07a9289ae929f6ea2365ba021fc24965", null ],
@@ -8,6 +10,7 @@ var namespace_f_c_t =
       [ "SingleBufferImage", "namespace_f_c_t_1_1_context_resource.html#a4f34ed2aec11d896c63f5d65f118554f", null ],
       [ "VertexShader", "namespace_f_c_t_1_1_context_resource.html#aa4d17b706adb09314d47a203d76c631f", null ]
     ] ],
+    [ "ContextTicker", "namespace_f_c_t_1_1_context_ticker.html", null ],
     [ "EventSystemConfig", "namespace_f_c_t_1_1_event_system_config.html", "namespace_f_c_t_1_1_event_system_config" ],
     [ "InnerSync", "namespace_f_c_t_1_1_inner_sync.html", [
       [ "AdvanceFrameIndex", "namespace_f_c_t_1_1_inner_sync.html#ad2597362f14f210b2f50b418fb6a5fef", null ],
@@ -36,10 +39,6 @@ var namespace_f_c_t =
       [ "createCube", "namespace_f_c_t_1_1_primitives.html#a727e7130106dbf301dfa8031bb5617ed", null ],
       [ "createSphere", "namespace_f_c_t_1_1_primitives.html#aa0b24a65edceec7ba239e2c4faae0f3e", null ]
     ] ],
-    [ "RenderGraphConstVar", "namespace_f_c_t_1_1_render_graph_const_var.html", [
-      [ "MAX_TARGET_COUNT", "namespace_f_c_t_1_1_render_graph_const_var.html#acbdf1419b00bff03061fa00fc5413dbc", null ],
-      [ "MAX_TEXTURE_COUNT", "namespace_f_c_t_1_1_render_graph_const_var.html#add7537a401d1df77c3b1c28c769adba1", null ]
-    ] ],
     [ "RenderGraphTickers", "namespace_f_c_t_1_1_render_graph_tickers.html", [
       [ "RenderGraphSubmit", "namespace_f_c_t_1_1_render_graph_tickers.html#abedce7e95b0c3907eaae658a450b2461", null ]
     ] ],
@@ -54,15 +53,8 @@ var namespace_f_c_t =
     [ "AutoViewport", "class_f_c_t_1_1_auto_viewport.html", "class_f_c_t_1_1_auto_viewport" ],
     [ "BeforeCreateImageBehavior", "class_f_c_t_1_1_before_create_image_behavior.html", "class_f_c_t_1_1_before_create_image_behavior" ],
     [ "BlendState", "class_f_c_t_1_1_blend_state.html", "class_f_c_t_1_1_blend_state" ],
-    [ "BufferDesc", "struct_f_c_t_1_1_buffer_desc.html", "struct_f_c_t_1_1_buffer_desc" ],
-    [ "BufferUnionShared", "struct_f_c_t_1_1_buffer_union_shared.html", "struct_f_c_t_1_1_buffer_union_shared" ],
     [ "CallBackEventHandler", "class_f_c_t_1_1_call_back_event_handler.html", "class_f_c_t_1_1_call_back_event_handler" ],
-    [ "CommandBufferGraph", "class_f_c_t_1_1_command_buffer_graph.html", null ],
-    [ "CommandBufferGraphNode", "class_f_c_t_1_1_command_buffer_graph_node.html", null ],
-    [ "CommandBufferGraphWindowInputNode", "class_f_c_t_1_1_command_buffer_graph_window_input_node.html", "class_f_c_t_1_1_command_buffer_graph_window_input_node" ],
-    [ "CommandBufferGraphWindowOutputNode", "class_f_c_t_1_1_command_buffer_graph_window_output_node.html", "class_f_c_t_1_1_command_buffer_graph_window_output_node" ],
-    [ "CompiledGroup", "struct_f_c_t_1_1_compiled_group.html", "struct_f_c_t_1_1_compiled_group" ],
-    [ "CompiledPass", "struct_f_c_t_1_1_compiled_pass.html", "struct_f_c_t_1_1_compiled_pass" ],
+    [ "CommandBufferGraph", "class_f_c_t_1_1_command_buffer_graph.html", "class_f_c_t_1_1_command_buffer_graph" ],
     [ "ConstElement", "class_f_c_t_1_1_const_element.html", "class_f_c_t_1_1_const_element" ],
     [ "ConstLayout", "class_f_c_t_1_1_const_layout.html", "class_f_c_t_1_1_const_layout" ],
     [ "ConstVertex", "class_f_c_t_1_1_const_vertex.html", "class_f_c_t_1_1_const_vertex" ],
@@ -80,9 +72,9 @@ var namespace_f_c_t =
     [ "FencePool", "class_f_c_t_1_1_fence_pool.html", "class_f_c_t_1_1_fence_pool" ],
     [ "Flags", "class_f_c_t_1_1_flags.html", "class_f_c_t_1_1_flags" ],
     [ "FlagTraits", "struct_f_c_t_1_1_flag_traits.html", "struct_f_c_t_1_1_flag_traits" ],
+    [ "FlowControl", "class_f_c_t_1_1_flow_control.html", "class_f_c_t_1_1_flow_control" ],
     [ "Fraction", "struct_f_c_t_1_1_fraction.html", "struct_f_c_t_1_1_fraction" ],
     [ "FractionScale2D", "struct_f_c_t_1_1_fraction_scale2_d.html", "struct_f_c_t_1_1_fraction_scale2_d" ],
-    [ "FrameResource", "struct_f_c_t_1_1_frame_resource.html", "struct_f_c_t_1_1_frame_resource" ],
     [ "FreeImage_ImageLoader", "class_f_c_t_1_1_free_image___image_loader.html", "class_f_c_t_1_1_free_image___image_loader" ],
     [ "Freetype_Font", "class_f_c_t_1_1_freetype___font.html", "class_f_c_t_1_1_freetype___font" ],
     [ "Freetype_FontCommon", "class_f_c_t_1_1_freetype___font_common.html", "class_f_c_t_1_1_freetype___font_common" ],
@@ -92,7 +84,6 @@ var namespace_f_c_t =
     [ "GLFW_WindowBehavior", "class_f_c_t_1_1_g_l_f_w___window_behavior.html", "class_f_c_t_1_1_g_l_f_w___window_behavior" ],
     [ "IEventSystem", "class_f_c_t_1_1_i_event_system.html", "class_f_c_t_1_1_i_event_system" ],
     [ "Image", "class_f_c_t_1_1_image.html", "class_f_c_t_1_1_image" ],
-    [ "ImageBarrierDesc", "struct_f_c_t_1_1_image_barrier_desc.html", "struct_f_c_t_1_1_image_barrier_desc" ],
     [ "ImageBehavior", "class_f_c_t_1_1_image_behavior.html", "class_f_c_t_1_1_image_behavior" ],
     [ "ImageDesc", "struct_f_c_t_1_1_image_desc.html", "struct_f_c_t_1_1_image_desc" ],
     [ "ImageInitData", "struct_f_c_t_1_1_image_init_data.html", "struct_f_c_t_1_1_image_init_data" ],
@@ -116,19 +107,16 @@ var namespace_f_c_t =
     [ "ModuleManager", "class_f_c_t_1_1_module_manager.html", null ],
     [ "MutilBufferAffterCreateImageBehavior", "class_f_c_t_1_1_mutil_buffer_affter_create_image_behavior.html", "class_f_c_t_1_1_mutil_buffer_affter_create_image_behavior" ],
     [ "MutilBufferImage", "class_f_c_t_1_1_mutil_buffer_image.html", "class_f_c_t_1_1_mutil_buffer_image" ],
-    [ "NeedCreatedBufferDesc", "struct_f_c_t_1_1_need_created_buffer_desc.html", "struct_f_c_t_1_1_need_created_buffer_desc" ],
     [ "Noncopyable", "class_f_c_t_1_1_noncopyable.html", "class_f_c_t_1_1_noncopyable" ],
     [ "Object", "class_f_c_t_1_1_object.html", "class_f_c_t_1_1_object" ],
     [ "ObjectPool", "class_f_c_t_1_1_object_pool.html", "class_f_c_t_1_1_object_pool" ],
     [ "ObjectPoolChunk", "class_f_c_t_1_1_object_pool_chunk.html", "class_f_c_t_1_1_object_pool_chunk" ],
     [ "OldPass", "class_f_c_t_1_1_old_pass.html", "class_f_c_t_1_1_old_pass" ],
     [ "OldRenderGraph", "class_f_c_t_1_1_old_render_graph.html", "class_f_c_t_1_1_old_render_graph" ],
-    [ "PassClear", "struct_f_c_t_1_1_pass_clear.html", "struct_f_c_t_1_1_pass_clear" ],
     [ "PassClearValue", "struct_f_c_t_1_1_pass_clear_value.html", "struct_f_c_t_1_1_pass_clear_value" ],
     [ "PassDesc", "struct_f_c_t_1_1_pass_desc.html", "struct_f_c_t_1_1_pass_desc" ],
     [ "PassGraphEdge", "struct_f_c_t_1_1_pass_graph_edge.html", "struct_f_c_t_1_1_pass_graph_edge" ],
     [ "PassGraphVertex", "struct_f_c_t_1_1_pass_graph_vertex.html", "struct_f_c_t_1_1_pass_graph_vertex" ],
-    [ "PassGroupRenderGraphNode", "struct_f_c_t_1_1_pass_group_render_graph_node.html", "struct_f_c_t_1_1_pass_group_render_graph_node" ],
     [ "PassResource", "class_f_c_t_1_1_pass_resource.html", "class_f_c_t_1_1_pass_resource" ],
     [ "PassSource", "struct_f_c_t_1_1_pass_source.html", "struct_f_c_t_1_1_pass_source" ],
     [ "PassSubmitEvent", "struct_f_c_t_1_1_pass_submit_event.html", "struct_f_c_t_1_1_pass_submit_event" ],
@@ -139,7 +127,6 @@ var namespace_f_c_t =
     [ "RefCountPolicy", "class_f_c_t_1_1_ref_count_policy.html", "class_f_c_t_1_1_ref_count_policy" ],
     [ "RefCountPolicy< T, false >", "class_f_c_t_1_1_ref_count_policy_3_01_t_00_01false_01_4.html", "class_f_c_t_1_1_ref_count_policy_3_01_t_00_01false_01_4" ],
     [ "RenderGraph", "class_f_c_t_1_1_render_graph.html", "class_f_c_t_1_1_render_graph" ],
-    [ "RenderGraphBufferDesc", "struct_f_c_t_1_1_render_graph_buffer_desc.html", "struct_f_c_t_1_1_render_graph_buffer_desc" ],
     [ "RenderGraphBufferNode", "class_f_c_t_1_1_render_graph_buffer_node.html", "class_f_c_t_1_1_render_graph_buffer_node" ],
     [ "RenderGraphImageNode", "class_f_c_t_1_1_render_graph_image_node.html", "class_f_c_t_1_1_render_graph_image_node" ],
     [ "RenderGraphNode", "class_f_c_t_1_1_render_graph_node.html", "class_f_c_t_1_1_render_graph_node" ],
@@ -165,11 +152,11 @@ var namespace_f_c_t =
     [ "SharePtr", "class_f_c_t_1_1_share_ptr.html", "class_f_c_t_1_1_share_ptr" ],
     [ "SingleBufferAfterCreateImageBehavior", "class_f_c_t_1_1_single_buffer_after_create_image_behavior.html", "class_f_c_t_1_1_single_buffer_after_create_image_behavior" ],
     [ "SingleBufferImage", "class_f_c_t_1_1_single_buffer_image.html", "class_f_c_t_1_1_single_buffer_image" ],
-    [ "Size2", "struct_f_c_t_1_1_size2.html", "struct_f_c_t_1_1_size2" ],
     [ "SizeNode", "struct_f_c_t_1_1_size_node.html", "struct_f_c_t_1_1_size_node" ],
     [ "StaticMesh", "class_f_c_t_1_1_static_mesh.html", "class_f_c_t_1_1_static_mesh" ],
     [ "StencilOpState", "struct_f_c_t_1_1_stencil_op_state.html", "struct_f_c_t_1_1_stencil_op_state" ],
     [ "SubmitJob", "struct_f_c_t_1_1_submit_job.html", "struct_f_c_t_1_1_submit_job" ],
+    [ "SubmitThreadManager", "class_f_c_t_1_1_submit_thread_manager.html", null ],
     [ "SwapchainTargetWrapper", "class_f_c_t_1_1_swapchain_target_wrapper.html", "class_f_c_t_1_1_swapchain_target_wrapper" ],
     [ "Target", "struct_f_c_t_1_1_target.html", "struct_f_c_t_1_1_target" ],
     [ "TargetDesc", "struct_f_c_t_1_1_target_desc.html", "struct_f_c_t_1_1_target_desc" ],
@@ -221,6 +208,7 @@ var namespace_f_c_t =
     [ "Win32_RuntimeCommon", "struct_f_c_t_1_1_win32___runtime_common.html", "struct_f_c_t_1_1_win32___runtime_common" ],
     [ "Window", "class_f_c_t_1_1_window.html", "class_f_c_t_1_1_window" ],
     [ "WindowBehavior", "class_f_c_t_1_1_window_behavior.html", "class_f_c_t_1_1_window_behavior" ],
+    [ "CommandBufferToken", "namespace_f_c_t.html#afacdf252c6b64af1f231c753c443de0b", null ],
     [ "ContextPtr", "namespace_f_c_t.html#aa1479301f199fc13f9f893d2c9c77e71", null ],
     [ "EventDispatcher", "namespace_f_c_t.html#a6411293e3892f12f2e2a5ba79d09eb84", null ],
     [ "InputPosTransformCallback", "namespace_f_c_t.html#ab4a59b11fd31afd38f70a20820f77fe6", null ],
@@ -622,10 +610,6 @@ var namespace_f_c_t =
     [ "PassGraphEdgeType", "namespace_f_c_t.html#ae4037e5f73740942e7e5aaf4f351cf5b", [
       [ "Dependency", "namespace_f_c_t.html#ae4037e5f73740942e7e5aaf4f351cf5ba90a95d6639a7bbbeff7f36a7ec8f3b10", null ]
     ] ],
-    [ "PassGroupRenderGraphNodeType", "namespace_f_c_t.html#afd53f672fb7d76ece2c6dd81f3071cd9", [
-      [ "group", "namespace_f_c_t.html#afd53f672fb7d76ece2c6dd81f3071cd9adb0f6f37ebeb6ea09489124345af2a45", null ],
-      [ "image", "namespace_f_c_t.html#afd53f672fb7d76ece2c6dd81f3071cd9a78805a221a988e79ef3f42d7c5bfd418", null ]
-    ] ],
     [ "PipelineResourceType", "namespace_f_c_t.html#a0100ef6b5595f1c6e1ca08fb82dc0f67", [
       [ "VertexShader", "namespace_f_c_t.html#a0100ef6b5595f1c6e1ca08fb82dc0f67aeb3ca4dac3e206977e0b7d998eefcc33", null ],
       [ "PixelShader", "namespace_f_c_t.html#a0100ef6b5595f1c6e1ca08fb82dc0f67a54d3d36aabc3abac323576e3d22a3d2c", null ],
@@ -665,10 +649,6 @@ var namespace_f_c_t =
     [ "PrimitiveType", "namespace_f_c_t.html#af728cf79eb18c0a3cc5d824c70c335cc", [
       [ "Lines", "namespace_f_c_t.html#af728cf79eb18c0a3cc5d824c70c335ccaa0b0293a2db49f5f93c15a62e095c819", null ],
       [ "Triangles", "namespace_f_c_t.html#af728cf79eb18c0a3cc5d824c70c335cca7ca66fdfaad3eb33fc65d7490178f856", null ]
-    ] ],
-    [ "RenderGraphNodeType", "namespace_f_c_t.html#adfd269e2894c507f2ea4d65f7d0337cc", [
-      [ "pass", "namespace_f_c_t.html#adfd269e2894c507f2ea4d65f7d0337cca1a1dc91c907325c69271ddf0c944bc72", null ],
-      [ "image", "namespace_f_c_t.html#adfd269e2894c507f2ea4d65f7d0337cca78805a221a988e79ef3f42d7c5bfd418", null ]
     ] ],
     [ "RenderGraphVertexType", "namespace_f_c_t.html#a06857f19619e14aebd3f3ac216280004", [
       [ "Pass", "namespace_f_c_t.html#a06857f19619e14aebd3f3ac216280004ab9b57aae83585e17ede4570dcede353c", null ],

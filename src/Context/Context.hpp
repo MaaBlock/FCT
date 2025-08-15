@@ -7,12 +7,8 @@ namespace FCT {
 	inline void Context::submitThread()
 	{
 		while (m_ctxRunning) {
-
 			_waitForNextFrame();
-			auto order = m_submitTickers.order();
-			for (auto& ticker : order) {
-				ticker();
-			}
+			m_flowControl->executeSubmitTickers();
 			_currentFlush();
 		}
 	}
@@ -23,11 +19,7 @@ namespace FCT {
 			FCT_DELETE(data);
 		});
 		_waitCurrentFlush();
-		auto tickers = m_syncTickers.order();
-		for (auto ticker : tickers)
-		{
-			ticker();
-		}
+		m_flowControl->executeSyncTickers();
 		_nextFrame();
 	}
 

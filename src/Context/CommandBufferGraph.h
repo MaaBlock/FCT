@@ -5,6 +5,7 @@
 
 namespace FCT
 {
+    class Device;
     class SemaphorePool;
     class FencePool;
     class Window;
@@ -270,10 +271,10 @@ namespace FCT
         std::unordered_map<Window*, CommandBufferNodes::OutputToWindow*> m_windowOutputNodes;
         std::set<Window*> m_windows;
         uint32_t m_maxFrameInFlight = 0;
-        Context* m_ctx;
+        Device* m_device;
 
     public:
-        CommandBufferGraph(Context* ctx);
+        CommandBufferGraph(Device* device);
         struct NodeRef {
             enum Type {
                 WindowType,

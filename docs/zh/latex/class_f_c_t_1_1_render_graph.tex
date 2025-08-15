@@ -6,7 +6,8 @@
 
 
 
-类 FCT\+::Render\+Graph 继承关系图\+:\nopagebreak
+类 FCT\+::Render\+Graph 继承关系图\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -15,7 +16,8 @@
 \end{figure}
 
 
-FCT\+::Render\+Graph 的协作图\+:\nopagebreak
+FCT\+::Render\+Graph 的协作图\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -32,11 +34,11 @@ struct \mbox{\hyperlink{struct_f_c_t_1_1_render_graph_1_1_image_state}{Image\+St
 \doxysubsubsection*{Public 成员函数}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{class_f_c_t_1_1_render_graph_a110c2e0eb2765c0a62c24aadacb77573}{Render\+Graph}} (\mbox{\hyperlink{class_f_c_t_1_1_device}{Device}} \texorpdfstring{$\ast$}{*}device, \mbox{\hyperlink{class_f_c_t_1_1_flow_control}{Flow\+Control}} \texorpdfstring{$\ast$}{*}flow\+Control, \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph}{Command\+Buffer\+Graph}} \texorpdfstring{$\ast$}{*}command\+Buffer\+Graph, \mbox{\hyperlink{class_f_c_t_1_1_resource_manager}{Resource\+Manager}} \texorpdfstring{$\ast$}{*}resource\+Manager)
+\item 
 {\footnotesize template$<$typename Func$>$ }\\\mbox{\hyperlink{namespace_f_c_t_a8b1c77084f003979f0fe6c4ddb7e8eb6}{Subscribe\+Id}} \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a2a15e7fd084be3edf0405d30bc484909}{subscribe}} (std\+::string pass\+Name, Func \&\&func)
 \item 
 void \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a18e20b658a05c4651bdf3ac96beec642}{unsubscribe}} (\mbox{\hyperlink{namespace_f_c_t_a8b1c77084f003979f0fe6c4ddb7e8eb6}{Subscribe\+Id}} subscribe\+Id)
-\item 
-\mbox{\hyperlink{class_f_c_t_1_1_render_graph_a19ae7a486768d9c79e762e48ecdd5fb1}{Render\+Graph}} (\mbox{\hyperlink{class_f_c_t_1_1_context}{Context}} \texorpdfstring{$\ast$}{*}ctx)
 \item 
 {\footnotesize template$<$typename... Args$>$ }\\void \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a30867c75a3a166408b7e8ade356c73be}{add\+Pass}} (std\+::string name, Args \&\&... args)
 \item 
@@ -47,21 +49,13 @@ void \mbox{\hyperlink{class_f_c_t_1_1_render_graph_ac374234ca05eb3f5eee8c3f6f095
 \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pass}{RHI\+::\+Pass}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a73f229fce93004e480a73e0ae241a543}{get\+Pass}} (const std\+::string \&name) const
 \item 
 \mbox{\hyperlink{class_f_c_t_1_1_image}{Image}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a84e68041d7a9a73366103d9222f2c550}{get\+Image}} (const std\+::string \&name) const
-\item 
-\mbox{\hyperlink{class_f_c_t_1_1_render_graph_a19ae7a486768d9c79e762e48ecdd5fb1}{Render\+Graph}} (\mbox{\hyperlink{class_f_c_t_1_1_context}{Context}} \texorpdfstring{$\ast$}{*}ctx)
-\item 
-\mbox{\hyperlink{class_f_c_t_1_1_render_graph_a2a2482bea06c07a22d39ca8f2e60b3e5}{\texorpdfstring{$\sim$}{\string~}\+Render\+Graph}} ()
-\item 
-{\footnotesize template$<$typename... Args$>$ }\\void \mbox{\hyperlink{class_f_c_t_1_1_render_graph_af873d2466ec017c26c6b0b14bbcc3ad8}{add\+Pass}} (std\+::string\+\_\+view name, Args \&\&... args)
-\item 
-void \mbox{\hyperlink{class_f_c_t_1_1_render_graph_aa5c0b00e38cf397e0760041456e9ba35}{complie}} ()
-\item 
-\mbox{\hyperlink{class_f_c_t_1_1_image}{Image}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_render_graph_ac13f66797e77430f97b8d7f5997d9598}{get\+Image}} (std\+::string name)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Private 成员函数}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_f_c_t_1_1_render_graph_acff635849f03546c4469bd64f6f082e5}{init\+For\+Submit}} ()
+\item 
+void \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a38b8df6c7764da4903710711edeb83a3}{allocate\+Command\+Buffer}} ()
 \item 
 \mbox{\hyperlink{class_f_c_t_1_1_render_graph_image_node}{Render\+Graph\+Image\+Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a557b441965bf4be1f98dfe3c956961cb}{get\+Or\+Create\+Image\+Node}} (const std\+::string \&name, const \mbox{\hyperlink{struct_f_c_t_1_1_texture}{Texture}} \&texture)
 \item 
@@ -107,36 +101,6 @@ void \mbox{\hyperlink{class_f_c_t_1_1_render_graph_ab195fe60a7dd017668c078e20501
 \item 
 void \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a66221b20e9e581034e3f17c69f2fa4e7}{submit\+Pass\+Group}} (\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer}{RHI\+::\+Command\+Buffer}} \texorpdfstring{$\ast$}{*}cmd\+Buffer, const std\+::string \&group\+Leader)
 \item 
-void \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a4ed5336a1b1f7373e25c53493fed3dec}{allocate\+Root\+Images}} (std\+::string name)
-\item 
-void \mbox{\hyperlink{class_f_c_t_1_1_render_graph_ad19b55a21dbb7ba9b2b47cc14b2ad00d}{allocate\+Images}} (std\+::string name, std\+::string root)
-\item 
-void \mbox{\hyperlink{class_f_c_t_1_1_render_graph_abb79f2ad48c3908f07a798a9dbb51c70}{allocate\+Images}} (std\+::string name, \mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}wnd)
-\item 
-void \mbox{\hyperlink{class_f_c_t_1_1_render_graph_ac0ebbc83224b0076909878f9b9894895}{collect\+Images}} ()
-\item 
-void \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a6da12b96379f215e3a96b7c9f0632fc8}{union\+Has\+Size\+Buffers}} ()
-\item 
-void \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a38593ac55f824074775e4a9f5183f5e2}{compute\+Buffer\+Size}} ()
-\item 
-void \mbox{\hyperlink{class_f_c_t_1_1_render_graph_ae32a9c818ecda03aac86867607c127c5}{add\+Node\+To\+Token\+Graph}} (const \mbox{\hyperlink{struct_f_c_t_1_1_pass_desc}{Pass\+Desc}} \&\mbox{\hyperlink{namespace_f_c_t_adfd269e2894c507f2ea4d65f7d0337cca1a1dc91c907325c69271ddf0c944bc72}{pass}})
-\item 
-bool \mbox{\hyperlink{class_f_c_t_1_1_render_graph_ab2450faae07f740f93cfb30eed076a29}{is\+Wall\+Node}} (std\+::string node\+Nmae)
-\item 
-bool \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a9c89fb14a61c536f446bf5544947d879}{is\+Mutil\+Input\+Node}} (std\+::string node\+Name)
-\item 
-bool \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a92cf14c82ba8269d4161a87fd470155d}{is\+Mutil\+Output\+Node}} (std\+::string node\+Name)
-\item 
-void \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a754d6e749e78fe29cef35629d214b57e}{partition\+Pass\+Groups}} ()
-\item 
-void \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a5f3c72d1206ac21c660c0aa801513c64}{build\+Pass\+Group\+Graph}} ()
-\item 
-void \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a30abe7641169009361af9eea5bc8c4f7}{create\+Buffers}} ()
-\item 
-void \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a3322413bb8870b2b5a05e41f1807f053}{create\+Passes}} ()
-\item 
-void \mbox{\hyperlink{class_f_c_t_1_1_render_graph_ab195fe60a7dd017668c078e20501b850}{create\+Pass\+Groups}} ()
-\item 
 void \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a1d00b7b39876287ffe06ad1c140646f7}{trigger}} (const Event \&event)
 \item 
 void \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a038abe615383d3992d2bccf2273db0bd}{enqueue}} (Event \&\&event)
@@ -159,11 +123,19 @@ static constexpr auto \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_a831449cee
 \item 
 uint32\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a9b490ad90196b0a4c5bffd6d87a64e0d}{m\+\_\+command\+Buffer\+Index}} = 0
 \item 
+\mbox{\hyperlink{namespace_f_c_t_afacdf252c6b64af1f231c753c443de0b}{Command\+Buffer\+Token}} \mbox{\hyperlink{class_f_c_t_1_1_render_graph_aff16efa335f7c1ea867850a8c81883a5}{m\+\_\+command\+Buffer\+Token}}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_device}{Device}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a4bc83d491c76082db2a8656766b062b6}{m\+\_\+resource\+Device}}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_flow_control}{Flow\+Control}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a4ecd6861bbe8c1c4ce57884c410c0e7f}{m\+\_\+flow\+Control}}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph}{Command\+Buffer\+Graph}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a80d728593d9adaaf7ae73c405a1ffb51}{m\+\_\+command\+Buffer\+Graph}}
+\item 
+\mbox{\hyperlink{class_f_c_t_1_1_resource_manager}{Resource\+Manager}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a92b182fcf84fe0ac7d0f112c280f6758}{m\+\_\+resource\+Manager}}
+\item 
 std\+::unordered\+\_\+map$<$ std\+::string, std\+::vector$<$ \mbox{\hyperlink{struct_f_c_t_1_1_render_graph_1_1_barrier_info}{Barrier\+Info}} $>$ $>$ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_aa030ebf008f488bcbf0d7298f972b983}{m\+\_\+pass\+Group\+Barriers}}
 \item 
 std\+::map$<$ std\+::string, std\+::set$<$ std\+::string $>$ $>$ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a26906f9826480e8324561437cde57984}{m\+\_\+pass\+Group\+Dependencies}}
-\item 
-\mbox{\hyperlink{class_f_c_t_1_1_context}{Context}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a7c71b6fd6cecc7297659c9526cf9a07c}{m\+\_\+ctx}}
 \item 
 std\+::unordered\+\_\+map$<$ std\+::string, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_image_node}{Render\+Graph\+Image\+Node}} $>$ $>$ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}{m\+\_\+image\+Nodes}}
 \item 
@@ -183,32 +155,6 @@ std\+::unordered\+\_\+map$<$ std\+::string, std\+::vector$<$ std\+::string $>$ $
 \item 
 std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a934aa6af128eaeb5b7cd4111480509d3}{m\+\_\+pass\+Group\+Execution\+Order}}
 \item 
-\mbox{\hyperlink{class_f_c_t_1_1_device}{Device}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a9c141d6fe04b4526550663fdfcf8aba8}{m\+\_\+device}}
-\item 
-std\+::unordered\+\_\+map$<$ std\+::string, \mbox{\hyperlink{struct_f_c_t_1_1_pass_desc}{Pass\+Desc}} $>$ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a1cd61b13c382c494f486286fc880b090}{m\+\_\+origin\+Passes}}
-\item 
-std\+::unordered\+\_\+map$<$ std\+::string, \mbox{\hyperlink{struct_f_c_t_1_1_buffer_desc}{Buffer\+Desc}} $>$ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a484282c29973d7d1e8c7dcf02f846527}{m\+\_\+origin\+Images}}
-\item 
-std\+::unordered\+\_\+map$<$ std\+::string, \mbox{\hyperlink{struct_f_c_t_1_1_buffer_desc}{Buffer\+Desc}} $>$ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_ae7cc15d087add17d76de7667a9a92656}{m\+\_\+computed\+Images}}
-\item 
-\mbox{\hyperlink{class_f_c_t_1_1_union_find}{Union\+Find}}$<$ std\+::string, \mbox{\hyperlink{struct_f_c_t_1_1_buffer_union_shared}{Buffer\+Union\+Shared}} $>$ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a0767287a476fb9ff2e41eeba03647c66}{m\+\_\+buffer\+Unions}}
-\item 
-std\+::set$<$ std\+::string $>$ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a0cd3a25c496643d18c700addbb446bca}{m\+\_\+has\+Size\+Buffers}}
-\item 
-\mbox{\hyperlink{class_f_c_t_1_1_token_graph}{Token\+Graph}}$<$ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_node}{Render\+Graph\+Node}}, \mbox{\hyperlink{class_f_c_t_1_1_render_graph_node}{Render\+Graph\+Node}} $>$ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a805adaec864b89bd221a2e94a65d23d8}{m\+\_\+token\+Graph}}
-\item 
-std\+::unordered\+\_\+map$<$ std\+::string, \mbox{\hyperlink{struct_f_c_t_1_1_compiled_pass}{Compiled\+Pass}} $>$ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a0a4f96f4bcf4eacb67fe8bbd905f6eea}{m\+\_\+compiled\+Passes}}
-\item 
-\mbox{\hyperlink{class_f_c_t_1_1_union_find}{Union\+Find}}$<$ std\+::string, char $>$ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_aec313d83a12f83e090a07ee23907d2c3}{m\+\_\+pass\+Unions}}
-\item 
-std\+::unordered\+\_\+map$<$ std\+::string, \mbox{\hyperlink{struct_f_c_t_1_1_compiled_group}{Compiled\+Group}} $>$ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a69876d3394b29be6b1ee353d64bbf099}{m\+\_\+compiled\+Groups}}
-\item 
-\mbox{\hyperlink{class_f_c_t_1_1_token_graph}{Token\+Graph}}$<$ \mbox{\hyperlink{struct_f_c_t_1_1_pass_group_render_graph_node}{Pass\+Group\+Render\+Graph\+Node}}, \mbox{\hyperlink{struct_f_c_t_1_1_pass_group_render_graph_node}{Pass\+Group\+Render\+Graph\+Node}} $>$ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a17225ed5055c8878eaddd6c0fabaffa6}{m\+\_\+group\+Graph}}
-\item 
-std\+::unordered\+\_\+map$<$ std\+::string, std\+::string $>$ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a02e126ba6861931aee9906c6c91aed38}{m\+\_\+image\+To\+Buffer\+Map}}
-\item 
-std\+::unordered\+\_\+map$<$ std\+::string, \mbox{\hyperlink{struct_f_c_t_1_1_render_graph_buffer_desc}{Render\+Graph\+Buffer\+Desc}} $>$ \mbox{\hyperlink{class_f_c_t_1_1_render_graph_a85dd8436e9f8da2aa52d344fda9fb6c7}{m\+\_\+buffer\+Name\+To\+Buffer\+Desc}}
-\item 
 std\+::conditional\+\_\+t$<$ \mbox{\hyperlink{struct_f_c_t_1_1_event_system_config_1_1_trigger_only_ae2391cd921ad84545419019ede084564}{Event\+System\+Config\+::\+Trigger\+Only\+::\+Event\+As\+Data}}, std\+::unordered\+\_\+map$<$ entt\+::id\+\_\+type, std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{namespace_f_c_t_a8b1c77084f003979f0fe6c4ddb7e8eb6}{Subscribe\+Id}}, std\+::unique\+\_\+ptr$<$ IEvent\+Handler $>$ $>$ $>$, std\+::unordered\+\_\+map$<$ entt\+::id\+\_\+type, std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{namespace_f_c_t_a8b1c77084f003979f0fe6c4ddb7e8eb6}{Subscribe\+Id}}, std\+::unique\+\_\+ptr$<$ IEvent\+Identifier\+Handler $>$ $>$ $>$ $>$ \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_acab222a6a3fc80b9d6e1fec3d67afd34}{m\+\_\+handlers}}
 \item 
 std\+::conditional\+\_\+t$<$ \mbox{\hyperlink{struct_f_c_t_1_1_event_system_config_1_1_trigger_only_a3984fd09f2bff8af77fdd4deba82cc90}{Event\+System\+Config\+::\+Trigger\+Only\+::\+Enable\+Queue}}, std\+::unordered\+\_\+map$<$ entt\+::id\+\_\+type, std\+::vector$<$ std\+::function$<$ void()$>$ $>$ $>$, std\+::monostate $>$ \mbox{\hyperlink{class_f_c_t_1_1_i_event_system_ac1a6fdf7719000f53dff74e887528a6f}{m\+\_\+event\+Queue}}
@@ -218,75 +164,46 @@ std\+::conditional\+\_\+t$<$ \mbox{\hyperlink{struct_f_c_t_1_1_event_system_conf
 
 
 \doxysubsection{详细描述}
-\begin{DoxyNote}{注解}
-\doxylink{class_f_c_t_1_1_render_graph}{Render\+Graph} 职责 1.自动创建中间的图像资源 2.转换\+Pass 为 \doxylink{class_f_c_t_1_1_r_h_i_1_1_pass}{RHI\+::\+Pass} RHI\+::\+Pass\+Group，自动添加 屏障 3.提供命令 封装\+Command\+Buffer，并 实现\+Cache\+Pass\+Resource 
-\end{DoxyNote}
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_context_2_render_graph_8h_source_l00194}{194}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00197}{197}} 行定义.
 
 
 
 \label{doc-constructors}
 \Hypertarget{class_f_c_t_1_1_render_graph_doc-constructors}
 \doxysubsection{构造及析构函数说明}
-\Hypertarget{class_f_c_t_1_1_render_graph_a19ae7a486768d9c79e762e48ecdd5fb1}\index{FCT::RenderGraph@{FCT::RenderGraph}!RenderGraph@{RenderGraph}}
+\Hypertarget{class_f_c_t_1_1_render_graph_a110c2e0eb2765c0a62c24aadacb77573}\index{FCT::RenderGraph@{FCT::RenderGraph}!RenderGraph@{RenderGraph}}
 \index{RenderGraph@{RenderGraph}!FCT::RenderGraph@{FCT::RenderGraph}}
-\doxysubsubsection{\texorpdfstring{RenderGraph()}{RenderGraph()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_a19ae7a486768d9c79e762e48ecdd5fb1} 
-FCT\+::\+Render\+Graph\+::\+Render\+Graph (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_context}{Context}} \texorpdfstring{$\ast$}{*}}]{ctx}{}\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{RenderGraph()}{RenderGraph()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_a110c2e0eb2765c0a62c24aadacb77573} 
+FCT\+::\+Render\+Graph\+::\+Render\+Graph (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_device}{Device}} \texorpdfstring{$\ast$}{*}}]{device}{, }\item[{\mbox{\hyperlink{class_f_c_t_1_1_flow_control}{Flow\+Control}} \texorpdfstring{$\ast$}{*}}]{flow\+Control}{, }\item[{\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph}{Command\+Buffer\+Graph}} \texorpdfstring{$\ast$}{*}}]{command\+Buffer\+Graph}{, }\item[{\mbox{\hyperlink{class_f_c_t_1_1_resource_manager}{Resource\+Manager}} \texorpdfstring{$\ast$}{*}}]{resource\+Manager}{}\end{DoxyParamCaption})}
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_context_2_render_graph_8cpp_source_l00551}{551}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_render_graph_8cpp_source_l00083}{83}} 行定义.
 
-\Hypertarget{class_f_c_t_1_1_render_graph_a19ae7a486768d9c79e762e48ecdd5fb1}\index{FCT::RenderGraph@{FCT::RenderGraph}!RenderGraph@{RenderGraph}}
-\index{RenderGraph@{RenderGraph}!FCT::RenderGraph@{FCT::RenderGraph}}
-\doxysubsubsection{\texorpdfstring{RenderGraph()}{RenderGraph()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_a19ae7a486768d9c79e762e48ecdd5fb1} 
-FCT\+::\+Render\+Graph\+::\+Render\+Graph (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_context}{Context}} \texorpdfstring{$\ast$}{*}}]{ctx}{}\end{DoxyParamCaption})}
-
-\Hypertarget{class_f_c_t_1_1_render_graph_a2a2482bea06c07a22d39ca8f2e60b3e5}\index{FCT::RenderGraph@{FCT::RenderGraph}!````~RenderGraph@{\texorpdfstring{$\sim$}{\string~}RenderGraph}}
-\index{````~RenderGraph@{\texorpdfstring{$\sim$}{\string~}RenderGraph}!FCT::RenderGraph@{FCT::RenderGraph}}
-\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}RenderGraph()}{\string~RenderGraph()}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_a2a2482bea06c07a22d39ca8f2e60b3e5} 
-FCT\+::\+Render\+Graph\+::\texorpdfstring{$\sim$}{\string~}\+Render\+Graph (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
-
-
-
-在文件 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8cpp_source_l00404}{404}} 行定义.
-
+函数调用图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_f_c_t_1_1_render_graph_a110c2e0eb2765c0a62c24aadacb77573_cgraph}
+\end{center}
+\end{figure}
 
 
 \label{doc-func-members}
 \Hypertarget{class_f_c_t_1_1_render_graph_doc-func-members}
 \doxysubsection{成员函数说明}
-\Hypertarget{class_f_c_t_1_1_render_graph_ae32a9c818ecda03aac86867607c127c5}\index{FCT::RenderGraph@{FCT::RenderGraph}!addNodeToTokenGraph@{addNodeToTokenGraph}}
-\index{addNodeToTokenGraph@{addNodeToTokenGraph}!FCT::RenderGraph@{FCT::RenderGraph}}
-\doxysubsubsection{\texorpdfstring{addNodeToTokenGraph()}{addNodeToTokenGraph()}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_ae32a9c818ecda03aac86867607c127c5} 
-void FCT\+::\+Render\+Graph\+::add\+Node\+To\+Token\+Graph (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_f_c_t_1_1_pass_desc}{Pass\+Desc}} \&}]{pass}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
-
-
-
-在文件 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source_l00471}{471}} 行定义.
-
-这是这个函数的调用关系图\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_f_c_t_1_1_render_graph_ae32a9c818ecda03aac86867607c127c5_icgraph}
-\end{center}
-\end{figure}
 \Hypertarget{class_f_c_t_1_1_render_graph_a6027a8bddbd54ca652688a771e80d8cc}\index{FCT::RenderGraph@{FCT::RenderGraph}!addPass@{addPass}}
 \index{addPass@{addPass}!FCT::RenderGraph@{FCT::RenderGraph}}
-\doxysubsubsection{\texorpdfstring{addPass()}{addPass()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+\doxysubsubsection{\texorpdfstring{addPass()}{addPass()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_a6027a8bddbd54ca652688a771e80d8cc} 
 void FCT\+::\+Render\+Graph\+::add\+Pass (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_f_c_t_1_1_pass_desc}{Pass\+Desc}} \&}]{desc}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_context_2_render_graph_8cpp_source_l00155}{155}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_render_graph_8cpp_source_l00210}{210}} 行定义.
 
 函数调用图\+:\nopagebreak
 \begin{figure}[H]
@@ -304,14 +221,14 @@ void FCT\+::\+Render\+Graph\+::add\+Pass (\begin{DoxyParamCaption}\item[{const \
 \end{figure}
 \Hypertarget{class_f_c_t_1_1_render_graph_a30867c75a3a166408b7e8ade356c73be}\index{FCT::RenderGraph@{FCT::RenderGraph}!addPass@{addPass}}
 \index{addPass@{addPass}!FCT::RenderGraph@{FCT::RenderGraph}}
-\doxysubsubsection{\texorpdfstring{addPass()}{addPass()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+\doxysubsubsection{\texorpdfstring{addPass()}{addPass()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_a30867c75a3a166408b7e8ade356c73be} 
 template$<$typename... Args$>$ \\
 void FCT\+::\+Render\+Graph\+::add\+Pass (\begin{DoxyParamCaption}\item[{std\+::string}]{name}{, }\item[{Args \&\&...}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_context_2_render_graph_8h_source_l00320}{320}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00334}{334}} 行定义.
 
 函数调用图\+:\nopagebreak
 \begin{figure}[H]
@@ -320,63 +237,21 @@ void FCT\+::\+Render\+Graph\+::add\+Pass (\begin{DoxyParamCaption}\item[{std\+::
 \includegraphics[width=350pt]{class_f_c_t_1_1_render_graph_a30867c75a3a166408b7e8ade356c73be_cgraph}
 \end{center}
 \end{figure}
-\Hypertarget{class_f_c_t_1_1_render_graph_af873d2466ec017c26c6b0b14bbcc3ad8}\index{FCT::RenderGraph@{FCT::RenderGraph}!addPass@{addPass}}
-\index{addPass@{addPass}!FCT::RenderGraph@{FCT::RenderGraph}}
-\doxysubsubsection{\texorpdfstring{addPass()}{addPass()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_af873d2466ec017c26c6b0b14bbcc3ad8} 
-template$<$typename... Args$>$ \\
-void FCT\+::\+Render\+Graph\+::add\+Pass (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{name}{, }\item[{Args \&\&...}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\Hypertarget{class_f_c_t_1_1_render_graph_a38b8df6c7764da4903710711edeb83a3}\index{FCT::RenderGraph@{FCT::RenderGraph}!allocateCommandBuffer@{allocateCommandBuffer}}
+\index{allocateCommandBuffer@{allocateCommandBuffer}!FCT::RenderGraph@{FCT::RenderGraph}}
+\doxysubsubsection{\texorpdfstring{allocateCommandBuffer()}{allocateCommandBuffer()}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_a38b8df6c7764da4903710711edeb83a3} 
+void FCT\+::\+Render\+Graph\+::allocate\+Command\+Buffer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
+todo\+: 添加移除机制来支持重新编译
 
+在文件 \mbox{\hyperlink{_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_render_graph_8cpp_source_l00037}{37}} 行定义.
 
-在文件 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source_l00731}{731}} 行定义.
-
-函数调用图\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_f_c_t_1_1_render_graph_af873d2466ec017c26c6b0b14bbcc3ad8_cgraph}
-\end{center}
-\end{figure}
-\Hypertarget{class_f_c_t_1_1_render_graph_ad19b55a21dbb7ba9b2b47cc14b2ad00d}\index{FCT::RenderGraph@{FCT::RenderGraph}!allocateImages@{allocateImages}}
-\index{allocateImages@{allocateImages}!FCT::RenderGraph@{FCT::RenderGraph}}
-\doxysubsubsection{\texorpdfstring{allocateImages()}{allocateImages()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_ad19b55a21dbb7ba9b2b47cc14b2ad00d} 
-void FCT\+::\+Render\+Graph\+::allocate\+Images (\begin{DoxyParamCaption}\item[{std\+::string}]{name}{, }\item[{std\+::string}]{root}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-在文件 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8cpp_source_l00199}{199}} 行定义.
-
-函数调用图\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_f_c_t_1_1_render_graph_ad19b55a21dbb7ba9b2b47cc14b2ad00d_cgraph}
-\end{center}
-\end{figure}
 这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_f_c_t_1_1_render_graph_ad19b55a21dbb7ba9b2b47cc14b2ad00d_icgraph}
-\end{center}
-\end{figure}
-\Hypertarget{class_f_c_t_1_1_render_graph_abb79f2ad48c3908f07a798a9dbb51c70}\index{FCT::RenderGraph@{FCT::RenderGraph}!allocateImages@{allocateImages}}
-\index{allocateImages@{allocateImages}!FCT::RenderGraph@{FCT::RenderGraph}}
-\doxysubsubsection{\texorpdfstring{allocateImages()}{allocateImages()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_abb79f2ad48c3908f07a798a9dbb51c70} 
-void FCT\+::\+Render\+Graph\+::allocate\+Images (\begin{DoxyParamCaption}\item[{std\+::string}]{name}{, }\item[{\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}}]{wnd}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-在文件 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8cpp_source_l00217}{217}} 行定义.
-
-函数调用图\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_f_c_t_1_1_render_graph_abb79f2ad48c3908f07a798a9dbb51c70_cgraph}
+\includegraphics[width=350pt]{class_f_c_t_1_1_render_graph_a38b8df6c7764da4903710711edeb83a3_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{class_f_c_t_1_1_render_graph_a87457dca5aacecf0895cf2cc946a5763}\index{FCT::RenderGraph@{FCT::RenderGraph}!allocateResources@{allocateResources}}
@@ -387,7 +262,7 @@ void FCT\+::\+Render\+Graph\+::allocate\+Resources (\begin{DoxyParamCaption}{}{}
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_context_2_render_graph_8cpp_source_l00313}{313}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_render_graph_8cpp_source_l00368}{368}} 行定义.
 
 函数调用图\+:\nopagebreak
 \begin{figure}[H]
@@ -401,26 +276,6 @@ void FCT\+::\+Render\+Graph\+::allocate\+Resources (\begin{DoxyParamCaption}{}{}
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_f_c_t_1_1_render_graph_a87457dca5aacecf0895cf2cc946a5763_icgraph}
-\end{center}
-\end{figure}
-\Hypertarget{class_f_c_t_1_1_render_graph_a4ed5336a1b1f7373e25c53493fed3dec}\index{FCT::RenderGraph@{FCT::RenderGraph}!allocateRootImages@{allocateRootImages}}
-\index{allocateRootImages@{allocateRootImages}!FCT::RenderGraph@{FCT::RenderGraph}}
-\doxysubsubsection{\texorpdfstring{allocateRootImages()}{allocateRootImages()}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_a4ed5336a1b1f7373e25c53493fed3dec} 
-void FCT\+::\+Render\+Graph\+::allocate\+Root\+Images (\begin{DoxyParamCaption}\item[{std\+::string}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-\begin{DoxyNote}{注解}
-收集 所有\+Image,并收集其中有大小的\+Image 
-\end{DoxyNote}
-
-
-在文件 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8cpp_source_l00182}{182}} 行定义.
-
-这是这个函数的调用关系图\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_f_c_t_1_1_render_graph_a4ed5336a1b1f7373e25c53493fed3dec_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{class_f_c_t_1_1_render_graph_a1e993e6c03ae0f9ef982e7f6c6b6eb15}\index{FCT::RenderGraph@{FCT::RenderGraph}!analyzePassGroupBarriers@{analyzePassGroupBarriers}}
@@ -437,33 +292,13 @@ void FCT\+::\+Render\+Graph\+::analyze\+Pass\+Group\+Dependencies (\begin{DoxyPa
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_context_2_render_graph_8cpp_source_l00441}{441}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_render_graph_8cpp_source_l00496}{496}} 行定义.
 
 这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_f_c_t_1_1_render_graph_ad54d6ba2079f5378d0923c3418ae672d_icgraph}
-\end{center}
-\end{figure}
-\Hypertarget{class_f_c_t_1_1_render_graph_a5f3c72d1206ac21c660c0aa801513c64}\index{FCT::RenderGraph@{FCT::RenderGraph}!buildPassGroupGraph@{buildPassGroupGraph}}
-\index{buildPassGroupGraph@{buildPassGroupGraph}!FCT::RenderGraph@{FCT::RenderGraph}}
-\doxysubsubsection{\texorpdfstring{buildPassGroupGraph()}{buildPassGroupGraph()}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_a5f3c72d1206ac21c660c0aa801513c64} 
-void FCT\+::\+Render\+Graph\+::build\+Pass\+Group\+Graph (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
-
-\begin{DoxyNote}{注解}
-收集输入输出buffer，遍历每种然后看一眼是不是又 被生产 了，又被消费 了，那就是中间资源
-\end{DoxyNote}
-
-
-在文件 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source_l00580}{580}} 行定义.
-
-这是这个函数的调用关系图\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_f_c_t_1_1_render_graph_a5f3c72d1206ac21c660c0aa801513c64_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{class_f_c_t_1_1_render_graph_acb07b830dee99dc3fd5caca92fa2d0fa}\index{FCT::RenderGraph@{FCT::RenderGraph}!checkBarriersBeforePassGroup@{checkBarriersBeforePassGroup}}
@@ -474,9 +309,10 @@ std\+::vector$<$ \mbox{\hyperlink{struct_f_c_t_1_1_render_graph_1_1_barrier_info
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_context_2_render_graph_8cpp_source_l00721}{721}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_render_graph_8cpp_source_l00771}{771}} 行定义.
 
-函数调用图\+:\nopagebreak
+函数调用图\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -490,23 +326,6 @@ std\+::vector$<$ \mbox{\hyperlink{struct_f_c_t_1_1_render_graph_1_1_barrier_info
 \includegraphics[width=350pt]{class_f_c_t_1_1_render_graph_acb07b830dee99dc3fd5caca92fa2d0fa_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{class_f_c_t_1_1_render_graph_ac0ebbc83224b0076909878f9b9894895}\index{FCT::RenderGraph@{FCT::RenderGraph}!collectImages@{collectImages}}
-\index{collectImages@{collectImages}!FCT::RenderGraph@{FCT::RenderGraph}}
-\doxysubsubsection{\texorpdfstring{collectImages()}{collectImages()}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_ac0ebbc83224b0076909878f9b9894895} 
-void FCT\+::\+Render\+Graph\+::collect\+Images (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-在文件 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8cpp_source_l00011}{11}} 行定义.
-
-这是这个函数的调用关系图\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_f_c_t_1_1_render_graph_ac0ebbc83224b0076909878f9b9894895_icgraph}
-\end{center}
-\end{figure}
 \Hypertarget{class_f_c_t_1_1_render_graph_ae435c8f45be6782f6f17ee01daba53d6}\index{FCT::RenderGraph@{FCT::RenderGraph}!compile@{compile}}
 \index{compile@{compile}!FCT::RenderGraph@{FCT::RenderGraph}}
 \doxysubsubsection{\texorpdfstring{compile()}{compile()}}
@@ -515,57 +334,14 @@ void FCT\+::\+Render\+Graph\+::compile (\begin{DoxyParamCaption}{}{}\end{DoxyPar
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_context_2_render_graph_8h_source_l00326}{326}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00340}{340}} 行定义.
 
-函数调用图\+:\nopagebreak
+函数调用图\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_f_c_t_1_1_render_graph_ae435c8f45be6782f6f17ee01daba53d6_cgraph}
-\end{center}
-\end{figure}
-\Hypertarget{class_f_c_t_1_1_render_graph_aa5c0b00e38cf397e0760041456e9ba35}\index{FCT::RenderGraph@{FCT::RenderGraph}!complie@{complie}}
-\index{complie@{complie}!FCT::RenderGraph@{FCT::RenderGraph}}
-\doxysubsubsection{\texorpdfstring{complie()}{complie()}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_aa5c0b00e38cf397e0760041456e9ba35} 
-void FCT\+::\+Render\+Graph\+::complie (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-在文件 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source_l00737}{737}} 行定义.
-
-函数调用图\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_f_c_t_1_1_render_graph_aa5c0b00e38cf397e0760041456e9ba35_cgraph}
-\end{center}
-\end{figure}
-\Hypertarget{class_f_c_t_1_1_render_graph_a38593ac55f824074775e4a9f5183f5e2}\index{FCT::RenderGraph@{FCT::RenderGraph}!computeBufferSize@{computeBufferSize}}
-\index{computeBufferSize@{computeBufferSize}!FCT::RenderGraph@{FCT::RenderGraph}}
-\doxysubsubsection{\texorpdfstring{computeBufferSize()}{computeBufferSize()}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_a38593ac55f824074775e4a9f5183f5e2} 
-void FCT\+::\+Render\+Graph\+::compute\+Buffer\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-\begin{DoxyNote}{注解}
-将同一pass的所有target和depth stencil 加入进一个集合
-\end{DoxyNote}
-
-
-在文件 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8cpp_source_l00120}{120}} 行定义.
-
-函数调用图\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_f_c_t_1_1_render_graph_a38593ac55f824074775e4a9f5183f5e2_cgraph}
-\end{center}
-\end{figure}
-这是这个函数的调用关系图\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_f_c_t_1_1_render_graph_a38593ac55f824074775e4a9f5183f5e2_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{class_f_c_t_1_1_render_graph_a54bda548f267dd3019bc390ac5f1ee52}\index{FCT::RenderGraph@{FCT::RenderGraph}!computePassGroupExecutionOrder@{computePassGroupExecutionOrder}}
@@ -576,9 +352,10 @@ void FCT\+::\+Render\+Graph\+::compute\+Pass\+Group\+Execution\+Order (\begin{Do
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_context_2_render_graph_8cpp_source_l00538}{538}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_render_graph_8cpp_source_l00593}{593}} 行定义.
 
-函数调用图\+:\nopagebreak
+函数调用图\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -600,37 +377,14 @@ void FCT\+::\+Render\+Graph\+::compute\+Pass\+Group\+Execution\+Order (\begin{Do
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_context_2_render_graph_8cpp_source_l00845}{845}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_render_graph_8cpp_source_l00895}{895}} 行定义.
 
-这是这个函数的调用关系图\+:\nopagebreak
+这是这个函数的调用关系图\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_f_c_t_1_1_render_graph_ac41e1cf8dea17e1da4c8f26522ce6e17_icgraph}
-\end{center}
-\end{figure}
-\Hypertarget{class_f_c_t_1_1_render_graph_a30abe7641169009361af9eea5bc8c4f7}\index{FCT::RenderGraph@{FCT::RenderGraph}!createBuffers@{createBuffers}}
-\index{createBuffers@{createBuffers}!FCT::RenderGraph@{FCT::RenderGraph}}
-\doxysubsubsection{\texorpdfstring{createBuffers()}{createBuffers()}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_a30abe7641169009361af9eea5bc8c4f7} 
-void FCT\+::\+Render\+Graph\+::create\+Buffers (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-在文件 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8cpp_source_l00234}{234}} 行定义.
-
-函数调用图\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_f_c_t_1_1_render_graph_a30abe7641169009361af9eea5bc8c4f7_cgraph}
-\end{center}
-\end{figure}
-这是这个函数的调用关系图\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_f_c_t_1_1_render_graph_a30abe7641169009361af9eea5bc8c4f7_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{class_f_c_t_1_1_render_graph_ad3b131aa50a2ba677941481c5b4aaa83}\index{FCT::RenderGraph@{FCT::RenderGraph}!createDepthStencilEdge@{createDepthStencilEdge}}
@@ -641,7 +395,7 @@ void FCT\+::\+Render\+Graph\+::create\+Depth\+Stencil\+Edge (\begin{DoxyParamCap
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_context_2_render_graph_8cpp_source_l00135}{135}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_render_graph_8cpp_source_l00190}{190}} 行定义.
 
 这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
@@ -650,45 +404,18 @@ void FCT\+::\+Render\+Graph\+::create\+Depth\+Stencil\+Edge (\begin{DoxyParamCap
 \includegraphics[width=350pt]{class_f_c_t_1_1_render_graph_ad3b131aa50a2ba677941481c5b4aaa83_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{class_f_c_t_1_1_render_graph_a3322413bb8870b2b5a05e41f1807f053}\index{FCT::RenderGraph@{FCT::RenderGraph}!createPasses@{createPasses}}
-\index{createPasses@{createPasses}!FCT::RenderGraph@{FCT::RenderGraph}}
-\doxysubsubsection{\texorpdfstring{createPasses()}{createPasses()}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_a3322413bb8870b2b5a05e41f1807f053} 
-void FCT\+::\+Render\+Graph\+::create\+Passes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-在文件 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8cpp_source_l00333}{333}} 行定义.
-
-函数调用图\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_f_c_t_1_1_render_graph_a3322413bb8870b2b5a05e41f1807f053_cgraph}
-\end{center}
-\end{figure}
-这是这个函数的调用关系图\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_f_c_t_1_1_render_graph_a3322413bb8870b2b5a05e41f1807f053_icgraph}
-\end{center}
-\end{figure}
 \Hypertarget{class_f_c_t_1_1_render_graph_ab195fe60a7dd017668c078e20501b850}\index{FCT::RenderGraph@{FCT::RenderGraph}!createPassGroups@{createPassGroups}}
 \index{createPassGroups@{createPassGroups}!FCT::RenderGraph@{FCT::RenderGraph}}
-\doxysubsubsection{\texorpdfstring{createPassGroups()}{createPassGroups()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\doxysubsubsection{\texorpdfstring{createPassGroups()}{createPassGroups()}}
 {\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_ab195fe60a7dd017668c078e20501b850} 
 void FCT\+::\+Render\+Graph\+::create\+Pass\+Groups (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 \begin{DoxyNote}{注解}
 创建\+Pass\+Group并设置\+Pass之间的依赖关系 根据m\+\_\+passes\+Unions的分组结果创建\+Pass\+Group 通过\+Texture\+Edge分析\+Pass之间的依赖关系 设置正确的\+Pipeline\+Stage和\+Access\+Flags 注意点\+: 1.\+Pass\+Group内部在create的时候会把找不到的\+Pass\texorpdfstring{$\ast$}{*}设置为external 2. 
 \end{DoxyNote}
-\begin{DoxyNote}{注解}
-解析 规则， texture 如果存在本group里的pass作为 target，则添加对哪个pass的依赖 如果 不存在，则添加外部 依赖
-\end{DoxyNote}
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_context_2_render_graph_8cpp_source_l00557}{557}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_render_graph_8cpp_source_l00607}{607}} 行定义.
 
 函数调用图\+:\nopagebreak
 \begin{figure}[H]
@@ -697,19 +424,14 @@ void FCT\+::\+Render\+Graph\+::create\+Pass\+Groups (\begin{DoxyParamCaption}{}{
 \includegraphics[width=350pt]{class_f_c_t_1_1_render_graph_ab195fe60a7dd017668c078e20501b850_cgraph}
 \end{center}
 \end{figure}
-这是这个函数的调用关系图\+:\nopagebreak
+这是这个函数的调用关系图\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_f_c_t_1_1_render_graph_ab195fe60a7dd017668c078e20501b850_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{class_f_c_t_1_1_render_graph_ab195fe60a7dd017668c078e20501b850}\index{FCT::RenderGraph@{FCT::RenderGraph}!createPassGroups@{createPassGroups}}
-\index{createPassGroups@{createPassGroups}!FCT::RenderGraph@{FCT::RenderGraph}}
-\doxysubsubsection{\texorpdfstring{createPassGroups()}{createPassGroups()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_ab195fe60a7dd017668c078e20501b850} 
-void FCT\+::\+Render\+Graph\+::create\+Pass\+Groups (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
 \Hypertarget{class_f_c_t_1_1_render_graph_ae1da1bdcbc804b2284f43ff8cf079360}\index{FCT::RenderGraph@{FCT::RenderGraph}!createRHIPasses@{createRHIPasses}}
 \index{createRHIPasses@{createRHIPasses}!FCT::RenderGraph@{FCT::RenderGraph}}
 \doxysubsubsection{\texorpdfstring{createRHIPasses()}{createRHIPasses()}}
@@ -721,9 +443,10 @@ void FCT\+::\+Render\+Graph\+::create\+RHIPasses (\begin{DoxyParamCaption}{}{}\e
 \end{DoxyNote}
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_context_2_render_graph_8cpp_source_l00406}{406}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_render_graph_8cpp_source_l00461}{461}} 行定义.
 
-函数调用图\+:\nopagebreak
+函数调用图\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -745,7 +468,7 @@ void FCT\+::\+Render\+Graph\+::create\+Target\+Edge (\begin{DoxyParamCaption}\it
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_context_2_render_graph_8cpp_source_l00116}{116}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_render_graph_8cpp_source_l00171}{171}} 行定义.
 
 这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
@@ -762,7 +485,7 @@ void FCT\+::\+Render\+Graph\+::create\+Texture\+Edge (\begin{DoxyParamCaption}\i
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_context_2_render_graph_8cpp_source_l00094}{94}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_render_graph_8cpp_source_l00149}{149}} 行定义.
 
 函数调用图\+:\nopagebreak
 \begin{figure}[H]
@@ -796,7 +519,7 @@ void FCT\+::\+Render\+Graph\+::execute\+All\+Pass\+Groups (\begin{DoxyParamCapti
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_context_2_render_graph_8cpp_source_l00871}{871}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_render_graph_8cpp_source_l00921}{921}} 行定义.
 
 函数调用图\+:\nopagebreak
 \begin{figure}[H]
@@ -820,7 +543,7 @@ void FCT\+::\+Render\+Graph\+::execute\+Barriers (\begin{DoxyParamCaption}\item[
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_context_2_render_graph_8cpp_source_l00857}{857}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_render_graph_8cpp_source_l00907}{907}} 行定义.
 
 函数调用图\+:\nopagebreak
 \begin{figure}[H]
@@ -848,30 +571,13 @@ constexpr auto \mbox{\hyperlink{class_f_c_t_1_1_i_event_system}{FCT\+::\+IEvent\
 
 \Hypertarget{class_f_c_t_1_1_render_graph_a84e68041d7a9a73366103d9222f2c550}\index{FCT::RenderGraph@{FCT::RenderGraph}!getImage@{getImage}}
 \index{getImage@{getImage}!FCT::RenderGraph@{FCT::RenderGraph}}
-\doxysubsubsection{\texorpdfstring{getImage()}{getImage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\doxysubsubsection{\texorpdfstring{getImage()}{getImage()}}
 {\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_a84e68041d7a9a73366103d9222f2c550} 
 \mbox{\hyperlink{class_f_c_t_1_1_image}{Image}} \texorpdfstring{$\ast$}{*} FCT\+::\+Render\+Graph\+::get\+Image (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption}) const}
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_context_2_render_graph_8cpp_source_l00887}{887}} 行定义.
-
-这是这个函数的调用关系图\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_f_c_t_1_1_render_graph_a84e68041d7a9a73366103d9222f2c550_icgraph}
-\end{center}
-\end{figure}
-\Hypertarget{class_f_c_t_1_1_render_graph_ac13f66797e77430f97b8d7f5997d9598}\index{FCT::RenderGraph@{FCT::RenderGraph}!getImage@{getImage}}
-\index{getImage@{getImage}!FCT::RenderGraph@{FCT::RenderGraph}}
-\doxysubsubsection{\texorpdfstring{getImage()}{getImage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_ac13f66797e77430f97b8d7f5997d9598} 
-\mbox{\hyperlink{class_f_c_t_1_1_image}{Image}} \texorpdfstring{$\ast$}{*} FCT\+::\+Render\+Graph\+::get\+Image (\begin{DoxyParamCaption}\item[{std\+::string}]{name}{}\end{DoxyParamCaption})}
-
-
-
-在文件 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8cpp_source_l00409}{409}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_render_graph_8cpp_source_l00937}{937}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_render_graph_a8d26ecf865ef6b611d715826608c92db}\index{FCT::RenderGraph@{FCT::RenderGraph}!getOrCreateImageNode@{getOrCreateImageNode}}
 \index{getOrCreateImageNode@{getOrCreateImageNode}!FCT::RenderGraph@{FCT::RenderGraph}}
@@ -881,7 +587,7 @@ constexpr auto \mbox{\hyperlink{class_f_c_t_1_1_i_event_system}{FCT\+::\+IEvent\
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_context_2_render_graph_8cpp_source_l00073}{73}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_render_graph_8cpp_source_l00128}{128}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_render_graph_af0c1033668050cc3fb12074ccd91fdaf}\index{FCT::RenderGraph@{FCT::RenderGraph}!getOrCreateImageNode@{getOrCreateImageNode}}
 \index{getOrCreateImageNode@{getOrCreateImageNode}!FCT::RenderGraph@{FCT::RenderGraph}}
@@ -891,7 +597,7 @@ constexpr auto \mbox{\hyperlink{class_f_c_t_1_1_i_event_system}{FCT\+::\+IEvent\
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_context_2_render_graph_8cpp_source_l00052}{52}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_render_graph_8cpp_source_l00107}{107}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_render_graph_a557b441965bf4be1f98dfe3c956961cb}\index{FCT::RenderGraph@{FCT::RenderGraph}!getOrCreateImageNode@{getOrCreateImageNode}}
 \index{getOrCreateImageNode@{getOrCreateImageNode}!FCT::RenderGraph@{FCT::RenderGraph}}
@@ -901,7 +607,7 @@ constexpr auto \mbox{\hyperlink{class_f_c_t_1_1_i_event_system}{FCT\+::\+IEvent\
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_context_2_render_graph_8cpp_source_l00038}{38}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_render_graph_8cpp_source_l00093}{93}} 行定义.
 
 这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
@@ -918,7 +624,7 @@ constexpr auto \mbox{\hyperlink{class_f_c_t_1_1_i_event_system}{FCT\+::\+IEvent\
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_context_2_render_graph_8cpp_source_l00882}{882}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_render_graph_8cpp_source_l00932}{932}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_render_graph_a64311028d43559d0e6e2e52c5b5a3ebf}\index{FCT::RenderGraph@{FCT::RenderGraph}!groupPasses@{groupPasses}}
 \index{groupPasses@{groupPasses}!FCT::RenderGraph@{FCT::RenderGraph}}
@@ -937,7 +643,7 @@ void FCT\+::\+Render\+Graph\+::group\+Passes (\begin{DoxyParamCaption}{}{}\end{D
 \end{DoxyNote}
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_context_2_render_graph_8cpp_source_l00238}{238}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_render_graph_8cpp_source_l00293}{293}} 行定义.
 
 函数调用图\+:\nopagebreak
 \begin{figure}[H]
@@ -961,7 +667,7 @@ void FCT\+::\+Render\+Graph\+::init\+For\+Submit (\begin{DoxyParamCaption}{}{}\e
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_context_2_render_graph_8cpp_source_l00018}{18}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_render_graph_8cpp_source_l00018}{18}} 行定义.
 
 函数调用图\+:\nopagebreak
 \begin{figure}[H]
@@ -977,74 +683,6 @@ void FCT\+::\+Render\+Graph\+::init\+For\+Submit (\begin{DoxyParamCaption}{}{}\e
 \includegraphics[width=350pt]{class_f_c_t_1_1_render_graph_acff635849f03546c4469bd64f6f082e5_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{class_f_c_t_1_1_render_graph_a9c89fb14a61c536f446bf5544947d879}\index{FCT::RenderGraph@{FCT::RenderGraph}!isMutilInputNode@{isMutilInputNode}}
-\index{isMutilInputNode@{isMutilInputNode}!FCT::RenderGraph@{FCT::RenderGraph}}
-\doxysubsubsection{\texorpdfstring{isMutilInputNode()}{isMutilInputNode()}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_a9c89fb14a61c536f446bf5544947d879} 
-bool FCT\+::\+Render\+Graph\+::is\+Mutil\+Input\+Node (\begin{DoxyParamCaption}\item[{std\+::string}]{node\+Name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
-
-
-
-在文件 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source_l00495}{495}} 行定义.
-
-这是这个函数的调用关系图\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_f_c_t_1_1_render_graph_a9c89fb14a61c536f446bf5544947d879_icgraph}
-\end{center}
-\end{figure}
-\Hypertarget{class_f_c_t_1_1_render_graph_a92cf14c82ba8269d4161a87fd470155d}\index{FCT::RenderGraph@{FCT::RenderGraph}!isMutilOutputNode@{isMutilOutputNode}}
-\index{isMutilOutputNode@{isMutilOutputNode}!FCT::RenderGraph@{FCT::RenderGraph}}
-\doxysubsubsection{\texorpdfstring{isMutilOutputNode()}{isMutilOutputNode()}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_a92cf14c82ba8269d4161a87fd470155d} 
-bool FCT\+::\+Render\+Graph\+::is\+Mutil\+Output\+Node (\begin{DoxyParamCaption}\item[{std\+::string}]{node\+Name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
-
-
-
-在文件 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source_l00505}{505}} 行定义.
-
-这是这个函数的调用关系图\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_f_c_t_1_1_render_graph_a92cf14c82ba8269d4161a87fd470155d_icgraph}
-\end{center}
-\end{figure}
-\Hypertarget{class_f_c_t_1_1_render_graph_ab2450faae07f740f93cfb30eed076a29}\index{FCT::RenderGraph@{FCT::RenderGraph}!isWallNode@{isWallNode}}
-\index{isWallNode@{isWallNode}!FCT::RenderGraph@{FCT::RenderGraph}}
-\doxysubsubsection{\texorpdfstring{isWallNode()}{isWallNode()}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_ab2450faae07f740f93cfb30eed076a29} 
-bool FCT\+::\+Render\+Graph\+::is\+Wall\+Node (\begin{DoxyParamCaption}\item[{std\+::string}]{node\+Nmae}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
-
-
-
-在文件 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source_l00491}{491}} 行定义.
-
-\Hypertarget{class_f_c_t_1_1_render_graph_a754d6e749e78fe29cef35629d214b57e}\index{FCT::RenderGraph@{FCT::RenderGraph}!partitionPassGroups@{partitionPassGroups}}
-\index{partitionPassGroups@{partitionPassGroups}!FCT::RenderGraph@{FCT::RenderGraph}}
-\doxysubsubsection{\texorpdfstring{partitionPassGroups()}{partitionPassGroups()}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_a754d6e749e78fe29cef35629d214b57e} 
-void FCT\+::\+Render\+Graph\+::partition\+Pass\+Groups (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
-
-
-
-在文件 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source_l00516}{516}} 行定义.
-
-函数调用图\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_f_c_t_1_1_render_graph_a754d6e749e78fe29cef35629d214b57e_cgraph}
-\end{center}
-\end{figure}
-这是这个函数的调用关系图\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_f_c_t_1_1_render_graph_a754d6e749e78fe29cef35629d214b57e_icgraph}
-\end{center}
-\end{figure}
 \Hypertarget{class_f_c_t_1_1_render_graph_adc5fb8038856ec115d0834aadef091d1}\index{FCT::RenderGraph@{FCT::RenderGraph}!resolveTextureSizes@{resolveTextureSizes}}
 \index{resolveTextureSizes@{resolveTextureSizes}!FCT::RenderGraph@{FCT::RenderGraph}}
 \doxysubsubsection{\texorpdfstring{resolveTextureSizes()}{resolveTextureSizes()}}
@@ -1056,7 +694,7 @@ void FCT\+::\+Render\+Graph\+::resolve\+Texture\+Sizes (\begin{DoxyParamCaption}
 \end{DoxyNote}
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_context_2_render_graph_8cpp_source_l00192}{192}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_render_graph_8cpp_source_l00247}{247}} 行定义.
 
 函数调用图\+:\nopagebreak
 \begin{figure}[H]
@@ -1080,9 +718,10 @@ void FCT\+::\+Render\+Graph\+::simulate\+Execution\+And\+Analyze\+Barriers (\beg
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_context_2_render_graph_8cpp_source_l00694}{694}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_render_graph_8cpp_source_l00744}{744}} 行定义.
 
-函数调用图\+:\nopagebreak
+函数调用图\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1104,9 +743,10 @@ void FCT\+::\+Render\+Graph\+::simulate\+Pass\+Group\+Execution (\begin{DoxyPara
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_context_2_render_graph_8cpp_source_l00790}{790}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_render_graph_8cpp_source_l00840}{840}} 行定义.
 
-函数调用图\+:\nopagebreak
+函数调用图\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1128,7 +768,7 @@ void FCT\+::\+Render\+Graph\+::submit\+Pass\+Group (\begin{DoxyParamCaption}\ite
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_context_2_render_graph_8cpp_source_l00667}{667}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_render_graph_8cpp_source_l00717}{717}} 行定义.
 
 函数调用图\+:\nopagebreak
 \begin{figure}[H]
@@ -1163,7 +803,7 @@ template$<$typename Func$>$ \\
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_context_2_render_graph_8h_source_l00303}{303}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00318}{318}} 行定义.
 
 函数调用图\+:\nopagebreak
 \begin{figure}[H]
@@ -1180,7 +820,7 @@ std\+::vector$<$ std\+::string $>$ FCT\+::\+Render\+Graph\+::topological\+Sort (
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_context_2_render_graph_8cpp_source_l00491}{491}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_render_graph_8cpp_source_l00546}{546}} 行定义.
 
 这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
@@ -1206,23 +846,6 @@ void \mbox{\hyperlink{class_f_c_t_1_1_i_event_system}{FCT\+::\+IEvent\+System}}$
 \includegraphics[width=350pt]{class_f_c_t_1_1_i_event_system_a1d00b7b39876287ffe06ad1c140646f7_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{class_f_c_t_1_1_render_graph_a6da12b96379f215e3a96b7c9f0632fc8}\index{FCT::RenderGraph@{FCT::RenderGraph}!unionHasSizeBuffers@{unionHasSizeBuffers}}
-\index{unionHasSizeBuffers@{unionHasSizeBuffers}!FCT::RenderGraph@{FCT::RenderGraph}}
-\doxysubsubsection{\texorpdfstring{unionHasSizeBuffers()}{unionHasSizeBuffers()}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_a6da12b96379f215e3a96b7c9f0632fc8} 
-void FCT\+::\+Render\+Graph\+::union\+Has\+Size\+Buffers (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-在文件 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8cpp_source}{Render\+Graph.\+cpp}} 第 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8cpp_source_l00086}{86}} 行定义.
-
-这是这个函数的调用关系图\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_f_c_t_1_1_render_graph_a6da12b96379f215e3a96b7c9f0632fc8_icgraph}
-\end{center}
-\end{figure}
 \Hypertarget{class_f_c_t_1_1_render_graph_a18e20b658a05c4651bdf3ac96beec642}\index{FCT::RenderGraph@{FCT::RenderGraph}!unsubscribe@{unsubscribe}}
 \index{unsubscribe@{unsubscribe}!FCT::RenderGraph@{FCT::RenderGraph}}
 \doxysubsubsection{\texorpdfstring{unsubscribe()}{unsubscribe()}}
@@ -1231,7 +854,7 @@ void FCT\+::\+Render\+Graph\+::unsubscribe (\begin{DoxyParamCaption}\item[{\mbox
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_context_2_render_graph_8h_source_l00314}{314}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00329}{329}} 行定义.
 
 函数调用图\+:\nopagebreak
 \begin{figure}[H]
@@ -1283,7 +906,7 @@ std\+::unordered\+\_\+map$<$std\+::string, \mbox{\hyperlink{class_f_c_t_1_1_imag
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_context_2_render_graph_8h_source_l00226}{226}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00241}{241}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_render_graph_acb8b3015a4177cbbdd79e8f6a8da467b}\index{FCT::RenderGraph@{FCT::RenderGraph}!m\_allocatedPasses@{m\_allocatedPasses}}
 \index{m\_allocatedPasses@{m\_allocatedPasses}!FCT::RenderGraph@{FCT::RenderGraph}}
@@ -1293,7 +916,7 @@ std\+::unordered\+\_\+map$<$std\+::string, \mbox{\hyperlink{class_f_c_t_1_1_r_h_
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_context_2_render_graph_8h_source_l00227}{227}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00242}{242}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_render_graph_a8801403275fe3e48f6ce99e7307b0373}\index{FCT::RenderGraph@{FCT::RenderGraph}!m\_allocatedPassGroups@{m\_allocatedPassGroups}}
 \index{m\_allocatedPassGroups@{m\_allocatedPassGroups}!FCT::RenderGraph@{FCT::RenderGraph}}
@@ -1303,27 +926,17 @@ std\+::unordered\+\_\+map$<$std\+::string, \mbox{\hyperlink{class_f_c_t_1_1_r_h_
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_context_2_render_graph_8h_source_l00288}{288}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00303}{303}} 行定义.
 
-\Hypertarget{class_f_c_t_1_1_render_graph_a85dd8436e9f8da2aa52d344fda9fb6c7}\index{FCT::RenderGraph@{FCT::RenderGraph}!m\_bufferNameToBufferDesc@{m\_bufferNameToBufferDesc}}
-\index{m\_bufferNameToBufferDesc@{m\_bufferNameToBufferDesc}!FCT::RenderGraph@{FCT::RenderGraph}}
-\doxysubsubsection{\texorpdfstring{m\_bufferNameToBufferDesc}{m\_bufferNameToBufferDesc}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_a85dd8436e9f8da2aa52d344fda9fb6c7} 
-std\+::unordered\+\_\+map$<$std\+::string,\mbox{\hyperlink{struct_f_c_t_1_1_render_graph_buffer_desc}{Render\+Graph\+Buffer\+Desc}}$>$ FCT\+::\+Render\+Graph\+::m\+\_\+buffer\+Name\+To\+Buffer\+Desc\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-在文件 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source_l00459}{459}} 行定义.
-
-\Hypertarget{class_f_c_t_1_1_render_graph_a0767287a476fb9ff2e41eeba03647c66}\index{FCT::RenderGraph@{FCT::RenderGraph}!m\_bufferUnions@{m\_bufferUnions}}
-\index{m\_bufferUnions@{m\_bufferUnions}!FCT::RenderGraph@{FCT::RenderGraph}}
-\doxysubsubsection{\texorpdfstring{m\_bufferUnions}{m\_bufferUnions}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_a0767287a476fb9ff2e41eeba03647c66} 
-\mbox{\hyperlink{class_f_c_t_1_1_union_find}{Union\+Find}}$<$std\+::string,\mbox{\hyperlink{struct_f_c_t_1_1_buffer_union_shared}{Buffer\+Union\+Shared}}$>$ FCT\+::\+Render\+Graph\+::m\+\_\+buffer\+Unions\hspace{0.3cm}{\ttfamily [private]}}
+\Hypertarget{class_f_c_t_1_1_render_graph_a80d728593d9adaaf7ae73c405a1ffb51}\index{FCT::RenderGraph@{FCT::RenderGraph}!m\_commandBufferGraph@{m\_commandBufferGraph}}
+\index{m\_commandBufferGraph@{m\_commandBufferGraph}!FCT::RenderGraph@{FCT::RenderGraph}}
+\doxysubsubsection{\texorpdfstring{m\_commandBufferGraph}{m\_commandBufferGraph}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_a80d728593d9adaaf7ae73c405a1ffb51} 
+\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph}{Command\+Buffer\+Graph}}\texorpdfstring{$\ast$}{*} FCT\+::\+Render\+Graph\+::m\+\_\+command\+Buffer\+Graph\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-在文件 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source_l00451}{451}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00212}{212}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_render_graph_a9b490ad90196b0a4c5bffd6d87a64e0d}\index{FCT::RenderGraph@{FCT::RenderGraph}!m\_commandBufferIndex@{m\_commandBufferIndex}}
 \index{m\_commandBufferIndex@{m\_commandBufferIndex}!FCT::RenderGraph@{FCT::RenderGraph}}
@@ -1333,57 +946,17 @@ uint32\+\_\+t FCT\+::\+Render\+Graph\+::m\+\_\+command\+Buffer\+Index = 0\hspace
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_context_2_render_graph_8h_source_l00196}{196}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00199}{199}} 行定义.
 
-\Hypertarget{class_f_c_t_1_1_render_graph_a69876d3394b29be6b1ee353d64bbf099}\index{FCT::RenderGraph@{FCT::RenderGraph}!m\_compiledGroups@{m\_compiledGroups}}
-\index{m\_compiledGroups@{m\_compiledGroups}!FCT::RenderGraph@{FCT::RenderGraph}}
-\doxysubsubsection{\texorpdfstring{m\_compiledGroups}{m\_compiledGroups}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_a69876d3394b29be6b1ee353d64bbf099} 
-std\+::unordered\+\_\+map$<$std\+::string,\mbox{\hyperlink{struct_f_c_t_1_1_compiled_group}{Compiled\+Group}}$>$ FCT\+::\+Render\+Graph\+::m\+\_\+compiled\+Groups\hspace{0.3cm}{\ttfamily [private]}}
+\Hypertarget{class_f_c_t_1_1_render_graph_aff16efa335f7c1ea867850a8c81883a5}\index{FCT::RenderGraph@{FCT::RenderGraph}!m\_commandBufferToken@{m\_commandBufferToken}}
+\index{m\_commandBufferToken@{m\_commandBufferToken}!FCT::RenderGraph@{FCT::RenderGraph}}
+\doxysubsubsection{\texorpdfstring{m\_commandBufferToken}{m\_commandBufferToken}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_aff16efa335f7c1ea867850a8c81883a5} 
+\mbox{\hyperlink{namespace_f_c_t_afacdf252c6b64af1f231c753c443de0b}{Command\+Buffer\+Token}} FCT\+::\+Render\+Graph\+::m\+\_\+command\+Buffer\+Token\hspace{0.3cm}{\ttfamily [private]}}
 
+todo\+:修改以做多\+Command\+Buffer\+Graph支持 
 
-
-在文件 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source_l00456}{456}} 行定义.
-
-\Hypertarget{class_f_c_t_1_1_render_graph_a0a4f96f4bcf4eacb67fe8bbd905f6eea}\index{FCT::RenderGraph@{FCT::RenderGraph}!m\_compiledPasses@{m\_compiledPasses}}
-\index{m\_compiledPasses@{m\_compiledPasses}!FCT::RenderGraph@{FCT::RenderGraph}}
-\doxysubsubsection{\texorpdfstring{m\_compiledPasses}{m\_compiledPasses}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_a0a4f96f4bcf4eacb67fe8bbd905f6eea} 
-std\+::unordered\+\_\+map$<$std\+::string, \mbox{\hyperlink{struct_f_c_t_1_1_compiled_pass}{Compiled\+Pass}}$>$ FCT\+::\+Render\+Graph\+::m\+\_\+compiled\+Passes\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-在文件 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source_l00454}{454}} 行定义.
-
-\Hypertarget{class_f_c_t_1_1_render_graph_ae7cc15d087add17d76de7667a9a92656}\index{FCT::RenderGraph@{FCT::RenderGraph}!m\_computedImages@{m\_computedImages}}
-\index{m\_computedImages@{m\_computedImages}!FCT::RenderGraph@{FCT::RenderGraph}}
-\doxysubsubsection{\texorpdfstring{m\_computedImages}{m\_computedImages}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_ae7cc15d087add17d76de7667a9a92656} 
-std\+::unordered\+\_\+map$<$std\+::string,\mbox{\hyperlink{struct_f_c_t_1_1_buffer_desc}{Buffer\+Desc}}$>$ FCT\+::\+Render\+Graph\+::m\+\_\+computed\+Images\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-在文件 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source_l00450}{450}} 行定义.
-
-\Hypertarget{class_f_c_t_1_1_render_graph_a7c71b6fd6cecc7297659c9526cf9a07c}\index{FCT::RenderGraph@{FCT::RenderGraph}!m\_ctx@{m\_ctx}}
-\index{m\_ctx@{m\_ctx}!FCT::RenderGraph@{FCT::RenderGraph}}
-\doxysubsubsection{\texorpdfstring{m\_ctx}{m\_ctx}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_a7c71b6fd6cecc7297659c9526cf9a07c} 
-\mbox{\hyperlink{class_f_c_t_1_1_context}{Context}} \texorpdfstring{$\ast$}{*} FCT\+::\+Render\+Graph\+::m\+\_\+ctx\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-在文件 \mbox{\hyperlink{_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_context_2_render_graph_8h_source_l00221}{221}} 行定义.
-
-\Hypertarget{class_f_c_t_1_1_render_graph_a9c141d6fe04b4526550663fdfcf8aba8}\index{FCT::RenderGraph@{FCT::RenderGraph}!m\_device@{m\_device}}
-\index{m\_device@{m\_device}!FCT::RenderGraph@{FCT::RenderGraph}}
-\doxysubsubsection{\texorpdfstring{m\_device}{m\_device}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_a9c141d6fe04b4526550663fdfcf8aba8} 
-\mbox{\hyperlink{class_f_c_t_1_1_device}{Device}}\texorpdfstring{$\ast$}{*} FCT\+::\+Render\+Graph\+::m\+\_\+device\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-在文件 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source_l00447}{447}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00205}{205}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_render_graph_a94aab527dae029fb493ce542fdffb1a4}\index{FCT::RenderGraph@{FCT::RenderGraph}!m\_edges@{m\_edges}}
 \index{m\_edges@{m\_edges}!FCT::RenderGraph@{FCT::RenderGraph}}
@@ -1393,7 +966,7 @@ std\+::vector$<$std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{class_f_c_t_1_1_edge}{
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_context_2_render_graph_8h_source_l00225}{225}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00240}{240}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_i_event_system_ac1a6fdf7719000f53dff74e887528a6f}\index{FCT::RenderGraph@{FCT::RenderGraph}!m\_eventQueue@{m\_eventQueue}}
 \index{m\_eventQueue@{m\_eventQueue}!FCT::RenderGraph@{FCT::RenderGraph}}
@@ -1405,15 +978,15 @@ std\+::conditional\+\_\+t$<$\mbox{\hyperlink{struct_f_c_t_1_1_event_system_confi
 
 在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00104}{104}} 行定义.
 
-\Hypertarget{class_f_c_t_1_1_render_graph_a17225ed5055c8878eaddd6c0fabaffa6}\index{FCT::RenderGraph@{FCT::RenderGraph}!m\_groupGraph@{m\_groupGraph}}
-\index{m\_groupGraph@{m\_groupGraph}!FCT::RenderGraph@{FCT::RenderGraph}}
-\doxysubsubsection{\texorpdfstring{m\_groupGraph}{m\_groupGraph}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_a17225ed5055c8878eaddd6c0fabaffa6} 
-\mbox{\hyperlink{class_f_c_t_1_1_token_graph}{Token\+Graph}}$<$\mbox{\hyperlink{struct_f_c_t_1_1_pass_group_render_graph_node}{Pass\+Group\+Render\+Graph\+Node}},\mbox{\hyperlink{struct_f_c_t_1_1_pass_group_render_graph_node}{Pass\+Group\+Render\+Graph\+Node}}$>$ FCT\+::\+Render\+Graph\+::m\+\_\+group\+Graph\hspace{0.3cm}{\ttfamily [private]}}
+\Hypertarget{class_f_c_t_1_1_render_graph_a4ecd6861bbe8c1c4ce57884c410c0e7f}\index{FCT::RenderGraph@{FCT::RenderGraph}!m\_flowControl@{m\_flowControl}}
+\index{m\_flowControl@{m\_flowControl}!FCT::RenderGraph@{FCT::RenderGraph}}
+\doxysubsubsection{\texorpdfstring{m\_flowControl}{m\_flowControl}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_a4ecd6861bbe8c1c4ce57884c410c0e7f} 
+\mbox{\hyperlink{class_f_c_t_1_1_flow_control}{Flow\+Control}}\texorpdfstring{$\ast$}{*} FCT\+::\+Render\+Graph\+::m\+\_\+flow\+Control\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-在文件 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source_l00457}{457}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00211}{211}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_i_event_system_acab222a6a3fc80b9d6e1fec3d67afd34}\index{FCT::RenderGraph@{FCT::RenderGraph}!m\_handlers@{m\_handlers}}
 \index{m\_handlers@{m\_handlers}!FCT::RenderGraph@{FCT::RenderGraph}}
@@ -1425,16 +998,6 @@ std\+::conditional\+\_\+t$<$\mbox{\hyperlink{struct_f_c_t_1_1_event_system_confi
 
 在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00100}{100}} 行定义.
 
-\Hypertarget{class_f_c_t_1_1_render_graph_a0cd3a25c496643d18c700addbb446bca}\index{FCT::RenderGraph@{FCT::RenderGraph}!m\_hasSizeBuffers@{m\_hasSizeBuffers}}
-\index{m\_hasSizeBuffers@{m\_hasSizeBuffers}!FCT::RenderGraph@{FCT::RenderGraph}}
-\doxysubsubsection{\texorpdfstring{m\_hasSizeBuffers}{m\_hasSizeBuffers}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_a0cd3a25c496643d18c700addbb446bca} 
-std\+::set$<$std\+::string$>$ FCT\+::\+Render\+Graph\+::m\+\_\+has\+Size\+Buffers\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-在文件 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source_l00452}{452}} 行定义.
-
 \Hypertarget{class_f_c_t_1_1_render_graph_a28ce85d056e682419f00ceea6c8097e8}\index{FCT::RenderGraph@{FCT::RenderGraph}!m\_imageNodes@{m\_imageNodes}}
 \index{m\_imageNodes@{m\_imageNodes}!FCT::RenderGraph@{FCT::RenderGraph}}
 \doxysubsubsection{\texorpdfstring{m\_imageNodes}{m\_imageNodes}}
@@ -1443,17 +1006,7 @@ std\+::unordered\+\_\+map$<$std\+::string, std\+::unique\+\_\+ptr$<$\mbox{\hyper
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_context_2_render_graph_8h_source_l00222}{222}} 行定义.
-
-\Hypertarget{class_f_c_t_1_1_render_graph_a02e126ba6861931aee9906c6c91aed38}\index{FCT::RenderGraph@{FCT::RenderGraph}!m\_imageToBufferMap@{m\_imageToBufferMap}}
-\index{m\_imageToBufferMap@{m\_imageToBufferMap}!FCT::RenderGraph@{FCT::RenderGraph}}
-\doxysubsubsection{\texorpdfstring{m\_imageToBufferMap}{m\_imageToBufferMap}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_a02e126ba6861931aee9906c6c91aed38} 
-std\+::unordered\+\_\+map$<$std\+::string,std\+::string$>$ FCT\+::\+Render\+Graph\+::m\+\_\+image\+To\+Buffer\+Map\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-在文件 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source_l00458}{458}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00237}{237}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_i_event_system_a291c4e6c183a43db009d4461d2c5c706}\index{FCT::RenderGraph@{FCT::RenderGraph}!m\_nextSubscribeId@{m\_nextSubscribeId}}
 \index{m\_nextSubscribeId@{m\_nextSubscribeId}!FCT::RenderGraph@{FCT::RenderGraph}}
@@ -1465,26 +1018,6 @@ std\+::unordered\+\_\+map$<$std\+::string,std\+::string$>$ FCT\+::\+Render\+Grap
 
 在文件 \mbox{\hyperlink{_i_event_system_8h_source}{IEvent\+System.\+h}} 第 \mbox{\hyperlink{_i_event_system_8h_source_l00106}{106}} 行定义.
 
-\Hypertarget{class_f_c_t_1_1_render_graph_a484282c29973d7d1e8c7dcf02f846527}\index{FCT::RenderGraph@{FCT::RenderGraph}!m\_originImages@{m\_originImages}}
-\index{m\_originImages@{m\_originImages}!FCT::RenderGraph@{FCT::RenderGraph}}
-\doxysubsubsection{\texorpdfstring{m\_originImages}{m\_originImages}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_a484282c29973d7d1e8c7dcf02f846527} 
-std\+::unordered\+\_\+map$<$std\+::string,\mbox{\hyperlink{struct_f_c_t_1_1_buffer_desc}{Buffer\+Desc}}$>$ FCT\+::\+Render\+Graph\+::m\+\_\+origin\+Images\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-在文件 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source_l00449}{449}} 行定义.
-
-\Hypertarget{class_f_c_t_1_1_render_graph_a1cd61b13c382c494f486286fc880b090}\index{FCT::RenderGraph@{FCT::RenderGraph}!m\_originPasses@{m\_originPasses}}
-\index{m\_originPasses@{m\_originPasses}!FCT::RenderGraph@{FCT::RenderGraph}}
-\doxysubsubsection{\texorpdfstring{m\_originPasses}{m\_originPasses}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_a1cd61b13c382c494f486286fc880b090} 
-std\+::unordered\+\_\+map$<$std\+::string,\mbox{\hyperlink{struct_f_c_t_1_1_pass_desc}{Pass\+Desc}}$>$ FCT\+::\+Render\+Graph\+::m\+\_\+origin\+Passes\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-在文件 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source_l00448}{448}} 行定义.
-
 \Hypertarget{class_f_c_t_1_1_render_graph_a9b755e0c12e56561d51beefc03d60036}\index{FCT::RenderGraph@{FCT::RenderGraph}!m\_passesUnions@{m\_passesUnions}}
 \index{m\_passesUnions@{m\_passesUnions}!FCT::RenderGraph@{FCT::RenderGraph}}
 \doxysubsubsection{\texorpdfstring{m\_passesUnions}{m\_passesUnions}}
@@ -1493,7 +1026,7 @@ std\+::unordered\+\_\+map$<$std\+::string,\mbox{\hyperlink{struct_f_c_t_1_1_pass
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_context_2_render_graph_8h_source_l00224}{224}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00239}{239}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_render_graph_aa030ebf008f488bcbf0d7298f972b983}\index{FCT::RenderGraph@{FCT::RenderGraph}!m\_passGroupBarriers@{m\_passGroupBarriers}}
 \index{m\_passGroupBarriers@{m\_passGroupBarriers}!FCT::RenderGraph@{FCT::RenderGraph}}
@@ -1503,7 +1036,7 @@ std\+::unordered\+\_\+map$<$std\+::string, std\+::vector$<$\mbox{\hyperlink{stru
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_context_2_render_graph_8h_source_l00218}{218}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00234}{234}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_render_graph_a26906f9826480e8324561437cde57984}\index{FCT::RenderGraph@{FCT::RenderGraph}!m\_passGroupDependencies@{m\_passGroupDependencies}}
 \index{m\_passGroupDependencies@{m\_passGroupDependencies}!FCT::RenderGraph@{FCT::RenderGraph}}
@@ -1513,7 +1046,7 @@ std\+::map$<$std\+::string, std\+::set$<$std\+::string$>$ $>$ FCT\+::\+Render\+G
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_context_2_render_graph_8h_source_l00219}{219}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00235}{235}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_render_graph_a934aa6af128eaeb5b7cd4111480509d3}\index{FCT::RenderGraph@{FCT::RenderGraph}!m\_passGroupExecutionOrder@{m\_passGroupExecutionOrder}}
 \index{m\_passGroupExecutionOrder@{m\_passGroupExecutionOrder}!FCT::RenderGraph@{FCT::RenderGraph}}
@@ -1523,7 +1056,7 @@ std\+::vector$<$std\+::string$>$ FCT\+::\+Render\+Graph\+::m\+\_\+pass\+Group\+E
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_context_2_render_graph_8h_source_l00344}{344}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00356}{356}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_render_graph_ae80359d99dd887e498d5b86f441e2c56}\index{FCT::RenderGraph@{FCT::RenderGraph}!m\_passGroupOrders@{m\_passGroupOrders}}
 \index{m\_passGroupOrders@{m\_passGroupOrders}!FCT::RenderGraph@{FCT::RenderGraph}}
@@ -1533,7 +1066,7 @@ std\+::unordered\+\_\+map$<$std\+::string, std\+::vector$<$std\+::string$>$ $>$ 
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_context_2_render_graph_8h_source_l00343}{343}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00355}{355}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_render_graph_a8bbc2d9678e6ca16dba1c4d50468030d}\index{FCT::RenderGraph@{FCT::RenderGraph}!m\_passNodes@{m\_passNodes}}
 \index{m\_passNodes@{m\_passNodes}!FCT::RenderGraph@{FCT::RenderGraph}}
@@ -1543,33 +1076,31 @@ std\+::unordered\+\_\+map$<$std\+::string,\mbox{\hyperlink{class_f_c_t_1_1_rende
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_context_2_render_graph_8h_source_l00223}{223}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00238}{238}} 行定义.
 
-\Hypertarget{class_f_c_t_1_1_render_graph_aec313d83a12f83e090a07ee23907d2c3}\index{FCT::RenderGraph@{FCT::RenderGraph}!m\_passUnions@{m\_passUnions}}
-\index{m\_passUnions@{m\_passUnions}!FCT::RenderGraph@{FCT::RenderGraph}}
-\doxysubsubsection{\texorpdfstring{m\_passUnions}{m\_passUnions}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_aec313d83a12f83e090a07ee23907d2c3} 
-\mbox{\hyperlink{class_f_c_t_1_1_union_find}{Union\+Find}}$<$std\+::string,char$>$ FCT\+::\+Render\+Graph\+::m\+\_\+pass\+Unions\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-在文件 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source_l00455}{455}} 行定义.
-
-\Hypertarget{class_f_c_t_1_1_render_graph_a805adaec864b89bd221a2e94a65d23d8}\index{FCT::RenderGraph@{FCT::RenderGraph}!m\_tokenGraph@{m\_tokenGraph}}
-\index{m\_tokenGraph@{m\_tokenGraph}!FCT::RenderGraph@{FCT::RenderGraph}}
-\doxysubsubsection{\texorpdfstring{m\_tokenGraph}{m\_tokenGraph}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_a805adaec864b89bd221a2e94a65d23d8} 
-\mbox{\hyperlink{class_f_c_t_1_1_token_graph}{Token\+Graph}}$<$\mbox{\hyperlink{class_f_c_t_1_1_render_graph_node}{Render\+Graph\+Node}},\mbox{\hyperlink{class_f_c_t_1_1_render_graph_node}{Render\+Graph\+Node}}$>$ FCT\+::\+Render\+Graph\+::m\+\_\+token\+Graph\hspace{0.3cm}{\ttfamily [private]}}
+\Hypertarget{class_f_c_t_1_1_render_graph_a4bc83d491c76082db2a8656766b062b6}\index{FCT::RenderGraph@{FCT::RenderGraph}!m\_resourceDevice@{m\_resourceDevice}}
+\index{m\_resourceDevice@{m\_resourceDevice}!FCT::RenderGraph@{FCT::RenderGraph}}
+\doxysubsubsection{\texorpdfstring{m\_resourceDevice}{m\_resourceDevice}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_a4bc83d491c76082db2a8656766b062b6} 
+\mbox{\hyperlink{class_f_c_t_1_1_device}{Device}}\texorpdfstring{$\ast$}{*} FCT\+::\+Render\+Graph\+::m\+\_\+resource\+Device\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-在文件 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source_l00453}{453}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00210}{210}} 行定义.
+
+\Hypertarget{class_f_c_t_1_1_render_graph_a92b182fcf84fe0ac7d0f112c280f6758}\index{FCT::RenderGraph@{FCT::RenderGraph}!m\_resourceManager@{m\_resourceManager}}
+\index{m\_resourceManager@{m\_resourceManager}!FCT::RenderGraph@{FCT::RenderGraph}}
+\doxysubsubsection{\texorpdfstring{m\_resourceManager}{m\_resourceManager}}
+{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_a92b182fcf84fe0ac7d0f112c280f6758} 
+\mbox{\hyperlink{class_f_c_t_1_1_resource_manager}{Resource\+Manager}}\texorpdfstring{$\ast$}{*} FCT\+::\+Render\+Graph\+::m\+\_\+resource\+Manager\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00213}{213}} 行定义.
 
 
 
 该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
 \item 
-src/\+Context/\mbox{\hyperlink{_context_2_render_graph_8h}{Render\+Graph.\+h}}\item 
-src/\+Deprecated/\+Context/\mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h}{Render\+Graph.\+h}}\item 
-src/\+Context/\mbox{\hyperlink{_context_2_render_graph_8cpp}{Render\+Graph.\+cpp}}\item 
-src/\+Deprecated/\+Context/\mbox{\hyperlink{_deprecated_2_context_2_render_graph_8cpp}{Render\+Graph.\+cpp}}\end{DoxyCompactItemize}
+src/\+Context/\mbox{\hyperlink{_render_graph_8h}{Render\+Graph.\+h}}\item 
+src/\+Context/\mbox{\hyperlink{_render_graph_8cpp}{Render\+Graph.\+cpp}}\end{DoxyCompactItemize}

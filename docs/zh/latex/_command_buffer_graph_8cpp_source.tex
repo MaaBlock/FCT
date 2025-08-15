@@ -2,14 +2,375 @@
 \hypertarget{_command_buffer_graph_8cpp_source}{}\label{_command_buffer_graph_8cpp_source}\index{src/Context/CommandBufferGraph.cpp@{src/Context/CommandBufferGraph.cpp}}
 \mbox{\hyperlink{_command_buffer_graph_8cpp}{浏览该文件的文档.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00001}00001\ \textcolor{comment}{//}}
-\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00002}00002\ \textcolor{comment}{//\ Created\ by\ Administrator\ on\ 2025/8/12.}}
-\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00003}00003\ \textcolor{comment}{//}}
-\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00004}00004\ }
-\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_command_buffer_graph_8h}{CommandBufferGraph.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00006}00006\ }
-\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00007}00007\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_f_c_t}{FCT}}\ \{}
-\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00008}00008\ }
-\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00009}00009\ \}\ \textcolor{comment}{//\ FCT}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_command_buffer_graph_8h}{./CommandBufferGraph.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_context_8h}{./Context.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_context_8hpp}{./Context.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_window_8h}{../UI/Window.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00005}00005\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_f_c_t}{FCT}}\ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00006}\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_input_from_window_a12aa610b00799b35f9e6627eeb9d3327}{00006}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_input_from_window_a12aa610b00799b35f9e6627eeb9d3327}{CommandBufferNodes::InputFromWindow::fillSynchronization}}(uint32\_t\ frameIndex)}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00007}00007\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00008}00008\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (frameIndex\ >=\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_node_base_a5434bc1cda776b1d1ebd83e572ff0abf}{m\_frameDirty}}.size()\ ||\ !\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_node_base_a5434bc1cda776b1d1ebd83e572ff0abf}{m\_frameDirty}}[frameIndex])\ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00009}00009\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00010}00010\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_input_from_window_a32a7f9483fb290c11b16f7041797c5e3}{m\_outputEdge}}\ \&\&\ frameIndex\ <\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_input_from_window_aa7e792230cf8dadf3b9b8ccfdaedefa5}{m\_collectedImageAvailable}}.size())\ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ semaphore\ =\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_input_from_window_a32a7f9483fb290c11b16f7041797c5e3}{m\_outputEdge}}-\/>getImageAvailableSemaphore(frameIndex);}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_input_from_window_aa7e792230cf8dadf3b9b8ccfdaedefa5}{m\_collectedImageAvailable}}[frameIndex]\ =\ semaphore;}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_node_base_a4d8fe0d4816d46f005738c0ba7c6c435}{markFrameClean}}(frameIndex);}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00018}00018\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00020}\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_output_to_window_a7703e050476eac5c19afe46286f3a3f1}{00020}}\ \ \ \ \ std::vector<RHI::Fence*>\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_output_to_window_a7703e050476eac5c19afe46286f3a3f1}{CommandBufferNodes::OutputToWindow::getCollectedFence}}(uint32\_t\ frameIndex)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00021}00021\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (frameIndex\ <\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_output_to_window_aec935e764bd911e9eb035d3b8618de87}{m\_collectedFences}}.size())\ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_output_to_window_aec935e764bd911e9eb035d3b8618de87}{m\_collectedFences}}[frameIndex];}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::vector<RHI::Fence*>\{\}\ ;}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00026}00026\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00028}\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_output_to_window_aeef3cc45fb3f85e6fac072685ccbe854}{00028}}\ \ \ \ \ std::vector<RHI::Semaphore*>\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_output_to_window_aeef3cc45fb3f85e6fac072685ccbe854}{CommandBufferNodes::OutputToWindow::getCollectedRenderFinishedSemaphore}}(}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ uint32\_t\ frameIndex)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00030}00030\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (frameIndex\ <\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_output_to_window_acf08274d283740df50e887331581c646}{m\_collectedRenderFinished}}.size())\ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_output_to_window_acf08274d283740df50e887331581c646}{m\_collectedRenderFinished}}[frameIndex];}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::vector<RHI::Semaphore*>\{\}\ ;}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00035}00035\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00037}\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_output_to_window_a2af63352e104c0716c30d346e6793d50}{00037}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_output_to_window_a2af63352e104c0716c30d346e6793d50}{CommandBufferNodes::OutputToWindow::fillSynchronization}}(uint32\_t\ frameIndex)}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00038}00038\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (frameIndex\ >=\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_node_base_a5434bc1cda776b1d1ebd83e572ff0abf}{m\_frameDirty}}.size()\ ||\ !\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_node_base_a5434bc1cda776b1d1ebd83e572ff0abf}{m\_frameDirty}}[frameIndex])\ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (frameIndex\ >=\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_output_to_window_aec935e764bd911e9eb035d3b8618de87}{m\_collectedFences}}.size()\ ||\ frameIndex\ >=\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_output_to_window_acf08274d283740df50e887331581c646}{m\_collectedRenderFinished}}.size())\ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_output_to_window_aec935e764bd911e9eb035d3b8618de87}{m\_collectedFences}}[frameIndex].clear();}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_output_to_window_acf08274d283740df50e887331581c646}{m\_collectedRenderFinished}}[frameIndex].clear();}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}*\ edge\ :\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_output_to_window_a5f8956a1267ddd3a9c39adce938dee45}{m\_inputEdges}})\ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (edge)\ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ fence\ =\ edge-\/>getFence(frameIndex);}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ semaphore\ =\ edge-\/>getRenderFinishedSemaphore(frameIndex);}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (fence)\ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_output_to_window_aec935e764bd911e9eb035d3b8618de87}{m\_collectedFences}}[frameIndex].push\_back(fence);}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (semaphore)\ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_output_to_window_acf08274d283740df50e887331581c646}{m\_collectedRenderFinished}}[frameIndex].push\_back(semaphore);}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_node_base_a4d8fe0d4816d46f005738c0ba7c6c435}{markFrameClean}}(frameIndex);}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00065}00065\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00067}\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_a69a5e1d7e6832e7fb42ca3fd1b9f1a5b}{00067}}\ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_a69a5e1d7e6832e7fb42ca3fd1b9f1a5b}{CommandBufferNodes::CommandBuffer::CommandBuffer}}(\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_pool}{RHI::CommandPool}}*\ pool)}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00068}00068\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_a40bf9a2a11c793868fa98090856790e6}{m\_pool}}\ =\ pool;}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00070}00070\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00072}\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_a634ef1903aac0b9c3147d95b04007e9b}{00072}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_a634ef1903aac0b9c3147d95b04007e9b}{CommandBufferNodes::CommandBuffer::updateSynchronization}}(uint32\_t\ newMaxFrameInFlight)}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00073}00073\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_aad0d02c9b56e9991eff70fbd7737fc1b}{m\_cmdBuffers}}.size()\ !=\ newMaxFrameInFlight)\ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ cmdBuffer\ :\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_aad0d02c9b56e9991eff70fbd7737fc1b}{m\_cmdBuffers}})}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cmdBuffer-\/>release();}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_aad0d02c9b56e9991eff70fbd7737fc1b}{m\_cmdBuffers}}.clear();}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_aad0d02c9b56e9991eff70fbd7737fc1b}{m\_cmdBuffers}}.reserve(newMaxFrameInFlight);}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (uint32\_t\ i\ =\ 0;\ i\ <\ newMaxFrameInFlight;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ cmdBuf\ =\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_a40bf9a2a11c793868fa98090856790e6}{m\_pool}}-\/>createCommandBuffer();}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cmdBuf-\/>create();}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_aad0d02c9b56e9991eff70fbd7737fc1b}{m\_cmdBuffers}}.push\_back(cmdBuf);}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_node_base_a5434bc1cda776b1d1ebd83e572ff0abf}{m\_frameDirty}}.clear();}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_node_base_a5434bc1cda776b1d1ebd83e572ff0abf}{m\_frameDirty}}.resize(newMaxFrameInFlight,\ 1);}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00089}00089\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00091}\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_af2c36e5ce88d7106bb7c709d33e2441b}{00091}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_af2c36e5ce88d7106bb7c709d33e2441b}{CommandBufferNodes::CommandBuffer::addOutputEdge}}(\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_edges_1_1_edge_base}{CommandBufferEdges::EdgeBase}}*\ edge)}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00092}00092\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ std::fill(\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_node_base_a5434bc1cda776b1d1ebd83e572ff0abf}{m\_frameDirty}}.begin(),\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_node_base_a5434bc1cda776b1d1ebd83e572ff0abf}{m\_frameDirty}}.end(),\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_a4b809e57010a6a1d60f4f3e3a3636604}{m\_outputEdges}}.push\_back(edge);}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00095}00095\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00097}\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_aebb69df57bf3046eeaf8f28165103767}{00097}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_aebb69df57bf3046eeaf8f28165103767}{CommandBufferNodes::CommandBuffer::addInputEdge}}(\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_edges_1_1_edge_base}{CommandBufferEdges::EdgeBase}}*\ edge)}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00098}00098\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ std::fill(\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_node_base_a5434bc1cda776b1d1ebd83e572ff0abf}{m\_frameDirty}}.begin(),\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_node_base_a5434bc1cda776b1d1ebd83e572ff0abf}{m\_frameDirty}}.end(),\ 1);}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_ad135b9660bdb62a3f3bc4ed6321162c4}{m\_inputEdges}}.push\_back(edge);}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00101}00101\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00103}\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_a4134de95939336b610283e5803c2b265}{00103}}\ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer}{RHI::CommandBuffer}}*\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_a4134de95939336b610283e5803c2b265}{CommandBufferNodes::CommandBuffer::getCommandBuffer}}(uint32\_t\ frameIndex)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00104}00104\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (frameIndex\ <\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_aad0d02c9b56e9991eff70fbd7737fc1b}{m\_cmdBuffers}}.size())\ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_aad0d02c9b56e9991eff70fbd7737fc1b}{m\_cmdBuffers}}[frameIndex];}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00109}00109\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00112}\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_a5f41c4fad7ff24fec98bd64e45f487e0}{00112}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_a5f41c4fad7ff24fec98bd64e45f487e0}{CommandBufferNodes::CommandBuffer::fillSynchronization}}(uint32\_t\ frameIndex)}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00113}00113\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ cmdBuf\ =\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_a4134de95939336b610283e5803c2b265}{getCommandBuffer}}(frameIndex);}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!cmdBuf\ ||\ frameIndex\ >=\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_node_base_a5434bc1cda776b1d1ebd83e572ff0abf}{m\_frameDirty}}.size()\ ||\ !\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_node_base_a5434bc1cda776b1d1ebd83e572ff0abf}{m\_frameDirty}}[frameIndex])\ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ cmdBuf-\/>clearWaitSemaphores();}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ cmdBuf-\/>signalSemaphores().clear();}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}*\ edge\ :\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_ad135b9660bdb62a3f3bc4ed6321162c4}{m\_inputEdges}})\ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{auto}*\ inputEdge\ =\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_edges_1_1_input_from_window}{CommandBufferEdges::InputFromWindow}}*\textcolor{keyword}{>}(edge))\ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{auto}*\ semaphore\ =\ inputEdge-\/>getImageAvailableSemaphore(frameIndex))\ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cmdBuf-\/>addWaitSemaphore(semaphore,\ \mbox{\hyperlink{namespace_f_c_t_aee548840338e7edaf410402fdc1b43f0a4ecc54305ce317f6232ab7ce1acb4db6}{PipelineStage::colorAttachmentOutput}});}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TODO:\ 处理其他类型的输入边}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}*\ edge\ :\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_a4b809e57010a6a1d60f4f3e3a3636604}{m\_outputEdges}})\ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{auto}*\ outputEdge\ =\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window}{CommandBufferEdges::OutputToWindow}}*\textcolor{keyword}{>}(edge))\ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ semaphore\ =\ outputEdge-\/>getRenderFinishedSemaphore(frameIndex);}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (semaphore)\ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cmdBuf-\/>addSignalSemaphore(semaphore);}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ fence\ =\ outputEdge-\/>getFence(frameIndex);}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (fence)\ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cmdBuf-\/>fence(fence);}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TODO:\ 处理其他类型的输出边}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_node_base_a5434bc1cda776b1d1ebd83e572ff0abf}{m\_frameDirty}}[frameIndex]\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00147}00147\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00148}00148\ }
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00149}\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_edges_1_1_input_from_window_ab8149a3df2d2d22d3227ea0b5157f609}{00149}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_edges_1_1_input_from_window_ab8149a3df2d2d22d3227ea0b5157f609}{CommandBufferEdges::InputFromWindow::updateSynchronization}}(uint32\_t\ newMaxFrameInFlight)}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00150}00150\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_edges_1_1_input_from_window_abe5cdd954ec0ac7598229f656094374f}{m\_imageAvailable}}.size()\ !=\ newMaxFrameInFlight)\ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ semaphore\ :\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_edges_1_1_input_from_window_abe5cdd954ec0ac7598229f656094374f}{m\_imageAvailable}})}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ semaphore-\/>release();}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_edges_1_1_input_from_window_abe5cdd954ec0ac7598229f656094374f}{m\_imageAvailable}}.clear();}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_edges_1_1_input_from_window_abe5cdd954ec0ac7598229f656094374f}{m\_imageAvailable}}.reserve(newMaxFrameInFlight);}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (uint32\_t\ i\ =\ 0;\ i\ <\ newMaxFrameInFlight;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ semaphore\ =\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_edges_1_1_edge_base_a028ec53a2f00fc735208fb6acec21ca9}{m\_semaphorePool}}-\/>alloc();}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ semaphore-\/>create();}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_edges_1_1_input_from_window_abe5cdd954ec0ac7598229f656094374f}{m\_imageAvailable}}.push\_back(semaphore);}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00164}00164\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00165}00165\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00166}\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_a73d0e7b1ab264c419371d9410e61f5de}{00166}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_a73d0e7b1ab264c419371d9410e61f5de}{CommandBufferEdges::OutputToWindow::updateSynchronization}}(uint32\_t\ newMaxFrameInFlight)}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00167}00167\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00168}00168\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_a2a0c611116da3b4211202c8e90522050}{m\_renderFinished}}.size()\ !=\ newMaxFrameInFlight)\ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ semaphore\ :\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_a2a0c611116da3b4211202c8e90522050}{m\_renderFinished}})}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ semaphore-\/>release();}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_a2a0c611116da3b4211202c8e90522050}{m\_renderFinished}}.clear();}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_a2a0c611116da3b4211202c8e90522050}{m\_renderFinished}}.reserve(newMaxFrameInFlight);}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (uint32\_t\ i\ =\ 0;\ i\ <\ newMaxFrameInFlight;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ semaphore\ =\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_edges_1_1_edge_base_a028ec53a2f00fc735208fb6acec21ca9}{m\_semaphorePool}}-\/>alloc();}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ semaphore-\/>create();}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_a2a0c611116da3b4211202c8e90522050}{m\_renderFinished}}.push\_back(semaphore);}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00180}00180\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00181}00181\ }
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00182}00182\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_a5325e7b5bc6bd7ac23bc58c36f26ae38}{m\_fences}}.size()\ !=\ newMaxFrameInFlight)\ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ fence\ :\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_a5325e7b5bc6bd7ac23bc58c36f26ae38}{m\_fences}})}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fence-\/>release();}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_a5325e7b5bc6bd7ac23bc58c36f26ae38}{m\_fences}}.clear();}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_a5325e7b5bc6bd7ac23bc58c36f26ae38}{m\_fences}}.reserve(newMaxFrameInFlight);}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (uint32\_t\ i\ =\ 0;\ i\ <\ newMaxFrameInFlight;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ fence\ =\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_a6d663d787bca5b28ac88b9fe609f6248}{m\_fencePool}}-\/>alloc();}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fence-\/>createSignaled();}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window_a5325e7b5bc6bd7ac23bc58c36f26ae38}{m\_fences}}.push\_back(fence);}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00194}00194\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00195}00195\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00196}00196\ }
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00197}\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_afa5d13d206849a8ed89819dbc33a7b42}{00197}}\ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_afa5d13d206849a8ed89819dbc33a7b42}{CommandBufferGraph::CommandBufferGraph}}(\mbox{\hyperlink{class_f_c_t_1_1_device}{Device}}*\ device)}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00198}00198\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00199}00199\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_a03fbcad45ff9de944b2bd7663b910f63}{m\_cmdPool}}\ =\ device-\/>\mbox{\hyperlink{class_f_c_t_1_1_device_a767564c02b1e777a52888b5f2c436344}{createResource}}<\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_pool}{RHI::CommandPool}}>();}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00200}00200\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_a03fbcad45ff9de944b2bd7663b910f63}{m\_cmdPool}}-\/>create();}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00201}00201\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_a1a2ccaf6b2c7932da7751fcf52f83882}{m\_semaphorePool}}\ =\ device-\/>\mbox{\hyperlink{class_f_c_t_1_1_device_a767564c02b1e777a52888b5f2c436344}{createResource}}<\mbox{\hyperlink{class_f_c_t_1_1_semaphore_pool}{SemaphorePool}}>();}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00202}00202\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_af29896ed7a4d2601306b938c7a7d8991}{m\_fencePool}}\ =\ device-\/>\mbox{\hyperlink{class_f_c_t_1_1_device_a767564c02b1e777a52888b5f2c436344}{createResource}}<\mbox{\hyperlink{class_f_c_t_1_1_fence_pool}{FencePool}}>();}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00203}00203\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_ab384d45fd9ccfc3aab1f02890b4221b1}{m\_device}}\ =\ device;}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00204}00204\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00205}00205\ }
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00206}\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_ae21638ba6cd1d432b947214aa4212cf3}{00206}}\ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_input_from_window}{CommandBufferNodes::InputFromWindow}}*\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_ae21638ba6cd1d432b947214aa4212cf3}{CommandBufferGraph::getOrCreateWindowInputNode}}(\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}}*\ window)}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00207}00207\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00208}00208\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_aa15cac2d3cbc6f15b5fa82d24474f88f}{m\_windows}}.insert(window);}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00209}00209\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_ab7264d4476462cab976283056da74ad4}{m\_windowInputNodes}}.find(window);}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00210}00210\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_ab7264d4476462cab976283056da74ad4}{m\_windowInputNodes}}.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ it-\/>second;}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00212}00212\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00213}00213\ }
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00214}00214\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ inputNode\ =\ std::make\_unique<CommandBufferNodes::InputFromWindow>(window);}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00215}00215\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ nodePtr\ =\ inputNode.get();}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00216}00216\ \ \ \ \ \ \ \ \ nodePtr-\/>updateSynchronization(\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_a6000e552b4f7b901e56dfb2d3d009fd7}{m\_maxFrameInFlight}});}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00217}00217\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_a49fc1fc2fb497e8cb068f63f61516270}{m\_nodes}}.push\_back(std::move(inputNode));}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00218}00218\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_ab7264d4476462cab976283056da74ad4}{m\_windowInputNodes}}[window]\ =\ nodePtr;}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00219}00219\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ nodePtr;}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00220}00220\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00221}00221\ }
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00222}\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_a9bd227d916cad40f0edc03ac0ed1a38e}{00222}}\ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_output_to_window}{CommandBufferNodes::OutputToWindow}}*\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_a9bd227d916cad40f0edc03ac0ed1a38e}{CommandBufferGraph::getOrCreateWindowOutputNode}}(\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}}*\ window)}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00223}00223\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00224}00224\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_aa15cac2d3cbc6f15b5fa82d24474f88f}{m\_windows}}.insert(window);}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00225}00225\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_ad3151f699a9983c4e06bfed6b5f9d434}{m\_windowOutputNodes}}.find(window);}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00226}00226\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_ad3151f699a9983c4e06bfed6b5f9d434}{m\_windowOutputNodes}}.end())\ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ it-\/>second;}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00228}00228\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00229}00229\ }
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00230}00230\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ outputNode\ =\ std::make\_unique<CommandBufferNodes::OutputToWindow>(window);}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00231}00231\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ nodePtr\ =\ outputNode.get();}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00232}00232\ \ \ \ \ \ \ \ \ nodePtr-\/>updateSynchronization(\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_a6000e552b4f7b901e56dfb2d3d009fd7}{m\_maxFrameInFlight}});}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00233}00233\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_a49fc1fc2fb497e8cb068f63f61516270}{m\_nodes}}.push\_back(std::move(outputNode));}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00234}00234\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_ad3151f699a9983c4e06bfed6b5f9d434}{m\_windowOutputNodes}}[window]\ =\ nodePtr;}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00235}00235\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ nodePtr;}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00236}00236\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00237}00237\ }
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00238}\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_a5ab1e5b29ecf07e486656f1bc7eb5bc8}{00238}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_a5ab1e5b29ecf07e486656f1bc7eb5bc8}{CommandBufferGraph::connectPredecessors}}(\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer}{CommandBufferNodes::CommandBuffer}}*\ buffer,}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00239}00239\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<NodeRef>\&\ predecessors)}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00240}00240\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00241}00241\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ pred\ :\ predecessors)\ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pred.type\ ==\ \mbox{\hyperlink{struct_f_c_t_1_1_command_buffer_graph_1_1_node_ref_a6b2ce16bbc23091b2cac4d991c8f65b3ae4119e85010a5f7562d08c445842bcd5}{NodeRef::WindowType}})\ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_a1a70c152689550368cdb975a7b006c16}{connectWindowPredecessor}}(buffer,\ pred.window);}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pred.type\ ==\ \mbox{\hyperlink{struct_f_c_t_1_1_command_buffer_graph_1_1_node_ref_a6b2ce16bbc23091b2cac4d991c8f65b3ad89a85a410c6d856670799c324e2f03f}{NodeRef::CommandBufferType}})\ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ CommandBuffer\ -\/>\ CommandBuffer}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ todo:}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 创建CommandBuffer之间的边，并对CommandBuffers执行fillAllSynchronization}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00249}00249\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00250}00250\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00251}00251\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00252}00252\ }
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00253}\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_a22881c9977ce024dc339b56604e37bbd}{00253}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_a22881c9977ce024dc339b56604e37bbd}{CommandBufferGraph::connectSuccessors}}(\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer}{CommandBufferNodes::CommandBuffer}}*\ buffer,}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00254}00254\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<NodeRef>\&\ successors)}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00255}00255\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00256}00256\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ succ\ :\ successors)\ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00257}00257\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (succ.type\ ==\ \mbox{\hyperlink{struct_f_c_t_1_1_command_buffer_graph_1_1_node_ref_a6b2ce16bbc23091b2cac4d991c8f65b3ae4119e85010a5f7562d08c445842bcd5}{NodeRef::WindowType}})\ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_ae9870dd3acfb1ef99532cd3102a627b8}{connectWindowSuccessor}}(buffer,\ succ.window);}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00259}00259\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00260}00260\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (succ.type\ ==\ \mbox{\hyperlink{struct_f_c_t_1_1_command_buffer_graph_1_1_node_ref_a6b2ce16bbc23091b2cac4d991c8f65b3ad89a85a410c6d856670799c324e2f03f}{NodeRef::CommandBufferType}})\ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00261}00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ CommandBuffer\ -\/>\ CommandBuffer}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00262}00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ todo:}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 创建CommandBuffer之间的边，并对CommandBuffers执行fillAllSynchronization}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00264}00264\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00265}00265\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00266}00266\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00267}00267\ }
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00268}\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_a1a70c152689550368cdb975a7b006c16}{00268}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_a1a70c152689550368cdb975a7b006c16}{CommandBufferGraph::connectWindowPredecessor}}(\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer}{CommandBufferNodes::CommandBuffer}}*\ buffer,\ \mbox{\hyperlink{class_f_c_t_1_1_window}{Window}}*\ window)}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00269}00269\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00270}00270\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ windowInputNode\ =\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_ae21638ba6cd1d432b947214aa4212cf3}{getOrCreateWindowInputNode}}(window);}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00271}00271\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ edge\ =\ std::make\_unique<CommandBufferEdges::InputFromWindow>(\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_a1a2ccaf6b2c7932da7751fcf52f83882}{m\_semaphorePool}});}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00272}00272\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ edgePtr\ =\ edge.get();}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00273}00273\ }
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00274}00274\ \ \ \ \ \ \ \ \ edgePtr-\/>setSourceNode(windowInputNode);}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00275}00275\ \ \ \ \ \ \ \ \ edgePtr-\/>setTargetNode(buffer);}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00276}00276\ \ \ \ \ \ \ \ \ edgePtr-\/>updateSynchronization(\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_a6000e552b4f7b901e56dfb2d3d009fd7}{m\_maxFrameInFlight}});}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00277}00277\ }
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00278}00278\ \ \ \ \ \ \ \ \ windowInputNode-\/>addOutputEdge(edgePtr);}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00279}00279\ \ \ \ \ \ \ \ \ buffer-\/>\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_aebb69df57bf3046eeaf8f28165103767}{addInputEdge}}(edgePtr);}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00280}00280\ }
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00281}00281\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_ab8a190e28b2b58f8beeb661d0d0573c2}{m\_edges}}.push\_back(std::move(edge));}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00282}00282\ }
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00283}00283\ \ \ \ \ \ \ \ \ windowInputNode-\/>fillAllSynchronization();}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00284}00284\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00285}00285\ }
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00286}\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_ae9870dd3acfb1ef99532cd3102a627b8}{00286}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_ae9870dd3acfb1ef99532cd3102a627b8}{CommandBufferGraph::connectWindowSuccessor}}(\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer}{CommandBufferNodes::CommandBuffer}}*\ buffer,\ \mbox{\hyperlink{class_f_c_t_1_1_window}{Window}}*\ window)}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00287}00287\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00288}00288\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ windowOutputNode\ =\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_a9bd227d916cad40f0edc03ac0ed1a38e}{getOrCreateWindowOutputNode}}(window);}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00289}00289\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ edge\ =\ std::make\_unique<CommandBufferEdges::OutputToWindow>(\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_af29896ed7a4d2601306b938c7a7d8991}{m\_fencePool}},\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_a1a2ccaf6b2c7932da7751fcf52f83882}{m\_semaphorePool}});}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00290}00290\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ edgePtr\ =\ edge.get();}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00291}00291\ }
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00292}00292\ \ \ \ \ \ \ \ \ edgePtr-\/>setSourceNode(buffer);}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00293}00293\ \ \ \ \ \ \ \ \ edgePtr-\/>setTargetNode(windowOutputNode);}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00294}00294\ \ \ \ \ \ \ \ \ edgePtr-\/>updateSynchronization(\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_a6000e552b4f7b901e56dfb2d3d009fd7}{m\_maxFrameInFlight}});}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00295}00295\ }
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00296}00296\ \ \ \ \ \ \ \ \ buffer-\/>\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_af2c36e5ce88d7106bb7c709d33e2441b}{addOutputEdge}}(edgePtr);}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00297}00297\ \ \ \ \ \ \ \ \ windowOutputNode-\/>addInputEdge(edgePtr);}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00298}00298\ }
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00299}00299\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_ab8a190e28b2b58f8beeb661d0d0573c2}{m\_edges}}.push\_back(std::move(edge));}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00300}00300\ }
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00301}00301\ \ \ \ \ \ \ \ \ windowOutputNode-\/>fillAllSynchronization();}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00302}00302\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00303}\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_ae21566efe12c656faa8d1b1d87ac19de}{00303}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_ae21566efe12c656faa8d1b1d87ac19de}{CommandBufferGraph::maxFrameInFlight}}(uint32\_t\ max)}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00304}00304\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00305}00305\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_a6000e552b4f7b901e56dfb2d3d009fd7}{m\_maxFrameInFlight}}\ =\ max;}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00306}00306\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ edge\ :\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_ab8a190e28b2b58f8beeb661d0d0573c2}{m\_edges}})\ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00307}00307\ \ \ \ \ \ \ \ \ \ \ \ \ edge-\/>updateSynchronization(\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_a6000e552b4f7b901e56dfb2d3d009fd7}{m\_maxFrameInFlight}});}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00308}00308\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00309}00309\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ node\ :\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_a49fc1fc2fb497e8cb068f63f61516270}{m\_nodes}})\ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00310}00310\ \ \ \ \ \ \ \ \ \ \ \ \ node-\/>updateSynchronization(\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_a6000e552b4f7b901e56dfb2d3d009fd7}{m\_maxFrameInFlight}});}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00311}00311\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00312}00312\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ node\ :\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_a49fc1fc2fb497e8cb068f63f61516270}{m\_nodes}})\ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00313}00313\ \ \ \ \ \ \ \ \ \ \ \ \ node-\/>fillAllSynchronization();}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00314}00314\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00315}00315\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00316}00316\ }
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00317}\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_acdb41648c94416ba25ddbfc8c261f998}{00317}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_acdb41648c94416ba25ddbfc8c261f998}{CommandBufferGraph::swapBuffer}}()}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00318}00318\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00319}00319\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ wnd\ :\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_aa15cac2d3cbc6f15b5fa82d24474f88f}{m\_windows}})}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00320}00320\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00321}00321\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_ad3151f699a9983c4e06bfed6b5f9d434}{m\_windowOutputNodes}}.count(wnd))}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00322}00322\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00323}00323\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ wnd-\/>clearRenderFinshSemaphores();}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00324}00324\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ semaphore\ :\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_ad3151f699a9983c4e06bfed6b5f9d434}{m\_windowOutputNodes}}[wnd]-\/>getCollectedRenderFinishedSemaphores(\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_a4a0194d60e9d3a86687c510f37448042}{m\_frameIndex}}))}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00325}00325\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00326}00326\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ wnd-\/>addRenderFinshSemaphore(semaphore);}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00327}00327\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00328}00328\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00329}00329\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00330}00330\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_a4a0194d60e9d3a86687c510f37448042}{m\_frameIndex}}\ =\ (\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_a4a0194d60e9d3a86687c510f37448042}{m\_frameIndex}}\ +\ 1)\ \%\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_a6000e552b4f7b901e56dfb2d3d009fd7}{m\_maxFrameInFlight}};}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00331}00331\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ wnd\ :\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_aa15cac2d3cbc6f15b5fa82d24474f88f}{m\_windows}})\ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00332}00332\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_ab7264d4476462cab976283056da74ad4}{m\_windowInputNodes}}.count(wnd))}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00333}00333\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00334}00334\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ wnd-\/>setPresentFinshSemaphore(\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_ab7264d4476462cab976283056da74ad4}{m\_windowInputNodes}}[wnd]-\/>getCollectedImageAvailableSemaphore(\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_a4a0194d60e9d3a86687c510f37448042}{m\_frameIndex}}));}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00335}00335\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00336}00336\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_ad3151f699a9983c4e06bfed6b5f9d434}{m\_windowOutputNodes}}.count(wnd))}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00337}00337\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00338}00338\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ wnd-\/>clearRenderFinshFences();}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00339}00339\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ fence\ :\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_ad3151f699a9983c4e06bfed6b5f9d434}{m\_windowOutputNodes}}[wnd]-\/>getCollectedFences(\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_a4a0194d60e9d3a86687c510f37448042}{m\_frameIndex}}))}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00340}00340\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00341}00341\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ wnd-\/>addRenderFinshFence(fence);}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00342}00342\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00343}00343\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00344}00344\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00345}00345\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ wnd\ :\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_aa15cac2d3cbc6f15b5fa82d24474f88f}{m\_windows}})}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00346}00346\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00347}00347\ \ \ \ \ \ \ \ \ \ \ \ \ wnd-\/>swapBuffers();}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00348}00348\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00349}00349\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00350}00350\ }
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00351}\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_a98a519c938e553a1a7f9d5470f625935}{00351}}\ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer}{RHI::CommandBuffer}}*\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_a98a519c938e553a1a7f9d5470f625935}{CommandBufferGraph::getCommandBuffer}}(\mbox{\hyperlink{namespace_f_c_t_afacdf252c6b64af1f231c753c443de0b}{CommandBufferToken}}\ token)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00352}00352\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00353}00353\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token-\/>\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer_a4134de95939336b610283e5803c2b265}{getCommandBuffer}}(\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_a4a0194d60e9d3a86687c510f37448042}{m\_frameIndex}});}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00354}00354\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00355}00355\ }
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00356}\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_a92863872dce08aee85ab07899a6cc4b2}{00356}}\ \ \ \ \ \mbox{\hyperlink{namespace_f_c_t_afacdf252c6b64af1f231c753c443de0b}{CommandBufferToken}}\ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_a92863872dce08aee85ab07899a6cc4b2}{CommandBufferGraph::addBuffer}}(\textcolor{keyword}{const}\ std::vector<NodeRef>\&\ predecessors,}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00357}00357\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<NodeRef>\&\ successors)}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00358}00358\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00359}00359\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ newBuffer\ =\ std::make\_unique<CommandBufferNodes::CommandBuffer>(\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_a03fbcad45ff9de944b2bd7663b910f63}{m\_cmdPool}});}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00360}00360\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ bufferPtr\ =\ newBuffer.get();}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00361}00361\ \ \ \ \ \ \ \ \ bufferPtr-\/>updateSynchronization(\mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_a6000e552b4f7b901e56dfb2d3d009fd7}{m\_maxFrameInFlight}});}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00362}00362\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_a49fc1fc2fb497e8cb068f63f61516270}{m\_nodes}}.push\_back(std::move(newBuffer));}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00363}00363\ }
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00364}00364\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_a5ab1e5b29ecf07e486656f1bc7eb5bc8}{connectPredecessors}}(bufferPtr,\ predecessors);}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00365}00365\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_c_t_1_1_command_buffer_graph_a22881c9977ce024dc339b56604e37bbd}{connectSuccessors}}(bufferPtr,\ successors);}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00366}00366\ }
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00367}00367\ \ \ \ \ \ \ \ \ bufferPtr-\/>fillAllSynchronization();}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00368}00368\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ bufferPtr;}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00369}00369\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_command_buffer_graph_8cpp_source_l00370}00370\ \}\ \textcolor{comment}{//\ FCT}}
 
 \end{DoxyCode}

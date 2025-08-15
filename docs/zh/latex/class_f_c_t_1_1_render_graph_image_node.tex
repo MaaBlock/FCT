@@ -6,7 +6,8 @@
 
 
 
-类 FCT\+::Render\+Graph\+Image\+Node 继承关系图\+:\nopagebreak
+类 FCT\+::Render\+Graph\+Image\+Node 继承关系图\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -15,7 +16,8 @@
 \end{figure}
 
 
-FCT\+::Render\+Graph\+Image\+Node 的协作图\+:\nopagebreak
+FCT\+::Render\+Graph\+Image\+Node 的协作图\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -27,7 +29,7 @@ FCT\+::Render\+Graph\+Image\+Node 的协作图\+:\nopagebreak
 \item 
 \mbox{\hyperlink{class_f_c_t_1_1_render_graph_image_node_ae9b4f2f6cb4e3257d683159876b610b1}{Render\+Graph\+Image\+Node}} ()=default
 \item 
-\mbox{\hyperlink{class_f_c_t_1_1_render_graph_image_node_a0f6ad04f82a29b10c06102e6f6b6da96}{Render\+Graph\+Image\+Node}} (const std\+::string \&\mbox{\hyperlink{class_f_c_t_1_1_render_graph_node_a80ca9b32bb21a8af3a7997ff218d560c}{name}})
+\mbox{\hyperlink{class_f_c_t_1_1_render_graph_image_node_a0f6ad04f82a29b10c06102e6f6b6da96}{Render\+Graph\+Image\+Node}} (const std\+::string \&name)
 \item 
 virtual \mbox{\hyperlink{class_f_c_t_1_1_render_graph_image_node}{Render\+Graph\+Image\+Node}} \& \mbox{\hyperlink{class_f_c_t_1_1_render_graph_image_node_ab249024cda9b2aab1f0ccea6a2bf068c}{operator\texorpdfstring{$\vert$}{|}=}} (const \mbox{\hyperlink{struct_f_c_t_1_1_texture}{Texture}} \&other)=0
 \item 
@@ -72,8 +74,6 @@ bool \mbox{\hyperlink{struct_f_c_t_1_1_size_node_a5db1bd1ad56685ff1f9da64c6ca5f2
 bool \mbox{\hyperlink{struct_f_c_t_1_1_size_node_a9732b5716dda9bc16fcaf86f60a4faaf}{is\+Same\+Size}} (const \mbox{\hyperlink{struct_f_c_t_1_1_size_node}{Size\+Node}} \texorpdfstring{$\ast$}{*}other) const noexcept
 \item 
 \mbox{\hyperlink{struct_f_c_t_1_1_fraction_scale2_d}{Fraction\+Scale2D}} \mbox{\hyperlink{struct_f_c_t_1_1_size_node_a64ca4efaa33707d1dfd6ff6d673b7d4d}{get\+Relative\+Scale}} (const \mbox{\hyperlink{struct_f_c_t_1_1_size_node}{Size\+Node}} \texorpdfstring{$\ast$}{*}other) const noexcept
-\item 
-constexpr bool \mbox{\hyperlink{class_f_c_t_1_1_render_graph_node_a6588dda6d19c66185d4b144558313ef8}{operator==}} (const \mbox{\hyperlink{class_f_c_t_1_1_render_graph_node}{Render\+Graph\+Node}} \&other) const noexcept
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Public 属性}
 \begin{DoxyCompactItemize}
@@ -87,10 +87,6 @@ uint32\+\_\+t \mbox{\hyperlink{struct_f_c_t_1_1_size_node_ab8a0870435eb0ece05113
 bool \mbox{\hyperlink{struct_f_c_t_1_1_size_node_ac88975034f7d124dd3509a739fce8aac}{size\+Fixed}}
 \item 
 \mbox{\hyperlink{struct_f_c_t_1_1_fraction_scale2_d}{Fraction\+Scale2D}} \mbox{\hyperlink{struct_f_c_t_1_1_size_node_aa7907fd33836d334cad7298a745bf999}{scale\+To\+Parent}}
-\item 
-std\+::string \mbox{\hyperlink{class_f_c_t_1_1_render_graph_node_a80ca9b32bb21a8af3a7997ff218d560c}{name}}
-\item 
-\mbox{\hyperlink{namespace_f_c_t_adfd269e2894c507f2ea4d65f7d0337cc}{Render\+Graph\+Node\+Type}} \mbox{\hyperlink{class_f_c_t_1_1_render_graph_node_a012ddbc284e36aa2c2bdc909580ba5ac}{type}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Protected 属性}
 \begin{DoxyCompactItemize}
@@ -115,7 +111,7 @@ uint32\+\_\+t \mbox{\hyperlink{class_f_c_t_1_1_render_graph_image_node_a1a62ff26
 \doxysubsection{详细描述}
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_context_2_render_graph_8h_source_l00082}{82}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00085}{85}} 行定义.
 
 
 
@@ -143,7 +139,7 @@ FCT\+::\+Render\+Graph\+Image\+Node\+::\+Render\+Graph\+Image\+Node (\begin{Doxy
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_context_2_render_graph_8h_source_l00086}{86}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00089}{89}} 行定义.
 
 函数调用图\+:\nopagebreak
 \begin{figure}[H]
@@ -165,7 +161,7 @@ void FCT\+::\+Render\+Graph\+Image\+Node\+::add\+Incoming\+Edge (\begin{DoxyPara
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_context_2_render_graph_8h_source_l00100}{100}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00103}{103}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_render_graph_image_node_ab50b845d32bc64fe3488b92d1c58b530}\index{FCT::RenderGraphImageNode@{FCT::RenderGraphImageNode}!addIncomingEdge@{addIncomingEdge}}
 \index{addIncomingEdge@{addIncomingEdge}!FCT::RenderGraphImageNode@{FCT::RenderGraphImageNode}}
@@ -175,7 +171,7 @@ void FCT\+::\+Render\+Graph\+Image\+Node\+::add\+Incoming\+Edge (\begin{DoxyPara
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_context_2_render_graph_8h_source_l00095}{95}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00098}{98}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_render_graph_image_node_a1e03845e1c9a1b6c61b1b94854c0ddfd}\index{FCT::RenderGraphImageNode@{FCT::RenderGraphImageNode}!addOutgoingEdge@{addOutgoingEdge}}
 \index{addOutgoingEdge@{addOutgoingEdge}!FCT::RenderGraphImageNode@{FCT::RenderGraphImageNode}}
@@ -185,7 +181,7 @@ void FCT\+::\+Render\+Graph\+Image\+Node\+::add\+Outgoing\+Edge (\begin{DoxyPara
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_context_2_render_graph_8h_source_l00091}{91}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00094}{94}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_render_graph_image_node_ae1f060eb51a930a69e3ee7f65618bab3}\index{FCT::RenderGraphImageNode@{FCT::RenderGraphImageNode}!fillDefaultData@{fillDefaultData}}
 \index{fillDefaultData@{fillDefaultData}!FCT::RenderGraphImageNode@{FCT::RenderGraphImageNode}}
@@ -246,7 +242,7 @@ const std\+::vector$<$ \mbox{\hyperlink{class_f_c_t_1_1_depth_stencil_edge}{Dept
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_context_2_render_graph_8h_source_l00113}{113}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00116}{116}} 行定义.
 
 这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
@@ -338,7 +334,7 @@ const std\+::vector$<$ \mbox{\hyperlink{class_f_c_t_1_1_target_edge}{Target\+Edg
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_context_2_render_graph_8h_source_l00109}{109}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00112}{112}} 行定义.
 
 这是这个函数的调用关系图\+:\nopagebreak
 \begin{figure}[H]
@@ -355,7 +351,7 @@ const std\+::vector$<$ \mbox{\hyperlink{class_f_c_t_1_1_texture_edge}{Texture\+E
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_context_2_render_graph_8h_source_l00105}{105}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00108}{108}} 行定义.
 
 \Hypertarget{struct_f_c_t_1_1_size_node_a5db1bd1ad56685ff1f9da64c6ca5f24c}\index{FCT::RenderGraphImageNode@{FCT::RenderGraphImageNode}!isConnected@{isConnected}}
 \index{isConnected@{isConnected}!FCT::RenderGraphImageNode@{FCT::RenderGraphImageNode}}
@@ -427,23 +423,6 @@ bool FCT\+::\+Size\+Node\+::is\+Size\+Determined (\begin{DoxyParamCaption}{}{}\e
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{struct_f_c_t_1_1_size_node_a776e363250eaa977723697fa032ddc64_icgraph}
-\end{center}
-\end{figure}
-\Hypertarget{class_f_c_t_1_1_render_graph_node_a6588dda6d19c66185d4b144558313ef8}\index{FCT::RenderGraphImageNode@{FCT::RenderGraphImageNode}!operator==@{operator==}}
-\index{operator==@{operator==}!FCT::RenderGraphImageNode@{FCT::RenderGraphImageNode}}
-\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_node_a6588dda6d19c66185d4b144558313ef8} 
-bool FCT\+::\+Render\+Graph\+Node\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_f_c_t_1_1_render_graph_node}{Render\+Graph\+Node}} \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [noexcept]}, {\ttfamily [inherited]}}
-
-
-
-在文件 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source_l00053}{53}} 行定义.
-
-函数调用图\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_f_c_t_1_1_render_graph_node_a6588dda6d19c66185d4b144558313ef8_cgraph}
 \end{center}
 \end{figure}
 \Hypertarget{class_f_c_t_1_1_render_graph_image_node_a6b517e2413d59e738b0bcf4a560a28ff}\index{FCT::RenderGraphImageNode@{FCT::RenderGraphImageNode}!operator\texttt{"|}=@{operator\texttt{"|}=}}
@@ -602,7 +581,7 @@ std\+::vector$<$\mbox{\hyperlink{class_f_c_t_1_1_depth_stencil_edge}{Depth\+Sten
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_context_2_render_graph_8h_source_l00121}{121}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00124}{124}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_render_graph_image_node_a1a62ff26e1261b95f25a0151d9f8c4b0}\index{FCT::RenderGraphImageNode@{FCT::RenderGraphImageNode}!m\_depthStencilOrderCounter@{m\_depthStencilOrderCounter}}
 \index{m\_depthStencilOrderCounter@{m\_depthStencilOrderCounter}!FCT::RenderGraphImageNode@{FCT::RenderGraphImageNode}}
@@ -612,7 +591,7 @@ uint32\+\_\+t FCT\+::\+Render\+Graph\+Image\+Node\+::m\+\_\+depth\+Stencil\+Orde
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_context_2_render_graph_8h_source_l00123}{123}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00126}{126}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_render_graph_node_a3c1c5e851e0458fec80988a8a6ab75d4}\index{FCT::RenderGraphImageNode@{FCT::RenderGraphImageNode}!m\_name@{m\_name}}
 \index{m\_name@{m\_name}!FCT::RenderGraphImageNode@{FCT::RenderGraphImageNode}}
@@ -622,7 +601,7 @@ std\+::string FCT\+::\+Render\+Graph\+Node\+::m\+\_\+name\hspace{0.3cm}{\ttfamil
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_context_2_render_graph_8h_source_l00054}{54}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00057}{57}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_render_graph_image_node_a1061b1bfc66e60efd29399babe836098}\index{FCT::RenderGraphImageNode@{FCT::RenderGraphImageNode}!m\_targetIncomingEdges@{m\_targetIncomingEdges}}
 \index{m\_targetIncomingEdges@{m\_targetIncomingEdges}!FCT::RenderGraphImageNode@{FCT::RenderGraphImageNode}}
@@ -632,7 +611,7 @@ std\+::vector$<$\mbox{\hyperlink{class_f_c_t_1_1_target_edge}{Target\+Edge}}\tex
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_context_2_render_graph_8h_source_l00120}{120}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00123}{123}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_render_graph_image_node_a70f59dcbc3659740a4e4227c217e8efa}\index{FCT::RenderGraphImageNode@{FCT::RenderGraphImageNode}!m\_targetOrderCounter@{m\_targetOrderCounter}}
 \index{m\_targetOrderCounter@{m\_targetOrderCounter}!FCT::RenderGraphImageNode@{FCT::RenderGraphImageNode}}
@@ -642,7 +621,7 @@ uint32\+\_\+t FCT\+::\+Render\+Graph\+Image\+Node\+::m\+\_\+target\+Order\+Count
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_context_2_render_graph_8h_source_l00122}{122}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00125}{125}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_render_graph_image_node_a8f83f6323192b025507c0e5b2e148268}\index{FCT::RenderGraphImageNode@{FCT::RenderGraphImageNode}!m\_textureOutgoingEdges@{m\_textureOutgoingEdges}}
 \index{m\_textureOutgoingEdges@{m\_textureOutgoingEdges}!FCT::RenderGraphImageNode@{FCT::RenderGraphImageNode}}
@@ -652,17 +631,7 @@ std\+::vector$<$\mbox{\hyperlink{class_f_c_t_1_1_texture_edge}{Texture\+Edge}}\t
 
 
 
-在文件 \mbox{\hyperlink{_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_context_2_render_graph_8h_source_l00119}{119}} 行定义.
-
-\Hypertarget{class_f_c_t_1_1_render_graph_node_a80ca9b32bb21a8af3a7997ff218d560c}\index{FCT::RenderGraphImageNode@{FCT::RenderGraphImageNode}!name@{name}}
-\index{name@{name}!FCT::RenderGraphImageNode@{FCT::RenderGraphImageNode}}
-\doxysubsubsection{\texorpdfstring{name}{name}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_node_a80ca9b32bb21a8af3a7997ff218d560c} 
-std\+::string FCT\+::\+Render\+Graph\+Node\+::name\hspace{0.3cm}{\ttfamily [inherited]}}
-
-
-
-在文件 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source_l00051}{51}} 行定义.
+在文件 \mbox{\hyperlink{_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_render_graph_8h_source_l00122}{122}} 行定义.
 
 \Hypertarget{struct_f_c_t_1_1_size_node_af454a90b3935e183ee99873d1a319d3a}\index{FCT::RenderGraphImageNode@{FCT::RenderGraphImageNode}!parent@{parent}}
 \index{parent@{parent}!FCT::RenderGraphImageNode@{FCT::RenderGraphImageNode}}
@@ -694,16 +663,6 @@ bool FCT\+::\+Size\+Node\+::size\+Fixed\hspace{0.3cm}{\ttfamily [mutable]}, {\tt
 
 在文件 \mbox{\hyperlink{_size_node_8h_source}{Size\+Node.\+h}} 第 \mbox{\hyperlink{_size_node_8h_source_l00011}{11}} 行定义.
 
-\Hypertarget{class_f_c_t_1_1_render_graph_node_a012ddbc284e36aa2c2bdc909580ba5ac}\index{FCT::RenderGraphImageNode@{FCT::RenderGraphImageNode}!type@{type}}
-\index{type@{type}!FCT::RenderGraphImageNode@{FCT::RenderGraphImageNode}}
-\doxysubsubsection{\texorpdfstring{type}{type}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_render_graph_node_a012ddbc284e36aa2c2bdc909580ba5ac} 
-\mbox{\hyperlink{namespace_f_c_t_adfd269e2894c507f2ea4d65f7d0337cc}{Render\+Graph\+Node\+Type}} FCT\+::\+Render\+Graph\+Node\+::type\hspace{0.3cm}{\ttfamily [inherited]}}
-
-
-
-在文件 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source}{Render\+Graph.\+h}} 第 \mbox{\hyperlink{_deprecated_2_context_2_render_graph_8h_source_l00052}{52}} 行定义.
-
 \Hypertarget{struct_f_c_t_1_1_size_node_a841dd2fb34c5e249eedde53b3282b792}\index{FCT::RenderGraphImageNode@{FCT::RenderGraphImageNode}!width@{width}}
 \index{width@{width}!FCT::RenderGraphImageNode@{FCT::RenderGraphImageNode}}
 \doxysubsubsection{\texorpdfstring{width}{width}}
@@ -718,4 +677,4 @@ uint32\+\_\+t FCT\+::\+Size\+Node\+::width\hspace{0.3cm}{\ttfamily [mutable]}, {
 
 该类的文档由以下文件生成\+:\begin{DoxyCompactItemize}
 \item 
-src/\+Context/\mbox{\hyperlink{_context_2_render_graph_8h}{Render\+Graph.\+h}}\end{DoxyCompactItemize}
+src/\+Context/\mbox{\hyperlink{_render_graph_8h}{Render\+Graph.\+h}}\end{DoxyCompactItemize}

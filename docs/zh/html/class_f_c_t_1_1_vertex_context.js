@@ -1,6 +1,6 @@
 var class_f_c_t_1_1_vertex_context =
 [
-    [ "VertexContext", "class_f_c_t_1_1_vertex_context.html#aac40f8413559d30f9229c933d3ba95e4", null ],
+    [ "VertexContext", "class_f_c_t_1_1_vertex_context.html#aecfd1336272f723d80fc1acb06f09673", null ],
     [ "addConstBuffer", "class_f_c_t_1_1_vertex_context.html#a303682c5b0ec1561ea38ab547bad0fe9", null ],
     [ "addPath", "class_f_c_t_1_1_vertex_context.html#a3ed87c4bdf3d30a438d58056a97fa916", null ],
     [ "addRectangle", "class_f_c_t_1_1_vertex_context.html#a318a0ba088aae06ce622d6e432a33c3c", null ],
@@ -31,7 +31,6 @@ var class_f_c_t_1_1_vertex_context =
     [ "m_uploadPassName", "class_f_c_t_1_1_vertex_context.html#aabd33c48b3686313446480a5e5fdc84f", null ],
     [ "m_viewMatrix", "class_f_c_t_1_1_vertex_context.html#ad9a2cce5f66f1989adfad859e5dfa26f", null ],
     [ "m_vs", "class_f_c_t_1_1_vertex_context.html#afecd89c54c2de4ff5039c57edb06e458", null ],
-    [ "m_wnd", "class_f_c_t_1_1_vertex_context.html#a252724f4217ba3a9174fb3838db05361", null ],
     [ "pixelLayout", "class_f_c_t_1_1_vertex_context.html#a1631e3d2b822a1e052a7f8ddc1eaed33", null ],
     [ "resourceLayout", "class_f_c_t_1_1_vertex_context.html#ab7da9bce812a453bb15a3ab172b99209", null ],
     [ "ScreenInfoNameInShder", "class_f_c_t_1_1_vertex_context.html#a87782fd9229ab4b83226a2a1744a80e0", null ],

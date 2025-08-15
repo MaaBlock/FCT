@@ -6,15 +6,7 @@ var hierarchy =
     [ "FCT::AutoViewport", "class_f_c_t_1_1_auto_viewport.html", null ],
     [ "FCT::WindowModule::AutoViewport", "struct_f_c_t_1_1_window_module_1_1_auto_viewport.html", null ],
     [ "FCT::RenderGraph::BarrierInfo", "struct_f_c_t_1_1_render_graph_1_1_barrier_info.html", null ],
-    [ "FCT::BufferDesc", "struct_f_c_t_1_1_buffer_desc.html", null ],
-    [ "FCT::BufferUnionShared", "struct_f_c_t_1_1_buffer_union_shared.html", null ],
     [ "FCT::CommandBufferGraph", "class_f_c_t_1_1_command_buffer_graph.html", null ],
-    [ "FCT::CommandBufferGraphNode", "class_f_c_t_1_1_command_buffer_graph_node.html", [
-      [ "FCT::CommandBufferGraphWindowInputNode", "class_f_c_t_1_1_command_buffer_graph_window_input_node.html", null ],
-      [ "FCT::CommandBufferGraphWindowOutputNode", "class_f_c_t_1_1_command_buffer_graph_window_output_node.html", null ]
-    ] ],
-    [ "FCT::CompiledGroup", "struct_f_c_t_1_1_compiled_group.html", null ],
-    [ "FCT::CompiledPass", "struct_f_c_t_1_1_compiled_pass.html", null ],
     [ "Computation< T >", "class_computation.html", null ],
     [ "FCT::RHI::ConstBuffer", "class_f_c_t_1_1_r_h_i_1_1_const_buffer.html", [
       [ "FCT::RHI::VK_ConstBuffer", "class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer.html", null ]
@@ -53,6 +45,10 @@ var hierarchy =
       [ "FCT::TargetEdge", "class_f_c_t_1_1_target_edge.html", null ],
       [ "FCT::TextureEdge", "class_f_c_t_1_1_texture_edge.html", null ]
     ] ],
+    [ "FCT::CommandBufferEdges::EdgeBase", "class_f_c_t_1_1_command_buffer_edges_1_1_edge_base.html", [
+      [ "FCT::CommandBufferEdges::InputFromWindow", "class_f_c_t_1_1_command_buffer_edges_1_1_input_from_window.html", null ],
+      [ "FCT::CommandBufferEdges::OutputToWindow", "class_f_c_t_1_1_command_buffer_edges_1_1_output_to_window.html", null ]
+    ] ],
     [ "FCT::EnablePassClear", "struct_f_c_t_1_1_enable_pass_clear.html", null ],
     [ "FCT::OldRenderGraph::ExecutionOrder", "struct_f_c_t_1_1_old_render_graph_1_1_execution_order.html", null ],
     [ "FCT::FencePool", "class_f_c_t_1_1_fence_pool.html", [
@@ -60,20 +56,16 @@ var hierarchy =
     ] ],
     [ "FCT::Flags< BitType >", "class_f_c_t_1_1_flags.html", null ],
     [ "FCT::FlagTraits< BitType >", "struct_f_c_t_1_1_flag_traits.html", null ],
+    [ "FCT::FlowControl", "class_f_c_t_1_1_flow_control.html", null ],
     [ "Font", "class_font.html", [
       [ "FCT::Freetype_Font", "class_f_c_t_1_1_freetype___font.html", null ]
     ] ],
     [ "FCT::Fraction", "struct_f_c_t_1_1_fraction.html", null ],
     [ "FCT::FractionScale2D", "struct_f_c_t_1_1_fraction_scale2_d.html", null ],
-    [ "FCT::FrameResource", "struct_f_c_t_1_1_frame_resource.html", null ],
     [ "FCT::Freetype_FontCommon", "class_f_c_t_1_1_freetype___font_common.html", null ],
     [ "FCT::EventSystemConfig::Full", "struct_f_c_t_1_1_event_system_config_1_1_full.html", null ],
     [ "FCT::GLFW_UICommon", "class_f_c_t_1_1_g_l_f_w___u_i_common.html", null ],
     [ "Font::GlyphInfo", "struct_font_1_1_glyph_info.html", null ],
-    [ "std::hash< FCT::NeedCreatedBufferDesc >", "structstd_1_1hash_3_01_f_c_t_1_1_need_created_buffer_desc_01_4.html", null ],
-    [ "std::hash< FCT::PassGroupRenderGraphNode >", "structstd_1_1hash_3_01_f_c_t_1_1_pass_group_render_graph_node_01_4.html", null ],
-    [ "std::hash< FCT::RenderGraphNode >", "structstd_1_1hash_3_01_f_c_t_1_1_render_graph_node_01_4.html", null ],
-    [ "std::hash< FCT::Size2 >", "structstd_1_1hash_3_01_f_c_t_1_1_size2_01_4.html", null ],
     [ "std::hash< FCT::TextureElement >", "structstd_1_1hash_3_01_f_c_t_1_1_texture_element_01_4.html", null ],
     [ "FCT::EventSystemConfig::IdentifierFull", "struct_f_c_t_1_1_event_system_config_1_1_identifier_full.html", null ],
     [ "FCT::EventSystemConfig::IdentifierTriggerOnly", "struct_f_c_t_1_1_event_system_config_1_1_identifier_trigger_only.html", null ],
@@ -96,7 +88,6 @@ var hierarchy =
     [ "FCT::RHI::IIndexData", "class_f_c_t_1_1_r_h_i_1_1_i_index_data.html", [
       [ "FCT::RHI::IndexData< T >", "class_f_c_t_1_1_r_h_i_1_1_index_data.html", null ]
     ] ],
-    [ "FCT::ImageBarrierDesc", "struct_f_c_t_1_1_image_barrier_desc.html", null ],
     [ "FCT::ImageBehavior", "class_f_c_t_1_1_image_behavior.html", [
       [ "FCT::BeforeCreateImageBehavior", "class_f_c_t_1_1_before_create_image_behavior.html", null ],
       [ "FCT::MutilBufferAffterCreateImageBehavior", "class_f_c_t_1_1_mutil_buffer_affter_create_image_behavior.html", null ],
@@ -144,21 +135,23 @@ var hierarchy =
     [ "FCT::ModelObject", "struct_f_c_t_1_1_model_object.html", null ],
     [ "FCT::ModelVertex", "struct_f_c_t_1_1_model_vertex.html", null ],
     [ "FCT::ModuleManager", "class_f_c_t_1_1_module_manager.html", null ],
-    [ "FCT::NeedCreatedBufferDesc", "struct_f_c_t_1_1_need_created_buffer_desc.html", null ],
+    [ "FCT::CommandBufferNodes::NodeBase", "class_f_c_t_1_1_command_buffer_nodes_1_1_node_base.html", [
+      [ "FCT::CommandBufferNodes::CommandBuffer", "class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer.html", null ],
+      [ "FCT::CommandBufferNodes::InputFromWindow", "class_f_c_t_1_1_command_buffer_nodes_1_1_input_from_window.html", null ],
+      [ "FCT::CommandBufferNodes::OutputToWindow", "class_f_c_t_1_1_command_buffer_nodes_1_1_output_to_window.html", null ]
+    ] ],
     [ "FCT::TokenGraph< Token, Value >::NodeInfo", "struct_f_c_t_1_1_token_graph_1_1_node_info.html", null ],
     [ "FCT::TokenGraph< Token, Value >::NodeProbe", "class_f_c_t_1_1_token_graph_1_1_node_probe.html", null ],
+    [ "FCT::CommandBufferGraph::NodeRef", "struct_f_c_t_1_1_command_buffer_graph_1_1_node_ref.html", null ],
     [ "FCT::Noncopyable", "class_f_c_t_1_1_noncopyable.html", [
       [ "FCT::TokenGraph< std::string, SubmitTicker >", "class_f_c_t_1_1_token_graph.html", null ],
       [ "FCT::TokenGraph< std::string, SyncTicker >", "class_f_c_t_1_1_token_graph.html", null ],
-      [ "FCT::TokenGraph< FCT::RenderGraphNode, FCT::RenderGraphNode >", "class_f_c_t_1_1_token_graph.html", null ],
-      [ "FCT::TokenGraph< FCT::PassGroupRenderGraphNode, FCT::PassGroupRenderGraphNode >", "class_f_c_t_1_1_token_graph.html", null ],
       [ "FCT::TokenGraph< std::string, FCT::ImageSaved >", "class_f_c_t_1_1_token_graph.html", null ],
       [ "FCT::TokenGraph< Token, Value >", "class_f_c_t_1_1_token_graph.html", null ]
     ] ],
     [ "FCT::Object", "class_f_c_t_1_1_object.html", null ],
     [ "FCT::ObjectPool< T, Args >", "class_f_c_t_1_1_object_pool.html", null ],
     [ "FCT::ObjectPoolChunk< T >", "class_f_c_t_1_1_object_pool_chunk.html", null ],
-    [ "FCT::PassClear", "struct_f_c_t_1_1_pass_clear.html", null ],
     [ "FCT::PassClearValue", "struct_f_c_t_1_1_pass_clear_value.html", null ],
     [ "FCT::PassDesc", "struct_f_c_t_1_1_pass_desc.html", null ],
     [ "FCT::RHI::PassDesc", "struct_f_c_t_1_1_r_h_i_1_1_pass_desc.html", null ],
@@ -167,7 +160,6 @@ var hierarchy =
     [ "FCT::RHI::PassGroup", "class_f_c_t_1_1_r_h_i_1_1_pass_group.html", [
       [ "FCT::RHI::VK_PassGroup", "class_f_c_t_1_1_r_h_i_1_1_v_k___pass_group.html", null ]
     ] ],
-    [ "FCT::PassGroupRenderGraphNode", "struct_f_c_t_1_1_pass_group_render_graph_node.html", null ],
     [ "FCT::RHI::PassNeighbors", "struct_f_c_t_1_1_r_h_i_1_1_pass_neighbors.html", null ],
     [ "FCT::PassResource", "class_f_c_t_1_1_pass_resource.html", [
       [ "FCT::VK_PassResource", "class_f_c_t_1_1_v_k___pass_resource.html", null ]
@@ -262,7 +254,6 @@ var hierarchy =
     ] ],
     [ "FCT::RefCountPolicy< T, isRefCountBase >", "class_f_c_t_1_1_ref_count_policy.html", null ],
     [ "FCT::RefCountPolicy< T, false >", "class_f_c_t_1_1_ref_count_policy_3_01_t_00_01false_01_4.html", null ],
-    [ "FCT::RenderGraphBufferDesc", "struct_f_c_t_1_1_render_graph_buffer_desc.html", null ],
     [ "FCT::RenderGraphNode", "class_f_c_t_1_1_render_graph_node.html", [
       [ "FCT::RenderGraphImageNode", "class_f_c_t_1_1_render_graph_image_node.html", [
         [ "FCT::RenderGraphBufferNode", "class_f_c_t_1_1_render_graph_buffer_node.html", null ],
@@ -296,7 +287,6 @@ var hierarchy =
     ] ],
     [ "FCT::ShaderGenerator", "class_f_c_t_1_1_shader_generator.html", null ],
     [ "FCT::SharePtr< T >", "class_f_c_t_1_1_share_ptr.html", null ],
-    [ "FCT::Size2", "struct_f_c_t_1_1_size2.html", null ],
     [ "FCT::SizeNode", "struct_f_c_t_1_1_size_node.html", [
       [ "FCT::RenderGraphImageNode", "class_f_c_t_1_1_render_graph_image_node.html", null ]
     ] ],
@@ -306,6 +296,7 @@ var hierarchy =
       [ "AndroidErr", "class_android_err.html", null ],
       [ "Android_Out", "class_android___out.html", null ]
     ] ],
+    [ "FCT::SubmitThreadManager", "class_f_c_t_1_1_submit_thread_manager.html", null ],
     [ "FCT::WindowModule::Swapchain", "struct_f_c_t_1_1_window_module_1_1_swapchain.html", null ],
     [ "FCT::SwapchainTargetWrapper", "class_f_c_t_1_1_swapchain_target_wrapper.html", [
       [ "FCT::GLFW_SwapchainTargetWrapper", "class_f_c_t_1_1_g_l_f_w___swapchain_target_wrapper.html", null ]

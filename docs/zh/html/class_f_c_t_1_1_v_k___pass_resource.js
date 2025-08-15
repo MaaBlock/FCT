@@ -4,7 +4,6 @@ var class_f_c_t_1_1_v_k___pass_resource =
     [ "addConstBuffer", "class_f_c_t_1_1_v_k___pass_resource.html#ab76207cd13bd5ada11880cf3228ce72a", null ],
     [ "addSampler", "class_f_c_t_1_1_v_k___pass_resource.html#aef8d80b6d7372a7d2ab0c8abac97bddd", null ],
     [ "addTexture", "class_f_c_t_1_1_v_k___pass_resource.html#adce903a017bf01a4df07064f8eae2310", null ],
-    [ "bind", "class_f_c_t_1_1_v_k___pass_resource.html#ae10b85c895c0bb40a2a8af042d3eb3ca", null ],
     [ "bind", "class_f_c_t_1_1_v_k___pass_resource.html#a7ad93d9edc1054a416d15f970f71c801", null ],
     [ "create", "class_f_c_t_1_1_v_k___pass_resource.html#a4818ec04167db30e0a2d545313e5bd95", null ],
     [ "createDescriptorSetsAndLayouts", "class_f_c_t_1_1_v_k___pass_resource.html#a0210cbf88dba34d267cdafac2071083f", null ],
@@ -25,6 +24,5 @@ var class_f_c_t_1_1_v_k___pass_resource =
     [ "m_dirtyFlags", "class_f_c_t_1_1_v_k___pass_resource.html#ab7255ad01052f5e4e395d46537f91742", null ],
     [ "m_needRecreate", "class_f_c_t_1_1_v_k___pass_resource.html#a274b9d8a323e38398e54baa74c9aae09", null ],
     [ "m_samplers", "class_f_c_t_1_1_v_k___pass_resource.html#a5a87c09644f12ae3b72621bd182923d0", null ],
-    [ "m_textures", "class_f_c_t_1_1_v_k___pass_resource.html#ad346a8e3ea6aca1e38a9609d734429cd", null ],
-    [ "m_wnd", "class_f_c_t_1_1_v_k___pass_resource.html#a275ae375787ce9f0eb2616272fe31eae", null ]
+    [ "m_textures", "class_f_c_t_1_1_v_k___pass_resource.html#ad346a8e3ea6aca1e38a9609d734429cd", null ]
 ];

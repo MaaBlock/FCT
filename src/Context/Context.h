@@ -36,6 +36,8 @@
 #include "./ContextEvent.h"
 #include "./RenderGraph.h"
 #include "./CommandBufferGraph.h"
+#include "./SubmitThreadManager.h"
+#include "./FlowControl.h"
 namespace FCT
 {
 	class RasterizationState;
@@ -57,8 +59,6 @@ namespace FCT
 	class Window;
 	class SemaphorePool;
 	class FencePool;
-	using SubmitTicker = std::function<void()>;
-	using SyncTicker = std::function<void()>;
 	class RenderGraph;
 
 	using TickerToken = uint32_t;
@@ -97,8 +97,6 @@ namespace FCT
 	class Context : public RefCount,public IEventSystem<EventSystemConfig::TriggerOnly>
 	{
 	protected:
-		Device* m_resourceDevice;
-		CommandBufferGraph* m_cmdGraph;
 	protected:
 		Context(Runtime* runtime);
 		virtual ~Context();
@@ -136,12 +134,12 @@ namespace FCT
  		  * @endcond
 	 	  *  @{
 	 	  */
-		auto& syncTickers(){ return m_syncTickers; }
+		auto& syncTickers() { return m_flowControl->syncTickers(); }
 		/*
 		 * 初始化阶段 可以在flush前任意修改，因为提交线程一直在等待下一帧
 		 * 运行阶段 不允许修改 或 拆分flush函数，在wait currentFlush和nextFrame之间修改
 		 */
-		auto& submitTickers() { return m_submitTickers; }
+		auto& submitTickers() { return m_flowControl->submitTickers(); }
 		void flush();
 		/** @} */
 	protected:
@@ -203,15 +201,20 @@ namespace FCT
 
 	protected:
 		// 模块组件
+		FlowControl* m_flowControl;
+		Device* m_resourceDevice;
 		ModelLoader* m_modelLoader;
 		RenderGraph* m_renderGraph;
 		ImageLoader* m_imageLoader;
 		ResourceManager* m_resourceManager;
 		ShaderCompiler* m_compiler;
 		ShaderGenerator* m_generator;
+		CommandBufferGraph* m_cmdGraph;
 	protected:
-		TokenGraph<std::string, SubmitTicker> m_submitTickers;
-		TokenGraph<std::string, SyncTicker> m_syncTickers;
+		/*
+		TokenGraph<std::string, SubmitTicker>& m_submitTickers;
+		TokenGraph<std::string, SyncTicker>& m_syncTickers;
+		*/
 		SubmitTicker m_ticker;
 		std::vector<Window*> m_bindWindows;
 		bool m_nextFrame;
@@ -278,7 +281,7 @@ namespace FCT
 		}
 		else if constexpr (std::is_same_v<T, RenderGraph>)
 		{
-			FCT_SAFE_NEW(m_renderGraph,RenderGraph,this);
+			FCT_SAFE_NEW(m_renderGraph,RenderGraph,m_resourceDevice,m_flowControl,m_cmdGraph,m_resourceManager);
 		}
 		else
 		{

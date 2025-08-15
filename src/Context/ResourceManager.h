@@ -8,6 +8,7 @@
 #include "ContextEvent.h"
 #include "../Base/TokenGraph.h"
 #include "Device.h"
+#include "FlowControl.h"
 #include "Format.h"
 #include "../RHI/ImageUsageFlags.h"
 #include "../Base/FractionScale2D.h"
@@ -105,6 +106,7 @@ namespace FCT
         std::vector<ImageSaved> m_needChangeIndexImages;
         Device* m_resourceDevice;
         Context* m_context;
+        FlowControl* m_flowControl;
     public:
         //todo:todo函数
         /**

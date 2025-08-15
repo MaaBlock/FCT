@@ -18,10 +18,10 @@ namespace FCT
     void RenderGraph::initForSubmit()
     {
         m_commandBufferToken = nullptr;
-        auto& submitGraph = m_ctx->submitTickers();
+        auto& submitGraph = m_flowControl->submitTickers();
         submitGraph[RenderGraphTickers::RenderGraphSubmit] = {[this]()
         {
-            auto cmdGraph = m_ctx->getModule<CommandBufferGraph>();
+            auto cmdGraph = m_commandBufferGraph;
             auto cmdBuf = cmdGraph->getCommandBuffer(m_commandBufferToken);
             cmdBuf->reset();
             cmdBuf->begin();
@@ -36,7 +36,7 @@ namespace FCT
 
     void RenderGraph::allocateCommandBuffer()
     {
-        auto cmdGraph = m_ctx->getModule<CommandBufferGraph>();
+        auto cmdGraph = m_commandBufferGraph;
 
         if (m_commandBufferToken)
         {
@@ -78,6 +78,16 @@ namespace FCT
         }
 
         m_commandBufferToken = cmdGraph->addBuffer(windowNodes, windowNodes);
+    }
+
+    RenderGraph::RenderGraph(Device* device, FlowControl* flowControl, CommandBufferGraph* commandBufferGraph,
+        ResourceManager* resourceManager)
+    {
+        m_resourceDevice = device;
+        m_flowControl = flowControl;
+        m_commandBufferGraph = commandBufferGraph;
+        m_resourceManager = resourceManager;
+        initForSubmit();
     }
 
     RenderGraphImageNode* RenderGraph::getOrCreateImageNode(const std::string& name, const Texture& texture)
@@ -360,7 +370,7 @@ namespace FCT
         for (auto& [name, imageNode] : m_imageNodes) {
             imageNode->fillDefaultData();
         }
-        auto* resourceManager = m_ctx->getModule<ResourceManager>();
+        auto* resourceManager = m_resourceManager;
         if (!resourceManager) {
             throw std::runtime_error("ResourceManager not available");
         }
@@ -450,7 +460,7 @@ namespace FCT
 
     void RenderGraph::createRHIPasses() {
         for (const auto& [passName, passNode] : m_passNodes) {
-            RHI::Pass* rhiPass = m_ctx->createResource<RHI::Pass>();
+            RHI::Pass* rhiPass = m_resourceDevice->createResource<RHI::Pass>();
 
             const EnablePassClear& clearInfo = passNode.getClearInfo();
             if (clearInfo.types) {
@@ -593,18 +603,12 @@ namespace FCT
         simulateExecutionAndAnalyzeBarriers();
     }
 
-    RenderGraph::RenderGraph(Context* ctx)
-    {
-        m_ctx = ctx;
-        initForSubmit();
-        //auto submitGraph = m_ctx->submitTickers();
-    }
 
     void RenderGraph::createPassGroups() {
         auto passGroups = m_passesUnions.getGroups();
 
         for (const auto& [groupLeader, groupMembers] : passGroups) {
-            RHI::PassGroup* passGroup = m_ctx->createResource<RHI::PassGroup>();
+            RHI::PassGroup* passGroup = m_resourceDevice->createResource<RHI::PassGroup>();
 
             std::vector<std::string> orderedPassNames;
 

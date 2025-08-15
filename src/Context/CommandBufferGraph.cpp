@@ -194,13 +194,13 @@ namespace FCT {
         }
     }
 
-    CommandBufferGraph::CommandBufferGraph(Context* ctx): m_ctx(ctx)
+    CommandBufferGraph::CommandBufferGraph(Device* device)
     {
-        m_cmdPool = ctx->createResource<RHI::CommandPool>();
+        m_cmdPool = device->createResource<RHI::CommandPool>();
         m_cmdPool->create();
-        m_semaphorePool = ctx->createResource<SemaphorePool>();
-        m_fencePool = ctx->createResource<FencePool>();
-
+        m_semaphorePool = device->createResource<SemaphorePool>();
+        m_fencePool = device->createResource<FencePool>();
+        m_device = device;
     }
 
     CommandBufferNodes::InputFromWindow* CommandBufferGraph::getOrCreateWindowInputNode(Window* window)

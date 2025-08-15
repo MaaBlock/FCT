@@ -1,10 +1,7 @@
 var _context_8h =
 [
-    [ "FCT::FrameResource", "struct_f_c_t_1_1_frame_resource.html", "struct_f_c_t_1_1_frame_resource" ],
     [ "FCT::Context", "class_f_c_t_1_1_context.html", "class_f_c_t_1_1_context" ],
     [ "FCT::Context::LogicTaskData", "struct_f_c_t_1_1_context_1_1_logic_task_data.html", "struct_f_c_t_1_1_context_1_1_logic_task_data" ],
-    [ "FCT::SubmitTicker", "namespace_f_c_t.html#ab1ea6811dd963f80ea7b7b1b6aec0d3c", null ],
-    [ "FCT::SyncTicker", "namespace_f_c_t.html#a726db41259cdbddb2910a4854444d5b9", null ],
     [ "FCT::TickerToken", "namespace_f_c_t.html#a4871ca624d38cba5f44a54de0e01a933", null ],
     [ "FCT::ContextCreateFlag", "namespace_f_c_t.html#a0f42c8db4cad8b73d402562d575b1a1b", [
       [ "FCT::ContextCreateFlag::withModuleResourceManage", "namespace_f_c_t.html#a0f42c8db4cad8b73d402562d575b1a1ba44ae79148d07f2b385498c42666929b2", null ],

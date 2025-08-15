@@ -24,6 +24,8 @@
 #include "CommandBufferGraph.h"
 #include "../Base/UnionFind.h"
 #include "../Base/IEventSystem.h"
+#include "./FlowControl.h"
+#include "./Device.h"
 
 namespace FCT
 {
@@ -204,7 +206,13 @@ namespace FCT
         void initForSubmit();
         void allocateCommandBuffer();
     public:
-
+    private:
+        Device* m_resourceDevice;
+        FlowControl* m_flowControl;
+        CommandBufferGraph* m_commandBufferGraph;
+        ResourceManager* m_resourceManager;
+    public:
+        RenderGraph(Device* device, FlowControl* flowControl, CommandBufferGraph* commandBufferGraph, ResourceManager* resourceManager);
     private:
         struct ImageState {
             ImageLayout currentLayout = ImageLayout::undefined;
@@ -226,7 +234,6 @@ namespace FCT
         std::unordered_map<std::string, std::vector<BarrierInfo>> m_passGroupBarriers;
         std::map<std::string, std::set<std::string>> m_passGroupDependencies;
 
-        Context* m_ctx;
         std::unordered_map<std::string, std::unique_ptr<RenderGraphImageNode>> m_imageNodes;
         std::unordered_map<std::string,RenderGraphPassNode> m_passNodes;
         UnionFind<std::string,char> m_passesUnions;
@@ -323,7 +330,6 @@ namespace FCT
         {
             IEventSystem<EventSystemConfig::TriggerOnly>::unsubscribe(subscribeId);
         }
-        RenderGraph(Context* ctx);
         template<typename... Args>
         void addPass(std::string name,Args&&... args)
         {

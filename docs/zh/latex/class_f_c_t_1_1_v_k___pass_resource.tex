@@ -15,7 +15,8 @@
 \end{figure}
 
 
-FCT\+::VK\+\_\+\+Pass\+Resource 的协作图\+:\nopagebreak
+FCT\+::VK\+\_\+\+Pass\+Resource 的协作图\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -55,8 +56,6 @@ void \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a4c81bbc00f575af063187
 \item 
 void \mbox{\hyperlink{class_f_c_t_1_1_v_k___pass_resource_a7ad93d9edc1054a416d15f970f71c801}{bind}} (\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer}{RHI\+::\+Command\+Buffer}} \texorpdfstring{$\ast$}{*}cmd\+Buf, \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pipeline}{RHI\+::\+Pipeline}} \texorpdfstring{$\ast$}{*}pipeline) override
 \item 
-void \mbox{\hyperlink{class_f_c_t_1_1_pass_resource_ae10b85c895c0bb40a2a8af042d3eb3ca}{bind}} (\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}wnd)
-\item 
 bool \mbox{\hyperlink{class_f_c_t_1_1_pass_resource_a856801634d4fceb71ba38331e24e8ff1}{is\+Bound}} (const \mbox{\hyperlink{class_f_c_t_1_1_texture_element}{Texture\+Element}} \&element) const
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Protected 属性}
@@ -77,8 +76,6 @@ std\+::vector$<$ \mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_const_buffer}{RHI\+:
 std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{class_f_c_t_1_1_texture_element}{Texture\+Element}}, \mbox{\hyperlink{class_f_c_t_1_1_image}{Image}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_f_c_t_1_1_pass_resource_ad346a8e3ea6aca1e38a9609d734429cd}{m\+\_\+textures}}
 \item 
 std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{class_f_c_t_1_1_sampler}{Sampler}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{class_f_c_t_1_1_sampler_element}{Sampler\+Element}} $>$ $>$ \mbox{\hyperlink{class_f_c_t_1_1_pass_resource_a5a87c09644f12ae3b72621bd182923d0}{m\+\_\+samplers}}
-\item 
-\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_f_c_t_1_1_pass_resource_a275ae375787ce9f0eb2616272fe31eae}{m\+\_\+wnd}}
 \item 
 bool \mbox{\hyperlink{class_f_c_t_1_1_pass_resource_af16957199da14f817571f38ebe66ea8b}{m\+\_\+dirty}} = true
 \end{DoxyCompactItemize}
@@ -172,19 +169,9 @@ void FCT\+::\+VK\+\_\+\+Pass\+Resource\+::add\+Texture (\begin{DoxyParamCaption}
 \includegraphics[width=350pt]{class_f_c_t_1_1_v_k___pass_resource_adce903a017bf01a4df07064f8eae2310_cgraph}
 \end{center}
 \end{figure}
-\Hypertarget{class_f_c_t_1_1_pass_resource_ae10b85c895c0bb40a2a8af042d3eb3ca}\index{FCT::VK\_PassResource@{FCT::VK\_PassResource}!bind@{bind}}
-\index{bind@{bind}!FCT::VK\_PassResource@{FCT::VK\_PassResource}}
-\doxysubsubsection{\texorpdfstring{bind()}{bind()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_pass_resource_ae10b85c895c0bb40a2a8af042d3eb3ca} 
-void FCT\+::\+Pass\+Resource\+::bind (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}} \texorpdfstring{$\ast$}{*}}]{wnd}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}
-
-
-
-在文件 \mbox{\hyperlink{_pass_resource_8h_source}{Pass\+Resource.\+h}} 第 \mbox{\hyperlink{_pass_resource_8h_source_l00030}{30}} 行定义.
-
 \Hypertarget{class_f_c_t_1_1_v_k___pass_resource_a7ad93d9edc1054a416d15f970f71c801}\index{FCT::VK\_PassResource@{FCT::VK\_PassResource}!bind@{bind}}
 \index{bind@{bind}!FCT::VK\_PassResource@{FCT::VK\_PassResource}}
-\doxysubsubsection{\texorpdfstring{bind()}{bind()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\doxysubsubsection{\texorpdfstring{bind()}{bind()}}
 {\footnotesize\ttfamily \label{class_f_c_t_1_1_v_k___pass_resource_a7ad93d9edc1054a416d15f970f71c801} 
 void FCT\+::\+VK\+\_\+\+Pass\+Resource\+::bind (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_command_buffer}{RHI\+::\+Command\+Buffer}} \texorpdfstring{$\ast$}{*}}]{cmd\+Buf}{, }\item[{\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_pipeline}{RHI\+::\+Pipeline}} \texorpdfstring{$\ast$}{*}}]{pipeline}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
@@ -273,7 +260,7 @@ bool FCT\+::\+Pass\+Resource\+::is\+Bound (\begin{DoxyParamCaption}\item[{const 
 
 
 
-在文件 \mbox{\hyperlink{_pass_resource_8h_source}{Pass\+Resource.\+h}} 第 \mbox{\hyperlink{_pass_resource_8h_source_l00042}{42}} 行定义.
+在文件 \mbox{\hyperlink{_pass_resource_8h_source}{Pass\+Resource.\+h}} 第 \mbox{\hyperlink{_pass_resource_8h_source_l00037}{37}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_v_k___pass_resource_a33e2e0be4beec0f521265b1ac654afa4}\index{FCT::VK\_PassResource@{FCT::VK\_PassResource}!markAllDescriptorSetsDirty@{markAllDescriptorSetsDirty}}
 \index{markAllDescriptorSetsDirty@{markAllDescriptorSetsDirty}!FCT::VK\_PassResource@{FCT::VK\_PassResource}}
@@ -433,7 +420,7 @@ std\+::vector$<$\mbox{\hyperlink{class_f_c_t_1_1_r_h_i_1_1_const_buffer}{RHI\+::
 
 
 
-在文件 \mbox{\hyperlink{_pass_resource_8h_source}{Pass\+Resource.\+h}} 第 \mbox{\hyperlink{_pass_resource_8h_source_l00046}{46}} 行定义.
+在文件 \mbox{\hyperlink{_pass_resource_8h_source}{Pass\+Resource.\+h}} 第 \mbox{\hyperlink{_pass_resource_8h_source_l00041}{41}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_v_k___pass_resource_aa61429c15436c4289d2a93110af38195}\index{FCT::VK\_PassResource@{FCT::VK\_PassResource}!m\_ctx@{m\_ctx}}
 \index{m\_ctx@{m\_ctx}!FCT::VK\_PassResource@{FCT::VK\_PassResource}}
@@ -473,7 +460,7 @@ bool FCT\+::\+Pass\+Resource\+::m\+\_\+dirty = true\hspace{0.3cm}{\ttfamily [pro
 
 
 
-在文件 \mbox{\hyperlink{_pass_resource_8h_source}{Pass\+Resource.\+h}} 第 \mbox{\hyperlink{_pass_resource_8h_source_l00051}{51}} 行定义.
+在文件 \mbox{\hyperlink{_pass_resource_8h_source}{Pass\+Resource.\+h}} 第 \mbox{\hyperlink{_pass_resource_8h_source_l00045}{45}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_v_k___pass_resource_ab7255ad01052f5e4e395d46537f91742}\index{FCT::VK\_PassResource@{FCT::VK\_PassResource}!m\_dirtyFlags@{m\_dirtyFlags}}
 \index{m\_dirtyFlags@{m\_dirtyFlags}!FCT::VK\_PassResource@{FCT::VK\_PassResource}}
@@ -503,7 +490,7 @@ std\+::vector$<$std\+::pair$<$\mbox{\hyperlink{class_f_c_t_1_1_sampler}{Sampler}
 
 
 
-在文件 \mbox{\hyperlink{_pass_resource_8h_source}{Pass\+Resource.\+h}} 第 \mbox{\hyperlink{_pass_resource_8h_source_l00048}{48}} 行定义.
+在文件 \mbox{\hyperlink{_pass_resource_8h_source}{Pass\+Resource.\+h}} 第 \mbox{\hyperlink{_pass_resource_8h_source_l00043}{43}} 行定义.
 
 \Hypertarget{class_f_c_t_1_1_pass_resource_ad346a8e3ea6aca1e38a9609d734429cd}\index{FCT::VK\_PassResource@{FCT::VK\_PassResource}!m\_textures@{m\_textures}}
 \index{m\_textures@{m\_textures}!FCT::VK\_PassResource@{FCT::VK\_PassResource}}
@@ -513,17 +500,7 @@ std\+::unordered\+\_\+map$<$\mbox{\hyperlink{class_f_c_t_1_1_texture_element}{Te
 
 
 
-在文件 \mbox{\hyperlink{_pass_resource_8h_source}{Pass\+Resource.\+h}} 第 \mbox{\hyperlink{_pass_resource_8h_source_l00047}{47}} 行定义.
-
-\Hypertarget{class_f_c_t_1_1_pass_resource_a275ae375787ce9f0eb2616272fe31eae}\index{FCT::VK\_PassResource@{FCT::VK\_PassResource}!m\_wnd@{m\_wnd}}
-\index{m\_wnd@{m\_wnd}!FCT::VK\_PassResource@{FCT::VK\_PassResource}}
-\doxysubsubsection{\texorpdfstring{m\_wnd}{m\_wnd}}
-{\footnotesize\ttfamily \label{class_f_c_t_1_1_pass_resource_a275ae375787ce9f0eb2616272fe31eae} 
-\mbox{\hyperlink{class_f_c_t_1_1_window}{Window}}\texorpdfstring{$\ast$}{*} FCT\+::\+Pass\+Resource\+::m\+\_\+wnd\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}
-
-
-
-在文件 \mbox{\hyperlink{_pass_resource_8h_source}{Pass\+Resource.\+h}} 第 \mbox{\hyperlink{_pass_resource_8h_source_l00050}{50}} 行定义.
+在文件 \mbox{\hyperlink{_pass_resource_8h_source}{Pass\+Resource.\+h}} 第 \mbox{\hyperlink{_pass_resource_8h_source_l00042}{42}} 行定义.
 
 
 

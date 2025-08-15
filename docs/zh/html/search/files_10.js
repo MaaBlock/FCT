@@ -20,6 +20,7 @@ var searchData=
   ['singlebufferimage_2eh_17',['SingleBufferImage.h',['../_single_buffer_image_8h.html',1,'']]],
   ['sizenode_2eh_18',['SizeNode.h',['../_size_node_8h.html',1,'']]],
   ['string_2eh_19',['string.h',['../string_8h.html',1,'']]],
-  ['swapcain_2eh_20',['Swapcain.h',['../_swapcain_8h.html',1,'']]],
-  ['swapchainevent_2eh_21',['SwapchainEvent.h',['../_swapchain_event_8h.html',1,'']]]
+  ['submitthreadmanager_2eh_20',['SubmitThreadManager.h',['../_submit_thread_manager_8h.html',1,'']]],
+  ['swapcain_2eh_21',['Swapcain.h',['../_swapcain_8h.html',1,'']]],
+  ['swapchainevent_2eh_22',['SwapchainEvent.h',['../_swapchain_event_8h.html',1,'']]]
 ];

@@ -2,7 +2,7 @@
 // Created by Administrator on 2025/3/16.
 //
 #include "../FCTAPI.h"
-#include "Context.h"
+#include "./Context.h"
 #include "RenderGraph.h"
 
 
@@ -58,6 +58,10 @@ namespace FCT {
 
     Context::Context(Runtime* runtime)
     {
+        m_flowControl = new FlowControl();
+        auto& m_submitTickers = m_flowControl->submitTickers();
+        auto& m_syncTickers = m_flowControl->syncTickers();
+
         m_cmdGraph = nullptr;
         m_renderGraph = nullptr;
         m_resourceManager = nullptr;
@@ -129,7 +133,7 @@ namespace FCT {
         createPlatform();
         m_descriptorPool = createResource<RHI::DescriptorPool>();
         m_descriptorPool->create();
-        m_cmdGraph = new CommandBufferGraph(this);
+        m_cmdGraph = new CommandBufferGraph(m_resourceDevice);
         if (flag & ContextCreateFlag::withModuleResourceManage)
             addModule<ResourceManager>();
         if (flag & ContextCreateFlag::withModuleRenderGraph)
