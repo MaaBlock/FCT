@@ -124,15 +124,13 @@ namespace FCT
         uint8_t m_targetIndex;
         DynamicMesh<uint32_t>* m_mesh;
         std::vector<float> m_commandBuffer;
-        Window* m_wnd;
     public:
-        VertexContext(Context* ctx,Window* wnd) : m_ctx(ctx) ,m_wnd(wnd)
+        VertexContext(Context* ctx) : m_ctx(ctx)
         {
             m_targetIndex = 0;
             for (int i = 0;i < m_ctx->maxFrameInFlight();i++)
             {
                 m_passResources.push_back(m_ctx->createResource<PassResource>());
-                m_passResources[i]->bind(wnd);
             }
             /*
             m_passResource = m_ctx->createPassResource();

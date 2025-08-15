@@ -26,11 +26,6 @@ namespace FCT
         {
 
         }
-        //todo:整个系统变更成使用IRenderTarget
-        void bind(Window* wnd)
-        {
-            m_wnd = wnd;
-        }
         virtual void bind(RHI::CommandBuffer* cmdBuf,RHI::Pipeline* pipeline) = 0;
         virtual void addConstBuffer(RHI::ConstBuffer* buffer) = 0;
         virtual void addTexture(Image* texture,TextureElement element) = 0;
@@ -47,7 +42,6 @@ namespace FCT
         std::unordered_map<TextureElement,Image*> m_textures;
         std::vector<std::pair<Sampler*,SamplerElement>> m_samplers;
         //std::vector<std::pair<Image*, TextureElement>> m_textures;
-        Window* m_wnd;
         bool m_dirty = true;
     };
 }

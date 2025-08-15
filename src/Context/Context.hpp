@@ -173,6 +173,7 @@ namespace FCT {
 	inline void Context::maxFrameInFlight(uint32_t maxFrameInFlight)
 	{
 		m_maxFrameInFlight = maxFrameInFlight;
+		m_cmdGraph->maxFrameInFlight(m_maxFrameInFlight);
 		initFrameManager();
 	}
 	inline void Context::initFrameManager()
@@ -193,14 +194,12 @@ namespace FCT {
 		wnd->setPresentFinshSemaphore(frameResources[m_frameIndex].imageAvailableSemaphore);
 		wnd->initRender();
 		m_frameResources[wnd] = std::move(frameResources);
-		m_descriptorPools[wnd] = createResource<RHI::DescriptorPool>();
-		m_descriptorPools[wnd]->create();
 		//allocBaseCommandBuffers(wnd);
 	}
 
-	inline RHI::DescriptorPool* Context::getDescriptorPool(Window* wnd)
+	inline RHI::DescriptorPool* Context::getDescriptorPool()
 	{
-		return m_descriptorPools[wnd];
+		return m_descriptorPool;
 	}
 
 	template <typename T>

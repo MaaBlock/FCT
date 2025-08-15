@@ -21,6 +21,7 @@
 #include "Vec.h"
 #include "../Base/Graph.h"
 #include "./SizeNode.h"
+#include "CommandBufferGraph.h"
 #include "../Base/UnionFind.h"
 #include "../Base/IEventSystem.h"
 
@@ -194,7 +195,14 @@ namespace FCT
     class RenderGraph : private IEventSystem<EventSystemConfig::TriggerOnly>{
     private:
         uint32_t m_commandBufferIndex = 0;
+        /**
+         * @cond CHINESE
+         *  todo:修改以做多CommandBufferGraph支持
+         * @endcond
+         */
+        CommandBufferToken m_commandBufferToken;
         void initForSubmit();
+        void allocateCommandBuffer();
     public:
 
     private:
@@ -325,9 +333,7 @@ namespace FCT
         }
         void compile()
         {
-            /***todo:change for CommanderBufferGraph ***/
-            initForSubmit();
-            /*****/
+            allocateCommandBuffer();
             resolveTextureSizes();
             groupPasses();
             allocateResources();
@@ -344,6 +350,7 @@ namespace FCT
         std::vector<std::string> m_passGroupExecutionOrder;
         void submitPassGroup(RHI::CommandBuffer* cmdBuffer,
                              const std::string& groupLeader);
+
     };
 
 } // FCT

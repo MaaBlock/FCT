@@ -35,6 +35,7 @@
 #include "./ResourceManager.h"
 #include "./ContextEvent.h"
 #include "./RenderGraph.h"
+#include "./CommandBufferGraph.h"
 namespace FCT
 {
 	class RasterizationState;
@@ -104,6 +105,10 @@ namespace FCT
 		constexpr const char* CheckRecreateSwapchainSync = "CheckRecreateSwapchainSync";
 		constexpr const char* AdvanceFrameIndex = "AdvanceFrameIndex";
 	}
+	namespace ContextTicker
+	{
+
+	}
 	/**
 	 *@note successors of RenderGraphSubmitTicker has RenderGraphExcutePassSubmitTickerName SwapBufferSubmitTicker
 	 *		successors of RenderGraphExcutePassSubmitTickerName has SwapBufferSubmitTicker
@@ -122,6 +127,7 @@ namespace FCT
 	{
 	protected:
 		Device* m_resourceDevice;
+		CommandBufferGraph* m_cmdGraph;
 	public:
 		Context(Runtime* runtime);
 		virtual ~Context();
@@ -232,8 +238,8 @@ namespace FCT
 	protected:
 		uint32_t m_maxFrameInFlight;
 		std::map<Window*, std::vector<FrameResource>> m_frameResources;
-		std::map<Window*, RHI::DescriptorPool*> m_descriptorPools;
-
+		//std::map<Window*, RHI::DescriptorPool*> m_descriptorPools;
+		RHI::DescriptorPool* m_descriptorPool;
 		size_t m_frameIndex = 0;//submit帧index 区别在于是 swapBuffer更改的，而m_submitFrameIndex和m_logicFrameIndex都是在同步时候更改的
 		size_t m_logicFrameIndex = 0; //逻辑帧index
 		size_t m_submitFrameIndex = 0;//submit帧index
@@ -275,7 +281,7 @@ namespace FCT
 			}
 			return m_logicFrameIndex;
 		}
-		RHI::DescriptorPool* getDescriptorPool(Window* wnd);
+		RHI::DescriptorPool* getDescriptorPool();
 		//todo: 考虑可能要变更为 [IRenderTarget*]<->[DescriptorPool*] map
 		void advanceLogicFrame()
 		{
@@ -411,6 +417,10 @@ namespace FCT
 		{
             return m_renderGraph;
         }
+		else if constexpr (std::is_same_v<T, CommandBufferGraph>)
+		{
+			return m_cmdGraph;
+		}
 		else
 		{
 			ferr << "try to get undefined context module." << std::endl;

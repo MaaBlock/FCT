@@ -17,22 +17,67 @@ namespace FCT
 
     void RenderGraph::initForSubmit()
     {
-        Window* window = m_ctx->getBindWindows()[0];
-        m_commandBufferIndex = m_ctx->allocBaseCommandBuffers(window);
+        m_commandBufferToken = nullptr;
         auto& submitGraph = m_ctx->submitTickers();
-        submitGraph[RenderGraphTickers::RenderGraphSubmit] = {[this,window]()
+        submitGraph[RenderGraphTickers::RenderGraphSubmit] = {[this]()
         {
-            auto cmdBuf = m_ctx->getCmdBuf(window,m_commandBufferIndex);
+            auto cmdGraph = m_ctx->getModule<CommandBufferGraph>();
+            auto cmdBuf = cmdGraph->getCommandBuffer(m_commandBufferToken);
             cmdBuf->reset();
             cmdBuf->begin();
             executeAllPassGroups(cmdBuf);
             cmdBuf->end();
             cmdBuf->submit();
-        },
-        {},
+        },{},
         {SwapBufferSubmitTicker}
         };
         submitGraph.update();
+    }
+
+    void RenderGraph::allocateCommandBuffer()
+    {
+        auto cmdGraph = m_ctx->getModule<CommandBufferGraph>();
+
+        if (m_commandBufferToken)
+        {
+            /**
+             * @cond CHINESE
+             *  todo: 添加移除机制来支持重新编译
+             * @endcond
+             **/
+        }
+        std::vector<CommandBufferGraph::NodeRef> windowNodes;
+
+        for (const auto& [imageName, imageNode] : m_imageNodes) {
+            Window* window = nullptr;
+
+            auto* windowTargetNode = dynamic_cast<RenderGraphWindowTargetNode*>(imageNode.get());
+            if (windowTargetNode && windowTargetNode->isValidWindowTarget()) {
+                window = windowTargetNode->getWindow();
+            }
+
+            if (!window) {
+                auto* windowDepthNode = dynamic_cast<RenderGraphWindowDepthStencilNode*>(imageNode.get());
+                if (windowDepthNode && windowDepthNode->isValidWindowDepthStencil()) {
+                    window = windowDepthNode->getWindow();
+                }
+            }
+
+            if (window) {
+                bool alreadyAdded = false;
+                for (const auto& node : windowNodes) {
+                    if (node.type == CommandBufferGraph::NodeRef::WindowType && node.window == window) {
+                        alreadyAdded = true;
+                        break;
+                    }
+                }
+                if (!alreadyAdded) {
+                    windowNodes.emplace_back(window);
+                }
+            }
+        }
+
+        m_commandBufferToken = cmdGraph->addBuffer(windowNodes, windowNodes);
     }
 
     RenderGraphImageNode* RenderGraph::getOrCreateImageNode(const std::string& name, const Texture& texture)
@@ -551,6 +596,7 @@ namespace FCT
     RenderGraph::RenderGraph(Context* ctx)
     {
         m_ctx = ctx;
+        initForSubmit();
         //auto submitGraph = m_ctx->submitTickers();
     }
 

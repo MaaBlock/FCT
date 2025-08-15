@@ -172,7 +172,10 @@ void FCT::GLFW_Window::swapBuffers()
 {
     if (isRunning())
     {
-        m_swapchain->present();
+        if (m_swapchain)
+        {
+            m_swapchain->present();
+        }
     }
 	//glfwSwapBuffers(m_window);
 }

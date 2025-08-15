@@ -67,7 +67,7 @@ bool VK_PassResource::createDescriptorSetsAndLayouts(uint32_t frameIdx,
                                                     std::vector<vk::DescriptorSet>& outDescriptorSets)
     {
         vk::Device device = m_ctx->getDevice();
-        auto descriptorPool = static_cast<RHI::VK_DescriptorPool*>(m_ctx->getDescriptorPool(m_wnd));
+        auto descriptorPool = static_cast<RHI::VK_DescriptorPool*>(m_ctx->getDescriptorPool());
 
         for (auto& layout : outLayouts) {
             if (layout) {

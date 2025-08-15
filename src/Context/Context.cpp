@@ -62,6 +62,7 @@ namespace FCT {
 
     Context::Context(Runtime* runtime)
     {
+        m_cmdGraph = nullptr;
         m_renderGraph = nullptr;
         m_resourceManager = nullptr;
         m_defaultGraph = new OldRenderGraph(this);
@@ -93,7 +94,8 @@ namespace FCT {
                 std::this_thread::yield();
                 {
                     ScopeTimer waitGpuTimer("waitGpu");
-                    swapBuffers();
+                    m_cmdGraph->swapBuffer();
+                    //swapBuffers();
                 }
             },
             {},
@@ -135,6 +137,9 @@ namespace FCT {
     void Context::create(ContextCreateFlags flag)
     {
         createPlatform();
+        m_descriptorPool = createResource<RHI::DescriptorPool>();
+        m_descriptorPool->create();
+        m_cmdGraph = new CommandBufferGraph(this);
         if (flag & ContextCreateFlag::withModuleResourceManage)
             addModule<ResourceManager>();
         if (flag & ContextCreateFlag::withModuleRenderGraph)

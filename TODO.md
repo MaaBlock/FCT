@@ -1,4 +1,5 @@
-﻿# [branch]
+﻿# todo
+# [branch]
 ## 添加事件处理
 ```mermaid
 graph TD
@@ -22,10 +23,12 @@ FrameBuffer Cache
 而不是使用TokenGraph
 ## 为将ResourceManager添加对Scale的支持
 ## 真正支持RenderGraph里读对scale的支持[需完成前一个todo]
-## 完成CommandBufferGraph
-## RenderGraph的命令使用完成CommandBufferGraph以便可以多窗口
-## RenderGraph需要多窗口支持
 ## 将Context平台拆分成其它的类
+## CommandBufferGraph需要做多CommandBuffer支持
+## RenderGraph需要做多CommandBuffer支持
+## Context一帧一个描述符集池
+## PassResource适应一帧一个描述符集池[需完成前一个todo]
+## Imgui改为单独一个描述符集池
 # [main]
 ```mermaid
 graph TD
