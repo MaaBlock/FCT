@@ -29,6 +29,7 @@ FrameBuffer Cache
 ## Context一帧一个描述符集池
 ## PassResource适应一帧一个描述符集池[需完成前一个todo]
 ## Imgui改为单独一个描述符集池
+## 重写矢量渲染
 # [main]
 ```mermaid
 graph TD

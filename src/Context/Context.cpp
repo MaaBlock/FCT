@@ -7,11 +7,11 @@
 
 
 namespace FCT {
-    void Context::nextFrame() {
+    void Context::_nextFrame() {
         m_nextFrame = true;
     }
 
-    void Context::currentFlush() {
+    void Context::_currentFlush() {
         m_currentFlush = true;
     }
 
@@ -54,10 +54,6 @@ namespace FCT {
     }
 
 
-    void Context::swapQueue() {
-        //std::swap(m_pushQueue,m_submitQueue);
-
-    }
 
 
     Context::Context(Runtime* runtime)
@@ -65,9 +61,6 @@ namespace FCT {
         m_cmdGraph = nullptr;
         m_renderGraph = nullptr;
         m_resourceManager = nullptr;
-        m_defaultGraph = new OldRenderGraph(this);
-        m_currentGraph = m_defaultGraph;
-        m_currentGraph->addRef();
         m_compiler = nullptr;
         m_ctxRunning = true;
         //m_flushWnd = nullptr;
@@ -81,7 +74,6 @@ namespace FCT {
             submitThread();
         });
         FCT_WAIT_FOR(isInited);
-        m_ticker = std::bind(&Context::defaultTick,this);
         createCompiler();
         m_generator = new ShaderGenerator();
         m_frameIndex = 0;
@@ -129,8 +121,6 @@ namespace FCT {
 
     Context::~Context() {
         m_ctxRunning = false;
-        m_currentGraph->release();
-        m_defaultGraph->release();
         m_submitThread.join();
     }
 

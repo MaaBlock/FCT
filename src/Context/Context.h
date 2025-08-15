@@ -62,35 +62,6 @@ namespace FCT
 	class RenderGraph;
 
 	using TickerToken = uint32_t;
-	struct FrameResource
-	{
-		/*
-		 *提供alloc 函数，来在初始化阶段指定需要 几个，如renderFinishedSemaphores
-		 *提供获取指定序号的renderFinishedSemaphores和cmdB uf
-		 */
-		RHI::Semaphore* imageAvailableSemaphore;
-		//ObjectPool<RHI::Semaphore> renderFinishedSemaphoresPool;
-		SemaphorePool* renderFinishedSemaphoresPool;
-		FencePool* presentCompleteFencePool;
-
-		std::vector<RHI::Semaphore*> renderFinishedSemaphores;
-		std::vector<RHI::Fence*> presentCompleteFences;
-		RHI::CommandPool* cmdPool;
-		std::vector<RHI::CommandBuffer*> cmdBufs;
-		Context* ctx;
-		void init(Context* ctx);
-		void allocCommandBuffers(uint32_t additionalCount);
-
-		RHI::Fence* allocPresentCompleteFence();
-		RHI::Semaphore* allocRenderFinishedSemaphore();
-		uint32_t allocBaseCommandBuffers();
-		void allocBaseCommandBuffers(uint32_t index);
-		void freeCommandBuffers(uint32_t index);
-		RHI::Semaphore* getImageAvailableSemaphore();
-		RHI::CommandPool* getCmdPool();
-		RHI::CommandBuffer* getCmdBuf(uint32_t index);
-		//注：不应该频繁的 分配  和 删除  fence/ 信号量/命令队列
-	};
 	/*Context作用
 	 *1.作为Context接口
 	 *2.作为RenderGraph系统
@@ -128,26 +99,51 @@ namespace FCT
 	protected:
 		Device* m_resourceDevice;
 		CommandBufferGraph* m_cmdGraph;
-	public:
+	protected:
 		Context(Runtime* runtime);
 		virtual ~Context();
-		template <typename T>
-		T* createResource();
-		virtual RHI::RasterizationPipeline* createTraditionPipeline() = 0;
 		virtual void createPlatform() = 0;
+	public:
+		/** @name 初始化与配置 (Initialization & Configuration)
+   		*  @{
+   		*/
 		void create(ContextCreateFlags flag = ContextCreateFlag::defaultConfig);
+		/** @} */
+		/** @name 模块管理 (Module Management)
+		 *  @{
+		 */
 		template <typename T>
 		void addModule();
 		template <typename T>
 		void removeModule();
 		template <typename T>
 		T* getModule();
-	protected:
-		ModelLoader* m_modelLoader;
-		RenderGraph* m_renderGraph;
-	public:
+		/** @} */
+		// tools
+		template <typename T>
+		T* createResource();
+		virtual RHI::RasterizationPipeline* createTraditionPipeline() = 0;
 		StaticMesh<uint32_t>* createMesh(const ModelMesh* modelMesh, const VertexLayout& layout);
 		StaticMesh<uint32_t>* loadMesh(const std::string& filename,const std::string& meshName, const VertexLayout& layout);
+		Image* loadTexture(const std::string& filename);
+		/**
+ 		  * @cond CHINESE
+ 		  * @name 流程控制
+ 		  * @endcond
+ 		  *
+ 		  * @cond ENGLISH
+ 		  * @name Flow Control
+ 		  * @endcond
+	 	  *  @{
+	 	  */
+		auto& syncTickers(){ return m_syncTickers; }
+		/*
+		 * 初始化阶段 可以在flush前任意修改，因为提交线程一直在等待下一帧
+		 * 运行阶段 不允许修改 或 拆分flush函数，在wait currentFlush和nextFrame之间修改
+		 */
+		auto& submitTickers() { return m_submitTickers; }
+		void flush();
+		/** @} */
 	protected:
 		struct LogicTaskData
 		{
@@ -161,69 +157,58 @@ namespace FCT
 			m_logicTask.push(data);
 		}
 	public:
-		auto& syncTickers(){ return m_syncTickers; }
-		void flush()
-		{
-			m_logicTask.consume_all([](LogicTaskData*& data) {
-                data->task();
-				FCT_DELETE(data);
-            });
-			FCT_WAIT_FOR(m_currentFlush);
-			auto tickers = m_syncTickers.order();
-			for (auto ticker : tickers)
-			{
-				ticker();
-			}
-			nextFrame();
-		}
-	public:
-		virtual void swapQueue();
-		void submitThread()
-		{
-			while (m_ctxRunning) {
-				FCT_WAIT_FOR(m_nextFrame);
-				auto order = m_submitTickers.order();
-				for (auto& ticker : order) {
-					ticker();
-				}
-				currentFlush();
-			}
-		}
-		void swapBuffers();
-		void defaultTick()
-		{
-		}
 
-		void onWindowBound(Window* wnd)
-		{
+		/** @name 窗口管理 (Window Management)
+		 *  @{
+		 */
+		const std::vector<Window*>& getBindWindows() { return m_bindWindows; }
+		void onWindowBound(Window* wnd) {
 			m_bindWindows.push_back(wnd);
-			m_currentGraph->addWindowResource(wnd);
-			initWndFrameResources(wnd);
-			trigger(ContextEvent::WindowBound{
-			wnd,this
-			});
+			trigger(ContextEvent::WindowBound{wnd, this});
 		}
+		/** @} */
+	public:
+		void submitThread();
+		/** @name 着色器编译 (Shader Compilation)
+  		  *  @{
+  		  */
 		void createCompiler();
 		ShaderCompiler* getCompiler() { return m_compiler; }
 		ShaderGenerator* getGenerator() { return m_generator; }
-		//maxFrameInFlight 是用来封装在RenerGraph系统里的（Context扮演RenderGraph的角色）
-		void waitCurrentFlush()
+		/** @} */
+	public:
+		/** @name SubmitThread内部实现接口
+	      *  @brief 以_开头的函数供自定义或内部使用
+	      *  @{
+	      */
+		void _nextFrame();
+		void _currentFlush();
+		constexpr inline void _waitCurrentFlush()
 		{
 			FCT_WAIT_FOR(m_currentFlush);
 		}
-		std::vector<std::string> getPassTargetToWnd(Window* wnd)
+		constexpr inline void _waitForNextFrame()
 		{
-			return m_currentGraph->getPassTargetToWnd(wnd);
+			FCT_WAIT_FOR(m_nextFrame);
 		}
-		/*
-		 * 初始化阶段 可以在flush前任意修改，因为提交线程一直在等待下一帧
-		 * 运行阶段 不允许修改 或 拆分flush函数，在wait currentFlush和nextFrame之间修改
-		 */
-		auto& submitTickers() { return m_submitTickers; }
-	public:
-		void nextFrame();
-		void currentFlush();
-		const std::vector<Window*>& getBindWindows() { return m_bindWindows; }
+		void advanceLogicFrame()
+		{
+			m_logicFrameIndex = (m_logicFrameIndex + 1) % m_maxFrameInFlight;
+		}
+		void advanceSubmitFrame()
+		{
+			m_submitFrameIndex = (m_submitFrameIndex + 1) % m_maxFrameInFlight;
+		}
+		/** @} */
+
+	protected:
+		// 模块组件
+		ModelLoader* m_modelLoader;
+		RenderGraph* m_renderGraph;
+		ImageLoader* m_imageLoader;
+		ResourceManager* m_resourceManager;
+		ShaderCompiler* m_compiler;
+		ShaderGenerator* m_generator;
 	protected:
 		TokenGraph<std::string, SubmitTicker> m_submitTickers;
 		TokenGraph<std::string, SyncTicker> m_syncTickers;
@@ -233,11 +218,8 @@ namespace FCT
 		bool m_currentFlush;
 		std::thread m_submitThread;
 		bool m_ctxRunning;
-		ShaderCompiler* m_compiler;
-		ShaderGenerator* m_generator;
 	protected:
 		uint32_t m_maxFrameInFlight;
-		std::map<Window*, std::vector<FrameResource>> m_frameResources;
 		//std::map<Window*, RHI::DescriptorPool*> m_descriptorPools;
 		RHI::DescriptorPool* m_descriptorPool;
 		size_t m_frameIndex = 0;//submit帧index 区别在于是 swapBuffer更改的，而m_submitFrameIndex和m_logicFrameIndex都是在同步时候更改的
@@ -246,10 +228,6 @@ namespace FCT
 		std::thread::id m_submitThreadId;
 		//todo:未分离线程时，m_submitThreadId = 逻辑and提交线程 所在id
 	public:
-		RHI::CommandBuffer* getCmdBuf(Window* wnd,uint32_t index);
-		uint32_t allocBaseCommandBuffers(Window* wnd);
-		void freeCommandBuffers(Window* wnd, uint32_t index);
-
 		/**
 		 * @cond CHINESE
 		 * @param maxFrameInFlight cpu可以比gpu快多少帧
@@ -263,7 +241,6 @@ namespace FCT
 		 */
 		void maxFrameInFlight(uint32_t maxFrameInFlight);
 		uint32_t maxFrameInFlight() const { return m_maxFrameInFlight; }
-		void initFrameManager();
 		uint32_t currentSubmitFrameIndex() const { return m_frameIndex; }
 		/*
 		 *分离了submit线程
@@ -283,91 +260,12 @@ namespace FCT
 		}
 		RHI::DescriptorPool* getDescriptorPool();
 		//todo: 考虑可能要变更为 [IRenderTarget*]<->[DescriptorPool*] map
-		void advanceLogicFrame()
-		{
-			m_logicFrameIndex = (m_logicFrameIndex + 1) % m_maxFrameInFlight;
-		}
-		void advanceSubmitFrame()
-		{
-			m_submitFrameIndex = (m_submitFrameIndex + 1) % m_maxFrameInFlight;
-		}
-		constexpr const char* getRenderGraphSubmitTickerName()
-		{
-			return RenderGraphSubmitTickerName;
-		}
 		uint32_t currentLogicFrameIndex() const { return m_logicFrameIndex; }
 	protected:
-		void initWndFrameResources(Window* wnd);
 	public:
-		Image* loadTexture(const std::string& filename);
 	protected:
-		ImageLoader* m_imageLoader;
-
-		//render graph部分
 	protected:
-		OldRenderGraph* m_defaultGraph;
-		OldRenderGraph* m_currentGraph;
 	public:
-		OldRenderGraph* currentGraph() { return m_currentGraph; }
-		Image* getResourceImage(std::string name)
-		{
-			return m_currentGraph->getResourceImage(name);
-		}
-		//todo:这一系列转发函数想个办法优化
-		void setCurrentGraph(OldRenderGraph* graph)
-		{
-			m_currentGraph->release();
-			m_currentGraph = graph;
-			m_currentGraph->addRef();
-		}
-		void addPass(const std::string& name, OldPass* pass)
-		{
-			m_currentGraph->addPass(name, pass);
-		}
-
-		void submit(Job* job,std::string name)
-		{
-			m_currentGraph->submit(job, name);
-		}
-		void compilePasses()
-		{
-			m_currentGraph->compile();
-		}
-		void addPassDenpendency(const std::string& from,const std::string& to)
-		{
-			m_currentGraph->addPassDenpendency(from,to);
-		}
-		void bindOutputImage(const std::string& name, std::string image,uint8_t slot = 0)
-		{
-			m_currentGraph->bindOutputImage(name, image, slot);
-		}
-		void bindTextureImage(std::string name, std::string image,uint32_t width = 0, uint32_t height = 0,Samples samples = Samples::sample_undefined)
-		{
-			m_currentGraph->bindTextureImage(name, image, width, height, samples);
-		}
-		void bindDepthStencil(const char* name, std::string image)
-		{
-			m_currentGraph->bindDepthStencil(name, image);
-		}
-		void bindOutput(const char* name, Window* wnd, uint8_t slot = 0)
-		{
-			m_currentGraph->bindOutput(name, wnd, slot);
-		}
-		void excutePasses(RHI::CommandBuffer* cmdBuf)
-		{
-			m_currentGraph->execute(cmdBuf);
-		}
-		void excute()
-		{
-
-		}
-		OldPass* findPass(const std::string& name)
-		{
-			return m_currentGraph->getPassByName(name);
-		}
-
-	protected:
-		ResourceManager* m_resourceManager;
 	};
 
 

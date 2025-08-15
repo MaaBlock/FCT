@@ -74,29 +74,6 @@ namespace FCT
         cmdBuf->scissor(FCT::Vec2(m_viewportOffsetX, m_viewportOffsetY), FCT::Vec2(m_viewportOffsetX + m_viewportWidth, m_viewportOffsetY + m_viewportHeight));
     }
 
-    void AutoViewport::submit()
-    {
-        /*
-        if (m_needReviewport) {
-            computeViewport();
-            m_needReviewport = false;
-        }
-        FCT::ViewportJob* job = new FCT::ViewportJob(
-            FCT::Vec2(m_viewportOffsetX, m_viewportOffsetY), FCT::Vec2(m_viewportOffsetX + m_viewportWidth, m_viewportOffsetY + m_viewportHeight),
-            FCT::Vec2(m_viewportOffsetX, m_viewportOffsetY), FCT::Vec2(m_viewportOffsetX + m_viewportWidth, m_viewportOffsetY + m_viewportHeight)
-        );
-        for (const auto& name : m_passes)
-        {
-            m_ctx->submit(job, name);
-        }
-        job->release();
-        */
-    }
-
-    void AutoViewport::addPass(const std::string& name)
-    {
-        m_passes.push_back(name);
-    }
 
     bool AutoViewport::wndPosToViewportPos(Vec2 wndPos, Vec2& viewportPos) const
     {
@@ -105,15 +82,6 @@ namespace FCT
         srcViewportPos.y = (wndPos.y - m_viewportOffsetY) / m_viewportHeight;
         viewportPos = srcViewportPos * Vec2(m_dstViewportWidth, m_dstViewPortHeight);
         return srcViewportPos.x >= 0.0f && srcViewportPos.x <= 1.0f && srcViewportPos.y >= 0.0f && srcViewportPos.y <= 1.0f;
-    }
-
-    void AutoViewport::enableForWndAllPass(Window* wnd)
-    {
-        auto passes = m_ctx->getPassTargetToWnd(wnd);
-        for (const auto& pass : passes)
-        {
-            addPass(pass);
-        }
     }
 }
 

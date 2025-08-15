@@ -37,6 +37,7 @@ void FCT::Window::addSingleComponent(const WindowModule::Swapchain& component)
 	m_swapchain->size(m_width, m_height);
 	m_swapchain->create();
 	delete surface;
+	m_swapchain->acquireFirstImage();
 	m_ctx->onWindowBound(this);
 	m_delayModuleCreate.trigger<WindowModule::Swapchain>();
 }

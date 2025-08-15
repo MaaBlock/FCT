@@ -6,6 +6,7 @@ namespace FCT
 {
     void VertexContext::updataCommandInfo()
     {
+        /*
         auto commandBufferImage = m_ctx->getResourceImage(VertexCommandBufferNameInShder);
 
         if (commandBufferImage->width() * commandBufferImage->height() >= m_commandBuffer.size()) {
@@ -21,6 +22,7 @@ namespace FCT
         });
         m_ctx->submit(job,m_uploadPassName);
         job->release();
+        */
     }
     void VertexContext::submitPath()
     {

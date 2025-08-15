@@ -157,6 +157,7 @@ namespace FCT
             m_uploadPassName = uploadPassName;
 
             OldPass* uploadPass = new TraditionRenderPass(m_ctx);
+            /*
             m_ctx->addPass(uploadPassName, uploadPass);
             uploadPass->release();
 
@@ -165,7 +166,7 @@ namespace FCT
 
             m_ctx->bindTextureImage(passName, VertexCommandBufferNameInShder,4096,1,Samples::sample_1);
             m_ctx->bindTextureImage(passName, ScreenInfoNameInShder,4000,1,Samples::sample_1);
-
+*/
             create();
         }
         void generateVertexShader();
@@ -191,8 +192,9 @@ namespace FCT
         }
         void updataScreenInfo()
         {
+            /*
             auto screenInfoImage = m_ctx->getResourceImage(ScreenInfoNameInShder);
-
+            */
             uint32_t totalElements = m_infos.size() * 5;
 
             std::vector<float> screenData;
@@ -225,6 +227,7 @@ namespace FCT
                 screenData.push_back(info.VertexCoordSize.w);
             }
 
+            /*
             if (screenInfoImage->width() * screenInfoImage->height() >= totalElements) {
                 auto res = screenInfoImage->updateToCurrent(screenData.data(), screenData.size() * sizeof(float));
                 auto job = new VertexSubmitJob([res]()
@@ -237,10 +240,12 @@ namespace FCT
             } else {
                 ferr << "目前仅支持 4000 / 5 = 800 个screen" << std::endl;
             }
+            */
         }
 
         void submit()
         {
+            /*
             updataScreenInfo();
             submitPath();
 
@@ -253,6 +258,7 @@ namespace FCT
 
             m_ctx->submit(job, m_passName);
             job->release();
+            */
         }
     };
 

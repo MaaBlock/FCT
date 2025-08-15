@@ -21,10 +21,7 @@ namespace FCT
         void resize(int width, int height);
         void computeViewport();
         void submit(RHI::CommandBuffer* cmdBuf);
-        void submit();
-        void addPass(const std::string& name);
         bool wndPosToViewportPos(Vec2 wndPos,Vec2& viewportPos) const;
-        void enableForWndAllPass(Window* wnd);
     private:
         bool m_needReviewport;
         float m_dstViewportWidth, m_dstViewPortHeight;
@@ -33,7 +30,6 @@ namespace FCT
         float m_viewportOffsetX, m_viewportOffsetY;
         CallBackEventHandler::CallbackId m_resizeCallBack = 0;
         FCT::Context* m_ctx;
-        std::vector<std::string> m_passes;
         Window* m_wnd;
     };
 }

@@ -1,5 +1,6 @@
 ﻿#include "./CommandBufferGraph.h"
 #include "./Context.h"
+#include "./Context.hpp"
 #include "../UI/Window.h"
 namespace FCT {
     void CommandBufferNodes::InputFromWindow::fillSynchronization(uint32_t frameIndex)
