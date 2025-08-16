@@ -3,7 +3,7 @@
 ## 添加事件处理
 ```mermaid
 graph TD
-    1[添加使用entt的窗口EventHandler]
+    1[添加使用IEventSystem的窗口EventHandler]
 ```
 ## 统一new和delete
 将不小心使用的new 和 delete 都改为使用FCT_NEW FCT_NEWS FCT_DELETE FCT_DELETES
