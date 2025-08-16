@@ -1,4 +1,4 @@
-//
+﻿//
 // Created by Administrator on 2025/4/7.
 //
 #ifndef SHADERGENERATE_H

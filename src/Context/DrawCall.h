@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "../RHI/IPipelineResource.h"
 
 namespace FCT {

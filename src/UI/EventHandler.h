@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "../MutilThreadBase/RefCount.h"
 namespace FCT {
 	class Window;

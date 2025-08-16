@@ -1,4 +1,4 @@
-#include "../FCTAPI.h"
+﻿#include "../FCTAPI.h"
 #include "Android_Window.h"
 
 

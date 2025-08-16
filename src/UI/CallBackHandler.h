@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "./EventHandler.h"
 #include <vector>
 #include <functional>

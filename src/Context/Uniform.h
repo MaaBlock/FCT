@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include <vector>
 #include <string>
@@ -155,6 +155,34 @@ namespace FCT
             return 16; // 默认对齐到16字节
         }
     }
+
+    constexpr size_t GetHLSLArrayElementSize(ConstType type) {
+        switch (type) {
+        case ConstType::Float:
+        case ConstType::Int:
+        case ConstType::Bool:
+        case ConstType::Vec2:
+        case ConstType::Vec3:
+            return 16; // 16字节
+
+        case ConstType::Vec4:
+            return 16;
+
+        case ConstType::Mat3:
+            return 48; // 3x3矩阵：3个寄存器，每行按 float4 对齐
+
+        case ConstType::Mat4:
+        case ConstType::ModelMatrix:
+        case ConstType::ViewMatrix:
+        case ConstType::ProjectionMatrix:
+        case ConstType::MVPMatrix:
+            return 64; // 4x4矩阵：4个寄存器
+
+        default:
+            return 16;
+        }
+    }
+
     inline constexpr const char* GetUniformDefaultName(ConstType type)
     {
         switch (type)
@@ -206,14 +234,27 @@ namespace FCT
             : m_type(ConstType::Custom), m_name("") {}
 
         constexpr ConstElement(ConstType type) noexcept
-            : m_type(type),m_name(GetUniformDefaultName(type)) {}
+            : m_type(type), m_name(GetUniformDefaultName(type)) {}
 
         constexpr ConstElement(ConstType type, const char* name) noexcept
             : m_type(type), m_name(name) {}
 
+        constexpr ConstElement(ConstType type, const char* name, size_t arraySize) noexcept
+            : m_type(type), m_name(name), m_arraySize(arraySize) {}
+
+        constexpr size_t getElementCount() const noexcept {
+            return isArray() ? m_arraySize : 1;
+        }
+        constexpr bool isArray() const noexcept { return m_arraySize > 0; }
+
         constexpr ConstType getType() const noexcept { return m_type; }
         constexpr const char* getName() const noexcept { return m_name; }
-        constexpr size_t getSize() const noexcept { return GetUniformSize(m_type); }
+        constexpr size_t getSize() const noexcept {
+            if (isArray()) {
+                return GetHLSLArrayElementSize(m_type) * getElementCount();
+            }
+            return GetUniformSize(m_type);
+        }
         constexpr size_t getAlignment() const noexcept { return GetUniformAlignment(m_type); }
         constexpr explicit operator bool() const noexcept {
             return (m_name && m_name[0] != '\0');
@@ -221,6 +262,7 @@ namespace FCT
     private:
         ConstType m_type;
         const char* m_name;
+        size_t m_arraySize = 0;
     };
 
     class ConstLayout {
@@ -412,12 +454,15 @@ namespace FCT
         void setValue(const char* name, const T& value) {
             int index = m_layout.findElementIndex(name);
             if (index >= 0) {
+                const auto& element = m_layout.getElement(index);
                 size_t offset = m_layout.getElementOffset(index);
-                size_t elementSize = m_layout.getElement(index).getSize();
-
-                if (sizeof(T) <= elementSize) {
-                    std::memcpy(m_data.data() + offset, &value, sizeof(T));
-                    m_dirty = true;
+                if (element.isArray())
+                {
+                    setArrayValueDispatch(name, value, element, offset);
+                }
+                else
+                {
+                    setSingleValue(name, value, element, offset);
                 }
             }
         }
@@ -461,6 +506,59 @@ namespace FCT
 
         void clearDirty() { m_dirty = false; }
     private:
+        template<typename T>
+   void setArrayValueDispatch(const char* name, const T& value, const ConstElement& element, size_t offset) {
+            if constexpr (std::is_pointer_v<T>) {
+                setArrayFromPointer(value, element, offset);
+            } else if constexpr (std::ranges::range<T>) {
+                setArrayFromContainer(value, element, offset);
+            } else
+            {
+
+            }
+        }
+
+        template<typename T>
+        void setArrayFromPointer(T value, const ConstElement& element, size_t offset) {
+            static_assert(std::is_pointer_v<T>, "Expected pointer type");
+
+            size_t baseElementSize = GetUniformSize(element.getType());
+            size_t elementCount = element.getElementCount();
+
+            for (uint32_t i = 0; i < elementCount; ++i) {
+                size_t currentOffset = offset + i * GetHLSLArrayElementSize(element.getType());
+                if (currentOffset + baseElementSize <= m_data.size()) {
+                    std::memcpy(m_data.data() + currentOffset, &value[i], baseElementSize);
+                }
+            }
+            m_dirty = true;
+        }
+
+        template<typename T>
+        void setArrayFromContainer(const T& value, const ConstElement& element, size_t offset) {
+            size_t baseElementSize = GetUniformSize(element.getType());
+            size_t maxElements = element.getElementCount();
+            uint32_t arrayIndex = 0;
+
+            for (const auto& it : value) {
+                if (arrayIndex >= maxElements) break;
+
+                size_t currentOffset = offset + arrayIndex * GetHLSLArrayElementSize(element.getType());
+                if (currentOffset + baseElementSize <= m_data.size()) {
+                    std::memcpy(m_data.data() + currentOffset, &it, baseElementSize);
+                }
+                arrayIndex++;
+            }
+            m_dirty = true;
+        }
+        template<typename T>
+        void setSingleValue(const char* name, const T& value, const ConstElement& element, size_t offset) {
+            size_t elementSize = element.getSize();
+            if (sizeof(T) <= elementSize) {
+                std::memcpy(m_data.data() + offset, &value, sizeof(T));
+                m_dirty = true;
+            }
+        }
         ConstLayout m_layout;
         std::vector<uint8_t> m_data;
         size_t m_size;

@@ -1,4 +1,4 @@
-#ifndef IMAGERENDERTARGET_H
+﻿#ifndef IMAGERENDERTARGET_H
 #define IMAGERENDERTARGET_H
 #include "../MutilThreadBase/RefCount.h"
 #include "../RHI/Image.h"

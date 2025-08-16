@@ -1,4 +1,4 @@
-#include "./IPipelineResource.h"
+﻿#include "./IPipelineResource.h"
 #include <vector>
 
 #ifndef BLENDSTATE_H

@@ -1,4 +1,4 @@
-
+﻿
 #include "../FCTAPI.h"
 
 namespace FCT
@@ -558,8 +558,12 @@ namespace FCT
                 const ConstElement& element = layout.getElement(i);
                 std::string typeStr = uniformTypeToShaderType(element.getType());
                 const char* name = element.getName();
-
-                ss << "    " << typeStr << " " << name << ";\n";
+                if (element.isArray()) {
+                    size_t arraySize = element.getElementCount();
+                    ss << "    " << typeStr << " " << name << "[" << arraySize << "];\n";
+                } else {
+                    ss << "    " << typeStr << " " << name << ";\n";
+                }
             }
 
             ss << "};\n\n";

@@ -1,4 +1,4 @@
-#ifndef FCT_VERTEX_H
+﻿#ifndef FCT_VERTEX_H
 #define FCT_VERTEX_H
 #include "./Format.h"
 #include "./DataTypes.h"

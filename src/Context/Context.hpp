@@ -1,4 +1,4 @@
-#ifndef FCT_CONTEXT_IH
+﻿#ifndef FCT_CONTEXT_IH
 #define FCT_CONTEXT_IH
 #include "../UI/Window.h"
 namespace FCT {

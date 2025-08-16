@@ -1,4 +1,4 @@
-#ifndef FCT_RHI_PASS_H
+﻿#ifndef FCT_RHI_PASS_H
 #define FCT_RHI_PASS_H
 #include "../Base/Flags.h"
 #include "../MutilThreadBase/RefCount.h"
