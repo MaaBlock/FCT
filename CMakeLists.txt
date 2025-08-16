@@ -1,4 +1,5 @@
 include(platform/platform.cmake)
+include(config/copy_headers.cmake)
 
 
 file(GLOB RUNTIME_MODULE_SOURCES
@@ -349,37 +350,7 @@ set(ALL_HEADER_FILES
         ${TYPE_MODULE_HEADERS}
 )
 
-add_custom_target(fct_copy_headers ALL
-        COMMENT "Copying FCT headers to include directory"
-)
-
-add_custom_command(
-        TARGET fct_copy_headers PRE_BUILD
-        COMMAND ${CMAKE_COMMAND} -E make_directory ${CMAKE_CURRENT_SOURCE_DIR}/include/FCT
-        COMMAND ${CMAKE_COMMAND} -E copy_if_different
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/FCT.h
-        ${CMAKE_CURRENT_SOURCE_DIR}/include/FCT.h
-        DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/src/FCT.h
-        COMMENT "Setting up include directory and copying FCT.h"
-)
-
-foreach(header_file ${ALL_HEADER_FILES})
-    file(RELATIVE_PATH relative_path ${CMAKE_CURRENT_SOURCE_DIR}/src ${header_file})
-    get_filename_component(header_dir ${relative_path} DIRECTORY)
-    get_filename_component(output_dir ${CMAKE_CURRENT_SOURCE_DIR}/include/FCT/${relative_path} DIRECTORY)
-
-    add_custom_command(
-            TARGET fct_copy_headers PRE_BUILD
-            COMMAND ${CMAKE_COMMAND} -E make_directory ${output_dir}
-            COMMAND ${CMAKE_COMMAND} -E copy_if_different
-            ${header_file}
-            ${CMAKE_CURRENT_SOURCE_DIR}/include/FCT/${relative_path}
-            DEPENDS ${header_file}
-            COMMENT "Copying: ${relative_path}"
-    )
-endforeach()
-
-add_dependencies(FCT fct_copy_headers)
+add_copy_target_headers(FCT "${ALL_HEADER_FILES}")
 
 #
 #file(MAKE_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/include/FCT)
@@ -406,7 +377,6 @@ message(STATUS "Headers copied to: ${CMAKE_CURRENT_BINARY_DIR}/include")
 message(STATUS "Total headers copied: ${CMAKE_LIST_LENGTH} ALL_HEADER_FILES")
 
 function(target_link_fct_libraries target_name)
-    add_dependencies(${target_name} fct_copy_headers)
     target_link_libraries(${target_name} FCT)
 
     if (FCT_ANDROID)
