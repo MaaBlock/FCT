@@ -65,6 +65,7 @@ namespace FCT
         Window* createWindow(int w,int h,const char* title = "") {
             Window* window = createWindow();
             window->size(w,h);
+        	window->title(title);
             window->create();
             return window;
         }
@@ -72,6 +73,7 @@ namespace FCT
             Window* window = createWindow();
             window->pos(x,y);
             window->size(w,h);
+        	window->title(title);
             window->create();
             return window;
         }
