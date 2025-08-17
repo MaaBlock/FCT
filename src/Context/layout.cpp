@@ -257,8 +257,9 @@ namespace FCT
             {
                 usage = FCT::ShaderStage::Fragment;
             }
-
-            FCT::TextureElement element(FCT::TextureType::Texture2D, it->name.c_str(), usage, FCT::UpdateFrequency::PerFrame);
+            m_textureNames[it->name] = nullptr;
+            m_textureNames[it->name] =  m_textureNames.find(it->name)->first.c_str();
+            FCT::TextureElement element(FCT::TextureType::Texture2D, m_textureNames[it->name], usage, FCT::UpdateFrequency::PerFrame);
             addTextureSlot(element);
 
             it = m_unhandledTextureSlots.erase(it);

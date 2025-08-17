@@ -178,6 +178,7 @@ namespace FCT {
         TraditionPipelineState m_pipelineState;
         PipelineCache m_pipelineCache;
         FCT::RHI::RasterizationPipeline* getCurrentPipeline();
+        std::unordered_map<std::string,const char*> m_textureNames;
     };
 
 }
