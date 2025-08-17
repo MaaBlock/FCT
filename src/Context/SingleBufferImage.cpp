@@ -136,4 +136,9 @@ namespace FCT
     {
         return m_image;
     }
+
+    size_t SingleBufferImage::textureViewHash() const
+    {
+        return reinterpret_cast<size_t>(m_srv);
+    }
 }

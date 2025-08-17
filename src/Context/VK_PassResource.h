@@ -24,12 +24,14 @@ namespace FCT
         bool recreateDescriptorSetsIfNeeded(uint32_t frameIdx);
         void update() override;
         void bind(RHI::CommandBuffer* cmdBuf, RHI::Pipeline* pipeline) override;
+        void checkTextureViewHash();
     protected:
         VK_Context* m_ctx;
         std::vector<std::vector<vk::DescriptorSet>> m_descriptorSets;
         std::vector<uint8_t> m_dirtyFlags;
         std::vector<uint8_t> m_needRecreate;
         std::vector<vk::DescriptorSetLayout> m_descriptorSetLayouts;
+        std::unordered_map<TextureElement,size_t> m_textureViewHashes;
     };
 }
 #endif //VK_PASSRESOURCE_H

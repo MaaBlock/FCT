@@ -47,6 +47,7 @@ namespace FCT
         std::vector<RHI::RenderTargetView*> rtvs() const { return m_rtvs; }
         std::vector<RHI::DepthStencilView*> dsvs() const { return m_dsvs; }
         std::vector<RHI::TextureView*> tvs() const { return m_tvs; }
+        size_t textureViewHash() const override;
     private:
         size_t m_imageCount = 0;
         ImageUsages m_usage;

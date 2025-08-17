@@ -206,7 +206,10 @@ bool VK_PassResource::createDescriptorSetsAndLayouts(uint32_t frameIdx,
             }
         }
     }
+
    void VK_PassResource::updateDescriptorSetsIfNeeded(uint32_t frameIdx) {
+
+
         if (frameIdx >= m_dirtyFlags.size() || !m_dirtyFlags[frameIdx]) {
             return;
         }
@@ -347,6 +350,7 @@ bool VK_PassResource::createDescriptorSetsAndLayouts(uint32_t frameIdx,
         recreateDescriptorSetsIfNeeded(frameIdx);
         updateDescriptorSetsIfNeeded(frameIdx);
     }
+
     void VK_PassResource::bind(RHI::CommandBuffer* cmdBuf, RHI::Pipeline* srcPipeline)
     {
 
@@ -356,6 +360,7 @@ bool VK_PassResource::createDescriptorSetsAndLayouts(uint32_t frameIdx,
 
         uint32_t frameIdx = m_ctx->currentSubmitFrameIndex();
 
+        checkTextureViewHash();
         recreateDescriptorSetsIfNeeded(frameIdx);
         updateDescriptorSetsIfNeeded(frameIdx);
 
@@ -378,5 +383,20 @@ bool VK_PassResource::createDescriptorSetsAndLayouts(uint32_t frameIdx,
                 nullptr
             );
         }
+    }
+
+    void VK_PassResource::checkTextureViewHash()
+    {
+        bool hasChange = false;
+        for (auto& it : m_textureViewHashes)
+        {
+            if (m_textures[it.first]->textureViewHash() != it.second)
+            {
+                hasChange = true;
+                it.second = m_textures[it.first]->textureViewHash();
+            }
+        }
+        if (hasChange)
+            markAllDescriptorSetsDirty();
     }
 }

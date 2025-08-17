@@ -221,4 +221,9 @@ namespace FCT
         m_images[m_ctx->currentFrameIndex()]->updateData(data,size,res->fence,&res->cleanUpCallback);
         return res;
     }
+
+    size_t MutilBufferImage::textureViewHash() const
+    {
+        return reinterpret_cast<size_t>(m_tvs[0]);
+    }
 }

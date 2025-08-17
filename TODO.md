@@ -36,7 +36,7 @@ FrameBuffer Cache
     而Shader生成中，并没有使用ShaderStages来查看该
     ResourceLayout的内容是否应该在当前中使用
     修改ResourceLayoutToElements应该就可以
-    
+## 重构PassResource糊的一坨的代码，对于dirty是否有必要
 
 ```mermaid
 graph TD

@@ -82,6 +82,7 @@ namespace FCT {
         {
             return nullptr;
         };
+        virtual size_t textureViewHash() const = 0;
     protected:
         ImageBehavior* m_behavior;
         Context* m_ctx;
