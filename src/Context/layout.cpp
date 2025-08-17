@@ -1,4 +1,5 @@
 ﻿#include "layout.h"
+#include "layout.hpp"
 #include "./PixelShader.h"
 #include "./VertexShader.h"
 #include "PassResource.h"
@@ -121,6 +122,7 @@ namespace FCT
         m_pipelineState.pixelShader = shader;
     }
 
+    /*
     void Layout::drawMesh(FCT::RHI::CommandBuffer* cmdBuffer, FCT::StaticMesh<uint32_t>* mesh)
     {
         auto resource = getCurrentPassResource();
@@ -130,7 +132,7 @@ namespace FCT
         resource->bind(cmdBuffer,pipeline);
         mesh->bind(cmdBuffer);
         mesh->draw(cmdBuffer);
-    }
+    }*/
 
     void Layout::end()
     {

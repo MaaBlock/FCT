@@ -119,7 +119,11 @@ namespace FCT {
         //pipeline
         void bindVertexShader(FCT::VertexShader* shader);
         void bindPixelShader(FCT::PixelShader* shader);
-        void drawMesh(FCT::RHI::CommandBuffer* cmdBuffer,FCT::StaticMesh<uint32_t>* mesh);
+        //void drawMesh(FCT::RHI::CommandBuffer* cmdBuffer,FCT::StaticMesh<uint32_t>* mesh);
+        template<typename T>
+        void drawMesh(RHI::CommandBuffer* cmdBuffer,T* mesh);
+        template<typename T>
+        void drawMesh(RHI::CommandBuffer* cmdBuffer,T& mesh);
         void end();
     private:
         struct TraditionPipelineState
@@ -175,5 +179,6 @@ namespace FCT {
         PipelineCache m_pipelineCache;
         FCT::RHI::RasterizationPipeline* getCurrentPipeline();
     };
+
 }
 #endif //LAYOUT_H
