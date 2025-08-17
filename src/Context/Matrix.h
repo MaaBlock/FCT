@@ -129,22 +129,22 @@ namespace FCT
 			Mat4 result;
 
 			result.m[0] = s.x;
-			result.m[1] = u.x;
+			result.m[1] = -u.x;
 			result.m[2] = -f.x;
 			result.m[3] = 0.0f;
 
 			result.m[4] = s.y;
-			result.m[5] = u.y;
+			result.m[5] = -u.y;
 			result.m[6] = -f.y;
 			result.m[7] = 0.0f;
 
 			result.m[8] = s.z;
-			result.m[9] = u.z;
+			result.m[9] = -u.z;
 			result.m[10] = -f.z;
 			result.m[11] = 0.0f;
 
 			result.m[12] = -s.dot(eye);
-			result.m[13] = -u.dot(eye);
+			result.m[13] = u.dot(eye);
 			result.m[14] = f.dot(eye);
 			result.m[15] = 1.0f;
 
