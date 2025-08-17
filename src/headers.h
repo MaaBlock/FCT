@@ -1,4 +1,4 @@
-﻿//
+//
 // Created by Administrator on 2025/2/19.
 //
 #define FCT_USE_MEMORY_CHECK
@@ -68,6 +68,7 @@
 //#include "MutilThreadBase/TlsPtr.h"
 #include "./Context/Context.h"
 #include "./Context/Context.hpp"
+#include "./Context/layout.h"
 #include "./Context/Primitives.h"
 //#include "Context/Image.h"
 //#include "UI/Window.h"

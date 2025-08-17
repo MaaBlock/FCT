@@ -44,5 +44,20 @@ namespace FCT {
         return static_cast<ShaderStage>(0);
     }
 
+    inline FCT::ShaderStages getAllAfterTheStage(FCT::ShaderStage stages)
+    {
+        FCT::ShaderStages ret;
+        switch (stages)
+        {
+        case FCT::ShaderStage::Vertex:
+            ret |= FCT::ShaderStage::Vertex;
+        case FCT::ShaderStage::Fragment:
+            ret |= FCT::ShaderStage::Fragment;
+        default:
+            break;
+        }
+        return ret;
+    }
+
 }
 #endif //SHADERSTAGE_H
