@@ -74,7 +74,7 @@ rankdir=TD;
     edge [fontname="SimHei"];
 
     A [label="顶点数据"];
-    B [label="片段着色器"];
+    B [label="顶点着色器"];
     C [label="图元装配"];
     D [label="光栅化"];
     E [label="像素着色器"];
