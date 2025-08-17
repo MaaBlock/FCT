@@ -9,5 +9,5 @@
 - Vulkan Backend
 ## Clone
 ```
-git clone --recursive https://github.com/MaaBlock/FCTv3.git
+git clone --recursive https://github.com/MaaBlock/FCT.git
 ```
