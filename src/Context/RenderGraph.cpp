@@ -942,4 +942,13 @@ namespace FCT
         }
         return nullptr;
     }
+
+    std::vector<TextureEdge*> RenderGraph::getTextureEdges(const std::string& passName) const
+    {
+        auto passNodeIt = m_passNodes.find(passName);
+        if (passNodeIt!= m_passNodes.end()) {
+            return passNodeIt->second.getTextureIncomingEdges();
+        }
+        return {};
+    }
 }// FCT

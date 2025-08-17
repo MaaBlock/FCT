@@ -31,6 +31,13 @@ FrameBuffer Cache
 ## Imgui改为单独一个描述符集池
 ## 重写矢量渲染
 ## 重构Pipeline
+## Shader生成应该区分ResourceLayout里面的是否会在当前Shader里使用
+    TextureElement里面有指定ShaderStages,
+    而Shader生成中，并没有使用ShaderStages来查看该
+    ResourceLayout的内容是否应该在当前中使用
+    修改ResourceLayoutToElements应该就可以
+    
+
 ```mermaid
 graph TD
     1[将Pipeline系列分离为俩个类,

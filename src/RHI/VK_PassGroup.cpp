@@ -1,4 +1,4 @@
-#include "../ThirdParty.h"
+﻿#include "../ThirdParty.h"
 #include "../Context/VK_Context.h"
 #include "./VK_PassGroup.h"
 #include "./VK_RenderTargetView.h"

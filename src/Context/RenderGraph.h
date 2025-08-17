@@ -136,6 +136,11 @@ namespace FCT
         TextureSize size;
         std::string fromImage;
         std::string toPass;
+        /**
+         * @cond CHIESE
+         * @brief 最早被使用的阶段
+         * @endcond
+         */
         ShaderStage stage;
     };
 
@@ -233,7 +238,6 @@ namespace FCT
         };
         std::unordered_map<std::string, std::vector<BarrierInfo>> m_passGroupBarriers;
         std::map<std::string, std::set<std::string>> m_passGroupDependencies;
-
         std::unordered_map<std::string, std::unique_ptr<RenderGraphImageNode>> m_imageNodes;
         std::unordered_map<std::string,RenderGraphPassNode> m_passNodes;
         UnionFind<std::string,char> m_passesUnions;
@@ -350,6 +354,7 @@ namespace FCT
         void executeAllPassGroups(RHI::CommandBuffer* cmdBuffer);
         RHI::Pass* getPass(const std::string& name) const;
         Image* getImage(const std::string& name) const;
+        std::vector<TextureEdge*> getTextureEdges(const std::string& passName) const;
     private:
         PipelineStage convertShaderStageToPipelineStage(ShaderStage stage) const;
         std::unordered_map<std::string, std::vector<std::string>> m_passGroupOrders;

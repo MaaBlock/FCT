@@ -1,4 +1,4 @@
-#include "../FCTAPI.h"
+﻿#include "../FCTAPI.h"
 
 namespace FCT
 {
