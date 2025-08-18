@@ -47,15 +47,17 @@ namespace FCT
 		}
 		void translate(float x, float y)
 		{
-			m[8] += x;
-			m[9] += y;
+			m[3] += x;
+			m[7] += y;
 		}
 		void translate(float x, float y, float z)
 		{
-			Mat4 trans;
-			trans.m[12] = x;
-			trans.m[13] = y;
-			trans.m[14] = z;
+			Mat4 trans = {
+				1, 0, 0, x,
+				0, 1, 0, y,
+				0, 0, 1, z,
+				0, 0, 0, 1
+			};
 			*this = *this * trans;
 		}
 		void rotateX(float degrees)
@@ -74,8 +76,8 @@ namespace FCT
 		static Mat4 CreateTranslation(float x, float y)
 		{
 			Mat4 ret;
-			ret.m[8] += x;
-			ret.m[9] += y;
+			ret.m[3] += x;
+			ret.m[7] += y;
 			return ret;
 		}
 		static Mat4 CreateScale(float scaleX, float scaleY)
@@ -94,16 +96,17 @@ namespace FCT
 			ret.m[9] += y;
 			return ret;
 		}
-		static Mat4 Translate(float x, float y,float z)
+		static Mat4 Translate(float x, float y, float z)
 		{
 			Mat4 ret = {
-				1, 0, 0, 0,
-				0, 1, 0, 0,
-				0, 0, 1, 0,
-				x, y, z, 1};
-
+				1, 0, 0, x,
+				0, 1, 0, y,
+				0, 0, 1, z,
+				0, 0, 0, 1
+			};
 			return ret;
 		}
+
 
 		static Mat4 Ortho(float left, float right, float bottom, float top, float zNear, float zFar)
 		{
