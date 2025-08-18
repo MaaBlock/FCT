@@ -212,13 +212,13 @@ namespace FCT
 		}
 		Vec4 operator*(const Vec4& vec) const
 		{
-			Vec4 result;
-			result.x = m[0] * vec.x + m[1] * vec.y + m[2] * vec.z + m[3] * vec.w;
-			result.y = m[4] * vec.x + m[5] * vec.y + m[6] * vec.z + m[7] * vec.w;
-			result.z = m[8] * vec.x + m[9] * vec.y + m[10] * vec.z + m[11] * vec.w;
-			result.w = m[12] * vec.x + m[13] * vec.y + m[14] * vec.z + m[15] * vec.w;
-			return result;
-		 }
+			return {
+				m[0] * vec.x + m[4] * vec.y + m[8] * vec.z + m[12] * vec.w,
+				m[1] * vec.x + m[5] * vec.y + m[9] * vec.z + m[13] * vec.w,
+				m[2] * vec.x + m[6] * vec.y + m[10] * vec.z + m[14] * vec.w,
+				m[3] * vec.x + m[7] * vec.y + m[11] * vec.z + m[15] * vec.w
+			};
+		}
 		void scale(float x, float y, float z)
 		{
 			Mat4 scl = {
