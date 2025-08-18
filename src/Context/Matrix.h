@@ -166,8 +166,8 @@ namespace FCT
 			result.m[0] = 1.0f / (aspect * tanHalfFovy);
 			result.m[5] = 1.0f / tanHalfFovy;
 			result.m[10] = -(zFar + zNear) / (zFar - zNear);
-			result.m[11] = -1.0f;
-			result.m[14] = -(2.0f * zFar * zNear) / (zFar - zNear);
+			result.m[11] = -(2.0f * zFar * zNear) / (zFar - zNear);
+			result.m[14] = -1.0f;
 			result.m[15] = 0.0f;
 
 			return result;
