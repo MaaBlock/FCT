@@ -213,10 +213,10 @@ namespace FCT
 		Vec4 operator*(const Vec4& vec) const
 		{
 			return {
-				m[0] * vec.x + m[4] * vec.y + m[8] * vec.z + m[12] * vec.w,
-				m[1] * vec.x + m[5] * vec.y + m[9] * vec.z + m[13] * vec.w,
-				m[2] * vec.x + m[6] * vec.y + m[10] * vec.z + m[14] * vec.w,
-				m[3] * vec.x + m[7] * vec.y + m[11] * vec.z + m[15] * vec.w
+				m[0] * vec.x + m[1] * vec.y + m[2] * vec.z + m[3] * vec.w,    // 第1行
+				m[4] * vec.x + m[5] * vec.y + m[6] * vec.z + m[7] * vec.w,    // 第2行
+				m[8] * vec.x + m[9] * vec.y + m[10] * vec.z + m[11] * vec.w,  // 第3行
+				m[12] * vec.x + m[13] * vec.y + m[14] * vec.z + m[15] * vec.w // 第4行
 			};
 		}
 		void scale(float x, float y, float z)
@@ -232,15 +232,14 @@ namespace FCT
 		Mat4 operator*(const Mat4 &rhs) const
 		{
 			Mat4 result;
-
-			for (int col = 0; col < 4; ++col)
+			for (int i = 0; i < 4; ++i)
 			{
-				for (int row = 0; row < 4; ++row)
+				for (int j = 0; j < 4; ++j)
 				{
-					result.m[col * 4 + row] = 0.0f;
+					result.m[i * 4 + j] = 0.0f;
 					for (int k = 0; k < 4; ++k)
 					{
-						result.m[col * 4 + row] += m[k * 4 + row] * rhs.m[col * 4 + k];
+						result.m[i * 4 + j] += m[i * 4 + k] * rhs.m[k * 4 + j];
 					}
 				}
 			}
