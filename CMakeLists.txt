@@ -216,7 +216,7 @@ file(GLOB ADDITIONAL_HEADERS
         "./src/*.h"
 )
 
-#find_package(Boost REQUIRED COMPONENTS system thread locale)
+find_package(Boost REQUIRED COMPONENTS system thread locale serialization)
 #find_package(harfbuzz CONFIG REQUIRED)
 #find_package(Freetype REQUIRED)
 #find_package(Bullet CONFIG REQUIRED)
@@ -313,6 +313,10 @@ target_link_libraries(FCT PUBLIC
         unofficial::shaderc::shaderc
         assimp::assimp
         Freetype::Freetype
+        Boost::system
+        Boost::thread
+        Boost::locale
+        Boost::serialization
 )
 
 file(GLOB THIRDPARTY_MODULE_HEADERS
