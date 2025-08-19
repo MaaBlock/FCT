@@ -36,9 +36,9 @@ namespace FCT
             {
                 vk::Viewport viewport{};
                 viewport.x = static_cast<float>(lt.x);
-                viewport.y = static_cast<float>(lt.y);
+                viewport.y = static_cast<float>(rb.y);
                 viewport.width = static_cast<float>(rb.x - lt.x);
-                viewport.height = static_cast<float>(rb.y - lt.y);
+                viewport.height = -static_cast<float>(rb.y - lt.y);
                 viewport.minDepth = 0.0f;
                 viewport.maxDepth = 1.0f;
                 m_commandBuffer.setViewport(0,1, &viewport);

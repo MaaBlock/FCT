@@ -1,4 +1,4 @@
-
+﻿
 #include "./Vec.h"
 #pragma once
 
@@ -114,25 +114,24 @@ namespace FCT
 			result.identity();
 
 			result.m[0] = 2.0f / (right - left);
-			result.m[5] = 2.0f / (top - bottom);
-			result.m[10] = -2.0f / (zFar - zNear);
+			result.m[5] = -2.0f / (top - bottom);
+			result.m[10] = -1.0f / (zFar - zNear);
 			result.m[3] = -(right + left) / (right - left);
-			result.m[7] = -(top + bottom) / (top - bottom);
-			result.m[11] = -(zFar + zNear) / (zFar - zNear);
-			result.m[15] = 1.0f;
+			result.m[7] = (top + bottom) / (top - bottom);
+			result.m[11] = -zNear / (zFar - zNear);
 
 			return result;
 		}
 		static Mat4 LookAt(const Vec3& eye, const Vec3& center, const Vec3& up)
 		{
-			Vec3 f = (center - eye).normalize();
-			Vec3 s = f.cross(up).normalize();
-			Vec3 u = s.cross(f);
+			Vec3 f = (eye - center).normalize(); //z
+			Vec3 s = f.cross(up).normalize(); //x
+			Vec3 u = f.cross(s);
 
 			Mat4 result = {
 				s.x,  s.y,  s.z,  -s.dot(eye),
 				u.x,  u.y,  u.z,  -u.dot(eye),
-				-f.x, -f.y, -f.z,  f.dot(eye),
+				f.x,  f.y,  f.z,  -f.dot(eye),
 				0.0f, 0.0f, 0.0f,  1.0f
 			};
 
@@ -159,18 +158,13 @@ namespace FCT
 		static Mat4 Perspective(float fovy, float aspect, float zNear, float zFar)
 		{
 			float tanHalfFovy = tanf(fovy / 2.0f);
-
-			Mat4 result;
-			result.identity();
-
-			result.m[0] = 1.0f / (aspect * tanHalfFovy);
-			result.m[5] = 1.0f / tanHalfFovy;
-			result.m[10] = -(zFar + zNear) / (zFar - zNear);
-			result.m[11] = -(2.0f * zFar * zNear) / (zFar - zNear);
-			result.m[14] = -1.0f;
-			result.m[15] = 0.0f;
-
-			return result;
+			float f = 1.0f / tanHalfFovy;
+			return Mat4(
+				 f / aspect,  0,   0,                          0,
+				 0,          f,   0,                          0,
+				 0,           0,   -zFar / (zFar - zNear),     -(zFar * zNear) / (zFar - zNear),
+				 0,           0,  -1,                          0
+			 );
 		}
 		void rotateY(float degrees)
 		{
