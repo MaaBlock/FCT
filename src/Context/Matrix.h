@@ -110,23 +110,18 @@ namespace FCT
 
 		static Mat4 Ortho(float left, float right, float bottom, float top, float zNear, float zFar)
 		{
-			Mat4 result;
-			result.identity();
-
-			result.m[0] = 2.0f / (right - left);
-			result.m[5] = -2.0f / (top - bottom);
-			result.m[10] = -1.0f / (zFar - zNear);
-			result.m[3] = -(right + left) / (right - left);
-			result.m[7] = (top + bottom) / (top - bottom);
-			result.m[11] = -zNear / (zFar - zNear);
-
-			return result;
+			return Mat4(
+				2.0f / (right - left), 0, 0, -(right + left) / (right - left),
+				0, 2.0f / (top - bottom), 0, -(top + bottom) / (top - bottom),
+				0, 0, 1.0f / (zFar - zNear), -zNear / (zFar - zNear),
+				0, 0, 0, 1
+			);
 		}
 		static Mat4 LookAt(const Vec3& eye, const Vec3& center, const Vec3& up)
 		{
-			Vec3 f = (eye - center).normalize(); //z
+			Vec3 f = (center - eye).normalize(); //z
 			Vec3 s = f.cross(up).normalize(); //x
-			Vec3 u = f.cross(s);
+			Vec3 u = s.cross(f);
 
 			Mat4 result = {
 				s.x,  s.y,  s.z,  -s.dot(eye),
@@ -155,15 +150,15 @@ namespace FCT
 				0, 0, 0, 1};
 			return ret;
 		}
-		static Mat4 Perspective(float fovy, float aspect, float zNear, float zFar)
+		static Mat4 Perspective(float fovx, float aspect, float zNear, float zFar)
 		{
-			float tanHalfFovy = tanf(fovy / 2.0f);
-			float f = 1.0f / tanHalfFovy;
+			float angle = fovx * 3.14159265f / 180.0f;
+			float h = tanf(angle / 2.0f);
 			return Mat4(
-				 f / aspect,  0,   0,                          0,
-				 0,          f,   0,                          0,
-				 0,           0,   -zFar / (zFar - zNear),     -(zFar * zNear) / (zFar - zNear),
-				 0,           0,  -1,                          0
+				 1 / h,  0,   0,                          0,
+				 0,          aspect/ h,   0,                          0,
+				 0,           0,   zFar / (zFar - zNear),     - zFar * zNear / (zFar - zNear),
+				 0,           0,  1 ,                          0
 			 );
 		}
 		void rotateY(float degrees)
