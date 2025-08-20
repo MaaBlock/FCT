@@ -244,6 +244,11 @@ namespace FCT
         }
     }
 
+    void RenderGraph::cleanUpCompile()
+    {
+
+    }
+
     void RenderGraph::resolveTextureSizes()
     {
         for (auto& [passName, pass] : m_passNodes) {
@@ -278,11 +283,12 @@ namespace FCT
                 RenderGraphImageNode* textureNode = imageNodeIt->second.get();
 
                 if (textureEdge->size.type == TextureSize::Type::Undefined) {
-                    if (!textureNode->isSizeDetermined()) {
-                        textureNode->unite(referenceNode);
+                    if (!textureNode->isSizeDetermined()) {//
+                        textureEdge->size = TextureSize(Fraction(),Fraction());
+                        //textureNode->unite(referenceNode);
                     }
                 }
-                else if (textureEdge->size.type == TextureSize::Type::Relative) {
+                if (textureEdge->size.type == TextureSize::Type::Relative) {
                     FractionScale2D scale(textureEdge->size.relativeWidth, textureEdge->size.relativeHeight);
                     textureNode->unite(referenceNode, scale);
                 }

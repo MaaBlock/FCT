@@ -260,6 +260,8 @@ namespace FCT
 
         void executeBarriers(RHI::CommandBuffer* cmdBuffer, const std::vector<BarrierInfo>& barriers);
         void addPass(const PassDesc& desc);
+        void cleanUpCompile();
+        void cleanUp();
         /**
          * @cond CHINESE
          * @note 在compile调用时执行，遍历每个pass，
