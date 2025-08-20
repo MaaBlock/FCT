@@ -155,10 +155,10 @@ namespace FCT
 			float angle = fovx * 3.14159265f / 180.0f;
 			float h = tanf(angle / 2.0f);
 			return Mat4(
-				 1 / h,  0,   0,                          0,
-				 0,          aspect/ h,   0,                          0,
-				 0,           0,   zFar / (zFar - zNear),     - zFar * zNear / (zFar - zNear),
-				 0,           0,  1 ,                          0
+				 1 / h,		0,			0,                          0,
+				 0,			aspect/ h,  0,                          0,
+				 0,         0,			zFar / (zFar - zNear),     -zFar * zNear / (zFar - zNear),
+				 0,         0,			1 ,                         0
 			 );
 		}
 		void rotateY(float degrees)
