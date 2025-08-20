@@ -1,0 +1,483 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FCT: src/VertexAndText/VertexPath.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FCT
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_vertex_path_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">VertexPath.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_vertex_path_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// Created by Administrator on 2025/5/4.</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#ifndef VERTEXPATH_H</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#define VERTEXPATH_H</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="_ref_count_8h.html">../MutilThreadBase/RefCount.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_f_c_t.html">FCT</a> {</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="namespace_f_c_t.html#a92ac38c495f3786ade2746ad9611fae5">   11</a></span><span class="keyword">constexpr</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="namespace_f_c_t.html#a92ac38c495f3786ade2746ad9611fae5">VertexCommand_End</a> = -1.0;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="namespace_f_c_t.html#a746b29002cdb00f413b48e6cfa64ef41">   12</a></span><span class="keyword">constexpr</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="namespace_f_c_t.html#a746b29002cdb00f413b48e6cfa64ef41">VertexCommand_MoveTo</a> = 1.0;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="namespace_f_c_t.html#a05b95a0724e561f0b2a1b8aaf9d20c22">   13</a></span><span class="keyword">constexpr</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="namespace_f_c_t.html#a05b95a0724e561f0b2a1b8aaf9d20c22">VertexCommand_LineTo</a> = 2.0;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="namespace_f_c_t.html#a9e95124674bfc7bac5798d5930b784ba">   14</a></span><span class="keyword">constexpr</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="namespace_f_c_t.html#a9e95124674bfc7bac5798d5930b784ba">VertexCommand_BezierCurveTo</a> = 3.0;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="namespace_f_c_t.html#ae4223c5fe723050691f8cbe9f041bad8">   15</a></span><span class="keyword">constexpr</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="namespace_f_c_t.html#ae4223c5fe723050691f8cbe9f041bad8">VertexCommand_SetColor</a> = 4.0;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="namespace_f_c_t.html#a7186c70e83eacf0988cfd2ab42e8050f">   16</a></span><span class="keyword">constexpr</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="namespace_f_c_t.html#a7186c70e83eacf0988cfd2ab42e8050f">VertexCommand_ArcTo</a> = 6.0;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="namespace_f_c_t.html#af4e7b95fc2f5c2daad7e127ae9549e99">   17</a></span><span class="keyword">constexpr</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="namespace_f_c_t.html#af4e7b95fc2f5c2daad7e127ae9549e99">VertexCommand_SetTransform</a> = 5.0;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="namespace_f_c_t.html#aea93dba39e20bf367a3d5c9af2f05563">   18</a></span><span class="keyword">constexpr</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="namespace_f_c_t.html#aea93dba39e20bf367a3d5c9af2f05563">VertexCommand_BeginPath</a> = 7.0;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="namespace_f_c_t.html#a782c95bb6c3248b8611fd33f83a093ca">   19</a></span><span class="keyword">constexpr</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="namespace_f_c_t.html#a782c95bb6c3248b8611fd33f83a093ca">VertexCommand_EndPath</a> = 8.0;</div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="};">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_vertex_path.html">   20</a></span><span class="keyword">class </span><a class="code hl_function" href="class_f_c_t_1_1_vertex_path.html#a47ab2ed1831ea4e299509ee9e2841037">VertexPath</a> : <span class="keyword">public</span> <a class="code hl_function" href="class_f_c_t_1_1_ref_count.html#a681b72d7bd32fd7e4b9ec861cd74370e">RefCount</a></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>{</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_vertex_path.html#a8fd21fa443a82c9600e9fcdbf0e2c1a9">   23</a></span>    std::vector&lt;float&gt; <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a8fd21fa443a82c9600e9fcdbf0e2c1a9">m_commandQueue</a>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_vertex_path.html#aa6e7be769a004d469c4a6bd751475023">   24</a></span>    <a class="code hl_struct" href="struct_f_c_t_1_1_vec2.html">Vec2</a> <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#aa6e7be769a004d469c4a6bd751475023">m_currentPos</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_vertex_path.html#a163fe684408acbbd4957c38725cae116">   25</a></span>    <a class="code hl_struct" href="struct_f_c_t_1_1_vec2.html">Vec2</a> <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a163fe684408acbbd4957c38725cae116">m_pathStart</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_vertex_path.html#a3f5ecbb9dbb433ba26f559acea96e55f">   26</a></span>    <a class="code hl_struct" href="struct_f_c_t_1_1_vec2.html">Vec2</a> <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a3f5ecbb9dbb433ba26f559acea96e55f">m_minBounds</a>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_vertex_path.html#a2e9350ac9cd26c979fb74e2b04f97f20">   27</a></span>    <a class="code hl_struct" href="struct_f_c_t_1_1_vec2.html">Vec2</a> <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a2e9350ac9cd26c979fb74e2b04f97f20">m_maxBounds</a>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_vertex_path.html#a549f645cc1fffb0e57431955f1e2f122">   28</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a549f645cc1fffb0e57431955f1e2f122">m_hasPoints</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="foldopen" id="foldopen00030" data-start="{" data-end="};">
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_vertex_path.html#aa58aaa0f03b30771c4eeaf6240240696">   30</a></span>    <span class="keyword">enum</span> <a class="code hl_enumeration" href="class_f_c_t_1_1_vertex_path.html#aa58aaa0f03b30771c4eeaf6240240696">CommandType</a> {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    };</div>
+</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="foldopen" id="foldopen00033" data-start="{" data-end="}">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_vertex_path.html#ae1a4776ea6c1ce05110769dc040313b0">   33</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_vertex_path.html#ae1a4776ea6c1ce05110769dc040313b0">updateBounds</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_f_c_t_1_1_vec2.html">Vec2</a>&amp; point) {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a074a9bb236007ed4807aaad27ddca280">m_dirty</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="keywordflow">if</span> (!<a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a549f645cc1fffb0e57431955f1e2f122">m_hasPoints</a>) {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a3f5ecbb9dbb433ba26f559acea96e55f">m_minBounds</a> = point;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a2e9350ac9cd26c979fb74e2b04f97f20">m_maxBounds</a> = point;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a549f645cc1fffb0e57431955f1e2f122">m_hasPoints</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a3f5ecbb9dbb433ba26f559acea96e55f">m_minBounds</a>.x = std::min(<a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a3f5ecbb9dbb433ba26f559acea96e55f">m_minBounds</a>.x, point.<a class="code hl_variable" href="struct_f_c_t_1_1_vec2.html#a46dd201ced58e5d5012381fa82e2f023">x</a>);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a3f5ecbb9dbb433ba26f559acea96e55f">m_minBounds</a>.y = std::min(<a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a3f5ecbb9dbb433ba26f559acea96e55f">m_minBounds</a>.y, point.<a class="code hl_variable" href="struct_f_c_t_1_1_vec2.html#aef6165dc59972cc930197af4e4bf2b2f">y</a>);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a2e9350ac9cd26c979fb74e2b04f97f20">m_maxBounds</a>.x = std::max(<a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a2e9350ac9cd26c979fb74e2b04f97f20">m_maxBounds</a>.x, point.<a class="code hl_variable" href="struct_f_c_t_1_1_vec2.html#a46dd201ced58e5d5012381fa82e2f023">x</a>);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a2e9350ac9cd26c979fb74e2b04f97f20">m_maxBounds</a>.y = std::max(<a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a2e9350ac9cd26c979fb74e2b04f97f20">m_maxBounds</a>.y, point.<a class="code hl_variable" href="struct_f_c_t_1_1_vec2.html#aef6165dc59972cc930197af4e4bf2b2f">y</a>);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        }</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    }</div>
+</div>
+<div class="foldopen" id="foldopen00046" data-start="{" data-end="}">
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_vertex_path.html#ab89ff47759cbf4e8dbc990e8ab060ea7">   46</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_vertex_path.html#ab89ff47759cbf4e8dbc990e8ab060ea7">unwrapperArcTo</a>(<a class="code hl_struct" href="struct_f_c_t_1_1_vec2.html">Vec2</a> center, <span class="keywordtype">float</span> beginAngle, <span class="keywordtype">float</span> endAngle, <span class="keywordtype">float</span> q) {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a8fd21fa443a82c9600e9fcdbf0e2c1a9">m_commandQueue</a>.push_back(<a class="code hl_variable" href="namespace_f_c_t.html#a7186c70e83eacf0988cfd2ab42e8050f">VertexCommand_ArcTo</a>);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a8fd21fa443a82c9600e9fcdbf0e2c1a9">m_commandQueue</a>.push_back(center.<a class="code hl_variable" href="struct_f_c_t_1_1_vec2.html#a46dd201ced58e5d5012381fa82e2f023">x</a>);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a8fd21fa443a82c9600e9fcdbf0e2c1a9">m_commandQueue</a>.push_back(center.<a class="code hl_variable" href="struct_f_c_t_1_1_vec2.html#aef6165dc59972cc930197af4e4bf2b2f">y</a>);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a8fd21fa443a82c9600e9fcdbf0e2c1a9">m_commandQueue</a>.push_back(beginAngle);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a8fd21fa443a82c9600e9fcdbf0e2c1a9">m_commandQueue</a>.push_back(endAngle);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a8fd21fa443a82c9600e9fcdbf0e2c1a9">m_commandQueue</a>.push_back(q);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="keywordtype">float</span> radius = <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#aa6e7be769a004d469c4a6bd751475023">m_currentPos</a>.distance(center);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <a class="code hl_function" href="class_f_c_t_1_1_vertex_path.html#ae1a4776ea6c1ce05110769dc040313b0">updateBounds</a>(<a class="code hl_enumvalue" href="namespace_f_c_t.html#a230e974c7c1f163f1dec4530a2e3239cafe98032d4f1c52a2f0b617f9205d5f80">Vec2</a>(center.<a class="code hl_variable" href="struct_f_c_t_1_1_vec2.html#a46dd201ced58e5d5012381fa82e2f023">x</a> - 2 * radius, center.<a class="code hl_variable" href="struct_f_c_t_1_1_vec2.html#aef6165dc59972cc930197af4e4bf2b2f">y</a> - 2 * radius));</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <a class="code hl_function" href="class_f_c_t_1_1_vertex_path.html#ae1a4776ea6c1ce05110769dc040313b0">updateBounds</a>(<a class="code hl_enumvalue" href="namespace_f_c_t.html#a230e974c7c1f163f1dec4530a2e3239cafe98032d4f1c52a2f0b617f9205d5f80">Vec2</a>(center.<a class="code hl_variable" href="struct_f_c_t_1_1_vec2.html#a46dd201ced58e5d5012381fa82e2f023">x</a> + 2 * radius, center.<a class="code hl_variable" href="struct_f_c_t_1_1_vec2.html#aef6165dc59972cc930197af4e4bf2b2f">y</a> + 2 * radius));</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    }</div>
+</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_vertex_path.html#a074a9bb236007ed4807aaad27ddca280">   58</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a074a9bb236007ed4807aaad27ddca280">m_dirty</a>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00060" data-start="{" data-end="}">
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_vertex_path.html#a192f1c3799123975f33c0be57f671ec9">   60</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_vertex_path.html#a192f1c3799123975f33c0be57f671ec9">clearDirty</a>()</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a074a9bb236007ed4807aaad27ddca280">m_dirty</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    }</div>
+</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_vertex_path.html#a2b45cd766fac46fb7ee7e7c87724c358">   64</a></span>    <a class="code hl_class" href="class_f_c_t_1_1_mat3.html">Mat3</a> <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a2b45cd766fac46fb7ee7e7c87724c358">transform</a>;</div>
+<div class="foldopen" id="foldopen00065" data-start="{" data-end="}">
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_vertex_path.html#a2b35cdb190516676965cc7fe3d3e81c6">   65</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_vertex_path.html#a2b35cdb190516676965cc7fe3d3e81c6">end</a>()</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a8fd21fa443a82c9600e9fcdbf0e2c1a9">m_commandQueue</a>.push_back(<a class="code hl_variable" href="namespace_f_c_t.html#a92ac38c495f3786ade2746ad9611fae5">VertexCommand_End</a>);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    }</div>
+</div>
+<div class="foldopen" id="foldopen00069" data-start="{" data-end="}">
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_vertex_path.html#a47ab2ed1831ea4e299509ee9e2841037">   69</a></span>    <a class="code hl_function" href="class_f_c_t_1_1_vertex_path.html#a47ab2ed1831ea4e299509ee9e2841037">VertexPath</a>() : <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a549f645cc1fffb0e57431955f1e2f122">m_hasPoints</a>(false) {</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a2b45cd766fac46fb7ee7e7c87724c358">transform</a> = <a class="code hl_enumvalue" href="namespace_f_c_t.html#a230e974c7c1f163f1dec4530a2e3239ca2495a7d9c1fab19af6441abbfed823e1">Mat3</a>();</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <a class="code hl_function" href="class_f_c_t_1_1_vertex_path.html#abe8395136f982559b16bfd1d8394e624">clear</a>();</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    }</div>
+</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="foldopen" id="foldopen00074" data-start="{" data-end="}">
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_vertex_path.html#abe8395136f982559b16bfd1d8394e624">   74</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_vertex_path.html#abe8395136f982559b16bfd1d8394e624">clear</a>() {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a8fd21fa443a82c9600e9fcdbf0e2c1a9">m_commandQueue</a>.clear();</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a549f645cc1fffb0e57431955f1e2f122">m_hasPoints</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a3f5ecbb9dbb433ba26f559acea96e55f">m_minBounds</a> = <a class="code hl_enumvalue" href="namespace_f_c_t.html#a230e974c7c1f163f1dec4530a2e3239cafe98032d4f1c52a2f0b617f9205d5f80">Vec2</a>(std::numeric_limits&lt;float&gt;::max(), std::numeric_limits&lt;float&gt;::max());</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a2e9350ac9cd26c979fb74e2b04f97f20">m_maxBounds</a> = <a class="code hl_enumvalue" href="namespace_f_c_t.html#a230e974c7c1f163f1dec4530a2e3239cafe98032d4f1c52a2f0b617f9205d5f80">Vec2</a>(std::numeric_limits&lt;float&gt;::lowest(), std::numeric_limits&lt;float&gt;::lowest());</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    }</div>
+</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="foldopen" id="foldopen00081" data-start="{" data-end="}">
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_vertex_path.html#a6120c62c6215eeaef9ee2d1761ed6b13">   81</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_vertex_path.html#a6120c62c6215eeaef9ee2d1761ed6b13">beginPath</a>(<span class="keywordtype">float</span> sign = 1.0f) {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a8fd21fa443a82c9600e9fcdbf0e2c1a9">m_commandQueue</a>.push_back(<a class="code hl_variable" href="namespace_f_c_t.html#aea93dba39e20bf367a3d5c9af2f05563">VertexCommand_BeginPath</a>);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a8fd21fa443a82c9600e9fcdbf0e2c1a9">m_commandQueue</a>.push_back(sign);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    }</div>
+</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="foldopen" id="foldopen00086" data-start="{" data-end="}">
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_vertex_path.html#ad442863883024db93cb955ef9b9d3812">   86</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_vertex_path.html#ad442863883024db93cb955ef9b9d3812">endPath</a>() {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a8fd21fa443a82c9600e9fcdbf0e2c1a9">m_commandQueue</a>.push_back(<a class="code hl_variable" href="namespace_f_c_t.html#a782c95bb6c3248b8611fd33f83a093ca">VertexCommand_EndPath</a>);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    }</div>
+</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="foldopen" id="foldopen00090" data-start="{" data-end="}">
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_vertex_path.html#af7faad5e51f9380966e73ca6227d8c2d">   90</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_vertex_path.html#af7faad5e51f9380966e73ca6227d8c2d">moveTo</a>(<a class="code hl_struct" href="struct_f_c_t_1_1_vec2.html">Vec2</a> to) {</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a8fd21fa443a82c9600e9fcdbf0e2c1a9">m_commandQueue</a>.push_back(<a class="code hl_variable" href="namespace_f_c_t.html#a746b29002cdb00f413b48e6cfa64ef41">VertexCommand_MoveTo</a>);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a8fd21fa443a82c9600e9fcdbf0e2c1a9">m_commandQueue</a>.push_back(to.<a class="code hl_variable" href="struct_f_c_t_1_1_vec2.html#a46dd201ced58e5d5012381fa82e2f023">x</a>);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a8fd21fa443a82c9600e9fcdbf0e2c1a9">m_commandQueue</a>.push_back(to.<a class="code hl_variable" href="struct_f_c_t_1_1_vec2.html#aef6165dc59972cc930197af4e4bf2b2f">y</a>);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#aa6e7be769a004d469c4a6bd751475023">m_currentPos</a> = to;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a163fe684408acbbd4957c38725cae116">m_pathStart</a> = to;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <a class="code hl_function" href="class_f_c_t_1_1_vertex_path.html#ae1a4776ea6c1ce05110769dc040313b0">updateBounds</a>(to);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    }</div>
+</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="foldopen" id="foldopen00099" data-start="{" data-end="}">
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_vertex_path.html#a9e8020682aec9883ce9151e8f3cefed7">   99</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_vertex_path.html#a9e8020682aec9883ce9151e8f3cefed7">lineTo</a>(<a class="code hl_struct" href="struct_f_c_t_1_1_vec2.html">Vec2</a> to) {</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a8fd21fa443a82c9600e9fcdbf0e2c1a9">m_commandQueue</a>.push_back(<a class="code hl_variable" href="namespace_f_c_t.html#a05b95a0724e561f0b2a1b8aaf9d20c22">VertexCommand_LineTo</a>);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a8fd21fa443a82c9600e9fcdbf0e2c1a9">m_commandQueue</a>.push_back(to.<a class="code hl_variable" href="struct_f_c_t_1_1_vec2.html#a46dd201ced58e5d5012381fa82e2f023">x</a>);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a8fd21fa443a82c9600e9fcdbf0e2c1a9">m_commandQueue</a>.push_back(to.<a class="code hl_variable" href="struct_f_c_t_1_1_vec2.html#aef6165dc59972cc930197af4e4bf2b2f">y</a>);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#aa6e7be769a004d469c4a6bd751475023">m_currentPos</a> = to;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        <a class="code hl_function" href="class_f_c_t_1_1_vertex_path.html#ae1a4776ea6c1ce05110769dc040313b0">updateBounds</a>(to);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    }</div>
+</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="foldopen" id="foldopen00107" data-start="{" data-end="}">
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_vertex_path.html#a16dc9a5a0d8ce3c0885c2c6f46e8f5a7">  107</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_vertex_path.html#a16dc9a5a0d8ce3c0885c2c6f46e8f5a7">fillRect</a>(<a class="code hl_struct" href="struct_f_c_t_1_1_vec2.html">Vec2</a> pos, <a class="code hl_struct" href="struct_f_c_t_1_1_vec2.html">Vec2</a> size) {</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        <a class="code hl_function" href="class_f_c_t_1_1_vertex_path.html#af7faad5e51f9380966e73ca6227d8c2d">moveTo</a>(pos);</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        <a class="code hl_function" href="class_f_c_t_1_1_vertex_path.html#a9e8020682aec9883ce9151e8f3cefed7">lineTo</a>(<a class="code hl_enumvalue" href="namespace_f_c_t.html#a230e974c7c1f163f1dec4530a2e3239cafe98032d4f1c52a2f0b617f9205d5f80">Vec2</a>(pos.<a class="code hl_variable" href="struct_f_c_t_1_1_vec2.html#a46dd201ced58e5d5012381fa82e2f023">x</a>, pos.<a class="code hl_variable" href="struct_f_c_t_1_1_vec2.html#aef6165dc59972cc930197af4e4bf2b2f">y</a> + size.<a class="code hl_variable" href="struct_f_c_t_1_1_vec2.html#aef6165dc59972cc930197af4e4bf2b2f">y</a>));</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        <a class="code hl_function" href="class_f_c_t_1_1_vertex_path.html#a9e8020682aec9883ce9151e8f3cefed7">lineTo</a>(<a class="code hl_enumvalue" href="namespace_f_c_t.html#a230e974c7c1f163f1dec4530a2e3239cafe98032d4f1c52a2f0b617f9205d5f80">Vec2</a>(pos.<a class="code hl_variable" href="struct_f_c_t_1_1_vec2.html#a46dd201ced58e5d5012381fa82e2f023">x</a> + size.<a class="code hl_variable" href="struct_f_c_t_1_1_vec2.html#a46dd201ced58e5d5012381fa82e2f023">x</a>, pos.<a class="code hl_variable" href="struct_f_c_t_1_1_vec2.html#aef6165dc59972cc930197af4e4bf2b2f">y</a> + size.<a class="code hl_variable" href="struct_f_c_t_1_1_vec2.html#aef6165dc59972cc930197af4e4bf2b2f">y</a>));</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        <a class="code hl_function" href="class_f_c_t_1_1_vertex_path.html#a9e8020682aec9883ce9151e8f3cefed7">lineTo</a>(<a class="code hl_enumvalue" href="namespace_f_c_t.html#a230e974c7c1f163f1dec4530a2e3239cafe98032d4f1c52a2f0b617f9205d5f80">Vec2</a>(pos.<a class="code hl_variable" href="struct_f_c_t_1_1_vec2.html#a46dd201ced58e5d5012381fa82e2f023">x</a> + size.<a class="code hl_variable" href="struct_f_c_t_1_1_vec2.html#a46dd201ced58e5d5012381fa82e2f023">x</a>, pos.<a class="code hl_variable" href="struct_f_c_t_1_1_vec2.html#aef6165dc59972cc930197af4e4bf2b2f">y</a>));</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        <a class="code hl_function" href="class_f_c_t_1_1_vertex_path.html#a9e8020682aec9883ce9151e8f3cefed7">lineTo</a>(pos);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    }</div>
+</div>
+<div class="foldopen" id="foldopen00114" data-start="{" data-end="}">
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_vertex_path.html#a6ff7a824190b799d5e1ab729e57a6d7d">  114</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_vertex_path.html#a6ff7a824190b799d5e1ab729e57a6d7d">arcTo</a>(<a class="code hl_struct" href="struct_f_c_t_1_1_vec2.html">Vec2</a> center, <span class="keywordtype">float</span> beginAngle, <span class="keywordtype">float</span> endAngle)</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    {</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        beginAngle = fmod(beginAngle, 2 * M_PI);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        endAngle = fmod(endAngle, 2 * M_PI);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        <span class="keywordflow">if</span> (beginAngle &lt; 0)</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        {</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>            beginAngle += 2 * M_PI;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>            <span class="keywordflow">if</span> (endAngle)</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>            {</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>                endAngle += 2 * M_PI;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>                endAngle = fmod(endAngle, 2 * M_PI);</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>            }</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>            <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>            {</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>                endAngle += 2 * M_PI;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>            }</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        }</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        <span class="keywordflow">if</span> (endAngle &lt; 0)</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        {</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>            <span class="keywordflow">if</span> (beginAngle)</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>            {</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>                beginAngle += 2 * M_PI;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>                beginAngle = fmod(beginAngle, 2 * M_PI);</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>            }</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>            <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>            {</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>                beginAngle += 2 * M_PI;</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>            }</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>            endAngle += 2 * M_PI;</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        }</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span> </div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        <span class="keywordflow">if</span> (abs(endAngle - beginAngle) &lt; 1e-6 || abs(endAngle - beginAngle) &gt;= 2 * M_PI - 1e-6)</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        {</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> q = 1; q &lt;= 4; ++q)</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>            {</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>                <a class="code hl_function" href="class_f_c_t_1_1_vertex_path.html#ab89ff47759cbf4e8dbc990e8ab060ea7">unwrapperArcTo</a>(center, (q - 1) * M_PI_2, q * M_PI_2, q);</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>            }</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        }</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        <span class="keywordtype">bool</span> isClockwise = endAngle &lt; beginAngle;</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        <span class="keywordflow">if</span> (isClockwise)</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        {</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>            <span class="keywordflow">if</span> (endAngle &gt; beginAngle)</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>                endAngle -= 2 * M_PI;</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> q = 4; q &gt;= 1; --q)</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>            {</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>                <span class="keywordtype">float</span> quadrantStart = q * M_PI_2;</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>                <span class="keywordtype">float</span> quadrantEnd = (q - 1) * M_PI_2;</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>                <span class="keywordflow">if</span> (beginAngle &gt; quadrantEnd &amp;&amp; endAngle &lt; quadrantStart)</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>                {</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>                    <span class="keywordtype">float</span> arcStart = std::min(beginAngle, quadrantStart);</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>                    <span class="keywordtype">float</span> arcEnd = std::max(endAngle, quadrantEnd);</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>                    <a class="code hl_function" href="class_f_c_t_1_1_vertex_path.html#ab89ff47759cbf4e8dbc990e8ab060ea7">unwrapperArcTo</a>(center, arcStart, arcEnd, q);</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>                }</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>                <span class="keywordflow">if</span> (endAngle &gt;= quadrantEnd)</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>            }</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        }</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        {</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>            <span class="keywordflow">if</span> (endAngle &lt; beginAngle)</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>                endAngle += 2 * M_PI;</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> q = 1; q &lt;= 4; ++q)</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>            {</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>                <span class="keywordtype">float</span> quadrantStart = (q - 1) * M_PI_2;</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>                <span class="keywordtype">float</span> quadrantEnd = q * M_PI_2;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>                <span class="keywordflow">if</span> (beginAngle &lt; quadrantEnd &amp;&amp; endAngle &gt; quadrantStart)</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>                {</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>                    <span class="keywordtype">float</span> arcStart = std::max(beginAngle, quadrantStart);</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>                    <span class="keywordtype">float</span> arcEnd = std::min(endAngle, quadrantEnd);</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>                    <a class="code hl_function" href="class_f_c_t_1_1_vertex_path.html#ab89ff47759cbf4e8dbc990e8ab060ea7">unwrapperArcTo</a>(center, arcStart, arcEnd, q);</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>                }</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span> </div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>                <span class="keywordflow">if</span> (endAngle &lt;= quadrantEnd)</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>            }</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        }</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    }</div>
+</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
+<div class="foldopen" id="foldopen00200" data-start="{" data-end="}">
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_vertex_path.html#a88117fbd3fe65c73784ef97ab97c2675">  200</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_vertex_path.html#a88117fbd3fe65c73784ef97ab97c2675">curveTo</a>(<a class="code hl_struct" href="struct_f_c_t_1_1_vec2.html">Vec2</a> control, <a class="code hl_struct" href="struct_f_c_t_1_1_vec2.html">Vec2</a> to) {</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a8fd21fa443a82c9600e9fcdbf0e2c1a9">m_commandQueue</a>.push_back(<a class="code hl_variable" href="namespace_f_c_t.html#a9e95124674bfc7bac5798d5930b784ba">VertexCommand_BezierCurveTo</a>);</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a8fd21fa443a82c9600e9fcdbf0e2c1a9">m_commandQueue</a>.push_back(control.<a class="code hl_variable" href="struct_f_c_t_1_1_vec2.html#a46dd201ced58e5d5012381fa82e2f023">x</a>);</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a8fd21fa443a82c9600e9fcdbf0e2c1a9">m_commandQueue</a>.push_back(control.<a class="code hl_variable" href="struct_f_c_t_1_1_vec2.html#aef6165dc59972cc930197af4e4bf2b2f">y</a>);</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a8fd21fa443a82c9600e9fcdbf0e2c1a9">m_commandQueue</a>.push_back(to.<a class="code hl_variable" href="struct_f_c_t_1_1_vec2.html#a46dd201ced58e5d5012381fa82e2f023">x</a>);</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a8fd21fa443a82c9600e9fcdbf0e2c1a9">m_commandQueue</a>.push_back(to.<a class="code hl_variable" href="struct_f_c_t_1_1_vec2.html#aef6165dc59972cc930197af4e4bf2b2f">y</a>);</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>        <a class="code hl_function" href="class_f_c_t_1_1_vertex_path.html#ae1a4776ea6c1ce05110769dc040313b0">updateBounds</a>(<a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#aa6e7be769a004d469c4a6bd751475023">m_currentPos</a>);</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>        <a class="code hl_function" href="class_f_c_t_1_1_vertex_path.html#ae1a4776ea6c1ce05110769dc040313b0">updateBounds</a>(control);</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>        <a class="code hl_function" href="class_f_c_t_1_1_vertex_path.html#ae1a4776ea6c1ce05110769dc040313b0">updateBounds</a>(to);</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span> </div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>        <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#aa6e7be769a004d469c4a6bd751475023">m_currentPos</a> = to;</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    }</div>
+</div>
+<div class="foldopen" id="foldopen00213" data-start="{" data-end="}">
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_vertex_path.html#a3ec97d66a51dbe6739ad570aa5b6c3cc">  213</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_vertex_path.html#a3ec97d66a51dbe6739ad570aa5b6c3cc">curveTo</a>(<a class="code hl_struct" href="struct_f_c_t_1_1_vec2.html">Vec2</a> control1, <a class="code hl_struct" href="struct_f_c_t_1_1_vec2.html">Vec2</a> control2, <a class="code hl_struct" href="struct_f_c_t_1_1_vec2.html">Vec2</a> to) {</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>        <a class="code hl_struct" href="struct_f_c_t_1_1_vec2.html">Vec2</a> start = <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#aa6e7be769a004d469c4a6bd751475023">m_currentPos</a>;</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>        <a class="code hl_struct" href="struct_f_c_t_1_1_vec2.html">Vec2</a> q1 = start + (control1 - start) * 2.0f / 3.0f;</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>        <a class="code hl_struct" href="struct_f_c_t_1_1_vec2.html">Vec2</a> q2 = to + (control2 - to) * 2.0f / 3.0f;</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>        <a class="code hl_struct" href="struct_f_c_t_1_1_vec2.html">Vec2</a> m = (q1 + q2) * 0.5f;</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span> </div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>        <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a8fd21fa443a82c9600e9fcdbf0e2c1a9">m_commandQueue</a>.push_back(<a class="code hl_variable" href="namespace_f_c_t.html#a9e95124674bfc7bac5798d5930b784ba">VertexCommand_BezierCurveTo</a>);</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>        <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a8fd21fa443a82c9600e9fcdbf0e2c1a9">m_commandQueue</a>.push_back(q1.<a class="code hl_variable" href="struct_f_c_t_1_1_vec2.html#a46dd201ced58e5d5012381fa82e2f023">x</a>);</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>        <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a8fd21fa443a82c9600e9fcdbf0e2c1a9">m_commandQueue</a>.push_back(q1.<a class="code hl_variable" href="struct_f_c_t_1_1_vec2.html#aef6165dc59972cc930197af4e4bf2b2f">y</a>);</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>        <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a8fd21fa443a82c9600e9fcdbf0e2c1a9">m_commandQueue</a>.push_back(m.x);</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>        <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a8fd21fa443a82c9600e9fcdbf0e2c1a9">m_commandQueue</a>.push_back(m.y);</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span> </div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>        <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a8fd21fa443a82c9600e9fcdbf0e2c1a9">m_commandQueue</a>.push_back(<a class="code hl_variable" href="namespace_f_c_t.html#a9e95124674bfc7bac5798d5930b784ba">VertexCommand_BezierCurveTo</a>);</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>        <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a8fd21fa443a82c9600e9fcdbf0e2c1a9">m_commandQueue</a>.push_back(q2.x);</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>        <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a8fd21fa443a82c9600e9fcdbf0e2c1a9">m_commandQueue</a>.push_back(q2.y);</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>        <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a8fd21fa443a82c9600e9fcdbf0e2c1a9">m_commandQueue</a>.push_back(to.<a class="code hl_variable" href="struct_f_c_t_1_1_vec2.html#a46dd201ced58e5d5012381fa82e2f023">x</a>);</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>        <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a8fd21fa443a82c9600e9fcdbf0e2c1a9">m_commandQueue</a>.push_back(to.<a class="code hl_variable" href="struct_f_c_t_1_1_vec2.html#aef6165dc59972cc930197af4e4bf2b2f">y</a>);</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> </div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>        <a class="code hl_function" href="class_f_c_t_1_1_vertex_path.html#ae1a4776ea6c1ce05110769dc040313b0">updateBounds</a>(start);</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>        <a class="code hl_function" href="class_f_c_t_1_1_vertex_path.html#ae1a4776ea6c1ce05110769dc040313b0">updateBounds</a>(control1);</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>        <a class="code hl_function" href="class_f_c_t_1_1_vertex_path.html#ae1a4776ea6c1ce05110769dc040313b0">updateBounds</a>(control2);</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>        <a class="code hl_function" href="class_f_c_t_1_1_vertex_path.html#ae1a4776ea6c1ce05110769dc040313b0">updateBounds</a>(to);</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span> </div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>        <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#aa6e7be769a004d469c4a6bd751475023">m_currentPos</a> = to;</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    }</div>
+</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span> </div>
+<div class="foldopen" id="foldopen00240" data-start="{" data-end="}">
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_vertex_path.html#a4c184d2b8589d81710d2a854297f5c5d">  240</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_vertex_path.html#a4c184d2b8589d81710d2a854297f5c5d">circle</a>(<a class="code hl_struct" href="struct_f_c_t_1_1_vec2.html">Vec2</a> center, <span class="keywordtype">float</span> radius) {</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>        <a class="code hl_function" href="class_f_c_t_1_1_vertex_path.html#af7faad5e51f9380966e73ca6227d8c2d">moveTo</a>(<a class="code hl_enumvalue" href="namespace_f_c_t.html#a230e974c7c1f163f1dec4530a2e3239cafe98032d4f1c52a2f0b617f9205d5f80">Vec2</a>(center.<a class="code hl_variable" href="struct_f_c_t_1_1_vec2.html#a46dd201ced58e5d5012381fa82e2f023">x</a> + radius, center.<a class="code hl_variable" href="struct_f_c_t_1_1_vec2.html#aef6165dc59972cc930197af4e4bf2b2f">y</a>));</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>        <a class="code hl_function" href="class_f_c_t_1_1_vertex_path.html#a6ff7a824190b799d5e1ab729e57a6d7d">arcTo</a>(center, 0, 2 * M_PI);</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span> </div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>        <a class="code hl_function" href="class_f_c_t_1_1_vertex_path.html#ae1a4776ea6c1ce05110769dc040313b0">updateBounds</a>(<a class="code hl_enumvalue" href="namespace_f_c_t.html#a230e974c7c1f163f1dec4530a2e3239cafe98032d4f1c52a2f0b617f9205d5f80">Vec2</a>(center.<a class="code hl_variable" href="struct_f_c_t_1_1_vec2.html#a46dd201ced58e5d5012381fa82e2f023">x</a> - 2 * radius, center.<a class="code hl_variable" href="struct_f_c_t_1_1_vec2.html#aef6165dc59972cc930197af4e4bf2b2f">y</a> - 2 * radius));</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>        <a class="code hl_function" href="class_f_c_t_1_1_vertex_path.html#ae1a4776ea6c1ce05110769dc040313b0">updateBounds</a>(<a class="code hl_enumvalue" href="namespace_f_c_t.html#a230e974c7c1f163f1dec4530a2e3239cafe98032d4f1c52a2f0b617f9205d5f80">Vec2</a>(center.<a class="code hl_variable" href="struct_f_c_t_1_1_vec2.html#a46dd201ced58e5d5012381fa82e2f023">x</a> + 2 * radius, center.<a class="code hl_variable" href="struct_f_c_t_1_1_vec2.html#aef6165dc59972cc930197af4e4bf2b2f">y</a> + 2 * radius));</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    }</div>
+</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span> </div>
+<div class="foldopen" id="foldopen00248" data-start="{" data-end="}">
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_vertex_path.html#a871705e4a113f1244aea2f8f6741a615">  248</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_vertex_path.html#a871705e4a113f1244aea2f8f6741a615">setColor</a>(<a class="code hl_struct" href="struct_f_c_t_1_1_vec4.html">Vec4</a> <a class="code hl_enumvalue" href="namespace_f_c_t.html#a5d14bda42e5f9f565abd0b018262b564a70dda5dfb8053dc6d1c492574bce9bfd">color</a>) {</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>        <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a8fd21fa443a82c9600e9fcdbf0e2c1a9">m_commandQueue</a>.push_back(<a class="code hl_variable" href="namespace_f_c_t.html#ae4223c5fe723050691f8cbe9f041bad8">VertexCommand_SetColor</a>);</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>        <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a8fd21fa443a82c9600e9fcdbf0e2c1a9">m_commandQueue</a>.push_back(<a class="code hl_enumvalue" href="namespace_f_c_t.html#a5d14bda42e5f9f565abd0b018262b564a70dda5dfb8053dc6d1c492574bce9bfd">color</a>.x);</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>        <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a8fd21fa443a82c9600e9fcdbf0e2c1a9">m_commandQueue</a>.push_back(<a class="code hl_enumvalue" href="namespace_f_c_t.html#a5d14bda42e5f9f565abd0b018262b564a70dda5dfb8053dc6d1c492574bce9bfd">color</a>.y);</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>        <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a8fd21fa443a82c9600e9fcdbf0e2c1a9">m_commandQueue</a>.push_back(<a class="code hl_enumvalue" href="namespace_f_c_t.html#a5d14bda42e5f9f565abd0b018262b564a70dda5dfb8053dc6d1c492574bce9bfd">color</a>.z);</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>        <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a8fd21fa443a82c9600e9fcdbf0e2c1a9">m_commandQueue</a>.push_back(<a class="code hl_enumvalue" href="namespace_f_c_t.html#a5d14bda42e5f9f565abd0b018262b564a70dda5dfb8053dc6d1c492574bce9bfd">color</a>.w);</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>    }</div>
+</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span> </div>
+<div class="foldopen" id="foldopen00256" data-start="{" data-end="}">
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_vertex_path.html#a5483b0d4034257bbb0a778c5d76df297">  256</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_vertex_path.html#a5483b0d4034257bbb0a778c5d76df297">setTransform</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_f_c_t_1_1_mat4.html">Mat4</a> &amp;<a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a2b45cd766fac46fb7ee7e7c87724c358">transform</a>) {</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>        <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a8fd21fa443a82c9600e9fcdbf0e2c1a9">m_commandQueue</a>.push_back(<a class="code hl_variable" href="namespace_f_c_t.html#af4e7b95fc2f5c2daad7e127ae9549e99">VertexCommand_SetTransform</a>);</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 16; i++) {</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>            <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a8fd21fa443a82c9600e9fcdbf0e2c1a9">m_commandQueue</a>.push_back(<a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a2b45cd766fac46fb7ee7e7c87724c358">transform</a>.m[i]);</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>        }</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>    }</div>
+</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span> </div>
+<div class="foldopen" id="foldopen00263" data-start="{" data-end="}">
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_vertex_path.html#ae23cb61addbb89285b126f33f669e03b">  263</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_vertex_path.html#ae23cb61addbb89285b126f33f669e03b">closePath</a>() {</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>        <a class="code hl_function" href="class_f_c_t_1_1_vertex_path.html#a9e8020682aec9883ce9151e8f3cefed7">lineTo</a>(<a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a163fe684408acbbd4957c38725cae116">m_pathStart</a>);</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>    }</div>
+</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span> </div>
+<div class="foldopen" id="foldopen00267" data-start="{" data-end="}">
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_vertex_path.html#a1ac20526341d2eb55269988b56820784">  267</a></span>    <a class="code hl_struct" href="struct_f_c_t_1_1_vec4.html">Vec4</a> <a class="code hl_function" href="class_f_c_t_1_1_vertex_path.html#a1ac20526341d2eb55269988b56820784">getBoundingRect</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>        <span class="keywordflow">if</span> (!<a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a549f645cc1fffb0e57431955f1e2f122">m_hasPoints</a>) {</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>            <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespace_f_c_t.html#a230e974c7c1f163f1dec4530a2e3239caf67402842935c0240e8109e7312def66">Vec4</a>(0, 0, 0, 0);</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>        }</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="namespace_f_c_t.html#a230e974c7c1f163f1dec4530a2e3239caf67402842935c0240e8109e7312def66">Vec4</a>(<a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a3f5ecbb9dbb433ba26f559acea96e55f">m_minBounds</a>.x, <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a3f5ecbb9dbb433ba26f559acea96e55f">m_minBounds</a>.y,</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>                   <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a2e9350ac9cd26c979fb74e2b04f97f20">m_maxBounds</a>.x - <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a3f5ecbb9dbb433ba26f559acea96e55f">m_minBounds</a>.x,</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>                   <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a2e9350ac9cd26c979fb74e2b04f97f20">m_maxBounds</a>.y - <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a3f5ecbb9dbb433ba26f559acea96e55f">m_minBounds</a>.y);</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>    }</div>
+</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span> </div>
+<div class="foldopen" id="foldopen00276" data-start="{" data-end="}">
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_vertex_path.html#a80200e783df21aa4e130e200ec9ca66e">  276</a></span>    <span class="keyword">const</span> std::vector&lt;float&gt;&amp; <a class="code hl_function" href="class_f_c_t_1_1_vertex_path.html#a80200e783df21aa4e130e200ec9ca66e">getCommandQueue</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="class_f_c_t_1_1_vertex_path.html#a8fd21fa443a82c9600e9fcdbf0e2c1a9">m_commandQueue</a>;</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>    }</div>
+</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>};</div>
+</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>}</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span> </div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span> </div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span><span class="preprocessor">#endif </span><span class="comment">//VERTEXPATH_H</span></div>
+<div class="ttc" id="a_ref_count_8h_html"><div class="ttname"><a href="_ref_count_8h.html">RefCount.h</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_mat3_html"><div class="ttname"><a href="class_f_c_t_1_1_mat3.html">FCT::Mat3</a></div><div class="ttdef"><b>定义</b> <a href="_matrix_8h_source.html#l00249">Matrix.h:250</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_mat4_html"><div class="ttname"><a href="class_f_c_t_1_1_mat4.html">FCT::Mat4</a></div><div class="ttdef"><b>定义</b> <a href="_matrix_8h_source.html#l00008">Matrix.h:9</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_ref_count_html_a681b72d7bd32fd7e4b9ec861cd74370e"><div class="ttname"><a href="class_f_c_t_1_1_ref_count.html#a681b72d7bd32fd7e4b9ec861cd74370e">FCT::RefCount::RefCount</a></div><div class="ttdeci">RefCount()</div><div class="ttdef"><b>定义</b> <a href="_ref_count_8h_source.html#l00007">RefCount.h:7</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_vertex_path_html_a074a9bb236007ed4807aaad27ddca280"><div class="ttname"><a href="class_f_c_t_1_1_vertex_path.html#a074a9bb236007ed4807aaad27ddca280">FCT::VertexPath::m_dirty</a></div><div class="ttdeci">bool m_dirty</div><div class="ttdef"><b>定义</b> <a href="#l00058">VertexPath.h:58</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_vertex_path_html_a163fe684408acbbd4957c38725cae116"><div class="ttname"><a href="class_f_c_t_1_1_vertex_path.html#a163fe684408acbbd4957c38725cae116">FCT::VertexPath::m_pathStart</a></div><div class="ttdeci">Vec2 m_pathStart</div><div class="ttdef"><b>定义</b> <a href="#l00025">VertexPath.h:25</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_vertex_path_html_a16dc9a5a0d8ce3c0885c2c6f46e8f5a7"><div class="ttname"><a href="class_f_c_t_1_1_vertex_path.html#a16dc9a5a0d8ce3c0885c2c6f46e8f5a7">FCT::VertexPath::fillRect</a></div><div class="ttdeci">void fillRect(Vec2 pos, Vec2 size)</div><div class="ttdef"><b>定义</b> <a href="#l00107">VertexPath.h:107</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_vertex_path_html_a192f1c3799123975f33c0be57f671ec9"><div class="ttname"><a href="class_f_c_t_1_1_vertex_path.html#a192f1c3799123975f33c0be57f671ec9">FCT::VertexPath::clearDirty</a></div><div class="ttdeci">void clearDirty()</div><div class="ttdef"><b>定义</b> <a href="#l00060">VertexPath.h:60</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_vertex_path_html_a1ac20526341d2eb55269988b56820784"><div class="ttname"><a href="class_f_c_t_1_1_vertex_path.html#a1ac20526341d2eb55269988b56820784">FCT::VertexPath::getBoundingRect</a></div><div class="ttdeci">Vec4 getBoundingRect() const</div><div class="ttdef"><b>定义</b> <a href="#l00267">VertexPath.h:267</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_vertex_path_html_a2b35cdb190516676965cc7fe3d3e81c6"><div class="ttname"><a href="class_f_c_t_1_1_vertex_path.html#a2b35cdb190516676965cc7fe3d3e81c6">FCT::VertexPath::end</a></div><div class="ttdeci">void end()</div><div class="ttdef"><b>定义</b> <a href="#l00065">VertexPath.h:65</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_vertex_path_html_a2b45cd766fac46fb7ee7e7c87724c358"><div class="ttname"><a href="class_f_c_t_1_1_vertex_path.html#a2b45cd766fac46fb7ee7e7c87724c358">FCT::VertexPath::transform</a></div><div class="ttdeci">Mat3 transform</div><div class="ttdef"><b>定义</b> <a href="#l00064">VertexPath.h:64</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_vertex_path_html_a2e9350ac9cd26c979fb74e2b04f97f20"><div class="ttname"><a href="class_f_c_t_1_1_vertex_path.html#a2e9350ac9cd26c979fb74e2b04f97f20">FCT::VertexPath::m_maxBounds</a></div><div class="ttdeci">Vec2 m_maxBounds</div><div class="ttdef"><b>定义</b> <a href="#l00027">VertexPath.h:27</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_vertex_path_html_a3ec97d66a51dbe6739ad570aa5b6c3cc"><div class="ttname"><a href="class_f_c_t_1_1_vertex_path.html#a3ec97d66a51dbe6739ad570aa5b6c3cc">FCT::VertexPath::curveTo</a></div><div class="ttdeci">void curveTo(Vec2 control1, Vec2 control2, Vec2 to)</div><div class="ttdef"><b>定义</b> <a href="#l00213">VertexPath.h:213</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_vertex_path_html_a3f5ecbb9dbb433ba26f559acea96e55f"><div class="ttname"><a href="class_f_c_t_1_1_vertex_path.html#a3f5ecbb9dbb433ba26f559acea96e55f">FCT::VertexPath::m_minBounds</a></div><div class="ttdeci">Vec2 m_minBounds</div><div class="ttdef"><b>定义</b> <a href="#l00026">VertexPath.h:26</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_vertex_path_html_a47ab2ed1831ea4e299509ee9e2841037"><div class="ttname"><a href="class_f_c_t_1_1_vertex_path.html#a47ab2ed1831ea4e299509ee9e2841037">FCT::VertexPath::VertexPath</a></div><div class="ttdeci">VertexPath()</div><div class="ttdef"><b>定义</b> <a href="#l00069">VertexPath.h:69</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_vertex_path_html_a4c184d2b8589d81710d2a854297f5c5d"><div class="ttname"><a href="class_f_c_t_1_1_vertex_path.html#a4c184d2b8589d81710d2a854297f5c5d">FCT::VertexPath::circle</a></div><div class="ttdeci">void circle(Vec2 center, float radius)</div><div class="ttdef"><b>定义</b> <a href="#l00240">VertexPath.h:240</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_vertex_path_html_a5483b0d4034257bbb0a778c5d76df297"><div class="ttname"><a href="class_f_c_t_1_1_vertex_path.html#a5483b0d4034257bbb0a778c5d76df297">FCT::VertexPath::setTransform</a></div><div class="ttdeci">void setTransform(const Mat4 &amp;transform)</div><div class="ttdef"><b>定义</b> <a href="#l00256">VertexPath.h:256</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_vertex_path_html_a549f645cc1fffb0e57431955f1e2f122"><div class="ttname"><a href="class_f_c_t_1_1_vertex_path.html#a549f645cc1fffb0e57431955f1e2f122">FCT::VertexPath::m_hasPoints</a></div><div class="ttdeci">bool m_hasPoints</div><div class="ttdef"><b>定义</b> <a href="#l00028">VertexPath.h:28</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_vertex_path_html_a6120c62c6215eeaef9ee2d1761ed6b13"><div class="ttname"><a href="class_f_c_t_1_1_vertex_path.html#a6120c62c6215eeaef9ee2d1761ed6b13">FCT::VertexPath::beginPath</a></div><div class="ttdeci">void beginPath(float sign=1.0f)</div><div class="ttdef"><b>定义</b> <a href="#l00081">VertexPath.h:81</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_vertex_path_html_a6ff7a824190b799d5e1ab729e57a6d7d"><div class="ttname"><a href="class_f_c_t_1_1_vertex_path.html#a6ff7a824190b799d5e1ab729e57a6d7d">FCT::VertexPath::arcTo</a></div><div class="ttdeci">void arcTo(Vec2 center, float beginAngle, float endAngle)</div><div class="ttdef"><b>定义</b> <a href="#l00114">VertexPath.h:114</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_vertex_path_html_a80200e783df21aa4e130e200ec9ca66e"><div class="ttname"><a href="class_f_c_t_1_1_vertex_path.html#a80200e783df21aa4e130e200ec9ca66e">FCT::VertexPath::getCommandQueue</a></div><div class="ttdeci">const std::vector&lt; float &gt; &amp; getCommandQueue() const</div><div class="ttdef"><b>定义</b> <a href="#l00276">VertexPath.h:276</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_vertex_path_html_a871705e4a113f1244aea2f8f6741a615"><div class="ttname"><a href="class_f_c_t_1_1_vertex_path.html#a871705e4a113f1244aea2f8f6741a615">FCT::VertexPath::setColor</a></div><div class="ttdeci">void setColor(Vec4 color)</div><div class="ttdef"><b>定义</b> <a href="#l00248">VertexPath.h:248</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_vertex_path_html_a88117fbd3fe65c73784ef97ab97c2675"><div class="ttname"><a href="class_f_c_t_1_1_vertex_path.html#a88117fbd3fe65c73784ef97ab97c2675">FCT::VertexPath::curveTo</a></div><div class="ttdeci">void curveTo(Vec2 control, Vec2 to)</div><div class="ttdef"><b>定义</b> <a href="#l00200">VertexPath.h:200</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_vertex_path_html_a8fd21fa443a82c9600e9fcdbf0e2c1a9"><div class="ttname"><a href="class_f_c_t_1_1_vertex_path.html#a8fd21fa443a82c9600e9fcdbf0e2c1a9">FCT::VertexPath::m_commandQueue</a></div><div class="ttdeci">std::vector&lt; float &gt; m_commandQueue</div><div class="ttdef"><b>定义</b> <a href="#l00023">VertexPath.h:23</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_vertex_path_html_a9e8020682aec9883ce9151e8f3cefed7"><div class="ttname"><a href="class_f_c_t_1_1_vertex_path.html#a9e8020682aec9883ce9151e8f3cefed7">FCT::VertexPath::lineTo</a></div><div class="ttdeci">void lineTo(Vec2 to)</div><div class="ttdef"><b>定义</b> <a href="#l00099">VertexPath.h:99</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_vertex_path_html_aa58aaa0f03b30771c4eeaf6240240696"><div class="ttname"><a href="class_f_c_t_1_1_vertex_path.html#aa58aaa0f03b30771c4eeaf6240240696">FCT::VertexPath::CommandType</a></div><div class="ttdeci">CommandType</div><div class="ttdef"><b>定义</b> <a href="#l00030">VertexPath.h:30</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_vertex_path_html_aa6e7be769a004d469c4a6bd751475023"><div class="ttname"><a href="class_f_c_t_1_1_vertex_path.html#aa6e7be769a004d469c4a6bd751475023">FCT::VertexPath::m_currentPos</a></div><div class="ttdeci">Vec2 m_currentPos</div><div class="ttdef"><b>定义</b> <a href="#l00024">VertexPath.h:24</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_vertex_path_html_ab89ff47759cbf4e8dbc990e8ab060ea7"><div class="ttname"><a href="class_f_c_t_1_1_vertex_path.html#ab89ff47759cbf4e8dbc990e8ab060ea7">FCT::VertexPath::unwrapperArcTo</a></div><div class="ttdeci">void unwrapperArcTo(Vec2 center, float beginAngle, float endAngle, float q)</div><div class="ttdef"><b>定义</b> <a href="#l00046">VertexPath.h:46</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_vertex_path_html_abe8395136f982559b16bfd1d8394e624"><div class="ttname"><a href="class_f_c_t_1_1_vertex_path.html#abe8395136f982559b16bfd1d8394e624">FCT::VertexPath::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdef"><b>定义</b> <a href="#l00074">VertexPath.h:74</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_vertex_path_html_ad442863883024db93cb955ef9b9d3812"><div class="ttname"><a href="class_f_c_t_1_1_vertex_path.html#ad442863883024db93cb955ef9b9d3812">FCT::VertexPath::endPath</a></div><div class="ttdeci">void endPath()</div><div class="ttdef"><b>定义</b> <a href="#l00086">VertexPath.h:86</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_vertex_path_html_ae1a4776ea6c1ce05110769dc040313b0"><div class="ttname"><a href="class_f_c_t_1_1_vertex_path.html#ae1a4776ea6c1ce05110769dc040313b0">FCT::VertexPath::updateBounds</a></div><div class="ttdeci">void updateBounds(const Vec2 &amp;point)</div><div class="ttdef"><b>定义</b> <a href="#l00033">VertexPath.h:33</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_vertex_path_html_ae23cb61addbb89285b126f33f669e03b"><div class="ttname"><a href="class_f_c_t_1_1_vertex_path.html#ae23cb61addbb89285b126f33f669e03b">FCT::VertexPath::closePath</a></div><div class="ttdeci">void closePath()</div><div class="ttdef"><b>定义</b> <a href="#l00263">VertexPath.h:263</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_vertex_path_html_af7faad5e51f9380966e73ca6227d8c2d"><div class="ttname"><a href="class_f_c_t_1_1_vertex_path.html#af7faad5e51f9380966e73ca6227d8c2d">FCT::VertexPath::moveTo</a></div><div class="ttdeci">void moveTo(Vec2 to)</div><div class="ttdef"><b>定义</b> <a href="#l00090">VertexPath.h:90</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html"><div class="ttname"><a href="namespace_f_c_t.html">FCT</a></div><div class="ttdef"><b>定义</b> <a href="_enums_8h_source.html#l00008">Enums.h:8</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_a05b95a0724e561f0b2a1b8aaf9d20c22"><div class="ttname"><a href="namespace_f_c_t.html#a05b95a0724e561f0b2a1b8aaf9d20c22">FCT::VertexCommand_LineTo</a></div><div class="ttdeci">constexpr float VertexCommand_LineTo</div><div class="ttdef"><b>定义</b> <a href="#l00013">VertexPath.h:13</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_a230e974c7c1f163f1dec4530a2e3239ca2495a7d9c1fab19af6441abbfed823e1"><div class="ttname"><a href="namespace_f_c_t.html#a230e974c7c1f163f1dec4530a2e3239ca2495a7d9c1fab19af6441abbfed823e1">FCT::DataType::Mat3</a></div><div class="ttdeci">@ Mat3</div><div class="ttdef"><b>定义</b> <a href="_data_types_8h_source.html#l00022">DataTypes.h:22</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_a230e974c7c1f163f1dec4530a2e3239caf67402842935c0240e8109e7312def66"><div class="ttname"><a href="namespace_f_c_t.html#a230e974c7c1f163f1dec4530a2e3239caf67402842935c0240e8109e7312def66">FCT::DataType::Vec4</a></div><div class="ttdeci">@ Vec4</div><div class="ttdef"><b>定义</b> <a href="_data_types_8h_source.html#l00020">DataTypes.h:20</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_a230e974c7c1f163f1dec4530a2e3239cafe98032d4f1c52a2f0b617f9205d5f80"><div class="ttname"><a href="namespace_f_c_t.html#a230e974c7c1f163f1dec4530a2e3239cafe98032d4f1c52a2f0b617f9205d5f80">FCT::DataType::Vec2</a></div><div class="ttdeci">@ Vec2</div><div class="ttdef"><b>定义</b> <a href="_data_types_8h_source.html#l00018">DataTypes.h:18</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_a5d14bda42e5f9f565abd0b018262b564a70dda5dfb8053dc6d1c492574bce9bfd"><div class="ttname"><a href="namespace_f_c_t.html#a5d14bda42e5f9f565abd0b018262b564a70dda5dfb8053dc6d1c492574bce9bfd">FCT::ClearType::color</a></div><div class="ttdeci">@ color</div><div class="ttdef"><b>定义</b> <a href="_clear_types_8h_source.html#l00011">ClearTypes.h:11</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_a7186c70e83eacf0988cfd2ab42e8050f"><div class="ttname"><a href="namespace_f_c_t.html#a7186c70e83eacf0988cfd2ab42e8050f">FCT::VertexCommand_ArcTo</a></div><div class="ttdeci">constexpr float VertexCommand_ArcTo</div><div class="ttdef"><b>定义</b> <a href="#l00016">VertexPath.h:16</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_a746b29002cdb00f413b48e6cfa64ef41"><div class="ttname"><a href="namespace_f_c_t.html#a746b29002cdb00f413b48e6cfa64ef41">FCT::VertexCommand_MoveTo</a></div><div class="ttdeci">constexpr float VertexCommand_MoveTo</div><div class="ttdef"><b>定义</b> <a href="#l00012">VertexPath.h:12</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_a782c95bb6c3248b8611fd33f83a093ca"><div class="ttname"><a href="namespace_f_c_t.html#a782c95bb6c3248b8611fd33f83a093ca">FCT::VertexCommand_EndPath</a></div><div class="ttdeci">constexpr float VertexCommand_EndPath</div><div class="ttdef"><b>定义</b> <a href="#l00019">VertexPath.h:19</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_a92ac38c495f3786ade2746ad9611fae5"><div class="ttname"><a href="namespace_f_c_t.html#a92ac38c495f3786ade2746ad9611fae5">FCT::VertexCommand_End</a></div><div class="ttdeci">constexpr float VertexCommand_End</div><div class="ttdef"><b>定义</b> <a href="#l00011">VertexPath.h:11</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_a9e95124674bfc7bac5798d5930b784ba"><div class="ttname"><a href="namespace_f_c_t.html#a9e95124674bfc7bac5798d5930b784ba">FCT::VertexCommand_BezierCurveTo</a></div><div class="ttdeci">constexpr float VertexCommand_BezierCurveTo</div><div class="ttdef"><b>定义</b> <a href="#l00014">VertexPath.h:14</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_ae4223c5fe723050691f8cbe9f041bad8"><div class="ttname"><a href="namespace_f_c_t.html#ae4223c5fe723050691f8cbe9f041bad8">FCT::VertexCommand_SetColor</a></div><div class="ttdeci">constexpr float VertexCommand_SetColor</div><div class="ttdef"><b>定义</b> <a href="#l00015">VertexPath.h:15</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_aea93dba39e20bf367a3d5c9af2f05563"><div class="ttname"><a href="namespace_f_c_t.html#aea93dba39e20bf367a3d5c9af2f05563">FCT::VertexCommand_BeginPath</a></div><div class="ttdeci">constexpr float VertexCommand_BeginPath</div><div class="ttdef"><b>定义</b> <a href="#l00018">VertexPath.h:18</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_af4e7b95fc2f5c2daad7e127ae9549e99"><div class="ttname"><a href="namespace_f_c_t.html#af4e7b95fc2f5c2daad7e127ae9549e99">FCT::VertexCommand_SetTransform</a></div><div class="ttdeci">constexpr float VertexCommand_SetTransform</div><div class="ttdef"><b>定义</b> <a href="#l00017">VertexPath.h:17</a></div></div>
+<div class="ttc" id="astruct_f_c_t_1_1_vec2_html"><div class="ttname"><a href="struct_f_c_t_1_1_vec2.html">FCT::Vec2</a></div><div class="ttdef"><b>定义</b> <a href="_vec_8h_source.html#l00008">Vec.h:9</a></div></div>
+<div class="ttc" id="astruct_f_c_t_1_1_vec2_html_a46dd201ced58e5d5012381fa82e2f023"><div class="ttname"><a href="struct_f_c_t_1_1_vec2.html#a46dd201ced58e5d5012381fa82e2f023">FCT::Vec2::x</a></div><div class="ttdeci">float x</div><div class="ttdef"><b>定义</b> <a href="_vec_8h_source.html#l00010">Vec.h:10</a></div></div>
+<div class="ttc" id="astruct_f_c_t_1_1_vec2_html_aef6165dc59972cc930197af4e4bf2b2f"><div class="ttname"><a href="struct_f_c_t_1_1_vec2.html#aef6165dc59972cc930197af4e4bf2b2f">FCT::Vec2::y</a></div><div class="ttdeci">float y</div><div class="ttdef"><b>定义</b> <a href="_vec_8h_source.html#l00010">Vec.h:10</a></div></div>
+<div class="ttc" id="astruct_f_c_t_1_1_vec4_html"><div class="ttname"><a href="struct_f_c_t_1_1_vec4.html">FCT::Vec4</a></div><div class="ttdef"><b>定义</b> <a href="_vec_8h_source.html#l00194">Vec.h:195</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_e2cc5e7b7eb319e7385338f2066ea89e.html">VertexAndText</a></li><li class="navelem"><a href="_vertex_path_8h.html">VertexPath.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

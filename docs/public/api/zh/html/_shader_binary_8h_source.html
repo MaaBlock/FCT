@@ -1,0 +1,319 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FCT: src/RHI/ShaderBinary.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FCT
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_shader_binary_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">ShaderBinary.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_shader_binary_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// Created by Administrator on 2025/4/8.</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="_third_party_8h.html">../ThirdParty.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="_uniform_8h.html">../Context/Uniform.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="_resource_layout_8h.html">../Context/ResourceLayout.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#ifndef SHADERBINARY_H</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#define SHADERBINARY_H</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_f_c_t.html">FCT</a></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>{</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_f_c_t_1_1_r_h_i.html">RHI</a></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    {</div>
+<div class="foldopen" id="foldopen00014" data-start="{" data-end="};">
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html">   14</a></span>        <span class="keyword">class </span><a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#ae14ca2d24f3940fcda3ac1ec2a698433">ShaderBinary</a> {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>            <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#ae14ca2d24f3940fcda3ac1ec2a698433">ShaderBinary</a>();</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a112a8907a73586cc316c3d37cb2d5fd3">   17</a></span>            <span class="keyword">virtual</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a112a8907a73586cc316c3d37cb2d5fd3">~ShaderBinary</a>() {}</div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="}">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#ab9e1f09b11e3c5b93dfa5de0a45cd372">   18</a></span>            <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#ab9e1f09b11e3c5b93dfa5de0a45cd372">code</a>(std::vector&lt;char&gt; <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#ab9e1f09b11e3c5b93dfa5de0a45cd372">code</a>)</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>            {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>                <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#ab28101698f7a61e94eac8aa5ab88f4d5">m_code</a> = <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#ab9e1f09b11e3c5b93dfa5de0a45cd372">code</a>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>                <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#af6bd1dd7227da3d72ae1a9e4480c0da0">m_reflected</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            }</div>
+</div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="}">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#ad980f2f83257becbbf570891818513fb">   23</a></span>            std::vector&lt;char&gt; <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#ad980f2f83257becbbf570891818513fb">code</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">            </span>{</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>                <span class="keywordflow">return</span> <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#ab28101698f7a61e94eac8aa5ab88f4d5">m_code</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            }</div>
+</div>
+<div class="foldopen" id="foldopen00027" data-start="{" data-end="}">
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a12e04d867a7d6d8af3e37d0002e6aa38">   27</a></span>            <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a12e04d867a7d6d8af3e37d0002e6aa38">location</a>(std::map&lt;std::string, uint32_t&gt; locations)</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>                <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#abd5c32db38f910c53bfb27bcf1210155">m_locations</a> = locations;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            }</div>
+</div>
+<div class="foldopen" id="foldopen00031" data-start="{" data-end="}">
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a263ea3acc2ec1f1a46dcdb4aa588843f">   31</a></span>            int32_t <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a263ea3acc2ec1f1a46dcdb4aa588843f">locationBySemantic</a>(<span class="keyword">const</span> std::string&amp; semantic)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">            </span>{</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>                <span class="keyword">auto</span> it = <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#abd5c32db38f910c53bfb27bcf1210155">m_locations</a>.find(semantic);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                <span class="keywordflow">if</span> (it != <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#abd5c32db38f910c53bfb27bcf1210155">m_locations</a>.end()) {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                    <span class="keywordflow">return</span> it-&gt;second;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                }</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>                <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            }</div>
+</div>
+<div class="foldopen" id="foldopen00039" data-start="{" data-end="}">
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#acb302f82c5bd483c1276c34b1204310c">   39</a></span>            std::map&lt;std::string,std::pair&lt;uint32_t,uint32_t&gt;&gt; <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#acb302f82c5bd483c1276c34b1204310c">constBufferLocations</a>()</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                <span class="keywordflow">return</span> <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a68fd607d08b0e7c8219c5018c6e498a5">m_constBufferLocations</a>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            }</div>
+</div>
+<div class="foldopen" id="foldopen00043" data-start="{" data-end="}">
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#aba51452e367cc1e3435e051243bc1cf3">   43</a></span>            std::map&lt;std::string,ConstLayout&gt; <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#aba51452e367cc1e3435e051243bc1cf3">constBufferLayout</a>()</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                <span class="keywordflow">return</span> <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#aad51c71e87e1d89d74d38fc77099c7e8">m_constBufferLayout</a>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            }</div>
+</div>
+<div class="foldopen" id="foldopen00047" data-start="{" data-end="}">
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a530750aa137bb8f5fe46f47c8985a80d">   47</a></span>            <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a530750aa137bb8f5fe46f47c8985a80d">addConstBufferLocation</a>(<a class="code hl_class" href="class_f_c_t_1_1_const_layout.html">ConstLayout</a> layout, uint32_t set, uint32_t <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a12e04d867a7d6d8af3e37d0002e6aa38">location</a>)</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#aad51c71e87e1d89d74d38fc77099c7e8">m_constBufferLayout</a>[layout.<a class="code hl_function" href="class_f_c_t_1_1_const_layout.html#aa9451c9479b21cb27c18c70a1231b581">getName</a>()] = layout;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a68fd607d08b0e7c8219c5018c6e498a5">m_constBufferLocations</a>[layout.<a class="code hl_function" href="class_f_c_t_1_1_const_layout.html#aa9451c9479b21cb27c18c70a1231b581">getName</a>()] = std::make_pair(set, <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a12e04d867a7d6d8af3e37d0002e6aa38">location</a>);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            }</div>
+</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="foldopen" id="foldopen00053" data-start="{" data-end="}">
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a5f9791bd03457c7f05c3f3e9c747819b">   53</a></span>            <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a5f9791bd03457c7f05c3f3e9c747819b">addTextureLocation</a>(<a class="code hl_class" href="class_f_c_t_1_1_texture_element.html">TextureElement</a> texture, uint32_t set, uint32_t binding)</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a7eea73660f5e16e6894930056e3b9930">m_textureLayout</a>[texture.<a class="code hl_function" href="class_f_c_t_1_1_texture_element.html#a29157e3cface33df29e94b9ee6d5b7d5">getName</a>()] = texture;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#aa5607f5810c6bab14f0407c29428353c">m_textureLocations</a>[texture.<a class="code hl_function" href="class_f_c_t_1_1_texture_element.html#a29157e3cface33df29e94b9ee6d5b7d5">getName</a>()] = std::make_pair(set, binding);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            }</div>
+</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="foldopen" id="foldopen00059" data-start="{" data-end="}">
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a7d5e6265e0ecaad62237478d9895026f">   59</a></span>            std::pair&lt;uint32_t, uint32_t&gt; <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a7d5e6265e0ecaad62237478d9895026f">getTextureLocation</a>(<span class="keyword">const</span> std::string&amp; name)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="keyword">            </span>{</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                <span class="keyword">auto</span> it = <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#aa5607f5810c6bab14f0407c29428353c">m_textureLocations</a>.find(name);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                <span class="keywordflow">if</span> (it != <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#aa5607f5810c6bab14f0407c29428353c">m_textureLocations</a>.end()) {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                    <span class="keywordflow">return</span> it-&gt;second;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                }</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                <span class="keywordflow">return</span> std::make_pair(0, 0);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            }</div>
+</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="foldopen" id="foldopen00068" data-start="{" data-end="}">
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#af84d42d0264ea8d6b8aa5d8b4b3bcb53">   68</a></span>            <a class="code hl_class" href="class_f_c_t_1_1_texture_element.html">TextureElement</a> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#af84d42d0264ea8d6b8aa5d8b4b3bcb53">getTextureElement</a>(<span class="keyword">const</span> std::string&amp; name)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="keyword">            </span>{</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                <span class="keyword">auto</span> it = <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a7eea73660f5e16e6894930056e3b9930">m_textureLayout</a>.find(name);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                <span class="keywordflow">if</span> (it != <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a7eea73660f5e16e6894930056e3b9930">m_textureLayout</a>.end()) {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                    <span class="keywordflow">return</span> it-&gt;second;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                }</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                <span class="keywordflow">return</span> <a class="code hl_class" href="class_f_c_t_1_1_texture_element.html">TextureElement</a>();</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            }</div>
+</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="foldopen" id="foldopen00077" data-start="{" data-end="}">
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a5a78e2acffd78039dbc02c6cc863e107">   77</a></span>            std::map&lt;std::string, std::pair&lt;uint32_t, uint32_t&gt;&gt; <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a5a78e2acffd78039dbc02c6cc863e107">textureLocations</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="keyword">            </span>{</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                <span class="keywordflow">return</span> <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#aa5607f5810c6bab14f0407c29428353c">m_textureLocations</a>;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            }</div>
+</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="foldopen" id="foldopen00082" data-start="{" data-end="}">
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a6c32b39cde5a0221fc166d938ce7910f">   82</a></span>            std::map&lt;std::string, TextureElement&gt; <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a6c32b39cde5a0221fc166d938ce7910f">textureLayout</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="keyword">            </span>{</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>                <span class="keywordflow">return</span> <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a7eea73660f5e16e6894930056e3b9930">m_textureLayout</a>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            }</div>
+</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="foldopen" id="foldopen00087" data-start="{" data-end="}">
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a9c7a7c7859ec40f5b1d6032c67bb20dc">   87</a></span>            <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a9c7a7c7859ec40f5b1d6032c67bb20dc">addSamplerLocation</a>(<a class="code hl_class" href="class_f_c_t_1_1_sampler_element.html">SamplerElement</a> sampler, uint32_t set, uint32_t binding)</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            {</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#ab814276c30a482362a22d95fb9a62cf5">m_samplerLayout</a>[sampler.<a class="code hl_function" href="class_f_c_t_1_1_sampler_element.html#aa8459fb05557219fa2b8230bcfde8334">getName</a>()] = sampler;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a07a491784b70c511c0fdac27e511a7ea">m_samplerLocations</a>[sampler.<a class="code hl_function" href="class_f_c_t_1_1_sampler_element.html#aa8459fb05557219fa2b8230bcfde8334">getName</a>()] = std::make_pair(set, binding);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            }</div>
+</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="foldopen" id="foldopen00093" data-start="{" data-end="}">
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a9508b6de32fa750c31ae861edacc741e">   93</a></span>            std::pair&lt;uint32_t, uint32_t&gt; <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a9508b6de32fa750c31ae861edacc741e">getSamplerLocation</a>(<span class="keyword">const</span> std::string&amp; name)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="keyword">            </span>{</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>                <span class="keyword">auto</span> it = <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a07a491784b70c511c0fdac27e511a7ea">m_samplerLocations</a>.find(name);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                <span class="keywordflow">if</span> (it != <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a07a491784b70c511c0fdac27e511a7ea">m_samplerLocations</a>.end()) {</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                    <span class="keywordflow">return</span> it-&gt;second;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                }</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                <span class="keywordflow">return</span> std::make_pair(0, 0);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            }</div>
+</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="foldopen" id="foldopen00102" data-start="{" data-end="}">
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#acd20cc5006e4ca31e23d673489dbd253">  102</a></span>            <a class="code hl_class" href="class_f_c_t_1_1_sampler_element.html">SamplerElement</a> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#acd20cc5006e4ca31e23d673489dbd253">getSamplerElement</a>(<span class="keyword">const</span> std::string&amp; name)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="keyword">            </span>{</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>                <span class="keyword">auto</span> it = <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#ab814276c30a482362a22d95fb9a62cf5">m_samplerLayout</a>.find(name);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                <span class="keywordflow">if</span> (it != <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#ab814276c30a482362a22d95fb9a62cf5">m_samplerLayout</a>.end()) {</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                    <span class="keywordflow">return</span> it-&gt;second;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                }</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                <span class="keywordflow">return</span> <a class="code hl_class" href="class_f_c_t_1_1_sampler_element.html">SamplerElement</a>();</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            }</div>
+</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="foldopen" id="foldopen00111" data-start="{" data-end="}">
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#af0cc551e78d4d67e5264a6fb997d3daf">  111</a></span>            std::map&lt;std::string, std::pair&lt;uint32_t, uint32_t&gt;&gt; <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#af0cc551e78d4d67e5264a6fb997d3daf">samplerLocations</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="keyword">            </span>{</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                <span class="keywordflow">return</span> <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a07a491784b70c511c0fdac27e511a7ea">m_samplerLocations</a>;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>            }</div>
+</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="foldopen" id="foldopen00116" data-start="{" data-end="}">
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#ae868e4140b950f5bf273f1d4756aece8">  116</a></span>            std::map&lt;std::string, SamplerElement&gt; <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#ae868e4140b950f5bf273f1d4756aece8">samplerLayout</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="keyword">            </span>{</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>                <span class="keywordflow">return</span> <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#ab814276c30a482362a22d95fb9a62cf5">m_samplerLayout</a>;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            }</div>
+</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#ab28101698f7a61e94eac8aa5ab88f4d5">  122</a></span>            std::vector&lt;char&gt; <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#ab28101698f7a61e94eac8aa5ab88f4d5">m_code</a>;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#abd5c32db38f910c53bfb27bcf1210155">  123</a></span>            std::map&lt;std::string, uint32_t&gt; <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#abd5c32db38f910c53bfb27bcf1210155">m_locations</a>;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#ada1e10b65b3c7bb76d1e5667a4c29293">  124</a></span>            std::map&lt;std::string,std::pair&lt;uint32_t,uint32_t&gt;&gt; <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#ada1e10b65b3c7bb76d1e5667a4c29293">m_uniformLocations</a>;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a68fd607d08b0e7c8219c5018c6e498a5">  125</a></span>            std::map&lt;std::string,std::pair&lt;uint32_t,uint32_t&gt;&gt; <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a68fd607d08b0e7c8219c5018c6e498a5">m_constBufferLocations</a>;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#aad51c71e87e1d89d74d38fc77099c7e8">  126</a></span>            std::map&lt;std::string,ConstLayout&gt; <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#aad51c71e87e1d89d74d38fc77099c7e8">m_constBufferLayout</a>;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#aa5607f5810c6bab14f0407c29428353c">  127</a></span>            std::map&lt;std::string,std::pair&lt;uint32_t,uint32_t&gt;&gt; <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#aa5607f5810c6bab14f0407c29428353c">m_textureLocations</a>;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a7eea73660f5e16e6894930056e3b9930">  128</a></span>            std::map&lt;std::string,TextureElement&gt; <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a7eea73660f5e16e6894930056e3b9930">m_textureLayout</a>;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a07a491784b70c511c0fdac27e511a7ea">  129</a></span>            std::map&lt;std::string,std::pair&lt;uint32_t,uint32_t&gt;&gt; <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a07a491784b70c511c0fdac27e511a7ea">m_samplerLocations</a>;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#ab814276c30a482362a22d95fb9a62cf5">  130</a></span>            std::map&lt;std::string,SamplerElement&gt; <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#ab814276c30a482362a22d95fb9a62cf5">m_samplerLayout</a>;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#af6bd1dd7227da3d72ae1a9e4480c0da0">  131</a></span>            <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#af6bd1dd7227da3d72ae1a9e4480c0da0">m_reflected</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        };</div>
+</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    }</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>}</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span><span class="preprocessor">#endif </span><span class="comment">//SHADERBINARY_H</span></div>
+<div class="ttc" id="a_resource_layout_8h_html"><div class="ttname"><a href="_resource_layout_8h.html">ResourceLayout.h</a></div></div>
+<div class="ttc" id="a_third_party_8h_html"><div class="ttname"><a href="_third_party_8h.html">ThirdParty.h</a></div></div>
+<div class="ttc" id="a_uniform_8h_html"><div class="ttname"><a href="_uniform_8h.html">Uniform.h</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_const_layout_html"><div class="ttname"><a href="class_f_c_t_1_1_const_layout.html">FCT::ConstLayout</a></div><div class="ttdef"><b>定义</b> <a href="_uniform_8h_source.html#l00268">Uniform.h:268</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_const_layout_html_aa9451c9479b21cb27c18c70a1231b581"><div class="ttname"><a href="class_f_c_t_1_1_const_layout.html#aa9451c9479b21cb27c18c70a1231b581">FCT::ConstLayout::getName</a></div><div class="ttdeci">constexpr const char * getName() const noexcept</div><div class="ttdef"><b>定义</b> <a href="_uniform_8h_source.html#l00286">Uniform.h:286</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_shader_binary_html_a07a491784b70c511c0fdac27e511a7ea"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a07a491784b70c511c0fdac27e511a7ea">FCT::RHI::ShaderBinary::m_samplerLocations</a></div><div class="ttdeci">std::map&lt; std::string, std::pair&lt; uint32_t, uint32_t &gt; &gt; m_samplerLocations</div><div class="ttdef"><b>定义</b> <a href="#l00129">ShaderBinary.h:129</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_shader_binary_html_a112a8907a73586cc316c3d37cb2d5fd3"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a112a8907a73586cc316c3d37cb2d5fd3">FCT::RHI::ShaderBinary::~ShaderBinary</a></div><div class="ttdeci">virtual ~ShaderBinary()</div><div class="ttdef"><b>定义</b> <a href="#l00017">ShaderBinary.h:17</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_shader_binary_html_a12e04d867a7d6d8af3e37d0002e6aa38"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a12e04d867a7d6d8af3e37d0002e6aa38">FCT::RHI::ShaderBinary::location</a></div><div class="ttdeci">void location(std::map&lt; std::string, uint32_t &gt; locations)</div><div class="ttdef"><b>定义</b> <a href="#l00027">ShaderBinary.h:27</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_shader_binary_html_a263ea3acc2ec1f1a46dcdb4aa588843f"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a263ea3acc2ec1f1a46dcdb4aa588843f">FCT::RHI::ShaderBinary::locationBySemantic</a></div><div class="ttdeci">int32_t locationBySemantic(const std::string &amp;semantic) const</div><div class="ttdef"><b>定义</b> <a href="#l00031">ShaderBinary.h:31</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_shader_binary_html_a530750aa137bb8f5fe46f47c8985a80d"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a530750aa137bb8f5fe46f47c8985a80d">FCT::RHI::ShaderBinary::addConstBufferLocation</a></div><div class="ttdeci">void addConstBufferLocation(ConstLayout layout, uint32_t set, uint32_t location)</div><div class="ttdef"><b>定义</b> <a href="#l00047">ShaderBinary.h:47</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_shader_binary_html_a5a78e2acffd78039dbc02c6cc863e107"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a5a78e2acffd78039dbc02c6cc863e107">FCT::RHI::ShaderBinary::textureLocations</a></div><div class="ttdeci">std::map&lt; std::string, std::pair&lt; uint32_t, uint32_t &gt; &gt; textureLocations() const</div><div class="ttdef"><b>定义</b> <a href="#l00077">ShaderBinary.h:77</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_shader_binary_html_a5f9791bd03457c7f05c3f3e9c747819b"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a5f9791bd03457c7f05c3f3e9c747819b">FCT::RHI::ShaderBinary::addTextureLocation</a></div><div class="ttdeci">void addTextureLocation(TextureElement texture, uint32_t set, uint32_t binding)</div><div class="ttdef"><b>定义</b> <a href="#l00053">ShaderBinary.h:53</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_shader_binary_html_a68fd607d08b0e7c8219c5018c6e498a5"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a68fd607d08b0e7c8219c5018c6e498a5">FCT::RHI::ShaderBinary::m_constBufferLocations</a></div><div class="ttdeci">std::map&lt; std::string, std::pair&lt; uint32_t, uint32_t &gt; &gt; m_constBufferLocations</div><div class="ttdef"><b>定义</b> <a href="#l00125">ShaderBinary.h:125</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_shader_binary_html_a6c32b39cde5a0221fc166d938ce7910f"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a6c32b39cde5a0221fc166d938ce7910f">FCT::RHI::ShaderBinary::textureLayout</a></div><div class="ttdeci">std::map&lt; std::string, TextureElement &gt; textureLayout() const</div><div class="ttdef"><b>定义</b> <a href="#l00082">ShaderBinary.h:82</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_shader_binary_html_a7d5e6265e0ecaad62237478d9895026f"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a7d5e6265e0ecaad62237478d9895026f">FCT::RHI::ShaderBinary::getTextureLocation</a></div><div class="ttdeci">std::pair&lt; uint32_t, uint32_t &gt; getTextureLocation(const std::string &amp;name) const</div><div class="ttdef"><b>定义</b> <a href="#l00059">ShaderBinary.h:59</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_shader_binary_html_a7eea73660f5e16e6894930056e3b9930"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a7eea73660f5e16e6894930056e3b9930">FCT::RHI::ShaderBinary::m_textureLayout</a></div><div class="ttdeci">std::map&lt; std::string, TextureElement &gt; m_textureLayout</div><div class="ttdef"><b>定义</b> <a href="#l00128">ShaderBinary.h:128</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_shader_binary_html_a9508b6de32fa750c31ae861edacc741e"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a9508b6de32fa750c31ae861edacc741e">FCT::RHI::ShaderBinary::getSamplerLocation</a></div><div class="ttdeci">std::pair&lt; uint32_t, uint32_t &gt; getSamplerLocation(const std::string &amp;name) const</div><div class="ttdef"><b>定义</b> <a href="#l00093">ShaderBinary.h:93</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_shader_binary_html_a9c7a7c7859ec40f5b1d6032c67bb20dc"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#a9c7a7c7859ec40f5b1d6032c67bb20dc">FCT::RHI::ShaderBinary::addSamplerLocation</a></div><div class="ttdeci">void addSamplerLocation(SamplerElement sampler, uint32_t set, uint32_t binding)</div><div class="ttdef"><b>定义</b> <a href="#l00087">ShaderBinary.h:87</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_shader_binary_html_aa5607f5810c6bab14f0407c29428353c"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#aa5607f5810c6bab14f0407c29428353c">FCT::RHI::ShaderBinary::m_textureLocations</a></div><div class="ttdeci">std::map&lt; std::string, std::pair&lt; uint32_t, uint32_t &gt; &gt; m_textureLocations</div><div class="ttdef"><b>定义</b> <a href="#l00127">ShaderBinary.h:127</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_shader_binary_html_aad51c71e87e1d89d74d38fc77099c7e8"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#aad51c71e87e1d89d74d38fc77099c7e8">FCT::RHI::ShaderBinary::m_constBufferLayout</a></div><div class="ttdeci">std::map&lt; std::string, ConstLayout &gt; m_constBufferLayout</div><div class="ttdef"><b>定义</b> <a href="#l00126">ShaderBinary.h:126</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_shader_binary_html_ab28101698f7a61e94eac8aa5ab88f4d5"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#ab28101698f7a61e94eac8aa5ab88f4d5">FCT::RHI::ShaderBinary::m_code</a></div><div class="ttdeci">std::vector&lt; char &gt; m_code</div><div class="ttdef"><b>定义</b> <a href="#l00122">ShaderBinary.h:122</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_shader_binary_html_ab814276c30a482362a22d95fb9a62cf5"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#ab814276c30a482362a22d95fb9a62cf5">FCT::RHI::ShaderBinary::m_samplerLayout</a></div><div class="ttdeci">std::map&lt; std::string, SamplerElement &gt; m_samplerLayout</div><div class="ttdef"><b>定义</b> <a href="#l00130">ShaderBinary.h:130</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_shader_binary_html_ab9e1f09b11e3c5b93dfa5de0a45cd372"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#ab9e1f09b11e3c5b93dfa5de0a45cd372">FCT::RHI::ShaderBinary::code</a></div><div class="ttdeci">void code(std::vector&lt; char &gt; code)</div><div class="ttdef"><b>定义</b> <a href="#l00018">ShaderBinary.h:18</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_shader_binary_html_aba51452e367cc1e3435e051243bc1cf3"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#aba51452e367cc1e3435e051243bc1cf3">FCT::RHI::ShaderBinary::constBufferLayout</a></div><div class="ttdeci">std::map&lt; std::string, ConstLayout &gt; constBufferLayout()</div><div class="ttdef"><b>定义</b> <a href="#l00043">ShaderBinary.h:43</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_shader_binary_html_abd5c32db38f910c53bfb27bcf1210155"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#abd5c32db38f910c53bfb27bcf1210155">FCT::RHI::ShaderBinary::m_locations</a></div><div class="ttdeci">std::map&lt; std::string, uint32_t &gt; m_locations</div><div class="ttdef"><b>定义</b> <a href="#l00123">ShaderBinary.h:123</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_shader_binary_html_acb302f82c5bd483c1276c34b1204310c"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#acb302f82c5bd483c1276c34b1204310c">FCT::RHI::ShaderBinary::constBufferLocations</a></div><div class="ttdeci">std::map&lt; std::string, std::pair&lt; uint32_t, uint32_t &gt; &gt; constBufferLocations()</div><div class="ttdef"><b>定义</b> <a href="#l00039">ShaderBinary.h:39</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_shader_binary_html_acd20cc5006e4ca31e23d673489dbd253"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#acd20cc5006e4ca31e23d673489dbd253">FCT::RHI::ShaderBinary::getSamplerElement</a></div><div class="ttdeci">SamplerElement getSamplerElement(const std::string &amp;name) const</div><div class="ttdef"><b>定义</b> <a href="#l00102">ShaderBinary.h:102</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_shader_binary_html_ad980f2f83257becbbf570891818513fb"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#ad980f2f83257becbbf570891818513fb">FCT::RHI::ShaderBinary::code</a></div><div class="ttdeci">std::vector&lt; char &gt; code() const</div><div class="ttdef"><b>定义</b> <a href="#l00023">ShaderBinary.h:23</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_shader_binary_html_ada1e10b65b3c7bb76d1e5667a4c29293"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#ada1e10b65b3c7bb76d1e5667a4c29293">FCT::RHI::ShaderBinary::m_uniformLocations</a></div><div class="ttdeci">std::map&lt; std::string, std::pair&lt; uint32_t, uint32_t &gt; &gt; m_uniformLocations</div><div class="ttdef"><b>定义</b> <a href="#l00124">ShaderBinary.h:124</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_shader_binary_html_ae14ca2d24f3940fcda3ac1ec2a698433"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#ae14ca2d24f3940fcda3ac1ec2a698433">FCT::RHI::ShaderBinary::ShaderBinary</a></div><div class="ttdeci">ShaderBinary()</div><div class="ttdef"><b>定义</b> <a href="_shader_binary_8cpp_source.html#l00010">ShaderBinary.cpp:10</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_shader_binary_html_ae868e4140b950f5bf273f1d4756aece8"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#ae868e4140b950f5bf273f1d4756aece8">FCT::RHI::ShaderBinary::samplerLayout</a></div><div class="ttdeci">std::map&lt; std::string, SamplerElement &gt; samplerLayout() const</div><div class="ttdef"><b>定义</b> <a href="#l00116">ShaderBinary.h:116</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_shader_binary_html_af0cc551e78d4d67e5264a6fb997d3daf"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#af0cc551e78d4d67e5264a6fb997d3daf">FCT::RHI::ShaderBinary::samplerLocations</a></div><div class="ttdeci">std::map&lt; std::string, std::pair&lt; uint32_t, uint32_t &gt; &gt; samplerLocations() const</div><div class="ttdef"><b>定义</b> <a href="#l00111">ShaderBinary.h:111</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_shader_binary_html_af6bd1dd7227da3d72ae1a9e4480c0da0"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#af6bd1dd7227da3d72ae1a9e4480c0da0">FCT::RHI::ShaderBinary::m_reflected</a></div><div class="ttdeci">bool m_reflected</div><div class="ttdef"><b>定义</b> <a href="#l00131">ShaderBinary.h:131</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_shader_binary_html_af84d42d0264ea8d6b8aa5d8b4b3bcb53"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_shader_binary.html#af84d42d0264ea8d6b8aa5d8b4b3bcb53">FCT::RHI::ShaderBinary::getTextureElement</a></div><div class="ttdeci">TextureElement getTextureElement(const std::string &amp;name) const</div><div class="ttdef"><b>定义</b> <a href="#l00068">ShaderBinary.h:68</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_sampler_element_html"><div class="ttname"><a href="class_f_c_t_1_1_sampler_element.html">FCT::SamplerElement</a></div><div class="ttdef"><b>定义</b> <a href="_resource_layout_8h_source.html#l00098">ResourceLayout.h:98</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_sampler_element_html_aa8459fb05557219fa2b8230bcfde8334"><div class="ttname"><a href="class_f_c_t_1_1_sampler_element.html#aa8459fb05557219fa2b8230bcfde8334">FCT::SamplerElement::getName</a></div><div class="ttdeci">constexpr const char * getName() const noexcept</div><div class="ttdef"><b>定义</b> <a href="_resource_layout_8h_source.html#l00121">ResourceLayout.h:121</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_texture_element_html"><div class="ttname"><a href="class_f_c_t_1_1_texture_element.html">FCT::TextureElement</a></div><div class="ttdef"><b>定义</b> <a href="_resource_layout_8h_source.html#l00041">ResourceLayout.h:41</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_texture_element_html_a29157e3cface33df29e94b9ee6d5b7d5"><div class="ttname"><a href="class_f_c_t_1_1_texture_element.html#a29157e3cface33df29e94b9ee6d5b7d5">FCT::TextureElement::getName</a></div><div class="ttdeci">constexpr const char * getName() const noexcept</div><div class="ttdef"><b>定义</b> <a href="_resource_layout_8h_source.html#l00073">ResourceLayout.h:73</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_1_1_r_h_i_html"><div class="ttname"><a href="namespace_f_c_t_1_1_r_h_i.html">FCT::RHI</a></div><div class="ttdef"><b>定义</b> <a href="_command_buffer_graph_8h_source.html#l00013">CommandBufferGraph.h:14</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html"><div class="ttname"><a href="namespace_f_c_t.html">FCT</a></div><div class="ttdef"><b>定义</b> <a href="_enums_8h_source.html#l00008">Enums.h:8</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_99cd23f92401c000af28014fa43f2752.html">RHI</a></li><li class="navelem"><a href="_shader_binary_8h.html">ShaderBinary.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

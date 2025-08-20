@@ -1,0 +1,247 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FCT: src/Runtime/Android_Runtime.cpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FCT
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_android___runtime_8cpp_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Android_Runtime.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_android___runtime_8cpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="_f_c_t_a_p_i_8h.html">../FCTAPI.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="runtime_8h.html">Runtime.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="_android___runtime_8h.html">Android_Runtime.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_f_c_t.html">FCT</a>{</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="namespace_f_c_t.html#a9e922cfd5094a3fea4d99453bfec23b0">    7</a></span>    <a class="code hl_class" href="class_f_c_t_1_1_android___runtime.html">Android_Runtime</a>* <a class="code hl_variable" href="namespace_f_c_t.html#a9e922cfd5094a3fea4d99453bfec23b0">g_androidRuntime</a>;</div>
+<div class="foldopen" id="foldopen00008" data-start="{" data-end="}">
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_android___runtime.html#a23271583a7ede482dc6b00e1b7222de0">    8</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_android___runtime.html#a23271583a7ede482dc6b00e1b7222de0">Android_Runtime::init</a>(JNIEnv *env, jobject activity) {</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        JavaVM* vm;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        env-&gt;GetJavaVM(&amp;vm);</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        <a class="code hl_variable" href="class_f_c_t_1_1_android___runtime.html#aa26315aab116e2a2f69c0fda9113fd99">m_vm</a> = <span class="keyword">new</span> jni::JvmRef&lt;jni::kDefaultJvm&gt;{vm};</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <a class="code hl_variable" href="class_f_c_t_1_1_android___runtime.html#a33007d117a6ad2dd6bd31f826e13065e">m_activity</a> = <span class="keyword">new</span> jni::GlobalObject&lt;FCTMainActivityJavaClass&gt;(</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>                std::move(jni::LocalObject&lt;FCTMainActivityJavaClass&gt;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>                        {activity}));</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <a class="code hl_variable" href="namespace_f_c_t.html#a539584b126825634a31a2e55f4c9a0f3">fout</a> &lt;&lt; <span class="stringliteral">&quot;FCT Device Info:&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <a class="code hl_variable" href="namespace_f_c_t.html#a539584b126825634a31a2e55f4c9a0f3">fout</a> &lt;&lt; <span class="stringliteral">&quot;Size: &quot;</span> &lt;&lt; <a class="code hl_function" href="class_f_c_t_1_1_android___runtime.html#ab15a459be46259fffc454bfdfa890232">getDeviceWidth</a>() &lt;&lt; <span class="stringliteral">&quot;x&quot;</span> &lt;&lt; <a class="code hl_function" href="class_f_c_t_1_1_android___runtime.html#a065a479fc9e0808194381f762b63d4f0">getDeviceHeight</a>() &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <a class="code hl_variable" href="class_f_c_t_1_1_android___runtime.html#a76ba4c7521719ef78319c710a4ec6e23">m_uiCommon</a> = <span class="keyword">new</span> <a class="code hl_class" href="class_f_c_t_1_1_android___u_i_common.html">Android_UICommon</a>();</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <a class="code hl_variable" href="class_f_c_t_1_1_android___runtime.html#a76ba4c7521719ef78319c710a4ec6e23">m_uiCommon</a>-&gt;preinit();</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <a class="code hl_variable" href="class_f_c_t_1_1_android___runtime.html#a11cb878af67d4c2ab12f110dc7c94ab1">m_userThread</a> = <span class="keyword">new</span> std::thread([<span class="keyword">this</span>]{</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            jni::ThreadGuard threadGuard = <a class="code hl_variable" href="class_f_c_t_1_1_android___runtime.html#aa26315aab116e2a2f69c0fda9113fd99">m_vm</a>-&gt;BuildThreadGuard();</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            <a class="code hl_function" href="class_f_c_t_1_1_android___runtime.html#ac0f94d065de3d9d9f26c04eb10a0c322">entry</a>();</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            <a class="code hl_function" href="class_f_c_t_1_1_android___runtime.html#a817c1ef5cba32bd83c4d72e74126bd75">cleanUp</a>();</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        });</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <a class="code hl_variable" href="class_f_c_t_1_1_android___runtime.html#a11cb878af67d4c2ab12f110dc7c94ab1">m_userThread</a>-&gt;detach();</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    }</div>
+</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="foldopen" id="foldopen00029" data-start="{" data-end="}">
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_android___runtime.html#a74df7e0391a2c5dd78da41b81f6a7732">   29</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_android___runtime.html#a74df7e0391a2c5dd78da41b81f6a7732">Android_Runtime::term</a>() {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    }</div>
+</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="foldopen" id="foldopen00033" data-start="{" data-end="}">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_android___runtime.html#ac0f94d065de3d9d9f26c04eb10a0c322">   33</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_android___runtime.html#ac0f94d065de3d9d9f26c04eb10a0c322">Android_Runtime::entry</a>() {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        main();</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    }</div>
+</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="foldopen" id="foldopen00037" data-start="{" data-end="}">
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_android___runtime.html#a817c1ef5cba32bd83c4d72e74126bd75">   37</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_android___runtime.html#a817c1ef5cba32bd83c4d72e74126bd75">Android_Runtime::cleanUp</a>() {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <a class="code hl_variable" href="class_f_c_t_1_1_android___runtime.html#a76ba4c7521719ef78319c710a4ec6e23">m_uiCommon</a>-&gt;cleanup();</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keyword">delete</span> <a class="code hl_variable" href="class_f_c_t_1_1_android___runtime.html#a76ba4c7521719ef78319c710a4ec6e23">m_uiCommon</a>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    }</div>
+</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="foldopen" id="foldopen00042" data-start="{" data-end="}">
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_android___runtime.html#a065a479fc9e0808194381f762b63d4f0">   42</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_f_c_t_1_1_android___runtime.html#a065a479fc9e0808194381f762b63d4f0">Android_Runtime::getDeviceHeight</a>() {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="class_f_c_t_1_1_android___runtime.html#a33007d117a6ad2dd6bd31f826e13065e">m_activity</a>-&gt;Call&lt;<span class="stringliteral">&quot;getDeviceHeight&quot;</span>&gt;();</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    }</div>
+</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="foldopen" id="foldopen00046" data-start="{" data-end="}">
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_android___runtime.html#ab15a459be46259fffc454bfdfa890232">   46</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_f_c_t_1_1_android___runtime.html#ab15a459be46259fffc454bfdfa890232">Android_Runtime::getDeviceWidth</a>() {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordflow">return</span>  <a class="code hl_variable" href="class_f_c_t_1_1_android___runtime.html#a33007d117a6ad2dd6bd31f826e13065e">m_activity</a>-&gt;Call&lt;<span class="stringliteral">&quot;getDeviceWidth&quot;</span>&gt;();</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    }</div>
+</div>
+<div class="foldopen" id="foldopen00049" data-start="{" data-end="};">
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="struct_f_c_t_1_1_android___runtime_common.html">   49</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_f_c_t_1_1_android___runtime_common.html">Android_RuntimeCommon</a> : <span class="keyword">public</span> <a class="code hl_struct" href="struct_f_c_t_1_1_runtime_common.html">RuntimeCommon</a> {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    };</div>
+</div>
+<div class="foldopen" id="foldopen00052" data-start="{" data-end="}">
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_runtime.html#a8935358c013f37d5ec950099c888c89c">   52</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_runtime.html#a8935358c013f37d5ec950099c888c89c">Runtime::init</a>() {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    }</div>
+</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="foldopen" id="foldopen00056" data-start="{" data-end="}">
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_runtime.html#a7e06f2fd3bd29b1196861fa8b62aee37">   56</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_runtime.html#a7e06f2fd3bd29b1196861fa8b62aee37">Runtime::term</a>() {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    }</div>
+</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="foldopen" id="foldopen00060" data-start="{" data-end="}">
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_runtime.html#a3eca945852ac8ffcabe129e7909fac63">   60</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_f_c_t_1_1_runtime.html#a3eca945852ac8ffcabe129e7909fac63">Runtime::getDeviceWidth</a>() {</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="namespace_f_c_t.html#a9e922cfd5094a3fea4d99453bfec23b0">g_androidRuntime</a>-&gt;getDeviceWidth();</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    }</div>
+</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="foldopen" id="foldopen00064" data-start="{" data-end="}">
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_runtime.html#a5d124ae96e25b8955bef0c0fb8abaeda">   64</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_f_c_t_1_1_runtime.html#a5d124ae96e25b8955bef0c0fb8abaeda">Runtime::getDeviceHeight</a>() {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="namespace_f_c_t.html#a9e922cfd5094a3fea4d99453bfec23b0">g_androidRuntime</a>-&gt;getDeviceHeight();</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    }</div>
+</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="foldopen" id="foldopen00068" data-start="{" data-end="}">
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_runtime.html#adf96ab1ae1ec05e6777ab9b3fdef8d55">   68</a></span>    <a class="code hl_class" href="class_f_c_t_1_1_window.html">Window</a> *<a class="code hl_function" href="class_f_c_t_1_1_runtime.html#adf96ab1ae1ec05e6777ab9b3fdef8d55">Runtime::createWindow</a>() {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="class_f_c_t_1_1_android___window.html">Android_Window</a>;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    }</div>
+</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="foldopen" id="foldopen00072" data-start="{" data-end="}">
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_runtime.html#ade286afead1866b1749ba244f0da78e3">   72</a></span>    <a class="code hl_class" href="class_f_c_t_1_1_context.html">Context</a> *<a class="code hl_function" href="class_f_c_t_1_1_runtime.html#ade286afead1866b1749ba244f0da78e3">Runtime::createContext</a>() {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="class_f_c_t_1_1_v_k___context.html">VK_Context</a>(<a class="code hl_variable" href="class_f_c_t_1_1_runtime.html#ac8957ab52a379f3ef953b938ace24ebb">g_common</a>-&gt;vkContextCommon);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    }</div>
+</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>}</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>JNIEXPORT <span class="keywordtype">void</span> JNICALL</div>
+<div class="foldopen" id="foldopen00079" data-start="{" data-end="}">
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="_android___runtime_8cpp.html#ad4d089577dfd56545b44fcdda38fb2fd">   79</a></span><a class="code hl_function" href="_android___runtime_8cpp.html#ad4d089577dfd56545b44fcdda38fb2fd">Java_com_example_androidtutorial_FCTMainActivity_CPPEntry</a>(JNIEnv *env, jobject thiz) {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <a class="code hl_variable" href="namespace_f_c_t.html#a9e922cfd5094a3fea4d99453bfec23b0">FCT::g_androidRuntime</a> = <span class="keyword">new</span> <a class="code hl_class" href="class_f_c_t_1_1_android___runtime.html">FCT::Android_Runtime</a>();</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <a class="code hl_variable" href="namespace_f_c_t.html#a9e922cfd5094a3fea4d99453bfec23b0">FCT::g_androidRuntime</a>-&gt;init(env, thiz);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>}</div>
+</div>
+<div class="ttc" id="a_android___runtime_8cpp_html_ad4d089577dfd56545b44fcdda38fb2fd"><div class="ttname"><a href="_android___runtime_8cpp.html#ad4d089577dfd56545b44fcdda38fb2fd">Java_com_example_androidtutorial_FCTMainActivity_CPPEntry</a></div><div class="ttdeci">JNIEXPORT void JNICALL Java_com_example_androidtutorial_FCTMainActivity_CPPEntry(JNIEnv *env, jobject thiz)</div><div class="ttdef"><b>定义</b> <a href="#l00079">Android_Runtime.cpp:79</a></div></div>
+<div class="ttc" id="a_android___runtime_8h_html"><div class="ttname"><a href="_android___runtime_8h.html">Android_Runtime.h</a></div></div>
+<div class="ttc" id="a_f_c_t_a_p_i_8h_html"><div class="ttname"><a href="_f_c_t_a_p_i_8h.html">FCTAPI.h</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_android___runtime_html"><div class="ttname"><a href="class_f_c_t_1_1_android___runtime.html">FCT::Android_Runtime</a></div><div class="ttdef"><b>定义</b> <a href="_android___runtime_8h_source.html#l00011">Android_Runtime.h:11</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_android___runtime_html_a065a479fc9e0808194381f762b63d4f0"><div class="ttname"><a href="class_f_c_t_1_1_android___runtime.html#a065a479fc9e0808194381f762b63d4f0">FCT::Android_Runtime::getDeviceHeight</a></div><div class="ttdeci">int getDeviceHeight()</div><div class="ttdef"><b>定义</b> <a href="#l00042">Android_Runtime.cpp:42</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_android___runtime_html_a11cb878af67d4c2ab12f110dc7c94ab1"><div class="ttname"><a href="class_f_c_t_1_1_android___runtime.html#a11cb878af67d4c2ab12f110dc7c94ab1">FCT::Android_Runtime::m_userThread</a></div><div class="ttdeci">std::thread * m_userThread</div><div class="ttdef"><b>定义</b> <a href="_android___runtime_8h_source.html#l00044">Android_Runtime.h:44</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_android___runtime_html_a23271583a7ede482dc6b00e1b7222de0"><div class="ttname"><a href="class_f_c_t_1_1_android___runtime.html#a23271583a7ede482dc6b00e1b7222de0">FCT::Android_Runtime::init</a></div><div class="ttdeci">void init(JNIEnv *env, jobject activity)</div><div class="ttdef"><b>定义</b> <a href="#l00008">Android_Runtime.cpp:8</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_android___runtime_html_a33007d117a6ad2dd6bd31f826e13065e"><div class="ttname"><a href="class_f_c_t_1_1_android___runtime.html#a33007d117a6ad2dd6bd31f826e13065e">FCT::Android_Runtime::m_activity</a></div><div class="ttdeci">jni::GlobalObject&lt; FCTMainActivityJavaClass &gt; * m_activity</div><div class="ttdef"><b>定义</b> <a href="_android___runtime_8h_source.html#l00043">Android_Runtime.h:43</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_android___runtime_html_a74df7e0391a2c5dd78da41b81f6a7732"><div class="ttname"><a href="class_f_c_t_1_1_android___runtime.html#a74df7e0391a2c5dd78da41b81f6a7732">FCT::Android_Runtime::term</a></div><div class="ttdeci">void term()</div><div class="ttdef"><b>定义</b> <a href="#l00029">Android_Runtime.cpp:29</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_android___runtime_html_a76ba4c7521719ef78319c710a4ec6e23"><div class="ttname"><a href="class_f_c_t_1_1_android___runtime.html#a76ba4c7521719ef78319c710a4ec6e23">FCT::Android_Runtime::m_uiCommon</a></div><div class="ttdeci">Android_UICommon * m_uiCommon</div><div class="ttdef"><b>定义</b> <a href="_android___runtime_8h_source.html#l00046">Android_Runtime.h:46</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_android___runtime_html_a817c1ef5cba32bd83c4d72e74126bd75"><div class="ttname"><a href="class_f_c_t_1_1_android___runtime.html#a817c1ef5cba32bd83c4d72e74126bd75">FCT::Android_Runtime::cleanUp</a></div><div class="ttdeci">void cleanUp()</div><div class="ttdef"><b>定义</b> <a href="#l00037">Android_Runtime.cpp:37</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_android___runtime_html_aa26315aab116e2a2f69c0fda9113fd99"><div class="ttname"><a href="class_f_c_t_1_1_android___runtime.html#aa26315aab116e2a2f69c0fda9113fd99">FCT::Android_Runtime::m_vm</a></div><div class="ttdeci">jni::JvmRef&lt; jni::kDefaultJvm &gt; * m_vm</div><div class="ttdef"><b>定义</b> <a href="_android___runtime_8h_source.html#l00045">Android_Runtime.h:45</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_android___runtime_html_ab15a459be46259fffc454bfdfa890232"><div class="ttname"><a href="class_f_c_t_1_1_android___runtime.html#ab15a459be46259fffc454bfdfa890232">FCT::Android_Runtime::getDeviceWidth</a></div><div class="ttdeci">int getDeviceWidth()</div><div class="ttdef"><b>定义</b> <a href="#l00046">Android_Runtime.cpp:46</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_android___runtime_html_ac0f94d065de3d9d9f26c04eb10a0c322"><div class="ttname"><a href="class_f_c_t_1_1_android___runtime.html#ac0f94d065de3d9d9f26c04eb10a0c322">FCT::Android_Runtime::entry</a></div><div class="ttdeci">void entry()</div><div class="ttdef"><b>定义</b> <a href="#l00033">Android_Runtime.cpp:33</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_android___u_i_common_html"><div class="ttname"><a href="class_f_c_t_1_1_android___u_i_common.html">FCT::Android_UICommon</a></div><div class="ttdef"><b>定义</b> <a href="_android___u_i_common_8h_source.html#l00018">Android_UICommon.h:18</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_android___window_html"><div class="ttname"><a href="class_f_c_t_1_1_android___window.html">FCT::Android_Window</a></div><div class="ttdef"><b>定义</b> <a href="_android___window_8h_source.html#l00014">Android_Window.h:14</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_context_html"><div class="ttname"><a href="class_f_c_t_1_1_context.html">FCT::Context</a></div><div class="ttdef"><b>定义</b> <a href="_context_8h_source.html#l00097">Context.h:98</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_runtime_html_a3eca945852ac8ffcabe129e7909fac63"><div class="ttname"><a href="class_f_c_t_1_1_runtime.html#a3eca945852ac8ffcabe129e7909fac63">FCT::Runtime::getDeviceWidth</a></div><div class="ttdeci">int getDeviceWidth()</div><div class="ttdef"><b>定义</b> <a href="#l00060">Android_Runtime.cpp:60</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_runtime_html_a5d124ae96e25b8955bef0c0fb8abaeda"><div class="ttname"><a href="class_f_c_t_1_1_runtime.html#a5d124ae96e25b8955bef0c0fb8abaeda">FCT::Runtime::getDeviceHeight</a></div><div class="ttdeci">int getDeviceHeight()</div><div class="ttdef"><b>定义</b> <a href="#l00064">Android_Runtime.cpp:64</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_runtime_html_a7e06f2fd3bd29b1196861fa8b62aee37"><div class="ttname"><a href="class_f_c_t_1_1_runtime.html#a7e06f2fd3bd29b1196861fa8b62aee37">FCT::Runtime::term</a></div><div class="ttdeci">void term()</div><div class="ttdef"><b>定义</b> <a href="#l00056">Android_Runtime.cpp:56</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_runtime_html_a8935358c013f37d5ec950099c888c89c"><div class="ttname"><a href="class_f_c_t_1_1_runtime.html#a8935358c013f37d5ec950099c888c89c">FCT::Runtime::init</a></div><div class="ttdeci">void init()</div><div class="ttdef"><b>定义</b> <a href="#l00052">Android_Runtime.cpp:52</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_runtime_html_ac8957ab52a379f3ef953b938ace24ebb"><div class="ttname"><a href="class_f_c_t_1_1_runtime.html#ac8957ab52a379f3ef953b938ace24ebb">FCT::Runtime::g_common</a></div><div class="ttdeci">RuntimeCommon * g_common</div><div class="ttdef"><b>定义</b> <a href="runtime_8h_source.html#l00095">runtime.h:95</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_runtime_html_ade286afead1866b1749ba244f0da78e3"><div class="ttname"><a href="class_f_c_t_1_1_runtime.html#ade286afead1866b1749ba244f0da78e3">FCT::Runtime::createContext</a></div><div class="ttdeci">Context * createContext()</div><div class="ttdef"><b>定义</b> <a href="#l00072">Android_Runtime.cpp:72</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_runtime_html_adf96ab1ae1ec05e6777ab9b3fdef8d55"><div class="ttname"><a href="class_f_c_t_1_1_runtime.html#adf96ab1ae1ec05e6777ab9b3fdef8d55">FCT::Runtime::createWindow</a></div><div class="ttdeci">Window * createWindow()</div><div class="ttdef"><b>定义</b> <a href="#l00068">Android_Runtime.cpp:68</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_v_k___context_html"><div class="ttname"><a href="class_f_c_t_1_1_v_k___context.html">FCT::VK_Context</a></div><div class="ttdef"><b>定义</b> <a href="_v_k___context_8h_source.html#l00011">VK_Context.h:11</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_window_html"><div class="ttname"><a href="class_f_c_t_1_1_window.html">FCT::Window</a></div><div class="ttdef"><b>定义</b> <a href="_window_8h_source.html#l00066">Window.h:66</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html"><div class="ttname"><a href="namespace_f_c_t.html">FCT</a></div><div class="ttdef"><b>定义</b> <a href="_enums_8h_source.html#l00008">Enums.h:8</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_a539584b126825634a31a2e55f4c9a0f3"><div class="ttname"><a href="namespace_f_c_t.html#a539584b126825634a31a2e55f4c9a0f3">FCT::fout</a></div><div class="ttdeci">std::ostream &amp; fout</div><div class="ttdef"><b>定义</b> <a href="_out_stream_8cpp_source.html#l00008">OutStream.cpp:8</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_a9e922cfd5094a3fea4d99453bfec23b0"><div class="ttname"><a href="namespace_f_c_t.html#a9e922cfd5094a3fea4d99453bfec23b0">FCT::g_androidRuntime</a></div><div class="ttdeci">Android_Runtime * g_androidRuntime</div><div class="ttdef"><b>定义</b> <a href="#l00007">Android_Runtime.cpp:7</a></div></div>
+<div class="ttc" id="aruntime_8h_html"><div class="ttname"><a href="runtime_8h.html">runtime.h</a></div></div>
+<div class="ttc" id="astruct_f_c_t_1_1_android___runtime_common_html"><div class="ttname"><a href="struct_f_c_t_1_1_android___runtime_common.html">FCT::Android_RuntimeCommon</a></div><div class="ttdef"><b>定义</b> <a href="#l00049">Android_Runtime.cpp:49</a></div></div>
+<div class="ttc" id="astruct_f_c_t_1_1_runtime_common_html"><div class="ttname"><a href="struct_f_c_t_1_1_runtime_common.html">FCT::RuntimeCommon</a></div><div class="ttdef"><b>定义</b> <a href="runtime_8h_source.html#l00016">runtime.h:16</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_336443d5468dfc2bb33128b4e5b96f42.html">Runtime</a></li><li class="navelem"><a href="_android___runtime_8cpp.html">Android_Runtime.cpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

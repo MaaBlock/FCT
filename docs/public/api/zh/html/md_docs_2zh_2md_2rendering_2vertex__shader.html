@@ -1,0 +1,243 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FCT: 顶点着色器详解</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FCT
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('md_docs_2zh_2md_2rendering_2vertex__shader.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">顶点着色器详解 </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="autotoc_md103"></a></p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md104"></a>
+概述</h1>
+<p>顶点着色器（Vertex Shader）允许你对顶点进行变换和处理。</p>
+<p>想象一下：</p><ul>
+<li>你有一个图形，它由很多个顶点组成</li>
+<li>每个顶点都有自己的位置、颜色、纹理坐标等信息</li>
+<li>顶点着色器就像一个工人，负责处理每一个顶点</li>
+<li>它可以移动顶点位置、改变颜色、计算动画效果等</li>
+<li>为每个顶点计算需要传递给下一阶段的数据</li>
+</ul>
+<p><b>简单来说</b>：顶点着色器决定了每个顶点的最终属性和位置，以及要传递给渲染管线下一阶段的信息。 </p><blockquote class="doxtable">
+<p><b>FCT库说明</b>：在FCT中，你不需要从零开始写复杂的着色器代码，只需要定义数据结构和核心逻辑，FCT会帮你生成完整的着色器程序。 </p>
+</blockquote>
+<blockquote class="doxtable">
+<p><b>详细了解</b>：</p><ul>
+<li><a class="el" href="md_docs_2zh_2md_2rendering_23d__transforms.html">3D渲染下的各种变换</a></li>
+<li><a class="el" href="md_docs_2zh_2md_2rendering_2how__3d__object__rendered.html">一个3D物体是怎么被画出来的</a> </li>
+</ul>
+</blockquote>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md105"></a>
+FCT中的顶点着色器</h1>
+<p>FCT库提供了 <span class="tt">VertexShader</span> 类来简化顶点着色器的创建和管理： </p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md106"></a>
+基本使用示例</h2>
+<div class="fragment"><div class="line"><span class="comment">// 1. 定义顶点数据结构（告诉FCT顶点包含什么信息）</span></div>
+<div class="line"><a class="code hl_class" href="class_f_c_t_1_1_vertex_layout.html">FCT::VertexLayout</a> vertexLayout = {</div>
+<div class="line"><a class="code hl_class" href="class_f_c_t_1_1_vertex_element.html">FCT::VertexElement</a>{<a class="code hl_enumvalue" href="namespace_f_c_t.html#aa946ca9a7d9318f0c9a8e49b9df96b06a78f15757ef79c97aa0187c4823e8b0ed">FCT::VtxType::Position4f</a>, <span class="stringliteral">&quot;position&quot;</span>},  <span class="comment">// 顶点位置</span></div>
+<div class="line"><a class="code hl_class" href="class_f_c_t_1_1_vertex_element.html">FCT::VertexElement</a>{<a class="code hl_enumvalue" href="namespace_f_c_t.html#aa946ca9a7d9318f0c9a8e49b9df96b06a908f4dab02973b0773bbc2a05fc23753">FCT::VtxType::Normal3f</a>, <span class="stringliteral">&quot;normal&quot;</span>},      <span class="comment">// 法线向量</span></div>
+<div class="line"><a class="code hl_class" href="class_f_c_t_1_1_vertex_element.html">FCT::VertexElement</a>{<a class="code hl_enumvalue" href="namespace_f_c_t.html#aa946ca9a7d9318f0c9a8e49b9df96b06abf4af6bad2ec3d11d38fc1cb96f4fc6e">FCT::VtxType::TexCoord2f</a>, <span class="stringliteral">&quot;texCoord&quot;</span>},  <span class="comment">// 纹理坐标</span></div>
+<div class="line"><a class="code hl_class" href="class_f_c_t_1_1_vertex_element.html">FCT::VertexElement</a>{<a class="code hl_enumvalue" href="namespace_f_c_t.html#aa946ca9a7d9318f0c9a8e49b9df96b06a4b27cd2fd42dcad88c2b5ca40571dd51">FCT::VtxType::Color4f</a>, <span class="stringliteral">&quot;color&quot;</span>},        <span class="comment">// 顶点颜色</span></div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 2. 定义输出数据结构（告诉FCT要传递给像素着色器什么信息）</span></div>
+<div class="line"><a class="code hl_class" href="class_f_c_t_1_1_pixel_layout.html">FCT::PixelLayout</a> pixelLayout = {</div>
+<div class="line">vertexLayout  <span class="comment">// 把顶点数据原样传递</span></div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 3. 定义变换矩阵（告诉FCT需要什么常量数据）</span></div>
+<div class="line"><a class="code hl_class" href="class_f_c_t_1_1_const_layout.html">FCT::ConstLayout</a> transformLayout = {</div>
+<div class="line"><span class="stringliteral">&quot;transform&quot;</span>,</div>
+<div class="line"><a class="code hl_class" href="class_f_c_t_1_1_const_element.html">FCT::ConstElement</a>{<a class="code hl_enumvalue" href="namespace_f_c_t.html#aca2f02796bb2000f510d9542ef85e9d1adfc8c46857bdc918f98396c7dd61a61c">FCT::ConstType::MVPMatrix</a>, <span class="stringliteral">&quot;mvp&quot;</span>},  <span class="comment">// 模型-视图-投影矩阵</span></div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 4. 创建顶点着色器</span></div>
+<div class="line"><span class="keyword">auto</span> vs = m_ctx-&gt;createResource&lt;ContextResource::VertexShader&gt;();</div>
+<div class="line">vs-&gt;addLayout(0, vertexLayout);      <span class="comment">// 设置输入数据格式</span></div>
+<div class="line">vs-&gt;pixelLayout(pixelLayout);        <span class="comment">// 设置输出数据格式</span></div>
+<div class="line">vs-&gt;addUniform(transformLayout);     <span class="comment">// 添加变换矩阵</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 5. 编写核心逻辑（只需要写最重要的变换代码）</span></div>
+<div class="line">vs-&gt;code(R<span class="stringliteral">&quot;(</span></div>
+<div class="line"><span class="stringliteral">ShaderOut main(ShaderIn sIn) {</span></div>
+<div class="line"><span class="stringliteral">ShaderOut sOut;</span></div>
+<div class="line"><span class="stringliteral"></span> </div>
+<div class="line"><span class="stringliteral">    // 坐标变换：把3D坐标转换为屏幕坐标</span></div>
+<div class="line"><span class="stringliteral">    sOut.position = mul(mvp, sIn.position);</span></div>
+<div class="line"><span class="stringliteral">    </span></div>
+<div class="line"><span class="stringliteral">    // 传递其他属性</span></div>
+<div class="line"><span class="stringliteral">    sOut.normal = sIn.normal;</span></div>
+<div class="line"><span class="stringliteral">    sOut.texCoord = sIn.texCoord;</span></div>
+<div class="line"><span class="stringliteral">    sOut.color = sIn.color;</span></div>
+<div class="line"><span class="stringliteral">    </span></div>
+<div class="line"><span class="stringliteral">    return sOut;</span></div>
+<div class="line"><span class="stringliteral">}</span></div>
+<div class="line"><span class="stringliteral">)&quot;);</span></div>
+<div class="line"><span class="stringliteral"></span> </div>
+<div class="line"><span class="stringliteral"></span><span class="comment">// 6. 创建着色器</span></div>
+<div class="line">vs-&gt;create();</div>
+<div class="ttc" id="aclass_f_c_t_1_1_const_element_html"><div class="ttname"><a href="class_f_c_t_1_1_const_element.html">FCT::ConstElement</a></div><div class="ttdef"><b>定义</b> <a href="_uniform_8h_source.html#l00231">Uniform.h:231</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_const_layout_html"><div class="ttname"><a href="class_f_c_t_1_1_const_layout.html">FCT::ConstLayout</a></div><div class="ttdef"><b>定义</b> <a href="_uniform_8h_source.html#l00268">Uniform.h:268</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_pixel_layout_html"><div class="ttname"><a href="class_f_c_t_1_1_pixel_layout.html">FCT::PixelLayout</a></div><div class="ttdef"><b>定义</b> <a href="_vertex_8h_source.html#l00306">Vertex.h:307</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_vertex_element_html"><div class="ttname"><a href="class_f_c_t_1_1_vertex_element.html">FCT::VertexElement</a></div><div class="ttdef"><b>定义</b> <a href="_vertex_8h_source.html#l00168">Vertex.h:168</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_vertex_layout_html"><div class="ttname"><a href="class_f_c_t_1_1_vertex_layout.html">FCT::VertexLayout</a></div><div class="ttdef"><b>定义</b> <a href="_vertex_8h_source.html#l00228">Vertex.h:229</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_aa946ca9a7d9318f0c9a8e49b9df96b06a4b27cd2fd42dcad88c2b5ca40571dd51"><div class="ttname"><a href="namespace_f_c_t.html#aa946ca9a7d9318f0c9a8e49b9df96b06a4b27cd2fd42dcad88c2b5ca40571dd51">FCT::VtxType::Color4f</a></div><div class="ttdeci">@ Color4f</div><div class="ttdef"><b>定义</b> <a href="_vertex_8h_source.html#l00017">Vertex.h:17</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_aa946ca9a7d9318f0c9a8e49b9df96b06a78f15757ef79c97aa0187c4823e8b0ed"><div class="ttname"><a href="namespace_f_c_t.html#aa946ca9a7d9318f0c9a8e49b9df96b06a78f15757ef79c97aa0187c4823e8b0ed">FCT::VtxType::Position4f</a></div><div class="ttdeci">@ Position4f</div><div class="ttdef"><b>定义</b> <a href="_vertex_8h_source.html#l00011">Vertex.h:11</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_aa946ca9a7d9318f0c9a8e49b9df96b06a908f4dab02973b0773bbc2a05fc23753"><div class="ttname"><a href="namespace_f_c_t.html#aa946ca9a7d9318f0c9a8e49b9df96b06a908f4dab02973b0773bbc2a05fc23753">FCT::VtxType::Normal3f</a></div><div class="ttdeci">@ Normal3f</div><div class="ttdef"><b>定义</b> <a href="_vertex_8h_source.html#l00012">Vertex.h:12</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_aa946ca9a7d9318f0c9a8e49b9df96b06abf4af6bad2ec3d11d38fc1cb96f4fc6e"><div class="ttname"><a href="namespace_f_c_t.html#aa946ca9a7d9318f0c9a8e49b9df96b06abf4af6bad2ec3d11d38fc1cb96f4fc6e">FCT::VtxType::TexCoord2f</a></div><div class="ttdeci">@ TexCoord2f</div><div class="ttdef"><b>定义</b> <a href="_vertex_8h_source.html#l00015">Vertex.h:15</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_aca2f02796bb2000f510d9542ef85e9d1adfc8c46857bdc918f98396c7dd61a61c"><div class="ttname"><a href="namespace_f_c_t.html#aca2f02796bb2000f510d9542ef85e9d1adfc8c46857bdc918f98396c7dd61a61c">FCT::ConstType::MVPMatrix</a></div><div class="ttdeci">@ MVPMatrix</div><div class="ttdef"><b>定义</b> <a href="_uniform_8h_source.html#l00021">Uniform.h:21</a></div></div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md107"></a>
+布局系统详解</h2>
+<p>FCT使用声明式的布局系统来定义着色器的输入输出：</p>
+<ul>
+<li><b>VertexLayout</b> - 定义顶点数据的结构和格式</li>
+<li><b>PixelLayout</b> - 定义传递给像素着色器的数据</li>
+<li><b>ConstLayout</b> - 定义常量缓冲区的结构</li>
+<li><b>ResourceLayout</b> - 定义纹理和采样器等资源</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md108"></a>
+代码生成机制</h2>
+<p>FCT会根据布局自动生成：</p>
+<ol type="1">
+<li><b>输入结构体</b> (<span class="tt">ShaderIn</span>) - 基于 <span class="tt">VertexLayout</span></li>
+<li><b>输出结构体</b> (<span class="tt">ShaderOut</span>) - 基于 <span class="tt">PixelLayout</span></li>
+<li><b>常量缓冲区</b> - 基于 <span class="tt">ConstLayout</span></li>
+<li><b>资源绑定</b> - 基于 <span class="tt">ResourceLayout</span></li>
+</ol>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md109"></a>
+自定义着色器代码</h2>
+<p>用户只需要编写主要的变换逻辑：</p>
+<div class="fragment"><div class="line">ShaderOut main(ShaderIn sIn) {</div>
+<div class="line">ShaderOut sOut;</div>
+<div class="line"> </div>
+<div class="line">    // 基本属性传递</div>
+<div class="line">    sOut.color = sIn.color;</div>
+<div class="line">    sOut.texCoord = sIn.texCoord;</div>
+<div class="line">    sOut.normal = sIn.normal;</div>
+<div class="line">    </div>
+<div class="line">    // 坐标变换</div>
+<div class="line">    sOut.position = mul(mvp, sIn.position);</div>
+<div class="line">    </div>
+<div class="line">    // 自定义计算</div>
+<div class="line">    sOut.srcpos = sIn.position;</div>
+<div class="line">    sOut.shadowPos = mul(lightMvp, sIn.position);</div>
+<div class="line">    </div>
+<div class="line">    return sOut;</div>
+<div class="line">}</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md110"></a>
+优势特点</h2>
+<ul>
+<li><b>类型安全</b>：编译时检查布局匹配</li>
+<li><b>自动生成</b>：减少样板代码</li>
+<li><b>灵活扩展</b>：支持自定义数据类型</li>
+<li><b>性能优化</b>：自动优化内存布局</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md111"></a>
+相关文档</h1>
+<ul>
+<li><a class="el" href="md_docs_2zh_2md_2rendering_2shader__overview.html">着色器概述</a></li>
+<li><a class="el" href="md_docs_2zh_2md_2rendering_2pipeline__comparison.html">渲染管线概述</a> </li>
+</ul>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

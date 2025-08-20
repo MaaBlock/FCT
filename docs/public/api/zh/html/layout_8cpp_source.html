@@ -1,0 +1,584 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FCT: src/Context/layout.cpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FCT
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('layout_8cpp_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">layout.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="layout_8cpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="layout_8h.html">layout.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="layout_8hpp.html">layout.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="_context_2_pixel_shader_8h.html">./PixelShader.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="_context_2_vertex_shader_8h.html">./VertexShader.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="_pass_resource_8h.html">PassResource.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="_rasterization_pipeline_8h.html">../RHI/RasterizationPipeline.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="_blend_state_8h.html">../RHI/BlendState.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="_rasterization_state_8h.html">../RHI/RasterizationState.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="_depth_stencil_state_8h.html">../RHI/DepthStencilState.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="_context_8hpp.html">Context.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_f_c_t.html">FCT</a></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>{</div>
+<div class="foldopen" id="foldopen00014" data-start="{" data-end="}">
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_layout.html#ae3452371383f21dcf7e94ff76ca61ca4">   14</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_layout.html#ae3452371383f21dcf7e94ff76ca61ca4">Layout::ctx</a>(<a class="code hl_class" href="class_f_c_t_1_1_context.html">FCT::Context</a>* <a class="code hl_function" href="class_f_c_t_1_1_layout.html#ae3452371383f21dcf7e94ff76ca61ca4">ctx</a>)</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <a class="code hl_variable" href="class_f_c_t_1_1_layout.html#a3cfbd85063e1650b00b8a30790cfe496">m_ctx</a> = <a class="code hl_function" href="class_f_c_t_1_1_layout.html#ae3452371383f21dcf7e94ff76ca61ca4">ctx</a>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    }</div>
+</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="}">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_layout.html#a1accd90364bf48a3539d88f1c4ae1ba4">   19</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_layout.html#a1accd90364bf48a3539d88f1c4ae1ba4">Layout::setFixedImage</a>(std::string name, <a class="code hl_class" href="class_f_c_t_1_1_image.html">FCT::Image</a>* image)</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <a class="code hl_variable" href="class_f_c_t_1_1_layout.html#a8acf4282f647fee52ea14b2d9bd6db7e">m_fixedImages</a>[name] = image;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    }</div>
+</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="foldopen" id="foldopen00024" data-start="{" data-end="}">
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_layout.html#a8b5d00a8b85fa9f5087672da508b62a0">   24</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_layout.html#a8b5d00a8b85fa9f5087672da508b62a0">Layout::addTextureSlot</a>(<a class="code hl_class" href="class_f_c_t_1_1_texture_element.html">FCT::TextureElement</a> element)</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <a class="code hl_variable" href="class_f_c_t_1_1_layout.html#a95a72b91ab541e6c279aec55b8a23258">m_resourceLayout</a>.addTexture(element);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keywordflow">if</span> (element.<a class="code hl_function" href="class_f_c_t_1_1_texture_element.html#a196ac1a4f112dca30ab169437aecf702">getShaderStages</a>() &amp; <a class="code hl_enumvalue" href="namespace_f_c_t.html#adb995786f2f649c122895cd47ab09d32ab22b929ba52471a02d18bb3a4e4472e6">FCT::ShaderStage::Vertex</a>)</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            <a class="code hl_variable" href="class_f_c_t_1_1_layout.html#a713bba62927f50e1540c1722cefe688d">m_vertexResourceLayout</a>.addTexture(element);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        }</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keywordflow">if</span> (element.<a class="code hl_function" href="class_f_c_t_1_1_texture_element.html#a196ac1a4f112dca30ab169437aecf702">getShaderStages</a>() &amp; <a class="code hl_enumvalue" href="namespace_f_c_t.html#adb995786f2f649c122895cd47ab09d32a37d01b98065725fe3a1d30acf3a0064a">FCT::ShaderStage::Fragment</a>)</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            <a class="code hl_variable" href="class_f_c_t_1_1_layout.html#a24a73638312c32d9c4ac262837a9e32e">m_pixelResourceLayout</a>.addTexture(element);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        }</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    }</div>
+</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="foldopen" id="foldopen00037" data-start="{" data-end="}">
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_layout.html#a2f52cef26b42a2914deab8e1da3aae6f">   37</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_layout.html#a2f52cef26b42a2914deab8e1da3aae6f">Layout::attachPass</a>(<a class="code hl_class" href="class_f_c_t_1_1_render_graph.html">FCT::RenderGraph</a>* graph, std::string passName)</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keyword">auto</span> edges = graph-&gt;<a class="code hl_function" href="class_f_c_t_1_1_render_graph.html#a5319625c020f63b30575f07c71896620">getTextureEdges</a>(passName);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> edge : edges)</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            <a class="code hl_class" href="class_f_c_t_1_1_texture_element.html">FCT::TextureElement</a> element(<a class="code hl_enumvalue" href="namespace_f_c_t.html#a8c0a0c97235ef12c8fa799cc939337dbaa6e2bae752d3bf4e34cb392bca789995">FCT::TextureType::Texture2D</a>,edge-&gt;fromImage.c_str(),<a class="code hl_function" href="namespace_f_c_t.html#a77dc23450b304c556eb555b25aa776f3">getAllAfterTheStage</a>(edge-&gt;stage),<a class="code hl_enumvalue" href="namespace_f_c_t.html#a0236e673f1b6fe9736bc596d7e50dc7ea5ac98a9f1bddc1b15896f0e02bf06839">FCT::UpdateFrequency::PerFrame</a>);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            <a class="code hl_function" href="class_f_c_t_1_1_layout.html#a8b5d00a8b85fa9f5087672da508b62a0">addTextureSlot</a>(element);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            <a class="code hl_function" href="class_f_c_t_1_1_layout.html#a1accd90364bf48a3539d88f1c4ae1ba4">setFixedImage</a>(edge-&gt;fromImage,graph-&gt;<a class="code hl_function" href="class_f_c_t_1_1_render_graph.html#a84e68041d7a9a73366103d9222f2c550">getImage</a>(edge-&gt;fromImage));</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        }</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <a class="code hl_variable" href="class_f_c_t_1_1_layout.html#adf0d071a9bdd3822b4c47fc447ada908">m_pass</a> = graph-&gt;<a class="code hl_function" href="class_f_c_t_1_1_render_graph.html#a73f229fce93004e480a73e0ae241a543">getPass</a>(passName);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    }</div>
+</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="foldopen" id="foldopen00049" data-start="{" data-end="}">
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_layout.html#af28d3ab67e615ac99875123ac657f3f9">   49</a></span>    <a class="code hl_struct" href="struct_f_c_t_1_1_uniform.html">Uniform</a> <a class="code hl_function" href="class_f_c_t_1_1_layout.html#af28d3ab67e615ac99875123ac657f3f9">Layout::allocateUniform</a>(std::string name)</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    {</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keywordflow">return</span> std::move(<a class="code hl_struct" href="struct_f_c_t_1_1_uniform.html">Uniform</a>(<a class="code hl_variable" href="class_f_c_t_1_1_layout.html#a3cfbd85063e1650b00b8a30790cfe496">m_ctx</a>,<a class="code hl_variable" href="class_f_c_t_1_1_layout.html#a0086d650ee231ac1e19b9ae34bc16672">m_uniformLayouts</a>[name]));</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    }</div>
+</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="foldopen" id="foldopen00054" data-start="{" data-end="}">
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_layout.html#af45cc5b2801684145c0ca5a567e60305">   54</a></span>    <a class="code hl_class" href="class_f_c_t_1_1_vertex_shader.html">FCT::VertexShader</a>* <a class="code hl_function" href="class_f_c_t_1_1_layout.html#af45cc5b2801684145c0ca5a567e60305">Layout::allocateVertexShader</a>(std::string code)</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    {</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="keyword">auto</span> ret = <a class="code hl_variable" href="class_f_c_t_1_1_layout.html#a3cfbd85063e1650b00b8a30790cfe496">m_ctx</a>-&gt;createResource&lt;<a class="code hl_typedef" href="namespace_f_c_t_1_1_context_resource.html#aa4d17b706adb09314d47a203d76c631f">FCT::ContextResource::VertexShader</a>&gt;();</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; layout : <a class="code hl_variable" href="class_f_c_t_1_1_layout.html#a9ef50632d892d6a46c0770f89e6a311e">m_vertexLayouts</a>)</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            ret-&gt;addLayout(layout.first,layout.second);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        }</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        ret-&gt;pixelLayout(<a class="code hl_variable" href="class_f_c_t_1_1_layout.html#abbb668ceb9e6a2f5f32b20feffab6fd3">m_pixelLayout</a>);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; uniform : <a class="code hl_variable" href="class_f_c_t_1_1_layout.html#a0086d650ee231ac1e19b9ae34bc16672">m_uniformLayouts</a>)</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            ret-&gt;addUniform(uniform.second);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        }</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        ret-&gt;resourceLayout(<a class="code hl_variable" href="class_f_c_t_1_1_layout.html#a713bba62927f50e1540c1722cefe688d">m_vertexResourceLayout</a>);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        ret-&gt;code(code);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        ret-&gt;create();</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    }</div>
+</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="foldopen" id="foldopen00072" data-start="{" data-end="}">
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_layout.html#aea2f328715d6767cf1366af16c98e241">   72</a></span>    <a class="code hl_class" href="class_f_c_t_1_1_pixel_shader.html">FCT::PixelShader</a>* <a class="code hl_function" href="class_f_c_t_1_1_layout.html#aea2f328715d6767cf1366af16c98e241">Layout::allocatePixelShader</a>(std::string code)</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    {</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <span class="keyword">auto</span> ret = <a class="code hl_variable" href="class_f_c_t_1_1_layout.html#a3cfbd85063e1650b00b8a30790cfe496">m_ctx</a>-&gt;createResource&lt;<a class="code hl_typedef" href="namespace_f_c_t_1_1_context_resource.html#a986e00876429326135c67f9020269d95">FCT::ContextResource::PixelShader</a>&gt;();</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; layout : <a class="code hl_variable" href="class_f_c_t_1_1_layout.html#a0086d650ee231ac1e19b9ae34bc16672">m_uniformLayouts</a>)</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            ret-&gt;addUniform(layout.second);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        }</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        ret-&gt;pixelLayout(<a class="code hl_variable" href="class_f_c_t_1_1_layout.html#abbb668ceb9e6a2f5f32b20feffab6fd3">m_pixelLayout</a>);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        ret-&gt;resourceLayout(<a class="code hl_variable" href="class_f_c_t_1_1_layout.html#a24a73638312c32d9c4ac262837a9e32e">m_pixelResourceLayout</a>);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        ret-&gt;code(code);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        ret-&gt;create();</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    }</div>
+</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="foldopen" id="foldopen00087" data-start="{" data-end="}">
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_layout.html#a28b9ee861e342e80e3a5d356b8ea495b">   87</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_layout.html#a28b9ee861e342e80e3a5d356b8ea495b">Layout::begin</a>()</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    {</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        <a class="code hl_variable" href="class_f_c_t_1_1_layout.html#ab4269584d5ddf3c1dc949555ae264b43">m_passResourceState</a>.clear();</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; fixedImage : <a class="code hl_variable" href="class_f_c_t_1_1_layout.html#a8acf4282f647fee52ea14b2d9bd6db7e">m_fixedImages</a>)</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            <a class="code hl_variable" href="class_f_c_t_1_1_layout.html#ab4269584d5ddf3c1dc949555ae264b43">m_passResourceState</a>.bindTexture(fixedImage.first, fixedImage.second);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        }</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <a class="code hl_variable" href="class_f_c_t_1_1_layout.html#a8cc74eb30336c05520d2c0a24312b819">m_pipelineState</a> = <a class="code hl_struct" href="struct_f_c_t_1_1_layout_1_1_tradition_pipeline_state.html">TraditionPipelineState</a>();</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    }</div>
+</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="foldopen" id="foldopen00099" data-start="{" data-end="}">
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_layout.html#a173707812269ff8c0e3d79b7d11c704d">   99</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_layout.html#a173707812269ff8c0e3d79b7d11c704d">Layout::bindUniform</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_f_c_t_1_1_uniform.html">Uniform</a>&amp; uniform)</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    {</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        std::string name = (<span class="keyword">static_cast&lt;</span><a class="code hl_class" href="class_f_c_t_1_1_r_h_i_1_1_const_buffer.html">FCT::RHI::ConstBuffer</a>*<span class="keyword">&gt;</span>(uniform))-&gt;layout().getName(); <span class="comment">// 你可能需要在 Uniform 类中添加这个方法</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        <a class="code hl_variable" href="class_f_c_t_1_1_layout.html#ab4269584d5ddf3c1dc949555ae264b43">m_passResourceState</a>.bindUniform(name, uniform);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    }</div>
+</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="foldopen" id="foldopen00105" data-start="{" data-end="}">
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_layout.html#a67e3f4d0eb544fc097b162b193d39c95">  105</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_layout.html#a67e3f4d0eb544fc097b162b193d39c95">Layout::bindTexture</a>(std::string name, <a class="code hl_class" href="class_f_c_t_1_1_image.html">FCT::Image</a>* image)</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    {</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        <a class="code hl_variable" href="class_f_c_t_1_1_layout.html#ab4269584d5ddf3c1dc949555ae264b43">m_passResourceState</a>.bindTexture(name, image);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    }</div>
+</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="foldopen" id="foldopen00110" data-start="{" data-end="}">
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_layout.html#a44fe126dad764e62fcf5bea37c8a0039">  110</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_layout.html#a44fe126dad764e62fcf5bea37c8a0039">Layout::bindSampler</a>(std::string name, <a class="code hl_class" href="class_f_c_t_1_1_sampler.html">FCT::Sampler</a>* sampler)</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    {</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        <a class="code hl_variable" href="class_f_c_t_1_1_layout.html#ab4269584d5ddf3c1dc949555ae264b43">m_passResourceState</a>.bindSampler(name, sampler);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    }</div>
+</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="foldopen" id="foldopen00115" data-start="{" data-end="}">
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_layout.html#a02288e8f71bfb61caf323ffee1398143">  115</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_layout.html#a02288e8f71bfb61caf323ffee1398143">Layout::bindVertexShader</a>(<a class="code hl_class" href="class_f_c_t_1_1_vertex_shader.html">FCT::VertexShader</a>* shader)</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    {</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        <a class="code hl_variable" href="class_f_c_t_1_1_layout.html#a8cc74eb30336c05520d2c0a24312b819">m_pipelineState</a>.vertexShader = shader;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    }</div>
+</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="foldopen" id="foldopen00120" data-start="{" data-end="}">
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_layout.html#a1df012546ed2adc47d6b6358cba705ed">  120</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_layout.html#a1df012546ed2adc47d6b6358cba705ed">Layout::bindPixelShader</a>(<a class="code hl_class" href="class_f_c_t_1_1_pixel_shader.html">FCT::PixelShader</a>* shader)</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    {</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        <a class="code hl_variable" href="class_f_c_t_1_1_layout.html#a8cc74eb30336c05520d2c0a24312b819">m_pipelineState</a>.pixelShader = shader;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    }</div>
+</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="comment">/*</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span><span class="comment">    void Layout::drawMesh(FCT::RHI::CommandBuffer* cmdBuffer, FCT::StaticMesh&lt;uint32_t&gt;* mesh)</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="comment">    {</span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="comment">        auto resource = getCurrentPassResource();</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="comment">        auto pipeline = getCurrentPipeline();</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="comment"></span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="comment">        pipeline-&gt;bind(cmdBuffer);</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><span class="comment">        resource-&gt;bind(cmdBuffer,pipeline);</span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="comment">        mesh-&gt;bind(cmdBuffer);</span></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="comment">        mesh-&gt;draw(cmdBuffer);</span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="comment">    }*/</span></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="foldopen" id="foldopen00137" data-start="{" data-end="}">
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_layout.html#a7bd3827ca5d298c78fac264e60956b16">  137</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_layout.html#a7bd3827ca5d298c78fac264e60956b16">Layout::end</a>()</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    {</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    }</div>
+</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
+<div class="foldopen" id="foldopen00142" data-start="{" data-end="}">
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno"><a class="line" href="struct_f_c_t_1_1_layout_1_1_tradition_pipeline_state.html#aef431a3bd7705899cebe575e966690df">  142</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_function" href="struct_f_c_t_1_1_layout_1_1_tradition_pipeline_state.html#aef431a3bd7705899cebe575e966690df">Layout::TraditionPipelineState::hash</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        <span class="keywordtype">size_t</span> <a class="code hl_function" href="struct_f_c_t_1_1_layout_1_1_tradition_pipeline_state.html#aef431a3bd7705899cebe575e966690df">hash</a> = 0;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        boost::hash_combine(<a class="code hl_function" href="struct_f_c_t_1_1_layout_1_1_tradition_pipeline_state.html#aef431a3bd7705899cebe575e966690df">hash</a>, <a class="code hl_variable" href="struct_f_c_t_1_1_layout_1_1_tradition_pipeline_state.html#af72d0a552c671b02be3eb908d1e0a545">vertexShader</a>);</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        boost::hash_combine(<a class="code hl_function" href="struct_f_c_t_1_1_layout_1_1_tradition_pipeline_state.html#aef431a3bd7705899cebe575e966690df">hash</a>, <a class="code hl_variable" href="struct_f_c_t_1_1_layout_1_1_tradition_pipeline_state.html#a6343c24888582d983478cbad26af2b4c">pixelShader</a>);</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        boost::hash_combine(<a class="code hl_function" href="struct_f_c_t_1_1_layout_1_1_tradition_pipeline_state.html#aef431a3bd7705899cebe575e966690df">hash</a>, <a class="code hl_variable" href="struct_f_c_t_1_1_layout_1_1_tradition_pipeline_state.html#a1eb0a0b5c807e98fac8669651eabe106">blendState</a>);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        boost::hash_combine(<a class="code hl_function" href="struct_f_c_t_1_1_layout_1_1_tradition_pipeline_state.html#aef431a3bd7705899cebe575e966690df">hash</a>, <a class="code hl_variable" href="struct_f_c_t_1_1_layout_1_1_tradition_pipeline_state.html#abd5ba38ef213069598dddefc91b0c9c0">rasterizationState</a>);</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        boost::hash_combine(<a class="code hl_function" href="struct_f_c_t_1_1_layout_1_1_tradition_pipeline_state.html#aef431a3bd7705899cebe575e966690df">hash</a>, <a class="code hl_variable" href="struct_f_c_t_1_1_layout_1_1_tradition_pipeline_state.html#a0546199e2652c98b0d25b0eedaeaca08">depthStencilState</a>);</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="struct_f_c_t_1_1_layout_1_1_tradition_pipeline_state.html#aef431a3bd7705899cebe575e966690df">hash</a>;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    }</div>
+</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="foldopen" id="foldopen00153" data-start="{" data-end="}">
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno"><a class="line" href="struct_f_c_t_1_1_layout_1_1_tradition_pipeline_state.html#ad372dac40777ffdd45a57ca474382431">  153</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="struct_f_c_t_1_1_layout_1_1_tradition_pipeline_state.html#ad372dac40777ffdd45a57ca474382431">Layout::TraditionPipelineState::operator==</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_f_c_t_1_1_layout_1_1_tradition_pipeline_state.html">TraditionPipelineState</a>&amp; other)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="struct_f_c_t_1_1_layout_1_1_tradition_pipeline_state.html#af72d0a552c671b02be3eb908d1e0a545">vertexShader</a> == other.<a class="code hl_variable" href="struct_f_c_t_1_1_layout_1_1_tradition_pipeline_state.html#af72d0a552c671b02be3eb908d1e0a545">vertexShader</a> &amp;&amp;</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>            <a class="code hl_variable" href="struct_f_c_t_1_1_layout_1_1_tradition_pipeline_state.html#a6343c24888582d983478cbad26af2b4c">pixelShader</a> == other.<a class="code hl_variable" href="struct_f_c_t_1_1_layout_1_1_tradition_pipeline_state.html#a6343c24888582d983478cbad26af2b4c">pixelShader</a> &amp;&amp;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>            <a class="code hl_variable" href="struct_f_c_t_1_1_layout_1_1_tradition_pipeline_state.html#a1eb0a0b5c807e98fac8669651eabe106">blendState</a> == other.<a class="code hl_variable" href="struct_f_c_t_1_1_layout_1_1_tradition_pipeline_state.html#a1eb0a0b5c807e98fac8669651eabe106">blendState</a> &amp;&amp;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>            <a class="code hl_variable" href="struct_f_c_t_1_1_layout_1_1_tradition_pipeline_state.html#abd5ba38ef213069598dddefc91b0c9c0">rasterizationState</a> == other.<a class="code hl_variable" href="struct_f_c_t_1_1_layout_1_1_tradition_pipeline_state.html#abd5ba38ef213069598dddefc91b0c9c0">rasterizationState</a> &amp;&amp;</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>            <a class="code hl_variable" href="struct_f_c_t_1_1_layout_1_1_tradition_pipeline_state.html#a0546199e2652c98b0d25b0eedaeaca08">depthStencilState</a> == other.<a class="code hl_variable" href="struct_f_c_t_1_1_layout_1_1_tradition_pipeline_state.html#a0546199e2652c98b0d25b0eedaeaca08">depthStencilState</a>;</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    }</div>
+</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
+<div class="foldopen" id="foldopen00162" data-start="{" data-end="}">
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno"><a class="line" href="struct_f_c_t_1_1_layout_1_1_pass_resource_state.html#afbde64bd459e9944aa56f929f189f18b">  162</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_f_c_t_1_1_layout_1_1_pass_resource_state.html#afbde64bd459e9944aa56f929f189f18b">Layout::PassResourceState::clear</a>()</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    {</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        <a class="code hl_variable" href="struct_f_c_t_1_1_layout_1_1_pass_resource_state.html#a3e816412842c18a1332aa71d09f388ef">boundTextures</a>.clear();</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        <a class="code hl_variable" href="struct_f_c_t_1_1_layout_1_1_pass_resource_state.html#ae0140ffb12ba4308d707f8b175fc394f">boundSamplers</a>.clear();</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        <a class="code hl_variable" href="struct_f_c_t_1_1_layout_1_1_pass_resource_state.html#a179819d3e928afb8971e773e3ba148b4">boundUniforms</a>.clear();</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    }</div>
+</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
+<div class="foldopen" id="foldopen00169" data-start="{" data-end="}">
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno"><a class="line" href="struct_f_c_t_1_1_layout_1_1_pass_resource_state.html#a32a66bf71d661954fba0c0d27c60f3d5">  169</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_f_c_t_1_1_layout_1_1_pass_resource_state.html#a32a66bf71d661954fba0c0d27c60f3d5">Layout::PassResourceState::bindTexture</a>(<span class="keyword">const</span> std::string&amp; name, <a class="code hl_class" href="class_f_c_t_1_1_image.html">FCT::Image</a>* image)</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    {</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        <a class="code hl_variable" href="struct_f_c_t_1_1_layout_1_1_pass_resource_state.html#a3e816412842c18a1332aa71d09f388ef">boundTextures</a>[name] = image;</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    }</div>
+</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
+<div class="foldopen" id="foldopen00174" data-start="{" data-end="}">
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno"><a class="line" href="struct_f_c_t_1_1_layout_1_1_pass_resource_state.html#ae53abf1160e3c028c5480239a6d77e2e">  174</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_f_c_t_1_1_layout_1_1_pass_resource_state.html#ae53abf1160e3c028c5480239a6d77e2e">Layout::PassResourceState::bindSampler</a>(<span class="keyword">const</span> std::string&amp; name, <a class="code hl_class" href="class_f_c_t_1_1_sampler.html">FCT::Sampler</a>* sampler)</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    {</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        <a class="code hl_variable" href="struct_f_c_t_1_1_layout_1_1_pass_resource_state.html#ae0140ffb12ba4308d707f8b175fc394f">boundSamplers</a>[name] = sampler;</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    }</div>
+</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
+<div class="foldopen" id="foldopen00179" data-start="{" data-end="}">
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno"><a class="line" href="struct_f_c_t_1_1_layout_1_1_pass_resource_state.html#a31de121c127deb7861616e6c68cdf717">  179</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="struct_f_c_t_1_1_layout_1_1_pass_resource_state.html#a31de121c127deb7861616e6c68cdf717">Layout::PassResourceState::bindUniform</a>(<span class="keyword">const</span> std::string&amp; name, <span class="keyword">const</span> <a class="code hl_struct" href="struct_f_c_t_1_1_uniform.html">Uniform</a>&amp; uniform)</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    {</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        <a class="code hl_variable" href="struct_f_c_t_1_1_layout_1_1_pass_resource_state.html#a179819d3e928afb8971e773e3ba148b4">boundUniforms</a>[name] = uniform;</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    }</div>
+</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span> </div>
+<div class="foldopen" id="foldopen00184" data-start="{" data-end="}">
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno"><a class="line" href="struct_f_c_t_1_1_layout_1_1_pass_resource_state.html#ae7a67b560d229b52721f91ce9c60f9b4">  184</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_function" href="struct_f_c_t_1_1_layout_1_1_pass_resource_state.html#ae7a67b560d229b52721f91ce9c60f9b4">Layout::PassResourceState::hash</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        <span class="keywordtype">size_t</span> <a class="code hl_function" href="struct_f_c_t_1_1_layout_1_1_pass_resource_state.html#ae7a67b560d229b52721f91ce9c60f9b4">hash</a> = 0;</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; tex : <a class="code hl_variable" href="struct_f_c_t_1_1_layout_1_1_pass_resource_state.html#a3e816412842c18a1332aa71d09f388ef">boundTextures</a>) {</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>            boost::hash_combine(<a class="code hl_function" href="struct_f_c_t_1_1_layout_1_1_pass_resource_state.html#ae7a67b560d229b52721f91ce9c60f9b4">hash</a>, tex.first);</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>            boost::hash_combine(<a class="code hl_function" href="struct_f_c_t_1_1_layout_1_1_pass_resource_state.html#ae7a67b560d229b52721f91ce9c60f9b4">hash</a>, tex.second);</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        }</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; samp : <a class="code hl_variable" href="struct_f_c_t_1_1_layout_1_1_pass_resource_state.html#ae0140ffb12ba4308d707f8b175fc394f">boundSamplers</a>) {</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>            boost::hash_combine(<a class="code hl_function" href="struct_f_c_t_1_1_layout_1_1_pass_resource_state.html#ae7a67b560d229b52721f91ce9c60f9b4">hash</a>, samp.first);</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>            boost::hash_combine(<a class="code hl_function" href="struct_f_c_t_1_1_layout_1_1_pass_resource_state.html#ae7a67b560d229b52721f91ce9c60f9b4">hash</a>, samp.second);</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        }</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; uni : <a class="code hl_variable" href="struct_f_c_t_1_1_layout_1_1_pass_resource_state.html#a179819d3e928afb8971e773e3ba148b4">boundUniforms</a>) {</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>            boost::hash_combine(<a class="code hl_function" href="struct_f_c_t_1_1_layout_1_1_pass_resource_state.html#ae7a67b560d229b52721f91ce9c60f9b4">hash</a>, uni.first);</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>            boost::hash_combine(<a class="code hl_function" href="struct_f_c_t_1_1_layout_1_1_pass_resource_state.html#ae7a67b560d229b52721f91ce9c60f9b4">hash</a>, uni.second);</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        }</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span> </div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="struct_f_c_t_1_1_layout_1_1_pass_resource_state.html#ae7a67b560d229b52721f91ce9c60f9b4">hash</a>;</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    }</div>
+</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> </div>
+<div class="foldopen" id="foldopen00206" data-start="{" data-end="}">
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno"><a class="line" href="struct_f_c_t_1_1_layout_1_1_pass_resource_cache.html#af5a053983f76ae4fe5f19c0347f169e3">  206</a></span>    <a class="code hl_class" href="class_f_c_t_1_1_pass_resource.html">FCT::PassResource</a>* <a class="code hl_function" href="struct_f_c_t_1_1_layout_1_1_pass_resource_cache.html#af5a053983f76ae4fe5f19c0347f169e3">Layout::PassResourceCache::get</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_f_c_t_1_1_layout_1_1_pass_resource_state.html">PassResourceState</a>&amp; state,</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>        <span class="keyword">const</span> std::function&lt;<a class="code hl_class" href="class_f_c_t_1_1_pass_resource.html">FCT::PassResource</a>*(<span class="keyword">const</span> <a class="code hl_struct" href="struct_f_c_t_1_1_layout_1_1_pass_resource_state.html">PassResourceState</a>&amp; state)&gt;&amp; creator)</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    {</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>        <span class="keyword">auto</span> hash = state.<a class="code hl_function" href="struct_f_c_t_1_1_layout_1_1_pass_resource_state.html#ae7a67b560d229b52721f91ce9c60f9b4">hash</a>();</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="struct_f_c_t_1_1_layout_1_1_pass_resource_cache.html#af79a6e9aa876cb58957d86434d02993c">m_passResources</a>.count(hash))</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>        {</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="struct_f_c_t_1_1_layout_1_1_pass_resource_cache.html#af79a6e9aa876cb58957d86434d02993c">m_passResources</a>[hash];</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>        } <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>        {</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>            <span class="keyword">auto</span> passResource = creator(state);</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>            <a class="code hl_variable" href="struct_f_c_t_1_1_layout_1_1_pass_resource_cache.html#af79a6e9aa876cb58957d86434d02993c">m_passResources</a>[hash] = passResource;</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>            <span class="keywordflow">return</span> passResource;</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>        }</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    }</div>
+</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span> </div>
+<div class="foldopen" id="foldopen00221" data-start="{" data-end="}">
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno"><a class="line" href="struct_f_c_t_1_1_layout_1_1_pipeline_cache.html#aa676d582bc420a01f619d4d9e65d195e">  221</a></span>    <a class="code hl_class" href="class_f_c_t_1_1_r_h_i_1_1_rasterization_pipeline.html">FCT::RHI::RasterizationPipeline</a>* <a class="code hl_function" href="struct_f_c_t_1_1_layout_1_1_pipeline_cache.html#aa676d582bc420a01f619d4d9e65d195e">Layout::PipelineCache::get</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_f_c_t_1_1_layout_1_1_tradition_pipeline_state.html">TraditionPipelineState</a>&amp; state,</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>        <span class="keyword">const</span> std::function&lt;<a class="code hl_class" href="class_f_c_t_1_1_r_h_i_1_1_rasterization_pipeline.html">FCT::RHI::RasterizationPipeline</a>*(<span class="keyword">const</span> <a class="code hl_struct" href="struct_f_c_t_1_1_layout_1_1_tradition_pipeline_state.html">TraditionPipelineState</a>&amp; state)&gt;&amp; creator)</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>    {</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>        <span class="keyword">auto</span> hash = state.<a class="code hl_function" href="struct_f_c_t_1_1_layout_1_1_tradition_pipeline_state.html#aef431a3bd7705899cebe575e966690df">hash</a>();</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="struct_f_c_t_1_1_layout_1_1_pipeline_cache.html#a26d75cfb173eade3b206985447cef841">m_pipelines</a>.count(hash))</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>        {</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="struct_f_c_t_1_1_layout_1_1_pipeline_cache.html#a26d75cfb173eade3b206985447cef841">m_pipelines</a>[hash];</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>        } <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>        {</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>            <span class="keyword">auto</span> pipeline = creator(state);</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>            <a class="code hl_variable" href="struct_f_c_t_1_1_layout_1_1_pipeline_cache.html#a26d75cfb173eade3b206985447cef841">m_pipelines</a>[hash] = pipeline;</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>            <span class="keywordflow">return</span> pipeline;</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>        }</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>    }</div>
+</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span> </div>
+<div class="foldopen" id="foldopen00236" data-start="{" data-end="}">
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_layout.html#a1e0c92327f583aeffbd818cc0ab0b152">  236</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_layout.html#a1e0c92327f583aeffbd818cc0ab0b152">Layout::processUnhandledTextureSlots</a>()</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    {</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>        <span class="keyword">auto</span> it = <a class="code hl_variable" href="class_f_c_t_1_1_layout.html#afb1c429b1181f66eab9784ecac831fc1">m_unhandledTextureSlots</a>.begin();</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>        <span class="keywordflow">while</span> (it != <a class="code hl_variable" href="class_f_c_t_1_1_layout.html#afb1c429b1181f66eab9784ecac831fc1">m_unhandledTextureSlots</a>.end())</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>        {</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>            FCT::ShaderStages usage;</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span> </div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>            <span class="keywordflow">if</span> (!<a class="code hl_variable" href="class_f_c_t_1_1_layout.html#a31583d728f41a33280446b0080bb20c2">m_hasVertexLayout</a> &amp;&amp; !<a class="code hl_variable" href="class_f_c_t_1_1_layout.html#accb7168349fa77d0d40761bf26a72ea7">m_hasPixelLayout</a>)</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>            {</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>                ++it;</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>                <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>            }</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_f_c_t_1_1_layout.html#a31583d728f41a33280446b0080bb20c2">m_hasVertexLayout</a> &amp;&amp; !<a class="code hl_variable" href="class_f_c_t_1_1_layout.html#accb7168349fa77d0d40761bf26a72ea7">m_hasPixelLayout</a>)</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>            {</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>                usage = <a class="code hl_enumvalue" href="namespace_f_c_t.html#adb995786f2f649c122895cd47ab09d32ab22b929ba52471a02d18bb3a4e4472e6">FCT::ShaderStage::Vertex</a> | <a class="code hl_enumvalue" href="namespace_f_c_t.html#adb995786f2f649c122895cd47ab09d32a37d01b98065725fe3a1d30acf3a0064a">FCT::ShaderStage::Fragment</a>;</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>            }</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!<a class="code hl_variable" href="class_f_c_t_1_1_layout.html#a31583d728f41a33280446b0080bb20c2">m_hasVertexLayout</a> &amp;&amp; <a class="code hl_variable" href="class_f_c_t_1_1_layout.html#accb7168349fa77d0d40761bf26a72ea7">m_hasPixelLayout</a>)</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>            {</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>                usage = <a class="code hl_enumvalue" href="namespace_f_c_t.html#adb995786f2f649c122895cd47ab09d32ab22b929ba52471a02d18bb3a4e4472e6">FCT::ShaderStage::Vertex</a> | <a class="code hl_enumvalue" href="namespace_f_c_t.html#adb995786f2f649c122895cd47ab09d32a37d01b98065725fe3a1d30acf3a0064a">FCT::ShaderStage::Fragment</a>;</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>            }</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>            <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>            {</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>                usage = <a class="code hl_enumvalue" href="namespace_f_c_t.html#adb995786f2f649c122895cd47ab09d32a37d01b98065725fe3a1d30acf3a0064a">FCT::ShaderStage::Fragment</a>;</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>            }</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>            <a class="code hl_variable" href="class_f_c_t_1_1_layout.html#a182bc65f09a1469c7c64453d5d7d2679">m_textureNames</a>[it-&gt;name] = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>            <a class="code hl_variable" href="class_f_c_t_1_1_layout.html#a182bc65f09a1469c7c64453d5d7d2679">m_textureNames</a>[it-&gt;name] =  <a class="code hl_variable" href="class_f_c_t_1_1_layout.html#a182bc65f09a1469c7c64453d5d7d2679">m_textureNames</a>.find(it-&gt;name)-&gt;first.c_str();</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>            <a class="code hl_class" href="class_f_c_t_1_1_texture_element.html">FCT::TextureElement</a> element(<a class="code hl_enumvalue" href="namespace_f_c_t.html#a8c0a0c97235ef12c8fa799cc939337dbaa6e2bae752d3bf4e34cb392bca789995">FCT::TextureType::Texture2D</a>, <a class="code hl_variable" href="class_f_c_t_1_1_layout.html#a182bc65f09a1469c7c64453d5d7d2679">m_textureNames</a>[it-&gt;name], usage, <a class="code hl_enumvalue" href="namespace_f_c_t.html#a0236e673f1b6fe9736bc596d7e50dc7ea5ac98a9f1bddc1b15896f0e02bf06839">FCT::UpdateFrequency::PerFrame</a>);</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>            <a class="code hl_function" href="class_f_c_t_1_1_layout.html#a8b5d00a8b85fa9f5087672da508b62a0">addTextureSlot</a>(element);</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span> </div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>            it = <a class="code hl_variable" href="class_f_c_t_1_1_layout.html#afb1c429b1181f66eab9784ecac831fc1">m_unhandledTextureSlots</a>.erase(it);</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>        }</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>    }</div>
+</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span> </div>
+<div class="foldopen" id="foldopen00269" data-start="{" data-end="}">
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_layout.html#a5b4a6dc2fcfbf86dd42e05d534c6c037">  269</a></span>    uint32_t <a class="code hl_function" href="class_f_c_t_1_1_layout.html#a5b4a6dc2fcfbf86dd42e05d534c6c037">Layout::findNextAvailableIndex</a>()</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>    {</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>        <span class="keywordflow">while</span> (<a class="code hl_variable" href="class_f_c_t_1_1_layout.html#a9ef50632d892d6a46c0770f89e6a311e">m_vertexLayouts</a>.find(<a class="code hl_variable" href="class_f_c_t_1_1_layout.html#a580ea215664b16266558cc88ba1e6c0d">m_nextAvailableIndex</a>) != <a class="code hl_variable" href="class_f_c_t_1_1_layout.html#a9ef50632d892d6a46c0770f89e6a311e">m_vertexLayouts</a>.end()) {</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>            ++<a class="code hl_variable" href="class_f_c_t_1_1_layout.html#a580ea215664b16266558cc88ba1e6c0d">m_nextAvailableIndex</a>;</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>        }</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="class_f_c_t_1_1_layout.html#a580ea215664b16266558cc88ba1e6c0d">m_nextAvailableIndex</a>++;</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>    }</div>
+</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span> </div>
+<div class="foldopen" id="foldopen00277" data-start="{" data-end="}">
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_layout.html#af5bab5473f563dd2817ed500f010bb85">  277</a></span>    <a class="code hl_class" href="class_f_c_t_1_1_pass_resource.html">FCT::PassResource</a>* <a class="code hl_function" href="class_f_c_t_1_1_layout.html#af5bab5473f563dd2817ed500f010bb85">Layout::getCurrentPassResource</a>()</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>    {</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="class_f_c_t_1_1_layout.html#aba307b8daa4ab37815c785fc37920f96">m_passResourceCache</a>.get(<a class="code hl_variable" href="class_f_c_t_1_1_layout.html#ab4269584d5ddf3c1dc949555ae264b43">m_passResourceState</a>, [<span class="keyword">this</span>](<span class="keyword">const</span> <a class="code hl_struct" href="struct_f_c_t_1_1_layout_1_1_pass_resource_state.html">PassResourceState</a>&amp; state)</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>        {</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>            <span class="keyword">auto</span> ret = <a class="code hl_variable" href="class_f_c_t_1_1_layout.html#a3cfbd85063e1650b00b8a30790cfe496">m_ctx</a>-&gt;createResource&lt;<a class="code hl_class" href="class_f_c_t_1_1_pass_resource.html">FCT::PassResource</a>&gt;();</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; tex : state.<a class="code hl_variable" href="struct_f_c_t_1_1_layout_1_1_pass_resource_state.html#a3e816412842c18a1332aa71d09f388ef">boundTextures</a>) {</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>                ret-&gt;addTexture( tex.second,<a class="code hl_variable" href="class_f_c_t_1_1_layout.html#a95a72b91ab541e6c279aec55b8a23258">m_resourceLayout</a>.findTexture(tex.first.c_str()));</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>            }</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; samp : state.<a class="code hl_variable" href="struct_f_c_t_1_1_layout_1_1_pass_resource_state.html#ae0140ffb12ba4308d707f8b175fc394f">boundSamplers</a>) {</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>                ret-&gt;addSampler(samp.second,<a class="code hl_variable" href="class_f_c_t_1_1_layout.html#a95a72b91ab541e6c279aec55b8a23258">m_resourceLayout</a>.findSampler(samp.first.c_str()));</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>            }</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; uni : state.<a class="code hl_variable" href="struct_f_c_t_1_1_layout_1_1_pass_resource_state.html#a179819d3e928afb8971e773e3ba148b4">boundUniforms</a>) {</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>                ret-&gt;addConstBuffer(uni.second);</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>            }</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>            ret-&gt;<a class="code hl_function" href="class_f_c_t_1_1_pass_resource.html#a510e6fab20f930e412280a6c1e574e63">create</a>();</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>            <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>        });</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>    }</div>
+</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span> </div>
+<div class="foldopen" id="foldopen00296" data-start="{" data-end="}">
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_layout.html#aabcd759c16325a6b2cdbcb90041630e8">  296</a></span>    <a class="code hl_class" href="class_f_c_t_1_1_r_h_i_1_1_rasterization_pipeline.html">FCT::RHI::RasterizationPipeline</a>* <a class="code hl_function" href="class_f_c_t_1_1_layout.html#aabcd759c16325a6b2cdbcb90041630e8">Layout::getCurrentPipeline</a>()</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>    {</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="class_f_c_t_1_1_layout.html#abfccf9ae4ca54dea96bb1203aaf3a97e">m_pipelineCache</a>.get(<a class="code hl_variable" href="class_f_c_t_1_1_layout.html#a8cc74eb30336c05520d2c0a24312b819">m_pipelineState</a>, [<span class="keyword">this</span>](<span class="keyword">const</span> <a class="code hl_struct" href="struct_f_c_t_1_1_layout_1_1_tradition_pipeline_state.html">TraditionPipelineState</a>&amp; state)</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>        {</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>            <span class="keyword">auto</span> ret = <a class="code hl_variable" href="class_f_c_t_1_1_layout.html#a3cfbd85063e1650b00b8a30790cfe496">m_ctx</a>-&gt;createTraditionPipeline();</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span> </div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>            <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; layout : <a class="code hl_variable" href="class_f_c_t_1_1_layout.html#a9ef50632d892d6a46c0770f89e6a311e">m_vertexLayouts</a>)</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>            {</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>                ret-&gt;vertexLayout(layout.second);</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>            }</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span> </div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>            ret-&gt;pixelLayout(<a class="code hl_variable" href="class_f_c_t_1_1_layout.html#abbb668ceb9e6a2f5f32b20feffab6fd3">m_pixelLayout</a>);</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span> </div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>            <span class="keywordflow">if</span> (state.<a class="code hl_variable" href="struct_f_c_t_1_1_layout_1_1_tradition_pipeline_state.html#af72d0a552c671b02be3eb908d1e0a545">vertexShader</a>) {</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>                ret-&gt;addResources(state.<a class="code hl_variable" href="struct_f_c_t_1_1_layout_1_1_tradition_pipeline_state.html#af72d0a552c671b02be3eb908d1e0a545">vertexShader</a>);</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>            }</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>            <span class="keywordflow">if</span> (state.<a class="code hl_variable" href="struct_f_c_t_1_1_layout_1_1_tradition_pipeline_state.html#a6343c24888582d983478cbad26af2b4c">pixelShader</a>) {</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>                ret-&gt;addResources(state.<a class="code hl_variable" href="struct_f_c_t_1_1_layout_1_1_tradition_pipeline_state.html#a6343c24888582d983478cbad26af2b4c">pixelShader</a>);</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>            }</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span> </div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>            <span class="keywordflow">if</span> (state.<a class="code hl_variable" href="struct_f_c_t_1_1_layout_1_1_tradition_pipeline_state.html#a1eb0a0b5c807e98fac8669651eabe106">blendState</a>) {</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>                ret-&gt;addResources(state.<a class="code hl_variable" href="struct_f_c_t_1_1_layout_1_1_tradition_pipeline_state.html#a1eb0a0b5c807e98fac8669651eabe106">blendState</a>);</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>            }</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>            <span class="keywordflow">if</span> (state.<a class="code hl_variable" href="struct_f_c_t_1_1_layout_1_1_tradition_pipeline_state.html#abd5ba38ef213069598dddefc91b0c9c0">rasterizationState</a>) {</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>                ret-&gt;addResources(state.<a class="code hl_variable" href="struct_f_c_t_1_1_layout_1_1_tradition_pipeline_state.html#abd5ba38ef213069598dddefc91b0c9c0">rasterizationState</a>);</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>            }</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>            <span class="keywordflow">if</span> (state.<a class="code hl_variable" href="struct_f_c_t_1_1_layout_1_1_tradition_pipeline_state.html#a0546199e2652c98b0d25b0eedaeaca08">depthStencilState</a>) {</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>                ret-&gt;addResources(state.<a class="code hl_variable" href="struct_f_c_t_1_1_layout_1_1_tradition_pipeline_state.html#a0546199e2652c98b0d25b0eedaeaca08">depthStencilState</a>);</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>            }</div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span> </div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_f_c_t_1_1_layout.html#adf0d071a9bdd3822b4c47fc447ada908">m_pass</a>) {</div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>                ret-&gt;bindPass(<a class="code hl_variable" href="class_f_c_t_1_1_layout.html#adf0d071a9bdd3822b4c47fc447ada908">m_pass</a>);</div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>            }</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span> </div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>            ret-&gt;create();</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>            <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>        });</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>    }</div>
+</div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>}</div>
+<div class="ttc" id="a_blend_state_8h_html"><div class="ttname"><a href="_blend_state_8h.html">BlendState.h</a></div></div>
+<div class="ttc" id="a_context_2_pixel_shader_8h_html"><div class="ttname"><a href="_context_2_pixel_shader_8h.html">PixelShader.h</a></div></div>
+<div class="ttc" id="a_context_2_vertex_shader_8h_html"><div class="ttname"><a href="_context_2_vertex_shader_8h.html">VertexShader.h</a></div></div>
+<div class="ttc" id="a_context_8hpp_html"><div class="ttname"><a href="_context_8hpp.html">Context.hpp</a></div></div>
+<div class="ttc" id="a_depth_stencil_state_8h_html"><div class="ttname"><a href="_depth_stencil_state_8h.html">DepthStencilState.h</a></div></div>
+<div class="ttc" id="a_pass_resource_8h_html"><div class="ttname"><a href="_pass_resource_8h.html">PassResource.h</a></div></div>
+<div class="ttc" id="a_rasterization_pipeline_8h_html"><div class="ttname"><a href="_rasterization_pipeline_8h.html">RasterizationPipeline.h</a></div></div>
+<div class="ttc" id="a_rasterization_state_8h_html"><div class="ttname"><a href="_rasterization_state_8h.html">RasterizationState.h</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_context_html"><div class="ttname"><a href="class_f_c_t_1_1_context.html">FCT::Context</a></div><div class="ttdef"><b>定义</b> <a href="_context_8h_source.html#l00097">Context.h:98</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_image_html"><div class="ttname"><a href="class_f_c_t_1_1_image.html">FCT::Image</a></div><div class="ttdef"><b>定义</b> <a href="_context_2_image_8h_source.html#l00049">Image.h:49</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_layout_html_a0086d650ee231ac1e19b9ae34bc16672"><div class="ttname"><a href="class_f_c_t_1_1_layout.html#a0086d650ee231ac1e19b9ae34bc16672">FCT::Layout::m_uniformLayouts</a></div><div class="ttdeci">std::map&lt; std::string, FCT::ConstLayout &gt; m_uniformLayouts</div><div class="ttdef"><b>定义</b> <a href="layout_8h_source.html#l00164">layout.h:164</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_layout_html_a02288e8f71bfb61caf323ffee1398143"><div class="ttname"><a href="class_f_c_t_1_1_layout.html#a02288e8f71bfb61caf323ffee1398143">FCT::Layout::bindVertexShader</a></div><div class="ttdeci">void bindVertexShader(FCT::VertexShader *shader)</div><div class="ttdef"><b>定义</b> <a href="#l00115">layout.cpp:115</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_layout_html_a173707812269ff8c0e3d79b7d11c704d"><div class="ttname"><a href="class_f_c_t_1_1_layout.html#a173707812269ff8c0e3d79b7d11c704d">FCT::Layout::bindUniform</a></div><div class="ttdeci">void bindUniform(const Uniform &amp;uniform)</div><div class="ttdef"><b>定义</b> <a href="#l00099">layout.cpp:99</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_layout_html_a182bc65f09a1469c7c64453d5d7d2679"><div class="ttname"><a href="class_f_c_t_1_1_layout.html#a182bc65f09a1469c7c64453d5d7d2679">FCT::Layout::m_textureNames</a></div><div class="ttdeci">std::unordered_map&lt; std::string, const char * &gt; m_textureNames</div><div class="ttdef"><b>定义</b> <a href="layout_8h_source.html#l00181">layout.h:181</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_layout_html_a1accd90364bf48a3539d88f1c4ae1ba4"><div class="ttname"><a href="class_f_c_t_1_1_layout.html#a1accd90364bf48a3539d88f1c4ae1ba4">FCT::Layout::setFixedImage</a></div><div class="ttdeci">void setFixedImage(std::string name, FCT::Image *image)</div><div class="ttdef"><b>定义</b> <a href="#l00019">layout.cpp:19</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_layout_html_a1df012546ed2adc47d6b6358cba705ed"><div class="ttname"><a href="class_f_c_t_1_1_layout.html#a1df012546ed2adc47d6b6358cba705ed">FCT::Layout::bindPixelShader</a></div><div class="ttdeci">void bindPixelShader(FCT::PixelShader *shader)</div><div class="ttdef"><b>定义</b> <a href="#l00120">layout.cpp:120</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_layout_html_a1e0c92327f583aeffbd818cc0ab0b152"><div class="ttname"><a href="class_f_c_t_1_1_layout.html#a1e0c92327f583aeffbd818cc0ab0b152">FCT::Layout::processUnhandledTextureSlots</a></div><div class="ttdeci">void processUnhandledTextureSlots()</div><div class="ttdef"><b>定义</b> <a href="#l00236">layout.cpp:236</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_layout_html_a24a73638312c32d9c4ac262837a9e32e"><div class="ttname"><a href="class_f_c_t_1_1_layout.html#a24a73638312c32d9c4ac262837a9e32e">FCT::Layout::m_pixelResourceLayout</a></div><div class="ttdeci">FCT::ResourceLayout m_pixelResourceLayout</div><div class="ttdef"><b>定义</b> <a href="layout_8h_source.html#l00168">layout.h:168</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_layout_html_a28b9ee861e342e80e3a5d356b8ea495b"><div class="ttname"><a href="class_f_c_t_1_1_layout.html#a28b9ee861e342e80e3a5d356b8ea495b">FCT::Layout::begin</a></div><div class="ttdeci">void begin()</div><div class="ttdef"><b>定义</b> <a href="#l00087">layout.cpp:87</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_layout_html_a2f52cef26b42a2914deab8e1da3aae6f"><div class="ttname"><a href="class_f_c_t_1_1_layout.html#a2f52cef26b42a2914deab8e1da3aae6f">FCT::Layout::attachPass</a></div><div class="ttdeci">void attachPass(FCT::RenderGraph *graph, std::string passName)</div><div class="ttdef"><b>定义</b> <a href="#l00037">layout.cpp:37</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_layout_html_a31583d728f41a33280446b0080bb20c2"><div class="ttname"><a href="class_f_c_t_1_1_layout.html#a31583d728f41a33280446b0080bb20c2">FCT::Layout::m_hasVertexLayout</a></div><div class="ttdeci">bool m_hasVertexLayout</div><div class="ttdef"><b>定义</b> <a href="layout_8h_source.html#l00172">layout.h:172</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_layout_html_a3cfbd85063e1650b00b8a30790cfe496"><div class="ttname"><a href="class_f_c_t_1_1_layout.html#a3cfbd85063e1650b00b8a30790cfe496">FCT::Layout::m_ctx</a></div><div class="ttdeci">FCT::Context * m_ctx</div><div class="ttdef"><b>定义</b> <a href="layout_8h_source.html#l00162">layout.h:162</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_layout_html_a44fe126dad764e62fcf5bea37c8a0039"><div class="ttname"><a href="class_f_c_t_1_1_layout.html#a44fe126dad764e62fcf5bea37c8a0039">FCT::Layout::bindSampler</a></div><div class="ttdeci">void bindSampler(std::string name, FCT::Sampler *sampler)</div><div class="ttdef"><b>定义</b> <a href="#l00110">layout.cpp:110</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_layout_html_a580ea215664b16266558cc88ba1e6c0d"><div class="ttname"><a href="class_f_c_t_1_1_layout.html#a580ea215664b16266558cc88ba1e6c0d">FCT::Layout::m_nextAvailableIndex</a></div><div class="ttdeci">uint32_t m_nextAvailableIndex</div><div class="ttdef"><b>定义</b> <a href="layout_8h_source.html#l00170">layout.h:170</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_layout_html_a5b4a6dc2fcfbf86dd42e05d534c6c037"><div class="ttname"><a href="class_f_c_t_1_1_layout.html#a5b4a6dc2fcfbf86dd42e05d534c6c037">FCT::Layout::findNextAvailableIndex</a></div><div class="ttdeci">uint32_t findNextAvailableIndex()</div><div class="ttdef"><b>定义</b> <a href="#l00269">layout.cpp:269</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_layout_html_a67e3f4d0eb544fc097b162b193d39c95"><div class="ttname"><a href="class_f_c_t_1_1_layout.html#a67e3f4d0eb544fc097b162b193d39c95">FCT::Layout::bindTexture</a></div><div class="ttdeci">void bindTexture(std::string name, FCT::Image *image)</div><div class="ttdef"><b>定义</b> <a href="#l00105">layout.cpp:105</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_layout_html_a713bba62927f50e1540c1722cefe688d"><div class="ttname"><a href="class_f_c_t_1_1_layout.html#a713bba62927f50e1540c1722cefe688d">FCT::Layout::m_vertexResourceLayout</a></div><div class="ttdeci">FCT::ResourceLayout m_vertexResourceLayout</div><div class="ttdef"><b>定义</b> <a href="layout_8h_source.html#l00167">layout.h:167</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_layout_html_a7bd3827ca5d298c78fac264e60956b16"><div class="ttname"><a href="class_f_c_t_1_1_layout.html#a7bd3827ca5d298c78fac264e60956b16">FCT::Layout::end</a></div><div class="ttdeci">void end()</div><div class="ttdef"><b>定义</b> <a href="#l00137">layout.cpp:137</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_layout_html_a8acf4282f647fee52ea14b2d9bd6db7e"><div class="ttname"><a href="class_f_c_t_1_1_layout.html#a8acf4282f647fee52ea14b2d9bd6db7e">FCT::Layout::m_fixedImages</a></div><div class="ttdeci">std::unordered_map&lt; std::string, FCT::Image * &gt; m_fixedImages</div><div class="ttdef"><b>定义</b> <a href="layout_8h_source.html#l00169">layout.h:169</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_layout_html_a8b5d00a8b85fa9f5087672da508b62a0"><div class="ttname"><a href="class_f_c_t_1_1_layout.html#a8b5d00a8b85fa9f5087672da508b62a0">FCT::Layout::addTextureSlot</a></div><div class="ttdeci">void addTextureSlot(FCT::TextureElement element)</div><div class="ttdef"><b>定义</b> <a href="#l00024">layout.cpp:24</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_layout_html_a8cc74eb30336c05520d2c0a24312b819"><div class="ttname"><a href="class_f_c_t_1_1_layout.html#a8cc74eb30336c05520d2c0a24312b819">FCT::Layout::m_pipelineState</a></div><div class="ttdeci">TraditionPipelineState m_pipelineState</div><div class="ttdef"><b>定义</b> <a href="layout_8h_source.html#l00178">layout.h:178</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_layout_html_a95a72b91ab541e6c279aec55b8a23258"><div class="ttname"><a href="class_f_c_t_1_1_layout.html#a95a72b91ab541e6c279aec55b8a23258">FCT::Layout::m_resourceLayout</a></div><div class="ttdeci">FCT::ResourceLayout m_resourceLayout</div><div class="ttdef"><b>定义</b> <a href="layout_8h_source.html#l00166">layout.h:166</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_layout_html_a9ef50632d892d6a46c0770f89e6a311e"><div class="ttname"><a href="class_f_c_t_1_1_layout.html#a9ef50632d892d6a46c0770f89e6a311e">FCT::Layout::m_vertexLayouts</a></div><div class="ttdeci">std::map&lt; uint32_t, FCT::VertexLayout &gt; m_vertexLayouts</div><div class="ttdef"><b>定义</b> <a href="layout_8h_source.html#l00163">layout.h:163</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_layout_html_aabcd759c16325a6b2cdbcb90041630e8"><div class="ttname"><a href="class_f_c_t_1_1_layout.html#aabcd759c16325a6b2cdbcb90041630e8">FCT::Layout::getCurrentPipeline</a></div><div class="ttdeci">FCT::RHI::RasterizationPipeline * getCurrentPipeline()</div><div class="ttdef"><b>定义</b> <a href="#l00296">layout.cpp:296</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_layout_html_ab4269584d5ddf3c1dc949555ae264b43"><div class="ttname"><a href="class_f_c_t_1_1_layout.html#ab4269584d5ddf3c1dc949555ae264b43">FCT::Layout::m_passResourceState</a></div><div class="ttdeci">PassResourceState m_passResourceState</div><div class="ttdef"><b>定义</b> <a href="layout_8h_source.html#l00175">layout.h:175</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_layout_html_aba307b8daa4ab37815c785fc37920f96"><div class="ttname"><a href="class_f_c_t_1_1_layout.html#aba307b8daa4ab37815c785fc37920f96">FCT::Layout::m_passResourceCache</a></div><div class="ttdeci">PassResourceCache m_passResourceCache</div><div class="ttdef"><b>定义</b> <a href="layout_8h_source.html#l00176">layout.h:176</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_layout_html_abbb668ceb9e6a2f5f32b20feffab6fd3"><div class="ttname"><a href="class_f_c_t_1_1_layout.html#abbb668ceb9e6a2f5f32b20feffab6fd3">FCT::Layout::m_pixelLayout</a></div><div class="ttdeci">FCT::PixelLayout m_pixelLayout</div><div class="ttdef"><b>定义</b> <a href="layout_8h_source.html#l00165">layout.h:165</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_layout_html_abfccf9ae4ca54dea96bb1203aaf3a97e"><div class="ttname"><a href="class_f_c_t_1_1_layout.html#abfccf9ae4ca54dea96bb1203aaf3a97e">FCT::Layout::m_pipelineCache</a></div><div class="ttdeci">PipelineCache m_pipelineCache</div><div class="ttdef"><b>定义</b> <a href="layout_8h_source.html#l00179">layout.h:179</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_layout_html_accb7168349fa77d0d40761bf26a72ea7"><div class="ttname"><a href="class_f_c_t_1_1_layout.html#accb7168349fa77d0d40761bf26a72ea7">FCT::Layout::m_hasPixelLayout</a></div><div class="ttdeci">bool m_hasPixelLayout</div><div class="ttdef"><b>定义</b> <a href="layout_8h_source.html#l00173">layout.h:173</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_layout_html_adf0d071a9bdd3822b4c47fc447ada908"><div class="ttname"><a href="class_f_c_t_1_1_layout.html#adf0d071a9bdd3822b4c47fc447ada908">FCT::Layout::m_pass</a></div><div class="ttdeci">FCT::RHI::Pass * m_pass</div><div class="ttdef"><b>定义</b> <a href="layout_8h_source.html#l00177">layout.h:177</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_layout_html_ae3452371383f21dcf7e94ff76ca61ca4"><div class="ttname"><a href="class_f_c_t_1_1_layout.html#ae3452371383f21dcf7e94ff76ca61ca4">FCT::Layout::ctx</a></div><div class="ttdeci">void ctx(FCT::Context *ctx)</div><div class="ttdef"><b>定义</b> <a href="#l00014">layout.cpp:14</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_layout_html_aea2f328715d6767cf1366af16c98e241"><div class="ttname"><a href="class_f_c_t_1_1_layout.html#aea2f328715d6767cf1366af16c98e241">FCT::Layout::allocatePixelShader</a></div><div class="ttdeci">FCT::PixelShader * allocatePixelShader(std::string code)</div><div class="ttdef"><b>定义</b> <a href="#l00072">layout.cpp:72</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_layout_html_af28d3ab67e615ac99875123ac657f3f9"><div class="ttname"><a href="class_f_c_t_1_1_layout.html#af28d3ab67e615ac99875123ac657f3f9">FCT::Layout::allocateUniform</a></div><div class="ttdeci">Uniform allocateUniform(std::string name)</div><div class="ttdef"><b>定义</b> <a href="#l00049">layout.cpp:49</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_layout_html_af45cc5b2801684145c0ca5a567e60305"><div class="ttname"><a href="class_f_c_t_1_1_layout.html#af45cc5b2801684145c0ca5a567e60305">FCT::Layout::allocateVertexShader</a></div><div class="ttdeci">FCT::VertexShader * allocateVertexShader(std::string code)</div><div class="ttdef"><b>定义</b> <a href="#l00054">layout.cpp:54</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_layout_html_af5bab5473f563dd2817ed500f010bb85"><div class="ttname"><a href="class_f_c_t_1_1_layout.html#af5bab5473f563dd2817ed500f010bb85">FCT::Layout::getCurrentPassResource</a></div><div class="ttdeci">FCT::PassResource * getCurrentPassResource()</div><div class="ttdef"><b>定义</b> <a href="#l00277">layout.cpp:277</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_layout_html_afb1c429b1181f66eab9784ecac831fc1"><div class="ttname"><a href="class_f_c_t_1_1_layout.html#afb1c429b1181f66eab9784ecac831fc1">FCT::Layout::m_unhandledTextureSlots</a></div><div class="ttdeci">std::vector&lt; TextureSlot &gt; m_unhandledTextureSlots</div><div class="ttdef"><b>定义</b> <a href="layout_8h_source.html#l00171">layout.h:171</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_pass_resource_html"><div class="ttname"><a href="class_f_c_t_1_1_pass_resource.html">FCT::PassResource</a></div><div class="ttdef"><b>定义</b> <a href="_pass_resource_8h_source.html#l00022">PassResource.h:23</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_pass_resource_html_a510e6fab20f930e412280a6c1e574e63"><div class="ttname"><a href="class_f_c_t_1_1_pass_resource.html#a510e6fab20f930e412280a6c1e574e63">FCT::PassResource::create</a></div><div class="ttdeci">virtual void create()=0</div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_pixel_shader_html"><div class="ttname"><a href="class_f_c_t_1_1_pixel_shader.html">FCT::PixelShader</a></div><div class="ttdef"><b>定义</b> <a href="_context_2_pixel_shader_8h_source.html#l00012">PixelShader.h:12</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_const_buffer_html"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_const_buffer.html">FCT::RHI::ConstBuffer</a></div><div class="ttdef"><b>定义</b> <a href="_r_h_i_2_const_buffer_8h_source.html#l00007">ConstBuffer.h:8</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_rasterization_pipeline_html"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_rasterization_pipeline.html">FCT::RHI::RasterizationPipeline</a></div><div class="ttdef"><b>定义</b> <a href="_rasterization_pipeline_8h_source.html#l00016">RasterizationPipeline.h:17</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_render_graph_html"><div class="ttname"><a href="class_f_c_t_1_1_render_graph.html">FCT::RenderGraph</a></div><div class="ttdef"><b>定义</b> <a href="_render_graph_8h_source.html#l00202">RenderGraph.h:202</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_render_graph_html_a5319625c020f63b30575f07c71896620"><div class="ttname"><a href="class_f_c_t_1_1_render_graph.html#a5319625c020f63b30575f07c71896620">FCT::RenderGraph::getTextureEdges</a></div><div class="ttdeci">std::vector&lt; TextureEdge * &gt; getTextureEdges(const std::string &amp;passName) const</div><div class="ttdef"><b>定义</b> <a href="_render_graph_8cpp_source.html#l00952">RenderGraph.cpp:952</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_render_graph_html_a73f229fce93004e480a73e0ae241a543"><div class="ttname"><a href="class_f_c_t_1_1_render_graph.html#a73f229fce93004e480a73e0ae241a543">FCT::RenderGraph::getPass</a></div><div class="ttdeci">RHI::Pass * getPass(const std::string &amp;name) const</div><div class="ttdef"><b>定义</b> <a href="_render_graph_8cpp_source.html#l00938">RenderGraph.cpp:938</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_render_graph_html_a84e68041d7a9a73366103d9222f2c550"><div class="ttname"><a href="class_f_c_t_1_1_render_graph.html#a84e68041d7a9a73366103d9222f2c550">FCT::RenderGraph::getImage</a></div><div class="ttdeci">Image * getImage(const std::string &amp;name) const</div><div class="ttdef"><b>定义</b> <a href="_render_graph_8cpp_source.html#l00943">RenderGraph.cpp:943</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_sampler_html"><div class="ttname"><a href="class_f_c_t_1_1_sampler.html">FCT::Sampler</a></div><div class="ttdef"><b>定义</b> <a href="_sampler_8h_source.html#l00035">Sampler.h:35</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_texture_element_html"><div class="ttname"><a href="class_f_c_t_1_1_texture_element.html">FCT::TextureElement</a></div><div class="ttdef"><b>定义</b> <a href="_resource_layout_8h_source.html#l00041">ResourceLayout.h:41</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_texture_element_html_a196ac1a4f112dca30ab169437aecf702"><div class="ttname"><a href="class_f_c_t_1_1_texture_element.html#a196ac1a4f112dca30ab169437aecf702">FCT::TextureElement::getShaderStages</a></div><div class="ttdeci">constexpr ShaderStages getShaderStages() const noexcept</div><div class="ttdef"><b>定义</b> <a href="_resource_layout_8h_source.html#l00074">ResourceLayout.h:74</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_vertex_shader_html"><div class="ttname"><a href="class_f_c_t_1_1_vertex_shader.html">FCT::VertexShader</a></div><div class="ttdef"><b>定义</b> <a href="_context_2_vertex_shader_8h_source.html#l00019">VertexShader.h:20</a></div></div>
+<div class="ttc" id="alayout_8h_html"><div class="ttname"><a href="layout_8h.html">layout.h</a></div></div>
+<div class="ttc" id="alayout_8hpp_html"><div class="ttname"><a href="layout_8hpp.html">layout.hpp</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_1_1_context_resource_html_a986e00876429326135c67f9020269d95"><div class="ttname"><a href="namespace_f_c_t_1_1_context_resource.html#a986e00876429326135c67f9020269d95">FCT::ContextResource::PixelShader</a></div><div class="ttdeci">FCT::PixelShader PixelShader</div><div class="ttdef"><b>定义</b> <a href="_device_8h_source.html#l00056">Device.h:56</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_1_1_context_resource_html_aa4d17b706adb09314d47a203d76c631f"><div class="ttname"><a href="namespace_f_c_t_1_1_context_resource.html#aa4d17b706adb09314d47a203d76c631f">FCT::ContextResource::VertexShader</a></div><div class="ttdeci">FCT::VertexShader VertexShader</div><div class="ttdef"><b>定义</b> <a href="_device_8h_source.html#l00055">Device.h:55</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html"><div class="ttname"><a href="namespace_f_c_t.html">FCT</a></div><div class="ttdef"><b>定义</b> <a href="_enums_8h_source.html#l00008">Enums.h:8</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_a0236e673f1b6fe9736bc596d7e50dc7ea5ac98a9f1bddc1b15896f0e02bf06839"><div class="ttname"><a href="namespace_f_c_t.html#a0236e673f1b6fe9736bc596d7e50dc7ea5ac98a9f1bddc1b15896f0e02bf06839">FCT::UpdateFrequency::PerFrame</a></div><div class="ttdeci">@ PerFrame</div><div class="ttdef"><b>定义</b> <a href="_data_types_8h_source.html#l00011">DataTypes.h:11</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_a77dc23450b304c556eb555b25aa776f3"><div class="ttname"><a href="namespace_f_c_t.html#a77dc23450b304c556eb555b25aa776f3">FCT::getAllAfterTheStage</a></div><div class="ttdeci">FCT::ShaderStages getAllAfterTheStage(FCT::ShaderStage stages)</div><div class="ttdef"><b>定义</b> <a href="_shader_stage_8h_source.html#l00047">ShaderStage.h:47</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_a8c0a0c97235ef12c8fa799cc939337dbaa6e2bae752d3bf4e34cb392bca789995"><div class="ttname"><a href="namespace_f_c_t.html#a8c0a0c97235ef12c8fa799cc939337dbaa6e2bae752d3bf4e34cb392bca789995">FCT::TextureType::Texture2D</a></div><div class="ttdeci">@ Texture2D</div><div class="ttdef"><b>定义</b> <a href="_resource_layout_8h_source.html#l00015">ResourceLayout.h:15</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_adb995786f2f649c122895cd47ab09d32a37d01b98065725fe3a1d30acf3a0064a"><div class="ttname"><a href="namespace_f_c_t.html#adb995786f2f649c122895cd47ab09d32a37d01b98065725fe3a1d30acf3a0064a">FCT::ShaderStage::Fragment</a></div><div class="ttdeci">@ Fragment</div><div class="ttdef"><b>定义</b> <a href="_shader_stage_8h_source.html#l00012">ShaderStage.h:12</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_adb995786f2f649c122895cd47ab09d32ab22b929ba52471a02d18bb3a4e4472e6"><div class="ttname"><a href="namespace_f_c_t.html#adb995786f2f649c122895cd47ab09d32ab22b929ba52471a02d18bb3a4e4472e6">FCT::ShaderStage::Vertex</a></div><div class="ttdeci">@ Vertex</div><div class="ttdef"><b>定义</b> <a href="_shader_stage_8h_source.html#l00011">ShaderStage.h:11</a></div></div>
+<div class="ttc" id="astruct_f_c_t_1_1_layout_1_1_pass_resource_cache_html_af5a053983f76ae4fe5f19c0347f169e3"><div class="ttname"><a href="struct_f_c_t_1_1_layout_1_1_pass_resource_cache.html#af5a053983f76ae4fe5f19c0347f169e3">FCT::Layout::PassResourceCache::get</a></div><div class="ttdeci">FCT::PassResource * get(const PassResourceState &amp;state, const std::function&lt; FCT::PassResource *(const PassResourceState &amp;state)&gt; &amp;creator)</div><div class="ttdef"><b>定义</b> <a href="#l00206">layout.cpp:206</a></div></div>
+<div class="ttc" id="astruct_f_c_t_1_1_layout_1_1_pass_resource_cache_html_af79a6e9aa876cb58957d86434d02993c"><div class="ttname"><a href="struct_f_c_t_1_1_layout_1_1_pass_resource_cache.html#af79a6e9aa876cb58957d86434d02993c">FCT::Layout::PassResourceCache::m_passResources</a></div><div class="ttdeci">std::unordered_map&lt; size_t, FCT::PassResource * &gt; m_passResources</div><div class="ttdef"><b>定义</b> <a href="layout_8h_source.html#l00152">layout.h:152</a></div></div>
+<div class="ttc" id="astruct_f_c_t_1_1_layout_1_1_pass_resource_state_html"><div class="ttname"><a href="struct_f_c_t_1_1_layout_1_1_pass_resource_state.html">FCT::Layout::PassResourceState</a></div><div class="ttdef"><b>定义</b> <a href="layout_8h_source.html#l00139">layout.h:140</a></div></div>
+<div class="ttc" id="astruct_f_c_t_1_1_layout_1_1_pass_resource_state_html_a179819d3e928afb8971e773e3ba148b4"><div class="ttname"><a href="struct_f_c_t_1_1_layout_1_1_pass_resource_state.html#a179819d3e928afb8971e773e3ba148b4">FCT::Layout::PassResourceState::boundUniforms</a></div><div class="ttdeci">std::unordered_map&lt; std::string, FCT::RHI::ConstBuffer * &gt; boundUniforms</div><div class="ttdef"><b>定义</b> <a href="layout_8h_source.html#l00143">layout.h:143</a></div></div>
+<div class="ttc" id="astruct_f_c_t_1_1_layout_1_1_pass_resource_state_html_a31de121c127deb7861616e6c68cdf717"><div class="ttname"><a href="struct_f_c_t_1_1_layout_1_1_pass_resource_state.html#a31de121c127deb7861616e6c68cdf717">FCT::Layout::PassResourceState::bindUniform</a></div><div class="ttdeci">void bindUniform(const std::string &amp;name, const Uniform &amp;uniform)</div><div class="ttdef"><b>定义</b> <a href="#l00179">layout.cpp:179</a></div></div>
+<div class="ttc" id="astruct_f_c_t_1_1_layout_1_1_pass_resource_state_html_a32a66bf71d661954fba0c0d27c60f3d5"><div class="ttname"><a href="struct_f_c_t_1_1_layout_1_1_pass_resource_state.html#a32a66bf71d661954fba0c0d27c60f3d5">FCT::Layout::PassResourceState::bindTexture</a></div><div class="ttdeci">void bindTexture(const std::string &amp;name, FCT::Image *image)</div><div class="ttdef"><b>定义</b> <a href="#l00169">layout.cpp:169</a></div></div>
+<div class="ttc" id="astruct_f_c_t_1_1_layout_1_1_pass_resource_state_html_a3e816412842c18a1332aa71d09f388ef"><div class="ttname"><a href="struct_f_c_t_1_1_layout_1_1_pass_resource_state.html#a3e816412842c18a1332aa71d09f388ef">FCT::Layout::PassResourceState::boundTextures</a></div><div class="ttdeci">std::unordered_map&lt; std::string, FCT::Image * &gt; boundTextures</div><div class="ttdef"><b>定义</b> <a href="layout_8h_source.html#l00141">layout.h:141</a></div></div>
+<div class="ttc" id="astruct_f_c_t_1_1_layout_1_1_pass_resource_state_html_ae0140ffb12ba4308d707f8b175fc394f"><div class="ttname"><a href="struct_f_c_t_1_1_layout_1_1_pass_resource_state.html#ae0140ffb12ba4308d707f8b175fc394f">FCT::Layout::PassResourceState::boundSamplers</a></div><div class="ttdeci">std::unordered_map&lt; std::string, FCT::Sampler * &gt; boundSamplers</div><div class="ttdef"><b>定义</b> <a href="layout_8h_source.html#l00142">layout.h:142</a></div></div>
+<div class="ttc" id="astruct_f_c_t_1_1_layout_1_1_pass_resource_state_html_ae53abf1160e3c028c5480239a6d77e2e"><div class="ttname"><a href="struct_f_c_t_1_1_layout_1_1_pass_resource_state.html#ae53abf1160e3c028c5480239a6d77e2e">FCT::Layout::PassResourceState::bindSampler</a></div><div class="ttdeci">void bindSampler(const std::string &amp;name, FCT::Sampler *sampler)</div><div class="ttdef"><b>定义</b> <a href="#l00174">layout.cpp:174</a></div></div>
+<div class="ttc" id="astruct_f_c_t_1_1_layout_1_1_pass_resource_state_html_ae7a67b560d229b52721f91ce9c60f9b4"><div class="ttname"><a href="struct_f_c_t_1_1_layout_1_1_pass_resource_state.html#ae7a67b560d229b52721f91ce9c60f9b4">FCT::Layout::PassResourceState::hash</a></div><div class="ttdeci">size_t hash() const</div><div class="ttdef"><b>定义</b> <a href="#l00184">layout.cpp:184</a></div></div>
+<div class="ttc" id="astruct_f_c_t_1_1_layout_1_1_pass_resource_state_html_afbde64bd459e9944aa56f929f189f18b"><div class="ttname"><a href="struct_f_c_t_1_1_layout_1_1_pass_resource_state.html#afbde64bd459e9944aa56f929f189f18b">FCT::Layout::PassResourceState::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdef"><b>定义</b> <a href="#l00162">layout.cpp:162</a></div></div>
+<div class="ttc" id="astruct_f_c_t_1_1_layout_1_1_pipeline_cache_html_a26d75cfb173eade3b206985447cef841"><div class="ttname"><a href="struct_f_c_t_1_1_layout_1_1_pipeline_cache.html#a26d75cfb173eade3b206985447cef841">FCT::Layout::PipelineCache::m_pipelines</a></div><div class="ttdeci">std::unordered_map&lt; size_t, FCT::RHI::RasterizationPipeline * &gt; m_pipelines</div><div class="ttdef"><b>定义</b> <a href="layout_8h_source.html#l00157">layout.h:157</a></div></div>
+<div class="ttc" id="astruct_f_c_t_1_1_layout_1_1_pipeline_cache_html_aa676d582bc420a01f619d4d9e65d195e"><div class="ttname"><a href="struct_f_c_t_1_1_layout_1_1_pipeline_cache.html#aa676d582bc420a01f619d4d9e65d195e">FCT::Layout::PipelineCache::get</a></div><div class="ttdeci">FCT::RHI::RasterizationPipeline * get(const TraditionPipelineState &amp;state, const std::function&lt; FCT::RHI::RasterizationPipeline *(const TraditionPipelineState &amp;state)&gt; &amp;creator)</div><div class="ttdef"><b>定义</b> <a href="#l00221">layout.cpp:221</a></div></div>
+<div class="ttc" id="astruct_f_c_t_1_1_layout_1_1_tradition_pipeline_state_html"><div class="ttname"><a href="struct_f_c_t_1_1_layout_1_1_tradition_pipeline_state.html">FCT::Layout::TraditionPipelineState</a></div><div class="ttdef"><b>定义</b> <a href="layout_8h_source.html#l00129">layout.h:130</a></div></div>
+<div class="ttc" id="astruct_f_c_t_1_1_layout_1_1_tradition_pipeline_state_html_a0546199e2652c98b0d25b0eedaeaca08"><div class="ttname"><a href="struct_f_c_t_1_1_layout_1_1_tradition_pipeline_state.html#a0546199e2652c98b0d25b0eedaeaca08">FCT::Layout::TraditionPipelineState::depthStencilState</a></div><div class="ttdeci">FCT::DepthStencilState * depthStencilState</div><div class="ttdef"><b>定义</b> <a href="layout_8h_source.html#l00135">layout.h:135</a></div></div>
+<div class="ttc" id="astruct_f_c_t_1_1_layout_1_1_tradition_pipeline_state_html_a1eb0a0b5c807e98fac8669651eabe106"><div class="ttname"><a href="struct_f_c_t_1_1_layout_1_1_tradition_pipeline_state.html#a1eb0a0b5c807e98fac8669651eabe106">FCT::Layout::TraditionPipelineState::blendState</a></div><div class="ttdeci">FCT::BlendState * blendState</div><div class="ttdef"><b>定义</b> <a href="layout_8h_source.html#l00133">layout.h:133</a></div></div>
+<div class="ttc" id="astruct_f_c_t_1_1_layout_1_1_tradition_pipeline_state_html_a6343c24888582d983478cbad26af2b4c"><div class="ttname"><a href="struct_f_c_t_1_1_layout_1_1_tradition_pipeline_state.html#a6343c24888582d983478cbad26af2b4c">FCT::Layout::TraditionPipelineState::pixelShader</a></div><div class="ttdeci">FCT::PixelShader * pixelShader</div><div class="ttdef"><b>定义</b> <a href="layout_8h_source.html#l00132">layout.h:132</a></div></div>
+<div class="ttc" id="astruct_f_c_t_1_1_layout_1_1_tradition_pipeline_state_html_abd5ba38ef213069598dddefc91b0c9c0"><div class="ttname"><a href="struct_f_c_t_1_1_layout_1_1_tradition_pipeline_state.html#abd5ba38ef213069598dddefc91b0c9c0">FCT::Layout::TraditionPipelineState::rasterizationState</a></div><div class="ttdeci">FCT::RasterizationState * rasterizationState</div><div class="ttdef"><b>定义</b> <a href="layout_8h_source.html#l00134">layout.h:134</a></div></div>
+<div class="ttc" id="astruct_f_c_t_1_1_layout_1_1_tradition_pipeline_state_html_ad372dac40777ffdd45a57ca474382431"><div class="ttname"><a href="struct_f_c_t_1_1_layout_1_1_tradition_pipeline_state.html#ad372dac40777ffdd45a57ca474382431">FCT::Layout::TraditionPipelineState::operator==</a></div><div class="ttdeci">bool operator==(const TraditionPipelineState &amp;other) const</div><div class="ttdef"><b>定义</b> <a href="#l00153">layout.cpp:153</a></div></div>
+<div class="ttc" id="astruct_f_c_t_1_1_layout_1_1_tradition_pipeline_state_html_aef431a3bd7705899cebe575e966690df"><div class="ttname"><a href="struct_f_c_t_1_1_layout_1_1_tradition_pipeline_state.html#aef431a3bd7705899cebe575e966690df">FCT::Layout::TraditionPipelineState::hash</a></div><div class="ttdeci">size_t hash() const</div><div class="ttdef"><b>定义</b> <a href="#l00142">layout.cpp:142</a></div></div>
+<div class="ttc" id="astruct_f_c_t_1_1_layout_1_1_tradition_pipeline_state_html_af72d0a552c671b02be3eb908d1e0a545"><div class="ttname"><a href="struct_f_c_t_1_1_layout_1_1_tradition_pipeline_state.html#af72d0a552c671b02be3eb908d1e0a545">FCT::Layout::TraditionPipelineState::vertexShader</a></div><div class="ttdeci">FCT::VertexShader * vertexShader</div><div class="ttdef"><b>定义</b> <a href="layout_8h_source.html#l00131">layout.h:131</a></div></div>
+<div class="ttc" id="astruct_f_c_t_1_1_uniform_html"><div class="ttname"><a href="struct_f_c_t_1_1_uniform.html">FCT::Uniform</a></div><div class="ttdef"><b>定义</b> <a href="_uniform_wrapper_8h_source.html#l00010">UniformWrapper.h:11</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_283dc56ba28011889f2bbd8b6e1cfbb3.html">Context</a></li><li class="navelem"><a href="layout_8cpp.html">layout.cpp</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FCT: src/RHI/VK_CommandBuffer.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FCT
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_v_k___command_buffer_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">VK_CommandBuffer.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_v_k___command_buffer_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// Created by Administrator on 2025/3/31.</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="_command_buffer_8h.html">./CommandBuffer.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="_v_k___command_pool_8h.html">VK_CommandPool.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="_access_flags_8h.html">AccessFlags.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="_pipeline_stage_8h.html">PipelineStage.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="_image_aspect_8h.html">ImageAspect.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef VK_COMMANDBUFFER_H</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define VK_COMMANDBUFFER_H</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_f_c_t.html">FCT</a></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>{</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_f_c_t_1_1_r_h_i.html">RHI</a></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keyword">class </span><a class="code hl_class" href="class_f_c_t_1_1_r_h_i_1_1_rasterization_pipeline.html">RasterizationPipeline</a>;</div>
+<div class="foldopen" id="foldopen00017" data-start="{" data-end="};">
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html">   17</a></span>        <span class="keyword">class </span><a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#adf6a0192fe851bf1c0b3603f80b1c74e">VK_CommandBuffer</a> : <span class="keyword">public</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_command_buffer.html#a8af059f4d01c98a51f554a4bf5611b37">CommandBuffer</a>{</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>            <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#adf6a0192fe851bf1c0b3603f80b1c74e">VK_CommandBuffer</a>(<a class="code hl_class" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_pool.html">VK_CommandPool</a>* pool);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#af9ab46232edcdf36f5b40e6724f8391d">create</a>() <span class="keyword">override</span>;</div>
+<div class="foldopen" id="foldopen00021" data-start="{" data-end="}">
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#ae8c7ddb229009bc08273d05e1bc270e5">   21</a></span>            vk::CommandBuffer <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#ae8c7ddb229009bc08273d05e1bc270e5">commandBuffer</a>()</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>                <span class="keywordflow">return</span> <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a8ef22bce4788ac7217a156ebdb47f3ad">m_commandBuffer</a>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            }</div>
+</div>
+<div class="foldopen" id="foldopen00025" data-start="{" data-end="}">
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a58e7a54f640f832f155707df332e8d65">   25</a></span>            <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a58e7a54f640f832f155707df332e8d65">reset</a>()<span class="keyword"> override</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">            </span>{</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a8ef22bce4788ac7217a156ebdb47f3ad">m_commandBuffer</a>.reset();</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            }</div>
+</div>
+<div class="foldopen" id="foldopen00029" data-start="{" data-end="}">
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a775aaa3a42bbf95deb9bbe90a5cc0bb3">   29</a></span>            <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a775aaa3a42bbf95deb9bbe90a5cc0bb3">begin</a>()<span class="keyword"> override</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">            </span>{</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>                vk::CommandBufferBeginInfo beginInfo{};</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>                <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a8ef22bce4788ac7217a156ebdb47f3ad">m_commandBuffer</a>.begin(beginInfo);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            }</div>
+</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#aeeed414bba6e0d11d7df65090877d2ff">nextPass</a>() <span class="keyword">override</span>;</div>
+<div class="foldopen" id="foldopen00035" data-start="{" data-end="}">
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a86a8a52535de07e4439721342cc6bcd1">   35</a></span>            <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a86a8a52535de07e4439721342cc6bcd1">viewport</a>(<a class="code hl_struct" href="struct_f_c_t_1_1_vec2.html">Vec2</a> lt, <a class="code hl_struct" href="struct_f_c_t_1_1_vec2.html">Vec2</a> rb)<span class="keyword"> override</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">            </span>{</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>                vk::Viewport <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a86a8a52535de07e4439721342cc6bcd1">viewport</a>{};</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>                <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a86a8a52535de07e4439721342cc6bcd1">viewport</a>.x = <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(lt.<a class="code hl_variable" href="struct_f_c_t_1_1_vec2.html#a46dd201ced58e5d5012381fa82e2f023">x</a>);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a86a8a52535de07e4439721342cc6bcd1">viewport</a>.y = <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(rb.<a class="code hl_variable" href="struct_f_c_t_1_1_vec2.html#aef6165dc59972cc930197af4e4bf2b2f">y</a>);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a86a8a52535de07e4439721342cc6bcd1">viewport</a>.width = <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(rb.<a class="code hl_variable" href="struct_f_c_t_1_1_vec2.html#a46dd201ced58e5d5012381fa82e2f023">x</a> - lt.<a class="code hl_variable" href="struct_f_c_t_1_1_vec2.html#a46dd201ced58e5d5012381fa82e2f023">x</a>);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a86a8a52535de07e4439721342cc6bcd1">viewport</a>.height = -<span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(rb.<a class="code hl_variable" href="struct_f_c_t_1_1_vec2.html#aef6165dc59972cc930197af4e4bf2b2f">y</a> - lt.<a class="code hl_variable" href="struct_f_c_t_1_1_vec2.html#aef6165dc59972cc930197af4e4bf2b2f">y</a>);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a86a8a52535de07e4439721342cc6bcd1">viewport</a>.minDepth = 0.0f;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a86a8a52535de07e4439721342cc6bcd1">viewport</a>.maxDepth = 1.0f;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>                <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a8ef22bce4788ac7217a156ebdb47f3ad">m_commandBuffer</a>.setViewport(0,1, &amp;<a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a86a8a52535de07e4439721342cc6bcd1">viewport</a>);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            }</div>
+</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a2add93b72d1289301a26fa2d9be60208">scissor</a>(<a class="code hl_struct" href="struct_f_c_t_1_1_vec2.html">Vec2</a> lt, <a class="code hl_struct" href="struct_f_c_t_1_1_vec2.html">Vec2</a> rb) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#ad4e0a4fc9549049347c43099daaeda11">bindPipieline</a>(<a class="code hl_class" href="class_f_c_t_1_1_r_h_i_1_1_rasterization_pipeline.html">RasterizationPipeline</a>* pipeline) <span class="keyword">override</span>;</div>
+<div class="foldopen" id="foldopen00048" data-start="{" data-end="}">
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a2a27873ed53662f3ab01bb1c21e2d94c">   48</a></span>            <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a2a27873ed53662f3ab01bb1c21e2d94c">draw</a>(<span class="keywordtype">size_t</span> vertexBegin, <span class="keywordtype">size_t</span> instanceBegin, <span class="keywordtype">size_t</span> vertexSize, <span class="keywordtype">size_t</span> instanceSize)<span class="keyword"> override</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">            </span>{</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a8ef22bce4788ac7217a156ebdb47f3ad">m_commandBuffer</a>.draw(<span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(vertexSize),<span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(instanceSize) ,<span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(vertexBegin), <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(instanceBegin));</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            }</div>
+</div>
+<div class="foldopen" id="foldopen00052" data-start="{" data-end="}">
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a73183fe2b772f3d84539e19ae1f964db">   52</a></span>            <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a73183fe2b772f3d84539e19ae1f964db">end</a>()<span class="keyword"> override</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keyword">            </span>{</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a8ef22bce4788ac7217a156ebdb47f3ad">m_commandBuffer</a>.end();</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            }</div>
+</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a1c04e2cf1b81f5a4c0355e9efec78a83">submit</a>() <span class="keyword">override</span>;</div>
+<div class="foldopen" id="foldopen00057" data-start="{" data-end="}">
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a4431d021311da99f08b99e4e3a044b62">   57</a></span>            vk::CommandBuffer <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a4431d021311da99f08b99e4e3a044b62">commandBuffer</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keyword">            </span>{</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                <span class="keywordflow">return</span> <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a8ef22bce4788ac7217a156ebdb47f3ad">m_commandBuffer</a>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            }</div>
+</div>
+<div class="foldopen" id="foldopen00061" data-start="{" data-end="}">
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a68767d12725e6beda5288ecde7997220">   61</a></span>            <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a68767d12725e6beda5288ecde7997220">drawIndex</a>(<span class="keywordtype">size_t</span> indexBegin, <span class="keywordtype">size_t</span> instanceBegin, <span class="keywordtype">size_t</span> indexCount, <span class="keywordtype">size_t</span> instanceCount, <span class="keywordtype">size_t</span> firstVertex)<span class="keyword"> override</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keyword">            </span>{</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a8ef22bce4788ac7217a156ebdb47f3ad">m_commandBuffer</a>.drawIndexed(<span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(indexCount),<span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(instanceCount), <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(indexBegin), <span class="keyword">static_cast&lt;</span>int32_t<span class="keyword">&gt;</span>(firstVertex), <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(instanceBegin));</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            }</div>
+</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a17fce21c4c90520882b35b70c5eaf00f">barrier</a>(<a class="code hl_class" href="class_f_c_t_1_1_image.html">FCT::Image</a>* image, <a class="code hl_enumeration" href="namespace_f_c_t.html#aa6d1e7cd43d5bb06686de955be1a4309">ImageLayout</a> oldLayout, <a class="code hl_enumeration" href="namespace_f_c_t.html#aa6d1e7cd43d5bb06686de955be1a4309">ImageLayout</a> newLayout, PipelineStages srcStage, PipelineStages dstStage, AccessFlags srcAccess, AccessFlags dstAccess, ImageAspects aspectMask) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a864679209c52f890f173f116b609081d">   67</a></span>            <a class="code hl_class" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_pool.html">VK_CommandPool</a>* <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a864679209c52f890f173f116b609081d">m_pool</a>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#afc0b398c63d181c406185a065e1fdfdd">   68</a></span>            vk::CommandBufferAllocateInfo <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#afc0b398c63d181c406185a065e1fdfdd">m_allocateInfo</a>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            <span class="comment">//vk::CommandBuffer&gt; m_commandBuffers;</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a8ef22bce4788ac7217a156ebdb47f3ad">   70</a></span>            vk::CommandBuffer <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a8ef22bce4788ac7217a156ebdb47f3ad">m_commandBuffer</a>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        };</div>
+</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    }</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>}</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="preprocessor">#endif </span><span class="comment">//VK_COMMANDBUFFER_H</span></div>
+<div class="ttc" id="a_access_flags_8h_html"><div class="ttname"><a href="_access_flags_8h.html">AccessFlags.h</a></div></div>
+<div class="ttc" id="a_command_buffer_8h_html"><div class="ttname"><a href="_command_buffer_8h.html">CommandBuffer.h</a></div></div>
+<div class="ttc" id="a_image_aspect_8h_html"><div class="ttname"><a href="_image_aspect_8h.html">ImageAspect.h</a></div></div>
+<div class="ttc" id="a_pipeline_stage_8h_html"><div class="ttname"><a href="_pipeline_stage_8h.html">PipelineStage.h</a></div></div>
+<div class="ttc" id="a_v_k___command_pool_8h_html"><div class="ttname"><a href="_v_k___command_pool_8h.html">VK_CommandPool.h</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_image_html"><div class="ttname"><a href="class_f_c_t_1_1_image.html">FCT::Image</a></div><div class="ttdef"><b>定义</b> <a href="_context_2_image_8h_source.html#l00049">Image.h:49</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_command_buffer_html_a8af059f4d01c98a51f554a4bf5611b37"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_command_buffer.html#a8af059f4d01c98a51f554a4bf5611b37">FCT::RHI::CommandBuffer::CommandBuffer</a></div><div class="ttdeci">CommandBuffer()</div><div class="ttdef"><b>定义</b> <a href="_command_buffer_8h_source.html#l00036">CommandBuffer.h:36</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_rasterization_pipeline_html"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_rasterization_pipeline.html">FCT::RHI::RasterizationPipeline</a></div><div class="ttdef"><b>定义</b> <a href="_rasterization_pipeline_8h_source.html#l00016">RasterizationPipeline.h:17</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer_html_a17fce21c4c90520882b35b70c5eaf00f"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a17fce21c4c90520882b35b70c5eaf00f">FCT::RHI::VK_CommandBuffer::barrier</a></div><div class="ttdeci">void barrier(FCT::Image *image, ImageLayout oldLayout, ImageLayout newLayout, PipelineStages srcStage, PipelineStages dstStage, AccessFlags srcAccess, AccessFlags dstAccess, ImageAspects aspectMask) override</div><div class="ttdef"><b>定义</b> <a href="_v_k___command_buffer_8cpp_source.html#l00085">VK_CommandBuffer.cpp:85</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer_html_a1c04e2cf1b81f5a4c0355e9efec78a83"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a1c04e2cf1b81f5a4c0355e9efec78a83">FCT::RHI::VK_CommandBuffer::submit</a></div><div class="ttdeci">void submit() override</div><div class="ttdef"><b>定义</b> <a href="_v_k___command_buffer_8cpp_source.html#l00061">VK_CommandBuffer.cpp:61</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer_html_a2a27873ed53662f3ab01bb1c21e2d94c"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a2a27873ed53662f3ab01bb1c21e2d94c">FCT::RHI::VK_CommandBuffer::draw</a></div><div class="ttdeci">void draw(size_t vertexBegin, size_t instanceBegin, size_t vertexSize, size_t instanceSize) override</div><div class="ttdef"><b>定义</b> <a href="#l00048">VK_CommandBuffer.h:48</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer_html_a2add93b72d1289301a26fa2d9be60208"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a2add93b72d1289301a26fa2d9be60208">FCT::RHI::VK_CommandBuffer::scissor</a></div><div class="ttdeci">void scissor(Vec2 lt, Vec2 rb) override</div><div class="ttdef"><b>定义</b> <a href="_v_k___command_buffer_8cpp_source.html#l00037">VK_CommandBuffer.cpp:37</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer_html_a4431d021311da99f08b99e4e3a044b62"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a4431d021311da99f08b99e4e3a044b62">FCT::RHI::VK_CommandBuffer::commandBuffer</a></div><div class="ttdeci">vk::CommandBuffer commandBuffer() const</div><div class="ttdef"><b>定义</b> <a href="#l00057">VK_CommandBuffer.h:57</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer_html_a58e7a54f640f832f155707df332e8d65"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a58e7a54f640f832f155707df332e8d65">FCT::RHI::VK_CommandBuffer::reset</a></div><div class="ttdeci">void reset() override</div><div class="ttdef"><b>定义</b> <a href="#l00025">VK_CommandBuffer.h:25</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer_html_a68767d12725e6beda5288ecde7997220"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a68767d12725e6beda5288ecde7997220">FCT::RHI::VK_CommandBuffer::drawIndex</a></div><div class="ttdeci">void drawIndex(size_t indexBegin, size_t instanceBegin, size_t indexCount, size_t instanceCount, size_t firstVertex) override</div><div class="ttdef"><b>定义</b> <a href="#l00061">VK_CommandBuffer.h:61</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer_html_a73183fe2b772f3d84539e19ae1f964db"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a73183fe2b772f3d84539e19ae1f964db">FCT::RHI::VK_CommandBuffer::end</a></div><div class="ttdeci">void end() override</div><div class="ttdef"><b>定义</b> <a href="#l00052">VK_CommandBuffer.h:52</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer_html_a775aaa3a42bbf95deb9bbe90a5cc0bb3"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a775aaa3a42bbf95deb9bbe90a5cc0bb3">FCT::RHI::VK_CommandBuffer::begin</a></div><div class="ttdeci">void begin() override</div><div class="ttdef"><b>定义</b> <a href="#l00029">VK_CommandBuffer.h:29</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer_html_a864679209c52f890f173f116b609081d"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a864679209c52f890f173f116b609081d">FCT::RHI::VK_CommandBuffer::m_pool</a></div><div class="ttdeci">VK_CommandPool * m_pool</div><div class="ttdef"><b>定义</b> <a href="#l00067">VK_CommandBuffer.h:67</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer_html_a86a8a52535de07e4439721342cc6bcd1"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a86a8a52535de07e4439721342cc6bcd1">FCT::RHI::VK_CommandBuffer::viewport</a></div><div class="ttdeci">void viewport(Vec2 lt, Vec2 rb) override</div><div class="ttdef"><b>定义</b> <a href="#l00035">VK_CommandBuffer.h:35</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer_html_a8ef22bce4788ac7217a156ebdb47f3ad"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a8ef22bce4788ac7217a156ebdb47f3ad">FCT::RHI::VK_CommandBuffer::m_commandBuffer</a></div><div class="ttdeci">vk::CommandBuffer m_commandBuffer</div><div class="ttdef"><b>定义</b> <a href="#l00070">VK_CommandBuffer.h:70</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer_html_ad4e0a4fc9549049347c43099daaeda11"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#ad4e0a4fc9549049347c43099daaeda11">FCT::RHI::VK_CommandBuffer::bindPipieline</a></div><div class="ttdeci">void bindPipieline(RasterizationPipeline *pipeline) override</div><div class="ttdef"><b>定义</b> <a href="_v_k___command_buffer_8cpp_source.html#l00047">VK_CommandBuffer.cpp:47</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer_html_adf6a0192fe851bf1c0b3603f80b1c74e"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#adf6a0192fe851bf1c0b3603f80b1c74e">FCT::RHI::VK_CommandBuffer::VK_CommandBuffer</a></div><div class="ttdeci">VK_CommandBuffer(VK_CommandPool *pool)</div><div class="ttdef"><b>定义</b> <a href="_v_k___command_buffer_8cpp_source.html#l00010">VK_CommandBuffer.cpp:10</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer_html_ae8c7ddb229009bc08273d05e1bc270e5"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#ae8c7ddb229009bc08273d05e1bc270e5">FCT::RHI::VK_CommandBuffer::commandBuffer</a></div><div class="ttdeci">vk::CommandBuffer commandBuffer()</div><div class="ttdef"><b>定义</b> <a href="#l00021">VK_CommandBuffer.h:21</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer_html_aeeed414bba6e0d11d7df65090877d2ff"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#aeeed414bba6e0d11d7df65090877d2ff">FCT::RHI::VK_CommandBuffer::nextPass</a></div><div class="ttdeci">void nextPass() override</div><div class="ttdef"><b>定义</b> <a href="_v_k___command_buffer_8cpp_source.html#l00032">VK_CommandBuffer.cpp:32</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer_html_af9ab46232edcdf36f5b40e6724f8391d"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#af9ab46232edcdf36f5b40e6724f8391d">FCT::RHI::VK_CommandBuffer::create</a></div><div class="ttdeci">void create() override</div><div class="ttdef"><b>定义</b> <a href="_v_k___command_buffer_8cpp_source.html#l00015">VK_CommandBuffer.cpp:15</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer_html_afc0b398c63d181c406185a065e1fdfdd"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#afc0b398c63d181c406185a065e1fdfdd">FCT::RHI::VK_CommandBuffer::m_allocateInfo</a></div><div class="ttdeci">vk::CommandBufferAllocateInfo m_allocateInfo</div><div class="ttdef"><b>定义</b> <a href="#l00068">VK_CommandBuffer.h:68</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___command_pool_html"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___command_pool.html">FCT::RHI::VK_CommandPool</a></div><div class="ttdef"><b>定义</b> <a href="_v_k___command_pool_8h_source.html#l00012">VK_CommandPool.h:12</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_1_1_r_h_i_html"><div class="ttname"><a href="namespace_f_c_t_1_1_r_h_i.html">FCT::RHI</a></div><div class="ttdef"><b>定义</b> <a href="_command_buffer_graph_8h_source.html#l00013">CommandBufferGraph.h:14</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html"><div class="ttname"><a href="namespace_f_c_t.html">FCT</a></div><div class="ttdef"><b>定义</b> <a href="_enums_8h_source.html#l00008">Enums.h:8</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_aa6d1e7cd43d5bb06686de955be1a4309"><div class="ttname"><a href="namespace_f_c_t.html#aa6d1e7cd43d5bb06686de955be1a4309">FCT::ImageLayout</a></div><div class="ttdeci">ImageLayout</div><div class="ttdef"><b>定义</b> <a href="_image_layout_8h_source.html#l00009">ImageLayout.h:10</a></div></div>
+<div class="ttc" id="astruct_f_c_t_1_1_vec2_html"><div class="ttname"><a href="struct_f_c_t_1_1_vec2.html">FCT::Vec2</a></div><div class="ttdef"><b>定义</b> <a href="_vec_8h_source.html#l00008">Vec.h:9</a></div></div>
+<div class="ttc" id="astruct_f_c_t_1_1_vec2_html_a46dd201ced58e5d5012381fa82e2f023"><div class="ttname"><a href="struct_f_c_t_1_1_vec2.html#a46dd201ced58e5d5012381fa82e2f023">FCT::Vec2::x</a></div><div class="ttdeci">float x</div><div class="ttdef"><b>定义</b> <a href="_vec_8h_source.html#l00010">Vec.h:10</a></div></div>
+<div class="ttc" id="astruct_f_c_t_1_1_vec2_html_aef6165dc59972cc930197af4e4bf2b2f"><div class="ttname"><a href="struct_f_c_t_1_1_vec2.html#aef6165dc59972cc930197af4e4bf2b2f">FCT::Vec2::y</a></div><div class="ttdeci">float y</div><div class="ttdef"><b>定义</b> <a href="_vec_8h_source.html#l00010">Vec.h:10</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_99cd23f92401c000af28014fa43f2752.html">RHI</a></li><li class="navelem"><a href="_v_k___command_buffer_8h.html">VK_CommandBuffer.h</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

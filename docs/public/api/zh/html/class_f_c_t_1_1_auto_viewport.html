@@ -1,0 +1,795 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FCT: FCT::AutoViewport类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FCT
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('class_f_c_t_1_1_auto_viewport.html','','class_f_c_t_1_1_auto_viewport-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">FCT::AutoViewport类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_auto_viewport_8h_source.html">AutoViewport.h</a>&gt;</code></p>
+<div class="dynheader">
+FCT::AutoViewport 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_auto_viewport__coll__graph.png" border="0" usemap="#a_f_c_t_1_1_auto_viewport_coll__map" loading="lazy" alt="Collaboration graph"/></div>
+<map name="a_f_c_t_1_1_auto_viewport_coll__map" id="a_f_c_t_1_1_auto_viewport_coll__map">
+<area shape="rect" title=" " alt="" coords="2188,4307,2358,4699"/>
+<area shape="rect" href="class_f_c_t_1_1_window.html" title=" " alt="" coords="2465,4800,2684,5695"/>
+<area shape="poly" title=" " alt="" coords="2335,4698,2352,4744,2405,4874,2461,5001,2456,5003,2400,4876,2347,4746,2330,4700"/>
+<area shape="rect" href="class_f_c_t_1_1_context.html" title=" " alt="" coords="1300,2975,1498,4237"/>
+<area shape="poly" title=" " alt="" coords="1499,3690,1629,3806,1788,3955,1958,4126,2121,4306,2180,4378,2176,4381,2117,4309,1954,4130,1784,3959,1625,3810,1495,3694"/>
+<area shape="rect" href="class_f_c_t_1_1_resource_manager.html" title=" " alt="" coords="580,4375,764,4632"/>
+<area shape="poly" title=" " alt="" coords="1302,3731,869,4263,777,4377,773,4374,865,4260,1298,3728"/>
+<area shape="poly" title=" " alt="" coords="1500,3765,1775,4191,1948,4446,2128,4698,2297,4914,2456,5105,2452,5109,2293,4918,2124,4701,1944,4450,1771,4194,1495,3768"/>
+<area shape="rect" href="class_f_c_t_1_1_ref_count.html" title=" " alt="" coords="2501,5,2629,204"/>
+<area shape="poly" title=" " alt="" coords="2489,137,2444,158,2395,185,2349,217,2307,255,2239,335,2186,407,2146,475,2116,542,2092,613,2070,691,2024,883,2005,970,1994,1044,1989,1110,1988,1172,1991,1301,1989,1467,1964,2210,1946,2714,1935,2952,1895,3041,1846,3127,1790,3209,1731,3286,1669,3357,1608,3421,1499,3525,1496,3521,1604,3417,1665,3354,1726,3283,1786,3206,1842,3125,1890,3039,1929,2951,1941,2714,1959,2209,1984,1467,1986,1301,1983,1172,1984,1109,1989,1043,2000,969,2019,881,2065,689,2086,611,2111,540,2142,472,2182,404,2235,331,2303,251,2345,213,2393,180,2441,153,2487,132"/>
+<area shape="rect" href="class_f_c_t_1_1_r_h_i_1_1_command_pool.html" title=" " alt="" coords="1754,514,1924,597"/>
+<area shape="poly" title=" " alt="" coords="2487,114,2350,128,2189,150,2111,166,2041,184,1984,206,1944,230,1916,261,1894,296,1876,334,1863,374,1847,451,1842,515,1836,514,1842,450,1858,373,1871,332,1889,293,1912,257,1941,226,1982,201,2040,179,2110,161,2188,145,2350,122,2486,109"/>
+<area shape="poly" title=" " alt="" coords="2644,132,2702,158,2768,191,2837,232,2904,281,2965,338,2991,369,3014,402,3033,437,3048,474,3057,513,3060,554,3060,4505,3057,4556,3050,4606,3038,4656,3021,4704,2979,4798,2926,4886,2866,4967,2804,5040,2742,5104,2685,5158,2682,5154,2739,5100,2800,5037,2862,4964,2922,4883,2974,4795,3016,4702,3032,4654,3044,4605,3052,4555,3055,4505,3055,554,3052,514,3043,476,3029,439,3010,405,2987,372,2961,341,2901,285,2834,237,2765,196,2700,163,2642,137"/>
+<area shape="rect" href="class_f_c_t_1_1_event_handler.html" title=" " alt="" coords="2686,447,2816,665"/>
+<area shape="poly" title=" " alt="" coords="2614,217,2709,446,2704,448,2609,219"/>
+<area shape="rect" href="class_f_c_t_1_1_r_h_i_1_1_swapchain.html" title=" " alt="" coords="2456,3275,2675,3938"/>
+<area shape="poly" title=" " alt="" coords="2568,219,2568,3275,2563,3275,2563,219"/>
+<area shape="rect" href="class_f_c_t_1_1_i_event_system.html" title=" " alt="" coords="2146,1598,2297,1863"/>
+<area shape="poly" title=" " alt="" coords="2175,1878,2157,1947,2143,2018,2138,2084,2137,2194,2137,2489,2135,2644,2131,2782,2121,2890,2114,2928,2105,2953,2097,2963,2087,2968,2067,2978,1905,3112,1749,3254,1611,3389,1499,3502,1495,3499,1607,3385,1746,3250,1902,3108,2064,2973,2085,2963,2093,2959,2100,2950,2109,2926,2116,2889,2125,2782,2130,2643,2132,2489,2132,2194,2133,2084,2137,2018,2152,1946,2170,1876"/>
+<area shape="rect" href="class_f_c_t_1_1_render_graph.html" title=" " alt="" coords="913,4769,1146,5725"/>
+<area shape="poly" title=" " alt="" coords="2196,1878,2176,2018,2170,2109,2168,2222,2166,2486,2161,2749,2152,2862,2139,2952,2070,3233,2000,3468,1927,3671,1847,3857,1757,4038,1653,4230,1394,4701,1335,4804,1272,4906,1148,5089,1143,5086,1267,4903,1331,4801,1390,4698,1649,4227,1752,4036,1842,3854,1922,3669,1995,3467,2065,3232,2133,2951,2147,2861,2155,2749,2161,2486,2162,2222,2165,2109,2171,2018,2191,1877"/>
+<area shape="poly" title=" " alt="" coords="2251,1877,2507,3275,2502,3276,2245,1878"/>
+<area shape="rect" href="class_f_c_t_1_1_flow_control.html" title=" " alt="" coords="146,1670,323,1791"/>
+<area shape="poly" title=" " alt="" coords="248,1790,265,1896,280,2018,284,2490,292,2797,300,2902,305,2935,311,2950,330,2961,358,2967,432,2969,509,2966,542,2967,567,2973,677,3022,784,3080,886,3146,984,3217,1074,3289,1156,3359,1290,3486,1286,3490,1152,3363,1070,3293,980,3221,883,3151,781,3085,675,3026,566,2978,541,2973,509,2971,432,2974,358,2972,328,2966,307,2953,300,2936,295,2903,287,2797,279,2490,275,2018,260,1897,243,1791"/>
+<area shape="poly" title=" " alt="" coords="217,1791,187,1896,173,1957,163,2018,156,2156,150,2419,145,3150,148,3871,154,4120,161,4237,204,4392,227,4453,252,4508,283,4561,319,4616,418,4744,473,4808,533,4869,661,4984,788,5082,900,5161,897,5166,785,5087,658,4988,530,4873,469,4811,414,4747,315,4619,278,4564,248,4511,222,4455,199,4394,156,4238,148,4120,143,3871,140,3150,145,2419,150,2156,157,2018,168,1956,182,1895,212,1790"/>
+<area shape="poly" title=" " alt="" coords="232,1791,197,2253,179,2596,167,2975,166,3167,169,3358,175,3542,188,3716,206,3876,230,4019,262,4140,281,4191,302,4236,325,4274,354,4309,386,4341,421,4370,495,4419,566,4456,563,4461,492,4424,418,4374,383,4345,350,4313,321,4277,297,4239,276,4193,257,4142,225,4020,200,3877,182,3716,170,3542,163,3358,161,3167,162,2975,174,2596,192,2253,227,1791"/>
+<area shape="rect" href="class_f_c_t_1_1_token_graph.html" title=" " alt="" coords="213,275,397,836"/>
+<area shape="poly" title=" " alt="" coords="238,836,232,882,222,990,216,1101,215,1317,221,1509,231,1652,225,1653,216,1509,209,1317,211,1101,217,990,227,882,233,836"/>
+<area shape="rect" href="class_f_c_t_1_1_noncopyable.html" title=" " alt="" coords="244,44,367,165"/>
+<area shape="poly" title=" " alt="" coords="308,180,308,276,303,276,303,180"/>
+<area shape="rect" href="class_f_c_t_1_1_token_graph.html" title=" " alt="" coords="5,275,189,836"/>
+<area shape="poly" title=" " alt="" coords="251,179,204,255,192,279,187,277,199,252,247,176"/>
+<area shape="rect" href="class_f_c_t_1_1_token_graph.html" title=" " alt="" coords="362,882,561,1443"/>
+<area shape="poly" title=" " alt="" coords="370,176,394,213,412,252,436,330,454,411,468,492,478,575,488,735,487,882,482,882,482,735,473,575,463,493,449,412,431,332,407,254,389,215,365,179"/>
+<area shape="poly" title=" " alt="" coords="71,836,65,977,66,1130,78,1288,89,1366,103,1442,120,1499,142,1555,191,1654,187,1656,137,1558,115,1501,98,1443,83,1367,72,1289,61,1131,59,977,65,836"/>
+<area shape="rect" href="class_f_c_t_1_1_device.html" title=" " alt="" coords="584,253,776,858"/>
+<area shape="poly" title=" " alt="" coords="683,858,686,1201,693,1561,706,1854,714,1948,725,1993,736,2002,749,2004,765,2006,779,2016,825,2077,861,2135,888,2191,907,2246,919,2300,927,2353,931,2460,931,2569,935,2685,943,2747,955,2811,974,2879,1000,2950,1065,3090,1141,3225,1219,3350,1292,3457,1288,3460,1215,3353,1136,3228,1060,3092,995,2952,969,2880,950,2812,937,2747,930,2686,926,2569,926,2460,921,2353,914,2301,901,2247,883,2193,856,2137,821,2080,776,2020,763,2011,749,2009,734,2007,720,1995,709,1949,700,1854,688,1562,681,1201,678,858"/>
+<area shape="poly" title=" " alt="" coords="655,858,653,882,629,1921,608,2617,595,2852,589,2921,582,2953,574,2961,564,2965,546,2966,528,2967,521,2970,514,2977,487,3025,467,3084,453,3153,444,3230,439,3313,439,3401,447,3587,464,3775,484,3954,503,4112,514,4237,517,4370,516,4475,520,4524,529,4576,545,4633,570,4698,602,4762,639,4825,680,4885,724,4942,816,5047,903,5133,899,5137,812,5050,720,4946,676,4888,634,4828,597,4765,566,4700,540,4634,523,4577,515,4525,511,4475,511,4370,509,4237,497,4112,479,3955,459,3776,442,3587,433,3401,434,3313,438,3229,447,3152,462,3083,482,3023,510,2974,518,2966,527,2962,546,2961,563,2960,571,2957,578,2950,584,2921,590,2851,602,2616,624,1921,648,882,650,858"/>
+<area shape="rect" href="class_f_c_t_1_1_command_buffer_graph.html" title=" " alt="" coords="862,1544,1088,1917"/>
+<area shape="poly" title=" " alt="" coords="741,857,803,1142,880,1442,906,1527,900,1529,874,1443,798,1143,736,858"/>
+<area shape="poly" title=" " alt="" coords="673,858,659,1398,648,2018,645,2705,652,3379,671,4358,665,4358,646,3379,640,2705,642,2018,654,1398,668,858"/>
+<area shape="rect" href="class_f_c_t_1_1_model_loader.html" title=" " alt="" coords="1999,1699,2121,1762"/>
+<area shape="poly" title=" " alt="" coords="2054,1763,2026,1874,2011,1946,1999,2018,1994,2194,1993,2487,1987,2779,1980,2888,1968,2952,1927,3041,1876,3127,1818,3208,1756,3284,1691,3354,1628,3418,1512,3520,1509,3516,1624,3414,1688,3351,1752,3281,1814,3205,1871,3124,1922,3039,1963,2951,1974,2887,1982,2779,1988,2487,1989,2194,1994,2018,2006,1945,2021,1873,2049,1761"/>
+<area shape="poly" title=" " alt="" coords="1143,4893,1184,4745,1243,4488,1294,4230,1299,4231,1248,4489,1189,4746,1148,4895"/>
+<area shape="rect" href="class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer.html" title=" " alt="" coords="2321,1624,2505,1837"/>
+<area shape="poly" title=" " alt="" coords="2406,1837,2256,3459,2175,4320,2134,4700,2088,4762,2036,4818,1979,4870,1918,4918,1854,4962,1788,5002,1651,5071,1514,5127,1383,5170,1264,5203,1163,5226,1162,5220,1263,5198,1382,5165,1513,5122,1649,5066,1786,4997,1852,4958,1915,4914,1976,4866,2032,4814,2084,4758,2130,4698,2169,4319,2251,3459,2401,1836"/>
+<area shape="rect" href="class_f_c_t_1_1_command_buffer_nodes_1_1_node_base.html" title=" " alt="" coords="2318,440,2509,672"/>
+<area shape="poly" title=" " alt="" coords="2416,687,2416,1624,2411,1624,2411,687"/>
+<area shape="poly" title=" " alt="" coords="1863,595,2055,948,2185,1202,2312,1466,2371,1608,2366,1610,2307,1468,2181,1204,2050,951,1859,598"/>
+<area shape="poly" title=" " alt="" coords="1828,598,1803,666,1764,760,1712,871,1647,993,1568,1119,1524,1181,1476,1241,1424,1298,1370,1352,1311,1401,1249,1445,1228,1455,1209,1459,1172,1456,1137,1454,1119,1458,1100,1469,1070,1497,1045,1531,1040,1528,1066,1494,1097,1465,1117,1453,1136,1448,1172,1450,1208,1453,1227,1450,1247,1440,1308,1397,1366,1348,1421,1294,1472,1237,1519,1177,1564,1116,1642,990,1708,869,1759,757,1798,664,1823,596"/>
+<area shape="poly" title=" " alt="" coords="994,1916,1020,2174,1053,2471,1091,2750,1110,2863,1130,2951,1164,3066,1206,3180,1250,3290,1295,3390,1290,3392,1246,3292,1201,3182,1159,3067,1124,2952,1105,2865,1086,2750,1048,2472,1015,2174,989,1917"/>
+<area shape="poly" title=" " alt="" coords="976,1917,974,2400,976,3088,984,3886,1003,4699,1004,4752,999,4752,997,4699,979,3886,971,3088,969,2400,971,1917"/>
+<area shape="rect" href="class_f_c_t_1_1_semaphore_pool.html" title=" " alt="" coords="1049,514,1212,597"/>
+<area shape="poly" title=" " alt="" coords="1134,597,1132,737,1123,946,1103,1192,1087,1319,1067,1443,1046,1528,1041,1527,1061,1442,1082,1319,1098,1192,1118,946,1126,736,1128,597"/>
+<area shape="rect" href="class_f_c_t_1_1_fence_pool.html" title=" " alt="" coords="862,505,1026,607"/>
+<area shape="poly" title=" " alt="" coords="948,607,972,1527,967,1527,943,607"/>
+<area shape="poly" title=" " alt="" coords="675,4375,688,4316,710,4260,768,4165,836,4074,911,3990,990,3912,1070,3840,1148,3777,1284,3678,1287,3682,1151,3781,1074,3845,994,3915,915,3993,840,4078,773,4168,715,4263,693,4318,681,4376"/>
+<area shape="poly" title=" " alt="" coords="735,4630,908,4988,903,4990,731,4632"/>
+<area shape="poly" title=" " alt="" coords="450,1443,435,1861,430,2097,428,2330,432,2547,442,2732,450,2809,461,2872,473,2919,488,2950,496,2957,505,2961,526,2961,548,2961,559,2965,569,2974,585,3006,597,3058,607,3126,615,3207,625,3401,629,3618,629,4034,629,4190,633,4283,645,4358,639,4359,628,4284,624,4190,623,4034,623,3618,619,3401,609,3208,602,3126,592,3059,579,3008,565,2977,556,2969,547,2966,526,2966,504,2966,494,2962,484,2953,468,2921,455,2873,445,2810,437,2733,427,2547,423,2330,424,2097,429,1861,445,1442"/>
+<area shape="rect" href="class_f_c_t_1_1_union_find.html" title=" " alt="" coords="1012,4407,1156,4600"/>
+<area shape="poly" title=" " alt="" coords="1080,4600,1068,4753,1063,4752,1074,4599"/>
+<area shape="rect" href="class_f_c_t_1_1_image_loader.html" title=" " alt="" coords="1111,1660,1302,1801"/>
+<area shape="poly" title=" " alt="" coords="1211,1801,1219,1998,1234,2282,1257,2613,1290,2951,1300,3030,1295,3030,1285,2952,1252,2614,1228,2282,1214,1998,1206,1801"/>
+<area shape="rect" href="class_f_c_t_1_1_shader_compiler.html" title=" " alt="" coords="1327,1689,1470,1772"/>
+<area shape="poly" title=" " alt="" coords="1401,1772,1401,2959,1396,2959,1396,1772"/>
+<area shape="rect" href="class_f_c_t_1_1_shader_generator.html" title=" " alt="" coords="1495,1467,1721,1994"/>
+<area shape="poly" title=" " alt="" coords="1588,1994,1547,2442,1492,2952,1491,2959,1486,2958,1487,2951,1541,2441,1583,1993"/>
+<area shape="rect" href="class_f_c_t_1_1_r_h_i_1_1_descriptor_pool.html" title=" " alt="" coords="1745,1699,1924,1762"/>
+<area shape="poly" title=" " alt="" coords="1834,1762,1763,2378,1717,2740,1698,2874,1683,2952,1646,3070,1602,3187,1554,3299,1507,3400,1503,3398,1550,3297,1597,3185,1641,3068,1677,2951,1692,2873,1712,2740,1758,2377,1829,1761"/>
+<area shape="poly" title=" " alt="" coords="2463,5126,2402,5046,2340,4954,2285,4853,2262,4800,2243,4746,2237,4717,2242,4715,2249,4745,2267,4798,2290,4850,2345,4951,2406,5043,2467,5123"/>
+<area shape="rect" href="class_f_c_t_1_1_i_render_target.html" title=" " alt="" coords="3094,4452,3231,4554"/>
+<area shape="poly" title=" " alt="" coords="3150,4569,3123,4656,3102,4703,3078,4747,3035,4809,2987,4870,2884,4984,2779,5083,2686,5164,2682,5159,2776,5080,2880,4980,2983,4867,3031,4806,3074,4744,3098,4700,3118,4654,3145,4568"/>
+<area shape="rect" href="class_f_c_t_1_1_window_behavior.html" title=" " alt="" coords="2383,4452,2526,4554"/>
+<area shape="poly" title=" " alt="" coords="2459,4554,2463,4643,2474,4745,2479,4783,2474,4784,2468,4746,2458,4644,2453,4554"/>
+<area shape="rect" href="class_f_c_t_1_1_call_back_event_handler.html" title=" " alt="" coords="2766,2018,2978,2951"/>
+<area shape="poly" title=" " alt="" coords="2789,2951,2773,3099,2762,3258,2757,3426,2762,3599,2777,3774,2805,3949,2824,4035,2848,4119,2875,4202,2907,4282,2912,4289,2918,4293,2926,4298,2932,4306,2953,4363,2967,4412,2975,4458,2976,4501,2972,4545,2962,4591,2932,4700,2912,4758,2888,4815,2829,4925,2763,5025,2697,5112,2693,5109,2758,5022,2824,4922,2883,4813,2907,4756,2927,4699,2957,4590,2966,4544,2971,4501,2969,4458,2962,4413,2948,4364,2927,4309,2922,4302,2916,4298,2908,4293,2902,4285,2870,4204,2842,4121,2819,4036,2800,3950,2772,3775,2756,3599,2752,3426,2756,3258,2768,3098,2784,2951"/>
+<area shape="poly" title=" " alt="" coords="2761,679,2845,2018,2840,2018,2756,679"/>
+<area shape="poly" title=" " alt="" coords="2570,3937,2575,4783,2569,4783,2565,3937"/>
+<area shape="rect" href="class_f_c_t_1_1_i_event_system.html" title=" " alt="" coords="2690,4371,2918,4636"/>
+<area shape="poly" title=" " alt="" coords="2766,4637,2692,4877,2686,4876,2761,4635"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a473bf205c680166fd4474cbe19c21edd" id="r_a473bf205c680166fd4474cbe19c21edd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a473bf205c680166fd4474cbe19c21edd">AutoViewport</a> ()</td></tr>
+<tr class="memitem:ac1f7593a96c1a541c9fce0f3a6a3280f" id="r_ac1f7593a96c1a541c9fce0f3a6a3280f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac1f7593a96c1a541c9fce0f3a6a3280f">AutoViewport</a> (<a class="el" href="struct_f_c_t_1_1_vec2.html">Vec2</a> windowSize, <a class="el" href="struct_f_c_t_1_1_vec2.html">Vec2</a> viewportSize)</td></tr>
+<tr class="memitem:a4410ba69b939e54669a7ab1427b0a77c" id="r_a4410ba69b939e54669a7ab1427b0a77c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4410ba69b939e54669a7ab1427b0a77c">ctx</a> (<a class="el" href="class_f_c_t_1_1_context.html">FCT::Context</a> *ctx)</td></tr>
+<tr class="memitem:ac711a3cb8ade78ceaa8adb4d31c9f127" id="r_ac711a3cb8ade78ceaa8adb4d31c9f127"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac711a3cb8ade78ceaa8adb4d31c9f127">window</a> (<a class="el" href="class_f_c_t_1_1_window.html">Window</a> *wnd)</td></tr>
+<tr class="memitem:afc74e9c9bd5e07bea9854b884866f05c" id="r_afc74e9c9bd5e07bea9854b884866f05c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc74e9c9bd5e07bea9854b884866f05c">enable</a> (bool enable)</td></tr>
+<tr class="memitem:a7714ea97a6f1d96bb573ec694d69c8c6" id="r_a7714ea97a6f1d96bb573ec694d69c8c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7714ea97a6f1d96bb573ec694d69c8c6">resize</a> (int width, int height)</td></tr>
+<tr class="memitem:a71650f51b3cec932c0ecc092b8babd57" id="r_a71650f51b3cec932c0ecc092b8babd57"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71650f51b3cec932c0ecc092b8babd57">computeViewport</a> ()</td></tr>
+<tr class="memitem:ac91bfd11bf4371f85f351b680f9ccdc6" id="r_ac91bfd11bf4371f85f351b680f9ccdc6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac91bfd11bf4371f85f351b680f9ccdc6">submit</a> (<a class="el" href="class_f_c_t_1_1_r_h_i_1_1_command_buffer.html">RHI::CommandBuffer</a> *cmdBuf)</td></tr>
+<tr class="memitem:a4fc07ffe6500f158ad15cf28e4ca525b" id="r_a4fc07ffe6500f158ad15cf28e4ca525b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4fc07ffe6500f158ad15cf28e4ca525b">wndPosToViewportPos</a> (<a class="el" href="struct_f_c_t_1_1_vec2.html">Vec2</a> wndPos, <a class="el" href="struct_f_c_t_1_1_vec2.html">Vec2</a> &amp;viewportPos) const</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a3d027403d9bd3cd106a18dbd3c57134c" id="r_a3d027403d9bd3cd106a18dbd3c57134c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3d027403d9bd3cd106a18dbd3c57134c">m_needReviewport</a></td></tr>
+<tr class="memitem:ae9c4a20ffa7ccfaa444cf801f3f3df26" id="r_ae9c4a20ffa7ccfaa444cf801f3f3df26"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae9c4a20ffa7ccfaa444cf801f3f3df26">m_dstViewportWidth</a></td></tr>
+<tr class="memitem:a5b0b85302a57889067ee9627660401e5" id="r_a5b0b85302a57889067ee9627660401e5"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5b0b85302a57889067ee9627660401e5">m_dstViewPortHeight</a></td></tr>
+<tr class="memitem:a64a07c6c2b584ca1132bb67c4436eca5" id="r_a64a07c6c2b584ca1132bb67c4436eca5"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a64a07c6c2b584ca1132bb67c4436eca5">m_windowWidth</a></td></tr>
+<tr class="memitem:a8be1ccee54b2cd61fa3880f4bbd13d7d" id="r_a8be1ccee54b2cd61fa3880f4bbd13d7d"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8be1ccee54b2cd61fa3880f4bbd13d7d">m_windowHeight</a></td></tr>
+<tr class="memitem:a3fc76cfb9431c786a61cb561aa94cab2" id="r_a3fc76cfb9431c786a61cb561aa94cab2"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3fc76cfb9431c786a61cb561aa94cab2">m_viewportWidth</a></td></tr>
+<tr class="memitem:a21f05a6ca76e6de52a47014de4c78818" id="r_a21f05a6ca76e6de52a47014de4c78818"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a21f05a6ca76e6de52a47014de4c78818">m_viewportHeight</a></td></tr>
+<tr class="memitem:ac7f7f802ba1d075d923486eba435c2a5" id="r_ac7f7f802ba1d075d923486eba435c2a5"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac7f7f802ba1d075d923486eba435c2a5">m_viewportOffsetX</a></td></tr>
+<tr class="memitem:aee5feccd0c0a4156b06283c55e701583" id="r_aee5feccd0c0a4156b06283c55e701583"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aee5feccd0c0a4156b06283c55e701583">m_viewportOffsetY</a></td></tr>
+<tr class="memitem:a73664582dcd712cbbf761a439eb50b96" id="r_a73664582dcd712cbbf761a439eb50b96"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_f_c_t_1_1_call_back_event_handler.html#a8457c73c6cb46ee6ed38174f403fae5e">CallBackEventHandler::CallbackId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73664582dcd712cbbf761a439eb50b96">m_resizeCallBack</a> = 0</td></tr>
+<tr class="memitem:a1af599816e84c2d4809c8c1cc009a4a0" id="r_a1af599816e84c2d4809c8c1cc009a4a0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_f_c_t_1_1_context.html">FCT::Context</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1af599816e84c2d4809c8c1cc009a4a0">m_ctx</a></td></tr>
+<tr class="memitem:a428051d3999de157417143e62ff705e4" id="r_a428051d3999de157417143e62ff705e4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_f_c_t_1_1_window.html">Window</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a428051d3999de157417143e62ff705e4">m_wnd</a></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">详细描述</h2>
+<div class="textblock">
+<p class="definition">在文件 <a class="el" href="_auto_viewport_8h_source.html">AutoViewport.h</a> 第 <a class="el" href="_auto_viewport_8h_source.html#l00013">13</a> 行定义.</p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">构造及析构函数说明</h2>
+<a id="a473bf205c680166fd4474cbe19c21edd" name="a473bf205c680166fd4474cbe19c21edd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a473bf205c680166fd4474cbe19c21edd">&#9670;&#160;</a></span>AutoViewport() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FCT::AutoViewport::AutoViewport </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_auto_viewport_8cpp_source.html">AutoViewport.cpp</a> 第 <a class="el" href="_auto_viewport_8cpp_source.html#l00005">5</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ac1f7593a96c1a541c9fce0f3a6a3280f" name="ac1f7593a96c1a541c9fce0f3a6a3280f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1f7593a96c1a541c9fce0f3a6a3280f">&#9670;&#160;</a></span>AutoViewport() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FCT::AutoViewport::AutoViewport </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_f_c_t_1_1_vec2.html">Vec2</a></td>          <td class="paramname"><span class="paramname"><em>windowSize</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_f_c_t_1_1_vec2.html">Vec2</a></td>          <td class="paramname"><span class="paramname"><em>viewportSize</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_auto_viewport_8cpp_source.html">AutoViewport.cpp</a> 第 <a class="el" href="_auto_viewport_8cpp_source.html#l00010">10</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_auto_viewport_ac1f7593a96c1a541c9fce0f3a6a3280f_cgraph.png" border="0" usemap="#aclass_f_c_t_1_1_auto_viewport_ac1f7593a96c1a541c9fce0f3a6a3280f_cgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_auto_viewport_ac1f7593a96c1a541c9fce0f3a6a3280f_cgraph" id="aclass_f_c_t_1_1_auto_viewport_ac1f7593a96c1a541c9fce0f3a6a3280f_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,160,44"/>
+<area shape="rect" href="class_f_c_t_1_1_auto_viewport.html#a7714ea97a6f1d96bb573ec694d69c8c6" title=" " alt="" coords="208,5,362,44"/>
+<area shape="poly" title=" " alt="" coords="160,22,192,22,192,27,160,27"/>
+</map>
+</div>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">成员函数说明</h2>
+<a id="a71650f51b3cec932c0ecc092b8babd57" name="a71650f51b3cec932c0ecc092b8babd57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71650f51b3cec932c0ecc092b8babd57">&#9670;&#160;</a></span>computeViewport()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FCT::AutoViewport::computeViewport </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_auto_viewport_8cpp_source.html">AutoViewport.cpp</a> 第 <a class="el" href="_auto_viewport_8cpp_source.html#l00049">49</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_auto_viewport_a71650f51b3cec932c0ecc092b8babd57_icgraph.png" border="0" usemap="#aclass_f_c_t_1_1_auto_viewport_a71650f51b3cec932c0ecc092b8babd57_icgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_auto_viewport_a71650f51b3cec932c0ecc092b8babd57_icgraph" id="aclass_f_c_t_1_1_auto_viewport_a71650f51b3cec932c0ecc092b8babd57_icgraph">
+<area shape="rect" title=" " alt="" coords="208,5,362,44"/>
+<area shape="rect" href="class_f_c_t_1_1_auto_viewport.html#ac91bfd11bf4371f85f351b680f9ccdc6" title=" " alt="" coords="5,5,160,44"/>
+<area shape="poly" title=" " alt="" coords="192,27,160,27,160,22,192,22"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4410ba69b939e54669a7ab1427b0a77c" name="a4410ba69b939e54669a7ab1427b0a77c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4410ba69b939e54669a7ab1427b0a77c">&#9670;&#160;</a></span>ctx()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FCT::AutoViewport::ctx </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_f_c_t_1_1_context.html">FCT::Context</a> *</td>          <td class="paramname"><span class="paramname"><em>ctx</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_auto_viewport_8cpp_source.html">AutoViewport.cpp</a> 第 <a class="el" href="_auto_viewport_8cpp_source.html#l00020">20</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_auto_viewport_a4410ba69b939e54669a7ab1427b0a77c_cgraph.png" border="0" usemap="#aclass_f_c_t_1_1_auto_viewport_a4410ba69b939e54669a7ab1427b0a77c_cgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_auto_viewport_a4410ba69b939e54669a7ab1427b0a77c_cgraph" id="aclass_f_c_t_1_1_auto_viewport_a4410ba69b939e54669a7ab1427b0a77c_cgraph">
+<area shape="rect" title=" " alt="" coords="5,29,181,54"/>
+<area shape="poly" title=" " alt="" coords="64,30,58,21,61,11,73,5,93,3,115,5,126,12,123,17,113,10,93,8,75,10,65,15,63,20,68,28"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_auto_viewport_a4410ba69b939e54669a7ab1427b0a77c_icgraph.png" border="0" usemap="#aclass_f_c_t_1_1_auto_viewport_a4410ba69b939e54669a7ab1427b0a77c_icgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_auto_viewport_a4410ba69b939e54669a7ab1427b0a77c_icgraph" id="aclass_f_c_t_1_1_auto_viewport_a4410ba69b939e54669a7ab1427b0a77c_icgraph">
+<area shape="rect" title=" " alt="" coords="5,29,181,54"/>
+<area shape="poly" title=" " alt="" coords="123,17,113,10,93,8,75,10,65,15,63,20,68,28,64,30,58,21,61,11,73,5,93,3,115,5,126,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afc74e9c9bd5e07bea9854b884866f05c" name="afc74e9c9bd5e07bea9854b884866f05c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc74e9c9bd5e07bea9854b884866f05c">&#9670;&#160;</a></span>enable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FCT::AutoViewport::enable </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>enable</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_auto_viewport_8cpp_source.html">AutoViewport.cpp</a> 第 <a class="el" href="_auto_viewport_8cpp_source.html#l00030">30</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_auto_viewport_afc74e9c9bd5e07bea9854b884866f05c_cgraph.png" border="0" usemap="#aclass_f_c_t_1_1_auto_viewport_afc74e9c9bd5e07bea9854b884866f05c_cgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_auto_viewport_afc74e9c9bd5e07bea9854b884866f05c_cgraph" id="aclass_f_c_t_1_1_auto_viewport_afc74e9c9bd5e07bea9854b884866f05c_cgraph">
+<area shape="rect" title=" " alt="" coords="5,29,160,68"/>
+<area shape="poly" title=" " alt="" coords="45,30,42,20,48,11,62,5,83,3,105,5,118,12,116,16,103,10,82,8,63,10,51,15,47,21,50,28"/>
+<area shape="rect" href="class_f_c_t_1_1_auto_viewport.html#a7714ea97a6f1d96bb573ec694d69c8c6" title=" " alt="" coords="208,29,362,68"/>
+<area shape="poly" title=" " alt="" coords="160,46,192,46,192,51,160,51"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_auto_viewport_afc74e9c9bd5e07bea9854b884866f05c_icgraph.png" border="0" usemap="#aclass_f_c_t_1_1_auto_viewport_afc74e9c9bd5e07bea9854b884866f05c_icgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_auto_viewport_afc74e9c9bd5e07bea9854b884866f05c_icgraph" id="aclass_f_c_t_1_1_auto_viewport_afc74e9c9bd5e07bea9854b884866f05c_icgraph">
+<area shape="rect" title=" " alt="" coords="5,29,160,68"/>
+<area shape="poly" title=" " alt="" coords="107,16,98,10,82,8,68,10,59,14,56,21,58,28,53,30,51,20,56,11,66,5,83,3,100,5,110,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7714ea97a6f1d96bb573ec694d69c8c6" name="a7714ea97a6f1d96bb573ec694d69c8c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7714ea97a6f1d96bb573ec694d69c8c6">&#9670;&#160;</a></span>resize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FCT::AutoViewport::resize </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>width</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>height</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_auto_viewport_8cpp_source.html">AutoViewport.cpp</a> 第 <a class="el" href="_auto_viewport_8cpp_source.html#l00042">42</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_auto_viewport_a7714ea97a6f1d96bb573ec694d69c8c6_icgraph.png" border="0" usemap="#aclass_f_c_t_1_1_auto_viewport_a7714ea97a6f1d96bb573ec694d69c8c6_icgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_auto_viewport_a7714ea97a6f1d96bb573ec694d69c8c6_icgraph" id="aclass_f_c_t_1_1_auto_viewport_a7714ea97a6f1d96bb573ec694d69c8c6_icgraph">
+<area shape="rect" title=" " alt="" coords="208,49,362,88"/>
+<area shape="rect" href="class_f_c_t_1_1_auto_viewport.html#ac1f7593a96c1a541c9fce0f3a6a3280f" title=" " alt="" coords="5,5,160,44"/>
+<area shape="poly" title=" " alt="" coords="192,51,159,44,160,39,193,46"/>
+<area shape="rect" href="class_f_c_t_1_1_auto_viewport.html#afc74e9c9bd5e07bea9854b884866f05c" title=" " alt="" coords="5,92,160,131"/>
+<area shape="poly" title=" " alt="" coords="193,91,160,98,159,93,192,85"/>
+<area shape="poly" title=" " alt="" coords="116,79,103,73,82,71,63,73,51,77,47,83,50,91,45,92,42,82,48,73,62,67,83,65,105,68,118,74"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac91bfd11bf4371f85f351b680f9ccdc6" name="ac91bfd11bf4371f85f351b680f9ccdc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac91bfd11bf4371f85f351b680f9ccdc6">&#9670;&#160;</a></span>submit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FCT::AutoViewport::submit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_f_c_t_1_1_r_h_i_1_1_command_buffer.html">RHI::CommandBuffer</a> *</td>          <td class="paramname"><span class="paramname"><em>cmdBuf</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_auto_viewport_8cpp_source.html">AutoViewport.cpp</a> 第 <a class="el" href="_auto_viewport_8cpp_source.html#l00067">67</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_auto_viewport_ac91bfd11bf4371f85f351b680f9ccdc6_cgraph.png" border="0" usemap="#aclass_f_c_t_1_1_auto_viewport_ac91bfd11bf4371f85f351b680f9ccdc6_cgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_auto_viewport_ac91bfd11bf4371f85f351b680f9ccdc6_cgraph" id="aclass_f_c_t_1_1_auto_viewport_ac91bfd11bf4371f85f351b680f9ccdc6_cgraph">
+<area shape="rect" title=" " alt="" coords="5,68,160,107"/>
+<area shape="rect" href="class_f_c_t_1_1_auto_viewport.html#a71650f51b3cec932c0ecc092b8babd57" title=" " alt="" coords="222,5,376,44"/>
+<area shape="poly" title=" " alt="" coords="151,65,215,46,216,51,152,70"/>
+<area shape="rect" href="class_f_c_t_1_1_r_h_i_1_1_command_buffer.html#a7b51ab7bd9f18283c84a477454ef9fbf" title=" " alt="" coords="208,68,390,107"/>
+<area shape="poly" title=" " alt="" coords="160,85,192,85,192,90,160,90"/>
+<area shape="rect" href="class_f_c_t_1_1_r_h_i_1_1_command_buffer.html#ac759849c55b2746d5cd1b1ffc24ce66d" title=" " alt="" coords="208,131,390,169"/>
+<area shape="poly" title=" " alt="" coords="152,105,216,123,215,128,151,110"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac711a3cb8ade78ceaa8adb4d31c9f127" name="ac711a3cb8ade78ceaa8adb4d31c9f127"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac711a3cb8ade78ceaa8adb4d31c9f127">&#9670;&#160;</a></span>window()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FCT::AutoViewport::window </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_f_c_t_1_1_window.html">Window</a> *</td>          <td class="paramname"><span class="paramname"><em>wnd</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_auto_viewport_8cpp_source.html">AutoViewport.cpp</a> 第 <a class="el" href="_auto_viewport_8cpp_source.html#l00025">25</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a4fc07ffe6500f158ad15cf28e4ca525b" name="a4fc07ffe6500f158ad15cf28e4ca525b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fc07ffe6500f158ad15cf28e4ca525b">&#9670;&#160;</a></span>wndPosToViewportPos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool FCT::AutoViewport::wndPosToViewportPos </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_f_c_t_1_1_vec2.html">Vec2</a></td>          <td class="paramname"><span class="paramname"><em>wndPos</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_f_c_t_1_1_vec2.html">Vec2</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>viewportPos</em></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_auto_viewport_8cpp_source.html">AutoViewport.cpp</a> 第 <a class="el" href="_auto_viewport_8cpp_source.html#l00078">78</a> 行定义.</p>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">类成员变量说明</h2>
+<a id="a1af599816e84c2d4809c8c1cc009a4a0" name="a1af599816e84c2d4809c8c1cc009a4a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1af599816e84c2d4809c8c1cc009a4a0">&#9670;&#160;</a></span>m_ctx</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_f_c_t_1_1_context.html">FCT::Context</a>* FCT::AutoViewport::m_ctx</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_auto_viewport_8h_source.html">AutoViewport.h</a> 第 <a class="el" href="_auto_viewport_8h_source.html#l00032">32</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a5b0b85302a57889067ee9627660401e5" name="a5b0b85302a57889067ee9627660401e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b0b85302a57889067ee9627660401e5">&#9670;&#160;</a></span>m_dstViewPortHeight</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float FCT::AutoViewport::m_dstViewPortHeight</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_auto_viewport_8h_source.html">AutoViewport.h</a> 第 <a class="el" href="_auto_viewport_8h_source.html#l00027">27</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ae9c4a20ffa7ccfaa444cf801f3f3df26" name="ae9c4a20ffa7ccfaa444cf801f3f3df26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9c4a20ffa7ccfaa444cf801f3f3df26">&#9670;&#160;</a></span>m_dstViewportWidth</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float FCT::AutoViewport::m_dstViewportWidth</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_auto_viewport_8h_source.html">AutoViewport.h</a> 第 <a class="el" href="_auto_viewport_8h_source.html#l00027">27</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a3d027403d9bd3cd106a18dbd3c57134c" name="a3d027403d9bd3cd106a18dbd3c57134c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d027403d9bd3cd106a18dbd3c57134c">&#9670;&#160;</a></span>m_needReviewport</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool FCT::AutoViewport::m_needReviewport</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_auto_viewport_8h_source.html">AutoViewport.h</a> 第 <a class="el" href="_auto_viewport_8h_source.html#l00026">26</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a73664582dcd712cbbf761a439eb50b96" name="a73664582dcd712cbbf761a439eb50b96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73664582dcd712cbbf761a439eb50b96">&#9670;&#160;</a></span>m_resizeCallBack</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_f_c_t_1_1_call_back_event_handler.html#a8457c73c6cb46ee6ed38174f403fae5e">CallBackEventHandler::CallbackId</a> FCT::AutoViewport::m_resizeCallBack = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_auto_viewport_8h_source.html">AutoViewport.h</a> 第 <a class="el" href="_auto_viewport_8h_source.html#l00031">31</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a21f05a6ca76e6de52a47014de4c78818" name="a21f05a6ca76e6de52a47014de4c78818"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21f05a6ca76e6de52a47014de4c78818">&#9670;&#160;</a></span>m_viewportHeight</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float FCT::AutoViewport::m_viewportHeight</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_auto_viewport_8h_source.html">AutoViewport.h</a> 第 <a class="el" href="_auto_viewport_8h_source.html#l00029">29</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ac7f7f802ba1d075d923486eba435c2a5" name="ac7f7f802ba1d075d923486eba435c2a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7f7f802ba1d075d923486eba435c2a5">&#9670;&#160;</a></span>m_viewportOffsetX</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float FCT::AutoViewport::m_viewportOffsetX</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_auto_viewport_8h_source.html">AutoViewport.h</a> 第 <a class="el" href="_auto_viewport_8h_source.html#l00030">30</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aee5feccd0c0a4156b06283c55e701583" name="aee5feccd0c0a4156b06283c55e701583"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee5feccd0c0a4156b06283c55e701583">&#9670;&#160;</a></span>m_viewportOffsetY</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float FCT::AutoViewport::m_viewportOffsetY</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_auto_viewport_8h_source.html">AutoViewport.h</a> 第 <a class="el" href="_auto_viewport_8h_source.html#l00030">30</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a3fc76cfb9431c786a61cb561aa94cab2" name="a3fc76cfb9431c786a61cb561aa94cab2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fc76cfb9431c786a61cb561aa94cab2">&#9670;&#160;</a></span>m_viewportWidth</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float FCT::AutoViewport::m_viewportWidth</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_auto_viewport_8h_source.html">AutoViewport.h</a> 第 <a class="el" href="_auto_viewport_8h_source.html#l00029">29</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a8be1ccee54b2cd61fa3880f4bbd13d7d" name="a8be1ccee54b2cd61fa3880f4bbd13d7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8be1ccee54b2cd61fa3880f4bbd13d7d">&#9670;&#160;</a></span>m_windowHeight</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float FCT::AutoViewport::m_windowHeight</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_auto_viewport_8h_source.html">AutoViewport.h</a> 第 <a class="el" href="_auto_viewport_8h_source.html#l00028">28</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a64a07c6c2b584ca1132bb67c4436eca5" name="a64a07c6c2b584ca1132bb67c4436eca5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64a07c6c2b584ca1132bb67c4436eca5">&#9670;&#160;</a></span>m_windowWidth</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float FCT::AutoViewport::m_windowWidth</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_auto_viewport_8h_source.html">AutoViewport.h</a> 第 <a class="el" href="_auto_viewport_8h_source.html#l00028">28</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a428051d3999de157417143e62ff705e4" name="a428051d3999de157417143e62ff705e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a428051d3999de157417143e62ff705e4">&#9670;&#160;</a></span>m_wnd</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_f_c_t_1_1_window.html">Window</a>* FCT::AutoViewport::m_wnd</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_auto_viewport_8h_source.html">AutoViewport.h</a> 第 <a class="el" href="_auto_viewport_8h_source.html#l00033">33</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/UI/<a class="el" href="_auto_viewport_8h_source.html">AutoViewport.h</a></li>
+<li>src/UI/<a class="el" href="_auto_viewport_8cpp_source.html">AutoViewport.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespace_f_c_t.html">FCT</a></li><li class="navelem"><a href="class_f_c_t_1_1_auto_viewport.html">AutoViewport</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

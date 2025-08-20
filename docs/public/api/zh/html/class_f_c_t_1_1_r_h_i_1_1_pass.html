@@ -1,0 +1,1354 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FCT: FCT::RHI::Pass类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FCT
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('class_f_c_t_1_1_r_h_i_1_1_pass.html','','class_f_c_t_1_1_r_h_i_1_1_pass-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">FCT::RHI::Pass类 参考<span class="mlabels"><span class="mlabel abstract">abstract</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_r_h_i_2_pass_8h_source.html">Pass.h</a>&gt;</code></p>
+<div class="dynheader">
+类 FCT::RHI::Pass 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_r_h_i_1_1_pass__inherit__graph.png" border="0" usemap="#a_f_c_t_1_1_r_h_i_1_1_pass_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
+<map name="a_f_c_t_1_1_r_h_i_1_1_pass_inherit__map" id="a_f_c_t_1_1_r_h_i_1_1_pass_inherit__map">
+<area shape="rect" title=" " alt="" coords="40,252,168,760"/>
+<area shape="rect" href="class_f_c_t_1_1_r_h_i_1_1_v_k___pass.html" title=" " alt="" coords="5,808,203,1131"/>
+<area shape="poly" title=" " alt="" coords="107,775,107,808,102,808,102,775"/>
+<area shape="rect" href="class_f_c_t_1_1_ref_count.html" title=" " alt="" coords="40,5,168,204"/>
+<area shape="poly" title=" " alt="" coords="107,219,107,252,102,252,102,219"/>
+</map>
+</div>
+<div class="dynheader">
+FCT::RHI::Pass 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_r_h_i_1_1_pass__coll__graph.png" border="0" usemap="#a_f_c_t_1_1_r_h_i_1_1_pass_coll__map" loading="lazy" alt="Collaboration graph"/></div>
+<map name="a_f_c_t_1_1_r_h_i_1_1_pass_coll__map" id="a_f_c_t_1_1_r_h_i_1_1_pass_coll__map">
+<area shape="rect" title=" " alt="" coords="376,4333,504,4725"/>
+<area shape="poly" title=" " alt="" coords="506,4434,516,4445,524,4465,529,4493,531,4529,527,4578,518,4610,513,4609,522,4578,526,4529,524,4494,519,4466,511,4448,502,4438"/>
+<area shape="rect" href="class_f_c_t_1_1_ref_count.html" title=" " alt="" coords="528,5,656,204"/>
+<area shape="poly" title=" " alt="" coords="538,219,527,254,509,337,501,402,502,554,502,3690,498,3860,489,4031,464,4334,459,4333,484,4031,493,3860,496,3690,496,554,496,402,503,336,522,253,533,217"/>
+<area shape="rect" href="class_f_c_t_1_1_image.html" title=" " alt="" coords="77,3396,275,3981"/>
+<area shape="poly" title=" " alt="" coords="516,143,405,205,345,247,286,296,234,352,191,413,175,446,163,481,155,517,152,554,152,2696,157,3061,167,3396,162,3396,152,3061,147,2696,147,554,150,516,158,479,170,444,187,411,230,348,283,292,342,243,403,201,513,139"/>
+<area shape="rect" href="class_f_c_t_1_1_context.html" title=" " alt="" coords="1809,2064,2007,3326"/>
+<area shape="poly" title=" " alt="" coords="672,103,875,109,1002,117,1133,130,1259,149,1373,174,1422,190,1464,208,1499,229,1525,252,1547,282,1566,316,1581,355,1593,397,1608,493,1613,600,1610,717,1601,842,1571,1105,1537,1370,1524,1497,1515,1619,1512,1731,1518,1833,1533,1921,1545,1959,1560,1993,1566,2001,1574,2004,1583,2008,1593,2016,1659,2106,1718,2204,1769,2303,1812,2401,1807,2403,1764,2306,1713,2206,1655,2109,1589,2020,1581,2013,1572,2009,1563,2005,1555,1995,1540,1961,1528,1922,1512,1833,1507,1731,1509,1618,1518,1497,1532,1369,1566,1104,1596,842,1605,717,1608,600,1603,493,1587,398,1576,356,1561,318,1543,284,1521,255,1496,233,1462,213,1420,195,1371,180,1258,154,1132,135,1001,123,875,115,671,109"/>
+<area shape="rect" href="class_f_c_t_1_1_r_h_i_1_1_command_pool.html" title=" " alt="" coords="751,514,921,597"/>
+<area shape="poly" title=" " alt="" coords="669,165,708,206,743,252,777,321,803,393,821,460,833,514,827,515,816,461,798,394,772,323,738,255,704,209,665,169"/>
+<area shape="poly" title=" " alt="" coords="252,3980,266,4027,319,4189,373,4342,368,4344,314,4190,261,4028,247,3982"/>
+<area shape="rect" href="class_f_c_t_1_1_image_behavior.html" title=" " alt="" coords="5,4488,142,4571"/>
+<area shape="poly" title=" " alt="" coords="80,3909,54,4006,44,4070,40,4135,41,4265,52,4381,65,4471,60,4472,47,4382,36,4265,34,4135,39,4069,48,4005,75,3908"/>
+<area shape="rect" href="class_f_c_t_1_1_i_render_target.html" title=" " alt="" coords="187,2644,323,2746"/>
+<area shape="poly" title=" " alt="" coords="253,2761,202,3396,197,3396,247,2761"/>
+<area shape="poly" title=" " alt="" coords="74,4488,90,4281,119,4005,120,3998,126,3999,125,4006,95,4282,79,4489"/>
+<area shape="poly" title=" " alt="" coords="1812,2894,1730,3023,1681,3090,1626,3157,1566,3221,1501,3279,1430,3331,1355,3375,1296,3382,1174,3385,826,3384,479,3385,359,3389,321,3393,303,3398,289,3408,286,3404,300,3394,320,3388,358,3384,479,3379,826,3379,1174,3379,1295,3376,1353,3369,1427,3327,1497,3275,1562,3217,1622,3153,1677,3087,1726,3020,1807,2891"/>
+<area shape="rect" href="class_f_c_t_1_1_resource_manager.html" title=" " alt="" coords="1848,3560,2032,3817"/>
+<area shape="poly" title=" " alt="" coords="1999,3326,1996,3372,1986,3459,1973,3544,1967,3543,1981,3458,1991,3372,1994,3326"/>
+<area shape="rect" href="class_f_c_t_1_1_i_event_system.html" title=" " alt="" coords="1293,1598,1444,1863"/>
+<area shape="poly" title=" " alt="" coords="1402,1877,1427,1959,1459,2039,1497,2115,1540,2190,1633,2335,1727,2466,1811,2575,1807,2578,1723,2470,1628,2338,1535,2193,1492,2117,1454,2041,1422,1960,1397,1878"/>
+<area shape="rect" href="class_f_c_t_1_1_render_graph.html" title=" " alt="" coords="1290,4051,1524,5007"/>
+<area shape="poly" title=" " alt="" coords="1297,1878,1287,1920,1284,1962,1291,2002,1309,2038,1317,2046,1326,2050,1347,2049,1369,2049,1379,2053,1389,2063,1395,2085,1399,2132,1406,2292,1414,2808,1415,3449,1413,4051,1408,4051,1410,3449,1408,2808,1401,2292,1394,2132,1390,2085,1385,2065,1377,2058,1368,2055,1347,2055,1325,2055,1314,2051,1305,2042,1285,2004,1279,1962,1282,1919,1292,1876"/>
+<area shape="rect" href="class_f_c_t_1_1_flow_control.html" title=" " alt="" coords="2825,1670,3002,1791"/>
+<area shape="poly" title=" " alt="" coords="2895,1792,2873,1848,2842,1912,2804,1979,2760,2042,2673,2138,2577,2230,2477,2316,2376,2396,2276,2468,2182,2532,2023,2631,2021,2627,2179,2528,2273,2464,2373,2392,2474,2312,2574,2226,2669,2135,2756,2038,2800,1976,2837,1910,2868,1846,2890,1790"/>
+<area shape="poly" title=" " alt="" coords="2939,1790,2976,1896,3022,2044,3067,2227,3087,2328,3105,2434,3118,2544,3127,2656,3130,2771,3125,2886,3113,3000,3092,3112,3061,3222,3019,3327,2956,3446,2882,3558,2799,3664,2707,3763,2609,3857,2505,3944,2399,4025,2290,4100,2181,4169,2073,4232,1868,4340,1686,4423,1541,4483,1539,4478,1684,4418,1866,4335,2071,4228,2178,4165,2287,4096,2396,4021,2502,3940,2605,3853,2703,3760,2795,3660,2878,3555,2952,3443,3014,3325,3056,3220,3087,3111,3108,2999,3120,2885,3124,2771,3122,2657,3113,2544,3100,2435,3082,2329,3062,2228,3017,2046,2971,1897,2934,1792"/>
+<area shape="poly" title=" " alt="" coords="2916,1791,2907,2121,2893,2353,2870,2603,2836,2849,2814,2966,2788,3074,2759,3171,2725,3255,2686,3324,2665,3351,2642,3374,2627,3382,2603,3387,2533,3391,2341,3388,2149,3384,2078,3388,2055,3392,2040,3398,2010,3428,1987,3463,1969,3503,1957,3544,1952,3543,1964,3501,1982,3461,2006,3424,2038,3394,2053,3387,2078,3383,2148,3379,2341,3383,2533,3386,2602,3381,2625,3377,2639,3370,2661,3348,2681,3321,2720,3253,2754,3169,2783,3072,2809,2965,2831,2849,2865,2602,2888,2353,2901,2121,2911,1791"/>
+<area shape="rect" href="class_f_c_t_1_1_token_graph.html" title=" " alt="" coords="2779,275,2963,836"/>
+<area shape="poly" title=" " alt="" coords="2884,836,2914,1652,2908,1653,2878,836"/>
+<area shape="rect" href="class_f_c_t_1_1_noncopyable.html" title=" " alt="" coords="2810,44,2932,165"/>
+<area shape="poly" title=" " alt="" coords="2874,180,2874,276,2868,276,2868,180"/>
+<area shape="rect" href="class_f_c_t_1_1_token_graph.html" title=" " alt="" coords="2987,275,3171,836"/>
+<area shape="poly" title=" " alt="" coords="2930,176,2977,252,2990,277,2985,279,2973,255,2925,179"/>
+<area shape="rect" href="class_f_c_t_1_1_token_graph.html" title=" " alt="" coords="2642,882,2842,1443"/>
+<area shape="poly" title=" " alt="" coords="2810,179,2787,215,2770,254,2747,332,2730,412,2718,493,2711,575,2706,735,2711,882,2706,882,2700,735,2705,575,2713,493,2725,411,2742,330,2764,252,2782,213,2806,176"/>
+<area shape="poly" title=" " alt="" coords="3088,836,3084,977,3075,1131,3057,1289,3030,1443,3014,1500,2995,1556,2953,1655,2948,1653,2990,1554,3009,1498,3024,1442,3052,1288,3069,1130,3079,977,3083,836"/>
+<area shape="rect" href="class_f_c_t_1_1_device.html" title=" " alt="" coords="1320,253,1510,858"/>
+<area shape="poly" title=" " alt="" coords="1511,596,1613,644,1739,711,1881,795,2031,897,2106,954,2181,1015,2253,1080,2322,1149,2386,1222,2446,1300,2499,1381,2544,1466,2560,1515,2572,1578,2578,1651,2579,1729,2576,1807,2569,1881,2558,1945,2544,1995,2498,2095,2440,2190,2373,2280,2301,2364,2227,2440,2153,2508,2022,2616,2019,2611,2150,2504,2223,2436,2297,2360,2369,2277,2435,2188,2493,2093,2539,1993,2553,1944,2564,1880,2571,1807,2574,1729,2572,1651,2566,1579,2555,1516,2539,1468,2494,1383,2441,1303,2382,1226,2318,1153,2249,1084,2177,1019,2103,958,2028,901,1878,800,1736,715,1610,649,1509,600"/>
+<area shape="poly" title=" " alt="" coords="1420,858,1418,1044,1411,1223,1397,1366,1387,1415,1374,1444,1363,1454,1351,1458,1327,1457,1303,1456,1293,1460,1284,1468,1272,1488,1264,1512,1254,1572,1252,1643,1257,1721,1273,1875,1284,1994,1281,2126,1269,2293,1255,2482,1244,2681,1241,2877,1244,2970,1250,3058,1262,3138,1278,3211,1300,3273,1329,3324,1342,3334,1358,3335,1376,3337,1392,3348,1420,3392,1442,3433,1457,3473,1467,3511,1472,3548,1473,3585,1466,3658,1434,3814,1421,3903,1416,4005,1417,4034,1411,4035,1411,4005,1415,3903,1429,3813,1461,3657,1468,3585,1467,3549,1462,3512,1452,3474,1437,3435,1416,3395,1388,3352,1374,3342,1358,3341,1340,3339,1325,3328,1295,3276,1273,3212,1256,3139,1245,3058,1238,2970,1235,2877,1239,2681,1250,2482,1264,2293,1275,2126,1279,1994,1268,1875,1251,1721,1247,1643,1249,1572,1258,1511,1267,1485,1280,1465,1290,1455,1302,1451,1327,1452,1350,1453,1361,1449,1370,1441,1382,1414,1392,1365,1406,1223,1413,1043,1415,858"/>
+<area shape="rect" href="class_f_c_t_1_1_command_buffer_graph.html" title=" " alt="" coords="991,1544,1217,1917"/>
+<area shape="poly" title=" " alt="" coords="1322,818,1304,883,1298,937,1298,1006,1303,1167,1304,1250,1301,1327,1291,1393,1273,1444,1265,1453,1256,1458,1247,1462,1238,1469,1193,1531,1189,1528,1234,1465,1244,1457,1254,1453,1262,1449,1269,1441,1286,1392,1295,1326,1298,1250,1297,1167,1292,1006,1293,937,1299,881,1317,816"/>
+<area shape="poly" title=" " alt="" coords="1433,857,1459,1467,1464,2424,1468,2756,1476,3050,1487,3267,1494,3336,1503,3371,1533,3419,1569,3463,1611,3502,1655,3538,1748,3598,1835,3642,1832,3647,1745,3603,1652,3543,1607,3506,1565,3466,1528,3422,1498,3373,1489,3337,1482,3268,1470,3050,1463,2756,1458,2424,1454,1467,1428,858"/>
+<area shape="rect" href="class_f_c_t_1_1_model_loader.html" title=" " alt="" coords="1570,1699,1692,1762"/>
+<area shape="poly" title=" " alt="" coords="1642,1761,1707,1993,1807,2340,1802,2341,1702,1995,1637,1763"/>
+<area shape="poly" title=" " alt="" coords="1522,4465,1651,4385,1723,4334,1796,4276,1868,4211,1934,4140,1993,4063,2042,3980,2069,3918,2091,3853,2107,3787,2118,3720,2125,3651,2128,3582,2122,3445,2104,3310,2078,3181,2045,3060,2010,2952,2016,2950,2051,3059,2083,3179,2110,3309,2127,3444,2133,3582,2131,3652,2124,3720,2112,3788,2096,3855,2074,3920,2047,3983,1998,4066,1938,4144,1871,4215,1800,4280,1726,4339,1654,4390,1525,4470"/>
+<area shape="rect" href="class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer.html" title=" " alt="" coords="738,1624,922,1837"/>
+<area shape="poly" title=" " alt="" coords="818,1837,801,1992,784,2202,772,2455,771,2741,776,2893,786,3048,801,3206,822,3364,850,3523,885,3679,928,3832,979,3980,1006,4043,1039,4104,1076,4162,1115,4219,1199,4322,1280,4408,1276,4412,1195,4325,1111,4222,1071,4165,1034,4106,1001,4045,974,3982,922,3834,880,3680,845,3524,817,3365,796,3206,781,3048,771,2893,766,2741,767,2455,779,2201,795,1991,813,1836"/>
+<area shape="rect" href="class_f_c_t_1_1_command_buffer_nodes_1_1_node_base.html" title=" " alt="" coords="537,440,728,672"/>
+<area shape="poly" title=" " alt="" coords="657,686,815,1624,809,1625,652,687"/>
+<area shape="poly" title=" " alt="" coords="838,597,834,882,832,1607,827,1607,829,882,833,596"/>
+<area shape="poly" title=" " alt="" coords="847,596,869,723,891,882,897,1005,899,1164,905,1322,913,1389,925,1442,945,1480,985,1543,980,1546,940,1482,920,1444,908,1390,900,1323,893,1164,891,1005,886,882,864,724,841,597"/>
+<area shape="poly" title=" " alt="" coords="1218,1915,1249,1955,1283,1992,1311,2014,1335,2027,1360,2041,1389,2062,1507,2178,1618,2303,1718,2425,1801,2536,1797,2539,1714,2429,1614,2306,1503,2182,1385,2066,1357,2045,1332,2032,1308,2019,1280,1996,1245,1958,1213,1918"/>
+<area shape="poly" title=" " alt="" coords="1117,1916,1157,2542,1189,2933,1228,3326,1275,3686,1327,4034,1322,4035,1269,3687,1223,3326,1184,2933,1152,2542,1111,1916"/>
+<area shape="rect" href="class_f_c_t_1_1_semaphore_pool.html" title=" " alt="" coords="946,514,1108,597"/>
+<area shape="poly" title=" " alt="" coords="1026,597,1016,737,1009,945,1011,1191,1018,1318,1031,1442,1047,1527,1041,1528,1026,1443,1013,1319,1005,1192,1003,945,1011,736,1021,597"/>
+<area shape="rect" href="class_f_c_t_1_1_fence_pool.html" title=" " alt="" coords="1132,505,1295,607"/>
+<area shape="poly" title=" " alt="" coords="1210,607,1182,882,1172,1040,1168,1163,1164,1285,1151,1443,1141,1527,1135,1527,1146,1442,1159,1285,1163,1162,1167,1040,1176,882,1205,606"/>
+<area shape="poly" title=" " alt="" coords="1895,3561,1870,3469,1852,3372,1848,3343,1854,3343,1857,3372,1875,3468,1900,3560"/>
+<area shape="poly" title=" " alt="" coords="1862,3818,1535,4332,1530,4330,1857,3815"/>
+<area shape="poly" title=" " alt="" coords="2767,1442,2773,1605,2768,1765,2761,1838,2749,1903,2733,1956,2710,1996,2700,2005,2688,2010,2665,2010,2642,2010,2631,2013,2620,2020,2539,2100,2476,2181,2427,2262,2391,2343,2366,2424,2348,2506,2327,2672,2309,2840,2295,2926,2275,3013,2246,3102,2205,3191,2151,3282,2081,3374,2070,3382,2060,3386,2050,3390,2041,3398,2018,3431,1998,3468,1970,3545,1965,3543,1993,3466,2013,3429,2037,3394,2047,3385,2058,3381,2068,3378,2077,3370,2147,3279,2200,3189,2241,3100,2270,3012,2290,2925,2304,2840,2322,2671,2343,2505,2361,2423,2386,2341,2422,2259,2471,2178,2535,2097,2617,2016,2629,2008,2641,2005,2665,2005,2687,2005,2697,2001,2706,1992,2728,1954,2744,1902,2756,1838,2763,1765,2767,1605,2762,1443"/>
+<area shape="rect" href="class_f_c_t_1_1_union_find.html" title=" " alt="" coords="988,3592,1132,3785"/>
+<area shape="poly" title=" " alt="" coords="1049,3785,1045,3841,1045,3902,1051,3965,1065,4027,1083,4078,1105,4128,1159,4224,1220,4313,1282,4390,1277,4394,1216,4316,1155,4227,1101,4130,1078,4080,1059,4028,1045,3966,1040,3903,1040,3841,1043,3785"/>
+<area shape="rect" href="class_f_c_t_1_1_image_loader.html" title=" " alt="" coords="1717,1660,1908,1801"/>
+<area shape="poly" title=" " alt="" coords="1822,1800,1846,2047,1841,2048,1817,1801"/>
+<area shape="rect" href="class_f_c_t_1_1_shader_compiler.html" title=" " alt="" coords="1932,1689,2076,1772"/>
+<area shape="poly" title=" " alt="" coords="2003,1771,1976,2047,1970,2047,1998,1771"/>
+<area shape="rect" href="class_f_c_t_1_1_shader_generator.html" title=" " alt="" coords="2101,1467,2327,1994"/>
+<area shape="poly" title=" " alt="" coords="2133,1995,2015,2367,2010,2365,2128,1993"/>
+<area shape="rect" href="class_f_c_t_1_1_r_h_i_1_1_descriptor_pool.html" title=" " alt="" coords="2351,1699,2530,1762"/>
+<area shape="poly" title=" " alt="" coords="2433,1763,2396,1867,2341,1995,2263,2142,2179,2287,2019,2538,2014,2535,2174,2285,2259,2140,2337,1993,2391,1865,2428,1761"/>
+<area shape="rect" href="class_f_c_t_1_1_r_h_i_1_1_pass_group.html" title=" " alt="" coords="536,3541,680,3836"/>
+<area shape="poly" title=" " alt="" coords="582,3836,485,4317,480,4316,576,3835"/>
+<area shape="rect" href="struct_f_c_t_1_1_pass_clear_value.html" title=" " alt="" coords="314,3638,458,3740"/>
+<area shape="poly" title=" " alt="" coords="387,3739,384,4005,384,4027,396,4174,412,4316,407,4317,391,4174,379,4027,379,4005,382,3739"/>
+<area shape="rect" href="struct_f_c_t_1_1_vec4.html" title=" " alt="" coords="348,2576,448,2814"/>
+<area shape="poly" title=" " alt="" coords="399,2813,389,3621,384,3621,394,2813"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a96ba42633871a400aa870a15df504ed8" id="r_a96ba42633871a400aa870a15df504ed8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a96ba42633871a400aa870a15df504ed8">Pass</a> ()</td></tr>
+<tr class="memitem:ae0c987eccb3de45f5008a5fe795200ce" id="r_ae0c987eccb3de45f5008a5fe795200ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae0c987eccb3de45f5008a5fe795200ce">bindTarget</a> (uint32_t <a class="el" href="#a8b75dbaaeedb1c3af70dc5f0e2da5eea">index</a>, <a class="el" href="class_f_c_t_1_1_image.html">FCT::Image</a> *target)</td></tr>
+<tr class="memitem:a7929b50f5bda8152b934ea7c8a3fd3ef" id="r_a7929b50f5bda8152b934ea7c8a3fd3ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7929b50f5bda8152b934ea7c8a3fd3ef">bindTexture</a> (uint32_t <a class="el" href="#a8b75dbaaeedb1c3af70dc5f0e2da5eea">index</a>, <a class="el" href="class_f_c_t_1_1_image.html">FCT::Image</a> *texture)</td></tr>
+<tr class="memitem:a10081bc141a93556358669058e270603" id="r_a10081bc141a93556358669058e270603"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a10081bc141a93556358669058e270603">depthStencil</a> (<a class="el" href="class_f_c_t_1_1_image.html">FCT::Image</a> *depthStencil)</td></tr>
+<tr class="memitem:a4a5832122ff3fa5c514804e3d14288a1" id="r_a4a5832122ff3fa5c514804e3d14288a1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_f_c_t_1_1_image.html">FCT::Image</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4a5832122ff3fa5c514804e3d14288a1">depthStencil</a> () const</td></tr>
+<tr class="memitem:ae65a4fd311c5561c2effd7193fc05cba" id="r_ae65a4fd311c5561c2effd7193fc05cba"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae65a4fd311c5561c2effd7193fc05cba">create</a> (<a class="el" href="class_f_c_t_1_1_r_h_i_1_1_pass_group.html">PassGroup</a> *<a class="el" href="#ac2f8bd3467538544fcf2370d9fe1d533">group</a>)=0</td></tr>
+<tr class="memitem:abc6d3d656e42dcc326a93df3e234469f" id="r_abc6d3d656e42dcc326a93df3e234469f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc6d3d656e42dcc326a93df3e234469f">enableClear</a> (ClearTypes type, <a class="el" href="struct_f_c_t_1_1_vec4.html">Vec4</a> <a class="el" href="namespace_f_c_t.html#a5d14bda42e5f9f565abd0b018262b564a70dda5dfb8053dc6d1c492574bce9bfd">color</a>, float <a class="el" href="namespace_f_c_t.html#a5d14bda42e5f9f565abd0b018262b564a12a055bf01a31369fe81ac35d85c7bc1">depth</a>=1.0f, uint8_t <a class="el" href="namespace_f_c_t.html#a5d14bda42e5f9f565abd0b018262b564a667f218c5ed2c9cf25734500472e7c4a">stencil</a>=0)</td></tr>
+<tr class="memitem:a17ccf372ec705a4be0f13b55a8cf10d2" id="r_a17ccf372ec705a4be0f13b55a8cf10d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a17ccf372ec705a4be0f13b55a8cf10d2">enableClear</a> (<a class="el" href="struct_f_c_t_1_1_pass_clear_value.html">PassClearValue</a> clearValue)</td></tr>
+<tr class="memitem:a6b164a5314f7bb62fc0ab1989bd7c65f" id="r_a6b164a5314f7bb62fc0ab1989bd7c65f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6b164a5314f7bb62fc0ab1989bd7c65f">passGroup</a> () const</td></tr>
+<tr class="memitem:aa6a18ac3974103580ba195e75d438476" id="r_aa6a18ac3974103580ba195e75d438476"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa6a18ac3974103580ba195e75d438476">executeClear</a> (<a class="el" href="class_f_c_t_1_1_r_h_i_1_1_command_buffer.html">CommandBuffer</a> *cmdBuf)=0</td></tr>
+<tr class="memitem:a227276d998085bd8e33f6e25dbe46396" id="r_a227276d998085bd8e33f6e25dbe46396"><td class="memItemLeft" align="right" valign="top">auto &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a227276d998085bd8e33f6e25dbe46396">renderTargets</a> ()</td></tr>
+<tr class="memitem:af42b166201dd5e3201ff36e60e88bdcd" id="r_af42b166201dd5e3201ff36e60e88bdcd"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af42b166201dd5e3201ff36e60e88bdcd">beginSubmit</a> (<a class="el" href="class_f_c_t_1_1_r_h_i_1_1_command_buffer.html">CommandBuffer</a> *cmdBuf)=0</td></tr>
+<tr class="memitem:a0dfbe0f748cbeb987c01d3243f765ffa" id="r_a0dfbe0f748cbeb987c01d3243f765ffa"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0dfbe0f748cbeb987c01d3243f765ffa">endSubmit</a> ()=0</td></tr>
+<tr class="memitem:a8b75dbaaeedb1c3af70dc5f0e2da5eea" id="r_a8b75dbaaeedb1c3af70dc5f0e2da5eea"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b75dbaaeedb1c3af70dc5f0e2da5eea">index</a> () const</td></tr>
+<tr class="memitem:ac037d9d7e331a780b70a1989f7f893ff" id="r_ac037d9d7e331a780b70a1989f7f893ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac037d9d7e331a780b70a1989f7f893ff">index</a> (uint32_t index)</td></tr>
+<tr class="memitem:ac2f8bd3467538544fcf2370d9fe1d533" id="r_ac2f8bd3467538544fcf2370d9fe1d533"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_f_c_t_1_1_r_h_i_1_1_pass_group.html">PassGroup</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac2f8bd3467538544fcf2370d9fe1d533">group</a> () const</td></tr>
+<tr class="memitem:a59c2f131121de6503df8d363b6853d45" id="r_a59c2f131121de6503df8d363b6853d45"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_f_c_t_1_1_ref_count.html#a59c2f131121de6503df8d363b6853d45">addRef</a> ()</td></tr>
+<tr class="memitem:aaf57b2df79545f2b71ae9087865dee4c" id="r_aaf57b2df79545f2b71ae9087865dee4c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_f_c_t_1_1_ref_count.html#aaf57b2df79545f2b71ae9087865dee4c">release</a> ()</td></tr>
+<tr class="memitem:a33146ec5804be422936519224a3a7b3f" id="r_a33146ec5804be422936519224a3a7b3f"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_f_c_t_1_1_ref_count.html#a33146ec5804be422936519224a3a7b3f">count</a> ()</td></tr>
+<tr class="memitem:a474ad3a918f2e87d75ff16075e1caeec" id="r_a474ad3a918f2e87d75ff16075e1caeec"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_f_c_t_1_1_ref_count.html#a474ad3a918f2e87d75ff16075e1caeec">operator bool</a> () const</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+静态 Public 属性</h2></td></tr>
+<tr class="memitem:a7a0e778492bf9fb5abcc0b2f648ad0ba" id="r_a7a0e778492bf9fb5abcc0b2f648ad0ba"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="class_f_c_t_1_1_r_h_i_1_1_pass.html">Pass</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a0e778492bf9fb5abcc0b2f648ad0ba">external</a> = nullptr</td></tr>
+<tr class="memitem:a39f06b29f58ff75f7392852375001396" id="r_a39f06b29f58ff75f7392852375001396"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="class_f_c_t_1_1_r_h_i_1_1_pass.html">Pass</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a39f06b29f58ff75f7392852375001396">present</a> = reinterpret_cast&lt;<a class="el" href="class_f_c_t_1_1_r_h_i_1_1_pass.html">Pass</a>*&gt;(-1)</td></tr>
+<tr class="memitem:a7d465f5f79e0e65cabfe311d96976655" id="r_a7d465f5f79e0e65cabfe311d96976655"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="class_f_c_t_1_1_r_h_i_1_1_pass.html">Pass</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7d465f5f79e0e65cabfe311d96976655">begin</a> = reinterpret_cast&lt;<a class="el" href="class_f_c_t_1_1_r_h_i_1_1_pass.html">Pass</a>*&gt;(-1)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected 成员函数</h2></td></tr>
+<tr class="memitem:a0fea0bed50f726d3e11ddde802dac5da" id="r_a0fea0bed50f726d3e11ddde802dac5da"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_f_c_t_1_1_ref_count.html#a0fea0bed50f726d3e11ddde802dac5da">deleteThis</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected 属性</h2></td></tr>
+<tr class="memitem:ab348804e4c13576737a0564a017aab12" id="r_ab348804e4c13576737a0564a017aab12"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_f_c_t_1_1_image.html">FCT::Image</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab348804e4c13576737a0564a017aab12">m_depthStencil</a></td></tr>
+<tr class="memitem:ac0e82ca03cee77668766a965b32c3c31" id="r_ac0e82ca03cee77668766a965b32c3c31"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_f_c_t_1_1_r_h_i_1_1_pass_group.html">PassGroup</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac0e82ca03cee77668766a965b32c3c31">m_group</a></td></tr>
+<tr class="memitem:ab41b4758c6557c0596947beaeede42c1" id="r_ab41b4758c6557c0596947beaeede42c1"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab41b4758c6557c0596947beaeede42c1">m_index</a></td></tr>
+<tr class="memitem:a4ffe98d835ca8f04ac64fa33b169fa34" id="r_a4ffe98d835ca8f04ac64fa33b169fa34"><td class="memItemLeft" align="right" valign="top">std::map&lt; uint32_t, <a class="el" href="class_f_c_t_1_1_image.html">FCT::Image</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ffe98d835ca8f04ac64fa33b169fa34">m_renderTargets</a></td></tr>
+<tr class="memitem:a16f1774d66625b0bd76da8d1d4091f24" id="r_a16f1774d66625b0bd76da8d1d4091f24"><td class="memItemLeft" align="right" valign="top">std::map&lt; uint32_t, <a class="el" href="class_f_c_t_1_1_image.html">FCT::Image</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a16f1774d66625b0bd76da8d1d4091f24">m_textures</a></td></tr>
+<tr class="memitem:a11f20cca6f091d8374e867fc24b651d2" id="r_a11f20cca6f091d8374e867fc24b651d2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_f_c_t_1_1_pass_clear_value.html">PassClearValue</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a11f20cca6f091d8374e867fc24b651d2">m_clearValue</a></td></tr>
+<tr class="memitem:aca88529f9b473d326168fa808fd02300" id="r_aca88529f9b473d326168fa808fd02300"><td class="memItemLeft" align="right" valign="top">std::atomic&lt; size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_f_c_t_1_1_ref_count.html#aca88529f9b473d326168fa808fd02300">m_refCount</a></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">详细描述</h2>
+<div class="textblock">
+<p class="definition">在文件 <a class="el" href="_r_h_i_2_pass_8h_source.html">Pass.h</a> 第 <a class="el" href="_r_h_i_2_pass_8h_source.html#l00021">21</a> 行定义.</p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">构造及析构函数说明</h2>
+<a id="a96ba42633871a400aa870a15df504ed8" name="a96ba42633871a400aa870a15df504ed8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96ba42633871a400aa870a15df504ed8">&#9670;&#160;</a></span>Pass()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">FCT::RHI::Pass::Pass </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_r_h_i_2_pass_8h_source.html">Pass.h</a> 第 <a class="el" href="_r_h_i_2_pass_8h_source.html#l00027">27</a> 行定义.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">成员函数说明</h2>
+<a id="a59c2f131121de6503df8d363b6853d45" name="a59c2f131121de6503df8d363b6853d45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59c2f131121de6503df8d363b6853d45">&#9670;&#160;</a></span>addRef()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FCT::RefCount::addRef </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_ref_count_8h_source.html">RefCount.h</a> 第 <a class="el" href="_ref_count_8h_source.html#l00010">10</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_ref_count_a59c2f131121de6503df8d363b6853d45_icgraph.png" border="0" usemap="#aclass_f_c_t_1_1_ref_count_a59c2f131121de6503df8d363b6853d45_icgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_ref_count_a59c2f131121de6503df8d363b6853d45_icgraph" id="aclass_f_c_t_1_1_ref_count_a59c2f131121de6503df8d363b6853d45_icgraph">
+<area shape="rect" title=" " alt="" coords="955,326,1123,350"/>
+<area shape="rect" href="class_f_c_t_1_1_old_render_graph.html#a13cfd8276f10ed265389fcc693e860ea" title=" " alt="" coords="721,5,875,44"/>
+<area shape="poly" title=" " alt="" coords="1030,311,1017,257,993,188,956,118,933,85,905,57,874,40,877,35,908,53,937,82,961,115,998,186,1022,255,1035,310"/>
+<area shape="rect" href="class_f_c_t_1_1_r_h_i_1_1_command_buffer.html#abfc610f45b65f65b5bb52f41c78f09cf" title=" " alt="" coords="707,68,889,107"/>
+<area shape="poly" title=" " alt="" coords="1026,312,1010,269,984,218,949,165,928,141,905,120,888,109,891,105,908,116,932,137,954,162,989,215,1015,267,1031,310"/>
+<area shape="rect" href="class_f_c_t_1_1_r_h_i_1_1_command_buffer.html#ae144aad972520d4c900c99d7dbfc9479" title=" " alt="" coords="707,131,889,169"/>
+<area shape="poly" title=" " alt="" coords="1021,313,974,248,942,213,905,183,885,172,888,167,908,178,946,209,979,244,1025,310"/>
+<area shape="rect" href="class_f_c_t_1_1_old_render_graph.html#a278ba21d6ca7fde15a01d9e36a645a70" title=" " alt="" coords="721,193,875,232"/>
+<area shape="poly" title=" " alt="" coords="1010,317,963,281,905,246,875,233,877,228,908,241,966,276,1014,313"/>
+<area shape="rect" href="class_f_c_t_1_1_r_h_i_1_1_v_k___fence.html#a6165a4dbe87683eaa15803370bf04dcf" title=" " alt="" coords="724,256,872,295"/>
+<area shape="poly" title=" " alt="" coords="973,324,871,297,873,292,974,319"/>
+<area shape="rect" href="class_f_c_t_1_1_r_h_i_1_1_v_k___semaphore.html#a1839ec7c217ac2bbf36aafa30a68900d" title="创建 信号量" alt="" coords="710,319,886,357"/>
+<area shape="poly" title=" " alt="" coords="939,341,886,341,886,335,939,335"/>
+<area shape="rect" href="struct_f_c_t_1_1_vertex_screen.html#ac040d5c42d62e7cb5e003a9dedfeefae" title=" " alt="" coords="721,381,875,420"/>
+<area shape="poly" title=" " alt="" coords="974,357,876,383,874,378,973,352"/>
+<area shape="rect" href="class_f_c_t_1_1_window.html#addf28064468b78b3bff89dbab4e551cf" title=" " alt="" coords="689,444,907,469"/>
+<area shape="poly" title=" " alt="" coords="1014,363,966,399,908,434,873,446,871,441,906,429,963,395,1010,359"/>
+<area shape="rect" href="namespace_f_c_t.html#aae9e9c566a4946fdf40954bc6e462eb8" title=" " alt="" coords="735,494,861,518"/>
+<area shape="poly" title=" " alt="" coords="1024,365,977,425,945,456,908,483,862,500,860,495,905,478,941,452,973,421,1019,362"/>
+<area shape="rect" href="class_f_c_t_1_1_tradition_render_pass.html#a160a8388423dcb956a13890c21bf59e9" title=" " alt="" coords="703,543,893,581"/>
+<area shape="poly" title=" " alt="" coords="1029,366,1011,403,984,448,950,493,908,532,887,544,884,540,905,528,946,490,980,445,1006,401,1024,364"/>
+<area shape="rect" href="class_f_c_t_1_1_tradition_render_pass.html#ae9289090a01e814478fe29c0113ae775" title=" " alt="" coords="703,605,893,644"/>
+<area shape="poly" title=" " alt="" coords="1034,366,1019,415,994,477,958,540,935,569,908,595,889,607,886,603,905,591,931,566,953,537,989,474,1014,413,1029,365"/>
+<area shape="rect" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a58f3695dff033e086411efc7ec36b61b" title=" " alt="" coords="459,256,634,295"/>
+<area shape="poly" title=" " alt="" coords="708,278,635,278,635,273,708,273"/>
+<area shape="rect" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a317a59351a75bae4e75089d55927f8d1" title=" " alt="" coords="229,256,404,295"/>
+<area shape="poly" title=" " alt="" coords="443,278,405,278,405,273,443,273"/>
+<area shape="rect" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a33264ad79ca37ae01a536e2af696a0cc" title=" " alt="" coords="5,256,181,295"/>
+<area shape="poly" title=" " alt="" coords="213,278,181,278,181,273,213,273"/>
+<area shape="rect" href="class_f_c_t_1_1_vertex_context.html#a3ed87c4bdf3d30a438d58056a97fa916" title=" " alt="" coords="473,357,620,396"/>
+<area shape="poly" title=" " alt="" coords="705,394,620,386,621,381,705,389"/>
+<area shape="rect" href="class_f_c_t_1_1_window.html#a7659d7c67b9e40d73f4245e4449c776f" title=" " alt="" coords="470,444,624,469"/>
+<area shape="poly" title=" " alt="" coords="673,459,624,459,624,454,673,454"/>
+<area shape="poly" title=" " alt="" coords="587,432,574,426,547,423,522,425,509,430,506,435,513,442,509,446,501,436,505,426,521,420,547,418,576,421,590,428"/>
+<area shape="rect" href="class_f_c_t_1_1_tls_ptr.html#ad18443a59e0ad2a96f34ae9830c5a6d2" title=" " alt="" coords="470,494,624,518"/>
+<area shape="poly" title=" " alt="" coords="719,509,624,509,624,503,719,503"/>
+<area shape="rect" href="class_f_c_t_1_1_tradition_render_pass.html#a943a4a4725e1e7516083fa479153ca83" title=" " alt="" coords="452,543,641,581"/>
+<area shape="poly" title=" " alt="" coords="688,565,642,565,642,559,688,559"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af42b166201dd5e3201ff36e60e88bdcd" name="af42b166201dd5e3201ff36e60e88bdcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af42b166201dd5e3201ff36e60e88bdcd">&#9670;&#160;</a></span>beginSubmit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void FCT::RHI::Pass::beginSubmit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_f_c_t_1_1_r_h_i_1_1_command_buffer.html">CommandBuffer</a> *</td>          <td class="paramname"><span class="paramname"><em>cmdBuf</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="class_f_c_t_1_1_r_h_i_1_1_v_k___pass.html#aeefe722a13b25bf38fc07baffb25ad35">FCT::RHI::VK_Pass</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="ae0c987eccb3de45f5008a5fe795200ce" name="ae0c987eccb3de45f5008a5fe795200ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0c987eccb3de45f5008a5fe795200ce">&#9670;&#160;</a></span>bindTarget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FCT::RHI::Pass::bindTarget </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>index</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_f_c_t_1_1_image.html">FCT::Image</a> *</td>          <td class="paramname"><span class="paramname"><em>target</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_r_h_i_2_pass_8h_source.html">Pass.h</a> 第 <a class="el" href="_r_h_i_2_pass_8h_source.html#l00032">32</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_r_h_i_1_1_pass_ae0c987eccb3de45f5008a5fe795200ce_cgraph.png" border="0" usemap="#aclass_f_c_t_1_1_r_h_i_1_1_pass_ae0c987eccb3de45f5008a5fe795200ce_cgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_r_h_i_1_1_pass_ae0c987eccb3de45f5008a5fe795200ce_cgraph" id="aclass_f_c_t_1_1_r_h_i_1_1_pass_ae0c987eccb3de45f5008a5fe795200ce_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,209,30"/>
+<area shape="rect" href="class_f_c_t_1_1_r_h_i_1_1_pass.html#a8b75dbaaeedb1c3af70dc5f0e2da5eea" title=" " alt="" coords="257,5,425,30"/>
+<area shape="poly" title=" " alt="" coords="209,15,241,15,241,20,209,20"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_r_h_i_1_1_pass_ae0c987eccb3de45f5008a5fe795200ce_icgraph.png" border="0" usemap="#aclass_f_c_t_1_1_r_h_i_1_1_pass_ae0c987eccb3de45f5008a5fe795200ce_icgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_r_h_i_1_1_pass_ae0c987eccb3de45f5008a5fe795200ce_icgraph" id="aclass_f_c_t_1_1_r_h_i_1_1_pass_ae0c987eccb3de45f5008a5fe795200ce_icgraph">
+<area shape="rect" title=" " alt="" coords="487,44,690,69"/>
+<area shape="rect" href="class_f_c_t_1_1_render_graph.html#ae1da1bdcbc804b2284f43ff8cf079360" title=" " alt="" coords="250,5,439,44"/>
+<area shape="poly" title=" " alt="" coords="474,44,439,40,440,34,475,39"/>
+<area shape="rect" href="class_f_c_t_1_1_old_render_graph.html#af139f52664ebb46c739f89ba80a253b3" title=" " alt="" coords="253,68,436,107"/>
+<area shape="poly" title=" " alt="" coords="472,74,436,79,435,73,471,69"/>
+<area shape="rect" href="class_f_c_t_1_1_render_graph.html#ae435c8f45be6782f6f17ee01daba53d6" title=" " alt="" coords="5,12,202,37"/>
+<area shape="poly" title=" " alt="" coords="234,27,202,27,202,22,234,22"/>
+<area shape="rect" href="class_f_c_t_1_1_old_render_graph.html#a56a51fcac47d140a8f640fe36c875977" title=" " alt="" coords="26,68,181,107"/>
+<area shape="poly" title=" " alt="" coords="238,90,181,90,181,85,238,85"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7929b50f5bda8152b934ea7c8a3fd3ef" name="a7929b50f5bda8152b934ea7c8a3fd3ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7929b50f5bda8152b934ea7c8a3fd3ef">&#9670;&#160;</a></span>bindTexture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FCT::RHI::Pass::bindTexture </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>index</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_f_c_t_1_1_image.html">FCT::Image</a> *</td>          <td class="paramname"><span class="paramname"><em>texture</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_r_h_i_2_pass_8h_source.html">Pass.h</a> 第 <a class="el" href="_r_h_i_2_pass_8h_source.html#l00036">36</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_r_h_i_1_1_pass_a7929b50f5bda8152b934ea7c8a3fd3ef_cgraph.png" border="0" usemap="#aclass_f_c_t_1_1_r_h_i_1_1_pass_a7929b50f5bda8152b934ea7c8a3fd3ef_cgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_r_h_i_1_1_pass_a7929b50f5bda8152b934ea7c8a3fd3ef_cgraph" id="aclass_f_c_t_1_1_r_h_i_1_1_pass_a7929b50f5bda8152b934ea7c8a3fd3ef_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,216,30"/>
+<area shape="rect" href="class_f_c_t_1_1_r_h_i_1_1_pass.html#a8b75dbaaeedb1c3af70dc5f0e2da5eea" title=" " alt="" coords="264,5,432,30"/>
+<area shape="poly" title=" " alt="" coords="216,15,248,15,248,20,216,20"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a33146ec5804be422936519224a3a7b3f" name="a33146ec5804be422936519224a3a7b3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33146ec5804be422936519224a3a7b3f">&#9670;&#160;</a></span>count()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t FCT::RefCount::count </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_ref_count_8h_source.html">RefCount.h</a> 第 <a class="el" href="_ref_count_8h_source.html#l00019">19</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_ref_count_a33146ec5804be422936519224a3a7b3f_icgraph.png" border="0" usemap="#aclass_f_c_t_1_1_ref_count_a33146ec5804be422936519224a3a7b3f_icgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_ref_count_a33146ec5804be422936519224a3a7b3f_icgraph" id="aclass_f_c_t_1_1_ref_count_a33146ec5804be422936519224a3a7b3f_icgraph">
+<area shape="rect" title=" " alt="" coords="1039,138,1200,162"/>
+<area shape="rect" href="class_f_c_t_1_1_render_graph.html#acb07b830dee99dc3fd5caca92fa2d0fa" title=" " alt="" coords="752,5,991,44"/>
+<area shape="poly" title=" " alt="" coords="1092,129,1046,92,989,58,963,47,965,42,992,53,1049,88,1095,125"/>
+<area shape="rect" href="class_f_c_t_1_1_mutil_buffer_image.html#ac20d7079024a790b21c4c6bc3b9d46bf" title=" " alt="" coords="787,68,956,107"/>
+<area shape="poly" title=" " alt="" coords="1052,136,950,110,951,105,1053,131"/>
+<area shape="rect" href="class_f_c_t_1_1_rasterization_state.html#a0d93705332eb3200072581ef554ea181" title=" " alt="" coords="780,131,963,169"/>
+<area shape="poly" title=" " alt="" coords="1023,153,963,153,963,147,1023,147"/>
+<area shape="rect" href="class_f_c_t_1_1_draw_call.html#a41b6b3739527d9073839932315e05774" title=" " alt="" coords="780,194,963,218"/>
+<area shape="poly" title=" " alt="" coords="1055,169,991,185,940,196,938,190,990,179,1054,164"/>
+<area shape="rect" href="class_f_c_t_1_1_blend_state.html#a85805cd280a4e4b7dda693da734c57ee" title=" " alt="" coords="777,243,966,268"/>
+<area shape="poly" title=" " alt="" coords="1091,174,1046,204,992,232,952,245,951,240,990,228,1043,200,1088,170"/>
+<area shape="rect" href="class_f_c_t_1_1_render_graph.html#a026e34fc52f3b7d6f85858440deacd18" title=" " alt="" coords="494,5,704,44"/>
+<area shape="poly" title=" " alt="" coords="737,27,705,27,705,22,737,22"/>
+<area shape="rect" href="class_f_c_t_1_1_render_graph.html#a54bda548f267dd3019bc390ac5f1ee52" title=" " alt="" coords="250,5,446,44"/>
+<area shape="poly" title=" " alt="" coords="478,27,447,27,447,22,478,22"/>
+<area shape="rect" href="class_f_c_t_1_1_render_graph.html#ae435c8f45be6782f6f17ee01daba53d6" title=" " alt="" coords="5,12,202,37"/>
+<area shape="poly" title=" " alt="" coords="234,27,202,27,202,22,234,22"/>
+<area shape="rect" href="class_f_c_t_1_1_old_render_graph.html#af139f52664ebb46c739f89ba80a253b3" title=" " alt="" coords="508,68,690,107"/>
+<area shape="poly" title=" " alt="" coords="771,90,691,90,691,85,771,85"/>
+<area shape="rect" href="class_f_c_t_1_1_old_render_graph.html#aeba324cd304a4483896e5cbd3f335f01" title=" " alt="" coords="522,131,676,169"/>
+<area shape="poly" title=" " alt="" coords="773,113,677,135,676,130,771,108"/>
+<area shape="rect" href="class_f_c_t_1_1_old_render_graph.html#a56a51fcac47d140a8f640fe36c875977" title=" " alt="" coords="271,68,425,107"/>
+<area shape="poly" title=" " alt="" coords="492,90,426,90,426,85,492,85"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae65a4fd311c5561c2effd7193fc05cba" name="ae65a4fd311c5561c2effd7193fc05cba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae65a4fd311c5561c2effd7193fc05cba">&#9670;&#160;</a></span>create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void FCT::RHI::Pass::create </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_f_c_t_1_1_r_h_i_1_1_pass_group.html">PassGroup</a> *</td>          <td class="paramname"><span class="paramname"><em>group</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="class_f_c_t_1_1_r_h_i_1_1_v_k___pass.html#aec58488d91e8d76a376dadd47bf62fb0">FCT::RHI::VK_Pass</a> 内被实现.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_r_h_i_1_1_pass_ae65a4fd311c5561c2effd7193fc05cba_cgraph.png" border="0" usemap="#aclass_f_c_t_1_1_r_h_i_1_1_pass_ae65a4fd311c5561c2effd7193fc05cba_cgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_r_h_i_1_1_pass_ae65a4fd311c5561c2effd7193fc05cba_cgraph" id="aclass_f_c_t_1_1_r_h_i_1_1_pass_ae65a4fd311c5561c2effd7193fc05cba_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,181,30"/>
+<area shape="rect" href="class_f_c_t_1_1_r_h_i_1_1_pass.html#ac2f8bd3467538544fcf2370d9fe1d533" title=" " alt="" coords="229,5,397,30"/>
+<area shape="poly" title=" " alt="" coords="181,15,213,15,213,20,181,20"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0fea0bed50f726d3e11ddde802dac5da" name="a0fea0bed50f726d3e11ddde802dac5da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fea0bed50f726d3e11ddde802dac5da">&#9670;&#160;</a></span>deleteThis()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void FCT::RefCount::deleteThis </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>被 <a class="el" href="class_f_c_t_1_1_r_h_i_1_1_fence.html#a3e7497fa088fbeae2a9e9f2acce771c9">FCT::RHI::Fence</a> , 以及 <a class="el" href="class_f_c_t_1_1_r_h_i_1_1_semaphore.html#ad7b72415b5c2e15a44bf488c7e27c4cd">FCT::RHI::Semaphore</a> 重载.</p>
+
+<p class="definition">在文件 <a class="el" href="_ref_count_8h_source.html">RefCount.h</a> 第 <a class="el" href="_ref_count_8h_source.html#l00027">27</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_ref_count_a0fea0bed50f726d3e11ddde802dac5da_icgraph.png" border="0" usemap="#aclass_f_c_t_1_1_ref_count_a0fea0bed50f726d3e11ddde802dac5da_icgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_ref_count_a0fea0bed50f726d3e11ddde802dac5da_icgraph" id="aclass_f_c_t_1_1_ref_count_a0fea0bed50f726d3e11ddde802dac5da_icgraph">
+<area shape="rect" title=" " alt="" coords="955,68,1151,93"/>
+<area shape="rect" href="class_f_c_t_1_1_ref_count.html#aaf57b2df79545f2b71ae9087865dee4c" title=" " alt="" coords="731,68,907,93"/>
+<area shape="poly" title=" " alt="" coords="939,83,907,83,907,78,939,78"/>
+<area shape="rect" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a58f3695dff033e086411efc7ec36b61b" title=" " alt="" coords="480,5,655,44"/>
+<area shape="poly" title=" " alt="" coords="745,67,655,47,656,42,746,62"/>
+<area shape="rect" href="namespace_f_c_t.html#a397954f06cba94c6ba59c60eafdd0e93" title=" " alt="" coords="501,68,634,93"/>
+<area shape="poly" title=" " alt="" coords="716,83,635,83,635,78,716,78"/>
+<area shape="rect" href="class_f_c_t_1_1_window.html#af49287ab5b42fe00bc8d58afa3a78193" title=" " alt="" coords="452,118,683,142"/>
+<area shape="poly" title=" " alt="" coords="738,99,635,120,634,114,737,94"/>
+<area shape="rect" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a317a59351a75bae4e75089d55927f8d1" title=" " alt="" coords="229,5,404,44"/>
+<area shape="poly" title=" " alt="" coords="464,27,405,27,405,22,464,22"/>
+<area shape="rect" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a33264ad79ca37ae01a536e2af696a0cc" title=" " alt="" coords="5,5,181,44"/>
+<area shape="poly" title=" " alt="" coords="213,27,181,27,181,22,213,22"/>
+<area shape="rect" href="class_f_c_t_1_1_tls_ptr.html#a7ecf19590c98d4761d9cbce1c6c650df" title=" " alt="" coords="236,68,397,93"/>
+<area shape="poly" title=" " alt="" coords="485,83,397,83,397,78,485,78"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4a5832122ff3fa5c514804e3d14288a1" name="a4a5832122ff3fa5c514804e3d14288a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a5832122ff3fa5c514804e3d14288a1">&#9670;&#160;</a></span>depthStencil() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_f_c_t_1_1_image.html">FCT::Image</a> * FCT::RHI::Pass::depthStencil </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_r_h_i_2_pass_8h_source.html">Pass.h</a> 第 <a class="el" href="_r_h_i_2_pass_8h_source.html#l00044">44</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a10081bc141a93556358669058e270603" name="a10081bc141a93556358669058e270603"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10081bc141a93556358669058e270603">&#9670;&#160;</a></span>depthStencil() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FCT::RHI::Pass::depthStencil </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_f_c_t_1_1_image.html">FCT::Image</a> *</td>          <td class="paramname"><span class="paramname"><em>depthStencil</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_r_h_i_2_pass_8h_source.html">Pass.h</a> 第 <a class="el" href="_r_h_i_2_pass_8h_source.html#l00040">40</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_r_h_i_1_1_pass_a10081bc141a93556358669058e270603_cgraph.png" border="0" usemap="#aclass_f_c_t_1_1_r_h_i_1_1_pass_a10081bc141a93556358669058e270603_cgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_r_h_i_1_1_pass_a10081bc141a93556358669058e270603_cgraph" id="aclass_f_c_t_1_1_r_h_i_1_1_pass_a10081bc141a93556358669058e270603_cgraph">
+<area shape="rect" title=" " alt="" coords="5,29,223,54"/>
+<area shape="poly" title=" " alt="" coords="78,31,71,21,75,11,90,5,114,3,141,6,155,13,152,17,140,11,114,8,91,10,79,15,76,20,83,27"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_r_h_i_1_1_pass_a10081bc141a93556358669058e270603_icgraph.png" border="0" usemap="#aclass_f_c_t_1_1_r_h_i_1_1_pass_a10081bc141a93556358669058e270603_icgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_r_h_i_1_1_pass_a10081bc141a93556358669058e270603_icgraph" id="aclass_f_c_t_1_1_r_h_i_1_1_pass_a10081bc141a93556358669058e270603_icgraph">
+<area shape="rect" title=" " alt="" coords="487,44,704,69"/>
+<area shape="poly" title=" " alt="" coords="640,33,626,26,596,23,569,25,554,30,551,35,559,42,555,46,546,36,551,26,568,20,596,18,628,21,643,28"/>
+<area shape="rect" href="class_f_c_t_1_1_render_graph.html#ae1da1bdcbc804b2284f43ff8cf079360" title=" " alt="" coords="250,5,439,44"/>
+<area shape="poly" title=" " alt="" coords="478,44,439,39,440,34,479,39"/>
+<area shape="rect" href="class_f_c_t_1_1_old_render_graph.html#af139f52664ebb46c739f89ba80a253b3" title=" " alt="" coords="253,68,436,107"/>
+<area shape="poly" title=" " alt="" coords="474,74,436,79,436,74,474,69"/>
+<area shape="rect" href="class_f_c_t_1_1_render_graph.html#ae435c8f45be6782f6f17ee01daba53d6" title=" " alt="" coords="5,12,202,37"/>
+<area shape="poly" title=" " alt="" coords="234,27,202,27,202,22,234,22"/>
+<area shape="rect" href="class_f_c_t_1_1_old_render_graph.html#a56a51fcac47d140a8f640fe36c875977" title=" " alt="" coords="26,68,181,107"/>
+<area shape="poly" title=" " alt="" coords="238,90,181,90,181,85,238,85"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="abc6d3d656e42dcc326a93df3e234469f" name="abc6d3d656e42dcc326a93df3e234469f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc6d3d656e42dcc326a93df3e234469f">&#9670;&#160;</a></span>enableClear() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FCT::RHI::Pass::enableClear </td>
+          <td>(</td>
+          <td class="paramtype">ClearTypes</td>          <td class="paramname"><span class="paramname"><em>type</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_f_c_t_1_1_vec4.html">Vec4</a></td>          <td class="paramname"><span class="paramname"><em>color</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>depth</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1.0f</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>stencil</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_r_h_i_2_pass_8h_source.html">Pass.h</a> 第 <a class="el" href="_r_h_i_2_pass_8h_source.html#l00049">49</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_r_h_i_1_1_pass_abc6d3d656e42dcc326a93df3e234469f_icgraph.png" border="0" usemap="#aclass_f_c_t_1_1_r_h_i_1_1_pass_abc6d3d656e42dcc326a93df3e234469f_icgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_r_h_i_1_1_pass_abc6d3d656e42dcc326a93df3e234469f_icgraph" id="aclass_f_c_t_1_1_r_h_i_1_1_pass_abc6d3d656e42dcc326a93df3e234469f_icgraph">
+<area shape="rect" title=" " alt="" coords="487,44,697,69"/>
+<area shape="rect" href="class_f_c_t_1_1_old_render_graph.html#a56a51fcac47d140a8f640fe36c875977" title=" " alt="" coords="267,5,422,44"/>
+<area shape="poly" title=" " alt="" coords="476,44,421,37,422,32,477,39"/>
+<area shape="rect" href="class_f_c_t_1_1_render_graph.html#ae1da1bdcbc804b2284f43ff8cf079360" title=" " alt="" coords="250,68,439,107"/>
+<area shape="poly" title=" " alt="" coords="473,74,440,78,439,73,472,69"/>
+<area shape="rect" href="class_f_c_t_1_1_render_graph.html#ae435c8f45be6782f6f17ee01daba53d6" title=" " alt="" coords="5,75,202,100"/>
+<area shape="poly" title=" " alt="" coords="234,90,202,90,202,85,234,85"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a17ccf372ec705a4be0f13b55a8cf10d2" name="a17ccf372ec705a4be0f13b55a8cf10d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17ccf372ec705a4be0f13b55a8cf10d2">&#9670;&#160;</a></span>enableClear() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FCT::RHI::Pass::enableClear </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_f_c_t_1_1_pass_clear_value.html">PassClearValue</a></td>          <td class="paramname"><span class="paramname"><em>clearValue</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_r_h_i_2_pass_8h_source.html">Pass.h</a> 第 <a class="el" href="_r_h_i_2_pass_8h_source.html#l00056">56</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a0dfbe0f748cbeb987c01d3243f765ffa" name="a0dfbe0f748cbeb987c01d3243f765ffa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dfbe0f748cbeb987c01d3243f765ffa">&#9670;&#160;</a></span>endSubmit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void FCT::RHI::Pass::endSubmit </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="class_f_c_t_1_1_r_h_i_1_1_v_k___pass.html#af2d6532e2b2de68ed26f35c337134918">FCT::RHI::VK_Pass</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="aa6a18ac3974103580ba195e75d438476" name="aa6a18ac3974103580ba195e75d438476"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6a18ac3974103580ba195e75d438476">&#9670;&#160;</a></span>executeClear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void FCT::RHI::Pass::executeClear </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_f_c_t_1_1_r_h_i_1_1_command_buffer.html">CommandBuffer</a> *</td>          <td class="paramname"><span class="paramname"><em>cmdBuf</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="class_f_c_t_1_1_r_h_i_1_1_v_k___pass.html#a0ba2afa146bfbb1a99d90e82eb02f97f">FCT::RHI::VK_Pass</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="ac2f8bd3467538544fcf2370d9fe1d533" name="ac2f8bd3467538544fcf2370d9fe1d533"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2f8bd3467538544fcf2370d9fe1d533">&#9670;&#160;</a></span>group()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_f_c_t_1_1_r_h_i_1_1_pass_group.html">PassGroup</a> * FCT::RHI::Pass::group </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_r_h_i_2_pass_8h_source.html">Pass.h</a> 第 <a class="el" href="_r_h_i_2_pass_8h_source.html#l00079">79</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_r_h_i_1_1_pass_ac2f8bd3467538544fcf2370d9fe1d533_icgraph.png" border="0" usemap="#aclass_f_c_t_1_1_r_h_i_1_1_pass_ac2f8bd3467538544fcf2370d9fe1d533_icgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_r_h_i_1_1_pass_ac2f8bd3467538544fcf2370d9fe1d533_icgraph" id="aclass_f_c_t_1_1_r_h_i_1_1_pass_ac2f8bd3467538544fcf2370d9fe1d533_icgraph">
+<area shape="rect" title=" " alt="" coords="229,33,397,58"/>
+<area shape="rect" href="class_f_c_t_1_1_r_h_i_1_1_pass.html#ae65a4fd311c5561c2effd7193fc05cba" title=" " alt="" coords="5,5,181,30"/>
+<area shape="poly" title=" " alt="" coords="213,36,181,31,181,26,213,30"/>
+<area shape="rect" href="class_f_c_t_1_1_r_h_i_1_1_v_k___pass.html#aec58488d91e8d76a376dadd47bf62fb0" title=" " alt="" coords="16,54,170,93"/>
+<area shape="poly" title=" " alt="" coords="214,61,171,66,170,61,213,56"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8b75dbaaeedb1c3af70dc5f0e2da5eea" name="a8b75dbaaeedb1c3af70dc5f0e2da5eea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b75dbaaeedb1c3af70dc5f0e2da5eea">&#9670;&#160;</a></span>index() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t FCT::RHI::Pass::index </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_r_h_i_2_pass_8h_source.html">Pass.h</a> 第 <a class="el" href="_r_h_i_2_pass_8h_source.html#l00071">71</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_r_h_i_1_1_pass_a8b75dbaaeedb1c3af70dc5f0e2da5eea_icgraph.png" border="0" usemap="#aclass_f_c_t_1_1_r_h_i_1_1_pass_a8b75dbaaeedb1c3af70dc5f0e2da5eea_icgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_r_h_i_1_1_pass_a8b75dbaaeedb1c3af70dc5f0e2da5eea_icgraph" id="aclass_f_c_t_1_1_r_h_i_1_1_pass_a8b75dbaaeedb1c3af70dc5f0e2da5eea_icgraph">
+<area shape="rect" title=" " alt="" coords="766,118,935,142"/>
+<area shape="rect" href="class_f_c_t_1_1_r_h_i_1_1_pass_group.html#a7562f105268830178f04da42cbc0b5c3" title=" " alt="" coords="526,5,680,44"/>
+<area shape="poly" title=" " alt="" coords="815,111,770,85,717,59,679,46,681,41,719,54,772,80,818,107"/>
+<area shape="rect" href="class_f_c_t_1_1_r_h_i_1_1_pass.html#ae0c987eccb3de45f5008a5fe795200ce" title=" " alt="" coords="501,68,704,93"/>
+<area shape="poly" title=" " alt="" coords="770,117,668,96,669,91,771,111"/>
+<area shape="rect" href="class_f_c_t_1_1_r_h_i_1_1_pass.html#a7929b50f5bda8152b934ea7c8a3fd3ef" title=" " alt="" coords="498,118,708,142"/>
+<area shape="poly" title=" " alt="" coords="751,133,708,133,708,127,751,127"/>
+<area shape="rect" href="class_f_c_t_1_1_r_h_i_1_1_pass.html#ac037d9d7e331a780b70a1989f7f893ff" title=" " alt="" coords="518,167,687,192"/>
+<area shape="poly" title=" " alt="" coords="771,149,669,169,668,164,770,143"/>
+<area shape="rect" href="class_f_c_t_1_1_r_h_i_1_1_v_k___pass.html#a219983df1b9c36efc3324812f3fe5dcc" title=" " alt="" coords="487,216,718,255"/>
+<area shape="poly" title=" " alt="" coords="818,153,772,180,719,206,685,218,683,213,717,201,770,175,815,149"/>
+<area shape="rect" href="class_f_c_t_1_1_render_graph.html#ae1da1bdcbc804b2284f43ff8cf079360" title=" " alt="" coords="250,31,439,69"/>
+<area shape="poly" title=" " alt="" coords="485,69,439,64,440,59,486,64"/>
+<area shape="rect" href="class_f_c_t_1_1_old_render_graph.html#af139f52664ebb46c739f89ba80a253b3" title=" " alt="" coords="253,93,436,132"/>
+<area shape="poly" title=" " alt="" coords="486,98,436,104,436,99,485,93"/>
+<area shape="rect" href="class_f_c_t_1_1_render_graph.html#ae435c8f45be6782f6f17ee01daba53d6" title=" " alt="" coords="5,38,202,62"/>
+<area shape="poly" title=" " alt="" coords="234,53,202,53,202,47,234,47"/>
+<area shape="rect" href="class_f_c_t_1_1_old_render_graph.html#a56a51fcac47d140a8f640fe36c875977" title=" " alt="" coords="26,93,181,132"/>
+<area shape="poly" title=" " alt="" coords="238,115,181,115,181,110,238,110"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac037d9d7e331a780b70a1989f7f893ff" name="ac037d9d7e331a780b70a1989f7f893ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac037d9d7e331a780b70a1989f7f893ff">&#9670;&#160;</a></span>index() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FCT::RHI::Pass::index </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_r_h_i_2_pass_8h_source.html">Pass.h</a> 第 <a class="el" href="_r_h_i_2_pass_8h_source.html#l00075">75</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_r_h_i_1_1_pass_ac037d9d7e331a780b70a1989f7f893ff_cgraph.png" border="0" usemap="#aclass_f_c_t_1_1_r_h_i_1_1_pass_ac037d9d7e331a780b70a1989f7f893ff_cgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_r_h_i_1_1_pass_ac037d9d7e331a780b70a1989f7f893ff_cgraph" id="aclass_f_c_t_1_1_r_h_i_1_1_pass_ac037d9d7e331a780b70a1989f7f893ff_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,174,30"/>
+<area shape="rect" href="class_f_c_t_1_1_r_h_i_1_1_pass.html#a8b75dbaaeedb1c3af70dc5f0e2da5eea" title=" " alt="" coords="222,5,390,30"/>
+<area shape="poly" title=" " alt="" coords="174,15,206,15,206,20,174,20"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a474ad3a918f2e87d75ff16075e1caeec" name="a474ad3a918f2e87d75ff16075e1caeec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a474ad3a918f2e87d75ff16075e1caeec">&#9670;&#160;</a></span>operator bool()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">FCT::RefCount::operator bool </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_ref_count_8h_source.html">RefCount.h</a> 第 <a class="el" href="_ref_count_8h_source.html#l00022">22</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a6b164a5314f7bb62fc0ab1989bd7c65f" name="a6b164a5314f7bb62fc0ab1989bd7c65f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b164a5314f7bb62fc0ab1989bd7c65f">&#9670;&#160;</a></span>passGroup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto FCT::RHI::Pass::passGroup </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_r_h_i_2_pass_8h_source.html">Pass.h</a> 第 <a class="el" href="_r_h_i_2_pass_8h_source.html#l00060">60</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aaf57b2df79545f2b71ae9087865dee4c" name="aaf57b2df79545f2b71ae9087865dee4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf57b2df79545f2b71ae9087865dee4c">&#9670;&#160;</a></span>release()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FCT::RefCount::release </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_ref_count_8h_source.html">RefCount.h</a> 第 <a class="el" href="_ref_count_8h_source.html#l00013">13</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_ref_count_aaf57b2df79545f2b71ae9087865dee4c_cgraph.png" border="0" usemap="#aclass_f_c_t_1_1_ref_count_aaf57b2df79545f2b71ae9087865dee4c_cgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_ref_count_aaf57b2df79545f2b71ae9087865dee4c_cgraph" id="aclass_f_c_t_1_1_ref_count_aaf57b2df79545f2b71ae9087865dee4c_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,181,30"/>
+<area shape="rect" href="class_f_c_t_1_1_ref_count.html#a0fea0bed50f726d3e11ddde802dac5da" title=" " alt="" coords="229,5,425,30"/>
+<area shape="poly" title=" " alt="" coords="181,15,213,15,213,20,181,20"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_ref_count_aaf57b2df79545f2b71ae9087865dee4c_icgraph.png" border="0" usemap="#aclass_f_c_t_1_1_ref_count_aaf57b2df79545f2b71ae9087865dee4c_icgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_ref_count_aaf57b2df79545f2b71ae9087865dee4c_icgraph" id="aclass_f_c_t_1_1_ref_count_aaf57b2df79545f2b71ae9087865dee4c_icgraph">
+<area shape="rect" title=" " alt="" coords="731,68,907,93"/>
+<area shape="rect" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a58f3695dff033e086411efc7ec36b61b" title=" " alt="" coords="480,5,655,44"/>
+<area shape="poly" title=" " alt="" coords="745,67,655,47,656,42,746,62"/>
+<area shape="rect" href="namespace_f_c_t.html#a397954f06cba94c6ba59c60eafdd0e93" title=" " alt="" coords="501,68,634,93"/>
+<area shape="poly" title=" " alt="" coords="716,83,635,83,635,78,716,78"/>
+<area shape="rect" href="class_f_c_t_1_1_window.html#af49287ab5b42fe00bc8d58afa3a78193" title=" " alt="" coords="452,118,683,142"/>
+<area shape="poly" title=" " alt="" coords="738,99,635,120,634,114,737,94"/>
+<area shape="rect" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a317a59351a75bae4e75089d55927f8d1" title=" " alt="" coords="229,5,404,44"/>
+<area shape="poly" title=" " alt="" coords="464,27,405,27,405,22,464,22"/>
+<area shape="rect" href="class_f_c_t_1_1_r_h_i_1_1_v_k___swapchain.html#a33264ad79ca37ae01a536e2af696a0cc" title=" " alt="" coords="5,5,181,44"/>
+<area shape="poly" title=" " alt="" coords="213,27,181,27,181,22,213,22"/>
+<area shape="rect" href="class_f_c_t_1_1_tls_ptr.html#a7ecf19590c98d4761d9cbce1c6c650df" title=" " alt="" coords="236,68,397,93"/>
+<area shape="poly" title=" " alt="" coords="485,83,397,83,397,78,485,78"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a227276d998085bd8e33f6e25dbe46396" name="a227276d998085bd8e33f6e25dbe46396"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a227276d998085bd8e33f6e25dbe46396">&#9670;&#160;</a></span>renderTargets()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto &amp; FCT::RHI::Pass::renderTargets </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_r_h_i_2_pass_8h_source.html">Pass.h</a> 第 <a class="el" href="_r_h_i_2_pass_8h_source.html#l00065">65</a> 行定义.</p>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">类成员变量说明</h2>
+<a id="a7d465f5f79e0e65cabfe311d96976655" name="a7d465f5f79e0e65cabfe311d96976655"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d465f5f79e0e65cabfe311d96976655">&#9670;&#160;</a></span>begin</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_f_c_t_1_1_r_h_i_1_1_pass.html">Pass</a>* FCT::RHI::Pass::begin = reinterpret_cast&lt;<a class="el" href="class_f_c_t_1_1_r_h_i_1_1_pass.html">Pass</a>*&gt;(-1)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_r_h_i_2_pass_8h_source.html">Pass.h</a> 第 <a class="el" href="_r_h_i_2_pass_8h_source.html#l00026">26</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a7a0e778492bf9fb5abcc0b2f648ad0ba" name="a7a0e778492bf9fb5abcc0b2f648ad0ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a0e778492bf9fb5abcc0b2f648ad0ba">&#9670;&#160;</a></span>external</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_f_c_t_1_1_r_h_i_1_1_pass.html">Pass</a>* FCT::RHI::Pass::external = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_r_h_i_2_pass_8h_source.html">Pass.h</a> 第 <a class="el" href="_r_h_i_2_pass_8h_source.html#l00024">24</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a11f20cca6f091d8374e867fc24b651d2" name="a11f20cca6f091d8374e867fc24b651d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11f20cca6f091d8374e867fc24b651d2">&#9670;&#160;</a></span>m_clearValue</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_f_c_t_1_1_pass_clear_value.html">PassClearValue</a> FCT::RHI::Pass::m_clearValue</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_r_h_i_2_pass_8h_source.html">Pass.h</a> 第 <a class="el" href="_r_h_i_2_pass_8h_source.html#l00090">90</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ab348804e4c13576737a0564a017aab12" name="ab348804e4c13576737a0564a017aab12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab348804e4c13576737a0564a017aab12">&#9670;&#160;</a></span>m_depthStencil</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_f_c_t_1_1_image.html">FCT::Image</a>* FCT::RHI::Pass::m_depthStencil</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_r_h_i_2_pass_8h_source.html">Pass.h</a> 第 <a class="el" href="_r_h_i_2_pass_8h_source.html#l00084">84</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ac0e82ca03cee77668766a965b32c3c31" name="ac0e82ca03cee77668766a965b32c3c31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0e82ca03cee77668766a965b32c3c31">&#9670;&#160;</a></span>m_group</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_f_c_t_1_1_r_h_i_1_1_pass_group.html">PassGroup</a>* FCT::RHI::Pass::m_group</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_r_h_i_2_pass_8h_source.html">Pass.h</a> 第 <a class="el" href="_r_h_i_2_pass_8h_source.html#l00085">85</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ab41b4758c6557c0596947beaeede42c1" name="ab41b4758c6557c0596947beaeede42c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab41b4758c6557c0596947beaeede42c1">&#9670;&#160;</a></span>m_index</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t FCT::RHI::Pass::m_index</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_r_h_i_2_pass_8h_source.html">Pass.h</a> 第 <a class="el" href="_r_h_i_2_pass_8h_source.html#l00086">86</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aca88529f9b473d326168fa808fd02300" name="aca88529f9b473d326168fa808fd02300"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca88529f9b473d326168fa808fd02300">&#9670;&#160;</a></span>m_refCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::atomic&lt;size_t&gt; FCT::RefCount::m_refCount</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel inherited">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_ref_count_8h_source.html">RefCount.h</a> 第 <a class="el" href="_ref_count_8h_source.html#l00030">30</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a4ffe98d835ca8f04ac64fa33b169fa34" name="a4ffe98d835ca8f04ac64fa33b169fa34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ffe98d835ca8f04ac64fa33b169fa34">&#9670;&#160;</a></span>m_renderTargets</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;uint32_t,<a class="el" href="class_f_c_t_1_1_image.html">FCT::Image</a>*&gt; FCT::RHI::Pass::m_renderTargets</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_r_h_i_2_pass_8h_source.html">Pass.h</a> 第 <a class="el" href="_r_h_i_2_pass_8h_source.html#l00088">88</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a16f1774d66625b0bd76da8d1d4091f24" name="a16f1774d66625b0bd76da8d1d4091f24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16f1774d66625b0bd76da8d1d4091f24">&#9670;&#160;</a></span>m_textures</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;uint32_t,<a class="el" href="class_f_c_t_1_1_image.html">FCT::Image</a>*&gt; FCT::RHI::Pass::m_textures</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_r_h_i_2_pass_8h_source.html">Pass.h</a> 第 <a class="el" href="_r_h_i_2_pass_8h_source.html#l00089">89</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a39f06b29f58ff75f7392852375001396" name="a39f06b29f58ff75f7392852375001396"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39f06b29f58ff75f7392852375001396">&#9670;&#160;</a></span>present</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_f_c_t_1_1_r_h_i_1_1_pass.html">Pass</a>* FCT::RHI::Pass::present = reinterpret_cast&lt;<a class="el" href="class_f_c_t_1_1_r_h_i_1_1_pass.html">Pass</a>*&gt;(-1)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_r_h_i_2_pass_8h_source.html">Pass.h</a> 第 <a class="el" href="_r_h_i_2_pass_8h_source.html#l00025">25</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/RHI/<a class="el" href="_r_h_i_2_pass_8h_source.html">Pass.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespace_f_c_t.html">FCT</a></li><li class="navelem"><a href="namespace_f_c_t_1_1_r_h_i.html">RHI</a></li><li class="navelem"><a href="class_f_c_t_1_1_r_h_i_1_1_pass.html">Pass</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,855 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FCT: FCT::ResourceManager类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FCT
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','搜索',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('class_f_c_t_1_1_resource_manager.html','','class_f_c_t_1_1_resource_manager-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">FCT::ResourceManager类 参考</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_resource_manager_8h_source.html">ResourceManager.h</a>&gt;</code></p>
+<div class="dynheader">
+FCT::ResourceManager 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_resource_manager__coll__graph.png" border="0" usemap="#a_f_c_t_1_1_resource_manager_coll__map" loading="lazy" alt="Collaboration graph"/></div>
+<map name="a_f_c_t_1_1_resource_manager_coll__map" id="a_f_c_t_1_1_resource_manager_coll__map">
+<area shape="rect" title=" " alt="" coords="140,2078,324,2335"/>
+<area shape="rect" href="class_f_c_t_1_1_context.html" title=" " alt="" coords="1423,3489,1621,4751"/>
+<area shape="poly" title=" " alt="" coords="230,2335,222,2614,218,2952,220,3113,226,3252,237,3358,245,3394,254,3417,307,3495,367,3568,434,3635,507,3697,584,3753,664,3805,746,3852,830,3895,996,3967,1153,4023,1293,4064,1407,4093,1405,4098,1292,4069,1151,4028,994,3972,828,3899,744,3857,661,3810,581,3758,504,3701,431,3639,363,3571,303,3499,249,3420,240,3395,232,3358,221,3252,215,3113,212,2952,216,2614,225,2334"/>
+<area shape="rect" href="class_f_c_t_1_1_render_graph.html" title=" " alt="" coords="896,2463,1129,3419"/>
+<area shape="poly" title=" " alt="" coords="326,2285,472,2415,692,2622,886,2811,882,2814,688,2626,468,2419,322,2289"/>
+<area shape="rect" href="class_f_c_t_1_1_token_graph.html" title=" " alt="" coords="53,761,252,1321"/>
+<area shape="poly" title=" " alt="" coords="142,1321,140,1466,142,1625,151,1789,168,1950,191,2062,186,2063,162,1950,146,1789,137,1625,134,1466,136,1321"/>
+<area shape="rect" href="class_f_c_t_1_1_noncopyable.html" title=" " alt="" coords="220,5,343,127"/>
+<area shape="poly" title=" " alt="" coords="213,128,194,151,180,177,155,248,135,321,122,396,113,472,107,622,114,761,108,761,102,622,108,472,116,396,130,320,150,246,175,175,190,149,209,125"/>
+<area shape="rect" href="class_f_c_t_1_1_token_graph.html" title=" " alt="" coords="398,176,582,737"/>
+<area shape="poly" title=" " alt="" coords="355,132,388,175,400,195,396,198,384,177,351,135"/>
+<area shape="rect" href="class_f_c_t_1_1_token_graph.html" title=" " alt="" coords="190,176,374,737"/>
+<area shape="poly" title=" " alt="" coords="284,142,284,176,279,176,279,142"/>
+<area shape="rect" href="class_f_c_t_1_1_device.html" title=" " alt="" coords="658,1345,849,1950"/>
+<area shape="poly" title=" " alt="" coords="660,1769,584,1860,501,1952,419,2035,339,2112,335,2108,416,2031,497,1948,580,1856,656,1766"/>
+<area shape="poly" title=" " alt="" coords="714,1950,701,2099,693,2267,691,2451,700,2644,721,2842,737,2942,758,3041,782,3138,812,3234,847,3327,887,3417,940,3513,1001,3605,1070,3693,1141,3775,1214,3851,1285,3919,1412,4029,1408,4033,1282,3923,1211,3855,1138,3779,1065,3696,997,3608,935,3516,882,3420,842,3329,807,3236,777,3140,752,3042,732,2943,716,2843,695,2644,686,2451,687,2267,696,2098,708,1949"/>
+<area shape="poly" title=" " alt="" coords="852,1881,894,2019,904,2076,906,2126,901,2213,900,2254,905,2296,917,2341,941,2391,948,2398,956,2402,964,2406,972,2415,987,2446,982,2448,968,2418,961,2411,953,2407,945,2403,937,2394,912,2343,899,2297,895,2254,896,2213,901,2126,899,2077,889,2021,847,1883"/>
+<area shape="rect" href="class_f_c_t_1_1_command_buffer_graph.html" title=" " alt="" coords="1286,2020,1512,2393"/>
+<area shape="poly" title=" " alt="" coords="851,1888,877,1920,907,1948,925,1957,948,1966,1006,1978,1112,1993,1156,1997,1193,1997,1230,2001,1273,2017,1271,2022,1229,2006,1193,2002,1156,2003,1112,1999,1005,1983,946,1971,922,1962,904,1952,874,1924,847,1892"/>
+<area shape="poly" title=" " alt="" coords="1422,4107,1302,4085,1148,4049,971,3998,877,3965,782,3928,687,3886,592,3838,500,3785,412,3725,329,3659,252,3586,183,3507,123,3420,85,3354,56,3291,33,3232,18,3175,8,3120,3,3067,4,3013,8,2960,27,2852,56,2736,89,2608,123,2462,138,2405,158,2349,163,2351,143,2406,128,2463,95,2609,61,2737,33,2853,13,2961,9,3014,9,3066,13,3120,23,3174,39,3230,61,3289,90,3351,127,3417,187,3504,256,3583,332,3655,415,3721,503,3780,595,3833,689,3881,784,3923,879,3960,973,3993,1149,4044,1303,4080,1423,4102"/>
+<area shape="rect" href="class_f_c_t_1_1_ref_count.html" title=" " alt="" coords="1526,357,1654,556"/>
+<area shape="poly" title=" " alt="" coords="1608,570,1652,916,1674,1130,1691,1345,1700,1535,1703,1682,1702,2020,1705,2077,1713,2127,1731,2213,1736,2254,1734,2296,1724,2342,1701,2394,1690,2409,1678,2420,1650,2430,1623,2441,1611,2450,1600,2464,1593,2563,1580,2807,1550,3489,1545,3489,1575,2806,1587,2563,1595,2462,1607,2446,1620,2436,1648,2425,1675,2415,1687,2406,1697,2391,1719,2341,1729,2296,1731,2254,1726,2214,1708,2128,1700,2078,1696,2020,1697,1682,1695,1535,1686,1346,1669,1130,1646,916,1603,570"/>
+<area shape="rect" href="class_f_c_t_1_1_r_h_i_1_1_command_pool.html" title=" " alt="" coords="1133,1606,1303,1689"/>
+<area shape="poly" title=" " alt="" coords="1557,571,1233,1608,1228,1606,1552,569"/>
+<area shape="rect" href="class_f_c_t_1_1_i_event_system.html" title=" " alt="" coords="1536,2074,1686,2339"/>
+<area shape="poly" title=" " alt="" coords="1576,2354,1556,2463,1531,2722,1516,2986,1508,3245,1507,3489,1502,3489,1503,3245,1511,2986,1526,2722,1551,2462,1571,2353"/>
+<area shape="poly" title=" " alt="" coords="1559,2354,1526,2395,1506,2411,1487,2422,1450,2432,1412,2442,1392,2451,1371,2465,1303,2527,1239,2597,1181,2670,1131,2742,1126,2739,1177,2667,1235,2593,1299,2523,1368,2461,1390,2446,1410,2437,1448,2427,1485,2417,1503,2407,1523,2391,1554,2350"/>
+<area shape="rect" href="class_f_c_t_1_1_flow_control.html" title=" " alt="" coords="311,1587,488,1708"/>
+<area shape="poly" title=" " alt="" coords="395,1709,383,1765,364,1829,334,1894,315,1924,293,1952,278,1961,263,1964,250,1966,239,1976,221,2016,214,2062,208,2061,216,2015,235,1972,248,1961,262,1958,276,1956,289,1948,311,1921,330,1892,359,1828,378,1764,389,1708"/>
+<area shape="poly" title=" " alt="" coords="398,1708,379,2012,361,2417,360,2428,361,2438,366,2445,373,2449,388,2461,429,2530,460,2595,485,2657,502,2717,524,2831,535,2942,547,3052,569,3165,587,3224,612,3286,644,3350,685,3417,765,3523,855,3624,952,3717,1053,3803,1152,3880,1248,3947,1409,4051,1407,4056,1245,3952,1149,3884,1049,3807,949,3721,851,3627,761,3527,681,3420,639,3352,607,3288,582,3226,564,3166,542,3052,530,2942,519,2832,497,2718,480,2659,456,2597,424,2532,384,2464,370,2453,362,2449,356,2440,354,2428,356,2416,373,2011,392,1708"/>
+<area shape="poly" title=" " alt="" coords="431,1707,485,1828,513,1900,538,1973,554,2036,563,2091,571,2186,575,2231,583,2279,597,2331,620,2392,677,2504,745,2612,817,2712,887,2798,883,2801,813,2715,740,2615,672,2507,615,2394,592,2333,578,2280,570,2232,566,2186,558,2092,549,2038,533,1975,508,1902,480,1830,426,1709"/>
+<area shape="poly" title=" " alt="" coords="471,737,408,1571,402,1570,466,736"/>
+<area shape="poly" title=" " alt="" coords="280,736,282,872,288,1020,299,1172,317,1321,344,1454,377,1570,372,1572,339,1455,312,1322,294,1172,283,1020,277,872,274,736"/>
+<area shape="rect" href="class_f_c_t_1_1_model_loader.html" title=" " alt="" coords="1610,2909,1732,2972"/>
+<area shape="poly" title=" " alt="" coords="1670,2973,1607,3472,1601,3471,1665,2972"/>
+<area shape="poly" title=" " alt="" coords="1131,3210,1419,3873,1414,3875,1126,3212"/>
+<area shape="rect" href="class_f_c_t_1_1_command_buffer_nodes_1_1_command_buffer.html" title=" " alt="" coords="1078,2100,1262,2313"/>
+<area shape="poly" title=" " alt="" coords="1113,2314,1061,2394,1050,2406,1041,2418,1031,2447,1026,2445,1036,2415,1046,2402,1057,2391,1109,2311"/>
+<area shape="rect" href="class_f_c_t_1_1_command_buffer_nodes_1_1_node_base.html" title=" " alt="" coords="918,1532,1109,1764"/>
+<area shape="poly" title=" " alt="" coords="1006,1778,1007,1831,1012,1887,1023,1942,1040,1995,1049,2007,1061,2018,1114,2099,1109,2102,1057,2022,1045,2010,1035,1997,1018,1943,1007,1887,1002,1831,1001,1778"/>
+<area shape="poly" title=" " alt="" coords="1217,1689,1183,2083,1178,2083,1212,1689"/>
+<area shape="poly" title=" " alt="" coords="1231,1688,1269,1825,1322,1995,1325,2003,1320,2005,1317,1997,1264,1826,1226,1690"/>
+<area shape="poly" title=" " alt="" coords="1396,2392,1393,2602,1393,2859,1400,3139,1417,3418,1424,3492,1418,3492,1411,3419,1395,3139,1388,2859,1387,2602,1391,2392"/>
+<area shape="poly" title=" " alt="" coords="1288,2383,1275,2395,1262,2403,1250,2407,1239,2410,1227,2419,1180,2478,1139,2545,1134,2542,1175,2475,1224,2415,1236,2405,1248,2401,1260,2398,1272,2391,1284,2379"/>
+<area shape="rect" href="class_f_c_t_1_1_semaphore_pool.html" title=" " alt="" coords="1327,1606,1490,1689"/>
+<area shape="poly" title=" " alt="" coords="1410,1689,1405,2003,1400,2003,1405,1689"/>
+<area shape="rect" href="class_f_c_t_1_1_fence_pool.html" title=" " alt="" coords="1514,1597,1677,1699"/>
+<area shape="poly" title=" " alt="" coords="1594,1699,1575,1835,1557,1917,1531,1997,1522,2018,1517,2016,1526,1995,1551,1916,1570,1834,1589,1698"/>
+<area shape="rect" href="class_f_c_t_1_1_union_find.html" title=" " alt="" coords="735,2110,879,2303"/>
+<area shape="poly" title=" " alt="" coords="828,2302,859,2438,894,2561,889,2563,854,2439,823,2303"/>
+<area shape="rect" href="class_f_c_t_1_1_image_loader.html" title=" " alt="" coords="1757,2870,1948,3011"/>
+<area shape="poly" title=" " alt="" coords="1841,3011,1802,3196,1747,3419,1689,3618,1629,3811,1623,3810,1684,3617,1742,3418,1797,3195,1836,3010"/>
+<area shape="rect" href="class_f_c_t_1_1_shader_compiler.html" title=" " alt="" coords="1973,2899,2116,2982"/>
+<area shape="poly" title=" " alt="" coords="2045,2982,2039,3064,2025,3174,2000,3298,1983,3360,1963,3420,1930,3499,1891,3577,1806,3729,1716,3867,1633,3982,1629,3979,1712,3864,1801,3726,1887,3575,1925,3497,1958,3418,1978,3358,1995,3296,2019,3173,2033,3063,2040,2981"/>
+<area shape="rect" href="class_f_c_t_1_1_shader_generator.html" title=" " alt="" coords="2141,2677,2367,3204"/>
+<area shape="poly" title=" " alt="" coords="2210,3205,2177,3315,2155,3369,2131,3420,2078,3511,2018,3600,1953,3685,1885,3766,1752,3910,1635,4023,1631,4019,1748,3906,1881,3763,1949,3682,2014,3597,2073,3508,2126,3417,2150,3366,2172,3313,2205,3203"/>
+<area shape="rect" href="class_f_c_t_1_1_r_h_i_1_1_descriptor_pool.html" title=" " alt="" coords="2391,2909,2570,2972"/>
+<area shape="poly" title=" " alt="" coords="2483,2972,2480,3054,2467,3169,2454,3233,2436,3298,2412,3361,2381,3420,2344,3477,2303,3531,2212,3635,2113,3731,2009,3817,1905,3894,1806,3961,1637,4062,1634,4057,1803,3957,1902,3890,2006,3813,2109,3727,2209,3632,2299,3528,2340,3474,2377,3417,2407,3359,2431,3296,2449,3232,2461,3169,2475,3054,2478,2972"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a4f992dc6effcc7cd3e6d154b1aa10a50" id="r_a4f992dc6effcc7cd3e6d154b1aa10a50"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4f992dc6effcc7cd3e6d154b1aa10a50">ResourceManager</a> (<a class="el" href="class_f_c_t_1_1_context.html">Context</a> *ctx)</td></tr>
+<tr class="memitem:aeb733fce98bbcfc7f081bba86ed31e47" id="r_aeb733fce98bbcfc7f081bba86ed31e47"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_f_c_t_1_1_image.html">Image</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeb733fce98bbcfc7f081bba86ed31e47">allocateImage</a> (std::string name, <a class="el" href="class_f_c_t_1_1_window.html">Window</a> *dependency, <a class="el" href="struct_f_c_t_1_1_image_desc.html">ImageDesc</a> desc)</td></tr>
+<tr class="memdesc:aeb733fce98bbcfc7f081bba86ed31e47"><td class="mdescLeft">&#160;</td><td class="mdescRight">分配中间Target / 图像  <br /></td></tr>
+<tr class="memitem:a42c083caec12c65230370c7dcfa5a118" id="r_a42c083caec12c65230370c7dcfa5a118"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_f_c_t_1_1_image.html">Image</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a42c083caec12c65230370c7dcfa5a118">allocateImage</a> (std::string name, std::string dependency, <a class="el" href="struct_f_c_t_1_1_image_desc.html">ImageDesc</a> desc)</td></tr>
+<tr class="memdesc:a42c083caec12c65230370c7dcfa5a118"><td class="mdescLeft">&#160;</td><td class="mdescRight">分配中间Target / 图像  <br /></td></tr>
+<tr class="memitem:a954addf5ebf3890aa5ed2853cb9efc32" id="r_a954addf5ebf3890aa5ed2853cb9efc32"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a954addf5ebf3890aa5ed2853cb9efc32">resizeImage</a> (std::string name, int width, int height)</td></tr>
+<tr class="memdesc:a954addf5ebf3890aa5ed2853cb9efc32"><td class="mdescLeft">&#160;</td><td class="mdescRight">挂起resize一个image  <br /></td></tr>
+<tr class="memitem:ab2a4326281e2905274f2a426cf236edb" id="r_ab2a4326281e2905274f2a426cf236edb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_f_c_t_1_1_image.html">Image</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2a4326281e2905274f2a426cf236edb">allocateTarget</a> (std::string name, <a class="el" href="struct_f_c_t_1_1_target_desc.html">TargetDesc</a> desc)</td></tr>
+<tr class="memdesc:ab2a4326281e2905274f2a426cf236edb"><td class="mdescLeft">&#160;</td><td class="mdescRight">分配的是独立的Target,例如窗口一类的就算为独立Target  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:a909ee0ce75929ac350afe4588d06a56a" id="r_a909ee0ce75929ac350afe4588d06a56a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a909ee0ce75929ac350afe4588d06a56a">updateGraph</a> ()</td></tr>
+<tr class="memitem:ad5246ffe3f7357be10898fd24268b277" id="r_ad5246ffe3f7357be10898fd24268b277"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad5246ffe3f7357be10898fd24268b277">addvanceFrame</a> ()</td></tr>
+<tr class="memitem:a954245509d71e21eaa0dbe13c7b77d19" id="r_a954245509d71e21eaa0dbe13c7b77d19"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a954245509d71e21eaa0dbe13c7b77d19">registerWindow</a> (<a class="el" href="class_f_c_t_1_1_window.html">Window</a> *wnd)</td></tr>
+<tr class="memitem:a1a396277acf6d8a877ec019680dc3adc" id="r_a1a396277acf6d8a877ec019680dc3adc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1a396277acf6d8a877ec019680dc3adc">resizeSub</a> (std::string token, int width, int height)</td></tr>
+<tr class="memitem:a49de35a354ac61f32450c9a3a02b19f9" id="r_a49de35a354ac61f32450c9a3a02b19f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a49de35a354ac61f32450c9a3a02b19f9">resize</a> (std::string token, int width, int height)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a7b4ea6c70c937b2930d37829ca4d7c6c" id="r_a7b4ea6c70c937b2930d37829ca4d7c6c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_f_c_t_1_1_token_graph.html">TokenGraph</a>&lt; std::string, <a class="el" href="struct_f_c_t_1_1_image_saved.html">ImageSaved</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b4ea6c70c937b2930d37829ca4d7c6c">m_dependencyGraph</a></td></tr>
+<tr class="memitem:a5e0ea4d0a63050b103f35f7617d157bc" id="r_a5e0ea4d0a63050b103f35f7617d157bc"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e0ea4d0a63050b103f35f7617d157bc">m_target</a></td></tr>
+<tr class="memitem:ad529b84a87058bd8f480b3dd30325e56" id="r_ad529b84a87058bd8f480b3dd30325e56"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="struct_f_c_t_1_1_image_saved.html">ImageSaved</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad529b84a87058bd8f480b3dd30325e56">m_needChangeIndexImages</a></td></tr>
+<tr class="memitem:afef6c064768005c18b49c21da416d3d0" id="r_afef6c064768005c18b49c21da416d3d0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_f_c_t_1_1_device.html">Device</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afef6c064768005c18b49c21da416d3d0">m_resourceDevice</a></td></tr>
+<tr class="memitem:a58fb20c20e5bbebfda29dcceb9bd56ed" id="r_a58fb20c20e5bbebfda29dcceb9bd56ed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_f_c_t_1_1_context.html">Context</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a58fb20c20e5bbebfda29dcceb9bd56ed">m_context</a></td></tr>
+<tr class="memitem:ac5dd14facc0c5b3bfc29d75391f6bf14" id="r_ac5dd14facc0c5b3bfc29d75391f6bf14"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_f_c_t_1_1_flow_control.html">FlowControl</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac5dd14facc0c5b3bfc29d75391f6bf14">m_flowControl</a></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">详细描述</h2>
+<div class="textblock">
+<p class="definition">在文件 <a class="el" href="_resource_manager_8h_source.html">ResourceManager.h</a> 第 <a class="el" href="_resource_manager_8h_source.html#l00074">74</a> 行定义.</p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">构造及析构函数说明</h2>
+<a id="a4f992dc6effcc7cd3e6d154b1aa10a50" name="a4f992dc6effcc7cd3e6d154b1aa10a50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f992dc6effcc7cd3e6d154b1aa10a50">&#9670;&#160;</a></span>ResourceManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FCT::ResourceManager::ResourceManager </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_f_c_t_1_1_context.html">Context</a> *</td>          <td class="paramname"><span class="paramname"><em>ctx</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_resource_manager_8cpp_source.html">ResourceManager.cpp</a> 第 <a class="el" href="_resource_manager_8cpp_source.html#l00037">37</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_resource_manager_a4f992dc6effcc7cd3e6d154b1aa10a50_cgraph.png" border="0" usemap="#aclass_f_c_t_1_1_resource_manager_a4f992dc6effcc7cd3e6d154b1aa10a50_cgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_resource_manager_a4f992dc6effcc7cd3e6d154b1aa10a50_cgraph" id="aclass_f_c_t_1_1_resource_manager_a4f992dc6effcc7cd3e6d154b1aa10a50_cgraph">
+<area shape="rect" title=" " alt="" coords="5,112,167,150"/>
+<area shape="rect" href="class_f_c_t_1_1_mutil_buffer_image.html#a6f226b4615f566314d524fff91a83e83" title=" " alt="" coords="222,56,390,94"/>
+<area shape="poly" title=" " alt="" coords="164,109,212,96,213,101,165,114"/>
+<area shape="rect" href="class_f_c_t_1_1_context.html#ae521169daf8c304c7aaeb0e78ab031e3" title=" " alt="" coords="215,119,397,143"/>
+<area shape="poly" title=" " alt="" coords="167,128,199,128,199,134,167,134"/>
+<area shape="rect" href="class_f_c_t_1_1_resource_manager.html#a954245509d71e21eaa0dbe13c7b77d19" title=" " alt="" coords="225,168,386,206"/>
+<area shape="poly" title=" " alt="" coords="165,148,213,161,212,166,164,153"/>
+<area shape="rect" href="class_f_c_t_1_1_resource_manager.html#a1a396277acf6d8a877ec019680dc3adc" title=" " alt="" coords="445,22,606,61"/>
+<area shape="poly" title=" " alt="" coords="377,165,395,153,411,133,419,113,426,92,443,70,447,68,450,72,447,74,431,94,424,115,416,136,399,157,380,169"/>
+<area shape="rect" href="class_f_c_t_1_1_i_event_system.html#a6eeb72a9c1dacd521fd4056727aa80bb" title=" " alt="" coords="448,85,603,124"/>
+<area shape="poly" title=" " alt="" coords="363,165,396,153,461,127,463,132,398,157,365,170"/>
+<area shape="rect" href="class_f_c_t_1_1_window.html#a7d345c18f51bb043f3b69bd887537f24" title=" " alt="" coords="654,175,830,199"/>
+<area shape="poly" title=" " alt="" coords="387,184,639,184,639,190,387,190"/>
+<area shape="rect" href="namespace_f_c_t.html#a897b9d524084119d15e466af7c8de628" title=" " alt="" coords="658,256,826,281"/>
+<area shape="poly" title=" " alt="" coords="326,205,376,254,409,277,446,295,477,304,510,308,576,307,638,297,690,283,692,288,640,302,577,312,510,313,476,309,444,300,406,282,372,258,322,209"/>
+<area shape="rect" href="class_f_c_t_1_1_resource_manager.html#a909ee0ce75929ac350afe4588d06a56a" title=" " alt="" coords="445,248,606,286"/>
+<area shape="poly" title=" " alt="" coords="362,204,457,239,455,244,360,209"/>
+<area shape="rect" href="namespace_f_c_t.html#a68b84e05c65710912752e24203b1514b" title=" " alt="" coords="452,199,599,223"/>
+<area shape="poly" title=" " alt="" coords="387,193,437,199,436,204,387,198"/>
+<area shape="rect" href="class_f_c_t_1_1_image.html#acb1ab72cc0a3baa278e7ce68f28cacdc" title=" " alt="" coords="668,29,816,54"/>
+<area shape="poly" title=" " alt="" coords="607,39,653,39,653,44,607,44"/>
+<area shape="rect" href="class_f_c_t_1_1_image.html#ab8acb1090a3b1bc3bb282196f7b9209f" title=" " alt="" coords="878,5,1025,30"/>
+<area shape="poly" title=" " alt="" coords="816,31,862,25,862,31,817,36"/>
+<area shape="rect" href="class_f_c_t_1_1_image.html#af4b50a8b7479884c2cd0c0e990875c25" title=" " alt="" coords="881,55,1022,79"/>
+<area shape="poly" title=" " alt="" coords="817,48,866,54,865,59,816,53"/>
+<area shape="poly" title=" " alt="" coords="600,200,638,196,639,201,600,205"/>
+<area shape="poly" title=" " alt="" coords="576,221,679,249,677,254,574,226"/>
+</map>
+</div>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">成员函数说明</h2>
+<a id="ad5246ffe3f7357be10898fd24268b277" name="ad5246ffe3f7357be10898fd24268b277"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5246ffe3f7357be10898fd24268b277">&#9670;&#160;</a></span>addvanceFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FCT::ResourceManager::addvanceFrame </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a42c083caec12c65230370c7dcfa5a118" name="a42c083caec12c65230370c7dcfa5a118"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42c083caec12c65230370c7dcfa5a118">&#9670;&#160;</a></span>allocateImage() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_f_c_t_1_1_image.html">Image</a> * FCT::ResourceManager::allocateImage </td>
+          <td>(</td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>dependency</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_f_c_t_1_1_image_desc.html">ImageDesc</a></td>          <td class="paramname"><span class="paramname"><em>desc</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>分配中间Target / 图像 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td></td></tr>
+    <tr><td class="paramname">dependency</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+
+<p class="definition">在文件 <a class="el" href="_resource_manager_8cpp_source.html">ResourceManager.cpp</a> 第 <a class="el" href="_resource_manager_8cpp_source.html#l00069">69</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_resource_manager_a42c083caec12c65230370c7dcfa5a118_cgraph.png" border="0" usemap="#aclass_f_c_t_1_1_resource_manager_a42c083caec12c65230370c7dcfa5a118_cgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_resource_manager_a42c083caec12c65230370c7dcfa5a118_cgraph" id="aclass_f_c_t_1_1_resource_manager_a42c083caec12c65230370c7dcfa5a118_cgraph">
+<area shape="rect" title="分配中间Target / 图像" alt="" coords="5,26,167,65"/>
+<area shape="rect" href="class_f_c_t_1_1_image.html#a736f4899f0f23e52e4e52d6469f3ba90" title=" " alt="" coords="218,5,372,30"/>
+<area shape="poly" title=" " alt="" coords="167,32,202,27,203,33,168,37"/>
+<area shape="rect" href="class_f_c_t_1_1_resource_manager.html#a909ee0ce75929ac350afe4588d06a56a" title=" " alt="" coords="215,54,376,93"/>
+<area shape="poly" title=" " alt="" coords="168,54,200,58,199,63,167,59"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aeb733fce98bbcfc7f081bba86ed31e47" name="aeb733fce98bbcfc7f081bba86ed31e47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb733fce98bbcfc7f081bba86ed31e47">&#9670;&#160;</a></span>allocateImage() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_f_c_t_1_1_image.html">Image</a> * FCT::ResourceManager::allocateImage </td>
+          <td>(</td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_f_c_t_1_1_window.html">Window</a> *</td>          <td class="paramname"><span class="paramname"><em>dependency</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_f_c_t_1_1_image_desc.html">ImageDesc</a></td>          <td class="paramname"><span class="paramname"><em>desc</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>分配中间Target / 图像 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td></td></tr>
+    <tr><td class="paramname">dependency</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+
+<p class="definition">在文件 <a class="el" href="_resource_manager_8cpp_source.html">ResourceManager.cpp</a> 第 <a class="el" href="_resource_manager_8cpp_source.html#l00064">64</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_resource_manager_aeb733fce98bbcfc7f081bba86ed31e47_cgraph.png" border="0" usemap="#aclass_f_c_t_1_1_resource_manager_aeb733fce98bbcfc7f081bba86ed31e47_cgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_resource_manager_aeb733fce98bbcfc7f081bba86ed31e47_cgraph" id="aclass_f_c_t_1_1_resource_manager_aeb733fce98bbcfc7f081bba86ed31e47_cgraph">
+<area shape="rect" title="分配中间Target / 图像" alt="" coords="5,29,167,68"/>
+<area shape="poly" title=" " alt="" coords="48,30,46,20,51,11,65,5,86,3,108,5,122,12,119,16,107,10,86,8,66,10,55,15,51,21,53,28"/>
+<area shape="rect" href="namespace_f_c_t.html#a68b84e05c65710912752e24203b1514b" title=" " alt="" coords="215,36,362,61"/>
+<area shape="poly" title=" " alt="" coords="167,46,199,46,199,51,167,51"/>
+<area shape="rect" href="class_f_c_t_1_1_window.html#a7d345c18f51bb043f3b69bd887537f24" title=" " alt="" coords="410,11,585,36"/>
+<area shape="poly" title=" " alt="" coords="362,37,394,33,395,38,363,42"/>
+<area shape="rect" href="namespace_f_c_t.html#a897b9d524084119d15e466af7c8de628" title=" " alt="" coords="414,60,582,85"/>
+<area shape="poly" title=" " alt="" coords="363,54,398,59,398,64,362,60"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_resource_manager_aeb733fce98bbcfc7f081bba86ed31e47_icgraph.png" border="0" usemap="#aclass_f_c_t_1_1_resource_manager_aeb733fce98bbcfc7f081bba86ed31e47_icgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_resource_manager_aeb733fce98bbcfc7f081bba86ed31e47_icgraph" id="aclass_f_c_t_1_1_resource_manager_aeb733fce98bbcfc7f081bba86ed31e47_icgraph">
+<area shape="rect" title="分配中间Target / 图像" alt="" coords="5,29,167,68"/>
+<area shape="poly" title=" " alt="" coords="112,16,102,10,86,8,71,10,62,15,58,21,60,28,55,30,53,20,58,11,69,5,86,3,104,5,115,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab2a4326281e2905274f2a426cf236edb" name="ab2a4326281e2905274f2a426cf236edb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2a4326281e2905274f2a426cf236edb">&#9670;&#160;</a></span>allocateTarget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_f_c_t_1_1_image.html">Image</a> * FCT::ResourceManager::allocateTarget </td>
+          <td>(</td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_f_c_t_1_1_target_desc.html">TargetDesc</a></td>          <td class="paramname"><span class="paramname"><em>desc</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>分配的是独立的Target,例如窗口一类的就算为独立Target </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd></dd></dl>
+
+<p class="definition">在文件 <a class="el" href="_resource_manager_8cpp_source.html">ResourceManager.cpp</a> 第 <a class="el" href="_resource_manager_8cpp_source.html#l00159">159</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_resource_manager_ab2a4326281e2905274f2a426cf236edb_cgraph.png" border="0" usemap="#aclass_f_c_t_1_1_resource_manager_ab2a4326281e2905274f2a426cf236edb_cgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_resource_manager_ab2a4326281e2905274f2a426cf236edb_cgraph" id="aclass_f_c_t_1_1_resource_manager_ab2a4326281e2905274f2a426cf236edb_cgraph">
+<area shape="rect" title="分配的是独立的Target,例如窗口一类的就算为独立Target" alt="" coords="5,26,167,65"/>
+<area shape="rect" href="class_f_c_t_1_1_image.html#a736f4899f0f23e52e4e52d6469f3ba90" title=" " alt="" coords="218,5,372,30"/>
+<area shape="poly" title=" " alt="" coords="167,32,202,27,203,33,168,37"/>
+<area shape="rect" href="class_f_c_t_1_1_resource_manager.html#a909ee0ce75929ac350afe4588d06a56a" title=" " alt="" coords="215,54,376,93"/>
+<area shape="poly" title=" " alt="" coords="168,54,200,58,199,63,167,59"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a954245509d71e21eaa0dbe13c7b77d19" name="a954245509d71e21eaa0dbe13c7b77d19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a954245509d71e21eaa0dbe13c7b77d19">&#9670;&#160;</a></span>registerWindow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FCT::ResourceManager::registerWindow </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_f_c_t_1_1_window.html">Window</a> *</td>          <td class="paramname"><span class="paramname"><em>wnd</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_resource_manager_8cpp_source.html">ResourceManager.cpp</a> 第 <a class="el" href="_resource_manager_8cpp_source.html#l00115">115</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_resource_manager_a954245509d71e21eaa0dbe13c7b77d19_cgraph.png" border="0" usemap="#aclass_f_c_t_1_1_resource_manager_a954245509d71e21eaa0dbe13c7b77d19_cgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_resource_manager_a954245509d71e21eaa0dbe13c7b77d19_cgraph" id="aclass_f_c_t_1_1_resource_manager_a954245509d71e21eaa0dbe13c7b77d19_cgraph">
+<area shape="rect" title=" " alt="" coords="5,168,167,206"/>
+<area shape="rect" href="class_f_c_t_1_1_resource_manager.html#a1a396277acf6d8a877ec019680dc3adc" title=" " alt="" coords="215,22,376,61"/>
+<area shape="poly" title=" " alt="" coords="103,165,150,119,181,93,213,70,220,66,223,71,216,75,184,97,154,122,107,169"/>
+<area shape="rect" href="class_f_c_t_1_1_i_event_system.html#a6eeb72a9c1dacd521fd4056727aa80bb" title=" " alt="" coords="218,85,372,124"/>
+<area shape="poly" title=" " alt="" coords="136,165,229,127,231,132,138,170"/>
+<area shape="rect" href="class_f_c_t_1_1_window.html#a7d345c18f51bb043f3b69bd887537f24" title=" " alt="" coords="424,175,599,199"/>
+<area shape="poly" title=" " alt="" coords="167,184,409,184,409,190,167,190"/>
+<area shape="rect" href="namespace_f_c_t.html#a897b9d524084119d15e466af7c8de628" title=" " alt="" coords="428,256,596,281"/>
+<area shape="poly" title=" " alt="" coords="104,205,150,253,181,277,216,295,247,304,280,309,347,308,409,298,461,283,463,289,410,303,347,313,280,314,246,309,214,300,178,282,147,257,100,209"/>
+<area shape="rect" href="class_f_c_t_1_1_resource_manager.html#a909ee0ce75929ac350afe4588d06a56a" title=" " alt="" coords="215,248,376,286"/>
+<area shape="poly" title=" " alt="" coords="140,204,229,239,228,244,138,209"/>
+<area shape="rect" href="namespace_f_c_t.html#a68b84e05c65710912752e24203b1514b" title=" " alt="" coords="222,199,369,223"/>
+<area shape="poly" title=" " alt="" coords="168,194,206,198,206,203,167,199"/>
+<area shape="rect" href="class_f_c_t_1_1_image.html#acb1ab72cc0a3baa278e7ce68f28cacdc" title=" " alt="" coords="438,29,585,54"/>
+<area shape="poly" title=" " alt="" coords="376,39,422,39,422,44,376,44"/>
+<area shape="rect" href="class_f_c_t_1_1_image.html#ab8acb1090a3b1bc3bb282196f7b9209f" title=" " alt="" coords="647,5,795,30"/>
+<area shape="poly" title=" " alt="" coords="586,31,631,25,632,31,586,36"/>
+<area shape="rect" href="class_f_c_t_1_1_image.html#af4b50a8b7479884c2cd0c0e990875c25" title=" " alt="" coords="651,55,791,79"/>
+<area shape="poly" title=" " alt="" coords="586,48,636,54,635,59,586,53"/>
+<area shape="poly" title=" " alt="" coords="369,200,408,196,408,201,370,205"/>
+<area shape="poly" title=" " alt="" coords="345,221,448,249,447,254,344,226"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_resource_manager_a954245509d71e21eaa0dbe13c7b77d19_icgraph.png" border="0" usemap="#aclass_f_c_t_1_1_resource_manager_a954245509d71e21eaa0dbe13c7b77d19_icgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_resource_manager_a954245509d71e21eaa0dbe13c7b77d19_icgraph" id="aclass_f_c_t_1_1_resource_manager_a954245509d71e21eaa0dbe13c7b77d19_icgraph">
+<area shape="rect" title=" " alt="" coords="215,5,376,44"/>
+<area shape="rect" href="class_f_c_t_1_1_resource_manager.html#a4f992dc6effcc7cd3e6d154b1aa10a50" title=" " alt="" coords="5,5,167,44"/>
+<area shape="poly" title=" " alt="" coords="199,27,167,27,167,22,199,22"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a49de35a354ac61f32450c9a3a02b19f9" name="a49de35a354ac61f32450c9a3a02b19f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49de35a354ac61f32450c9a3a02b19f9">&#9670;&#160;</a></span>resize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FCT::ResourceManager::resize </td>
+          <td>(</td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>token</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>width</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>height</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_resource_manager_8cpp_source.html">ResourceManager.cpp</a> 第 <a class="el" href="_resource_manager_8cpp_source.html#l00142">142</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_resource_manager_a49de35a354ac61f32450c9a3a02b19f9_cgraph.png" border="0" usemap="#aclass_f_c_t_1_1_resource_manager_a49de35a354ac61f32450c9a3a02b19f9_cgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_resource_manager_a49de35a354ac61f32450c9a3a02b19f9_cgraph" id="aclass_f_c_t_1_1_resource_manager_a49de35a354ac61f32450c9a3a02b19f9_cgraph">
+<area shape="rect" title=" " alt="" coords="5,24,167,62"/>
+<area shape="rect" href="class_f_c_t_1_1_image.html#acb1ab72cc0a3baa278e7ce68f28cacdc" title=" " alt="" coords="215,31,362,55"/>
+<area shape="poly" title=" " alt="" coords="167,40,199,40,199,46,167,46"/>
+<area shape="rect" href="class_f_c_t_1_1_image.html#ab8acb1090a3b1bc3bb282196f7b9209f" title=" " alt="" coords="410,5,557,30"/>
+<area shape="poly" title=" " alt="" coords="362,31,394,27,395,32,363,36"/>
+<area shape="rect" href="class_f_c_t_1_1_image.html#af4b50a8b7479884c2cd0c0e990875c25" title=" " alt="" coords="414,55,554,79"/>
+<area shape="poly" title=" " alt="" coords="363,49,399,54,398,59,362,55"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a954addf5ebf3890aa5ed2853cb9efc32" name="a954addf5ebf3890aa5ed2853cb9efc32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a954addf5ebf3890aa5ed2853cb9efc32">&#9670;&#160;</a></span>resizeImage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FCT::ResourceManager::resizeImage </td>
+          <td>(</td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>width</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>height</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>挂起resize一个image </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td></td></tr>
+    <tr><td class="paramname">width</td><td></td></tr>
+    <tr><td class="paramname">height</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="_resource_manager_8cpp_source.html">ResourceManager.cpp</a> 第 <a class="el" href="_resource_manager_8cpp_source.html#l00155">155</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a1a396277acf6d8a877ec019680dc3adc" name="a1a396277acf6d8a877ec019680dc3adc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a396277acf6d8a877ec019680dc3adc">&#9670;&#160;</a></span>resizeSub()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FCT::ResourceManager::resizeSub </td>
+          <td>(</td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>token</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>width</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>height</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_resource_manager_8cpp_source.html">ResourceManager.cpp</a> 第 <a class="el" href="_resource_manager_8cpp_source.html#l00134">134</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_resource_manager_a1a396277acf6d8a877ec019680dc3adc_cgraph.png" border="0" usemap="#aclass_f_c_t_1_1_resource_manager_a1a396277acf6d8a877ec019680dc3adc_cgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_resource_manager_a1a396277acf6d8a877ec019680dc3adc_cgraph" id="aclass_f_c_t_1_1_resource_manager_a1a396277acf6d8a877ec019680dc3adc_cgraph">
+<area shape="rect" title=" " alt="" coords="5,24,167,62"/>
+<area shape="rect" href="class_f_c_t_1_1_image.html#acb1ab72cc0a3baa278e7ce68f28cacdc" title=" " alt="" coords="215,31,362,55"/>
+<area shape="poly" title=" " alt="" coords="167,40,199,40,199,46,167,46"/>
+<area shape="rect" href="class_f_c_t_1_1_image.html#ab8acb1090a3b1bc3bb282196f7b9209f" title=" " alt="" coords="410,5,557,30"/>
+<area shape="poly" title=" " alt="" coords="362,31,394,27,395,32,363,36"/>
+<area shape="rect" href="class_f_c_t_1_1_image.html#af4b50a8b7479884c2cd0c0e990875c25" title=" " alt="" coords="414,55,554,79"/>
+<area shape="poly" title=" " alt="" coords="363,49,399,54,398,59,362,55"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_resource_manager_a1a396277acf6d8a877ec019680dc3adc_icgraph.png" border="0" usemap="#aclass_f_c_t_1_1_resource_manager_a1a396277acf6d8a877ec019680dc3adc_icgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_resource_manager_a1a396277acf6d8a877ec019680dc3adc_icgraph" id="aclass_f_c_t_1_1_resource_manager_a1a396277acf6d8a877ec019680dc3adc_icgraph">
+<area shape="rect" title=" " alt="" coords="424,5,585,44"/>
+<area shape="rect" href="class_f_c_t_1_1_resource_manager.html#a954245509d71e21eaa0dbe13c7b77d19" title=" " alt="" coords="215,5,376,44"/>
+<area shape="poly" title=" " alt="" coords="408,27,376,27,376,22,408,22"/>
+<area shape="rect" href="class_f_c_t_1_1_resource_manager.html#a4f992dc6effcc7cd3e6d154b1aa10a50" title=" " alt="" coords="5,5,167,44"/>
+<area shape="poly" title=" " alt="" coords="199,27,167,27,167,22,199,22"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a909ee0ce75929ac350afe4588d06a56a" name="a909ee0ce75929ac350afe4588d06a56a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a909ee0ce75929ac350afe4588d06a56a">&#9670;&#160;</a></span>updateGraph()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FCT::ResourceManager::updateGraph </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_resource_manager_8cpp_source.html">ResourceManager.cpp</a> 第 <a class="el" href="_resource_manager_8cpp_source.html#l00106">106</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_resource_manager_a909ee0ce75929ac350afe4588d06a56a_icgraph.png" border="0" usemap="#aclass_f_c_t_1_1_resource_manager_a909ee0ce75929ac350afe4588d06a56a_icgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_resource_manager_a909ee0ce75929ac350afe4588d06a56a_icgraph" id="aclass_f_c_t_1_1_resource_manager_a909ee0ce75929ac350afe4588d06a56a_icgraph">
+<area shape="rect" title=" " alt="" coords="424,68,585,107"/>
+<area shape="rect" href="class_f_c_t_1_1_resource_manager.html#a42c083caec12c65230370c7dcfa5a118" title="分配中间Target / 图像" alt="" coords="215,5,376,44"/>
+<area shape="poly" title=" " alt="" coords="423,66,362,47,363,42,424,61"/>
+<area shape="rect" href="class_f_c_t_1_1_resource_manager.html#ab2a4326281e2905274f2a426cf236edb" title="分配的是独立的Target,例如窗口一类的就算为独立Target" alt="" coords="215,68,376,107"/>
+<area shape="poly" title=" " alt="" coords="408,90,376,90,376,85,408,85"/>
+<area shape="rect" href="class_f_c_t_1_1_resource_manager.html#a954245509d71e21eaa0dbe13c7b77d19" title=" " alt="" coords="215,131,376,169"/>
+<area shape="poly" title=" " alt="" coords="424,114,363,133,362,128,423,109"/>
+<area shape="rect" href="class_f_c_t_1_1_resource_manager.html#a4f992dc6effcc7cd3e6d154b1aa10a50" title=" " alt="" coords="5,131,167,169"/>
+<area shape="poly" title=" " alt="" coords="199,153,167,153,167,147,199,147"/>
+</map>
+</div>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">类成员变量说明</h2>
+<a id="a58fb20c20e5bbebfda29dcceb9bd56ed" name="a58fb20c20e5bbebfda29dcceb9bd56ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58fb20c20e5bbebfda29dcceb9bd56ed">&#9670;&#160;</a></span>m_context</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_f_c_t_1_1_context.html">Context</a>* FCT::ResourceManager::m_context</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_resource_manager_8h_source.html">ResourceManager.h</a> 第 <a class="el" href="_resource_manager_8h_source.html#l00108">108</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a7b4ea6c70c937b2930d37829ca4d7c6c" name="a7b4ea6c70c937b2930d37829ca4d7c6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b4ea6c70c937b2930d37829ca4d7c6c">&#9670;&#160;</a></span>m_dependencyGraph</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_f_c_t_1_1_token_graph.html">TokenGraph</a>&lt;std::string,<a class="el" href="struct_f_c_t_1_1_image_saved.html">ImageSaved</a>&gt; FCT::ResourceManager::m_dependencyGraph</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_resource_manager_8h_source.html">ResourceManager.h</a> 第 <a class="el" href="_resource_manager_8h_source.html#l00104">104</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ac5dd14facc0c5b3bfc29d75391f6bf14" name="ac5dd14facc0c5b3bfc29d75391f6bf14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5dd14facc0c5b3bfc29d75391f6bf14">&#9670;&#160;</a></span>m_flowControl</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_f_c_t_1_1_flow_control.html">FlowControl</a>* FCT::ResourceManager::m_flowControl</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_resource_manager_8h_source.html">ResourceManager.h</a> 第 <a class="el" href="_resource_manager_8h_source.html#l00109">109</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ad529b84a87058bd8f480b3dd30325e56" name="ad529b84a87058bd8f480b3dd30325e56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad529b84a87058bd8f480b3dd30325e56">&#9670;&#160;</a></span>m_needChangeIndexImages</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="struct_f_c_t_1_1_image_saved.html">ImageSaved</a>&gt; FCT::ResourceManager::m_needChangeIndexImages</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_resource_manager_8h_source.html">ResourceManager.h</a> 第 <a class="el" href="_resource_manager_8h_source.html#l00106">106</a> 行定义.</p>
+
+</div>
+</div>
+<a id="afef6c064768005c18b49c21da416d3d0" name="afef6c064768005c18b49c21da416d3d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afef6c064768005c18b49c21da416d3d0">&#9670;&#160;</a></span>m_resourceDevice</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_f_c_t_1_1_device.html">Device</a>* FCT::ResourceManager::m_resourceDevice</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_resource_manager_8h_source.html">ResourceManager.h</a> 第 <a class="el" href="_resource_manager_8h_source.html#l00107">107</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a5e0ea4d0a63050b103f35f7617d157bc" name="a5e0ea4d0a63050b103f35f7617d157bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e0ea4d0a63050b103f35f7617d157bc">&#9670;&#160;</a></span>m_target</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::string&gt; FCT::ResourceManager::m_target</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_resource_manager_8h_source.html">ResourceManager.h</a> 第 <a class="el" href="_resource_manager_8h_source.html#l00105">105</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/Context/<a class="el" href="_resource_manager_8h_source.html">ResourceManager.h</a></li>
+<li>src/Context/<a class="el" href="_resource_manager_8cpp_source.html">ResourceManager.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="namespace_f_c_t.html">FCT</a></li><li class="navelem"><a href="class_f_c_t_1_1_resource_manager.html">ResourceManager</a></li>
+    <li class="footer">制作者 <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>
