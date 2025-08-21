@@ -603,6 +603,10 @@ namespace FCT {
 
         	return activeSuccessors;
         }
+		bool containsNode(const Token& token) const
+	    {
+		    return m_nodeMap.contains(token);
+	    }
 	private:
 		TokenGraphSavedBoostGraph m_graph;
 		boost::bimap<

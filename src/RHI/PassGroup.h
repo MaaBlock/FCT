@@ -44,7 +44,7 @@ namespace FCT
             std::vector<PassNeighbors> predecessors;
             std::vector<PassNeighbors> successors;
         };
-        class PassGroup
+        class PassGroup : public RefCount
         {
         public:
             PassGroup()

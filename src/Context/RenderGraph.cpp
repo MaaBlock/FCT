@@ -244,14 +244,11 @@ namespace FCT
         }
     }
 
-    void RenderGraph::cleanUpCompile()
-    {
-
-    }
-
     void RenderGraph::resolveTextureSizes()
     {
-        for (auto& [passName, pass] : m_passNodes) {
+
+        for (auto& passName : m_topologicalSortPasses) {
+            auto& pass = m_passNodes[passName];
             std::vector<RenderGraphImageNode*> referenceNodes;
 
             for (auto* targetEdge : pass.getTargetOutgoingEdges()) {
@@ -368,8 +365,14 @@ namespace FCT
             }
         }
     }
-
-
+    void RenderGraph::clearResources()
+    {
+        for (auto& [name, image] : m_allocatedImages)
+        {
+            m_resourceManager->clearImage(name);
+        }
+        m_allocatedImages.clear();
+    }
 
     void RenderGraph::allocateResources()
     {
@@ -547,6 +550,47 @@ namespace FCT
                 }
             }
         }
+    }
+    std::vector<std::string> RenderGraph::topologicalSortPasses() const
+    {
+        auto dependencies = buildPassDependencyGraph();
+        return topologicalSort(dependencies);
+    }
+
+    std::map<std::string, std::set<std::string>> RenderGraph::buildPassDependencyGraph() const
+    {
+        std::map<std::string, std::set<std::string>> dependencies;
+
+        for (const auto& [passName, passNode] : m_passNodes) {
+            dependencies[passName] = std::set<std::string>();
+        }
+
+        for (const auto& [consumerPassName, consumerPassNode] : m_passNodes) {
+            for (const auto* textureEdge : consumerPassNode.getTextureIncomingEdges()) {
+                std::string imageName = textureEdge->fromImage;
+
+                auto imageIt = m_imageNodes.find(imageName);
+                if (imageIt != m_imageNodes.end()) {
+                    const auto& imageNode = imageIt->second;
+
+                    for (const auto* targetEdge : imageNode->getTargetIncomingEdges()) {
+                        std::string producerPassName = targetEdge->fromPass;
+                        if (producerPassName != consumerPassName) {
+                            dependencies[consumerPassName].insert(producerPassName);
+                        }
+                    }
+
+                    for (const auto* depthEdge : imageNode->getDepthStencilIncomingEdges()) {
+                        std::string producerPassName = depthEdge->fromPass;
+                        if (producerPassName != consumerPassName) {
+                            dependencies[consumerPassName].insert(producerPassName);
+                        }
+                    }
+                }
+            }
+        }
+
+        return dependencies;
     }
 
     std::vector<std::string> RenderGraph::topologicalSort(
@@ -898,6 +942,31 @@ namespace FCT
             }
         }
     }
+
+    void RenderGraph::cleanUpCompile()
+    {
+        m_passGroupOrders.clear();
+        m_passGroupExecutionOrder.clear();
+        m_passGroupBarriers.clear();
+        m_passGroupDependencies.clear();
+        m_imageNodes.clear();
+        m_passNodes.clear();
+        m_passesUnions = UnionFind<std::string,char>();
+        m_edges.clear();
+        clearResources();//m_allocatedImages
+        for (auto& [name, pass] : m_allocatedPasses)
+        {
+            pass->release();
+        }
+        m_allocatedPasses.clear();
+        m_topologicalSortPasses.clear();
+        for (auto& [name, passGroup] : m_allocatedPassGroups)
+        {
+            passGroup->release();
+        }
+        m_originalPasses.clear();
+    }
+
     PipelineStage RenderGraph::convertShaderStageToPipelineStage(ShaderStage stage) const {
         switch (stage) {
         case ShaderStage::Vertex:

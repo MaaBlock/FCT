@@ -103,6 +103,25 @@ namespace FCT {
         return ret.img;
     }
 
+    void ResourceManager::clearImage(std::string name)
+    {
+        if (m_dependencyGraph.containsNode(name))
+        {
+
+            auto node = m_dependencyGraph[name];
+            auto& imageSaved = node->value;
+
+            if (imageSaved.img)
+            {
+                imageSaved.img->release();
+            }
+
+            m_dependencyGraph.removeNode(name);
+
+            updateGraph();
+        }
+    }
+
     void ResourceManager::updateGraph()
     {
         m_dependencyGraph.update();

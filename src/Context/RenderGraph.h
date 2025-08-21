@@ -200,25 +200,6 @@ namespace FCT
         constexpr const char* RenderGraphSubmit = "RenderGraphSubmit";
     }
     class RenderGraph : private IEventSystem<EventSystemConfig::TriggerOnly>{
-    private:
-        uint32_t m_commandBufferIndex = 0;
-        /**
-         * @cond CHINESE
-         *  todo:修改以做多CommandBufferGraph支持
-         * @endcond
-         */
-        CommandBufferToken m_commandBufferToken;
-        void initForSubmit();
-        void allocateCommandBuffer();
-    public:
-    private:
-        Device* m_resourceDevice;
-        FlowControl* m_flowControl;
-        CommandBufferGraph* m_commandBufferGraph;
-        ResourceManager* m_resourceManager;
-    public:
-        RenderGraph(Device* device, FlowControl* flowControl, CommandBufferGraph* commandBufferGraph, ResourceManager* resourceManager);
-    private:
         struct ImageState {
             ImageLayout currentLayout = ImageLayout::undefined;
             PipelineStage lastStage = PipelineStage::topOfPipe;
@@ -236,6 +217,25 @@ namespace FCT
             AccessFlag dstAccess;
             ImageAspect aspect;
         };
+    private:
+        Device* m_resourceDevice;
+        FlowControl* m_flowControl;
+        CommandBufferGraph* m_commandBufferGraph;
+        ResourceManager* m_resourceManager;
+    private:
+        /**
+         * @cond CHINESE
+         *  todo:修改以做多CommandBufferGraph支持
+         * @endcond
+         */
+        CommandBufferToken m_commandBufferToken;
+        void initForSubmit();
+        void allocateCommandBuffer();
+    private:
+        std::unordered_map<std::string, std::vector<std::string>> m_passGroupOrders;
+        std::vector<std::string> m_passGroupExecutionOrder;
+    public:
+    private:
         std::unordered_map<std::string, std::vector<BarrierInfo>> m_passGroupBarriers;
         std::map<std::string, std::set<std::string>> m_passGroupDependencies;
         std::unordered_map<std::string, std::unique_ptr<RenderGraphImageNode>> m_imageNodes;
@@ -244,6 +244,16 @@ namespace FCT
         std::vector<std::unique_ptr<Edge>> m_edges;
         std::unordered_map<std::string, Image*> m_allocatedImages;
         std::unordered_map<std::string, RHI::Pass*> m_allocatedPasses;
+        std::vector<PassDesc> m_originalPasses; // 存储编译前的PassDesc
+        std::vector<std::string> m_topologicalSortPasses;
+        std::unordered_map<std::string, RHI::PassGroup*> m_allocatedPassGroups; // 存储创建的PassGroup
+        void cleanUpCompile();
+
+    private:
+        PipelineStage convertShaderStageToPipelineStage(ShaderStage stage) const;
+    public:
+        RenderGraph(Device* device, FlowControl* flowControl, CommandBufferGraph* commandBufferGraph, ResourceManager* resourceManager);
+    private:
         RenderGraphImageNode* getOrCreateImageNode(const std::string& name, const Texture& texture);
         RenderGraphImageNode* getOrCreateImageNode(const std::string& name, const Target& target);
         RenderGraphImageNode* getOrCreateImageNode(const std::string& name, const DepthStencil& depthStencil);
@@ -260,7 +270,7 @@ namespace FCT
 
         void executeBarriers(RHI::CommandBuffer* cmdBuffer, const std::vector<BarrierInfo>& barriers);
         void addPass(const PassDesc& desc);
-        void cleanUpCompile();
+
         void cleanUp();
         /**
          * @cond CHINESE
@@ -290,6 +300,7 @@ namespace FCT
           * @endcond
           */
         void groupPasses();
+        void clearResources();
 
         void allocateResources();
         /**
@@ -303,10 +314,11 @@ namespace FCT
         void createRHIPasses();
         void analyzePassGroupDependencies(const std::string& groupLeader, const std::vector<std::string>& groupMembers,
                                           std::map<std::string, std::set<std::string>>& dependencies) const;
+        std::vector<std::string> topologicalSortPasses() const;
+        std::map<std::string, std::set<std::string>> buildPassDependencyGraph() const;
         std::vector<std::string> topologicalSort(const std::map<std::string, std::set<std::string>>& dependencies) const;
         void analyzePassGroupBarriers();
         void computePassGroupExecutionOrder();
-        std::unordered_map<std::string, RHI::PassGroup*> m_allocatedPassGroups; // 存储创建的PassGroup
         /**
           * @cond CHINESE
           * @note 创建PassGroup并设置Pass之间的依赖关系
@@ -341,11 +353,21 @@ namespace FCT
         {
             PassDesc desc(name);
             desc.processArgs(std::forward<Args>(args)...);
-            addPass(desc);
+            m_originalPasses.push_back(desc);
+            //addPass(desc);
+        }
+        void buildGraph()
+        {
+            for (auto pass : m_originalPasses)
+            {
+                addPass(pass);
+            }
         }
         void compile()
         {
+            buildGraph();
             allocateCommandBuffer();
+            m_topologicalSortPasses = topologicalSortPasses();
             resolveTextureSizes();
             groupPasses();
             allocateResources();
@@ -358,9 +380,6 @@ namespace FCT
         Image* getImage(const std::string& name) const;
         std::vector<TextureEdge*> getTextureEdges(const std::string& passName) const;
     private:
-        PipelineStage convertShaderStageToPipelineStage(ShaderStage stage) const;
-        std::unordered_map<std::string, std::vector<std::string>> m_passGroupOrders;
-        std::vector<std::string> m_passGroupExecutionOrder;
         void submitPassGroup(RHI::CommandBuffer* cmdBuffer,
                              const std::string& groupLeader);
 

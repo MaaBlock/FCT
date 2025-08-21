@@ -92,6 +92,7 @@ namespace FCT
          * @endcond
          */
         Image* allocateImage(std::string name,std::string dependency,ImageDesc desc);
+        void clearImage(std::string name);
     private:
         /*todo: updateGraph 修改了 m_needChangeIndexImages 而 change index 发生在submit 线程
          *      要是运行时 allocateImage怎么办？怎么做线程同步?
