@@ -30,7 +30,17 @@ export default defineConfig({
                       link: '/document/getting_started/index.md',
                       items: [
                           {
-
+                              text: '快速开始',
+                              link: '/document/getting_started/quick-start/index.md',
+                              items: [
+                                  {text: '配置vcpkg',link: '/document/getting_started/quick-start/config-vcpkg.md' },
+                                  {text: '配置ide',
+                                      items: [
+                                          {text: 'VS 2022' },
+                                          {text: 'CLion', link: '/document/getting_started/quick-start/install-for-clion.md' },
+                                      ]
+                                  }
+                              ]
                           }]
                   },
                   {
