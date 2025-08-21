@@ -33,7 +33,7 @@ graph LR
         
         subgraph groupPasses["分组Pass"]
             B1[遍历pass]
-            B2[如果texture连接的image和pass输出大小相同<br/>将该texture作为target的pass全部Unite起来]
+            B2[如果texture连接的image和pass输出大小相同<br/>将该texture作为target的pass<br/>全部Unite起来]
             B3[遍历image]
             B4[将输出到这个image的pass全部unite起来]
             
