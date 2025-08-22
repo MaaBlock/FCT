@@ -34,6 +34,7 @@ namespace FCT {
         return std::vector<RHI::Semaphore*>{} ;
     }
 
+
     void CommandBufferNodes::OutputToWindow::fillSynchronization(uint32_t frameIndex)
     {
         if (frameIndex >= m_frameDirty.size() || !m_frameDirty[frameIndex]) {

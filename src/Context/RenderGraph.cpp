@@ -165,7 +165,7 @@ namespace FCT
         }
         pass.addIncomingEdge(edgePtr);
 
-        m_edges.push_back(std::move(edge));
+        m_edges.insert(std::move(edge));
     }
 
     void RenderGraph::createTargetEdge(const std::string& passName, const std::string& targetName, const Target& target)
@@ -184,7 +184,7 @@ namespace FCT
         }
         pass.addOutgoingEdge(edgePtr);
 
-        m_edges.push_back(std::move(edge));
+        m_edges.insert(std::move(edge));
     }
 
     void RenderGraph::createDepthStencilEdge(const std::string& passName, const std::string& depthStencilName,
@@ -204,9 +204,94 @@ namespace FCT
         }
         pass.addOutgoingEdge(edgePtr);
 
-        m_edges.push_back(std::move(edge));
+        m_edges.insert(std::move(edge));
+    }
+void RenderGraph::removeTextureEdge(TextureEdge* edgeToRemove) {
+    if (!edgeToRemove) return;
+
+    auto passIt = m_passNodes.find(edgeToRemove->toPass);
+    if (passIt != m_passNodes.end()) {
+        auto& pass = passIt->second;
+        auto& incomingEdges = const_cast<std::vector<TextureEdge*>&>(pass.getTextureIncomingEdges());
+        incomingEdges.erase(
+            std::remove(incomingEdges.begin(), incomingEdges.end(), edgeToRemove),
+            incomingEdges.end()
+        );
     }
 
+    auto imageNodeIt = m_imageNodes.find(edgeToRemove->fromImage);
+    if (imageNodeIt != m_imageNodes.end()) {
+        imageNodeIt->second->removeOutgoingEdge(edgeToRemove);
+    }
+
+    auto it = std::find_if(m_edges.begin(), m_edges.end(),
+        [edgeToRemove](const std::unique_ptr<Edge>& edge) {
+            return edge.get() == edgeToRemove;
+        });
+
+    if (it != m_edges.end()) {
+        m_edges.erase(it);
+    }
+}
+
+void RenderGraph::removeTargetEdge(TargetEdge* edgeToRemove) {
+    if (!edgeToRemove) return;
+
+    auto passIt = m_passNodes.find(edgeToRemove->fromPass);
+    if (passIt != m_passNodes.end()) {
+        auto& pass = passIt->second;
+        auto& outgoingEdges = const_cast<std::vector<TargetEdge*>&>(pass.getTargetOutgoingEdges());
+        outgoingEdges.erase(
+            std::remove(outgoingEdges.begin(), outgoingEdges.end(), edgeToRemove),
+            outgoingEdges.end()
+        );
+    }
+
+    auto imageNodeIt = m_imageNodes.find(edgeToRemove->toImage);
+    if (imageNodeIt != m_imageNodes.end()) {
+        imageNodeIt->second->removeIncomingEdge(edgeToRemove);
+    }
+
+    auto it = std::find_if(m_edges.begin(), m_edges.end(),
+        [edgeToRemove](const std::unique_ptr<Edge>& edge) {
+            return edge.get() == edgeToRemove;
+        });
+
+    if (it != m_edges.end()) {
+        m_edges.erase(it);
+    }
+}
+
+void RenderGraph::removeDepthStencilEdge(DepthStencilEdge* edgeToRemove) {
+    if (!edgeToRemove) return;
+
+    // 从 pass 的 outgoing edges 中移除
+    auto passIt = m_passNodes.find(edgeToRemove->fromPass);
+    if (passIt != m_passNodes.end()) {
+        auto& pass = passIt->second;
+        auto& outgoingEdges = const_cast<std::vector<DepthStencilEdge*>&>(pass.getDepthStencilOutgoingEdges());
+        outgoingEdges.erase(
+            std::remove(outgoingEdges.begin(), outgoingEdges.end(), edgeToRemove),
+            outgoingEdges.end()
+        );
+    }
+
+    // 从 image node 的 incoming edges 中移除
+    auto imageNodeIt = m_imageNodes.find(edgeToRemove->toImage);
+    if (imageNodeIt != m_imageNodes.end()) {
+        imageNodeIt->second->removeIncomingEdge(edgeToRemove);
+    }
+
+    // 从 m_edges 中移除并销毁
+    auto it = std::find_if(m_edges.begin(), m_edges.end(),
+        [edgeToRemove](const std::unique_ptr<Edge>& edge) {
+            return edge.get() == edgeToRemove;
+        });
+
+    if (it != m_edges.end()) {
+        m_edges.erase(it);
+    }
+}
     void RenderGraph::addPass(const PassDesc& desc)
     {
         m_passNodes[desc.name] = desc.name;
@@ -991,6 +1076,123 @@ namespace FCT
                 barrier.dstAccess,
                 barrier.aspect
             );
+        }
+    }
+void RenderGraph::cullPasses()
+    {
+        std::vector<std::string> passesToCull;
+
+        for (const auto& [passName, passNode] : m_passNodes) {
+            bool shouldCull = false;
+
+            for (const auto* targetEdge : passNode.getTargetOutgoingEdges()) {
+                auto imageNodeIt = m_imageNodes.find(targetEdge->toImage);
+                if (imageNodeIt != m_imageNodes.end()) {
+                    const auto* imageNode = imageNodeIt->second.get();
+
+                    const auto* bufferNode = dynamic_cast<const RenderGraphBufferNode*>(imageNode);
+                    if (bufferNode && !bufferNode->isSizeDetermined()) {
+                        shouldCull = true;
+                        break;
+                    }
+                }
+            }
+
+            if (!shouldCull) {
+                for (const auto* depthEdge : passNode.getDepthStencilOutgoingEdges()) {
+                    auto imageNodeIt = m_imageNodes.find(depthEdge->toImage);
+                    if (imageNodeIt != m_imageNodes.end()) {
+                        const auto* imageNode = imageNodeIt->second.get();
+
+                        // 检查是否是 RenderGraphBufferNode 且大小未确定
+                        const auto* bufferNode = dynamic_cast<const RenderGraphBufferNode*>(imageNode);
+                        if (bufferNode && !bufferNode->isSizeDetermined()) {
+                            shouldCull = true;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            if (shouldCull) {
+                passesToCull.push_back(passName);
+            }
+        }
+
+        for (const std::string& passName : passesToCull) {
+            cullPass(passName);
+        }
+    }
+
+void RenderGraph::cullPass(const std::string& passName)
+    {
+        auto passIt = m_passNodes.find(passName);
+        if (passIt == m_passNodes.end()) {
+            return;
+        }
+
+        const auto& passNode = passIt->second;
+        std::vector<std::string> imagesToCull;
+
+        std::vector<TextureEdge*> textureEdgesToRemove;
+        std::vector<TargetEdge*> targetEdgesToRemove;
+        std::vector<DepthStencilEdge*> depthStencilEdgesToRemove;
+
+        for (const auto* textureEdge : passNode.getTextureIncomingEdges()) {
+            textureEdgesToRemove.push_back(const_cast<TextureEdge*>(textureEdge));
+        }
+
+        for (const auto* targetEdge : passNode.getTargetOutgoingEdges()) {
+            targetEdgesToRemove.push_back(const_cast<TargetEdge*>(targetEdge));
+
+            auto imageNodeIt = m_imageNodes.find(targetEdge->toImage);
+            if (imageNodeIt != m_imageNodes.end()) {
+                const auto& imageNode = imageNodeIt->second;
+
+                if (imageNode->getTargetIncomingEdges().size() == 1 &&
+                    imageNode->getDepthStencilIncomingEdges().empty() &&
+                    imageNode->getTextureOutgoingEdges().empty()) {
+                    imagesToCull.push_back(targetEdge->toImage);
+                    }
+            }
+        }
+
+        for (const auto* depthEdge : passNode.getDepthStencilOutgoingEdges()) {
+            depthStencilEdgesToRemove.push_back(const_cast<DepthStencilEdge*>(depthEdge));
+
+            auto imageNodeIt = m_imageNodes.find(depthEdge->toImage);
+            if (imageNodeIt != m_imageNodes.end()) {
+                const auto& imageNode = imageNodeIt->second;
+
+                if (imageNode->getDepthStencilIncomingEdges().size() == 1 &&
+                    imageNode->getTargetIncomingEdges().empty() &&
+                    imageNode->getTextureOutgoingEdges().empty()) {
+                    imagesToCull.push_back(depthEdge->toImage);
+                    }
+            }
+        }
+
+        for (auto* edge : textureEdgesToRemove) {
+            removeTextureEdge(edge);
+        }
+
+        for (auto* edge : targetEdgesToRemove) {
+            removeTargetEdge(edge);
+        }
+
+        for (auto* edge : depthStencilEdgesToRemove) {
+            removeDepthStencilEdge(edge);
+        }
+
+        for (const std::string& imageName : imagesToCull) {
+            m_imageNodes.erase(imageName);
+        }
+
+        m_passNodes.erase(passName);
+
+        auto it = std::find(m_topologicalSortPasses.begin(), m_topologicalSortPasses.end(), passName);
+        if (it != m_topologicalSortPasses.end()) {
+            m_topologicalSortPasses.erase(it);
         }
     }
 

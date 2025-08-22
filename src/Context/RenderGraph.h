@@ -106,6 +106,27 @@ namespace FCT
             m_depthStencilIncomingEdges.push_back(edge);
         }
 
+        void removeOutgoingEdge(TextureEdge* edge) {
+            m_textureOutgoingEdges.erase(
+                std::remove(m_textureOutgoingEdges.begin(), m_textureOutgoingEdges.end(), edge),
+                m_textureOutgoingEdges.end()
+            );
+        }
+
+        void removeIncomingEdge(TargetEdge* edge) {
+            m_targetIncomingEdges.erase(
+                std::remove(m_targetIncomingEdges.begin(), m_targetIncomingEdges.end(), edge),
+                m_targetIncomingEdges.end()
+            );
+        }
+
+        void removeIncomingEdge(DepthStencilEdge* edge) {
+            m_depthStencilIncomingEdges.erase(
+                std::remove(m_depthStencilIncomingEdges.begin(), m_depthStencilIncomingEdges.end(), edge),
+                m_depthStencilIncomingEdges.end()
+            );
+        }
+
         const std::vector<TextureEdge*>& getTextureOutgoingEdges() const {
             return m_textureOutgoingEdges;
         }
@@ -178,6 +199,27 @@ namespace FCT
         const std::vector<DepthStencilEdge*>& getDepthStencilOutgoingEdges() const {
             return m_depthStencilOutgoingEdges;
         }
+        void removeIncomingEdge(TextureEdge* edge) {
+            m_textureIncomingEdges.erase(
+                std::remove(m_textureIncomingEdges.begin(), m_textureIncomingEdges.end(), edge),
+                m_textureIncomingEdges.end()
+            );
+        }
+
+        void removeOutgoingEdge(TargetEdge* edge) {
+            m_targetOutgoingEdges.erase(
+                std::remove(m_targetOutgoingEdges.begin(), m_targetOutgoingEdges.end(), edge),
+                m_targetOutgoingEdges.end()
+            );
+        }
+
+        void removeOutgoingEdge(DepthStencilEdge* edge) {
+            m_depthStencilOutgoingEdges.erase(
+                std::remove(m_depthStencilOutgoingEdges.begin(), m_depthStencilOutgoingEdges.end(), edge),
+                m_depthStencilOutgoingEdges.end()
+            );
+        }
+
         void applyPassDesc(const PassDesc& desc) {
             m_clearInfo = desc.clear;
         }
@@ -242,7 +284,7 @@ namespace FCT
         std::unordered_map<std::string, std::unique_ptr<RenderGraphImageNode>> m_imageNodes;
         std::unordered_map<std::string,RenderGraphPassNode> m_passNodes;
         UnionFind<std::string,char> m_passesUnions;
-        std::vector<std::unique_ptr<Edge>> m_edges;
+        std::unordered_set<std::unique_ptr<Edge>> m_edges;
         std::unordered_map<std::string, Image*> m_allocatedImages;
         std::unordered_map<std::string, RHI::Pass*> m_allocatedPasses;
         std::vector<PassDesc> m_originalPasses; // 存储编译前的PassDesc
@@ -262,15 +304,18 @@ namespace FCT
         void createTextureEdge(const std::string& passName, const std::string& textureName, const Texture& texture);
         void createTargetEdge(const std::string& passName, const std::string& targetName, const Target& target);
         void createDepthStencilEdge(const std::string& passName, const std::string& depthStencilName, const DepthStencil& depthStencil);
+        void removeTextureEdge(TextureEdge* edgeToRemove);
         void simulatePassGroupExecution(const std::string& groupLeader,
-                                   const std::vector<std::string>& groupMembers,
-                                   std::unordered_map<Image*, ImageState>& imageStates);
+                                        const std::vector<std::string>& groupMembers,
+                                        std::unordered_map<Image*, ImageState>& imageStates);
         void simulateExecutionAndAnalyzeBarriers();
         std::vector<BarrierInfo> checkBarriersBeforePassGroup(const std::string& groupLeader,
                                                                 const std::vector<std::string>& groupMembers,
                                                                 const std::unordered_map<Image*, ImageState>& imageStates);
 
         void executeBarriers(RHI::CommandBuffer* cmdBuffer, const std::vector<BarrierInfo>& barriers);
+        void removeTargetEdge(TargetEdge* edgeToRemove);
+        void removeDepthStencilEdge(DepthStencilEdge* edgeToRemove);
         void addPass(const PassDesc& desc);
 
         void cleanUp();
@@ -292,6 +337,10 @@ namespace FCT
          * @endcond
          */
         void resolveTextureSizes();
+        void cullPasses();
+        void cullPass(const std::string& passName);
+        void cullSinglePass(const std::string& passName);
+        void cullUnusedImageNode(const std::string& imageName);
         /**
           * @cond CHINESE
           * @note 在compile时调用，用于将Pass分组到PassGroup中
@@ -371,6 +420,7 @@ namespace FCT
             allocateCommandBuffer();
             m_topologicalSortPasses = topologicalSortPasses();
             resolveTextureSizes();
+            cullPasses();
             groupPasses();
             allocateResources();
             createRHIPasses();
