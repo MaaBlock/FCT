@@ -88,6 +88,21 @@ namespace FCT
         m_commandBufferGraph = commandBufferGraph;
         m_resourceManager = resourceManager;
         initForSubmit();
+        auto& syncTickers = m_flowControl->syncTickers();
+        syncTickers[RenderGraphTickers::CheckRecompiledSync] = {
+            [this]()
+            {
+               if (m_needRecompiled)
+               {
+                   cleanUpCompile();
+                   compile();
+                   m_needRecompiled = false;
+               }
+            },
+            {},
+            {}
+        };
+        syncTickers.update();
     }
 
     RenderGraphImageNode* RenderGraph::getOrCreateImageNode(const std::string& name, const Texture& texture)
@@ -327,6 +342,16 @@ void RenderGraph::removeDepthStencilEdge(DepthStencilEdge* edgeToRemove) {
                 firstNode->unite(renderTargetNodes[i]);
             }
         }
+    }
+
+    void RenderGraph::recompile()
+    {
+        m_needRecompiled = true;
+        /*
+         *
+        cleanUpCompile();
+        compile();
+        */
     }
 
     void RenderGraph::resolveTextureSizes()
@@ -1030,6 +1055,11 @@ void RenderGraph::removeDepthStencilEdge(DepthStencilEdge* edgeToRemove) {
 
     void RenderGraph::cleanUpCompile()
     {
+        m_commandBufferGraph->removeBuffer(m_commandBufferToken);
+        for (auto& [name, pass] : m_allocatedPasses)
+        {
+            pipeHub.passPipe.remove<PassInfo>(name);
+        }
         m_passGroupOrders.clear();
         m_passGroupExecutionOrder.clear();
         m_passGroupBarriers.clear();
@@ -1049,7 +1079,6 @@ void RenderGraph::removeDepthStencilEdge(DepthStencilEdge* edgeToRemove) {
         {
             passGroup->release();
         }
-        m_originalPasses.clear();
     }
 
     PipelineStage RenderGraph::convertShaderStageToPipelineStage(ShaderStage stage) const {

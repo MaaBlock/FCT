@@ -241,6 +241,7 @@ namespace FCT
     namespace RenderGraphTickers
     {
         constexpr const char* RenderGraphSubmit = "RenderGraphSubmit";
+        constexpr const char* CheckRecompiledSync = "RenderGraphCheckRecompiled";
     }
     class RenderGraph : private IEventSystem<EventSystemConfig::TriggerOnly>{
         struct ImageState {
@@ -261,6 +262,7 @@ namespace FCT
             ImageAspect aspect;
         };
     private:
+        bool m_needRecompiled = false;
         Device* m_resourceDevice;
         FlowControl* m_flowControl;
         CommandBufferGraph* m_commandBufferGraph;
@@ -287,7 +289,7 @@ namespace FCT
         std::unordered_set<std::unique_ptr<Edge>> m_edges;
         std::unordered_map<std::string, Image*> m_allocatedImages;
         std::unordered_map<std::string, RHI::Pass*> m_allocatedPasses;
-        std::vector<PassDesc> m_originalPasses; // 存储编译前的PassDesc
+        std::vector<PassDesc> m_originalPasses;
         std::vector<std::string> m_topologicalSortPasses;
         std::unordered_map<std::string, RHI::PassGroup*> m_allocatedPassGroups; // 存储创建的PassGroup
         void cleanUpCompile();
@@ -297,6 +299,11 @@ namespace FCT
     public:
         RenderGraph(PipeHub& pipeHub, Device* device, FlowControl* flowControl, CommandBufferGraph* commandBufferGraph,
                     ResourceManager* resourceManager);
+        void recompile();
+        std::vector<PassDesc> getOriginalPasses() const
+        {
+            return m_originalPasses;
+        }
     private:
         RenderGraphImageNode* getOrCreateImageNode(const std::string& name, const Texture& texture);
         RenderGraphImageNode* getOrCreateImageNode(const std::string& name, const Target& target);
@@ -317,7 +324,6 @@ namespace FCT
         void removeTargetEdge(TargetEdge* edgeToRemove);
         void removeDepthStencilEdge(DepthStencilEdge* edgeToRemove);
         void addPass(const PassDesc& desc);
-
         void cleanUp();
         /**
          * @cond CHINESE

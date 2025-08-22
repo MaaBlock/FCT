@@ -55,7 +55,7 @@ namespace FCT
         Flags<BitType> & operator&=(Flags<BitType> const & rhs) noexcept { m_mask &= rhs.m_mask; return *this; }
         Flags<BitType> & operator^=(Flags<BitType> const & rhs) noexcept { m_mask ^= rhs.m_mask; return *this; }
 
-        explicit constexpr operator bool() const noexcept { return !!m_mask; }
+        constexpr operator bool() const noexcept { return !!m_mask; }
         explicit constexpr operator MaskType() const noexcept { return m_mask; }
 
 

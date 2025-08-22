@@ -107,13 +107,14 @@ namespace FCT {
     {
         if (m_dependencyGraph.containsNode(name))
         {
-
-            auto node = m_dependencyGraph[name];
-            auto& imageSaved = node->value;
-
-            if (imageSaved.img)
             {
-                imageSaved.img->release();
+                auto node = m_dependencyGraph[name];
+                auto& imageSaved = node->value;
+
+                if (imageSaved.img)
+                {
+                    imageSaved.img->release();
+                }
             }
 
             m_dependencyGraph.removeNode(name);
