@@ -80,8 +80,8 @@ namespace FCT
         m_commandBufferToken = cmdGraph->addBuffer(windowNodes, windowNodes);
     }
 
-    RenderGraph::RenderGraph(Device* device, FlowControl* flowControl, CommandBufferGraph* commandBufferGraph,
-        ResourceManager* resourceManager)
+    RenderGraph::RenderGraph(PipeHub& pipeHub,Device* device, FlowControl* flowControl, CommandBufferGraph* commandBufferGraph,
+        ResourceManager* resourceManager) : pipeHub(pipeHub)
     {
         m_resourceDevice = device;
         m_flowControl = flowControl;
@@ -993,6 +993,61 @@ namespace FCT
             );
         }
     }
+
+    void RenderGraph::pushPipe()
+    {
+        for (auto [passName,pass] : m_allocatedPasses)
+        {
+            PassInfo info{
+                *pass
+            };
+            pipeHub
+                .passPipe
+                .provide(passName,
+                         PassInfo{
+                             *pass,
+                             [this, passName]() -> std::map<std::string, Image*>
+                             {
+                                 std::map<std::string, Image*> textureImages;
+                                 auto passNodeIt = m_passNodes.find(passName);
+                                 if (passNodeIt != m_passNodes.end())
+                                 {
+                                     const auto& passNode = passNodeIt->second;
+
+                                     for (const auto* textureEdge : passNode.getTextureIncomingEdges())
+                                     {
+                                         auto imageNodeIt = m_imageNodes.find(textureEdge->fromImage);
+                                         if (imageNodeIt != m_imageNodes.end())
+                                         {
+                                             Image* image = imageNodeIt->second->getImage();
+                                             if (image)
+                                             {
+                                                 textureImages[textureEdge->fromImage] = image;
+                                             }
+                                         }
+                                     }
+                                 }
+                                 return textureImages;
+                             }.operator()(),
+                             [this, passName]() -> std::map<std::string, ShaderStage>
+                             {
+                                 std::map<std::string, ShaderStage> textureStages;
+                                 auto passNodeIt = m_passNodes.find(passName);
+                                 if (passNodeIt != m_passNodes.end())
+                                 {
+                                     const auto& passNode = passNodeIt->second;
+
+                                     for (const auto* textureEdge : passNode.getTextureIncomingEdges())
+                                     {
+                                         textureStages[textureEdge->fromImage] = textureEdge->stage;
+                                     }
+                                 }
+                                 return textureStages;
+                             }.operator()()
+                         });
+        }
+    }
+
     void RenderGraph::executeAllPassGroups(RHI::CommandBuffer* cmdBuffer)
     {
         for (const std::string& groupLeader : m_passGroupExecutionOrder) {

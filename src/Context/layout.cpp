@@ -33,17 +33,58 @@ namespace FCT
             m_pixelResourceLayout.addTexture(element);
         }
     }
-
-    void Layout::attachPass(FCT::RenderGraph* graph, std::string passName)
+    void Layout::removeTextureSlot(const char* name)
     {
-        auto edges = graph->getTextureEdges(passName);
-        for (auto edge : edges)
-        {
-            FCT::TextureElement element(FCT::TextureType::Texture2D,edge->fromImage.c_str(),getAllAfterTheStage(edge->stage),FCT::UpdateFrequency::PerFrame);
-            addTextureSlot(element);
-            setFixedImage(edge->fromImage,graph->getImage(edge->fromImage));
+        m_resourceLayout.removeTexture(name);
+
+        m_vertexResourceLayout.removeTexture(name);
+
+        m_pixelResourceLayout.removeTexture(name);
+
+        auto it = m_fixedImages.find(name);
+        if (it != m_fixedImages.end()) {
+            m_fixedImages.erase(it);
         }
-        m_pass = graph->getPass(passName);
+
+        auto nameIt = m_textureNames.find(name);
+        if (nameIt != m_textureNames.end()) {
+            m_textureNames.erase(nameIt);
+        }
+    }
+
+    void Layout::attachPass(std::string passName)
+    {
+        m_ctx->pipeHub()
+             .passPipe.
+             subscribe<PassInfo>(
+                 passName,
+                 [this](PassInfo& info)
+                 {
+                     m_pass = &info.pass;
+                     m_textureFromPass = info.textures;
+                     for (auto& texture : m_textureFromPass)
+                     {
+                         FCT::TextureElement element(
+                             FCT::TextureType::Texture2D,
+                             texture.first.c_str(),
+                             getAllAfterTheStage(info.textureSlot[texture.first]),
+                             FCT::UpdateFrequency::PerFrame);
+                         addTextureSlot(element);
+                         setFixedImage(texture.first,
+                             texture.second);
+                     }
+                 },
+                 [this]()
+                 {
+                     for (auto& texture : m_textureFromPass)
+                     {
+                         removeTextureSlot(texture.first.c_str());
+                     }
+                     m_textureFromPass.clear();
+                     clearShaderCache();
+                     clearPipelineCache();
+                     clearPassResourceCache();
+                 });
     }
 
     Uniform Layout::allocateUniform(std::string name)
@@ -121,6 +162,7 @@ namespace FCT
     {
         m_pipelineState.pixelShader = shader;
     }
+
 
     /*
     void Layout::drawMesh(FCT::RHI::CommandBuffer* cmdBuffer, FCT::StaticMesh<uint32_t>* mesh)
@@ -330,5 +372,187 @@ namespace FCT
             ret->create();
             return ret;
         });
+    }
+
+
+    FCT::VertexShader* Layout::ShaderCache::getVertexShader(const std::string& code,
+                                                            const std::function<FCT::VertexShader*(const std::string& code)>& creator)
+    {
+        auto hash = std::hash<std::string>{}(code);
+        if (m_vertexShaders.count(hash))
+        {
+            return m_vertexShaders[hash];
+        }
+        else
+        {
+            auto shader = creator(code);
+            m_vertexShaders[hash] = shader;
+            return shader;
+        }
+    }
+
+    FCT::PixelShader* Layout::ShaderCache::getPixelShader(const std::string& code,
+        const std::function<FCT::PixelShader*(const std::string& code)>& creator)
+    {
+        auto hash = std::hash<std::string>{}(code);
+        if (m_pixelShaders.count(hash))
+        {
+            return m_pixelShaders[hash];
+        }
+        else
+        {
+            auto shader = creator(code);
+            m_pixelShaders[hash] = shader;
+            return shader;
+        }
+    }
+
+    FCT::VertexShader* Layout::ShaderCache::getVertexShader(const ShaderRef& ref,
+        const std::function<FCT::VertexShader*(const ShaderRef& ref)>& creator)
+    {
+        auto hash = ref.hash;
+        if (m_vertexShaders.count(hash))
+        {
+            return m_vertexShaders[hash];
+        }
+        else
+        {
+            auto shader = creator(ref);
+            m_vertexShaders[hash] = shader;
+            return shader;
+        }
+    }
+
+    FCT::PixelShader* Layout::ShaderCache::getPixelShader(const ShaderRef& ref,
+        const std::function<FCT::PixelShader*(const ShaderRef& ref)>& creator)
+    {
+        auto hash = ref.hash;
+        if (m_pixelShaders.count(hash))
+        {
+            return m_pixelShaders[hash];
+        }
+        else
+        {
+            auto shader = creator(ref);
+            m_pixelShaders[hash] = shader;
+            return shader;
+        }
+    }
+
+
+    VertexShader* Layout::getCacheVertexShader(std::string code)
+    {
+        return m_shaderCache.getVertexShader(code, [this](const std::string& code) -> FCT::VertexShader*
+        {
+            return allocateVertexShader(code);
+        });
+    }
+
+    PixelShader* Layout::getCachePixelShader(std::string code)
+    {
+        return m_shaderCache.getPixelShader(code, [this](const std::string& code) -> FCT::PixelShader*
+        {
+            return allocatePixelShader(code);
+        });
+    }
+
+    VertexShader* Layout::getCacheVertexShader(const ShaderRef& ref)
+    {
+        return m_shaderCache.getVertexShader(ref, [this](const ShaderRef& ref) -> FCT::VertexShader*
+        {
+            return allocateVertexShader(ref.code);
+        });
+    }
+
+    PixelShader* Layout::getCachePixelShader(const ShaderRef& ref)
+    {
+        return m_shaderCache.getPixelShader(ref, [this](const ShaderRef& ref) -> FCT::PixelShader*
+        {
+            return allocatePixelShader(ref.code);
+        });
+    }
+
+    ShaderRef Layout::cacheVertexShader(const std::string& code)
+    {
+        ShaderRef ref;
+        ref.code = code;
+        ref.hash = std::hash<std::string>{}(code);
+        ref.kind = FCT::ShaderKind::VertexShader;
+        getCacheVertexShader(ref);
+        return ref;
+    }
+
+    ShaderRef Layout::cachePixelShader(const std::string& code)
+    {
+        ShaderRef ref;
+        ref.code = code;
+        ref.hash = std::hash<std::string>{}(code);
+        ref.kind = FCT::ShaderKind::FragmentShader;
+        getCachePixelShader(ref);
+        return ref;
+    }
+
+    void Layout::bindVertexShader(std::string code)
+    {
+        auto shader = getCacheVertexShader(code);
+        bindVertexShader(shader);
+    }
+
+    void Layout::bindPixelShader(std::string code)
+    {
+        auto shader = getCachePixelShader(code);
+        bindPixelShader(shader);
+    }
+
+    void Layout::bindVertexShader(const ShaderRef& ref)
+    {
+        auto shader = getCacheVertexShader(ref);
+        bindVertexShader(shader);
+    }
+
+    void Layout::bindPixelShader(const ShaderRef& ref)
+    {
+        auto shader = getCachePixelShader(ref);
+        bindPixelShader(shader);
+    }
+    void Layout::ShaderCache::clear()
+    {
+        for (auto& shader : m_vertexShaders) {
+            if (shader.second) {
+                shader.second->release();
+            }
+        }
+        for (auto& shader : m_pixelShaders) {
+            if (shader.second) {
+                shader.second->release();
+            }
+        }
+        m_vertexShaders.clear();
+        m_pixelShaders.clear();
+    }
+
+    void Layout::clearPassResourceCache()
+    {
+        for (auto& resource : m_passResourceCache.m_passResources) {
+            if (resource.second) {
+                resource.second->release();
+            }
+        }
+        m_passResourceCache.m_passResources.clear();
+    }
+
+    void Layout::clearPipelineCache()
+    {
+        for (auto& pipeline : m_pipelineCache.m_pipelines) {
+            if (pipeline.second) {
+                pipeline.second->release();
+            }
+        }
+        m_pipelineCache.m_pipelines.clear();
+    }
+
+    void Layout::clearShaderCache()
+    {
+        m_shaderCache.clear();
     }
 }

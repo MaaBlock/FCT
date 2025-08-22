@@ -21,6 +21,12 @@ namespace FCT {
     using UniformVar = FCT::ConstElement;
     using UniformType = FCT::ConstType;
     using SamplerSlot = FCT::SamplerElement;
+    struct ShaderRef
+    {
+        std::string code;
+        size_t hash;
+        ShaderKind kind;
+    };
     class Layout {
     public:
         template<typename... Args>
@@ -52,9 +58,11 @@ namespace FCT {
         template<typename... Args>
         void proccessArgs(PassName passName, Args... args)
         {
+            attachPass(passName.name);
+            /*
             if (m_ctx && m_ctx->getModule<FCT::RenderGraph>()) {
                 attachPass(m_ctx->getModule<FCT::RenderGraph>(), passName.name);
-            }
+            }*/
             proccessArgs(args...);
         }
 
@@ -107,25 +115,35 @@ namespace FCT {
         void ctx(FCT::Context* ctx);
         void setFixedImage(std::string name, FCT::Image* image);
         void addTextureSlot(FCT::TextureElement element);
-        void attachPass(FCT::RenderGraph* graph,std::string passName);
+        void removeTextureSlot(const char* name);
+        void attachPass(std::string passName);
         Uniform allocateUniform(std::string name);
-        FCT::VertexShader* allocateVertexShader(std::string code);
-        FCT::PixelShader* allocatePixelShader(std::string code);
         void begin();
         //passresource
         void bindUniform(const Uniform& uniform);
         void bindTexture(std::string name, FCT::Image* image);
         void bindSampler(std::string name, FCT::Sampler* sampler);
         //pipeline
-        void bindVertexShader(FCT::VertexShader* shader);
-        void bindPixelShader(FCT::PixelShader* shader);
+        void bindVertexShader(std::string code);
+        void bindPixelShader(std::string code);
+        void bindVertexShader(const ShaderRef& ref);
+        void bindPixelShader(const ShaderRef& ref);
         //void drawMesh(FCT::RHI::CommandBuffer* cmdBuffer,FCT::StaticMesh<uint32_t>* mesh);
         template<typename T>
         void drawMesh(RHI::CommandBuffer* cmdBuffer,T* mesh);
         template<typename T>
         void drawMesh(RHI::CommandBuffer* cmdBuffer,T& mesh);
         void end();
+        ShaderRef cacheVertexShader(const std::string& code);
+        ShaderRef cachePixelShader(const std::string& code);
+        void clearPassResourceCache();
+        void clearPipelineCache();
+        void clearShaderCache();
     private:
+        void bindVertexShader(FCT::VertexShader* shader);
+        void bindPixelShader(FCT::PixelShader* shader);
+        FCT::VertexShader* allocateVertexShader(std::string code);
+        FCT::PixelShader* allocatePixelShader(std::string code);
         struct TraditionPipelineState
         {
             FCT::VertexShader* vertexShader = nullptr;
@@ -157,6 +175,16 @@ namespace FCT {
             std::unordered_map<size_t, FCT::RHI::RasterizationPipeline*> m_pipelines;
             FCT::RHI::RasterizationPipeline* get(const TraditionPipelineState& state, const std::function<FCT::RHI::RasterizationPipeline*(const TraditionPipelineState& state)>& creator);
         };
+        struct ShaderCache
+        {
+            std::unordered_map<size_t, FCT::VertexShader*> m_vertexShaders;
+            std::unordered_map<size_t, FCT::PixelShader*> m_pixelShaders;
+            FCT::VertexShader* getVertexShader(const std::string& code,const std::function<FCT::VertexShader*(const std::string& code)>& creator);
+            FCT::PixelShader* getPixelShader(const std::string& code,const std::function<FCT::PixelShader*(const std::string& code)>& creator);
+            FCT::VertexShader* getVertexShader(const ShaderRef& ref,const std::function<FCT::VertexShader*(const ShaderRef& ref)>& creator);
+            FCT::PixelShader* getPixelShader(const ShaderRef& ref, const std::function<FCT::PixelShader*(const ShaderRef& ref)>& creator);
+            void clear();
+        };
         void processUnhandledTextureSlots();
         uint32_t findNextAvailableIndex();
         FCT::Context* m_ctx;
@@ -179,6 +207,12 @@ namespace FCT {
         PipelineCache m_pipelineCache;
         FCT::RHI::RasterizationPipeline* getCurrentPipeline();
         std::unordered_map<std::string,const char*> m_textureNames;
+        std::map<std::string, Image*> m_textureFromPass;
+        ShaderCache m_shaderCache;
+        VertexShader* getCacheVertexShader(std::string code);
+        PixelShader* getCachePixelShader(std::string code);
+        VertexShader* getCacheVertexShader(const ShaderRef& ref);
+        PixelShader* getCachePixelShader(const ShaderRef& ref);
     };
 
 }

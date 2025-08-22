@@ -13,6 +13,7 @@
 #include "./Base/Flags.h"
 #include "./Bases.h"
 #include "./Base/TokenGraph.h"
+#include "./Base/ObjectPipe.h"
 #include "./Memory/ObjectPool.h"
 #include "Runtime/Runtime.h"
 #include "./Context/Vertex.h"
@@ -74,4 +75,5 @@
 //#include "Context/Image.h"
 //#include "UI/Window.h"
 #include "./UI/AutoViewport.h"
+#include "./Runtime/PipeHub.h"
 #endif //FCT_HEADER_H

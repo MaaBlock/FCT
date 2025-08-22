@@ -162,6 +162,19 @@ namespace FCT
                 m_samplers[m_samplerCount++] = element;
             }
         }
+        constexpr bool removeTexture(const char* name) noexcept {
+            int index = findTextureIndex(name);
+            if (index < 0) {
+                return false;
+            }
+
+            for (size_t i = static_cast<size_t>(index); i < m_textureCount - 1; ++i) {
+                m_textures[i] = m_textures[i + 1];
+            }
+
+            --m_textureCount;
+            return true;
+        }
 
         constexpr size_t getTextureCount() const noexcept { return m_textureCount; }
         constexpr size_t getSamplerCount() const noexcept { return m_samplerCount; }

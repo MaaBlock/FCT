@@ -97,11 +97,13 @@ namespace FCT
 	class Context : public RefCount,public IEventSystem<EventSystemConfig::TriggerOnly>
 	{
 	protected:
+		Runtime* m_runtime;
 	protected:
 		Context(Runtime* runtime);
 		virtual ~Context();
 		virtual void createPlatform() = 0;
 	public:
+		PipeHub& pipeHub();
 		/** @name 初始化与配置 (Initialization & Configuration)
    		*  @{
    		*/
@@ -280,7 +282,7 @@ namespace FCT
 		}
 		else if constexpr (std::is_same_v<T, RenderGraph>)
 		{
-			FCT_SAFE_NEW(m_renderGraph,RenderGraph,m_resourceDevice,m_flowControl,m_cmdGraph,m_resourceManager);
+			FCT_SAFE_NEW(m_renderGraph,RenderGraph,pipeHub(),m_resourceDevice,m_flowControl,m_cmdGraph,m_resourceManager);
 		}
 		else
 		{

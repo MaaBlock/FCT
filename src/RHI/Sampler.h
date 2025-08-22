@@ -1,5 +1,6 @@
 #ifndef FCT_RHI_SAMPLER_H
 #define FCT_RHI_SAMPLER_H
+#include "../MutilThreadBase/RefCount.h"
 namespace FCT
 {
     enum class FilterMode {
@@ -32,7 +33,7 @@ namespace FCT
         OpaqueWhite
     };
 
-    class Sampler {
+    class Sampler : public RefCount {
     public:
         virtual ~Sampler() = default;
 

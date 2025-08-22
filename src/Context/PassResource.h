@@ -19,7 +19,7 @@ namespace FCT
         class CommandBuffer;
     }
 
-    class PassResource
+    class PassResource : public RefCount
     {
     public:
         PassResource()

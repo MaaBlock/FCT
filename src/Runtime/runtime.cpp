@@ -16,7 +16,13 @@ namespace FCT
 	{
 		return new Assimp_ModelLoader;
 	}
-    /*
+
+	PipeHub& Runtime::pipeHub()
+	{
+		return m_pipeHub;
+	}
+
+	/*
 	Runtime *CreateRuntime()
 	{
 		Runtime *ret = new Runtime;

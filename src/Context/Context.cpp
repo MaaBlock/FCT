@@ -4,6 +4,7 @@
 #include "../FCTAPI.h"
 #include "./Context.h"
 #include "RenderGraph.h"
+#include "../Runtime/runtime.h"
 
 
 namespace FCT {
@@ -58,6 +59,7 @@ namespace FCT {
 
     Context::Context(Runtime* runtime)
     {
+        m_runtime = runtime;
         m_flowControl = new FlowControl();
         auto& m_submitTickers = m_flowControl->submitTickers();
         auto& m_syncTickers = m_flowControl->syncTickers();
@@ -126,6 +128,11 @@ namespace FCT {
     Context::~Context() {
         m_ctxRunning = false;
         m_submitThread.join();
+    }
+
+    PipeHub& Context::pipeHub()
+    {
+        return m_runtime->pipeHub();
     }
 
     void Context::create(ContextCreateFlags flag)

@@ -5,6 +5,7 @@
 #ifndef RENDERGRAPH_H
 #define RENDERGRAPH_H
 
+#include "../Runtime/PipeHub.h"
 #include "./ResourceManager.h"
 #include "../RHI/ImageAspect.h"
 #include "../RHI/ImageLayout.h"
@@ -248,11 +249,12 @@ namespace FCT
         std::vector<std::string> m_topologicalSortPasses;
         std::unordered_map<std::string, RHI::PassGroup*> m_allocatedPassGroups; // 存储创建的PassGroup
         void cleanUpCompile();
-
+        PipeHub& pipeHub;
     private:
         PipelineStage convertShaderStageToPipelineStage(ShaderStage stage) const;
     public:
-        RenderGraph(Device* device, FlowControl* flowControl, CommandBufferGraph* commandBufferGraph, ResourceManager* resourceManager);
+        RenderGraph(PipeHub& pipeHub, Device* device, FlowControl* flowControl, CommandBufferGraph* commandBufferGraph,
+                    ResourceManager* resourceManager);
     private:
         RenderGraphImageNode* getOrCreateImageNode(const std::string& name, const Texture& texture);
         RenderGraphImageNode* getOrCreateImageNode(const std::string& name, const Target& target);
@@ -374,7 +376,9 @@ namespace FCT
             createRHIPasses();
             createPassGroups();
             computePassGroupExecutionOrder();
+            pushPipe();
         }
+        void pushPipe();
         void executeAllPassGroups(RHI::CommandBuffer* cmdBuffer);
         RHI::Pass* getPass(const std::string& name) const;
         Image* getImage(const std::string& name) const;

@@ -21,8 +21,8 @@ namespace FCT {
 	extern std::mutex fct_object_mutex;
 	extern int fct_object_count_delete_without_object;
 	template <typename T, typename... Args>
-	T* _fct_new(const Args&... arg) {
-		T* ret = new T(arg...);
+	T* _fct_new(Args&&... args) {
+		T* ret = new T(std::forward<Args>(args)...);
 		_fct_object_t* object = new _fct_object_t;
 		object->pointer = ret;
 		object->refCounted = -1;

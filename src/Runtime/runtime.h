@@ -91,7 +91,9 @@ namespace FCT
     		g_common->glfwUICommon->postUiTask(task,param, waited);
 #endif
     	}
+    	PipeHub& pipeHub();
     private:
+    	PipeHub m_pipeHub;
         RuntimeCommon* g_common;
     	Runtime(const Runtime&) = delete;
     	Runtime& operator=(const Runtime&) = delete;
