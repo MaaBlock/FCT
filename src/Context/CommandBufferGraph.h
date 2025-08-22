@@ -118,10 +118,20 @@ namespace FCT
         class NodeBase {
         public:
             virtual ~NodeBase() = default;
+            /**
+             * 用来更新/设置mafFrameInFlight的
+             * @param newMaxFrameInFlight
+             */
             virtual void updateSynchronization(uint32_t newMaxFrameInFlight) = 0;
             virtual void addOutputEdge(CommandBufferEdges::EdgeBase* edge) {}
             virtual void addInputEdge(CommandBufferEdges::EdgeBase* edge) {}
             virtual void fillSynchronization(uint32_t frameIndex) {}
+            virtual void removeOutputEdge(CommandBufferEdges::EdgeBase* edge) {}
+            virtual void removeInputEdge(CommandBufferEdges::EdgeBase* edge) {}
+
+            /**
+             *  @brief  更新边的变化
+             */
             virtual void fillAllSynchronization() {
                 for (uint32_t i = 0; i < m_frameDirty.size(); ++i) {
                     fillSynchronization(i);
@@ -170,6 +180,12 @@ namespace FCT
             void addInputEdge(CommandBufferEdges::EdgeBase* edge) override {
                 markAllFramesDirty();
                 throw std::runtime_error("InputFromWindow node cannot accept input edges");
+            }
+            void removeOutputEdge(CommandBufferEdges::EdgeBase* edge) override {
+                if (edge == m_outputEdge) {
+                    m_outputEdge = nullptr;
+                    markAllFramesDirty();
+                }
             }
 
             void fillSynchronization(uint32_t frameIndex) override;
@@ -224,6 +240,17 @@ namespace FCT
                 }
                 return empty;
             }
+            void removeInputEdge(CommandBufferEdges::EdgeBase* edge) override
+            {
+                for (auto it = m_inputEdges.begin(); it!= m_inputEdges.end(); ++it) {
+                    if (*it == edge) {
+                        m_inputEdges.erase(it);
+                        markAllFramesDirty();
+                        return;
+                    }
+                }
+                throw std::runtime_error("OutputToWindow node does not have the specified input edge");
+            }
 
             const std::vector<RHI::Semaphore*>& getCollectedRenderFinishedSemaphores(uint32_t frameIndex) const {
                 static const std::vector<RHI::Semaphore*> empty;
@@ -249,6 +276,30 @@ namespace FCT
             void addInputEdge(CommandBufferEdges::EdgeBase* edge) override;
             RHI::CommandBuffer* getCommandBuffer(uint32_t frameIndex) const;
             void fillSynchronization(uint32_t frameIndex) override;
+
+            std::vector<CommandBufferEdges::EdgeBase*>& getOutputEdges() {
+                return m_outputEdges;
+            }
+
+            std::vector<CommandBufferEdges::EdgeBase*>& getInputEdges() {
+                return m_inputEdges;
+            }
+            void removeInputEdge(CommandBufferEdges::EdgeBase* edge) override
+            {
+                auto it = std::find(m_inputEdges.begin(), m_inputEdges.end(), edge);
+                if (it != m_inputEdges.end()) {
+                    m_inputEdges.erase(it);
+                    markAllFramesDirty();
+                }
+            }
+            void removeOutputEdge(CommandBufferEdges::EdgeBase* edge) override
+            {
+                auto it = std::find(m_outputEdges.begin(), m_outputEdges.end(), edge);
+                if (it != m_outputEdges.end()) {
+                    m_outputEdges.erase(it);
+                    markAllFramesDirty();
+                }
+            }
         private:
             std::vector<CommandBufferEdges::EdgeBase*> m_outputEdges;
             std::vector<CommandBufferEdges::EdgeBase*> m_inputEdges;
@@ -264,8 +315,8 @@ namespace FCT
         SemaphorePool* m_semaphorePool;
         FencePool* m_fencePool;
 
-        std::vector<std::unique_ptr<CommandBufferNodes::NodeBase>> m_nodes;
-        std::vector<std::unique_ptr<CommandBufferEdges::EdgeBase>> m_edges;
+        std::unordered_set<std::unique_ptr<CommandBufferNodes::NodeBase>> m_nodes;
+        std::unordered_set<std::unique_ptr<CommandBufferEdges::EdgeBase>> m_edges;
 
         std::unordered_map<Window*, CommandBufferNodes::InputFromWindow*> m_windowInputNodes;
         std::unordered_map<Window*, CommandBufferNodes::OutputToWindow*> m_windowOutputNodes;
@@ -293,6 +344,8 @@ namespace FCT
         CommandBufferToken addBuffer(
             const std::vector<NodeRef>& predecessors,
             const std::vector<NodeRef>& successors);
+        void removeEdge(CommandBufferEdges::EdgeBase* edge);
+        void removeBuffer(CommandBufferToken token);
         void maxFrameInFlight(uint32_t max);
         void swapBuffer();
         RHI::CommandBuffer* getCommandBuffer(CommandBufferToken token) const;

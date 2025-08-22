@@ -215,7 +215,7 @@ namespace FCT {
         auto inputNode = std::make_unique<CommandBufferNodes::InputFromWindow>(window);
         auto* nodePtr = inputNode.get();
         nodePtr->updateSynchronization(m_maxFrameInFlight);
-        m_nodes.push_back(std::move(inputNode));
+        m_nodes.insert(std::move(inputNode));
         m_windowInputNodes[window] = nodePtr;
         return nodePtr;
     }
@@ -231,7 +231,7 @@ namespace FCT {
         auto outputNode = std::make_unique<CommandBufferNodes::OutputToWindow>(window);
         auto* nodePtr = outputNode.get();
         nodePtr->updateSynchronization(m_maxFrameInFlight);
-        m_nodes.push_back(std::move(outputNode));
+        m_nodes.insert(std::move(outputNode));
         m_windowOutputNodes[window] = nodePtr;
         return nodePtr;
     }
@@ -279,7 +279,7 @@ namespace FCT {
         windowInputNode->addOutputEdge(edgePtr);
         buffer->addInputEdge(edgePtr);
 
-        m_edges.push_back(std::move(edge));
+        m_edges.insert(std::move(edge));
 
         windowInputNode->fillAllSynchronization();
     }
@@ -297,7 +297,7 @@ namespace FCT {
         buffer->addOutputEdge(edgePtr);
         windowOutputNode->addInputEdge(edgePtr);
 
-        m_edges.push_back(std::move(edge));
+        m_edges.insert(std::move(edge));
 
         windowOutputNode->fillAllSynchronization();
     }
@@ -360,12 +360,60 @@ namespace FCT {
         auto newBuffer = std::make_unique<CommandBufferNodes::CommandBuffer>(m_cmdPool);
         auto* bufferPtr = newBuffer.get();
         bufferPtr->updateSynchronization(m_maxFrameInFlight);
-        m_nodes.push_back(std::move(newBuffer));
+        m_nodes.insert(std::move(newBuffer));
 
         connectPredecessors(bufferPtr, predecessors);
         connectSuccessors(bufferPtr, successors);
 
         bufferPtr->fillAllSynchronization();
         return bufferPtr;
+    }
+    void CommandBufferGraph::removeEdge(CommandBufferEdges::EdgeBase* edge)
+    {
+        if (auto* inputEdge = dynamic_cast<CommandBufferEdges::InputFromWindow*>(edge))
+        {
+            inputEdge->getSourceNode()->removeOutputEdge(edge);
+            inputEdge->getSourceNode()->fillAllSynchronization();
+            inputEdge->getTargetNode()->removeInputEdge(edge);
+            inputEdge->getTargetNode()->fillAllSynchronization();
+            auto it = std::find_if(m_edges.begin(), m_edges.end(),
+                [edge](const std::unique_ptr<CommandBufferEdges::EdgeBase>& ptr) {
+                    return ptr.get() == edge;
+                });
+            if (it != m_edges.end()) {
+                m_edges.erase(it);
+            }
+        } else if (auto* outputEdge = dynamic_cast<CommandBufferEdges::OutputToWindow*>(edge))
+        {
+            outputEdge->getSourceNode()->removeOutputEdge(edge);
+            outputEdge->getSourceNode()->fillAllSynchronization();
+            outputEdge->getTargetNode()->removeInputEdge(edge);
+            outputEdge->getTargetNode()->fillAllSynchronization();
+            auto it = std::find_if(m_edges.begin(), m_edges.end(),
+                [edge](const std::unique_ptr<CommandBufferEdges::EdgeBase>& ptr) {
+                    return ptr.get() == edge;
+                });
+            if (it!= m_edges.end()) {
+                m_edges.erase(it);
+            }
+        } else
+        {
+
+        }
+    }
+    void CommandBufferGraph::removeBuffer(CommandBufferToken token)
+    {
+        auto outputEdge = token->getOutputEdges();
+        for (auto& edge : outputEdge) {
+            removeEdge(edge);
+        }
+        auto inputEdge = token->getInputEdges();
+        for (auto& edge : inputEdge) {
+            removeEdge(edge);
+        }
+        auto it = std::find_if(m_nodes.begin(), m_nodes.end(),
+            [token](const std::unique_ptr<CommandBufferNodes::NodeBase>& ptr) {
+                return ptr.get() == token;
+            });
     }
 } // FCT
