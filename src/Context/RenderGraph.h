@@ -417,6 +417,10 @@ namespace FCT
             m_originalPasses.push_back(desc);
             //addPass(desc);
         }
+        void addPassDesc(const PassDesc& desc)
+        {
+            m_originalPasses.push_back(desc);
+        }
         void buildGraph()
         {
             for (auto pass : m_originalPasses)

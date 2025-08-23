@@ -24,7 +24,7 @@ namespace FCT {
             processArgs(std::forward<Rest>(rest)...);
         }
         template<typename... Rest>
-        constexpr void processArgs(const Vec4& other, Rest&&... rest)
+        constexpr void processArgs(Vec4&& other, Rest&&... rest)
         {
             color = other;
             processArgs(std::forward<Rest>(rest)...);
