@@ -1,6 +1,7 @@
 ﻿#ifndef FCT_FORMAT_H
 #define FCT_FORMAT_H
 #include "../ThirdParty.h"
+#include "../Base/string.h"
 namespace FCT {
     enum class Format {
         UNDEFINED,
@@ -56,98 +57,159 @@ namespace FCT {
         D32_SFLOAT,
         D32_SFLOAT_S8_UINT
     };
-    constexpr const char* FormatToString(Format format) noexcept {
-    switch (format) {
-    case Format::UNDEFINED:
-        return "UNDEFINED";
-    case Format::R8_UNORM:
-        return "R8_UNORM";
-    case Format::R8G8_UNORM:
-        return "R8G8_UNORM";
-    case Format::R8G8B8_UNORM:
-        return "R8G8B8_UNORM";
-    case Format::R8G8B8A8_UNORM:
-        return "R8G8B8A8_UNORM";
-    case Format::B8G8R8A8_UNORM:
-        return "B8G8R8A8_UNORM";
-    case Format::R8G8B8A8_SRGB:
-        return "R8G8B8A8_SRGB";
-    case Format::B8G8R8A8_SRGB:
-        return "B8G8R8A8_SRGB";
-    case Format::R16_SFLOAT:
-        return "R16_SFLOAT";
-    case Format::R16G16_SFLOAT:
-        return "R16G16_SFLOAT";
-    case Format::R16G16B16A16_SFLOAT:
-        return "R16G16B16A16_SFLOAT";
-    case Format::R8_SINT:
-        return "R8_SINT";
-    case Format::R8G8_SINT:
-        return "R8G8_SINT";
-    case Format::R8G8B8_SINT:
-        return "R8G8B8_SINT";
-    case Format::R8G8B8A8_SINT:
-        return "R8G8B8A8_SINT";
-    case Format::R16_SINT:
-        return "R16_SINT";
-    case Format::R16G16_SINT:
-        return "R16G16_SINT";
-    case Format::R16G16B16_SINT:
-        return "R16G16B16_SINT";
-    case Format::R16G16B16A16_SINT:
-        return "R16G16B16A16_SINT";
-    case Format::R32_SINT:
-        return "R32_SINT";
-    case Format::R32G32_SINT:
-        return "R32G32_SINT";
-    case Format::R32G32B32_SINT:
-        return "R32G32B32_SINT";
-    case Format::R32G32B32A32_SINT:
-        return "R32G32B32A32_SINT";
-    case Format::R8_UINT:
-        return "R8_UINT";
-    case Format::R8G8_UINT:
-        return "R8G8_UINT";
-    case Format::R8G8B8_UINT:
-        return "R8G8B8_UINT";
-    case Format::R8G8B8A8_UINT:
-        return "R8G8B8A8_UINT";
-    case Format::R16_UINT:
-        return "R16_UINT";
-    case Format::R16G16_UINT:
-        return "R16G16_UINT";
-    case Format::R16G16B16_UINT:
-        return "R16G16B16_UINT";
-    case Format::R16G16B16A16_UINT:
-        return "R16G16B16A16_UINT";
-    case Format::R32_UINT:
-        return "R32_UINT";
-    case Format::R32G32_UINT:
-        return "R32G32_UINT";
-    case Format::R32G32B32_UINT:
-        return "R32G32B32_UINT";
-    case Format::R32G32B32A32_UINT:
-        return "R32G32B32A32_UINT";
-    case Format::R32_SFLOAT:
-        return "R32_SFLOAT";
-    case Format::R32G32_SFLOAT:
-        return "R32G32_SFLOAT";
-    case Format::R32G32B32_SFLOAT:
-        return "R32G32B32_SFLOAT";
-    case Format::R32G32B32A32_SFLOAT:
-        return "R32G32B32A32_SFLOAT";
-    case Format::D16_UNORM:
-        return "D16_UNORM";
-    case Format::D24_UNORM_S8_UINT:
-        return "D24_UNORM_S8_UINT";
-    case Format::D32_SFLOAT:
-        return "D32_SFLOAT";
-    case Format::D32_SFLOAT_S8_UINT:
-        return "D32_SFLOAT_S8_UINT";
-    default:
-        return "UNKNOWN";
+    constexpr const char* FormatToString(Format format) noexcept
+    {
+        switch (format) {
+        case Format::UNDEFINED:
+            return "UNDEFINED";
+        case Format::R8_UNORM:
+            return "R8_UNORM";
+        case Format::R8G8_UNORM:
+            return "R8G8_UNORM";
+        case Format::R8G8B8_UNORM:
+            return "R8G8B8_UNORM";
+        case Format::R8G8B8A8_UNORM:
+            return "R8G8B8A8_UNORM";
+        case Format::B8G8R8A8_UNORM:
+            return "B8G8R8A8_UNORM";
+        case Format::R8G8B8A8_SRGB:
+            return "R8G8B8A8_SRGB";
+        case Format::B8G8R8A8_SRGB:
+            return "B8G8R8A8_SRGB";
+        case Format::R16_SFLOAT:
+            return "R16_SFLOAT";
+        case Format::R16G16_SFLOAT:
+            return "R16G16_SFLOAT";
+        case Format::R16G16B16A16_SFLOAT:
+            return "R16G16B16A16_SFLOAT";
+        case Format::R8_SINT:
+            return "R8_SINT";
+        case Format::R8G8_SINT:
+            return "R8G8_SINT";
+        case Format::R8G8B8_SINT:
+            return "R8G8B8_SINT";
+        case Format::R8G8B8A8_SINT:
+            return "R8G8B8A8_SINT";
+        case Format::R16_SINT:
+            return "R16_SINT";
+        case Format::R16G16_SINT:
+            return "R16G16_SINT";
+        case Format::R16G16B16_SINT:
+            return "R16G16B16_SINT";
+        case Format::R16G16B16A16_SINT:
+            return "R16G16B16A16_SINT";
+        case Format::R32_SINT:
+            return "R32_SINT";
+        case Format::R32G32_SINT:
+            return "R32G32_SINT";
+        case Format::R32G32B32_SINT:
+            return "R32G32B32_SINT";
+        case Format::R32G32B32A32_SINT:
+            return "R32G32B32A32_SINT";
+        case Format::R8_UINT:
+            return "R8_UINT";
+        case Format::R8G8_UINT:
+            return "R8G8_UINT";
+        case Format::R8G8B8_UINT:
+            return "R8G8B8_UINT";
+        case Format::R8G8B8A8_UINT:
+            return "R8G8B8A8_UINT";
+        case Format::R16_UINT:
+            return "R16_UINT";
+        case Format::R16G16_UINT:
+            return "R16G16_UINT";
+        case Format::R16G16B16_UINT:
+            return "R16G16B16_UINT";
+        case Format::R16G16B16A16_UINT:
+            return "R16G16B16A16_UINT";
+        case Format::R32_UINT:
+            return "R32_UINT";
+        case Format::R32G32_UINT:
+            return "R32G32_UINT";
+        case Format::R32G32B32_UINT:
+            return "R32G32B32_UINT";
+        case Format::R32G32B32A32_UINT:
+            return "R32G32B32A32_UINT";
+        case Format::R32_SFLOAT:
+            return "R32_SFLOAT";
+        case Format::R32G32_SFLOAT:
+            return "R32G32_SFLOAT";
+        case Format::R32G32B32_SFLOAT:
+            return "R32G32B32_SFLOAT";
+        case Format::R32G32B32A32_SFLOAT:
+            return "R32G32B32A32_SFLOAT";
+        case Format::D16_UNORM:
+            return "D16_UNORM";
+        case Format::D24_UNORM_S8_UINT:
+            return "D24_UNORM_S8_UINT";
+        case Format::D32_SFLOAT:
+            return "D32_SFLOAT";
+        case Format::D32_SFLOAT_S8_UINT:
+            return "D32_SFLOAT_S8_UINT";
+        default:
+            return "UNKNOWN";
+        }
     }
-}
+    constexpr Format StringToFormat(const char* formatStr) noexcept
+    {
+        if (!formatStr) return Format::UNDEFINED;
+
+        if (StringEquals(formatStr, "UNDEFINED")) return Format::UNDEFINED;
+        if (StringEquals(formatStr, "R8_UNORM")) return Format::R8_UNORM;
+        if (StringEquals(formatStr, "R8G8_UNORM")) return Format::R8G8_UNORM;
+        if (StringEquals(formatStr, "R8G8B8_UNORM")) return Format::R8G8B8_UNORM;
+        if (StringEquals(formatStr, "R8G8B8A8_UNORM")) return Format::R8G8B8A8_UNORM;
+        if (StringEquals(formatStr, "B8G8R8A8_UNORM")) return Format::B8G8R8A8_UNORM;
+        if (StringEquals(formatStr, "R8G8B8A8_SRGB")) return Format::R8G8B8A8_SRGB;
+        if (StringEquals(formatStr, "B8G8R8A8_SRGB")) return Format::B8G8R8A8_SRGB;
+
+        // 16位格式
+        if (StringEquals(formatStr, "R16_SFLOAT")) return Format::R16_SFLOAT;
+        if (StringEquals(formatStr, "R16G16_SFLOAT")) return Format::R16G16_SFLOAT;
+        if (StringEquals(formatStr, "R16G16B16A16_SFLOAT")) return Format::R16G16B16A16_SFLOAT;
+
+        // 有符号整数格式
+        if (StringEquals(formatStr, "R8_SINT")) return Format::R8_SINT;
+        if (StringEquals(formatStr, "R8G8_SINT")) return Format::R8G8_SINT;
+        if (StringEquals(formatStr, "R8G8B8_SINT")) return Format::R8G8B8_SINT;
+        if (StringEquals(formatStr, "R8G8B8A8_SINT")) return Format::R8G8B8A8_SINT;
+        if (StringEquals(formatStr, "R16_SINT")) return Format::R16_SINT;
+        if (StringEquals(formatStr, "R16G16_SINT")) return Format::R16G16_SINT;
+        if (StringEquals(formatStr, "R16G16B16_SINT")) return Format::R16G16B16_SINT;
+        if (StringEquals(formatStr, "R16G16B16A16_SINT")) return Format::R16G16B16A16_SINT;
+        if (StringEquals(formatStr, "R32_SINT")) return Format::R32_SINT;
+        if (StringEquals(formatStr, "R32G32_SINT")) return Format::R32G32_SINT;
+        if (StringEquals(formatStr, "R32G32B32_SINT")) return Format::R32G32B32_SINT;
+        if (StringEquals(formatStr, "R32G32B32A32_SINT")) return Format::R32G32B32A32_SINT;
+
+        // 无符号整数格式
+        if (StringEquals(formatStr, "R8_UINT")) return Format::R8_UINT;
+        if (StringEquals(formatStr, "R8G8_UINT")) return Format::R8G8_UINT;
+        if (StringEquals(formatStr, "R8G8B8_UINT")) return Format::R8G8B8_UINT;
+        if (StringEquals(formatStr, "R8G8B8A8_UINT")) return Format::R8G8B8A8_UINT;
+        if (StringEquals(formatStr, "R16_UINT")) return Format::R16_UINT;
+        if (StringEquals(formatStr, "R16G16_UINT")) return Format::R16G16_UINT;
+        if (StringEquals(formatStr, "R16G16B16_UINT")) return Format::R16G16B16_UINT;
+        if (StringEquals(formatStr, "R16G16B16A16_UINT")) return Format::R16G16B16A16_UINT;
+        if (StringEquals(formatStr, "R32_UINT")) return Format::R32_UINT;
+        if (StringEquals(formatStr, "R32G32_UINT")) return Format::R32G32_UINT;
+        if (StringEquals(formatStr, "R32G32B32_UINT")) return Format::R32G32B32_UINT;
+        if (StringEquals(formatStr, "R32G32B32A32_UINT")) return Format::R32G32B32A32_UINT;
+
+        // 32位浮点格式
+        if (StringEquals(formatStr, "R32_SFLOAT")) return Format::R32_SFLOAT;
+        if (StringEquals(formatStr, "R32G32_SFLOAT")) return Format::R32G32_SFLOAT;
+        if (StringEquals(formatStr, "R32G32B32_SFLOAT")) return Format::R32G32B32_SFLOAT;
+        if (StringEquals(formatStr, "R32G32B32A32_SFLOAT")) return Format::R32G32B32A32_SFLOAT;
+
+        // 深度/模板格式
+        if (StringEquals(formatStr, "D16_UNORM")) return Format::D16_UNORM;
+        if (StringEquals(formatStr, "D24_UNORM_S8_UINT")) return Format::D24_UNORM_S8_UINT;
+        if (StringEquals(formatStr, "D32_SFLOAT")) return Format::D32_SFLOAT;
+        if (StringEquals(formatStr, "D32_SFLOAT_S8_UINT")) return Format::D32_SFLOAT_S8_UINT;
+
+        return Format::UNDEFINED;
+    }
 
 
    constexpr const char* FormatToShaderType(Format format) noexcept
