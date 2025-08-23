@@ -304,6 +304,10 @@ namespace FCT
         {
             return m_originalPasses;
         }
+        void clearOriginalPasses()
+        {
+            m_originalPasses.clear();
+        }
     private:
         RenderGraphImageNode* getOrCreateImageNode(const std::string& name, const Texture& texture);
         RenderGraphImageNode* getOrCreateImageNode(const std::string& name, const Target& target);
