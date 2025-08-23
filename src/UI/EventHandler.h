@@ -13,6 +13,7 @@ namespace FCT {
 		virtual void onRButtonUp(Window* wnd, int xpos, int ypos) = 0;
 		virtual void onKeyDown(Window* wnd, int key) = 0;
 		virtual void onKeyUp(Window* wnd, int key) = 0;
+		virtual void onFileDrop(Window* wnd, const std::vector<std::string>& files) = 0;
 	private:
 
 	};

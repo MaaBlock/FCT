@@ -16,6 +16,7 @@ namespace FCT {
         using MouseWheelCallBack = std::function<void(Window* wnd, int delta)>;
         using KeyDownCallBack = std::function<void(Window* wnd, int key)>;
         using KeyUpCallBack = std::function<void(Window* wnd, int key)>;
+        using FileDropCallBack = std::function<void(Window* wnd, const std::vector<std::string>& files)>;
 
         /**
          * @cond CHINESE
@@ -70,6 +71,13 @@ namespace FCT {
             }
         }
 
+        void onFileDrop(Window* wnd, const std::vector<std::string>& files) override
+        {
+            for (const auto& pair : m_fileDropCallbacks) {
+                pair.second(wnd, files);
+            }
+        }
+
         CallbackId addResizeCallback(const ResizeCallBack& cb) {
             CallbackId id = m_nextId++;
             m_resizeCallbacks[id] = cb;
@@ -116,6 +124,11 @@ namespace FCT {
             m_keyUpCallbacks[id] = cb;
             return id;
         }
+        CallbackId addFileDropCallback(const FileDropCallBack& cb) {
+            CallbackId id = m_nextId++;
+            m_fileDropCallbacks[id] = cb;
+            return id;
+        }
         void removeResizeCallback(CallbackId id) {
             m_resizeCallbacks.erase(id);
         }
@@ -143,6 +156,9 @@ namespace FCT {
         }
         void removeKeyUpCallback(CallbackId id) {
             m_keyUpCallbacks.erase(id);
+        }
+        void removeFileDropCallback(CallbackId id) {
+            m_fileDropCallbacks.erase(id);
         }
 
         void clearResizeCallbacks() {
@@ -172,6 +188,9 @@ namespace FCT {
         void clearKeyUpCallbacks() {
             m_keyUpCallbacks.clear();
         }
+        void clearFileDropCallbacks() {
+            m_fileDropCallbacks.clear();
+        }
         void invokeResizeCallbacks(Window* wnd, int width, int height) {
             onResize(wnd, width, height);
         }
@@ -186,6 +205,7 @@ namespace FCT {
         std::unordered_map<CallbackId, MouseWheelCallBack> m_mouseWheelCallbacks;
         std::unordered_map<CallbackId, KeyDownCallBack> m_keyDownCallbacks;
         std::unordered_map<CallbackId, KeyUpCallBack> m_keyUpCallbacks;
+        std::unordered_map<CallbackId, FileDropCallBack> m_fileDropCallbacks;
         CallbackId m_nextId = 1;
     };
 }

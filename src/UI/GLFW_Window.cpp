@@ -126,6 +126,16 @@ void FCT::GLFW_Window::invokeScrollCallbacks(int xoffset, int yoffset)
     }
 }
 
+void FCT::GLFW_Window::invokeFileDropCallbacks(int count, const char** paths)
+{
+    std::vector<std::string> filePaths;
+    for (int i = 0; i < count; ++i)
+        filePaths.push_back(paths[i]);
+    for (auto cb : m_handlers) {
+        cb->onFileDrop(this, filePaths);
+    }
+}
+
 void FCT::GLFW_Window::createPlatform()
 {
     m_common->postUiTask([this](void*)
@@ -153,6 +163,10 @@ void FCT::GLFW_Window::createPlatform()
            auto* wnd = static_cast<FCT::GLFW_Window*>(glfwGetWindowUserPointer(window));
            wnd->invokeScrollCallbacks(xoffset, yoffset);
        });
+        glfwSetDropCallback(m_window, [](GLFWwindow* window, int count, const char** paths) {
+         auto* wnd = static_cast<FCT::GLFW_Window*>(glfwGetWindowUserPointer(window));
+         wnd->invokeFileDropCallbacks(count, paths);
+        });
     });
     if (m_behavior)
     {

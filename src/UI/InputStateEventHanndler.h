@@ -27,6 +27,10 @@ namespace FCT
         {
 
         }
+        void onFileDrop(Window* wnd, const std::vector<std::string>& files) override
+        {
+
+        }
         struct InputState
         {
             int delta;

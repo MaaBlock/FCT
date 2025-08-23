@@ -35,6 +35,7 @@ namespace FCT
         void invokeMouseCallbacks(int button, int action, int mods);
         void invokeKeyCallbacks(int key, int scancode, int action, int mods);
         void invokeScrollCallbacks(int xoffset, int yoffset);
+        void invokeFileDropCallbacks(int count, const char** paths);
         void createPlatform();
         bool isRunning() const override;
         void swapBuffers() override;
