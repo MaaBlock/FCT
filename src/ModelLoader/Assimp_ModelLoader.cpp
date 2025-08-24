@@ -85,4 +85,254 @@ namespace FCT
         }
         return ret;
     }
+    ModelInfo::SceneInfo Assimp_ModelLoader::loadModelInfo(const std::string& path)
+    {
+        ModelInfo::SceneInfo info;
+
+        Assimp::Importer importer;
+        const auto aiScene = importer.ReadFile(path,
+            aiProcess_CalcTangentSpace |
+            aiProcess_Triangulate |
+            aiProcess_JoinIdenticalVertices |
+            aiProcess_SortByPType);
+
+        if (!aiScene) {
+            return info;
+        }
+        info.name = aiScene->mName.C_Str();
+        for (unsigned int i = 0; i < aiScene->mNumMeshes; i++)
+        {
+            const auto aiMesh = aiScene->mMeshes[i];
+            ModelInfo::MeshInfo meshInfo;
+
+            meshInfo.name = aiMesh->mName.C_Str();
+            meshInfo.vertexCount = aiMesh->mNumVertices;
+            meshInfo.hasPositions = aiMesh->HasPositions();
+            meshInfo.hasNormals = aiMesh->HasNormals();
+            meshInfo.hasTangents = aiMesh->HasTangentsAndBitangents();
+            meshInfo.hasBitangents = aiMesh->HasTangentsAndBitangents();
+
+            for (unsigned int texCoordSet = 0; texCoordSet < 8; texCoordSet++) {
+                meshInfo.hasTexCoords[texCoordSet] = aiMesh->HasTextureCoords(texCoordSet);
+            }
+
+            for (unsigned int colorSet = 0; colorSet < 8; colorSet++) {
+                meshInfo.hasVertexColors[colorSet] = aiMesh->HasVertexColors(colorSet);
+            }
+
+            meshInfo.indexCount = 0;
+            meshInfo.triangleCount = 0;
+            if (aiMesh->HasFaces()) {
+                meshInfo.isIndexed = true;
+                for (unsigned int j = 0; j < aiMesh->mNumFaces; j++) {
+                    const aiFace& face = aiMesh->mFaces[j];
+                    meshInfo.indexCount += face.mNumIndices;
+                    if (face.mNumIndices == 3) {
+                        meshInfo.triangleCount++;
+                    }
+                }
+            }
+
+            if (aiMesh->HasPositions()) {
+                aiVector3D min = aiMesh->mVertices[0];
+                aiVector3D max = aiMesh->mVertices[0];
+
+                for (unsigned int j = 1; j < aiMesh->mNumVertices; j++) {
+                    const aiVector3D& vertex = aiMesh->mVertices[j];
+                    min.x = std::min(min.x, vertex.x);
+                    min.y = std::min(min.y, vertex.y);
+                    min.z = std::min(min.z, vertex.z);
+                    max.x = std::max(max.x, vertex.x);
+                    max.y = std::max(max.y, vertex.y);
+                    max.z = std::max(max.z, vertex.z);
+                }
+
+                meshInfo.boundingBoxMin = Vec3(min.x, min.y, min.z);
+                meshInfo.boundingBoxMax = Vec3(max.x, max.y, max.z);
+                meshInfo.boundingBoxCenter = Vec3(
+                    (min.x + max.x) * 0.5f,
+                    (min.y + max.y) * 0.5f,
+                    (min.z + max.z) * 0.5f
+                );
+            }
+
+            info.meshInfos.push_back(meshInfo);
+        }
+          std::map<std::string, ModelInfo::TextureInfo> textureInfoMap;
+        std::filesystem::path modelDir = std::filesystem::path(path).parent_path();
+
+        for (unsigned int i = 0; i < aiScene->mNumMaterials; i++)
+        {
+            const auto aiMaterial = aiScene->mMaterials[i];
+
+            std::vector<aiTextureType> textureTypes = {
+                aiTextureType_DIFFUSE,
+                aiTextureType_SPECULAR,
+                aiTextureType_AMBIENT,
+                aiTextureType_EMISSIVE,
+                aiTextureType_HEIGHT,
+                aiTextureType_NORMALS,
+                aiTextureType_SHININESS,
+                aiTextureType_OPACITY,
+                aiTextureType_DISPLACEMENT,
+                aiTextureType_LIGHTMAP,
+                aiTextureType_REFLECTION,
+                aiTextureType_BASE_COLOR,
+                aiTextureType_NORMAL_CAMERA,
+                aiTextureType_EMISSION_COLOR,
+                aiTextureType_METALNESS,
+                aiTextureType_DIFFUSE_ROUGHNESS,
+                aiTextureType_AMBIENT_OCCLUSION
+            };
+
+            for (auto textureType : textureTypes) {
+                unsigned int textureCount = aiMaterial->GetTextureCount(textureType);
+
+                for (unsigned int j = 0; j < textureCount; j++) {
+                    aiString texturePath;
+                    if (aiMaterial->GetTexture(textureType, j, &texturePath) == AI_SUCCESS) {
+                        std::string texturePathStr = texturePath.C_Str();
+
+                        if (texturePathStr.empty()) {
+                            continue;
+                        }
+
+                        if (textureInfoMap.find(texturePathStr) == textureInfoMap.end()) {
+                            ModelInfo::TextureInfo textureInfo;
+                            textureInfo.path = texturePathStr;
+
+                            textureInfo.isInner = (texturePathStr[0] == '*');
+
+                            textureInfoMap[texturePathStr] = textureInfo;
+                        }
+                    }
+                }
+            }
+        }
+
+        for (const auto& [path, textureInfo] : textureInfoMap) {
+            info.textureInfos.push_back(textureInfo);
+        }
+
+        return info;
+    }
+
+    std::set<std::string> Assimp_ModelLoader::resolveTexturePaths(const std::string& modelPath) const
+    {
+        std::set<std::string> texturePaths;
+
+        Assimp::Importer importer;
+        const auto aiScene = importer.ReadFile(modelPath,
+            aiProcess_CalcTangentSpace |
+            aiProcess_Triangulate |
+            aiProcess_JoinIdenticalVertices |
+            aiProcess_SortByPType);
+
+        if (!aiScene || !aiScene->HasMaterials()) {
+            return texturePaths;
+        }
+
+        std::filesystem::path modelDir = std::filesystem::path(modelPath).parent_path();
+
+        for (unsigned int i = 0; i < aiScene->mNumMaterials; i++) {
+            const auto aiMaterial = aiScene->mMaterials[i];
+
+            std::vector<aiTextureType> textureTypes = {
+                aiTextureType_DIFFUSE,
+                aiTextureType_SPECULAR,
+                aiTextureType_AMBIENT,
+                aiTextureType_EMISSIVE,
+                aiTextureType_HEIGHT,
+                aiTextureType_NORMALS,
+                aiTextureType_SHININESS,
+                aiTextureType_OPACITY,
+                aiTextureType_DISPLACEMENT,
+                aiTextureType_LIGHTMAP,
+                aiTextureType_REFLECTION,
+                aiTextureType_BASE_COLOR,
+                aiTextureType_NORMAL_CAMERA,
+                aiTextureType_EMISSION_COLOR,
+                aiTextureType_METALNESS,
+                aiTextureType_DIFFUSE_ROUGHNESS,
+                aiTextureType_AMBIENT_OCCLUSION
+            };
+
+            for (auto textureType : textureTypes) {
+                unsigned int textureCount = aiMaterial->GetTextureCount(textureType);
+
+                for (unsigned int j = 0; j < textureCount; j++) {
+                    aiString texturePath;
+                    if (aiMaterial->GetTexture(textureType, j, &texturePath) == AI_SUCCESS) {
+                        std::string texturePathStr = texturePath.C_Str();
+
+                        if (texturePathStr.empty()) {
+                            continue;
+                        }
+
+                        if (texturePathStr[0] == '*') {
+                            continue;
+                        }
+
+                        std::vector<std::string> candidatePaths;
+
+                        candidatePaths.push_back(texturePathStr);
+
+                        candidatePaths.push_back((modelDir / texturePathStr).string());
+
+                        std::filesystem::path textureFileName = std::filesystem::path(texturePathStr).filename();
+                        candidatePaths.push_back((modelDir / textureFileName).string());
+
+                        std::vector<std::string> commonTextureDirs = {"textures", "texture", "images", "img", "maps"};
+                        for (const auto& texDir : commonTextureDirs) {
+                            candidatePaths.push_back((modelDir / texDir / textureFileName).string());
+                        }
+
+                        bool found = false;
+                        for (const auto& candidatePath : candidatePaths) {
+                            if (std::filesystem::exists(candidatePath)) {
+                                try {
+                                    std::string absolutePath = std::filesystem::canonical(candidatePath).string();
+                                    texturePaths.insert(absolutePath);
+                                    found = true;
+                                    break;
+                                } catch (const std::filesystem::filesystem_error&) {
+                                    try {
+                                        std::string absolutePath = std::filesystem::absolute(candidatePath).string();
+                                        texturePaths.insert(absolutePath);
+                                        found = true;
+                                        break;
+                                    } catch (const std::filesystem::filesystem_error&) {
+                                        continue;
+                                    }
+                                }
+                            }
+                        }
+
+                        if (!found) {
+                            try {
+                                std::string fallbackPath;
+                                if (std::filesystem::path(texturePathStr).is_absolute()) {
+                                    fallbackPath = std::filesystem::absolute(texturePathStr).string();
+                                } else {
+                                    fallbackPath = std::filesystem::absolute(modelDir / texturePathStr).string();
+                                }
+                                texturePaths.insert(fallbackPath);
+                            } catch (const std::filesystem::filesystem_error&) {
+                                texturePaths.insert(texturePathStr);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        return texturePaths;
+    }
+
+    std::set<std::string> Assimp_ModelLoader::getPlatformSupportedExtensions() const
+    {
+        return {
+
+        };
+    }
 }

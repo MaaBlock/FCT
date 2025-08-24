@@ -1,9 +1,113 @@
-//
-// Created by Administrator on 2025/4/21.
-//
-#include "../Context/Vertex.h"
 #ifndef MODELLOADER_H
 #define MODELLOADER_H
+#include "../ThirdParty.h"
+#include "../Context/Vertex.h"
+namespace FCT
+{
+    namespace ModelInfo
+    {
+        struct MeshInfo
+    {
+        std::string name;
+        uint32_t vertexCount;
+        uint32_t indexCount;
+        uint32_t triangleCount;
+        bool isIndexed;
+
+        bool hasPositions;
+        bool hasNormals;
+        bool hasTangents;
+        bool hasBitangents;
+
+        std::array<bool, 8> hasTexCoords;
+        std::array<bool, 8> hasVertexColors;
+
+        Vec3 boundingBoxMin;
+        Vec3 boundingBoxMax;
+        Vec3 boundingBoxCenter;
+
+        MeshInfo() : vertexCount(0), indexCount(0), triangleCount(0),
+                     isIndexed(false), hasPositions(false), hasNormals(false),
+                     hasTangents(false), hasBitangents(false),
+                     boundingBoxMin(0.0f), boundingBoxMax(0.0f), boundingBoxCenter(0.0f)
+        {
+            hasTexCoords.fill(false);
+            hasVertexColors.fill(false);
+        }
+
+    private:
+        friend class boost::serialization::access;
+        template<class Archive>
+        void serialize(Archive & ar, const unsigned int version)
+        {
+            ar & name;
+            ar & vertexCount;
+            ar & indexCount;
+            ar & triangleCount;
+            ar & isIndexed;
+            ar & hasPositions;
+            ar & hasNormals;
+            ar & hasTangents;
+            ar & hasBitangents;
+            ar & hasTexCoords;
+            ar & hasVertexColors;
+            ar & boundingBoxMin;
+            ar & boundingBoxMax;
+            ar & boundingBoxCenter;
+        }
+    };
+
+        struct MaterialInfo
+        {
+        private:
+            friend class boost::serialization::access;
+            template<class Archive>
+            void serialize(Archive & ar, const unsigned int version)
+            {
+                // 当MaterialInfo有成员时在这里添加序列化
+            }
+        };
+
+        struct TextureInfo
+        {
+            std::string path;
+            bool isInner;
+            TextureInfo() : isInner(false) {}
+        private:
+            friend class boost::serialization::access;
+            template<class Archive>
+            void serialize(Archive & ar, const unsigned int version)
+            {
+                ar & path;
+                ar & isInner;
+            }
+        };
+
+        struct SceneInfo
+        {
+            std::string name;
+            std::vector<MeshInfo> meshInfos;
+            std::vector<MaterialInfo> materialInfos;
+            std::vector<TextureInfo> textureInfos;
+
+        private:
+            friend class boost::serialization::access;
+            template<class Archive>
+            void serialize(Archive & ar, const unsigned int version)
+            {
+                ar & name;
+                ar & meshInfos;
+                ar & materialInfos;
+                ar & textureInfos;
+            }
+        };
+    }
+}
+
+BOOST_CLASS_VERSION(FCT::ModelInfo::MeshInfo, 1);
+BOOST_CLASS_VERSION(FCT::ModelInfo::MaterialInfo, 1);
+BOOST_CLASS_VERSION(FCT::ModelInfo::TextureInfo, 1);
+BOOST_CLASS_VERSION(FCT::ModelInfo::SceneInfo, 1);
 namespace FCT
 {
     struct ModelVertex
@@ -176,8 +280,28 @@ namespace FCT
     class ModelLoader {
     public:
         virtual std::unique_ptr<ModelData> loadModel(const std::string &path) = 0;
+        virtual ModelInfo::SceneInfo loadModelInfo(const std::string &path) = 0;
+        /**
+         * @cond CHINESE
+         * @brief 解析模型依赖的纹理位置
+         * @param modelPath 模型路径
+         * @return 纹理绝对路径
+         * @endcond
+         */
+        virtual std::set<std::string> resolveTexturePaths(const std::string& modelPath) const = 0;
+        /**
+         * @cond CHINESE
+         * @brief 获取模型及其所有依赖文件的绝对路径
+         * @param modelPath 模型路径
+         * @return 包含模型文件和所有依赖文件（纹理、材质等）的绝对路径集合
+         * @endcond
+         */
+        std::set<std::string> resolveModePaths(const std::string& modelPath);
+        std::set<std::string> getSupportedExtensions() const;
     protected:
-
+        std::set<std::string> getModelSpecificDependencies(const std::string& modelPath) const;
+        virtual std::set<std::string> getPlatformSupportedExtensions() const = 0;;
     };
+
 }
 #endif //MODELLOADER_H

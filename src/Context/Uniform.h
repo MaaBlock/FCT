@@ -40,6 +40,7 @@ namespace FCT
         Custom
     };
 
+    using UniformType = ConstType;
 
 #ifdef FCT_USE_VULKAN
 #include <vulkan/vulkan.hpp>

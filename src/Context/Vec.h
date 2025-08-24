@@ -4,6 +4,7 @@
 
 #ifndef VEC_H
 #define VEC_H
+#include "../ThirdParty.h"
 namespace FCT {
     struct Vec2
     {
@@ -60,6 +61,13 @@ namespace FCT {
         float distance(const Vec2 &other) const
         {
             return std::sqrt((x - other.x) * (x - other.x) + (y - other.y) * (y - other.y));
+        }
+        friend class boost::serialization::access;
+        template<class Archive>
+        void serialize(Archive & ar, const unsigned int version)
+        {
+            ar & x;
+            ar & y;
         }
     };
 
@@ -172,6 +180,14 @@ namespace FCT {
         float dot(const Vec3& rhs) const {
             return x * rhs.x + y * rhs.y + z * rhs.z;
         }
+        friend class boost::serialization::access;
+        template<class Archive>
+        void serialize(Archive & ar, const unsigned int version)
+        {
+            ar & x;
+            ar & y;
+            ar & z;
+        }
     };
     inline Vec3 normalize(const Vec3 &v)
     {
@@ -220,6 +236,15 @@ namespace FCT {
         Vec3 xyz() const
         {
             return Vec3(x, y, z);
+        }
+        friend class boost::serialization::access;
+        template<class Archive>
+        void serialize(Archive & ar, const unsigned int version)
+        {
+            ar & x;
+            ar & y;
+            ar & z;
+            ar & w;
         }
     };
     template<typename T>

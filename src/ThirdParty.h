@@ -72,6 +72,11 @@
 #include <boost/graph/breadth_first_search.hpp>
 #include <boost/pending/disjoint_sets.hpp>
 #include <boost/unordered/unordered_flat_map.hpp>
+#include <boost/serialization/serialization.hpp>
+#include <boost/serialization/vector.hpp>
+#include <boost/serialization/array.hpp>
+#include <boost/serialization/string.hpp>
+#include <boost/serialization/version.hpp>
 
 #include <thread>
 #include <map>

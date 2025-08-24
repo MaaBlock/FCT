@@ -7,6 +7,7 @@ namespace FCT {
         class UniformBuffer;
         class ConstBuffer;
     }
+
     struct Uniform
     {
     public:
@@ -19,6 +20,11 @@ namespace FCT {
         void setValue(const char* name, const T& value)
         {
             m_uniformBuffer->setValue(name, value);
+        }
+        template<typename T>
+        void setValue(UniformType type, const T& value)
+        {
+            m_uniformBuffer->setValue(type, value);
         }
         void update();
         operator FCT::RHI::ConstBuffer*() const;

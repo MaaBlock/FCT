@@ -75,5 +75,7 @@
 //#include "Context/Image.h"
 //#include "UI/Window.h"
 #include "./UI/AutoViewport.h"
+#include "./UI/Utils.h"
 #include "./Runtime/PipeHub.h"
+#include "./Path/path.h"
 #endif //FCT_HEADER_H
