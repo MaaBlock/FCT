@@ -145,7 +145,12 @@ namespace FCT {
             addModule<ResourceManager>();
         if (flag & ContextCreateFlag::withModuleRenderGraph)
             addModule<RenderGraph>();
-        maxFrameInFlight(3);
+        if (flag & ContextCreateFlag::withAutoMaxFrameInFlight) {
+            if (isIntegrateGpu())
+                maxFrameInFlight(1);
+            else
+                maxFrameInFlight(3);
+        }
     }
 
     StaticMesh<uint32_t>* Context::createMesh(const ModelMesh* modelMesh, const VertexLayout& layout)

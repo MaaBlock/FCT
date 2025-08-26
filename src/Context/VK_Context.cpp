@@ -534,4 +534,13 @@ namespace FCT
         m_graphicsQueue.submit(submitInfo);
         m_graphicsQueue.waitIdle();
     }
+
+    bool VK_Context::isIntegrateGpu() {
+        if (!m_phyDevice) {
+            return false;
+        }
+
+        vk::PhysicalDeviceProperties properties = m_phyDevice.getProperties();
+        return properties.deviceType == vk::PhysicalDeviceType::eIntegratedGpu;
+    }
 }

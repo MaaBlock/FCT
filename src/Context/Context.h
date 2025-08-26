@@ -88,10 +88,12 @@ namespace FCT
 	class Runtime;
 	enum class ContextCreateFlag
 	{
-		withModuleResourceManage	             = 0x1,
-		withModuleRenderGraph		             = 0x2,
+		withModuleResourceManage	             = 1 << 0,
+		withModuleRenderGraph		             = 1 << 1,
+        withAutoMaxFrameInFlight                 = 1 << 2,
 		defaultConfig = withModuleResourceManage
-						| withModuleRenderGraph,
+						| withModuleRenderGraph
+                        | withAutoMaxFrameInFlight,
 	};
 	FCT_DECLARE_FLAGS(ContextCreateFlag)
 	class Context : public RefCount,public IEventSystem<EventSystemConfig::TriggerOnly>
@@ -103,6 +105,7 @@ namespace FCT
 		virtual ~Context();
 		virtual void createPlatform() = 0;
 	public:
+        virtual bool isIntegrateGpu() = 0;
 		PipeHub& pipeHub();
 		/** @name 初始化与配置 (Initialization & Configuration)
    		*  @{

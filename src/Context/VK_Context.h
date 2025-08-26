@@ -13,6 +13,7 @@ namespace FCT {
         VK_Context(VK_ContextCommon* common);
         ~VK_Context() override;
         RHI::RasterizationPipeline* createTraditionPipeline() override;
+        bool isIntegrateGpu() override;
         //void create(IRenderTarget* target) override;
         uint32_t findMemoryType(uint32_t typeFilter, vk::MemoryPropertyFlags properties);
         void createPlatform() override;
