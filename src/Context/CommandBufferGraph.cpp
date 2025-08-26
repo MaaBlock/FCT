@@ -70,6 +70,14 @@ namespace FCT {
         m_pool = pool;
     }
 
+    CommandBufferNodes::CommandBuffer::~CommandBuffer()
+    {
+        for (auto& cmdBuffer : m_cmdBuffers) {
+            cmdBuffer->release();
+        }
+        m_cmdBuffers.clear();
+    }
+
     void CommandBufferNodes::CommandBuffer::updateSynchronization(uint32_t newMaxFrameInFlight)
     {
         if (m_cmdBuffers.size() != newMaxFrameInFlight) {
@@ -212,10 +220,9 @@ namespace FCT {
             return it->second;
         }
 
-        auto inputNode = std::make_unique<CommandBufferNodes::InputFromWindow>(window);
-        auto* nodePtr = inputNode.get();
+        auto* nodePtr = FCT_NEW(CommandBufferNodes::InputFromWindow,window);
         nodePtr->updateSynchronization(m_maxFrameInFlight);
-        m_nodes.insert(std::move(inputNode));
+        m_nodes.insert(nodePtr);
         m_windowInputNodes[window] = nodePtr;
         return nodePtr;
     }
@@ -228,10 +235,9 @@ namespace FCT {
             return it->second;
         }
 
-        auto outputNode = std::make_unique<CommandBufferNodes::OutputToWindow>(window);
-        auto* nodePtr = outputNode.get();
+        auto* nodePtr = FCT_NEW(CommandBufferNodes::OutputToWindow,window);
         nodePtr->updateSynchronization(m_maxFrameInFlight);
-        m_nodes.insert(std::move(outputNode));
+        m_nodes.insert(nodePtr);
         m_windowOutputNodes[window] = nodePtr;
         return nodePtr;
     }
@@ -357,10 +363,9 @@ namespace FCT {
     CommandBufferToken CommandBufferGraph::addBuffer(const std::vector<NodeRef>& predecessors,
                                                      const std::vector<NodeRef>& successors)
     {
-        auto newBuffer = std::make_unique<CommandBufferNodes::CommandBuffer>(m_cmdPool);
-        auto* bufferPtr = newBuffer.get();
+        auto* bufferPtr = FCT_NEW(CommandBufferNodes::CommandBuffer,m_cmdPool);
         bufferPtr->updateSynchronization(m_maxFrameInFlight);
-        m_nodes.insert(std::move(newBuffer));
+        m_nodes.insert(bufferPtr);
 
         connectPredecessors(bufferPtr, predecessors);
         connectSuccessors(bufferPtr, successors);
@@ -411,9 +416,7 @@ namespace FCT {
         for (auto& edge : inputEdge) {
             removeEdge(edge);
         }
-        auto it = std::find_if(m_nodes.begin(), m_nodes.end(),
-            [token](const std::unique_ptr<CommandBufferNodes::NodeBase>& ptr) {
-                return ptr.get() == token;
-            });
+        m_nodes.erase(token);
+        FCT_DELETE(token);
     }
 } // FCT

@@ -23,6 +23,7 @@ namespace FCT::RHI
         FCT_SAFE_RELEASE(m_rasterizationState);
         FCT_SAFE_RELEASE(m_viewportState);
         FCT_SAFE_RELEASE(m_inputLayout);
+        FCT_SAFE_RELEASE(m_depthStencilState);
     }
 
     void VK_RasterizationPipeline::addResources(IPipelineResource* resource)

@@ -18,7 +18,7 @@ namespace FCT
         StaticMesh(Context* context, const VertexLayout& layout)
             : m_ctx(context), m_vertexLayout(layout), m_gpuIndex(nullptr), m_gpuVertex(nullptr)
         {
-            m_cpuVertex = new VertexBuffer(layout);
+            m_cpuVertex = FCT_NEW(VertexBuffer,layout);
         }
 
         ~StaticMesh()
@@ -104,7 +104,7 @@ namespace FCT
         DynamicMesh(Context* context, const VertexLayout& layout)
             : m_ctx(context), m_vertexLayout(layout), m_gpuIndex(nullptr), m_gpuVertex(nullptr)
         {
-            m_cpuVertex = new VertexBuffer(layout);
+            m_cpuVertex = FCT_NEW(VertexBuffer,layout);
         }
 
         ~DynamicMesh()

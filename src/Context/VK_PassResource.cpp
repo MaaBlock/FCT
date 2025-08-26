@@ -9,6 +9,21 @@ namespace FCT
         m_ctx = ctx;
     }
 
+    VK_PassResource::~VK_PassResource()
+    {
+        for (auto& set : m_descriptorSets)
+        {
+            m_ctx->device().
+                freeDescriptorSets(
+                     static_cast<RHI::VK_DescriptorPool*>(m_ctx->getDescriptorPool())->getPool(),set);
+        }
+        for (auto& layout : m_descriptorSetLayouts)
+        {
+            m_ctx->device().destroyDescriptorSetLayout(layout);
+        }
+    }
+
+
     void VK_PassResource::addConstBuffer(RHI::ConstBuffer* buffer)
     {
         if (buffer) {
@@ -67,7 +82,8 @@ bool VK_PassResource::createDescriptorSetsAndLayouts(uint32_t frameIdx,
                                                     std::vector<vk::DescriptorSet>& outDescriptorSets)
     {
         vk::Device device = m_ctx->getDevice();
-        auto descriptorPool = static_cast<RHI::VK_DescriptorPool*>(m_ctx->getDescriptorPool());
+        auto descriptorPool =
+            static_cast<RHI::VK_DescriptorPool*>(m_ctx->getDescriptorPool());
 
         for (auto& layout : outLayouts) {
             if (layout) {

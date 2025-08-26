@@ -9,6 +9,7 @@ namespace FCT
     class VK_PassResource : public PassResource{
     public:
         VK_PassResource(VK_Context* ctx);
+        ~VK_PassResource() override;
         void addConstBuffer(RHI::ConstBuffer* buffer) override;
         void addSampler(Sampler* sampler, SamplerElement element) override;
         void addTexture(Image* texture, TextureElement element) override;

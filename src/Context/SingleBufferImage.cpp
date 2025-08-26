@@ -26,6 +26,7 @@ namespace FCT
     SingleBufferImage::~SingleBufferImage() {
         FCT_SAFE_RELEASE(m_image);
         FCT_SAFE_RELEASE(m_rtv);
+        FCT_SAFE_RELEASE(m_srv);
     }
 
     void SingleBufferImage::create() {

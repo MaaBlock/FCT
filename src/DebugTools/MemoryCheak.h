@@ -83,6 +83,7 @@ namespace FCT {
 	}
 	inline void _output_object(std::ostream& out) {
 		//线程不安全
+		out << std::dec;
 		for (auto i = fct_object_list.begin(); i != fct_object_list.end(); i++) {
 			out << (*i)->describe << std::endl;
 		}

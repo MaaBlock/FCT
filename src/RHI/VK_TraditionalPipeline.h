@@ -16,6 +16,7 @@ namespace FCT
         public:
             PipelineType getType() const override;
             VK_TraditionalPipeline(VK_Context* ctx);
+            ~VK_TraditionalPipeline() override;
             void addResources(IPipelineResource* resource) override;
             void create() override;
         private:

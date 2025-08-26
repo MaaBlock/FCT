@@ -271,6 +271,7 @@ namespace FCT
         {
         public:
             CommandBuffer(RHI::CommandPool* pool);
+            ~CommandBuffer() override;
             void updateSynchronization(uint32_t newMaxFrameInFlight) override;
             void addOutputEdge(CommandBufferEdges::EdgeBase* edge) override;
             void addInputEdge(CommandBufferEdges::EdgeBase* edge) override;
@@ -315,7 +316,7 @@ namespace FCT
         SemaphorePool* m_semaphorePool;
         FencePool* m_fencePool;
 
-        std::unordered_set<std::unique_ptr<CommandBufferNodes::NodeBase>> m_nodes;
+        std::unordered_set<CommandBufferNodes::NodeBase*> m_nodes;
         std::unordered_set<std::unique_ptr<CommandBufferEdges::EdgeBase>> m_edges;
 
         std::unordered_map<Window*, CommandBufferNodes::InputFromWindow*> m_windowInputNodes;

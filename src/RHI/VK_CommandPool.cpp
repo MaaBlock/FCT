@@ -26,7 +26,7 @@ namespace FCT
 
         CommandBuffer* VK_CommandPool::createCommandBuffer()
         {
-            return new VK_CommandBuffer(this);
+            return FCT_NEW(VK_CommandBuffer,this);
         }
     }
 }

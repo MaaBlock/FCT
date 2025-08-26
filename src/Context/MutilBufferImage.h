@@ -22,6 +22,7 @@ namespace FCT
     public:
         friend class MutilBufferAffterCreateImageBehavior;
         MutilBufferImage(Context* ctx);
+        ~MutilBufferImage() override;
         void imageCount(size_t count) { m_imageCount = count; }
         void create() override;
         void resize(uint32_t width, uint32_t height);

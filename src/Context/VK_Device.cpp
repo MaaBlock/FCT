@@ -41,136 +41,136 @@ namespace FCT
 
     VertexShader* VK_Device::newVertexShader()
     {
-        return new VertexShader(m_ctx);
+        return FCT_NEW(VertexShader,m_ctx);
     }
 
     PixelShader* VK_Device::newPixelShader()
     {
-        return new PixelShader(m_ctx);
+        return FCT_NEW(PixelShader,m_ctx);
     }
 
     RHI::VertexShader* VK_Device::newRhiVertexShader()
     {
-        return new RHI::VK_VertexShader(m_ctx);
+        return FCT_NEW(RHI::VK_VertexShader,m_ctx);
     }
 
     RHI::PixelShader* VK_Device::newRhiPixelShader()
     {
-        return new RHI::VK_PixelShader(m_ctx);
+        return FCT_NEW(RHI::VK_PixelShader,m_ctx);
     }
 
     RHI::ConstBuffer* VK_Device::newRhiConstBuffer()
     {
-        return new RHI::VK_ConstBuffer(m_ctx);
+        return FCT_NEW(RHI::VK_ConstBuffer,m_ctx);
     }
 
     RHI::InputLayout* VK_Device::newRhiInputLayout()
     {
-        return new RHI::VK_InputLayout(m_ctx);
+        return FCT_NEW(RHI::VK_InputLayout,m_ctx);
     }
 
     SingleBufferImage* VK_Device::newSingleBufferImage()
     {
-        return new SingleBufferImage(m_ctx);
+        return FCT_NEW(SingleBufferImage,m_ctx);
     }
 
     MutilBufferImage* VK_Device::newMutilBufferImage()
     {
-        return new MutilBufferImage(m_ctx);
+        return FCT_NEW(MutilBufferImage,m_ctx);
     }
 
     RHI::Image* VK_Device::newRhiImage()
     {
-        return new RHI::VK_Image(m_ctx);
+        return FCT_NEW(RHI::VK_Image,m_ctx);
     }
 
     RHI::Swapchain* VK_Device::newRhiSwapchain()
     {
-        return new RHI::VK_Swapchain(m_ctx);
+        return FCT_NEW(RHI::VK_Swapchain,m_ctx);
     }
 
     RHI::PassGroup* VK_Device::newRhiPassGroup()
     {
-        return new RHI::VK_PassGroup(m_ctx);
+        return FCT_NEW(RHI::VK_PassGroup,m_ctx);
     }
 
     RHI::Pass* VK_Device::newRhiPass()
     {
-        return new RHI::VK_Pass(m_ctx);
+        return FCT_NEW(RHI::VK_Pass,m_ctx);
     }
 
     RHI::Fence* VK_Device::newRhiFence()
     {
-        return new RHI::VK_Fence(m_ctx);
+        return FCT_NEW(RHI::VK_Fence,m_ctx);
     }
 
     RHI::Semaphore* VK_Device::newRhiSemaphore()
     {
-        return new RHI::VK_Semaphore(m_ctx);
+        return FCT_NEW(RHI::VK_Semaphore,m_ctx);
     }
 
     RHI::CommandPool* VK_Device::newRhiCommandPool()
     {
-        return new RHI::VK_CommandPool(m_ctx);
+        return FCT_NEW(RHI::VK_CommandPool,m_ctx);
     }
 
     RHI::VertexBuffer* VK_Device::newRhiVertexBuffer()
     {
-        return new RHI::VK_VertexBuffer(m_ctx);
+        return FCT_NEW(RHI::VK_VertexBuffer,m_ctx);
     }
 
     RHI::IndexBuffer* VK_Device::newRhiIndexBuffer()
     {
-        return new RHI::VK_IndexBuffer(m_ctx);
+        return FCT_NEW(RHI::VK_IndexBuffer,m_ctx);
     }
 
     RHI::DescriptorPool* VK_Device::newRhiDescriptorPool()
     {
-        return new RHI::VK_DescriptorPool(m_ctx);
+        return FCT_NEW(RHI::VK_DescriptorPool,m_ctx);
     }
 
     RHI::DepthStencilView* VK_Device::newRhiDepthStencilView()
     {
-        return new RHI::VK_DepthStencilView(m_ctx);
+        return FCT_NEW(RHI::VK_DepthStencilView,m_ctx);
     }
 
     RHI::TextureView* VK_Device::newRhiTextureView()
     {
-        return new RHI::VK_TextureView(m_ctx);
+        return FCT_NEW(RHI::VK_TextureView,m_ctx);
     }
 
     BlendState* VK_Device::newBlendState()
     {
-        return new VK_BlendState(m_ctx);
+        return FCT_NEW(VK_BlendState,m_ctx);
     }
 
     Sampler* VK_Device::newSampler()
     {
-        return new RHI::VK_Sampler(m_ctx);
+        return FCT_NEW(RHI::VK_Sampler,m_ctx);
     }
 
     PassResource* VK_Device::newPassResource()
     {
-        return new VK_PassResource(m_ctx);
+        return FCT_NEW(VK_PassResource,m_ctx);
     }
 
     SemaphorePool* VK_Device::newSemaphorePool()
     {
-        return new VK_SemaphorePool(m_ctx);
+        return FCT_NEW(VK_SemaphorePool,m_ctx);
     }
 
     FencePool* VK_Device::newFencePool()
     {
-        return new VK_FencePool(m_ctx);
+        return FCT_NEW(VK_FencePool,m_ctx);
     }
 
     RHI::RenderTargetView* VK_Device::newRhiRenderTargetView()
     {
-        return new RHI::VK_RenderTargetView(m_ctx);
+        return FCT_NEW(RHI::VK_RenderTargetView,m_ctx);
     }
 
     RasterizationState* VK_Device::newRasterizationState()
     {
-        return new VK_RasterizationState(m_ctx);
+        return FCT_NEW(VK_RasterizationState,m_ctx);
     }
 }

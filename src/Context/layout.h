@@ -7,6 +7,8 @@
 #include "ShaderStage.h"
 #include "Context.h"
 #include "UniformWrapper.h"
+#include "VertexShader.h"
+
 namespace FCT {
     class DepthStencilState;
     struct TextureSlot
@@ -168,17 +170,20 @@ namespace FCT {
         struct PassResourceCache
         {
             std::unordered_map<size_t,FCT::PassResource*> m_passResources;
+            ~PassResourceCache();
             FCT::PassResource* get(const PassResourceState& state, const std::function<FCT::PassResource*(const PassResourceState& state)>& creator);
         };
         struct PipelineCache
         {
             std::unordered_map<size_t, FCT::RHI::RasterizationPipeline*> m_pipelines;
+            ~PipelineCache();
             FCT::RHI::RasterizationPipeline* get(const TraditionPipelineState& state, const std::function<FCT::RHI::RasterizationPipeline*(const TraditionPipelineState& state)>& creator);
         };
         struct ShaderCache
         {
             std::unordered_map<size_t, FCT::VertexShader*> m_vertexShaders;
             std::unordered_map<size_t, FCT::PixelShader*> m_pixelShaders;
+            ~ShaderCache();
             FCT::VertexShader* getVertexShader(const std::string& code,const std::function<FCT::VertexShader*(const std::string& code)>& creator);
             FCT::PixelShader* getPixelShader(const std::string& code,const std::function<FCT::PixelShader*(const std::string& code)>& creator);
             FCT::VertexShader* getVertexShader(const ShaderRef& ref,const std::function<FCT::VertexShader*(const ShaderRef& ref)>& creator);

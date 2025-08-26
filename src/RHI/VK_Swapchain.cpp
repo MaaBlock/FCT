@@ -132,7 +132,7 @@ namespace FCT {
         void VK_Swapchain::createImagesAndTargets() {
 
             for (auto image : m_images) {
-                auto ret = new VK_Image(m_ctx);
+                auto ret = FCT_NEW(VK_Image,m_ctx);
                 ret->samples(getSamples());
                 ret->format(getFormat());
                 ret->width(m_width);
@@ -146,7 +146,7 @@ namespace FCT {
                 m_fctImage->create(m_fctImages);
             } else
             {
-                m_fctImage = new MutilBufferImage(m_ctx);
+                m_fctImage = FCT_NEW(MutilBufferImage,m_ctx);
                 m_fctImage->renderTargetType(RenderTargetType::WindowTarget);
                 m_fctImage->as(ImageUsage::RenderTarget);
                 m_fctImage->create(m_fctImages);
@@ -156,7 +156,7 @@ namespace FCT {
 
             } else
             {
-                m_target = new ImageRenderTarget(m_ctx);
+                m_target = FCT_NEW(ImageRenderTarget,m_ctx);
                 m_target->renderTargetType(RenderTargetType::WindowTarget);
                 m_target->bindTarget(m_fctImage);
             }
@@ -357,7 +357,7 @@ namespace FCT {
                     }
             } else
             {
-                fence = new VK_Fence(m_ctx);
+                fence = FCT_NEW(VK_Fence,m_ctx);
                 fence->create();
                 auto nextResult = dc.acquireNextImageKHR(
                         m_swapchain,

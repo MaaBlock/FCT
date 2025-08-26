@@ -23,6 +23,20 @@ namespace FCT
             m_vertexShader = nullptr;
         }
 
+        VK_TraditionalPipeline::~VK_TraditionalPipeline()
+        {
+            if (m_vertexShader)
+            {
+                m_vertexShader->release();
+                m_vertexShader = nullptr;
+            }
+            if (m_pixelShader)
+            {
+                m_pixelShader->release();
+                m_pixelShader = nullptr;
+            }
+        }
+
         void VK_TraditionalPipeline::addResources(IPipelineResource* resource)
         {
             if (!resource)

@@ -29,6 +29,26 @@ namespace FCT
         m_behavior = new BeforeCreateImageBehavior(this);
     }
 
+    MutilBufferImage::~MutilBufferImage()
+    {
+        for (auto img : m_images)
+        {
+            FCT_SAFE_RELEASE(img);
+        }
+        for (auto rtv : m_rtvs)
+        {
+            rtv->release();
+        }
+        for (auto dsv : m_dsvs)
+        {
+            dsv->release();
+        }
+        for (auto tv : m_tvs)
+        {
+            tv->release();
+        }
+    }
+
     void MutilBufferImage::resize(uint32_t width, uint32_t height)
     {
         if (m_width == width && m_height == height)

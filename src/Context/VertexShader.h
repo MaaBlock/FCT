@@ -23,9 +23,18 @@ namespace FCT {
         {
             return PipelineResourceType::VertexShader;
         }
-        VertexShader(Context* ctx)
+        VertexShader(Context* ctx): m_vertexShader(nullptr)
         {
             m_ctx = ctx;
+        }
+
+        ~VertexShader() override
+        {
+            if (m_vertexShader)
+            {
+                m_vertexShader->release();
+            }
+
         }
         void code(std::string source)
         {

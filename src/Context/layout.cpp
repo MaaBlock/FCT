@@ -245,8 +245,16 @@ namespace FCT
         return hash;
     }
 
+    Layout::PassResourceCache::~PassResourceCache()
+    {
+        for (auto& pair : m_passResources)
+        {
+            pair.second->release();
+        }
+    }
+
     FCT::PassResource* Layout::PassResourceCache::get(const PassResourceState& state,
-        const std::function<FCT::PassResource*(const PassResourceState& state)>& creator)
+                                                      const std::function<FCT::PassResource*(const PassResourceState& state)>& creator)
     {
         auto hash = state.hash();
         if (m_passResources.count(hash))
@@ -260,8 +268,16 @@ namespace FCT
         }
     }
 
+    Layout::PipelineCache::~PipelineCache()
+    {
+        for (auto& pair : m_pipelines)
+        {
+            pair.second->release();
+        }
+    }
+
     FCT::RHI::RasterizationPipeline* Layout::PipelineCache::get(const TraditionPipelineState& state,
-        const std::function<FCT::RHI::RasterizationPipeline*(const TraditionPipelineState& state)>& creator)
+                                                                const std::function<FCT::RHI::RasterizationPipeline*(const TraditionPipelineState& state)>& creator)
     {
         auto hash = state.hash();
         if (m_pipelines.count(hash))
@@ -374,6 +390,16 @@ namespace FCT
         });
     }
 
+
+    Layout::ShaderCache::~ShaderCache()
+    {
+        for (auto& pair : m_vertexShaders) {
+            pair.second->release();
+        }
+        for (auto& pair : m_pixelShaders) {
+            pair.second->release();
+        }
+    }
 
     FCT::VertexShader* Layout::ShaderCache::getVertexShader(const std::string& code,
                                                             const std::function<FCT::VertexShader*(const std::string& code)>& creator)

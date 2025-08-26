@@ -15,9 +15,17 @@ namespace FCT {
         {
             return PipelineResourceType::PixelShader;
         }
-        PixelShader(Context* ctx)
+        PixelShader(Context* ctx): m_pixelShader(nullptr)
         {
             m_ctx = ctx;
+        }
+
+        ~PixelShader()
+        {
+            if (m_pixelShader)
+            {
+                m_pixelShader->release();
+            }
         }
         void code(std::string source)
         {
