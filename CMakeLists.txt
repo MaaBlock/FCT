@@ -1,5 +1,6 @@
 include(platform/platform.cmake)
 include(config/copy_headers.cmake)
+include(config/set_utf8_compiler_encoding.cmake)
 
 
 file(GLOB RUNTIME_MODULE_SOURCES
@@ -369,7 +370,7 @@ set(ALL_HEADER_FILES
 )
 
 add_copy_target_headers(FCT "${ALL_HEADER_FILES}")
-
+set_utf8_for_target(FCT)
 #
 #file(MAKE_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/include/FCT)
 #
