@@ -1,4 +1,4 @@
-#ifndef MODELLOADER_H
+﻿#ifndef MODELLOADER_H
 #define MODELLOADER_H
 #include "../ThirdParty.h"
 #include "../Context/Vertex.h"
