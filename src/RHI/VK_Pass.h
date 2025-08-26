@@ -15,6 +15,7 @@ namespace FCT
         class VK_Pass : public Pass{
         public:
             VK_Pass(VK_Context* ctx);
+            ~VK_Pass() override;
             void create(PassGroup* group) override;
             vk::SubpassDescription getDescription() { return m_desc; }
             std::map<uint32_t,uint32_t>& targetAttachmentIndices() { return m_targetAttachmentIndices; }

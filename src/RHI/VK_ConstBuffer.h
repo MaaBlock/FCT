@@ -10,6 +10,7 @@ namespace FCT {
         class VK_ConstBuffer : public ConstBuffer{
         public:
             VK_ConstBuffer(VK_Context* ctx);
+            ~VK_ConstBuffer() override;
             void mapData() override;
             void checkAndUpdateCurrentFrame();
             const vk::DescriptorBufferInfo& currentBufferInfo();

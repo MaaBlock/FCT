@@ -11,6 +11,18 @@ namespace FCT
             m_frameNeedsUpdate.clear();
         }
 
+        VK_ConstBuffer::~VK_ConstBuffer()
+        {
+            for (auto& buffer : m_buffers)
+            {
+                m_ctx->device().destroyBuffer(buffer);
+            }
+            for (auto& memory : m_memories)
+            {
+                m_ctx->device().freeMemory(memory);
+            }
+        }
+
         void VK_ConstBuffer::mapData()
         {
             if (!m_buffer) {

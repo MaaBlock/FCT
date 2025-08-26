@@ -17,6 +17,7 @@ namespace FCT
         class VK_Fence : public Fence{
         public:
             VK_Fence(VK_Context* ctx);
+            ~VK_Fence() override;
             void reset() override;
             void create() override;
             void waitFor() override;

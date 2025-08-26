@@ -12,6 +12,14 @@ namespace FCT
             m_pool = pool;
         }
 
+        VK_CommandBuffer::~VK_CommandBuffer()
+        {
+            if (m_commandBuffer)
+            {
+                m_pool->context()->device().freeCommandBuffers(m_pool->pool(), 1, &m_commandBuffer);
+            }
+        }
+
         void VK_CommandBuffer::create()
         {
             switch (m_level)

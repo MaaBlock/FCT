@@ -14,6 +14,20 @@ namespace FCT
         {
             m_ctx = ctx;
         }
+
+        VK_PassGroup::~VK_PassGroup()
+        {
+            if (m_renderPass)
+            {
+                m_ctx->device().destroyRenderPass(m_renderPass);
+            }
+            for (auto& it : m_framebuffers)
+            {
+                if (it.second)
+                    m_ctx->device().destroyFramebuffer(it.second);
+            }
+        }
+
         void VK_PassGroup::create()
         {
             collectAttachments();

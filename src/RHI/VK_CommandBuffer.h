@@ -17,6 +17,7 @@ namespace FCT
         class VK_CommandBuffer : public CommandBuffer{
         public:
             VK_CommandBuffer(VK_CommandPool* pool);
+            ~VK_CommandBuffer() override;
             void create() override;
             vk::CommandBuffer commandBuffer()
             {

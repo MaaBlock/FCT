@@ -12,12 +12,12 @@ namespace FCT
         class VK_RenderTargetView : public RenderTargetView {
         public:
             VK_RenderTargetView(VK_Context* ctx);
+            ~VK_RenderTargetView() override;
             void create() override;
             vk::ImageView view() const { return m_view; }
         protected:
             VK_Context* m_ctx;
             vk::ImageView m_view;
-            vk::Framebuffer m_framebuffer;
         };
     }
 }

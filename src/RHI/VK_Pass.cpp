@@ -16,6 +16,10 @@ namespace FCT
             m_group = nullptr;
         }
 
+        VK_Pass::~VK_Pass()
+        {
+        }
+
         void VK_Pass::create(PassGroup* srcGroup)
         {
             auto group = static_cast<VK_PassGroup*>(srcGroup);

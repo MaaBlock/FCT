@@ -22,6 +22,7 @@ namespace FCT
         class VK_PassGroup : public PassGroup {
         public:
             VK_PassGroup(VK_Context* ctx);
+            ~VK_PassGroup() override;
             //uint32_t getImageIndex(FCT::Image* image);
             void create();
             vk::RenderPass getRenderPass() const { return m_renderPass; }

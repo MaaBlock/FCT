@@ -19,6 +19,7 @@ namespace FCT {
         {
             if (m_owns) {
                 m_ctx->getDevice().destroyImage(m_image);
+                m_ctx->device().freeMemory(m_memory);
             }
         }
 

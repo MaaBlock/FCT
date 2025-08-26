@@ -10,6 +10,11 @@ namespace FCT
             m_ctx = ctx;
         }
 
+        VK_Fence::~VK_Fence()
+        {
+            VK_Fence::destroy();
+        }
+
         void VK_Fence::reset()
         {
             m_ctx->device().resetFences(1, &m_fence);

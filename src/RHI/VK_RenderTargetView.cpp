@@ -16,6 +16,15 @@ namespace FCT
             m_ctx = ctx;
         }
 
+        VK_RenderTargetView::~VK_RenderTargetView()
+        {
+            if (m_view)
+            {
+                m_ctx->getDevice().destroyImageView(m_view);
+                m_view = nullptr;
+            }
+        }
+
         void VK_RenderTargetView::create()
         {
 

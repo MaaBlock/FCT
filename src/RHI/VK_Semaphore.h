@@ -12,6 +12,7 @@ namespace FCT
         class VK_Semaphore : public Semaphore{
         public:
             VK_Semaphore(VK_Context* ctx);
+            ~VK_Semaphore() override;
             void create() override;
             vk::Semaphore semaphore()
             {

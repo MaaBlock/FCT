@@ -12,6 +12,11 @@ namespace FCT {
         {
         }
 
+        VK_Semaphore::~VK_Semaphore()
+        {
+            VK_Semaphore::destroy();
+        }
+
         void VK_Semaphore::create()
         {
             addRef();

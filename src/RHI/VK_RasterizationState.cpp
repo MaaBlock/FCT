@@ -10,6 +10,11 @@ namespace FCT
         m_ctx = ctx;
     }
 
+    VK_RasterizationState::~VK_RasterizationState()
+    {
+
+    }
+
     void VK_RasterizationState::create()
     {
         m_rasterizationStateCreateInfo = vk::PipelineRasterizationStateCreateInfo()
