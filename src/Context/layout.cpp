@@ -11,6 +11,14 @@
 
 namespace FCT
 {
+    void Layout::proccessArgs()
+    {
+        if (!m_hasPixelLayout && m_hasVertexLayout)
+        {
+            m_pixelLayout = m_vertexLayouts.begin()->second;
+        }
+    }
+
     void Layout::ctx(FCT::Context* ctx)
     {
         m_ctx = ctx;
@@ -32,7 +40,59 @@ namespace FCT
         {
             m_pixelResourceLayout.addTexture(element);
         }
+        clearShaderCache();
+        clearPipelineCache();
+        clearPassResourceCache();
+
     }
+    void Layout::addUniformSlot(const UniformSlot& uniformSlot)
+    {
+        m_uniformLayouts[uniformSlot.getName()] = uniformSlot;
+        clearShaderCache();
+        clearPipelineCache();
+        clearPassResourceCache();
+
+    }
+
+    void Layout::addSamplerSlot(const SamplerSlot& samplerSlot)
+    {
+        m_resourceLayout.addSampler(samplerSlot);
+
+        if (samplerSlot.getShaderStages() & FCT::ShaderStage::Vertex)
+        {
+            m_vertexResourceLayout.addSampler(samplerSlot);
+        }
+        if (samplerSlot.getShaderStages() & FCT::ShaderStage::Fragment)
+        {
+            m_pixelResourceLayout.addSampler(samplerSlot);
+        }
+
+        clearShaderCache();
+        clearPipelineCache();
+        clearPassResourceCache();
+
+    }
+
+    void Layout::addVertexLayout(const FCT::VertexLayout& vertexLayout)
+    {
+        uint32_t index = findNextAvailableIndex();
+        m_vertexLayouts[index] = vertexLayout;
+        m_hasVertexLayout = true;
+        processUnhandledTextureSlots();
+        clearShaderCache();
+        clearPipelineCache();
+    }
+
+    void Layout::setPixelLayout(const FCT::PixelLayout& pixelLayout)
+    {
+        m_pixelLayout = pixelLayout;
+        m_hasPixelLayout = true;
+        processUnhandledTextureSlots();
+        clearShaderCache();
+        clearPipelineCache();
+    }
+
+
     void Layout::removeTextureSlot(const char* name)
     {
         m_resourceLayout.removeTexture(name);
@@ -50,6 +110,9 @@ namespace FCT
         if (nameIt != m_textureNames.end()) {
             m_textureNames.erase(nameIt);
         }
+        clearShaderCache();
+        clearPipelineCache();
+        clearPassResourceCache();
     }
 
     void Layout::attachPass(std::string passName)

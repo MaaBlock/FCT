@@ -10,6 +10,84 @@
 
 namespace FCT
 {
+    template <typename ... Args>
+    void Layout::proccessArgs(FCT::VertexLayout vertexLayout, Args... args)
+    {
+        uint32_t index = findNextAvailableIndex();
+        m_vertexLayouts[index] = vertexLayout;
+        m_hasVertexLayout = true;
+        processUnhandledTextureSlots();
+        proccessArgs(args...);
+    }
+
+    template <typename ... Args>
+    void Layout::proccessArgs(SamplerSlot samplerSlot, Args... args)
+    {
+        m_resourceLayout.addSampler(samplerSlot);
+
+        if (samplerSlot.getShaderStages() & FCT::ShaderStage::Vertex)
+        {
+            m_vertexResourceLayout.addSampler(samplerSlot);
+        }
+        if (samplerSlot.getShaderStages() & FCT::ShaderStage::Fragment)
+        {
+            m_pixelResourceLayout.addSampler(samplerSlot);
+        }
+        m_resourceLayout.addSampler(samplerSlot);
+
+        proccessArgs(args...);
+    }
+
+    template <typename ... Args>
+    void Layout::proccessArgs(PassName passName, Args... args)
+    {
+        attachPass(passName.name);
+        /*
+            if (m_ctx && m_ctx->getModule<FCT::RenderGraph>()) {
+                attachPass(m_ctx->getModule<FCT::RenderGraph>(), passName.name);
+            }*/
+        proccessArgs(args...);
+    }
+
+    template <typename ... Args>
+    void Layout::proccessArgs(uint32_t index, FCT::VertexLayout vertexLayout, Args... args)
+    {
+        m_vertexLayouts[index] = vertexLayout;
+        m_hasVertexLayout = true;
+        processUnhandledTextureSlots();
+        proccessArgs(args...);
+    }
+
+    template <typename ... Args>
+    void Layout::proccessArgs(FCT::PixelLayout pixelLayout, Args... args)
+    {
+        m_pixelLayout = pixelLayout;
+        m_hasPixelLayout = true;
+        processUnhandledTextureSlots();
+        proccessArgs(args...);
+    }
+
+    template <typename ... Args>
+    void Layout::proccessArgs(TextureSlot textureSlot, Args... args)
+    {
+        m_unhandledTextureSlots.push_back(textureSlot);
+        processUnhandledTextureSlots();
+        proccessArgs(args...);
+    }
+
+    template <typename ... Args>
+    void Layout::proccessArgs(UniformSlot uniformSlot, Args... args)
+    {
+        m_uniformLayouts[uniformSlot.getName()] = uniformSlot;
+        proccessArgs(args...);
+    }
+
+    template <typename ... Args>
+    Layout::Layout(FCT::Context* ctx, Args... args): m_ctx(ctx)
+    {
+        proccessArgs(args...);
+    }
+
     template <typename T>
     void Layout::drawMesh(RHI::CommandBuffer* cmdBuffer, T* mesh)
     {
