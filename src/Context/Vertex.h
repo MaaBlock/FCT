@@ -3,6 +3,7 @@
 #include "./Format.h"
 #include "./DataTypes.h"
 #include "../Base/string.h"
+#include <boost/container_hash/hash.hpp>
 namespace FCT
 {
      enum class VtxType {
@@ -186,6 +187,14 @@ namespace FCT
         constexpr size_t getSize() const noexcept {
             return FormatSize(m_format);
         }
+        size_t getHash() const noexcept {
+            size_t seed = 0;
+            boost::hash_combine(seed, static_cast<size_t>(m_type));
+            boost::hash_combine(seed, static_cast<size_t>(m_format));
+            boost::hash_combine(seed, static_cast<size_t>(m_modelAttribute));
+            boost::hash_combine(seed, boost::hash<const char*>()(m_semantic));
+            return seed;
+        }
 
     private:
         constexpr void processArgs() noexcept {}
@@ -295,6 +304,13 @@ namespace FCT
         constexpr size_t getElementOffsetBySemantic(const char* semantic) const noexcept {
             int index = getElementIndexBySemantic(semantic);
             return (index >= 0) ? getElementOffset(index) : 0;
+        }
+        size_t getHash() const noexcept {
+            size_t seed = 0;
+            for (size_t i = 0; i < m_elementCount; ++i) {
+                boost::hash_combine(seed, m_elements[i].getHash());
+            }
+            return seed;
         }
 
     private:
@@ -407,6 +423,15 @@ namespace FCT
 
             }
         }
+
+        size_t getHash() const noexcept {
+            size_t seed = 0;
+            for (size_t i = 0; i < m_elementCount; ++i) {
+                boost::hash_combine(seed, m_elements[i].getHash());
+            }
+            return seed;
+        }
+
 
     private:
         constexpr void addElements() noexcept {}

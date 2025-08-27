@@ -2,12 +2,12 @@
 #include "layout.hpp"
 #include "./PixelShader.h"
 #include "./VertexShader.h"
-#include "PassResource.h"
-#include "../RHI/RasterizationPipeline.h"
-#include "../RHI/BlendState.h"
-#include "../RHI/RasterizationState.h"
-#include "../RHI/DepthStencilState.h"
 #include "Context.hpp"
+#include "PassResource.h"
+#include "../RHI/BlendState.h"
+#include "../RHI/DepthStencilState.h"
+#include "../RHI/RasterizationPipeline.h"
+#include "../RHI/RasterizationState.h"
 
 namespace FCT
 {
@@ -52,6 +52,15 @@ namespace FCT
         clearPipelineCache();
         clearPassResourceCache();
 
+    }
+
+    void Layout::addTextureSlot(const FCT::TextureSlot& slot)
+    {
+        TextureElement element(
+            TextureType::Texture2D,
+            slot.name.c_str(),
+            ShaderStage::All);
+        addTextureSlot(element);
     }
 
     void Layout::addSamplerSlot(const SamplerSlot& samplerSlot)
@@ -226,18 +235,6 @@ namespace FCT
         m_pipelineState.pixelShader = shader;
     }
 
-
-    /*
-    void Layout::drawMesh(FCT::RHI::CommandBuffer* cmdBuffer, FCT::StaticMesh<uint32_t>* mesh)
-    {
-        auto resource = getCurrentPassResource();
-        auto pipeline = getCurrentPipeline();
-
-        pipeline->bind(cmdBuffer);
-        resource->bind(cmdBuffer,pipeline);
-        mesh->bind(cmdBuffer);
-        mesh->draw(cmdBuffer);
-    }*/
 
     void Layout::end()
     {

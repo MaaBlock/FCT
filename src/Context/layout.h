@@ -105,6 +105,7 @@ namespace FCT {
          */
         void addUniformSlot(const UniformSlot& uniformSlot);
 
+        void addTextureSlot(const FCT::TextureSlot& element);
         /**
          * @cond CHINESE
          * @brief 添加一个纹理资源槽位。
@@ -404,6 +405,8 @@ namespace FCT {
         // --- 构造函数参数处理 ---
         template<typename... Args>
         void proccessArgs(FCT::VertexLayout vertexLayout, Args... args);
+        template <class ... Args>
+        void proccessArgs(const std::vector<FCT::VertexLayout>& vertexLayouts, Args... args);
         template<typename... Args>
         void proccessArgs(SamplerSlot samplerSlot, Args... args);
         template<typename... Args>

@@ -19,6 +19,18 @@ namespace FCT
         processUnhandledTextureSlots();
         proccessArgs(args...);
     }
+    template <typename ... Args>
+   void Layout::proccessArgs(const std::vector<FCT::VertexLayout>& vertexLayouts, Args... args)
+    {
+        for(const auto& vertexLayout : vertexLayouts)
+        {
+            uint32_t index = findNextAvailableIndex();
+            m_vertexLayouts[index] = vertexLayout;
+        }
+        m_hasVertexLayout = !vertexLayouts.empty();
+        processUnhandledTextureSlots();
+        proccessArgs(args...);
+    }
 
     template <typename ... Args>
     void Layout::proccessArgs(SamplerSlot samplerSlot, Args... args)
