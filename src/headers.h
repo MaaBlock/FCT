@@ -8,6 +8,7 @@
 #include "ToolDefine.h"
 #include "./predefine.h"
 #include "./MutilThreadBase/SharePtr.h"
+#include "./MutilThreadBase/UniquePtr.h"
 #include "./DebugTools/MemoryCheak.h"
 #include "./DebugTools/ScopeTimer.h"
 #include "./Base/Flags.h"
