@@ -130,6 +130,13 @@ namespace FCT
 		StaticMesh<uint32_t>* loadMesh(const std::string& filename,const std::string& meshName, const VertexLayout& layout);
 		Image* loadTexture(const std::string& filename);
 		/**
+		 * @brief 从转换到内存的文件中 读取
+		 * @param data
+		 * @param size
+		 * @return
+		 */
+		Image* loadTexture(const unsigned char* data, size_t size);
+		/**
  		  * @cond CHINESE
  		  * @name 流程控制
  		  * @endcond

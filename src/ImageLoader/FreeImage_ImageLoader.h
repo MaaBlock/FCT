@@ -11,7 +11,7 @@ namespace FCT {
         static void Tern();
         FreeImage_ImageLoader();
         ~FreeImage_ImageLoader();
-
+        ImageLoader::ImageData loadFromMemory(const unsigned char* data, size_t size) override;
         ImageData load(const std::string& filename) override;
         bool save(const std::string& filename, const ImageData& imageData) override;
         std::vector<std::string> getSupportedExtensions() const override;

@@ -42,6 +42,7 @@ namespace FCT {
             }
             std::vector<const char*> extensions = {
 #ifdef FCT_DEBUG
+                VK_EXT_VALIDATION_FEATURES_EXTENSION_NAME,
                // VK_EXT_DEBUG_UTILS_EXTENSION_NAME,
 #endif
 #ifdef FCT_ANDROID
@@ -54,6 +55,15 @@ namespace FCT {
                 //VK_KHR_SWAPCHAIN_EXTENSION_NAME
             };
             vk::InstanceCreateInfo createInfo;
+#ifdef FCT_DEBUG
+            std::vector<vk::ValidationFeatureEnableEXT> enabledValidationFeatures;
+            enabledValidationFeatures.push_back(vk::ValidationFeatureEnableEXT::eSynchronizationValidation);
+
+            vk::ValidationFeaturesEXT validationFeatures;
+            validationFeatures.setEnabledValidationFeatures(enabledValidationFeatures);
+
+            createInfo.setPNext(&validationFeatures);
+#endif
             createInfo.setPEnabledLayerNames(m_layers)
                       .setPApplicationInfo(&appInfo)
                       .setPEnabledExtensionNames(extensions);

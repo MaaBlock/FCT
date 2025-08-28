@@ -54,7 +54,43 @@ namespace FCT {
         return image;
     }
 
+    Image* Context::loadTexture(const unsigned char* memData, size_t size)
+    {
 
+        auto data = m_imageLoader->loadFromMemory(memData, size);
+        SingleBufferImage* image = new SingleBufferImage(this);
+        image->width(data.width);
+        image->height(data.height);
+
+        bool isSRGB = true;
+
+
+        Format format;
+        switch (data.channels) {
+        case 1:
+            format = Format::R8_UNORM;
+            break;
+        case 2:
+            format = Format::R8G8_UNORM;
+            break;
+        case 3:
+            format = isSRGB ? Format::R8G8B8A8_SRGB : Format::R8G8B8_UNORM;
+            break;
+        case 4:
+            format = isSRGB ? Format::R8G8B8A8_SRGB : Format::R8G8B8A8_UNORM;
+            break;
+        default:
+            ferr << "Unsupported number of channels: " << data.channels << std::endl;
+            format = isSRGB ? Format::R8G8B8A8_SRGB : Format::R8G8B8A8_UNORM;
+            break;
+        }
+
+        image->format(format);
+        image->as(ImageUsage::Texture);
+        image->initData(data.data.data(), data.data.size());
+        image->create();
+        return image;
+    }
 
 
     Context::Context(Runtime* runtime)

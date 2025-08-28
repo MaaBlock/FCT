@@ -15,6 +15,7 @@ namespace FCT {
 		};
 
 		virtual ~ImageLoader() = default;
+		virtual ImageData loadFromMemory(const unsigned char* data, size_t size) = 0;
 
 		virtual ImageData load(const std::string& filename) = 0;
 		virtual bool save(const std::string& filename, const ImageData& imageData) = 0;

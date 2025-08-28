@@ -19,6 +19,57 @@ namespace FCT {
     FreeImage_ImageLoader::~FreeImage_ImageLoader() {
     }
 
+    ImageLoader::ImageData FreeImage_ImageLoader::loadFromMemory(const unsigned char* data, size_t size) {
+        FIMEMORY* hmem = FreeImage_OpenMemory((BYTE*)data, size);
+        if (hmem == nullptr) {
+            throw std::runtime_error("Could not open memory stream for image");
+        }
+
+        FREE_IMAGE_FORMAT fif = FreeImage_GetFileTypeFromMemory(hmem, 0);
+        if (fif == FIF_UNKNOWN) {
+            FreeImage_CloseMemory(hmem);
+            throw std::runtime_error("Unknown image format from memory");
+        }
+
+        FIBITMAP* dib = FreeImage_LoadFromMemory(fif, hmem, 0);
+        FreeImage_CloseMemory(hmem); // Memory handle can be closed after loading
+
+        if (!dib) {
+            throw std::runtime_error("Failed to load image from memory");
+        }
+
+        FIBITMAP* dibConverted = FreeImage_ConvertTo32Bits(dib);
+        FreeImage_Unload(dib);
+
+        if (!dibConverted) {
+            throw std::runtime_error("Failed to convert image to 32 bits");
+        }
+
+        ImageData imageData;
+        imageData.width = FreeImage_GetWidth(dibConverted);
+        imageData.height = FreeImage_GetHeight(dibConverted);
+        imageData.channels = 4; // RGBA
+
+        unsigned int pitch = FreeImage_GetPitch(dibConverted);
+        imageData.data.resize(imageData.height * pitch);
+
+        FreeImage_ConvertToRawBits(imageData.data.data(), dibConverted, pitch, 32,
+            FI_RGBA_RED_MASK, FI_RGBA_GREEN_MASK, FI_RGBA_BLUE_MASK, TRUE);
+
+        // FreeImage loads images as BGRA, so we need to swap Red and Blue channels to get RGBA.
+        for (unsigned int y = 0; y < imageData.height; ++y) {
+            for (unsigned int x = 0; x < imageData.width; ++x) {
+                unsigned int offset = (y * pitch) + (x * 4);
+                std::swap(imageData.data[offset], imageData.data[offset + 2]);
+            }
+        }
+
+        FreeImage_Unload(dibConverted);
+
+        return imageData;
+    }
+
+
     ImageLoader::ImageData FreeImage_ImageLoader::load(const std::string& filename) {
         FREE_IMAGE_FORMAT fif = FreeImage_GetFileType(filename.c_str(), 0);
         if (fif == FIF_UNKNOWN) {
