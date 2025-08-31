@@ -28,7 +28,7 @@ namespace FCT {
         }
         void update();
         operator FCT::RHI::ConstBuffer*() const;
-
+        FCT::RHI::ConstBuffer* getConstBuffer() const;
     private:
         FCT::UniformBuffer* m_uniformBuffer;
         FCT::RHI::ConstBuffer* m_constBuffer;

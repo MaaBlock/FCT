@@ -180,6 +180,7 @@ namespace FCT {
          * @endcond
          */
         void bindUniform(const Uniform& uniform);
+        void bindUniform(Uniform* uniform);
 
         /**
          * @cond CHINESE
@@ -334,6 +335,7 @@ namespace FCT {
             void bindTexture(const std::string& name, FCT::Image* image);
             void bindSampler(const std::string& name, FCT::Sampler* sampler);
             void bindUniform(const std::string& name, const Uniform& uniform);
+            void bindUniform(const std::string& name, Uniform* uniform);
             size_t hash() const;
         };
 

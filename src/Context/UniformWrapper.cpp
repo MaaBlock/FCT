@@ -64,4 +64,9 @@ namespace FCT {
     {
         return m_constBuffer;
     }
+
+    FCT::RHI::ConstBuffer* Uniform::getConstBuffer() const
+    {
+        return m_constBuffer;
+    }
 }

@@ -211,8 +211,13 @@ namespace FCT
 
     void Layout::bindUniform(const Uniform& uniform)
     {
-        std::string name = (static_cast<FCT::RHI::ConstBuffer*>(uniform))->layout().getName(); // 你可能需要在 Uniform 类中添加这个方法
+        FCT::RHI::ConstBuffer* constBuffer = uniform;
+        std::string name = constBuffer->layout().getName();
         m_passResourceState.bindUniform(name, uniform);
+    }
+    void Layout::bindUniform(Uniform* uniform)
+    {
+        m_passResourceState.bindUniform(uniform->getConstBuffer()->layout().getName(), uniform);
     }
 
     void Layout::bindTexture(std::string name, FCT::Image* image)
@@ -281,6 +286,10 @@ namespace FCT
     void Layout::PassResourceState::bindUniform(const std::string& name, const Uniform& uniform)
     {
         boundUniforms[name] = uniform;
+    }
+    void Layout::PassResourceState::bindUniform(const std::string& name, Uniform* uniform)
+    {
+        boundUniforms[name] = uniform->getConstBuffer();
     }
 
     size_t Layout::PassResourceState::hash() const
