@@ -1,4 +1,4 @@
-﻿
+
 #include "./Vec.h"
 #pragma once
 
@@ -160,6 +160,45 @@ namespace FCT
 				 0,         0,			zFar / (zFar - zNear),     -zFar * zNear / (zFar - zNear),
 				 0,         0,			1 ,                         0
 			 );
+		}
+		static Mat4 RotateX(float degrees)
+		{
+			float radians = degrees * 3.14159265f / 180.0f;
+			float c = cosf(radians);
+			float s = sinf(radians);
+
+			Mat4 ret = {
+				1, 0, 0, 0,
+				0, c, -s, 0,
+				0, s, c, 0,
+				0, 0, 0, 1};
+			return ret;
+		}
+		static Mat4 RotateY(float degrees)
+		{
+			float radians = degrees * 3.14159265f / 180.0f;
+			float c = cosf(radians);
+			float s = sinf(radians);
+
+			Mat4 ret = {
+				c, 0, s, 0,
+				0, 1, 0, 0,
+				-s, 0, c, 0,
+				0, 0, 0, 1};
+			return ret;
+		}
+		static Mat4 RotateZ(float degrees)
+		{
+			float radians = degrees * 3.14159265f / 180.0f;
+			float c = cosf(radians);
+			float s = sinf(radians);
+
+			Mat4 ret = {
+				c, -s, 0, 0,
+				s, c, 0, 0,
+				0, 0, 1, 0,
+				0, 0, 0, 1};
+			return ret;
 		}
 		void rotateY(float degrees)
 		{
