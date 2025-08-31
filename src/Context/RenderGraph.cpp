@@ -1114,30 +1114,36 @@ void RenderGraph::cullPasses()
         for (const auto& [passName, passNode] : m_passNodes) {
             bool shouldCull = false;
 
-            for (const auto* targetEdge : passNode.getTargetOutgoingEdges()) {
-                auto imageNodeIt = m_imageNodes.find(targetEdge->toImage);
-                if (imageNodeIt != m_imageNodes.end()) {
-                    const auto* imageNode = imageNodeIt->second.get();
-
-                    const auto* bufferNode = dynamic_cast<const RenderGraphBufferNode*>(imageNode);
-                    if (bufferNode && !bufferNode->isSizeDetermined()) {
-                        shouldCull = true;
-                        break;
-                    }
-                }
-            }
-
-            if (!shouldCull) {
-                for (const auto* depthEdge : passNode.getDepthStencilOutgoingEdges()) {
-                    auto imageNodeIt = m_imageNodes.find(depthEdge->toImage);
+            bool hasTargetOutput = !passNode.getTargetOutgoingEdges().empty();
+            bool hasDepthStencilOutput = !passNode.getDepthStencilOutgoingEdges().empty();
+            
+            if (!hasTargetOutput && !hasDepthStencilOutput) {
+                shouldCull = true;
+            } else {
+                for (const auto* targetEdge : passNode.getTargetOutgoingEdges()) {
+                    auto imageNodeIt = m_imageNodes.find(targetEdge->toImage);
                     if (imageNodeIt != m_imageNodes.end()) {
                         const auto* imageNode = imageNodeIt->second.get();
 
-                        // 检查是否是 RenderGraphBufferNode 且大小未确定
                         const auto* bufferNode = dynamic_cast<const RenderGraphBufferNode*>(imageNode);
                         if (bufferNode && !bufferNode->isSizeDetermined()) {
                             shouldCull = true;
                             break;
+                        }
+                    }
+                }
+
+                if (!shouldCull) {
+                    for (const auto* depthEdge : passNode.getDepthStencilOutgoingEdges()) {
+                        auto imageNodeIt = m_imageNodes.find(depthEdge->toImage);
+                        if (imageNodeIt != m_imageNodes.end()) {
+                            const auto* imageNode = imageNodeIt->second.get();
+
+                            const auto* bufferNode = dynamic_cast<const RenderGraphBufferNode*>(imageNode);
+                            if (bufferNode && !bufferNode->isSizeDetermined()) {
+                                shouldCull = true;
+                                break;
+                            }
                         }
                     }
                 }
