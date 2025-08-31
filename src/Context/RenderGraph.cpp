@@ -1274,6 +1274,117 @@ void RenderGraph::cullPass(const std::string& passName)
                                      }
                                  }
                                  return textureStages;
+                             }.operator()(),
+                             [this, passName]() -> std::map<std::string, Image*>
+                             {
+                                 std::map<std::string, Image*> targetImages;
+                                 auto passNodeIt = m_passNodes.find(passName);
+                                 if (passNodeIt != m_passNodes.end())
+                                 {
+                                     const auto& passNode = passNodeIt->second;
+
+                                     for (const auto* targetEdge : passNode.getTargetOutgoingEdges())
+                                     {
+                                         auto imageNodeIt = m_imageNodes.find(targetEdge->toImage);
+                                         if (imageNodeIt != m_imageNodes.end())
+                                         {
+                                             Image* image = imageNodeIt->second->getImage();
+                                             if (image)
+                                             {
+                                                 targetImages[targetEdge->toImage] = image;
+                                             }
+                                         }
+                                     }
+                                 }
+                                 return targetImages;
+                             }.operator()(),
+                             [this, passName]() -> std::map<std::string, Image*>
+                             {
+                                 std::map<std::string, Image*> depthStencilImages;
+                                 auto passNodeIt = m_passNodes.find(passName);
+                                 if (passNodeIt != m_passNodes.end())
+                                 {
+                                     const auto& passNode = passNodeIt->second;
+
+                                     for (const auto* depthEdge : passNode.getDepthStencilOutgoingEdges())
+                                     {
+                                         auto imageNodeIt = m_imageNodes.find(depthEdge->toImage);
+                                         if (imageNodeIt != m_imageNodes.end())
+                                         {
+                                             Image* image = imageNodeIt->second->getImage();
+                                             if (image)
+                                             {
+                                                 depthStencilImages[depthEdge->toImage] = image;
+                                             }
+                                         }
+                                     }
+                                 }
+                                 return depthStencilImages;
+                             }.operator()(),
+                             [this, passName]() -> OutputInfo
+                             {
+                                 OutputInfo outputInfo;
+                                 auto passNodeIt = m_passNodes.find(passName);
+                                 if (passNodeIt != m_passNodes.end())
+                                 {
+                                     const auto& passNode = passNodeIt->second;
+
+                                     const SizeNode* rootNode = nullptr;
+
+                                     for (const auto* targetEdge : passNode.getTargetOutgoingEdges())
+                                     {
+                                         auto imageNodeIt = m_imageNodes.find(targetEdge->toImage);
+                                         if (imageNodeIt != m_imageNodes.end())
+                                         {
+                                             rootNode = imageNodeIt->second->getRoot();
+                                             break;
+                                         }
+                                     }
+
+                                     if (!rootNode)
+                                     {
+                                         for (const auto* depthEdge : passNode.getDepthStencilOutgoingEdges())
+                                         {
+                                             auto imageNodeIt = m_imageNodes.find(depthEdge->toImage);
+                                             if (imageNodeIt != m_imageNodes.end())
+                                             {
+                                                 rootNode = imageNodeIt->second->getRoot();
+                                                 break;
+                                             }
+                                         }
+                                     }
+                                     
+                                     if (rootNode)
+                                     {
+                                         if (auto windowTarget = dynamic_cast<const RenderGraphWindowTargetNode*>(rootNode))
+                                         {
+                                             outputInfo.isWindow = true;
+                                             outputInfo.window = windowTarget->getWindow();
+                                             if (outputInfo.window)
+                                             {
+                                                 outputInfo.width = outputInfo.window->getWidth();
+                                                 outputInfo.height = outputInfo.window->getHeight();
+                                             }
+                                         }
+                                         else if (auto windowDepth = dynamic_cast<const RenderGraphWindowDepthStencilNode*>(rootNode))
+                                         {
+                                             outputInfo.isWindow = true;
+                                             outputInfo.window = windowDepth->getWindow();
+                                             if (outputInfo.window)
+                                             {
+                                                 outputInfo.width = outputInfo.window->getWidth();
+                                                 outputInfo.height = outputInfo.window->getHeight();
+                                             }
+                                         }
+                                         else
+                                         {
+                                             outputInfo.isWindow = false;
+                                             outputInfo.window = nullptr;
+                                             rootNode->getComputedSize(outputInfo.width, outputInfo.height);
+                                         }
+                                     }
+                                 }
+                                 return outputInfo;
                              }.operator()()
                          });
         }
