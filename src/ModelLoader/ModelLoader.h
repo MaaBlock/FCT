@@ -334,11 +334,23 @@ namespace FCT
          * @endcond
          */
         virtual std::set<std::string> resolveTexturePaths(const std::string& modelPath) const = 0;
+        
+        /**
+         * @brief 获取内嵌纹理数据
+         * @param modelPath 模型文件路径
+         * @param textureIndex 内嵌纹理索引（例如"*0"中的0）
+         * @param outData 输出的纹理数据容器
+         * @return 是否成功获取纹理数据
+         * @endcond
+         */
+        virtual bool getEmbeddedTextureData(const std::string& modelPath, int textureIndex, 
+                                           std::vector<unsigned char>& outData) const = 0;
+        
         /**
          * @cond CHINESE
-         * @brief 获取模型及其所有依赖文件的绝对路径
-         * @param modelPath 模型路径
-         * @return 包含模型文件和所有依赖文件（纹理、材质等）的绝对路径集合
+         * @brief 解析模型路径，获取模型文件的所有依赖路径
+         * @param modelPath 模型文件路径
+         * @return 依赖路径集合
          * @endcond
          */
         std::set<std::string> resolveModePaths(const std::string& modelPath);

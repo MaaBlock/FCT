@@ -372,4 +372,49 @@ namespace FCT
 
         };
     }
+
+    bool Assimp_ModelLoader::getEmbeddedTextureData(const std::string& modelPath, int textureIndex, 
+                                                    std::vector<unsigned char>& outData) const
+    {
+        try {
+            Assimp::Importer importer;
+            const aiScene* scene = importer.ReadFile(modelPath, aiProcess_Triangulate);
+            
+            if (!scene) {
+                std::cerr << "Failed to load model for embedded texture: " << modelPath << std::endl;
+                return false;
+            }
+            
+            if (textureIndex < 0 || textureIndex >= static_cast<int>(scene->mNumTextures)) {
+                std::cerr << "Invalid texture index: " << textureIndex << ", available textures: " << scene->mNumTextures << std::endl;
+                return false;
+            }
+            
+            const aiTexture* texture = scene->mTextures[textureIndex];
+            if (!texture) {
+                std::cerr << "Texture at index " << textureIndex << " is null" << std::endl;
+                return false;
+            }
+            
+            size_t dataSize;
+            const unsigned char* sourceData = reinterpret_cast<const unsigned char*>(texture->pcData);
+
+            if (texture->mHeight == 0) {
+                dataSize = texture->mWidth;
+            } else {
+                dataSize = texture->mWidth * texture->mHeight * 4;
+            }
+
+            outData.resize(dataSize);
+            std::memcpy(outData.data(), sourceData, dataSize);
+            
+            std::cout << "Successfully loaded embedded texture " << textureIndex << " from " << modelPath 
+                      << ", size: " << dataSize << " bytes" << std::endl;
+            return true;
+            
+        } catch (const std::exception& e) {
+            std::cerr << "Exception while loading embedded texture: " << e.what() << std::endl;
+            return false;
+        }
+    }
 }

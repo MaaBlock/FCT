@@ -10,6 +10,8 @@ namespace FCT {
         std::unique_ptr<ModelData> loadModel(const std::string& path) override;
         ModelInfo::SceneInfo loadModelInfo(const std::string& path) override;
         std::set<std::string> resolveTexturePaths(const std::string& modelPath) const override;
+        bool getEmbeddedTextureData(const std::string& modelPath, int textureIndex, 
+                                    std::vector<unsigned char>& outData) const override;
     protected:
         std::set<std::string> getPlatformSupportedExtensions() const override;
     };
