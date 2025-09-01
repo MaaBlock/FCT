@@ -1,4 +1,4 @@
-﻿#include "layout.h"
+#include "layout.h"
 #include "layout.hpp"
 #include "./PixelShader.h"
 #include "./VertexShader.h"
@@ -65,6 +65,12 @@ namespace FCT
 
     void Layout::addSamplerSlot(const SamplerSlot& samplerSlot)
     {
+        // 检查是否已存在相同名字的SamplerSlot，避免重复添加
+        auto existingSampler = m_resourceLayout.findSampler(samplerSlot.getName());
+        if (existingSampler.getName() != nullptr && existingSampler.getName()[0] != '\0') {
+            return; // 已存在，不重复添加
+        }
+
         m_resourceLayout.addSampler(samplerSlot);
 
         if (samplerSlot.getShaderStages() & FCT::ShaderStage::Vertex)
