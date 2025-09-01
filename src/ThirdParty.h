@@ -77,6 +77,7 @@
 #include <boost/serialization/array.hpp>
 #include <boost/serialization/string.hpp>
 #include <boost/serialization/version.hpp>
+#include <boost/serialization/set.hpp>
 
 #include <thread>
 #include <map>

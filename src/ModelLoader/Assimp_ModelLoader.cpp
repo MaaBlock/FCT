@@ -1,6 +1,35 @@
 #include "./Assimp_ModelLoader.h"
 namespace FCT
 {
+    /**
+     * @brief 将Assimp纹理类型转换为ModelInfo::TextureType
+     */
+    ModelInfo::TextureType convertAssimpTextureType(aiTextureType assimpType)
+    {
+        switch (assimpType)
+        {
+            case aiTextureType_DIFFUSE: return ModelInfo::TextureType::diffuse;
+            case aiTextureType_SPECULAR: return ModelInfo::TextureType::specular;
+            case aiTextureType_NORMALS: return ModelInfo::TextureType::normals;
+            case aiTextureType_HEIGHT: return ModelInfo::TextureType::height;
+            case aiTextureType_EMISSIVE: return ModelInfo::TextureType::emissive;
+            case aiTextureType_SHININESS: return ModelInfo::TextureType::shininess;
+            case aiTextureType_OPACITY: return ModelInfo::TextureType::opacity;
+            case aiTextureType_DISPLACEMENT: return ModelInfo::TextureType::displacement;
+            case aiTextureType_LIGHTMAP: return ModelInfo::TextureType::lightmap;
+            case aiTextureType_REFLECTION: return ModelInfo::TextureType::reflection;
+            case aiTextureType_BASE_COLOR: return ModelInfo::TextureType::baseColor;
+            case aiTextureType_NORMAL_CAMERA: return ModelInfo::TextureType::normalCamera;
+            case aiTextureType_EMISSION_COLOR: return ModelInfo::TextureType::emissionColor;
+            case aiTextureType_METALNESS: return ModelInfo::TextureType::metalness;
+            case aiTextureType_DIFFUSE_ROUGHNESS: return ModelInfo::TextureType::diffuseRoughness;
+            case aiTextureType_AMBIENT_OCCLUSION: return ModelInfo::TextureType::ambientOcclusion;
+            case aiTextureType_SHEEN: return ModelInfo::TextureType::sheen;
+            case aiTextureType_CLEARCOAT: return ModelInfo::TextureType::clearcoat;
+            case aiTextureType_TRANSMISSION: return ModelInfo::TextureType::transmission;
+            default: return ModelInfo::TextureType::unknown;
+        }
+    }
     std::unique_ptr<ModelData> Assimp_ModelLoader::loadModel(const std::string& path)
     {
         Assimp::Importer importer;
@@ -182,7 +211,10 @@ namespace FCT
                 aiTextureType_EMISSION_COLOR,
                 aiTextureType_METALNESS,
                 aiTextureType_DIFFUSE_ROUGHNESS,
-                aiTextureType_AMBIENT_OCCLUSION
+                aiTextureType_AMBIENT_OCCLUSION,
+                aiTextureType_SHEEN,
+                aiTextureType_CLEARCOAT,
+                aiTextureType_TRANSMISSION
             };
 
             for (auto textureType : textureTypes) {
@@ -200,10 +232,12 @@ namespace FCT
                         if (textureInfoMap.find(texturePathStr) == textureInfoMap.end()) {
                             ModelInfo::TextureInfo textureInfo;
                             textureInfo.path = texturePathStr;
-
                             textureInfo.isInner = (texturePathStr[0] == '*');
+                            textureInfo.types.insert(convertAssimpTextureType(textureType));
 
                             textureInfoMap[texturePathStr] = textureInfo;
+                        } else {
+                            textureInfoMap[texturePathStr].types.insert(convertAssimpTextureType(textureType));
                         }
                     }
                 }
@@ -254,7 +288,10 @@ namespace FCT
                 aiTextureType_EMISSION_COLOR,
                 aiTextureType_METALNESS,
                 aiTextureType_DIFFUSE_ROUGHNESS,
-                aiTextureType_AMBIENT_OCCLUSION
+                aiTextureType_AMBIENT_OCCLUSION,
+                aiTextureType_SHEEN,
+                aiTextureType_CLEARCOAT,
+                aiTextureType_TRANSMISSION
             };
 
             for (auto textureType : textureTypes) {

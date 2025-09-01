@@ -1,4 +1,4 @@
-﻿#ifndef MODELLOADER_H
+#ifndef MODELLOADER_H
 #define MODELLOADER_H
 #include "../ThirdParty.h"
 #include "../Context/Vertex.h"
@@ -6,6 +6,37 @@ namespace FCT
 {
     namespace ModelInfo
     {
+        /**
+         * @cond CHINESE
+         * @brief 纹理类型枚举
+         * @endcond
+         */
+        enum class TextureType
+        {
+            diffuse = 0,        ///< @cond CHINESE 漫反射贴图 @endcond
+            specular,           ///< @cond CHINESE 镜面反射贴图 @endcond
+            ambient,            ///< @cond CHINESE 环境光贴图 @endcond
+            emissive,           ///< @cond CHINESE 自发光贴图 @endcond
+            height,             ///< @cond CHINESE 高度贴图 @endcond
+            normals,            ///< @cond CHINESE 法线贴图 @endcond
+            shininess,          ///< @cond CHINESE 光泽度贴图 @endcond
+            opacity,            ///< @cond CHINESE 透明度贴图 @endcond
+            displacement,       ///< @cond CHINESE 位移贴图 @endcond
+            lightmap,           ///< @cond CHINESE 光照贴图 @endcond
+            reflection,         ///< @cond CHINESE 反射贴图 @endcond
+            baseColor,          ///< @cond CHINESE 基础颜色贴图(PBR) @endcond
+            normalCamera,       ///< @cond CHINESE 相机空间法线贴图 @endcond
+            emissionColor,      ///< @cond CHINESE 发射颜色贴图 @endcond
+            metalness,          ///< @cond CHINESE 金属度贴图(PBR) @endcond
+            diffuseRoughness,   ///< @cond CHINESE 漫反射粗糙度贴图 @endcond
+            ambientOcclusion,   ///< @cond CHINESE 环境遮蔽贴图 @endcond
+            sheen,              ///< @cond CHINESE 光泽贴图 @endcond
+            clearcoat,          ///< @cond CHINESE 透明涂层贴图 @endcond
+            transmission,       ///< @cond CHINESE 透射贴图 @endcond
+            unknown             ///< @cond CHINESE 未知类型 @endcond
+        };
+
+
         struct MeshInfo
     {
         std::string name;
@@ -72,6 +103,7 @@ namespace FCT
         {
             std::string path;
             bool isInner;
+            std::set<TextureType> types;
             TextureInfo() : isInner(false) {}
         private:
             friend class boost::serialization::access;
@@ -80,6 +112,9 @@ namespace FCT
             {
                 ar & path;
                 ar & isInner;
+                if (version >= 3) {
+                    ar & types;
+                }
             }
         };
 
@@ -106,8 +141,18 @@ namespace FCT
 
 BOOST_CLASS_VERSION(FCT::ModelInfo::MeshInfo, 1);
 BOOST_CLASS_VERSION(FCT::ModelInfo::MaterialInfo, 1);
-BOOST_CLASS_VERSION(FCT::ModelInfo::TextureInfo, 1);
+BOOST_CLASS_VERSION(FCT::ModelInfo::TextureInfo, 3);
 BOOST_CLASS_VERSION(FCT::ModelInfo::SceneInfo, 1);
+
+namespace boost {
+namespace serialization {
+    template<class Archive>
+    void serialize(Archive & ar, FCT::ModelInfo::TextureType & t, const unsigned int version)
+    {
+        ar & static_cast<int&>(t);
+    }
+}
+}
 namespace FCT
 {
     struct ModelVertex
