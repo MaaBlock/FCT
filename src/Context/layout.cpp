@@ -43,7 +43,6 @@ namespace FCT
         clearShaderCache();
         clearPipelineCache();
         clearPassResourceCache();
-
     }
     void Layout::addUniformSlot(const UniformSlot& uniformSlot)
     {

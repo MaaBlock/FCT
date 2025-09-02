@@ -81,6 +81,7 @@ namespace FCT {
             img->imageCount(savedImg->imageCount());
             img->as(desc.usage);
             img->create();
+            img->changeCurrentIndex(m_context->currentLogicFrameIndex());
             ret.img = img;
         }  else
         {
@@ -187,6 +188,7 @@ namespace FCT
         img->imageCount(m_context->maxFrameInFlight());
         img->as(desc.usage);
         img->create();
+        img->changeCurrentIndex(m_context->currentLogicFrameIndex());
         ret.img = img;
         m_dependencyGraph[name] = {
             ret,
