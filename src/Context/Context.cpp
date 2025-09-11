@@ -163,6 +163,7 @@ namespace FCT {
 
     Context::~Context() {
         m_ctxRunning = false;
+        FCT_SAFE_DELETE(m_renderGraph);
         m_submitThread.join();
     }
 

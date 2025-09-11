@@ -199,7 +199,7 @@ namespace FCT
 		}
 		constexpr inline void _waitForNextFrame()
 		{
-			FCT_WAIT_FOR(m_nextFrame);
+			FCT_WAIT_FOR_WITH_TERM(m_nextFrame,!m_ctxRunning);
 		}
 		void advanceLogicFrame()
 		{

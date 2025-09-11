@@ -105,6 +105,16 @@ namespace FCT
         syncTickers.update();
     }
 
+    RenderGraph::~RenderGraph()
+    {
+        auto& syncTickers = m_flowControl->syncTickers();
+        syncTickers.removeNode(RenderGraphTickers::CheckRecompiledSync);
+        syncTickers.update();
+        auto& submitGraph = m_flowControl->submitTickers();
+        submitGraph.removeNode(RenderGraphTickers::RenderGraphSubmit);
+        submitGraph.update();
+    }
+
     RenderGraphImageNode* RenderGraph::getOrCreateImageNode(const std::string& name, const Texture& texture)
     {
         auto it = m_imageNodes.find(name);

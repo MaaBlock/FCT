@@ -8,10 +8,18 @@
 //#define FCT_SAFE_ADDREF(p) if (p) { p->addRef(); }
 #define FCT_WAIT_FOR(condition) \
     do { \
-        while(!condition) \
+        while(!(condition)) \
         {\
             std::this_thread::sleep_for(std::chrono::milliseconds(0)); \
         }\
         condition = false;\
+    } while(0)
+#define FCT_WAIT_FOR_WITH_TERM(condition,termCondition) \
+    do { \
+        while(!condition && !(termCondition)) \
+        {\
+            std::this_thread::sleep_for(std::chrono::milliseconds(0)); \
+        }\
+    condition = false;\
     } while(0)
 #endif //FCT_TOOLDEFINE_H

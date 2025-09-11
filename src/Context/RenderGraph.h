@@ -299,6 +299,7 @@ namespace FCT
     public:
         RenderGraph(PipeHub& pipeHub, Device* device, FlowControl* flowControl, CommandBufferGraph* commandBufferGraph,
                     ResourceManager* resourceManager);
+        ~RenderGraph();
         void recompile();
         std::vector<PassDesc> getOriginalPasses() const
         {
