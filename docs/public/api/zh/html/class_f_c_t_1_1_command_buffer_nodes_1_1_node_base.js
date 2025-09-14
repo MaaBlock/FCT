@@ -8,6 +8,8 @@ var class_f_c_t_1_1_command_buffer_nodes_1_1_node_base =
     [ "markAllFramesDirty", "class_f_c_t_1_1_command_buffer_nodes_1_1_node_base.html#a553e804184a21ade5801289f63dd1b4b", null ],
     [ "markFrameClean", "class_f_c_t_1_1_command_buffer_nodes_1_1_node_base.html#a4d8fe0d4816d46f005738c0ba7c6c435", null ],
     [ "markFrameDirty", "class_f_c_t_1_1_command_buffer_nodes_1_1_node_base.html#a8ec6bf83ef2c11fe68499fdc306d7150", null ],
+    [ "removeInputEdge", "class_f_c_t_1_1_command_buffer_nodes_1_1_node_base.html#a7a0dad2940d42907e0b8f73aee56a747", null ],
+    [ "removeOutputEdge", "class_f_c_t_1_1_command_buffer_nodes_1_1_node_base.html#a0defc7dd98b79e773766f88a48edebe8", null ],
     [ "updateSynchronization", "class_f_c_t_1_1_command_buffer_nodes_1_1_node_base.html#a42177640cb2ab72f2dbe60ded801bba5", null ],
     [ "m_frameDirty", "class_f_c_t_1_1_command_buffer_nodes_1_1_node_base.html#a5434bc1cda776b1d1ebd83e572ff0abf", null ]
 ];

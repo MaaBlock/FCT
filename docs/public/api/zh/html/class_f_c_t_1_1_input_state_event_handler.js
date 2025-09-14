@@ -7,6 +7,7 @@ var class_f_c_t_1_1_input_state_event_handler =
     [ "deleteThis", "class_f_c_t_1_1_input_state_event_handler.html#a0fea0bed50f726d3e11ddde802dac5da", null ],
     [ "getPosTransformCallback", "class_f_c_t_1_1_input_state_event_handler.html#a0b8ac8f94526b4318bbe2b2d110c6680", null ],
     [ "getResizeCallback", "class_f_c_t_1_1_input_state_event_handler.html#af0bf787335c93850670adaeeddc2824c", null ],
+    [ "onFileDrop", "class_f_c_t_1_1_input_state_event_handler.html#ac2c1080b0f3563d798137057fbd3d191", null ],
     [ "onKeyDown", "class_f_c_t_1_1_input_state_event_handler.html#a0928fc37323389e80dd610fce41c68d0", null ],
     [ "onKeyUp", "class_f_c_t_1_1_input_state_event_handler.html#a991c759490310be0dd8201c5d1ef9c0c", null ],
     [ "onLButtonDown", "class_f_c_t_1_1_input_state_event_handler.html#a0e55301bd836d93c72c3010d38011c82", null ],

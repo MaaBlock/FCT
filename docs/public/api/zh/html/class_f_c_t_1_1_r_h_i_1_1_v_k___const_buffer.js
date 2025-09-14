@@ -1,6 +1,7 @@
 var class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer =
 [
     [ "VK_ConstBuffer", "class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer.html#ab43b43acff01d28b1950798dcf50b38f", null ],
+    [ "~VK_ConstBuffer", "class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer.html#aff0a5a805062e231f6ca9fe48b93b782", null ],
     [ "buffer", "class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer.html#af624823d81f27fe58bb242f1a8db7e18", null ],
     [ "checkAndUpdateCurrentFrame", "class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer.html#aaef98c40faf3017568f07f5ae8b48d2b", null ],
     [ "create", "class_f_c_t_1_1_r_h_i_1_1_v_k___const_buffer.html#a74207f60c769bc9567d1e7e6d9844880", null ],

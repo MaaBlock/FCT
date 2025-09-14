@@ -2,6 +2,7 @@ var class_f_c_t_1_1_r_h_i_1_1_v_k___semaphore =
 [
     [ "DeleterType", "class_f_c_t_1_1_r_h_i_1_1_v_k___semaphore.html#aa11d4656b54ed291143d6c79da4c407b", null ],
     [ "VK_Semaphore", "class_f_c_t_1_1_r_h_i_1_1_v_k___semaphore.html#ad715c35708eed6bc6125910c4f96a735", null ],
+    [ "~VK_Semaphore", "class_f_c_t_1_1_r_h_i_1_1_v_k___semaphore.html#a8e08b42bbc67ed2d038ed7f456442581", null ],
     [ "addRef", "class_f_c_t_1_1_r_h_i_1_1_v_k___semaphore.html#a59c2f131121de6503df8d363b6853d45", null ],
     [ "applyDeleter", "class_f_c_t_1_1_r_h_i_1_1_v_k___semaphore.html#aeb6edd1024ec555f8eb0321092ee874b", null ],
     [ "count", "class_f_c_t_1_1_r_h_i_1_1_v_k___semaphore.html#a33146ec5804be422936519224a3a7b3f", null ],

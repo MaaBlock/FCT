@@ -1,6 +1,7 @@
 var class_f_c_t_1_1_pixel_shader =
 [
     [ "PixelShader", "class_f_c_t_1_1_pixel_shader.html#a307d98731b35ee727aa2a4cc859e4cc8", null ],
+    [ "~PixelShader", "class_f_c_t_1_1_pixel_shader.html#a0562db318a0a302d0d464ca1d0316199", null ],
     [ "addRef", "class_f_c_t_1_1_pixel_shader.html#a59c2f131121de6503df8d363b6853d45", null ],
     [ "addUniform", "class_f_c_t_1_1_pixel_shader.html#a43b4b0a99187f5f5782494afb9760e6d", null ],
     [ "binaryCode", "class_f_c_t_1_1_pixel_shader.html#ac6e1714a5fe97b5c0b698b0ae43dc52d", null ],

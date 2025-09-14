@@ -114,8 +114,8 @@ $(function(){initNavTree('_memory_cheak_8h_source.html','',''); });
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">extern</span> std::mutex fct_object_mutex;</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keyword">extern</span> <span class="keywordtype">int</span> fct_object_count_delete_without_object;</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span>... Args&gt;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    T* _fct_new(<span class="keyword">const</span> Args&amp;... arg) {</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        T* ret = <span class="keyword">new</span> T(arg...);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    T* _fct_new(Args&amp;&amp;... args) {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        T* ret = <span class="keyword">new</span> T(std::forward&lt;Args&gt;(args)...);</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        _fct_object_t* <span class="keywordtype">object</span> = <span class="keyword">new</span> _fct_object_t;</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keywordtype">object</span>-&gt;pointer = ret;</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keywordtype">object</span>-&gt;refCounted = -1;</div>
@@ -176,117 +176,118 @@ $(function(){initNavTree('_memory_cheak_8h_source.html','',''); });
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    }</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> _output_object(std::ostream&amp; out) {</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <span class="comment">//线程不安全</span></div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = fct_object_list.begin(); i != fct_object_list.end(); i++) {</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            out &lt;&lt; (*i)-&gt;describe &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        }</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        out &lt;&lt; <span class="stringliteral">&quot;不在object表里不delete的数量:&quot;</span> &lt;&lt; fct_object_count_delete_without_object &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        out &lt;&lt; <span class="stringliteral">&quot;未释放对象总计:&quot;</span> &lt;&lt; fct_object_list.size() &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    }</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> _add_object(<span class="keywordtype">void</span>* ptr, <span class="keyword">const</span> std::string&amp; describe)</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    {</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        _fct_object_t* <span class="keywordtype">object</span> = <span class="keyword">new</span> _fct_object_t;</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <span class="keywordtype">object</span>-&gt;pointer = ptr;</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <span class="keywordtype">object</span>-&gt;refCounted = -1;</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <span class="keywordtype">object</span>-&gt;describe = describe;</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        fct_object_mutex.lock();</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        fct_object_list.push_back(<span class="keywordtype">object</span>);</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        fct_object_mutex.unlock();</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    }</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="keyword">inline</span> <span class="keywordtype">bool</span> _remove_object(<span class="keywordtype">void</span>* ptr)</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    {</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        <span class="keyword">auto</span> i = fct_object_list.begin();</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        <span class="keywordflow">for</span> (; i != fct_object_list.end(); i++) {</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            <span class="keywordflow">if</span> ((*i)-&gt;pointer == ptr) {</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                <span class="keyword">delete</span> (*i);</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                fct_object_list.erase(i);</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>            }</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        }</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        fct_object_count_delete_without_object++;</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    }</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="foldopen" id="foldopen00119" data-start="{" data-end="}">
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="namespace_f_c_t.html#a611326d53acf4814f308bb3af9499899">  119</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespace_f_c_t.html#a611326d53acf4814f308bb3af9499899">AllocatorDelete</a>(T* ptr)</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    {</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="preprocessor">#ifdef FCT_DEBUG</span></div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        FCT::_remove_object(ptr);</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        <span class="keyword">operator</span> <span class="keyword">delete</span>[](ptr);</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    }</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        out &lt;&lt; std::dec;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = fct_object_list.begin(); i != fct_object_list.end(); i++) {</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            out &lt;&lt; (*i)-&gt;describe &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        }</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        out &lt;&lt; <span class="stringliteral">&quot;不在object表里不delete的数量:&quot;</span> &lt;&lt; fct_object_count_delete_without_object &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        out &lt;&lt; <span class="stringliteral">&quot;未释放对象总计:&quot;</span> &lt;&lt; fct_object_list.size() &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    }</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> _add_object(<span class="keywordtype">void</span>* ptr, <span class="keyword">const</span> std::string&amp; describe)</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    {</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        _fct_object_t* <span class="keywordtype">object</span> = <span class="keyword">new</span> _fct_object_t;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <span class="keywordtype">object</span>-&gt;pointer = ptr;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <span class="keywordtype">object</span>-&gt;refCounted = -1;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        <span class="keywordtype">object</span>-&gt;describe = describe;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        fct_object_mutex.lock();</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        fct_object_list.push_back(<span class="keywordtype">object</span>);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        fct_object_mutex.unlock();</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    }</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keyword">inline</span> <span class="keywordtype">bool</span> _remove_object(<span class="keywordtype">void</span>* ptr)</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    {</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        <span class="keyword">auto</span> i = fct_object_list.begin();</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        <span class="keywordflow">for</span> (; i != fct_object_list.end(); i++) {</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            <span class="keywordflow">if</span> ((*i)-&gt;pointer == ptr) {</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                <span class="keyword">delete</span> (*i);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                fct_object_list.erase(i);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>            }</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        }</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        fct_object_count_delete_without_object++;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    }</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00120" data-start="{" data-end="}">
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="namespace_f_c_t.html#a611326d53acf4814f308bb3af9499899">  120</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespace_f_c_t.html#a611326d53acf4814f308bb3af9499899">AllocatorDelete</a>(T* ptr)</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    {</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="preprocessor">#ifdef FCT_DEBUG</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        FCT::_remove_object(ptr);</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        <span class="keyword">operator</span> <span class="keyword">delete</span>[](ptr);</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    }</div>
 </div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="foldopen" id="foldopen00127" data-start="{" data-end="}">
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno"><a class="line" href="namespace_f_c_t.html#a3fcb58c5b721e187bad6da51a8b72a05">  127</a></span>    <span class="keyword">inline</span> T* <a class="code hl_function" href="namespace_f_c_t.html#a3fcb58c5b721e187bad6da51a8b72a05">AllocatorNew</a>(<span class="keywordtype">size_t</span> size)</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    {</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="preprocessor">#ifdef FCT_DEBUG</span></div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        <span class="keyword">auto</span> ret = <span class="keyword">static_cast&lt;</span>T*<span class="keyword">&gt;</span>(<span class="keyword">operator</span> <span class="keyword">new</span>[](<span class="keyword">sizeof</span>(T) * size));</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        _add_object(ret,std::string(<span class="keyword">typeid</span>(ret).name()) + std::string(<span class="stringliteral">&quot; Chunk Size: &quot;</span>) + std::to_string(size));</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        <span class="keywordflow">return</span> ret;</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>T*<span class="keyword">&gt;</span>(<span class="keyword">operator</span> <span class="keyword">new</span>[](<span class="keyword">sizeof</span>(T) * size));</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    }</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00128" data-start="{" data-end="}">
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="namespace_f_c_t.html#a3fcb58c5b721e187bad6da51a8b72a05">  128</a></span>    <span class="keyword">inline</span> T* <a class="code hl_function" href="namespace_f_c_t.html#a3fcb58c5b721e187bad6da51a8b72a05">AllocatorNew</a>(<span class="keywordtype">size_t</span> size)</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    {</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="preprocessor">#ifdef FCT_DEBUG</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        <span class="keyword">auto</span> ret = <span class="keyword">static_cast&lt;</span>T*<span class="keyword">&gt;</span>(<span class="keyword">operator</span> <span class="keyword">new</span>[](<span class="keyword">sizeof</span>(T) * size));</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        _add_object(ret,std::string(<span class="keyword">typeid</span>(ret).name()) + std::string(<span class="stringliteral">&quot; Chunk Size: &quot;</span>) + std::to_string(size));</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>T*<span class="keyword">&gt;</span>(<span class="keyword">operator</span> <span class="keyword">new</span>[](<span class="keyword">sizeof</span>(T) * size));</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    }</div>
 </div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="foldopen" id="foldopen00138" data-start="{" data-end="}">
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="namespace_f_c_t.html#a28b9188bf4be0ceb6c1128405c10fb41">  138</a></span>    <span class="keyword">inline</span> T* <a class="code hl_function" href="namespace_f_c_t.html#a28b9188bf4be0ceb6c1128405c10fb41">New</a>(T* ptr)</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    {</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> (ptr) T();</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    }</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00139" data-start="{" data-end="}">
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno"><a class="line" href="namespace_f_c_t.html#a28b9188bf4be0ceb6c1128405c10fb41">  139</a></span>    <span class="keyword">inline</span> T* <a class="code hl_function" href="namespace_f_c_t.html#a28b9188bf4be0ceb6c1128405c10fb41">New</a>(T* ptr)</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    {</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> (ptr) T();</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    }</div>
 </div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span>... Args&gt;</div>
-<div class="foldopen" id="foldopen00144" data-start="{" data-end="}">
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="namespace_f_c_t.html#aff1166bbe77435892c8acbc1e5deb6ac">  144</a></span>    <span class="keyword">inline</span> T* <a class="code hl_function" href="namespace_f_c_t.html#a28b9188bf4be0ceb6c1128405c10fb41">New</a>(T* ptr, Args&amp;&amp;... args)</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    {</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> (ptr) T(std::forward&lt;Args&gt;(args)...);</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    }</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span>... Args&gt;</div>
+<div class="foldopen" id="foldopen00145" data-start="{" data-end="}">
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="namespace_f_c_t.html#aff1166bbe77435892c8acbc1e5deb6ac">  145</a></span>    <span class="keyword">inline</span> T* <a class="code hl_function" href="namespace_f_c_t.html#a28b9188bf4be0ceb6c1128405c10fb41">New</a>(T* ptr, Args&amp;&amp;... args)</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    {</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> (ptr) T(std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    }</div>
 </div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="foldopen" id="foldopen00149" data-start="{" data-end="}">
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno"><a class="line" href="namespace_f_c_t.html#a76888f223cab62dfa9ea0b85d0b6d84a">  149</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespace_f_c_t.html#a76888f223cab62dfa9ea0b85d0b6d84a">Destroy</a>(T* ptr)</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    {</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        <span class="keywordflow">if</span> (ptr) {</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>            ptr-&gt;~T();</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        }</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    }</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00150" data-start="{" data-end="}">
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="namespace_f_c_t.html#a76888f223cab62dfa9ea0b85d0b6d84a">  150</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespace_f_c_t.html#a76888f223cab62dfa9ea0b85d0b6d84a">Destroy</a>(T* ptr)</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    {</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        <span class="keywordflow">if</span> (ptr) {</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>            ptr-&gt;~T();</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        }</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    }</div>
 </div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>}</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span><span class="preprocessor">#if defined(FCT_DEBUG) &amp;&amp; defined(FCT_USE_MEMORY_CHECK)</span></div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span><span class="preprocessor">#define FCT_NEW(type,...) FCT::_fct_new&lt;type&gt;(__VA_ARGS__)</span></div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span><span class="preprocessor">#define FCT_NEWS(type,num) FCT::_fct_news&lt;type&gt;(num)</span></div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span><span class="preprocessor">#define FCT_DELETE(args) FCT::_fct_delete&lt;decltype(args)&gt;(args)</span></div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span><span class="preprocessor">#define FCT_DELETES(args) FCT::_fct_deletes&lt;decltype(args)&gt;(args)</span></div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno"><a class="line" href="_memory_cheak_8h.html#a0fee0225d38ce42671a1fb5630db4434">  162</a></span><span class="preprocessor">#define FCT_NEW(type,...) new type(__VA_ARGS__)</span></div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno"><a class="line" href="_memory_cheak_8h.html#a322d84bde6390d4cd0062d4726d9eafc">  163</a></span><span class="preprocessor">#define FCT_NEWS(type,num) new type[num]</span></div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno"><a class="line" href="_memory_cheak_8h.html#a208ca9335e0fa05cd26667978959abd5">  164</a></span><span class="preprocessor">#define FCT_DELETE(args) delete args</span></div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno"><a class="line" href="_memory_cheak_8h.html#a56b71ca695afcf8aba5906a660b72035">  165</a></span><span class="preprocessor">#define FCT_DELETES(args) delete[] args</span></div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span><span class="preprocessor">#endif </span><span class="comment">// FCT_DEBUG</span></div>
-<div class="foldopen" id="foldopen00167" data-start="" data-end="">
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno"><a class="line" href="_memory_cheak_8h.html#af286b6406ea2c32046e4b1d34f4032b0">  167</a></span><span class="preprocessor">#define FCT_SAFE_NEW(var,type,...) \</span></div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span><span class="preprocessor">    if (var) \</span></div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span><span class="preprocessor">        FCT_DELETE(var); \</span></div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span><span class="preprocessor">    var = FCT_NEW(type, __VA_ARGS__)</span></div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>}</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span><span class="preprocessor">#if defined(FCT_DEBUG) &amp;&amp; defined(FCT_USE_MEMORY_CHECK)</span></div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span><span class="preprocessor">#define FCT_NEW(type,...) FCT::_fct_new&lt;type&gt;(__VA_ARGS__)</span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span><span class="preprocessor">#define FCT_NEWS(type,num) FCT::_fct_news&lt;type&gt;(num)</span></div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span><span class="preprocessor">#define FCT_DELETE(args) FCT::_fct_delete&lt;decltype(args)&gt;(args)</span></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span><span class="preprocessor">#define FCT_DELETES(args) FCT::_fct_deletes&lt;decltype(args)&gt;(args)</span></div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno"><a class="line" href="_memory_cheak_8h.html#a0fee0225d38ce42671a1fb5630db4434">  163</a></span><span class="preprocessor">#define FCT_NEW(type,...) new type(__VA_ARGS__)</span></div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno"><a class="line" href="_memory_cheak_8h.html#a322d84bde6390d4cd0062d4726d9eafc">  164</a></span><span class="preprocessor">#define FCT_NEWS(type,num) new type[num]</span></div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno"><a class="line" href="_memory_cheak_8h.html#a208ca9335e0fa05cd26667978959abd5">  165</a></span><span class="preprocessor">#define FCT_DELETE(args) delete args</span></div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno"><a class="line" href="_memory_cheak_8h.html#a56b71ca695afcf8aba5906a660b72035">  166</a></span><span class="preprocessor">#define FCT_DELETES(args) delete[] args</span></div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span><span class="preprocessor">#endif </span><span class="comment">// FCT_DEBUG</span></div>
+<div class="foldopen" id="foldopen00168" data-start="" data-end="">
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno"><a class="line" href="_memory_cheak_8h.html#af286b6406ea2c32046e4b1d34f4032b0">  168</a></span><span class="preprocessor">#define FCT_SAFE_NEW(var,type,...) \</span></div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span><span class="preprocessor">    if (var) \</span></div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span><span class="preprocessor">        FCT_DELETE(var); \</span></div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span><span class="preprocessor">    var = FCT_NEW(type, __VA_ARGS__)</span></div>
 </div>
-<div class="foldopen" id="foldopen00171" data-start="" data-end="">
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno"><a class="line" href="_memory_cheak_8h.html#a83569cc2756f73ebf7b01c88ec19e224">  171</a></span><span class="preprocessor">#define FCT_SAFE_DELETE(var) \</span></div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span><span class="preprocessor">    if (var) {\</span></div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span><span class="preprocessor">        FCT_DELETE(var); \</span></div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span><span class="preprocessor">        var = nullptr; \</span></div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span><span class="preprocessor">    }</span></div>
+<div class="foldopen" id="foldopen00172" data-start="" data-end="">
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno"><a class="line" href="_memory_cheak_8h.html#a83569cc2756f73ebf7b01c88ec19e224">  172</a></span><span class="preprocessor">#define FCT_SAFE_DELETE(var) \</span></div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span><span class="preprocessor">    if (var) {\</span></div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span><span class="preprocessor">        FCT_DELETE(var); \</span></div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span><span class="preprocessor">        var = nullptr; \</span></div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span><span class="preprocessor">    }</span></div>
 </div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span><span class="preprocessor">#endif </span><span class="comment">// FCT_MEMORY_CHEAK</span></div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span><span class="preprocessor">#endif </span><span class="comment">// FCT_MEMORY_CHEAK</span></div>
 <div class="ttc" id="a_third_party_8h_html"><div class="ttname"><a href="_third_party_8h.html">ThirdParty.h</a></div></div>
 <div class="ttc" id="anamespace_f_c_t_html"><div class="ttname"><a href="namespace_f_c_t.html">FCT</a></div><div class="ttdef"><b>定义</b> <a href="_enums_8h_source.html#l00008">Enums.h:8</a></div></div>
-<div class="ttc" id="anamespace_f_c_t_html_a28b9188bf4be0ceb6c1128405c10fb41"><div class="ttname"><a href="namespace_f_c_t.html#a28b9188bf4be0ceb6c1128405c10fb41">FCT::New</a></div><div class="ttdeci">T * New(T *ptr)</div><div class="ttdef"><b>定义</b> <a href="#l00138">MemoryCheak.h:138</a></div></div>
-<div class="ttc" id="anamespace_f_c_t_html_a3fcb58c5b721e187bad6da51a8b72a05"><div class="ttname"><a href="namespace_f_c_t.html#a3fcb58c5b721e187bad6da51a8b72a05">FCT::AllocatorNew</a></div><div class="ttdeci">T * AllocatorNew(size_t size)</div><div class="ttdef"><b>定义</b> <a href="#l00127">MemoryCheak.h:127</a></div></div>
-<div class="ttc" id="anamespace_f_c_t_html_a611326d53acf4814f308bb3af9499899"><div class="ttname"><a href="namespace_f_c_t.html#a611326d53acf4814f308bb3af9499899">FCT::AllocatorDelete</a></div><div class="ttdeci">void AllocatorDelete(T *ptr)</div><div class="ttdef"><b>定义</b> <a href="#l00119">MemoryCheak.h:119</a></div></div>
-<div class="ttc" id="anamespace_f_c_t_html_a76888f223cab62dfa9ea0b85d0b6d84a"><div class="ttname"><a href="namespace_f_c_t.html#a76888f223cab62dfa9ea0b85d0b6d84a">FCT::Destroy</a></div><div class="ttdeci">void Destroy(T *ptr)</div><div class="ttdef"><b>定义</b> <a href="#l00149">MemoryCheak.h:149</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_a28b9188bf4be0ceb6c1128405c10fb41"><div class="ttname"><a href="namespace_f_c_t.html#a28b9188bf4be0ceb6c1128405c10fb41">FCT::New</a></div><div class="ttdeci">T * New(T *ptr)</div><div class="ttdef"><b>定义</b> <a href="#l00139">MemoryCheak.h:139</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_a3fcb58c5b721e187bad6da51a8b72a05"><div class="ttname"><a href="namespace_f_c_t.html#a3fcb58c5b721e187bad6da51a8b72a05">FCT::AllocatorNew</a></div><div class="ttdeci">T * AllocatorNew(size_t size)</div><div class="ttdef"><b>定义</b> <a href="#l00128">MemoryCheak.h:128</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_a611326d53acf4814f308bb3af9499899"><div class="ttname"><a href="namespace_f_c_t.html#a611326d53acf4814f308bb3af9499899">FCT::AllocatorDelete</a></div><div class="ttdeci">void AllocatorDelete(T *ptr)</div><div class="ttdef"><b>定义</b> <a href="#l00120">MemoryCheak.h:120</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_a76888f223cab62dfa9ea0b85d0b6d84a"><div class="ttname"><a href="namespace_f_c_t.html#a76888f223cab62dfa9ea0b85d0b6d84a">FCT::Destroy</a></div><div class="ttdeci">void Destroy(T *ptr)</div><div class="ttdef"><b>定义</b> <a href="#l00150">MemoryCheak.h:150</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

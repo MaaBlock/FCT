@@ -1,6 +1,7 @@
 var class_f_c_t_1_1_vertex_shader =
 [
     [ "VertexShader", "class_f_c_t_1_1_vertex_shader.html#a41ef43c17cc84078bb8f986506bbeb65", null ],
+    [ "~VertexShader", "class_f_c_t_1_1_vertex_shader.html#a6a100e07974e88fe81e7eb3ad450b85e", null ],
     [ "addLayout", "class_f_c_t_1_1_vertex_shader.html#a2837e9e7593ae66cc4bf0b8d027c185b", null ],
     [ "addRef", "class_f_c_t_1_1_vertex_shader.html#a59c2f131121de6503df8d363b6853d45", null ],
     [ "addUniform", "class_f_c_t_1_1_vertex_shader.html#a1cdfa620d51f7cb8d711bf8188a4aaa0", null ],

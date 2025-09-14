@@ -14,7 +14,9 @@ var class_f_c_t_1_1_runtime =
     [ "getDeviceWidth", "class_f_c_t_1_1_runtime.html#a3eca945852ac8ffcabe129e7909fac63", null ],
     [ "init", "class_f_c_t_1_1_runtime.html#a8935358c013f37d5ec950099c888c89c", null ],
     [ "operator=", "class_f_c_t_1_1_runtime.html#ade80129a1332252edc136c72287ef4f3", null ],
+    [ "pipeHub", "class_f_c_t_1_1_runtime.html#a086c7cc9fa026e0868e1c17413e80ba3", null ],
     [ "postUiTask", "class_f_c_t_1_1_runtime.html#af0d24b61dc00d465199c917e75efd72e", null ],
     [ "term", "class_f_c_t_1_1_runtime.html#a7e06f2fd3bd29b1196861fa8b62aee37", null ],
-    [ "g_common", "class_f_c_t_1_1_runtime.html#ac8957ab52a379f3ef953b938ace24ebb", null ]
+    [ "g_common", "class_f_c_t_1_1_runtime.html#ac8957ab52a379f3ef953b938ace24ebb", null ],
+    [ "m_pipeHub", "class_f_c_t_1_1_runtime.html#a728c8459a4e615e5886ac981acfae420", null ]
 ];

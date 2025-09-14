@@ -1,6 +1,7 @@
 var class_f_c_t_1_1_r_h_i_1_1_v_k___pass =
 [
     [ "VK_Pass", "class_f_c_t_1_1_r_h_i_1_1_v_k___pass.html#a232f4a02a87d460778ceacd21270d080", null ],
+    [ "~VK_Pass", "class_f_c_t_1_1_r_h_i_1_1_v_k___pass.html#a4bdcf2a4e4d758e7620fb8f0e963f3ea", null ],
     [ "addRef", "class_f_c_t_1_1_r_h_i_1_1_v_k___pass.html#a59c2f131121de6503df8d363b6853d45", null ],
     [ "beginSubmit", "class_f_c_t_1_1_r_h_i_1_1_v_k___pass.html#aeefe722a13b25bf38fc07baffb25ad35", null ],
     [ "bindTarget", "class_f_c_t_1_1_r_h_i_1_1_v_k___pass.html#ae0c987eccb3de45f5008a5fe795200ce", null ],

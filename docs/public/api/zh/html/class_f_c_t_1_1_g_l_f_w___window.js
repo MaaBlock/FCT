@@ -31,6 +31,7 @@ var class_f_c_t_1_1_g_l_f_w___window =
     [ "getWidth", "class_f_c_t_1_1_g_l_f_w___window.html#a664529ab5a468493f4f420082d3d8900", null ],
     [ "getWindow", "class_f_c_t_1_1_g_l_f_w___window.html#a95fb376b87ae1821e4194018fcfc9011", null ],
     [ "initRender", "class_f_c_t_1_1_g_l_f_w___window.html#a19a7ad9ada73cdb78399672e016acfa6", null ],
+    [ "invokeFileDropCallbacks", "class_f_c_t_1_1_g_l_f_w___window.html#a2ae0ce54914de727c9af8041b01d2403", null ],
     [ "invokeKeyCallbacks", "class_f_c_t_1_1_g_l_f_w___window.html#a73009276887dc418f50096b8cb4380c7", null ],
     [ "invokeMouseCallbacks", "class_f_c_t_1_1_g_l_f_w___window.html#af841db207f4c3a38e334cf487feca34c", null ],
     [ "invokeMouseMoveCallbacks", "class_f_c_t_1_1_g_l_f_w___window.html#a9c40e2770603e99cb407b7e5b81e6d00", null ],

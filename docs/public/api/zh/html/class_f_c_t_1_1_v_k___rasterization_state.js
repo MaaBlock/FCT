@@ -1,6 +1,7 @@
 var class_f_c_t_1_1_v_k___rasterization_state =
 [
     [ "VK_RasterizationState", "class_f_c_t_1_1_v_k___rasterization_state.html#a4168aa800f80b9f6b42e3a8e85f98499", null ],
+    [ "~VK_RasterizationState", "class_f_c_t_1_1_v_k___rasterization_state.html#acb362eab01385c9ea9d812d67fda4887", null ],
     [ "addRef", "class_f_c_t_1_1_v_k___rasterization_state.html#a59c2f131121de6503df8d363b6853d45", null ],
     [ "alphaToCoverageEnable", "class_f_c_t_1_1_v_k___rasterization_state.html#a6777c85f8ffc5ad2c6ee777059ef926b", null ],
     [ "alphaToCoverageEnable", "class_f_c_t_1_1_v_k___rasterization_state.html#aa75b1336f7221d79ae8622fd49e5ff10", null ],

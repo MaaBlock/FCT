@@ -2,6 +2,7 @@ var class_f_c_t_1_1_r_h_i_1_1_v_k___fence =
 [
     [ "DeleterType", "class_f_c_t_1_1_r_h_i_1_1_v_k___fence.html#aa11d4656b54ed291143d6c79da4c407b", null ],
     [ "VK_Fence", "class_f_c_t_1_1_r_h_i_1_1_v_k___fence.html#aac3ff4218dc7ec5dcbaf29fec9338dc3", null ],
+    [ "~VK_Fence", "class_f_c_t_1_1_r_h_i_1_1_v_k___fence.html#a6128dfb8a6ba7078eb847a036ec44cd3", null ],
     [ "addRef", "class_f_c_t_1_1_r_h_i_1_1_v_k___fence.html#a59c2f131121de6503df8d363b6853d45", null ],
     [ "applyDeleter", "class_f_c_t_1_1_r_h_i_1_1_v_k___fence.html#aeb6edd1024ec555f8eb0321092ee874b", null ],
     [ "count", "class_f_c_t_1_1_r_h_i_1_1_v_k___fence.html#a33146ec5804be422936519224a3a7b3f", null ],

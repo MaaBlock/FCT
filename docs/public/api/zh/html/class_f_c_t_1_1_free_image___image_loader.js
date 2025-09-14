@@ -6,6 +6,7 @@ var class_f_c_t_1_1_free_image___image_loader =
     [ "getSupportedExtensions", "class_f_c_t_1_1_free_image___image_loader.html#ae25f42aa12983e250ac13ace8404ce70", null ],
     [ "Init", "class_f_c_t_1_1_free_image___image_loader.html#ad8baa49fb40cbcf38ce90e8e9c250449", null ],
     [ "load", "class_f_c_t_1_1_free_image___image_loader.html#afebfb60e26cb7e46add4a543e1e4150e", null ],
+    [ "loadFromMemory", "class_f_c_t_1_1_free_image___image_loader.html#a73b7af2e878de91b207bc03a0a2a2ce8", null ],
     [ "save", "class_f_c_t_1_1_free_image___image_loader.html#a415cc10447a2086a5711ca55575cbf69", null ],
     [ "Tern", "class_f_c_t_1_1_free_image___image_loader.html#a3cafb50378c292ac9a91923f05d14c16", null ]
 ];

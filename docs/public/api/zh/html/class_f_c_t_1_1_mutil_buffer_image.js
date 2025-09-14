@@ -1,6 +1,7 @@
 var class_f_c_t_1_1_mutil_buffer_image =
 [
     [ "MutilBufferImage", "class_f_c_t_1_1_mutil_buffer_image.html#a501cd636d88938597b99c2cbf152036f", null ],
+    [ "~MutilBufferImage", "class_f_c_t_1_1_mutil_buffer_image.html#a2c62f168dbe39f3f6ab7eae52e239d7d", null ],
     [ "addRef", "class_f_c_t_1_1_mutil_buffer_image.html#a59c2f131121de6503df8d363b6853d45", null ],
     [ "as", "class_f_c_t_1_1_mutil_buffer_image.html#a922687a9af38683519c069b1d0249da4", null ],
     [ "bind", "class_f_c_t_1_1_mutil_buffer_image.html#a2b3635fafe7a058d07b9ff813945cf20", null ],

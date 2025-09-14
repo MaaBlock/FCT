@@ -115,179 +115,180 @@ $(function(){initNavTree('_v_k___image_8cpp_source.html','',''); });
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        {</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a11328b266cec172e2b8bd340fc0dde61">m_owns</a>) {</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>                <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a9794017bc5da4f12b90b6c117015250f">m_ctx</a>-&gt;getDevice().destroyImage(<a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#ac927c4005f2697795e91a694f24bcfdf">m_image</a>);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            }</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        }</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>                <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a9794017bc5da4f12b90b6c117015250f">m_ctx</a>-&gt;device().freeMemory(<a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a37ac40e348c9dc7288212214f7062ee0">m_memory</a>);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            }</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        }</div>
 </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="foldopen" id="foldopen00025" data-start="{" data-end="}">
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#aee51778aeb3dcee2e1f4b73a425c76d5">   25</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#aee51778aeb3dcee2e1f4b73a425c76d5">VK_Image::create</a>()</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        {</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            vk::ImageCreateInfo imageInfo;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            imageInfo.setImageType(vk::ImageType::e2D);</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            imageInfo.setFormat(<a class="code hl_function" href="namespace_f_c_t.html#ac1e051cf6058ce7121dd786478277836">ToVkFormat</a>(<a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_image.html#aa5391a55ae9708ce4eeff32b0758290f">m_format</a>));</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            imageInfo.setExtent(vk::Extent3D(<a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_image.html#abe5d8b322123b8de96d7a37731b6c6a9">m_width</a>, <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_image.html#a95d4b0a6bb195228371a65cdaa029693">m_height</a>, 1));</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            imageInfo.setMipLevels(1);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            imageInfo.setArrayLayers(1);</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            imageInfo.setSamples(<a class="code hl_function" href="namespace_f_c_t.html#a630511e4e6f1b069a65ce7439723da72">ToVkSampleCount</a>(<a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_image.html#aca8a30ca3b6dea20429770cd6ffac3d6">m_samples</a>));</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            imageInfo.setTiling(vk::ImageTiling::eOptimal);</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            vk::ImageUsageFlags usageFlags;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_image.html#ab0fe6c77ce0e9b723d3e66384cbb4c49">m_usage</a> &amp; <a class="code hl_enumvalue" href="namespace_f_c_t.html#a7c79cf32fda44767f87c534ba3c7f1e5aa3e8ae43188ae76d38f414b2bdb0077b">ImageUsage::Texture</a>)</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            {</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>                usageFlags |= vk::ImageUsageFlagBits::eSampled | vk::ImageUsageFlagBits::eTransferDst;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            }</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_image.html#ab0fe6c77ce0e9b723d3e66384cbb4c49">m_usage</a> &amp; <a class="code hl_enumvalue" href="namespace_f_c_t.html#a7c79cf32fda44767f87c534ba3c7f1e5a9b0bffda4bcb312168c0d6537cb04b4d">ImageUsage::RenderTarget</a>)</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            {</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                usageFlags |= vk::ImageUsageFlagBits::eColorAttachment |</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                              vk::ImageUsageFlagBits::eTransferSrc |</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>                              vk::ImageUsageFlagBits::eSampled;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            }</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_image.html#ab0fe6c77ce0e9b723d3e66384cbb4c49">m_usage</a> &amp; <a class="code hl_enumvalue" href="namespace_f_c_t.html#a7c79cf32fda44767f87c534ba3c7f1e5a2fa8076285272883c91e14402975a441">ImageUsage::DepthStencil</a>)</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            {</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                usageFlags |= vk::ImageUsageFlagBits::eDepthStencilAttachment;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            }</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            <span class="keywordflow">if</span> (!(usageFlags &amp; vk::ImageUsageFlagBits::eTransferDst)) {</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                usageFlags |= vk::ImageUsageFlagBits::eTransferDst;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            }</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            imageInfo.setUsage(usageFlags);</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            imageInfo.setSharingMode(vk::SharingMode::eExclusive);</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            imageInfo.setInitialLayout(vk::ImageLayout::eUndefined);</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            <span class="keywordflow">try</span> {</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#ac927c4005f2697795e91a694f24bcfdf">m_image</a> = <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a9794017bc5da4f12b90b6c117015250f">m_ctx</a>-&gt;getDevice().createImage(imageInfo);</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                vk::MemoryRequirements memRequirements = <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a9794017bc5da4f12b90b6c117015250f">m_ctx</a>-&gt;getDevice().getImageMemoryRequirements(<a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#ac927c4005f2697795e91a694f24bcfdf">m_image</a>);</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                vk::MemoryAllocateInfo allocInfo;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                allocInfo.setAllocationSize(memRequirements.size);</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                allocInfo.setMemoryTypeIndex(<a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a9794017bc5da4f12b90b6c117015250f">m_ctx</a>-&gt;findMemoryType(</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                    memRequirements.memoryTypeBits,</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                    vk::MemoryPropertyFlagBits::eDeviceLocal));</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a37ac40e348c9dc7288212214f7062ee0">m_memory</a> = <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a9794017bc5da4f12b90b6c117015250f">m_ctx</a>-&gt;getDevice().allocateMemory(allocInfo);</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a9794017bc5da4f12b90b6c117015250f">m_ctx</a>-&gt;getDevice().bindImageMemory(<a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#ac927c4005f2697795e91a694f24bcfdf">m_image</a>, <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a37ac40e348c9dc7288212214f7062ee0">m_memory</a>, 0);</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_image.html#a1ae68744727dc163c4c9b577d9634f17">m_initData</a>.data &amp;&amp; <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_image.html#a1ae68744727dc163c4c9b577d9634f17">m_initData</a>.size &gt; 0) {</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                    <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a71d751f0564089be8f1c6cb3210dc65b">uploadInitialData</a>();</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                }</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a11328b266cec172e2b8bd340fc0dde61">m_owns</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            }</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; e) {</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                <a class="code hl_variable" href="namespace_f_c_t.html#a41993be9a3c6e8f05f5b7bda9a9015b2">ferr</a> &lt;&lt; <span class="stringliteral">&quot;Failed to create Vulkan image: &quot;</span> &lt;&lt; e.what() &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#ac927c4005f2697795e91a694f24bcfdf">m_image</a>) {</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>                    <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a9794017bc5da4f12b90b6c117015250f">m_ctx</a>-&gt;getDevice().destroyImage(<a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#ac927c4005f2697795e91a694f24bcfdf">m_image</a>);</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>                    <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#ac927c4005f2697795e91a694f24bcfdf">m_image</a> = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>                }</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a37ac40e348c9dc7288212214f7062ee0">m_memory</a>) {</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                    <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a9794017bc5da4f12b90b6c117015250f">m_ctx</a>-&gt;getDevice().freeMemory(<a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a37ac40e348c9dc7288212214f7062ee0">m_memory</a>);</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                    <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a37ac40e348c9dc7288212214f7062ee0">m_memory</a> = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                }</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a11328b266cec172e2b8bd340fc0dde61">m_owns</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            }</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        }</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="foldopen" id="foldopen00026" data-start="{" data-end="}">
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#aee51778aeb3dcee2e1f4b73a425c76d5">   26</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#aee51778aeb3dcee2e1f4b73a425c76d5">VK_Image::create</a>()</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            vk::ImageCreateInfo imageInfo;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            imageInfo.setImageType(vk::ImageType::e2D);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            imageInfo.setFormat(<a class="code hl_function" href="namespace_f_c_t.html#ac1e051cf6058ce7121dd786478277836">ToVkFormat</a>(<a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_image.html#aa5391a55ae9708ce4eeff32b0758290f">m_format</a>));</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            imageInfo.setExtent(vk::Extent3D(<a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_image.html#abe5d8b322123b8de96d7a37731b6c6a9">m_width</a>, <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_image.html#a95d4b0a6bb195228371a65cdaa029693">m_height</a>, 1));</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            imageInfo.setMipLevels(1);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            imageInfo.setArrayLayers(1);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            imageInfo.setSamples(<a class="code hl_function" href="namespace_f_c_t.html#a630511e4e6f1b069a65ce7439723da72">ToVkSampleCount</a>(<a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_image.html#aca8a30ca3b6dea20429770cd6ffac3d6">m_samples</a>));</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            imageInfo.setTiling(vk::ImageTiling::eOptimal);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            vk::ImageUsageFlags usageFlags;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_image.html#ab0fe6c77ce0e9b723d3e66384cbb4c49">m_usage</a> &amp; <a class="code hl_enumvalue" href="namespace_f_c_t.html#a7c79cf32fda44767f87c534ba3c7f1e5aa3e8ae43188ae76d38f414b2bdb0077b">ImageUsage::Texture</a>)</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                usageFlags |= vk::ImageUsageFlagBits::eSampled | vk::ImageUsageFlagBits::eTransferDst;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            }</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_image.html#ab0fe6c77ce0e9b723d3e66384cbb4c49">m_usage</a> &amp; <a class="code hl_enumvalue" href="namespace_f_c_t.html#a7c79cf32fda44767f87c534ba3c7f1e5a9b0bffda4bcb312168c0d6537cb04b4d">ImageUsage::RenderTarget</a>)</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                usageFlags |= vk::ImageUsageFlagBits::eColorAttachment |</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>                              vk::ImageUsageFlagBits::eTransferSrc |</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                              vk::ImageUsageFlagBits::eSampled;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            }</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_image.html#ab0fe6c77ce0e9b723d3e66384cbb4c49">m_usage</a> &amp; <a class="code hl_enumvalue" href="namespace_f_c_t.html#a7c79cf32fda44767f87c534ba3c7f1e5a2fa8076285272883c91e14402975a441">ImageUsage::DepthStencil</a>)</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                usageFlags |= vk::ImageUsageFlagBits::eDepthStencilAttachment;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            }</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            <span class="keywordflow">if</span> (!(usageFlags &amp; vk::ImageUsageFlagBits::eTransferDst)) {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                usageFlags |= vk::ImageUsageFlagBits::eTransferDst;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            }</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            imageInfo.setUsage(usageFlags);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            imageInfo.setSharingMode(vk::SharingMode::eExclusive);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            imageInfo.setInitialLayout(vk::ImageLayout::eUndefined);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#ac927c4005f2697795e91a694f24bcfdf">m_image</a> = <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a9794017bc5da4f12b90b6c117015250f">m_ctx</a>-&gt;getDevice().createImage(imageInfo);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                vk::MemoryRequirements memRequirements = <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a9794017bc5da4f12b90b6c117015250f">m_ctx</a>-&gt;getDevice().getImageMemoryRequirements(<a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#ac927c4005f2697795e91a694f24bcfdf">m_image</a>);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                vk::MemoryAllocateInfo allocInfo;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                allocInfo.setAllocationSize(memRequirements.size);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                allocInfo.setMemoryTypeIndex(<a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a9794017bc5da4f12b90b6c117015250f">m_ctx</a>-&gt;findMemoryType(</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                    memRequirements.memoryTypeBits,</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                    vk::MemoryPropertyFlagBits::eDeviceLocal));</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a37ac40e348c9dc7288212214f7062ee0">m_memory</a> = <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a9794017bc5da4f12b90b6c117015250f">m_ctx</a>-&gt;getDevice().allocateMemory(allocInfo);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a9794017bc5da4f12b90b6c117015250f">m_ctx</a>-&gt;getDevice().bindImageMemory(<a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#ac927c4005f2697795e91a694f24bcfdf">m_image</a>, <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a37ac40e348c9dc7288212214f7062ee0">m_memory</a>, 0);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_image.html#a1ae68744727dc163c4c9b577d9634f17">m_initData</a>.data &amp;&amp; <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_image.html#a1ae68744727dc163c4c9b577d9634f17">m_initData</a>.size &gt; 0) {</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                    <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a71d751f0564089be8f1c6cb3210dc65b">uploadInitialData</a>();</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                }</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a11328b266cec172e2b8bd340fc0dde61">m_owns</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            }</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; e) {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                <a class="code hl_variable" href="namespace_f_c_t.html#a41993be9a3c6e8f05f5b7bda9a9015b2">ferr</a> &lt;&lt; <span class="stringliteral">&quot;Failed to create Vulkan image: &quot;</span> &lt;&lt; e.what() &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#ac927c4005f2697795e91a694f24bcfdf">m_image</a>) {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>                    <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a9794017bc5da4f12b90b6c117015250f">m_ctx</a>-&gt;getDevice().destroyImage(<a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#ac927c4005f2697795e91a694f24bcfdf">m_image</a>);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>                    <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#ac927c4005f2697795e91a694f24bcfdf">m_image</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>                }</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a37ac40e348c9dc7288212214f7062ee0">m_memory</a>) {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                    <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a9794017bc5da4f12b90b6c117015250f">m_ctx</a>-&gt;getDevice().freeMemory(<a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a37ac40e348c9dc7288212214f7062ee0">m_memory</a>);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                    <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a37ac40e348c9dc7288212214f7062ee0">m_memory</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                }</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a11328b266cec172e2b8bd340fc0dde61">m_owns</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            }</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        }</div>
 </div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
-<div class="foldopen" id="foldopen00094" data-start="{" data-end="}">
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a71d751f0564089be8f1c6cb3210dc65b">   94</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a71d751f0564089be8f1c6cb3210dc65b">VK_Image::uploadInitialData</a>()</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        {</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_image.html#a1ae68744727dc163c4c9b577d9634f17">m_initData</a>.data &amp;&amp; <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_image.html#a1ae68744727dc163c4c9b577d9634f17">m_initData</a>.size &gt; 0) {</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#aef43205c1ec7e8053a45f34e59ec39e3">updateData</a>(<a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_image.html#a1ae68744727dc163c4c9b577d9634f17">m_initData</a>.data, <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_image.html#a1ae68744727dc163c4c9b577d9634f17">m_initData</a>.size);</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>            }</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        }</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="foldopen" id="foldopen00095" data-start="{" data-end="}">
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a71d751f0564089be8f1c6cb3210dc65b">   95</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a71d751f0564089be8f1c6cb3210dc65b">VK_Image::uploadInitialData</a>()</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        {</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_image.html#a1ae68744727dc163c4c9b577d9634f17">m_initData</a>.data &amp;&amp; <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_image.html#a1ae68744727dc163c4c9b577d9634f17">m_initData</a>.size &gt; 0) {</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#aef43205c1ec7e8053a45f34e59ec39e3">updateData</a>(<a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_image.html#a1ae68744727dc163c4c9b577d9634f17">m_initData</a>.data, <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_image.html#a1ae68744727dc163c4c9b577d9634f17">m_initData</a>.size);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            }</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        }</div>
 </div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
-<div class="foldopen" id="foldopen00102" data-start="{" data-end="}">
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#aef43205c1ec7e8053a45f34e59ec39e3">  102</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#aef43205c1ec7e8053a45f34e59ec39e3">VK_Image::updateData</a>(<span class="keyword">const</span> <span class="keywordtype">void</span>* data, <span class="keywordtype">size_t</span> dataSize)</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        {</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            <span class="keywordflow">if</span> (!data || dataSize == 0) {</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                <a class="code hl_variable" href="namespace_f_c_t.html#a41993be9a3c6e8f05f5b7bda9a9015b2">ferr</a> &lt;&lt; <span class="stringliteral">&quot;Invalid data for image update&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            }</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            <span class="keywordflow">try</span> {</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                vk::ImageAspectFlags aspectMask = vk::ImageAspectFlagBits::eColor;</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_image.html#ab0fe6c77ce0e9b723d3e66384cbb4c49">m_usage</a> &amp; <a class="code hl_enumvalue" href="namespace_f_c_t.html#a7c79cf32fda44767f87c534ba3c7f1e5a2fa8076285272883c91e14402975a441">ImageUsage::DepthStencil</a>) {</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                    aspectMask = vk::ImageAspectFlagBits::eDepth | vk::ImageAspectFlagBits::eStencil;</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                    aspectMask = vk::ImageAspectFlagBits::eColor;</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>                }</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>                <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a9794017bc5da4f12b90b6c117015250f">m_ctx</a>-&gt;transferDataToImage(</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>                    <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#ac927c4005f2697795e91a694f24bcfdf">m_image</a>,</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>                    <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_image.html#abe5d8b322123b8de96d7a37731b6c6a9">m_width</a>,</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>                    <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_image.html#a95d4b0a6bb195228371a65cdaa029693">m_height</a>,</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>                    1,</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>                    <a class="code hl_function" href="namespace_f_c_t.html#ac1e051cf6058ce7121dd786478277836">ToVkFormat</a>(<a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_image.html#aa5391a55ae9708ce4eeff32b0758290f">m_format</a>),</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>                    1,</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="foldopen" id="foldopen00103" data-start="{" data-end="}">
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#aef43205c1ec7e8053a45f34e59ec39e3">  103</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#aef43205c1ec7e8053a45f34e59ec39e3">VK_Image::updateData</a>(<span class="keyword">const</span> <span class="keywordtype">void</span>* data, <span class="keywordtype">size_t</span> dataSize)</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        {</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>            <span class="keywordflow">if</span> (!data || dataSize == 0) {</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                <a class="code hl_variable" href="namespace_f_c_t.html#a41993be9a3c6e8f05f5b7bda9a9015b2">ferr</a> &lt;&lt; <span class="stringliteral">&quot;Invalid data for image update&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            }</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>                vk::ImageAspectFlags aspectMask = vk::ImageAspectFlagBits::eColor;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_image.html#ab0fe6c77ce0e9b723d3e66384cbb4c49">m_usage</a> &amp; <a class="code hl_enumvalue" href="namespace_f_c_t.html#a7c79cf32fda44767f87c534ba3c7f1e5a2fa8076285272883c91e14402975a441">ImageUsage::DepthStencil</a>) {</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                    aspectMask = vk::ImageAspectFlagBits::eDepth | vk::ImageAspectFlagBits::eStencil;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>                    aspectMask = vk::ImageAspectFlagBits::eColor;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>                }</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>                <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a9794017bc5da4f12b90b6c117015250f">m_ctx</a>-&gt;transferDataToImage(</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>                    <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#ac927c4005f2697795e91a694f24bcfdf">m_image</a>,</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>                    <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_image.html#abe5d8b322123b8de96d7a37731b6c6a9">m_width</a>,</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>                    <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_image.html#a95d4b0a6bb195228371a65cdaa029693">m_height</a>,</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>                    1,</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>                    <a class="code hl_function" href="namespace_f_c_t.html#ac1e051cf6058ce7121dd786478277836">ToVkFormat</a>(<a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_image.html#aa5391a55ae9708ce4eeff32b0758290f">m_format</a>),</div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>                    1,</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>                    aspectMask,</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>                    data,</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>                    dataSize</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>                );</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>            }</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>            <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; e) {</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>                <a class="code hl_variable" href="namespace_f_c_t.html#a41993be9a3c6e8f05f5b7bda9a9015b2">ferr</a> &lt;&lt; <span class="stringliteral">&quot;Failed to update image data: &quot;</span> &lt;&lt; e.what() &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>            }</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        }</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>                    1,</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>                    aspectMask,</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>                    data,</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>                    dataSize</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>                );</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>            }</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>            <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; e) {</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>                <a class="code hl_variable" href="namespace_f_c_t.html#a41993be9a3c6e8f05f5b7bda9a9015b2">ferr</a> &lt;&lt; <span class="stringliteral">&quot;Failed to update image data: &quot;</span> &lt;&lt; e.what() &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>            }</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        }</div>
 </div>
-<div class="foldopen" id="foldopen00135" data-start="{" data-end="}">
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a35dad7ab0fe7dcb8549c7dfc426eeaf0">  135</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#aef43205c1ec7e8053a45f34e59ec39e3">VK_Image::updateData</a>(<span class="keyword">const</span> <span class="keywordtype">void</span>* data, <span class="keywordtype">size_t</span> dataSize,<a class="code hl_class" href="class_f_c_t_1_1_r_h_i_1_1_fence.html">Fence</a>* fence,std::function&lt;<span class="keywordtype">void</span>()&gt;* onCompletion)</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        {</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>            <span class="keywordflow">if</span> (!data || dataSize == 0) {</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>                <a class="code hl_variable" href="namespace_f_c_t.html#a41993be9a3c6e8f05f5b7bda9a9015b2">ferr</a> &lt;&lt; <span class="stringliteral">&quot;Invalid data for image update&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>                <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>            }</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>            <span class="keywordflow">try</span> {</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>                vk::ImageAspectFlags aspectMask = vk::ImageAspectFlagBits::eColor;</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span> </div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_image.html#ab0fe6c77ce0e9b723d3e66384cbb4c49">m_usage</a> &amp; <a class="code hl_enumvalue" href="namespace_f_c_t.html#a7c79cf32fda44767f87c534ba3c7f1e5a2fa8076285272883c91e14402975a441">ImageUsage::DepthStencil</a>) {</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>                    aspectMask = vk::ImageAspectFlagBits::eDepth | vk::ImageAspectFlagBits::eStencil;</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>                    aspectMask = vk::ImageAspectFlagBits::eColor;</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>                }</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>                <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a9794017bc5da4f12b90b6c117015250f">m_ctx</a>-&gt;transferDataToImage(</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>                    <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#ac927c4005f2697795e91a694f24bcfdf">m_image</a>,</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>                    <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_image.html#abe5d8b322123b8de96d7a37731b6c6a9">m_width</a>,</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>                    <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_image.html#a95d4b0a6bb195228371a65cdaa029693">m_height</a>,</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>                    1,</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>                    <a class="code hl_function" href="namespace_f_c_t.html#ac1e051cf6058ce7121dd786478277836">ToVkFormat</a>(<a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_image.html#aa5391a55ae9708ce4eeff32b0758290f">m_format</a>),</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>                    1,</div>
+<div class="foldopen" id="foldopen00136" data-start="{" data-end="}">
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a35dad7ab0fe7dcb8549c7dfc426eeaf0">  136</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#aef43205c1ec7e8053a45f34e59ec39e3">VK_Image::updateData</a>(<span class="keyword">const</span> <span class="keywordtype">void</span>* data, <span class="keywordtype">size_t</span> dataSize,<a class="code hl_class" href="class_f_c_t_1_1_r_h_i_1_1_fence.html">Fence</a>* fence,std::function&lt;<span class="keywordtype">void</span>()&gt;* onCompletion)</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        {</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>            <span class="keywordflow">if</span> (!data || dataSize == 0) {</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>                <a class="code hl_variable" href="namespace_f_c_t.html#a41993be9a3c6e8f05f5b7bda9a9015b2">ferr</a> &lt;&lt; <span class="stringliteral">&quot;Invalid data for image update&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>                <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>            }</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>            <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>                vk::ImageAspectFlags aspectMask = vk::ImageAspectFlagBits::eColor;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_image.html#ab0fe6c77ce0e9b723d3e66384cbb4c49">m_usage</a> &amp; <a class="code hl_enumvalue" href="namespace_f_c_t.html#a7c79cf32fda44767f87c534ba3c7f1e5a2fa8076285272883c91e14402975a441">ImageUsage::DepthStencil</a>) {</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>                    aspectMask = vk::ImageAspectFlagBits::eDepth | vk::ImageAspectFlagBits::eStencil;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>                    aspectMask = vk::ImageAspectFlagBits::eColor;</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>                }</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>                <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a9794017bc5da4f12b90b6c117015250f">m_ctx</a>-&gt;transferDataToImage(</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>                    <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#ac927c4005f2697795e91a694f24bcfdf">m_image</a>,</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>                    <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_image.html#abe5d8b322123b8de96d7a37731b6c6a9">m_width</a>,</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>                    <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_image.html#a95d4b0a6bb195228371a65cdaa029693">m_height</a>,</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>                    1,</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>                    <a class="code hl_function" href="namespace_f_c_t.html#ac1e051cf6058ce7121dd786478277836">ToVkFormat</a>(<a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_image.html#aa5391a55ae9708ce4eeff32b0758290f">m_format</a>),</div>
 <div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>                    1,</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>                    aspectMask,</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>                    data,</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>                    dataSize,</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>                    <span class="keyword">static_cast&lt;</span><a class="code hl_class" href="class_f_c_t_1_1_r_h_i_1_1_v_k___fence.html">VK_Fence</a>*<span class="keyword">&gt;</span>(fence)-&gt;fencePtr(),</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>                    onCompletion</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>                );</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>            }</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>            <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; e) {</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>                <a class="code hl_variable" href="namespace_f_c_t.html#a41993be9a3c6e8f05f5b7bda9a9015b2">ferr</a> &lt;&lt; <span class="stringliteral">&quot;Failed to update image data: &quot;</span> &lt;&lt; e.what() &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>            }</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        }</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>                    1,</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>                    aspectMask,</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>                    data,</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>                    dataSize,</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>                    <span class="keyword">static_cast&lt;</span><a class="code hl_class" href="class_f_c_t_1_1_r_h_i_1_1_v_k___fence.html">VK_Fence</a>*<span class="keyword">&gt;</span>(fence)-&gt;fencePtr(),</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>                    onCompletion</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>                );</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>            }</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>            <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; e) {</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>                <a class="code hl_variable" href="namespace_f_c_t.html#a41993be9a3c6e8f05f5b7bda9a9015b2">ferr</a> &lt;&lt; <span class="stringliteral">&quot;Failed to update image data: &quot;</span> &lt;&lt; e.what() &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>            }</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        }</div>
 </div>
-<div class="foldopen" id="foldopen00170" data-start="{" data-end="}">
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#aada3fac76487f3f8238bc9247e42eee1">  170</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#aee51778aeb3dcee2e1f4b73a425c76d5">VK_Image::create</a>(vk::Image <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a99967810ccacdc0b527424b0b0ccf9cb">image</a>)</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        {</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>            <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#ac927c4005f2697795e91a694f24bcfdf">m_image</a> = <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a99967810ccacdc0b527424b0b0ccf9cb">image</a>;</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>            <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a11328b266cec172e2b8bd340fc0dde61">m_owns</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        }</div>
+<div class="foldopen" id="foldopen00171" data-start="{" data-end="}">
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#aada3fac76487f3f8238bc9247e42eee1">  171</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#aee51778aeb3dcee2e1f4b73a425c76d5">VK_Image::create</a>(vk::Image <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a99967810ccacdc0b527424b0b0ccf9cb">image</a>)</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>        {</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>            <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#ac927c4005f2697795e91a694f24bcfdf">m_image</a> = <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a99967810ccacdc0b527424b0b0ccf9cb">image</a>;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>            <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a11328b266cec172e2b8bd340fc0dde61">m_owns</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        }</div>
 </div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> </div>
-<div class="foldopen" id="foldopen00176" data-start="{" data-end="}">
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#aef6bb2015cbb8b91adaa0860b253069f">  176</a></span>        vk::Image <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#aef6bb2015cbb8b91adaa0860b253069f">VK_Image::getVkImage</a>()</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        {</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#ac927c4005f2697795e91a694f24bcfdf">m_image</a>;</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        }</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span> </div>
+<div class="foldopen" id="foldopen00177" data-start="{" data-end="}">
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno"><a class="line" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#aef6bb2015cbb8b91adaa0860b253069f">  177</a></span>        vk::Image <a class="code hl_function" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#aef6bb2015cbb8b91adaa0860b253069f">VK_Image::getVkImage</a>()</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        {</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#ac927c4005f2697795e91a694f24bcfdf">m_image</a>;</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        }</div>
 </div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    }</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>}</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    }</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>}</div>
 <div class="ttc" id="a_third_party_8h_html"><div class="ttname"><a href="_third_party_8h.html">ThirdParty.h</a></div></div>
 <div class="ttc" id="a_v_k___context_8h_html"><div class="ttname"><a href="_v_k___context_8h.html">VK_Context.h</a></div></div>
 <div class="ttc" id="a_v_k___fence_8h_html"><div class="ttname"><a href="_v_k___fence_8h.html">VK_Fence.h</a></div></div>
@@ -302,24 +303,24 @@ $(function(){initNavTree('_v_k___image_8cpp_source.html','',''); });
 <div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___fence_html"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___fence.html">FCT::RHI::VK_Fence</a></div><div class="ttdef"><b>定义</b> <a href="_v_k___fence_8h_source.html#l00017">VK_Fence.h:17</a></div></div>
 <div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___image_html_a11328b266cec172e2b8bd340fc0dde61"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a11328b266cec172e2b8bd340fc0dde61">FCT::RHI::VK_Image::m_owns</a></div><div class="ttdeci">bool m_owns</div><div class="ttdef"><b>定义</b> <a href="_v_k___image_8h_source.html#l00028">VK_Image.h:28</a></div></div>
 <div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___image_html_a37ac40e348c9dc7288212214f7062ee0"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a37ac40e348c9dc7288212214f7062ee0">FCT::RHI::VK_Image::m_memory</a></div><div class="ttdeci">vk::DeviceMemory m_memory</div><div class="ttdef"><b>定义</b> <a href="_v_k___image_8h_source.html#l00027">VK_Image.h:27</a></div></div>
-<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___image_html_a71d751f0564089be8f1c6cb3210dc65b"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a71d751f0564089be8f1c6cb3210dc65b">FCT::RHI::VK_Image::uploadInitialData</a></div><div class="ttdeci">void uploadInitialData()</div><div class="ttdef"><b>定义</b> <a href="#l00094">VK_Image.cpp:94</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___image_html_a71d751f0564089be8f1c6cb3210dc65b"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a71d751f0564089be8f1c6cb3210dc65b">FCT::RHI::VK_Image::uploadInitialData</a></div><div class="ttdeci">void uploadInitialData()</div><div class="ttdef"><b>定义</b> <a href="#l00095">VK_Image.cpp:95</a></div></div>
 <div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___image_html_a88af2cf51386b7763aeb14163fa75133"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a88af2cf51386b7763aeb14163fa75133">FCT::RHI::VK_Image::VK_Image</a></div><div class="ttdeci">VK_Image(VK_Context *ctx)</div><div class="ttdef"><b>定义</b> <a href="#l00012">VK_Image.cpp:12</a></div></div>
 <div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___image_html_a9794017bc5da4f12b90b6c117015250f"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a9794017bc5da4f12b90b6c117015250f">FCT::RHI::VK_Image::m_ctx</a></div><div class="ttdeci">VK_Context * m_ctx</div><div class="ttdef"><b>定义</b> <a href="_v_k___image_8h_source.html#l00025">VK_Image.h:25</a></div></div>
 <div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___image_html_a99967810ccacdc0b527424b0b0ccf9cb"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#a99967810ccacdc0b527424b0b0ccf9cb">FCT::RHI::VK_Image::image</a></div><div class="ttdeci">vk::Image image() const</div><div class="ttdef"><b>定义</b> <a href="_v_k___image_8h_source.html#l00023">VK_Image.h:23</a></div></div>
 <div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___image_html_ac144d7a85121d452062bd0239a703d8e"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#ac144d7a85121d452062bd0239a703d8e">FCT::RHI::VK_Image::~VK_Image</a></div><div class="ttdeci">~VK_Image()</div><div class="ttdef"><b>定义</b> <a href="#l00018">VK_Image.cpp:18</a></div></div>
 <div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___image_html_ac927c4005f2697795e91a694f24bcfdf"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#ac927c4005f2697795e91a694f24bcfdf">FCT::RHI::VK_Image::m_image</a></div><div class="ttdeci">vk::Image m_image</div><div class="ttdef"><b>定义</b> <a href="_v_k___image_8h_source.html#l00026">VK_Image.h:26</a></div></div>
-<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___image_html_aee51778aeb3dcee2e1f4b73a425c76d5"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#aee51778aeb3dcee2e1f4b73a425c76d5">FCT::RHI::VK_Image::create</a></div><div class="ttdeci">void create() override</div><div class="ttdef"><b>定义</b> <a href="#l00025">VK_Image.cpp:25</a></div></div>
-<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___image_html_aef43205c1ec7e8053a45f34e59ec39e3"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#aef43205c1ec7e8053a45f34e59ec39e3">FCT::RHI::VK_Image::updateData</a></div><div class="ttdeci">void updateData(const void *data, size_t dataSize)</div><div class="ttdef"><b>定义</b> <a href="#l00102">VK_Image.cpp:102</a></div></div>
-<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___image_html_aef6bb2015cbb8b91adaa0860b253069f"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#aef6bb2015cbb8b91adaa0860b253069f">FCT::RHI::VK_Image::getVkImage</a></div><div class="ttdeci">vk::Image getVkImage()</div><div class="ttdef"><b>定义</b> <a href="#l00176">VK_Image.cpp:176</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___image_html_aee51778aeb3dcee2e1f4b73a425c76d5"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#aee51778aeb3dcee2e1f4b73a425c76d5">FCT::RHI::VK_Image::create</a></div><div class="ttdeci">void create() override</div><div class="ttdef"><b>定义</b> <a href="#l00026">VK_Image.cpp:26</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___image_html_aef43205c1ec7e8053a45f34e59ec39e3"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#aef43205c1ec7e8053a45f34e59ec39e3">FCT::RHI::VK_Image::updateData</a></div><div class="ttdeci">void updateData(const void *data, size_t dataSize)</div><div class="ttdef"><b>定义</b> <a href="#l00103">VK_Image.cpp:103</a></div></div>
+<div class="ttc" id="aclass_f_c_t_1_1_r_h_i_1_1_v_k___image_html_aef6bb2015cbb8b91adaa0860b253069f"><div class="ttname"><a href="class_f_c_t_1_1_r_h_i_1_1_v_k___image.html#aef6bb2015cbb8b91adaa0860b253069f">FCT::RHI::VK_Image::getVkImage</a></div><div class="ttdeci">vk::Image getVkImage()</div><div class="ttdef"><b>定义</b> <a href="#l00177">VK_Image.cpp:177</a></div></div>
 <div class="ttc" id="aclass_f_c_t_1_1_v_k___context_html"><div class="ttname"><a href="class_f_c_t_1_1_v_k___context.html">FCT::VK_Context</a></div><div class="ttdef"><b>定义</b> <a href="_v_k___context_8h_source.html#l00011">VK_Context.h:11</a></div></div>
 <div class="ttc" id="anamespace_f_c_t_1_1_r_h_i_html"><div class="ttname"><a href="namespace_f_c_t_1_1_r_h_i.html">FCT::RHI</a></div><div class="ttdef"><b>定义</b> <a href="_command_buffer_graph_8h_source.html#l00013">CommandBufferGraph.h:14</a></div></div>
 <div class="ttc" id="anamespace_f_c_t_html"><div class="ttname"><a href="namespace_f_c_t.html">FCT</a></div><div class="ttdef"><b>定义</b> <a href="_enums_8h_source.html#l00008">Enums.h:8</a></div></div>
 <div class="ttc" id="anamespace_f_c_t_html_a41993be9a3c6e8f05f5b7bda9a9015b2"><div class="ttname"><a href="namespace_f_c_t.html#a41993be9a3c6e8f05f5b7bda9a9015b2">FCT::ferr</a></div><div class="ttdeci">std::ostream &amp; ferr</div><div class="ttdef"><b>定义</b> <a href="_out_stream_8cpp_source.html#l00009">OutStream.cpp:9</a></div></div>
-<div class="ttc" id="anamespace_f_c_t_html_a630511e4e6f1b069a65ce7439723da72"><div class="ttname"><a href="namespace_f_c_t.html#a630511e4e6f1b069a65ce7439723da72">FCT::ToVkSampleCount</a></div><div class="ttdeci">vk::SampleCountFlagBits ToVkSampleCount(Samples samples)</div><div class="ttdef"><b>定义</b> <a href="_context_2_format_8h_source.html#l00229">Format.h:229</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_a630511e4e6f1b069a65ce7439723da72"><div class="ttname"><a href="namespace_f_c_t.html#a630511e4e6f1b069a65ce7439723da72">FCT::ToVkSampleCount</a></div><div class="ttdeci">vk::SampleCountFlagBits ToVkSampleCount(Samples samples)</div><div class="ttdef"><b>定义</b> <a href="_context_2_format_8h_source.html#l00385">Format.h:385</a></div></div>
 <div class="ttc" id="anamespace_f_c_t_html_a7c79cf32fda44767f87c534ba3c7f1e5a2fa8076285272883c91e14402975a441"><div class="ttname"><a href="namespace_f_c_t.html#a7c79cf32fda44767f87c534ba3c7f1e5a2fa8076285272883c91e14402975a441">FCT::ImageUsage::DepthStencil</a></div><div class="ttdeci">@ DepthStencil</div><div class="ttdef"><b>定义</b> <a href="_image_usage_flags_8h_source.html#l00013">ImageUsageFlags.h:13</a></div></div>
 <div class="ttc" id="anamespace_f_c_t_html_a7c79cf32fda44767f87c534ba3c7f1e5a9b0bffda4bcb312168c0d6537cb04b4d"><div class="ttname"><a href="namespace_f_c_t.html#a7c79cf32fda44767f87c534ba3c7f1e5a9b0bffda4bcb312168c0d6537cb04b4d">FCT::ImageUsage::RenderTarget</a></div><div class="ttdeci">@ RenderTarget</div><div class="ttdef"><b>定义</b> <a href="_image_usage_flags_8h_source.html#l00012">ImageUsageFlags.h:12</a></div></div>
 <div class="ttc" id="anamespace_f_c_t_html_a7c79cf32fda44767f87c534ba3c7f1e5aa3e8ae43188ae76d38f414b2bdb0077b"><div class="ttname"><a href="namespace_f_c_t.html#a7c79cf32fda44767f87c534ba3c7f1e5aa3e8ae43188ae76d38f414b2bdb0077b">FCT::ImageUsage::Texture</a></div><div class="ttdeci">@ Texture</div><div class="ttdef"><b>定义</b> <a href="_image_usage_flags_8h_source.html#l00014">ImageUsageFlags.h:14</a></div></div>
-<div class="ttc" id="anamespace_f_c_t_html_ac1e051cf6058ce7121dd786478277836"><div class="ttname"><a href="namespace_f_c_t.html#ac1e051cf6058ce7121dd786478277836">FCT::ToVkFormat</a></div><div class="ttdeci">vk::Format ToVkFormat(Format format)</div><div class="ttdef"><b>定义</b> <a href="_context_2_format_8h_source.html#l00268">Format.h:268</a></div></div>
+<div class="ttc" id="anamespace_f_c_t_html_ac1e051cf6058ce7121dd786478277836"><div class="ttname"><a href="namespace_f_c_t.html#ac1e051cf6058ce7121dd786478277836">FCT::ToVkFormat</a></div><div class="ttdeci">vk::Format ToVkFormat(Format format)</div><div class="ttdef"><b>定义</b> <a href="_context_2_format_8h_source.html#l00424">Format.h:424</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

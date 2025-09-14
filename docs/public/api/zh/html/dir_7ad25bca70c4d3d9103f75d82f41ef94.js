@@ -15,6 +15,8 @@ var dir_7ad25bca70c4d3d9103f75d82f41ef94 =
     [ "GLFW_Window.cpp", "_g_l_f_w___window_8cpp.html", null ],
     [ "GLFW_Window.h", "_g_l_f_w___window_8h.html", "_g_l_f_w___window_8h" ],
     [ "InputStateEventHanndler.h", "_input_state_event_hanndler_8h.html", "_input_state_event_hanndler_8h" ],
+    [ "Utils.cpp", "_utils_8cpp.html", "_utils_8cpp" ],
+    [ "Utils.h", "_utils_8h.html", "_utils_8h" ],
     [ "Window.cpp", "_window_8cpp.html", null ],
     [ "Window.h", "_window_8h.html", "_window_8h" ]
 ];

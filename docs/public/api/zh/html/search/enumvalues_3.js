@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['d16_5funorm_0',['D16_UNORM',['../namespace_f_c_t.html#a0741721dca246274b1b72d07249443e4a03e5886d3d7216eed4f577937132b20f',1,'FCT::D16_UNORM'],['../namespace_f_c_t.html#a0741721dca246274b1b72d07249443e4a03e5886d3d7216eed4f577937132b20f',1,'FCT::D16_UNORM'],['../namespace_f_c_t.html#a0741721dca246274b1b72d07249443e4a03e5886d3d7216eed4f577937132b20f',1,'FCT::D16_UNORM'],['../namespace_f_c_t.html#a0741721dca246274b1b72d07249443e4a03e5886d3d7216eed4f577937132b20f',1,'FCT::D16_UNORM']]],
-  ['d24_5funorm_5fs8_5fuint_1',['D24_UNORM_S8_UINT',['../namespace_f_c_t.html#a0741721dca246274b1b72d07249443e4aa6dc4e4319b85984a4ab81ae89949f88',1,'FCT::D24_UNORM_S8_UINT'],['../namespace_f_c_t.html#a0741721dca246274b1b72d07249443e4aa6dc4e4319b85984a4ab81ae89949f88',1,'FCT::D24_UNORM_S8_UINT'],['../namespace_f_c_t.html#a0741721dca246274b1b72d07249443e4aa6dc4e4319b85984a4ab81ae89949f88',1,'FCT::D24_UNORM_S8_UINT'],['../namespace_f_c_t.html#a0741721dca246274b1b72d07249443e4aa6dc4e4319b85984a4ab81ae89949f88',1,'FCT::D24_UNORM_S8_UINT']]],
-  ['d32_5fsfloat_2',['D32_SFLOAT',['../namespace_f_c_t.html#a0741721dca246274b1b72d07249443e4a23a4ce33815655871d103d3071d91072',1,'FCT::D32_SFLOAT'],['../namespace_f_c_t.html#a0741721dca246274b1b72d07249443e4a23a4ce33815655871d103d3071d91072',1,'FCT::D32_SFLOAT'],['../namespace_f_c_t.html#a0741721dca246274b1b72d07249443e4a23a4ce33815655871d103d3071d91072',1,'FCT::D32_SFLOAT'],['../namespace_f_c_t.html#a0741721dca246274b1b72d07249443e4a23a4ce33815655871d103d3071d91072',1,'FCT::D32_SFLOAT']]],
-  ['d32_5fsfloat_5fs8_5fuint_3',['D32_SFLOAT_S8_UINT',['../namespace_f_c_t.html#a0741721dca246274b1b72d07249443e4a37607c17eb1a7e0092e2c2dac3c072ea',1,'FCT::D32_SFLOAT_S8_UINT'],['../namespace_f_c_t.html#a0741721dca246274b1b72d07249443e4a37607c17eb1a7e0092e2c2dac3c072ea',1,'FCT::D32_SFLOAT_S8_UINT'],['../namespace_f_c_t.html#a0741721dca246274b1b72d07249443e4a37607c17eb1a7e0092e2c2dac3c072ea',1,'FCT::D32_SFLOAT_S8_UINT'],['../namespace_f_c_t.html#a0741721dca246274b1b72d07249443e4a37607c17eb1a7e0092e2c2dac3c072ea',1,'FCT::D32_SFLOAT_S8_UINT']]],
+  ['d16_5funorm_0',['D16_UNORM',['../namespace_f_c_t.html#a0741721dca246274b1b72d07249443e4a03e5886d3d7216eed4f577937132b20f',1,'FCT']]],
+  ['d24_5funorm_5fs8_5fuint_1',['D24_UNORM_S8_UINT',['../namespace_f_c_t.html#a0741721dca246274b1b72d07249443e4aa6dc4e4319b85984a4ab81ae89949f88',1,'FCT']]],
+  ['d32_5fsfloat_2',['D32_SFLOAT',['../namespace_f_c_t.html#a0741721dca246274b1b72d07249443e4a23a4ce33815655871d103d3071d91072',1,'FCT']]],
+  ['d32_5fsfloat_5fs8_5fuint_3',['D32_SFLOAT_S8_UINT',['../namespace_f_c_t.html#a0741721dca246274b1b72d07249443e4a37607c17eb1a7e0092e2c2dac3c072ea',1,'FCT']]],
   ['decrementclamp_4',['DecrementClamp',['../namespace_f_c_t.html#a974ea50843d2c5ad8bbb8eb832cda07aa669ecd4a04c7b2cda3fbf54f62e180f1',1,'FCT']]],
   ['decrementwrap_5',['DecrementWrap',['../namespace_f_c_t.html#a974ea50843d2c5ad8bbb8eb832cda07aa6ec565c329385c8d59333abc6a1003d1',1,'FCT']]],
   ['defaultconfig_6',['defaultConfig',['../namespace_f_c_t.html#a0f42c8db4cad8b73d402562d575b1a1baf48e7c18fc823c3bb7afa0dadd597603',1,'FCT::defaultConfig'],['../namespace_f_c_t.html#a124d36d9f90f447cc81380138ca967ceaf48e7c18fc823c3bb7afa0dadd597603',1,'FCT::defaultConfig']]],
@@ -20,8 +20,11 @@ var searchData=
   ['depthstencilreadonlyoptimal_17',['depthStencilReadOnlyOptimal',['../namespace_f_c_t.html#aa6d1e7cd43d5bb06686de955be1a4309ae3bcd1abe55880899783d560843a498c',1,'FCT']]],
   ['depthstencilstate_18',['DepthStencilState',['../namespace_f_c_t.html#a0100ef6b5595f1c6e1ca08fb82dc0f67aacdd9cc339edada9c10fe294c4e44862',1,'FCT']]],
   ['depthtexture_19',['DepthTexture',['../namespace_f_c_t.html#a8c0a0c97235ef12c8fa799cc939337dba8ff61f00665b2125149bf524b747994f',1,'FCT']]],
-  ['drawcall_20',['DrawCall',['../namespace_f_c_t.html#a0100ef6b5595f1c6e1ca08fb82dc0f67aea4ce08ac58e79006060cbcd14e2f336',1,'FCT']]],
-  ['dstalpha_21',['DstAlpha',['../namespace_f_c_t.html#aeb26fde385511ea278759f730bd57f75af72dbe2436b38a39e5927ed644e6818b',1,'FCT']]],
-  ['dstcolor_22',['DstColor',['../namespace_f_c_t.html#aeb26fde385511ea278759f730bd57f75afaedf511c99a5461048fd6a3b73da26c',1,'FCT']]],
-  ['dynamic_23',['Dynamic',['../namespace_f_c_t.html#a0236e673f1b6fe9736bc596d7e50dc7ea971fd8cc345d8bd9f92e9f7d88fdf20c',1,'FCT']]]
+  ['diffuse_20',['diffuse',['../namespace_f_c_t_1_1_model_info.html#afd56652b6a23158d6ca2d3aab3507c37aa2b8f01051e9b67acd6050985ce2422f',1,'FCT::ModelInfo']]],
+  ['diffuseroughness_21',['diffuseRoughness',['../namespace_f_c_t_1_1_model_info.html#afd56652b6a23158d6ca2d3aab3507c37ad54895c717e9fa3d5de3e1bf187f7ba2',1,'FCT::ModelInfo']]],
+  ['displacement_22',['displacement',['../namespace_f_c_t_1_1_model_info.html#afd56652b6a23158d6ca2d3aab3507c37a0c2d35f5f278a229db5ba41d40120f1c',1,'FCT::ModelInfo']]],
+  ['drawcall_23',['DrawCall',['../namespace_f_c_t.html#a0100ef6b5595f1c6e1ca08fb82dc0f67aea4ce08ac58e79006060cbcd14e2f336',1,'FCT']]],
+  ['dstalpha_24',['DstAlpha',['../namespace_f_c_t.html#aeb26fde385511ea278759f730bd57f75af72dbe2436b38a39e5927ed644e6818b',1,'FCT']]],
+  ['dstcolor_25',['DstColor',['../namespace_f_c_t.html#aeb26fde385511ea278759f730bd57f75afaedf511c99a5461048fd6a3b73da26c',1,'FCT']]],
+  ['dynamic_26',['Dynamic',['../namespace_f_c_t.html#a0236e673f1b6fe9736bc596d7e50dc7ea971fd8cc345d8bd9f92e9f7d88fdf20c',1,'FCT']]]
 ];

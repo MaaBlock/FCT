@@ -1,7 +1,12 @@
 var class_f_c_t_1_1_sampler =
 [
     [ "~Sampler", "class_f_c_t_1_1_sampler.html#ae759f61839ced62cf9a6a7eb5ce8a997", null ],
+    [ "addRef", "class_f_c_t_1_1_sampler.html#a59c2f131121de6503df8d363b6853d45", null ],
+    [ "count", "class_f_c_t_1_1_sampler.html#a33146ec5804be422936519224a3a7b3f", null ],
     [ "create", "class_f_c_t_1_1_sampler.html#ab0770be0f1e4df8b81b7a8ad37b013e0", null ],
+    [ "deleteThis", "class_f_c_t_1_1_sampler.html#a0fea0bed50f726d3e11ddde802dac5da", null ],
+    [ "operator bool", "class_f_c_t_1_1_sampler.html#a474ad3a918f2e87d75ff16075e1caeec", null ],
+    [ "release", "class_f_c_t_1_1_sampler.html#aaf57b2df79545f2b71ae9087865dee4c", null ],
     [ "setAddressMode", "class_f_c_t_1_1_sampler.html#a7bdcf3853239359ec0cc2ea34c163eda", null ],
     [ "setAnisotropic", "class_f_c_t_1_1_sampler.html#ad57f90e576605b4d4d6a246dba90c65d", null ],
     [ "setAnisotropy", "class_f_c_t_1_1_sampler.html#a095e579b761fa2ebe7dd134e4d98b34c", null ],
@@ -28,5 +33,6 @@ var class_f_c_t_1_1_sampler =
     [ "m_minLod", "class_f_c_t_1_1_sampler.html#ac38f2ec7f6a4a15c31ba115138a1c823", null ],
     [ "m_mipLodBias", "class_f_c_t_1_1_sampler.html#aeda085a2c444205f5e8840fcd5eb5e56", null ],
     [ "m_mipmapFilter", "class_f_c_t_1_1_sampler.html#af4c567e9bae50e3ded925b35d270aac8", null ],
+    [ "m_refCount", "class_f_c_t_1_1_sampler.html#aca88529f9b473d326168fa808fd02300", null ],
     [ "m_unnormalizedCoordinates", "class_f_c_t_1_1_sampler.html#adb9c22e5ada05479222cabb5cfc26241", null ]
 ];

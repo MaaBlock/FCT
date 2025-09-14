@@ -6,6 +6,7 @@ var _context_8h =
     [ "FCT::ContextCreateFlag", "namespace_f_c_t.html#a0f42c8db4cad8b73d402562d575b1a1b", [
       [ "FCT::ContextCreateFlag::withModuleResourceManage", "namespace_f_c_t.html#a0f42c8db4cad8b73d402562d575b1a1ba44ae79148d07f2b385498c42666929b2", null ],
       [ "FCT::ContextCreateFlag::withModuleRenderGraph", "namespace_f_c_t.html#a0f42c8db4cad8b73d402562d575b1a1ba105a0cc4809da5dfea2973ecf2923d74", null ],
+      [ "FCT::ContextCreateFlag::withAutoMaxFrameInFlight", "namespace_f_c_t.html#a0f42c8db4cad8b73d402562d575b1a1bac139a16cead6b4f0b2feec3f426717cd", null ],
       [ "FCT::ContextCreateFlag::defaultConfig", "namespace_f_c_t.html#a0f42c8db4cad8b73d402562d575b1a1baf48e7c18fc823c3bb7afa0dadd597603", null ]
     ] ],
     [ "FCT::InnerSync::AdvanceFrameIndex", "namespace_f_c_t_1_1_inner_sync.html#ad2597362f14f210b2f50b418fb6a5fef", null ],

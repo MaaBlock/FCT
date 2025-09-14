@@ -98,9 +98,9 @@ $(function(){initNavTree('class_f_c_t_1_1_model_loader.html','','class_f_c_t_1_1
 <div class="dyncontent">
 <div class="center"><img src="class_f_c_t_1_1_model_loader__inherit__graph.png" border="0" usemap="#a_f_c_t_1_1_model_loader_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
 <map name="a_f_c_t_1_1_model_loader_inherit__map" id="a_f_c_t_1_1_model_loader_inherit__map">
-<area shape="rect" title=" " alt="" coords="30,5,152,69"/>
-<area shape="rect" href="class_f_c_t_1_1_assimp___model_loader.html" title=" " alt="" coords="5,117,177,180"/>
-<area shape="poly" title=" " alt="" coords="94,84,94,117,88,117,88,84"/>
+<area shape="rect" title=" " alt="" coords="5,5,252,204"/>
+<area shape="rect" href="class_f_c_t_1_1_assimp___model_loader.html" title=" " alt="" coords="5,252,252,393"/>
+<area shape="poly" title=" " alt="" coords="132,219,132,252,126,252,126,219"/>
 </map>
 </div>
 <div class="dynheader">
@@ -108,18 +108,181 @@ FCT::ModelLoader 的协作图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_f_c_t_1_1_model_loader__coll__graph.png" border="0" usemap="#a_f_c_t_1_1_model_loader_coll__map" loading="lazy" alt="Collaboration graph"/></div>
 <map name="a_f_c_t_1_1_model_loader_coll__map" id="a_f_c_t_1_1_model_loader_coll__map">
-<area shape="rect" title=" " alt="" coords="5,5,128,69"/>
+<area shape="rect" title=" " alt="" coords="5,5,252,204"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
 <tr class="memitem:a626e9ea641ff8fb6385615c0f76a55e9" id="r_a626e9ea641ff8fb6385615c0f76a55e9"><td class="memItemLeft" align="right" valign="top">virtual std::unique_ptr&lt; <a class="el" href="struct_f_c_t_1_1_model_data.html">ModelData</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a626e9ea641ff8fb6385615c0f76a55e9">loadModel</a> (const std::string &amp;path)=0</td></tr>
+<tr class="memitem:ac42cb1875ed8979751426a1e7cd4c405" id="r_ac42cb1875ed8979751426a1e7cd4c405"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="struct_f_c_t_1_1_model_info_1_1_scene_info.html">ModelInfo::SceneInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac42cb1875ed8979751426a1e7cd4c405">loadModelInfo</a> (const std::string &amp;path)=0</td></tr>
+<tr class="memitem:a404381f3a2b69398161fda63de787154" id="r_a404381f3a2b69398161fda63de787154"><td class="memItemLeft" align="right" valign="top">virtual std::set&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a404381f3a2b69398161fda63de787154">resolveTexturePaths</a> (const std::string &amp;modelPath) const =0</td></tr>
+<tr class="memdesc:a404381f3a2b69398161fda63de787154"><td class="mdescLeft">&#160;</td><td class="mdescRight">解析模型依赖的纹理位置  <br /></td></tr>
+<tr class="memitem:a1bc7fcb35067b9520ba8a709be445d61" id="r_a1bc7fcb35067b9520ba8a709be445d61"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1bc7fcb35067b9520ba8a709be445d61">getEmbeddedTextureData</a> (const std::string &amp;modelPath, int textureIndex, std::vector&lt; unsigned char &gt; &amp;outData) const =0</td></tr>
+<tr class="memdesc:a1bc7fcb35067b9520ba8a709be445d61"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取内嵌纹理数据  <br /></td></tr>
+<tr class="memitem:ad75ed4a6b1fb24e8b25932e90c95da28" id="r_ad75ed4a6b1fb24e8b25932e90c95da28"><td class="memItemLeft" align="right" valign="top">std::set&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad75ed4a6b1fb24e8b25932e90c95da28">resolveModePaths</a> (const std::string &amp;modelPath)</td></tr>
+<tr class="memdesc:ad75ed4a6b1fb24e8b25932e90c95da28"><td class="mdescLeft">&#160;</td><td class="mdescRight">解析模型路径，获取模型文件的所有依赖路径  <br /></td></tr>
+<tr class="memitem:a64585cf5a5bbf34f12a617796a293604" id="r_a64585cf5a5bbf34f12a617796a293604"><td class="memItemLeft" align="right" valign="top">std::set&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a64585cf5a5bbf34f12a617796a293604">getSupportedExtensions</a> () const</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected 成员函数</h2></td></tr>
+<tr class="memitem:a49fa8c80a166e88ba09cb5f43489c6c7" id="r_a49fa8c80a166e88ba09cb5f43489c6c7"><td class="memItemLeft" align="right" valign="top">std::set&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a49fa8c80a166e88ba09cb5f43489c6c7">getModelSpecificDependencies</a> (const std::string &amp;modelPath) const</td></tr>
+<tr class="memitem:a8ed2f000f53ab1edb5a9bcc564369a21" id="r_a8ed2f000f53ab1edb5a9bcc564369a21"><td class="memItemLeft" align="right" valign="top">virtual std::set&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ed2f000f53ab1edb5a9bcc564369a21">getPlatformSupportedExtensions</a> () const =0</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">详细描述</h2>
 <div class="textblock">
-<p class="definition">在文件 <a class="el" href="_model_loader_8h_source.html">ModelLoader.h</a> 第 <a class="el" href="_model_loader_8h_source.html#l00176">176</a> 行定义.</p>
+<p class="definition">在文件 <a class="el" href="_model_loader_8h_source.html">ModelLoader.h</a> 第 <a class="el" href="_model_loader_8h_source.html#l00325">325</a> 行定义.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">成员函数说明</h2>
+<a id="a1bc7fcb35067b9520ba8a709be445d61" name="a1bc7fcb35067b9520ba8a709be445d61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bc7fcb35067b9520ba8a709be445d61">&#9670;&#160;</a></span>getEmbeddedTextureData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool FCT::ModelLoader::getEmbeddedTextureData </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>modelPath</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>textureIndex</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; unsigned char &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>outData</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取内嵌纹理数据 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">modelPath</td><td>模型文件路径 </td></tr>
+    <tr><td class="paramname">textureIndex</td><td>内嵌纹理索引（例如"*0"中的0） </td></tr>
+    <tr><td class="paramname">outData</td><td>输出的纹理数据容器 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>是否成功获取纹理数据 </dd></dl>
+
+<p>在 <a class="el" href="class_f_c_t_1_1_assimp___model_loader.html#ad43ff9b2f0268b53e5d03bdfb3b17eb5">FCT::Assimp_ModelLoader</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a49fa8c80a166e88ba09cb5f43489c6c7" name="a49fa8c80a166e88ba09cb5f43489c6c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49fa8c80a166e88ba09cb5f43489c6c7">&#9670;&#160;</a></span>getModelSpecificDependencies()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::set&lt; std::string &gt; FCT::ModelLoader::getModelSpecificDependencies </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>modelPath</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_model_loader_8cpp_source.html">ModelLoader.cpp</a> 第 <a class="el" href="_model_loader_8cpp_source.html#l00044">44</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_model_loader_a49fa8c80a166e88ba09cb5f43489c6c7_icgraph.png" border="0" usemap="#aclass_f_c_t_1_1_model_loader_a49fa8c80a166e88ba09cb5f43489c6c7_icgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_model_loader_a49fa8c80a166e88ba09cb5f43489c6c7_icgraph" id="aclass_f_c_t_1_1_model_loader_a49fa8c80a166e88ba09cb5f43489c6c7_icgraph">
+<area shape="rect" title=" " alt="" coords="250,5,453,44"/>
+<area shape="rect" href="class_f_c_t_1_1_model_loader.html#ad75ed4a6b1fb24e8b25932e90c95da28" title="解析模型路径，获取模型文件的所有依赖路径" alt="" coords="5,5,202,44"/>
+<area shape="poly" title=" " alt="" coords="234,27,202,27,202,22,234,22"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8ed2f000f53ab1edb5a9bcc564369a21" name="a8ed2f000f53ab1edb5a9bcc564369a21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ed2f000f53ab1edb5a9bcc564369a21">&#9670;&#160;</a></span>getPlatformSupportedExtensions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::set&lt; std::string &gt; FCT::ModelLoader::getPlatformSupportedExtensions </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="class_f_c_t_1_1_assimp___model_loader.html#a7f0f08f6e17d1969100e744eac66566a">FCT::Assimp_ModelLoader</a> 内被实现.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_model_loader_a8ed2f000f53ab1edb5a9bcc564369a21_icgraph.png" border="0" usemap="#aclass_f_c_t_1_1_model_loader_a8ed2f000f53ab1edb5a9bcc564369a21_icgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_model_loader_a8ed2f000f53ab1edb5a9bcc564369a21_icgraph" id="aclass_f_c_t_1_1_model_loader_a8ed2f000f53ab1edb5a9bcc564369a21_icgraph">
+<area shape="rect" title=" " alt="" coords="285,5,509,44"/>
+<area shape="rect" href="class_f_c_t_1_1_model_loader.html#a64585cf5a5bbf34f12a617796a293604" title=" " alt="" coords="5,5,237,44"/>
+<area shape="poly" title=" " alt="" coords="269,27,237,27,237,22,269,22"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a64585cf5a5bbf34f12a617796a293604" name="a64585cf5a5bbf34f12a617796a293604"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64585cf5a5bbf34f12a617796a293604">&#9670;&#160;</a></span>getSupportedExtensions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::set&lt; std::string &gt; FCT::ModelLoader::getSupportedExtensions </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_model_loader_8cpp_source.html">ModelLoader.cpp</a> 第 <a class="el" href="_model_loader_8cpp_source.html#l00073">73</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_model_loader_a64585cf5a5bbf34f12a617796a293604_cgraph.png" border="0" usemap="#aclass_f_c_t_1_1_model_loader_a64585cf5a5bbf34f12a617796a293604_cgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_model_loader_a64585cf5a5bbf34f12a617796a293604_cgraph" id="aclass_f_c_t_1_1_model_loader_a64585cf5a5bbf34f12a617796a293604_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,237,44"/>
+<area shape="rect" href="class_f_c_t_1_1_model_loader.html#a8ed2f000f53ab1edb5a9bcc564369a21" title=" " alt="" coords="285,5,509,44"/>
+<area shape="poly" title=" " alt="" coords="237,22,269,22,269,27,237,27"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a626e9ea641ff8fb6385615c0f76a55e9" name="a626e9ea641ff8fb6385615c0f76a55e9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a626e9ea641ff8fb6385615c0f76a55e9">&#9670;&#160;</a></span>loadModel()</h2>
 
@@ -147,8 +310,122 @@ Public 成员函数</h2></td></tr>
 
 </div>
 </div>
+<a id="ac42cb1875ed8979751426a1e7cd4c405" name="ac42cb1875ed8979751426a1e7cd4c405"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac42cb1875ed8979751426a1e7cd4c405">&#9670;&#160;</a></span>loadModelInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="struct_f_c_t_1_1_model_info_1_1_scene_info.html">ModelInfo::SceneInfo</a> FCT::ModelLoader::loadModelInfo </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="class_f_c_t_1_1_assimp___model_loader.html#a1869f7e6f2562c9ed06c4686ddbd1c66">FCT::Assimp_ModelLoader</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="ad75ed4a6b1fb24e8b25932e90c95da28" name="ad75ed4a6b1fb24e8b25932e90c95da28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad75ed4a6b1fb24e8b25932e90c95da28">&#9670;&#160;</a></span>resolveModePaths()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::set&lt; std::string &gt; FCT::ModelLoader::resolveModePaths </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>modelPath</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>解析模型路径，获取模型文件的所有依赖路径 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">modelPath</td><td>模型文件路径 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>依赖路径集合 </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="_model_loader_8cpp_source.html">ModelLoader.cpp</a> 第 <a class="el" href="_model_loader_8cpp_source.html#l00003">3</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_model_loader_ad75ed4a6b1fb24e8b25932e90c95da28_cgraph.png" border="0" usemap="#aclass_f_c_t_1_1_model_loader_ad75ed4a6b1fb24e8b25932e90c95da28_cgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_model_loader_ad75ed4a6b1fb24e8b25932e90c95da28_cgraph" id="aclass_f_c_t_1_1_model_loader_ad75ed4a6b1fb24e8b25932e90c95da28_cgraph">
+<area shape="rect" title="解析模型路径，获取模型文件的所有依赖路径" alt="" coords="5,37,202,76"/>
+<area shape="rect" href="class_f_c_t_1_1_model_loader.html#a49fa8c80a166e88ba09cb5f43489c6c7" title=" " alt="" coords="250,5,453,44"/>
+<area shape="poly" title=" " alt="" coords="202,41,234,37,235,42,202,47"/>
+<area shape="rect" href="class_f_c_t_1_1_model_loader.html#a404381f3a2b69398161fda63de787154" title="解析模型依赖的纹理位置" alt="" coords="253,68,450,107"/>
+<area shape="poly" title=" " alt="" coords="202,66,238,71,238,76,202,71"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a404381f3a2b69398161fda63de787154" name="a404381f3a2b69398161fda63de787154"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a404381f3a2b69398161fda63de787154">&#9670;&#160;</a></span>resolveTexturePaths()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::set&lt; std::string &gt; FCT::ModelLoader::resolveTexturePaths </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>modelPath</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>解析模型依赖的纹理位置 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">modelPath</td><td>模型路径 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>纹理绝对路径 </dd></dl>
+
+<p>在 <a class="el" href="class_f_c_t_1_1_assimp___model_loader.html#adcfd8f19478b9c9804c819019f2632dc">FCT::Assimp_ModelLoader</a> 内被实现.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_f_c_t_1_1_model_loader_a404381f3a2b69398161fda63de787154_icgraph.png" border="0" usemap="#aclass_f_c_t_1_1_model_loader_a404381f3a2b69398161fda63de787154_icgraph" loading="lazy" alt=""/></div>
+<map name="aclass_f_c_t_1_1_model_loader_a404381f3a2b69398161fda63de787154_icgraph" id="aclass_f_c_t_1_1_model_loader_a404381f3a2b69398161fda63de787154_icgraph">
+<area shape="rect" title="解析模型依赖的纹理位置" alt="" coords="250,5,446,44"/>
+<area shape="rect" href="class_f_c_t_1_1_model_loader.html#ad75ed4a6b1fb24e8b25932e90c95da28" title="解析模型路径，获取模型文件的所有依赖路径" alt="" coords="5,5,202,44"/>
+<area shape="poly" title=" " alt="" coords="234,27,202,27,202,22,234,22"/>
+</map>
+</div>
+
+</div>
+</div>
 <hr/>该类的文档由以下文件生成:<ul>
 <li>src/ModelLoader/<a class="el" href="_model_loader_8h_source.html">ModelLoader.h</a></li>
+<li>src/ModelLoader/<a class="el" href="_model_loader_8cpp_source.html">ModelLoader.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

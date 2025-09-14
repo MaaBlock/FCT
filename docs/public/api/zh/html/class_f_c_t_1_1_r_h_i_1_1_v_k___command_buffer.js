@@ -1,6 +1,7 @@
 var class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer =
 [
     [ "VK_CommandBuffer", "class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#adf6a0192fe851bf1c0b3603f80b1c74e", null ],
+    [ "~VK_CommandBuffer", "class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a6b6c534657e2c6bc0edc3ef8f6c157b6", null ],
     [ "addRef", "class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#a59c2f131121de6503df8d363b6853d45", null ],
     [ "addSignalSemaphore", "class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#abfc610f45b65f65b5bb52f41c78f09cf", null ],
     [ "addWaitSemaphore", "class_f_c_t_1_1_r_h_i_1_1_v_k___command_buffer.html#ae144aad972520d4c900c99d7dbfc9479", null ],

@@ -9,6 +9,8 @@ var class_f_c_t_1_1_command_buffer_nodes_1_1_input_from_window =
     [ "markAllFramesDirty", "class_f_c_t_1_1_command_buffer_nodes_1_1_input_from_window.html#a553e804184a21ade5801289f63dd1b4b", null ],
     [ "markFrameClean", "class_f_c_t_1_1_command_buffer_nodes_1_1_input_from_window.html#a4d8fe0d4816d46f005738c0ba7c6c435", null ],
     [ "markFrameDirty", "class_f_c_t_1_1_command_buffer_nodes_1_1_input_from_window.html#a8ec6bf83ef2c11fe68499fdc306d7150", null ],
+    [ "removeInputEdge", "class_f_c_t_1_1_command_buffer_nodes_1_1_input_from_window.html#a7a0dad2940d42907e0b8f73aee56a747", null ],
+    [ "removeOutputEdge", "class_f_c_t_1_1_command_buffer_nodes_1_1_input_from_window.html#a287a0d9f22f7d978691f2d886f5b7942", null ],
     [ "updateSynchronization", "class_f_c_t_1_1_command_buffer_nodes_1_1_input_from_window.html#a96a8214fec6c8ed350a16eec4c578b7b", null ],
     [ "m_collectedImageAvailable", "class_f_c_t_1_1_command_buffer_nodes_1_1_input_from_window.html#aa7e792230cf8dadf3b9b8ccfdaedefa5", null ],
     [ "m_frameDirty", "class_f_c_t_1_1_command_buffer_nodes_1_1_input_from_window.html#a5434bc1cda776b1d1ebd83e572ff0abf", null ],

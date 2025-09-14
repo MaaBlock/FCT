@@ -2,8 +2,13 @@ var class_f_c_t_1_1_r_h_i_1_1_v_k___sampler =
 [
     [ "VK_Sampler", "class_f_c_t_1_1_r_h_i_1_1_v_k___sampler.html#a2fabaf9a43eaa0aff3dc5cb3bdd67a39", null ],
     [ "~VK_Sampler", "class_f_c_t_1_1_r_h_i_1_1_v_k___sampler.html#a6eceac70b953ef5aadcb6ccb6b61189b", null ],
+    [ "addRef", "class_f_c_t_1_1_r_h_i_1_1_v_k___sampler.html#a59c2f131121de6503df8d363b6853d45", null ],
+    [ "count", "class_f_c_t_1_1_r_h_i_1_1_v_k___sampler.html#a33146ec5804be422936519224a3a7b3f", null ],
     [ "create", "class_f_c_t_1_1_r_h_i_1_1_v_k___sampler.html#a69cdc9eb8bd18f6af09400df5b890fe6", null ],
+    [ "deleteThis", "class_f_c_t_1_1_r_h_i_1_1_v_k___sampler.html#a0fea0bed50f726d3e11ddde802dac5da", null ],
     [ "getSampler", "class_f_c_t_1_1_r_h_i_1_1_v_k___sampler.html#a44feb18938c0b119682cdf4258aea374", null ],
+    [ "operator bool", "class_f_c_t_1_1_r_h_i_1_1_v_k___sampler.html#a474ad3a918f2e87d75ff16075e1caeec", null ],
+    [ "release", "class_f_c_t_1_1_r_h_i_1_1_v_k___sampler.html#aaf57b2df79545f2b71ae9087865dee4c", null ],
     [ "setAddressMode", "class_f_c_t_1_1_r_h_i_1_1_v_k___sampler.html#a7bdcf3853239359ec0cc2ea34c163eda", null ],
     [ "setAnisotropic", "class_f_c_t_1_1_r_h_i_1_1_v_k___sampler.html#ad57f90e576605b4d4d6a246dba90c65d", null ],
     [ "setAnisotropy", "class_f_c_t_1_1_r_h_i_1_1_v_k___sampler.html#a095e579b761fa2ebe7dd134e4d98b34c", null ],
@@ -36,6 +41,7 @@ var class_f_c_t_1_1_r_h_i_1_1_v_k___sampler =
     [ "m_minLod", "class_f_c_t_1_1_r_h_i_1_1_v_k___sampler.html#ac38f2ec7f6a4a15c31ba115138a1c823", null ],
     [ "m_mipLodBias", "class_f_c_t_1_1_r_h_i_1_1_v_k___sampler.html#aeda085a2c444205f5e8840fcd5eb5e56", null ],
     [ "m_mipmapFilter", "class_f_c_t_1_1_r_h_i_1_1_v_k___sampler.html#af4c567e9bae50e3ded925b35d270aac8", null ],
+    [ "m_refCount", "class_f_c_t_1_1_r_h_i_1_1_v_k___sampler.html#aca88529f9b473d326168fa808fd02300", null ],
     [ "m_sampler", "class_f_c_t_1_1_r_h_i_1_1_v_k___sampler.html#a47b7f8575d92d873f6d2d7c458c66318", null ],
     [ "m_unnormalizedCoordinates", "class_f_c_t_1_1_r_h_i_1_1_v_k___sampler.html#adb9c22e5ada05479222cabb5cfc26241", null ]
 ];

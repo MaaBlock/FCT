@@ -3,6 +3,7 @@ var class_f_c_t_1_1_event_handler =
     [ "addRef", "class_f_c_t_1_1_event_handler.html#a59c2f131121de6503df8d363b6853d45", null ],
     [ "count", "class_f_c_t_1_1_event_handler.html#a33146ec5804be422936519224a3a7b3f", null ],
     [ "deleteThis", "class_f_c_t_1_1_event_handler.html#a0fea0bed50f726d3e11ddde802dac5da", null ],
+    [ "onFileDrop", "class_f_c_t_1_1_event_handler.html#a1dc2f12bc050871f5cb19d9acfc0a4b2", null ],
     [ "onKeyDown", "class_f_c_t_1_1_event_handler.html#a0928fc37323389e80dd610fce41c68d0", null ],
     [ "onKeyUp", "class_f_c_t_1_1_event_handler.html#a991c759490310be0dd8201c5d1ef9c0c", null ],
     [ "onLButtonDown", "class_f_c_t_1_1_event_handler.html#a0e55301bd836d93c72c3010d38011c82", null ],

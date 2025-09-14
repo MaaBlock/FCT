@@ -1,7 +1,7 @@
 var searchData=
 [
   ['vec2_0',['Vec2',['../struct_f_c_t_1_1_vec2.html#a43d454e00e233db6aad7ae72c5412454',1,'FCT::Vec2::Vec2(int x, int y)'],['../struct_f_c_t_1_1_vec2.html#a90185fc34156cb6713bd417792dbcdf5',1,'FCT::Vec2::Vec2(float x=0.0f, float y=0.0f)'],['../struct_f_c_t_1_1_vec2.html#ad19ecc2cd6dc79397802e4db08ec772f',1,'FCT::Vec2::Vec2(uint32_t x, uint32_t y)']]],
-  ['vec3_1',['Vec3',['../struct_f_c_t_1_1_vec3.html#a58e43b4ac251f676805bd68fcde8f15e',1,'FCT::Vec3::Vec3(float x=0.0f, float y=0.0f, float z=0.0f)'],['../struct_f_c_t_1_1_vec3.html#a128ecae74e170db7c420dedc8c7533a3',1,'FCT::Vec3::Vec3(const Vec3 &amp;other)']]],
+  ['vec3_1',['Vec3',['../struct_f_c_t_1_1_vec3.html#ad654e7fe212a41ff78265492bf82356f',1,'FCT::Vec3::Vec3(const physx::PxVec3 &amp;other)'],['../struct_f_c_t_1_1_vec3.html#a58e43b4ac251f676805bd68fcde8f15e',1,'FCT::Vec3::Vec3(float x=0.0f, float y=0.0f, float z=0.0f)'],['../struct_f_c_t_1_1_vec3.html#a128ecae74e170db7c420dedc8c7533a3',1,'FCT::Vec3::Vec3(const Vec3 &amp;other)']]],
   ['vec4_2',['Vec4',['../struct_f_c_t_1_1_vec4.html#aafaec34d5b6e9ca0651e39f9da7ac443',1,'FCT::Vec4::Vec4(float x=0.0f, float y=0.0f, float z=0.0f, float w=0.0f)'],['../struct_f_c_t_1_1_vec4.html#af5e34b98b8aaf385ac84e4d9665edce8',1,'FCT::Vec4::Vec4(Vec3 vec, float w=0.0f)'],['../struct_f_c_t_1_1_vec4.html#a6e18f3055141dbe362aeaa8e2635f2f8',1,'FCT::Vec4::Vec4(Vec2 v, float z=0.0f, float w=0.0f)']]],
   ['vector4_3',['Vector4',['../struct_f_c_t_1_1_vector4.html#a5994f6709505bb3da8eec8d710a6c59a',1,'FCT::Vector4']]],
   ['vertex_4',['Vertex',['../class_f_c_t_1_1_vertex.html#a82ac2a8ed532e9b811c05db763564c75',1,'FCT::Vertex']]],

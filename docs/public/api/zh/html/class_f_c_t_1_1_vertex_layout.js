@@ -11,6 +11,7 @@ var class_f_c_t_1_1_vertex_layout =
     [ "getElementOffset", "class_f_c_t_1_1_vertex_layout.html#a3ad89b1d6626b454fbc6c869c611a0a1", null ],
     [ "getElementOffsetBySemantic", "class_f_c_t_1_1_vertex_layout.html#a491e58f4ddb893bc51c3fb5aec4fc16d", null ],
     [ "getElementOffsetByType", "class_f_c_t_1_1_vertex_layout.html#a524184454d9e4dc63f8d4fed949a9d0b", null ],
+    [ "getHash", "class_f_c_t_1_1_vertex_layout.html#aa9caea91ffd07ba29f8fe9bb2dbe2c55", null ],
     [ "getStride", "class_f_c_t_1_1_vertex_layout.html#a3b31b1bfb8eeffa15d51f8bed3962733", null ],
     [ "m_elementCount", "class_f_c_t_1_1_vertex_layout.html#ae08626387512928c70619c3a7fcf21d4", null ],
     [ "m_elements", "class_f_c_t_1_1_vertex_layout.html#a2607fc048496f05722e83c6524347317", null ],

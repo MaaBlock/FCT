@@ -17,6 +17,7 @@ var class_f_c_t_1_1_pixel_layout =
     [ "getElementOffset", "class_f_c_t_1_1_pixel_layout.html#a6665e4b21b9ea321216588b4f641b46f", null ],
     [ "getElementOffsetBySemantic", "class_f_c_t_1_1_pixel_layout.html#a36cbbde70501a134bac613c6eae8b54f", null ],
     [ "getElementOffsetByType", "class_f_c_t_1_1_pixel_layout.html#ac32609d06ca129765e1045ebb94f9fc8", null ],
+    [ "getHash", "class_f_c_t_1_1_pixel_layout.html#a34e8be6fb6bf5d8ecc80f549975f814b", null ],
     [ "getStride", "class_f_c_t_1_1_pixel_layout.html#af372c779c93a54ea69dcd4c2b2c4b5a1", null ],
     [ "m_elementCount", "class_f_c_t_1_1_pixel_layout.html#a747df8e61a51b57426c51933a68daaa2", null ],
     [ "m_elements", "class_f_c_t_1_1_pixel_layout.html#a84a9316cb4e597631f11b825482735dc", null ],

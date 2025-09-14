@@ -98,9 +98,9 @@ $(function(){initNavTree('class_f_c_t_1_1_image_loader.html','','class_f_c_t_1_1
 <div class="dyncontent">
 <div class="center"><img src="class_f_c_t_1_1_image_loader__inherit__graph.png" border="0" usemap="#a_f_c_t_1_1_image_loader_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
 <map name="a_f_c_t_1_1_image_loader_inherit__map" id="a_f_c_t_1_1_image_loader_inherit__map">
-<area shape="rect" title=" " alt="" coords="6,5,197,146"/>
-<area shape="rect" href="class_f_c_t_1_1_free_image___image_loader.html" title=" " alt="" coords="5,194,198,393"/>
-<area shape="poly" title=" " alt="" coords="104,161,104,194,99,194,99,161"/>
+<area shape="rect" title=" " alt="" coords="6,5,197,165"/>
+<area shape="rect" href="class_f_c_t_1_1_free_image___image_loader.html" title=" " alt="" coords="5,213,198,431"/>
+<area shape="poly" title=" " alt="" coords="104,180,104,214,99,214,99,180"/>
 </map>
 </div>
 <div class="dynheader">
@@ -108,7 +108,7 @@ FCT::ImageLoader 的协作图:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_f_c_t_1_1_image_loader__coll__graph.png" border="0" usemap="#a_f_c_t_1_1_image_loader_coll__map" loading="lazy" alt="Collaboration graph"/></div>
 <map name="a_f_c_t_1_1_image_loader_coll__map" id="a_f_c_t_1_1_image_loader_coll__map">
-<area shape="rect" title=" " alt="" coords="5,5,196,146"/>
+<area shape="rect" title=" " alt="" coords="5,5,196,165"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -119,6 +119,7 @@ FCT::ImageLoader 的协作图:</div>
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 成员函数</h2></td></tr>
 <tr class="memitem:a48b552bedde562e3cde2b6bd50900fb0" id="r_a48b552bedde562e3cde2b6bd50900fb0"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a48b552bedde562e3cde2b6bd50900fb0">~ImageLoader</a> ()=default</td></tr>
+<tr class="memitem:a3061fa6cd78af1928cfe3539b17cdb9c" id="r_a3061fa6cd78af1928cfe3539b17cdb9c"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="struct_f_c_t_1_1_image_loader_1_1_image_data.html">ImageData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3061fa6cd78af1928cfe3539b17cdb9c">loadFromMemory</a> (const unsigned char *data, size_t size)=0</td></tr>
 <tr class="memitem:a0e1b6e011b71a5d73ff9f9e22319268c" id="r_a0e1b6e011b71a5d73ff9f9e22319268c"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="struct_f_c_t_1_1_image_loader_1_1_image_data.html">ImageData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e1b6e011b71a5d73ff9f9e22319268c">load</a> (const std::string &amp;filename)=0</td></tr>
 <tr class="memitem:a8ec1c74db7d2e07693d553e72b0e09d3" id="r_a8ec1c74db7d2e07693d553e72b0e09d3"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ec1c74db7d2e07693d553e72b0e09d3">save</a> (const std::string &amp;filename, const <a class="el" href="struct_f_c_t_1_1_image_loader_1_1_image_data.html">ImageData</a> &amp;imageData)=0</td></tr>
 <tr class="memitem:a62bb3c434350ea7439d0c39338a0acf4" id="r_a62bb3c434350ea7439d0c39338a0acf4"><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a62bb3c434350ea7439d0c39338a0acf4">getSupportedExtensions</a> () const =0</td></tr>
@@ -233,6 +234,37 @@ Protected 成员函数</h2></td></tr>
 </div><div class="memdoc">
 
 <p>在 <a class="el" href="class_f_c_t_1_1_free_image___image_loader.html#afebfb60e26cb7e46add4a543e1e4150e">FCT::FreeImage_ImageLoader</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="a3061fa6cd78af1928cfe3539b17cdb9c" name="a3061fa6cd78af1928cfe3539b17cdb9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3061fa6cd78af1928cfe3539b17cdb9c">&#9670;&#160;</a></span>loadFromMemory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="struct_f_c_t_1_1_image_loader_1_1_image_data.html">ImageData</a> FCT::ImageLoader::loadFromMemory </td>
+          <td>(</td>
+          <td class="paramtype">const unsigned char *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="class_f_c_t_1_1_free_image___image_loader.html#a73b7af2e878de91b207bc03a0a2a2ce8">FCT::FreeImage_ImageLoader</a> 内被实现.</p>
 
 </div>
 </div>

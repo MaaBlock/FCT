@@ -12,6 +12,8 @@ var class_f_c_t_1_1_command_buffer_nodes_1_1_output_to_window =
     [ "markAllFramesDirty", "class_f_c_t_1_1_command_buffer_nodes_1_1_output_to_window.html#a553e804184a21ade5801289f63dd1b4b", null ],
     [ "markFrameClean", "class_f_c_t_1_1_command_buffer_nodes_1_1_output_to_window.html#a4d8fe0d4816d46f005738c0ba7c6c435", null ],
     [ "markFrameDirty", "class_f_c_t_1_1_command_buffer_nodes_1_1_output_to_window.html#a8ec6bf83ef2c11fe68499fdc306d7150", null ],
+    [ "removeInputEdge", "class_f_c_t_1_1_command_buffer_nodes_1_1_output_to_window.html#ace6ae872f8d6551d0e91a99323654285", null ],
+    [ "removeOutputEdge", "class_f_c_t_1_1_command_buffer_nodes_1_1_output_to_window.html#a0defc7dd98b79e773766f88a48edebe8", null ],
     [ "updateSynchronization", "class_f_c_t_1_1_command_buffer_nodes_1_1_output_to_window.html#aac73a79d86c3a52708ec017242f342ce", null ],
     [ "m_collectedFences", "class_f_c_t_1_1_command_buffer_nodes_1_1_output_to_window.html#aec935e764bd911e9eb035d3b8618de87", null ],
     [ "m_collectedRenderFinished", "class_f_c_t_1_1_command_buffer_nodes_1_1_output_to_window.html#acf08274d283740df50e887331581c646", null ],

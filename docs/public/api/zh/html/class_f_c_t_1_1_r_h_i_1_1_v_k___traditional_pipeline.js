@@ -1,6 +1,7 @@
 var class_f_c_t_1_1_r_h_i_1_1_v_k___traditional_pipeline =
 [
     [ "VK_TraditionalPipeline", "class_f_c_t_1_1_r_h_i_1_1_v_k___traditional_pipeline.html#a6a068f7a05ac880f0dc7574bcbc62a1a", null ],
+    [ "~VK_TraditionalPipeline", "class_f_c_t_1_1_r_h_i_1_1_v_k___traditional_pipeline.html#ad6f54943b6ee9d24c27d5c2f2b24c8d1", null ],
     [ "addRef", "class_f_c_t_1_1_r_h_i_1_1_v_k___traditional_pipeline.html#a59c2f131121de6503df8d363b6853d45", null ],
     [ "addResources", "class_f_c_t_1_1_r_h_i_1_1_v_k___traditional_pipeline.html#a93984f3b030cd4ea5edf5a2f0e446a16", null ],
     [ "bind", "class_f_c_t_1_1_r_h_i_1_1_v_k___traditional_pipeline.html#a6f6f05b9d19d5820c83d50a265bb9a73", null ],

@@ -13,6 +13,8 @@ var struct_f_c_t_1_1_vec2 =
     [ "operator/", "struct_f_c_t_1_1_vec2.html#a82ada2b8811cbf153ea1f11f5ddaed1d", null ],
     [ "operator/", "struct_f_c_t_1_1_vec2.html#ad717200b90aeb998160d06139296aa34", null ],
     [ "operator==", "struct_f_c_t_1_1_vec2.html#a73da3e42e71542f38d8bb1bb71d561d5", null ],
+    [ "serialize", "struct_f_c_t_1_1_vec2.html#a12acd5a288430f835fb5e654f53128ac", null ],
+    [ "boost::serialization::access", "struct_f_c_t_1_1_vec2.html#ac98d07dd8f7b70e16ccb9a01abf56b9c", null ],
     [ "x", "struct_f_c_t_1_1_vec2.html#a46dd201ced58e5d5012381fa82e2f023", null ],
     [ "y", "struct_f_c_t_1_1_vec2.html#aef6165dc59972cc930197af4e4bf2b2f", null ]
 ];
