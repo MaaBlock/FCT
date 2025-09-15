@@ -31,6 +31,9 @@ namespace FCT
 
     void Layout::addTextureSlot(FCT::TextureElement element)
     {
+        if (m_resourceLayout.findTextureIndex(element.getName()) != -1) {
+            return;
+        }
         m_resourceLayout.addTexture(element);
         if (element.getShaderStages() & FCT::ShaderStage::Vertex)
         {
@@ -46,11 +49,13 @@ namespace FCT
     }
     void Layout::addUniformSlot(const UniformSlot& uniformSlot)
     {
+        if (m_uniformLayouts.count(uniformSlot.getName())) {
+            return;
+        }
         m_uniformLayouts[uniformSlot.getName()] = uniformSlot;
         clearShaderCache();
         clearPipelineCache();
         clearPassResourceCache();
-
     }
 
     void Layout::addTextureSlot(const FCT::TextureSlot& slot)
@@ -64,10 +69,9 @@ namespace FCT
 
     void Layout::addSamplerSlot(const SamplerSlot& samplerSlot)
     {
-        // 检查是否已存在相同名字的SamplerSlot，避免重复添加
         auto existingSampler = m_resourceLayout.findSampler(samplerSlot.getName());
         if (existingSampler.getName() != nullptr && existingSampler.getName()[0] != '\0') {
-            return; // 已存在，不重复添加
+            return;
         }
 
         m_resourceLayout.addSampler(samplerSlot);
@@ -411,15 +415,38 @@ namespace FCT
         return m_passResourceCache.get(m_passResourceState, [this](const PassResourceState& state)
         {
             auto ret = m_ctx->createResource<FCT::PassResource>();
-            for (const auto& tex : state.boundTextures) {
-                ret->addTexture( tex.second,m_resourceLayout.findTexture(tex.first.c_str()));
+
+            for (const auto& layoutPair : m_uniformLayouts) {
+                const std::string& name = layoutPair.first;
+                const UniformSlot& slot = layoutPair.second;
+                auto boundIt = state.boundUniforms.find(name);
+                if (boundIt != state.boundUniforms.end()) {
+                    ret->addConstBuffer(boundIt->second);
+                } else {
+                    ret->addConstBuffer(m_ctx->getEmptyConstBuffer(slot));
+                }
             }
-            for (const auto& samp : state.boundSamplers) {
-                ret->addSampler(samp.second,m_resourceLayout.findSampler(samp.first.c_str()));
+
+            for (size_t i = 0; i < m_resourceLayout.getTextureCount(); ++i) {
+                const TextureElement& element = m_resourceLayout.getTexture(i);
+                auto boundIt = state.boundTextures.find(element.getName());
+                if (boundIt != state.boundTextures.end()) {
+                    ret->addTexture(boundIt->second, element);
+                } else {
+                    ret->addTexture(nullptr, element);
+                }
             }
-            for (const auto& uni : state.boundUniforms) {
-                ret->addConstBuffer(uni.second);
+
+            for (size_t i = 0; i < m_resourceLayout.getSamplerCount(); ++i) {
+                const SamplerElement& element = m_resourceLayout.getSampler(i);
+                auto boundIt = state.boundSamplers.find(element.getName());
+                if (boundIt != state.boundSamplers.end()) {
+                    ret->addSampler(boundIt->second, element);
+                } else {
+                    ret->addSampler(m_ctx->getEmptySampler(), element);
+                }
             }
+
             ret->create();
             return ret;
         });

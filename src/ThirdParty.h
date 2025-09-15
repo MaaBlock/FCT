@@ -78,6 +78,7 @@
 #include <boost/serialization/string.hpp>
 #include <boost/serialization/version.hpp>
 #include <boost/serialization/set.hpp>
+#include <boost/container_hash/hash.hpp>
 
 #include <thread>
 #include <map>

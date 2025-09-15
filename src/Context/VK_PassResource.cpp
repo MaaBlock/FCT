@@ -26,29 +26,23 @@ namespace FCT
 
     void VK_PassResource::addConstBuffer(RHI::ConstBuffer* buffer)
     {
-        if (buffer) {
-            m_constBuffers.push_back(buffer);
-            markAllDescriptorSetsDirty();
-            markAllDescriptorSetsNeedRecreate();
-        }
+        m_constBuffers.push_back(buffer);
+        markAllDescriptorSetsDirty();
+        markAllDescriptorSetsNeedRecreate();
     }
 
     void VK_PassResource::addSampler(Sampler* sampler, SamplerElement element)
     {
-        if (sampler) {
-            m_samplers.emplace_back(sampler, element);
-            markAllDescriptorSetsDirty();
-            markAllDescriptorSetsNeedRecreate();
-        }
+        m_samplers.emplace_back(sampler, element);
+        markAllDescriptorSetsDirty();
+        markAllDescriptorSetsNeedRecreate();
     }
 
     void VK_PassResource::addTexture(Image* texture, TextureElement element)
     {
-        if (texture) {
-            m_textures[element] = texture;
-            markAllDescriptorSetsDirty();
-            markAllDescriptorSetsNeedRecreate();
-        }
+        m_textures[element] = texture;
+        markAllDescriptorSetsDirty();
+        markAllDescriptorSetsNeedRecreate();
     }
 
     void VK_PassResource::setTexture(Image* texture, TextureElement element)
@@ -103,6 +97,7 @@ bool VK_PassResource::createDescriptorSetsAndLayouts(uint32_t frameIdx,
         std::map<uint32_t, std::vector<vk::DescriptorSetLayoutBinding>> setBindings;
 
         for (auto* constBuffer : m_constBuffers) {
+            if (!constBuffer) continue;
             auto* vkConstBuffer = static_cast<RHI::VK_ConstBuffer*>(constBuffer);
             auto uniformLayout = vkConstBuffer->layout();
             auto [setIndex, binding] = m_ctx->getGenerator()->getLayoutBinding(uniformLayout);
@@ -246,6 +241,9 @@ bool VK_PassResource::createDescriptorSetsAndLayouts(uint32_t frameIdx,
 
         for (size_t i = 0; i < m_constBuffers.size(); ++i) {
             auto* srcConstBuffer = m_constBuffers[i];
+            if (!srcConstBuffer) {
+                continue;
+            }
             auto* constBuffer = static_cast<RHI::VK_ConstBuffer*>(srcConstBuffer);
             auto uniformLayout = constBuffer->layout();
             auto [setIndex, binding] = m_ctx->getGenerator()->getLayoutBinding(uniformLayout);
@@ -268,17 +266,23 @@ bool VK_PassResource::createDescriptorSetsAndLayouts(uint32_t frameIdx,
         }
 
         for (auto& [element, texture ] : m_textures) {
-            auto* vkTexture = static_cast<RHI::VK_TextureView*>(texture->currentTextureView());
             auto [setIndex, binding] = m_ctx->getGenerator()->getTextureBinding(element);
 
-            if (setIndex >= m_descriptorSets[frameIdx].size() || !vkTexture) {
+            if (setIndex >= m_descriptorSets[frameIdx].size()) {
                 continue;
             }
 
             vk::DescriptorImageInfo imageInfo;
             imageInfo.setImageLayout(vk::ImageLayout::eShaderReadOnlyOptimal);
-            imageInfo.setImageView(vkTexture->view());
             imageInfo.setSampler(nullptr);
+
+            if (texture) {
+                auto* vkTexture = static_cast<RHI::VK_TextureView*>(texture->currentTextureView());
+                imageInfo.setImageView(vkTexture ? vkTexture->view() : VK_NULL_HANDLE);
+            } else {
+                imageInfo.setImageView(VK_NULL_HANDLE);
+            }
+            
             textureInfos.push_back(imageInfo);
 
             vk::WriteDescriptorSet descriptorWrite;
@@ -287,24 +291,30 @@ bool VK_PassResource::createDescriptorSetsAndLayouts(uint32_t frameIdx,
             descriptorWrite.setDstArrayElement(0);
             descriptorWrite.setDescriptorType(vk::DescriptorType::eSampledImage);
             descriptorWrite.setDescriptorCount(1);
-            descriptorWrite.setPImageInfo(&textureInfos[textureInfos.size() - 1]);
+            descriptorWrite.setPImageInfo(&textureInfos.back());
 
             descriptorWrites.push_back(descriptorWrite);
         }
 
         for (size_t i = 0; i < m_samplers.size(); ++i) {
             auto& [sampler, element] = m_samplers[i];
-            auto* vkSampler = static_cast<RHI::VK_Sampler*>(sampler);
             auto [setIndex, binding] = m_ctx->getGenerator()->getSamplerBinding(element);
 
-            if (setIndex >= m_descriptorSets[frameIdx].size() || !vkSampler) {
+            if (setIndex >= m_descriptorSets[frameIdx].size()) {
                 continue;
             }
 
             vk::DescriptorImageInfo samplerInfo;
-            samplerInfo.setSampler(vkSampler->getSampler());
             samplerInfo.setImageView(nullptr);
             samplerInfo.setImageLayout(vk::ImageLayout::eUndefined);
+
+            if (sampler) {
+                auto* vkSampler = static_cast<RHI::VK_Sampler*>(sampler);
+                samplerInfo.setSampler(vkSampler->getSampler());
+            } else {
+                samplerInfo.setSampler(VK_NULL_HANDLE);
+            }
+            
             samplerInfos.push_back(samplerInfo);
 
             vk::WriteDescriptorSet descriptorWrite;
@@ -313,7 +323,7 @@ bool VK_PassResource::createDescriptorSetsAndLayouts(uint32_t frameIdx,
             descriptorWrite.setDstArrayElement(0);
             descriptorWrite.setDescriptorType(vk::DescriptorType::eSampler);
             descriptorWrite.setDescriptorCount(1);
-            descriptorWrite.setPImageInfo(&samplerInfos[samplerInfos.size() - 1]);
+            descriptorWrite.setPImageInfo(&samplerInfos.back());
 
             descriptorWrites.push_back(descriptorWrite);
         }

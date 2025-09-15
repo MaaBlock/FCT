@@ -35,6 +35,22 @@ namespace FCT
                 m_pixelShader->release();
                 m_pixelShader = nullptr;
             }
+
+            if (m_pipelineLayout)
+            {
+                m_ctx->getDevice().destroyPipelineLayout(m_pipelineLayout);
+            }
+
+            for(auto& pair : m_descriptorSetLayouts)
+            {
+                m_ctx->getDevice().destroyDescriptorSetLayout(pair.second);
+            }
+            m_descriptorSetLayouts.clear();
+
+            if (m_emptyLayout)
+            {
+                m_ctx->getDevice().destroyDescriptorSetLayout(m_emptyLayout);
+            }
         }
 
         void VK_TraditionalPipeline::addResources(IPipelineResource* resource)
@@ -96,7 +112,6 @@ namespace FCT
             if (!m_inputLayout)
             {
                 m_inputLayout = static_cast<VK_InputLayout*>(m_vertexShader->createBindedInputLayout());
-                m_inputLayout->create();
             }
         }
         void VK_TraditionalPipeline::createDescriptorSetLayouts()
@@ -155,9 +170,14 @@ namespace FCT
                         continue;
                     }
 
-                    if (usedBindings[set].find(binding) != usedBindings[set].end()) {
+                    if (resourceBindings[set].find(name) != resourceBindings[set].end()) {
+                        continue;
+                    }
+
+                    if (usedBindings[set].count(binding)) {
+                        fout << "Warning: Binding collision for resource '" << name << "' in set " << set << ". Original binding " << binding << " is already in use. Remapping to a new binding." << std::endl;
                         binding = 0;
-                        while (usedBindings[set].find(binding) != usedBindings[set].end()) {
+                        while (usedBindings[set].count(binding)) {
                             binding++;
                         }
                     }
@@ -196,9 +216,14 @@ namespace FCT
                         continue;
                     }
 
-                    if (usedBindings[set].find(binding) != usedBindings[set].end()) {
+                    if (resourceBindings[set].find(name) != resourceBindings[set].end()) {
+                        continue;
+                    }
+
+                    if (usedBindings[set].count(binding)) {
+                        fout << "Warning: Binding collision for resource '" << name << "' in set " << set << ". Original binding " << binding << " is already in use. Remapping to a new binding." << std::endl;
                         binding = 0;
-                        while (usedBindings[set].find(binding) != usedBindings[set].end()) {
+                        while (usedBindings[set].count(binding)) {
                             binding++;
                         }
                     }
@@ -242,9 +267,14 @@ namespace FCT
                         continue;
                     }
 
-                    if (usedBindings[set].find(binding) != usedBindings[set].end()) {
+                    if (resourceBindings[set].find(name) != resourceBindings[set].end()) {
+                        continue;
+                    }
+
+                    if (usedBindings[set].count(binding)) {
+                        fout << "Warning: Binding collision for resource '" << name << "' in set " << set << ". Original binding " << binding << " is already in use. Remapping to a new binding." << std::endl;
                         binding = 0;
-                        while (usedBindings[set].find(binding) != usedBindings[set].end()) {
+                        while (usedBindings[set].count(binding)) {
                             binding++;
                         }
                     }
@@ -283,9 +313,14 @@ namespace FCT
                         continue;
                     }
 
-                    if (usedBindings[set].find(binding) != usedBindings[set].end()) {
+                    if (resourceBindings[set].find(name) != resourceBindings[set].end()) {
+                        continue;
+                    }
+
+                    if (usedBindings[set].count(binding)) {
+                        fout << "Warning: Binding collision for resource '" << name << "' in set " << set << ". Original binding " << binding << " is already in use. Remapping to a new binding." << std::endl;
                         binding = 0;
-                        while (usedBindings[set].find(binding) != usedBindings[set].end()) {
+                        while (usedBindings[set].count(binding)) {
                             binding++;
                         }
                     }
@@ -324,9 +359,14 @@ namespace FCT
                         continue;
                     }
 
-                    if (usedBindings[set].find(binding) != usedBindings[set].end()) {
+                    if (resourceBindings[set].find(name) != resourceBindings[set].end()) {
+                        continue;
+                    }
+
+                    if (usedBindings[set].count(binding)) {
+                        fout << "Warning: Binding collision for resource '" << name << "' in set " << set << ". Original binding " << binding << " is already in use. Remapping to a new binding." << std::endl;
                         binding = 0;
-                        while (usedBindings[set].find(binding) != usedBindings[set].end()) {
+                        while (usedBindings[set].count(binding)) {
                             binding++;
                         }
                     }

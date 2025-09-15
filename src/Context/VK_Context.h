@@ -46,6 +46,9 @@ namespace FCT {
             return m_graphicsQueue;
         }
 
+        RHI::ConstBuffer* getEmptyConstBuffer(const ConstLayout& layout) override;
+        Sampler* getEmptySampler() override;
+
         vk::CommandBuffer beginSingleTimeCommands();
         void endSingleTimeCommands(vk::CommandBuffer commandBuffer);
         void transferDataToBuffer(vk::Buffer dstBuffer, size_t size, const void* data);
@@ -70,6 +73,8 @@ namespace FCT {
         uint32_t m_transferQueueFamilyIndex;
         vk::Queue m_transferQueue;
         vk::CommandPool m_transferCommandPool;
+        std::unordered_map<size_t, std::unique_ptr<RHI::ConstBuffer>> m_emptyConstBufferCache;
+        std::unique_ptr<Sampler> m_emptySampler;
     };
 }
 

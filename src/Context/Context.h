@@ -50,6 +50,7 @@ namespace FCT
 		class ConstBuffer;
 		class IndexBuffer;
 	}
+    class Sampler;
 
 	class VertexBuffer;
 	//class InputLayout;
@@ -126,6 +127,8 @@ namespace FCT
 		template <typename T>
 		T* createResource();
 		virtual RHI::RasterizationPipeline* createTraditionPipeline() = 0;
+		        virtual RHI::ConstBuffer* getEmptyConstBuffer(const ConstLayout& layout) = 0;
+        virtual Sampler* getEmptySampler() = 0;
 		StaticMesh<uint32_t>* createMesh(const ModelMesh* modelMesh, const VertexLayout& layout);
 		StaticMesh<uint32_t>* loadMesh(const std::string& filename,const std::string& meshName, const VertexLayout& layout);
 		Image* loadTexture(const std::string& filename);

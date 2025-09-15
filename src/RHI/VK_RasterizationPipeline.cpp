@@ -19,6 +19,10 @@ namespace FCT::RHI
 
     VK_RasterizationPipeline::~VK_RasterizationPipeline()
     {
+        if (m_pipeline)
+        {
+            m_ctx->getDevice().destroyPipeline(m_pipeline);
+        }
         FCT_SAFE_RELEASE(m_blendState);
         FCT_SAFE_RELEASE(m_rasterizationState);
         FCT_SAFE_RELEASE(m_viewportState);

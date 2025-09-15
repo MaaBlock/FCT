@@ -19,6 +19,40 @@ namespace FCT
         return new RHI::VK_TraditionalPipeline(this);
     }
 
+    RHI::ConstBuffer* VK_Context::getEmptyConstBuffer(const ConstLayout& layout)
+    {
+        size_t layoutHash = layout.getHash();
+        auto it = m_emptyConstBufferCache.find(layoutHash);
+        if (it != m_emptyConstBufferCache.end())
+        {
+            return it->second.get();
+        }
+
+        auto emptyBuffer = createResource<RHI::ConstBuffer>();
+        emptyBuffer->layout(layout);
+        emptyBuffer->create(); // This will allocate a buffer of the correct size
+
+        RHI::ConstBuffer* bufferPtr = emptyBuffer;
+        m_emptyConstBufferCache[layoutHash] = std::unique_ptr<RHI::ConstBuffer>(bufferPtr);
+        return bufferPtr;
+    }
+
+        Sampler* VK_Context::getEmptySampler()
+    {
+        if (m_emptySampler)
+        {
+            return m_emptySampler.get();
+        }
+
+        auto sampler = createResource<Sampler>();
+        sampler->setFilter(FCT::FilterMode::Linear, FCT::FilterMode::Linear, FCT::FilterMode::Linear);
+        sampler->setAddressMode(FCT::AddressMode::ClampToEdge, FCT::AddressMode::ClampToEdge, FCT::AddressMode::ClampToEdge);
+        sampler->create();
+
+        m_emptySampler = std::unique_ptr<Sampler>(sampler);
+        return m_emptySampler.get();
+    }
+
     VK_Context::~VK_Context()
     {
         if (m_device) {

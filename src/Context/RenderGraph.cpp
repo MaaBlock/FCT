@@ -919,6 +919,10 @@ void RenderGraph::removeDepthStencilEdge(DepthStencilEdge* edgeToRemove) {
             Image* image = imageNode->getImage();
             if (image) {
                 imageStates[image] = ImageState{};
+                if (dynamic_cast<RenderGraphWindowTargetNode*>(imageNode.get()) || dynamic_cast<RenderGraphWindowDepthStencilNode*>(imageNode.get()))
+                {
+                    imageStates[image].currentLayout = ImageLayout::undefined;
+                }
             }
         }
 
@@ -970,10 +974,9 @@ void RenderGraph::removeDepthStencilEdge(DepthStencilEdge* edgeToRemove) {
 
                 bool needsBarrier = false;
 
-                if (currentState.currentLayout != requiredLayout &&
-                    currentState.currentLayout != ImageLayout::undefined) {
+                if (currentState.currentLayout != requiredLayout) {
                     needsBarrier = true;
-                    }
+                }
 
                 if (!currentState.lastWriterGroup.empty() &&
                     currentState.lastWriterGroup != groupLeader &&

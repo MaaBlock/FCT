@@ -329,6 +329,15 @@ namespace FCT
             return true;
         }
 
+        size_t getHash() const noexcept {
+            size_t seed = 0;
+            boost::hash_combine(seed, std::string(m_name));
+            for (size_t i = 0; i < m_elementCount; ++i) {
+                boost::hash_combine(seed, m_elements[i].getType());
+            }
+            return seed;
+        }
+
         constexpr size_t getElementCount() const noexcept { return m_elementCount; }
 
         constexpr const ConstElement& getElement(size_t index) const noexcept {
