@@ -331,8 +331,8 @@ namespace FCT
 
                         desc.storeOp = vk::AttachmentStoreOp::eStore;
                         if (image->getType() == RenderTargetType::WindowTarget) {
-                            desc.loadOp = vk::AttachmentLoadOp::eLoad;
-                            desc.initialLayout = vk::ImageLayout::eColorAttachmentOptimal; // 不能是Undefined
+                            desc.loadOp = vk::AttachmentLoadOp::eClear;
+                            desc.initialLayout = vk::ImageLayout::eUndefined; // 不能是Undefined
                         } else {
                             desc.loadOp = vk::AttachmentLoadOp::eLoad;
                             desc.initialLayout = vk::ImageLayout::eColorAttachmentOptimal;
