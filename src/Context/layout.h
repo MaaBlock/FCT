@@ -60,6 +60,11 @@ namespace FCT {
      */
     class Layout {
     public:
+        struct DisableInjectPassResource
+        {
+
+        };
+    public:
         /** @name 构造与上下文设置
          *  @{
         */
@@ -391,6 +396,8 @@ namespace FCT {
         bool m_hasPixelLayout = false;
 
         // --- 当前 Pass/Pipeline 状态 ---
+        bool m_injectPassResource = true;
+        std::string m_passName;
         FCT::RHI::Pass* m_pass;
         PassResourceState m_passResourceState;
         TraditionPipelineState m_pipelineState;
@@ -421,6 +428,8 @@ namespace FCT {
         void proccessArgs(TextureSlot textureSlot, Args... args);
         template<typename... Args>
         void proccessArgs(UniformSlot uniformSlot, Args... args);
+        template<typename... Args>
+        void proccessArgs(DisableInjectPassResource disable, Args... args);
         void proccessArgs();
 
         // --- 内部资源获取 ---

@@ -143,27 +143,33 @@ namespace FCT
                  {
                      m_pass = &info.pass;
                      m_textureFromPass = info.textures;
-                     for (auto& texture : m_textureFromPass)
+                     if (m_injectPassResource)
                      {
-                         FCT::TextureElement element(
-                             FCT::TextureType::Texture2D,
-                             texture.first.c_str(),
-                             getAllAfterTheStage(info.textureSlot[texture.first]),
-                             FCT::UpdateFrequency::PerFrame);
-                         addTextureSlot(element);
-                         setFixedImage(texture.first,
-                             texture.second);
+                         for (auto& texture : m_textureFromPass)
+                         {
+                             FCT::TextureElement element(
+                                 FCT::TextureType::Texture2D,
+                                 texture.first.c_str(),
+                                 getAllAfterTheStage(info.textureSlot[texture.first]),
+                                 FCT::UpdateFrequency::PerFrame);
+                             addTextureSlot(element);
+                             setFixedImage(texture.first,
+                                 texture.second);
+                         }
                      }
                  },
                  [this]()
                  {
-                     for (auto& texture : m_textureFromPass)
+                     if (m_injectPassResource)
                      {
-                         removeTextureSlot(texture.first.c_str());
+                         for (auto& texture : m_textureFromPass)
+                         {
+                             removeTextureSlot(texture.first.c_str());
+                         }
+                         clearShaderCache();
+                         clearPipelineCache();
                      }
                      m_textureFromPass.clear();
-                     clearShaderCache();
-                     clearPipelineCache();
                      clearPassResourceCache();
                  });
     }

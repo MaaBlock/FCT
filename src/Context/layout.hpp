@@ -53,7 +53,8 @@ namespace FCT
     template <typename ... Args>
     void Layout::proccessArgs(PassName passName, Args... args)
     {
-        attachPass(passName.name);
+
+        m_passName = passName.name;
         /*
             if (m_ctx && m_ctx->getModule<FCT::RenderGraph>()) {
                 attachPass(m_ctx->getModule<FCT::RenderGraph>(), passName.name);
@@ -87,10 +88,16 @@ namespace FCT
         proccessArgs(args...);
     }
 
-    template <typename ... Args>
+    template <typename... Args>
     void Layout::proccessArgs(UniformSlot uniformSlot, Args... args)
     {
         m_uniformLayouts[uniformSlot.getName()] = uniformSlot;
+        proccessArgs(args...);
+    }
+    template <typename... Args>
+    void Layout::proccessArgs(DisableInjectPassResource disable, Args... args)
+    {
+        m_injectPassResource = false;
         proccessArgs(args...);
     }
 
@@ -98,6 +105,10 @@ namespace FCT
     Layout::Layout(FCT::Context* ctx, Args... args): m_ctx(ctx)
     {
         proccessArgs(args...);
+        if (m_passName.size())
+        {
+            attachPass(m_passName);
+        }
     }
 
     template <typename T>
