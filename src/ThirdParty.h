@@ -38,7 +38,7 @@
 #ifdef FCT_USE_VULKAN
 #define GLFW_INCLUDE_VULKAN
 #endif
-	#include <glfw/glfw3.h>
+	#include <GLFW/glfw3.h>
 #endif
 
 //#include <boost/lockfree/queue.hpp>

@@ -41,39 +41,76 @@ namespace FCT {
         videoEncodeQuantizationMapKHR
     };
 #ifdef FCT_USE_VULKAN
-    FCT_TO_VK_ENUM_BEGIN(ImageLayout)
-    FCT_TO_VK_ENUM_CASE(ImageLayout, undefined, Undefined)
-    FCT_TO_VK_ENUM_CASE(ImageLayout, general, General)
-    FCT_TO_VK_ENUM_CASE(ImageLayout, colorAttachmentOptimal, ColorAttachmentOptimal)
-    FCT_TO_VK_ENUM_CASE(ImageLayout, depthStencilAttachmentOptimal, DepthStencilAttachmentOptimal)
-    FCT_TO_VK_ENUM_CASE(ImageLayout, depthStencilReadOnlyOptimal, DepthStencilReadOnlyOptimal)
-    FCT_TO_VK_ENUM_CASE(ImageLayout, shaderReadOnlyOptimal, ShaderReadOnlyOptimal)
-    FCT_TO_VK_ENUM_CASE(ImageLayout, transferSrcOptimal, TransferSrcOptimal)
-    FCT_TO_VK_ENUM_CASE(ImageLayout, transferDstOptimal, TransferDstOptimal)
-    FCT_TO_VK_ENUM_CASE(ImageLayout, preinitialized, Preinitialized)
-    FCT_TO_VK_ENUM_CASE(ImageLayout, depthReadOnlyStencilAttachmentOptimal, DepthReadOnlyStencilAttachmentOptimal)
-    FCT_TO_VK_ENUM_CASE(ImageLayout, depthAttachmentStencilReadOnlyOptimal, DepthAttachmentStencilReadOnlyOptimal)
-    FCT_TO_VK_ENUM_CASE(ImageLayout, depthAttachmentOptimal, DepthAttachmentOptimal)
-    FCT_TO_VK_ENUM_CASE(ImageLayout, depthReadOnlyOptimal, DepthReadOnlyOptimal)
-    FCT_TO_VK_ENUM_CASE(ImageLayout, stencilAttachmentOptimal, StencilAttachmentOptimal)
-    FCT_TO_VK_ENUM_CASE(ImageLayout, stencilReadOnlyOptimal, StencilReadOnlyOptimal)
-    FCT_TO_VK_ENUM_CASE(ImageLayout, readOnlyOptimal, ReadOnlyOptimal)
-    FCT_TO_VK_ENUM_CASE(ImageLayout, attachmentOptimal, AttachmentOptimal)
-    FCT_TO_VK_ENUM_CASE(ImageLayout, renderingLocalRead, RenderingLocalRead)
-    FCT_TO_VK_ENUM_CASE(ImageLayout, presentSrcKHR, PresentSrcKHR)
-    FCT_TO_VK_ENUM_CASE(ImageLayout, videoDecodeDstKHR, VideoDecodeDstKHR)
-    FCT_TO_VK_ENUM_CASE(ImageLayout, videoDecodeSrcKHR, VideoDecodeSrcKHR)
-    FCT_TO_VK_ENUM_CASE(ImageLayout, videoDecodeDpbKHR, VideoDecodeDpbKHR)
-    FCT_TO_VK_ENUM_CASE(ImageLayout, sharedPresentKHR, SharedPresentKHR)
-    FCT_TO_VK_ENUM_CASE(ImageLayout, fragmentDensityMapOptimalEXT, FragmentDensityMapOptimalEXT)
-    FCT_TO_VK_ENUM_CASE(ImageLayout, fragmentShadingRateAttachmentOptimalKHR, FragmentShadingRateAttachmentOptimalKHR)
-    FCT_TO_VK_ENUM_CASE(ImageLayout, shadingRateOptimalNV, ShadingRateOptimalNV)
-    FCT_TO_VK_ENUM_CASE(ImageLayout, videoEncodeDstKHR, VideoEncodeDstKHR)
-    FCT_TO_VK_ENUM_CASE(ImageLayout, videoEncodeSrcKHR, VideoEncodeSrcKHR)
-    FCT_TO_VK_ENUM_CASE(ImageLayout, videoEncodeDpbKHR, VideoEncodeDpbKHR)
-    FCT_TO_VK_ENUM_CASE(ImageLayout, attachmentFeedbackLoopOptimalEXT, AttachmentFeedbackLoopOptimalEXT)
-    FCT_TO_VK_ENUM_CASE(ImageLayout, videoEncodeQuantizationMapKHR, VideoEncodeQuantizationMapKHR)
-    FCT_TO_VK_ENUM_END(ImageLayout)
+     inline vk::ImageLayout ToVkImageLayout(ImageLayout e)
+    {
+        switch (e)
+        {
+            case ImageLayout::undefined:
+                return vk::ImageLayout::eUndefined;
+            case ImageLayout::general:
+                return vk::ImageLayout::eGeneral;
+            case ImageLayout::colorAttachmentOptimal:
+                return vk::ImageLayout::eColorAttachmentOptimal;
+            case ImageLayout::depthStencilAttachmentOptimal:
+                return vk::ImageLayout::eDepthStencilAttachmentOptimal;
+            case ImageLayout::depthStencilReadOnlyOptimal:
+                return vk::ImageLayout::eDepthStencilReadOnlyOptimal;
+            case ImageLayout::shaderReadOnlyOptimal:
+                return vk::ImageLayout::eShaderReadOnlyOptimal;
+            case ImageLayout::transferSrcOptimal:
+                return vk::ImageLayout::eTransferSrcOptimal;
+            case ImageLayout::transferDstOptimal:
+                return vk::ImageLayout::eTransferDstOptimal;
+            case ImageLayout::preinitialized:
+                return vk::ImageLayout::ePreinitialized;
+            case ImageLayout::depthReadOnlyStencilAttachmentOptimal:
+                return vk::ImageLayout::eDepthReadOnlyStencilAttachmentOptimal;
+            case ImageLayout::depthAttachmentStencilReadOnlyOptimal:
+                return vk::ImageLayout::eDepthAttachmentStencilReadOnlyOptimal;
+            case ImageLayout::depthAttachmentOptimal:
+                return vk::ImageLayout::eDepthAttachmentOptimal;
+            case ImageLayout::depthReadOnlyOptimal:
+                return vk::ImageLayout::eDepthReadOnlyOptimal;
+            case ImageLayout::stencilAttachmentOptimal:
+                return vk::ImageLayout::eStencilAttachmentOptimal;
+            case ImageLayout::stencilReadOnlyOptimal:
+                return vk::ImageLayout::eStencilReadOnlyOptimal;
+            case ImageLayout::readOnlyOptimal:
+                return vk::ImageLayout::eReadOnlyOptimal;
+            case ImageLayout::attachmentOptimal:
+                return vk::ImageLayout::eAttachmentOptimal;
+            case ImageLayout::renderingLocalRead:
+                return vk::ImageLayout::eRenderingLocalRead;
+            case ImageLayout::presentSrcKHR:
+                return vk::ImageLayout::ePresentSrcKHR;
+            case ImageLayout::videoDecodeDstKHR:
+                return vk::ImageLayout::eVideoDecodeDstKHR;
+            case ImageLayout::videoDecodeSrcKHR:
+                return vk::ImageLayout::eVideoDecodeSrcKHR;
+            case ImageLayout::videoDecodeDpbKHR:
+                return vk::ImageLayout::eVideoDecodeDpbKHR;
+            case ImageLayout::sharedPresentKHR:
+                return vk::ImageLayout::eSharedPresentKHR;
+            case ImageLayout::fragmentDensityMapOptimalEXT:
+                return vk::ImageLayout::eFragmentDensityMapOptimalEXT;
+            case ImageLayout::fragmentShadingRateAttachmentOptimalKHR:
+                return vk::ImageLayout::eFragmentShadingRateAttachmentOptimalKHR;
+            case ImageLayout::shadingRateOptimalNV:
+                return vk::ImageLayout::eShadingRateOptimalNV;
+            case ImageLayout::videoEncodeDstKHR:
+                return vk::ImageLayout::eVideoEncodeDstKHR;
+            case ImageLayout::videoEncodeSrcKHR:
+                return vk::ImageLayout::eVideoEncodeSrcKHR;
+            case ImageLayout::videoEncodeDpbKHR:
+                return vk::ImageLayout::eVideoEncodeDpbKHR;
+            case ImageLayout::attachmentFeedbackLoopOptimalEXT:
+                return vk::ImageLayout::eAttachmentFeedbackLoopOptimalEXT;
+            case ImageLayout::videoEncodeQuantizationMapKHR:
+                return vk::ImageLayout::eVideoEncodeQuantizationMapKHR;
+            default:
+                return vk::ImageLayout(0);
+        }
+    }
 #endif
 }
 #endif //IMAGELAYOUT_H

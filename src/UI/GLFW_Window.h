@@ -3,7 +3,7 @@
 //
 #include "../ThirdParty.h"
 #include "./Window.h"
-#include "../Runtime/Runtime.h"
+#include "../Runtime/runtime.h"
 #ifndef GLFW_WINDOW_H
 #define GLFW_WINDOW_H
 

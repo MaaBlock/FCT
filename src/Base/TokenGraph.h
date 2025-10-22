@@ -10,8 +10,9 @@ namespace FCT {
 	template<typename Token,typename Value>
 	class TokenGraph : public Noncopyable
 	{
+	public:
+	    class NodeProbe;
 	private:
-		class NodeProbe;
 		struct NodeInfo
 		{
 		private:

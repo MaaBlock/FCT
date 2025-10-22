@@ -11,7 +11,7 @@ namespace FCT
          * @brief 纹理类型枚举
          * @endcond
          */
-        enum class TextureType
+        enum class TextureType : int
         {
             diffuse = 0,        ///< @cond CHINESE 漫反射贴图 @endcond
             specular,           ///< @cond CHINESE 镜面反射贴图 @endcond
@@ -149,8 +149,12 @@ namespace serialization {
     template<class Archive>
     void serialize(Archive & ar, FCT::ModelInfo::TextureType & t, const unsigned int version)
     {
-        ar & static_cast<int&>(t);
+        using UnderlyingType = std::underlying_type_t<FCT::ModelInfo::TextureType>;
+        UnderlyingType value = static_cast<UnderlyingType>(t);
+        ar & value;
+        t = static_cast<FCT::ModelInfo::TextureType>(value);
     }
+
 }
 }
 namespace FCT

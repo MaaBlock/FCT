@@ -12,7 +12,7 @@
 #include "./AutoViewport.h"
 #include "./InputStateEventHanndler.h"
 #include "../Context/Context.h"
-#include "../base/IModuleManager.h"
+#include "../Base/IModuleManager.h"
 
 namespace FCT {
 	namespace RHI

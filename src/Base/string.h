@@ -6,7 +6,7 @@
 #define STRING_H
 namespace FCT {
     constexpr bool StringEquals(const char* a, const char* b) noexcept {
-        if (a == b) return true;
+        //if (a == b) return true;
         if (!a || !b) return false;
 
         while (*a && *b) {
