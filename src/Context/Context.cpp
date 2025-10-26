@@ -66,7 +66,8 @@ namespace FCT {
 
 
         Format format;
-        switch (data.channels) {
+        switch (data.channels)
+        {
         case 1:
             format = Format::R8_UNORM;
             break;
@@ -86,6 +87,31 @@ namespace FCT {
         }
 
         image->format(format);
+        image->as(ImageUsage::Texture);
+        image->initData(data.data.data(), data.data.size());
+        image->create();
+        return image;
+    }
+    Image* Context::loadTexture(std::vector<unsigned char> byteData, Format dstFormat)
+    {
+
+        auto data = m_imageLoader->loadFromMemory(byteData.data(),byteData.size());
+        SingleBufferImage* image = new SingleBufferImage(this);
+        image->width(data.width);
+        image->height(data.height);
+        image->format(dstFormat);
+        image->as(ImageUsage::Texture);
+        image->initData(data.data.data(), data.data.size());
+        image->create();
+        return image;
+    }
+    Image* Context::loadTexture(const std::string& filename, Format dstFormat)
+    {
+        auto data = m_imageLoader->load(filename);
+        SingleBufferImage* image = new SingleBufferImage(this);
+        image->width(data.width);
+        image->height(data.height);
+        image->format(dstFormat);
         image->as(ImageUsage::Texture);
         image->initData(data.data.data(), data.data.size());
         image->create();

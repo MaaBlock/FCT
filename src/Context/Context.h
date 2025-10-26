@@ -139,6 +139,12 @@ namespace FCT
 		 * @return
 		 */
 		Image* loadTexture(const unsigned char* data, size_t size);
+	    /**
+	     * @brief 加载图片并使用指定的Format
+	     */
+		Image* loadTexture(std::vector<unsigned char> data,Format dstFormat);
+	    Image* loadTexture(const std::string& filename,Format dstFormat);
+        /**
 		/**
  		  * @cond CHINESE
  		  * @name 流程控制
