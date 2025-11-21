@@ -50,6 +50,22 @@ namespace FCT
             {
                 return m_width;
             }
+            void arrayLayers(uint32_t layers)
+            {
+                m_arrayLayers = layers;
+            }
+            uint32_t arrayLayers() const
+            {
+                return m_arrayLayers;
+            }
+            void isCubeMap(bool isCube)
+            {
+                m_isCubeMap = isCube;
+            }
+            bool isCubeMap() const
+            {
+                return m_isCubeMap;
+            }
             void initData(void* data, size_t size)
             {
                 m_initData.data = data;
@@ -75,6 +91,8 @@ namespace FCT
             Samples m_samples;
             uint32_t m_width;
             uint32_t m_height;
+            uint32_t m_arrayLayers = 1;
+            bool m_isCubeMap = false;
             ImageUsages m_usage;
             ImageInitData m_initData;
         };

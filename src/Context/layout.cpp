@@ -61,7 +61,7 @@ namespace FCT
     void Layout::addTextureSlot(const FCT::TextureSlot& slot)
     {
         TextureElement element(
-            TextureType::Texture2D,
+            slot.type,
             slot.name.c_str(),
             ShaderStage::All);
         addTextureSlot(element);
@@ -148,7 +148,7 @@ namespace FCT
                          for (auto& texture : m_textureFromPass)
                          {
                              FCT::TextureElement element(
-                                 FCT::TextureType::Texture2D,
+                                 TextureType::Texture2D,
                                  texture.first.c_str(),
                                  getAllAfterTheStage(info.textureSlot[texture.first]),
                                  FCT::UpdateFrequency::PerFrame);
@@ -401,7 +401,7 @@ namespace FCT
             }
             m_textureNames[it->name] = nullptr;
             m_textureNames[it->name] =  m_textureNames.find(it->name)->first.c_str();
-            FCT::TextureElement element(FCT::TextureType::Texture2D, m_textureNames[it->name], usage, FCT::UpdateFrequency::PerFrame);
+            FCT::TextureElement element(it->type, m_textureNames[it->name], usage, FCT::UpdateFrequency::PerFrame);
             addTextureSlot(element);
 
             it = m_unhandledTextureSlots.erase(it);

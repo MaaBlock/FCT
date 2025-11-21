@@ -1,5 +1,5 @@
 #include "./FreeImage_ImageLoader.h"
-
+#include "../DebugTools/OutStream.h"
 #include <iostream>
 #include <stdexcept>
 
@@ -82,7 +82,9 @@ namespace FCT {
 
         FIBITMAP* dib = FreeImage_Load(fif, filename.c_str());
         if (!dib) {
-            throw std::runtime_error("Failed to load image");
+            ferr << "Failed to load image: " + filename << std::endl;
+            return {};
+            //throw std::runtime_error("Failed to load image: " + filename);
         }
 
         FIBITMAP* dibConverted = FreeImage_ConvertTo32Bits(dib);

@@ -288,15 +288,14 @@ namespace FCT
                            vk::ImageAspectFlagBits::eColor, data, dataSize, outFence, cleanUpCallback);
     }
 
-   void VK_Context::transferDataToImage(vk::Image dstImage, uint32_t width, uint32_t height, uint32_t depth,
-                                vk::Format format, uint32_t mipLevels, uint32_t arrayLayers,
-                                vk::ImageAspectFlags aspectMask, const void* data, size_t dataSize,
-                                vk::Fence* outFence, std::function<void()>* cleanUpCallback)
-    {
-        size_t pixelSize = FormatSize(FromVkFormat(format));
-        size_t fullImageSize = width * height * depth * pixelSize;
-        vk::BufferCreateInfo stagingBufferInfo;
-        stagingBufferInfo.setSize(fullImageSize);
+       void VK_Context::transferDataToImage(vk::Image dstImage, uint32_t width, uint32_t height, uint32_t depth,
+                                   vk::Format format, uint32_t mipLevels, uint32_t arrayLayers,
+                                   vk::ImageAspectFlags aspectMask, const void* data, size_t dataSize,
+                                   vk::Fence* outFence, std::function<void()>* cleanUpCallback)
+       {
+           size_t pixelSize = FormatSize(FromVkFormat(format));
+           size_t fullImageSize = width * height * depth * pixelSize * arrayLayers;
+           vk::BufferCreateInfo stagingBufferInfo;        stagingBufferInfo.setSize(fullImageSize);
         stagingBufferInfo.setUsage(vk::BufferUsageFlagBits::eTransferSrc);
         stagingBufferInfo.setSharingMode(vk::SharingMode::eExclusive);
 

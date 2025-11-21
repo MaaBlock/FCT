@@ -36,6 +36,8 @@ namespace FCT
         m_image->height(m_height);
         m_image->format(m_format);
         m_image->samples(m_samples);
+        m_image->arrayLayers(m_arrayLayers);
+        m_image->isCubeMap(m_isCubeMap);
         m_image->initData(m_initData);
         m_image->usage(m_usage);
         m_image->create();

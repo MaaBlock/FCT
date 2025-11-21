@@ -143,18 +143,19 @@ namespace FCT
 	     * @brief 加载图片并使用指定的Format
 	     */
 		Image* loadTexture(std::vector<unsigned char> data,Format dstFormat);
-	    Image* loadTexture(const std::string& filename,Format dstFormat);
+	    Image* loadTexture(const std::string& filename, Format dstFormat);
+        Image* loadCubeMap(const std::vector<std::string>& filenames);
         /**
-		/**
- 		  * @cond CHINESE
- 		  * @name 流程控制
- 		  * @endcond
- 		  *
- 		  * @cond ENGLISH
- 		  * @name Flow Control
- 		  * @endcond
-	 	  *  @{
-	 	  */
+        /**
+          * @cond CHINESE
+          * @name 流程控制
+          * @endcond
+          *
+          * @cond ENGLISH
+          * @name Flow Control
+          * @endcond
+          *  @{
+          */
 		auto& syncTickers() { return m_flowControl->syncTickers(); }
 		/*
 		 * 初始化阶段 可以在flush前任意修改，因为提交线程一直在等待下一帧

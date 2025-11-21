@@ -30,9 +30,12 @@ namespace FCT {
             imageInfo.setFormat(ToVkFormat(m_format));
             imageInfo.setExtent(vk::Extent3D(m_width, m_height, 1));
             imageInfo.setMipLevels(1);
-            imageInfo.setArrayLayers(1);
+            imageInfo.setArrayLayers(m_arrayLayers);
             imageInfo.setSamples(ToVkSampleCount(m_samples));
             imageInfo.setTiling(vk::ImageTiling::eOptimal);
+            if (m_isCubeMap) {
+                imageInfo.setFlags(vk::ImageCreateFlagBits::eCubeCompatible);
+            }
             vk::ImageUsageFlags usageFlags;
             if (m_usage & ImageUsage::Texture)
             {
@@ -123,7 +126,7 @@ namespace FCT {
                     1,
                     ToVkFormat(m_format),
                     1,
-                    1,
+                    m_arrayLayers,
                     aspectMask,
                     data,
                     dataSize
@@ -156,7 +159,7 @@ namespace FCT {
                     1,
                     ToVkFormat(m_format),
                     1,
-                    1,
+                    m_arrayLayers,
                     aspectMask,
                     data,
                     dataSize,

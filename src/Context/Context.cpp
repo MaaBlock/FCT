@@ -118,6 +118,66 @@ namespace FCT {
         return image;
     }
 
+    Image* Context::loadCubeMap(const std::vector<std::string>& filenames)
+    {
+        if (filenames.size() != 6) {
+            ferr << "loadCubeMap: Expected 6 filenames, got " << filenames.size() << std::endl;
+            return nullptr;
+        }
+
+        std::vector<unsigned char> combinedData;
+        uint32_t width = 0;
+        uint32_t height = 0;
+        uint32_t channels = 0;
+        
+        for (size_t i = 0; i < 6; ++i) {
+            auto data = m_imageLoader->load(filenames[i]);
+            if (data.data.empty()) {
+                ferr << "loadCubeMap: Failed to load " << filenames[i] << std::endl;
+                return nullptr;
+            }
+
+            if (i == 0) {
+                width = data.width;
+                height = data.height;
+                channels = data.channels;
+                combinedData.reserve(data.data.size() * 6);
+            } else {
+                if (data.width != width || data.height != height || data.channels != channels) {
+                    ferr << "loadCubeMap: Image dimensions or channels mismatch in " << filenames[i] << std::endl;
+                    return nullptr;
+                }
+            }
+            combinedData.insert(combinedData.end(), data.data.begin(), data.data.end());
+        }
+
+        SingleBufferImage* image = new SingleBufferImage(this);
+        image->width(width);
+        image->height(height);
+        image->arrayLayers(6);
+        image->isCubeMap(true);
+
+        bool isSRGB = true;
+        Format format;
+        switch (channels) {
+            case 1: format = Format::R8_UNORM; break;
+            case 2: format = Format::R8G8_UNORM; break;
+            case 3: format = isSRGB ? Format::R8G8B8A8_SRGB : Format::R8G8B8_UNORM; break;
+            case 4: format = isSRGB ? Format::R8G8B8A8_SRGB : Format::R8G8B8A8_UNORM; break;
+            default: 
+                format = Format::R8G8B8A8_SRGB; 
+                ferr << "Unsupported channels: " << channels << std::endl;
+                break;
+        }
+
+        image->format(format);
+        image->as(ImageUsage::Texture);
+        image->initData(combinedData.data(), combinedData.size());
+        image->create();
+        
+        return image;
+    }
+
 
     Context::Context(Runtime* runtime)
     {

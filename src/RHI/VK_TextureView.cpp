@@ -39,6 +39,11 @@ namespace FCT
 
             Format format = m_image->format();
             vk::ImageViewType viewType = vk::ImageViewType::e2D;
+            if (m_image->isCubeMap()) {
+                viewType = vk::ImageViewType::eCube;
+            } else if (m_image->arrayLayers() > 1) {
+                viewType = vk::ImageViewType::e2DArray;
+            }
 
             vk::ImageAspectFlags aspectMask = getImageAspectFlags(ToVkFormat(format));
 
@@ -57,7 +62,7 @@ namespace FCT
             viewInfo.subresourceRange.baseMipLevel = 0;
             viewInfo.subresourceRange.levelCount = 1;
             viewInfo.subresourceRange.baseArrayLayer = 0;
-            viewInfo.subresourceRange.layerCount = 1;
+            viewInfo.subresourceRange.layerCount = m_image->arrayLayers();
 
             try {
                 m_view = m_ctx->getDevice().createImageView(viewInfo);

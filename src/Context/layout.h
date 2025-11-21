@@ -24,6 +24,7 @@ namespace FCT {
     struct TextureSlot
     {
         std::string name;
+        FCT::TextureType type = FCT::TextureType::Texture2D;
     };
 
     /**

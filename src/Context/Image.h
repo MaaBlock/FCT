@@ -76,6 +76,10 @@ namespace FCT {
         int height() const { return m_height; }
         void width(int width) { m_width = width; }
         void height(int height) { m_height = height; }
+        int arrayLayers() const { return m_arrayLayers; }
+        void arrayLayers(int layers) { m_arrayLayers = layers; }
+        bool isCubeMap() const { return m_isCubeMap; }
+        void isCubeMap(bool isCube) { m_isCubeMap = isCube; }
         void format(Format format) { m_format = format; }
         void samples(Samples samples) { m_samples = samples; }
         virtual UpdateResult* updateToCurrent(void* data,size_t size)
@@ -88,6 +92,8 @@ namespace FCT {
         Context* m_ctx;
         int m_width;
         int m_height;
+        int m_arrayLayers = 1;
+        bool m_isCubeMap = false;
         Format m_format;
         Samples m_samples;
         RenderTargetType m_renderTargetType;
