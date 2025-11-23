@@ -14,9 +14,10 @@ namespace FCT {
         ~VK_Context() override;
         RHI::RasterizationPipeline* createTraditionPipeline() override;
         bool isIntegrateGpu() override;
+        bool isBindlessSupported() const override { return m_bindlessSupported; }
         //void create(IRenderTarget* target) override;
         uint32_t findMemoryType(uint32_t typeFilter, vk::MemoryPropertyFlags properties);
-        void createPlatform() override;
+        void createPlatform(ContextCreateFlags flag) override;
         auto device()
         {
             return m_device;
@@ -75,6 +76,7 @@ namespace FCT {
         vk::CommandPool m_transferCommandPool;
         std::unordered_map<size_t, std::unique_ptr<RHI::ConstBuffer>> m_emptyConstBufferCache;
         std::unique_ptr<Sampler> m_emptySampler;
+        bool m_bindlessSupported = false;
     };
 }
 

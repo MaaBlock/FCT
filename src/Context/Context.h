@@ -92,6 +92,7 @@ namespace FCT
 		withModuleResourceManage	             = 1 << 0,
 		withModuleRenderGraph		             = 1 << 1,
         withAutoMaxFrameInFlight                 = 1 << 2,
+		enableBindless                           = 1 << 3,
 		defaultConfig = withModuleResourceManage
 						| withModuleRenderGraph
                         | withAutoMaxFrameInFlight,
@@ -104,9 +105,10 @@ namespace FCT
 	protected:
 		Context(Runtime* runtime);
 		virtual ~Context();
-		virtual void createPlatform() = 0;
+		virtual void createPlatform(ContextCreateFlags flag) = 0;
 	public:
         virtual bool isIntegrateGpu() = 0;
+        virtual bool isBindlessSupported() const = 0;
 		PipeHub& pipeHub();
 		/** @name 初始化与配置 (Initialization & Configuration)
    		*  @{

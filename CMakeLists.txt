@@ -325,6 +325,8 @@ endif()
 
 find_package(Freetype REQUIRED)
 find_package(assimp CONFIG REQUIRED)
+find_package(absl CONFIG REQUIRED)
+
 find_package(unofficial-shaderc CONFIG REQUIRED)
 find_package(spirv_cross_core CONFIG REQUIRED)
 find_package(spirv_cross_glsl CONFIG REQUIRED)
@@ -344,6 +346,10 @@ target_link_libraries(FCT PUBLIC
         Boost::thread
         Boost::locale
         Boost::serialization
+        absl::any
+        absl::log
+        absl::base
+        absl::bits
 )
 
 file(GLOB THIRDPARTY_MODULE_HEADERS

@@ -69,60 +69,17 @@ namespace FCT
         m_resourceDevice = new VK_Device(this);
         m_common = common;
         m_phyDevice = common->getPhysicalDevice();
-        auto queueFamily = m_phyDevice.getQueueFamilyProperties();
 
-        m_transferQueueFamilyIndex = UINT32_MAX;
-        for (size_t i = 0; i < queueFamily.size(); ++i) {
-            if (queueFamily[i].queueFlags & vk::QueueFlagBits::eGraphics) {
-                m_graphicsQueueFamilyIndex = i;
-            }
+        // Check if descriptor indexing is supported
+        vk::PhysicalDeviceDescriptorIndexingFeaturesEXT supportedDescriptorIndexingFeatures{};
+        vk::PhysicalDeviceFeatures2 deviceFeatures2{};
+        deviceFeatures2.pNext = &supportedDescriptorIndexingFeatures;
+        m_phyDevice.getFeatures2(&deviceFeatures2);
 
-            if (queueFamily[i].queueFlags & vk::QueueFlagBits::eTransfer) {
-                if (!(queueFamily[i].queueFlags & vk::QueueFlagBits::eGraphics) &&
-                    !(queueFamily[i].queueFlags & vk::QueueFlagBits::eCompute)) {
-                    m_transferQueueFamilyIndex = i;
-                }
-                else if (m_transferQueueFamilyIndex == UINT32_MAX) {
-                    m_transferQueueFamilyIndex = i;
-                }
-            }
-        }
-
-        if (m_transferQueueFamilyIndex == UINT32_MAX) {
-            m_transferQueueFamilyIndex = m_graphicsQueueFamilyIndex;
-        }
-
-        std::vector<vk::DeviceQueueCreateInfo> queueCreateInfos;
-        std::set<uint32_t> uniqueQueueFamilies = {m_graphicsQueueFamilyIndex, m_transferQueueFamilyIndex};
-
-        float queuePriority = 1.0f;
-        for (uint32_t queueFamily : uniqueQueueFamilies) {
-            vk::DeviceQueueCreateInfo queueCreateInfo;
-            queueCreateInfo.setQueueFamilyIndex(queueFamily)
-                           .setQueueCount(1)
-                           .setPQueuePriorities(&queuePriority);
-            queueCreateInfos.push_back(queueCreateInfo);
-        }
-
-        std::vector<const char*> deviceExtensions = {
-            VK_KHR_SWAPCHAIN_EXTENSION_NAME
-        };
-        vk::PhysicalDeviceFeatures deviceFeatures;
-        deviceFeatures.setSamplerAnisotropy(true);
-
-        vk::DeviceCreateInfo deviceCreateInfo;
-        deviceCreateInfo.setQueueCreateInfos(queueCreateInfos)
-                        .setPEnabledExtensionNames(deviceExtensions)
-                        .setPEnabledFeatures(&deviceFeatures);
-
-        m_device = m_phyDevice.createDevice(deviceCreateInfo);
-        VULKAN_HPP_DEFAULT_DISPATCHER.init(m_device);
-
-        m_graphicsQueue = m_device.getQueue(m_graphicsQueueFamilyIndex, 0);
-        m_transferQueue = m_device.getQueue(m_transferQueueFamilyIndex, 0);
-
-        createCommandPoolAndBuffers();
-        createTransferCommandPool();
+        m_bindlessSupported = supportedDescriptorIndexingFeatures.shaderSampledImageArrayNonUniformIndexing &&
+                              supportedDescriptorIndexingFeatures.descriptorBindingVariableDescriptorCount &&
+                              supportedDescriptorIndexingFeatures.descriptorBindingPartiallyBound &&
+                              supportedDescriptorIndexingFeatures.runtimeDescriptorArray;
     }
     uint32_t VK_Context::getGraphicsQueueFamily() const {
         return m_graphicsQueueFamilyIndex;
@@ -529,9 +486,85 @@ namespace FCT
         }
     }
 
-    void VK_Context::createPlatform()
+    void VK_Context::createPlatform(ContextCreateFlags flag)
     {
+        auto queueFamily = m_phyDevice.getQueueFamilyProperties();
 
+        m_transferQueueFamilyIndex = UINT32_MAX;
+        for (size_t i = 0; i < queueFamily.size(); ++i) {
+            if (queueFamily[i].queueFlags & vk::QueueFlagBits::eGraphics) {
+                m_graphicsQueueFamilyIndex = i;
+            }
+
+            if (queueFamily[i].queueFlags & vk::QueueFlagBits::eTransfer) {
+                if (!(queueFamily[i].queueFlags & vk::QueueFlagBits::eGraphics) &&
+                    !(queueFamily[i].queueFlags & vk::QueueFlagBits::eCompute)) {
+                    m_transferQueueFamilyIndex = i;
+                }
+                else if (m_transferQueueFamilyIndex == UINT32_MAX) {
+                    m_transferQueueFamilyIndex = i;
+                }
+            }
+        }
+
+        if (m_transferQueueFamilyIndex == UINT32_MAX) {
+            m_transferQueueFamilyIndex = m_graphicsQueueFamilyIndex;
+        }
+
+        std::vector<vk::DeviceQueueCreateInfo> queueCreateInfos;
+        std::set<uint32_t> uniqueQueueFamilies = {m_graphicsQueueFamilyIndex, m_transferQueueFamilyIndex};
+
+        float queuePriority = 1.0f;
+        for (uint32_t queueFamily : uniqueQueueFamilies) {
+            vk::DeviceQueueCreateInfo queueCreateInfo;
+            queueCreateInfo.setQueueFamilyIndex(queueFamily)
+                           .setQueueCount(1)
+                           .setPQueuePriorities(&queuePriority);
+            queueCreateInfos.push_back(queueCreateInfo);
+        }
+
+        std::vector<const char*> deviceExtensions = {
+            VK_KHR_SWAPCHAIN_EXTENSION_NAME
+        };
+        
+        vk::PhysicalDeviceFeatures deviceFeatures;
+        deviceFeatures.setSamplerAnisotropy(true);
+
+        vk::DeviceCreateInfo deviceCreateInfo;
+        deviceCreateInfo.setQueueCreateInfos(queueCreateInfos)
+                        .setPEnabledExtensionNames(deviceExtensions)
+                        .setPEnabledFeatures(&deviceFeatures);
+
+        vk::PhysicalDeviceDescriptorIndexingFeaturesEXT descriptorIndexingFeatures{};
+        bool enableBindless = (flag & ContextCreateFlag::enableBindless) && m_bindlessSupported;
+        
+        if (enableBindless) {
+            deviceExtensions.push_back(VK_EXT_DESCRIPTOR_INDEXING_EXTENSION_NAME);
+            deviceCreateInfo.setPEnabledExtensionNames(deviceExtensions);
+
+            descriptorIndexingFeatures.setPNext(nullptr); 
+            descriptorIndexingFeatures.setShaderSampledImageArrayNonUniformIndexing(true);
+            descriptorIndexingFeatures.setDescriptorBindingVariableDescriptorCount(true);
+            descriptorIndexingFeatures.setDescriptorBindingPartiallyBound(true);
+            descriptorIndexingFeatures.setRuntimeDescriptorArray(true);
+            
+            deviceCreateInfo.setPNext(&descriptorIndexingFeatures);
+        }
+
+        m_device = m_phyDevice.createDevice(deviceCreateInfo);
+        VULKAN_HPP_DEFAULT_DISPATCHER.init(m_device);
+
+        m_graphicsQueue = m_device.getQueue(m_graphicsQueueFamilyIndex, 0);
+        m_transferQueue = m_device.getQueue(m_transferQueueFamilyIndex, 0);
+
+        createCommandPoolAndBuffers();
+        createTransferCommandPool();
+        
+        // update m_bindlessSupported to reflect actual enabled state
+        m_bindlessSupported = enableBindless;
+        if (!m_bindlessSupported && (flag & ContextCreateFlag::enableBindless)) {
+            ferr << "Warning: Bindless requested but not supported by device." << std::endl;
+        }
     }
 
     uint32_t VK_Context::findMemoryType(uint32_t typeFilter, vk::MemoryPropertyFlags properties)

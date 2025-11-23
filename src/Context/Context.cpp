@@ -260,7 +260,7 @@ namespace FCT {
 
     void Context::create(ContextCreateFlags flag)
     {
-        createPlatform();
+        createPlatform(flag);
         m_descriptorPool = createResource<RHI::DescriptorPool>();
         m_descriptorPool->create();
         m_cmdGraph = new CommandBufferGraph(m_resourceDevice);
