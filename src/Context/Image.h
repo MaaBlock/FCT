@@ -9,6 +9,8 @@
 #include "../RHI/Fence.h"
 #include "../RHI/ImageUsageFlags.h"
 #include "../Type/type.h"
+#include <vector>
+#include <functional>
 
 namespace FCT {
     class Context;
@@ -58,6 +60,8 @@ namespace FCT {
         void renderTargetType(RenderTargetType type) { m_renderTargetType = type; }
 
         virtual void create() = 0;
+        virtual void create(bool uploadData) { create(); } // Added
+        
         virtual void as(ImageUsages usage) = 0;
         virtual void bind(Context* ctx) {}
 
@@ -86,6 +90,10 @@ namespace FCT {
         {
             return nullptr;
         };
+        virtual void updateData(const void* data, size_t dataSize) {}
+        virtual void updateData(const void* data, size_t dataSize, RHI::Fence* fence, std::function<void()>* onCompletion) {}
+        virtual void uploadAsync(std::vector<uint8_t> data, std::function<void()> callback) {}
+
         virtual size_t textureViewHash() const = 0;
     protected:
         ImageBehavior* m_behavior;

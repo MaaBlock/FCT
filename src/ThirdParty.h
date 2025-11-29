@@ -139,6 +139,7 @@ namespace FCT {
 }
 #endif
 
+#include <library/work_contract.h>
 #if defined(_DEBUG) || defined(DEBUG)
 #define FCT_DEBUG_MODE
 #define FCT_DEBUG

@@ -1,6 +1,3 @@
-//
-// Created by Administrator on 2025/3/1.
-//
 #ifndef VK_CONTEXT_H
 #define VK_CONTEXT_H
 #include "../ThirdParty.h"
@@ -8,6 +5,20 @@
 
 namespace FCT {
     class VK_ContextCommon;
+    
+    struct AsyncTransferParams {
+        vk::Image dstImage;
+        uint32_t width;
+        uint32_t height;
+        uint32_t depth;
+        vk::Format format;
+        uint32_t mipLevels;
+        uint32_t arrayLayers;
+        vk::ImageAspectFlags aspectMask;
+        std::vector<uint8_t> data;
+        std::function<void()> onCompletion;
+    };
+
     class VK_Context : public Context {
     public:
         VK_Context(VK_ContextCommon* common);
@@ -61,8 +72,46 @@ namespace FCT {
                                  const void* data,
                                  size_t dataSize, vk::Fence* outFence = nullptr, std::function<void()>* cleanUpCallback = nullptr);
 
+        void asyncTransferDataToImage(vk::Image dstImage, uint32_t width, uint32_t height, uint32_t depth, vk::Format format,
+                                      uint32_t mipLevels, uint32_t arrayLayers, vk::ImageAspectFlags aspectMask,
+                                      std::vector<uint8_t> data,
+                                      std::function<void()> onCompletion);
+                                      
+        void acquireImageOwnership(Image* image) override;
+
+    private:
+        vk::Buffer m_stageBuffer;
+        vk::DeviceMemory m_stageMemory;
+        uint8_t* m_stageMappedPtr = nullptr;
+        size_t m_stageHead = 0;
+#ifdef FCT_ANDROID
+        size_t m_maxStageBufferSize = 64 * 1024 * 1024; // 64MB
+#else
+        size_t m_maxStageBufferSize = 128 * 1024 * 1024; // 128MB
+#endif
+        struct InFlightUpload {
+            size_t offset;
+            size_t size;
+            vk::Fence fence;
+            vk::CommandBuffer cmdBuffer;
+            std::function<void()> onCompletion;
+        };
+        std::deque<InFlightUpload> m_inFlightUploads;
+
+        struct TransferTask {
+            std::function<void()> task;
+        };
+        boost::lockfree::queue<TransferTask*, boost::lockfree::capacity<1024>> m_asyncTransferTaskQueue;
+    private:
+        void processInFlightUploads();
+        void createStageBuffer();
+        void transferThreadLoop() override;
+        size_t allocateStagingMemory(size_t size);
+        void executeAsyncTransfer(AsyncTransferParams params);
     private:
         void createCommandPoolAndBuffers();
+
+
         VK_ContextCommon* m_common;
         uint32_t m_graphicsQueueFamilyIndex;
         vk::Device m_device;
@@ -74,6 +123,7 @@ namespace FCT {
         uint32_t m_transferQueueFamilyIndex;
         vk::Queue m_transferQueue;
         vk::CommandPool m_transferCommandPool;
+        vk::CommandPool m_asyncTransferCmdPool;
         std::unordered_map<size_t, std::unique_ptr<RHI::ConstBuffer>> m_emptyConstBufferCache;
         std::unique_ptr<Sampler> m_emptySampler;
         bool m_bindlessSupported = false;

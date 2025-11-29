@@ -80,12 +80,17 @@ namespace FCT
                 return m_height;
             }
             virtual void create() = 0;
+            virtual void create(bool uploadData) { create(); } // Default implementation for backward compatibility
+            
             void usage(ImageUsages usage)
             {
                 m_usage = usage;
             }
             virtual void updateData(const void* data, size_t dataSize) = 0;
             virtual void updateData(const void* data, size_t dataSize, Fence* fence, std::function<void()>* onCompletion) = 0;
+            
+            virtual void uploadAsync(std::vector<uint8_t> data, std::function<void()> callback) {} // Default empty
+
         protected:
             Format m_format;
             Samples m_samples;

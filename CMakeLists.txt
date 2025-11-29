@@ -244,6 +244,8 @@ else()
     set(CMAKE_CXX_STANDARD 20)
 endif ()
 
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/ThirdParty/work_contract work_contract)
+
 add_library(FCT STATIC
     ${RUNTIME_MODULE_SOURCES}
     ${DEBUGTOOLS_MODULE_SOURCES}
@@ -334,6 +336,7 @@ find_package(spirv_cross_hlsl CONFIG REQUIRED)
 find_package(spirv_cross_cpp CONFIG REQUIRED)
 find_package(spirv_cross_reflect CONFIG REQUIRED)
 target_link_libraries(FCT PUBLIC
+        work_contract
         spirv-cross-core
         spirv-cross-glsl
         spirv-cross-hlsl

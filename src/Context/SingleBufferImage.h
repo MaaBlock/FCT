@@ -26,10 +26,16 @@ namespace FCT
             m_initData.size = size;
         }
         void create() override;
+        void create(bool uploadData) override;
         void create(RHI::Image* image);
         void as(ImageUsages usage) override;
         void bind(Context* ctx) override;
         void resize(uint32_t width, uint32_t height) override;
+        
+        void updateData(const void* data, size_t dataSize) override;
+        void updateData(const void* data, size_t dataSize, RHI::Fence* fence, std::function<void()>* onCompletion) override;
+        void uploadAsync(std::vector<uint8_t> data, std::function<void()> callback) override;
+
         Image* getImage() const override { return const_cast<SingleBufferImage*>(this); }
         std::vector<Image*> getTargetImages() override;
 

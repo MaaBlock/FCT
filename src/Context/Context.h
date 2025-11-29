@@ -147,6 +147,8 @@ namespace FCT
 		Image* loadTexture(std::vector<unsigned char> data,Format dstFormat);
 	    Image* loadTexture(const std::string& filename, Format dstFormat);
         Image* loadCubeMap(const std::vector<std::string>& filenames);
+        
+        virtual void acquireImageOwnership(Image* image) {} // For async transfer ownership transition
         /**
         /**
           * @cond CHINESE
@@ -244,6 +246,12 @@ namespace FCT
 		bool m_currentFlush;
 		std::thread m_submitThread;
 		bool m_ctxRunning;
+	protected:
+		std::thread m_transferThread;
+		std::atomic<bool> m_transferRunning;
+		
+		virtual void transferThreadLoop() {}
+
 	protected:
 		uint32_t m_maxFrameInFlight;
 		//std::map<Window*, RHI::DescriptorPool*> m_descriptorPools;

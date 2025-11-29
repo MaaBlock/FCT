@@ -25,6 +25,11 @@ namespace FCT {
 
         void VK_Image::create()
         {
+            create(true);
+        }
+
+        void VK_Image::create(bool uploadData)
+        {
             vk::ImageCreateInfo imageInfo;
             imageInfo.setImageType(vk::ImageType::e2D);
             imageInfo.setFormat(ToVkFormat(m_format));
@@ -73,7 +78,7 @@ namespace FCT {
 
                 m_ctx->getDevice().bindImageMemory(m_image, m_memory, 0);
 
-                if (m_initData.data && m_initData.size > 0) {
+                if (uploadData && m_initData.data && m_initData.size > 0) {
                     uploadInitialData();
                 }
 
@@ -100,6 +105,27 @@ namespace FCT {
             if (m_initData.data && m_initData.size > 0) {
                 updateData(m_initData.data, m_initData.size);
             }
+        }
+        
+        void VK_Image::uploadAsync(std::vector<uint8_t> data, std::function<void()> callback)
+        {
+            vk::ImageAspectFlags aspectMask = vk::ImageAspectFlagBits::eColor;
+            if (m_usage & ImageUsage::DepthStencil) {
+                aspectMask = vk::ImageAspectFlagBits::eDepth | vk::ImageAspectFlagBits::eStencil;
+            }
+
+            m_ctx->asyncTransferDataToImage(
+                m_image,
+                m_width,
+                m_height,
+                1,
+                ToVkFormat(m_format),
+                1,
+                m_arrayLayers,
+                aspectMask,
+                std::move(data),
+                callback
+            );
         }
 
 

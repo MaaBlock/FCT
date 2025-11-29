@@ -16,7 +16,6 @@ namespace FCT {
         m_currentFlush = true;
     }
 
-
     Image* Context::loadTexture(const std::string& filename)
     {
         auto data = m_imageLoader->load(filename);
@@ -25,7 +24,6 @@ namespace FCT {
         image->height(data.height);
 
         bool isSRGB = true;
-
 
         Format format;
         switch (data.channels) {
@@ -63,7 +61,6 @@ namespace FCT {
         image->height(data.height);
 
         bool isSRGB = true;
-
 
         Format format;
         switch (data.channels)

@@ -30,6 +30,10 @@ namespace FCT
     }
 
     void SingleBufferImage::create() {
+        create(true);
+    }
+    
+    void SingleBufferImage::create(bool uploadData) {
         FCT_SAFE_RELEASE(m_image);
         m_image = m_ctx->createResource<RHI::Image>();
         m_image->width(m_width);
@@ -40,7 +44,7 @@ namespace FCT
         m_image->isCubeMap(m_isCubeMap);
         m_image->initData(m_initData);
         m_image->usage(m_usage);
-        m_image->create();
+        m_image->create(uploadData); // Pass the flag
         if (m_usage & ImageUsage::Texture && !m_srv)
         {
             m_srv = m_ctx->createResource<RHI::TextureView>();
@@ -49,6 +53,23 @@ namespace FCT
         }
         delete m_behavior;
         m_behavior = new SingleBufferAfterCreateImageBehavior(this);
+    }
+
+    void SingleBufferImage::uploadAsync(std::vector<uint8_t> data, std::function<void()> callback)
+    {
+        if (m_image) {
+            m_image->uploadAsync(std::move(data), callback);
+        }
+    }
+
+    void SingleBufferImage::updateData(const void* data, size_t dataSize)
+    {
+        if (m_image) m_image->updateData(data, dataSize);
+    }
+
+    void SingleBufferImage::updateData(const void* data, size_t dataSize, RHI::Fence* fence, std::function<void()>* onCompletion)
+    {
+        if (m_image) m_image->updateData(data, dataSize, fence, onCompletion);
     }
 
     void SingleBufferImage::create(RHI::Image* image) {
