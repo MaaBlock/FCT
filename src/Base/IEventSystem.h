@@ -40,10 +40,10 @@ namespace FCT
             static constexpr bool EventAsData = false;
         };
     }
-    using SubscribeId = std::size_t;
 
     template<typename Config = EventSystemConfig::Full>
-    class IEventSystem {
+    class IEventSystem
+    {
     private:
         template<typename Event>
         static constexpr auto getEventTypeId() {
@@ -106,6 +106,17 @@ namespace FCT
         SubscribeId m_nextSubscribeId = 1;
 
     public:
+        inline IEventSystem()
+        {
+
+        }
+        inline virtual ~IEventSystem()
+        {
+        }
+        IEventSystem(const IEventSystem&) = delete;
+        IEventSystem& operator=(const IEventSystem&) = delete;
+        IEventSystem(IEventSystem&&) = default;
+        IEventSystem& operator=(IEventSystem&&) = default;
         template<typename Event>
        void trigger(const Event& event)
            requires (Config::EnableTrigger && Config::EventAsData)

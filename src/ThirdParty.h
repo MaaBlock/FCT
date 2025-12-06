@@ -158,6 +158,10 @@ namespace FCT {
 #include <queue>
 #include <optional>
 #include <type_traits>
+namespace FCT
+{
+	using SubscribeId = std::size_t;
+}
 
 
 #endif // FCT_THIRDPARTY_HEADER

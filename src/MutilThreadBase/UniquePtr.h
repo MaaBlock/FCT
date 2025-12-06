@@ -23,6 +23,8 @@ namespace FCT {
     template<typename T>
     class UniquePtr {
     public:
+        template<typename U> friend class UniquePtr;
+
         // 编译时检查，确保 T 没有继承自 RefCount
         static_assert(!std::is_base_of<FCT::RefCount, T>::value,
             "UniquePtr cannot manage types derived from FCT::RefCount. Use a reference-counting pointer instead.");
@@ -45,6 +47,12 @@ namespace FCT {
         UniquePtr(UniquePtr&& other) noexcept : m_ptr(other.release()) {}
 
         /**
+         * @brief 允许从派生类的 UniquePtr 移动构造。
+         */
+        template<typename U, typename = typename std::enable_if<std::is_convertible<U*, T*>::value>::type>
+        UniquePtr(UniquePtr<U>&& other) noexcept : m_ptr(other.release()) {}
+
+        /**
          * @brief 移动赋值运算符，从另一个 UniquePtr 转移所有权。
          * @param other 用于转移所有权的另一个 UniquePtr。
          * @return *this 的引用。
@@ -53,6 +61,15 @@ namespace FCT {
             if (this != &other) {
                 reset(other.release());
             }
+            return *this;
+        }
+
+        /**
+         * @brief 允许从派生类的 UniquePtr 移动赋值。
+         */
+        template<typename U, typename = typename std::enable_if<std::is_convertible<U*, T*>::value>::type>
+        UniquePtr& operator=(UniquePtr<U>&& other) noexcept {
+            reset(other.release());
             return *this;
         }
 

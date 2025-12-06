@@ -10,7 +10,6 @@
 #include <functional>
 #include <memory>
 namespace FCT {
-    using SubscribeId = std::size_t;
     struct IObjectDispatcher {
         virtual ~IObjectDispatcher() = default;
         virtual void unsubscribe(SubscribeId id) = 0;
