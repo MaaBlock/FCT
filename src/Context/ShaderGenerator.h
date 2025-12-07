@@ -111,8 +111,6 @@ namespace FCT
         std::string generateTexturesAndSamplers(RHI::ShaderBinary& binary, const std::vector<TextureElement>& textures,
                                                 const std::vector<SamplerElement>& samplers);
 
-        std::string uniformTypeToShaderType(ConstType type);
-
         std::string generateConstBuffer(RHI::ShaderBinary& binary,const std::vector<ConstLayout>& uniforms);
 
         std::vector<std::pair<ConstLayout, std::pair<uint32_t, uint32_t>>> m_layoutSetBindings;

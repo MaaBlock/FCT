@@ -473,36 +473,7 @@ namespace FCT
         return ss.str();
     }
 
-    std::string ShaderGenerator::uniformTypeToShaderType(ConstType type)
-    {
-        switch (type) {
-        case ConstType::ModelMatrix:
-        case ConstType::ViewMatrix:
-        case ConstType::ProjectionMatrix:
-        case ConstType::MVPMatrix:
-        case ConstType::Mat4:
-            return "float4x4";
-        case ConstType::Mat3:
-            return "float3x3";
-        case ConstType::Vec4:
-            return "float4";
-        case ConstType::Vec3:
-            return "float3";
-        case ConstType::Vec2:
-            return "float2";
-        case ConstType::Float:
-            return "float";
-        case ConstType::Int:
-            return "int";
-        case ConstType::Bool:
-            return "bool";
-        case ConstType::Texture2D:
-        case ConstType::TextureCube:
-        case ConstType::Custom:
-        default:
-            return "float4";
-        }
-    }
+
     std::string ShaderGenerator::generateConstBuffer(RHI::ShaderBinary& binary,
         const std::vector<ConstLayout>& uniforms)
     {
@@ -556,7 +527,7 @@ namespace FCT
 
             for (size_t i = 0; i < layout.getElementCount(); i++) {
                 const ConstElement& element = layout.getElement(i);
-                std::string typeStr = uniformTypeToShaderType(element.getType());
+                std::string typeStr = GetUniformTypeName(element.getType());
                 const char* name = element.getName();
                 if (element.isArray()) {
                     size_t arraySize = element.getElementCount();

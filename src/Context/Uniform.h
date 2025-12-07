@@ -228,6 +228,39 @@ namespace FCT
         }
     }
 
+    inline constexpr const char* GetUniformTypeName(ConstType type)
+    {
+        switch (type) {
+        case ConstType::ModelMatrix:
+        case ConstType::ViewMatrix:
+        case ConstType::ProjectionMatrix:
+        case ConstType::MVPMatrix:
+        case ConstType::Mat4:
+            return "float4x4";
+        case ConstType::Mat3:
+            return "float3x3";
+        case ConstType::Vec4:
+            return "float4";
+        case ConstType::Vec3:
+            return "float3";
+        case ConstType::Vec2:
+            return "float2";
+        case ConstType::Float:
+            return "float";
+        case ConstType::Int:
+            return "int";
+        case ConstType::Bool:
+            return "bool";
+        case ConstType::Texture2D:
+            return "Texture2D";
+        case ConstType::TextureCube:
+            return "TextureCube";
+        case ConstType::Custom:
+        default:
+            return "float4";
+        }
+    }
+
 
     class ConstElement {
     public:
