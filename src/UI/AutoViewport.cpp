@@ -56,12 +56,13 @@ namespace FCT
             m_viewportWidth = m_windowHeight * targetAspect;
             m_viewportOffsetX = (m_windowWidth - m_viewportWidth) / 2.0f;
             m_viewportOffsetY = 0.0f;
-        } else {
-            m_viewportWidth = m_windowWidth;
-            m_viewportHeight = m_windowWidth / targetAspect;
-            m_viewportOffsetX = 0.0f;
-            m_viewportOffsetY = (m_windowHeight - m_viewportHeight) / 2.0f;
+            return;
         }
+        m_viewportWidth = m_windowWidth;
+        m_viewportHeight = m_windowWidth / targetAspect;
+        m_viewportOffsetX = 0.0f;
+        m_viewportOffsetY = (m_windowHeight - m_viewportHeight) / 2.0f;
+        return;
     }
 
     void AutoViewport::submit(RHI::CommandBuffer* cmdBuf)
@@ -81,7 +82,8 @@ namespace FCT
         srcViewportPos.x = (wndPos.x - m_viewportOffsetX) / m_viewportWidth;
         srcViewportPos.y = (wndPos.y - m_viewportOffsetY) / m_viewportHeight;
         viewportPos = srcViewportPos * Vec2(m_dstViewportWidth, m_dstViewPortHeight);
-        return srcViewportPos.x >= 0.0f && srcViewportPos.x <= 1.0f && srcViewportPos.y >= 0.0f && srcViewportPos.y <= 1.0f;
+        return srcViewportPos.x >= 0.0f && srcViewportPos.x <= 1.0f
+            && srcViewportPos.y >= 0.0f && srcViewportPos.y <= 1.0f;
     }
 }
 
